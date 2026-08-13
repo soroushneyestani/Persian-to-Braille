@@ -13,22 +13,22 @@
   "summary": {
     "decisionItemsConsumed": 37,
     "rules": 37,
-    "candidateRules": 37,
-    "normativeRules": 0,
+    "candidateRules": 36,
+    "normativeRules": 1,
     "conformanceVectors": 37,
-    "activeConformanceVectors": 0,
+    "activeConformanceVectors": 1,
     "coreAlphabetRules": 32,
     "orthographicRules": 1,
     "punctuationOrNumberRules": 4,
     "dot78Rules": 0,
-    "promotionRecordsApplied": 0
+    "promotionRecordsApplied": 1
   },
   "rules": [
     {
       "id": "FA-G1-LETTER-001",
-      "status": "candidate",
+      "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-001.json",
-      "sha256": "B9873A26ED38F3289D2457B30B4C90C67DE449287DE439313467394363CB69B4"
+      "sha256": "6FC3A12A4AA9121AFF3EEA36F5045C1370E991CBBD3DF1E2B8BFC75233A7DDBA"
     },
     {
       "id": "FA-G1-LETTER-002",
@@ -250,9 +250,9 @@
   "conformanceVectors": [
     {
       "id": "FA-CONF-LETTER-001",
-      "status": "draft",
+      "status": "active",
       "path": "spec/fa-ir/conformance/records/fa-conf-letter-001.json",
-      "sha256": "E884E75A5543EABAB202A93A2DBF61EA0EE473209103FC78D2E669967B1291D8"
+      "sha256": "BE520D54CDE3FE3E15ED0B62FF8633782FA9E43A583AB942720900BFA2F03F56"
     },
     {
       "id": "FA-CONF-LETTER-002",
