@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/promotion-record.schema.json",
+  "title": "Persian Braille Normative Promotion Record",
+  "description": "Machine-readable decision record for explicit candidate-to-normative promotion inside the Persian-to-Braille project specification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "policyVersion",
+    "ruleId",
+    "profileId",
+    "ruleVersion",
+    "fromStatus",
+    "toStatus",
+    "decision",
+    "basis",
+    "checks",
+    "scope",
+    "review",
+    "rationale"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^FA-PROMO-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+    },
+    "policyVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "ruleId": {
+      "type": "string",
+      "pattern": "^FA-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+    },
+    "profileId": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(?:-[a-z0-9]+)+$"
+    },
+    "ruleVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "fromStatus": {
+      "type": "string",
+      "const": "candidate"
+    },
+    "toStatus": {
+      "type": "string",
+      "const": "normative"
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "authority",
+        "recordedBy"
+      ],
+      "properties": {
+        "result": {
+          "type": "string",
+          "const": "approved"
+        },
+        "authority": {
+          "type": "string",
+          "const": "project-maintainer"
+        },
+        "recordedBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "Optional audit timestamp. Generators must not invent or auto-update it."
+        }
+      }
+    },
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase1Classification",
+        "decisionItemIds",
+        "sourceIds",
+        "unresolvedConflicts"
+      ],
+      "properties": {
+        "phase1Classification": {
+          "type": "string",
+          "const": "CONSENSUS-CANDIDATE"
+        },
+        "decisionItemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^FA-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SRC-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "unresolvedConflicts": {
+          "type": "array",
+          "maxItems": 0,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaValidation",
+        "semanticValidation",
+        "conformanceCoverage",
+        "negativeFixtures",
+        "reproducibility",
+        "profileCompatibility",
+        "unicodeBrailleIntegrity",
+        "sourceTraceability"
+      ],
+      "properties": {
+        "schemaValidation": {
+          "type": "boolean",
+          "const": true
+        },
+        "semanticValidation": {
+          "type": "boolean",
+          "const": true
+        },
+        "conformanceCoverage": {
+          "type": "boolean",
+          "const": true
+        },
+        "negativeFixtures": {
+          "type": "boolean",
+          "const": true
+        },
+        "reproducibility": {
+          "type": "boolean",
+          "const": true
+        },
+        "profileCompatibility": {
+          "type": "boolean",
+          "const": true
+        },
+        "unicodeBrailleIntegrity": {
+          "type": "boolean",
+          "const": true
+        },
+        "sourceTraceability": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projectNormative",
+        "officialIranianStandardClaim",
+        "statement"
+      ],
+      "properties": {
+        "projectNormative": {
+          "type": "boolean",
+          "const": true
+        },
+        "officialIranianStandardClaim": {
+          "type": "boolean",
+          "const": false
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "externalReview",
+        "notes"
+      ],
+      "properties": {
+        "externalReview": {
+          "type": "string",
+          "enum": [
+            "not-performed",
+            "completed"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

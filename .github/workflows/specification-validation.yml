@@ -46,6 +46,9 @@ jobs:
       - name: Regenerate Phase 2 schemas
         run: python tools/spec/build_phase2_schemas.py
 
+      - name: Regenerate normative promotion protocol
+        run: python tools/spec/build_normative_promotion_protocol.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
@@ -60,6 +63,7 @@ jobs:
           git diff --exit-code -- \
             docs/specification \
             spec/fa-ir/schema \
+            spec/fa-ir/governance \
             spec/fa-ir/rules \
             spec/fa-ir/conformance \
             spec/fa-ir/profiles \
