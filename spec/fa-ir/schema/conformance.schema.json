@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/conformance.schema.json",
+  "title": "Persian Braille Conformance Vector",
+  "description": "Schema for deterministic print-to-Braille conformance vectors.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "version",
+    "profile",
+    "profileVersion",
+    "ruleIds",
+    "input",
+    "expected"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^FA-CONF-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+      "description": "Semantic version of this conformance vector."
+    },
+    "profile": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(?:-[a-z0-9]+)+$",
+      "examples": [
+        "fa-ir-g1"
+      ]
+    },
+    "profileVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+      "description": "Exact profile version used by this vector."
+    },
+    "ruleIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^FA-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$",
+        "examples": [
+          "FA-G1-LETTER-003",
+          "FA-G1-PUNC-ELLIPSIS-001"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "codePoints"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "codePoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^U\\+[0-9A-F]{4,6}$",
+            "examples": [
+              "U+067E",
+              "U+2026"
+            ]
+          }
+        },
+        "before": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional left-context predicate/token class."
+        },
+        "after": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional right-context predicate/token class."
+        },
+        "tokenClass": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional semantic token-class constraint."
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cells"
+      ],
+      "properties": {
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Braille dot pattern for one cell. '0' is the blank Braille cell. Otherwise digits 1-8 identify raised dots. Canonical ordering and duplicate-dot rejection are semantic validator responsibilities.",
+            "pattern": "^(?:0|[1-8]{1,8})$",
+            "examples": [
+              "1",
+              "1234",
+              "3456",
+              "0"
+            ]
+          }
+        },
+        "unicodeBraille": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "structuralTokens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}

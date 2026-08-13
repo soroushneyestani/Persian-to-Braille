@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/profile.schema.json",
+  "title": "Persian Braille Profile",
+  "description": "Schema for a versioned Persian Braille translation profile. Profiles select rule sets; they do not duplicate rule definitions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "region",
+    "grade",
+    "cellSize",
+    "direction",
+    "version",
+    "ruleIds",
+    "normalizationPolicy",
+    "fallbackPolicy"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(?:-[a-z0-9]+)+$",
+      "examples": [
+        "fa-ir-g1"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "candidate",
+        "normative",
+        "deprecated"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "const": "fa"
+    },
+    "region": {
+      "type": "string",
+      "const": "IR"
+    },
+    "grade": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cellSize": {
+      "type": "integer",
+      "enum": [
+        6,
+        8
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "print-to-braille"
+      ]
+    },
+    "ruleIds": {
+      "type": "array",
+      "description": "Stable rule identifiers selected by this profile. Filesystem layout is deliberately non-normative.",
+      "items": {
+        "type": "string",
+        "pattern": "^FA-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$",
+        "examples": [
+          "FA-G1-LETTER-003",
+          "FA-G1-PUNC-ELLIPSIS-001"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "normalizationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unicodeForm",
+        "unknownFormatControls"
+      ],
+      "properties": {
+        "unicodeForm": {
+          "type": "string",
+          "enum": [
+            "none",
+            "NFC",
+            "NFKC"
+          ]
+        },
+        "unknownFormatControls": {
+          "type": "string",
+          "enum": [
+            "preserve",
+            "ignore",
+            "error"
+          ]
+        }
+      }
+    },
+    "fallbackPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unknownCharacter",
+        "unknownSequence"
+      ],
+      "properties": {
+        "unknownCharacter": {
+          "type": "string",
+          "enum": [
+            "preserve",
+            "replace",
+            "error"
+          ]
+        },
+        "unknownSequence": {
+          "type": "string",
+          "enum": [
+            "scalar-fallback",
+            "preserve",
+            "error"
+          ]
+        }
+      }
+    },
+    "evidenceBaseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "masterDecisionMatrix": {
+          "type": "string",
+          "const": "spec/fa-ir/evidence/master-decision-matrix.json"
+        },
+        "minimumClassification": {
+          "type": "string",
+          "enum": [
+            "CONSENSUS-CANDIDATE",
+            "REVIEW-REQUIRED",
+            "UNRESOLVED"
+          ]
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+      "description": "Semantic version of this profile artifact."
+    }
+  }
+}
