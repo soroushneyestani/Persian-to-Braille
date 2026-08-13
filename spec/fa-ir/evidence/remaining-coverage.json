@@ -1,0 +1,2437 @@
+{
+  "schemaVersion": 1,
+  "auditStage": "1.7",
+  "scope": "Remaining scalar definitions, diacritics, quotes, symbols, contextual punctuation rules, emphasis indicators, and explicit coverage gaps after Stages 1.2-1.6",
+  "normative": false,
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "coveragePolicy": {
+    "description": "Stage 1.7 inventories what remains in the pinned Grade-1 implementation after subtracting scalar domains already audited in Stages 1.2-1.6. Stable/draft agreement is implementation agreement only and does not establish normative Persian Braille.",
+    "dot78Policy": "Any dot-7/dot-8 use in a literary six-dot Grade-1 profile remains flagged for explicit source review rather than silently converted."
+  },
+  "summary": {
+    "definedScalarUnion": 199,
+    "previouslyAuditedDefinedScalars": 137,
+    "remainingScalarCases": 62,
+    "remainingScalarStableDraftDifferences": 0,
+    "remainingScalarDot78Exposures": 18,
+    "remainingContextCases": 15,
+    "remainingContextStableDraftDifferences": 0,
+    "remainingContextDot78Exposures": 5,
+    "emphasisCases": 9,
+    "emphasisStableDraftDifferences": 0,
+    "emphasisDot78Exposures": 3,
+    "explicitKnownGapCases": 1,
+    "normativeDecisionsPending": 86
+  },
+  "remainingScalars": [
+    {
+      "id": "FA-REM-001",
+      "character": "\"",
+      "codePoint": "U+0022",
+      "unicodeName": "QUOTATION MARK",
+      "unicodeCategory": "Po",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "58"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "58"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-002",
+      "character": "#",
+      "codePoint": "U+0023",
+      "unicodeName": "NUMBER SIGN",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3456"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-003",
+      "character": "$",
+      "codePoint": "U+0024",
+      "unicodeName": "DOLLAR SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-234"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-004",
+      "character": "&",
+      "codePoint": "U+0026",
+      "unicodeName": "AMPERSAND",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "123468"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "123468"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-005",
+      "character": "'",
+      "codePoint": "U+0027",
+      "unicodeName": "APOSTROPHE",
+      "unicodeCategory": "Po",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-006",
+      "character": "+",
+      "codePoint": "U+002B",
+      "unicodeName": "PLUS SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-235"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-235"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-007",
+      "character": "<",
+      "codePoint": "U+003C",
+      "unicodeName": "LESS-THAN SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "246"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "246"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-008",
+      "character": "=",
+      "codePoint": "U+003D",
+      "unicodeName": "EQUALS SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-2356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-2356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-009",
+      "character": ">",
+      "codePoint": "U+003E",
+      "unicodeName": "GREATER-THAN SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "135"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "135"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-010",
+      "character": "@",
+      "codePoint": "U+0040",
+      "unicodeName": "COMMERCIAL AT",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-011",
+      "character": "[",
+      "codePoint": "U+005B",
+      "unicodeName": "LEFT SQUARE BRACKET",
+      "unicodeCategory": "Ps",
+      "auditCategory": "bracket",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-012",
+      "character": "\\",
+      "codePoint": "U+005C",
+      "unicodeName": "REVERSE SOLIDUS",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "12568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "12568"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-013",
+      "character": "]",
+      "codePoint": "U+005D",
+      "unicodeName": "RIGHT SQUARE BRACKET",
+      "unicodeCategory": "Pe",
+      "auditCategory": "bracket",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356-3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-014",
+      "character": "^",
+      "codePoint": "U+005E",
+      "unicodeName": "CIRCUMFLEX ACCENT",
+      "unicodeCategory": "Sk",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3468"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3468"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-015",
+      "character": "_",
+      "codePoint": "U+005F",
+      "unicodeName": "LOW LINE",
+      "unicodeCategory": "Pc",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "78"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "78"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-016",
+      "character": "`",
+      "codePoint": "U+0060",
+      "unicodeName": "GRAVE ACCENT",
+      "unicodeCategory": "Sk",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "48"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "48"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-017",
+      "character": "{",
+      "codePoint": "U+007B",
+      "unicodeName": "LEFT CURLY BRACKET",
+      "unicodeCategory": "Ps",
+      "auditCategory": "bracket",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "5-236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "5-236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-018",
+      "character": "|",
+      "codePoint": "U+007C",
+      "unicodeName": "VERTICAL LINE",
+      "unicodeCategory": "Sm",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4568-1237"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4568-1237"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-019",
+      "character": "}",
+      "codePoint": "U+007D",
+      "unicodeName": "RIGHT CURLY BRACKET",
+      "unicodeCategory": "Pe",
+      "auditCategory": "bracket",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356-2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356-2"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-020",
+      "character": "~",
+      "codePoint": "U+007E",
+      "unicodeName": "TILDE",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "45"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "45"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-021",
+      "character": "¢",
+      "codePoint": "U+00A2",
+      "unicodeName": "CENT SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-14"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-14"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-022",
+      "character": "£",
+      "codePoint": "U+00A3",
+      "unicodeName": "POUND SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-123"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-123"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-023",
+      "character": "¥",
+      "codePoint": "U+00A5",
+      "unicodeName": "YEN SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-13456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-13456"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-024",
+      "character": "§",
+      "codePoint": "U+00A7",
+      "unicodeName": "SECTION SIGN",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-234-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-234-3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-025",
+      "character": "©",
+      "codePoint": "U+00A9",
+      "unicodeName": "COPYRIGHT SIGN",
+      "unicodeCategory": "So",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "147-7"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "147-7"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-026",
+      "character": "«",
+      "codePoint": "U+00AB",
+      "unicodeName": "LEFT-POINTING DOUBLE ANGLE QUOTATION MARK",
+      "unicodeCategory": "Pi",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-027",
+      "character": "­",
+      "codePoint": "U+00AD",
+      "unicodeName": "SOFT HYPHEN",
+      "unicodeCategory": "Cf",
+      "auditCategory": "other",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "367"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "367"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-028",
+      "character": "®",
+      "codePoint": "U+00AE",
+      "unicodeName": "REGISTERED SIGN",
+      "unicodeCategory": "So",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "12357-7"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "12357-7"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-029",
+      "character": "°",
+      "codePoint": "U+00B0",
+      "unicodeName": "DEGREE SIGN",
+      "unicodeCategory": "So",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3568"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-030",
+      "character": "µ",
+      "codePoint": "U+00B5",
+      "unicodeName": "MICRO SIGN",
+      "unicodeCategory": "Ll",
+      "auditCategory": "other",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "46-134"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "46-134"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-031",
+      "character": "¶",
+      "codePoint": "U+00B6",
+      "unicodeName": "PILCROW SIGN",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-1234-345"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-1234-345"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-032",
+      "character": "»",
+      "codePoint": "U+00BB",
+      "unicodeName": "RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK",
+      "unicodeCategory": "Pf",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-033",
+      "character": "¿",
+      "codePoint": "U+00BF",
+      "unicodeName": "INVERTED QUESTION MARK",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-034",
+      "character": "×",
+      "codePoint": "U+00D7",
+      "unicodeName": "MULTIPLICATION SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-035",
+      "character": "÷",
+      "codePoint": "U+00F7",
+      "unicodeName": "DIVISION SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-256"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-256"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-036",
+      "character": "ء",
+      "codePoint": "U+0621",
+      "unicodeName": "ARABIC LETTER HAMZA",
+      "unicodeCategory": "Lo",
+      "auditCategory": "arabic-letter",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-037",
+      "character": "ً",
+      "codePoint": "U+064B",
+      "unicodeName": "ARABIC FATHATAN",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "23"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "23"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-038",
+      "character": "ٌ",
+      "codePoint": "U+064C",
+      "unicodeName": "ARABIC DAMMATAN",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "26"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "26"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-039",
+      "character": "ٍ",
+      "codePoint": "U+064D",
+      "unicodeName": "ARABIC KASRATAN",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "35"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "35"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-040",
+      "character": "َ",
+      "codePoint": "U+064E",
+      "unicodeName": "ARABIC FATHA",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-041",
+      "character": "ُ",
+      "codePoint": "U+064F",
+      "unicodeName": "ARABIC DAMMA",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "136"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "136"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-042",
+      "character": "ِ",
+      "codePoint": "U+0650",
+      "unicodeName": "ARABIC KASRA",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "15"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "15"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-043",
+      "character": "ّ",
+      "codePoint": "U+0651",
+      "unicodeName": "ARABIC SHADDA",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "6"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "6"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-044",
+      "character": "ْ",
+      "codePoint": "U+0652",
+      "unicodeName": "ARABIC SUKUN",
+      "unicodeCategory": "Mn",
+      "auditCategory": "arabic-diacritic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-045",
+      "character": "٫",
+      "codePoint": "U+066B",
+      "unicodeName": "ARABIC DECIMAL SEPARATOR",
+      "unicodeCategory": "Po",
+      "auditCategory": "numeric-separator",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-046",
+      "character": "٬",
+      "codePoint": "U+066C",
+      "unicodeName": "ARABIC THOUSANDS SEPARATOR",
+      "unicodeCategory": "Po",
+      "auditCategory": "numeric-separator",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-047",
+      "character": "۔",
+      "codePoint": "U+06D4",
+      "unicodeName": "ARABIC FULL STOP",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "256"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "256"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-048",
+      "character": "‐",
+      "codePoint": "U+2010",
+      "unicodeName": "HYPHEN",
+      "unicodeCategory": "Pd",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "368"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "368"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-049",
+      "character": "‑",
+      "codePoint": "U+2011",
+      "unicodeName": "NON-BREAKING HYPHEN",
+      "unicodeCategory": "Pd",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "36-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "36-3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-050",
+      "character": "‘",
+      "codePoint": "U+2018",
+      "unicodeName": "LEFT SINGLE QUOTATION MARK",
+      "unicodeCategory": "Pi",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-051",
+      "character": "’",
+      "codePoint": "U+2019",
+      "unicodeName": "RIGHT SINGLE QUOTATION MARK",
+      "unicodeCategory": "Pf",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-052",
+      "character": "“",
+      "codePoint": "U+201C",
+      "unicodeName": "LEFT DOUBLE QUOTATION MARK",
+      "unicodeCategory": "Pi",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-12356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-12356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-053",
+      "character": "”",
+      "codePoint": "U+201D",
+      "unicodeName": "RIGHT DOUBLE QUOTATION MARK",
+      "unicodeCategory": "Pf",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "23456-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "23456-3"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-054",
+      "character": "„",
+      "codePoint": "U+201E",
+      "unicodeName": "DOUBLE LOW-9 QUOTATION MARK",
+      "unicodeCategory": "Ps",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "123567"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "123567"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-055",
+      "character": "‟",
+      "codePoint": "U+201F",
+      "unicodeName": "DOUBLE HIGH-REVERSED-9 QUOTATION MARK",
+      "unicodeCategory": "Pi",
+      "auditCategory": "quotation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "234568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "234568"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-056",
+      "character": "•",
+      "codePoint": "U+2022",
+      "unicodeName": "BULLET",
+      "unicodeCategory": "Po",
+      "auditCategory": "punctuation",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "358"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "358"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-057",
+      "character": "€",
+      "codePoint": "U+20AC",
+      "unicodeName": "EURO SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-15"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-15"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-058",
+      "character": "−",
+      "codePoint": "U+2212",
+      "unicodeName": "MINUS SIGN",
+      "unicodeCategory": "Sm",
+      "auditCategory": "math-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-36"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "56-36"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-059",
+      "character": "●",
+      "codePoint": "U+25CF",
+      "unicodeName": "BLACK CIRCLE",
+      "unicodeCategory": "So",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "134678"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "134678"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-060",
+      "character": "◦",
+      "codePoint": "U+25E6",
+      "unicodeName": "WHITE BULLET",
+      "unicodeCategory": "So",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3578"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "3578"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-061",
+      "character": "◾",
+      "codePoint": "U+25FE",
+      "unicodeName": "BLACK MEDIUM SMALL SQUARE",
+      "unicodeCategory": "Sm",
+      "auditCategory": "symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "35678"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "35678"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-062",
+      "character": "﷼",
+      "codePoint": "U+FDFC",
+      "unicodeName": "RIAL SIGN",
+      "unicodeCategory": "Sc",
+      "auditCategory": "currency-symbol",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-1235"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "4-1235"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "mapping-not-verified-by-current-project-audit"
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "dot78ReviewQueue": [
+    {
+      "id": "FA-REM-001",
+      "character": "\"",
+      "codePoint": "U+0022",
+      "unicodeName": "QUOTATION MARK",
+      "dots": "58",
+      "auditCategory": "quotation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-004",
+      "character": "&",
+      "codePoint": "U+0026",
+      "unicodeName": "AMPERSAND",
+      "dots": "123468",
+      "auditCategory": "punctuation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-012",
+      "character": "\\",
+      "codePoint": "U+005C",
+      "unicodeName": "REVERSE SOLIDUS",
+      "dots": "12568",
+      "auditCategory": "punctuation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-014",
+      "character": "^",
+      "codePoint": "U+005E",
+      "unicodeName": "CIRCUMFLEX ACCENT",
+      "dots": "3468",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-015",
+      "character": "_",
+      "codePoint": "U+005F",
+      "unicodeName": "LOW LINE",
+      "dots": "78",
+      "auditCategory": "punctuation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-016",
+      "character": "`",
+      "codePoint": "U+0060",
+      "unicodeName": "GRAVE ACCENT",
+      "dots": "48",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-018",
+      "character": "|",
+      "codePoint": "U+007C",
+      "unicodeName": "VERTICAL LINE",
+      "dots": "4568-1237",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-025",
+      "character": "©",
+      "codePoint": "U+00A9",
+      "unicodeName": "COPYRIGHT SIGN",
+      "dots": "147-7",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-027",
+      "character": "­",
+      "codePoint": "U+00AD",
+      "unicodeName": "SOFT HYPHEN",
+      "dots": "367",
+      "auditCategory": "other",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-028",
+      "character": "®",
+      "codePoint": "U+00AE",
+      "unicodeName": "REGISTERED SIGN",
+      "dots": "12357-7",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-029",
+      "character": "°",
+      "codePoint": "U+00B0",
+      "unicodeName": "DEGREE SIGN",
+      "dots": "3568",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-048",
+      "character": "‐",
+      "codePoint": "U+2010",
+      "unicodeName": "HYPHEN",
+      "dots": "368",
+      "auditCategory": "punctuation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-054",
+      "character": "„",
+      "codePoint": "U+201E",
+      "unicodeName": "DOUBLE LOW-9 QUOTATION MARK",
+      "dots": "123567",
+      "auditCategory": "quotation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-055",
+      "character": "‟",
+      "codePoint": "U+201F",
+      "unicodeName": "DOUBLE HIGH-REVERSED-9 QUOTATION MARK",
+      "dots": "234568",
+      "auditCategory": "quotation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-056",
+      "character": "•",
+      "codePoint": "U+2022",
+      "unicodeName": "BULLET",
+      "dots": "358",
+      "auditCategory": "punctuation",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-059",
+      "character": "●",
+      "codePoint": "U+25CF",
+      "unicodeName": "BLACK CIRCLE",
+      "dots": "134678",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-060",
+      "character": "◦",
+      "codePoint": "U+25E6",
+      "unicodeName": "WHITE BULLET",
+      "dots": "3578",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    },
+    {
+      "id": "FA-REM-061",
+      "character": "◾",
+      "codePoint": "U+25FE",
+      "unicodeName": "BLACK MEDIUM SMALL SQUARE",
+      "dots": "35678",
+      "auditCategory": "symbol",
+      "decision": "pending-source-review"
+    }
+  ],
+  "remainingContextRules": [
+    {
+      "id": "FA-REM-CTX-001",
+      "directive": "hyphen",
+      "token": "-",
+      "codePoints": [
+        "U+002D"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "36"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "36"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-002",
+      "directive": "midnum",
+      "token": "-",
+      "codePoints": [
+        "U+002D"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "36"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "36"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-003",
+      "directive": "postpunc",
+      "token": "!",
+      "codePoints": [
+        "U+0021"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "235"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "235"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-004",
+      "directive": "postpunc",
+      "token": "\"",
+      "codePoints": [
+        "U+0022"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "58"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "58"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-005",
+      "directive": "postpunc",
+      "token": "'",
+      "codePoints": [
+        "U+0027"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "3567"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "3567"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-006",
+      "directive": "postpunc",
+      "token": "(",
+      "codePoints": [
+        "U+0028"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-007",
+      "directive": "postpunc",
+      "token": ",",
+      "codePoints": [
+        "U+002C"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-008",
+      "directive": "postpunc",
+      "token": ".",
+      "codePoints": [
+        "U+002E"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "256"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "256"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-009",
+      "directive": "postpunc",
+      "token": ":",
+      "codePoints": [
+        "U+003A"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "25"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "25"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-010",
+      "directive": "postpunc",
+      "token": ";",
+      "codePoints": [
+        "U+003B"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "23"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "23"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-011",
+      "directive": "postpunc",
+      "token": "?",
+      "codePoints": [
+        "U+003F"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "236"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-012",
+      "directive": "prepunc",
+      "token": "\"",
+      "codePoints": [
+        "U+0022"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "57"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "57"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-013",
+      "directive": "prepunc",
+      "token": "'",
+      "codePoints": [
+        "U+0027"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2367"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2367"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-014",
+      "directive": "prepunc",
+      "token": ")",
+      "codePoints": [
+        "U+0029"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2356"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-CTX-015",
+      "directive": "prepunc",
+      "token": "`",
+      "codePoints": [
+        "U+0060"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "48"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "48"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    }
+  ],
+  "emphasisRules": [
+    {
+      "id": "FA-REM-EMPH-001",
+      "directive": "begemph",
+      "class": "bold",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "456-456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "456-456"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-002",
+      "directive": "emphclass",
+      "class": "bold",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": null
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-003",
+      "directive": "endemph",
+      "class": "bold",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "4568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "4568"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-004",
+      "directive": "begemph",
+      "class": "italic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "46-46"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "46-46"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-005",
+      "directive": "emphclass",
+      "class": "italic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": null
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-006",
+      "directive": "endemph",
+      "class": "italic",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "46"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "46"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-007",
+      "directive": "begemph",
+      "class": "underline",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "78-78"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "78-78"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-008",
+      "directive": "emphclass",
+      "class": "underline",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": null
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": false,
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-REM-EMPH-009",
+      "directive": "endemph",
+      "class": "underline",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "78"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "78"
+      },
+      "stableDraftExactMatch": true,
+      "usesDot7Or8": true,
+      "normativeDecision": "pending"
+    }
+  ],
+  "knownGaps": [
+    {
+      "id": "FA-GAP-001",
+      "text": "ٔ",
+      "label": "ARABIC HAMZA ABOVE COMBINING MARK",
+      "codePoints": [
+        "U+0654"
+      ],
+      "status": "unmapped-as-scalar-in-stable-and-draft",
+      "crossReference": {
+        "stage": "1.3",
+        "evidenceId": "FA-VAR-013"
+      },
+      "decisionAccounting": "cross-reference-only",
+      "note": "The draft handles U+0654 in the explicit Ezafe sequence هٔ, but U+0654 remains unmapped as a standalone scalar. This gap was already audited as FA-VAR-013 in Stage 1.3, so Stage 1.7 records it as a coverage cross-reference rather than a second normative decision."
+    }
+  ]
+}
