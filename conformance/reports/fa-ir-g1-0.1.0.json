@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0",
+    "status": "draft"
+  },
+  "scenarioSchemaVersion": 1,
+  "summary": {
+    "total": 15,
+    "required": 13,
+    "draft": 2,
+    "passed": 15,
+    "failed": 0
+  },
+  "coverage": {
+    "categories": {
+      "persian": 1,
+      "sequence": 1,
+      "numeric": 4,
+      "latin": 2,
+      "layout-normalization": 2,
+      "mixed": 2,
+      "negative": 3
+    },
+    "lifecycles": {
+      "required": 13,
+      "draft": 2
+    },
+    "expectationKinds": {
+      "success": 12,
+      "failure": 3
+    }
+  },
+  "results": [
+    {
+      "id": "FA-PROFILE-CONF-LATIN-CAPITAL-001",
+      "lifecycle": "required",
+      "category": "latin",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-LATIN-SPAN-001",
+      "lifecycle": "required",
+      "category": "latin",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-LAYOUT-ZWNJ-001",
+      "lifecycle": "required",
+      "category": "layout-normalization",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-LAYOUT-ZWNJ-COMPOSED-001",
+      "lifecycle": "required",
+      "category": "layout-normalization",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-MIXED-LATIN-NUMERIC-001",
+      "lifecycle": "draft",
+      "category": "mixed",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-MIXED-PERSIAN-NUMERIC-001",
+      "lifecycle": "required",
+      "category": "mixed",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NEGATIVE-FORMAT-001",
+      "lifecycle": "required",
+      "category": "negative",
+      "expectationKind": "failure",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NEGATIVE-PARTIAL-001",
+      "lifecycle": "required",
+      "category": "negative",
+      "expectationKind": "failure",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NEGATIVE-UNKNOWN-001",
+      "lifecycle": "required",
+      "category": "negative",
+      "expectationKind": "failure",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NUMERIC-ASCII-RUN-001",
+      "lifecycle": "required",
+      "category": "numeric",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NUMERIC-BEGIN-001",
+      "lifecycle": "required",
+      "category": "numeric",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NUMERIC-DECIMAL-001",
+      "lifecycle": "required",
+      "category": "numeric",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-NUMERIC-PERSIAN-DIGITS-001",
+      "lifecycle": "draft",
+      "category": "numeric",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-PERSIAN-WORD-001",
+      "lifecycle": "required",
+      "category": "persian",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    },
+    {
+      "id": "FA-PROFILE-CONF-SEQUENCE-ASTERISK-CONTINUE-001",
+      "lifecycle": "required",
+      "category": "sequence",
+      "expectationKind": "success",
+      "status": "pass",
+      "diagnostics": []
+    }
+  ]
+}

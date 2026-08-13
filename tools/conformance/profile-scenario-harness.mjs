@@ -320,12 +320,22 @@ function schemaErrors(
   return errors;
 }
 
+export function validateJsonSchemaSubset(
+  value,
+  schema,
+) {
+  return schemaErrors(
+    value,
+    schema,
+    schema,
+  );
+}
+
 export function validateProfileScenarioDocument(
   scenario,
 ) {
-  const errors = schemaErrors(
+  const errors = validateJsonSchemaSubset(
     scenario,
-    scenarioSchema,
     scenarioSchema,
   );
 
