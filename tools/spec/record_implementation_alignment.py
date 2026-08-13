@@ -90,6 +90,26 @@ def artifact_decision(
     }
 
 
+def non_artifact_decision(
+    disposition: str,
+    kind: str,
+    rationale: str,
+) -> dict:
+    return {
+        "disposition": disposition,
+        "result": "approved",
+        "materialization": {
+            "kind": kind,
+            "createsSpecificationArtifact": False,
+            "targetRuleType": None,
+            "promotionEligible": False,
+            "requiresFuturePromotionGovernance": False,
+        },
+        "unresolvedEvidenceGaps": [],
+        "rationale": rationale,
+    }
+
+
 def deferred_decision(rationale: str, evidence_gap: str) -> dict:
     return {
         "disposition": "defer-pending-evidence",
@@ -155,8 +175,17 @@ def build_decision(decision_id: str) -> dict:
             ),
         )
 
+    if decision_id == "FA-PUNC-018":
+        return non_artifact_decision(
+            "out-of-scope",
+            "out-of-scope",
+            (
+                "Amended after the Phase 2.14 candidate-materialization readiness audit. NO-BREAK SPACE (U+00A0) is not a standalone punctuation/Braille character rule in this project. The observed Liblouis operand 'a' is a virtual/internal space operand, not a publishable Braille cell, and NBSP translation/layout semantics are already owned by FA-WS-007. The scalar punctuation decision is therefore out of scope to avoid a duplicate specification artifact."
+            ),
+        )
+
     if re.fullmatch(
-        r"FA-PUNC-(?:00[1-9]|010|011|016|017|018|019|020)",
+        r"FA-PUNC-(?:00[1-9]|010|011|016|017|019|020)",
         decision_id,
     ):
         return artifact_decision(

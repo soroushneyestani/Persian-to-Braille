@@ -11,8 +11,8 @@
     "adjudicationRecords": 253,
     "approved": 153,
     "deferred": 100,
-    "candidateAdmissionEligible": 139,
-    "approvedNonMaterializable": 14,
+    "candidateAdmissionEligible": 138,
+    "approvedNonMaterializable": 15,
     "normativePromotionAuthorized": 0,
     "promotionEligible": 0,
     "candidateArtifactsMaterialized": 0
@@ -28,7 +28,7 @@
   "inputs": {
     "adjudicationManifest": {
       "path": "spec/fa-ir/adjudications/manifest.json",
-      "sha256": "232CA86C9060B4F0296820AAD5F3CF4F011510844F3DE65CD1EA8DBC7D420BFB"
+      "sha256": "D17CDCE22C13BD72EF3B3CC0CE2692E4471B75C7094E0F4492B5CFE9E217D790"
     },
     "adjudicationPolicy": {
       "path": "spec/fa-ir/governance/adjudication-policy.json",
@@ -1987,24 +1987,6 @@
       "requiresSeparatePromotionRecord": true,
       "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-017.json",
       "evidencePacketSha256": "17FCD657881245B391CBD0C0E17196CA9C4390BF928C16640A2812C484FBD7F7"
-    },
-    {
-      "adjudicationRecordId": "FA-ADJ-PUNC-018-001",
-      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-018-001.json",
-      "adjudicationRecordSha256": "E3FE7D5E02C2A1B3F44A3B546C68AE8393D6B3EFCDC0AAC1D2C64CFAF071E2DD",
-      "decisionItemId": "FA-PUNC-018",
-      "phase1Classification": "REVIEW-REQUIRED",
-      "disposition": "accept-rule",
-      "targetRuleType": "character",
-      "targetStatus": "candidate",
-      "candidateMaterializationAuthorized": true,
-      "candidateRuleId": null,
-      "conformanceVectorIds": [],
-      "promotionEligible": false,
-      "normativePromotionAuthorized": false,
-      "requiresSeparatePromotionRecord": true,
-      "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-018.json",
-      "evidencePacketSha256": "DC9DEF01C690C206DD154DA980E5D3475F75BC3E81CF422BA121B13D36239525"
     },
     {
       "adjudicationRecordId": "FA-ADJ-PUNC-019-001",

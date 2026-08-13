@@ -134,6 +134,21 @@ def mutate_broaden_normative_policy(root: Path) -> None:
     write_json(path, data)
 
 
+def mutate_nbsp_scalar_reintroduced(root: Path) -> None:
+    records_dir = root / "spec/fa-ir/adjudications/records"
+    target = records_dir / "fa-adj-punc-018-001.json"
+    data = read_json(target)
+    data["disposition"] = "accept-rule"
+    data["materialization"] = {
+        "kind": "rule",
+        "createsSpecificationArtifact": True,
+        "targetRuleType": "character",
+        "promotionEligible": False,
+        "requiresFuturePromotionGovernance": True,
+    }
+    write_json(target, data)
+
+
 def mutate_official_claim(root: Path) -> None:
     path = (
         root
@@ -151,6 +166,7 @@ FIXTURES = [
     ("missing-eligible-admission", mutate_drop_eligible_entry),
     ("deferred-decision-admitted", mutate_admit_deferred),
     ("normative-policy-broadened", mutate_broaden_normative_policy),
+    ("nbsp-scalar-rule-reintroduced", mutate_nbsp_scalar_reintroduced),
     ("official-standard-claim", mutate_official_claim),
 ]
 

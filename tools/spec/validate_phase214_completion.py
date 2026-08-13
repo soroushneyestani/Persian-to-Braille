@@ -26,11 +26,11 @@ EXPECTED_DISPOSITIONS = {
     "accept-layout-policy": 27,
     "accept-mode-rule": 5,
     "accept-normalization": 1,
-    "accept-rule": 100,
+    "accept-rule": 99,
     "defer-pending-evidence": 100,
     "explicitly-unsupported": 1,
     "ignore-format-control": 11,
-    "out-of-scope": 2,
+    "out-of-scope": 3,
 }
 
 EXPECTED_TRACKS = {
@@ -45,7 +45,7 @@ EXPECTED_RESULTS_BY_TRACK = {
     "unresolved": {"approved": 1},
 }
 
-EXPECTED_ARTIFACT_DECISIONS = 139
+EXPECTED_ARTIFACT_DECISIONS = 138
 
 
 class CompletionError(RuntimeError):
@@ -176,6 +176,45 @@ def main() -> int:
             "Phase 1 classification rewrites",
         )
 
+        records_by_decision = {
+            record["decisionItemId"]: record
+            for record in records
+        }
+
+        punc_nbsp = records_by_decision["FA-PUNC-018"]
+        ws_nbsp = records_by_decision["FA-WS-007"]
+
+        expect_equal(
+            punc_nbsp["disposition"],
+            "out-of-scope",
+            "FA-PUNC-018 NBSP scalar scope",
+        )
+        expect_equal(
+            punc_nbsp["materialization"]["createsSpecificationArtifact"],
+            False,
+            "FA-PUNC-018 NBSP scalar artifact flag",
+        )
+        expect_equal(
+            punc_nbsp["materialization"]["targetRuleType"],
+            None,
+            "FA-PUNC-018 NBSP scalar target type",
+        )
+        expect_equal(
+            ws_nbsp["disposition"],
+            "accept-layout-policy",
+            "FA-WS-007 NBSP layout ownership",
+        )
+        expect_equal(
+            ws_nbsp["materialization"]["createsSpecificationArtifact"],
+            True,
+            "FA-WS-007 NBSP layout artifact flag",
+        )
+        expect_equal(
+            ws_nbsp["materialization"]["targetRuleType"],
+            "layout",
+            "FA-WS-007 NBSP layout target type",
+        )
+
         expect_equal(
             policy["authority"]["explicitDecisionRequired"],
             True,
@@ -204,10 +243,11 @@ def main() -> int:
         print("approved                         : 153")
         print("deferred                         : 100")
         print("unadjudicated                    : 0")
-        print("acceptedArtifactDecisions        : 139")
+        print("acceptedArtifactDecisions        : 138")
         print("promotionEligible                : 0")
         print("projectNormativeRules            : 0")
         print("officialIranianStandardClaims    : 0")
+        print("nbspScopeInvariant               : PASS")
         print("profileStatus                    : draft")
         print("completionErrors                 : 0")
         return 0

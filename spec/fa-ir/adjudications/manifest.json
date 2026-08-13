@@ -21,11 +21,11 @@
       "accept-layout-policy": 27,
       "accept-mode-rule": 5,
       "accept-normalization": 1,
-      "accept-rule": 100,
+      "accept-rule": 99,
       "defer-pending-evidence": 100,
       "explicitly-unsupported": 1,
       "ignore-format-control": 11,
-      "out-of-scope": 2
+      "out-of-scope": 3
     }
   },
   "inputs": {
@@ -1390,10 +1390,10 @@
       "decisionItemId": "FA-PUNC-018",
       "queueId": "FA-REVIEW-082",
       "planItemId": "FA-ADJ-PLAN-082",
-      "disposition": "accept-rule",
+      "disposition": "out-of-scope",
       "result": "approved",
       "path": "spec/fa-ir/adjudications/records/fa-adj-punc-018-001.json",
-      "sha256": "E3FE7D5E02C2A1B3F44A3B546C68AE8393D6B3EFCDC0AAC1D2C64CFAF071E2DD",
+      "sha256": "02E827DC7A472EFD783576713F4192313F595004CB76AE85766C6CC7B93EEB84",
       "promotionEligible": false
     },
     {

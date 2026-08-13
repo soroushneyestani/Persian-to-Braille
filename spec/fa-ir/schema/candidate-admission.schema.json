@@ -79,11 +79,11 @@
         },
         "candidateAdmissionEligible": {
           "type": "integer",
-          "const": 139
+          "const": 138
         },
         "approvedNonMaterializable": {
           "type": "integer",
-          "const": 14
+          "const": 15
         },
         "normativePromotionAuthorized": {
           "type": "integer",
@@ -223,8 +223,8 @@
     },
     "entries": {
       "type": "array",
-      "minItems": 139,
-      "maxItems": 139,
+      "minItems": 138,
+      "maxItems": 138,
       "items": {
         "type": "object",
         "additionalProperties": false,

@@ -38,11 +38,11 @@ EXPECTED_DISPOSITIONS = {
     "accept-layout-policy": 27,
     "accept-mode-rule": 5,
     "accept-normalization": 1,
-    "accept-rule": 100,
+    "accept-rule": 99,
 }
 
 EXPECTED_TARGET_TYPES = {
-    "character": 99,
+    "character": 98,
     "context": 6,
     "layout": 27,
     "mode": 5,
@@ -261,24 +261,24 @@ def main() -> int:
             else:
                 approved_non_materializable += 1
 
-        expect_equal(len(expected_eligible), 139, "Derived eligible record count")
+        expect_equal(len(expected_eligible), 138, "Derived eligible record count")
         expect_equal(
             approved_non_materializable,
-            14,
+            15,
             "Derived approved non-materializable count",
         )
         expect_equal(deferred, 100, "Derived deferred count")
 
         entries = manifest["entries"]
-        expect_equal(len(entries), 139, "Manifest eligible entry count")
+        expect_equal(len(entries), 138, "Manifest eligible entry count")
         expect_equal(
             len({row["adjudicationRecordId"] for row in entries}),
-            139,
+            138,
             "Unique admission record references",
         )
         expect_equal(
             len({row["decisionItemId"] for row in entries}),
-            139,
+            138,
             "Unique admission decision references",
         )
 
@@ -287,6 +287,29 @@ def main() -> int:
             entry_ids,
             set(expected_eligible),
             "Admission manifest exact eligibility coverage",
+        )
+
+        entries_by_decision = {
+            row["decisionItemId"]: row
+            for row in entries
+        }
+        expect(
+            "FA-PUNC-018" not in entries_by_decision,
+            "FA-PUNC-018 NBSP scalar decision must not be candidate-admission eligible",
+        )
+        expect(
+            "FA-WS-007" in entries_by_decision,
+            "FA-WS-007 NBSP layout decision must own candidate admission",
+        )
+        expect_equal(
+            entries_by_decision["FA-WS-007"]["disposition"],
+            "accept-layout-policy",
+            "FA-WS-007 NBSP admission disposition",
+        )
+        expect_equal(
+            entries_by_decision["FA-WS-007"]["targetRuleType"],
+            "layout",
+            "FA-WS-007 NBSP admission target type",
         )
 
         for entry in entries:
@@ -392,13 +415,14 @@ def main() -> int:
 
         print("Phase 2.14 adjudicated candidate-admission validation: PASS")
         print("adjudicationRecords              : 253")
-        print("candidateAdmissionEligible       : 139")
-        print("approvedNonMaterializable        : 14")
+        print("candidateAdmissionEligible       : 138")
+        print("approvedNonMaterializable        : 15")
         print("deferred                         : 100")
         print("candidateTargetStatus            : candidate")
         print("candidateArtifactsMaterialized   : 0")
         print("promotionEligible                : 0")
         print("normativePromotionAuthorized     : 0")
+        print("nbspLayoutOwnership              : PASS")
         print("profileStatus                    : draft")
         print("semanticErrors                   : 0")
         return 0
