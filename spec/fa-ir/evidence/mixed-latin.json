@@ -1,0 +1,1495 @@
+{
+  "schemaVersion": 1,
+  "auditStage": "1.5",
+  "scope": "ASCII Latin letters embedded in Persian literary Grade 1, including stable dot-7/dot-8 behavior and draft six-dot span-mode behavior",
+  "normative": false,
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "manualEvidencePolicy": "SRC-LIBLOUIS-2053 reports that printed page 46 of the Iranian 1393/2014 manual bounds embedded Latin with dot-25 markers and uses ordinary uncontracted six-dot English inside the span. This project records that report as secondary evidence; Stage 1.5 does not claim a direct transcription of the PDF.",
+  "summary": {
+    "asciiLetterCases": 52,
+    "asciiLetterStableDraftDifferences": 52,
+    "uppercaseCases": 26,
+    "lowercaseCases": 26,
+    "modeRuleCases": 4,
+    "modeRuleStableDraftDifferences": 4,
+    "normativeDecisionsPending": 56
+  },
+  "letters": [
+    {
+      "id": "FA-LATIN-001",
+      "character": "A",
+      "codePoint": "U+0041",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "17"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-002",
+      "character": "B",
+      "codePoint": "U+0042",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "127"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-003",
+      "character": "C",
+      "codePoint": "U+0043",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "147"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-004",
+      "character": "D",
+      "codePoint": "U+0044",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-005",
+      "character": "E",
+      "codePoint": "U+0045",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "157"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "15"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-006",
+      "character": "F",
+      "codePoint": "U+0046",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1247"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-007",
+      "character": "G",
+      "codePoint": "U+0047",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-008",
+      "character": "H",
+      "codePoint": "U+0048",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1257"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-009",
+      "character": "I",
+      "codePoint": "U+0049",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "247"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-010",
+      "character": "J",
+      "codePoint": "U+004A",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-011",
+      "character": "K",
+      "codePoint": "U+004B",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "137"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "13"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-012",
+      "character": "L",
+      "codePoint": "U+004C",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1237"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "123"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-013",
+      "character": "M",
+      "codePoint": "U+004D",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1347"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "134"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-014",
+      "character": "N",
+      "codePoint": "U+004E",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-015",
+      "character": "O",
+      "codePoint": "U+004F",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1357"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "135"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-016",
+      "character": "P",
+      "codePoint": "U+0050",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12347"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-017",
+      "character": "Q",
+      "codePoint": "U+0051",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "123457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-018",
+      "character": "R",
+      "codePoint": "U+0052",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12357"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1235"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-019",
+      "character": "S",
+      "codePoint": "U+0053",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2347"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-020",
+      "character": "T",
+      "codePoint": "U+0054",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "23457"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-021",
+      "character": "U",
+      "codePoint": "U+0055",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1367"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "136"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-022",
+      "character": "V",
+      "codePoint": "U+0056",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12367"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1236"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-023",
+      "character": "W",
+      "codePoint": "U+0057",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24567"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-024",
+      "character": "X",
+      "codePoint": "U+0058",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13467"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-025",
+      "character": "Y",
+      "codePoint": "U+0059",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "134567"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "13456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-026",
+      "character": "Z",
+      "codePoint": "U+005A",
+      "case": "uppercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13567"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-027",
+      "character": "a",
+      "codePoint": "U+0061",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "18"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-028",
+      "character": "b",
+      "codePoint": "U+0062",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "128"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-029",
+      "character": "c",
+      "codePoint": "U+0063",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "148"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-030",
+      "character": "d",
+      "codePoint": "U+0064",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-031",
+      "character": "e",
+      "codePoint": "U+0065",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "158"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "15"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-032",
+      "character": "f",
+      "codePoint": "U+0066",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1248"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-033",
+      "character": "g",
+      "codePoint": "U+0067",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-034",
+      "character": "h",
+      "codePoint": "U+0068",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1258"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-035",
+      "character": "i",
+      "codePoint": "U+0069",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "248"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-036",
+      "character": "j",
+      "codePoint": "U+006A",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-037",
+      "character": "k",
+      "codePoint": "U+006B",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "138"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "13"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-038",
+      "character": "l",
+      "codePoint": "U+006C",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1238"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "123"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-039",
+      "character": "m",
+      "codePoint": "U+006D",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1348"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "134"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-040",
+      "character": "n",
+      "codePoint": "U+006E",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-041",
+      "character": "o",
+      "codePoint": "U+006F",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1358"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "135"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-042",
+      "character": "p",
+      "codePoint": "U+0070",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12348"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-043",
+      "character": "q",
+      "codePoint": "U+0071",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "123458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-044",
+      "character": "r",
+      "codePoint": "U+0072",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12358"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1235"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-045",
+      "character": "s",
+      "codePoint": "U+0073",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2348"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-046",
+      "character": "t",
+      "codePoint": "U+0074",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "23458"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-047",
+      "character": "u",
+      "codePoint": "U+0075",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1368"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "136"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-048",
+      "character": "v",
+      "codePoint": "U+0076",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12368"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1236"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-049",
+      "character": "w",
+      "codePoint": "U+0077",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-050",
+      "character": "x",
+      "codePoint": "U+0078",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13468"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-051",
+      "character": "y",
+      "codePoint": "U+0079",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "134568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "13456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-052",
+      "character": "z",
+      "codePoint": "U+007A",
+      "case": "lowercase",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13568"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-uncontracted-english-inside-latin-span"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "runtimeEvidence": "not-recovered",
+        "note": "The recovered VBA/SQL runtime mappings do not contain an English alphabet translator, despite historical project documentation describing English conversion."
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "modeRules": [
+    {
+      "id": "FA-LATIN-MODE-001",
+      "directive": "attribute",
+      "name": "latin",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "absent",
+        "value": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "value": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-six-dot-english-span"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-MODE-002",
+      "directive": "begmode",
+      "name": "latin",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "absent",
+        "value": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "value": "25"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-dot-25-span-boundaries"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-MODE-003",
+      "directive": "endmode",
+      "name": "latin",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "absent",
+        "value": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "value": "25"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "reported-dot-25-span-boundaries"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-MODE-004",
+      "directive": "capsletter",
+      "name": null,
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "absent",
+        "value": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "value": "6"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 46,
+        "status": "draft-uses-dot-6-capital-indicator"
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "examplePolicyCases": [
+    {
+      "id": "FA-LATIN-EXAMPLE-001",
+      "input": "test",
+      "purpose": "lowercase embedded Latin span",
+      "expectedDraftPolicy": "dot-25 span start, six-dot English letters, dot-25 span end",
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-EXAMPLE-002",
+      "input": "Test",
+      "purpose": "embedded Latin with initial capital",
+      "expectedDraftPolicy": "dot-25 span start, dot-6 capital indicator before T, six-dot English letters, dot-25 span end",
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-LATIN-EXAMPLE-003",
+      "input": "ایران test ایران",
+      "purpose": "Persian-Latin-Persian mixed-script boundary",
+      "expectedDraftPolicy": "automatic Latin span boundaries around the contiguous ASCII letter run",
+      "normativeDecision": "pending"
+    }
+  ]
+}
