@@ -52,6 +52,15 @@ jobs:
       - name: Regenerate approved consensus promotion batch
         run: python tools/spec/build_consensus_promotion_batch.py
 
+      - name: Regenerate Phase 2.11 review queue
+        run: python tools/spec/build_review_queue.py
+
+      - name: Validate Phase 2.11 review queue
+        run: python tools/spec/validate_review_queue.py
+
+      - name: Run Phase 2.11 review queue negative fixtures
+        run: python tools/spec/test_review_queue_validator.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
