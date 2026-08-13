@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "stage": "2.14",
+  "title": "Persian-to-Braille Adjudicated Candidate Admission Policy",
+  "purpose": "Provide the explicit governance route required by Phase 2.14 for approved adjudications that are authorized to create specification artifacts, without rewriting Phase 1 classifications and without performing normative promotion.",
+  "authority": {
+    "source": "approved-adjudication-record",
+    "additionalMaintainerDecisionRequiredForCandidateAdmission": false,
+    "reason": "The Phase 2.14 adjudication record is already the explicit project-maintainer decision authorizing specification artifact creation. CI may reproduce that authorized candidate state but may not invent a new admission decision.",
+    "ciMayReproduceApprovedCandidateMaterialization": true,
+    "ciMayInventCandidateAdmission": false
+  },
+  "eligibility": {
+    "decisionResult": "approved",
+    "createsSpecificationArtifact": true,
+    "requiresFuturePromotionGovernance": true,
+    "promotionEligibleBeforeAdmission": false,
+    "projectNormativeBeforeAdmission": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationMayBeRewritten": false,
+    "eligibleDispositions": {
+      "accept-rule": [
+        "character",
+        "sequence"
+      ],
+      "accept-normalization": [
+        "normalization"
+      ],
+      "accept-context-rule": [
+        "context"
+      ],
+      "accept-mode-rule": [
+        "mode"
+      ],
+      "accept-layout-policy": [
+        "layout"
+      ]
+    }
+  },
+  "admission": {
+    "targetRuleStatus": "candidate",
+    "candidateMaterializationIsNormativePromotion": false,
+    "candidateMaterializationMaySetPromotionEligible": false,
+    "candidateMaterializationMayChangeProfileStatus": false,
+    "candidateMaterializationRequiresDraftConformanceCoverage": true,
+    "candidateMaterializationRequiresSixDotProfileCompatibility": true,
+    "candidateMaterializationMustPreserveEvidencePacketProvenance": true,
+    "candidateRuleIdsAssignedAtMaterialization": true
+  },
+  "promotionBoundary": {
+    "separateNormativePromotionRecordRequired": true,
+    "automaticNormativePromotionAllowed": false,
+    "ciPassAloneMayPromote": false,
+    "currentPromotionPolicyVersion": "1.0.0",
+    "currentPromotionPolicyEligiblePhase1Classifications": [
+      "CONSENSUS-CANDIDATE"
+    ],
+    "reviewRequiredCoveredByCurrentNormativePromotionPolicy": false,
+    "unresolvedCoveredByCurrentNormativePromotionPolicy": false,
+    "thisPolicyBroadensNormativePromotionEligibility": false,
+    "note": "This route ends at candidate status. A later explicit promotion governance change is required before any REVIEW-REQUIRED or UNRESOLVED-derived candidate can become project-normative."
+  },
+  "profileBoundary": {
+    "profileId": "fa-ir-g1",
+    "profileRemainsDraft": true,
+    "candidateAdmissionDoesNotClaimProfileCompleteness": true
+  },
+  "scope": {
+    "projectSpecificationOnly": true,
+    "officialIranianStandardClaim": false
+  },
+  "satisfies": {
+    "adjudicationPolicyVersion": "1.0.0",
+    "requirement": "futureGovernanceRouteRequiredForAcceptedRuleMaterialization",
+    "candidateMaterializationRouteProvided": true,
+    "normativePromotionRouteProvided": false
+  }
+}

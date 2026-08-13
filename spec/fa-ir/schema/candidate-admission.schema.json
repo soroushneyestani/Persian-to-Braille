@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/candidate-admission.schema.json",
+  "title": "Persian Braille Adjudicated Candidate Admission Manifest",
+  "description": "Machine-readable bridge from explicitly approved Phase 2.14 adjudications to future candidate specification materialization. Admission is not normative promotion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "stage",
+    "status",
+    "policyVersion",
+    "profile",
+    "summary",
+    "governanceBoundary",
+    "inputs",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "stage": {
+      "type": "string",
+      "const": "2.14"
+    },
+    "status": {
+      "type": "string",
+      "const": "route-ready"
+    },
+    "policyVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "const": "fa-ir-g1"
+        },
+        "status": {
+          "type": "string",
+          "const": "draft"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adjudicationRecords",
+        "approved",
+        "deferred",
+        "candidateAdmissionEligible",
+        "approvedNonMaterializable",
+        "normativePromotionAuthorized",
+        "promotionEligible",
+        "candidateArtifactsMaterialized"
+      ],
+      "properties": {
+        "adjudicationRecords": {
+          "type": "integer",
+          "const": 253
+        },
+        "approved": {
+          "type": "integer",
+          "const": 153
+        },
+        "deferred": {
+          "type": "integer",
+          "const": 100
+        },
+        "candidateAdmissionEligible": {
+          "type": "integer",
+          "const": 139
+        },
+        "approvedNonMaterializable": {
+          "type": "integer",
+          "const": 14
+        },
+        "normativePromotionAuthorized": {
+          "type": "integer",
+          "const": 0
+        },
+        "promotionEligible": {
+          "type": "integer",
+          "const": 0
+        },
+        "candidateArtifactsMaterialized": {
+          "type": "integer",
+          "const": 0
+        }
+      }
+    },
+    "governanceBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "admissionTargetStatus",
+        "admissionIsNormativePromotion",
+        "phase1ClassificationRewritten",
+        "officialIranianStandardClaim",
+        "separatePromotionRecordRequired",
+        "profileStatusChangesAutomatically"
+      ],
+      "properties": {
+        "admissionTargetStatus": {
+          "type": "string",
+          "const": "candidate"
+        },
+        "admissionIsNormativePromotion": {
+          "type": "boolean",
+          "const": false
+        },
+        "phase1ClassificationRewritten": {
+          "type": "boolean",
+          "const": false
+        },
+        "officialIranianStandardClaim": {
+          "type": "boolean",
+          "const": false
+        },
+        "separatePromotionRecordRequired": {
+          "type": "boolean",
+          "const": true
+        },
+        "profileStatusChangesAutomatically": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adjudicationManifest",
+        "adjudicationPolicy",
+        "normativePromotionPolicy",
+        "profile"
+      ],
+      "properties": {
+        "adjudicationManifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9A-F]{64}$"
+            }
+          }
+        },
+        "adjudicationPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9A-F]{64}$"
+            }
+          }
+        },
+        "normativePromotionPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9A-F]{64}$"
+            }
+          }
+        },
+        "profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9A-F]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 139,
+      "maxItems": 139,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "adjudicationRecordId",
+          "adjudicationRecordPath",
+          "adjudicationRecordSha256",
+          "decisionItemId",
+          "phase1Classification",
+          "disposition",
+          "targetRuleType",
+          "targetStatus",
+          "candidateMaterializationAuthorized",
+          "candidateRuleId",
+          "conformanceVectorIds",
+          "promotionEligible",
+          "normativePromotionAuthorized",
+          "requiresSeparatePromotionRecord",
+          "evidencePacketPath",
+          "evidencePacketSha256"
+        ],
+        "properties": {
+          "adjudicationRecordId": {
+            "type": "string",
+            "pattern": "^FA-ADJ-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "adjudicationRecordPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "adjudicationRecordSha256": {
+            "type": "string",
+            "pattern": "^[0-9A-F]{64}$"
+          },
+          "decisionItemId": {
+            "type": "string",
+            "pattern": "^FA-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "phase1Classification": {
+            "type": "string",
+            "enum": [
+              "REVIEW-REQUIRED",
+              "UNRESOLVED"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "accept-context-rule",
+              "accept-layout-policy",
+              "accept-mode-rule",
+              "accept-normalization",
+              "accept-rule"
+            ]
+          },
+          "targetRuleType": {
+            "type": "string",
+            "enum": [
+              "character",
+              "sequence",
+              "context",
+              "normalization",
+              "mode",
+              "layout"
+            ]
+          },
+          "targetStatus": {
+            "type": "string",
+            "const": "candidate"
+          },
+          "candidateMaterializationAuthorized": {
+            "type": "boolean",
+            "const": true
+          },
+          "candidateRuleId": {
+            "type": "null"
+          },
+          "conformanceVectorIds": {
+            "type": "array",
+            "maxItems": 0
+          },
+          "promotionEligible": {
+            "type": "boolean",
+            "const": false
+          },
+          "normativePromotionAuthorized": {
+            "type": "boolean",
+            "const": false
+          },
+          "requiresSeparatePromotionRecord": {
+            "type": "boolean",
+            "const": true
+          },
+          "evidencePacketPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidencePacketSha256": {
+            "type": "string",
+            "pattern": "^[0-9A-F]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

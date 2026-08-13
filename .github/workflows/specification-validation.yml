@@ -106,6 +106,18 @@ jobs:
       - name: Verify Phase 2.14 adjudication determinism
         run: python tools/spec/test_adjudication_determinism.py
 
+      - name: Build Phase 2.14 adjudicated candidate-admission route
+        run: python tools/spec/build_adjudicated_candidate_admission.py
+
+      - name: Validate Phase 2.14 adjudicated candidate-admission route
+        run: python tools/spec/validate_adjudicated_candidate_admission.py
+
+      - name: Run Phase 2.14 candidate-admission negative fixtures
+        run: python tools/spec/test_adjudicated_candidate_admission_negative.py
+
+      - name: Verify Phase 2.14 candidate-admission determinism
+        run: python tools/spec/test_adjudicated_candidate_admission_determinism.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
@@ -135,6 +147,8 @@ jobs:
             spec/fa-ir/conformance \
             spec/fa-ir/profiles \
             spec/fa-ir/manifests \
+            spec/fa-ir/governance \
+            spec/fa-ir/promotions \
             spec/fa-ir/review \
             spec/fa-ir/adjudications \
             spec/fa-ir/validation
