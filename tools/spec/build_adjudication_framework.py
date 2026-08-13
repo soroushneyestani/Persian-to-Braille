@@ -582,10 +582,8 @@ never resets an execution manifest after maintainer decisions exist.
 
         print("Phase 2.14 adjudication framework built.")
         print(f"Planned decisions          : {EXPECTED_PLAN_ITEMS}")
-        print("Adjudication records       : 0")
-        print("Approved                   : 0")
-        print("Deferred                   : 0")
-        print(f"Unadjudicated              : {EXPECTED_PLAN_ITEMS}")
+        print("Execution counts           : preserved in adjudication manifest")
+        print("Execution summary          : owned by materialize_adjudications.py")
         print("Promotion eligible         : 0")
         print("Normative rules created    : 0")
         print(f"Profile                    : {profile['id']} ({profile['status']})")
