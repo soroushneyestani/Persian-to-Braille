@@ -20,7 +20,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs"
   },
   "dependencies": {
     "@persian-braille/core": "workspace:*"
