@@ -1,0 +1,20 @@
+* text=auto
+
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+
+# Preserve original legacy artifacts byte-for-byte.
+legacy/v1/source/vba/*.bas -text
+legacy/v1/database/*.sql -text
+legacy/v1/README.github-original.md -text
+
+# Binary assets.
+*.ttf binary
+*.otf binary
+*.docx binary.gitattributes text eol=lf
+.gitignore text eol=lf

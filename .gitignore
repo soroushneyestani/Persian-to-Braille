@@ -1,0 +1,12 @@
+# Third-party legacy fonts are documented but intentionally not redistributed.
+legacy/v1/external-assets/*.ttf
+legacy/v1/external-assets/*.otf
+
+# Original binary legacy documents are retained outside the public repository.
+legacy/v1/docs/*.docx
+
+# Common local files.
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
