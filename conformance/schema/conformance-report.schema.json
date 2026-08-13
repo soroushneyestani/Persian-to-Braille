@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:persian-braille:conformance:profile-report:1",
+  "title": "Persian Braille Profile Conformance Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "profile",
+    "scenarioSchemaVersion",
+    "summary",
+    "coverage",
+    "results"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scenarioSchemaVersion": {
+      "const": 1
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "required",
+        "draft",
+        "passed",
+        "failed"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "required": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "draft": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categories",
+        "lifecycles",
+        "expectationKinds"
+      ],
+      "properties": {
+        "categories": {
+          "type": "object",
+          "propertyNames": {
+            "enum": [
+              "persian",
+              "sequence",
+              "numeric",
+              "latin",
+              "layout-normalization",
+              "mixed",
+              "negative"
+            ]
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "lifecycles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "required",
+            "draft"
+          ],
+          "properties": {
+            "required": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "draft": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "expectationKinds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "success",
+            "failure"
+          ],
+          "properties": {
+            "success": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "failure": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scenarioResult"
+      }
+    }
+  },
+  "$defs": {
+    "scenarioResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "lifecycle",
+        "category",
+        "expectationKind",
+        "status",
+        "diagnostics"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^FA-PROFILE-CONF-[A-Z0-9-]+$"
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "required",
+            "draft"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "persian",
+            "sequence",
+            "numeric",
+            "latin",
+            "layout-normalization",
+            "mixed",
+            "negative"
+          ]
+        },
+        "expectationKind": {
+          "type": "string",
+          "enum": [
+            "success",
+            "failure"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail"
+          ]
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
