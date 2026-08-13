@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "comparisonMode": "exact-legacy-value",
+  "summary": {
+    "uniqueSources": 60,
+    "allThreeExactMatch": 42,
+    "conflict": 3,
+    "partialExactMatch": 1,
+    "singleSourceOnly": 14
+  },
+  "rows": [
+    {
+      "source": "!",
+      "sourceCodePoints": [
+        "U+0021"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "6",
+      "status": "single-source-only"
+    },
+    {
+      "source": "(",
+      "sourceCodePoints": [
+        "U+0028"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "source": ")",
+      "sourceCodePoints": [
+        "U+0029"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "source": "+",
+      "sourceCodePoints": [
+        "U+002B"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "6",
+      "status": "single-source-only"
+    },
+    {
+      "source": "-",
+      "sourceCodePoints": [
+        "U+002D"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "-",
+      "status": "single-source-only"
+    },
+    {
+      "source": ".",
+      "sourceCodePoints": [
+        "U+002E"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "4",
+      "status": "single-source-only"
+    },
+    {
+      "source": "/",
+      "sourceCodePoints": [
+        "U+002F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "1",
+      "status": "single-source-only"
+    },
+    {
+      "source": "0",
+      "sourceCodePoints": [
+        "U+0030"
+      ],
+      "word": "#j",
+      "excel": "#j",
+      "sql": "#j",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "1",
+      "sourceCodePoints": [
+        "U+0031"
+      ],
+      "word": "#a",
+      "excel": "#a",
+      "sql": "#a",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "2",
+      "sourceCodePoints": [
+        "U+0032"
+      ],
+      "word": "#b",
+      "excel": "#b",
+      "sql": "#b",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "3",
+      "sourceCodePoints": [
+        "U+0033"
+      ],
+      "word": "#c",
+      "excel": "#c",
+      "sql": "#c",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "4",
+      "sourceCodePoints": [
+        "U+0034"
+      ],
+      "word": "#d",
+      "excel": "#d",
+      "sql": "#d",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "5",
+      "sourceCodePoints": [
+        "U+0035"
+      ],
+      "word": "#e",
+      "excel": "#e",
+      "sql": "#e",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "6",
+      "sourceCodePoints": [
+        "U+0036"
+      ],
+      "word": "#f",
+      "excel": "#f",
+      "sql": "#f",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "7",
+      "sourceCodePoints": [
+        "U+0037"
+      ],
+      "word": "#g",
+      "excel": "#g",
+      "sql": "#g",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "8",
+      "sourceCodePoints": [
+        "U+0038"
+      ],
+      "word": "#h",
+      "excel": "#h",
+      "sql": "#h",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "9",
+      "sourceCodePoints": [
+        "U+0039"
+      ],
+      "word": "#i",
+      "excel": "#i",
+      "sql": "#i",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": ":",
+      "sourceCodePoints": [
+        "U+003A"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "3",
+      "status": "single-source-only"
+    },
+    {
+      "source": "=",
+      "sourceCodePoints": [
+        "U+003D"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "source": "_",
+      "sourceCodePoints": [
+        "U+005F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": ".",
+      "status": "single-source-only"
+    },
+    {
+      "source": "÷",
+      "sourceCodePoints": [
+        "U+00F7"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "4",
+      "status": "single-source-only"
+    },
+    {
+      "source": "؟",
+      "sourceCodePoints": [
+        "U+061F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "8",
+      "status": "single-source-only"
+    },
+    {
+      "source": "آ",
+      "sourceCodePoints": [
+        "U+0622"
+      ],
+      "word": ">",
+      "excel": ">",
+      "sql": "> ",
+      "status": "conflict"
+    },
+    {
+      "source": "أ",
+      "sourceCodePoints": [
+        "U+0623"
+      ],
+      "word": "/",
+      "excel": "/",
+      "sql": "/",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ؤ",
+      "sourceCodePoints": [
+        "U+0624"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "\\",
+      "status": "single-source-only"
+    },
+    {
+      "source": "إ",
+      "sourceCodePoints": [
+        "U+0625"
+      ],
+      "word": "/",
+      "excel": "/",
+      "sql": "/",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ئ",
+      "sourceCodePoints": [
+        "U+0626"
+      ],
+      "word": "y",
+      "excel": "y",
+      "sql": "y",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ا",
+      "sourceCodePoints": [
+        "U+0627"
+      ],
+      "word": "a",
+      "excel": "a",
+      "sql": "a",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ب",
+      "sourceCodePoints": [
+        "U+0628"
+      ],
+      "word": "b",
+      "excel": "b",
+      "sql": "b",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ت",
+      "sourceCodePoints": [
+        "U+062A"
+      ],
+      "word": "t",
+      "excel": "t",
+      "sql": "t",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ث",
+      "sourceCodePoints": [
+        "U+062B"
+      ],
+      "word": "?",
+      "excel": "?",
+      "sql": "?",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ج",
+      "sourceCodePoints": [
+        "U+062C"
+      ],
+      "word": "j",
+      "excel": "j",
+      "sql": "j",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ح",
+      "sourceCodePoints": [
+        "U+062D"
+      ],
+      "word": ":",
+      "excel": ":",
+      "sql": ":",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "خ",
+      "sourceCodePoints": [
+        "U+062E"
+      ],
+      "word": "x",
+      "excel": "x",
+      "sql": "x",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "د",
+      "sourceCodePoints": [
+        "U+062F"
+      ],
+      "word": "d",
+      "excel": "d",
+      "sql": "d",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ذ",
+      "sourceCodePoints": [
+        "U+0630"
+      ],
+      "word": "!",
+      "excel": "!",
+      "sql": "!",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ر",
+      "sourceCodePoints": [
+        "U+0631"
+      ],
+      "word": "r",
+      "excel": "r",
+      "sql": "r",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ز",
+      "sourceCodePoints": [
+        "U+0632"
+      ],
+      "word": "z",
+      "excel": "z",
+      "sql": "z",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "س",
+      "sourceCodePoints": [
+        "U+0633"
+      ],
+      "word": "s",
+      "excel": "s",
+      "sql": "s",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ش",
+      "sourceCodePoints": [
+        "U+0634"
+      ],
+      "word": "%",
+      "excel": "%",
+      "sql": "%",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ص",
+      "sourceCodePoints": [
+        "U+0635"
+      ],
+      "word": "&",
+      "excel": "&",
+      "sql": "&",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ض",
+      "sourceCodePoints": [
+        "U+0636"
+      ],
+      "word": "$",
+      "excel": "$",
+      "sql": "$",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ط",
+      "sourceCodePoints": [
+        "U+0637"
+      ],
+      "word": ")",
+      "excel": ")",
+      "sql": ")",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ظ",
+      "sourceCodePoints": [
+        "U+0638"
+      ],
+      "word": "=",
+      "excel": "=",
+      "sql": "=",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ع",
+      "sourceCodePoints": [
+        "U+0639"
+      ],
+      "word": "(",
+      "excel": "(",
+      "sql": "(d",
+      "status": "conflict"
+    },
+    {
+      "source": "غ",
+      "sourceCodePoints": [
+        "U+063A"
+      ],
+      "word": "<",
+      "excel": "<",
+      "sql": "< ",
+      "status": "conflict"
+    },
+    {
+      "source": "ف",
+      "sourceCodePoints": [
+        "U+0641"
+      ],
+      "word": "f",
+      "excel": "f",
+      "sql": "f",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ق",
+      "sourceCodePoints": [
+        "U+0642"
+      ],
+      "word": "q",
+      "excel": "q",
+      "sql": "q",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ل",
+      "sourceCodePoints": [
+        "U+0644"
+      ],
+      "word": "l",
+      "excel": "l",
+      "sql": "l",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "م",
+      "sourceCodePoints": [
+        "U+0645"
+      ],
+      "word": "m",
+      "excel": "m",
+      "sql": "m",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ن",
+      "sourceCodePoints": [
+        "U+0646"
+      ],
+      "word": "n",
+      "excel": "n",
+      "sql": "n",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ه",
+      "sourceCodePoints": [
+        "U+0647"
+      ],
+      "word": "h",
+      "excel": "h",
+      "sql": "h",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "و",
+      "sourceCodePoints": [
+        "U+0648"
+      ],
+      "word": "w",
+      "excel": "w",
+      "sql": "w",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ي",
+      "sourceCodePoints": [
+        "U+064A"
+      ],
+      "word": "i",
+      "excel": null,
+      "sql": null,
+      "status": "single-source-only"
+    },
+    {
+      "source": "پ",
+      "sourceCodePoints": [
+        "U+067E"
+      ],
+      "word": "p",
+      "excel": "p",
+      "sql": "p",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "چ",
+      "sourceCodePoints": [
+        "U+0686"
+      ],
+      "word": "c",
+      "excel": "c",
+      "sql": "c",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ژ",
+      "sourceCodePoints": [
+        "U+0698"
+      ],
+      "word": "+",
+      "excel": "+",
+      "sql": "+",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ک",
+      "sourceCodePoints": [
+        "U+06A9"
+      ],
+      "word": "k",
+      "excel": "k",
+      "sql": "k",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "گ",
+      "sourceCodePoints": [
+        "U+06AF"
+      ],
+      "word": "g",
+      "excel": "g",
+      "sql": "g",
+      "status": "all-three-exact-match"
+    },
+    {
+      "source": "ی",
+      "sourceCodePoints": [
+        "U+06CC"
+      ],
+      "word": null,
+      "excel": "i",
+      "sql": "i",
+      "status": "partial-exact-match"
+    }
+  ]
+}

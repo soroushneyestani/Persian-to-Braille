@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "mappingCount": 46,
+  "mappings": [
+    {
+      "index": 1,
+      "source": "ا",
+      "sourceCodePoints": [
+        "U+0627"
+      ],
+      "target": "a",
+      "targetCodePoints": [
+        "U+0061"
+      ]
+    },
+    {
+      "index": 2,
+      "source": "ب",
+      "sourceCodePoints": [
+        "U+0628"
+      ],
+      "target": "b",
+      "targetCodePoints": [
+        "U+0062"
+      ]
+    },
+    {
+      "index": 3,
+      "source": "پ",
+      "sourceCodePoints": [
+        "U+067E"
+      ],
+      "target": "p",
+      "targetCodePoints": [
+        "U+0070"
+      ]
+    },
+    {
+      "index": 4,
+      "source": "ت",
+      "sourceCodePoints": [
+        "U+062A"
+      ],
+      "target": "t",
+      "targetCodePoints": [
+        "U+0074"
+      ]
+    },
+    {
+      "index": 5,
+      "source": "ث",
+      "sourceCodePoints": [
+        "U+062B"
+      ],
+      "target": "?",
+      "targetCodePoints": [
+        "U+003F"
+      ]
+    },
+    {
+      "index": 6,
+      "source": "ج",
+      "sourceCodePoints": [
+        "U+062C"
+      ],
+      "target": "j",
+      "targetCodePoints": [
+        "U+006A"
+      ]
+    },
+    {
+      "index": 7,
+      "source": "چ",
+      "sourceCodePoints": [
+        "U+0686"
+      ],
+      "target": "c",
+      "targetCodePoints": [
+        "U+0063"
+      ]
+    },
+    {
+      "index": 8,
+      "source": "ح",
+      "sourceCodePoints": [
+        "U+062D"
+      ],
+      "target": ":",
+      "targetCodePoints": [
+        "U+003A"
+      ]
+    },
+    {
+      "index": 9,
+      "source": "خ",
+      "sourceCodePoints": [
+        "U+062E"
+      ],
+      "target": "x",
+      "targetCodePoints": [
+        "U+0078"
+      ]
+    },
+    {
+      "index": 10,
+      "source": "د",
+      "sourceCodePoints": [
+        "U+062F"
+      ],
+      "target": "d",
+      "targetCodePoints": [
+        "U+0064"
+      ]
+    },
+    {
+      "index": 11,
+      "source": "ذ",
+      "sourceCodePoints": [
+        "U+0630"
+      ],
+      "target": "!",
+      "targetCodePoints": [
+        "U+0021"
+      ]
+    },
+    {
+      "index": 12,
+      "source": "ر",
+      "sourceCodePoints": [
+        "U+0631"
+      ],
+      "target": "r",
+      "targetCodePoints": [
+        "U+0072"
+      ]
+    },
+    {
+      "index": 13,
+      "source": "ز",
+      "sourceCodePoints": [
+        "U+0632"
+      ],
+      "target": "z",
+      "targetCodePoints": [
+        "U+007A"
+      ]
+    },
+    {
+      "index": 14,
+      "source": "ژ",
+      "sourceCodePoints": [
+        "U+0698"
+      ],
+      "target": "+",
+      "targetCodePoints": [
+        "U+002B"
+      ]
+    },
+    {
+      "index": 15,
+      "source": "س",
+      "sourceCodePoints": [
+        "U+0633"
+      ],
+      "target": "s",
+      "targetCodePoints": [
+        "U+0073"
+      ]
+    },
+    {
+      "index": 16,
+      "source": "ش",
+      "sourceCodePoints": [
+        "U+0634"
+      ],
+      "target": "%",
+      "targetCodePoints": [
+        "U+0025"
+      ]
+    },
+    {
+      "index": 17,
+      "source": "ص",
+      "sourceCodePoints": [
+        "U+0635"
+      ],
+      "target": "&",
+      "targetCodePoints": [
+        "U+0026"
+      ]
+    },
+    {
+      "index": 18,
+      "source": "ض",
+      "sourceCodePoints": [
+        "U+0636"
+      ],
+      "target": "$",
+      "targetCodePoints": [
+        "U+0024"
+      ]
+    },
+    {
+      "index": 19,
+      "source": "ط",
+      "sourceCodePoints": [
+        "U+0637"
+      ],
+      "target": ")",
+      "targetCodePoints": [
+        "U+0029"
+      ]
+    },
+    {
+      "index": 20,
+      "source": "ظ",
+      "sourceCodePoints": [
+        "U+0638"
+      ],
+      "target": "=",
+      "targetCodePoints": [
+        "U+003D"
+      ]
+    },
+    {
+      "index": 21,
+      "source": "ع",
+      "sourceCodePoints": [
+        "U+0639"
+      ],
+      "target": "(",
+      "targetCodePoints": [
+        "U+0028"
+      ]
+    },
+    {
+      "index": 22,
+      "source": "غ",
+      "sourceCodePoints": [
+        "U+063A"
+      ],
+      "target": "<",
+      "targetCodePoints": [
+        "U+003C"
+      ]
+    },
+    {
+      "index": 23,
+      "source": "ف",
+      "sourceCodePoints": [
+        "U+0641"
+      ],
+      "target": "f",
+      "targetCodePoints": [
+        "U+0066"
+      ]
+    },
+    {
+      "index": 24,
+      "source": "ق",
+      "sourceCodePoints": [
+        "U+0642"
+      ],
+      "target": "q",
+      "targetCodePoints": [
+        "U+0071"
+      ]
+    },
+    {
+      "index": 25,
+      "source": "ک",
+      "sourceCodePoints": [
+        "U+06A9"
+      ],
+      "target": "k",
+      "targetCodePoints": [
+        "U+006B"
+      ]
+    },
+    {
+      "index": 26,
+      "source": "گ",
+      "sourceCodePoints": [
+        "U+06AF"
+      ],
+      "target": "g",
+      "targetCodePoints": [
+        "U+0067"
+      ]
+    },
+    {
+      "index": 27,
+      "source": "ل",
+      "sourceCodePoints": [
+        "U+0644"
+      ],
+      "target": "l",
+      "targetCodePoints": [
+        "U+006C"
+      ]
+    },
+    {
+      "index": 28,
+      "source": "م",
+      "sourceCodePoints": [
+        "U+0645"
+      ],
+      "target": "m",
+      "targetCodePoints": [
+        "U+006D"
+      ]
+    },
+    {
+      "index": 29,
+      "source": "ن",
+      "sourceCodePoints": [
+        "U+0646"
+      ],
+      "target": "n",
+      "targetCodePoints": [
+        "U+006E"
+      ]
+    },
+    {
+      "index": 30,
+      "source": "و",
+      "sourceCodePoints": [
+        "U+0648"
+      ],
+      "target": "w",
+      "targetCodePoints": [
+        "U+0077"
+      ]
+    },
+    {
+      "index": 31,
+      "source": "ه",
+      "sourceCodePoints": [
+        "U+0647"
+      ],
+      "target": "h",
+      "targetCodePoints": [
+        "U+0068"
+      ]
+    },
+    {
+      "index": 32,
+      "source": "ي",
+      "sourceCodePoints": [
+        "U+064A"
+      ],
+      "target": "i",
+      "targetCodePoints": [
+        "U+0069"
+      ]
+    },
+    {
+      "index": 33,
+      "source": "آ",
+      "sourceCodePoints": [
+        "U+0622"
+      ],
+      "target": ">",
+      "targetCodePoints": [
+        "U+003E"
+      ]
+    },
+    {
+      "index": 34,
+      "source": "أ",
+      "sourceCodePoints": [
+        "U+0623"
+      ],
+      "target": "/",
+      "targetCodePoints": [
+        "U+002F"
+      ]
+    },
+    {
+      "index": 35,
+      "source": "إ",
+      "sourceCodePoints": [
+        "U+0625"
+      ],
+      "target": "/",
+      "targetCodePoints": [
+        "U+002F"
+      ]
+    },
+    {
+      "index": 36,
+      "source": "ئ",
+      "sourceCodePoints": [
+        "U+0626"
+      ],
+      "target": "y",
+      "targetCodePoints": [
+        "U+0079"
+      ]
+    },
+    {
+      "index": 37,
+      "source": "1",
+      "sourceCodePoints": [
+        "U+0031"
+      ],
+      "target": "#a",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0061"
+      ]
+    },
+    {
+      "index": 38,
+      "source": "2",
+      "sourceCodePoints": [
+        "U+0032"
+      ],
+      "target": "#b",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0062"
+      ]
+    },
+    {
+      "index": 39,
+      "source": "3",
+      "sourceCodePoints": [
+        "U+0033"
+      ],
+      "target": "#c",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0063"
+      ]
+    },
+    {
+      "index": 40,
+      "source": "4",
+      "sourceCodePoints": [
+        "U+0034"
+      ],
+      "target": "#d",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0064"
+      ]
+    },
+    {
+      "index": 41,
+      "source": "5",
+      "sourceCodePoints": [
+        "U+0035"
+      ],
+      "target": "#e",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0065"
+      ]
+    },
+    {
+      "index": 42,
+      "source": "6",
+      "sourceCodePoints": [
+        "U+0036"
+      ],
+      "target": "#f",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0066"
+      ]
+    },
+    {
+      "index": 43,
+      "source": "7",
+      "sourceCodePoints": [
+        "U+0037"
+      ],
+      "target": "#g",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0067"
+      ]
+    },
+    {
+      "index": 44,
+      "source": "8",
+      "sourceCodePoints": [
+        "U+0038"
+      ],
+      "target": "#h",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0068"
+      ]
+    },
+    {
+      "index": 45,
+      "source": "9",
+      "sourceCodePoints": [
+        "U+0039"
+      ],
+      "target": "#i",
+      "targetCodePoints": [
+        "U+0023",
+        "U+0069"
+      ]
+    },
+    {
+      "index": 46,
+      "source": "0",
+      "sourceCodePoints": [
+        "U+0030"
+      ],
+      "target": "#j",
+      "targetCodePoints": [
+        "U+0023",
+        "U+006A"
+      ]
+    }
+  ]
+}

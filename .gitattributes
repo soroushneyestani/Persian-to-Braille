@@ -18,3 +18,4 @@ legacy/v1/README.github-original.md -text
 *.otf binary
 *.docx binary.gitattributes text eol=lf
 .gitignore text eol=lf
+*.py text eol=lf

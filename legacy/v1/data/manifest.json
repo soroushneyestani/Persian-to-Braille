@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "inputs": {
+    "wordVba": {
+      "sha256": "2E201F0DA36D8047AA288833678877AD04480483A830971CDEC729B580D9C864",
+      "mappingCount": 46
+    },
+    "excelVba": {
+      "sha256": "46B622915DB2E8AA78107B495022A398FC10C3BDD473C6FFF7F0B5EDFCD0123A",
+      "mappingCount": 46
+    },
+    "sql": {
+      "sha256": "201B6624F86958D492BBF750A834ADF9D8C83E6E3194E94A7ADD9A69A44CA7B3",
+      "mappingCount": 59
+    }
+  },
+  "generated": [
+    {
+      "path": "legacy/v1/data/word-mappings.json",
+      "sha256": "317FFB6A49B7CAF05868D126635306D317A9A3DA1ED800148476A5F1DCFEAD1D"
+    },
+    {
+      "path": "legacy/v1/data/excel-mappings.json",
+      "sha256": "E72549FE5193E2BF600441C61DDC926A2712F52F349AC32269563DAC2FEEDDE4"
+    },
+    {
+      "path": "legacy/v1/data/sql-mappings.json",
+      "sha256": "3CDCD644D57033DB1AFE9A92F32F4DCCC99CBAF929A8E7A32CDEEBC56A3E1FCA"
+    },
+    {
+      "path": "legacy/v1/data/mapping-comparison.json",
+      "sha256": "638B9F8581C7FFD352CB18CD5DBB254BC4E08C0D3E303312059D1E725F1ADEB8"
+    }
+  ]
+}
