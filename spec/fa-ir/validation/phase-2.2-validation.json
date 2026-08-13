@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "validationStage": "2.3",
+  "validatedPackageStage": "2.2",
+  "result": "PASS",
+  "normative": false,
+  "summary": {
+    "schemasValidated": 3,
+    "profileDocuments": 1,
+    "candidateRules": 37,
+    "conformanceVectors": 37,
+    "uniqueDecisionItemsConsumed": 37,
+    "registeredSourcesReferenced": 5,
+    "prefixOverlapPairsChecked": 1,
+    "dot78Violations": 0,
+    "schemaErrors": 0,
+    "semanticErrors": 0
+  },
+  "validatedArtifacts": {
+    "profile": {
+      "path": "spec/fa-ir/profiles/fa-ir-g1.json",
+      "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+    },
+    "manifest": {
+      "path": "spec/fa-ir/manifests/phase-2.2-candidate-package.json",
+      "sha256": "F1594523111F259D47F6763EFB97CC54ADA15AE508324EBD7F2950FCDE8C2C4E"
+    },
+    "ruleDirectory": "spec/fa-ir/rules/candidates",
+    "conformanceDirectory": "spec/fa-ir/conformance/candidates"
+  },
+  "invariants": [
+    "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
+    "Profile rule IDs resolve exactly to the 37 candidate rule files.",
+    "Every rule consumes registered sources and Phase 1 CONSENSUS-CANDIDATE evidence.",
+    "All 37 Phase 1 consensus decisions are consumed exactly once.",
+    "Every rule has exactly one reciprocal conformance vector.",
+    "Vector context matches rule context.",
+    "Braille cell arrays deterministically derive their Unicode Braille strings.",
+    "The fa-ir-g1 draft package contains no dot-7/dot-8 cells.",
+    "Exact match-signature priority collisions are rejected.",
+    "Prefix-overlapping longer rules must have higher precedence.",
+    "The fraction-slash candidate is explicitly constrained to numeric context.",
+    "No Phase 2.2 artifact claims normative status.",
+    "Manifest paths and SHA-256 hashes match the generated package."
+  ]
+}
