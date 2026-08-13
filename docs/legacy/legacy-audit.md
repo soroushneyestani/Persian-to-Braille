@@ -243,17 +243,80 @@ deterministic conformance tests
 versioned translation profiles
 Microsoft Office integration through adapters rather than embedded translation rules
 platform-independent core and SDK
-## 12. Remaining Legacy Work
+## 12. Phase 0 Completion Status
 
-Before Phase 0 can be closed, the following items remain:
+The legacy reconstruction and audit phase has been completed.
 
-extract all VBA mappings into machine-readable test data
-compare Word VBA, Excel VBA, SQL, and historical documentation systematically
-record SHA-256 hashes for every committed legacy artifact
-create a machine-readable legacy manifest
-verify whether any additional original source files exist
-investigate the historical Swell Braille dependency
-complete provenance review of the Braille Music research document
-create the final v1.0.0-legacy Git tag
+### Completed
 
-No v2 translation rule should be derived solely from legacy behavior without the standards audit performed in Phase 1.
+- recovered Word VBA preserved byte-for-byte
+- recovered Excel VBA preserved byte-for-byte
+- historical SQL preserved without corrective modification
+- original GitHub documentation archived
+- Persian historical description converted to repository-friendly Markdown
+- all Word VBA mappings extracted into machine-readable JSON
+- all Excel VBA mappings extracted into machine-readable JSON
+- all SQL mappings extracted into machine-readable JSON
+- Word, Excel, and SQL mappings systematically compared
+- historical conflicts explicitly recorded
+- Persian Yeh / Arabic Yeh divergence explicitly recorded
+- SHA-256 provenance recorded
+- deterministic extraction tooling implemented
+- deterministic legacy conformance seed generated
+- machine-readable archive manifest generated
+- third-party legacy fonts documented without redistribution
+- legacy evidence explicitly separated from normative v2 rules
+
+### Verified Mapping Evidence
+
+The recovered implementations contain:
+
+- Word VBA: 46 mappings
+- Excel VBA: 46 mappings
+- SQL reference table: 59 mappings
+- unique source symbols across all recovered sources: 60
+
+Comparison results:
+
+- 42 exact matches across Word, Excel, and SQL
+- 3 historical conflicts
+- 1 partial exact match
+- 14 single-source-only mappings
+
+The confirmed conflicts are preserved rather than corrected:
+
+```text
+آ : Word ">" / Excel ">" / SQL ">\u00A0"
+ع : Word "(" / Excel "(" / SQL "(d"
+غ : Word "<" / Excel "<" / SQL "<\u00A0"
+
+The historical Yeh divergence is also preserved:
+
+Word  : ي U+064A -> i
+Excel : ی U+06CC -> i
+SQL   : ی U+06CC -> i
+Known Unresolved Historical Items
+
+The following items remain documented historical uncertainties but do not block closure of the legacy reconstruction phase:
+
+the Swell Braille font referenced by the Excel macro has not been recovered
+redistribution rights for recovered third-party Braille fonts have not been established
+provenance and licensing of the larger historical Braille Music research document require a separate audit
+additional original 2016 project artifacts may exist outside the currently recovered material
+
+These items must not be silently inferred or reconstructed.
+
+13. Phase 0 Closure
+
+Phase 0 establishes a reproducible historical baseline for Persian-to-Braille v1.
+
+The recovered v1 evidence is now suitable for:
+
+historical preservation
+regression testing
+compatibility research
+comparison against future normative Persian Braille specifications
+
+It is not a normative definition of Persian Braille.
+
+All normative translation behavior for Persian-to-Braille v2 must be established independently during the Persian Braille Standards Audit beginning in Phase 1.
