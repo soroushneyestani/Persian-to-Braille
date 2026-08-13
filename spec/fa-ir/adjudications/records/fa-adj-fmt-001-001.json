@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-FMT-001-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-FMT-001",
+  "queueId": "FA-REVIEW-002",
+  "packetId": "FA-EVIDENCE-002",
+  "planItemId": "FA-ADJ-PLAN-002",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-normalization",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-fmt-001.json",
+    "evidencePacketSha256": "803D29D18E9E88BB073227E52F0E521F4D974C1814DF634A9C5C169365FACF6D",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "normalization",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "normalization",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "ZERO WIDTH NON-JOINER is an orthographic boundary in Persian text, not a Braille cell. The stable implementation emits dot 8, while the draft implementation treats ZWNJ as non-emitting context. The project accepts a normalization-level policy in which ZWNJ emits no Braille cell but may be preserved long enough for sequence/context analysis instead of being blindly discarded before structural processing."
+}

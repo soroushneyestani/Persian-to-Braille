@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-SEQ-002-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-SEQ-002",
+  "queueId": "FA-REVIEW-015",
+  "packetId": "FA-EVIDENCE-015",
+  "planItemId": "FA-ADJ-PLAN-015",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-seq-002.json",
+    "evidencePacketSha256": "4C06BBA52EDF19AAF432390AD95B54B6C6676089C82D06CA53461935D79F1E6B",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The preserved print-era manual does not directly establish this Unicode spelling or a sequence-level rule for it."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Both implementations lack an explicit always rule for this sequence, and the preserved print-era manual does not directly define this Unicode spelling. The project defers it until normalization or spelling-equivalence evidence is formally established."
+}

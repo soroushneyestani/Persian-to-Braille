@@ -34,9 +34,8 @@ The packets preserve source material already recorded by the project. They do no
 
 ## Stable/draft comparison
 
-- `different-observed-behavior`: 75
-- `insufficient-data`: 27
-- `same-observed-behavior`: 151
+- `different-observed-behavior`: 76
+- `same-observed-behavior`: 177
 
 ## Provenance inputs
 

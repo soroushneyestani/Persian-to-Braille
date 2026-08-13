@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-REM-CTX-007-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-REM-CTX-007",
+  "queueId": "FA-REVIEW-236",
+  "packetId": "FA-EVIDENCE-236",
+  "planItemId": "FA-ADJ-PLAN-236",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-007.json",
+    "evidencePacketSha256": "CA3D61656FA25A6BD57645CB898704A6A1A14DD551897BBD6EEEB5636CAB60EB",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "Independent source evidence for this remaining-coverage context directive has not yet been established by the project."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on this context directive, but the preserved review surface contains no independent manual or legacy evidence establishing it as a Persian project rule. The project defers it instead of treating implementation agreement as normative evidence."
+}

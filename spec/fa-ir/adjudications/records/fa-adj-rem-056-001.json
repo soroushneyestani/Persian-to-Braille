@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-REM-056-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-REM-056",
+  "queueId": "FA-REVIEW-223",
+  "packetId": "FA-EVIDENCE-223",
+  "planItemId": "FA-ADJ-PLAN-223",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-rem-056.json",
+    "evidencePacketSha256": "6B334D1FF0B8C9FC08F640665C8E857D31D2E09E0FC9F3D80FD7222AEDA50CD8",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The current project audit has not independently verified this remaining-coverage mapping beyond aligned implementation evidence."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on this remaining-coverage mapping, but the Phase 1 audit explicitly did not verify the mapping against sufficiently authoritative project evidence. Agreement between implementations alone is not enough to make it a project specification rule, especially where dot 7/8 mappings may be involved. The project therefore defers this decision."
+}

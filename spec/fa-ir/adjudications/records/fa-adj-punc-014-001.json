@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-PUNC-014-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-PUNC-014",
+  "queueId": "FA-REVIEW-078",
+  "packetId": "FA-EVIDENCE-078",
+  "planItemId": "FA-ADJ-PLAN-078",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "out-of-scope",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-014.json",
+    "evidencePacketSha256": "170727E90C31F921A7A401C27164423E3FB51970B90B586582BFB10C4964F4F4",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "out-of-scope",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The preserved manual evidence describes a context-sensitive asterisk run rule rather than one unconditional scalar mapping. The project therefore leaves the generic scalar mapping outside this decision's normative scope and handles the meaningful behavior through the separate context/run decisions."
+}

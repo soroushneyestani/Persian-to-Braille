@@ -1,0 +1,313 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/adjudication-record.schema.json",
+  "title": "Persian Braille Evidence Adjudication Record",
+  "description": "Machine-readable project-maintainer decision for one Phase 2.13 adjudication-plan item. Adjudication is separate from normative promotion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "policyVersion",
+    "profileId",
+    "decisionItemId",
+    "queueId",
+    "packetId",
+    "planItemId",
+    "phase1Classification",
+    "track",
+    "disposition",
+    "decision",
+    "basis",
+    "materialization",
+    "scope",
+    "rationale"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^FA-ADJ-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+    },
+    "policyVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "profileId": {
+      "type": "string",
+      "const": "fa-ir-g1"
+    },
+    "decisionItemId": {
+      "type": "string",
+      "pattern": "^FA-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "queueId": {
+      "type": "string",
+      "pattern": "^FA-REVIEW-\\d{3,}$"
+    },
+    "packetId": {
+      "type": "string",
+      "pattern": "^FA-EVIDENCE-\\d{3,}$"
+    },
+    "planItemId": {
+      "type": "string",
+      "pattern": "^FA-ADJ-PLAN-\\d{3,}$"
+    },
+    "phase1Classification": {
+      "type": "string",
+      "enum": [
+        "REVIEW-REQUIRED",
+        "UNRESOLVED"
+      ]
+    },
+    "track": {
+      "type": "string",
+      "enum": [
+        "unresolved",
+        "evidence-gap",
+        "implementation-conflict",
+        "implementation-alignment"
+      ]
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "accept-rule",
+        "accept-normalization",
+        "accept-context-rule",
+        "accept-mode-rule",
+        "accept-layout-policy",
+        "ignore-format-control",
+        "explicitly-unsupported",
+        "out-of-scope",
+        "defer-pending-evidence"
+      ]
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "authority",
+        "recordedBy",
+        "recordedAt"
+      ],
+      "properties": {
+        "result": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "deferred"
+          ]
+        },
+        "authority": {
+          "type": "string",
+          "const": "project-maintainer"
+        },
+        "recordedBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "Optional audit timestamp. Generators must never invent or auto-update it."
+        }
+      }
+    },
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidencePacketPath",
+        "evidencePacketSha256",
+        "sourceIds",
+        "stableDraftRelationship",
+        "unresolvedEvidenceGaps"
+      ],
+      "properties": {
+        "evidencePacketPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidencePacketSha256": {
+          "type": "string",
+          "pattern": "^[A-F0-9]{64}$"
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SRC-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "uniqueItems": true
+        },
+        "stableDraftRelationship": {
+          "type": "string",
+          "enum": [
+            "same-observed-behavior",
+            "different-observed-behavior",
+            "insufficient-data"
+          ]
+        },
+        "unresolvedEvidenceGaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "materialization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "createsSpecificationArtifact",
+        "targetRuleType",
+        "promotionEligible",
+        "requiresFuturePromotionGovernance"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "rule",
+            "normalization",
+            "context-rule",
+            "mode-rule",
+            "layout-policy",
+            "ignore",
+            "unsupported",
+            "out-of-scope",
+            "deferred"
+          ]
+        },
+        "createsSpecificationArtifact": {
+          "type": "boolean"
+        },
+        "targetRuleType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "character",
+            "sequence",
+            "context",
+            "normalization",
+            "mode",
+            "layout"
+          ]
+        },
+        "promotionEligible": {
+          "type": "boolean",
+          "const": false
+        },
+        "requiresFuturePromotionGovernance": {
+          "type": "boolean"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projectSpecificationDecision",
+        "projectNormativeRule",
+        "officialIranianStandardClaim",
+        "phase1ClassificationRewritten"
+      ],
+      "properties": {
+        "projectSpecificationDecision": {
+          "type": "boolean",
+          "const": true
+        },
+        "projectNormativeRule": {
+          "type": "boolean",
+          "const": false
+        },
+        "officialIranianStandardClaim": {
+          "type": "boolean",
+          "const": false
+        },
+        "phase1ClassificationRewritten": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "defer-pending-evidence"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "result": {
+                "const": "deferred"
+              }
+            }
+          },
+          "materialization": {
+            "properties": {
+              "kind": {
+                "const": "deferred"
+              },
+              "createsSpecificationArtifact": {
+                "const": false
+              },
+              "targetRuleType": {
+                "const": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "enum": [
+              "explicitly-unsupported",
+              "out-of-scope",
+              "ignore-format-control"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "result": {
+                "const": "approved"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

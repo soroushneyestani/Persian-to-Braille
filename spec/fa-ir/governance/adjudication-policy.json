@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "title": "Persian-to-Braille Evidence Adjudication Policy",
+  "stage": "2.14",
+  "scope": {
+    "profileId": "fa-ir-g1",
+    "plannedDecisionCount": 253,
+    "projectSpecificationOnly": true,
+    "officialIranianStandardClaim": false
+  },
+  "authority": {
+    "required": "project-maintainer",
+    "explicitDecisionRequired": true,
+    "automaticAdjudicationAllowed": false,
+    "ciPassAloneMayAdjudicate": false,
+    "batchDecisionsAllowed": true,
+    "individualDecisionRecordsRequiredInBatch": true
+  },
+  "immutability": {
+    "phase1ClassificationMayBeRewritten": false,
+    "evidencePacketsMayBeMutatedByAdjudication": false,
+    "phase213PlanMayBeMutatedByExecution": false
+  },
+  "dispositions": {
+    "allowed": [
+      "accept-rule",
+      "accept-normalization",
+      "accept-context-rule",
+      "accept-mode-rule",
+      "accept-layout-policy",
+      "ignore-format-control",
+      "explicitly-unsupported",
+      "out-of-scope",
+      "defer-pending-evidence"
+    ],
+    "deferredDisposition": "defer-pending-evidence",
+    "acceptedDispositions": [
+      "accept-rule",
+      "accept-normalization",
+      "accept-context-rule",
+      "accept-mode-rule",
+      "accept-layout-policy",
+      "ignore-format-control",
+      "explicitly-unsupported",
+      "out-of-scope"
+    ]
+  },
+  "promotionBoundary": {
+    "adjudicationIsNormativePromotion": false,
+    "adjudicationMayDirectlyCreateNormativeRule": false,
+    "adjudicationMaySetPromotionEligible": false,
+    "currentPromotionPolicyVersion": "1.0.0",
+    "currentPromotionPolicyEligiblePhase1Classifications": [
+      "CONSENSUS-CANDIDATE"
+    ],
+    "reviewRequiredCoveredByCurrentPromotionPolicy": false,
+    "unresolvedCoveredByCurrentPromotionPolicy": false,
+    "futureGovernanceRouteRequiredForAcceptedRuleMaterialization": true
+  },
+  "recordRequirements": {
+    "schema": "spec/fa-ir/schema/adjudication-record.schema.json",
+    "oneRecordPerDecisionItem": true,
+    "evidencePacketHashMustMatch": true,
+    "recordedAtMayBeNull": true,
+    "generatorMayInventTimestamp": false,
+    "rationaleRequired": true,
+    "sourceTraceabilityRequired": true
+  },
+  "inputs": {
+    "adjudicationPlan": {
+      "path": "spec/fa-ir/governance/evidence-adjudication-plan.json",
+      "sha256": "FB5E7AA363EDB25B6CAC9556BFD9636FBAC6F7F5D797EE8D6A9C55E1CC1C6F26"
+    },
+    "profile": {
+      "path": "spec/fa-ir/profiles/fa-ir-g1.json",
+      "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+    },
+    "normativePromotionPolicy": {
+      "path": "spec/fa-ir/governance/normative-promotion-policy.json",
+      "sha256": "2A0558A9ECE46F9C8B9D550E7F08B835D863F40E0946CA27939D369DA59D96CE"
+    }
+  }
+}

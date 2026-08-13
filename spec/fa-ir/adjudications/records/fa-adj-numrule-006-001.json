@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-NUMRULE-006-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-NUMRULE-006",
+  "queueId": "FA-REVIEW-063",
+  "packetId": "FA-EVIDENCE-063",
+  "planItemId": "FA-ADJ-PLAN-063",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "accept-context-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-numrule-006.json",
+    "evidencePacketSha256": "64B971388251F1A8BDA1C6FDB087FE66B9C4C23AA4210BC6AEA8ABB8DA173F71",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "context-rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "context",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on this numeric begin/middle/decimal/end behavior. Because its meaning depends on numeric context, the project accepts it as a context rule rather than an unconditional character mapping."
+}

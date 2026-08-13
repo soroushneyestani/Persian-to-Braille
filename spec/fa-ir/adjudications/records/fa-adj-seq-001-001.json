@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-SEQ-001-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-SEQ-001",
+  "queueId": "FA-REVIEW-014",
+  "packetId": "FA-EVIDENCE-014",
+  "planItemId": "FA-ADJ-PLAN-014",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-seq-001.json",
+    "evidencePacketSha256": "A0A9D76B6792C8E18DEC51007AB694BEF2C2D3B63B28C4F73C96B98BE930C04A",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "sequence",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "For the Ezafe spelling هٔ, the draft implementation provides the explicit sequence 125-0-24 and the preserved Iranian manual evidence reports a separate Yeh for Ezafe. The project accepts a sequence-level rule rather than inventing an independent standalone U+0654 mapping."
+}

@@ -156,6 +156,49 @@ def choose_canonical(
 
 
 def stable_draft_snapshot(stage_record: dict, master_record: dict) -> dict:
+    # Phase 1.6 whitespace evidence uses a shared spaces.uti mapping plus
+    # Persian-local stable/draft overrides rather than liblouisStable /
+    # liblouisDraft objects. Model that representation explicitly so the
+    # comparison reflects evidence instead of parser blindness.
+    spaces_utility = stage_record.get("spacesUtility")
+    persian_stable = stage_record.get("persianStable")
+    persian_draft = stage_record.get("persianDraft")
+
+    if (
+        isinstance(spaces_utility, dict)
+        and isinstance(persian_stable, dict)
+        and isinstance(persian_draft, dict)
+    ):
+        shared_behavior = {
+            "mapping": copy.deepcopy(spaces_utility.get("mapping")),
+            "specialRules": copy.deepcopy(spaces_utility.get("specialRules", [])),
+        }
+        stable = {
+            "spacesUtility": copy.deepcopy(shared_behavior),
+            "persianLocalOverride": copy.deepcopy(
+                persian_stable.get("localOverride")
+            ),
+        }
+        draft = {
+            "spacesUtility": copy.deepcopy(shared_behavior),
+            "persianLocalOverride": copy.deepcopy(
+                persian_draft.get("localOverride")
+            ),
+        }
+        return {
+            "stable": stable,
+            "draft": draft,
+            "relationship": (
+                "same-observed-behavior"
+                if stable == draft
+                else "different-observed-behavior"
+            ),
+            "comparedFields": [
+                "spacesUtility",
+                "persianLocalOverride",
+            ],
+        }
+
     stable = (
         stage_record.get("liblouisStable")
         if isinstance(stage_record.get("liblouisStable"), dict)
@@ -180,6 +223,7 @@ def stable_draft_snapshot(stage_record: dict, master_record: dict) -> dict:
         key for key in ("status", "kind", "dots", "value", "behavior")
         if key in stable or key in draft
     ]
+
     if not comparable_keys:
         return result
 

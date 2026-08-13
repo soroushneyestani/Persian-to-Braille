@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-PUNC-012-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-PUNC-012",
+  "queueId": "FA-REVIEW-076",
+  "packetId": "FA-EVIDENCE-076",
+  "planItemId": "FA-ADJ-PLAN-076",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-012.json",
+    "evidencePacketSha256": "4CEA198EEAD63218C17E3D94224A72681F4EF2FCC045C42BC8EA0BE325D7D48D",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "No sufficiently authoritative preserved evidence currently establishes the Persian Braille mapping for EM DASH."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The stable implementation leaves EM DASH unmapped and the draft implementation proposes 6-36, but the focused preserved manual audit does not establish this sign. The project defers the scalar mapping rather than selecting one implementation without sufficient evidence."
+}

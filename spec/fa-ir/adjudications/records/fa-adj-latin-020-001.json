@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-LATIN-020-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-LATIN-020",
+  "queueId": "FA-REVIEW-104",
+  "packetId": "FA-EVIDENCE-104",
+  "planItemId": "FA-ADJ-PLAN-104",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-latin-020.json",
+    "evidencePacketSha256": "3463D9C560A784CB4AC80699ADD6FCEC090D52059CAF969EF3381329CC65C2AB",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "character",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The preserved Iranian manual evidence reports six-dot uncontracted English inside a Latin span. The draft Liblouis implementation follows that model, while the stable implementation encodes Latin letter case with dot 7 or dot 8. The project accepts the six-dot Latin character mapping and keeps capitalization/span semantics in the Latin mode layer. This is a project specification decision, not a claim of current official Iranian national-standard status."
+}
