@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "title": "Persian-to-Braille Normative Promotion Policy",
+  "normativeScope": {
+    "meaning": "Normative status is authoritative only within the Persian-to-Braille project specification.",
+    "officialIranianStandardStatusClaimed": false,
+    "note": "The project does not claim that a promoted rule is the current official national Persian Braille standard unless a future source audit explicitly establishes that status."
+  },
+  "promotion": {
+    "fromStatus": "candidate",
+    "toStatus": "normative",
+    "automaticPromotionAllowed": false,
+    "ciPassAloneMayPromote": false,
+    "onePromotionRecordPerRuleVersion": true,
+    "batchPullRequestsAllowed": true,
+    "individualRuleRecordsRequiredInBatch": true,
+    "eligiblePhase1Classifications": [
+      "CONSENSUS-CANDIDATE"
+    ],
+    "reviewRequired": {
+      "projectMaintainerDecision": true,
+      "externalReview": false,
+      "externalReviewRecommendation": "Recommended for language rules with significant ambiguity or before claiming broad real-world compatibility."
+    }
+  },
+  "hardGates": [
+    {
+      "id": "PROMO-GATE-001",
+      "name": "candidate-status",
+      "description": "The source rule must currently have status=candidate."
+    },
+    {
+      "id": "PROMO-GATE-002",
+      "name": "consensus-evidence",
+      "description": "Every Phase 1 decision item consumed by the rule must currently be classified CONSENSUS-CANDIDATE."
+    },
+    {
+      "id": "PROMO-GATE-003",
+      "name": "registered-sources",
+      "description": "Every source referenced by the rule must exist in the project source registry."
+    },
+    {
+      "id": "PROMO-GATE-004",
+      "name": "schema-validation",
+      "description": "Rule, profile and conformance artifacts must validate against the current Phase 2 JSON Schemas."
+    },
+    {
+      "id": "PROMO-GATE-005",
+      "name": "semantic-validation",
+      "description": "The independent specification validator must pass with zero semantic errors."
+    },
+    {
+      "id": "PROMO-GATE-006",
+      "name": "conformance",
+      "description": "The rule must have reciprocal conformance coverage and the expected Braille output must match the rule artifact."
+    },
+    {
+      "id": "PROMO-GATE-007",
+      "name": "negative-fixtures",
+      "description": "The validator negative-fixture suite must pass, proving the covered invalid states are rejected."
+    },
+    {
+      "id": "PROMO-GATE-008",
+      "name": "reproducibility",
+      "description": "Regenerating specification artifacts must produce no tracked diff."
+    },
+    {
+      "id": "PROMO-GATE-009",
+      "name": "profile-compatibility",
+      "description": "The rule must satisfy the target profile constraints, including the six-dot restriction for fa-ir-g1."
+    },
+    {
+      "id": "PROMO-GATE-010",
+      "name": "explicit-maintainer-decision",
+      "description": "Promotion must be recorded explicitly in a promotion record. Passing CI alone must never change candidate to normative."
+    },
+    {
+      "id": "PROMO-GATE-011",
+      "name": "scope-disclaimer",
+      "description": "The promotion record must state that normative means normative for the Persian-to-Braille project specification and does not claim current official Iranian-standard status."
+    }
+  ],
+  "profilePromotion": {
+    "separateFromRulePromotion": true,
+    "draftProfileMayContainNormativeRules": true,
+    "profileMayBecomeNormativeAutomatically": false,
+    "note": "Promoting individual rules does not promote fa-ir-g1 itself. Profile-level normative status requires a separate future gate covering completeness and unresolved REVIEW-REQUIRED domains."
+  },
+  "changeControl": {
+    "publishedRuleIdsStable": true,
+    "semanticChangesRequireRuleVersionChange": true,
+    "statusChangesRequirePullRequest": true,
+    "requiredCiCheck": "Validate Persian Braille specification",
+    "forcePushToProtectedMain": false
+  }
+}
