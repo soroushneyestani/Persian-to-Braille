@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "archive": "Persian-to-Braille v1",
+  "normative": false,
+  "historicalPeriod": "Mehr 1395 SH / 2016",
+  "preservationPolicy": {
+    "recoveredSourceFilesAreHistoricalEvidence": true,
+    "legacyDefectsAreNotSilentlyCorrected": true,
+    "thirdPartyFontsRedistributed": false,
+    "v2RulesMayNotBeDerivedSolelyFromLegacyBehavior": true
+  },
+  "documentedExternalAssets": [
+    {
+      "name": "BRAILLE.ttf",
+      "fontName": "Braille 3D",
+      "presentInRepository": false,
+      "sha256": "CBA6C96D4023AECE909B26FB95FED89FDF390841C93A512C850EE58593633C70"
+    },
+    {
+      "name": "BRAILLE1.ttf",
+      "fontName": "Braille Normal",
+      "presentInRepository": false,
+      "sha256": "92934DEA3EFD78161541944A8697FC7124ACB57D8685533F42DCD9C217864CF9"
+    },
+    {
+      "name": "Swell Braille",
+      "presentInRepository": false,
+      "sha256": null,
+      "status": "Referenced by recovered Excel VBA; matching font file not recovered."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "legacy/v1/README.github-original.md",
+      "classification": "legacy-documentation",
+      "sha256": "576DC04D95AE1492932062225F01B0925DF02CB885852182136AEDF9A387ED28",
+      "sizeBytes": 502
+    },
+    {
+      "path": "legacy/v1/README.md",
+      "classification": "legacy-documentation",
+      "sha256": "F4BF9C557DF9989942D78AE6CF5C913B660B9BA67E7F48E874E28ED3BE7EE1F0",
+      "sizeBytes": 1887
+    },
+    {
+      "path": "legacy/v1/conformance/legacy-v1-seed.json",
+      "classification": "generated-legacy-test-data",
+      "sha256": "12EFB28195EB26E77753E5729D181CAEFC5615CE68CF1787E4EF52DABDE24188",
+      "sizeBytes": 62028
+    },
+    {
+      "path": "legacy/v1/data/excel-mappings.json",
+      "classification": "generated-audit-data",
+      "sha256": "E72549FE5193E2BF600441C61DDC926A2712F52F349AC32269563DAC2FEEDDE4",
+      "sizeBytes": 8610
+    },
+    {
+      "path": "legacy/v1/data/manifest.json",
+      "classification": "generated-audit-data",
+      "sha256": "90C1E843C74E9B1865DCEF62BBF75AF2D14F6BFD7F9DAC921514F968BEC337DF",
+      "sizeBytes": 1053
+    },
+    {
+      "path": "legacy/v1/data/mapping-comparison.json",
+      "classification": "generated-audit-data",
+      "sha256": "638B9F8581C7FFD352CB18CD5DBB254BC4E08C0D3E303312059D1E725F1ADEB8",
+      "sizeBytes": 11354
+    },
+    {
+      "path": "legacy/v1/data/sql-mappings.json",
+      "classification": "generated-audit-data",
+      "sha256": "3CDCD644D57033DB1AFE9A92F32F4DCCC99CBAF929A8E7A32CDEEBC56A3E1FCA",
+      "sizeBytes": 11059
+    },
+    {
+      "path": "legacy/v1/data/word-mappings.json",
+      "classification": "generated-audit-data",
+      "sha256": "317FFB6A49B7CAF05868D126635306D317A9A3DA1ED800148476A5F1DCFEAD1D",
+      "sizeBytes": 8610
+    },
+    {
+      "path": "legacy/v1/database/Persian to Braille.sql",
+      "classification": "recovered-data",
+      "sha256": "201B6624F86958D492BBF750A834ADF9D8C83E6E3194E94A7ADD9A69A44CA7B3",
+      "sizeBytes": 910
+    },
+    {
+      "path": "legacy/v1/docs/legacy-v1-description-fa.md",
+      "classification": "recovered-documentation",
+      "sha256": "6B8DCD6F383E97E89C0E397457F511C15B116C3E41639AE9872787B8AA6B4CE7",
+      "sizeBytes": 1116
+    },
+    {
+      "path": "legacy/v1/external-assets/README.md",
+      "classification": "external-asset-documentation",
+      "sha256": "DCD3A26E87F7A3F4AEBA9749A6140FEBC34B1B0D60D30EBEF2E296B5C5A53107",
+      "sizeBytes": 1263
+    },
+    {
+      "path": "legacy/v1/source/vba/EnglishBrailleMaker.bas",
+      "classification": "recovered-source",
+      "sha256": "46B622915DB2E8AA78107B495022A398FC10C3BDD473C6FFF7F0B5EDFCD0123A",
+      "sizeBytes": 8300
+    },
+    {
+      "path": "legacy/v1/source/vba/FarsiBrailleMaker.bas",
+      "classification": "recovered-source",
+      "sha256": "2E201F0DA36D8047AA288833678877AD04480483A830971CDEC729B580D9C864",
+      "sizeBytes": 29637
+    }
+  ]
+}

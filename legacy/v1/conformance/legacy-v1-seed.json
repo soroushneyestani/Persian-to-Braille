@@ -1,0 +1,2742 @@
+{
+  "schemaVersion": 1,
+  "dataset": "persian-to-braille-legacy-v1",
+  "normative": false,
+  "purpose": "Historical compatibility and regression evidence only. These vectors do not define normative Persian Braille v2 behavior.",
+  "counts": {
+    "word": 46,
+    "excel": 46,
+    "sql": 59,
+    "uniqueSources": 60,
+    "allThreeExactMatch": 42,
+    "conflict": 3,
+    "partialExactMatch": 1,
+    "singleSourceOnly": 14
+  },
+  "vectors": {
+    "word": [
+      {
+        "id": "LEGACY-WORD-001",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ا",
+        "inputCodePoints": [
+          "U+0627"
+        ],
+        "expectedLegacyValue": "a",
+        "expectedLegacyValueCodePoints": [
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-002",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ب",
+        "inputCodePoints": [
+          "U+0628"
+        ],
+        "expectedLegacyValue": "b",
+        "expectedLegacyValueCodePoints": [
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-003",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "پ",
+        "inputCodePoints": [
+          "U+067E"
+        ],
+        "expectedLegacyValue": "p",
+        "expectedLegacyValueCodePoints": [
+          "U+0070"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-004",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ت",
+        "inputCodePoints": [
+          "U+062A"
+        ],
+        "expectedLegacyValue": "t",
+        "expectedLegacyValueCodePoints": [
+          "U+0074"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-005",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ث",
+        "inputCodePoints": [
+          "U+062B"
+        ],
+        "expectedLegacyValue": "?",
+        "expectedLegacyValueCodePoints": [
+          "U+003F"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-006",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ج",
+        "inputCodePoints": [
+          "U+062C"
+        ],
+        "expectedLegacyValue": "j",
+        "expectedLegacyValueCodePoints": [
+          "U+006A"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-007",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "چ",
+        "inputCodePoints": [
+          "U+0686"
+        ],
+        "expectedLegacyValue": "c",
+        "expectedLegacyValueCodePoints": [
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-008",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ح",
+        "inputCodePoints": [
+          "U+062D"
+        ],
+        "expectedLegacyValue": ":",
+        "expectedLegacyValueCodePoints": [
+          "U+003A"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-009",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "خ",
+        "inputCodePoints": [
+          "U+062E"
+        ],
+        "expectedLegacyValue": "x",
+        "expectedLegacyValueCodePoints": [
+          "U+0078"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-010",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "د",
+        "inputCodePoints": [
+          "U+062F"
+        ],
+        "expectedLegacyValue": "d",
+        "expectedLegacyValueCodePoints": [
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-011",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ذ",
+        "inputCodePoints": [
+          "U+0630"
+        ],
+        "expectedLegacyValue": "!",
+        "expectedLegacyValueCodePoints": [
+          "U+0021"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-012",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ر",
+        "inputCodePoints": [
+          "U+0631"
+        ],
+        "expectedLegacyValue": "r",
+        "expectedLegacyValueCodePoints": [
+          "U+0072"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-013",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ز",
+        "inputCodePoints": [
+          "U+0632"
+        ],
+        "expectedLegacyValue": "z",
+        "expectedLegacyValueCodePoints": [
+          "U+007A"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-014",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ژ",
+        "inputCodePoints": [
+          "U+0698"
+        ],
+        "expectedLegacyValue": "+",
+        "expectedLegacyValueCodePoints": [
+          "U+002B"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-015",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "س",
+        "inputCodePoints": [
+          "U+0633"
+        ],
+        "expectedLegacyValue": "s",
+        "expectedLegacyValueCodePoints": [
+          "U+0073"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-016",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ش",
+        "inputCodePoints": [
+          "U+0634"
+        ],
+        "expectedLegacyValue": "%",
+        "expectedLegacyValueCodePoints": [
+          "U+0025"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-017",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ص",
+        "inputCodePoints": [
+          "U+0635"
+        ],
+        "expectedLegacyValue": "&",
+        "expectedLegacyValueCodePoints": [
+          "U+0026"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-018",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ض",
+        "inputCodePoints": [
+          "U+0636"
+        ],
+        "expectedLegacyValue": "$",
+        "expectedLegacyValueCodePoints": [
+          "U+0024"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-019",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ط",
+        "inputCodePoints": [
+          "U+0637"
+        ],
+        "expectedLegacyValue": ")",
+        "expectedLegacyValueCodePoints": [
+          "U+0029"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-020",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ظ",
+        "inputCodePoints": [
+          "U+0638"
+        ],
+        "expectedLegacyValue": "=",
+        "expectedLegacyValueCodePoints": [
+          "U+003D"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-021",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ع",
+        "inputCodePoints": [
+          "U+0639"
+        ],
+        "expectedLegacyValue": "(",
+        "expectedLegacyValueCodePoints": [
+          "U+0028"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-022",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "غ",
+        "inputCodePoints": [
+          "U+063A"
+        ],
+        "expectedLegacyValue": "<",
+        "expectedLegacyValueCodePoints": [
+          "U+003C"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-023",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ف",
+        "inputCodePoints": [
+          "U+0641"
+        ],
+        "expectedLegacyValue": "f",
+        "expectedLegacyValueCodePoints": [
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-024",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ق",
+        "inputCodePoints": [
+          "U+0642"
+        ],
+        "expectedLegacyValue": "q",
+        "expectedLegacyValueCodePoints": [
+          "U+0071"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-025",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ک",
+        "inputCodePoints": [
+          "U+06A9"
+        ],
+        "expectedLegacyValue": "k",
+        "expectedLegacyValueCodePoints": [
+          "U+006B"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-026",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "گ",
+        "inputCodePoints": [
+          "U+06AF"
+        ],
+        "expectedLegacyValue": "g",
+        "expectedLegacyValueCodePoints": [
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-027",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ل",
+        "inputCodePoints": [
+          "U+0644"
+        ],
+        "expectedLegacyValue": "l",
+        "expectedLegacyValueCodePoints": [
+          "U+006C"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-028",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "م",
+        "inputCodePoints": [
+          "U+0645"
+        ],
+        "expectedLegacyValue": "m",
+        "expectedLegacyValueCodePoints": [
+          "U+006D"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-029",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ن",
+        "inputCodePoints": [
+          "U+0646"
+        ],
+        "expectedLegacyValue": "n",
+        "expectedLegacyValueCodePoints": [
+          "U+006E"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-030",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "و",
+        "inputCodePoints": [
+          "U+0648"
+        ],
+        "expectedLegacyValue": "w",
+        "expectedLegacyValueCodePoints": [
+          "U+0077"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-031",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ه",
+        "inputCodePoints": [
+          "U+0647"
+        ],
+        "expectedLegacyValue": "h",
+        "expectedLegacyValueCodePoints": [
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-032",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ي",
+        "inputCodePoints": [
+          "U+064A"
+        ],
+        "expectedLegacyValue": "i",
+        "expectedLegacyValueCodePoints": [
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-033",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "آ",
+        "inputCodePoints": [
+          "U+0622"
+        ],
+        "expectedLegacyValue": ">",
+        "expectedLegacyValueCodePoints": [
+          "U+003E"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-034",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "أ",
+        "inputCodePoints": [
+          "U+0623"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-035",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "إ",
+        "inputCodePoints": [
+          "U+0625"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-036",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "ئ",
+        "inputCodePoints": [
+          "U+0626"
+        ],
+        "expectedLegacyValue": "y",
+        "expectedLegacyValueCodePoints": [
+          "U+0079"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-037",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "1",
+        "inputCodePoints": [
+          "U+0031"
+        ],
+        "expectedLegacyValue": "#a",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-038",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "2",
+        "inputCodePoints": [
+          "U+0032"
+        ],
+        "expectedLegacyValue": "#b",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-039",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "3",
+        "inputCodePoints": [
+          "U+0033"
+        ],
+        "expectedLegacyValue": "#c",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-040",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "4",
+        "inputCodePoints": [
+          "U+0034"
+        ],
+        "expectedLegacyValue": "#d",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-041",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "5",
+        "inputCodePoints": [
+          "U+0035"
+        ],
+        "expectedLegacyValue": "#e",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0065"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-042",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "6",
+        "inputCodePoints": [
+          "U+0036"
+        ],
+        "expectedLegacyValue": "#f",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-043",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "7",
+        "inputCodePoints": [
+          "U+0037"
+        ],
+        "expectedLegacyValue": "#g",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-044",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "8",
+        "inputCodePoints": [
+          "U+0038"
+        ],
+        "expectedLegacyValue": "#h",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-045",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "9",
+        "inputCodePoints": [
+          "U+0039"
+        ],
+        "expectedLegacyValue": "#i",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-WORD-046",
+        "normative": false,
+        "evidenceSource": "word-vba",
+        "input": "0",
+        "inputCodePoints": [
+          "U+0030"
+        ],
+        "expectedLegacyValue": "#j",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+006A"
+        ]
+      }
+    ],
+    "excel": [
+      {
+        "id": "LEGACY-EXCEL-001",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ا",
+        "inputCodePoints": [
+          "U+0627"
+        ],
+        "expectedLegacyValue": "a",
+        "expectedLegacyValueCodePoints": [
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-002",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ب",
+        "inputCodePoints": [
+          "U+0628"
+        ],
+        "expectedLegacyValue": "b",
+        "expectedLegacyValueCodePoints": [
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-003",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "پ",
+        "inputCodePoints": [
+          "U+067E"
+        ],
+        "expectedLegacyValue": "p",
+        "expectedLegacyValueCodePoints": [
+          "U+0070"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-004",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ت",
+        "inputCodePoints": [
+          "U+062A"
+        ],
+        "expectedLegacyValue": "t",
+        "expectedLegacyValueCodePoints": [
+          "U+0074"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-005",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ث",
+        "inputCodePoints": [
+          "U+062B"
+        ],
+        "expectedLegacyValue": "?",
+        "expectedLegacyValueCodePoints": [
+          "U+003F"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-006",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ج",
+        "inputCodePoints": [
+          "U+062C"
+        ],
+        "expectedLegacyValue": "j",
+        "expectedLegacyValueCodePoints": [
+          "U+006A"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-007",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "چ",
+        "inputCodePoints": [
+          "U+0686"
+        ],
+        "expectedLegacyValue": "c",
+        "expectedLegacyValueCodePoints": [
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-008",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ح",
+        "inputCodePoints": [
+          "U+062D"
+        ],
+        "expectedLegacyValue": ":",
+        "expectedLegacyValueCodePoints": [
+          "U+003A"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-009",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "خ",
+        "inputCodePoints": [
+          "U+062E"
+        ],
+        "expectedLegacyValue": "x",
+        "expectedLegacyValueCodePoints": [
+          "U+0078"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-010",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "د",
+        "inputCodePoints": [
+          "U+062F"
+        ],
+        "expectedLegacyValue": "d",
+        "expectedLegacyValueCodePoints": [
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-011",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ذ",
+        "inputCodePoints": [
+          "U+0630"
+        ],
+        "expectedLegacyValue": "!",
+        "expectedLegacyValueCodePoints": [
+          "U+0021"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-012",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ر",
+        "inputCodePoints": [
+          "U+0631"
+        ],
+        "expectedLegacyValue": "r",
+        "expectedLegacyValueCodePoints": [
+          "U+0072"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-013",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ز",
+        "inputCodePoints": [
+          "U+0632"
+        ],
+        "expectedLegacyValue": "z",
+        "expectedLegacyValueCodePoints": [
+          "U+007A"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-014",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ژ",
+        "inputCodePoints": [
+          "U+0698"
+        ],
+        "expectedLegacyValue": "+",
+        "expectedLegacyValueCodePoints": [
+          "U+002B"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-015",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "س",
+        "inputCodePoints": [
+          "U+0633"
+        ],
+        "expectedLegacyValue": "s",
+        "expectedLegacyValueCodePoints": [
+          "U+0073"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-016",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ش",
+        "inputCodePoints": [
+          "U+0634"
+        ],
+        "expectedLegacyValue": "%",
+        "expectedLegacyValueCodePoints": [
+          "U+0025"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-017",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ص",
+        "inputCodePoints": [
+          "U+0635"
+        ],
+        "expectedLegacyValue": "&",
+        "expectedLegacyValueCodePoints": [
+          "U+0026"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-018",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ض",
+        "inputCodePoints": [
+          "U+0636"
+        ],
+        "expectedLegacyValue": "$",
+        "expectedLegacyValueCodePoints": [
+          "U+0024"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-019",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ط",
+        "inputCodePoints": [
+          "U+0637"
+        ],
+        "expectedLegacyValue": ")",
+        "expectedLegacyValueCodePoints": [
+          "U+0029"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-020",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ظ",
+        "inputCodePoints": [
+          "U+0638"
+        ],
+        "expectedLegacyValue": "=",
+        "expectedLegacyValueCodePoints": [
+          "U+003D"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-021",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ع",
+        "inputCodePoints": [
+          "U+0639"
+        ],
+        "expectedLegacyValue": "(",
+        "expectedLegacyValueCodePoints": [
+          "U+0028"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-022",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "غ",
+        "inputCodePoints": [
+          "U+063A"
+        ],
+        "expectedLegacyValue": "<",
+        "expectedLegacyValueCodePoints": [
+          "U+003C"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-023",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ف",
+        "inputCodePoints": [
+          "U+0641"
+        ],
+        "expectedLegacyValue": "f",
+        "expectedLegacyValueCodePoints": [
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-024",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ق",
+        "inputCodePoints": [
+          "U+0642"
+        ],
+        "expectedLegacyValue": "q",
+        "expectedLegacyValueCodePoints": [
+          "U+0071"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-025",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ک",
+        "inputCodePoints": [
+          "U+06A9"
+        ],
+        "expectedLegacyValue": "k",
+        "expectedLegacyValueCodePoints": [
+          "U+006B"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-026",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "گ",
+        "inputCodePoints": [
+          "U+06AF"
+        ],
+        "expectedLegacyValue": "g",
+        "expectedLegacyValueCodePoints": [
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-027",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ل",
+        "inputCodePoints": [
+          "U+0644"
+        ],
+        "expectedLegacyValue": "l",
+        "expectedLegacyValueCodePoints": [
+          "U+006C"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-028",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "م",
+        "inputCodePoints": [
+          "U+0645"
+        ],
+        "expectedLegacyValue": "m",
+        "expectedLegacyValueCodePoints": [
+          "U+006D"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-029",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ن",
+        "inputCodePoints": [
+          "U+0646"
+        ],
+        "expectedLegacyValue": "n",
+        "expectedLegacyValueCodePoints": [
+          "U+006E"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-030",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "و",
+        "inputCodePoints": [
+          "U+0648"
+        ],
+        "expectedLegacyValue": "w",
+        "expectedLegacyValueCodePoints": [
+          "U+0077"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-031",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ه",
+        "inputCodePoints": [
+          "U+0647"
+        ],
+        "expectedLegacyValue": "h",
+        "expectedLegacyValueCodePoints": [
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-032",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ی",
+        "inputCodePoints": [
+          "U+06CC"
+        ],
+        "expectedLegacyValue": "i",
+        "expectedLegacyValueCodePoints": [
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-033",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "آ",
+        "inputCodePoints": [
+          "U+0622"
+        ],
+        "expectedLegacyValue": ">",
+        "expectedLegacyValueCodePoints": [
+          "U+003E"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-034",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "أ",
+        "inputCodePoints": [
+          "U+0623"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-035",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "إ",
+        "inputCodePoints": [
+          "U+0625"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-036",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "ئ",
+        "inputCodePoints": [
+          "U+0626"
+        ],
+        "expectedLegacyValue": "y",
+        "expectedLegacyValueCodePoints": [
+          "U+0079"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-037",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "1",
+        "inputCodePoints": [
+          "U+0031"
+        ],
+        "expectedLegacyValue": "#a",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-038",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "2",
+        "inputCodePoints": [
+          "U+0032"
+        ],
+        "expectedLegacyValue": "#b",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-039",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "3",
+        "inputCodePoints": [
+          "U+0033"
+        ],
+        "expectedLegacyValue": "#c",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-040",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "4",
+        "inputCodePoints": [
+          "U+0034"
+        ],
+        "expectedLegacyValue": "#d",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-041",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "5",
+        "inputCodePoints": [
+          "U+0035"
+        ],
+        "expectedLegacyValue": "#e",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0065"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-042",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "6",
+        "inputCodePoints": [
+          "U+0036"
+        ],
+        "expectedLegacyValue": "#f",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-043",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "7",
+        "inputCodePoints": [
+          "U+0037"
+        ],
+        "expectedLegacyValue": "#g",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-044",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "8",
+        "inputCodePoints": [
+          "U+0038"
+        ],
+        "expectedLegacyValue": "#h",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-045",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "9",
+        "inputCodePoints": [
+          "U+0039"
+        ],
+        "expectedLegacyValue": "#i",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-EXCEL-046",
+        "normative": false,
+        "evidenceSource": "excel-vba",
+        "input": "0",
+        "inputCodePoints": [
+          "U+0030"
+        ],
+        "expectedLegacyValue": "#j",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+006A"
+        ]
+      }
+    ],
+    "sql": [
+      {
+        "id": "LEGACY-SQL-001",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "آ",
+        "inputCodePoints": [
+          "U+0622"
+        ],
+        "expectedLegacyValue": "> ",
+        "expectedLegacyValueCodePoints": [
+          "U+003E",
+          "U+00A0"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-002",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ا",
+        "inputCodePoints": [
+          "U+0627"
+        ],
+        "expectedLegacyValue": "a",
+        "expectedLegacyValueCodePoints": [
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-003",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ب",
+        "inputCodePoints": [
+          "U+0628"
+        ],
+        "expectedLegacyValue": "b",
+        "expectedLegacyValueCodePoints": [
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-004",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "پ",
+        "inputCodePoints": [
+          "U+067E"
+        ],
+        "expectedLegacyValue": "p",
+        "expectedLegacyValueCodePoints": [
+          "U+0070"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-005",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ت",
+        "inputCodePoints": [
+          "U+062A"
+        ],
+        "expectedLegacyValue": "t",
+        "expectedLegacyValueCodePoints": [
+          "U+0074"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-006",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ث",
+        "inputCodePoints": [
+          "U+062B"
+        ],
+        "expectedLegacyValue": "?",
+        "expectedLegacyValueCodePoints": [
+          "U+003F"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-007",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ج",
+        "inputCodePoints": [
+          "U+062C"
+        ],
+        "expectedLegacyValue": "j",
+        "expectedLegacyValueCodePoints": [
+          "U+006A"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-008",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "چ",
+        "inputCodePoints": [
+          "U+0686"
+        ],
+        "expectedLegacyValue": "c",
+        "expectedLegacyValueCodePoints": [
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-009",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ح",
+        "inputCodePoints": [
+          "U+062D"
+        ],
+        "expectedLegacyValue": ":",
+        "expectedLegacyValueCodePoints": [
+          "U+003A"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-010",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "خ",
+        "inputCodePoints": [
+          "U+062E"
+        ],
+        "expectedLegacyValue": "x",
+        "expectedLegacyValueCodePoints": [
+          "U+0078"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-011",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "د",
+        "inputCodePoints": [
+          "U+062F"
+        ],
+        "expectedLegacyValue": "d",
+        "expectedLegacyValueCodePoints": [
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-012",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ذ",
+        "inputCodePoints": [
+          "U+0630"
+        ],
+        "expectedLegacyValue": "!",
+        "expectedLegacyValueCodePoints": [
+          "U+0021"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-013",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ر",
+        "inputCodePoints": [
+          "U+0631"
+        ],
+        "expectedLegacyValue": "r",
+        "expectedLegacyValueCodePoints": [
+          "U+0072"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-014",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ز",
+        "inputCodePoints": [
+          "U+0632"
+        ],
+        "expectedLegacyValue": "z",
+        "expectedLegacyValueCodePoints": [
+          "U+007A"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-015",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ژ",
+        "inputCodePoints": [
+          "U+0698"
+        ],
+        "expectedLegacyValue": "+",
+        "expectedLegacyValueCodePoints": [
+          "U+002B"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-016",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "س",
+        "inputCodePoints": [
+          "U+0633"
+        ],
+        "expectedLegacyValue": "s",
+        "expectedLegacyValueCodePoints": [
+          "U+0073"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-017",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ش",
+        "inputCodePoints": [
+          "U+0634"
+        ],
+        "expectedLegacyValue": "%",
+        "expectedLegacyValueCodePoints": [
+          "U+0025"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-018",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ص",
+        "inputCodePoints": [
+          "U+0635"
+        ],
+        "expectedLegacyValue": "&",
+        "expectedLegacyValueCodePoints": [
+          "U+0026"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-019",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ض",
+        "inputCodePoints": [
+          "U+0636"
+        ],
+        "expectedLegacyValue": "$",
+        "expectedLegacyValueCodePoints": [
+          "U+0024"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-020",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ط",
+        "inputCodePoints": [
+          "U+0637"
+        ],
+        "expectedLegacyValue": ")",
+        "expectedLegacyValueCodePoints": [
+          "U+0029"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-021",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ظ",
+        "inputCodePoints": [
+          "U+0638"
+        ],
+        "expectedLegacyValue": "=",
+        "expectedLegacyValueCodePoints": [
+          "U+003D"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-022",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ع",
+        "inputCodePoints": [
+          "U+0639"
+        ],
+        "expectedLegacyValue": "(d",
+        "expectedLegacyValueCodePoints": [
+          "U+0028",
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-023",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "غ",
+        "inputCodePoints": [
+          "U+063A"
+        ],
+        "expectedLegacyValue": "< ",
+        "expectedLegacyValueCodePoints": [
+          "U+003C",
+          "U+00A0"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-024",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ف",
+        "inputCodePoints": [
+          "U+0641"
+        ],
+        "expectedLegacyValue": "f",
+        "expectedLegacyValueCodePoints": [
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-025",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ق",
+        "inputCodePoints": [
+          "U+0642"
+        ],
+        "expectedLegacyValue": "q",
+        "expectedLegacyValueCodePoints": [
+          "U+0071"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-026",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ک",
+        "inputCodePoints": [
+          "U+06A9"
+        ],
+        "expectedLegacyValue": "k",
+        "expectedLegacyValueCodePoints": [
+          "U+006B"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-027",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "گ",
+        "inputCodePoints": [
+          "U+06AF"
+        ],
+        "expectedLegacyValue": "g",
+        "expectedLegacyValueCodePoints": [
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-028",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ل",
+        "inputCodePoints": [
+          "U+0644"
+        ],
+        "expectedLegacyValue": "l",
+        "expectedLegacyValueCodePoints": [
+          "U+006C"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-029",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "م",
+        "inputCodePoints": [
+          "U+0645"
+        ],
+        "expectedLegacyValue": "m",
+        "expectedLegacyValueCodePoints": [
+          "U+006D"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-030",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ئ",
+        "inputCodePoints": [
+          "U+0626"
+        ],
+        "expectedLegacyValue": "y",
+        "expectedLegacyValueCodePoints": [
+          "U+0079"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-031",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": ":",
+        "inputCodePoints": [
+          "U+003A"
+        ],
+        "expectedLegacyValue": "3",
+        "expectedLegacyValueCodePoints": [
+          "U+0033"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-032",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "؟",
+        "inputCodePoints": [
+          "U+061F"
+        ],
+        "expectedLegacyValue": "8",
+        "expectedLegacyValueCodePoints": [
+          "U+0038"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-033",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "1",
+        "inputCodePoints": [
+          "U+0031"
+        ],
+        "expectedLegacyValue": "#a",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0061"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-034",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "2",
+        "inputCodePoints": [
+          "U+0032"
+        ],
+        "expectedLegacyValue": "#b",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0062"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-035",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "3",
+        "inputCodePoints": [
+          "U+0033"
+        ],
+        "expectedLegacyValue": "#c",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0063"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-036",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "4",
+        "inputCodePoints": [
+          "U+0034"
+        ],
+        "expectedLegacyValue": "#d",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0064"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-037",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "5",
+        "inputCodePoints": [
+          "U+0035"
+        ],
+        "expectedLegacyValue": "#e",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0065"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-038",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "6",
+        "inputCodePoints": [
+          "U+0036"
+        ],
+        "expectedLegacyValue": "#f",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0066"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-039",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "7",
+        "inputCodePoints": [
+          "U+0037"
+        ],
+        "expectedLegacyValue": "#g",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0067"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-040",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "8",
+        "inputCodePoints": [
+          "U+0038"
+        ],
+        "expectedLegacyValue": "#h",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-041",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "9",
+        "inputCodePoints": [
+          "U+0039"
+        ],
+        "expectedLegacyValue": "#i",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-042",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "0",
+        "inputCodePoints": [
+          "U+0030"
+        ],
+        "expectedLegacyValue": "#j",
+        "expectedLegacyValueCodePoints": [
+          "U+0023",
+          "U+006A"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-043",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "+",
+        "inputCodePoints": [
+          "U+002B"
+        ],
+        "expectedLegacyValue": "6",
+        "expectedLegacyValueCodePoints": [
+          "U+0036"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-044",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "-",
+        "inputCodePoints": [
+          "U+002D"
+        ],
+        "expectedLegacyValue": "-",
+        "expectedLegacyValueCodePoints": [
+          "U+002D"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-045",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "_",
+        "inputCodePoints": [
+          "U+005F"
+        ],
+        "expectedLegacyValue": ".",
+        "expectedLegacyValueCodePoints": [
+          "U+002E"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-046",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "=",
+        "inputCodePoints": [
+          "U+003D"
+        ],
+        "expectedLegacyValue": "7",
+        "expectedLegacyValueCodePoints": [
+          "U+0037"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-047",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "/",
+        "inputCodePoints": [
+          "U+002F"
+        ],
+        "expectedLegacyValue": "1",
+        "expectedLegacyValueCodePoints": [
+          "U+0031"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-048",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "÷",
+        "inputCodePoints": [
+          "U+00F7"
+        ],
+        "expectedLegacyValue": "4",
+        "expectedLegacyValueCodePoints": [
+          "U+0034"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-049",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "!",
+        "inputCodePoints": [
+          "U+0021"
+        ],
+        "expectedLegacyValue": "6",
+        "expectedLegacyValueCodePoints": [
+          "U+0036"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-050",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": ")",
+        "inputCodePoints": [
+          "U+0029"
+        ],
+        "expectedLegacyValue": "7",
+        "expectedLegacyValueCodePoints": [
+          "U+0037"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-051",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "(",
+        "inputCodePoints": [
+          "U+0028"
+        ],
+        "expectedLegacyValue": "7",
+        "expectedLegacyValueCodePoints": [
+          "U+0037"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-052",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": ".",
+        "inputCodePoints": [
+          "U+002E"
+        ],
+        "expectedLegacyValue": "4",
+        "expectedLegacyValueCodePoints": [
+          "U+0034"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-053",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ن",
+        "inputCodePoints": [
+          "U+0646"
+        ],
+        "expectedLegacyValue": "n",
+        "expectedLegacyValueCodePoints": [
+          "U+006E"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-054",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "و",
+        "inputCodePoints": [
+          "U+0648"
+        ],
+        "expectedLegacyValue": "w",
+        "expectedLegacyValueCodePoints": [
+          "U+0077"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-055",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ه",
+        "inputCodePoints": [
+          "U+0647"
+        ],
+        "expectedLegacyValue": "h",
+        "expectedLegacyValueCodePoints": [
+          "U+0068"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-056",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ی",
+        "inputCodePoints": [
+          "U+06CC"
+        ],
+        "expectedLegacyValue": "i",
+        "expectedLegacyValueCodePoints": [
+          "U+0069"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-057",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "أ",
+        "inputCodePoints": [
+          "U+0623"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-058",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "إ",
+        "inputCodePoints": [
+          "U+0625"
+        ],
+        "expectedLegacyValue": "/",
+        "expectedLegacyValueCodePoints": [
+          "U+002F"
+        ]
+      },
+      {
+        "id": "LEGACY-SQL-059",
+        "normative": false,
+        "evidenceSource": "sql-table",
+        "input": "ؤ",
+        "inputCodePoints": [
+          "U+0624"
+        ],
+        "expectedLegacyValue": "\\",
+        "expectedLegacyValueCodePoints": [
+          "U+005C"
+        ]
+      }
+    ]
+  },
+  "comparisonCases": [
+    {
+      "id": "LEGACY-COMP-001",
+      "normative": false,
+      "source": "!",
+      "sourceCodePoints": [
+        "U+0021"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "6",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-002",
+      "normative": false,
+      "source": "(",
+      "sourceCodePoints": [
+        "U+0028"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-003",
+      "normative": false,
+      "source": ")",
+      "sourceCodePoints": [
+        "U+0029"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-004",
+      "normative": false,
+      "source": "+",
+      "sourceCodePoints": [
+        "U+002B"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "6",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-005",
+      "normative": false,
+      "source": "-",
+      "sourceCodePoints": [
+        "U+002D"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "-",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-006",
+      "normative": false,
+      "source": ".",
+      "sourceCodePoints": [
+        "U+002E"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "4",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-007",
+      "normative": false,
+      "source": "/",
+      "sourceCodePoints": [
+        "U+002F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "1",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-008",
+      "normative": false,
+      "source": "0",
+      "sourceCodePoints": [
+        "U+0030"
+      ],
+      "word": "#j",
+      "excel": "#j",
+      "sql": "#j",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-009",
+      "normative": false,
+      "source": "1",
+      "sourceCodePoints": [
+        "U+0031"
+      ],
+      "word": "#a",
+      "excel": "#a",
+      "sql": "#a",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-010",
+      "normative": false,
+      "source": "2",
+      "sourceCodePoints": [
+        "U+0032"
+      ],
+      "word": "#b",
+      "excel": "#b",
+      "sql": "#b",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-011",
+      "normative": false,
+      "source": "3",
+      "sourceCodePoints": [
+        "U+0033"
+      ],
+      "word": "#c",
+      "excel": "#c",
+      "sql": "#c",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-012",
+      "normative": false,
+      "source": "4",
+      "sourceCodePoints": [
+        "U+0034"
+      ],
+      "word": "#d",
+      "excel": "#d",
+      "sql": "#d",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-013",
+      "normative": false,
+      "source": "5",
+      "sourceCodePoints": [
+        "U+0035"
+      ],
+      "word": "#e",
+      "excel": "#e",
+      "sql": "#e",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-014",
+      "normative": false,
+      "source": "6",
+      "sourceCodePoints": [
+        "U+0036"
+      ],
+      "word": "#f",
+      "excel": "#f",
+      "sql": "#f",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-015",
+      "normative": false,
+      "source": "7",
+      "sourceCodePoints": [
+        "U+0037"
+      ],
+      "word": "#g",
+      "excel": "#g",
+      "sql": "#g",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-016",
+      "normative": false,
+      "source": "8",
+      "sourceCodePoints": [
+        "U+0038"
+      ],
+      "word": "#h",
+      "excel": "#h",
+      "sql": "#h",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-017",
+      "normative": false,
+      "source": "9",
+      "sourceCodePoints": [
+        "U+0039"
+      ],
+      "word": "#i",
+      "excel": "#i",
+      "sql": "#i",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-018",
+      "normative": false,
+      "source": ":",
+      "sourceCodePoints": [
+        "U+003A"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "3",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-019",
+      "normative": false,
+      "source": "=",
+      "sourceCodePoints": [
+        "U+003D"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "7",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-020",
+      "normative": false,
+      "source": "_",
+      "sourceCodePoints": [
+        "U+005F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": ".",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-021",
+      "normative": false,
+      "source": "÷",
+      "sourceCodePoints": [
+        "U+00F7"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "4",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-022",
+      "normative": false,
+      "source": "؟",
+      "sourceCodePoints": [
+        "U+061F"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "8",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-023",
+      "normative": false,
+      "source": "آ",
+      "sourceCodePoints": [
+        "U+0622"
+      ],
+      "word": ">",
+      "excel": ">",
+      "sql": "> ",
+      "status": "conflict"
+    },
+    {
+      "id": "LEGACY-COMP-024",
+      "normative": false,
+      "source": "أ",
+      "sourceCodePoints": [
+        "U+0623"
+      ],
+      "word": "/",
+      "excel": "/",
+      "sql": "/",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-025",
+      "normative": false,
+      "source": "ؤ",
+      "sourceCodePoints": [
+        "U+0624"
+      ],
+      "word": null,
+      "excel": null,
+      "sql": "\\",
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-026",
+      "normative": false,
+      "source": "إ",
+      "sourceCodePoints": [
+        "U+0625"
+      ],
+      "word": "/",
+      "excel": "/",
+      "sql": "/",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-027",
+      "normative": false,
+      "source": "ئ",
+      "sourceCodePoints": [
+        "U+0626"
+      ],
+      "word": "y",
+      "excel": "y",
+      "sql": "y",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-028",
+      "normative": false,
+      "source": "ا",
+      "sourceCodePoints": [
+        "U+0627"
+      ],
+      "word": "a",
+      "excel": "a",
+      "sql": "a",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-029",
+      "normative": false,
+      "source": "ب",
+      "sourceCodePoints": [
+        "U+0628"
+      ],
+      "word": "b",
+      "excel": "b",
+      "sql": "b",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-030",
+      "normative": false,
+      "source": "ت",
+      "sourceCodePoints": [
+        "U+062A"
+      ],
+      "word": "t",
+      "excel": "t",
+      "sql": "t",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-031",
+      "normative": false,
+      "source": "ث",
+      "sourceCodePoints": [
+        "U+062B"
+      ],
+      "word": "?",
+      "excel": "?",
+      "sql": "?",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-032",
+      "normative": false,
+      "source": "ج",
+      "sourceCodePoints": [
+        "U+062C"
+      ],
+      "word": "j",
+      "excel": "j",
+      "sql": "j",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-033",
+      "normative": false,
+      "source": "ح",
+      "sourceCodePoints": [
+        "U+062D"
+      ],
+      "word": ":",
+      "excel": ":",
+      "sql": ":",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-034",
+      "normative": false,
+      "source": "خ",
+      "sourceCodePoints": [
+        "U+062E"
+      ],
+      "word": "x",
+      "excel": "x",
+      "sql": "x",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-035",
+      "normative": false,
+      "source": "د",
+      "sourceCodePoints": [
+        "U+062F"
+      ],
+      "word": "d",
+      "excel": "d",
+      "sql": "d",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-036",
+      "normative": false,
+      "source": "ذ",
+      "sourceCodePoints": [
+        "U+0630"
+      ],
+      "word": "!",
+      "excel": "!",
+      "sql": "!",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-037",
+      "normative": false,
+      "source": "ر",
+      "sourceCodePoints": [
+        "U+0631"
+      ],
+      "word": "r",
+      "excel": "r",
+      "sql": "r",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-038",
+      "normative": false,
+      "source": "ز",
+      "sourceCodePoints": [
+        "U+0632"
+      ],
+      "word": "z",
+      "excel": "z",
+      "sql": "z",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-039",
+      "normative": false,
+      "source": "س",
+      "sourceCodePoints": [
+        "U+0633"
+      ],
+      "word": "s",
+      "excel": "s",
+      "sql": "s",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-040",
+      "normative": false,
+      "source": "ش",
+      "sourceCodePoints": [
+        "U+0634"
+      ],
+      "word": "%",
+      "excel": "%",
+      "sql": "%",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-041",
+      "normative": false,
+      "source": "ص",
+      "sourceCodePoints": [
+        "U+0635"
+      ],
+      "word": "&",
+      "excel": "&",
+      "sql": "&",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-042",
+      "normative": false,
+      "source": "ض",
+      "sourceCodePoints": [
+        "U+0636"
+      ],
+      "word": "$",
+      "excel": "$",
+      "sql": "$",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-043",
+      "normative": false,
+      "source": "ط",
+      "sourceCodePoints": [
+        "U+0637"
+      ],
+      "word": ")",
+      "excel": ")",
+      "sql": ")",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-044",
+      "normative": false,
+      "source": "ظ",
+      "sourceCodePoints": [
+        "U+0638"
+      ],
+      "word": "=",
+      "excel": "=",
+      "sql": "=",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-045",
+      "normative": false,
+      "source": "ع",
+      "sourceCodePoints": [
+        "U+0639"
+      ],
+      "word": "(",
+      "excel": "(",
+      "sql": "(d",
+      "status": "conflict"
+    },
+    {
+      "id": "LEGACY-COMP-046",
+      "normative": false,
+      "source": "غ",
+      "sourceCodePoints": [
+        "U+063A"
+      ],
+      "word": "<",
+      "excel": "<",
+      "sql": "< ",
+      "status": "conflict"
+    },
+    {
+      "id": "LEGACY-COMP-047",
+      "normative": false,
+      "source": "ف",
+      "sourceCodePoints": [
+        "U+0641"
+      ],
+      "word": "f",
+      "excel": "f",
+      "sql": "f",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-048",
+      "normative": false,
+      "source": "ق",
+      "sourceCodePoints": [
+        "U+0642"
+      ],
+      "word": "q",
+      "excel": "q",
+      "sql": "q",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-049",
+      "normative": false,
+      "source": "ل",
+      "sourceCodePoints": [
+        "U+0644"
+      ],
+      "word": "l",
+      "excel": "l",
+      "sql": "l",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-050",
+      "normative": false,
+      "source": "م",
+      "sourceCodePoints": [
+        "U+0645"
+      ],
+      "word": "m",
+      "excel": "m",
+      "sql": "m",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-051",
+      "normative": false,
+      "source": "ن",
+      "sourceCodePoints": [
+        "U+0646"
+      ],
+      "word": "n",
+      "excel": "n",
+      "sql": "n",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-052",
+      "normative": false,
+      "source": "ه",
+      "sourceCodePoints": [
+        "U+0647"
+      ],
+      "word": "h",
+      "excel": "h",
+      "sql": "h",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-053",
+      "normative": false,
+      "source": "و",
+      "sourceCodePoints": [
+        "U+0648"
+      ],
+      "word": "w",
+      "excel": "w",
+      "sql": "w",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-054",
+      "normative": false,
+      "source": "ي",
+      "sourceCodePoints": [
+        "U+064A"
+      ],
+      "word": "i",
+      "excel": null,
+      "sql": null,
+      "status": "single-source-only"
+    },
+    {
+      "id": "LEGACY-COMP-055",
+      "normative": false,
+      "source": "پ",
+      "sourceCodePoints": [
+        "U+067E"
+      ],
+      "word": "p",
+      "excel": "p",
+      "sql": "p",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-056",
+      "normative": false,
+      "source": "چ",
+      "sourceCodePoints": [
+        "U+0686"
+      ],
+      "word": "c",
+      "excel": "c",
+      "sql": "c",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-057",
+      "normative": false,
+      "source": "ژ",
+      "sourceCodePoints": [
+        "U+0698"
+      ],
+      "word": "+",
+      "excel": "+",
+      "sql": "+",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-058",
+      "normative": false,
+      "source": "ک",
+      "sourceCodePoints": [
+        "U+06A9"
+      ],
+      "word": "k",
+      "excel": "k",
+      "sql": "k",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-059",
+      "normative": false,
+      "source": "گ",
+      "sourceCodePoints": [
+        "U+06AF"
+      ],
+      "word": "g",
+      "excel": "g",
+      "sql": "g",
+      "status": "all-three-exact-match"
+    },
+    {
+      "id": "LEGACY-COMP-060",
+      "normative": false,
+      "source": "ی",
+      "sourceCodePoints": [
+        "U+06CC"
+      ],
+      "word": null,
+      "excel": "i",
+      "sql": "i",
+      "status": "partial-exact-match"
+    }
+  ]
+}
