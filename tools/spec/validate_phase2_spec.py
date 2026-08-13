@@ -29,11 +29,12 @@ CONF_SCHEMA_PATH = ROOT / "spec" / "fa-ir" / "schema" / "conformance.schema.json
 
 PROFILE_PATH = ROOT / "spec" / "fa-ir" / "profiles" / "fa-ir-g1.json"
 MANIFEST_PATH = (
-    ROOT / "spec" / "fa-ir" / "manifests" / "phase-2.2-candidate-package.json"
+    ROOT / "spec" / "fa-ir" / "manifests" / "fa-ir-g1-materialization.json"
 )
+PROMOTION_DIR = ROOT / "spec" / "fa-ir" / "promotions"
 
-RULE_DIR = ROOT / "spec" / "fa-ir" / "rules" / "candidates"
-CONF_DIR = ROOT / "spec" / "fa-ir" / "conformance" / "candidates"
+RULE_DIR = ROOT / "spec" / "fa-ir" / "rules" / "records"
+CONF_DIR = ROOT / "spec" / "fa-ir" / "conformance" / "records"
 
 REPORT_DIR = ROOT / "spec" / "fa-ir" / "validation"
 REPORT_JSON = REPORT_DIR / "phase-2.2-validation.json"
@@ -44,7 +45,7 @@ EXPECTED_PROFILE_VERSION = "0.1.0"
 EXPECTED_RULE_COUNT = 37
 EXPECTED_VECTOR_COUNT = 37
 EXPECTED_DECISION_COUNT = 37
-EXPECTED_MANIFEST_STAGE = "2.2"
+EXPECTED_MANIFEST_STAGE = "2.7"
 
 
 class SpecValidationError(RuntimeError):
@@ -188,6 +189,17 @@ def validate() -> dict:
     profile = read_json(PROFILE_PATH)
     manifest = read_json(MANIFEST_PATH)
 
+    promotion_paths = (
+        sorted(PROMOTION_DIR.glob("*.json"))
+        if PROMOTION_DIR.exists()
+        else []
+    )
+    promotions = [read_json(path) for path in promotion_paths]
+    promotion_keys = {
+        (row.get("ruleId"), row.get("ruleVersion"))
+        for row in promotions
+    }
+
     rule_paths = sorted(RULE_DIR.glob("*.json"))
     vector_paths = sorted(CONF_DIR.glob("*.json"))
 
@@ -225,7 +237,7 @@ def validate() -> dict:
         vector_by_id[vector_id] = (path, vector)
 
     assert_equal(
-        len(rule_by_id), EXPECTED_RULE_COUNT, "Unique candidate rule count"
+        len(rule_by_id), EXPECTED_RULE_COUNT, "Unique materialized rule count"
     )
     assert_equal(
         len(vector_by_id), EXPECTED_VECTOR_COUNT, "Unique conformance vector count"
@@ -260,12 +272,17 @@ def validate() -> dict:
     assert_equal(
         set(profile_rule_ids),
         set(rule_by_id),
-        "Profile rule IDs must resolve exactly to candidate rule files",
+        "Profile rule IDs must resolve exactly to materialized rule files",
     )
 
     # Manifest integrity and exact file coverage.
     assert_equal(manifest["stage"], EXPECTED_MANIFEST_STAGE, "Manifest stage")
-    assert_equal(manifest["normative"], False, "Candidate package normative flag")
+    assert_equal(
+        manifest["status"],
+        "materialized-package",
+        "Manifest materialization status",
+    )
+    assert_equal(manifest["profileNormative"], False, "Draft profile normative flag")
     assert_equal(
         manifest["profile"]["id"], profile["id"], "Manifest profile ID"
     )
@@ -305,12 +322,22 @@ def validate() -> dict:
         assert_equal(
             entry["sha256"], sha256(path), f"Manifest rule hash {rule_id}"
         )
+        assert_equal(
+            entry["status"],
+            rule_by_id[rule_id][1]["status"],
+            f"Manifest rule status {rule_id}",
+        )
 
     for vector_id, entry in manifest_vector_entries.items():
         path, _ = vector_by_id[vector_id]
         assert_equal(entry["path"], rel(path), f"Manifest vector path {vector_id}")
         assert_equal(
             entry["sha256"], sha256(path), f"Manifest vector hash {vector_id}"
+        )
+        assert_equal(
+            entry["status"],
+            vector_by_id[vector_id][1]["status"],
+            f"Manifest vector status {vector_id}",
         )
 
     summary = manifest["summary"]
@@ -324,6 +351,29 @@ def validate() -> dict:
     )
     assert_equal(summary["dot78Rules"], 0, "Manifest dot-7/dot-8 count")
 
+    candidate_count = sum(
+        1 for _, rule in rule_by_id.values() if rule["status"] == "candidate"
+    )
+    normative_count = sum(
+        1 for _, rule in rule_by_id.values() if rule["status"] == "normative"
+    )
+    active_vector_count = sum(
+        1 for _, vector in vector_by_id.values() if vector["status"] == "active"
+    )
+
+    assert_equal(summary["candidateRules"], candidate_count, "Manifest candidate count")
+    assert_equal(summary["normativeRules"], normative_count, "Manifest normative count")
+    assert_equal(
+        summary["activeConformanceVectors"],
+        active_vector_count,
+        "Manifest active-vector count",
+    )
+    assert_equal(
+        summary["promotionRecordsApplied"],
+        len(promotions),
+        "Manifest promotion-record count",
+    )
+
     # Rule-level semantic validation.
     consumed_decisions = []
     referenced_sources = set()
@@ -332,7 +382,22 @@ def validate() -> dict:
 
     for rule_id, (path, rule) in rule_by_id.items():
         assert_equal(rule["profile"], profile["id"], f"Rule profile {rule_id}")
-        assert_equal(rule["status"], "candidate", f"Rule status {rule_id}")
+        assert_true(
+            rule["status"] in {"candidate", "normative"},
+            f"Rule {rule_id} has unsupported materialized status {rule['status']!r}",
+        )
+
+        promotion_key = (rule_id, rule["version"])
+        if rule["status"] == "normative":
+            assert_true(
+                promotion_key in promotion_keys,
+                f"Normative rule {rule_id} has no promotion record",
+            )
+        else:
+            assert_true(
+                promotion_key not in promotion_keys,
+                f"Candidate rule {rule_id} has an applied promotion record",
+            )
         assert_equal(rule["direction"], "forward", f"Rule direction {rule_id}")
 
         expected_filename = rule_id.lower() + ".json"
@@ -453,8 +518,6 @@ def validate() -> dict:
             profile["version"],
             f"Vector profile version {vector_id}",
         )
-        assert_equal(vector["status"], "draft", f"Vector status {vector_id}")
-
         expected_filename = vector_id.lower() + ".json"
         assert_equal(path.name, expected_filename, f"Vector filename {vector_id}")
 
@@ -468,6 +531,14 @@ def validate() -> dict:
         )
 
         rule = rule_by_id[rule_id][1]
+        expected_vector_status = (
+            "active" if rule["status"] == "normative" else "draft"
+        )
+        assert_equal(
+            vector["status"],
+            expected_vector_status,
+            f"Vector lifecycle status {vector_id}",
+        )
         assert_equal(
             rule["conformance"]["vectorIds"],
             [vector_id],
@@ -545,14 +616,11 @@ def validate() -> dict:
     )
     assert_equal(slash["output"]["cells"], ["34"], "Fraction-slash Braille cell")
 
-    # No generated candidate may claim normative status.
-    assert_true(
-        all(rule["status"] != "normative" for rule in rules.values()),
-        "Normative rule leaked into Phase 2.2 candidate package",
-    )
+    # Individual governed rules may be normative, but the incomplete profile
+    # remains draft until a separate profile-completeness gate exists.
     assert_true(
         profile["status"] != "normative",
-        "Normative profile leaked into incomplete Phase 2.2 package",
+        "Normative profile leaked into incomplete fa-ir-g1 materialization",
     )
 
     return {
@@ -564,8 +632,12 @@ def validate() -> dict:
         "summary": {
             "schemasValidated": 3,
             "profileDocuments": 1,
-            "candidateRules": len(rule_by_id),
+            "materializedRules": len(rule_by_id),
+            "candidateRules": candidate_count,
+            "normativeRules": normative_count,
             "conformanceVectors": len(vector_by_id),
+            "activeConformanceVectors": active_vector_count,
+            "promotionRecordsObserved": len(promotions),
             "uniqueDecisionItemsConsumed": len(unique_decisions),
             "registeredSourcesReferenced": len(referenced_sources),
             "prefixOverlapPairsChecked": len(set(prefix_pairs)),
@@ -587,7 +659,7 @@ def validate() -> dict:
         },
         "invariants": [
             "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
-            "Profile rule IDs resolve exactly to the 37 candidate rule files.",
+            "Profile rule IDs resolve exactly to the 37 materialized rule files.",
             "Every rule consumes registered sources and Phase 1 CONSENSUS-CANDIDATE evidence.",
             "All 37 Phase 1 consensus decisions are consumed exactly once.",
             "Every rule has exactly one reciprocal conformance vector.",
@@ -597,7 +669,7 @@ def validate() -> dict:
             "Exact match-signature priority collisions are rejected.",
             "Prefix-overlapping longer rules must have higher precedence.",
             "The fraction-slash candidate is explicitly constrained to numeric context.",
-            "No Phase 2.2 artifact claims normative status.",
+            "Normative rule status requires a matching promotion record; profile remains draft.",
             "Manifest paths and SHA-256 hashes match the generated package.",
         ],
     }
@@ -617,7 +689,9 @@ def render_markdown(report: dict) -> str:
         "## Summary",
         "",
         f"- Schemas validated: {s['schemasValidated']}",
+        f"- Materialized rules: {s['materializedRules']}",
         f"- Candidate rules: {s['candidateRules']}",
+        f"- Normative rules: {s['normativeRules']}",
         f"- Conformance vectors: {s['conformanceVectors']}",
         f"- Unique Phase 1 consensus decisions consumed: "
         f"{s['uniqueDecisionItemsConsumed']}",
@@ -637,10 +711,10 @@ def render_markdown(report: dict) -> str:
         "",
         "## Normative status",
         "",
-        "A PASS result means the candidate package is structurally and "
+        "A PASS result means the materialized package is structurally and "
         "semantically self-consistent against the current Phase 2 contracts. "
-        "It does **not** promote any candidate rule or the draft profile to "
-        "normative status.",
+        "Normative rule status must be backed by promotion records, while the "
+        "incomplete `fa-ir-g1` profile remains draft.",
     ]
     return "\n".join(lines)
 

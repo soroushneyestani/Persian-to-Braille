@@ -17,12 +17,12 @@ COPY_PATHS = [
     ROOT / "spec" / "fa-ir" / "profiles" / "fa-ir-g1.json",
     ROOT / "spec" / "fa-ir" / "schema" / "promotion-record.schema.json",
     ROOT / "spec" / "fa-ir" / "governance" / "normative-promotion-policy.json",
-    ROOT / "spec" / "fa-ir" / "rules" / "candidates",
+    ROOT / "spec" / "fa-ir" / "rules" / "records",
     ROOT / "tools" / "spec" / "validate_normative_promotions.py",
 ]
 
 RULE_REL = Path(
-    "spec/fa-ir/rules/candidates/fa-g1-letter-001.json"
+    "spec/fa-ir/rules/records/fa-g1-letter-001.json"
 )
 PROMOTION_DIR_REL = Path("spec/fa-ir/promotions")
 VALIDATOR_REL = Path("tools/spec/validate_normative_promotions.py")

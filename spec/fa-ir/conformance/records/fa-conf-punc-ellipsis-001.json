@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-PUNC-ELLIPSIS-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-PUNC-ELLIPSIS-001"
+  ],
+  "input": {
+    "text": "...",
+    "codePoints": [
+      "U+002E",
+      "U+002E",
+      "U+002E"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "6",
+      "6",
+      "6"
+    ],
+    "unicodeBraille": "⠠⠠⠠",
+    "structuralTokens": []
+  },
+  "tags": [
+    "punctuation",
+    "ellipsis",
+    "manual-backed"
+  ],
+  "notes": [
+    "Materialized conformance vector for the fa-ir-g1 rule record."
+  ]
+}

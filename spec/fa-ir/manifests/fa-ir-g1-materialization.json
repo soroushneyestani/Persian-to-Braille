@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.7",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0",
+    "status": "draft",
+    "path": "spec/fa-ir/profiles/fa-ir-g1.json",
+    "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+  },
+  "status": "materialized-package",
+  "profileNormative": false,
+  "summary": {
+    "decisionItemsConsumed": 37,
+    "rules": 37,
+    "candidateRules": 37,
+    "normativeRules": 0,
+    "conformanceVectors": 37,
+    "activeConformanceVectors": 0,
+    "coreAlphabetRules": 32,
+    "orthographicRules": 1,
+    "punctuationOrNumberRules": 4,
+    "dot78Rules": 0,
+    "promotionRecordsApplied": 0
+  },
+  "rules": [
+    {
+      "id": "FA-G1-LETTER-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-001.json",
+      "sha256": "B9873A26ED38F3289D2457B30B4C90C67DE449287DE439313467394363CB69B4"
+    },
+    {
+      "id": "FA-G1-LETTER-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-002.json",
+      "sha256": "4A79AE418BE809B0B315504DDE1C611C7A98B92F9DD78524585261F4A2E63DA5"
+    },
+    {
+      "id": "FA-G1-LETTER-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-003.json",
+      "sha256": "72EEF5A5E452E5BB45D8477554E77288465A51370485915FB7BD665E5F0804DE"
+    },
+    {
+      "id": "FA-G1-LETTER-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-004.json",
+      "sha256": "653BA6942C7615AD5492DEB07C546BE698A8D89066376579DA8EDE36ADEC53C9"
+    },
+    {
+      "id": "FA-G1-LETTER-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-005.json",
+      "sha256": "8AE27EB0690C20EEAF4795185268307D0D478AC4F870D781BFB6A23BD36F1328"
+    },
+    {
+      "id": "FA-G1-LETTER-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-006.json",
+      "sha256": "846FB0BE8B5C7C66B6E15F328CB808F6832F85A274DCFF7AEBBEEF1ACA098557"
+    },
+    {
+      "id": "FA-G1-LETTER-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-007.json",
+      "sha256": "05A518BC396DF1204A5E8B41F5F0D559D7961AAA526A8DF6BF9EF5FCDEBEB732"
+    },
+    {
+      "id": "FA-G1-LETTER-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-008.json",
+      "sha256": "5FCCDF7BE4FA4B82344DFCB13B0FB25F395305BF8085F952BAC2C7D5F8D62C8E"
+    },
+    {
+      "id": "FA-G1-LETTER-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-009.json",
+      "sha256": "351F89EB526926D3FA30D25527796A1FB4801A8A9E1415B5B1234C41DE0C36A1"
+    },
+    {
+      "id": "FA-G1-LETTER-010",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-010.json",
+      "sha256": "3361A83D1A97641E9D5AC9EE2E736CCB4F66AAB2CA58CFE2E48E98A3587CA54B"
+    },
+    {
+      "id": "FA-G1-LETTER-011",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-011.json",
+      "sha256": "18FD05F29E780F7A18CC3110C8831B2BB68BC4BDAFAE6EDF03B6C15FB80D95DB"
+    },
+    {
+      "id": "FA-G1-LETTER-012",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-012.json",
+      "sha256": "DACB5E4437AB3B760348B8FFF06F3AD140EDD2AA5FFFD49EBE313DE756C800BD"
+    },
+    {
+      "id": "FA-G1-LETTER-013",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-013.json",
+      "sha256": "F56DE45212F06F1773AE8F10AC0CA6B65CC75D0D5DFB0877FF12B069A6EE53C4"
+    },
+    {
+      "id": "FA-G1-LETTER-014",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-014.json",
+      "sha256": "441F5B74900613DE35EB2A7A74AD9FB3AC41A6483028B00ECE2EDEA007F11313"
+    },
+    {
+      "id": "FA-G1-LETTER-015",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-015.json",
+      "sha256": "038A34975AB4EF2B6BEC0868EFA926BB5A5A988DD3986F8BA758F7B10CD7E99F"
+    },
+    {
+      "id": "FA-G1-LETTER-016",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-016.json",
+      "sha256": "5282509FA170348A42C4FE9C9F6C6C74265DEF48650BB2ED88C52CC29B4349FA"
+    },
+    {
+      "id": "FA-G1-LETTER-017",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-017.json",
+      "sha256": "3690AD602B0ACBE89C8E510167C267B8B0D67EC606C233713481409EA2ECD6FF"
+    },
+    {
+      "id": "FA-G1-LETTER-018",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-018.json",
+      "sha256": "F7BFE6A1E4D018DA8F576FA5EE4BE008836ED64B5DEFB834C077B4681A00B47B"
+    },
+    {
+      "id": "FA-G1-LETTER-019",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-019.json",
+      "sha256": "B13D26DD90BDFB27A4BDADAB7FAE1B9669C132A51C0A03E2E9EA6B13AD173C76"
+    },
+    {
+      "id": "FA-G1-LETTER-020",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-020.json",
+      "sha256": "AD61E7A8161FCCFEBDA69DF5EC102AB21C478545C286B14E358A44BE7784145D"
+    },
+    {
+      "id": "FA-G1-LETTER-021",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-021.json",
+      "sha256": "BA138F51920BED5E544B897C28EBD701EF8AB417E5BA5DF75BAE738742D64C37"
+    },
+    {
+      "id": "FA-G1-LETTER-022",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-022.json",
+      "sha256": "1465FA5A5A08E29304C678EB06508F972F80D38ECE35DEAB0E80A4C0371980A3"
+    },
+    {
+      "id": "FA-G1-LETTER-023",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-023.json",
+      "sha256": "EB4F09E917D3B987E1089DA581FA3824EC5342DE10447ECAA9E45387823CC917"
+    },
+    {
+      "id": "FA-G1-LETTER-024",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-024.json",
+      "sha256": "DD82C1F02BC51E9FE2AB59F627DA1CEC505FBDA338CCE7A565D32623AB5CCED7"
+    },
+    {
+      "id": "FA-G1-LETTER-025",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-025.json",
+      "sha256": "01812C68228E8B37365E0F1EFE63A9D92B1E14DD4D901160B3BB6417C3C1DC47"
+    },
+    {
+      "id": "FA-G1-LETTER-026",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-026.json",
+      "sha256": "DA125C91F50B4747DDC129E19FFD576E64344627198CDEFAFB32B473C51917C1"
+    },
+    {
+      "id": "FA-G1-LETTER-027",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-027.json",
+      "sha256": "F4CB8629658F315C62CCE76533FA3C9F5A0605C0F748C5DF6B28F3B437611F5D"
+    },
+    {
+      "id": "FA-G1-LETTER-028",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-028.json",
+      "sha256": "95E76188DAD6A6B649D232489B8E70B772832EBDC11445240645C751EB3F6807"
+    },
+    {
+      "id": "FA-G1-LETTER-029",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-029.json",
+      "sha256": "9C57773F65385978109D46CF9C5B376101C8C2D156D6B47C27484AAB2E7AA2C6"
+    },
+    {
+      "id": "FA-G1-LETTER-030",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-030.json",
+      "sha256": "B716CF353257E1173CA07B5BE8907228F5525DA92F19FA21C1A64892105A3DB9"
+    },
+    {
+      "id": "FA-G1-LETTER-031",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-031.json",
+      "sha256": "D9F939EA6CBA20542FB59F42D049C5260A499C01B43789B4A7E8DE5253689A7E"
+    },
+    {
+      "id": "FA-G1-LETTER-032",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-letter-032.json",
+      "sha256": "C81BC3CC7B7BCE9F50659F610C42F299DBAF3CF655CA1CB3CC63D98D535FC143"
+    },
+    {
+      "id": "FA-G1-NUM-FRACTION-SLASH-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-num-fraction-slash-001.json",
+      "sha256": "BC43AED609C477C4A254C85E404755264BA134E0B427B182ADE8A097DFF460B3"
+    },
+    {
+      "id": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-ortho-superscript-alef-001.json",
+      "sha256": "17B59530DA2911BAFA273BD3F103673D8AF338284DDC56D009FA329941442B90"
+    },
+    {
+      "id": "FA-G1-PUNC-ASTERISK-RUN-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-asterisk-run-001.json",
+      "sha256": "49AA653257A435471CB84CF34C63809E5F1B5EC497D13D6ECA1CE481F2D0BD55"
+    },
+    {
+      "id": "FA-G1-PUNC-ASTERISK-SINGLE-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-asterisk-single-001.json",
+      "sha256": "BE621D5AB10A9D68E4264D17EA3DA41A22F03B19CDE3D0DA3640ACE60796A1BF"
+    },
+    {
+      "id": "FA-G1-PUNC-ELLIPSIS-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-ellipsis-001.json",
+      "sha256": "3537A0165A02A4923A1C8441E499A369827E95E9565CB6D0C18182A6E555E163"
+    }
+  ],
+  "conformanceVectors": [
+    {
+      "id": "FA-CONF-LETTER-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-001.json",
+      "sha256": "E884E75A5543EABAB202A93A2DBF61EA0EE473209103FC78D2E669967B1291D8"
+    },
+    {
+      "id": "FA-CONF-LETTER-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-002.json",
+      "sha256": "812793FFEF1D7188FCE583EB2D3AF97959715A0F9D9BFFA42477DB04E8B87ED8"
+    },
+    {
+      "id": "FA-CONF-LETTER-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-003.json",
+      "sha256": "8DF657F8EFC22712D138A24017FE0B8A5FF96899A1068DCEBF04601980A12D62"
+    },
+    {
+      "id": "FA-CONF-LETTER-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-004.json",
+      "sha256": "182293D0B381C74CF1123B0F82F206917CE28978EB75F0C528815676364EBECE"
+    },
+    {
+      "id": "FA-CONF-LETTER-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-005.json",
+      "sha256": "55DD4AFE1DFE9EECC71EB674100194AAFECC5B95CFB3A847527A9554E6BED23C"
+    },
+    {
+      "id": "FA-CONF-LETTER-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-006.json",
+      "sha256": "83DD2220ABBA2C96244881AFE6C4946F38F91F5FC44913596FA2893BECA03FEB"
+    },
+    {
+      "id": "FA-CONF-LETTER-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-007.json",
+      "sha256": "A3382EA01CBF5DEF936540B4C7602C17D293C3AFD632356C4798D0B1A985C32D"
+    },
+    {
+      "id": "FA-CONF-LETTER-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-008.json",
+      "sha256": "EBB9E28A941EE3E3D2CDCB28F09576D02516163A90E158A9604D11640967A334"
+    },
+    {
+      "id": "FA-CONF-LETTER-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-009.json",
+      "sha256": "3F0FB212956FD498E4B21853DE930BC36A082161C66E13E96EC9CCD0F1D297DE"
+    },
+    {
+      "id": "FA-CONF-LETTER-010",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-010.json",
+      "sha256": "ACBB0B5DE3E074A6CD5A38EB3F9D180942D7C181830E0992159FA94995B96CC0"
+    },
+    {
+      "id": "FA-CONF-LETTER-011",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-011.json",
+      "sha256": "4283B7F4338EA3D63E1D1E9A0062C1CA9FFC62BE865C606D449C0C324354F63C"
+    },
+    {
+      "id": "FA-CONF-LETTER-012",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-012.json",
+      "sha256": "667657F548176E1B8DF6490206CD1C521A9E468AD7162A7FFA8E27AB05423F3D"
+    },
+    {
+      "id": "FA-CONF-LETTER-013",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-013.json",
+      "sha256": "DF6136847D70451793157006837C98B2DB01DD73968E42FDB778AB50C1D14822"
+    },
+    {
+      "id": "FA-CONF-LETTER-014",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-014.json",
+      "sha256": "BBFC7C4B2DE3431BA84E16E6BC19DE1AC63266CCBD8D73AC40EAA2FF49B067EF"
+    },
+    {
+      "id": "FA-CONF-LETTER-015",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-015.json",
+      "sha256": "EB9249265C47FAACD5868EB98421DB6838D0C64F3ACC4F24036F73FCC0020F03"
+    },
+    {
+      "id": "FA-CONF-LETTER-016",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-016.json",
+      "sha256": "4BAE82CEF20380D91AC5CA71DFFC1539B7947D3195F6B95B28566FE6B58F0F48"
+    },
+    {
+      "id": "FA-CONF-LETTER-017",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-017.json",
+      "sha256": "DE8A82FE82D77DA028FF799D14EDCFC7EEF0F0CE5F61936B98B2B982F973DC48"
+    },
+    {
+      "id": "FA-CONF-LETTER-018",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-018.json",
+      "sha256": "17661932E2F818B260998C640A1CBF5E4F3C226CADDDEFFB42BA5623C5E2FF2F"
+    },
+    {
+      "id": "FA-CONF-LETTER-019",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-019.json",
+      "sha256": "EBCF8313F5C132946721449E734385986B7B23655F8535FEE34E92CD92DC2FB5"
+    },
+    {
+      "id": "FA-CONF-LETTER-020",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-020.json",
+      "sha256": "6C8A6A1535C6F6FFDEC649ECE8850F3DAE1923634C3A00C5E9527DD64B6C61B5"
+    },
+    {
+      "id": "FA-CONF-LETTER-021",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-021.json",
+      "sha256": "AC6CC4350CD0E10F52FB3E6A31FB428676F9C438CC7D1040CE71DCBE878A21C5"
+    },
+    {
+      "id": "FA-CONF-LETTER-022",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-022.json",
+      "sha256": "F5EB30988B1D29BE55982AA9E9FA325C129517BFE3A7BCAB87357BF155518E4A"
+    },
+    {
+      "id": "FA-CONF-LETTER-023",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-023.json",
+      "sha256": "7106103EA1926D2D65C0B8112850A6BE7E89AA354853E7E3003AF849170FD984"
+    },
+    {
+      "id": "FA-CONF-LETTER-024",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-024.json",
+      "sha256": "4DC874AD3D100024C4C5A253D559F1FF68CD5C64B188D2250F11100D214171B8"
+    },
+    {
+      "id": "FA-CONF-LETTER-025",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-025.json",
+      "sha256": "9A0F2B283F4FA8DB1C8E5525B6AEB2F9155C5C9CE7A075B64205C56C584A7BD0"
+    },
+    {
+      "id": "FA-CONF-LETTER-026",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-026.json",
+      "sha256": "53FAB534A6355CECC237CA6137978483E0FE92DAB6BAA0ABCCDCC55C1E87DBF8"
+    },
+    {
+      "id": "FA-CONF-LETTER-027",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-027.json",
+      "sha256": "F0D1B8978FA8BCD09903E8929776311F6C0DD3CACFFA14B78A3D867CD173D514"
+    },
+    {
+      "id": "FA-CONF-LETTER-028",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-028.json",
+      "sha256": "27220FFCE31A74F2E1C0C21EF013A38D765534C4C6D779466074AEFC5CB3EE58"
+    },
+    {
+      "id": "FA-CONF-LETTER-029",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-029.json",
+      "sha256": "3EAC59A56465CC240B09A1DA23733F98AB1833A3B0B18BAF9CAE0DC949A7DD63"
+    },
+    {
+      "id": "FA-CONF-LETTER-030",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-030.json",
+      "sha256": "B503EB98DE9BADF9A3B9B780FE72D877715EB42C5B33ABA1EB67BFE6FCB2EA32"
+    },
+    {
+      "id": "FA-CONF-LETTER-031",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-031.json",
+      "sha256": "9E184BEEDAD5C619861EE87EC77449CB2D106F587B71F562E36F428B532329BE"
+    },
+    {
+      "id": "FA-CONF-LETTER-032",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-letter-032.json",
+      "sha256": "17B03063969BAB0DB4BD18FB4334EE17509262620919709E762759AC5896F4E3"
+    },
+    {
+      "id": "FA-CONF-NUM-FRACTION-SLASH-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-num-fraction-slash-001.json",
+      "sha256": "BA27653DA220AC8881618BEDB2BDDEFC68B05B9669D5C2690658026AAC5D8204"
+    },
+    {
+      "id": "FA-CONF-ORTHO-SUPERSCRIPT-ALEF-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-ortho-superscript-alef-001.json",
+      "sha256": "28250C0FB1ACFA032B1E45497DE768546FCE027E0CBB0637CDB0F738FF58D321"
+    },
+    {
+      "id": "FA-CONF-PUNC-ASTERISK-RUN-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-asterisk-run-001.json",
+      "sha256": "C46362E05036B0ED2D501CE3E6BFC3D780120F2ECF4A17E39E854C8D5A9C9DCC"
+    },
+    {
+      "id": "FA-CONF-PUNC-ASTERISK-SINGLE-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-asterisk-single-001.json",
+      "sha256": "58D7F89AD84DFDED0208E65C8FE007F33D15634E69A2AA634BB93FDBC4FFAFB2"
+    },
+    {
+      "id": "FA-CONF-PUNC-ELLIPSIS-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-ellipsis-001.json",
+      "sha256": "83845D06736CB53310C12DDB41140BD8DC5999F6A4D819DBB395F70055773E91"
+    }
+  ]
+}

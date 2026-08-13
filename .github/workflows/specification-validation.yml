@@ -52,6 +52,9 @@ jobs:
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
+      - name: Test promotion-aware materialization
+        run: python tools/spec/test_promotion_aware_materialization.py
+
       - name: Validate specification package
         run: python tools/spec/validate_phase2_spec.py
 

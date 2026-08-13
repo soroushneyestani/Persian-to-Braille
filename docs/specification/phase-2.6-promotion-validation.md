@@ -37,4 +37,4 @@ The current zero-promotion state is valid. Phase 2.6 establishes the validator b
 
 ## Materialization boundary
 
-The existing Phase 2.2 package generator still materializes the 37-rule baseline as candidates. Therefore the first real promotion must not be attempted until a later stage makes rule materialization promotion-aware and updates the general specification validator to accept governed normative rules.
+Phase 2.7 materialization is promotion-aware: a schema-valid promotion record can materialize the matching rule/version as normative and its conformance vector as active. This validator remains the independent governance gate for whether that materialized promotion is actually acceptable.

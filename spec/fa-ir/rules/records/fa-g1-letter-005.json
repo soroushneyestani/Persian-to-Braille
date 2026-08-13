@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-LETTER-005",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "ث",
+    "codePoints": [
+      "U+062B"
+    ]
+  },
+  "output": {
+    "cells": [
+      "1456"
+    ],
+    "unicodeBraille": "⠹",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "ث",
+    "notes": "Phase 2.2 does not promote unresolved global Unicode normalization policy."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-CORE-005"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054",
+      "SRC-UNICODE-BRAILLE"
+    ],
+    "rationale": "Pinned stable and draft mappings agree, and the institutional 1393/2014 manual is reported by SRC-LIBLOUIS-2053 to match the core alphabet on printed pages 32-33.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-LETTER-005"
+    ]
+  },
+  "notes": [
+    "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
+    "Materialized lifecycle status is controlled by promotion records."
+  ]
+}
