@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "auditStage": "1.4",
+  "scope": "decimal digit repertoires, number syntax directives, common Persian punctuation, and source-backed context-sensitive punctuation behavior",
+  "normative": false,
+  "sourcePins": {
+    "liblouisStableTable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraftTable": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    },
+    "liblouisStableDigits6Dots": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "AD1E81B943415139576D4BA1C14D7208F1B8738112D2844C4C1CC4F878FF3DDD",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/digits6Dots.uti"
+    },
+    "liblouisDraftDigits6Dots": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "AD1E81B943415139576D4BA1C14D7208F1B8738112D2844C4C1CC4F878FF3DDD",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/digits6Dots.uti"
+    }
+  },
+  "summary": {
+    "digitCases": 30,
+    "digitStableDraftDifferences": 0,
+    "punctuationScalarCases": 20,
+    "punctuationScalarStableDraftDifferences": 4,
+    "numberDirectiveCases": 7,
+    "numberDirectiveStableDraftDifferences": 0,
+    "contextCases": 4,
+    "contextStableDraftDifferences": 4,
+    "normativeDecisionsPending": 61
+  },
+  "digits": [
+    {
+      "id": "FA-DIGIT-ASCII-0",
+      "set": "ascii",
+      "digitValue": 0,
+      "character": "0",
+      "codePoints": [
+        "U+0030"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#j",
+        "excel": "#j",
+        "sql": "#j"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-1",
+      "set": "ascii",
+      "digitValue": 1,
+      "character": "1",
+      "codePoints": [
+        "U+0031"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#a",
+        "excel": "#a",
+        "sql": "#a"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-2",
+      "set": "ascii",
+      "digitValue": 2,
+      "character": "2",
+      "codePoints": [
+        "U+0032"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#b",
+        "excel": "#b",
+        "sql": "#b"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-3",
+      "set": "ascii",
+      "digitValue": 3,
+      "character": "3",
+      "codePoints": [
+        "U+0033"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "14"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#c",
+        "excel": "#c",
+        "sql": "#c"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-4",
+      "set": "ascii",
+      "digitValue": 4,
+      "character": "4",
+      "codePoints": [
+        "U+0034"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "145"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#d",
+        "excel": "#d",
+        "sql": "#d"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-5",
+      "set": "ascii",
+      "digitValue": 5,
+      "character": "5",
+      "codePoints": [
+        "U+0035"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "15"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "15"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#e",
+        "excel": "#e",
+        "sql": "#e"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-6",
+      "set": "ascii",
+      "digitValue": 6,
+      "character": "6",
+      "codePoints": [
+        "U+0036"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "124"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#f",
+        "excel": "#f",
+        "sql": "#f"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-7",
+      "set": "ascii",
+      "digitValue": 7,
+      "character": "7",
+      "codePoints": [
+        "U+0037"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#g",
+        "excel": "#g",
+        "sql": "#g"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-8",
+      "set": "ascii",
+      "digitValue": 8,
+      "character": "8",
+      "codePoints": [
+        "U+0038"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "125"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#h",
+        "excel": "#h",
+        "sql": "#h"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ASCII-9",
+      "set": "ascii",
+      "digitValue": 9,
+      "character": "9",
+      "codePoints": [
+        "U+0039"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "#i",
+        "excel": "#i",
+        "sql": "#i"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-0",
+      "set": "arabic-indic",
+      "digitValue": 0,
+      "character": "٠",
+      "codePoints": [
+        "U+0660"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-1",
+      "set": "arabic-indic",
+      "digitValue": 1,
+      "character": "١",
+      "codePoints": [
+        "U+0661"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-2",
+      "set": "arabic-indic",
+      "digitValue": 2,
+      "character": "٢",
+      "codePoints": [
+        "U+0662"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-3",
+      "set": "arabic-indic",
+      "digitValue": 3,
+      "character": "٣",
+      "codePoints": [
+        "U+0663"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "14"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-4",
+      "set": "arabic-indic",
+      "digitValue": 4,
+      "character": "٤",
+      "codePoints": [
+        "U+0664"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "145"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-5",
+      "set": "arabic-indic",
+      "digitValue": 5,
+      "character": "٥",
+      "codePoints": [
+        "U+0665"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "15"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "15"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-6",
+      "set": "arabic-indic",
+      "digitValue": 6,
+      "character": "٦",
+      "codePoints": [
+        "U+0666"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "124"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-7",
+      "set": "arabic-indic",
+      "digitValue": 7,
+      "character": "٧",
+      "codePoints": [
+        "U+0667"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-8",
+      "set": "arabic-indic",
+      "digitValue": 8,
+      "character": "٨",
+      "codePoints": [
+        "U+0668"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "125"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-ARABIC-INDIC-9",
+      "set": "arabic-indic",
+      "digitValue": 9,
+      "character": "٩",
+      "codePoints": [
+        "U+0669"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-0",
+      "set": "persian",
+      "digitValue": 0,
+      "character": "۰",
+      "codePoints": [
+        "U+06F0"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-1",
+      "set": "persian",
+      "digitValue": 1,
+      "character": "۱",
+      "codePoints": [
+        "U+06F1"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-2",
+      "set": "persian",
+      "digitValue": 2,
+      "character": "۲",
+      "codePoints": [
+        "U+06F2"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-3",
+      "set": "persian",
+      "digitValue": 3,
+      "character": "۳",
+      "codePoints": [
+        "U+06F3"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "14"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-4",
+      "set": "persian",
+      "digitValue": 4,
+      "character": "۴",
+      "codePoints": [
+        "U+06F4"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "145"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-5",
+      "set": "persian",
+      "digitValue": 5,
+      "character": "۵",
+      "codePoints": [
+        "U+06F5"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "15"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "15"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-6",
+      "set": "persian",
+      "digitValue": 6,
+      "character": "۶",
+      "codePoints": [
+        "U+06F6"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "124"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-7",
+      "set": "persian",
+      "digitValue": 7,
+      "character": "۷",
+      "codePoints": [
+        "U+06F7"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-8",
+      "set": "persian",
+      "digitValue": 8,
+      "character": "۸",
+      "codePoints": [
+        "U+06F8"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "125"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-DIGIT-PERSIAN-9",
+      "set": "persian",
+      "digitValue": 9,
+      "character": "۹",
+      "codePoints": [
+        "U+06F9"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "numberDirectives": [
+    {
+      "id": "FA-NUMRULE-001",
+      "directive": "numsign",
+      "token": null,
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "3456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "3456"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-002",
+      "directive": "begnum",
+      "token": "#",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "3456-4"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "3456-4"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-003",
+      "directive": "midnum",
+      "token": ",",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "3"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-004",
+      "directive": "midnum",
+      "token": "٬",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "3"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-005",
+      "directive": "decpoint",
+      "token": ".",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-006",
+      "directive": "decpoint",
+      "token": "٫",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "2"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-NUMRULE-007",
+      "directive": "endnum",
+      "token": "%",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "present",
+        "dots": "25-1234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "present",
+        "dots": "25-1234"
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "punctuationScalars": [
+    {
+      "id": "FA-PUNC-001",
+      "character": "!",
+      "label": "EXCLAMATION MARK",
+      "codePoints": [
+        "U+0021"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "235"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "235"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "6"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-002",
+      "character": "?",
+      "label": "QUESTION MARK",
+      "codePoints": [
+        "U+003F"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "236"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-003",
+      "character": "؟",
+      "label": "ARABIC QUESTION MARK",
+      "codePoints": [
+        "U+061F"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "236"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "8"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-004",
+      "character": ".",
+      "label": "FULL STOP",
+      "codePoints": [
+        "U+002E"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "256"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "256"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "4"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-005",
+      "character": ",",
+      "label": "COMMA",
+      "codePoints": [
+        "U+002C"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-006",
+      "character": "،",
+      "label": "ARABIC COMMA",
+      "codePoints": [
+        "U+060C"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "2"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-007",
+      "character": ";",
+      "label": "SEMICOLON",
+      "codePoints": [
+        "U+003B"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "23"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "23"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-008",
+      "character": "؛",
+      "label": "ARABIC SEMICOLON",
+      "codePoints": [
+        "U+061B"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "23"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "23"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-009",
+      "character": ":",
+      "label": "COLON",
+      "codePoints": [
+        "U+003A"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "25"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "25"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "3"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-010",
+      "character": "-",
+      "label": "HYPHEN-MINUS",
+      "codePoints": [
+        "U+002D"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "36"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "36"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "-"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-011",
+      "character": "–",
+      "label": "EN DASH",
+      "codePoints": [
+        "U+2013"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-36"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-36"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-012",
+      "character": "—",
+      "label": "EM DASH",
+      "codePoints": [
+        "U+2014"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "unmapped",
+        "kind": null,
+        "dots": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-36"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-013",
+      "character": "…",
+      "label": "HORIZONTAL ELLIPSIS",
+      "codePoints": [
+        "U+2026"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "3-3-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "6-6-6"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 35,
+        "status": "reported",
+        "reportedDots": "6-6-6"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-014",
+      "character": "*",
+      "label": "ASTERISK",
+      "codePoints": [
+        "U+002A"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "246-135"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "35"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 36,
+        "status": "context-sensitive-run-rule-reported"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-015",
+      "character": "/",
+      "label": "SOLIDUS",
+      "codePoints": [
+        "U+002F"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "348"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "math",
+        "dots": "34"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 40,
+        "status": "reported-numeric-fraction-slash",
+        "reportedDots": "34"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "1"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-016",
+      "character": "%",
+      "label": "PERCENT SIGN",
+      "codePoints": [
+        "U+0025"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25-1234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25-1234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-017",
+      "character": "٪",
+      "label": "ARABIC PERCENT SIGN",
+      "codePoints": [
+        "U+066A"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25-1234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "sign",
+        "dots": "25-1234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-018",
+      "character": " ",
+      "label": "NO-BREAK SPACE",
+      "codePoints": [
+        "U+00A0"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "space",
+        "dots": "a"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "space",
+        "dots": "a"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "spacing-behavior-reported"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": null
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-019",
+      "character": "(",
+      "label": "LEFT PARENTHESIS",
+      "codePoints": [
+        "U+0028"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "7"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-PUNC-020",
+      "character": ")",
+      "label": "RIGHT PARENTHESIS",
+      "codePoints": [
+        "U+0029"
+      ],
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "mapped",
+        "kind": "punctuation",
+        "dots": "2356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "status": "not-established-in-this-focused-audit"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": null,
+        "sql": "7"
+      },
+      "normativeDecision": "pending"
+    }
+  ],
+  "contextCases": [
+    {
+      "id": "FA-CTX-001",
+      "name": "ASCII three-dot ellipsis",
+      "input": "...",
+      "manual": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 35,
+        "expectedDots": "6-6-6"
+      },
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "explicit-always-rule",
+        "dots": "3-3-3"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "explicit-always-rule",
+        "dots": "6-6-6"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CTX-002",
+      "name": "Numeric fraction slash",
+      "input": "1/2",
+      "manual": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 40,
+        "slashDots": "34"
+      },
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "no-midnum-rule",
+        "slashDots": null
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "midnum-rule-present",
+        "slashDots": "34"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CTX-003",
+      "name": "Single asterisk",
+      "input": "*",
+      "manual": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 36,
+        "expectedDots": "35-35"
+      },
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "no-asterisk-run-correction"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "asterisk-run-context-rules-present"
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CTX-004",
+      "name": "Adjacent asterisk run",
+      "input": "***",
+      "manual": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPage": 36,
+        "rule": "one asterisk is 35-35; each additional adjacent asterisk adds one 35 cell",
+        "expectedDots": "35-35-35-35"
+      },
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "status": "no-asterisk-run-correction"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "status": "asterisk-run-context-rules-present"
+      },
+      "normativeDecision": "pending"
+    }
+  ]
+}
