@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-MIXED-PERSIAN-NUMERIC-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "mixed",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "ا1",
+    "codePoints": [
+      "U+0627",
+      "U+0031"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "1",
+      "3456",
+      "1"
+    ],
+    "unicodeBraille": "⠁⠼⠁",
+    "structuralTokens": [],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-LETTER-001",
+        "FA-G1-NUMRULE-001",
+        "FA-G1-DIGIT-ASCII-001"
+      ],
+      "engineTokenClassesInOrder": [
+        "numeric-indicator"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "mixed",
+    "numeric",
+    "persian"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-MIXED-LATIN-NUMERIC-001",
+  "version": "1.0.0",
+  "lifecycle": "draft",
+  "category": "mixed",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "A1",
+    "codePoints": [
+      "U+0041",
+      "U+0031"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "25",
+      "6",
+      "1",
+      "25",
+      "3456",
+      "1"
+    ],
+    "unicodeBraille": "⠒⠠⠁⠒⠼⠁",
+    "structuralTokens": [
+      "mode:latin-character-class"
+    ],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-LATIN-MODE-002",
+        "FA-G1-LATIN-MODE-004",
+        "FA-G1-LATIN-MODE-003",
+        "FA-G1-NUMRULE-001"
+      ],
+      "engineTokenClassesInOrder": [
+        "latin-span-begin",
+        "latin-capital-indicator",
+        "latin-character-class",
+        "latin-span-end",
+        "numeric-indicator"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "latin",
+    "mixed",
+    "numeric"
+  ]
+}

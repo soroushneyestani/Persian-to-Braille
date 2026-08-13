@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-LAYOUT-ZWNJ-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "layout-normalization",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "‌",
+    "codePoints": [
+      "U+200C"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [],
+    "unicodeBraille": "",
+    "structuralTokens": [
+      "normalization:zwnj-orthographic-boundary",
+      "layout:shaping-control:U+200C"
+    ],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-LAYOUT-027"
+      ],
+      "requiredNormalizationRuleIds": [
+        "FA-G1-NORM-ZWNJ-001"
+      ]
+    }
+  },
+  "tags": [
+    "layout",
+    "normalization",
+    "zwnj"
+  ]
+}

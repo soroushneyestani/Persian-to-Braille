@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-PERSIAN-WORD-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "persian",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "سلام",
+    "codePoints": [
+      "U+0633",
+      "U+0644",
+      "U+0627",
+      "U+0645"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "234",
+      "123",
+      "1",
+      "134"
+    ],
+    "unicodeBraille": "⠎⠇⠁⠍",
+    "structuralTokens": [],
+    "trace": {
+      "ruleIdsInOrder": [
+        "FA-G1-LETTER-015",
+        "FA-G1-LETTER-027",
+        "FA-G1-LETTER-001",
+        "FA-G1-LETTER-028"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "persian"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-NEGATIVE-FORMAT-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "negative",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "‍",
+    "codePoints": [
+      "U+200D"
+    ]
+  },
+  "expected": {
+    "kind": "failure",
+    "code": "PREPROCESSING_FAILED",
+    "causeCode": "UNKNOWN_FORMAT_CONTROL"
+  },
+  "tags": [
+    "format-control",
+    "negative",
+    "preprocessing"
+  ]
+}

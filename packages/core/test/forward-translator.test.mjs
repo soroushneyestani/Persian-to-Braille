@@ -185,17 +185,12 @@ test("preserves both ZWNJ semantic layers in the forward result", () => {
   const result = translateOk("\u200C");
 
   assert.equal(result.unicodeBraille, "");
-  assert.equal(
-    result.structuralTokens.includes(
+  assert.deepEqual(
+    result.structuralTokens,
+    [
       "normalization:zwnj-orthographic-boundary",
-    ),
-    true,
-  );
-  assert.equal(
-    result.structuralTokens.includes(
       "layout:shaping-control:U+200C",
-    ),
-    true,
+    ],
   );
 });
 
