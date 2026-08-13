@@ -15,6 +15,32 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
 
+  apps/cli:
+    dependencies:
+      '@persian-braille/sdk':
+        specifier: workspace:*
+        version: link:../../packages/sdk
+
+  apps/web:
+    dependencies:
+      '@persian-braille/sdk':
+        specifier: workspace:*
+        version: link:../../packages/sdk
+
+  integrations/microsoft365:
+    dependencies:
+      '@persian-braille/sdk':
+        specifier: workspace:*
+        version: link:../../packages/sdk
+
+  packages/core: {}
+
+  packages/sdk:
+    dependencies:
+      '@persian-braille/core':
+        specifier: workspace:*
+        version: link:../core
+
 packages:
 
   node@runtime:24.19.0:
