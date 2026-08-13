@@ -285,37 +285,39 @@ Comparison results:
 
 The confirmed conflicts are preserved rather than corrected:
 
-```text
-آ : Word ">" / Excel ">" / SQL ">\u00A0"
-ع : Word "(" / Excel "(" / SQL "(d"
-غ : Word "<" / Excel "<" / SQL "<\u00A0"
+    آ : Word ">" / Excel ">" / SQL ">\u00A0"
+    ع : Word "(" / Excel "(" / SQL "(d"
+    غ : Word "<" / Excel "<" / SQL "<\u00A0"
 
 The historical Yeh divergence is also preserved:
 
-Word  : ي U+064A -> i
-Excel : ی U+06CC -> i
-SQL   : ی U+06CC -> i
-Known Unresolved Historical Items
+    Word  : ي U+064A -> i
+    Excel : ی U+06CC -> i
+    SQL   : ی U+06CC -> i
+
+### Known Unresolved Historical Items
 
 The following items remain documented historical uncertainties but do not block closure of the legacy reconstruction phase:
 
-the Swell Braille font referenced by the Excel macro has not been recovered
-redistribution rights for recovered third-party Braille fonts have not been established
-provenance and licensing of the larger historical Braille Music research document require a separate audit
-additional original 2016 project artifacts may exist outside the currently recovered material
+- the `Swell Braille` font referenced by the Excel macro has not been recovered
+- redistribution rights for recovered third-party Braille fonts have not been established
+- provenance and licensing of the larger historical Braille Music research document require a separate audit
+- additional original 2016 project artifacts may exist outside the currently recovered material
 
 These items must not be silently inferred or reconstructed.
 
-13. Phase 0 Closure
+---
+
+## 13. Phase 0 Closure
 
 Phase 0 establishes a reproducible historical baseline for Persian-to-Braille v1.
 
 The recovered v1 evidence is now suitable for:
 
-historical preservation
-regression testing
-compatibility research
-comparison against future normative Persian Braille specifications
+- historical preservation
+- regression testing
+- compatibility research
+- comparison against future normative Persian Braille specifications
 
 It is not a normative definition of Persian Braille.
 
