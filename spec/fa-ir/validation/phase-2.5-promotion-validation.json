@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "validationStage": "2.6",
+  "validatedPolicyStage": "2.5",
+  "result": "PASS",
+  "normative": false,
+  "summary": {
+    "policyVersion": "1.0.0",
+    "promotionSchemaValidated": 1,
+    "hardGatesValidated": 11,
+    "ruleArtifactsInspected": 37,
+    "candidateRules": 37,
+    "normativeRules": 0,
+    "promotionRecords": 0,
+    "uniquePromotedDecisionItems": 0,
+    "registeredSourcesUsedByPromotions": 0,
+    "semanticErrors": 0
+  },
+  "invariants": [
+    "Automatic promotion is forbidden.",
+    "Passing CI alone cannot promote a rule.",
+    "Only Phase 1 CONSENSUS-CANDIDATE decisions are eligible.",
+    "Every promotion record validates against the promotion schema.",
+    "Every promotion record targets an existing rule and profile.",
+    "Promotion rule/profile/version identity must match current artifacts.",
+    "Every applied promotion record corresponds to a normative rule.",
+    "Every normative rule has exactly one promotion record for its version.",
+    "Candidate rules cannot already have an applied promotion record.",
+    "Promotion evidence provenance matches the rule provenance.",
+    "All promotion source IDs are registered.",
+    "All promotion decision items remain CONSENSUS-CANDIDATE.",
+    "All recorded hard checks are true.",
+    "Promotion records cannot claim official Iranian-standard status."
+  ]
+}

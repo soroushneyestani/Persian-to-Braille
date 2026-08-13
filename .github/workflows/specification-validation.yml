@@ -55,8 +55,14 @@ jobs:
       - name: Validate specification package
         run: python tools/spec/validate_phase2_spec.py
 
-      - name: Run validator negative fixtures
+      - name: Run specification validator negative fixtures
         run: python tools/spec/test_phase2_validator_negative.py
+
+      - name: Validate normative promotion governance
+        run: python tools/spec/validate_normative_promotions.py
+
+      - name: Run promotion validator fixtures
+        run: python tools/spec/test_normative_promotion_validator.py
 
       - name: Verify generated specification is reproducible
         run: |
