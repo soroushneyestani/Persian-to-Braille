@@ -1,1 +1,1 @@
-export {};
+export * from "./specification.js";

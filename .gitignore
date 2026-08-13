@@ -13,3 +13,4 @@ Thumbs.db
 node_modules/
 dist/
 *.tsbuildinfo
+/packages/core/src/generated/

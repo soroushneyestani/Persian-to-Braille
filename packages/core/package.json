@@ -18,8 +18,9 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+    "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
+    "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true})\"",
+    "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs"
   }
 }

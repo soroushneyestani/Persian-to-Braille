@@ -19,7 +19,8 @@
     "build": "pnpm -r --if-present run build",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck",
-    "clean": "pnpm -r --if-present run clean"
+    "clean": "pnpm -r --if-present run clean",
+    "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
