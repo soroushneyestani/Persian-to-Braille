@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "auditBaselineDate": "2026-08-13",
+  "normativeDecisionModel": "rule-by-rule-evidence",
+  "sources": [
+    {
+      "id": "SRC-IR-1393",
+      "title": "مجموعه علائم بریل",
+      "issuer": "سازمان آموزش و پرورش استثنایی کشور",
+      "unit": "معاونت برنامه‌ریزی آموزشی و توان‌بخشی",
+      "year": "1393 / 2014",
+      "classification": "historical-institutional",
+      "normative": false,
+      "currentNormativeStatus": "unverified",
+      "recoveredPdfSha256": "7974B08C12ECE7242B2A435E71C5C8CACC2F296BAD8728544A310CB33C9ADA63",
+      "binaryRedistributed": false,
+      "redistributionLicenseEstablished": false,
+      "auditUrl": "https://github.com/liblouis/liblouis/issues/2053"
+    },
+    {
+      "id": "SRC-UNICODE-BRAILLE",
+      "title": "Unicode Braille Patterns",
+      "unicodeVersion": "17.0",
+      "range": "U+2800-U+28FF",
+      "classification": "encoding-normative",
+      "normative": true,
+      "normativeScope": "unicode-braille-cell-encoding",
+      "persianTranslationAuthority": false,
+      "url": "https://www.unicode.org/charts/PDF/U2800.pdf"
+    },
+    {
+      "id": "SRC-LIBLOUIS-G1",
+      "title": "Liblouis Persian Grade 1 table",
+      "classification": "de-facto-reference-implementation",
+      "normative": false,
+      "repository": "https://github.com/liblouis/liblouis",
+      "path": "tables/fa-ir-g1.utb",
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "pinnedUrl": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    {
+      "id": "SRC-LIBLOUIS-2053",
+      "title": "Persian Braille tables: audit against Iran's 1393/2014 manual and Unicode gaps",
+      "classification": "research-audit",
+      "normative": false,
+      "type": "github-issue",
+      "number": 2053,
+      "observedStatus": "open",
+      "observedAt": "2026-08-13",
+      "url": "https://github.com/liblouis/liblouis/issues/2053"
+    },
+    {
+      "id": "SRC-LIBLOUIS-2054",
+      "title": "Draft: update Persian Grade 1 Braille from the 1393 manual",
+      "classification": "candidate-implementation",
+      "normative": false,
+      "type": "github-pull-request",
+      "number": 2054,
+      "observedStatus": "draft",
+      "observedAt": "2026-08-13",
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "url": "https://github.com/liblouis/liblouis/pull/2054"
+    },
+    {
+      "id": "SRC-LIBLOUIS-BRAILLE-SPECS",
+      "title": "liblouis/braille-specs repository",
+      "classification": "provenance-repository-baseline",
+      "normative": false,
+      "commit": "3eca6dd444c9bbdfacf393119b01986398ab7ea0",
+      "persianSpecificRuleSourceAtBaseline": false,
+      "url": "https://github.com/liblouis/braille-specs"
+    },
+    {
+      "id": "SRC-LEGACY-V1",
+      "title": "Persian-to-Braille v1 reconstructed legacy archive",
+      "historicalPeriod": "Mehr 1395 SH / 2016",
+      "classification": "historical-project-evidence",
+      "normative": false,
+      "repositoryTag": "v1.0.0-legacy",
+      "manifest": "legacy/v1/manifest.json",
+      "conformanceSeed": "legacy/v1/conformance/legacy-v1-seed.json"
+    }
+  ]
+}
