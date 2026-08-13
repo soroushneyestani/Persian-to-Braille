@@ -1,0 +1,54 @@
+{
+    "schemaVersion":  1,
+    "id":  "FA-PROMO-G1-LETTER-001-001",
+    "policyVersion":  "1.0.0",
+    "ruleId":  "FA-G1-LETTER-001",
+    "profileId":  "fa-ir-g1",
+    "ruleVersion":  "0.1.0",
+    "fromStatus":  "candidate",
+    "toStatus":  "normative",
+    "decision":  {
+                     "result":  "approved",
+                     "authority":  "project-maintainer",
+                     "recordedBy":  "Soroush Neyestani",
+                     "recordedAt":  null
+                 },
+    "basis":  {
+                  "phase1Classification":  "CONSENSUS-CANDIDATE",
+                  "decisionItemIds":  [
+                                          "FA-CORE-001"
+                                      ],
+                  "sourceIds":  [
+                                    "SRC-IR-1393",
+                                    "SRC-LIBLOUIS-2053",
+                                    "SRC-LIBLOUIS-G1",
+                                    "SRC-LIBLOUIS-2054",
+                                    "SRC-UNICODE-BRAILLE"
+                                ],
+                  "unresolvedConflicts":  [
+
+                                          ]
+              },
+    "checks":  {
+                   "schemaValidation":  true,
+                   "semanticValidation":  true,
+                   "conformanceCoverage":  true,
+                   "negativeFixtures":  true,
+                   "reproducibility":  true,
+                   "profileCompatibility":  true,
+                   "unicodeBrailleIntegrity":  true,
+                   "sourceTraceability":  true
+               },
+    "scope":  {
+                  "projectNormative":  true,
+                  "officialIranianStandardClaim":  false,
+                  "statement":  "Normative within the Persian-to-Braille project specification only. No claim of current official Iranian national Braille standard status is made."
+              },
+    "review":  {
+                   "externalReview":  "not-performed",
+                   "notes":  [
+                                 "First real normative promotion in Persian-to-Braille v2."
+                             ]
+               },
+    "rationale":  "Explicitly approved by project maintainer Soroush Neyestani. FA-G1-LETTER-001 is backed by a Phase 1 CONSENSUS-CANDIDATE decision and is promoted as the first controlled normative rule of the Persian-to-Braille project specification."
+}

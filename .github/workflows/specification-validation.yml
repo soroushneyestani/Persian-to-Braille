@@ -73,6 +73,7 @@ jobs:
             docs/specification \
             spec/fa-ir/schema \
             spec/fa-ir/governance \
+            spec/fa-ir/promotions \
             spec/fa-ir/rules \
             spec/fa-ir/conformance \
             spec/fa-ir/profiles \

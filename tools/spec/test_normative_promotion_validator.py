@@ -18,17 +18,18 @@ COPY_PATHS = [
     ROOT / "spec" / "fa-ir" / "schema" / "promotion-record.schema.json",
     ROOT / "spec" / "fa-ir" / "governance" / "normative-promotion-policy.json",
     ROOT / "spec" / "fa-ir" / "rules" / "records",
+    ROOT / "spec" / "fa-ir" / "promotions",
     ROOT / "tools" / "spec" / "validate_normative_promotions.py",
 ]
 
 RULE_REL = Path(
-    "spec/fa-ir/rules/records/fa-g1-letter-001.json"
+    "spec/fa-ir/rules/records/fa-g1-letter-002.json"
 )
 PROMOTION_DIR_REL = Path("spec/fa-ir/promotions")
 VALIDATOR_REL = Path("tools/spec/validate_normative_promotions.py")
 
-RULE_ID = "FA-G1-LETTER-001"
-PROMO_ID = "FA-PROMO-G1-LETTER-001-001"
+RULE_ID = "FA-G1-LETTER-002"
+PROMO_ID = "FA-PROMO-G1-LETTER-002-001"
 
 
 @dataclass(frozen=True)
@@ -261,13 +262,13 @@ def run_negative(case: Case) -> None:
 
 
 def main() -> int:
-    # Current repository-shaped baseline: zero promotions is valid.
+    # Current repository-shaped baseline, including any real promotions, is valid.
     td = sandbox()
     try:
-        assert_pass(Path(td.name), "Zero-promotion baseline")
+        assert_pass(Path(td.name), "Repository promotion baseline")
     finally:
         td.cleanup()
-    print("PASS zero-promotion baseline")
+    print("PASS repository promotion baseline")
 
     # Synthetic applied promotion proves the validator can accept a valid
     # candidate->normative record even though the real repository has none yet.

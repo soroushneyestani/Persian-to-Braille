@@ -9,11 +9,11 @@
     "promotionSchemaValidated": 1,
     "hardGatesValidated": 11,
     "ruleArtifactsInspected": 37,
-    "candidateRules": 37,
-    "normativeRules": 0,
-    "promotionRecords": 0,
-    "uniquePromotedDecisionItems": 0,
-    "registeredSourcesUsedByPromotions": 0,
+    "candidateRules": 36,
+    "normativeRules": 1,
+    "promotionRecords": 1,
+    "uniquePromotedDecisionItems": 1,
+    "registeredSourcesUsedByPromotions": 5,
     "semanticErrors": 0
   },
   "invariants": [

@@ -23,6 +23,7 @@ COPY_PATHS = [
     ROOT / "spec" / "fa-ir" / "manifests" / "fa-ir-g1-materialization.json",
     ROOT / "spec" / "fa-ir" / "rules" / "records",
     ROOT / "spec" / "fa-ir" / "conformance" / "records",
+    ROOT / "spec" / "fa-ir" / "promotions",
     VALIDATOR,
 ]
 
