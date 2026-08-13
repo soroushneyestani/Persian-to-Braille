@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-NUMERIC-BEGIN-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "numeric",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "#1",
+    "codePoints": [
+      "U+0023",
+      "U+0031"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "3456",
+      "4",
+      "1"
+    ],
+    "unicodeBraille": "⠼⠈⠁",
+    "structuralTokens": [],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-NUMRULE-002"
+      ],
+      "forbiddenRuleIds": [
+        "FA-G1-NUMRULE-001"
+      ],
+      "engineTokenClassesInOrder": [
+        "numeric-begin"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "numeric"
+  ]
+}

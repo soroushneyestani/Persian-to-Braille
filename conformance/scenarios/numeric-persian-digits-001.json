@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-NUMERIC-PERSIAN-DIGITS-001",
+  "version": "1.0.0",
+  "lifecycle": "draft",
+  "category": "numeric",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "۱۲",
+    "codePoints": [
+      "U+06F1",
+      "U+06F2"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "3456",
+      "1",
+      "12"
+    ],
+    "unicodeBraille": "⠼⠁⠃",
+    "structuralTokens": [],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-NUMRULE-001"
+      ],
+      "engineTokenClassesInOrder": [
+        "numeric-indicator"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "numeric",
+    "persian-digits"
+  ]
+}

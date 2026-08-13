@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-NUMERIC-DECIMAL-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "numeric",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "1.2",
+    "codePoints": [
+      "U+0031",
+      "U+002E",
+      "U+0032"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "3456",
+      "1",
+      "2",
+      "12"
+    ],
+    "unicodeBraille": "⠼⠁⠂⠃",
+    "structuralTokens": [],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-NUMRULE-001",
+        "FA-G1-NUMRULE-005"
+      ],
+      "engineTokenClassesInOrder": [
+        "numeric-indicator",
+        "numeric-decimal-separator"
+      ]
+    }
+  },
+  "tags": [
+    "composition",
+    "context",
+    "numeric"
+  ]
+}

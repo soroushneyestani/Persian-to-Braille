@@ -121,6 +121,56 @@ function appendMatchOutput(
   }
 }
 
+function appendNormalizationStructuralTokens(
+  specification: RuntimeSpecificationBundle,
+  annotations: readonly {
+    readonly ruleIds: readonly string[];
+  }[],
+  structuralTokens: string[],
+): void {
+  const ruleById =
+    new Map<string, JsonObject>();
+
+  for (const rule of specification.rules) {
+    const id = readString(rule, "id");
+
+    if (id !== undefined) {
+      ruleById.set(id, rule);
+    }
+  }
+
+  for (const annotation of annotations) {
+    for (const ruleId of annotation.ruleIds) {
+      const rule = ruleById.get(ruleId);
+
+      if (rule === undefined) {
+        throw new Error(
+          `Preprocessing annotation references unknown canonical rule ${ruleId}.`,
+        );
+      }
+
+      if (readString(rule, "type") !== "normalization") {
+        continue;
+      }
+
+      const output = readObject(rule, "output");
+      const structuralToken =
+        output === undefined
+          ? undefined
+          : readString(
+              output,
+              "structuralToken",
+            );
+
+      if (structuralToken !== undefined) {
+        structuralTokens.push(
+          structuralToken,
+        );
+      }
+    }
+  }
+}
+
 function tokenStartIndex(
   token: EngineToken,
 ): number {
@@ -191,14 +241,11 @@ class SpecificationDrivenForwardTranslator
     const engineTokens: EngineToken[] = [];
     const matches: RuleMatch[] = [];
 
-    for (
-      const annotation of
-        preprocessing.annotations
-    ) {
-      structuralTokens.push(
-        ...annotation.structuralTokens,
-      );
-    }
+    appendNormalizationStructuralTokens(
+      specification,
+      preprocessing.annotations,
+      structuralTokens,
+    );
 
     const executePointTokens = (
       codePointIndex: number,

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROFILE-CONF-LATIN-CAPITAL-001",
+  "version": "1.0.0",
+  "lifecycle": "required",
+  "category": "latin",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0"
+  },
+  "input": {
+    "text": "Test",
+    "codePoints": [
+      "U+0054",
+      "U+0065",
+      "U+0073",
+      "U+0074"
+    ]
+  },
+  "expected": {
+    "kind": "success",
+    "cells": [
+      "25",
+      "6",
+      "2345",
+      "15",
+      "234",
+      "2345",
+      "25"
+    ],
+    "unicodeBraille": "⠒⠠⠞⠑⠎⠞⠒",
+    "structuralTokens": [
+      "mode:latin-character-class",
+      "mode:latin-character-class",
+      "mode:latin-character-class",
+      "mode:latin-character-class"
+    ],
+    "trace": {
+      "requiredRuleIds": [
+        "FA-G1-LATIN-MODE-004"
+      ],
+      "engineTokenClassesInOrder": [
+        "latin-span-begin",
+        "latin-capital-indicator",
+        "latin-character-class",
+        "latin-character-class",
+        "latin-character-class",
+        "latin-character-class",
+        "latin-span-end"
+      ]
+    }
+  },
+  "tags": [
+    "capital",
+    "composition",
+    "latin"
+  ]
+}
