@@ -61,6 +61,15 @@ jobs:
       - name: Run Phase 2.11 review queue negative fixtures
         run: python tools/spec/test_review_queue_validator.py
 
+      - name: Regenerate Phase 2.12 evidence packets
+        run: python tools/spec/build_evidence_packets.py
+
+      - name: Validate Phase 2.12 evidence packets
+        run: python tools/spec/validate_evidence_packets.py
+
+      - name: Run Phase 2.12 evidence packet negative fixtures
+        run: python tools/spec/test_evidence_packet_validator.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
@@ -90,4 +99,5 @@ jobs:
             spec/fa-ir/conformance \
             spec/fa-ir/profiles \
             spec/fa-ir/manifests \
+            spec/fa-ir/review \
             spec/fa-ir/validation
