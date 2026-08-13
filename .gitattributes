@@ -16,6 +16,9 @@ legacy/v1/README.github-original.md -text
 # Binary assets.
 *.ttf binary
 *.otf binary
-*.docx binary.gitattributes text eol=lf
+*.docx binary
+.gitattributes text eol=lf
 .gitignore text eol=lf
 *.py text eol=lf
+*.mjs text eol=lf
+.node-version text eol=lf
