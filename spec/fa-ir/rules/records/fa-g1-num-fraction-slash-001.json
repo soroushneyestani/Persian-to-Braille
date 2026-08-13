@@ -3,7 +3,7 @@
   "id": "FA-G1-NUM-FRACTION-SLASH-001",
   "profile": "fa-ir-g1",
   "type": "context",
-  "status": "candidate",
+  "status": "normative",
   "version": "0.1.0",
   "direction": "forward",
   "priority": 100,
@@ -48,6 +48,7 @@
   },
   "notes": [
     "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
-    "Materialized lifecycle status is controlled by promotion records."
+    "Materialized lifecycle status is controlled by promotion records.",
+    "Normative status materialized from promotion record FA-PROMO-G1-NUM-FRACTION-SLASH-001-001."
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-PROMO-G1-LETTER-002-001",
+  "policyVersion": "1.0.0",
+  "ruleId": "FA-G1-LETTER-002",
+  "profileId": "fa-ir-g1",
+  "ruleVersion": "0.1.0",
+  "fromStatus": "candidate",
+  "toStatus": "normative",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "phase1Classification": "CONSENSUS-CANDIDATE",
+    "decisionItemIds": [
+      "FA-CORE-002"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054",
+      "SRC-UNICODE-BRAILLE"
+    ],
+    "unresolvedConflicts": []
+  },
+  "checks": {
+    "schemaValidation": true,
+    "semanticValidation": true,
+    "conformanceCoverage": true,
+    "negativeFixtures": true,
+    "reproducibility": true,
+    "profileCompatibility": true,
+    "unicodeBrailleIntegrity": true,
+    "sourceTraceability": true
+  },
+  "scope": {
+    "projectNormative": true,
+    "officialIranianStandardClaim": false,
+    "statement": "Normative within the Persian-to-Braille project specification only. No claim of current official Iranian national Braille standard status is made."
+  },
+  "review": {
+    "externalReview": "not-performed",
+    "notes": [
+      "Approved as part of consensus baseline batch FA-APPROVAL-CONSENSUS-BASELINE-001.",
+      "Approval is bound to promotion plan SHA-256 02C39B43982FE117E50B7D0B85FD06365EBF9D581E94F1F0F475AB7680D6B618."
+    ]
+  },
+  "rationale": "Explicit batch approval by project maintainer Soroush Neyestani for the exact Phase 2.9 CONSENSUS-CANDIDATE promotion plan. This rule remains eligible because its Phase 1 provenance is exclusively CONSENSUS-CANDIDATE."
+}

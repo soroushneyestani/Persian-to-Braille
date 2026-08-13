@@ -49,6 +49,9 @@ jobs:
       - name: Regenerate normative promotion protocol
         run: python tools/spec/build_normative_promotion_protocol.py
 
+      - name: Regenerate approved consensus promotion batch
+        run: python tools/spec/build_consensus_promotion_batch.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 

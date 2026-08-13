@@ -70,6 +70,19 @@ def sandbox() -> tempfile.TemporaryDirectory:
     return td
 
 
+def reset_fixture_target_to_candidate(root: Path) -> None:
+    rule_path = root / RULE_REL
+    rule = read_json(rule_path)
+    rule["status"] = "candidate"
+    write_json(rule_path, rule)
+
+    promotion_path = (
+        root / PROMOTION_DIR_REL / (PROMO_ID.lower() + ".json")
+    )
+    if promotion_path.exists():
+        promotion_path.unlink()
+
+
 def base_record(root: Path) -> dict:
     rule = read_json(root / RULE_REL)
     return {
@@ -122,6 +135,8 @@ def base_record(root: Path) -> dict:
 
 
 def apply_valid_promotion(root: Path) -> None:
+    reset_fixture_target_to_candidate(root)
+
     rule_path = root / RULE_REL
     rule = read_json(rule_path)
     rule["status"] = "normative"
@@ -157,10 +172,25 @@ def mutate_normative_without_record(root: Path) -> None:
     rule["status"] = "normative"
     write_json(rule_path, rule)
 
+    promotion_path = (
+        root / PROMOTION_DIR_REL / (PROMO_ID.lower() + ".json")
+    )
+    if promotion_path.exists():
+        promotion_path.unlink()
+
 
 def mutate_record_but_candidate_rule(root: Path) -> None:
-    record = base_record(root)
-    write_json(root / PROMOTION_DIR_REL / (PROMO_ID.lower() + ".json"), record)
+    rule_path = root / RULE_REL
+    rule = read_json(rule_path)
+    rule["status"] = "candidate"
+    write_json(rule_path, rule)
+
+    promotion_path = (
+        root / PROMOTION_DIR_REL / (PROMO_ID.lower() + ".json")
+    )
+    if not promotion_path.exists():
+        record = base_record(root)
+        write_json(promotion_path, record)
 
 
 def mutate_unknown_source(root: Path) -> None:

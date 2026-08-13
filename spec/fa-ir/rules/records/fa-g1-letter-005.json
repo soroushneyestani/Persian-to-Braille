@@ -3,7 +3,7 @@
   "id": "FA-G1-LETTER-005",
   "profile": "fa-ir-g1",
   "type": "character",
-  "status": "candidate",
+  "status": "normative",
   "version": "0.1.0",
   "direction": "forward",
   "priority": 1000,
@@ -47,6 +47,7 @@
   },
   "notes": [
     "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
-    "Materialized lifecycle status is controlled by promotion records."
+    "Materialized lifecycle status is controlled by promotion records.",
+    "Normative status materialized from promotion record FA-PROMO-G1-LETTER-005-001."
   ]
 }

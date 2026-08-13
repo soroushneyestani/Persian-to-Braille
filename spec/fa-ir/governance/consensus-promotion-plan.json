@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.9",
+  "profileId": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "profileStatus": "draft",
+  "action": "plan-only",
+  "automaticPromotion": false,
+  "maintainerApprovalRequired": true,
+  "scope": {
+    "projectNormativeOnly": true,
+    "officialIranianStandardClaim": false
+  },
+  "summary": {
+    "profileRules": 37,
+    "consensusBaselineRules": 37,
+    "alreadyNormative": 1,
+    "eligibleCandidates": 36,
+    "reviewRequiredSelected": 0,
+    "unresolvedSelected": 0,
+    "plannedFinalNormativeRules": 37,
+    "plannedFinalCandidateRules": 0
+  },
+  "alreadyNormative": [
+    {
+      "ruleId": "FA-G1-LETTER-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "normative",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-001"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1"
+      ],
+      "unicodeBraille": "⠁"
+    }
+  ],
+  "eligibleCandidates": [
+    {
+      "ruleId": "FA-G1-LETTER-002",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-002"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "12"
+      ],
+      "unicodeBraille": "⠃"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-003",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-003"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1234"
+      ],
+      "unicodeBraille": "⠏"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-004",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-004"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "2345"
+      ],
+      "unicodeBraille": "⠞"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-005",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-005"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1456"
+      ],
+      "unicodeBraille": "⠹"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-006",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-006"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "245"
+      ],
+      "unicodeBraille": "⠚"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-007",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-007"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "14"
+      ],
+      "unicodeBraille": "⠉"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-008",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-008"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "156"
+      ],
+      "unicodeBraille": "⠱"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-009",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-009"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1346"
+      ],
+      "unicodeBraille": "⠭"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-010",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-010"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "145"
+      ],
+      "unicodeBraille": "⠙"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-011",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-011"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "2346"
+      ],
+      "unicodeBraille": "⠮"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-012",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-012"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1235"
+      ],
+      "unicodeBraille": "⠗"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-013",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-013"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1356"
+      ],
+      "unicodeBraille": "⠵"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-014",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-014"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "346"
+      ],
+      "unicodeBraille": "⠬"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-015",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-015"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "234"
+      ],
+      "unicodeBraille": "⠎"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-016",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-016"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "146"
+      ],
+      "unicodeBraille": "⠩"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-017",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-017"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "12346"
+      ],
+      "unicodeBraille": "⠯"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-018",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-018"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1246"
+      ],
+      "unicodeBraille": "⠫"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-019",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-019"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "23456"
+      ],
+      "unicodeBraille": "⠾"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-020",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-020"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "123456"
+      ],
+      "unicodeBraille": "⠿"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-021",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-021"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "12356"
+      ],
+      "unicodeBraille": "⠷"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-022",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-022"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "126"
+      ],
+      "unicodeBraille": "⠣"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-023",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-023"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "124"
+      ],
+      "unicodeBraille": "⠋"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-024",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-024"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "12345"
+      ],
+      "unicodeBraille": "⠟"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-025",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-025"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "13"
+      ],
+      "unicodeBraille": "⠅"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-026",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-026"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1245"
+      ],
+      "unicodeBraille": "⠛"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-027",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-027"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "123"
+      ],
+      "unicodeBraille": "⠇"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-028",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-028"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "134"
+      ],
+      "unicodeBraille": "⠍"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-029",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-029"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "1345"
+      ],
+      "unicodeBraille": "⠝"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-030",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-030"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "2456"
+      ],
+      "unicodeBraille": "⠺"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-031",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-031"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "125"
+      ],
+      "unicodeBraille": "⠓"
+    },
+    {
+      "ruleId": "FA-G1-LETTER-032",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CORE-032"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-UNICODE-BRAILLE"
+      ],
+      "cells": [
+        "24"
+      ],
+      "unicodeBraille": "⠊"
+    },
+    {
+      "ruleId": "FA-G1-NUM-FRACTION-SLASH-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CTX-002"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054"
+      ],
+      "cells": [
+        "34"
+      ],
+      "unicodeBraille": "⠌"
+    },
+    {
+      "ruleId": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-VAR-010"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-G1",
+        "SRC-LIBLOUIS-2054"
+      ],
+      "cells": [
+        "5"
+      ],
+      "unicodeBraille": "⠐"
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ASTERISK-RUN-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CTX-004"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054"
+      ],
+      "cells": [
+        "35",
+        "35",
+        "35",
+        "35"
+      ],
+      "unicodeBraille": "⠔⠔⠔⠔"
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ASTERISK-SINGLE-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CTX-003"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054"
+      ],
+      "cells": [
+        "35",
+        "35"
+      ],
+      "unicodeBraille": "⠔⠔"
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ELLIPSIS-001",
+      "ruleVersion": "0.1.0",
+      "currentStatus": "candidate",
+      "phase1Classification": "CONSENSUS-CANDIDATE",
+      "decisionItemIds": [
+        "FA-CTX-001"
+      ],
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054"
+      ],
+      "cells": [
+        "6",
+        "6",
+        "6"
+      ],
+      "unicodeBraille": "⠠⠠⠠"
+    }
+  ],
+  "blocked": {
+    "reviewRequired": [],
+    "unresolved": []
+  },
+  "approval": {
+    "status": "pending",
+    "note": "This artifact is a deterministic plan only. It does not create promotion records or change rule status."
+  }
+}

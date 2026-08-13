@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "FA-CONF-LETTER-030",
-  "status": "draft",
+  "status": "active",
   "version": "0.1.0",
   "profile": "fa-ir-g1",
   "profileVersion": "0.1.0",
@@ -26,6 +26,7 @@
     "scalar"
   ],
   "notes": [
-    "Materialized conformance vector for the fa-ir-g1 rule record."
+    "Materialized conformance vector for the fa-ir-g1 rule record.",
+    "Activated because FA-G1-LETTER-030 is normative."
   ]
 }

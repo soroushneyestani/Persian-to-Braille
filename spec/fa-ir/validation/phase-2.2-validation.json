@@ -8,11 +8,11 @@
     "schemasValidated": 3,
     "profileDocuments": 1,
     "materializedRules": 37,
-    "candidateRules": 36,
-    "normativeRules": 1,
+    "candidateRules": 0,
+    "normativeRules": 37,
     "conformanceVectors": 37,
-    "activeConformanceVectors": 1,
-    "promotionRecordsObserved": 1,
+    "activeConformanceVectors": 37,
+    "promotionRecordsObserved": 37,
     "uniqueDecisionItemsConsumed": 37,
     "registeredSourcesReferenced": 5,
     "prefixOverlapPairsChecked": 1,
@@ -27,7 +27,7 @@
     },
     "manifest": {
       "path": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
-      "sha256": "8C4A31B9F0025F695705FB2C0D58C7D48F1D365524AE79D1AC3AB5FDB77C1DD8"
+      "sha256": "74F8DE50E77E17F032E96610420886D8A7A29DFE78C19DFB2644CA483E9577CE"
     },
     "ruleDirectory": "spec/fa-ir/rules/records",
     "conformanceDirectory": "spec/fa-ir/conformance/records"

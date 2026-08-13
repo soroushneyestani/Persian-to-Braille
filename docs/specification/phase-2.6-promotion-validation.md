@@ -11,9 +11,9 @@ A PASS result does not promote any rule.
 - Policy version: `1.0.0`
 - Hard gates validated: 11
 - Rule artifacts inspected: 37
-- Candidate rules: 36
-- Normative rules: 1
-- Promotion records: 1
+- Candidate rules: 0
+- Normative rules: 37
+- Promotion records: 37
 - Semantic errors: 0
 
 The current zero-promotion state is valid. Phase 2.6 establishes the validator before the first real normative transition.
