@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-DIGIT-ARABIC-INDIC-005",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "٥",
+    "codePoints": [
+      "U+0665"
+    ]
+  },
+  "output": {
+    "cells": [
+      "15"
+    ],
+    "unicodeBraille": "⠑",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "٥",
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-DIGIT-ARABIC-INDIC-5"
+    ],
+    "sourceIds": [
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "Stable and draft Liblouis implementations agree on this digit mapping, and the preserved legacy v1 evidence independently supports the same digit-family behavior. The project accepts the aligned character mapping while keeping number-mode semantics in separate numeric rules.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-DIGIT-ARABIC-INDIC-005"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-DIGIT-ARABIC-INDIC-5-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

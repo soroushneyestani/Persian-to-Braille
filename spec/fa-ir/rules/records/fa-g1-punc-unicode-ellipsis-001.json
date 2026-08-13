@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "…",
+    "codePoints": [
+      "U+2026"
+    ]
+  },
+  "output": {
+    "cells": [
+      "6",
+      "6",
+      "6"
+    ],
+    "unicodeBraille": "⠠⠠⠠",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "…",
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-PUNC-013"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "For HORIZONTAL ELLIPSIS, the stable implementation uses 3-3-3 while the draft implementation uses 6-6-6. The preserved Iranian manual evidence reports 6-6-6, so the project accepts the draft-aligned ellipsis mapping.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-PUNC-013-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-PUNC-UNICODE-ELLIPSIS-001"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-PUNC-013-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

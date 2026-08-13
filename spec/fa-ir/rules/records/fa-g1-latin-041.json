@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-LATIN-041",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "o",
+    "codePoints": [
+      "U+006F"
+    ]
+  },
+  "output": {
+    "cells": [
+      "135"
+    ],
+    "unicodeBraille": "⠕",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "o",
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-LATIN-041"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "The preserved Iranian manual evidence reports six-dot uncontracted English inside a Latin span. The draft Liblouis implementation follows that model, while the stable implementation encodes Latin letter case with dot 7 or dot 8. The project accepts the six-dot Latin character mapping and keeps capitalization/span semantics in the Latin mode layer. This is a project specification decision, not a claim of current official Iranian national-standard status.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-LATIN-041-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-LATIN-041"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-LATIN-041-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

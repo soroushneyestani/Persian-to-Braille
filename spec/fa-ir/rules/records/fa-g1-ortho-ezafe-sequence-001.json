@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
+  "profile": "fa-ir-g1",
+  "type": "sequence",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 100,
+  "input": {
+    "kind": "sequence",
+    "text": "هٔ",
+    "codePoints": [
+      "U+0647",
+      "U+0654"
+    ]
+  },
+  "output": {
+    "cells": [
+      "125",
+      "0",
+      "24"
+    ],
+    "unicodeBraille": "⠓⠀⠊",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "هٔ",
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-SEQ-001"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "For the Ezafe spelling هٔ, the draft implementation provides the explicit sequence 125-0-24 and the preserved Iranian manual evidence reports a separate Yeh for Ezafe. The project accepts a sequence-level rule rather than inventing an independent standalone U+0654 mapping.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-SEQ-001-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-ORTHO-EZAFE-SEQUENCE-001"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-SEQ-001-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

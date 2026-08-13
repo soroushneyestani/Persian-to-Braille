@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-LATIN-MODE-001",
+  "profile": "fa-ir-g1",
+  "type": "mode",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 100,
+  "input": {
+    "kind": "structural",
+    "tokenClass": "latin-character-class"
+  },
+  "output": {
+    "cells": [],
+    "unicodeBraille": null,
+    "structuralToken": "mode:latin-character-class"
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": null,
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-LATIN-MODE-001"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "The preserved Iranian manual evidence reports a six-dot English span, dot-25 span boundaries, and a dot-6 capital indicator. The draft Liblouis implementation supplies the corresponding Latin mode machinery, while the stable implementation lacks it. The project therefore accepts the draft-style Latin mode architecture, subject to later specification materialization governance.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-LATIN-MODE-001-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-LATIN-MODE-001"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-LATIN-MODE-001-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

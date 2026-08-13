@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-LATIN-MODE-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-LATIN-MODE-001"
+  ],
+  "input": {
+    "text": "",
+    "codePoints": [],
+    "tokenClass": "latin-character-class"
+  },
+  "expected": {
+    "cells": [],
+    "unicodeBraille": null,
+    "structuralTokens": [
+      "mode:latin-character-class"
+    ]
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "mode",
+    "latin"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-LATIN-MODE-001-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

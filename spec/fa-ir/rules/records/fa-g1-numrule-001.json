@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-NUMRULE-001",
+  "profile": "fa-ir-g1",
+  "type": "mode",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 100,
+  "input": {
+    "kind": "structural",
+    "tokenClass": "numeric-indicator"
+  },
+  "output": {
+    "cells": [
+      "3456"
+    ],
+    "unicodeBraille": "⠼",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": null,
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-NUMRULE-001"
+    ],
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "Stable and draft implementations agree on the numeric indicator dots 3456. The project accepts this as numeric-mode infrastructure rather than as an ordinary scalar punctuation mapping.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-NUMRULE-001"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-NUMRULE-001-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

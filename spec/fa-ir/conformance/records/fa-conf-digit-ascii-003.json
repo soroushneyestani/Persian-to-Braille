@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-DIGIT-ASCII-003",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-DIGIT-ASCII-003"
+  ],
+  "input": {
+    "text": "3",
+    "codePoints": [
+      "U+0033"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "14"
+    ],
+    "unicodeBraille": "⠉",
+    "structuralTokens": []
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "character",
+    "digit"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-DIGIT-ASCII-3-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

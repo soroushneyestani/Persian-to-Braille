@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-DIGIT-PERSIAN-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-DIGIT-PERSIAN-001"
+  ],
+  "input": {
+    "text": "۱",
+    "codePoints": [
+      "U+06F1"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "1"
+    ],
+    "unicodeBraille": "⠁",
+    "structuralTokens": []
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "character",
+    "digit"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-DIGIT-PERSIAN-1-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

@@ -10,8 +10,8 @@ A PASS result does not promote any rule.
 
 - Policy version: `1.0.0`
 - Hard gates validated: 11
-- Rule artifacts inspected: 37
-- Candidate rules: 0
+- Rule artifacts inspected: 175
+- Candidate rules: 138
 - Normative rules: 37
 - Promotion records: 37
 - Semantic errors: 0

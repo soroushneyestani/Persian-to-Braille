@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-PUNC-UNICODE-ELLIPSIS-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+  ],
+  "input": {
+    "text": "…",
+    "codePoints": [
+      "U+2026"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "6",
+      "6",
+      "6"
+    ],
+    "unicodeBraille": "⠠⠠⠠",
+    "structuralTokens": []
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "character",
+    "punc"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-PUNC-013-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

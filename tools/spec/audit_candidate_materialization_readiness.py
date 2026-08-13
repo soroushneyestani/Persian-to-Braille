@@ -186,13 +186,15 @@ def main() -> int:
                 f"Expected {EXPECTED_ELIGIBLE} admission entries, found {len(entries)}"
             )
 
-        existing_rule_ids = set()
+        existing_rules = {}
         for path in RULE_DIR.glob("*.json"):
-            existing_rule_ids.add(read_json(path)["id"])
+            data = read_json(path)
+            existing_rules[data["id"]] = data
 
-        existing_vector_ids = set()
+        existing_vectors = {}
         for path in CONF_DIR.glob("*.json"):
-            existing_vector_ids.add(read_json(path)["id"])
+            data = read_json(path)
+            existing_vectors[data["id"]] = data
 
         rows = []
         proposed_rule_ids = set()
@@ -220,6 +222,28 @@ def main() -> int:
                 decision_id, entry, packet
             )
 
+            existing_rule = existing_rules.get(rule_id)
+            existing_vector = existing_vectors.get(vector_id)
+
+            exact_existing_rule = False
+            if existing_rule is not None:
+                exact_existing_rule = (
+                    existing_rule.get("status") == "candidate"
+                    and existing_rule.get("evidence", {}).get(
+                        "decisionItemIds"
+                    ) == [decision_id]
+                    and existing_rule.get("conformance", {}).get(
+                        "vectorIds"
+                    ) == [vector_id]
+                )
+
+            exact_existing_vector = False
+            if existing_vector is not None:
+                exact_existing_vector = (
+                    existing_vector.get("status") == "draft"
+                    and existing_vector.get("ruleIds") == [rule_id]
+                )
+
             rows.append(
                 {
                     "decisionId": decision_id,
@@ -228,8 +252,17 @@ def main() -> int:
                     "vectorId": vector_id,
                     "representation": representation,
                     "detail": detail,
-                    "ruleCollision": rule_id in existing_rule_ids,
-                    "vectorCollision": vector_id in existing_vector_ids,
+                    "ruleCollision": (
+                        existing_rule is not None
+                        and not exact_existing_rule
+                    ),
+                    "vectorCollision": (
+                        existing_vector is not None
+                        and not exact_existing_vector
+                    ),
+                    "alreadyMaterialized": (
+                        exact_existing_rule and exact_existing_vector
+                    ),
                 }
             )
 
@@ -242,12 +275,15 @@ def main() -> int:
             row for row in rows
             if row["ruleCollision"] or row["vectorCollision"]
         ]
+        already_materialized = sum(
+            1 for row in rows if row["alreadyMaterialized"]
+        )
 
         print("PHASE 2.14 — CANDIDATE MATERIALIZATION READINESS AUDIT")
         print("=" * 88)
         print(f"Admission entries             : {len(rows)}")
-        print(f"Existing base rule IDs        : {len(existing_rule_ids)}")
-        print(f"Existing base vector IDs      : {len(existing_vector_ids)}")
+        print(f"Existing materialized rules   : {len(existing_rules)}")
+        print(f"Existing materialized vectors : {len(existing_vectors)}")
         print()
 
         print("Target types:")
@@ -258,6 +294,7 @@ def main() -> int:
         print("Representation readiness:")
         for key, value in sorted(representation_counts.items()):
             print(f"  {key:<18}: {value}")
+        print(f"  alreadyMaterialized: {already_materialized}")
         print(f"  ID collisions      : {len(collisions)}")
         print()
 
@@ -300,7 +337,7 @@ def main() -> int:
             return 2
 
         print("Materialization readiness: PASS")
-        print("No rule/conformance artifact was written.")
+        print("Audit is read-only; no rule/conformance artifact was written.")
         return 0
 
     except AuditError as exc:
