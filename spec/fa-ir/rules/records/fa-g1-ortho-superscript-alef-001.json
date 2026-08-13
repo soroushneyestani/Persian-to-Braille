@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "ٰ",
+    "codePoints": [
+      "U+0670"
+    ]
+  },
+  "output": {
+    "cells": [
+      "5"
+    ],
+    "unicodeBraille": "⠐",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "ٰ",
+    "notes": "Phase 2.2 does not promote unresolved global Unicode normalization policy."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-VAR-010"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054"
+    ],
+    "rationale": "SRC-LIBLOUIS-2053 reports dot 5 for U+0670 on printed page 28; the pinned draft implements dot 5. Stable lacks the mapping, so this is a candidate backed by institutional evidence rather than stable/draft implementation consensus. The candidate output intentionally follows the institutionally reported draft mapping rather than the unmapped stable baseline.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-ORTHO-SUPERSCRIPT-ALEF-001"
+    ]
+  },
+  "notes": [
+    "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
+    "Materialized lifecycle status is controlled by promotion records."
+  ]
+}

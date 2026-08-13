@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-LETTER-031",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-LETTER-031"
+  ],
+  "input": {
+    "text": "ه",
+    "codePoints": [
+      "U+0647"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "125"
+    ],
+    "unicodeBraille": "⠓",
+    "structuralTokens": []
+  },
+  "tags": [
+    "core-alphabet",
+    "scalar"
+  ],
+  "notes": [
+    "Materialized conformance vector for the fa-ir-g1 rule record."
+  ]
+}

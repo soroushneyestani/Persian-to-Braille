@@ -20,15 +20,15 @@ COPY_PATHS = [
     ROOT / "spec" / "fa-ir" / "evidence" / "master-decision-matrix.json",
     ROOT / "spec" / "fa-ir" / "schema",
     ROOT / "spec" / "fa-ir" / "profiles" / "fa-ir-g1.json",
-    ROOT / "spec" / "fa-ir" / "manifests" / "phase-2.2-candidate-package.json",
-    ROOT / "spec" / "fa-ir" / "rules" / "candidates",
-    ROOT / "spec" / "fa-ir" / "conformance" / "candidates",
+    ROOT / "spec" / "fa-ir" / "manifests" / "fa-ir-g1-materialization.json",
+    ROOT / "spec" / "fa-ir" / "rules" / "records",
+    ROOT / "spec" / "fa-ir" / "conformance" / "records",
     VALIDATOR,
 ]
 
-RULE_DIR_REL = Path("spec/fa-ir/rules/candidates")
-CONF_DIR_REL = Path("spec/fa-ir/conformance/candidates")
-MANIFEST_REL = Path("spec/fa-ir/manifests/phase-2.2-candidate-package.json")
+RULE_DIR_REL = Path("spec/fa-ir/rules/records")
+CONF_DIR_REL = Path("spec/fa-ir/conformance/records")
+MANIFEST_REL = Path("spec/fa-ir/manifests/fa-ir-g1-materialization.json")
 
 LETTER_001 = "FA-G1-LETTER-001"
 LETTER_001_FILE = RULE_DIR_REL / "fa-g1-letter-001.json"

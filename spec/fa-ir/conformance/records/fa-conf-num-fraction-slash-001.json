@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-NUM-FRACTION-SLASH-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-NUM-FRACTION-SLASH-001"
+  ],
+  "input": {
+    "text": "/",
+    "codePoints": [
+      "U+002F"
+    ],
+    "before": "digit",
+    "after": "digit",
+    "tokenClass": "numeric-fraction-separator"
+  },
+  "expected": {
+    "cells": [
+      "34"
+    ],
+    "unicodeBraille": "⠌",
+    "structuralTokens": []
+  },
+  "tags": [
+    "number",
+    "fraction",
+    "context",
+    "manual-backed"
+  ],
+  "notes": [
+    "Materialized conformance vector for the fa-ir-g1 rule record."
+  ]
+}
