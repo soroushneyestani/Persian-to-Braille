@@ -13,6 +13,8 @@ on:
       - ".gitignore"
       - ".gitattributes"
       - "packages/**"
+      - "docs/normalization/**"
+      - "tools/normalization/**"
       - "apps/**"
       - "integrations/**"
       - "tools/architecture/**"
@@ -62,6 +64,9 @@ jobs:
 
       - name: Validate architecture contracts
         run: pnpm run validate:architecture
+
+      - name: Validate Phase 4 normalization baseline
+        run: pnpm run validate:normalization
 
       - name: Build workspace
         run: pnpm run build

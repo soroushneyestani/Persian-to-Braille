@@ -25,7 +25,8 @@
     "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
     "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
     "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
-    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism"
+    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism",
+    "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
