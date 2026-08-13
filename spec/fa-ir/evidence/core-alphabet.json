@@ -1,0 +1,1309 @@
+{
+  "schemaVersion": 1,
+  "auditStage": "1.2",
+  "scope": "32 core modern Persian alphabet letters",
+  "normative": false,
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "manualEvidencePolicy": "The Iranian 1393/2014 manual has not been directly extracted by this project in Stage 1.2. Manual core-alphabet evidence is recorded as secondary evidence through SRC-LIBLOUIS-2053, which reports that printed pages 32-33 match the current Liblouis core alphabet.",
+  "summary": {
+    "coreLetters": 32,
+    "stableMapped": 32,
+    "draftMapped": 32,
+    "stableDraftExactMatches": 32,
+    "manualReportedCoreMatches": 32,
+    "normativeDecisionsPending": 32
+  },
+  "rows": [
+    {
+      "id": "FA-CORE-001",
+      "character": "ا",
+      "codePoint": "U+0627",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠁",
+        "codePoint": "U+2801"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "a",
+        "excel": "a",
+        "sql": "a"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-002",
+      "character": "ب",
+      "codePoint": "U+0628",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "12"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠃",
+        "codePoint": "U+2803"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "b",
+        "excel": "b",
+        "sql": "b"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-003",
+      "character": "پ",
+      "codePoint": "U+067E",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1234"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠏",
+        "codePoint": "U+280F"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "p",
+        "excel": "p",
+        "sql": "p"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-004",
+      "character": "ت",
+      "codePoint": "U+062A",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2345"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "2345"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠞",
+        "codePoint": "U+281E"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "t",
+        "excel": "t",
+        "sql": "t"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-005",
+      "character": "ث",
+      "codePoint": "U+062B",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1456"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠹",
+        "codePoint": "U+2839"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "?",
+        "excel": "?",
+        "sql": "?"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-006",
+      "character": "ج",
+      "codePoint": "U+062C",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "245"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠚",
+        "codePoint": "U+281A"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "j",
+        "excel": "j",
+        "sql": "j"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-007",
+      "character": "چ",
+      "codePoint": "U+0686",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "14"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "14"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "14"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠉",
+        "codePoint": "U+2809"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "c",
+        "excel": "c",
+        "sql": "c"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-008",
+      "character": "ح",
+      "codePoint": "U+062D",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "156"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "156"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "156"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠱",
+        "codePoint": "U+2831"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": ":",
+        "excel": ":",
+        "sql": ":"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-009",
+      "character": "خ",
+      "codePoint": "U+062E",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1346"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1346"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠭",
+        "codePoint": "U+282D"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "x",
+        "excel": "x",
+        "sql": "x"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-010",
+      "character": "د",
+      "codePoint": "U+062F",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "145"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "145"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "145"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠙",
+        "codePoint": "U+2819"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "d",
+        "excel": "d",
+        "sql": "d"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-011",
+      "character": "ذ",
+      "codePoint": "U+0630",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2346"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "2346"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠮",
+        "codePoint": "U+282E"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "!",
+        "excel": "!",
+        "sql": "!"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-012",
+      "character": "ر",
+      "codePoint": "U+0631",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1235"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1235"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1235"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠗",
+        "codePoint": "U+2817"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "r",
+        "excel": "r",
+        "sql": "r"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-013",
+      "character": "ز",
+      "codePoint": "U+0632",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1356"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠵",
+        "codePoint": "U+2835"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "z",
+        "excel": "z",
+        "sql": "z"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-014",
+      "character": "ژ",
+      "codePoint": "U+0698",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "346"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "346"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠬",
+        "codePoint": "U+282C"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "+",
+        "excel": "+",
+        "sql": "+"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-015",
+      "character": "س",
+      "codePoint": "U+0633",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "234"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "234"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "234"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠎",
+        "codePoint": "U+280E"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "s",
+        "excel": "s",
+        "sql": "s"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-016",
+      "character": "ش",
+      "codePoint": "U+0634",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "146"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "146"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "146"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠩",
+        "codePoint": "U+2829"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "%",
+        "excel": "%",
+        "sql": "%"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-017",
+      "character": "ص",
+      "codePoint": "U+0635",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12346"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12346"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "12346"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠯",
+        "codePoint": "U+282F"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "&",
+        "excel": "&",
+        "sql": "&"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-018",
+      "character": "ض",
+      "codePoint": "U+0636",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1246"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1246"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1246"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠫",
+        "codePoint": "U+282B"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "$",
+        "excel": "$",
+        "sql": "$"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-019",
+      "character": "ط",
+      "codePoint": "U+0637",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "23456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "23456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "23456"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠾",
+        "codePoint": "U+283E"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": ")",
+        "excel": ")",
+        "sql": ")"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-020",
+      "character": "ظ",
+      "codePoint": "U+0638",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "123456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "123456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "123456"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠿",
+        "codePoint": "U+283F"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "=",
+        "excel": "=",
+        "sql": "="
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-021",
+      "character": "ع",
+      "codePoint": "U+0639",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12356"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12356"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "12356"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠷",
+        "codePoint": "U+2837"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "(",
+        "excel": "(",
+        "sql": "(d"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-022",
+      "character": "غ",
+      "codePoint": "U+063A",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "126"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "126"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "126"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠣",
+        "codePoint": "U+2823"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "<",
+        "excel": "<",
+        "sql": "< "
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-023",
+      "character": "ف",
+      "codePoint": "U+0641",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "124"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "124"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "124"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠋",
+        "codePoint": "U+280B"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "f",
+        "excel": "f",
+        "sql": "f"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-024",
+      "character": "ق",
+      "codePoint": "U+0642",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "12345"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "12345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "12345"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠟",
+        "codePoint": "U+281F"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "q",
+        "excel": "q",
+        "sql": "q"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-025",
+      "character": "ک",
+      "codePoint": "U+06A9",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "13"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "13"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "13"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠅",
+        "codePoint": "U+2805"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "k",
+        "excel": "k",
+        "sql": "k"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-026",
+      "character": "گ",
+      "codePoint": "U+06AF",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1245"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1245"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1245"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠛",
+        "codePoint": "U+281B"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "g",
+        "excel": "g",
+        "sql": "g"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-027",
+      "character": "ل",
+      "codePoint": "U+0644",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "123"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "123"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "123"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠇",
+        "codePoint": "U+2807"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "l",
+        "excel": "l",
+        "sql": "l"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-028",
+      "character": "م",
+      "codePoint": "U+0645",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "134"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "134"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "134"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠍",
+        "codePoint": "U+280D"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "m",
+        "excel": "m",
+        "sql": "m"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-029",
+      "character": "ن",
+      "codePoint": "U+0646",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "1345"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "1345"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "1345"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠝",
+        "codePoint": "U+281D"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "n",
+        "excel": "n",
+        "sql": "n"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-030",
+      "character": "و",
+      "codePoint": "U+0648",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "2456"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "2456"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "2456"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠺",
+        "codePoint": "U+283A"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "w",
+        "excel": "w",
+        "sql": "w"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-031",
+      "character": "ه",
+      "codePoint": "U+0647",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "125"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "125"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "125"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠓",
+        "codePoint": "U+2813"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": "h",
+        "excel": "h",
+        "sql": "h"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    },
+    {
+      "id": "FA-CORE-032",
+      "character": "ی",
+      "codePoint": "U+06CC",
+      "liblouisStable": {
+        "source": "SRC-LIBLOUIS-G1",
+        "dots": "24"
+      },
+      "liblouisDraft": {
+        "source": "SRC-LIBLOUIS-2054",
+        "dots": "24"
+      },
+      "iran1393": {
+        "source": "SRC-IR-1393",
+        "evidenceVia": "SRC-LIBLOUIS-2053",
+        "printedPages": [
+          32,
+          33
+        ],
+        "directlyAuditedFromPdfByThisProject": false,
+        "status": "reported-match-to-stable-core-alphabet",
+        "reportedDots": "24"
+      },
+      "unicodeBraille": {
+        "source": "SRC-UNICODE-BRAILLE",
+        "character": "⠊",
+        "codePoint": "U+280A"
+      },
+      "legacy": {
+        "source": "SRC-LEGACY-V1",
+        "word": null,
+        "excel": "i",
+        "sql": "i"
+      },
+      "comparison": {
+        "stableEqualsDraft": true,
+        "manualAuditReportsStableMatch": true
+      },
+      "normativeDecision": "pending"
+    }
+  ]
+}
