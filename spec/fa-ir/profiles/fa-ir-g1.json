@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "fa-ir-g1",
+  "status": "draft",
+  "language": "fa",
+  "region": "IR",
+  "grade": 1,
+  "cellSize": 6,
+  "direction": "print-to-braille",
+  "version": "0.1.0",
+  "ruleIds": [
+    "FA-G1-LETTER-001",
+    "FA-G1-LETTER-002",
+    "FA-G1-LETTER-003",
+    "FA-G1-LETTER-004",
+    "FA-G1-LETTER-005",
+    "FA-G1-LETTER-006",
+    "FA-G1-LETTER-007",
+    "FA-G1-LETTER-008",
+    "FA-G1-LETTER-009",
+    "FA-G1-LETTER-010",
+    "FA-G1-LETTER-011",
+    "FA-G1-LETTER-012",
+    "FA-G1-LETTER-013",
+    "FA-G1-LETTER-014",
+    "FA-G1-LETTER-015",
+    "FA-G1-LETTER-016",
+    "FA-G1-LETTER-017",
+    "FA-G1-LETTER-018",
+    "FA-G1-LETTER-019",
+    "FA-G1-LETTER-020",
+    "FA-G1-LETTER-021",
+    "FA-G1-LETTER-022",
+    "FA-G1-LETTER-023",
+    "FA-G1-LETTER-024",
+    "FA-G1-LETTER-025",
+    "FA-G1-LETTER-026",
+    "FA-G1-LETTER-027",
+    "FA-G1-LETTER-028",
+    "FA-G1-LETTER-029",
+    "FA-G1-LETTER-030",
+    "FA-G1-LETTER-031",
+    "FA-G1-LETTER-032",
+    "FA-G1-NUM-FRACTION-SLASH-001",
+    "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+    "FA-G1-PUNC-ASTERISK-RUN-001",
+    "FA-G1-PUNC-ASTERISK-SINGLE-001",
+    "FA-G1-PUNC-ELLIPSIS-001"
+  ],
+  "normalizationPolicy": {
+    "unicodeForm": "none",
+    "unknownFormatControls": "error"
+  },
+  "fallbackPolicy": {
+    "unknownCharacter": "error",
+    "unknownSequence": "error"
+  },
+  "evidenceBaseline": {
+    "masterDecisionMatrix": "spec/fa-ir/evidence/master-decision-matrix.json",
+    "minimumClassification": "CONSENSUS-CANDIDATE"
+  }
+}

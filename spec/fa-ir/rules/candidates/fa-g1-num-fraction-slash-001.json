@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-NUM-FRACTION-SLASH-001",
+  "profile": "fa-ir-g1",
+  "type": "context",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 100,
+  "input": {
+    "kind": "context",
+    "text": "/",
+    "codePoints": [
+      "U+002F"
+    ],
+    "before": "digit",
+    "after": "digit",
+    "tokenClass": "numeric-fraction-separator"
+  },
+  "output": {
+    "cells": [
+      "34"
+    ],
+    "unicodeBraille": "⠌",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "/",
+    "notes": "Phase 2.2 does not promote unresolved global Unicode normalization policy."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-CTX-002"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054"
+    ],
+    "rationale": "This context-sensitive case is explicitly reported from the 1393/2014 manual by SRC-LIBLOUIS-2053 and is implemented by the pinned draft behavior.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-NUM-FRACTION-SLASH-001"
+    ]
+  },
+  "notes": [
+    "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
+    "Candidate status is non-normative."
+  ]
+}
