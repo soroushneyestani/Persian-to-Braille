@@ -10,3 +10,4 @@ legacy/v1/docs/*.docx
 Thumbs.db
 *.tmp
 *.bak
+/node_modules/
