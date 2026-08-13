@@ -1,2 +1,3 @@
 export * from "./specification.js";
 export * from "./normalization.js";
+export * from "./unicode-preprocessor.js";
