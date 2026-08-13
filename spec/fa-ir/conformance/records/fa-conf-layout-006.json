@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-LAYOUT-006",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-LAYOUT-006"
+  ],
+  "input": {
+    "text": "\r",
+    "codePoints": [
+      "U+000D"
+    ]
+  },
+  "expected": {
+    "cells": [],
+    "unicodeBraille": null,
+    "structuralTokens": [
+      "layout:line-boundary-candidate:U+000D"
+    ]
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "layout",
+    "ws"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-WS-006-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-LAYOUT-027",
+  "profile": "fa-ir-g1",
+  "type": "layout",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "‌",
+    "codePoints": [
+      "U+200C"
+    ]
+  },
+  "output": {
+    "cells": [],
+    "unicodeBraille": null,
+    "structuralToken": "layout:shaping-control:U+200C"
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "‌",
+    "notes": "No global Unicode normalization is implied. Structural normalization/layout semantics are expressed by this rule's type and structural token."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-WS-027"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "At the host/layout layer, ZERO WIDTH NON-JOINER may remain present in source text as a Persian orthographic boundary, but translation output must not emit a Braille cell for it. Its structural role may be consumed by normalization or context processing. This complements the FA-FMT-001 normalization decision without rewriting Phase 1 evidence.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-WS-027-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-LAYOUT-027"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-WS-027-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-NUMRULE-003",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-NUMRULE-003"
+  ],
+  "input": {
+    "text": ",",
+    "codePoints": [
+      "U+002C"
+    ],
+    "before": "digit",
+    "after": "digit",
+    "tokenClass": "numeric-internal"
+  },
+  "expected": {
+    "cells": [
+      "3"
+    ],
+    "unicodeBraille": "⠄",
+    "structuralTokens": []
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "context",
+    "numrule"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-NUMRULE-003-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

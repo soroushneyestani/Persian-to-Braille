@@ -28,11 +28,11 @@
   "inputs": {
     "adjudicationManifest": {
       "path": "spec/fa-ir/adjudications/manifest.json",
-      "sha256": "D17CDCE22C13BD72EF3B3CC0CE2692E4471B75C7094E0F4492B5CFE9E217D790"
+      "sha256": "B49FADED11CDDE344B54B2D3F335E4A87E326D91BDC3DBB169CB474B8AAA422A"
     },
     "adjudicationPolicy": {
       "path": "spec/fa-ir/governance/adjudication-policy.json",
-      "sha256": "73B8C4E8DA12624A4C947583307D60F4583443C8BFF8CBD1E3B32B98D796C035"
+      "sha256": "6999AD610CD233C1DD14099D68934FFA98DAA16592A694867A12B01CE3CEAD92"
     },
     "normativePromotionPolicy": {
       "path": "spec/fa-ir/governance/normative-promotion-policy.json",
@@ -40,7 +40,7 @@
     },
     "profile": {
       "path": "spec/fa-ir/profiles/fa-ir-g1.json",
-      "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+      "sha256": "2448C00BFE7ED94F067912C9C836E5FF3092E203B78C0C88976A7B2DF3706EF7"
     }
   },
   "entries": [

@@ -33,6 +33,14 @@ MANIFEST_PATH = (
 )
 PROMOTION_DIR = ROOT / "spec" / "fa-ir" / "promotions"
 
+ADMISSION_PATH = (
+    ROOT / "spec" / "fa-ir" / "adjudications"
+    / "candidate-admission-manifest.json"
+)
+ADJUDICATION_RECORD_DIR = (
+    ROOT / "spec" / "fa-ir" / "adjudications" / "records"
+)
+
 RULE_DIR = ROOT / "spec" / "fa-ir" / "rules" / "records"
 CONF_DIR = ROOT / "spec" / "fa-ir" / "conformance" / "records"
 
@@ -42,10 +50,64 @@ REPORT_MD = ROOT / "docs" / "specification" / "phase-2.3-validation.md"
 
 EXPECTED_PROFILE = "fa-ir-g1"
 EXPECTED_PROFILE_VERSION = "0.1.0"
-EXPECTED_RULE_COUNT = 37
-EXPECTED_VECTOR_COUNT = 37
-EXPECTED_DECISION_COUNT = 37
-EXPECTED_MANIFEST_STAGE = "2.7"
+EXPECTED_RULE_COUNT = 175
+EXPECTED_VECTOR_COUNT = 175
+EXPECTED_DECISION_COUNT = 175
+EXPECTED_MANIFEST_STAGE = "2.14"
+EXPECTED_NORMATIVE_RULES = 37
+EXPECTED_CANDIDATE_RULES = 138
+EXPECTED_ACTIVE_VECTORS = 37
+EXPECTED_DRAFT_VECTORS = 138
+EXPECTED_STRUCTURAL_RULES = 29
+EXPECTED_CONSENSUS_DECISIONS = 37
+EXPECTED_ADJUDICATED_DECISIONS = 138
+EXPECTED_CANDIDATE_TYPES = {
+    "character": 98,
+    "context": 6,
+    "layout": 27,
+    "mode": 5,
+    "normalization": 1,
+    "sequence": 1,
+}
+
+
+def candidate_rule_id(decision_id: str) -> str:
+    if decision_id.startswith("FA-LATIN-MODE-"):
+        return "FA-G1-LATIN-MODE-" + decision_id.rsplit("-", 1)[1]
+    if decision_id.startswith("FA-LATIN-"):
+        return "FA-G1-LATIN-" + decision_id.rsplit("-", 1)[1]
+
+    match = re.fullmatch(
+        r"FA-DIGIT-(ASCII|PERSIAN|ARABIC-INDIC)-([0-9])",
+        decision_id,
+    )
+    if match:
+        family, digit = match.groups()
+        return f"FA-G1-DIGIT-{family}-{int(digit):03d}"
+
+    if decision_id.startswith("FA-NUMRULE-"):
+        return "FA-G1-NUMRULE-" + decision_id.rsplit("-", 1)[1]
+
+    if decision_id == "FA-PUNC-013":
+        return "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+
+    if decision_id.startswith("FA-PUNC-"):
+        return "FA-G1-PUNC-SCALAR-" + decision_id.rsplit("-", 1)[1]
+
+    if decision_id == "FA-SEQ-001":
+        return "FA-G1-ORTHO-EZAFE-SEQUENCE-001"
+
+    if decision_id == "FA-FMT-001":
+        return "FA-G1-NORM-ZWNJ-001"
+
+    if decision_id.startswith("FA-WS-"):
+        return "FA-G1-LAYOUT-" + decision_id.rsplit("-", 1)[1]
+
+    fail(f"No deterministic candidate rule ID mapping for {decision_id}")
+
+
+def candidate_vector_id(rule_id: str) -> str:
+    return "FA-CONF-" + rule_id.removeprefix("FA-G1-")
 
 
 class SpecValidationError(RuntimeError):
@@ -167,6 +229,79 @@ def context_signature(input_obj: dict) -> tuple:
     )
 
 
+def character_matches_context_class(ch: str, context_class: str) -> bool:
+    """
+    Conservative lexical check used only for prefix-overlap validation.
+
+    Known context classes are evaluated directly. Unknown classes return True
+    so the validator never suppresses a possible collision merely because it
+    does not understand a future context vocabulary.
+    """
+    if context_class == "digit":
+        return ch.isdigit()
+    if context_class in {"letter", "alpha"}:
+        return ch.isalpha()
+    if context_class in {"space", "whitespace"}:
+        return ch.isspace()
+    return True
+
+
+def prefix_rules_can_overlap(
+    shorter_rule: dict,
+    shorter_text: str,
+    longer_rule: dict,
+    longer_text: str,
+) -> bool:
+    """
+    Return True only when the shorter textual trigger can actually match at
+    the same start position as the longer trigger.
+
+    A pure text-prefix test is too broad once Phase 2.14 introduces context
+    rules. Example: numeric decimal '.' requires after='digit', so it cannot
+    match the first cell of the literal ellipsis '...' because the immediately
+    following character is another '.', not a digit.
+    """
+    if not longer_text.startswith(shorter_text):
+        return False
+
+    short_input = shorter_rule["input"]
+    long_input = longer_rule["input"]
+
+    # Both rules begin at the same position, therefore they observe the same
+    # preceding token. Mutually incompatible explicit 'before' constraints
+    # cannot overlap.
+    short_before = short_input.get("before")
+    long_before = long_input.get("before")
+    if (
+        short_before is not None
+        and long_before is not None
+        and short_before != long_before
+    ):
+        return False
+
+    # Because the shorter trigger is a strict prefix of the longer trigger,
+    # the shorter rule's immediate right context is already known: it is the
+    # next character inside the longer trigger itself.
+    short_after = short_input.get("after")
+    if short_after is not None:
+        next_char = longer_text[len(shorter_text)]
+        if not character_matches_context_class(next_char, short_after):
+            return False
+
+    # If both rules explicitly declare different token classes, treat them as
+    # separate match domains. A missing tokenClass remains unconstrained.
+    short_token_class = short_input.get("tokenClass")
+    long_token_class = long_input.get("tokenClass")
+    if (
+        short_token_class is not None
+        and long_token_class is not None
+        and short_token_class != long_token_class
+    ):
+        return False
+
+    return True
+
+
 def validate() -> dict:
     registry = read_json(REGISTRY)
     master = read_json(MASTER)
@@ -188,6 +323,7 @@ def validate() -> dict:
 
     profile = read_json(PROFILE_PATH)
     manifest = read_json(MANIFEST_PATH)
+    admission = read_json(ADMISSION_PATH) if ADMISSION_PATH.exists() else None
 
     promotion_paths = (
         sorted(PROMOTION_DIR.glob("*.json"))
@@ -262,7 +398,12 @@ def validate() -> dict:
     assert_equal(
         profile["normalizationPolicy"]["unicodeForm"],
         "none",
-        "Phase 2.2 normalization policy",
+        "Phase 2 normalization policy",
+    )
+    assert_equal(
+        profile["evidenceBaseline"]["minimumClassification"],
+        "REVIEW-REQUIRED",
+        "Combined package evidence baseline",
     )
 
     profile_rule_ids = profile["ruleIds"]
@@ -341,15 +482,50 @@ def validate() -> dict:
         )
 
     summary = manifest["summary"]
-    assert_equal(summary["decisionItemsConsumed"], 37, "Manifest decision count")
-    assert_equal(summary["rules"], 37, "Manifest rule count")
-    assert_equal(summary["conformanceVectors"], 37, "Manifest vector count")
-    assert_equal(summary["coreAlphabetRules"], 32, "Manifest core rule count")
-    assert_equal(summary["orthographicRules"], 1, "Manifest orthographic count")
     assert_equal(
-        summary["punctuationOrNumberRules"], 4, "Manifest punctuation/number count"
+        summary["decisionItemsConsumed"],
+        EXPECTED_DECISION_COUNT,
+        "Manifest decision count",
+    )
+    assert_equal(summary["rules"], EXPECTED_RULE_COUNT, "Manifest rule count")
+    assert_equal(
+        summary["conformanceVectors"],
+        EXPECTED_VECTOR_COUNT,
+        "Manifest vector count",
+    )
+    assert_equal(summary["coreAlphabetRules"], 32, "Manifest core rule count")
+    assert_equal(summary["orthographicRules"], 1, "Baseline orthographic count")
+    assert_equal(
+        summary["punctuationOrNumberRules"],
+        4,
+        "Baseline punctuation/number count",
     )
     assert_equal(summary["dot78Rules"], 0, "Manifest dot-7/dot-8 count")
+    assert_equal(
+        summary["phase1ConsensusRules"],
+        EXPECTED_CONSENSUS_DECISIONS,
+        "Manifest Phase 1 consensus-rule count",
+    )
+    assert_equal(
+        summary["adjudicatedCandidateRules"],
+        EXPECTED_ADJUDICATED_DECISIONS,
+        "Manifest adjudicated-candidate count",
+    )
+    assert_equal(
+        summary["structuralRules"],
+        EXPECTED_STRUCTURAL_RULES,
+        "Manifest structural-rule count",
+    )
+    assert_equal(
+        summary["candidateTargetTypes"],
+        EXPECTED_CANDIDATE_TYPES,
+        "Manifest candidate target-type counts",
+    )
+    assert_equal(
+        summary["candidateAdmissionManifest"],
+        rel(ADMISSION_PATH),
+        "Manifest candidate-admission path",
+    )
 
     candidate_count = sum(
         1 for _, rule in rule_by_id.values() if rule["status"] == "candidate"
@@ -360,6 +536,30 @@ def validate() -> dict:
     active_vector_count = sum(
         1 for _, vector in vector_by_id.values() if vector["status"] == "active"
     )
+    draft_vector_count = sum(
+        1 for _, vector in vector_by_id.values() if vector["status"] == "draft"
+    )
+
+    assert_equal(
+        candidate_count,
+        EXPECTED_CANDIDATE_RULES,
+        "Combined package candidate-rule count",
+    )
+    assert_equal(
+        normative_count,
+        EXPECTED_NORMATIVE_RULES,
+        "Combined package normative-rule count",
+    )
+    assert_equal(
+        active_vector_count,
+        EXPECTED_ACTIVE_VECTORS,
+        "Combined package active-vector count",
+    )
+    assert_equal(
+        draft_vector_count,
+        EXPECTED_DRAFT_VECTORS,
+        "Combined package draft-vector count",
+    )
 
     assert_equal(summary["candidateRules"], candidate_count, "Manifest candidate count")
     assert_equal(summary["normativeRules"], normative_count, "Manifest normative count")
@@ -369,6 +569,11 @@ def validate() -> dict:
         "Manifest active-vector count",
     )
     assert_equal(
+        summary["draftConformanceVectors"],
+        draft_vector_count,
+        "Manifest draft-vector count",
+    )
+    assert_equal(
         summary["promotionRecordsApplied"],
         len(promotions),
         "Manifest promotion-record count",
@@ -376,9 +581,36 @@ def validate() -> dict:
 
     # Rule-level semantic validation.
     consumed_decisions = []
+    consumed_consensus = []
+    consumed_adjudicated = []
     referenced_sources = set()
     exact_signatures = {}
     rule_input_texts = []
+    structural_rule_ids = set()
+    adjudicated_rule_ids = set()
+
+    admission_by_decision = {}
+    if admission is not None:
+        assert_equal(admission["stage"], "2.14", "Admission manifest stage")
+        assert_equal(
+            admission["status"],
+            "route-ready",
+            "Admission manifest status",
+        )
+        assert_equal(
+            len(admission["entries"]),
+            EXPECTED_ADJUDICATED_DECISIONS,
+            "Admission entry count",
+        )
+        admission_by_decision = {
+            row["decisionItemId"]: row
+            for row in admission["entries"]
+        }
+        assert_equal(
+            len(admission_by_decision),
+            EXPECTED_ADJUDICATED_DECISIONS,
+            "Unique admission decision count",
+        )
 
     for rule_id, (path, rule) in rule_by_id.items():
         assert_equal(rule["profile"], profile["id"], f"Rule profile {rule_id}")
@@ -425,11 +657,29 @@ def validate() -> dict:
                     f"Six-dot profile rule {rule_id} contains dot 7/8: {cell}",
                 )
 
-        assert_equal(
-            rule["output"]["unicodeBraille"],
-            unicode_braille(cells),
-            f"Rule Unicode Braille derivation {rule_id}",
-        )
+        structural_token = rule["output"].get("structuralToken")
+        if cells:
+            assert_equal(
+                structural_token,
+                None,
+                f"Cell-emitting rule structural token {rule_id}",
+            )
+            assert_equal(
+                rule["output"]["unicodeBraille"],
+                unicode_braille(cells),
+                f"Rule Unicode Braille derivation {rule_id}",
+            )
+        else:
+            assert_true(
+                isinstance(structural_token, str) and bool(structural_token),
+                f"Structural rule {rule_id} has no structural token",
+            )
+            assert_equal(
+                rule["output"]["unicodeBraille"],
+                None,
+                f"Structural rule Unicode Braille {rule_id}",
+            )
+            structural_rule_ids.add(rule_id)
 
         decision_ids = rule["evidence"]["decisionItemIds"]
         source_ids_for_rule = rule["evidence"]["sourceIds"]
@@ -437,18 +687,169 @@ def validate() -> dict:
         assert_true(decision_ids, f"Rule {rule_id} has no decision provenance")
         assert_true(source_ids_for_rule, f"Rule {rule_id} has no source provenance")
 
+        assert_equal(
+            len(decision_ids),
+            1,
+            f"Rule {rule_id} must consume exactly one decision item",
+        )
         for decision_id in decision_ids:
             assert_true(
                 decision_id in master_items,
                 f"Rule {rule_id} references unknown decision {decision_id}",
             )
             decision = master_items[decision_id]
-            assert_equal(
-                decision["classification"],
-                "CONSENSUS-CANDIDATE",
-                f"Rule {rule_id} consumes non-consensus decision {decision_id}",
-            )
+            classification = decision["classification"]
+
+            if rule["status"] == "normative":
+                assert_equal(
+                    classification,
+                    "CONSENSUS-CANDIDATE",
+                    f"Normative rule {rule_id} consumes ineligible decision "
+                    f"{decision_id}",
+                )
+                consumed_consensus.append(decision_id)
+            else:
+                assert_equal(
+                    classification,
+                    "REVIEW-REQUIRED",
+                    f"Adjudicated candidate {rule_id} must preserve the "
+                    f"REVIEW-REQUIRED classification of {decision_id}",
+                )
+                expected_rule_id = candidate_rule_id(decision_id)
+                assert_equal(
+                    rule_id,
+                    expected_rule_id,
+                    f"Deterministic candidate rule ID {decision_id}",
+                )
+                adjudicated_rule_ids.add(rule_id)
+                consumed_adjudicated.append(decision_id)
+
+                manifest_entry = manifest_rule_entries[rule_id]
+                assert_equal(
+                    manifest_entry["provenanceType"],
+                    "phase-2.14-adjudication",
+                    f"Candidate provenance type {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry["admissionAuthorized"],
+                    True,
+                    f"Candidate admission flag {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry["decisionItemId"],
+                    decision_id,
+                    f"Candidate manifest decision {rule_id}",
+                )
+
+                if admission_by_decision:
+                    assert_true(
+                        decision_id in admission_by_decision,
+                        f"Candidate {rule_id} lacks admission entry",
+                    )
+                    admission_entry = admission_by_decision[decision_id]
+                    assert_equal(
+                        admission_entry["targetRuleType"],
+                        rule["type"],
+                        f"Admission/rule type {rule_id}",
+                    )
+                    assert_equal(
+                        admission_entry["targetStatus"],
+                        "candidate",
+                        f"Admission target status {rule_id}",
+                    )
+                    assert_equal(
+                        admission_entry["promotionEligible"],
+                        False,
+                        f"Admission promotion eligibility {rule_id}",
+                    )
+                    assert_equal(
+                        admission_entry["normativePromotionAuthorized"],
+                        False,
+                        f"Admission normative authorization {rule_id}",
+                    )
+                    assert_equal(
+                        manifest_entry["adjudicationRecordId"],
+                        admission_entry["adjudicationRecordId"],
+                        f"Manifest/admission record ID {rule_id}",
+                    )
+                    assert_equal(
+                        manifest_entry["adjudicationRecordPath"],
+                        admission_entry["adjudicationRecordPath"],
+                        f"Manifest/admission record path {rule_id}",
+                    )
+                    assert_equal(
+                        manifest_entry["adjudicationRecordSha256"],
+                        admission_entry["adjudicationRecordSha256"],
+                        f"Manifest/admission record hash {rule_id}",
+                    )
+
+                    record_path = ROOT / admission_entry[
+                        "adjudicationRecordPath"
+                    ]
+                    if record_path.exists():
+                        assert_equal(
+                            sha256(record_path),
+                            admission_entry["adjudicationRecordSha256"],
+                            f"Adjudication record SHA-256 {rule_id}",
+                        )
+                        record = read_json(record_path)
+                        assert_equal(
+                            record["id"],
+                            admission_entry["adjudicationRecordId"],
+                            f"Adjudication record identity {rule_id}",
+                        )
+                        assert_equal(
+                            record["decisionItemId"],
+                            decision_id,
+                            f"Adjudication decision identity {rule_id}",
+                        )
+                        assert_equal(
+                            record["decision"]["result"],
+                            "approved",
+                            f"Adjudication result {rule_id}",
+                        )
+                        assert_equal(
+                            record["materialization"][
+                                "createsSpecificationArtifact"
+                            ],
+                            True,
+                            f"Adjudication materialization flag {rule_id}",
+                        )
+                        assert_equal(
+                            record["materialization"]["targetRuleType"],
+                            rule["type"],
+                            f"Adjudication/rule type {rule_id}",
+                        )
+                        assert_equal(
+                            record["materialization"]["promotionEligible"],
+                            False,
+                            f"Adjudication promotion eligibility {rule_id}",
+                        )
+                        assert_equal(
+                            set(rule["evidence"]["sourceIds"]),
+                            set(record["basis"]["sourceIds"]),
+                            f"Rule/adjudication sources {rule_id}",
+                        )
+                        assert_equal(
+                            rule["evidence"]["rationale"],
+                            record["rationale"],
+                            f"Rule/adjudication rationale {rule_id}",
+                        )
+
             consumed_decisions.append(decision_id)
+
+        if rule["status"] == "normative":
+            manifest_entry = manifest_rule_entries[rule_id]
+            assert_equal(
+                manifest_entry["provenanceType"],
+                "phase-1-consensus",
+                f"Normative baseline provenance {rule_id}",
+            )
+            assert_equal(
+                manifest_entry["admissionAuthorized"],
+                False,
+                f"Normative baseline admission flag {rule_id}",
+            )
 
         for source_id in source_ids_for_rule:
             assert_true(
@@ -494,7 +895,7 @@ def validate() -> dict:
     assert_equal(
         len(consumed_decisions),
         EXPECTED_DECISION_COUNT,
-        "Each candidate decision must be consumed exactly once",
+        "Each materialized rule must consume exactly one decision",
     )
 
     expected_consensus = {
@@ -503,9 +904,35 @@ def validate() -> dict:
         if row["classification"] == "CONSENSUS-CANDIDATE"
     }
     assert_equal(
-        unique_decisions,
+        set(consumed_consensus),
         expected_consensus,
-        "Candidate package must consume all and only Phase 1 consensus decisions",
+        "Normative baseline must consume all 37 Phase 1 consensus decisions",
+    )
+    assert_equal(
+        len(consumed_consensus),
+        EXPECTED_CONSENSUS_DECISIONS,
+        "Consensus decision consumption count",
+    )
+    assert_equal(
+        len(set(consumed_adjudicated)),
+        EXPECTED_ADJUDICATED_DECISIONS,
+        "Adjudicated decision consumption count",
+    )
+    if admission_by_decision:
+        assert_equal(
+            set(consumed_adjudicated),
+            set(admission_by_decision),
+            "Candidate package must consume all and only admitted decisions",
+        )
+    assert_equal(
+        len(structural_rule_ids),
+        EXPECTED_STRUCTURAL_RULES,
+        "Structural rule count",
+    )
+    assert_equal(
+        len(adjudicated_rule_ids),
+        EXPECTED_ADJUDICATED_DECISIONS,
+        "Adjudicated candidate rule count",
     )
 
     # Conformance symmetry and expected-output validation.
@@ -555,7 +982,7 @@ def validate() -> dict:
         # The vector exercises the same rule trigger/context as the rule record.
         assert_equal(
             vector_input["text"],
-            rule["input"]["text"],
+            rule["input"].get("text", ""),
             f"Vector/rule input text {vector_id}",
         )
         assert_equal(
@@ -574,11 +1001,28 @@ def validate() -> dict:
             rule["output"]["unicodeBraille"],
             f"Vector/rule Unicode Braille {vector_id}",
         )
-        assert_equal(
-            vector["expected"]["unicodeBraille"],
-            unicode_braille(vector["expected"]["cells"]),
-            f"Vector Unicode Braille derivation {vector_id}",
-        )
+        if vector["expected"]["cells"]:
+            assert_equal(
+                vector["expected"]["unicodeBraille"],
+                unicode_braille(vector["expected"]["cells"]),
+                f"Vector Unicode Braille derivation {vector_id}",
+            )
+            assert_equal(
+                vector["expected"].get("structuralTokens", []),
+                [],
+                f"Cell vector structural tokens {vector_id}",
+            )
+        else:
+            assert_equal(
+                vector["expected"]["unicodeBraille"],
+                None,
+                f"Structural vector Unicode Braille {vector_id}",
+            )
+            assert_equal(
+                vector["expected"].get("structuralTokens", []),
+                [rule["output"]["structuralToken"]],
+                f"Structural vector token {vector_id}",
+            )
 
     # Priority/prefix overlaps: longer/more-specific inputs must run earlier.
     # This catches the audited * / *** relationship and future analogous cases.
@@ -591,12 +1035,17 @@ def validate() -> dict:
                 continue
             if len(left_text) >= len(right_text):
                 continue
-            if right_text.startswith(left_text):
+            if prefix_rules_can_overlap(
+                left_rule,
+                left_text,
+                right_rule,
+                right_text,
+            ):
                 prefix_pairs.append((left_id, right_id))
                 assert_true(
                     right_rule["priority"] < left_rule["priority"],
-                    "More-specific prefix-overlapping rule must have higher "
-                    f"precedence (lower numeric priority): "
+                    "More-specific semantically overlapping prefix rule must "
+                    "have higher precedence (lower numeric priority): "
                     f"{right_id}({right_rule['priority']}) vs "
                     f"{left_id}({left_rule['priority']})",
                 )
@@ -626,7 +1075,7 @@ def validate() -> dict:
     return {
         "schemaVersion": 1,
         "validationStage": "2.3",
-        "validatedPackageStage": "2.2",
+        "validatedPackageStage": "2.14",
         "result": "PASS",
         "normative": False,
         "summary": {
@@ -637,8 +1086,12 @@ def validate() -> dict:
             "normativeRules": normative_count,
             "conformanceVectors": len(vector_by_id),
             "activeConformanceVectors": active_vector_count,
+            "draftConformanceVectors": draft_vector_count,
             "promotionRecordsObserved": len(promotions),
             "uniqueDecisionItemsConsumed": len(unique_decisions),
+            "consensusDecisionItemsConsumed": len(set(consumed_consensus)),
+            "adjudicatedDecisionItemsConsumed": len(set(consumed_adjudicated)),
+            "structuralRules": len(structural_rule_ids),
             "registeredSourcesReferenced": len(referenced_sources),
             "prefixOverlapPairsChecked": len(set(prefix_pairs)),
             "dot78Violations": 0,
@@ -659,17 +1112,19 @@ def validate() -> dict:
         },
         "invariants": [
             "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
-            "Profile rule IDs resolve exactly to the 37 materialized rule files.",
-            "Every rule consumes registered sources and Phase 1 CONSENSUS-CANDIDATE evidence.",
-            "All 37 Phase 1 consensus decisions are consumed exactly once.",
+            "Profile rule IDs resolve exactly to all 175 materialized rule files.",
+            "Every rule consumes registered sources and preserves its Phase 1 classification.",
+            "All 37 consensus decisions and all 138 admitted REVIEW-REQUIRED decisions are consumed exactly once.",
             "Every rule has exactly one reciprocal conformance vector.",
             "Vector context matches rule context.",
             "Braille cell arrays deterministically derive their Unicode Braille strings.",
             "The fa-ir-g1 draft package contains no dot-7/dot-8 cells.",
             "Exact match-signature priority collisions are rejected.",
-            "Prefix-overlapping longer rules must have higher precedence.",
+            "Semantically overlapping longer prefix rules must have higher precedence.",
             "The fraction-slash candidate is explicitly constrained to numeric context.",
             "Normative rule status requires a matching promotion record; profile remains draft.",
+            "All 138 adjudicated materializations remain candidate with draft vectors.",
+            "Structural rules use explicit structural tokens and null Unicode Braille output.",
             "Manifest paths and SHA-256 hashes match the generated package.",
         ],
     }
@@ -682,8 +1137,8 @@ def render_markdown(report: dict) -> str:
         "",
         f"Result: **{report['result']}**",
         "",
-        "This report is generated by an independent validator over the Phase 2.2 "
-        "candidate package. It does not reuse the package generator's in-memory "
+        "This report is generated by an independent validator over the combined "
+        "Phase 2.14 materialized package. It does not reuse the package generator's in-memory "
         "objects.",
         "",
         "## Summary",
@@ -693,8 +1148,11 @@ def render_markdown(report: dict) -> str:
         f"- Candidate rules: {s['candidateRules']}",
         f"- Normative rules: {s['normativeRules']}",
         f"- Conformance vectors: {s['conformanceVectors']}",
-        f"- Unique Phase 1 consensus decisions consumed: "
-        f"{s['uniqueDecisionItemsConsumed']}",
+        f"- Unique decision items consumed: {s['uniqueDecisionItemsConsumed']}",
+        f"- Consensus decisions consumed: {s['consensusDecisionItemsConsumed']}",
+        f"- Adjudicated decisions consumed: {s['adjudicatedDecisionItemsConsumed']}",
+        f"- Draft conformance vectors: {s['draftConformanceVectors']}",
+        f"- Structural rules: {s['structuralRules']}",
         f"- Registered sources referenced: {s['registeredSourcesReferenced']}",
         f"- Prefix-overlap pairs checked: {s['prefixOverlapPairsChecked']}",
         f"- Dot-7/dot-8 violations: {s['dot78Violations']}",

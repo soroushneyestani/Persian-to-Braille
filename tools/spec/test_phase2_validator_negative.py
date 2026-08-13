@@ -191,7 +191,7 @@ CASES = [
         name="priority-prefix-overlap",
         mutate=mutate_priority_overlap,
         expected_fragment=(
-            "More-specific prefix-overlapping rule must have higher precedence"
+            "More-specific semantically overlapping prefix rule must have higher precedence"
         ),
     ),
 ]

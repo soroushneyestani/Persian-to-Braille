@@ -1,253 +1,2711 @@
 {
   "schemaVersion": 1,
-  "stage": "2.7",
+  "stage": "2.14",
   "profile": {
     "id": "fa-ir-g1",
     "version": "0.1.0",
     "status": "draft",
     "path": "spec/fa-ir/profiles/fa-ir-g1.json",
-    "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+    "sha256": "2448C00BFE7ED94F067912C9C836E5FF3092E203B78C0C88976A7B2DF3706EF7"
   },
   "status": "materialized-package",
   "profileNormative": false,
   "summary": {
-    "decisionItemsConsumed": 37,
-    "rules": 37,
-    "candidateRules": 0,
+    "decisionItemsConsumed": 175,
+    "rules": 175,
+    "candidateRules": 138,
     "normativeRules": 37,
-    "conformanceVectors": 37,
+    "conformanceVectors": 175,
     "activeConformanceVectors": 37,
     "coreAlphabetRules": 32,
     "orthographicRules": 1,
     "punctuationOrNumberRules": 4,
     "dot78Rules": 0,
-    "promotionRecordsApplied": 37
+    "promotionRecordsApplied": 37,
+    "phase1ConsensusRules": 37,
+    "adjudicatedCandidateRules": 138,
+    "draftConformanceVectors": 138,
+    "structuralRules": 29,
+    "candidateTargetTypes": {
+      "character": 98,
+      "context": 6,
+      "layout": 27,
+      "mode": 5,
+      "normalization": 1,
+      "sequence": 1
+    },
+    "candidateAdmissionManifest": "spec/fa-ir/adjudications/candidate-admission-manifest.json"
   },
   "rules": [
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-000",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-000.json",
+      "sha256": "5F9911BCF72C3C8BBE8A0052EC77D189A5E28078B8647ED9397F6D00E334B40A",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-0",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-0-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-0-001.json",
+      "adjudicationRecordSha256": "6318E04C48942230AD89AC966415867157C659F014F71EA49A9445D48DBE36C0"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-001.json",
+      "sha256": "53E7E2412D7DB3F07EEC2E4B2A8B3D75076681009154E7E31848AA4BA324E295",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-1",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-1-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-1-001.json",
+      "adjudicationRecordSha256": "73E1171F30CCF2BD261794411D1BD771AF8598222D465E5DBFAE4D46798CAE4F"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-002.json",
+      "sha256": "09D16CF7024630416E800A17C7CEF38362CB7EFA544A6A74CDC2B53688B9AB53",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-2",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-2-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-2-001.json",
+      "adjudicationRecordSha256": "A3F5B2B932C4FE8194FF087E5758B9AD4D6D437E8576C89A3FF6300928E11CFD"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-003.json",
+      "sha256": "73EFBB2E43554B28E760646E029F1D4CC4546AFF8A4D17D18DF08A6012F54F1A",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-3",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-3-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-3-001.json",
+      "adjudicationRecordSha256": "5AF91290749046E37725D4079405C8FD97FCE70EF67AFF5E8C2ED8F7A136F783"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-004.json",
+      "sha256": "0E0AD04965A8D1065BA74A971CC31A8C139CAB68CDE64D94FF3387675C57F23E",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-4",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-4-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-4-001.json",
+      "adjudicationRecordSha256": "C75E12E213D6B451D4649ED64251D1FEDC72375152D4E18E9FCBCE972498C655"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-005.json",
+      "sha256": "5FDDC93B2C43282F497A48E94FF3A98926F4AE66A7506CFCB716BF509CBA7922",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-5",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-5-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-5-001.json",
+      "adjudicationRecordSha256": "5C6222340C07C85B64295ED37EA933E6E293CB15FF8FA423754505BD6D442C47"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-006.json",
+      "sha256": "21D346711E42089734153B201C913C7FF39959C51859B19597D77D9800337078",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-6",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-6-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-6-001.json",
+      "adjudicationRecordSha256": "999135D23A6B1B93E2E7172AD687A876349718D8FC91893920AC6BA284D604A6"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-007.json",
+      "sha256": "BD28E3DC252767DD4EE4F7EF0912337B03887BD03DE0183A290790B7EC5509B2",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-7",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-7-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-7-001.json",
+      "adjudicationRecordSha256": "AEBA734D9C5E19F89E3714FA300D846F864A66938CF04EDF094911503A3BDB20"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-008.json",
+      "sha256": "374AC5C916DD792B6B02C325F6B68AB0B64A1863F70B0534BABBEFAEB42F4095",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-8",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-8-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-8-001.json",
+      "adjudicationRecordSha256": "45AB2BAC8C4310A8E2A579730014AF166B58BC0F62FEAD51ECA072205190B41A"
+    },
+    {
+      "id": "FA-G1-DIGIT-ARABIC-INDIC-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-009.json",
+      "sha256": "FBBF938C9BB27C6603732A429F321C925ADB7E6599959FE7035986C6C06B5AF1",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-9",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ARABIC-INDIC-9-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-arabic-indic-9-001.json",
+      "adjudicationRecordSha256": "2C1BB4876C34151D3980BBC0C71DCE0E868905AC9AEAD3BFE39D9D8A65503459"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-000",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-000.json",
+      "sha256": "62A88C643E0770970AC8641A6444FB89EE214555CAB66F17C334D9B8094CE37C",
+      "decisionItemId": "FA-DIGIT-ASCII-0",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-0-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-0-001.json",
+      "adjudicationRecordSha256": "0778838E0DB8531B57CE05830770FAB419B613DEC3371FD8419D644A4AAD008C"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-001.json",
+      "sha256": "B582A6218D683D51E57F3357E92D08ED5C5FAE47C1988ACC8A3F2E9D296F4CC5",
+      "decisionItemId": "FA-DIGIT-ASCII-1",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-1-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-1-001.json",
+      "adjudicationRecordSha256": "94B1C4D42FA89E16BE48EB1BAF9174C4FD09B67C263E3B882F735395900150DB"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-002.json",
+      "sha256": "F637624AE0A0320C029DDE9751AADBE3138B7A99259CC7B904236016EC90732F",
+      "decisionItemId": "FA-DIGIT-ASCII-2",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-2-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-2-001.json",
+      "adjudicationRecordSha256": "45128B722E098D64F1362817E31F7FF22D4E1F303E7DFC9A0F135AAB2F3C82AB"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-003.json",
+      "sha256": "357AC6307C9CC3A79EAD1191E741D7D37357E620320071DF82B35EA8A3F820AB",
+      "decisionItemId": "FA-DIGIT-ASCII-3",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-3-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-3-001.json",
+      "adjudicationRecordSha256": "8F7A2CBA33E91E0E576230BF62021CF9B9413BEBD6C736CB4573A0F65B812FE0"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-004.json",
+      "sha256": "8D9B2F4A73D9548A28AEDBC502A56E77C4A75E8A9216D46E4C570EC5B4D5C7BF",
+      "decisionItemId": "FA-DIGIT-ASCII-4",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-4-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-4-001.json",
+      "adjudicationRecordSha256": "4590F8F64D4459089B1854374062A2D2F97BB2F7B2FEEFF11578DCF9B814F8A2"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-005.json",
+      "sha256": "F1E3F6C6C6A74D38EA7103AD793B704DEF6894B141E736CA5AEECCB62532116A",
+      "decisionItemId": "FA-DIGIT-ASCII-5",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-5-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-5-001.json",
+      "adjudicationRecordSha256": "C6BB9677EEB2E5B1A9117604B528ECD37F02044D861BAEBFFE3BD81DB85E869C"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-006.json",
+      "sha256": "2BD9E47B4794E162938CF49028217F33928959E92C2F889A7662AFB2477D411D",
+      "decisionItemId": "FA-DIGIT-ASCII-6",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-6-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-6-001.json",
+      "adjudicationRecordSha256": "F5AF81C011E2A16CD8E2FDAAA818B52ACD45AE86DBDCFE25C8BD3EA08918CCCA"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-007.json",
+      "sha256": "A765EE58259B098BBAE0A007376C2AB67D3880EB940ABEF5522F7446D3527EF9",
+      "decisionItemId": "FA-DIGIT-ASCII-7",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-7-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-7-001.json",
+      "adjudicationRecordSha256": "760F5B240F95FA9C4E7F0B98395985CBAB9604D02409DAB13B62A080C941EB30"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-008.json",
+      "sha256": "C87E240CB284E2EDC1B6330E3D57664A489E8D34A642442364C9371B47C1EC13",
+      "decisionItemId": "FA-DIGIT-ASCII-8",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-8-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-8-001.json",
+      "adjudicationRecordSha256": "4225F5D0E29702A2EAE05F51790311B65EB91640C5A79A4CCD3CFA18FFD6D9BA"
+    },
+    {
+      "id": "FA-G1-DIGIT-ASCII-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-ascii-009.json",
+      "sha256": "6DC630A5DD5D7CF869104363273B00C573A21D073A7D4E9EB9C41CB944360AC7",
+      "decisionItemId": "FA-DIGIT-ASCII-9",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-ASCII-9-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-ascii-9-001.json",
+      "adjudicationRecordSha256": "A875B083647CBC4D30008B630E89BB168DB2952D7D30DC8A49A4D871D0FA8683"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-000",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-000.json",
+      "sha256": "3005AB58A9EBE585794E4C44F13F90706D81C7A08A18A00489D4868E56D1EDE6",
+      "decisionItemId": "FA-DIGIT-PERSIAN-0",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-0-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-0-001.json",
+      "adjudicationRecordSha256": "E6EA98B23774A43802A24C76280B9DE1D0B9BFBC96290AEC963B50EAF3E332EE"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-001.json",
+      "sha256": "AAB01080DF477242C3418028386CECB235712A4F0D86AA19E3F588EA50ABD852",
+      "decisionItemId": "FA-DIGIT-PERSIAN-1",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-1-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-1-001.json",
+      "adjudicationRecordSha256": "D9151640ACC4D11D308D2A908BDA8808E3FC121A1A032CBA4A08A5C62227B4E0"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-002.json",
+      "sha256": "219F9BFA950377F4D368CE692F3A37E95E8C51FD4382A657A3D4A06DD824AD27",
+      "decisionItemId": "FA-DIGIT-PERSIAN-2",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-2-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-2-001.json",
+      "adjudicationRecordSha256": "B246A2D2F11E5DABA647AE9FF02E7FDB15835F277489F16761481FDF6C129C1F"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-003.json",
+      "sha256": "C200C2D558B2B71675E77BF9A3EB7667382FE7A6F9927319ADE2A4123C9E21C4",
+      "decisionItemId": "FA-DIGIT-PERSIAN-3",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-3-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-3-001.json",
+      "adjudicationRecordSha256": "F52D06962328A6F70E35A04C0C677A1D2C9224C06D3CD104BD188E8F1988FF9E"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-004.json",
+      "sha256": "17262CB049125EC27B1411EF97806557A715275BDEF62B2D9D88224C0F9B068E",
+      "decisionItemId": "FA-DIGIT-PERSIAN-4",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-4-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-4-001.json",
+      "adjudicationRecordSha256": "9584C15A6874BD191F7759B76E946756839EA5024461193D3FBD33357966D2CD"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-005.json",
+      "sha256": "414770F7EF288E006BFD62EE960CD628563FAF46E4D8D6E88E07E743183DB62A",
+      "decisionItemId": "FA-DIGIT-PERSIAN-5",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-5-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-5-001.json",
+      "adjudicationRecordSha256": "1337DE37921192323E25F37F1EB6445FFDE1C79148E4309EF1FD40A2ABEED1F5"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-006.json",
+      "sha256": "89AE105C67916B18B1691DE0392F70404D0636FC34A7BED668E8D17B58628ADC",
+      "decisionItemId": "FA-DIGIT-PERSIAN-6",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-6-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-6-001.json",
+      "adjudicationRecordSha256": "0DE746784AD72B49CC557D40E04A9FC276B28F21785394C21727CB2F63AD60CC"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-007.json",
+      "sha256": "32B159ED5F10CA10020211A844E412ABBDD3E8BEAE517CD11A23547FF662AFFA",
+      "decisionItemId": "FA-DIGIT-PERSIAN-7",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-7-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-7-001.json",
+      "adjudicationRecordSha256": "072B3429EC16654494BB02F0DE453B0E770A9E65570BD15B55385C49C0EC2EC7"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-008.json",
+      "sha256": "0A3B5D3C9AA3A054A3D56634735FEBB0FFE95D016EEF041D65FC5957C28F9CEA",
+      "decisionItemId": "FA-DIGIT-PERSIAN-8",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-8-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-8-001.json",
+      "adjudicationRecordSha256": "AF1637314C8BE4E85937032911A01044A3A77752FF88A38CC1BA9EC2B21298AF"
+    },
+    {
+      "id": "FA-G1-DIGIT-PERSIAN-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-digit-persian-009.json",
+      "sha256": "59D43BAC3F36972825C76F63F716663E04BDE41F68B06BB8561D06B39ECBADCE",
+      "decisionItemId": "FA-DIGIT-PERSIAN-9",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-DIGIT-PERSIAN-9-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-digit-persian-9-001.json",
+      "adjudicationRecordSha256": "55CEC79DFB567905B5B0CC0BB1A3AB3B95C63DC7C550319405A9E60682A90D3F"
+    },
+    {
+      "id": "FA-G1-LATIN-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-001.json",
+      "sha256": "F6780BFC911A20BBAD4706896D5D68AC987186485D35747EAA1489BD8C883887",
+      "decisionItemId": "FA-LATIN-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-001-001.json",
+      "adjudicationRecordSha256": "AA9FD5BB9BB3076241D997D26D6001D483C656F09311B6923D1C5FC14A854240"
+    },
+    {
+      "id": "FA-G1-LATIN-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-002.json",
+      "sha256": "ADD25B66D6CB95541AA7FB54FF9C8B18AD9252E179EC492346082B5E2F43F922",
+      "decisionItemId": "FA-LATIN-002",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-002-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-002-001.json",
+      "adjudicationRecordSha256": "38D168A3D20F0863E193AF01B53006F727A8C3E91AD2343019260F4672E3F96F"
+    },
+    {
+      "id": "FA-G1-LATIN-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-003.json",
+      "sha256": "0838C8855C1D0B0B190ED1A82DE0A1A42630C9AD60F00AA517D5A9D230208506",
+      "decisionItemId": "FA-LATIN-003",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-003-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-003-001.json",
+      "adjudicationRecordSha256": "B2CCFC76CB1F377A3504676BB39E49D9B7FEAE7A8D14733A4D246CF0EF4D9710"
+    },
+    {
+      "id": "FA-G1-LATIN-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-004.json",
+      "sha256": "1AE2FC51FFA4C5213CA908AD1E91D8A9ECF13A57E3AEA59DD3B2377026C94B8D",
+      "decisionItemId": "FA-LATIN-004",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-004-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-004-001.json",
+      "adjudicationRecordSha256": "1F5485334A2486EA94D2447D2DF536C4A245708C51873AD371DF2FA54ED570BE"
+    },
+    {
+      "id": "FA-G1-LATIN-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-005.json",
+      "sha256": "3C07AA2488AF829C0E0BD7FF4397525AE3A04A9A4D962715AA9C4169A6DAB122",
+      "decisionItemId": "FA-LATIN-005",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-005-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-005-001.json",
+      "adjudicationRecordSha256": "0B112BD6F50C99F11712A46EF83BAFBFE6F051C93F075F8F8E3B8B84C6B88C12"
+    },
+    {
+      "id": "FA-G1-LATIN-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-006.json",
+      "sha256": "E144FA73319937B440C59163A67ED598B3DBD7A7DC8887526400B0370A41B810",
+      "decisionItemId": "FA-LATIN-006",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-006-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-006-001.json",
+      "adjudicationRecordSha256": "540EE047F3852DE0A6BF642BD496505434CAB689CEC0CA63F1A9391A0AFE1227"
+    },
+    {
+      "id": "FA-G1-LATIN-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-007.json",
+      "sha256": "E8F35939CD770F2464CC0911282B1C9B6D6E82E80F4BA4FE5B2CFFA9BDE79123",
+      "decisionItemId": "FA-LATIN-007",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-007-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-007-001.json",
+      "adjudicationRecordSha256": "21960897C0FD7A48AF5E9087C81F532469FAFF84219F2825F6AB65C0C5A59963"
+    },
+    {
+      "id": "FA-G1-LATIN-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-008.json",
+      "sha256": "627A8A1787BDAD27834962FA1614A4D74E68DBB6D235D7B88175735824A718B8",
+      "decisionItemId": "FA-LATIN-008",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-008-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-008-001.json",
+      "adjudicationRecordSha256": "59875C64A0704A65E580373580E7AD988C33FF189A05FD19B72286805D77DA3C"
+    },
+    {
+      "id": "FA-G1-LATIN-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-009.json",
+      "sha256": "0B5CAA57EEF0804495CBFB58AE7F6DABE8072A97E40B83586D9525129F723022",
+      "decisionItemId": "FA-LATIN-009",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-009-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-009-001.json",
+      "adjudicationRecordSha256": "03007EDC39A54BDC2028C5EAE8365CB30CF726A059FBDD4F3B8596F2B1D00A2E"
+    },
+    {
+      "id": "FA-G1-LATIN-010",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-010.json",
+      "sha256": "A5F4457D04420AD743E5FC908FB27B6E1B0589602551AFCC45602444E3AD6D8C",
+      "decisionItemId": "FA-LATIN-010",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-010-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-010-001.json",
+      "adjudicationRecordSha256": "7F9242D2F07C56656E95E9B3BA9B8B8B13ED3C9D83E267FE1031DC30B4C928B9"
+    },
+    {
+      "id": "FA-G1-LATIN-011",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-011.json",
+      "sha256": "021E9E75E3D15B9BFFCECE058FD43A1941DE0A6C1FADC028A9AF47C33F3C1BD7",
+      "decisionItemId": "FA-LATIN-011",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-011-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-011-001.json",
+      "adjudicationRecordSha256": "AA0A0526D4CCEDBAC3ADBCF0E6A3EF06891195B3237E09CC8675E1B2B4DCC2E1"
+    },
+    {
+      "id": "FA-G1-LATIN-012",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-012.json",
+      "sha256": "EFD690A56270255CADE57B1E217A8B5117C62BCBAD4E17A7EB557F69F286029E",
+      "decisionItemId": "FA-LATIN-012",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-012-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-012-001.json",
+      "adjudicationRecordSha256": "2D9FD4F3DF824DCC2C5799886AFE8750EF382A361EE26D9A2C42CD2527932331"
+    },
+    {
+      "id": "FA-G1-LATIN-013",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-013.json",
+      "sha256": "98A38174767821B9B95F53B414D3A69BA18A5F3DF9ECE3CADA23FB1D8CC8957B",
+      "decisionItemId": "FA-LATIN-013",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-013-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-013-001.json",
+      "adjudicationRecordSha256": "37770BFC1C39ED1BC807DD5E7FE3ABCA0B556F1B987CFF495D2A4E3EC3FEB86D"
+    },
+    {
+      "id": "FA-G1-LATIN-014",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-014.json",
+      "sha256": "BE9F84DD1274D8612331287426F74FE5904A7FE42E98DAF0ECC5B83A1F63A491",
+      "decisionItemId": "FA-LATIN-014",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-014-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-014-001.json",
+      "adjudicationRecordSha256": "A4A0DBF2D8FAAB84F3305A0319EDBAEF7F9A0080A12E17DA320988173D8AF5AE"
+    },
+    {
+      "id": "FA-G1-LATIN-015",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-015.json",
+      "sha256": "2E734A64E37A421BAB6F6C35758DCF1C317DCAB6BFB57C0114032E28EEE9F883",
+      "decisionItemId": "FA-LATIN-015",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-015-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-015-001.json",
+      "adjudicationRecordSha256": "1400755E91C76B23680DBAFAAFB44E934462C0910C104765732F4B228F06A0BA"
+    },
+    {
+      "id": "FA-G1-LATIN-016",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-016.json",
+      "sha256": "2D3EC3195E840E5804007373944C8118A1D5D5652AC11E90A61C5AA439FE4192",
+      "decisionItemId": "FA-LATIN-016",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-016-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-016-001.json",
+      "adjudicationRecordSha256": "DDB8D41BEA443ABCD24DF7D3630B81E34A2BD162B8E8A60D0413289A08FD618D"
+    },
+    {
+      "id": "FA-G1-LATIN-017",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-017.json",
+      "sha256": "941320600CCCC9EC6B97EBADE62CF0DA9FFE68FA0CE16D61091E638451D13560",
+      "decisionItemId": "FA-LATIN-017",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-017-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-017-001.json",
+      "adjudicationRecordSha256": "2E9D49058DE321DC97C3560B8F405A50D80D35AAE15036449F5FDC8DD2C94982"
+    },
+    {
+      "id": "FA-G1-LATIN-018",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-018.json",
+      "sha256": "46D1B18BC353C3C0C19F29237CF5D45C205639F4BAA2C7B086E3C9BA93375CEF",
+      "decisionItemId": "FA-LATIN-018",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-018-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-018-001.json",
+      "adjudicationRecordSha256": "7AC800DD8C65B5C742E4EDD7E6AC7113EDEA98C92EF4BF00FB3C13F2ABD583CA"
+    },
+    {
+      "id": "FA-G1-LATIN-019",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-019.json",
+      "sha256": "2C41214DD24BE8297178F00E795DC6D38B142EA959F3AF64A11700C7D5551412",
+      "decisionItemId": "FA-LATIN-019",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-019-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-019-001.json",
+      "adjudicationRecordSha256": "E3B09CE1F65881F27296DA9EA5805F34F8417BEB48269B87288AC9DDBED84833"
+    },
+    {
+      "id": "FA-G1-LATIN-020",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-020.json",
+      "sha256": "002CD5464E766737616969EC6CA22FF9A57AC1DA9CA25D4F4171FC4ADF4ACA60",
+      "decisionItemId": "FA-LATIN-020",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-020-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-020-001.json",
+      "adjudicationRecordSha256": "8FED23784032E6C268968FE8D73BD2C16F20877FC19375A4F63F0BCF599B773C"
+    },
+    {
+      "id": "FA-G1-LATIN-021",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-021.json",
+      "sha256": "54A6040E1F5EE0E664AC63801A66D52582F6B955FA7B950F1031D4C3AD5AEACF",
+      "decisionItemId": "FA-LATIN-021",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-021-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-021-001.json",
+      "adjudicationRecordSha256": "96A1854487931A41621C80A34CAA22CA726010CE35D03C80553A177194962E07"
+    },
+    {
+      "id": "FA-G1-LATIN-022",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-022.json",
+      "sha256": "C41E0305CD9CD81A9864E5F1689BB6DDF13A7DE3B00DB2A8AB75B3A0270C15DF",
+      "decisionItemId": "FA-LATIN-022",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-022-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-022-001.json",
+      "adjudicationRecordSha256": "144B1BC49C64815E763AD5B01ED5A7957FF1551829E8F2C8AB2AD1B420108577"
+    },
+    {
+      "id": "FA-G1-LATIN-023",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-023.json",
+      "sha256": "40C695C17ADA89E2CE4896FF3BA52B2AA8702B6F849AE085327324ABA796203C",
+      "decisionItemId": "FA-LATIN-023",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-023-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-023-001.json",
+      "adjudicationRecordSha256": "11848586BD6C9E1C0BCC79CA328F1D73551AE0BD7511931A05C6A27D9B70123D"
+    },
+    {
+      "id": "FA-G1-LATIN-024",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-024.json",
+      "sha256": "6AAF22F6933E5CF620ED181ABDE02B53431E71C5E3F4AADD738A42196DBA9847",
+      "decisionItemId": "FA-LATIN-024",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-024-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-024-001.json",
+      "adjudicationRecordSha256": "96C1517950D72F23142320EE509E2E743C184120A3747F8D6633F63A6851B6D2"
+    },
+    {
+      "id": "FA-G1-LATIN-025",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-025.json",
+      "sha256": "67762177657FCA331700A45F16F0B87D50B16E54D53F279F9B88AE01FC0A6E18",
+      "decisionItemId": "FA-LATIN-025",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-025-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-025-001.json",
+      "adjudicationRecordSha256": "2BEC3F67701201B82CBC71611BD6A5199CFA9E42D2CEFCCB1368336B70BDFCBB"
+    },
+    {
+      "id": "FA-G1-LATIN-026",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-026.json",
+      "sha256": "FD8F9A900C6D9011AC9B8A4D73A56B673C10D4508BD0932FA32E7CA07EFF4F6C",
+      "decisionItemId": "FA-LATIN-026",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-026-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-026-001.json",
+      "adjudicationRecordSha256": "EF304BBC6F0E9C3CC2E8AC2B3FA2A3FC1A30C30E827A526AF2E206DEDD58C409"
+    },
+    {
+      "id": "FA-G1-LATIN-027",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-027.json",
+      "sha256": "D06152BE19E2C4C4F92EE725B485CF5E488FA01454D02509C1E8E258266EB9C9",
+      "decisionItemId": "FA-LATIN-027",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-027-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-027-001.json",
+      "adjudicationRecordSha256": "DF6C920ED5E6F0AB6C7F1290CCCE3CAB151597F782C347AFA04302DA655BC073"
+    },
+    {
+      "id": "FA-G1-LATIN-028",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-028.json",
+      "sha256": "040FC2E9DA341A2FA1A9226E4F32E35E8E3214B8B38FE9D52CF15883C266926D",
+      "decisionItemId": "FA-LATIN-028",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-028-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-028-001.json",
+      "adjudicationRecordSha256": "CC366675D9AD9FD7FB29288C6DF196C382CE33A317807729B1C2B228A0B63FD8"
+    },
+    {
+      "id": "FA-G1-LATIN-029",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-029.json",
+      "sha256": "C0E7DF481AF988A09B062C4D217741BBED4ED555AD8AAEBFAE579963FAB680F7",
+      "decisionItemId": "FA-LATIN-029",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-029-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-029-001.json",
+      "adjudicationRecordSha256": "54FC8AC2A2427428253C1F5E712C3E20C7E7D9CDF3912F63C2D64EBB6E04C82A"
+    },
+    {
+      "id": "FA-G1-LATIN-030",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-030.json",
+      "sha256": "F78D5656E883E4F0E444D1293E2BEF1547EC088C00A57C68F6BB4F18A417DEC6",
+      "decisionItemId": "FA-LATIN-030",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-030-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-030-001.json",
+      "adjudicationRecordSha256": "D6ACAEF1775E3EB71AEC34285ECC4E2FEE433A4004FDE37FB9CB43B50E98E325"
+    },
+    {
+      "id": "FA-G1-LATIN-031",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-031.json",
+      "sha256": "36E08E81E0153349BAD87F96BB2B060109BC939C6E98D52D47604B6CC2BA6FEB",
+      "decisionItemId": "FA-LATIN-031",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-031-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-031-001.json",
+      "adjudicationRecordSha256": "97A5417405DEB8279E2F4EF566E14B1E690B860860D2C924F48A1F44EF145CAE"
+    },
+    {
+      "id": "FA-G1-LATIN-032",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-032.json",
+      "sha256": "A0FDB69ABCBEA41A8270ECC4BDD2337C8B26D10ABAB84BE9CCD35EEF80E2DF5F",
+      "decisionItemId": "FA-LATIN-032",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-032-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-032-001.json",
+      "adjudicationRecordSha256": "F99BEFFC4BC8158EF3AC71C3EDF5C3D00B99A0730F31C09C15A76C1A545AAF5E"
+    },
+    {
+      "id": "FA-G1-LATIN-033",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-033.json",
+      "sha256": "BC6E31F104AB83195B764DD0AB368F035B717806649837D2F3325158DB7772FA",
+      "decisionItemId": "FA-LATIN-033",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-033-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-033-001.json",
+      "adjudicationRecordSha256": "3A9B0AB561333E1EDD0E08A6A849A6E782AD44064F4483AB8E862BAF69CB3FAE"
+    },
+    {
+      "id": "FA-G1-LATIN-034",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-034.json",
+      "sha256": "4AC56D52DC4009677A091E7F1E2796F23B36AAB6C0412402DE0BD39C05D8A272",
+      "decisionItemId": "FA-LATIN-034",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-034-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-034-001.json",
+      "adjudicationRecordSha256": "C6B1349112C077B6BBCA816C17F6ACBF6D0BC54928589633423BACD2CA78521B"
+    },
+    {
+      "id": "FA-G1-LATIN-035",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-035.json",
+      "sha256": "BC39780BFD29A04494121975F6E885C78E16645CB344BC8F978FEA0732218087",
+      "decisionItemId": "FA-LATIN-035",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-035-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-035-001.json",
+      "adjudicationRecordSha256": "3D75CF1BE40632DC05E203995837024B4AC29E51368A8FE2A2E3729FD12D4418"
+    },
+    {
+      "id": "FA-G1-LATIN-036",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-036.json",
+      "sha256": "B319192F290D72CD9FD9956C294AAD5248B2BC037FFF375638EA7A53FB124C53",
+      "decisionItemId": "FA-LATIN-036",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-036-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-036-001.json",
+      "adjudicationRecordSha256": "723BECDDAE28CCFE99CAC5A8801C05B8332C5D90B03C43BC76D8D10C5D89E2F4"
+    },
+    {
+      "id": "FA-G1-LATIN-037",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-037.json",
+      "sha256": "E06827018939CD232DFD6232D34373CB066674EDF7A83C2FA7F252D64FD641A3",
+      "decisionItemId": "FA-LATIN-037",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-037-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-037-001.json",
+      "adjudicationRecordSha256": "2306175299EEB858929B02016280369E6D0FDFE13C40D6FBAC92BCD9DCC687FB"
+    },
+    {
+      "id": "FA-G1-LATIN-038",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-038.json",
+      "sha256": "DE65DBFA9449BF74D97915BBF83ACF3524C2A7BEB33E1334CA14D987F302527F",
+      "decisionItemId": "FA-LATIN-038",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-038-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-038-001.json",
+      "adjudicationRecordSha256": "95DCBA16E0EE958FB61CD01FA3310E435F54C5F53EBB76CC15CA2BDE4DB1F30B"
+    },
+    {
+      "id": "FA-G1-LATIN-039",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-039.json",
+      "sha256": "8BD989D6355AF4EE82E8A0F97E5A2089019E5C2E285B06E39A437A8D24DB08BD",
+      "decisionItemId": "FA-LATIN-039",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-039-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-039-001.json",
+      "adjudicationRecordSha256": "27D6A2DD93A564E097743385F571F2B445A0EF901BBD628FAF6D8D6C66261B2B"
+    },
+    {
+      "id": "FA-G1-LATIN-040",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-040.json",
+      "sha256": "DEB89E598F682EB7EA7453C5F7F6C7B50B201559FB6F82C4638CF21E0AED80E8",
+      "decisionItemId": "FA-LATIN-040",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-040-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-040-001.json",
+      "adjudicationRecordSha256": "E5A6D523CB061F2EAAD313EEF929928596C9655F96A57B4B64323A37AC5434D0"
+    },
+    {
+      "id": "FA-G1-LATIN-041",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-041.json",
+      "sha256": "DE2D9D99E67D48990CBA7E95C8F3CA03BA41AB57F293CA5A40A35F789DE3DA35",
+      "decisionItemId": "FA-LATIN-041",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-041-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-041-001.json",
+      "adjudicationRecordSha256": "E95FA9A8BA4E4A4AC572C0014768EB04C05EBD71E8E07849F1D160664A1CE4F9"
+    },
+    {
+      "id": "FA-G1-LATIN-042",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-042.json",
+      "sha256": "E31FBAB9F4BE4579C25FBA7D7808EC4EAA0D0B11B704E7B5B08363630E804D4B",
+      "decisionItemId": "FA-LATIN-042",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-042-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-042-001.json",
+      "adjudicationRecordSha256": "D7834FC0B8A9E97D558E6E65B77DCECF022BF21450289C49D07A4CE02E17B76D"
+    },
+    {
+      "id": "FA-G1-LATIN-043",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-043.json",
+      "sha256": "1EBBE2BF4949C2E635D44CF046FC39EA9F51BA8B93B16B82FCE104A292D6587B",
+      "decisionItemId": "FA-LATIN-043",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-043-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-043-001.json",
+      "adjudicationRecordSha256": "06DF731E6DAC7C164149AD480782277619CDE6F86946A0903CCA46E097151B70"
+    },
+    {
+      "id": "FA-G1-LATIN-044",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-044.json",
+      "sha256": "1F8B4D477A5600B11FBEA8E729E7B1DA560E018BC37F0806FBD056CD99B68BA4",
+      "decisionItemId": "FA-LATIN-044",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-044-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-044-001.json",
+      "adjudicationRecordSha256": "38083919F3C59F48AD39F45582BA79F90D53F5133E2FEB5FFA40BEB74D300459"
+    },
+    {
+      "id": "FA-G1-LATIN-045",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-045.json",
+      "sha256": "177CA273776AB7B513375ED75D4AF14733F09972F04A2BBF5A9A1462E0141930",
+      "decisionItemId": "FA-LATIN-045",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-045-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-045-001.json",
+      "adjudicationRecordSha256": "820E8C6A7097E473BB627306F5D8B28A779699189F1400704DBFABF333FCE238"
+    },
+    {
+      "id": "FA-G1-LATIN-046",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-046.json",
+      "sha256": "58482F9E528AFDA14EECDE06198FCBBE466C17452BD3DC3FF0B92AD2DC21B59A",
+      "decisionItemId": "FA-LATIN-046",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-046-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-046-001.json",
+      "adjudicationRecordSha256": "BD5860EBD43DC29E83BBB1FF73644A4805DECC70D22C5D786780F140AA1C423D"
+    },
+    {
+      "id": "FA-G1-LATIN-047",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-047.json",
+      "sha256": "0548E4149D703C618F402236E02BEC516CD143F63C5BB1212456E24735AE793F",
+      "decisionItemId": "FA-LATIN-047",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-047-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-047-001.json",
+      "adjudicationRecordSha256": "E85D6C50DE57380732A21A2F5BA481785539C85F92285AEEFD65A13347747D38"
+    },
+    {
+      "id": "FA-G1-LATIN-048",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-048.json",
+      "sha256": "E03E012B864EBDC06131980C38F645924D01434525DCA7A2BF8AFA15F3C1D740",
+      "decisionItemId": "FA-LATIN-048",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-048-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-048-001.json",
+      "adjudicationRecordSha256": "870CE07563BC0955D9EB4CC557EC74FDE06921D28015CDC17DB16E8A68498A57"
+    },
+    {
+      "id": "FA-G1-LATIN-049",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-049.json",
+      "sha256": "07E27D7FEE45C3A2C9BA3B68D97104E1232A5A2930E34B483A1DCB90C504E740",
+      "decisionItemId": "FA-LATIN-049",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-049-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-049-001.json",
+      "adjudicationRecordSha256": "BAFA51C93C2ED634700F5F2FD0EE796F3F0A95B96EDC0CA36E2341F35ABF938D"
+    },
+    {
+      "id": "FA-G1-LATIN-050",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-050.json",
+      "sha256": "7E621F35768CB9600701F4A6121FE88936D7F83EB75383F9177CC04182C97626",
+      "decisionItemId": "FA-LATIN-050",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-050-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-050-001.json",
+      "adjudicationRecordSha256": "C0ED28FFAD92BA266654A203DE5599932405E493658D026537A7A99BB9CAC962"
+    },
+    {
+      "id": "FA-G1-LATIN-051",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-051.json",
+      "sha256": "BAC692C3A7B145AE7091EABD0885933289BA1A21415F6EEF80FE93903FA34A01",
+      "decisionItemId": "FA-LATIN-051",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-051-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-051-001.json",
+      "adjudicationRecordSha256": "081CEEFCA3D5E85725A6F7E1CE4562C77E09CF5DF4DA7C44C1238EFA484A3166"
+    },
+    {
+      "id": "FA-G1-LATIN-052",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-052.json",
+      "sha256": "AFEF7E3EB4EA45732324A4F9C708DDA956289904B163CF2477808701D34F6F12",
+      "decisionItemId": "FA-LATIN-052",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-052-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-052-001.json",
+      "adjudicationRecordSha256": "9F0F8D501A0AEB0D55FCEE70A976C3FA0C6B7F1D0E64F0960765FB2A37FE98CF"
+    },
+    {
+      "id": "FA-G1-LATIN-MODE-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-mode-001.json",
+      "sha256": "5BC85D936AA1F8A9F32B296C8F05A375353609595A6E7F095E5D608D3F59D27D",
+      "decisionItemId": "FA-LATIN-MODE-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-MODE-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-mode-001-001.json",
+      "adjudicationRecordSha256": "9CBDCB3DA8CABEAA538DFFF946AB5900DB4FC5869D2F9E242B87495E7C3437BA"
+    },
+    {
+      "id": "FA-G1-LATIN-MODE-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-mode-002.json",
+      "sha256": "E5E98E714D11CC118C784371B65480E65205A93FCB378DB58E94785BAC59898E",
+      "decisionItemId": "FA-LATIN-MODE-002",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-MODE-002-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-mode-002-001.json",
+      "adjudicationRecordSha256": "157AEB3148ABA1B1F14DE31C48E41AB6A8CBCADB1B4588987F92AA5FEB9041C5"
+    },
+    {
+      "id": "FA-G1-LATIN-MODE-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-mode-003.json",
+      "sha256": "D6FA0AAA933CE22F545BA12D83A5641759B604F6C01436DE2C547AA20CB7BC13",
+      "decisionItemId": "FA-LATIN-MODE-003",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-MODE-003-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-mode-003-001.json",
+      "adjudicationRecordSha256": "B4A5789814EA679DF8FC669242FEC43828A418980C4DAD2E5A7E3C514F22B015"
+    },
+    {
+      "id": "FA-G1-LATIN-MODE-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-latin-mode-004.json",
+      "sha256": "4196E74FBD6ED2F487FF184365EB73E60153293D2FE817865C77299D82249832",
+      "decisionItemId": "FA-LATIN-MODE-004",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-LATIN-MODE-004-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-latin-mode-004-001.json",
+      "adjudicationRecordSha256": "B69E39303D20290F4B48FE2E603675B93DBFE66CE2CB774FB98BCB5D4C0B3589"
+    },
+    {
+      "id": "FA-G1-LAYOUT-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-001.json",
+      "sha256": "5419ED795368D08CCB4CF5A2FE9903821EF57C8FE247AA8A6ADE2907F61D6620",
+      "decisionItemId": "FA-WS-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-001-001.json",
+      "adjudicationRecordSha256": "6D7FDEE0BF01BDBE9931C16B4DB46B1F0EC582F9CBD64874A2788ADAA1381EBD"
+    },
+    {
+      "id": "FA-G1-LAYOUT-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-002.json",
+      "sha256": "3ED658AB8BACDD9E32EDB7DD00DCE813625E55618ADE15D7C55C89954D5047CD",
+      "decisionItemId": "FA-WS-002",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-002-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-002-001.json",
+      "adjudicationRecordSha256": "4FB5E9A2DA026DCC1DA64B1F707CECB44C11692AD8AD1A4B691DC971A7261804"
+    },
+    {
+      "id": "FA-G1-LAYOUT-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-003.json",
+      "sha256": "C682DFEA8DD3FACD5B474C8B263805106267290F414C0CD847C403A82D5005CB",
+      "decisionItemId": "FA-WS-003",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-003-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-003-001.json",
+      "adjudicationRecordSha256": "22C9C78E0ABD316EB7F721A630D69D7A623E7E808068ACF1F8FDBF05FE275C71"
+    },
+    {
+      "id": "FA-G1-LAYOUT-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-004.json",
+      "sha256": "D94F80788D97B8E9ED4E7D6902783FB994B36DA0385BFF2953D3BA2C6FCF9FD8",
+      "decisionItemId": "FA-WS-004",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-004-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-004-001.json",
+      "adjudicationRecordSha256": "129F81077D62DC3401AED7741294DFEFA396EF55F0E5A5ADBF85C8E203C9D22A"
+    },
+    {
+      "id": "FA-G1-LAYOUT-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-005.json",
+      "sha256": "67479FBA475DA685B99F7622D97F289DF0BEDEE57D6CC4F9999BDEADB6707F83",
+      "decisionItemId": "FA-WS-005",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-005-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-005-001.json",
+      "adjudicationRecordSha256": "790AE3F07503FA46B96DBECC531E7BB89A633B499323C12DFE0973B4D374EA9D"
+    },
+    {
+      "id": "FA-G1-LAYOUT-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-006.json",
+      "sha256": "834B2F2E8DE0C697E7871E433E9BF48DCDF6E0BC86FD780336697F6189BF5BD2",
+      "decisionItemId": "FA-WS-006",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-006-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-006-001.json",
+      "adjudicationRecordSha256": "ECBC9FE4C795B8B7F562DB91F9235AA59DC42F299D72B585C4D9A8A57AA73CD1"
+    },
+    {
+      "id": "FA-G1-LAYOUT-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-007.json",
+      "sha256": "7E28A1C7F056D9A85002CE9FD4D7AF4CCA3F3F2E5D44375B11969D19B2AA3E63",
+      "decisionItemId": "FA-WS-007",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-007-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-007-001.json",
+      "adjudicationRecordSha256": "2BFAEEC94DBDA244134F3AB4A6F3DF3366F614D0011B0EDEE4834E15B5C50E37"
+    },
+    {
+      "id": "FA-G1-LAYOUT-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-008.json",
+      "sha256": "F442387C3B407BB9AB14306323990570FBBDBE7B94E24D6A7B3DC0A2853DBD49",
+      "decisionItemId": "FA-WS-008",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-008-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-008-001.json",
+      "adjudicationRecordSha256": "6ADEB5B684424EB50438E46D6097016B0EC02E4BED49F213B6404A77BB64D73F"
+    },
+    {
+      "id": "FA-G1-LAYOUT-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-009.json",
+      "sha256": "987C9BAD0640CAB236749CED0C84BA3C319FCA833763980187365D54F7242B31",
+      "decisionItemId": "FA-WS-009",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-009-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-009-001.json",
+      "adjudicationRecordSha256": "99F40FF57FD0163A1F52DED9A5557013B565AA8CA1AC535BA23FBAF6148D541A"
+    },
+    {
+      "id": "FA-G1-LAYOUT-010",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-010.json",
+      "sha256": "59349C890789143AB11B87D9991ED2E84D81DE69E41009CCD2AF60B455BB1471",
+      "decisionItemId": "FA-WS-010",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-010-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-010-001.json",
+      "adjudicationRecordSha256": "E638835E3846AD77F50F09770E4252754CBD58C7163E0D873B8DF28CB70C3B02"
+    },
+    {
+      "id": "FA-G1-LAYOUT-011",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-011.json",
+      "sha256": "85AB84776E53B9089CCC8B00FD39F422846FEA5AD94A30ABFDEAE082CDF80F75",
+      "decisionItemId": "FA-WS-011",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-011-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-011-001.json",
+      "adjudicationRecordSha256": "4CFCD0B13A7DB092DF7618CF8DA35356422A00E1976E65A92654DF68DA046B21"
+    },
+    {
+      "id": "FA-G1-LAYOUT-012",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-012.json",
+      "sha256": "791BBA8778BAE71E60454D4191BFC15025B6AC71756F721F6E487E16861F3404",
+      "decisionItemId": "FA-WS-012",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-012-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-012-001.json",
+      "adjudicationRecordSha256": "4F20145959A0E129184782A7DE7603F289BB94B3AF58C18DEAA1347BAAFD491E"
+    },
+    {
+      "id": "FA-G1-LAYOUT-013",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-013.json",
+      "sha256": "B29FC4BFDF3273C6C65D6CF35A2A87149C06D93E4182D95FAE0A2535B17B756F",
+      "decisionItemId": "FA-WS-013",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-013-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-013-001.json",
+      "adjudicationRecordSha256": "1559BE1AE9B30B867A7BC8CCE894F1B5738B6FA07F7AB3909E5EEA385159237D"
+    },
+    {
+      "id": "FA-G1-LAYOUT-014",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-014.json",
+      "sha256": "7B8F4E3012BAA858A09BEDE019E836F20370EF2CBBD097DFB2C01C4A69EBCF5A",
+      "decisionItemId": "FA-WS-014",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-014-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-014-001.json",
+      "adjudicationRecordSha256": "19791F78BD11F7F3E9F3E28B8BD8AA4AA6439745C2FEB4EF45129513F282E593"
+    },
+    {
+      "id": "FA-G1-LAYOUT-015",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-015.json",
+      "sha256": "3D1A65AF433C4F0448E7A481792FE9A524A04BAE1544898F931EF82484F1BE73",
+      "decisionItemId": "FA-WS-015",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-015-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-015-001.json",
+      "adjudicationRecordSha256": "C27ECA6394780E0D98CA6F5C4E3B3CDD95E740BA47F6AB828CEC78BCED60A13F"
+    },
+    {
+      "id": "FA-G1-LAYOUT-016",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-016.json",
+      "sha256": "E6385B09C2339B060CB15DC36C926E400488F02BCFC606CC31512884D24D7D40",
+      "decisionItemId": "FA-WS-016",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-016-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-016-001.json",
+      "adjudicationRecordSha256": "F8F81CC3291EB8BB8F4F03EEFAD3151D9C915C8A707763A22F49D77FA851CB74"
+    },
+    {
+      "id": "FA-G1-LAYOUT-017",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-017.json",
+      "sha256": "8012871175AABCC244D04D01A6F20A04CA4056A5819054E4D33FEBE3DCFC027E",
+      "decisionItemId": "FA-WS-017",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-017-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-017-001.json",
+      "adjudicationRecordSha256": "5E2CDD7661C752A54DB1AB7E905E2E1F4FD536B86EA6716B41947EFCE4DBD41A"
+    },
+    {
+      "id": "FA-G1-LAYOUT-018",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-018.json",
+      "sha256": "FAC7D849161BFDC226A812B5C64C704041C5532CBBD252582E3B6C5E21EEED1C",
+      "decisionItemId": "FA-WS-018",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-018-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-018-001.json",
+      "adjudicationRecordSha256": "5C0A8D7458305173F107CD15A10C14A7F98A53F738DF748E4F7F0B40D363352C"
+    },
+    {
+      "id": "FA-G1-LAYOUT-019",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-019.json",
+      "sha256": "D3DDCC333472E598F4E13E527EC3BDB4E84C6CC4B4D46444E06F45AB4E1193F8",
+      "decisionItemId": "FA-WS-019",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-019-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-019-001.json",
+      "adjudicationRecordSha256": "1B0414F5BA2A4CAF5B8816EC64C6FCAD57313D8D646F6BBB86A115998CBF09FD"
+    },
+    {
+      "id": "FA-G1-LAYOUT-020",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-020.json",
+      "sha256": "8D81640B2A9D68BEC98BB9FAE3B25CC42FB14CAF5A0DA263DA5C1971904339FD",
+      "decisionItemId": "FA-WS-020",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-020-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-020-001.json",
+      "adjudicationRecordSha256": "86EA9643235C56D0D1D2C32A70057689B93EA5D6F5C36957AB1D1E8B65392A21"
+    },
+    {
+      "id": "FA-G1-LAYOUT-021",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-021.json",
+      "sha256": "5C8A6860AE500E2FCDE33ED5589BB13F4B3E1738B4CFF74961B6B17596F6B656",
+      "decisionItemId": "FA-WS-021",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-021-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-021-001.json",
+      "adjudicationRecordSha256": "18AA2430C61176BD831C1A1E009C49A2294BF6C7356AAA9D8071A8FE7DBEDA89"
+    },
+    {
+      "id": "FA-G1-LAYOUT-022",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-022.json",
+      "sha256": "8BB2D92F34A97D5A0DAF9E2D46AADB9934CFB86B3D20FD691FE3366B1EB456D9",
+      "decisionItemId": "FA-WS-022",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-022-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-022-001.json",
+      "adjudicationRecordSha256": "98FE454F4306E75E61C4D5566A99303CE94B0506BC00036426E5DDF874337565"
+    },
+    {
+      "id": "FA-G1-LAYOUT-023",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-023.json",
+      "sha256": "590143D1AFCC9967E073756DEEEECAE6470CB1E6456D4E877818A7F1D11F51F5",
+      "decisionItemId": "FA-WS-023",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-023-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-023-001.json",
+      "adjudicationRecordSha256": "274F4606948DE83429AF34C7924D9AC2EC7F6F1AEA01C194AC0E88C77BC84578"
+    },
+    {
+      "id": "FA-G1-LAYOUT-024",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-024.json",
+      "sha256": "845011B96BFA8E8EF2846BD362086B6FBA4EF4D9F4D863986137AF6AEF6B348E",
+      "decisionItemId": "FA-WS-024",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-024-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-024-001.json",
+      "adjudicationRecordSha256": "262165C0B44A06FAAFECB9B9F4E84865F796F2ECA7C2DF4A677A0F2A33979512"
+    },
+    {
+      "id": "FA-G1-LAYOUT-025",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-025.json",
+      "sha256": "A7D66A086C1DFF57982218CA2ED6A91391B27D088F080FE5555761153E662BD6",
+      "decisionItemId": "FA-WS-025",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-025-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-025-001.json",
+      "adjudicationRecordSha256": "6F7BE9FB8C9E65528BDA869F4649955CCA73EF0E93E5F672D78AA78BD82F64A3"
+    },
+    {
+      "id": "FA-G1-LAYOUT-026",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-026.json",
+      "sha256": "F97CB345F3DE0AEC76A6EC2F776ABD8B793C1FD86DFE49EDF4F96840FB920B7B",
+      "decisionItemId": "FA-WS-026",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-026-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-026-001.json",
+      "adjudicationRecordSha256": "38B545FADF505A8908DA7B329A8921EBFB8A0D7ABFA696D9B7329F462E77CAA7"
+    },
+    {
+      "id": "FA-G1-LAYOUT-027",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-layout-027.json",
+      "sha256": "CBE8073266060584383D90CCF93036AC9A92E64AE2F30F91D79784AAEA377138",
+      "decisionItemId": "FA-WS-027",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-WS-027-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-ws-027-001.json",
+      "adjudicationRecordSha256": "0E38AB254B3A6C93E9E729AFF3022EDC896D7806F0039114B1575815AD9D3987"
+    },
     {
       "id": "FA-G1-LETTER-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-001.json",
-      "sha256": "6FC3A12A4AA9121AFF3EEA36F5045C1370E991CBBD3DF1E2B8BFC75233A7DDBA"
+      "sha256": "6FC3A12A4AA9121AFF3EEA36F5045C1370E991CBBD3DF1E2B8BFC75233A7DDBA",
+      "decisionItemId": "FA-CORE-001",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-002",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-002.json",
-      "sha256": "6610262B0E69988F4DC53FEEE187F278B8C6E6A8303083632A483679C7F0406A"
+      "sha256": "6610262B0E69988F4DC53FEEE187F278B8C6E6A8303083632A483679C7F0406A",
+      "decisionItemId": "FA-CORE-002",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-003",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-003.json",
-      "sha256": "043382F94BD8EC3EE424DB4F93815F474E1B6C7F7AA0FAF0662B91DD98667333"
+      "sha256": "043382F94BD8EC3EE424DB4F93815F474E1B6C7F7AA0FAF0662B91DD98667333",
+      "decisionItemId": "FA-CORE-003",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-004",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-004.json",
-      "sha256": "C55B710EDD27AAAE1526B9975B042C1EACF3F768CC8B42E380CD50D2869CCB78"
+      "sha256": "C55B710EDD27AAAE1526B9975B042C1EACF3F768CC8B42E380CD50D2869CCB78",
+      "decisionItemId": "FA-CORE-004",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-005",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-005.json",
-      "sha256": "CDDAB6CCD378A743F83F27FEF216A540E20540B1AB1D946DAC46EE04FCEC3E93"
+      "sha256": "CDDAB6CCD378A743F83F27FEF216A540E20540B1AB1D946DAC46EE04FCEC3E93",
+      "decisionItemId": "FA-CORE-005",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-006",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-006.json",
-      "sha256": "042E646BFEE99A31A9B729EAC6242DB4BA1367743731E0162CE1675357C446E2"
+      "sha256": "042E646BFEE99A31A9B729EAC6242DB4BA1367743731E0162CE1675357C446E2",
+      "decisionItemId": "FA-CORE-006",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-007",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-007.json",
-      "sha256": "B7EE73994659D87C00AFBE38E4096DD5328BBA14E58A51BCE0E77013D54CD4AD"
+      "sha256": "B7EE73994659D87C00AFBE38E4096DD5328BBA14E58A51BCE0E77013D54CD4AD",
+      "decisionItemId": "FA-CORE-007",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-008",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-008.json",
-      "sha256": "DD983EFC4770C603EEEA44F8071B71525D7F417BDAC512945D692F5EFD8EB752"
+      "sha256": "DD983EFC4770C603EEEA44F8071B71525D7F417BDAC512945D692F5EFD8EB752",
+      "decisionItemId": "FA-CORE-008",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-009",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-009.json",
-      "sha256": "6F44A4647C6FCFA7551321D492B250AFC1592A18E625030BD1D04C7EBAF6F9AD"
+      "sha256": "6F44A4647C6FCFA7551321D492B250AFC1592A18E625030BD1D04C7EBAF6F9AD",
+      "decisionItemId": "FA-CORE-009",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-010",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-010.json",
-      "sha256": "025476DBF92ADF619D778D05D141A56E339BEF8EE778753D7FF14E6F1652548D"
+      "sha256": "025476DBF92ADF619D778D05D141A56E339BEF8EE778753D7FF14E6F1652548D",
+      "decisionItemId": "FA-CORE-010",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-011",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-011.json",
-      "sha256": "EED01947B57542597B8D2B1D1E280C0FF072FAE64E74AD21677E524A22242E40"
+      "sha256": "EED01947B57542597B8D2B1D1E280C0FF072FAE64E74AD21677E524A22242E40",
+      "decisionItemId": "FA-CORE-011",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-012",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-012.json",
-      "sha256": "3E521859A7BA387449A0CFF9AC1170477F6F6A82BB151D78E633515D2D3ACCCC"
+      "sha256": "3E521859A7BA387449A0CFF9AC1170477F6F6A82BB151D78E633515D2D3ACCCC",
+      "decisionItemId": "FA-CORE-012",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-013",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-013.json",
-      "sha256": "C95BC7645EFFD86538DC35567E8B5D3DEBE584A78DF26AF060ED120138241981"
+      "sha256": "C95BC7645EFFD86538DC35567E8B5D3DEBE584A78DF26AF060ED120138241981",
+      "decisionItemId": "FA-CORE-013",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-014",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-014.json",
-      "sha256": "20D25793D63AE84C761F0D8C19B23A6FCCAD2B60E59ED6347E7C97A8911AD108"
+      "sha256": "20D25793D63AE84C761F0D8C19B23A6FCCAD2B60E59ED6347E7C97A8911AD108",
+      "decisionItemId": "FA-CORE-014",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-015",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-015.json",
-      "sha256": "13F4A1A207718FA9856838A48077A0FFBBF8F6C0CBD0E83C81DDE104F5D9CF40"
+      "sha256": "13F4A1A207718FA9856838A48077A0FFBBF8F6C0CBD0E83C81DDE104F5D9CF40",
+      "decisionItemId": "FA-CORE-015",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-016",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-016.json",
-      "sha256": "49200EA5340213818C210811C3E699BCEAA6E5CC867DE235F96A5D7651F93BDE"
+      "sha256": "49200EA5340213818C210811C3E699BCEAA6E5CC867DE235F96A5D7651F93BDE",
+      "decisionItemId": "FA-CORE-016",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-017",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-017.json",
-      "sha256": "8C37F38B3CD4D28DC1BDC36A645E4A5DBBC75D68218548D4AB15730EBBD6C2F7"
+      "sha256": "8C37F38B3CD4D28DC1BDC36A645E4A5DBBC75D68218548D4AB15730EBBD6C2F7",
+      "decisionItemId": "FA-CORE-017",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-018",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-018.json",
-      "sha256": "A4219650F84E504C30D2C7D6F55237738111E9955D1031A6239D7A7933702B58"
+      "sha256": "A4219650F84E504C30D2C7D6F55237738111E9955D1031A6239D7A7933702B58",
+      "decisionItemId": "FA-CORE-018",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-019",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-019.json",
-      "sha256": "8C2C473D23CD884A563437C2F8A2A63A64341E0CB48BB8E264C4286F64C2F566"
+      "sha256": "8C2C473D23CD884A563437C2F8A2A63A64341E0CB48BB8E264C4286F64C2F566",
+      "decisionItemId": "FA-CORE-019",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-020",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-020.json",
-      "sha256": "A97A46FF726A13C843A4ABA0C890537BFC31076FF9BD9FD234832BE9A2B8DE58"
+      "sha256": "A97A46FF726A13C843A4ABA0C890537BFC31076FF9BD9FD234832BE9A2B8DE58",
+      "decisionItemId": "FA-CORE-020",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-021",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-021.json",
-      "sha256": "7C7357D5BA40E5E94982BF2A02EFAD9B491CB8F93DAF69715954BD7AE7884761"
+      "sha256": "7C7357D5BA40E5E94982BF2A02EFAD9B491CB8F93DAF69715954BD7AE7884761",
+      "decisionItemId": "FA-CORE-021",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-022",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-022.json",
-      "sha256": "F9E2C62710D3991448B830B71E2ED262257C895A551909F8F6C214AB28E618E6"
+      "sha256": "F9E2C62710D3991448B830B71E2ED262257C895A551909F8F6C214AB28E618E6",
+      "decisionItemId": "FA-CORE-022",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-023",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-023.json",
-      "sha256": "465593BDAD235F0CE55CAA48C30514C9C58ED49576F3203DE84287ECD791648C"
+      "sha256": "465593BDAD235F0CE55CAA48C30514C9C58ED49576F3203DE84287ECD791648C",
+      "decisionItemId": "FA-CORE-023",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-024",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-024.json",
-      "sha256": "A22D244E150926D84189EA509A48E5E9C3368C936C6C9E0FDE226A0AD2A5310B"
+      "sha256": "A22D244E150926D84189EA509A48E5E9C3368C936C6C9E0FDE226A0AD2A5310B",
+      "decisionItemId": "FA-CORE-024",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-025",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-025.json",
-      "sha256": "953579D555CF0C5D8B3F9EA5BC3DBDF365DB70CCCB060B5592114F8ECD57ED77"
+      "sha256": "953579D555CF0C5D8B3F9EA5BC3DBDF365DB70CCCB060B5592114F8ECD57ED77",
+      "decisionItemId": "FA-CORE-025",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-026",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-026.json",
-      "sha256": "AA7775454B98102B52555065DFF51143F387C6F11281339D6C61CEF89E6E2446"
+      "sha256": "AA7775454B98102B52555065DFF51143F387C6F11281339D6C61CEF89E6E2446",
+      "decisionItemId": "FA-CORE-026",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-027",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-027.json",
-      "sha256": "0A09EA9B55B394B57DB7BE994E300ED0677F95A3B6E96D42275B14F2EFFFAB50"
+      "sha256": "0A09EA9B55B394B57DB7BE994E300ED0677F95A3B6E96D42275B14F2EFFFAB50",
+      "decisionItemId": "FA-CORE-027",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-028",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-028.json",
-      "sha256": "F4747DE0A6122ED1657AD8220B011B2110BDE004F7C2AC187C313E3837333E3F"
+      "sha256": "F4747DE0A6122ED1657AD8220B011B2110BDE004F7C2AC187C313E3837333E3F",
+      "decisionItemId": "FA-CORE-028",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-029",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-029.json",
-      "sha256": "86F5BFD912B5FBCBD0E774645A14465A5508CB53CA02FA5957B868BEB38EFB76"
+      "sha256": "86F5BFD912B5FBCBD0E774645A14465A5508CB53CA02FA5957B868BEB38EFB76",
+      "decisionItemId": "FA-CORE-029",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-030",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-030.json",
-      "sha256": "C7362A635081CBC90567F4AAEEE16F4C9961C6B5BFE94050BA42516558A21F8B"
+      "sha256": "C7362A635081CBC90567F4AAEEE16F4C9961C6B5BFE94050BA42516558A21F8B",
+      "decisionItemId": "FA-CORE-030",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-031",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-031.json",
-      "sha256": "3CAFAD73AB6A150E3989ABDB6EA46375E7E54A7D80AB20177F0D89EB5E342B54"
+      "sha256": "3CAFAD73AB6A150E3989ABDB6EA46375E7E54A7D80AB20177F0D89EB5E342B54",
+      "decisionItemId": "FA-CORE-031",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-LETTER-032",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-letter-032.json",
-      "sha256": "CE72FDC3426963DD0C05B382D9282703D262532FB5FB265E4275CFC424E1D18D"
+      "sha256": "CE72FDC3426963DD0C05B382D9282703D262532FB5FB265E4275CFC424E1D18D",
+      "decisionItemId": "FA-CORE-032",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
+    },
+    {
+      "id": "FA-G1-NORM-ZWNJ-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-norm-zwnj-001.json",
+      "sha256": "55DFAEA14E97B28174CAB2D1DB5B323640DD5635C53F84DE7F906470C06DD684",
+      "decisionItemId": "FA-FMT-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-FMT-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-fmt-001-001.json",
+      "adjudicationRecordSha256": "5EC87AD7AC98640B5B2640018D650D6E2A021C10677CCEB075CAE6D023971972"
     },
     {
       "id": "FA-G1-NUM-FRACTION-SLASH-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-num-fraction-slash-001.json",
-      "sha256": "AFE95FDCDEF3E64C019144080A49E7826E0FAC12D76199B47B7B452E8F665ACC"
+      "sha256": "AFE95FDCDEF3E64C019144080A49E7826E0FAC12D76199B47B7B452E8F665ACC",
+      "decisionItemId": "FA-CTX-002",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
+    },
+    {
+      "id": "FA-G1-NUMRULE-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-001.json",
+      "sha256": "CB3833630B77F5C981867A0F12E9F7EE5693B5EF407BCE119B49587C03AC746F",
+      "decisionItemId": "FA-NUMRULE-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-001-001.json",
+      "adjudicationRecordSha256": "04BC22E7D097FB9C51077C3C933DE790F39E82F3A2132581210893307F6935A6"
+    },
+    {
+      "id": "FA-G1-NUMRULE-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-002.json",
+      "sha256": "E02D7ED9190755EFC50742C4DA092BCC0C2099C26EEFBB35C2A217E3F83A28D5",
+      "decisionItemId": "FA-NUMRULE-002",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-002-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-002-001.json",
+      "adjudicationRecordSha256": "FB2AC7FABEB985251C43E7E4D3FB191DA55EDEF59CB1E9EAFF6B8FF93C1A4732"
+    },
+    {
+      "id": "FA-G1-NUMRULE-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-003.json",
+      "sha256": "975C705632D23E36019E7B14779F6B0CC5C3D9DA10642D7A2DA5AE9D3CEA6315",
+      "decisionItemId": "FA-NUMRULE-003",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-003-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-003-001.json",
+      "adjudicationRecordSha256": "7CA354CEDB39DD9BAA3A4C4820A05109DFA85FEC0A9F430FB688F18BA41DCB3E"
+    },
+    {
+      "id": "FA-G1-NUMRULE-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-004.json",
+      "sha256": "6D97D092898D6AD9743D68FB5E580C07F3E4A3BACEB157A871970ECA4841C240",
+      "decisionItemId": "FA-NUMRULE-004",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-004-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-004-001.json",
+      "adjudicationRecordSha256": "29FF21DDF59280C640A7043AAACC744753BA72C7F95567D8522862E803BF128B"
+    },
+    {
+      "id": "FA-G1-NUMRULE-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-005.json",
+      "sha256": "F50E25AAB20D37F77810BB776ED3FE188EF61D65D04FA4C32CC4E50513B9999A",
+      "decisionItemId": "FA-NUMRULE-005",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-005-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-005-001.json",
+      "adjudicationRecordSha256": "F216E9C43FF1C138C313EBB581AAECF1F9C237E481A053EBA6CF09D9DD735AE8"
+    },
+    {
+      "id": "FA-G1-NUMRULE-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-006.json",
+      "sha256": "B50A5CE36B7CD4743468F7C3537271E3EB4DB404A28F8620AC557C0A574EDEC7",
+      "decisionItemId": "FA-NUMRULE-006",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-006-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-006-001.json",
+      "adjudicationRecordSha256": "38EE7F5CD5FBA98E5857AA7544DDCFFA9DEC28C57D97585DD4B38EB2E9D0E22E"
+    },
+    {
+      "id": "FA-G1-NUMRULE-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-numrule-007.json",
+      "sha256": "D5B08170236069D2C0955D8F2414CA96BA287DB7EC10E1CAEBF57023C63C6E1A",
+      "decisionItemId": "FA-NUMRULE-007",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-NUMRULE-007-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-numrule-007-001.json",
+      "adjudicationRecordSha256": "B5FDDB6372BA09CF2F38165FAFEDABE382C7ABD09E4F2D30B0D2551B0F19B276"
+    },
+    {
+      "id": "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-ortho-ezafe-sequence-001.json",
+      "sha256": "AAE08A89379755F9BF6655E13183BAE19F4CC2BEB45E5C0B9168259E31B1361F",
+      "decisionItemId": "FA-SEQ-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-SEQ-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-seq-001-001.json",
+      "adjudicationRecordSha256": "06D2CCB27DB3BE887ADCF94280EFA2AB03D7D9819CB83A4F919C80A7A1A2F0DD"
     },
     {
       "id": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-ortho-superscript-alef-001.json",
-      "sha256": "9DEFF2B33ED3149B525ABEA676B4AD04020698BB146CABFD35DDF9D6FCBBB121"
+      "sha256": "9DEFF2B33ED3149B525ABEA676B4AD04020698BB146CABFD35DDF9D6FCBBB121",
+      "decisionItemId": "FA-VAR-010",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-PUNC-ASTERISK-RUN-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-punc-asterisk-run-001.json",
-      "sha256": "D65DDA96251A574AB119BD291F2FB76C34A0282B922EA794500136356B48B7EF"
+      "sha256": "D65DDA96251A574AB119BD291F2FB76C34A0282B922EA794500136356B48B7EF",
+      "decisionItemId": "FA-CTX-004",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-PUNC-ASTERISK-SINGLE-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-punc-asterisk-single-001.json",
-      "sha256": "1AEF1D70B8661FD110C23F173DA360E2A26542F9E7030710896417203A5595D5"
+      "sha256": "1AEF1D70B8661FD110C23F173DA360E2A26542F9E7030710896417203A5595D5",
+      "decisionItemId": "FA-CTX-003",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
     },
     {
       "id": "FA-G1-PUNC-ELLIPSIS-001",
       "status": "normative",
       "path": "spec/fa-ir/rules/records/fa-g1-punc-ellipsis-001.json",
-      "sha256": "FC65FB8CD4293EF272BEDBD56CB864AE919EBAD710902B322C5C41915179DA57"
+      "sha256": "FC65FB8CD4293EF272BEDBD56CB864AE919EBAD710902B322C5C41915179DA57",
+      "decisionItemId": "FA-CTX-001",
+      "provenanceType": "phase-1-consensus",
+      "admissionAuthorized": false
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-001.json",
+      "sha256": "76EB1665292E75A7096EEB74F6407C51317B4CC5991FB33609C535FDD1FC9E99",
+      "decisionItemId": "FA-PUNC-001",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-001-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-001-001.json",
+      "adjudicationRecordSha256": "197D378889249EE81A0D59CAFE7493EFC17D153202EF43ECE3F22827393754BB"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-002",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-002.json",
+      "sha256": "CB94F25CA14845CAD56484948DE9DAE618AE2BE3317B67EF977AECF635F7BCC7",
+      "decisionItemId": "FA-PUNC-002",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-002-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-002-001.json",
+      "adjudicationRecordSha256": "DD5A66134E3130216DE8BABFF33768762A325A36611CAAE9ED35F75934184B9C"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-003",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-003.json",
+      "sha256": "7A6D91EFA68F7964E631A5AA81C954B88E122E4FC7D9516943C226DCCF722877",
+      "decisionItemId": "FA-PUNC-003",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-003-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-003-001.json",
+      "adjudicationRecordSha256": "DCBECBCC6FCB9458DB339A1C3E6C8EAA20793095E73CC9A816682A85C7D38A4A"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-004",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-004.json",
+      "sha256": "113C1D811F655BEC88964604D457FAEA23D192B578BBEC634DB544A70997C414",
+      "decisionItemId": "FA-PUNC-004",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-004-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-004-001.json",
+      "adjudicationRecordSha256": "1BF46C6FC9976C2EF45DF3B7E825DA0189B1A76B499F6456B34FC95AC27487EB"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-005",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-005.json",
+      "sha256": "F7C74753B4D828AB49039397D26BD9BA0A07D95A958C38542D6327E5867A418E",
+      "decisionItemId": "FA-PUNC-005",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-005-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-005-001.json",
+      "adjudicationRecordSha256": "66A5B7CAC5F5FB9394F97A8AAE7012950EDBE8BB939EE5593313F9DD55E3BDAA"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-006",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-006.json",
+      "sha256": "0AABFC212A94E4D951A35722BFC248051A350FF4D56020C7B71C434C47D68822",
+      "decisionItemId": "FA-PUNC-006",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-006-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-006-001.json",
+      "adjudicationRecordSha256": "606E30BCBE4A27A36225D644825BEF2F77EDC7D1866771D92FB553FBC2792564"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-007",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-007.json",
+      "sha256": "CAB179B4709FF9C2F737C04E7622D1ED58AAFD5EB50B4222F776BD0333B130D0",
+      "decisionItemId": "FA-PUNC-007",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-007-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-007-001.json",
+      "adjudicationRecordSha256": "4A31A78A81E84F6CA2082A91355FE878BD87F9BCAACB07361CC22BA327187ECB"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-008",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-008.json",
+      "sha256": "DCE2DAB3B4A8B827591BF3BD1DD7010FAF62966182920B0CF03D7825B01A9A17",
+      "decisionItemId": "FA-PUNC-008",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-008-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-008-001.json",
+      "adjudicationRecordSha256": "ED9BF0A83725CF6110ABDAC02E40B558E0C65CECADACBD5818F295FFEBDF5D04"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-009",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-009.json",
+      "sha256": "B08723BAED9B506EA40DB32D3C2E837BE86796719E05CE02B2C777DE55FFDC7C",
+      "decisionItemId": "FA-PUNC-009",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-009-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-009-001.json",
+      "adjudicationRecordSha256": "6F322231614029E0449D32B682235F1526FA71E22CA4A9CCBA1852DEF9030948"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-010",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-010.json",
+      "sha256": "A5C1B4ECD61555CEBC7B1B37672395D00F50BF148AEE196A0D61BB1D97525607",
+      "decisionItemId": "FA-PUNC-010",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-010-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-010-001.json",
+      "adjudicationRecordSha256": "59F3D22628F728FB0FDA81D6EDF0B6469E2F0BD82A595F600F2DCBAC2AD6F4AF"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-011",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-011.json",
+      "sha256": "FC071F37D72593209F78510C5FB27BB21AF5271A8B4C5DEF26E85185DA3697BE",
+      "decisionItemId": "FA-PUNC-011",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-011-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-011-001.json",
+      "adjudicationRecordSha256": "A0DA0B000DEE27DC363CB28633F64A203B72ABB99B04AEA0D69B05D7F9BA1EAD"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-016",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-016.json",
+      "sha256": "5C6887AE4E8969D6D8443818B6C4FFBE6F788D3908459AC7DB61944521639E09",
+      "decisionItemId": "FA-PUNC-016",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-016-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-016-001.json",
+      "adjudicationRecordSha256": "82AFC2FA32CE57D8D0C834C6A8200AFB416FEED29D242596685B633F302172A6"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-017",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-017.json",
+      "sha256": "F7260E7A09CE6848446A39D6F1890C244980F57654F6A4202CDCE8F7A75CF959",
+      "decisionItemId": "FA-PUNC-017",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-017-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-017-001.json",
+      "adjudicationRecordSha256": "DE68231433138818FDAB0B03C784543BCB937ED6D3E3344684A17E258D1A3FDA"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-019",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-019.json",
+      "sha256": "CF17EE03896AB4DDD96C99C4EB1D7DD3024931BE27EEEC1077E2875D511E71CB",
+      "decisionItemId": "FA-PUNC-019",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-019-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-019-001.json",
+      "adjudicationRecordSha256": "5F1A97A6B0033573F3B9732C41AADCBD78F0F6A3DA5A5910D69A9B1CFA92362A"
+    },
+    {
+      "id": "FA-G1-PUNC-SCALAR-020",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-scalar-020.json",
+      "sha256": "CBF38B0943D2A9CB41468179CB210D304A270D460B5D38F8605F676554ED372C",
+      "decisionItemId": "FA-PUNC-020",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-020-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-020-001.json",
+      "adjudicationRecordSha256": "45B350FE05119E0114BBD2F420AC3B2991884A4AC95BA86CD3E1D46325EA30C2"
+    },
+    {
+      "id": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-punc-unicode-ellipsis-001.json",
+      "sha256": "0AB9BAEEEA9F7D1977E6BF10B3ADFD47FCD70220D53373F6BD2E2E5957BE11C9",
+      "decisionItemId": "FA-PUNC-013",
+      "provenanceType": "phase-2.14-adjudication",
+      "admissionAuthorized": true,
+      "adjudicationRecordId": "FA-ADJ-PUNC-013-001",
+      "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-013-001.json",
+      "adjudicationRecordSha256": "61811BF365C9B21E55D4B582BA0CBA587FE8374057D70E61EA546BD83AC109FC"
     }
   ],
   "conformanceVectors": [
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-000",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-000.json",
+      "sha256": "DE4A751C32A728A3BAA8694A94BE3272EEAB8DA236E8DA827E01B3105C515284"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-001.json",
+      "sha256": "4229F451475D125755CBAB82BDAE94A7D9B34D7A8F379A03EB625A0034D8CF55"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-002.json",
+      "sha256": "8F3BB3227DF721A572C13B296CD617746355574C379542950A2CF583F2886867"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-003.json",
+      "sha256": "9DED1D8FB10274E4C4DE969F46ECF88B372BBB2BF6269AB503616B9A43E8AD08"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-004.json",
+      "sha256": "37B4B63370854393CAAB9220ACFB9C95A8A12A192449CD319A5C38F67D25B1A2"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-005.json",
+      "sha256": "CADBD26F490A27613FE2135B93A3FADEF94D80199E7107D87589156BE876FCED"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-006.json",
+      "sha256": "B0097D2373F59A60E758E63FD7D065681DE4ED8086B15968C19B22CB027411C3"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-007.json",
+      "sha256": "D006675AF6477A76E91789EB0D41F727068BF228C73DF2CD22C73A79BB06A5C4"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-008.json",
+      "sha256": "BBCC3B8769413E7240B5993C7E0748904161358E3B30CBFC8805B62FFA2F8995"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ARABIC-INDIC-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-009.json",
+      "sha256": "134A035595A0C9EEE3998845B5BFD6842DD5E052B327610FF5C1212686EC36EB"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-000",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-000.json",
+      "sha256": "D9FDE8A0232FE9A612B0095079455390EDDAB4A8DF68762EE91AFD81804F3CFE"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-001.json",
+      "sha256": "E7E2BAD1969A835CD073AF433D1DF6FC2DAD3D78F64789FD9445545999220B0A"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-002.json",
+      "sha256": "F0F51ECF6AD0360A358D9C97CE6AF352DBCDEB8969D14D0E3214463C10E4F701"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-003.json",
+      "sha256": "1534C6156BB8BA408A0BBE922FFC2711103B61ADAB324E5899FE849F8AE90CA5"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-004.json",
+      "sha256": "E2103B67912E001C48D239B42CE240F3DC58EB4D7CD07EE80A178FA49A5FF9D6"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-005.json",
+      "sha256": "9855F9CCBAB03D3AFA401934DB4E0E84F2CCD7D1153E4C286EAFA00406C62599"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-006.json",
+      "sha256": "0D366790CC500A006ABB2BA42E64E793446CA7876FCC279CFA6BD462DB80B9B6"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-007.json",
+      "sha256": "15CC7FF4AE85E78F7AC8AAC4C4DEBDA94EEEF3B37E232F3192C8564EA4838CD0"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-008.json",
+      "sha256": "88AAB27FF88B3FDF5393C27B9221A22FE6DA1796071A3817845E96A5510F1705"
+    },
+    {
+      "id": "FA-CONF-DIGIT-ASCII-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-009.json",
+      "sha256": "DB7ED12B1E363E605EFC09A15040D898AB46C1DF41A749B6A054DB9E74C99B87"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-000",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-000.json",
+      "sha256": "266A08E4A6FCB74AE86B97F28CA8E39DCF4815C8AAACFD87D4950A702BE2C113"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-001.json",
+      "sha256": "F8120B91E1F989E81385CE125AC7DB5603E2EAFC975D2197577ADF09D5886C2E"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-002.json",
+      "sha256": "DF6D10EA2EA43BE780C467EF931B88E35445A636706C80BD28E94A7D26D39079"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-003.json",
+      "sha256": "D8BE636DA23520F3692EDCB3E765D52184A5450D08368A74652FF778841B5A91"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-004.json",
+      "sha256": "C1619A8E9717364EA0B563B3CF1CFCCF5F7638A3BF94CC8526950D765720C566"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-005.json",
+      "sha256": "6CCB0B30C8E7A6CB45E9B4C0596C3945CCED1AE3E9AA2CB95E0893478EC23A77"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-006.json",
+      "sha256": "DA92AEDA4D543241D941B01F6AE1B646F07C335C8BC76FF71872990769CC1812"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-007.json",
+      "sha256": "4E2E3DBFA34143CE5A3266A77BA29B8246F6779164DA2ED7BF2D8CC3086ED20C"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-008.json",
+      "sha256": "0507F6F40D8424EF9FEAF463FEC2CF61DA9DAB3A9C856946E78D2FEA59A208DE"
+    },
+    {
+      "id": "FA-CONF-DIGIT-PERSIAN-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-digit-persian-009.json",
+      "sha256": "9F03FDE9DACE7AADB7D38C48B430EB0A951E1A90A7DA483AE72E9D222816F474"
+    },
+    {
+      "id": "FA-CONF-LATIN-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-001.json",
+      "sha256": "83FC7860A76DE2E01220D5BC57D482C4C8A0CFB60004985CFF60D01EEE5737B1"
+    },
+    {
+      "id": "FA-CONF-LATIN-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-002.json",
+      "sha256": "DE8D020725773363892464AF9E2D607401F2B1C51459E0C9D2D79AE2E9E3D9B4"
+    },
+    {
+      "id": "FA-CONF-LATIN-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-003.json",
+      "sha256": "8EB8F47A2267A3509B7D78398CDAAA2B6D57B25079506147FAA778F0A92DB197"
+    },
+    {
+      "id": "FA-CONF-LATIN-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-004.json",
+      "sha256": "E98E066BED76B213160FFB7D5890E4F36EA968E577AD5E134A790EBAA3377ADC"
+    },
+    {
+      "id": "FA-CONF-LATIN-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-005.json",
+      "sha256": "A9E19131C3383C8189F516116B57D9A81A4DD05210D41C6A16854692F43914EA"
+    },
+    {
+      "id": "FA-CONF-LATIN-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-006.json",
+      "sha256": "134E01D40CD5AE2CBA51CAD6EA33E6C7304E74A8FA88DD002A2E983EF4EA1371"
+    },
+    {
+      "id": "FA-CONF-LATIN-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-007.json",
+      "sha256": "798ECC0C42432061E653117D51B16162208DBC8C626E2199B9E71F5653F1E57E"
+    },
+    {
+      "id": "FA-CONF-LATIN-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-008.json",
+      "sha256": "CC828A4F309898208E01CEA2350F1F92BC110D44FB5688DE42240E69C2DD5EAD"
+    },
+    {
+      "id": "FA-CONF-LATIN-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-009.json",
+      "sha256": "1CC5CD150A707C8C658872EEC26FE96651DF365DBCCEA6E6F9D197DB2A96630B"
+    },
+    {
+      "id": "FA-CONF-LATIN-010",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-010.json",
+      "sha256": "B75EADC8FF0513DAA7ADC6C105EB41EFE2ECE5D26508A6D9864DC2FB8553BCD9"
+    },
+    {
+      "id": "FA-CONF-LATIN-011",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-011.json",
+      "sha256": "884587C6B3B7C25BA7BF893896C6A25608BA6DA1419EE75462E16BD9D3B86D66"
+    },
+    {
+      "id": "FA-CONF-LATIN-012",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-012.json",
+      "sha256": "30965A32C3E02FA6789ACAAC1FE5735056518FD2AB80D8AC472DA400F09D569F"
+    },
+    {
+      "id": "FA-CONF-LATIN-013",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-013.json",
+      "sha256": "A05C9D0392EF1DC23619D2C081CBB18B8CBDC05D05965C9604CBE1572DABE970"
+    },
+    {
+      "id": "FA-CONF-LATIN-014",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-014.json",
+      "sha256": "8A0D83EF590D3088C08C3BE30444BE074AAA5828E8508CB1C8A5FE9C31B0D788"
+    },
+    {
+      "id": "FA-CONF-LATIN-015",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-015.json",
+      "sha256": "C5809745D8544130D320EA75BB6B8306793BE27A9FF605F2362D4EB9508C2058"
+    },
+    {
+      "id": "FA-CONF-LATIN-016",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-016.json",
+      "sha256": "ED1C4D7C5D69263D30EA783562B5A7B31210CB85F0DDB4F525CC74914F75C25F"
+    },
+    {
+      "id": "FA-CONF-LATIN-017",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-017.json",
+      "sha256": "14696FF86F3115117FAA821AFBB7F1D5D944603E6CEB63B0B9612259A2CBD907"
+    },
+    {
+      "id": "FA-CONF-LATIN-018",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-018.json",
+      "sha256": "9FE7C32F370F4C8CEFEE96E1D9D82F669C646EF95EC520B75F61A16D7BEEF234"
+    },
+    {
+      "id": "FA-CONF-LATIN-019",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-019.json",
+      "sha256": "D1AF41EA507A332B50C5B6FCEB6690DDA3FD31E033B167F6DDF449F02D96F79E"
+    },
+    {
+      "id": "FA-CONF-LATIN-020",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-020.json",
+      "sha256": "818C64E87D717E6A6F31B3D6C07879212105EA050423D9F62BBF4A9AD7CA707C"
+    },
+    {
+      "id": "FA-CONF-LATIN-021",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-021.json",
+      "sha256": "381383C8273385AB4661E4F316C73348AAFE59B159978EE8339BC59EA215BAA8"
+    },
+    {
+      "id": "FA-CONF-LATIN-022",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-022.json",
+      "sha256": "B817221068EF734CC86AE5889A132FF4AE7EE7C37BC8A01C0BDB9112461152A5"
+    },
+    {
+      "id": "FA-CONF-LATIN-023",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-023.json",
+      "sha256": "66C8A6596A010C5FC34BF6D2A9E5B4CBC03B37BF806767659AAF50F1AAEFFF2F"
+    },
+    {
+      "id": "FA-CONF-LATIN-024",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-024.json",
+      "sha256": "594DC574CD98E919769383AA0794C728065470C21636B11952A05089FDF927E8"
+    },
+    {
+      "id": "FA-CONF-LATIN-025",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-025.json",
+      "sha256": "5816E25CA1DCD5F791691798A474ECB0664F22F91435225DDD297A3575E9149B"
+    },
+    {
+      "id": "FA-CONF-LATIN-026",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-026.json",
+      "sha256": "A272190EA18824EDB40CC1666865B865A04FEEFDD78D085BFA96C1415CD55F61"
+    },
+    {
+      "id": "FA-CONF-LATIN-027",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-027.json",
+      "sha256": "4A30DA1084AEAA708F2A425D7F6951DCACD016162520C58B83F8E1DC1C502D9B"
+    },
+    {
+      "id": "FA-CONF-LATIN-028",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-028.json",
+      "sha256": "610EAA30965863B92F022921A39F42AB5ACFF00A72DA808CC8E72C8B068E86B8"
+    },
+    {
+      "id": "FA-CONF-LATIN-029",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-029.json",
+      "sha256": "EE2D9DBA97A6BECDB736D455CAE3C426F43969CF683E55D7EDDCB3374A07A2C3"
+    },
+    {
+      "id": "FA-CONF-LATIN-030",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-030.json",
+      "sha256": "289EB61F418847844B6674D914E9B63F131E17E53724DCB099ED6F405C056DF5"
+    },
+    {
+      "id": "FA-CONF-LATIN-031",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-031.json",
+      "sha256": "16B36E5B968B5B88F39FD01EC8545B9B5E1CEC63EB39C4C4EDA907535A2822B6"
+    },
+    {
+      "id": "FA-CONF-LATIN-032",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-032.json",
+      "sha256": "15E8C3CA83C97AD2D785D47871A4D040CC848BB6AFBE1A3A78035774ACDA00D6"
+    },
+    {
+      "id": "FA-CONF-LATIN-033",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-033.json",
+      "sha256": "67FD9F77EC389CF03413ACD0603BE33668347C5AA6A0143412838155A7D98488"
+    },
+    {
+      "id": "FA-CONF-LATIN-034",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-034.json",
+      "sha256": "C3A26E98C5F593D04DAAD43F61EE9CC04397796D5C6E19582B65318AE4800188"
+    },
+    {
+      "id": "FA-CONF-LATIN-035",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-035.json",
+      "sha256": "18906E3E47D8DCCE712147AF55FAEECFFDBC6178C0A7A4D8A51EA99E12C9EB78"
+    },
+    {
+      "id": "FA-CONF-LATIN-036",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-036.json",
+      "sha256": "3E78A44433E12EA3137FECC0C18B5C12CEAF6EFF507256C80830DAD9AFA3041B"
+    },
+    {
+      "id": "FA-CONF-LATIN-037",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-037.json",
+      "sha256": "2F39BD195AB7E1CEE7277C1D6EC631B4A2D15546BFE119B787C3FDEA343BF349"
+    },
+    {
+      "id": "FA-CONF-LATIN-038",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-038.json",
+      "sha256": "E91582D7F22B81DBB21198D99A0209E4A06E8FD9D1AF0E4E3A0AAA3AFFD5AB49"
+    },
+    {
+      "id": "FA-CONF-LATIN-039",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-039.json",
+      "sha256": "69FB8811E1863E03ECF9C8E39394EEE41E1DF0A3C6B07512088057CF16026A97"
+    },
+    {
+      "id": "FA-CONF-LATIN-040",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-040.json",
+      "sha256": "A9E2579B7A412D55BF9E17CDE6DF42B735345988BF83276AEAE216497688203D"
+    },
+    {
+      "id": "FA-CONF-LATIN-041",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-041.json",
+      "sha256": "02D7253D85210B651810ECA5BFDEBB9B7654CFACF84B4D60C55638C07CB2BA03"
+    },
+    {
+      "id": "FA-CONF-LATIN-042",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-042.json",
+      "sha256": "54E4D6405458DF18E49D247B1FDADD3511213884F3B715FA213B61DDEB5DADD8"
+    },
+    {
+      "id": "FA-CONF-LATIN-043",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-043.json",
+      "sha256": "F783C69B9791949E617D7D024908CDA4263CF8C3D0FBD3E0702A8F3BF852561A"
+    },
+    {
+      "id": "FA-CONF-LATIN-044",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-044.json",
+      "sha256": "6EA206A144F6BE0F7256225F34021ACB23F4EB549EA68988329EDD482FD020B6"
+    },
+    {
+      "id": "FA-CONF-LATIN-045",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-045.json",
+      "sha256": "6B3D177D87E5DBE35544001A6781DFCF9069B996F9DA39A349DB44D74195D77F"
+    },
+    {
+      "id": "FA-CONF-LATIN-046",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-046.json",
+      "sha256": "BA767451005E39C64B7C856C8CE2D4ED3926802DD78CFC1BED45EB2913583ECA"
+    },
+    {
+      "id": "FA-CONF-LATIN-047",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-047.json",
+      "sha256": "9663531B3E9993435C9CE2E93144AF822BB6864104A9251B4B745C932FADE267"
+    },
+    {
+      "id": "FA-CONF-LATIN-048",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-048.json",
+      "sha256": "21B27D88905F146DD397AE29DF62DE0E17FEE69F5E14493BDEE3397724CA02F6"
+    },
+    {
+      "id": "FA-CONF-LATIN-049",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-049.json",
+      "sha256": "76970976F22AF14CDFAFBC1A742BFDDCB91058B12118BB67C740642152A3C90F"
+    },
+    {
+      "id": "FA-CONF-LATIN-050",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-050.json",
+      "sha256": "4FC6D12F28DD7DF69A95F28842C6DDA14C55B177FCBF1595E77B6FE163B2DFFC"
+    },
+    {
+      "id": "FA-CONF-LATIN-051",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-051.json",
+      "sha256": "FB4214B6A3F22B09A36BF36CC9FDED64DBC803405E16DBDF569B67478E0A8699"
+    },
+    {
+      "id": "FA-CONF-LATIN-052",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-052.json",
+      "sha256": "6CF00B379F53E4E6A8CCE3C05A9E7338096D14A21F72D93E8B1E58655F8F193C"
+    },
+    {
+      "id": "FA-CONF-LATIN-MODE-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-mode-001.json",
+      "sha256": "EC37B9FE3FFD22B23B79163B7B880E4FB9A51501C48C12059CEEB7B56266A25A"
+    },
+    {
+      "id": "FA-CONF-LATIN-MODE-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-mode-002.json",
+      "sha256": "335F1674CCFE4EA288217C1CAB36ABBCDCE1EE3577582F301358BCD0887D099C"
+    },
+    {
+      "id": "FA-CONF-LATIN-MODE-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-mode-003.json",
+      "sha256": "7D233238A58FA6CF7D696A513C5449D86A0468E86957E130BCCF47F7059B3B51"
+    },
+    {
+      "id": "FA-CONF-LATIN-MODE-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-latin-mode-004.json",
+      "sha256": "FEC6B3045CD1A8402220871AA8FC869A09C165B1C55BE93FF901457997642742"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-001.json",
+      "sha256": "D0884B9B31311B8F463FA4859F8B1FF7FA0C0BB0777C180DC55C1BD6DE6BE6E3"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-002.json",
+      "sha256": "F428A3D103AF116BC7E2498812DA49245A02238E1DE6EF445E952C84B21FF86B"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-003.json",
+      "sha256": "E11F171663192032DFC6A280C08A8A0C0CE4A75250F4C2A72A4C985E2D145C68"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-004.json",
+      "sha256": "5DFDB1AD8F98BFD693D1FAEA5BCFF70DA669C7A60170A6DCC1AFE367BDEDBD45"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-005.json",
+      "sha256": "5FD5715CFC37DE9BC6B4CA9B4C8F64F7E962CA28271320430C7D1E402C3216FB"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-006.json",
+      "sha256": "4648002590975B444C2EA6F892FF3A1EF7809F3E94D98E73304848992E8DBEDD"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-007.json",
+      "sha256": "C5FE5D0DB34B71A2617695905E9634BEE07716340B4B310132BD66443E3C11E5"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-008.json",
+      "sha256": "7312884E3ED297AB1C3E54BF8DAB7316DE9D0A5337EDF388074188F56A7AE8C9"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-009.json",
+      "sha256": "AF3E9C169F8849E65BC25B0EED78B59048F1024F9A4668DEC5495F9952C10F94"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-010",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-010.json",
+      "sha256": "8F88C8798585E2110D03D9E2EAF79993DAA902EC1C635E0F3F52525BF18F5C65"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-011",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-011.json",
+      "sha256": "4E16A112462ACAE0E95B26925BCBF20BBB4B38E0DD9DBA6B80EE7CA42F26A071"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-012",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-012.json",
+      "sha256": "168857089BC72A1D10793E5853714DFAC54770F7388E735966FF468FB9C1D059"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-013",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-013.json",
+      "sha256": "9EF386C619D85E81AB25DA321AC392E7ECF091C550EAB2F8E53690CB315B5F49"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-014",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-014.json",
+      "sha256": "D91F5B85E4B6081085FCB05CFB01322272DAE5E6E626B7AF860322ACEED87AF7"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-015",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-015.json",
+      "sha256": "ABB2E726B91F129A3478990E3E2366C422E72E6E4568173FA92FE86F198B50B8"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-016",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-016.json",
+      "sha256": "74D5EFD21FA324B5A0E2BBE0F1247FC585DFE488F23E77A73A18F5333B4FA38E"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-017",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-017.json",
+      "sha256": "18E294135D05B8C8CDB78B80D1D8C45EFB02103A942DA0251B437A65C7916D2D"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-018",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-018.json",
+      "sha256": "E298E45F67A33CA5BBE3ED16ED00E95B55B2C2703C8DAE9B23A42403C3C64506"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-019",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-019.json",
+      "sha256": "89CC6C9AC9964E9F8DF39323C667E6C84E7DCEF315E18109B54049655A71118E"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-020",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-020.json",
+      "sha256": "ECD7F9A02C75BC60DB61DD028AC97CDA67D38C456F68F044041EEADABB0C3840"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-021",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-021.json",
+      "sha256": "A5D345A8C9C1E8FE901DF6376569FBCF0BA0AA5FA6A3F705497E9B2F6E446534"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-022",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-022.json",
+      "sha256": "027E3F35472995BB3515278F6937942416BC2156B50F30D18310D14EB66C7F25"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-023",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-023.json",
+      "sha256": "392187ACBDF71ADE03650CB7990AE0739287FB056691A144835B307722BB951E"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-024",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-024.json",
+      "sha256": "034DCD5D0AE9096C02ED1FDA0C766E6AD3E9499DC985E68EEA5F7AD679DE187B"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-025",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-025.json",
+      "sha256": "950297C64AB9B837CD80780B5337DB8EC1174BDED0768C100FCAD8BD7B47833A"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-026",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-026.json",
+      "sha256": "C93A7C79DF091EBD3B6C3B165D2ED2762ACA200C894900172D5FFE84F406732D"
+    },
+    {
+      "id": "FA-CONF-LAYOUT-027",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-layout-027.json",
+      "sha256": "4209206E2BBA110A0CE636CB88C9F13713A9BF3E9B001C8DC5947C90E982AB70"
+    },
     {
       "id": "FA-CONF-LETTER-001",
       "status": "active",
@@ -441,10 +2899,64 @@
       "sha256": "EBD155A64C362C0775C639244791A317D13D4DC0070CCD1F42DF5729AFB4E46D"
     },
     {
+      "id": "FA-CONF-NORM-ZWNJ-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-norm-zwnj-001.json",
+      "sha256": "536E5D50F23A4CE301CE65A283D209B97070F7EDC668611544B66D273ECCDC09"
+    },
+    {
       "id": "FA-CONF-NUM-FRACTION-SLASH-001",
       "status": "active",
       "path": "spec/fa-ir/conformance/records/fa-conf-num-fraction-slash-001.json",
       "sha256": "4E54F58F836E8C1DDC53882F3A7507D6E9D9287E355209F81C6D672BF1118884"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-001.json",
+      "sha256": "8F47A127BDC144F6F0F2DEBCBA02BB4A4659A77ADE2739553C7E88AE16B0C0FB"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-002.json",
+      "sha256": "AC4B5AA00BD404D456E383AE22A5F81567AE60EBA0281532DAE7BD7B05F187BE"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-003.json",
+      "sha256": "C127D24A59A25C6DC4CAEA2711CE0FA9301194304299E53489ABABEF9C4FACA6"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-004.json",
+      "sha256": "306F470E2408DD456411E6259C17724A27D772DD6087A1DFA5441044270016AD"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-005.json",
+      "sha256": "0BB37EA1B9FF7E0CD6730A2DD873522834DF433D72CB691CCA3221176E8BC5AA"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-006.json",
+      "sha256": "FAAA9F4EC7766B7D0CA598902B04A9188817570394EA201E54DBD547C4D0C2B0"
+    },
+    {
+      "id": "FA-CONF-NUMRULE-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-numrule-007.json",
+      "sha256": "4D0374241611E03398726EC2674817B72D0EF68546D14ADF2FC4F5F83DBA4651"
+    },
+    {
+      "id": "FA-CONF-ORTHO-EZAFE-SEQUENCE-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-ortho-ezafe-sequence-001.json",
+      "sha256": "C31EA3121AB0EE033DA6C3621DEFAFF1A12E61D4DE67D7784D5FCF60D6CA4E98"
     },
     {
       "id": "FA-CONF-ORTHO-SUPERSCRIPT-ALEF-001",
@@ -469,6 +2981,102 @@
       "status": "active",
       "path": "spec/fa-ir/conformance/records/fa-conf-punc-ellipsis-001.json",
       "sha256": "A052C0BF2DBD48FD6AA1EEA4DC705E7A4BB665B5758CC4F77010323D5BAAEA5C"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-001.json",
+      "sha256": "93BE35609979839CC11424656EBA9D86C90F7CC9863317DC0B20AF6FC5B01D42"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-002",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-002.json",
+      "sha256": "5AF0F44BED9D91BC490C8DDFB62FA36D6553222FA2D07A1B7B8B675FC72641AE"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-003",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-003.json",
+      "sha256": "03A04A522923047FB9461273FECF2FEFE4075E830E0E7D503EDD43A36E1B0949"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-004",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-004.json",
+      "sha256": "C50FF3432A646A4BDF5EED44962D5D51011679FF25C62C747BF26D7C85B7F261"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-005",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-005.json",
+      "sha256": "FE9844D4154BD5FA2356B9E3BD89FF84293CB34AE88C9D3DEF6F0FBB40F46C74"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-006",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-006.json",
+      "sha256": "EB520E01ECAE9ABAC6FC4B9D48BB5B5B5C04C66757BF99A2F07B69CFDCD113B1"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-007",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-007.json",
+      "sha256": "71EAAE0FCF335D40FBBF8B3E7C3C6A143ED9D392761A47C9D78FF866E3D13DF9"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-008",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-008.json",
+      "sha256": "C1479389438CBCFE70C2BEFADAA00C023453F7498AC81B618AE900022D3C8696"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-009",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-009.json",
+      "sha256": "46194973FBD5CE88B0FF77C7C0D3F8D84BF44DDC74B9AFCA82DB7DF0F194BF3B"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-010",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-010.json",
+      "sha256": "9898A648DDAB078419515505EAAE80EA41AE8EECC79B365A43A2A09F0E3B846A"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-011",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-011.json",
+      "sha256": "858457689AB20B75AA2A808E0F19D814A4D924AFC24CC7A38F6A9261384CB503"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-016",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-016.json",
+      "sha256": "D173C335DAE1CC29A8BA91DD0970134AD1630571138E9D4BCC23B56C0CCF732C"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-017",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-017.json",
+      "sha256": "5BFAF477999D05EF2837C8E5DB9E36F6A16DEA5A63BA11B97EAE5CBD2A2B3EEE"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-019",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-019.json",
+      "sha256": "AB6D1D868E49E886095A63593BA3AA9C2B92374EC6FD0DA56B887D54448BFF75"
+    },
+    {
+      "id": "FA-CONF-PUNC-SCALAR-020",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-scalar-020.json",
+      "sha256": "E343503D0788B647080314FB1AAC0C6EF35920EC90E0E46AB2D60F5B0724C60A"
+    },
+    {
+      "id": "FA-CONF-PUNC-UNICODE-ELLIPSIS-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-punc-unicode-ellipsis-001.json",
+      "sha256": "E1F58EC0B4598A8CE05D10BEC4B0D32B2FD4A07EF36A8A1265B2A4750A9ED3A6"
     }
   ]
 }

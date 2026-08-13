@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-ORTHO-EZAFE-SEQUENCE-001",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-ORTHO-EZAFE-SEQUENCE-001"
+  ],
+  "input": {
+    "text": "هٔ",
+    "codePoints": [
+      "U+0647",
+      "U+0654"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "125",
+      "0",
+      "24"
+    ],
+    "unicodeBraille": "⠓⠀⠊",
+    "structuralTokens": []
+  },
+  "tags": [
+    "phase-2.14",
+    "adjudicated-candidate",
+    "sequence",
+    "seq"
+  ],
+  "notes": [
+    "Draft conformance vector for adjudication FA-ADJ-SEQ-001-001.",
+    "Activation requires a separate normative promotion."
+  ]
+}

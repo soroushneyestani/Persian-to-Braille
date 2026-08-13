@@ -1,21 +1,25 @@
 {
   "schemaVersion": 1,
   "validationStage": "2.3",
-  "validatedPackageStage": "2.2",
+  "validatedPackageStage": "2.14",
   "result": "PASS",
   "normative": false,
   "summary": {
     "schemasValidated": 3,
     "profileDocuments": 1,
-    "materializedRules": 37,
-    "candidateRules": 0,
+    "materializedRules": 175,
+    "candidateRules": 138,
     "normativeRules": 37,
-    "conformanceVectors": 37,
+    "conformanceVectors": 175,
     "activeConformanceVectors": 37,
+    "draftConformanceVectors": 138,
     "promotionRecordsObserved": 37,
-    "uniqueDecisionItemsConsumed": 37,
-    "registeredSourcesReferenced": 5,
-    "prefixOverlapPairsChecked": 1,
+    "uniqueDecisionItemsConsumed": 175,
+    "consensusDecisionItemsConsumed": 37,
+    "adjudicatedDecisionItemsConsumed": 138,
+    "structuralRules": 29,
+    "registeredSourcesReferenced": 6,
+    "prefixOverlapPairsChecked": 3,
     "dot78Violations": 0,
     "schemaErrors": 0,
     "semanticErrors": 0
@@ -23,28 +27,30 @@
   "validatedArtifacts": {
     "profile": {
       "path": "spec/fa-ir/profiles/fa-ir-g1.json",
-      "sha256": "D71AC788E30909CE06735007336E6119843397132F762CE4DDCE0DAD3CA07500"
+      "sha256": "2448C00BFE7ED94F067912C9C836E5FF3092E203B78C0C88976A7B2DF3706EF7"
     },
     "manifest": {
       "path": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
-      "sha256": "74F8DE50E77E17F032E96610420886D8A7A29DFE78C19DFB2644CA483E9577CE"
+      "sha256": "AC7536F794A9DF48D771BE0751B7473EB5B090F0F1FA19035DBF071B185FDDDD"
     },
     "ruleDirectory": "spec/fa-ir/rules/records",
     "conformanceDirectory": "spec/fa-ir/conformance/records"
   },
   "invariants": [
     "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
-    "Profile rule IDs resolve exactly to the 37 materialized rule files.",
-    "Every rule consumes registered sources and Phase 1 CONSENSUS-CANDIDATE evidence.",
-    "All 37 Phase 1 consensus decisions are consumed exactly once.",
+    "Profile rule IDs resolve exactly to all 175 materialized rule files.",
+    "Every rule consumes registered sources and preserves its Phase 1 classification.",
+    "All 37 consensus decisions and all 138 admitted REVIEW-REQUIRED decisions are consumed exactly once.",
     "Every rule has exactly one reciprocal conformance vector.",
     "Vector context matches rule context.",
     "Braille cell arrays deterministically derive their Unicode Braille strings.",
     "The fa-ir-g1 draft package contains no dot-7/dot-8 cells.",
     "Exact match-signature priority collisions are rejected.",
-    "Prefix-overlapping longer rules must have higher precedence.",
+    "Semantically overlapping longer prefix rules must have higher precedence.",
     "The fraction-slash candidate is explicitly constrained to numeric context.",
     "Normative rule status requires a matching promotion record; profile remains draft.",
+    "All 138 adjudicated materializations remain candidate with draft vectors.",
+    "Structural rules use explicit structural tokens and null Unicode Braille output.",
     "Manifest paths and SHA-256 hashes match the generated package."
   ]
 }

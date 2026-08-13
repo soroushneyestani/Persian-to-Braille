@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-PUNC-SCALAR-004",
+  "profile": "fa-ir-g1",
+  "type": "character",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": ".",
+    "codePoints": [
+      "U+002E"
+    ]
+  },
+  "output": {
+    "cells": [
+      "256"
+    ],
+    "unicodeBraille": "⠲",
+    "structuralToken": null
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": ".",
+    "notes": "No additional normalization is applied by this rule."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-PUNC-004"
+    ],
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "Stable and draft implementations agree exactly on this scalar punctuation behavior, and legacy v1 supplies independent historical support for the aligned mapping. The project accepts the mapping as a character-level specification rule; this remains a project specification decision, not a claim of current official Iranian national-standard status.",
+    "conflictsResolved": []
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-PUNC-SCALAR-004"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-PUNC-004-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}

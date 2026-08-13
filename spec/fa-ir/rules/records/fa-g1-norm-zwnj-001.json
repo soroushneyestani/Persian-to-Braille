@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-G1-NORM-ZWNJ-001",
+  "profile": "fa-ir-g1",
+  "type": "normalization",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "priority": 1000,
+  "input": {
+    "kind": "scalar",
+    "text": "‌",
+    "codePoints": [
+      "U+200C"
+    ]
+  },
+  "output": {
+    "cells": [],
+    "unicodeBraille": null,
+    "structuralToken": "normalization:zwnj-orthographic-boundary"
+  },
+  "normalization": {
+    "form": "none",
+    "canonicalInput": "‌",
+    "notes": "No global Unicode normalization is implied. Structural normalization/layout semantics are expressed by this rule's type and structural token."
+  },
+  "evidence": {
+    "decisionItemIds": [
+      "FA-FMT-001"
+    ],
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "rationale": "ZERO WIDTH NON-JOINER is an orthographic boundary in Persian text, not a Braille cell. The stable implementation emits dot 8, while the draft implementation treats ZWNJ as non-emitting context. The project accepts a normalization-level policy in which ZWNJ emits no Braille cell but may be preserved long enough for sequence/context analysis instead of being blindly discarded before structural processing.",
+    "conflictsResolved": [
+      "Stable/draft implementation difference resolved by explicit Phase 2.14 adjudication FA-ADJ-FMT-001-001."
+    ]
+  },
+  "conformance": {
+    "vectorIds": [
+      "FA-CONF-NORM-ZWNJ-001"
+    ]
+  },
+  "notes": [
+    "Generated from an explicitly approved Phase 2.14 adjudication.",
+    "Adjudication record: FA-ADJ-FMT-001-001.",
+    "The historical Phase 1 classification remains REVIEW-REQUIRED.",
+    "Candidate admission does not imply normative promotion."
+  ]
+}
