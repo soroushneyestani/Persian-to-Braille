@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-DIGIT-ASCII-4-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-DIGIT-ASCII-4",
+  "queueId": "FA-REVIEW-042",
+  "packetId": "FA-EVIDENCE-042",
+  "planItemId": "FA-ADJ-PLAN-042",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "accept-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-4.json",
+    "evidencePacketSha256": "E00CDEADF50F3095D0168795D86A5258C97E8AAFF56BAFC94B71A3167C835658",
+    "sourceIds": [
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "character",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft Liblouis implementations agree on this digit mapping, and the preserved legacy v1 evidence independently supports the same digit-family behavior. The project accepts the aligned character mapping while keeping number-mode semantics in separate numeric rules."
+}

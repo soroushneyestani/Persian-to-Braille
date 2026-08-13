@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-PUNC-015-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-PUNC-015",
+  "queueId": "FA-REVIEW-079",
+  "packetId": "FA-EVIDENCE-079",
+  "planItemId": "FA-ADJ-PLAN-079",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "out-of-scope",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-015.json",
+    "evidencePacketSha256": "5DEF5E03FCB41937179E6E44BBD96F2132D172ABE7B77A507EBEDDCB2838C2A0",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "out-of-scope",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The preserved manual evidence establishes slash dots 34 specifically for numeric fractions, not an unconditional scalar slash mapping. Numeric fraction behavior is handled by its context-level decision, so a general scalar mapping for slash is outside this decision's normative scope."
+}

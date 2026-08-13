@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-PUNC-018-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-PUNC-018",
+  "queueId": "FA-REVIEW-082",
+  "packetId": "FA-EVIDENCE-082",
+  "planItemId": "FA-ADJ-PLAN-082",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "accept-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-018.json",
+    "evidencePacketSha256": "DC9DEF01C690C206DD154DA980E5D3475F75BC3E81CF422BA121B13D36239525",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "character",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree exactly on this scalar punctuation behavior, and legacy v1 supplies independent historical support for the aligned mapping. The project accepts the mapping as a character-level specification rule; this remains a project specification decision, not a claim of current official Iranian national-standard status."
+}

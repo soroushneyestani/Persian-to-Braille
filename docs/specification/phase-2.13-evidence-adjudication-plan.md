@@ -9,7 +9,7 @@ This stage does not adjudicate decisions, does not modify the promotion policy, 
 - Planned adjudication items: 253
 - REVIEW-REQUIRED: 252
 - UNRESOLVED: 1
-- Adjudication batches: 4
+- Adjudication batches: 3
 - Promotion-eligible items created by planning: 0
 - Maintainer decisions recorded: 0
 - Profile status: `draft`
@@ -20,15 +20,13 @@ This stage does not adjudicate decisions, does not modify the promotion policy, 
 | Priority | Track | Items | Purpose |
 |---:|---|---:|---|
 | 0 | `unresolved` | 1 | Phase 1 could not establish a project decision. Evidence must be examined before any disposition can be proposed. |
-| 1 | `evidence-gap` | 27 | Stable/draft comparison is insufficient to support a review disposition without additional evidence analysis. |
-| 2 | `implementation-conflict` | 75 | Observed stable and draft implementations differ and require explicit adjudication. |
-| 3 | `implementation-alignment` | 150 | Observed stable and draft implementations align, but the Phase 1 decision remains REVIEW-REQUIRED and therefore still requires human adjudication. |
+| 2 | `implementation-conflict` | 76 | Observed stable and draft implementations differ and require explicit adjudication. |
+| 3 | `implementation-alignment` | 176 | Observed stable and draft implementations align, but the Phase 1 decision remains REVIEW-REQUIRED and therefore still requires human adjudication. |
 
 ## Stable/draft evidence relationships
 
-- `different-observed-behavior`: 75
-- `insufficient-data`: 27
-- `same-observed-behavior`: 151
+- `different-observed-behavior`: 76
+- `same-observed-behavior`: 177
 
 ## Review signals
 
@@ -67,33 +65,6 @@ The project continues to make no claim that these decisions are the current offi
 | Plan item | Decision | Track | Stage | Category | Dot7/8 |
 |---|---|---|---|---|---|
 | `FA-ADJ-PLAN-001` | `FA-VAR-013` | `unresolved` | 1.3 | orthographic-variants | no |
-| `FA-ADJ-PLAN-141` | `FA-WS-001` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-142` | `FA-WS-002` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-143` | `FA-WS-003` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-144` | `FA-WS-004` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-145` | `FA-WS-005` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-146` | `FA-WS-006` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-147` | `FA-WS-007` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-148` | `FA-WS-008` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-149` | `FA-WS-009` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-150` | `FA-WS-010` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-151` | `FA-WS-011` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-152` | `FA-WS-012` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-153` | `FA-WS-013` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-154` | `FA-WS-014` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-155` | `FA-WS-015` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-156` | `FA-WS-016` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-157` | `FA-WS-017` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-158` | `FA-WS-018` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-159` | `FA-WS-019` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-160` | `FA-WS-020` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-161` | `FA-WS-021` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-162` | `FA-WS-022` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-163` | `FA-WS-023` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-164` | `FA-WS-024` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-165` | `FA-WS-025` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-166` | `FA-WS-026` | `evidence-gap` | 1.6 | whitespace-layout | no |
-| `FA-ADJ-PLAN-167` | `FA-WS-027` | `evidence-gap` | 1.6 | whitespace-layout | no |
 | `FA-ADJ-PLAN-002` | `FA-FMT-001` | `implementation-conflict` | 1.3 | orthographic-variants | yes |
 | `FA-ADJ-PLAN-079` | `FA-PUNC-015` | `implementation-conflict` | 1.4 | numbers-punctuation | yes |
 | `FA-ADJ-PLAN-085` | `FA-LATIN-001` | `implementation-conflict` | 1.5 | mixed-latin | yes |
@@ -169,6 +140,7 @@ The project continues to make no claim that these decisions are the current offi
 | `FA-ADJ-PLAN-138` | `FA-LATIN-MODE-002` | `implementation-conflict` | 1.5 | mixed-latin | no |
 | `FA-ADJ-PLAN-139` | `FA-LATIN-MODE-003` | `implementation-conflict` | 1.5 | mixed-latin | no |
 | `FA-ADJ-PLAN-140` | `FA-LATIN-MODE-004` | `implementation-conflict` | 1.5 | mixed-latin | no |
+| `FA-ADJ-PLAN-167` | `FA-WS-027` | `implementation-conflict` | 1.6 | whitespace-layout | no |
 | `FA-ADJ-PLAN-168` | `FA-REM-001` | `implementation-alignment` | 1.7 | remaining-coverage | yes |
 | `FA-ADJ-PLAN-171` | `FA-REM-004` | `implementation-alignment` | 1.7 | remaining-coverage | yes |
 | `FA-ADJ-PLAN-179` | `FA-REM-012` | `implementation-alignment` | 1.7 | remaining-coverage | yes |
@@ -259,6 +231,32 @@ The project continues to make no claim that these decisions are the current offi
 | `FA-ADJ-PLAN-082` | `FA-PUNC-018` | `implementation-alignment` | 1.4 | numbers-punctuation | no |
 | `FA-ADJ-PLAN-083` | `FA-PUNC-019` | `implementation-alignment` | 1.4 | numbers-punctuation | no |
 | `FA-ADJ-PLAN-084` | `FA-PUNC-020` | `implementation-alignment` | 1.4 | numbers-punctuation | no |
+| `FA-ADJ-PLAN-141` | `FA-WS-001` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-142` | `FA-WS-002` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-143` | `FA-WS-003` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-144` | `FA-WS-004` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-145` | `FA-WS-005` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-146` | `FA-WS-006` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-147` | `FA-WS-007` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-148` | `FA-WS-008` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-149` | `FA-WS-009` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-150` | `FA-WS-010` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-151` | `FA-WS-011` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-152` | `FA-WS-012` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-153` | `FA-WS-013` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-154` | `FA-WS-014` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-155` | `FA-WS-015` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-156` | `FA-WS-016` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-157` | `FA-WS-017` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-158` | `FA-WS-018` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-159` | `FA-WS-019` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-160` | `FA-WS-020` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-161` | `FA-WS-021` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-162` | `FA-WS-022` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-163` | `FA-WS-023` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-164` | `FA-WS-024` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-165` | `FA-WS-025` | `implementation-alignment` | 1.6 | whitespace-layout | no |
+| `FA-ADJ-PLAN-166` | `FA-WS-026` | `implementation-alignment` | 1.6 | whitespace-layout | no |
 | `FA-ADJ-PLAN-169` | `FA-REM-002` | `implementation-alignment` | 1.7 | remaining-coverage | no |
 | `FA-ADJ-PLAN-170` | `FA-REM-003` | `implementation-alignment` | 1.7 | remaining-coverage | no |
 | `FA-ADJ-PLAN-172` | `FA-REM-005` | `implementation-alignment` | 1.7 | remaining-coverage | no |

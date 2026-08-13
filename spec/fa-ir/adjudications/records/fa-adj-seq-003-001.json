@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-SEQ-003-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-SEQ-003",
+  "queueId": "FA-REVIEW-016",
+  "packetId": "FA-EVIDENCE-016",
+  "planItemId": "FA-ADJ-PLAN-016",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-seq-003.json",
+    "evidencePacketSha256": "D5157496E094033C73999E741F0BF4AC6D0C3F7316100F95AEFD4EA7DEBC90A7",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The preserved print-era manual does not directly establish the Unicode spelling ه‌ی or its exact normalization relationship for this rule."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The draft implementation gives ه‌ی the same explicit Ezafe sequence shape used for هٔ, but the preserved print-era manual does not directly define this Unicode spelling. The project defers this spelling-specific sequence until normalization-equivalence or direct evidence is formally established."
+}

@@ -79,6 +79,33 @@ jobs:
       - name: Run Phase 2.13 adjudication plan negative fixtures
         run: python tools/spec/test_evidence_adjudication_plan_validator.py
 
+      - name: Regenerate Phase 2.14 adjudication framework
+        run: python tools/spec/build_adjudication_framework.py
+
+      - name: Reproduce approved Phase 2.14 unresolved decision
+        run: python tools/spec/record_batch00_adjudication.py
+
+      - name: Reproduce approved Phase 2.14 implementation conflicts
+        run: python tools/spec/record_implementation_conflicts.py
+
+      - name: Reproduce approved Phase 2.14 implementation alignments
+        run: python tools/spec/record_implementation_alignment.py
+
+      - name: Materialize Phase 2.14 adjudication manifest
+        run: python tools/spec/materialize_adjudications.py
+
+      - name: Validate Phase 2.14 adjudications
+        run: python tools/spec/validate_adjudications.py
+
+      - name: Validate Phase 2.14 completion
+        run: python tools/spec/validate_phase214_completion.py
+
+      - name: Run Phase 2.14 adjudication negative fixtures
+        run: python tools/spec/test_adjudication_validator_negative.py
+
+      - name: Verify Phase 2.14 adjudication determinism
+        run: python tools/spec/test_adjudication_determinism.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
@@ -109,4 +136,5 @@ jobs:
             spec/fa-ir/profiles \
             spec/fa-ir/manifests \
             spec/fa-ir/review \
+            spec/fa-ir/adjudications \
             spec/fa-ir/validation

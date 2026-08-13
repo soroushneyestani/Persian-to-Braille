@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-VAR-002-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-VAR-002",
+  "queueId": "FA-REVIEW-018",
+  "packetId": "FA-EVIDENCE-018",
+  "planItemId": "FA-ADJ-PLAN-018",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-var-002.json",
+    "evidencePacketSha256": "42E7F9BF54B59FCB3129234282580AD63FC13438B03019B154FC82AC4EB3183C",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The project has not yet established whether this orthographic variant belongs in direct translation, normalization, or another non-character-rule layer."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on the observed scalar behavior, but alignment alone does not decide whether the final architecture should use a direct character rule, normalization to a canonical Persian form, or non-emitting treatment. The project therefore defers these orthographic variants until normalization semantics and direct-source support are adjudicated explicitly."
+}

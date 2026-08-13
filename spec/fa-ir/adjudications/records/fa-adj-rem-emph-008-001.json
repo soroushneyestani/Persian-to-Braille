@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-REM-EMPH-008-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-REM-EMPH-008",
+  "queueId": "FA-REVIEW-252",
+  "packetId": "FA-EVIDENCE-252",
+  "planItemId": "FA-ADJ-PLAN-252",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-008.json",
+    "evidencePacketSha256": "F93BF64A781BC4E9379AB1CE84C5C7AE7940D983A45C0D7658527AEDE2D0846E",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "A source-backed Persian Braille emphasis policy for this directive has not yet been established."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on this emphasis directive, but the project has not established a source-backed Persian emphasis policy for bold, italic, or underline. The project defers the directive rather than inheriting implementation-specific formatting semantics without independent evidence."
+}

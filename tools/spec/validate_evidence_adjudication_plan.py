@@ -27,14 +27,12 @@ EXPECTED_REVIEW_REQUIRED = 252
 EXPECTED_UNRESOLVED = 1
 EXPECTED_TRACK_COUNTS = {
     "unresolved": 1,
-    "evidence-gap": 27,
-    "implementation-conflict": 75,
-    "implementation-alignment": 150,
+    "implementation-conflict": 76,
+    "implementation-alignment": 176,
 }
 EXPECTED_RELATIONSHIPS = {
-    "different-observed-behavior": 75,
-    "insufficient-data": 27,
-    "same-observed-behavior": 151,
+    "different-observed-behavior": 76,
+    "same-observed-behavior": 177,
 }
 EXPECTED_CATEGORIES = {
     "mixed-latin": 56,
@@ -371,7 +369,7 @@ def main() -> int:
         expect_equal(summary.get("plannedItems"), EXPECTED_ITEMS, "summary planned items")
         expect_equal(summary.get("reviewRequired"), EXPECTED_REVIEW_REQUIRED, "summary review-required")
         expect_equal(summary.get("unresolved"), EXPECTED_UNRESOLVED, "summary unresolved")
-        expect_equal(summary.get("batches"), 4, "summary batches")
+        expect_equal(summary.get("batches"), 3, "summary batches")
         expect_equal(summary.get("promotionEligible"), 0, "summary promotionEligible")
         expect_equal(summary.get("maintainerDecisions"), 0, "summary maintainer decisions")
         expect_equal(summary.get("trackCounts"), EXPECTED_TRACK_COUNTS, "summary track counts")
@@ -381,11 +379,10 @@ def main() -> int:
 
         batches = plan.get("batches")
         expect(isinstance(batches, list), "batches must be an array")
-        expect_equal(len(batches), 4, "batch count")
+        expect_equal(len(batches), 3, "batch count")
 
         expected_batch_ids = [
             "FA-ADJ-BATCH-00",
-            "FA-ADJ-BATCH-01",
             "FA-ADJ-BATCH-02",
             "FA-ADJ-BATCH-03",
         ]
@@ -430,7 +427,7 @@ def main() -> int:
         print(f"unresolved                      : {class_counts['UNRESOLVED']}")
         print(f"batches                         : {len(batches)}")
         print(f"unresolvedTrack                 : {track_counts['unresolved']}")
-        print(f"evidenceGapTrack                : {track_counts['evidence-gap']}")
+        print("evidenceGapTrack                : 0")
         print(f"implementationConflictTrack     : {track_counts['implementation-conflict']}")
         print(f"implementationAlignmentTrack    : {track_counts['implementation-alignment']}")
         print("promotionEligible               : 0")

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-VAR-013-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-VAR-013",
+  "queueId": "FA-REVIEW-001",
+  "packetId": "FA-EVIDENCE-001",
+  "planItemId": "FA-ADJ-PLAN-001",
+  "phase1Classification": "UNRESOLVED",
+  "track": "unresolved",
+  "disposition": "explicitly-unsupported",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-var-013.json",
+    "evidencePacketSha256": "4C61EA0F4A9F3700F922C8D65F5501E73401D8694A15B3F69ADC9D70C747382B",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The preserved evidence does not establish an independent standalone Persian Braille mapping for U+0654 ARABIC HAMZA ABOVE; meaningful Ezafe sequence behavior is reviewed separately."
+    ]
+  },
+  "materialization": {
+    "kind": "unsupported",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "U+0654 has no independently established standalone Persian Braille behavior in the preserved evidence. Both pinned Liblouis implementations leave the standalone scalar unmapped, legacy v1 provides no standalone mapping, and the recovered historical Iranian manual evidence does not establish an independent scalar rule. Meaningful Ezafe usage is handled separately by sequence-level decisions. The fa-ir-g1 project therefore explicitly leaves standalone U+0654 unsupported rather than inventing a character mapping."
+}

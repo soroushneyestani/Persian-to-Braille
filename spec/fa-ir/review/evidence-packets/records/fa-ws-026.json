@@ -146,14 +146,34 @@
   "supplementalStageEvidenceRecords": [],
   "stableDraftComparison": {
     "stable": {
-      "source": "SRC-LIBLOUIS-G1",
-      "localOverride": null
+      "spacesUtility": {
+        "mapping": {
+          "directive": "space",
+          "value": "0"
+        },
+        "specialRules": [
+          "replace"
+        ]
+      },
+      "persianLocalOverride": null
     },
     "draft": {
-      "source": "SRC-LIBLOUIS-2054",
-      "localOverride": null
+      "spacesUtility": {
+        "mapping": {
+          "directive": "space",
+          "value": "0"
+        },
+        "specialRules": [
+          "replace"
+        ]
+      },
+      "persianLocalOverride": null
     },
-    "relationship": "insufficient-data"
+    "relationship": "same-observed-behavior",
+    "comparedFields": [
+      "spacesUtility",
+      "persianLocalOverride"
+    ]
   },
   "evidenceChannels": {
     "observed": [

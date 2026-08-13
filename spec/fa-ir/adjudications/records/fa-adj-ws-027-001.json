@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-WS-027-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-WS-027",
+  "queueId": "FA-REVIEW-167",
+  "packetId": "FA-EVIDENCE-167",
+  "planItemId": "FA-ADJ-PLAN-167",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-layout-policy",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-ws-027.json",
+    "evidencePacketSha256": "5FBD8BBA40EA99C99578C00DDE64CB0AC7FEBCBFDDEAE9FFE8C9DF6202439F0D",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "layout-policy",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "layout",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "At the host/layout layer, ZERO WIDTH NON-JOINER may remain present in source text as a Persian orthographic boundary, but translation output must not emit a Braille cell for it. Its structural role may be consumed by normalization or context processing. This complements the FA-FMT-001 normalization decision without rewriting Phase 1 evidence."
+}

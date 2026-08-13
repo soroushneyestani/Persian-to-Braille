@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-FMT-010-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-FMT-010",
+  "queueId": "FA-REVIEW-011",
+  "packetId": "FA-EVIDENCE-011",
+  "planItemId": "FA-ADJ-PLAN-011",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "ignore-format-control",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-fmt-010.json",
+    "evidencePacketSha256": "E4AAB0008564DDF6ECED35B25117DEF81D5DC2E7CCF29143BE3C493BF91AE653",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "ignore",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "This Unicode bidirectional formatting control carries text-layout or directional metadata rather than a Persian Braille cell. The stable implementation leaves it unmapped and the draft implementation explicitly removes it from Braille output. The project adopts non-emitting format-control behavior rather than inventing a Braille mapping."
+}

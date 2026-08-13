@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-LATIN-MODE-002-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-LATIN-MODE-002",
+  "queueId": "FA-REVIEW-138",
+  "packetId": "FA-EVIDENCE-138",
+  "planItemId": "FA-ADJ-PLAN-138",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-mode-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-002.json",
+    "evidencePacketSha256": "5E92F44314D7F62FECD9181F696CF11D1460EF12AAAD275A96FBFA454AE1C714",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "mode-rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "mode",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The preserved Iranian manual evidence reports a six-dot English span, dot-25 span boundaries, and a dot-6 capital indicator. The draft Liblouis implementation supplies the corresponding Latin mode machinery, while the stable implementation lacks it. The project therefore accepts the draft-style Latin mode architecture, subject to later specification materialization governance."
+}

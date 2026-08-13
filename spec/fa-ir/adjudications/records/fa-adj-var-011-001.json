@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-VAR-011-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-VAR-011",
+  "queueId": "FA-REVIEW-026",
+  "packetId": "FA-EVIDENCE-026",
+  "planItemId": "FA-ADJ-PLAN-026",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "defer-pending-evidence",
+  "decision": {
+    "result": "deferred",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-var-011.json",
+    "evidencePacketSha256": "01E1D127BC906734B90C3C2ECDB2885D9B82C760F960BE7CA0DDABD8E805C2CA",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": [
+      "The preserved evidence does not yet establish an independent Persian Braille mapping for scalar ۀ."
+    ]
+  },
+  "materialization": {
+    "kind": "deferred",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": false
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "The draft implementation maps scalar ۀ to 125-0-24 while the stable implementation leaves it unmapped. The preserved evidence does not yet establish this scalar independently, so the project defers it rather than promoting a draft-only scalar mapping."
+}

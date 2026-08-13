@@ -14,7 +14,7 @@
     },
     "evidencePacketManifest": {
       "path": "spec/fa-ir/review/evidence-packets/manifest.json",
-      "sha256": "9D78D2A02A23660824CA50670EF66EDCBDC895DAA650AAA8A91C3FC0AC98ADF2"
+      "sha256": "22355AF71945426ED8CE4D75B17CB00DBDD672D4AFBC363FCE27B2C26C4C8197"
     },
     "normativePromotionPolicy": {
       "path": "spec/fa-ir/governance/normative-promotion-policy.json",
@@ -75,19 +75,17 @@
     "plannedItems": 253,
     "reviewRequired": 252,
     "unresolved": 1,
-    "batches": 4,
+    "batches": 3,
     "promotionEligible": 0,
     "maintainerDecisions": 0,
     "trackCounts": {
       "unresolved": 1,
-      "evidence-gap": 27,
-      "implementation-conflict": 75,
-      "implementation-alignment": 150
+      "implementation-conflict": 76,
+      "implementation-alignment": 176
     },
     "stableDraftRelationships": {
-      "different-observed-behavior": 75,
-      "insufficient-data": 27,
-      "same-observed-behavior": 151
+      "different-observed-behavior": 76,
+      "same-observed-behavior": 177
     },
     "categories": {
       "mixed-latin": 56,
@@ -121,51 +119,12 @@
       "promotionEligibleByPlanning": false
     },
     {
-      "batchId": "FA-ADJ-BATCH-01",
-      "track": "evidence-gap",
-      "title": "Evidence gaps",
-      "priority": 1,
-      "reason": "Stable/draft comparison is insufficient to support a review disposition without additional evidence analysis.",
-      "itemCount": 27,
-      "decisionItemIds": [
-        "FA-WS-001",
-        "FA-WS-002",
-        "FA-WS-003",
-        "FA-WS-004",
-        "FA-WS-005",
-        "FA-WS-006",
-        "FA-WS-007",
-        "FA-WS-008",
-        "FA-WS-009",
-        "FA-WS-010",
-        "FA-WS-011",
-        "FA-WS-012",
-        "FA-WS-013",
-        "FA-WS-014",
-        "FA-WS-015",
-        "FA-WS-016",
-        "FA-WS-017",
-        "FA-WS-018",
-        "FA-WS-019",
-        "FA-WS-020",
-        "FA-WS-021",
-        "FA-WS-022",
-        "FA-WS-023",
-        "FA-WS-024",
-        "FA-WS-025",
-        "FA-WS-026",
-        "FA-WS-027"
-      ],
-      "automaticAdjudication": false,
-      "promotionEligibleByPlanning": false
-    },
-    {
       "batchId": "FA-ADJ-BATCH-02",
       "track": "implementation-conflict",
       "title": "Implementation conflicts",
       "priority": 2,
       "reason": "Observed stable and draft implementations differ and require explicit adjudication.",
-      "itemCount": 75,
+      "itemCount": 76,
       "decisionItemIds": [
         "FA-FMT-001",
         "FA-PUNC-015",
@@ -241,7 +200,8 @@
         "FA-LATIN-MODE-001",
         "FA-LATIN-MODE-002",
         "FA-LATIN-MODE-003",
-        "FA-LATIN-MODE-004"
+        "FA-LATIN-MODE-004",
+        "FA-WS-027"
       ],
       "automaticAdjudication": false,
       "promotionEligibleByPlanning": false
@@ -252,7 +212,7 @@
       "title": "Implementation alignment",
       "priority": 3,
       "reason": "Observed stable and draft implementations align, but the Phase 1 decision remains REVIEW-REQUIRED and therefore still requires human adjudication.",
-      "itemCount": 150,
+      "itemCount": 176,
       "decisionItemIds": [
         "FA-REM-001",
         "FA-REM-004",
@@ -344,6 +304,32 @@
         "FA-PUNC-018",
         "FA-PUNC-019",
         "FA-PUNC-020",
+        "FA-WS-001",
+        "FA-WS-002",
+        "FA-WS-003",
+        "FA-WS-004",
+        "FA-WS-005",
+        "FA-WS-006",
+        "FA-WS-007",
+        "FA-WS-008",
+        "FA-WS-009",
+        "FA-WS-010",
+        "FA-WS-011",
+        "FA-WS-012",
+        "FA-WS-013",
+        "FA-WS-014",
+        "FA-WS-015",
+        "FA-WS-016",
+        "FA-WS-017",
+        "FA-WS-018",
+        "FA-WS-019",
+        "FA-WS-020",
+        "FA-WS-021",
+        "FA-WS-022",
+        "FA-WS-023",
+        "FA-WS-024",
+        "FA-WS-025",
+        "FA-WS-026",
         "FA-REM-002",
         "FA-REM-003",
         "FA-REM-005",
@@ -445,1194 +431,6 @@
       "evidencePacket": {
         "path": "spec/fa-ir/review/evidence-packets/records/fa-var-013.json",
         "sha256": "4C61EA0F4A9F3700F922C8D65F5501E73401D8694A15B3F69ADC9D70C747382B"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-141",
-      "queueId": "FA-REVIEW-141",
-      "packetId": "FA-EVIDENCE-141",
-      "decisionItemId": "FA-WS-001",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-001.json",
-        "sha256": "8CB10077FCC1780CE4386594C0A7C5A938B4FA7388EFDEBA7467AAE207EB7D8A"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-142",
-      "queueId": "FA-REVIEW-142",
-      "packetId": "FA-EVIDENCE-142",
-      "decisionItemId": "FA-WS-002",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-002.json",
-        "sha256": "C378EC0AB71404D590263986003D644BF77A9B166F214B784EE78AE51DADC015"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-143",
-      "queueId": "FA-REVIEW-143",
-      "packetId": "FA-EVIDENCE-143",
-      "decisionItemId": "FA-WS-003",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-003.json",
-        "sha256": "FA5FF64D432E18D4BC7DE8ED3808E3BD5E686032A6BD1B9EBB5BE4C820451159"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-144",
-      "queueId": "FA-REVIEW-144",
-      "packetId": "FA-EVIDENCE-144",
-      "decisionItemId": "FA-WS-004",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-004.json",
-        "sha256": "8768046527DAEE76103D0908CB11CC84D23864AEB170E45B00C876C989FA1E84"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-145",
-      "queueId": "FA-REVIEW-145",
-      "packetId": "FA-EVIDENCE-145",
-      "decisionItemId": "FA-WS-005",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-005.json",
-        "sha256": "FD77A6E7B6B699812C06D87924F50DAB5385201C0ED7C8A1E2895DC8F3022C8B"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-146",
-      "queueId": "FA-REVIEW-146",
-      "packetId": "FA-EVIDENCE-146",
-      "decisionItemId": "FA-WS-006",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-006.json",
-        "sha256": "06D35B49552266311EFDC9AE224D75CEC6C7519F13D09B27C8FC4BABB2CAE7DC"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-147",
-      "queueId": "FA-REVIEW-147",
-      "packetId": "FA-EVIDENCE-147",
-      "decisionItemId": "FA-WS-007",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-007.json",
-        "sha256": "0788666E22F419C482D235A54F834142B914EB8A1F4F1971FBAFFC3629FE9CE5"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-148",
-      "queueId": "FA-REVIEW-148",
-      "packetId": "FA-EVIDENCE-148",
-      "decisionItemId": "FA-WS-008",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-008.json",
-        "sha256": "24185F74756ADA60B42B9514E486F5778DDB49D151C74E786D4965DD9FCD7806"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-149",
-      "queueId": "FA-REVIEW-149",
-      "packetId": "FA-EVIDENCE-149",
-      "decisionItemId": "FA-WS-009",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-009.json",
-        "sha256": "35F3CFB11876245BC27799F8CB6A358AF549DD8EADE07E0C7041015363CB48E8"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-150",
-      "queueId": "FA-REVIEW-150",
-      "packetId": "FA-EVIDENCE-150",
-      "decisionItemId": "FA-WS-010",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-010.json",
-        "sha256": "0A925D60BC3FD319E59C82892DE395F49D59F71D36AD288E0B959BCE3B2E0D67"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-151",
-      "queueId": "FA-REVIEW-151",
-      "packetId": "FA-EVIDENCE-151",
-      "decisionItemId": "FA-WS-011",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-011.json",
-        "sha256": "C21EEB7AE98E88D7FC4F0C3DE08C954A5A9EE377905FCADD14F26233249F135A"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-152",
-      "queueId": "FA-REVIEW-152",
-      "packetId": "FA-EVIDENCE-152",
-      "decisionItemId": "FA-WS-012",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-012.json",
-        "sha256": "FE8D9E78E55E6129D786781DC8C6D262AA91D6EF6399587C385DEB4C78724A29"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-153",
-      "queueId": "FA-REVIEW-153",
-      "packetId": "FA-EVIDENCE-153",
-      "decisionItemId": "FA-WS-013",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-013.json",
-        "sha256": "CC219E2E2A85F37C0F1C265E0F747CADCB109B151F589FDC61B125BD110A17BA"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-154",
-      "queueId": "FA-REVIEW-154",
-      "packetId": "FA-EVIDENCE-154",
-      "decisionItemId": "FA-WS-014",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-014.json",
-        "sha256": "C1E8E955B9CAC61099C84FD7F1DB44C7D905F2F8EE30AD0A3176F5EAE9AE9E41"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-155",
-      "queueId": "FA-REVIEW-155",
-      "packetId": "FA-EVIDENCE-155",
-      "decisionItemId": "FA-WS-015",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-015.json",
-        "sha256": "1F0948ECEC791304468EEF3614F3ACAFAED4841DE2B45DDFFED9D4E2ADAA379E"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-156",
-      "queueId": "FA-REVIEW-156",
-      "packetId": "FA-EVIDENCE-156",
-      "decisionItemId": "FA-WS-016",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-016.json",
-        "sha256": "1CC59965EE2BFC6F14AC2862806E61923B4CAD0607EABEB47040C3A8B8892FA7"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-157",
-      "queueId": "FA-REVIEW-157",
-      "packetId": "FA-EVIDENCE-157",
-      "decisionItemId": "FA-WS-017",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-017.json",
-        "sha256": "4DA6C6A0FD7DA104BA87C9120963A589D26A491A1333FA1B33238CC5655D7245"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-158",
-      "queueId": "FA-REVIEW-158",
-      "packetId": "FA-EVIDENCE-158",
-      "decisionItemId": "FA-WS-018",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-018.json",
-        "sha256": "B9583F03CB2ECA9C5B6A6D43309216D5A7F9B92E2E7C5424ADDA061E01989E29"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-159",
-      "queueId": "FA-REVIEW-159",
-      "packetId": "FA-EVIDENCE-159",
-      "decisionItemId": "FA-WS-019",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-019.json",
-        "sha256": "621B853B704C9EC4A8B45B810A296CE6F32483105F960B35621BBF95BD30A960"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-160",
-      "queueId": "FA-REVIEW-160",
-      "packetId": "FA-EVIDENCE-160",
-      "decisionItemId": "FA-WS-020",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-020.json",
-        "sha256": "D418AAFBC250258658A6A468DB21663C456B3969491E45E96E51A47805817A20"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-161",
-      "queueId": "FA-REVIEW-161",
-      "packetId": "FA-EVIDENCE-161",
-      "decisionItemId": "FA-WS-021",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-021.json",
-        "sha256": "5FFED91EBFFD4D6E5BC66F9C612EA80B20F8A941E878589152CD29CB2A4B7BE7"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-162",
-      "queueId": "FA-REVIEW-162",
-      "packetId": "FA-EVIDENCE-162",
-      "decisionItemId": "FA-WS-022",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-022.json",
-        "sha256": "8CAB56AACD4EA46DB854FEE91D89841FFC33F02C4ACC51AF5283DC1F2248AE1D"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-163",
-      "queueId": "FA-REVIEW-163",
-      "packetId": "FA-EVIDENCE-163",
-      "decisionItemId": "FA-WS-023",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-023.json",
-        "sha256": "79B535429DDE4BFD00E91A8A7558A483B49D2102FA0118F5BD7ED7B898EB3DAB"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-164",
-      "queueId": "FA-REVIEW-164",
-      "packetId": "FA-EVIDENCE-164",
-      "decisionItemId": "FA-WS-024",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-024.json",
-        "sha256": "7885420816D2ADC4B15EF5A00705C507A2B724848D577E32C61E072A518AE889"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-165",
-      "queueId": "FA-REVIEW-165",
-      "packetId": "FA-EVIDENCE-165",
-      "decisionItemId": "FA-WS-025",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-025.json",
-        "sha256": "EAA79B752EB2D889193CA8CC54EE967FF5C1951A7DFF5ADB450597EA6B016C4A"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-166",
-      "queueId": "FA-REVIEW-166",
-      "packetId": "FA-EVIDENCE-166",
-      "decisionItemId": "FA-WS-026",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-026.json",
-        "sha256": "40F86F5582A6CF9EBAB818AAD7F021DC43D00715205A4FDD6E0C3FC7C25C637B"
-      },
-      "status": "planned-for-adjudication",
-      "adjudication": {
-        "selectedDisposition": null,
-        "maintainerDecision": null,
-        "decisionRationale": null,
-        "promotionEligible": false
-      }
-    },
-    {
-      "adjudicationItemId": "FA-ADJ-PLAN-167",
-      "queueId": "FA-REVIEW-167",
-      "packetId": "FA-EVIDENCE-167",
-      "decisionItemId": "FA-WS-027",
-      "classification": "REVIEW-REQUIRED",
-      "phase1Stage": "1.6",
-      "category": "whitespace-layout",
-      "track": "evidence-gap",
-      "trackPriority": 1,
-      "reviewSignals": {
-        "stableDraftRelationship": "insufficient-data",
-        "sourceCount": 4,
-        "observedEvidenceChannels": [
-          "stableLiblouis",
-          "draftLiblouis",
-          "iranianManual",
-          "researchAudit2053"
-        ],
-        "missingEvidenceChannels": [
-          "legacyV1",
-          "unicodeBraille"
-        ],
-        "manualEvidenceObserved": true,
-        "legacyEvidenceObserved": false,
-        "unicodeEvidenceObserved": false,
-        "researchAudit2053Observed": true,
-        "supplementalEvidenceRecords": 0,
-        "dot78Signal": false,
-        "formatOrLayoutSignal": true,
-        "mixedLatinSignal": false
-      },
-      "evidencePacket": {
-        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-027.json",
-        "sha256": "6E7D715C7C835EFEF77984C381FE3652DC62170940B0ECFCED83AD3835C21F68"
       },
       "status": "planned-for-adjudication",
       "adjudication": {
@@ -4933,6 +3731,50 @@
       "evidencePacket": {
         "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-004.json",
         "sha256": "CA8312CF4AD4AA4EF1B3F1B788875016C35B8BC3E2475E39ED90E20EB5862E1E"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-167",
+      "queueId": "FA-REVIEW-167",
+      "packetId": "FA-EVIDENCE-167",
+      "decisionItemId": "FA-WS-027",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-conflict",
+      "trackPriority": 2,
+      "reviewSignals": {
+        "stableDraftRelationship": "different-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-027.json",
+        "sha256": "5FBD8BBA40EA99C99578C00DDE64CB0AC7FEBCBFDDEAE9FFE8C9DF6202439F0D"
       },
       "status": "planned-for-adjudication",
       "adjudication": {
@@ -8893,6 +7735,1150 @@
       "evidencePacket": {
         "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-020.json",
         "sha256": "937639C7B3D8A60192D15C15042A3D2B70344AC02A626C4D8815AE50B72C5EA3"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-141",
+      "queueId": "FA-REVIEW-141",
+      "packetId": "FA-EVIDENCE-141",
+      "decisionItemId": "FA-WS-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-001.json",
+        "sha256": "09F11FEC073ECAFFBD9F1D85BA2D2ABFF0B765D915A9A2C4FEA447764E02A83E"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-142",
+      "queueId": "FA-REVIEW-142",
+      "packetId": "FA-EVIDENCE-142",
+      "decisionItemId": "FA-WS-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-002.json",
+        "sha256": "9DABFBF12A2E395729444C84FB187748FCDCBFD0234E0C5EBCF9F0A1CC656822"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-143",
+      "queueId": "FA-REVIEW-143",
+      "packetId": "FA-EVIDENCE-143",
+      "decisionItemId": "FA-WS-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-003.json",
+        "sha256": "463C1DA089C0175FBFCB987484097520FCA8ADA6CF858F09C519097B0B5AC497"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-144",
+      "queueId": "FA-REVIEW-144",
+      "packetId": "FA-EVIDENCE-144",
+      "decisionItemId": "FA-WS-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-004.json",
+        "sha256": "4D6E97115D5C145834D8460798EAF80B5BB04FFF60DDCD47E37381215C3A375B"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-145",
+      "queueId": "FA-REVIEW-145",
+      "packetId": "FA-EVIDENCE-145",
+      "decisionItemId": "FA-WS-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-005.json",
+        "sha256": "DD1C55BAEA1D899F50332704F5808B524294D75330A77E054A5466B937AEDE21"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-146",
+      "queueId": "FA-REVIEW-146",
+      "packetId": "FA-EVIDENCE-146",
+      "decisionItemId": "FA-WS-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-006.json",
+        "sha256": "A50DB483CB6DB58F502BA2F7ACB8D8E750534A553822AC29E392CB186651277A"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-147",
+      "queueId": "FA-REVIEW-147",
+      "packetId": "FA-EVIDENCE-147",
+      "decisionItemId": "FA-WS-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-007.json",
+        "sha256": "10672E65BCF41CD3997B5730CE797F832A589B16F8DB3B0D3AAAEEFABDBA18C7"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-148",
+      "queueId": "FA-REVIEW-148",
+      "packetId": "FA-EVIDENCE-148",
+      "decisionItemId": "FA-WS-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-008.json",
+        "sha256": "4B0807F24161071D5EF04E2464446DE2F297719F7E1DDBB55B959EFE53A1FFE2"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-149",
+      "queueId": "FA-REVIEW-149",
+      "packetId": "FA-EVIDENCE-149",
+      "decisionItemId": "FA-WS-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-009.json",
+        "sha256": "0618663A87B7491245632C36D1ABA7152B78FE59238A7DF6ADB30EC4FABE62CF"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-150",
+      "queueId": "FA-REVIEW-150",
+      "packetId": "FA-EVIDENCE-150",
+      "decisionItemId": "FA-WS-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-010.json",
+        "sha256": "2D7612097C2329374F47CDA6A7D9E000FA0978EE86A1BC9A3DB5B58CA18AE554"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-151",
+      "queueId": "FA-REVIEW-151",
+      "packetId": "FA-EVIDENCE-151",
+      "decisionItemId": "FA-WS-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-011.json",
+        "sha256": "94FCB199E75A9BFFB5C546BF48CB7589858191E4ECBB2E4C941A8BA3B20E77FF"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-152",
+      "queueId": "FA-REVIEW-152",
+      "packetId": "FA-EVIDENCE-152",
+      "decisionItemId": "FA-WS-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-012.json",
+        "sha256": "39C8144307D8BE3C0636EDE396C73C1A06B43D857A9C420349432CBBCF801671"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-153",
+      "queueId": "FA-REVIEW-153",
+      "packetId": "FA-EVIDENCE-153",
+      "decisionItemId": "FA-WS-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-013.json",
+        "sha256": "C0D7BD15AA0E1C58F14D720DBB11487AFCE3D5628B682A220ECE345EFC616A13"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-154",
+      "queueId": "FA-REVIEW-154",
+      "packetId": "FA-EVIDENCE-154",
+      "decisionItemId": "FA-WS-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-014.json",
+        "sha256": "9551C4F2EF23B1D18E451B4DB97C3A598E9AEEEBEE93E249DE20A2E66416CA8E"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-155",
+      "queueId": "FA-REVIEW-155",
+      "packetId": "FA-EVIDENCE-155",
+      "decisionItemId": "FA-WS-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-015.json",
+        "sha256": "106AC7FC582F5E0C49C6462FDD51868159E761785ED0EAD4694FDCB692C81505"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-156",
+      "queueId": "FA-REVIEW-156",
+      "packetId": "FA-EVIDENCE-156",
+      "decisionItemId": "FA-WS-016",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-016.json",
+        "sha256": "98059BCDF03C76160E7C2D122473433293ACFD09713C34309E6E77D67E1F2A6C"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-157",
+      "queueId": "FA-REVIEW-157",
+      "packetId": "FA-EVIDENCE-157",
+      "decisionItemId": "FA-WS-017",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-017.json",
+        "sha256": "C8440F04F69614879375712838F95A6F44021526C6D04ABCB3135E34F38FEC8C"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-158",
+      "queueId": "FA-REVIEW-158",
+      "packetId": "FA-EVIDENCE-158",
+      "decisionItemId": "FA-WS-018",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-018.json",
+        "sha256": "E0A9298E4DF57A41F02B1834FB741FFD714C67CD79497C87D61ACE7CF96EA0D4"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-159",
+      "queueId": "FA-REVIEW-159",
+      "packetId": "FA-EVIDENCE-159",
+      "decisionItemId": "FA-WS-019",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-019.json",
+        "sha256": "E01910241D9D75C9E6DD640D91521B2852FCB94E4EB199F6B5DFFA0355102D9F"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-160",
+      "queueId": "FA-REVIEW-160",
+      "packetId": "FA-EVIDENCE-160",
+      "decisionItemId": "FA-WS-020",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-020.json",
+        "sha256": "F3112FC9E5F5060D85E57D70D94D2F116717FBA71966AC6505E212B1C578E963"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-161",
+      "queueId": "FA-REVIEW-161",
+      "packetId": "FA-EVIDENCE-161",
+      "decisionItemId": "FA-WS-021",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-021.json",
+        "sha256": "4DEE059EA5AE3443ECAF4796D1661F2BA3253B4B725F976BA9E0C08E3E72999E"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-162",
+      "queueId": "FA-REVIEW-162",
+      "packetId": "FA-EVIDENCE-162",
+      "decisionItemId": "FA-WS-022",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-022.json",
+        "sha256": "DAFF19719B91FC542D3B250824480B419D31CB0A9A2C1F34B1D1E3EDD5795841"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-163",
+      "queueId": "FA-REVIEW-163",
+      "packetId": "FA-EVIDENCE-163",
+      "decisionItemId": "FA-WS-023",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-023.json",
+        "sha256": "95822F36093F91E85DE9DEC68F6FFA581C1AF785EAC110A0B6F8FFD21D84416A"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-164",
+      "queueId": "FA-REVIEW-164",
+      "packetId": "FA-EVIDENCE-164",
+      "decisionItemId": "FA-WS-024",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-024.json",
+        "sha256": "E9210D71A9D02CDECB5C32C5B592BE40C15DACC95DBA831B8B74021F84459422"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-165",
+      "queueId": "FA-REVIEW-165",
+      "packetId": "FA-EVIDENCE-165",
+      "decisionItemId": "FA-WS-025",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-025.json",
+        "sha256": "AAB219BB85BB924752D9991CCA3ACAA56C860146FEE4F416ADD230D8903C4BA7"
+      },
+      "status": "planned-for-adjudication",
+      "adjudication": {
+        "selectedDisposition": null,
+        "maintainerDecision": null,
+        "decisionRationale": null,
+        "promotionEligible": false
+      }
+    },
+    {
+      "adjudicationItemId": "FA-ADJ-PLAN-166",
+      "queueId": "FA-REVIEW-166",
+      "packetId": "FA-EVIDENCE-166",
+      "decisionItemId": "FA-WS-026",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "track": "implementation-alignment",
+      "trackPriority": 3,
+      "reviewSignals": {
+        "stableDraftRelationship": "same-observed-behavior",
+        "sourceCount": 4,
+        "observedEvidenceChannels": [
+          "stableLiblouis",
+          "draftLiblouis",
+          "iranianManual",
+          "researchAudit2053"
+        ],
+        "missingEvidenceChannels": [
+          "legacyV1",
+          "unicodeBraille"
+        ],
+        "manualEvidenceObserved": true,
+        "legacyEvidenceObserved": false,
+        "unicodeEvidenceObserved": false,
+        "researchAudit2053Observed": true,
+        "supplementalEvidenceRecords": 0,
+        "dot78Signal": false,
+        "formatOrLayoutSignal": true,
+        "mixedLatinSignal": false
+      },
+      "evidencePacket": {
+        "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-026.json",
+        "sha256": "292A6BF5631E0D1FFFABCEDC0C6A979EBBB39B60F69841B74236BE49A9C14CA4"
       },
       "status": "planned-for-adjudication",
       "adjudication": {

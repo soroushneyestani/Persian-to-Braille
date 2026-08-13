@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-PUNC-013-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-PUNC-013",
+  "queueId": "FA-REVIEW-077",
+  "packetId": "FA-EVIDENCE-077",
+  "planItemId": "FA-ADJ-PLAN-077",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-conflict",
+  "disposition": "accept-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-punc-013.json",
+    "evidencePacketSha256": "48C98D2409328377521BF87D9A44B0CF63099160B957BBA25E8E860CFC9BE56A",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LEGACY-V1",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "different-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "character",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "For HORIZONTAL ELLIPSIS, the stable implementation uses 3-3-3 while the draft implementation uses 6-6-6. The preserved Iranian manual evidence reports 6-6-6, so the project accepts the draft-aligned ellipsis mapping."
+}

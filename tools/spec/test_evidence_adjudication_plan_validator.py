@@ -113,8 +113,13 @@ def mutate_policy_boundary(root: Path) -> None:
 def mutate_batch_coverage(root: Path) -> None:
     path = root / PLAN_REL
     data = read_json(path)
-    data["batches"][2]["decisionItemIds"] = data["batches"][2]["decisionItemIds"][:-1]
-    data["batches"][2]["itemCount"] -= 1
+    batch = next(
+        row
+        for row in data["batches"]
+        if row["track"] == "implementation-conflict"
+    )
+    batch["decisionItemIds"] = batch["decisionItemIds"][:-1]
+    batch["itemCount"] -= 1
     write_json(path, data)
 
 

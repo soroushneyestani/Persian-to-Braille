@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-WS-025-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-WS-025",
+  "queueId": "FA-REVIEW-165",
+  "packetId": "FA-EVIDENCE-165",
+  "planItemId": "FA-ADJ-PLAN-165",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "accept-layout-policy",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-ws-025.json",
+    "evidencePacketSha256": "AAB219BB85BB924752D9991CCA3ACAA56C860146FEE4F416ADD230D8903C4BA7",
+    "sourceIds": [
+      "SRC-IR-1393",
+      "SRC-LIBLOUIS-2053",
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "layout-policy",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "layout",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on this whitespace/layout behavior through the shared spaces utility and any identical Persian-local override. The project accepts it as host/layout policy rather than treating the whitespace code point as an ordinary Persian Braille character rule."
+}

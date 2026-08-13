@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-ADJ-NUMRULE-001-001",
+  "policyVersion": "1.0.0",
+  "profileId": "fa-ir-g1",
+  "decisionItemId": "FA-NUMRULE-001",
+  "queueId": "FA-REVIEW-058",
+  "packetId": "FA-EVIDENCE-058",
+  "planItemId": "FA-ADJ-PLAN-058",
+  "phase1Classification": "REVIEW-REQUIRED",
+  "track": "implementation-alignment",
+  "disposition": "accept-mode-rule",
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "basis": {
+    "evidencePacketPath": "spec/fa-ir/review/evidence-packets/records/fa-numrule-001.json",
+    "evidencePacketSha256": "A5BDA292CC3D86E6E02DC2C02B2E82D4819CDD139402FFCADE33AA3D3726AECC",
+    "sourceIds": [
+      "SRC-LIBLOUIS-2054",
+      "SRC-LIBLOUIS-G1"
+    ],
+    "stableDraftRelationship": "same-observed-behavior",
+    "unresolvedEvidenceGaps": []
+  },
+  "materialization": {
+    "kind": "mode-rule",
+    "createsSpecificationArtifact": true,
+    "targetRuleType": "mode",
+    "promotionEligible": false,
+    "requiresFuturePromotionGovernance": true
+  },
+  "scope": {
+    "projectSpecificationDecision": true,
+    "projectNormativeRule": false,
+    "officialIranianStandardClaim": false,
+    "phase1ClassificationRewritten": false
+  },
+  "rationale": "Stable and draft implementations agree on the numeric indicator dots 3456. The project accepts this as numeric-mode infrastructure rather than as an ordinary scalar punctuation mapping."
+}
