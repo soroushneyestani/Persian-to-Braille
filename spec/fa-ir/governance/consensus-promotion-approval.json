@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.10",
+  "approvalId": "FA-APPROVAL-CONSENSUS-BASELINE-001",
+  "plan": {
+    "path": "spec/fa-ir/governance/consensus-promotion-plan.json",
+    "sha256": "02C39B43982FE117E50B7D0B85FD06365EBF9D581E94F1F0F475AB7680D6B618",
+    "eligibleCandidates": 36,
+    "alreadyNormative": 1
+  },
+  "decision": {
+    "result": "approved",
+    "authority": "project-maintainer",
+    "recordedBy": "Soroush Neyestani",
+    "recordedAt": null
+  },
+  "scope": {
+    "projectNormativeOnly": true,
+    "officialIranianStandardClaim": false,
+    "profileRemainsDraft": true
+  },
+  "statement": "Approve all 36 eligible CONSENSUS-CANDIDATE rules listed in the exact consensus promotion plan for promotion to normative status within the Persian-to-Braille project specification. No current official Iranian national Braille standard status is claimed, and fa-ir-g1 remains draft."
+}

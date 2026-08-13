@@ -2,10 +2,10 @@
 
 The 37 Phase 1 consensus decisions remain the reproducible baseline for `fa-ir-g1`, but lifecycle status is now materialized from explicit promotion records.
 
-- Candidate rules: 36
-- Normative rules: 1
-- Promotion records applied: 1
-- Active conformance vectors: 1
+- Candidate rules: 0
+- Normative rules: 37
+- Promotion records applied: 37
+- Active conformance vectors: 37
 
 ## Source of lifecycle status
 
