@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:persian-braille:conformance:profile-scenario:1",
+  "title": "Persian Braille Profile Conformance Scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "lifecycle",
+    "category",
+    "profile",
+    "input",
+    "expected",
+    "tags"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^FA-PROFILE-CONF-[A-Z0-9-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "required",
+        "draft"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "persian",
+        "sequence",
+        "numeric",
+        "latin",
+        "layout-normalization",
+        "mixed",
+        "negative"
+      ]
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "codePoints"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "codePoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^U\\+[0-9A-F]{4,6}$"
+          }
+        }
+      }
+    },
+    "expected": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/expectedSuccess"
+        },
+        {
+          "$ref": "#/$defs/expectedFailure"
+        }
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "unicodeLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "codePointIndex",
+        "utf16Index"
+      ],
+      "properties": {
+        "codePointIndex": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "utf16Index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "engineTokenClass": {
+      "type": "string",
+      "enum": [
+        "latin-character-class",
+        "latin-span-begin",
+        "latin-span-end",
+        "latin-capital-indicator",
+        "numeric-indicator",
+        "numeric-begin",
+        "numeric-internal",
+        "numeric-decimal-separator",
+        "numeric-end",
+        "numeric-fraction-separator"
+      ]
+    },
+    "traceExpectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ruleIdsInOrder": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requiredRuleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "forbiddenRuleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "engineTokenClassesInOrder": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/engineTokenClass"
+          }
+        },
+        "requiredNormalizationRuleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "expectedSuccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "cells",
+        "unicodeBraille",
+        "structuralTokens"
+      ],
+      "properties": {
+        "kind": {
+          "const": "success"
+        },
+        "normalizedText": {
+          "type": "string"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unicodeBraille": {
+          "type": "string"
+        },
+        "structuralTokens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "trace": {
+          "$ref": "#/$defs/traceExpectation"
+        }
+      }
+    },
+    "expectedFailure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "code"
+      ],
+      "properties": {
+        "kind": {
+          "const": "failure"
+        },
+        "code": {
+          "type": "string",
+          "enum": [
+            "PREPROCESSING_FAILED",
+            "UNKNOWN_CHARACTER",
+            "UNKNOWN_SEQUENCE",
+            "AMBIGUOUS_MATCH",
+            "UNSUPPORTED_ENGINE_STATE"
+          ]
+        },
+        "causeCode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "messageIncludes": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "$ref": "#/$defs/unicodeLocation"
+        },
+        "character": {
+          "type": "string"
+        },
+        "codePoint": {
+          "type": "string",
+          "pattern": "^U\\+[0-9A-F]{4,6}$"
+        },
+        "candidateRuleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
