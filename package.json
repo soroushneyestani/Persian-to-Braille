@@ -20,7 +20,12 @@
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck",
     "clean": "pnpm -r --if-present run clean",
-    "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs"
+    "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs",
+    "validate:boundaries": "node tools/architecture/validate-package-boundaries.mjs",
+    "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
+    "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
+    "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
+    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism"
   },
   "devDependencies": {
     "typescript": "6.0.3"
