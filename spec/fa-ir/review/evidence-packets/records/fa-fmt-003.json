@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.12",
+  "packetId": "FA-EVIDENCE-004",
+  "queueId": "FA-REVIEW-004",
+  "decisionItemId": "FA-FMT-003",
+  "classification": "REVIEW-REQUIRED",
+  "phase1Stage": "1.3",
+  "category": "orthographic-variants",
+  "priority": 1,
+  "status": "evidence-collected",
+  "subject": {
+    "domain": "unicode-format-control",
+    "subject": "RIGHT-TO-LEFT MARK",
+    "codePoints": [
+      "U+200F"
+    ]
+  },
+  "provenance": {
+    "reviewQueue": {
+      "path": "spec/fa-ir/governance/review-queue.json",
+      "sha256": "08862B1A3BA4E1FAF256A4D0736FF5E29A828BFAFC8E0F984E1FA18EAF7D2A3B"
+    },
+    "masterDecisionMatrix": {
+      "path": "spec/fa-ir/evidence/master-decision-matrix.json",
+      "sha256": "9A3D8070D2364C368F7B1B4D9B661B114C74EE3BFFBC89BAED87DAD18CA4DB7A"
+    },
+    "stageEvidence": {
+      "path": "spec/fa-ir/evidence/orthographic-variants.json",
+      "sha256": "258C18412C2B0BBCA30DF1C2F5EE50FC9689B16825CB225E1C96F399DAC67831"
+    },
+    "sourceRegistry": {
+      "path": "docs/standards/source-registry.md",
+      "sha256": "DE21FE9525130597BAEA0F0BED275A169853D83E93CA6FECA4EFCAF397B42BA0"
+    }
+  },
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "sourceIds": [
+    "SRC-LIBLOUIS-2054",
+    "SRC-LIBLOUIS-G1"
+  ],
+  "sourceRegistryRecords": [
+    {
+      "sourceId": "SRC-LIBLOUIS-2054",
+      "registrySection": "## SRC-LIBLOUIS-2054\n\n**Title:** Draft: update Persian Grade 1 Braille from the 1393 manual\n\n**Type:** GitHub pull request\n\n**Pull request:** liblouis/liblouis#2054\n\n**Observed status on 2026-08-13:** draft\n\n**Classification:** candidate-implementation\n\n**Normative:** false\n\n**Pinned candidate commit:**\n\n`d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417`\n\nURL:\n\n`https://github.com/liblouis/liblouis/pull/2054`\n\nThe candidate contains proposed Persian Grade 1 changes based on the historical manual and modern Unicode policy decisions.\n\nThe draft must not be treated as an approved Persian national standard.\n\n---"
+    },
+    {
+      "sourceId": "SRC-LIBLOUIS-G1",
+      "registrySection": "## SRC-LIBLOUIS-G1\n\n**Title:** Liblouis Persian Grade 1 table\n\n**Path:** `tables/fa-ir-g1.utb`\n\n**Classification:** de-facto-reference-implementation\n\n**Normative:** false\n\n**Pinned repository commit:**\n\n`092e56062d1771b3ca9080651375284adaa5dfad`\n\nPinned source:\n\n`https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb`\n\nThis table is treated as implementation evidence and a practical interoperability baseline.\n\nIt is not treated as the normative Persian Braille specification.\n\n---"
+    }
+  ],
+  "masterDecision": {
+    "id": "FA-FMT-003",
+    "stage": "1.3",
+    "domain": "unicode-format-control",
+    "subject": "RIGHT-TO-LEFT MARK",
+    "codePoints": [
+      "U+200F"
+    ],
+    "classification": "REVIEW-REQUIRED",
+    "normative": false,
+    "reason": "Unicode shaping/bidi controls are modern text-processing policy and are not directly defined by the print-era Persian Braille manual. Their treatment must be reviewed separately from literary cell mappings.",
+    "evidence": [
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054"
+    ],
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "unmapped",
+      "kind": null,
+      "dots": null
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "ignored-by-replace",
+      "kind": "replace",
+      "dots": null
+    },
+    "notes": []
+  },
+  "stageEvidenceRecord": {
+    "id": "FA-FMT-003",
+    "char": "‏",
+    "label": "RIGHT-TO-LEFT MARK",
+    "codePoints": [
+      "U+200F"
+    ],
+    "liblouisStable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "unmapped",
+      "kind": null,
+      "dots": null
+    },
+    "liblouisDraft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "ignored-by-replace",
+      "kind": "replace",
+      "dots": null
+    },
+    "manualStatus": "modern-unicode-format-control",
+    "normativeDecision": "pending"
+  },
+  "supplementalStageEvidenceRecords": [],
+  "stableDraftComparison": {
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "unmapped",
+      "kind": null,
+      "dots": null
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "ignored-by-replace",
+      "kind": "replace",
+      "dots": null
+    },
+    "relationship": "different-observed-behavior",
+    "comparedFields": [
+      "status",
+      "kind",
+      "dots"
+    ]
+  },
+  "evidenceChannels": {
+    "observed": [
+      "stableLiblouis",
+      "draftLiblouis",
+      "iranianManual"
+    ],
+    "notObserved": [
+      "legacyV1",
+      "unicodeBraille",
+      "researchAudit2053"
+    ],
+    "presence": {
+      "stableLiblouis": true,
+      "draftLiblouis": true,
+      "iranianManual": true,
+      "legacyV1": false,
+      "unicodeBraille": false,
+      "researchAudit2053": false
+    }
+  },
+  "review": {
+    "question": "Determine the project-normative disposition for FA-FMT-003 ('RIGHT-TO-LEFT MARK') using the preserved Phase 1 evidence, explicitly resolving implementation differences and evidence gaps without asserting current official Iranian national-standard status.",
+    "recommendedDisposition": null,
+    "maintainerDecision": null,
+    "decisionRationale": null,
+    "promotionEligible": false
+  },
+  "scope": {
+    "evidenceOnly": true,
+    "projectNormativeDecisionMade": false,
+    "officialIranianStandardClaim": false,
+    "profileStatusChange": false
+  }
+}

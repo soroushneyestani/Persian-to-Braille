@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.12",
+  "packetId": "FA-EVIDENCE-189",
+  "queueId": "FA-REVIEW-189",
+  "decisionItemId": "FA-REM-022",
+  "classification": "REVIEW-REQUIRED",
+  "phase1Stage": "1.7",
+  "category": "remaining-coverage",
+  "priority": 5,
+  "status": "evidence-collected",
+  "subject": {
+    "domain": "remaining-scalar/symbol",
+    "subject": "£",
+    "codePoints": [
+      "U+00A3"
+    ]
+  },
+  "provenance": {
+    "reviewQueue": {
+      "path": "spec/fa-ir/governance/review-queue.json",
+      "sha256": "08862B1A3BA4E1FAF256A4D0736FF5E29A828BFAFC8E0F984E1FA18EAF7D2A3B"
+    },
+    "masterDecisionMatrix": {
+      "path": "spec/fa-ir/evidence/master-decision-matrix.json",
+      "sha256": "9A3D8070D2364C368F7B1B4D9B661B114C74EE3BFFBC89BAED87DAD18CA4DB7A"
+    },
+    "stageEvidence": {
+      "path": "spec/fa-ir/evidence/remaining-coverage.json",
+      "sha256": "58196A992A4B0BA657ECD4F8313CC78DA625C556C2F918573388791BC312FCA9"
+    },
+    "sourceRegistry": {
+      "path": "docs/standards/source-registry.md",
+      "sha256": "DE21FE9525130597BAEA0F0BED275A169853D83E93CA6FECA4EFCAF397B42BA0"
+    }
+  },
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "sourceIds": [
+    "SRC-IR-1393",
+    "SRC-LIBLOUIS-2053",
+    "SRC-LIBLOUIS-2054",
+    "SRC-LIBLOUIS-G1"
+  ],
+  "sourceRegistryRecords": [
+    {
+      "sourceId": "SRC-IR-1393",
+      "registrySection": "## SRC-IR-1393\n\n**Title:** مجموعه علائم بریل\n\n**Issuer:** سازمان آموزش و پرورش استثنایی کشور\n\n**Unit:** معاونت برنامه‌ریزی آموزشی و توان‌بخشی\n\n**Year:** 1393 / 2014\n\n**Classification:** historical-institutional\n\n**Current normative status:** unverified\n\nThe recovered source is reported as a 371-page publication.\n\nThe surviving recovered PDF has SHA-256:\n\n`7974B08C12ECE7242B2A435E71C5C8CACC2F296BAD8728544A310CB33C9ADA63`\n\nThe surviving mirror has not been proven byte-identical to the former official download.\n\nNo redistribution license has been established.\n\nThe project therefore records bibliographic information, hashes, page references, and independently derived rule evidence without redistributing the recovered binary.\n\nPrimary audit record:\n\n`https://github.com/liblouis/liblouis/issues/2053`\n\n---"
+    },
+    {
+      "sourceId": "SRC-LIBLOUIS-2053",
+      "registrySection": "## SRC-LIBLOUIS-2053\n\n**Title:** Persian Braille tables: audit against Iran's 1393/2014 manual and Unicode gaps\n\n**Type:** GitHub issue / research audit\n\n**Issue:** liblouis/liblouis#2053\n\n**Observed status on 2026-08-13:** open\n\n**Classification:** research-audit\n\n**Normative:** false\n\nURL:\n\n`https://github.com/liblouis/liblouis/issues/2053`\n\nThe audit compares the recovered Iranian manual with the Persian Liblouis tables and records source-backed differences and modern Unicode coverage gaps.\n\n---"
+    },
+    {
+      "sourceId": "SRC-LIBLOUIS-2054",
+      "registrySection": "## SRC-LIBLOUIS-2054\n\n**Title:** Draft: update Persian Grade 1 Braille from the 1393 manual\n\n**Type:** GitHub pull request\n\n**Pull request:** liblouis/liblouis#2054\n\n**Observed status on 2026-08-13:** draft\n\n**Classification:** candidate-implementation\n\n**Normative:** false\n\n**Pinned candidate commit:**\n\n`d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417`\n\nURL:\n\n`https://github.com/liblouis/liblouis/pull/2054`\n\nThe candidate contains proposed Persian Grade 1 changes based on the historical manual and modern Unicode policy decisions.\n\nThe draft must not be treated as an approved Persian national standard.\n\n---"
+    },
+    {
+      "sourceId": "SRC-LIBLOUIS-G1",
+      "registrySection": "## SRC-LIBLOUIS-G1\n\n**Title:** Liblouis Persian Grade 1 table\n\n**Path:** `tables/fa-ir-g1.utb`\n\n**Classification:** de-facto-reference-implementation\n\n**Normative:** false\n\n**Pinned repository commit:**\n\n`092e56062d1771b3ca9080651375284adaa5dfad`\n\nPinned source:\n\n`https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb`\n\nThis table is treated as implementation evidence and a practical interoperability baseline.\n\nIt is not treated as the normative Persian Braille specification.\n\n---"
+    }
+  ],
+  "masterDecision": {
+    "id": "FA-REM-022",
+    "stage": "1.7",
+    "domain": "remaining-scalar/symbol",
+    "subject": "£",
+    "codePoints": [
+      "U+00A3"
+    ],
+    "classification": "REVIEW-REQUIRED",
+    "normative": false,
+    "reason": "Stable and draft agree, but Stage 1.7 explicitly records that implementation agreement alone is not normative evidence. Remaining symbols/diacritics require source-level review.",
+    "evidence": [
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054"
+    ],
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "notes": []
+  },
+  "stageEvidenceRecord": {
+    "id": "FA-REM-022",
+    "character": "£",
+    "codePoint": "U+00A3",
+    "unicodeName": "POUND SIGN",
+    "unicodeCategory": "Sc",
+    "auditCategory": "symbol",
+    "liblouisStable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "liblouisDraft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "stableDraftExactMatch": true,
+    "usesDot7Or8": false,
+    "iran1393": {
+      "source": "SRC-IR-1393",
+      "evidenceVia": "SRC-LIBLOUIS-2053",
+      "status": "mapping-not-verified-by-current-project-audit"
+    },
+    "normativeDecision": "pending"
+  },
+  "supplementalStageEvidenceRecords": [],
+  "stableDraftComparison": {
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "mapped",
+      "kind": "sign",
+      "dots": "4-123"
+    },
+    "relationship": "same-observed-behavior",
+    "comparedFields": [
+      "status",
+      "kind",
+      "dots"
+    ]
+  },
+  "evidenceChannels": {
+    "observed": [
+      "stableLiblouis",
+      "draftLiblouis",
+      "iranianManual",
+      "researchAudit2053"
+    ],
+    "notObserved": [
+      "legacyV1",
+      "unicodeBraille"
+    ],
+    "presence": {
+      "stableLiblouis": true,
+      "draftLiblouis": true,
+      "iranianManual": true,
+      "legacyV1": false,
+      "unicodeBraille": false,
+      "researchAudit2053": true
+    }
+  },
+  "review": {
+    "question": "Determine the project-normative disposition for FA-REM-022 ('£') using the preserved Phase 1 evidence, explicitly resolving implementation differences and evidence gaps without asserting current official Iranian national-standard status.",
+    "recommendedDisposition": null,
+    "maintainerDecision": null,
+    "decisionRationale": null,
+    "promotionEligible": false
+  },
+  "scope": {
+    "evidenceOnly": true,
+    "projectNormativeDecisionMade": false,
+    "officialIranianStandardClaim": false,
+    "profileStatusChange": false
+  }
+}

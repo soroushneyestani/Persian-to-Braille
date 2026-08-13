@@ -1,0 +1,4072 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.12",
+  "status": "evidence-only",
+  "profile": {
+    "id": "fa-ir-g1",
+    "version": "0.1.0",
+    "status": "draft"
+  },
+  "summary": {
+    "packetCount": 253,
+    "reviewRequired": 252,
+    "unresolved": 1,
+    "promotionEligible": 0,
+    "maintainerDecisionsRecorded": 0,
+    "projectNormativeDecisionsMade": 0,
+    "registeredSourcesObserved": 5,
+    "supplementalStageEvidenceRecords": 18
+  },
+  "inputs": [
+    {
+      "path": "spec/fa-ir/governance/review-queue.json",
+      "sha256": "08862B1A3BA4E1FAF256A4D0736FF5E29A828BFAFC8E0F984E1FA18EAF7D2A3B"
+    },
+    {
+      "path": "spec/fa-ir/evidence/master-decision-matrix.json",
+      "sha256": "9A3D8070D2364C368F7B1B4D9B661B114C74EE3BFFBC89BAED87DAD18CA4DB7A"
+    },
+    {
+      "path": "docs/standards/source-registry.md",
+      "sha256": "DE21FE9525130597BAEA0F0BED275A169853D83E93CA6FECA4EFCAF397B42BA0"
+    },
+    {
+      "path": "spec/fa-ir/evidence/orthographic-variants.json",
+      "sha256": "258C18412C2B0BBCA30DF1C2F5EE50FC9689B16825CB225E1C96F399DAC67831"
+    },
+    {
+      "path": "spec/fa-ir/evidence/numbers-punctuation.json",
+      "sha256": "E203DA4EB068E614A9DEEF1BDFAAEBFCF7E037D6AA638B2A52C1E6DC3D620C9C"
+    },
+    {
+      "path": "spec/fa-ir/evidence/mixed-latin.json",
+      "sha256": "53D970743AA8014A13C07C39CD8769F61100217243FF271ECB4EDE5FC35B480E"
+    },
+    {
+      "path": "spec/fa-ir/evidence/whitespace-layout.json",
+      "sha256": "03138EA01B1213C4CE85D31D68766C49CE2BF7DDA5A105D50D7C2ED557997942"
+    },
+    {
+      "path": "spec/fa-ir/evidence/remaining-coverage.json",
+      "sha256": "58196A992A4B0BA657ECD4F8313CC78DA625C556C2F918573388791BC312FCA9"
+    }
+  ],
+  "packets": [
+    {
+      "packetId": "FA-EVIDENCE-001",
+      "queueId": "FA-REVIEW-001",
+      "decisionItemId": "FA-VAR-013",
+      "classification": "UNRESOLVED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-013.json",
+      "sha256": "4C61EA0F4A9F3700F922C8D65F5501E73401D8694A15B3F69ADC9D70C747382B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-002",
+      "queueId": "FA-REVIEW-002",
+      "decisionItemId": "FA-FMT-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-001.json",
+      "sha256": "803D29D18E9E88BB073227E52F0E521F4D974C1814DF634A9C5C169365FACF6D",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-003",
+      "queueId": "FA-REVIEW-003",
+      "decisionItemId": "FA-FMT-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-002.json",
+      "sha256": "FE0413A8EE53AF1B4B34C4AC76C6952A739C07EADB7116BC71400D8C509077DC",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-004",
+      "queueId": "FA-REVIEW-004",
+      "decisionItemId": "FA-FMT-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-003.json",
+      "sha256": "B5854E6529A5CCD868DEA9183108D09461071ACE26A9C0219F768C7BA770FD5A",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-005",
+      "queueId": "FA-REVIEW-005",
+      "decisionItemId": "FA-FMT-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-004.json",
+      "sha256": "D1F90EBCCBE22CBC6E1007A01BBEFFA624F1B477EA1B50E8ED61755A2FDE0F81",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-006",
+      "queueId": "FA-REVIEW-006",
+      "decisionItemId": "FA-FMT-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-005.json",
+      "sha256": "1FBC59A573592D3D00FE9B42F7AB0987A98AE55AA2B3572BAF2E4EE7C6936E65",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-007",
+      "queueId": "FA-REVIEW-007",
+      "decisionItemId": "FA-FMT-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-006.json",
+      "sha256": "EF6C521F19729C7B0D2B37656CC9D97A52CF158448B3EE156FDE1533089035C1",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-008",
+      "queueId": "FA-REVIEW-008",
+      "decisionItemId": "FA-FMT-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-007.json",
+      "sha256": "024D5C7ACF62AD9BED9EA4DF0A20052CF2B08C850D5AFF374A468784C2F8E409",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-009",
+      "queueId": "FA-REVIEW-009",
+      "decisionItemId": "FA-FMT-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-008.json",
+      "sha256": "FE823C1FFA4939F9F506ADA6D2ABCF3F0AFA475A3B14AE2C066A7E1A5CDB1887",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-010",
+      "queueId": "FA-REVIEW-010",
+      "decisionItemId": "FA-FMT-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-009.json",
+      "sha256": "0478380EF54D54200D41D00230BC582481D322C65668A77182A7C7119B643C41",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-011",
+      "queueId": "FA-REVIEW-011",
+      "decisionItemId": "FA-FMT-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-010.json",
+      "sha256": "E4AAB0008564DDF6ECED35B25117DEF81D5DC2E7CCF29143BE3C493BF91AE653",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-012",
+      "queueId": "FA-REVIEW-012",
+      "decisionItemId": "FA-FMT-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-011.json",
+      "sha256": "BA7192ACBC22FF943780ED9ABB8E0559771D79BB20AB62789E1D6C55885D7550",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-013",
+      "queueId": "FA-REVIEW-013",
+      "decisionItemId": "FA-FMT-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-fmt-012.json",
+      "sha256": "6459228FE0A0B14F507C7080BC44694884E28F145864195067F809C27C848C26",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-014",
+      "queueId": "FA-REVIEW-014",
+      "decisionItemId": "FA-SEQ-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-seq-001.json",
+      "sha256": "A0A9D76B6792C8E18DEC51007AB694BEF2C2D3B63B28C4F73C96B98BE930C04A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-015",
+      "queueId": "FA-REVIEW-015",
+      "decisionItemId": "FA-SEQ-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-seq-002.json",
+      "sha256": "4C06BBA52EDF19AAF432390AD95B54B6C6676089C82D06CA53461935D79F1E6B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-016",
+      "queueId": "FA-REVIEW-016",
+      "decisionItemId": "FA-SEQ-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-seq-003.json",
+      "sha256": "D5157496E094033C73999E741F0BF4AC6D0C3F7316100F95AEFD4EA7DEBC90A7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-017",
+      "queueId": "FA-REVIEW-017",
+      "decisionItemId": "FA-VAR-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-001.json",
+      "sha256": "31FA0DB4BCD898843F0519F2C233B59CA4C11FB8E8168A5C408E7A0B542DBB8C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-018",
+      "queueId": "FA-REVIEW-018",
+      "decisionItemId": "FA-VAR-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-002.json",
+      "sha256": "42E7F9BF54B59FCB3129234282580AD63FC13438B03019B154FC82AC4EB3183C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-019",
+      "queueId": "FA-REVIEW-019",
+      "decisionItemId": "FA-VAR-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-003.json",
+      "sha256": "6233815C7094AF8495C83BD445831D0BDB8F5A02626D56B2F582AB6200C71BCD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-020",
+      "queueId": "FA-REVIEW-020",
+      "decisionItemId": "FA-VAR-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-004.json",
+      "sha256": "B8F1539DA276C43B19532604361D198B1BBAAD133E79CDEAD2738E8774E9E652",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-021",
+      "queueId": "FA-REVIEW-021",
+      "decisionItemId": "FA-VAR-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-005.json",
+      "sha256": "F9D2761912A2D80B16FE51C79AC1D5A1169F93FEC6DEEF78AC19307EB64E7784",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-022",
+      "queueId": "FA-REVIEW-022",
+      "decisionItemId": "FA-VAR-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-006.json",
+      "sha256": "564D5728513FCEA571303AF640E6B9B077795D182A3DE92C4018BB6164D26A4F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-023",
+      "queueId": "FA-REVIEW-023",
+      "decisionItemId": "FA-VAR-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-007.json",
+      "sha256": "8DC905A913D899C718C6773E2C485FFD638D0069BC17E16B5C5B2FBFA4D4A206",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-024",
+      "queueId": "FA-REVIEW-024",
+      "decisionItemId": "FA-VAR-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-008.json",
+      "sha256": "5EBDC50EC9BF32A896C2A331FE43B2710D16D5A4C758EC840EEFE519FDBE1FB6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-025",
+      "queueId": "FA-REVIEW-025",
+      "decisionItemId": "FA-VAR-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-009.json",
+      "sha256": "CC1D0071702035927B4CC7140BF3FEE45332889536AA769844DA05D4F0E4FDB7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-026",
+      "queueId": "FA-REVIEW-026",
+      "decisionItemId": "FA-VAR-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-011.json",
+      "sha256": "01E1D127BC906734B90C3C2ECDB2885D9B82C760F960BE7CA0DDABD8E805C2CA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-027",
+      "queueId": "FA-REVIEW-027",
+      "decisionItemId": "FA-VAR-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.3",
+      "category": "orthographic-variants",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-var-012.json",
+      "sha256": "980A599071C38CBEDAF5A73FCFE808A2474A49B320A85BC69BEE9722943A1567",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-028",
+      "queueId": "FA-REVIEW-028",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-0",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-0.json",
+      "sha256": "D60C2A6D893DD278313AB2AF9B9A4FBC2B5E52E7AC593E4A8D55845B73A91021",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-029",
+      "queueId": "FA-REVIEW-029",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-1",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-1.json",
+      "sha256": "6CB10B484471BEDA379FC9D9B5947A8C4EBCD8C76010EDF18A2AD7C9D1A99FA4",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-030",
+      "queueId": "FA-REVIEW-030",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-2",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-2.json",
+      "sha256": "20E296FBA402C970D5F77E52B3E84C84A676DCCD7CC45D57629B8F1B73004628",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-031",
+      "queueId": "FA-REVIEW-031",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-3",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-3.json",
+      "sha256": "77AE3F120BEE1F28A3B82FE1D9861245B1D01CA8EE4FC9114F11D24F8C382466",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-032",
+      "queueId": "FA-REVIEW-032",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-4",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-4.json",
+      "sha256": "42C99CB4CAF865703409EE18660DEE8185E3D9DF8DB89CD07D7F77A9571AD7EF",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-033",
+      "queueId": "FA-REVIEW-033",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-5",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-5.json",
+      "sha256": "EDD74F2CC52AD6CAB29D748D2FBDF8E98BE470CA8C0743DF80C099052B2972C7",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-034",
+      "queueId": "FA-REVIEW-034",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-6",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-6.json",
+      "sha256": "41625BC96E1BBA153D518F75DB66EF094809277DF181582FD479036DF56E3372",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-035",
+      "queueId": "FA-REVIEW-035",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-7",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-7.json",
+      "sha256": "7CD4FE9D69AAACCD077E440A02E7F1131389B9C7F25389033A013DCB54F9FAF2",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-036",
+      "queueId": "FA-REVIEW-036",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-8",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-8.json",
+      "sha256": "9A84831852D1BA2E31D3E298746A83EDB5943C0C0DC084E2E0FDE556C4003D20",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-037",
+      "queueId": "FA-REVIEW-037",
+      "decisionItemId": "FA-DIGIT-ARABIC-INDIC-9",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-arabic-indic-9.json",
+      "sha256": "FAB08D0059DC5CFA5721686700BD54BB452EAEC9ED4611CC672B9099B0B7511E",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-038",
+      "queueId": "FA-REVIEW-038",
+      "decisionItemId": "FA-DIGIT-ASCII-0",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-0.json",
+      "sha256": "98914E11E65958F21C8BF9FAE32C3FEA27BFB959309499C38C3D9B22F5BEC47C",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-039",
+      "queueId": "FA-REVIEW-039",
+      "decisionItemId": "FA-DIGIT-ASCII-1",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-1.json",
+      "sha256": "ABFE6FF43F4F08DEFE60BB82276A80C9BE36571AB465D650F98DD66CD080BDA5",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-040",
+      "queueId": "FA-REVIEW-040",
+      "decisionItemId": "FA-DIGIT-ASCII-2",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-2.json",
+      "sha256": "5D8742C5FFC4C3FE736FE19CF26AA681332EB9CA081F02E6BD05ED859919E4B1",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-041",
+      "queueId": "FA-REVIEW-041",
+      "decisionItemId": "FA-DIGIT-ASCII-3",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-3.json",
+      "sha256": "B3FE821A6EAA1A28822C3815587B15A10AB9B6F29FD0B42EEFBF8D53B06F5310",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-042",
+      "queueId": "FA-REVIEW-042",
+      "decisionItemId": "FA-DIGIT-ASCII-4",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-4.json",
+      "sha256": "E00CDEADF50F3095D0168795D86A5258C97E8AAFF56BAFC94B71A3167C835658",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-043",
+      "queueId": "FA-REVIEW-043",
+      "decisionItemId": "FA-DIGIT-ASCII-5",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-5.json",
+      "sha256": "BB6C6F88C8A50E1A4CF6C1C6FFDA151C9AA60C3EA55F4DFA3C83066B2DC543F0",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-044",
+      "queueId": "FA-REVIEW-044",
+      "decisionItemId": "FA-DIGIT-ASCII-6",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-6.json",
+      "sha256": "64C83F44F8F098B71185DC9D57CDBC10A7E2A3A91DA69633B7600F47C16EE6A5",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-045",
+      "queueId": "FA-REVIEW-045",
+      "decisionItemId": "FA-DIGIT-ASCII-7",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-7.json",
+      "sha256": "DF78CBBE3F348F11AD48935DC922293908C6CB5DB9CAA0231562E1C938599508",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-046",
+      "queueId": "FA-REVIEW-046",
+      "decisionItemId": "FA-DIGIT-ASCII-8",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-8.json",
+      "sha256": "3356FB453A85A79CC83A112D3340462B87E001113C61EFBBCE2AA35352D103D1",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-047",
+      "queueId": "FA-REVIEW-047",
+      "decisionItemId": "FA-DIGIT-ASCII-9",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-ascii-9.json",
+      "sha256": "ED37202444A565880724A7C4F0E0F0B3E8C1D744AB4A7485D0D1368C683D3AD6",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-048",
+      "queueId": "FA-REVIEW-048",
+      "decisionItemId": "FA-DIGIT-PERSIAN-0",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-0.json",
+      "sha256": "1E1B2DE5A1F406026AFA1AD4538E8EE3DDC5B1462DF5427B3104561EFA51ECF0",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-049",
+      "queueId": "FA-REVIEW-049",
+      "decisionItemId": "FA-DIGIT-PERSIAN-1",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-1.json",
+      "sha256": "6277747EDCC9E8723CA3EABCD7F4D798D3D3F9C1BA18746E81D3807F208191EE",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-050",
+      "queueId": "FA-REVIEW-050",
+      "decisionItemId": "FA-DIGIT-PERSIAN-2",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-2.json",
+      "sha256": "EC1316D068006E0122D72C33C2EAAC6F5D55B7959783AD4D6383040CD472EF36",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-051",
+      "queueId": "FA-REVIEW-051",
+      "decisionItemId": "FA-DIGIT-PERSIAN-3",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-3.json",
+      "sha256": "34E9AD2A75B02F158ACE56D04D5883AE66D6FC5028C113C6252FBF7A60E2B600",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-052",
+      "queueId": "FA-REVIEW-052",
+      "decisionItemId": "FA-DIGIT-PERSIAN-4",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-4.json",
+      "sha256": "3F1A600A26A42F0B76E668E4DA39A98CA8C3FE01087A702536E5BB3AF6987FBE",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-053",
+      "queueId": "FA-REVIEW-053",
+      "decisionItemId": "FA-DIGIT-PERSIAN-5",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-5.json",
+      "sha256": "76B5F756C606A4F87F44468F7ECB281404828D5A66322A57ADD4A62CC146EE2E",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-054",
+      "queueId": "FA-REVIEW-054",
+      "decisionItemId": "FA-DIGIT-PERSIAN-6",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-6.json",
+      "sha256": "7F3D3D937C80C0E112FD68A1F0B7709A7147AFCFC21A1C60E8DB7FE8C6A8E61A",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-055",
+      "queueId": "FA-REVIEW-055",
+      "decisionItemId": "FA-DIGIT-PERSIAN-7",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-7.json",
+      "sha256": "DCE2B247D6EB69644DA1A829E7305B971763A968D1332C7AC9DA9B85D40EF804",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-056",
+      "queueId": "FA-REVIEW-056",
+      "decisionItemId": "FA-DIGIT-PERSIAN-8",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-8.json",
+      "sha256": "AC4E4036A297BECD43CACEE64E02D3DAA9A00DC73A4688427C1EC81F0D62AE52",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-057",
+      "queueId": "FA-REVIEW-057",
+      "decisionItemId": "FA-DIGIT-PERSIAN-9",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-digit-persian-9.json",
+      "sha256": "AD9AC12A8505144A21BB85B05D74CB3CFC806C19E60DAB2CD78A71967712C6B3",
+      "sourceIds": [
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-058",
+      "queueId": "FA-REVIEW-058",
+      "decisionItemId": "FA-NUMRULE-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-001.json",
+      "sha256": "A5BDA292CC3D86E6E02DC2C02B2E82D4819CDD139402FFCADE33AA3D3726AECC",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-059",
+      "queueId": "FA-REVIEW-059",
+      "decisionItemId": "FA-NUMRULE-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-002.json",
+      "sha256": "8D0167EFC50F082F9FFF153936A77511FC5624A1FDEB662AC1D36AA64FA616DB",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-060",
+      "queueId": "FA-REVIEW-060",
+      "decisionItemId": "FA-NUMRULE-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-003.json",
+      "sha256": "C930B481B33079424B843793AAF6EC5B9093AF4281DA4B7D36A463F867AA74DD",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-061",
+      "queueId": "FA-REVIEW-061",
+      "decisionItemId": "FA-NUMRULE-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-004.json",
+      "sha256": "3EE2BBBAF76997AB638A72DC426C218CAF40321BB6E10B7CE5FAF67486F0DA86",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-062",
+      "queueId": "FA-REVIEW-062",
+      "decisionItemId": "FA-NUMRULE-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-005.json",
+      "sha256": "AA0BEF02BF55FC8E94C0F7F60C290B7939CD90C71C209FF58031D48DA311A584",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-063",
+      "queueId": "FA-REVIEW-063",
+      "decisionItemId": "FA-NUMRULE-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-006.json",
+      "sha256": "64B971388251F1A8BDA1C6FDB087FE66B9C4C23AA4210BC6AEA8ABB8DA173F71",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-064",
+      "queueId": "FA-REVIEW-064",
+      "decisionItemId": "FA-NUMRULE-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-numrule-007.json",
+      "sha256": "41DBCD9AB75B416E2827C37C3E448374EA016D9FC9BEE16DE9CE786C96EEFC95",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-065",
+      "queueId": "FA-REVIEW-065",
+      "decisionItemId": "FA-PUNC-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-001.json",
+      "sha256": "8A3ABAF4C4822111FB4A86856F0FA571D736B906B42860545D97F759974A47A2",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-066",
+      "queueId": "FA-REVIEW-066",
+      "decisionItemId": "FA-PUNC-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-002.json",
+      "sha256": "C8673BEE9A7052AEEA0697AD2A0F2D6A1201816C68A47B282908B133495CA1C5",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-067",
+      "queueId": "FA-REVIEW-067",
+      "decisionItemId": "FA-PUNC-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-003.json",
+      "sha256": "E4734AB06EB57EDB0C476F1D70C6CDF4906F6EC2FF4295E87AC816127A213C72",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-068",
+      "queueId": "FA-REVIEW-068",
+      "decisionItemId": "FA-PUNC-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-004.json",
+      "sha256": "4985AD88E749D4A52C4261F5BAB3B5F9AAA5A1EA14043B8A640D41EE546ADC05",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-069",
+      "queueId": "FA-REVIEW-069",
+      "decisionItemId": "FA-PUNC-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-005.json",
+      "sha256": "9AAB0B5B074984CC80125FEA83F066E3C9B6F18200903309E88E6AAC00DB4E80",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-070",
+      "queueId": "FA-REVIEW-070",
+      "decisionItemId": "FA-PUNC-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-006.json",
+      "sha256": "331ED544422733DBD70DF3B53E795ACD55905083634A5E4B009FAF2B6098F70B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-071",
+      "queueId": "FA-REVIEW-071",
+      "decisionItemId": "FA-PUNC-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-007.json",
+      "sha256": "B34BE61318D6BB99BB7590BF92B79B3B0B51F0E66A8B960CCCD3D7121D4A5F25",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-072",
+      "queueId": "FA-REVIEW-072",
+      "decisionItemId": "FA-PUNC-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-008.json",
+      "sha256": "A4ECE364C09C3D9743BD40C9F116D8718C532A39AF6992E4604FA7374D55E680",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-073",
+      "queueId": "FA-REVIEW-073",
+      "decisionItemId": "FA-PUNC-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-009.json",
+      "sha256": "33F2692A0AD8EAB1AF67EE94123861F0C35EF3D57FC55698DDEB0D4178FB4C6F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-074",
+      "queueId": "FA-REVIEW-074",
+      "decisionItemId": "FA-PUNC-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-010.json",
+      "sha256": "7E80556B2AE56E1F9A89CBBB8B96CE0856AD13E65707475AB657CE46825C7298",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-075",
+      "queueId": "FA-REVIEW-075",
+      "decisionItemId": "FA-PUNC-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-011.json",
+      "sha256": "38223560AE61C69F203B23E238C7CC4F97908C6F690C4F2E1AE8546C3BFE29BB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-076",
+      "queueId": "FA-REVIEW-076",
+      "decisionItemId": "FA-PUNC-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-012.json",
+      "sha256": "4CEA198EEAD63218C17E3D94224A72681F4EF2FCC045C42BC8EA0BE325D7D48D",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-077",
+      "queueId": "FA-REVIEW-077",
+      "decisionItemId": "FA-PUNC-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-013.json",
+      "sha256": "48C98D2409328377521BF87D9A44B0CF63099160B957BBA25E8E860CFC9BE56A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-078",
+      "queueId": "FA-REVIEW-078",
+      "decisionItemId": "FA-PUNC-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-014.json",
+      "sha256": "170727E90C31F921A7A401C27164423E3FB51970B90B586582BFB10C4964F4F4",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-079",
+      "queueId": "FA-REVIEW-079",
+      "decisionItemId": "FA-PUNC-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-015.json",
+      "sha256": "5DEF5E03FCB41937179E6E44BBD96F2132D172ABE7B77A507EBEDDCB2838C2A0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-080",
+      "queueId": "FA-REVIEW-080",
+      "decisionItemId": "FA-PUNC-016",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-016.json",
+      "sha256": "AEFAC03281BE2D2D1039E3FF770D77A83B46C26BBD5443F8907D7AAFFC66C084",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-081",
+      "queueId": "FA-REVIEW-081",
+      "decisionItemId": "FA-PUNC-017",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-017.json",
+      "sha256": "17FCD657881245B391CBD0C0E17196CA9C4390BF928C16640A2812C484FBD7F7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-082",
+      "queueId": "FA-REVIEW-082",
+      "decisionItemId": "FA-PUNC-018",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-018.json",
+      "sha256": "DC9DEF01C690C206DD154DA980E5D3475F75BC3E81CF422BA121B13D36239525",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-083",
+      "queueId": "FA-REVIEW-083",
+      "decisionItemId": "FA-PUNC-019",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-019.json",
+      "sha256": "58811EA8299EB7A2A282769E8267750B71D05714C3A34002A78CE08FB426D464",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-084",
+      "queueId": "FA-REVIEW-084",
+      "decisionItemId": "FA-PUNC-020",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.4",
+      "category": "numbers-punctuation",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-punc-020.json",
+      "sha256": "937639C7B3D8A60192D15C15042A3D2B70344AC02A626C4D8815AE50B72C5EA3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-085",
+      "queueId": "FA-REVIEW-085",
+      "decisionItemId": "FA-LATIN-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-001.json",
+      "sha256": "8F49DDF41633C7FF6B6BC0639FE450421D8E6787BAB62F3B9DCA300F301042A3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-086",
+      "queueId": "FA-REVIEW-086",
+      "decisionItemId": "FA-LATIN-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-002.json",
+      "sha256": "4191DF01D03230E5D76966AD06612788BA7AA83929239114E88DF31FAB38095F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-087",
+      "queueId": "FA-REVIEW-087",
+      "decisionItemId": "FA-LATIN-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-003.json",
+      "sha256": "F1079832A9991DBFF50EC031C3A573F170C6CA3BD2B75C6CFE08030568FBCFB4",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-088",
+      "queueId": "FA-REVIEW-088",
+      "decisionItemId": "FA-LATIN-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-004.json",
+      "sha256": "979AF89CA7368F1CE1C55A7B0D5CA4735B1FA806E3631875DFE878388623BEAB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-089",
+      "queueId": "FA-REVIEW-089",
+      "decisionItemId": "FA-LATIN-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-005.json",
+      "sha256": "09B3597226E02CAC70F8C7EB0B3687117F203D851CF8763479C0704D5E1E327B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-090",
+      "queueId": "FA-REVIEW-090",
+      "decisionItemId": "FA-LATIN-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-006.json",
+      "sha256": "00043D7F2F29056B6BE80B5B32B90B39E8E3612152C972AD8EF0EBD84B691C6A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-091",
+      "queueId": "FA-REVIEW-091",
+      "decisionItemId": "FA-LATIN-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-007.json",
+      "sha256": "9563142E6000413B01F54E7F767FE0A7F2B881618B334984729F84E675E4ED4D",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-092",
+      "queueId": "FA-REVIEW-092",
+      "decisionItemId": "FA-LATIN-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-008.json",
+      "sha256": "1987F8D8C3832D1C8F490DC7364B5B7BB7FDA2E4FFDC42CBAB660C14F68A0C76",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-093",
+      "queueId": "FA-REVIEW-093",
+      "decisionItemId": "FA-LATIN-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-009.json",
+      "sha256": "850B32BCA2B4FF3D74BD864392E718D88CA97711F910E0116F2763C960ABFB64",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-094",
+      "queueId": "FA-REVIEW-094",
+      "decisionItemId": "FA-LATIN-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-010.json",
+      "sha256": "1DC6253F4CF2B6D63AA7212650392B47C1AAD3877F75E7FD14B7EE92CBC7D719",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-095",
+      "queueId": "FA-REVIEW-095",
+      "decisionItemId": "FA-LATIN-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-011.json",
+      "sha256": "FE84BFEEDA64051715D3AED72FD924265FF7BE45FABDEFF5DEB6433C1E41FFC0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-096",
+      "queueId": "FA-REVIEW-096",
+      "decisionItemId": "FA-LATIN-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-012.json",
+      "sha256": "A85D6C1BD6DCF0E12CCD8BEA93C14D0929BCD382C02B6263356E69C4F94A659F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-097",
+      "queueId": "FA-REVIEW-097",
+      "decisionItemId": "FA-LATIN-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-013.json",
+      "sha256": "B682BBD5788FD292FB91FF229DE857F5CA3964D3B1C73B266A71DC77F46B605E",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-098",
+      "queueId": "FA-REVIEW-098",
+      "decisionItemId": "FA-LATIN-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-014.json",
+      "sha256": "EF5B64318A545947DFCC09B8375C1ABAE212F8C029340417A6F7A46C613A49FC",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-099",
+      "queueId": "FA-REVIEW-099",
+      "decisionItemId": "FA-LATIN-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-015.json",
+      "sha256": "9718ADD9121828CFC919984DCE35D8471FE17ADD4C2F0169A83653F09FE923B4",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-100",
+      "queueId": "FA-REVIEW-100",
+      "decisionItemId": "FA-LATIN-016",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-016.json",
+      "sha256": "F216492139298B09FB7EFA89E44A6FF59ED9C7BBB95EC05841FFF34F10AB463C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-101",
+      "queueId": "FA-REVIEW-101",
+      "decisionItemId": "FA-LATIN-017",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-017.json",
+      "sha256": "B00F6EFBAD6D94AE595DA319408FB5C9875A5FB6623BEE97F3554A79262DFA7E",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-102",
+      "queueId": "FA-REVIEW-102",
+      "decisionItemId": "FA-LATIN-018",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-018.json",
+      "sha256": "AF4FA22E2DCE1B9CEADB6F23109D7B3E098D0333967F99E3059C0D84E47D1627",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-103",
+      "queueId": "FA-REVIEW-103",
+      "decisionItemId": "FA-LATIN-019",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-019.json",
+      "sha256": "F43BF13E229CD76EBBB2BED33F6D55A03ED12C9E26965641BD25BCBE45A325D5",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-104",
+      "queueId": "FA-REVIEW-104",
+      "decisionItemId": "FA-LATIN-020",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-020.json",
+      "sha256": "3463D9C560A784CB4AC80699ADD6FCEC090D52059CAF969EF3381329CC65C2AB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-105",
+      "queueId": "FA-REVIEW-105",
+      "decisionItemId": "FA-LATIN-021",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-021.json",
+      "sha256": "E3E1CCD26128B38A90E22010D59012E515CE4D52ADAEA9FF7E25353D94E4DFE0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-106",
+      "queueId": "FA-REVIEW-106",
+      "decisionItemId": "FA-LATIN-022",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-022.json",
+      "sha256": "FD842406873BC59B8CC3109420E5B1CB8690445C8E6233597B21928674328EAC",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-107",
+      "queueId": "FA-REVIEW-107",
+      "decisionItemId": "FA-LATIN-023",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-023.json",
+      "sha256": "7CCF26228C32423772F63D08F4A02217CD95BA9FD46611DD037E17FCB0E3D528",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-108",
+      "queueId": "FA-REVIEW-108",
+      "decisionItemId": "FA-LATIN-024",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-024.json",
+      "sha256": "E58A2DE2F1B8334F483561DF750625804DF14EA0ECE2F2A8FB6B73CF24AD7C5F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-109",
+      "queueId": "FA-REVIEW-109",
+      "decisionItemId": "FA-LATIN-025",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-025.json",
+      "sha256": "B45D649B76FC90FB13E79C7A3F75CCD10D875D2B6727AC798AC9AFBA294A750A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-110",
+      "queueId": "FA-REVIEW-110",
+      "decisionItemId": "FA-LATIN-026",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-026.json",
+      "sha256": "E73E09249A5E4641B567A5E8A0E841830501F8E175174B17184D1581CC6E21D3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-111",
+      "queueId": "FA-REVIEW-111",
+      "decisionItemId": "FA-LATIN-027",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-027.json",
+      "sha256": "6CA590F03B07D10EAF92B982B4FA7643ACEB29400EB317AAA58FE311877C9C7A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-112",
+      "queueId": "FA-REVIEW-112",
+      "decisionItemId": "FA-LATIN-028",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-028.json",
+      "sha256": "856A6721A6F09C1DB580D0A1EB8441F04B2B418545D5898116139A4E7BC9FB61",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-113",
+      "queueId": "FA-REVIEW-113",
+      "decisionItemId": "FA-LATIN-029",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-029.json",
+      "sha256": "096BE944B9494A2D94BC7B094A700E2D457C927B2AA6C276185A6195969B2485",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-114",
+      "queueId": "FA-REVIEW-114",
+      "decisionItemId": "FA-LATIN-030",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-030.json",
+      "sha256": "7DC23F697B05BB01F1401D62EB11B2F6072B4B30691A8CDF9782440A88A1C5DD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-115",
+      "queueId": "FA-REVIEW-115",
+      "decisionItemId": "FA-LATIN-031",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-031.json",
+      "sha256": "89692BBF7D5266B17F596912150127661420B9F3A33E8466BE64A4CE02632722",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-116",
+      "queueId": "FA-REVIEW-116",
+      "decisionItemId": "FA-LATIN-032",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-032.json",
+      "sha256": "64C8540FC9B40060C2A5EF3B2B486195A74D869C6C8C9AC6A2846D7F83B0FE3D",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-117",
+      "queueId": "FA-REVIEW-117",
+      "decisionItemId": "FA-LATIN-033",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-033.json",
+      "sha256": "5FBE67102CAAC8A8BCDC33D77F913DA0323FA0E376D2CA6A00762071B4FA05B6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-118",
+      "queueId": "FA-REVIEW-118",
+      "decisionItemId": "FA-LATIN-034",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-034.json",
+      "sha256": "7FEE93DD576D6210CE74D9E5D82FFB1CEA3210CBD7EAB2C7C2CF3B18F7D13E5B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-119",
+      "queueId": "FA-REVIEW-119",
+      "decisionItemId": "FA-LATIN-035",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-035.json",
+      "sha256": "4B65E2B8E89AE1218CA06133DD9CA95E22F94511D09FB5C5C3A04B7DB00B92E1",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-120",
+      "queueId": "FA-REVIEW-120",
+      "decisionItemId": "FA-LATIN-036",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-036.json",
+      "sha256": "CE4C82EB7128723E1D32CA628C0C0775A2E28B943FEAFF57A02E1AEA4FC4F511",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-121",
+      "queueId": "FA-REVIEW-121",
+      "decisionItemId": "FA-LATIN-037",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-037.json",
+      "sha256": "02FB0CAB6F813E5CDA962F2669FE8193DEA22AF10EC5E8387CA4B665BBB3B42F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-122",
+      "queueId": "FA-REVIEW-122",
+      "decisionItemId": "FA-LATIN-038",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-038.json",
+      "sha256": "AE3EE750EF3A5714A8EF1F87004716E7A3F22DD3D4B0CB0283FE45ECE3328832",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-123",
+      "queueId": "FA-REVIEW-123",
+      "decisionItemId": "FA-LATIN-039",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-039.json",
+      "sha256": "BB6EE3DDED78208C232D70A159C2DFEA84FE66A9167D3514BB0D8E64B140AFEB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-124",
+      "queueId": "FA-REVIEW-124",
+      "decisionItemId": "FA-LATIN-040",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-040.json",
+      "sha256": "2899458209AE9C28630728104F5E9D2456A8AEA753301237A6E0C3C4E6F5B7CB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-125",
+      "queueId": "FA-REVIEW-125",
+      "decisionItemId": "FA-LATIN-041",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-041.json",
+      "sha256": "FCEC5FF9FAEFFDDF08FA36542CB62FFFBA70109A74C8E07F57B4ECC46504E5E7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-126",
+      "queueId": "FA-REVIEW-126",
+      "decisionItemId": "FA-LATIN-042",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-042.json",
+      "sha256": "6D1059D62836CF4E0F4EAEE10C15B43B1DD06CA417F8CE479E6A9D90255997F9",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-127",
+      "queueId": "FA-REVIEW-127",
+      "decisionItemId": "FA-LATIN-043",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-043.json",
+      "sha256": "86783F7C24DA50EA7FFA0C5E79E5B3126D82F6970C9F90A429BEC3F3781E1A39",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-128",
+      "queueId": "FA-REVIEW-128",
+      "decisionItemId": "FA-LATIN-044",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-044.json",
+      "sha256": "98339DC7934DCD82A3D3515107D4761C1A1A48878ECF6647CAEE89CFE221697C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-129",
+      "queueId": "FA-REVIEW-129",
+      "decisionItemId": "FA-LATIN-045",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-045.json",
+      "sha256": "5C5E97FA789EB439A69BC7FAD5EA34B0BF878FC9BF8E648E827E8DBC1D650461",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-130",
+      "queueId": "FA-REVIEW-130",
+      "decisionItemId": "FA-LATIN-046",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-046.json",
+      "sha256": "E4407F31D1E6A798D1839359CD7E9CE8C8548436AA8AB41EF4AEEC9B21A20E89",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-131",
+      "queueId": "FA-REVIEW-131",
+      "decisionItemId": "FA-LATIN-047",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-047.json",
+      "sha256": "853BEC982ED04A92E3C050E3B23048D108FB6E2AB58296566CC1C5B745E15638",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-132",
+      "queueId": "FA-REVIEW-132",
+      "decisionItemId": "FA-LATIN-048",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-048.json",
+      "sha256": "2D5E929E9ACF118534A646E37DD00B2BA0793499D9CE74EE94391A1CAAE89611",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-133",
+      "queueId": "FA-REVIEW-133",
+      "decisionItemId": "FA-LATIN-049",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-049.json",
+      "sha256": "A2AA5A4536B10FDAAB448D156C02BAB354A830C6FBF7D0FB81D75A02FF9936C3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-134",
+      "queueId": "FA-REVIEW-134",
+      "decisionItemId": "FA-LATIN-050",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-050.json",
+      "sha256": "7ABD01B90F5B77378D174DFDC12459A055EB6B4664EB37B7A5E30A6835F9DA0F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-135",
+      "queueId": "FA-REVIEW-135",
+      "decisionItemId": "FA-LATIN-051",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-051.json",
+      "sha256": "FFE15F50F8227F7F86A6F15A8E7AB9A33C37C4D3C0A4F7FB95BCCF09B4B4E59D",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-136",
+      "queueId": "FA-REVIEW-136",
+      "decisionItemId": "FA-LATIN-052",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-052.json",
+      "sha256": "4715A99228685BEC13BB31CC7B5DF0E9FF78DBA5D9A2DDBF2DC899F667C3DEEA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LEGACY-V1",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-137",
+      "queueId": "FA-REVIEW-137",
+      "decisionItemId": "FA-LATIN-MODE-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-001.json",
+      "sha256": "4EB8D3DC7CB4CCAD34B750BF139FFEA15A53398E42DA114852E34C700E0BBD43",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-138",
+      "queueId": "FA-REVIEW-138",
+      "decisionItemId": "FA-LATIN-MODE-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-002.json",
+      "sha256": "5E92F44314D7F62FECD9181F696CF11D1460EF12AAAD275A96FBFA454AE1C714",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-139",
+      "queueId": "FA-REVIEW-139",
+      "decisionItemId": "FA-LATIN-MODE-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-003.json",
+      "sha256": "380380FF86FA551118EE9EB944ACDF819860A4EBDE0659C013079DBC268748B6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-140",
+      "queueId": "FA-REVIEW-140",
+      "decisionItemId": "FA-LATIN-MODE-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.5",
+      "category": "mixed-latin",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-latin-mode-004.json",
+      "sha256": "CA8312CF4AD4AA4EF1B3F1B788875016C35B8BC3E2475E39ED90E20EB5862E1E",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-141",
+      "queueId": "FA-REVIEW-141",
+      "decisionItemId": "FA-WS-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-001.json",
+      "sha256": "8CB10077FCC1780CE4386594C0A7C5A938B4FA7388EFDEBA7467AAE207EB7D8A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-142",
+      "queueId": "FA-REVIEW-142",
+      "decisionItemId": "FA-WS-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-002.json",
+      "sha256": "C378EC0AB71404D590263986003D644BF77A9B166F214B784EE78AE51DADC015",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-143",
+      "queueId": "FA-REVIEW-143",
+      "decisionItemId": "FA-WS-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-003.json",
+      "sha256": "FA5FF64D432E18D4BC7DE8ED3808E3BD5E686032A6BD1B9EBB5BE4C820451159",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-144",
+      "queueId": "FA-REVIEW-144",
+      "decisionItemId": "FA-WS-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-004.json",
+      "sha256": "8768046527DAEE76103D0908CB11CC84D23864AEB170E45B00C876C989FA1E84",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-145",
+      "queueId": "FA-REVIEW-145",
+      "decisionItemId": "FA-WS-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-005.json",
+      "sha256": "FD77A6E7B6B699812C06D87924F50DAB5385201C0ED7C8A1E2895DC8F3022C8B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-146",
+      "queueId": "FA-REVIEW-146",
+      "decisionItemId": "FA-WS-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-006.json",
+      "sha256": "06D35B49552266311EFDC9AE224D75CEC6C7519F13D09B27C8FC4BABB2CAE7DC",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-147",
+      "queueId": "FA-REVIEW-147",
+      "decisionItemId": "FA-WS-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-007.json",
+      "sha256": "0788666E22F419C482D235A54F834142B914EB8A1F4F1971FBAFFC3629FE9CE5",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-148",
+      "queueId": "FA-REVIEW-148",
+      "decisionItemId": "FA-WS-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-008.json",
+      "sha256": "24185F74756ADA60B42B9514E486F5778DDB49D151C74E786D4965DD9FCD7806",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-149",
+      "queueId": "FA-REVIEW-149",
+      "decisionItemId": "FA-WS-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-009.json",
+      "sha256": "35F3CFB11876245BC27799F8CB6A358AF549DD8EADE07E0C7041015363CB48E8",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-150",
+      "queueId": "FA-REVIEW-150",
+      "decisionItemId": "FA-WS-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-010.json",
+      "sha256": "0A925D60BC3FD319E59C82892DE395F49D59F71D36AD288E0B959BCE3B2E0D67",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-151",
+      "queueId": "FA-REVIEW-151",
+      "decisionItemId": "FA-WS-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-011.json",
+      "sha256": "C21EEB7AE98E88D7FC4F0C3DE08C954A5A9EE377905FCADD14F26233249F135A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-152",
+      "queueId": "FA-REVIEW-152",
+      "decisionItemId": "FA-WS-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-012.json",
+      "sha256": "FE8D9E78E55E6129D786781DC8C6D262AA91D6EF6399587C385DEB4C78724A29",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-153",
+      "queueId": "FA-REVIEW-153",
+      "decisionItemId": "FA-WS-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-013.json",
+      "sha256": "CC219E2E2A85F37C0F1C265E0F747CADCB109B151F589FDC61B125BD110A17BA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-154",
+      "queueId": "FA-REVIEW-154",
+      "decisionItemId": "FA-WS-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-014.json",
+      "sha256": "C1E8E955B9CAC61099C84FD7F1DB44C7D905F2F8EE30AD0A3176F5EAE9AE9E41",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-155",
+      "queueId": "FA-REVIEW-155",
+      "decisionItemId": "FA-WS-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-015.json",
+      "sha256": "1F0948ECEC791304468EEF3614F3ACAFAED4841DE2B45DDFFED9D4E2ADAA379E",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-156",
+      "queueId": "FA-REVIEW-156",
+      "decisionItemId": "FA-WS-016",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-016.json",
+      "sha256": "1CC59965EE2BFC6F14AC2862806E61923B4CAD0607EABEB47040C3A8B8892FA7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-157",
+      "queueId": "FA-REVIEW-157",
+      "decisionItemId": "FA-WS-017",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-017.json",
+      "sha256": "4DA6C6A0FD7DA104BA87C9120963A589D26A491A1333FA1B33238CC5655D7245",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-158",
+      "queueId": "FA-REVIEW-158",
+      "decisionItemId": "FA-WS-018",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-018.json",
+      "sha256": "B9583F03CB2ECA9C5B6A6D43309216D5A7F9B92E2E7C5424ADDA061E01989E29",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-159",
+      "queueId": "FA-REVIEW-159",
+      "decisionItemId": "FA-WS-019",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-019.json",
+      "sha256": "621B853B704C9EC4A8B45B810A296CE6F32483105F960B35621BBF95BD30A960",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-160",
+      "queueId": "FA-REVIEW-160",
+      "decisionItemId": "FA-WS-020",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-020.json",
+      "sha256": "D418AAFBC250258658A6A468DB21663C456B3969491E45E96E51A47805817A20",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-161",
+      "queueId": "FA-REVIEW-161",
+      "decisionItemId": "FA-WS-021",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-021.json",
+      "sha256": "5FFED91EBFFD4D6E5BC66F9C612EA80B20F8A941E878589152CD29CB2A4B7BE7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-162",
+      "queueId": "FA-REVIEW-162",
+      "decisionItemId": "FA-WS-022",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-022.json",
+      "sha256": "8CAB56AACD4EA46DB854FEE91D89841FFC33F02C4ACC51AF5283DC1F2248AE1D",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-163",
+      "queueId": "FA-REVIEW-163",
+      "decisionItemId": "FA-WS-023",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-023.json",
+      "sha256": "79B535429DDE4BFD00E91A8A7558A483B49D2102FA0118F5BD7ED7B898EB3DAB",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-164",
+      "queueId": "FA-REVIEW-164",
+      "decisionItemId": "FA-WS-024",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-024.json",
+      "sha256": "7885420816D2ADC4B15EF5A00705C507A2B724848D577E32C61E072A518AE889",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-165",
+      "queueId": "FA-REVIEW-165",
+      "decisionItemId": "FA-WS-025",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-025.json",
+      "sha256": "EAA79B752EB2D889193CA8CC54EE967FF5C1951A7DFF5ADB450597EA6B016C4A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-166",
+      "queueId": "FA-REVIEW-166",
+      "decisionItemId": "FA-WS-026",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-026.json",
+      "sha256": "40F86F5582A6CF9EBAB818AAD7F021DC43D00715205A4FDD6E0C3FC7C25C637B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-167",
+      "queueId": "FA-REVIEW-167",
+      "decisionItemId": "FA-WS-027",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.6",
+      "category": "whitespace-layout",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-ws-027.json",
+      "sha256": "6E7D715C7C835EFEF77984C381FE3652DC62170940B0ECFCED83AD3835C21F68",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-168",
+      "queueId": "FA-REVIEW-168",
+      "decisionItemId": "FA-REM-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-001.json",
+      "sha256": "FC8AFD966A808BE2386C6D208E73EAD20B152E072E7C43C25C52EEE69EEE2EE2",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-169",
+      "queueId": "FA-REVIEW-169",
+      "decisionItemId": "FA-REM-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-002.json",
+      "sha256": "40B420A42AF036E883464781697B8FC7C291CEC23CB6EE2B3BD4967E0064DA3F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-170",
+      "queueId": "FA-REVIEW-170",
+      "decisionItemId": "FA-REM-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-003.json",
+      "sha256": "27B956E35ED823FC5B4911DFEC4FBAAE91999FED0E0B14308F61F420D1A406E7",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-171",
+      "queueId": "FA-REVIEW-171",
+      "decisionItemId": "FA-REM-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-004.json",
+      "sha256": "5CAC82EEA706C7C1CD5EE563E7993848DBAFE386A0DC28F4BE297B3EAA10497C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-172",
+      "queueId": "FA-REVIEW-172",
+      "decisionItemId": "FA-REM-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-005.json",
+      "sha256": "920DB13866E290CF6B0033FFE2E1E033B40EB63107B0081FDFD0CFBB994730C6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-173",
+      "queueId": "FA-REVIEW-173",
+      "decisionItemId": "FA-REM-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-006.json",
+      "sha256": "4AB7B2F46DCF314C364CD343C1EB08F6F4F72197B346C1594C7FD4EC58025439",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-174",
+      "queueId": "FA-REVIEW-174",
+      "decisionItemId": "FA-REM-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-007.json",
+      "sha256": "74AC433771022F4C6CF80F41BA4C09E8A9AB60B8A251BB138CCD8D75517E5240",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-175",
+      "queueId": "FA-REVIEW-175",
+      "decisionItemId": "FA-REM-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-008.json",
+      "sha256": "413416DAB76C33074A653CBE33B4D7A64489AE4E1A3FF64352D707EEF6A7D7E3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-176",
+      "queueId": "FA-REVIEW-176",
+      "decisionItemId": "FA-REM-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-009.json",
+      "sha256": "8BD195C412A3A1F3D01767E9256EBBAA72C3528F204CC8D281352852FCB5137C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-177",
+      "queueId": "FA-REVIEW-177",
+      "decisionItemId": "FA-REM-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-010.json",
+      "sha256": "E4781F4301E1054336A65B11D975802B894EBCF9CEAF06777CCF679709B6403C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-178",
+      "queueId": "FA-REVIEW-178",
+      "decisionItemId": "FA-REM-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-011.json",
+      "sha256": "B0A1DBC518EA008C2D5E644B4095D820AE438ED7740DD07EB6431DB030DB9846",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-179",
+      "queueId": "FA-REVIEW-179",
+      "decisionItemId": "FA-REM-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-012.json",
+      "sha256": "E9221A919F2365C152EFA0D05588B02F9FB03FF0F245AB8E2D91659E8C1736B0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-180",
+      "queueId": "FA-REVIEW-180",
+      "decisionItemId": "FA-REM-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-013.json",
+      "sha256": "AD96C85EE1A1F6C778AC8318C5045624082F7A3F2678BB765B3BBC7468012C0B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-181",
+      "queueId": "FA-REVIEW-181",
+      "decisionItemId": "FA-REM-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-014.json",
+      "sha256": "045899E4C843922C4BEB23449E297F837FEC7A4AFC9AC9400866DE971CE3C163",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-182",
+      "queueId": "FA-REVIEW-182",
+      "decisionItemId": "FA-REM-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-015.json",
+      "sha256": "2E6C64E99AC17B094BC9D6CFE5772FC5F8B777F00E082D2BB2109106779549AA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-183",
+      "queueId": "FA-REVIEW-183",
+      "decisionItemId": "FA-REM-016",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-016.json",
+      "sha256": "070084BF4DE55ABB4EFF67952DAEF2320C3435A29714ABAB6A3427C7D1D6FE25",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-184",
+      "queueId": "FA-REVIEW-184",
+      "decisionItemId": "FA-REM-017",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-017.json",
+      "sha256": "9EC2EC3636DEDCED0F7E0F5E5813F79E7063D5CA8ED85AEE200AA73C6066D0AA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-185",
+      "queueId": "FA-REVIEW-185",
+      "decisionItemId": "FA-REM-018",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-018.json",
+      "sha256": "60FD8D1E954458885685530305C215CD89CBF666F5DC737BF823187C80DBC723",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-186",
+      "queueId": "FA-REVIEW-186",
+      "decisionItemId": "FA-REM-019",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-019.json",
+      "sha256": "59067A04B8D9436AE5D1ECBCEB5E5CDB8AED9742B120C6ADF813EDE04114CCAD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-187",
+      "queueId": "FA-REVIEW-187",
+      "decisionItemId": "FA-REM-020",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-020.json",
+      "sha256": "4FD07751C9E45C1D00BB34D225EF32492D8AC8B50236F620A962C8A4F450BE7C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-188",
+      "queueId": "FA-REVIEW-188",
+      "decisionItemId": "FA-REM-021",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-021.json",
+      "sha256": "EDE5E59C2B532B5873EAEAE9F66A1F032D06E15EC8451F13783962599A0F47AE",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-189",
+      "queueId": "FA-REVIEW-189",
+      "decisionItemId": "FA-REM-022",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-022.json",
+      "sha256": "9A4A683EC8504CADA0BB0EB6E946FF93C71737372398E80A9D80CCCFFCFCC21B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-190",
+      "queueId": "FA-REVIEW-190",
+      "decisionItemId": "FA-REM-023",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-023.json",
+      "sha256": "D076E1270A4FD2D55131F8A3BA311324589097C69328823220B3129409E99112",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-191",
+      "queueId": "FA-REVIEW-191",
+      "decisionItemId": "FA-REM-024",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-024.json",
+      "sha256": "0B86378E57594B1527AEB889B6C3AAFFADBFA1D01B61F3C384EA743E2CE2F59C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-192",
+      "queueId": "FA-REVIEW-192",
+      "decisionItemId": "FA-REM-025",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-025.json",
+      "sha256": "B75DE5AC076EA25F3476A769F3BB5A2CA0657A8376AF7BA20F20A0254AC081DC",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-193",
+      "queueId": "FA-REVIEW-193",
+      "decisionItemId": "FA-REM-026",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-026.json",
+      "sha256": "DA04C834010F6067E93823A4289360F863FE20EFE8AA5AA8C2B279D4032D23A4",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-194",
+      "queueId": "FA-REVIEW-194",
+      "decisionItemId": "FA-REM-027",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-027.json",
+      "sha256": "795A886AF2E44840914DF87BA97E2C419EE3EDFE4D05AACC3F6A25447B2831B6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-195",
+      "queueId": "FA-REVIEW-195",
+      "decisionItemId": "FA-REM-028",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-028.json",
+      "sha256": "9FA08283048D4CA92798E3EAB5457EA9DC78794EA95E2BAE9612DB714578853C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-196",
+      "queueId": "FA-REVIEW-196",
+      "decisionItemId": "FA-REM-029",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-029.json",
+      "sha256": "F1E07605BFEBE088D0334648B443FAA5A59000223F34309196F0DDE28290694F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-197",
+      "queueId": "FA-REVIEW-197",
+      "decisionItemId": "FA-REM-030",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-030.json",
+      "sha256": "ACFC096282171B94FC9F289AEDB959778761A51829FCE50AE370BFB429F853B8",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-198",
+      "queueId": "FA-REVIEW-198",
+      "decisionItemId": "FA-REM-031",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-031.json",
+      "sha256": "DF4B6E6A0F372240E46F01C2618551CF768E8246C68BE4F8AA278FAA4A2DD8B2",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-199",
+      "queueId": "FA-REVIEW-199",
+      "decisionItemId": "FA-REM-032",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-032.json",
+      "sha256": "3D6AF2EBBD103D12CBAC73F8E10D67332291BD99C218907AD029775AD723DBA3",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-200",
+      "queueId": "FA-REVIEW-200",
+      "decisionItemId": "FA-REM-033",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-033.json",
+      "sha256": "C08C32519E717729F5D75C5494F092A2504C310A5B561F0E2737F3B160719C4A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-201",
+      "queueId": "FA-REVIEW-201",
+      "decisionItemId": "FA-REM-034",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-034.json",
+      "sha256": "0748B8BEBED52EAC3D7F67FC874A7DE6575EAC8CEA31DE699BA6E1DDCDC6A4C6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-202",
+      "queueId": "FA-REVIEW-202",
+      "decisionItemId": "FA-REM-035",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-035.json",
+      "sha256": "21B29C6A816531A541C6254E9E2E59D4EA1E35003BB2AA31C1787EED7D51405C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-203",
+      "queueId": "FA-REVIEW-203",
+      "decisionItemId": "FA-REM-036",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-036.json",
+      "sha256": "B3FB76EB4C47917BBD71BFE016B0C212494EAA3378CBE3CC37F795DC7488F4E0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-204",
+      "queueId": "FA-REVIEW-204",
+      "decisionItemId": "FA-REM-037",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-037.json",
+      "sha256": "A1F56719FD7DF2B14AB9F31A93037F85B04E6D22BE3EC6107385406C6395D70C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-205",
+      "queueId": "FA-REVIEW-205",
+      "decisionItemId": "FA-REM-038",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-038.json",
+      "sha256": "2B3A6F03C65021A852E422C62795C0A914A82A14EC05F948D0EABCE19BEABCB4",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-206",
+      "queueId": "FA-REVIEW-206",
+      "decisionItemId": "FA-REM-039",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-039.json",
+      "sha256": "3772BE97C3B06038D04A613D3393B73A9E051AAD1047011C164CE6FEB362D5DD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-207",
+      "queueId": "FA-REVIEW-207",
+      "decisionItemId": "FA-REM-040",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-040.json",
+      "sha256": "E1A97459D370642A4F5DE8D8432749AD31FBAB1A4BBCDA4A8E3422ED2C500932",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-208",
+      "queueId": "FA-REVIEW-208",
+      "decisionItemId": "FA-REM-041",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-041.json",
+      "sha256": "0B5F5F304BB8A119E6544663E08BE9354EDDA2912A723C93D8D67557675C4D01",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-209",
+      "queueId": "FA-REVIEW-209",
+      "decisionItemId": "FA-REM-042",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-042.json",
+      "sha256": "CBEDB80DC62FA3146FECE9B39B132105A88B0CD54C04AC1A689277BE94309245",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-210",
+      "queueId": "FA-REVIEW-210",
+      "decisionItemId": "FA-REM-043",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-043.json",
+      "sha256": "BF4CFFECB91002C2F59A88BD6BD7EF260C12BE7881B1BAD8E769CCF4E9099673",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-211",
+      "queueId": "FA-REVIEW-211",
+      "decisionItemId": "FA-REM-044",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-044.json",
+      "sha256": "10F6EB79530042BEA62454FC6A02ECCA5FBC416D3E2F09DF36D327E136B3BB0E",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-212",
+      "queueId": "FA-REVIEW-212",
+      "decisionItemId": "FA-REM-045",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-045.json",
+      "sha256": "0641C78CBA6E081674F37D74D9242A9C8E6AAC3CE0213DD0E98DA2350C765EAD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-213",
+      "queueId": "FA-REVIEW-213",
+      "decisionItemId": "FA-REM-046",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-046.json",
+      "sha256": "6795D5F2FAFD2DFA5427F0562F580701F64D2E42A2440027523899AD1CC9626B",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-214",
+      "queueId": "FA-REVIEW-214",
+      "decisionItemId": "FA-REM-047",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-047.json",
+      "sha256": "1527AC12625C0E0013A60E085DE7E5654B008F5E155CCE5519D650CCF10E3EBF",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-215",
+      "queueId": "FA-REVIEW-215",
+      "decisionItemId": "FA-REM-048",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-048.json",
+      "sha256": "FCFAE94FFD2F8F3657FAF0F85A6EF4F634376A10BBE018CD740DEAB21083CFCA",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-216",
+      "queueId": "FA-REVIEW-216",
+      "decisionItemId": "FA-REM-049",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-049.json",
+      "sha256": "AF6B114279133CF5BECC697FF93A337157E7A15537EFA0DAE484FF340B6EAA83",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-217",
+      "queueId": "FA-REVIEW-217",
+      "decisionItemId": "FA-REM-050",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-050.json",
+      "sha256": "0376DC952996398A3F0D0272ED05C01C7C59281F906526C957A86EAEC180C36A",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-218",
+      "queueId": "FA-REVIEW-218",
+      "decisionItemId": "FA-REM-051",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-051.json",
+      "sha256": "8EA6E0C1F2D2262E9EE13BB4523E8FAC748EDA58BED7C10BE17AEEB01CA553AF",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-219",
+      "queueId": "FA-REVIEW-219",
+      "decisionItemId": "FA-REM-052",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-052.json",
+      "sha256": "023284A93E571F491F0B14B81CD13E0E3ED991960451AA85F07D2DFE87A728D0",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-220",
+      "queueId": "FA-REVIEW-220",
+      "decisionItemId": "FA-REM-053",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-053.json",
+      "sha256": "A94EA3474BF274B75415722469185FF213ECCB9576F805503B300879701E935C",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-221",
+      "queueId": "FA-REVIEW-221",
+      "decisionItemId": "FA-REM-054",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-054.json",
+      "sha256": "140E066D531FF3CF6F42DEE1BB25C053A6F5BEAC11ADC45B04B7FDBAA4F0F5F6",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-222",
+      "queueId": "FA-REVIEW-222",
+      "decisionItemId": "FA-REM-055",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-055.json",
+      "sha256": "D1C84D94BC7F27FF93F235B6AF7E0DB9D45A8411DFD2AAC59141EA6E148C9D96",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-223",
+      "queueId": "FA-REVIEW-223",
+      "decisionItemId": "FA-REM-056",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-056.json",
+      "sha256": "6B334D1FF0B8C9FC08F640665C8E857D31D2E09E0FC9F3D80FD7222AEDA50CD8",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-224",
+      "queueId": "FA-REVIEW-224",
+      "decisionItemId": "FA-REM-057",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-057.json",
+      "sha256": "BCBC9D4C2092FF4D82416C775BC0A2C3DB5D66E8EAB76ADA4E842DFECDDF3BDD",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-225",
+      "queueId": "FA-REVIEW-225",
+      "decisionItemId": "FA-REM-058",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-058.json",
+      "sha256": "84CE90870351699D5C6ECAAAF2CC6C36EF20FB922AD9FD9161716D9E604AD687",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-226",
+      "queueId": "FA-REVIEW-226",
+      "decisionItemId": "FA-REM-059",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-059.json",
+      "sha256": "5332E27DFD7FDAB6719643E4A075A3BBDA9276B8BFA6595D08DB95287D669A22",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-227",
+      "queueId": "FA-REVIEW-227",
+      "decisionItemId": "FA-REM-060",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-060.json",
+      "sha256": "E6D024C4ACCDDF92ACC7952925D1A8D95406B5E830F2F15E2AD4DE636C6387CC",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-228",
+      "queueId": "FA-REVIEW-228",
+      "decisionItemId": "FA-REM-061",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-061.json",
+      "sha256": "BC5AA2B4D41226202C7975DEE320BA3A31EE2BD144AEA8BE0F07DE7B4A3AEF01",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-229",
+      "queueId": "FA-REVIEW-229",
+      "decisionItemId": "FA-REM-062",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-062.json",
+      "sha256": "AAC351E3E577716A96FDD7260866BF48564A28B9517083F3227612CCB34D7D7F",
+      "sourceIds": [
+        "SRC-IR-1393",
+        "SRC-LIBLOUIS-2053",
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-230",
+      "queueId": "FA-REVIEW-230",
+      "decisionItemId": "FA-REM-CTX-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-001.json",
+      "sha256": "D45B80021543C612EF26A870C40D329540213C2BF4A62A5EE6EBE940576E8288",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-231",
+      "queueId": "FA-REVIEW-231",
+      "decisionItemId": "FA-REM-CTX-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-002.json",
+      "sha256": "5EF91B50FCAE5B6F59424D0CAC24C2F747A8D2C4C501E79D76D18C68C58DDBF2",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-232",
+      "queueId": "FA-REVIEW-232",
+      "decisionItemId": "FA-REM-CTX-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-003.json",
+      "sha256": "03F8863CB8C688D10E5C9AD00CFDF456B35D5767153DE8C13C2A516C4B2E76B4",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-233",
+      "queueId": "FA-REVIEW-233",
+      "decisionItemId": "FA-REM-CTX-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-004.json",
+      "sha256": "EE3B1F40707F136C877367702114C586759FA6FC00ADE7DB6FFC6B4C7FBF6870",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-234",
+      "queueId": "FA-REVIEW-234",
+      "decisionItemId": "FA-REM-CTX-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-005.json",
+      "sha256": "BA5C37CF0FCA65C3D935207211E23FD6D908F88F32FAD58DBF8B8F33C4B7F7FC",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-235",
+      "queueId": "FA-REVIEW-235",
+      "decisionItemId": "FA-REM-CTX-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-006.json",
+      "sha256": "E9E3FD25D608FD897F4C593A8FB51DDF76E2D376383802A6C85FCDDA487BCE13",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-236",
+      "queueId": "FA-REVIEW-236",
+      "decisionItemId": "FA-REM-CTX-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-007.json",
+      "sha256": "CA3D61656FA25A6BD57645CB898704A6A1A14DD551897BBD6EEEB5636CAB60EB",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-237",
+      "queueId": "FA-REVIEW-237",
+      "decisionItemId": "FA-REM-CTX-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-008.json",
+      "sha256": "F5A5920F26EA22FD9F16FC9034E6D60327616B3F3C06DBF101727A7FEB1FAA24",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-238",
+      "queueId": "FA-REVIEW-238",
+      "decisionItemId": "FA-REM-CTX-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-009.json",
+      "sha256": "FDD93020D3979E88E7806CAB13A1A392ABBF62CA5DBE1F5A71AA1964F46A32C2",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-239",
+      "queueId": "FA-REVIEW-239",
+      "decisionItemId": "FA-REM-CTX-010",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-010.json",
+      "sha256": "8E7D0BC068715A7675DA919BA45BC02CB16CC36B4C3FBDA756C8FFF8D0A70C36",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-240",
+      "queueId": "FA-REVIEW-240",
+      "decisionItemId": "FA-REM-CTX-011",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-011.json",
+      "sha256": "1F4B081F162E6BFB62686BB1398518749C93DDF884882A01B5E8102903689DF8",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-241",
+      "queueId": "FA-REVIEW-241",
+      "decisionItemId": "FA-REM-CTX-012",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-012.json",
+      "sha256": "8D858AE88E19A6EAD050822D2A09FACEDFC6924E8C25F6158539A794B8209F2F",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-242",
+      "queueId": "FA-REVIEW-242",
+      "decisionItemId": "FA-REM-CTX-013",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-013.json",
+      "sha256": "25A5B0D9DDB7519AAB71F5186B772B71204A9BBB5E56FA51D1C54B6DC80D751E",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-243",
+      "queueId": "FA-REVIEW-243",
+      "decisionItemId": "FA-REM-CTX-014",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-014.json",
+      "sha256": "C14FAD135B560819FC81AD3591E5CA1D47A22221BE61E6AF3609CBC77FB2838D",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-244",
+      "queueId": "FA-REVIEW-244",
+      "decisionItemId": "FA-REM-CTX-015",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-ctx-015.json",
+      "sha256": "D58FFB5E416EE00B3CCDA11248B3BC23A2A33EFBD49F9D504C626936D49DA360",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-245",
+      "queueId": "FA-REVIEW-245",
+      "decisionItemId": "FA-REM-EMPH-001",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-001.json",
+      "sha256": "31511F891AA59A3097DED3B8022644584A46A9733CCF537A8DDAB6F4B22F1FB2",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-246",
+      "queueId": "FA-REVIEW-246",
+      "decisionItemId": "FA-REM-EMPH-002",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-002.json",
+      "sha256": "7D9BF70304A635EDF0B6EDF31C1852589C0EBF1A39A48D469E00C432E2C4947E",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-247",
+      "queueId": "FA-REVIEW-247",
+      "decisionItemId": "FA-REM-EMPH-003",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-003.json",
+      "sha256": "24AA14CEC9ED2E9939E43DDE3C2776C9B95B25E84D2F53F1A075DFB9815A5969",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-248",
+      "queueId": "FA-REVIEW-248",
+      "decisionItemId": "FA-REM-EMPH-004",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-004.json",
+      "sha256": "E27A47305C76A9B5823184D8BB8E922E8DFED891ECFF64AEB86B60DEAE8B0E01",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-249",
+      "queueId": "FA-REVIEW-249",
+      "decisionItemId": "FA-REM-EMPH-005",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-005.json",
+      "sha256": "CC10D51464B6C9A7BD6EB822B832F66B6AA5326E90025E7CFC6BD45C0AD045BD",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-250",
+      "queueId": "FA-REVIEW-250",
+      "decisionItemId": "FA-REM-EMPH-006",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-006.json",
+      "sha256": "3FE0E6911520B42952817C19E540B08764AB265FEAF9FCCC05EC9084D2F8E220",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-251",
+      "queueId": "FA-REVIEW-251",
+      "decisionItemId": "FA-REM-EMPH-007",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-007.json",
+      "sha256": "7BC930EE1010A806B9D7D54E804B6E228D03A61DEFB2B1CD99436527B8B66A8D",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-252",
+      "queueId": "FA-REVIEW-252",
+      "decisionItemId": "FA-REM-EMPH-008",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-008.json",
+      "sha256": "F93BF64A781BC4E9379AB1CE84C5C7AE7940D983A45C0D7658527AEDE2D0846E",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    },
+    {
+      "packetId": "FA-EVIDENCE-253",
+      "queueId": "FA-REVIEW-253",
+      "decisionItemId": "FA-REM-EMPH-009",
+      "classification": "REVIEW-REQUIRED",
+      "phase1Stage": "1.7",
+      "category": "remaining-coverage",
+      "path": "spec/fa-ir/review/evidence-packets/records/fa-rem-emph-009.json",
+      "sha256": "BFD5A0F9D66B483023D2577D21C45F7AA6C92A070C64BE93AEC4DDEB9D4D7857",
+      "sourceIds": [
+        "SRC-LIBLOUIS-2054",
+        "SRC-LIBLOUIS-G1"
+      ]
+    }
+  ]
+}

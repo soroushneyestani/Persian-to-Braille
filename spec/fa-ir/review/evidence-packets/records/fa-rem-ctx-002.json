@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "stage": "2.12",
+  "packetId": "FA-EVIDENCE-231",
+  "queueId": "FA-REVIEW-231",
+  "decisionItemId": "FA-REM-CTX-002",
+  "classification": "REVIEW-REQUIRED",
+  "phase1Stage": "1.7",
+  "category": "remaining-coverage",
+  "priority": 5,
+  "status": "evidence-collected",
+  "subject": {
+    "domain": "remaining-context-rule",
+    "subject": "midnum -",
+    "codePoints": [
+      "U+002D"
+    ]
+  },
+  "provenance": {
+    "reviewQueue": {
+      "path": "spec/fa-ir/governance/review-queue.json",
+      "sha256": "08862B1A3BA4E1FAF256A4D0736FF5E29A828BFAFC8E0F984E1FA18EAF7D2A3B"
+    },
+    "masterDecisionMatrix": {
+      "path": "spec/fa-ir/evidence/master-decision-matrix.json",
+      "sha256": "9A3D8070D2364C368F7B1B4D9B661B114C74EE3BFFBC89BAED87DAD18CA4DB7A"
+    },
+    "stageEvidence": {
+      "path": "spec/fa-ir/evidence/remaining-coverage.json",
+      "sha256": "58196A992A4B0BA657ECD4F8313CC78DA625C556C2F918573388791BC312FCA9"
+    },
+    "sourceRegistry": {
+      "path": "docs/standards/source-registry.md",
+      "sha256": "DE21FE9525130597BAEA0F0BED275A169853D83E93CA6FECA4EFCAF397B42BA0"
+    }
+  },
+  "sourcePins": {
+    "liblouisStable": {
+      "commit": "092e56062d1771b3ca9080651375284adaa5dfad",
+      "sha256": "07396A4225C20F8725BF0150C5282CFB0419D290B18CBBCD38DB087DFFDB5D48",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb"
+    },
+    "liblouisDraft": {
+      "commit": "d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417",
+      "sha256": "CFA4ACF6B6B488E339D2D5AEF385BBDCAF6B6D8FFF30B8012F39B965B649BD13",
+      "url": "https://raw.githubusercontent.com/liblouis/liblouis/d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417/tables/fa-ir-g1.utb"
+    }
+  },
+  "sourceIds": [
+    "SRC-LIBLOUIS-2054",
+    "SRC-LIBLOUIS-G1"
+  ],
+  "sourceRegistryRecords": [
+    {
+      "sourceId": "SRC-LIBLOUIS-2054",
+      "registrySection": "## SRC-LIBLOUIS-2054\n\n**Title:** Draft: update Persian Grade 1 Braille from the 1393 manual\n\n**Type:** GitHub pull request\n\n**Pull request:** liblouis/liblouis#2054\n\n**Observed status on 2026-08-13:** draft\n\n**Classification:** candidate-implementation\n\n**Normative:** false\n\n**Pinned candidate commit:**\n\n`d47d3f9caa67163bc57aa7f0caf6ccb1ece7b417`\n\nURL:\n\n`https://github.com/liblouis/liblouis/pull/2054`\n\nThe candidate contains proposed Persian Grade 1 changes based on the historical manual and modern Unicode policy decisions.\n\nThe draft must not be treated as an approved Persian national standard.\n\n---"
+    },
+    {
+      "sourceId": "SRC-LIBLOUIS-G1",
+      "registrySection": "## SRC-LIBLOUIS-G1\n\n**Title:** Liblouis Persian Grade 1 table\n\n**Path:** `tables/fa-ir-g1.utb`\n\n**Classification:** de-facto-reference-implementation\n\n**Normative:** false\n\n**Pinned repository commit:**\n\n`092e56062d1771b3ca9080651375284adaa5dfad`\n\nPinned source:\n\n`https://raw.githubusercontent.com/liblouis/liblouis/092e56062d1771b3ca9080651375284adaa5dfad/tables/fa-ir-g1.utb`\n\nThis table is treated as implementation evidence and a practical interoperability baseline.\n\nIt is not treated as the normative Persian Braille specification.\n\n---"
+    }
+  ],
+  "masterDecision": {
+    "id": "FA-REM-CTX-002",
+    "stage": "1.7",
+    "domain": "remaining-context-rule",
+    "subject": "midnum -",
+    "codePoints": [
+      "U+002D"
+    ],
+    "classification": "REVIEW-REQUIRED",
+    "normative": false,
+    "reason": "Stable and draft agree, but contextual quote/punctuation behavior has not yet been validated against a current institutional source.",
+    "evidence": [
+      "SRC-LIBLOUIS-G1",
+      "SRC-LIBLOUIS-2054"
+    ],
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "present",
+      "dots": "36"
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "present",
+      "dots": "36"
+    },
+    "notes": []
+  },
+  "stageEvidenceRecord": {
+    "id": "FA-REM-CTX-002",
+    "directive": "midnum",
+    "token": "-",
+    "codePoints": [
+      "U+002D"
+    ],
+    "liblouisStable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "present",
+      "dots": "36"
+    },
+    "liblouisDraft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "present",
+      "dots": "36"
+    },
+    "stableDraftExactMatch": true,
+    "usesDot7Or8": false,
+    "normativeDecision": "pending"
+  },
+  "supplementalStageEvidenceRecords": [],
+  "stableDraftComparison": {
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "status": "present",
+      "dots": "36"
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "status": "present",
+      "dots": "36"
+    },
+    "relationship": "same-observed-behavior",
+    "comparedFields": [
+      "status",
+      "dots"
+    ]
+  },
+  "evidenceChannels": {
+    "observed": [
+      "stableLiblouis",
+      "draftLiblouis"
+    ],
+    "notObserved": [
+      "iranianManual",
+      "legacyV1",
+      "unicodeBraille",
+      "researchAudit2053"
+    ],
+    "presence": {
+      "stableLiblouis": true,
+      "draftLiblouis": true,
+      "iranianManual": false,
+      "legacyV1": false,
+      "unicodeBraille": false,
+      "researchAudit2053": false
+    }
+  },
+  "review": {
+    "question": "Determine the project-normative disposition for FA-REM-CTX-002 ('midnum -') using the preserved Phase 1 evidence, explicitly resolving implementation differences and evidence gaps without asserting current official Iranian national-standard status.",
+    "recommendedDisposition": null,
+    "maintainerDecision": null,
+    "decisionRationale": null,
+    "promotionEligible": false
+  },
+  "scope": {
+    "evidenceOnly": true,
+    "projectNormativeDecisionMade": false,
+    "officialIranianStandardClaim": false,
+    "profileStatusChange": false
+  }
+}
