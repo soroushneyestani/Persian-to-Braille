@@ -42,8 +42,8 @@ POLICY_VERSION = "1.0.0"
 EXPECTED_RECORDS = 253
 EXPECTED_APPROVED = 153
 EXPECTED_DEFERRED = 100
-EXPECTED_ELIGIBLE = 139
-EXPECTED_EXCLUDED_APPROVED = 14
+EXPECTED_ELIGIBLE = 138
+EXPECTED_EXCLUDED_APPROVED = 15
 
 ELIGIBLE_DISPOSITIONS = {
     "accept-rule": {"character", "sequence"},
@@ -58,11 +58,11 @@ EXPECTED_DISPOSITIONS = {
     "accept-layout-policy": 27,
     "accept-mode-rule": 5,
     "accept-normalization": 1,
-    "accept-rule": 100,
+    "accept-rule": 99,
 }
 
 EXPECTED_TARGET_TYPES = {
-    "character": 99,
+    "character": 98,
     "context": 6,
     "layout": 27,
     "mode": 5,
@@ -646,7 +646,7 @@ def main() -> int:
 
 Phase 2.14 has completed adjudication for all 253 queued decisions.
 
-This document defines the governance bridge for the **139 approved decisions**
+This document defines the governance bridge for the **138 approved decisions**
 whose adjudication records authorize creation of specification artifacts.
 
 ## Route
@@ -684,7 +684,7 @@ permits normative promotion only for Phase 1 `CONSENSUS-CANDIDATE` decisions.
 ## Authority
 
 No second maintainer decision is required merely to create a **candidate**
-artifact from one of these 139 records.
+artifact from one of these 138 records.
 
 The explicit Phase 2.14 adjudication record already contains the maintainer
 decision authorizing specification-artifact creation.
@@ -708,7 +708,7 @@ governance route and promotion record.
 
 ## Conformance boundary
 
-When the 139 candidates are materialized, each must receive reciprocal draft
+When the 138 candidates are materialized, each must receive reciprocal draft
 conformance coverage and must satisfy the six-dot `fa-ir-g1` profile.
 
 Rule IDs and conformance-vector IDs are deliberately **not assigned by this
@@ -719,7 +719,7 @@ the candidate materialization is implemented.
 
 The 100 deferred decisions remain deferred.
 
-The 14 approved but non-materializable decisions (`ignore-format-control`,
+The 15 approved but non-materializable decisions (`ignore-format-control`,
 `explicitly-unsupported`, and `out-of-scope`) remain explicit project
 decisions but do not create candidate rule artifacts.
 """

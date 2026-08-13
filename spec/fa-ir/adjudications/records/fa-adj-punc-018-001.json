@@ -9,7 +9,7 @@
   "planItemId": "FA-ADJ-PLAN-082",
   "phase1Classification": "REVIEW-REQUIRED",
   "track": "implementation-alignment",
-  "disposition": "accept-rule",
+  "disposition": "out-of-scope",
   "decision": {
     "result": "approved",
     "authority": "project-maintainer",
@@ -30,11 +30,11 @@
     "unresolvedEvidenceGaps": []
   },
   "materialization": {
-    "kind": "rule",
-    "createsSpecificationArtifact": true,
-    "targetRuleType": "character",
+    "kind": "out-of-scope",
+    "createsSpecificationArtifact": false,
+    "targetRuleType": null,
     "promotionEligible": false,
-    "requiresFuturePromotionGovernance": true
+    "requiresFuturePromotionGovernance": false
   },
   "scope": {
     "projectSpecificationDecision": true,
@@ -42,5 +42,5 @@
     "officialIranianStandardClaim": false,
     "phase1ClassificationRewritten": false
   },
-  "rationale": "Stable and draft implementations agree exactly on this scalar punctuation behavior, and legacy v1 supplies independent historical support for the aligned mapping. The project accepts the mapping as a character-level specification rule; this remains a project specification decision, not a claim of current official Iranian national-standard status."
+  "rationale": "Amended after the Phase 2.14 candidate-materialization readiness audit. NO-BREAK SPACE (U+00A0) is not a standalone punctuation/Braille character rule in this project. The observed Liblouis operand 'a' is a virtual/internal space operand, not a publishable Braille cell, and NBSP translation/layout semantics are already owned by FA-WS-007. The scalar punctuation decision is therefore out of scope to avoid a duplicate specification artifact."
 }

@@ -118,6 +118,9 @@ jobs:
       - name: Verify Phase 2.14 candidate-admission determinism
         run: python tools/spec/test_adjudicated_candidate_admission_determinism.py
 
+      - name: Audit Phase 2.14 candidate materialization readiness
+        run: python tools/spec/audit_candidate_materialization_readiness.py
+
       - name: Regenerate Phase 2 candidate package
         run: python tools/spec/build_phase2_candidate_package.py
 
