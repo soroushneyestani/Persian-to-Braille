@@ -17,6 +17,9 @@ on:
       - "docs/translation/**"
       - "tools/normalization/**"
       - "tools/translation/**"
+      - "conformance/**"
+      - "docs/conformance/**"
+      - "tools/conformance/**"
       - "apps/**"
       - "integrations/**"
       - "tools/architecture/**"
@@ -81,6 +84,8 @@ jobs:
 
       - name: Run workspace tests
         run: pnpm run test
+      - name: Validate profile conformance
+        run: pnpm run validate:conformance
 
       - name: Clean generated build artifacts
         run: pnpm run clean
