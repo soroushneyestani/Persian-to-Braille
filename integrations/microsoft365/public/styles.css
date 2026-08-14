@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+  color: #171717;
+  background: #f5f6f8;
+  line-height: 1.45;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+}
+
+button {
+  min-height: 40px;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #171717;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #eceff3;
+}
+
+button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.app-shell {
+  padding: 18px;
+}
+
+.app-header h1 {
+  margin:
+    0 0 8px;
+  font-size: 1.65rem;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.intro,
+footer {
+  color: #4b4b4b;
+}
+
+.ready-state {
+  display: inline-block;
+  margin: 8px 0 0;
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #e8e8e8;
+  font-size: 0.82rem;
+}
+
+.ready-state[data-ready="true"] {
+  background: #d9f4df;
+}
+
+.actions,
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.actions button:first-child {
+  font-weight: 700;
+}
+
+.panel {
+  margin-top: 18px;
+  border: 1px solid #d4d7dc;
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.panel h2 {
+  margin:
+    0 0 12px;
+  font-size: 1.05rem;
+}
+
+.result-grid {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.result-grid div {
+  display: grid;
+  gap: 5px;
+}
+
+dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #53565c;
+}
+
+dd {
+  margin: 0;
+}
+
+.output {
+  min-height: 34px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.braille {
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+}
+
+.code-output {
+  font-family:
+    ui-monospace,
+    "Cascadia Mono",
+    "SFMono-Regular",
+    monospace;
+  font-size: 0.82rem;
+}
+
+.error-panel {
+  border-color: #a63434;
+}
+
+.error-panel strong {
+  font-family:
+    ui-monospace,
+    "Cascadia Mono",
+    monospace;
+}
+
+.status {
+  min-height: 24px;
+  margin: 14px 0;
+  color: #45484d;
+}
+
+footer {
+  margin-top: 20px;
+  border-top: 1px solid #d4d7dc;
+  padding-top: 12px;
+  font-size: 0.8rem;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.draft-badge {
+  display: inline-block;
+  margin-left: 4px;
+  border-radius: 999px;
+  padding: 2px 6px;
+  background: #fff0c2;
+  color: #654d00;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
