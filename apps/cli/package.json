@@ -20,9 +20,14 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/cli.test.mjs"
   },
   "dependencies": {
     "@persian-braille/sdk": "workspace:*"
-  }
+  },
+  "bin": {
+    "persian-braille": "./dist/cli.js"
+  },
+  "description": "Official command-line interface for Persian Braille translation through @persian-braille/sdk."
 }
