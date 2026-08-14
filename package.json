@@ -25,7 +25,7 @@
     "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
     "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
     "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
-    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism && pnpm run validate:phase8-consumer-contract && pnpm run validate:phase9-word-contract",
+    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism && pnpm run validate:phase8-consumer-contract && pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-addin",
     "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs",
     "conformance:write-report": "pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write",
     "test:conformance": "pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs",
@@ -34,7 +34,8 @@
     "validate:phase8-consumer-contract": "node tools/architecture/validate-phase8-consumer-contract.mjs",
     "validate:phase8-consumers": "pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs",
     "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs",
-    "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test"
+    "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test",
+    "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"

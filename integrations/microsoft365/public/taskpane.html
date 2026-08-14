@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <title>Persian-to-Braille for Word</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+    type="text/javascript"
+  ></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "@persian-braille/sdk": "./vendor/sdk/index.js",
+      "@persian-braille/core": "./vendor/core/index.js"
+    }
+  }
+  </script>
+  <script
+    type="module"
+    src="./app/taskpane/main.js"
+  ></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <p class="eyebrow">Microsoft Word Add-in</p>
+      <h1>Persian-to-Braille</h1>
+      <p class="intro">
+        Translate the current Word selection with the shared
+        Persian Braille SDK.
+      </p>
+      <p
+        id="office-ready-state"
+        class="ready-state"
+        data-ready="false"
+      >
+        Waiting for Word
+      </p>
+    </header>
+
+    <section class="actions" aria-label="Translation actions">
+      <button
+        id="translate-selection"
+        type="button"
+        disabled
+      >
+        Translate Selection
+      </button>
+      <button
+        id="clear-output"
+        type="button"
+      >
+        Clear
+      </button>
+    </section>
+
+    <section
+      id="translation-result"
+      class="panel"
+      hidden
+      aria-labelledby="result-title"
+    >
+      <h2 id="result-title">Braille preview</h2>
+
+      <dl class="result-grid">
+        <div>
+          <dt>Selected text</dt>
+          <dd
+            id="source-output"
+            class="output source"
+            dir="rtl"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Unicode Braille</dt>
+          <dd
+            id="braille-output"
+            class="output braille"
+            dir="ltr"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Cells</dt>
+          <dd
+            id="cells-output"
+            class="output code-output"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Normalized text</dt>
+          <dd
+            id="normalized-output"
+            class="output"
+            dir="rtl"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Structural tokens</dt>
+          <dd
+            id="structural-output"
+            class="output code-output"
+          ></dd>
+        </div>
+      </dl>
+
+      <div
+        class="document-actions"
+        aria-label="Braille result actions"
+      >
+        <button
+          id="copy-braille"
+          type="button"
+          disabled
+        >
+          Copy Braille
+        </button>
+        <button
+          id="replace-selection"
+          type="button"
+          disabled
+        >
+          Replace Selection
+        </button>
+        <button
+          id="insert-after-selection"
+          type="button"
+          disabled
+        >
+          Insert After
+        </button>
+      </div>
+    </section>
+
+    <section
+      id="translation-error"
+      class="panel error-panel"
+      role="alert"
+      hidden
+    >
+      <h2>Translation unavailable</h2>
+      <p>
+        <strong id="error-code"></strong>
+      </p>
+      <p id="error-message"></p>
+    </section>
+
+    <p
+      id="taskpane-status"
+      class="status"
+      aria-live="polite"
+    ></p>
+
+    <footer>
+      <p>
+        Profile: <strong>fa-ir-g1 0.1.0</strong>
+        <span class="draft-badge">draft</span>
+      </p>
+      <p>
+        Translation rules remain owned by the shared project
+        specification and SDK.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
