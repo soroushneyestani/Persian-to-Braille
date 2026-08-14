@@ -140,6 +140,15 @@ pnpm run validate:phase8-consumers
 
 after workspace package tests.
 
+The workflow push path filter explicitly includes:
+
+```text
+tools/consumers/**
+```
+
+so a future change limited to the Phase 8 consumer-integration harness still
+triggers Architecture Validation on `main`.
+
 Therefore Phase 8 consumer parity is enforced on pull requests, merge queues,
 manual workflow runs, and relevant pushes to `main`.
 

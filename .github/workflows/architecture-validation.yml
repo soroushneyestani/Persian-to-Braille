@@ -26,6 +26,7 @@ on:
       - "apps/**"
       - "integrations/**"
       - "tools/architecture/**"
+      - "tools/consumers/**"
       - "docs/architecture/**"
       - "spec/fa-ir/profiles/**"
       - "spec/fa-ir/rules/**"
