@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Local browser playground for specification-driven Persian Braille translation."
+  >
+  <title>Persian Braille Playground</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "@persian-braille/sdk": "./vendor/sdk/index.js",
+      "@persian-braille/core": "./vendor/core/index.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">Persian-to-Braille</p>
+      <h1>Persian Braille Playground</h1>
+      <p class="lede">
+        Translate Persian print text locally in your browser through the public
+        SDK. Your translation input is not sent to a translation server.
+      </p>
+    </header>
+
+    <section class="profile-card" aria-labelledby="profile-heading">
+      <div>
+        <p class="section-kicker">Bundled profile</p>
+        <h2 id="profile-heading">Translation profile</h2>
+      </div>
+
+      <dl class="profile-grid">
+        <div>
+          <dt>ID</dt>
+          <dd id="profile-id"></dd>
+        </div>
+        <div>
+          <dt>Version</dt>
+          <dd id="profile-version"></dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd id="profile-status"></dd>
+        </div>
+        <div>
+          <dt>Direction</dt>
+          <dd id="profile-direction"></dd>
+        </div>
+      </dl>
+
+      <p id="profile-disclosure" class="draft-note" hidden>
+        This bundled Persian Braille profile is currently draft. The playground
+        reports the lifecycle status supplied by the SDK and does not promote
+        draft rules to normative status.
+      </p>
+    </section>
+
+    <section class="workspace" aria-labelledby="translate-heading">
+      <div class="workspace-header">
+        <div>
+          <p class="section-kicker">Local translation</p>
+          <h2 id="translate-heading">Print text</h2>
+        </div>
+        <p class="shortcut">Ctrl/⌘ + Enter to translate</p>
+      </div>
+
+      <label for="print-text-input">
+        Persian print text
+      </label>
+      <textarea
+        id="print-text-input"
+        dir="auto"
+        rows="8"
+        spellcheck="false"
+        placeholder="مثال: سلام"
+      ></textarea>
+
+      <div class="actions">
+        <button id="translate" type="button">Translate</button>
+        <button id="clear" type="button" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section
+      id="translation-result"
+      class="result-card"
+      aria-labelledby="result-heading"
+      hidden
+    >
+      <div class="result-header">
+        <div>
+          <p class="section-kicker">SDK result</p>
+          <h2 id="result-heading">Translation result</h2>
+        </div>
+        <button
+          id="copy-unicode-braille"
+          type="button"
+          class="secondary"
+        >
+          Copy Unicode Braille
+        </button>
+      </div>
+
+      <p
+        id="copy-feedback"
+        class="status-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div id="translation-success" hidden>
+        <div class="result-block">
+          <h3>Unicode Braille</h3>
+          <output id="unicode-braille" class="braille-output"></output>
+        </div>
+
+        <div class="result-block">
+          <h3>Cells</h3>
+          <output id="cells" class="mono-output"></output>
+        </div>
+
+        <div class="result-block">
+          <h3>Normalized text</h3>
+          <output id="normalized-text" dir="auto"></output>
+        </div>
+
+        <div class="result-block">
+          <h3>Structural tokens</h3>
+          <ul id="structural-tokens" class="token-list"></ul>
+        </div>
+      </div>
+
+      <div
+        id="translation-error"
+        class="error-panel"
+        role="alert"
+        aria-live="assertive"
+        hidden
+      >
+        <h3>Translation failed</h3>
+        <p><strong id="error-code"></strong></p>
+        <p id="error-message"></p>
+        <ul id="error-details"></ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Specification → Core → SDK → Web Playground
+      </p>
+    </footer>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
