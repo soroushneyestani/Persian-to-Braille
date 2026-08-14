@@ -14,3 +14,4 @@ node_modules/
 dist/
 *.tsbuildinfo
 /packages/core/src/generated/
+integrations/microsoft365/addin-dist/
