@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1",
+  "phase": "9.2",
+  "name": "Microsoft 365 Word Host Adapter Contract",
+  "host": "Word",
+  "targetClients": [
+    "Word on the web",
+    "Word for Microsoft 365 on Windows",
+    "Word for Microsoft 365 on Mac"
+  ],
+  "manifestStrategy": {
+    "phase9": "add-in-only-xml",
+    "unifiedManifest": "deferred-for-production-reaudit"
+  },
+  "minimumOfficeRequirementSet": {
+    "name": "WordApi",
+    "version": "1.1"
+  },
+  "architecture": {
+    "translationOwner": "@persian-braille/sdk",
+    "allowedInternalDependency": "@persian-braille/sdk",
+    "forbiddenDependencies": [
+      "@persian-braille/core",
+      "spec/fa-ir"
+    ],
+    "officeLayerOwnsTranslationSemantics": false
+  },
+  "adapter": {
+    "name": "PersianBrailleWordHostAdapter",
+    "operations": {
+      "readSelection": {
+        "input": "none",
+        "success": {
+          "text": "exact-current-selection-text"
+        },
+        "rules": [
+          "read the current Word selection at invocation time",
+          "return selection text verbatim",
+          "do not trim, normalize, reshape, or translate",
+          "do not persist Office proxy objects across invocations"
+        ]
+      },
+      "replaceSelection": {
+        "input": {
+          "expectedSourceText": "string",
+          "replacementText": "string"
+        },
+        "success": "void",
+        "rules": [
+          "re-read the current selection at action time",
+          "require exact equality with expectedSourceText",
+          "if equality fails return SELECTION_CHANGED",
+          "replace the current selection with replacementText",
+          "do not add whitespace, paragraph breaks, or formatting semantics"
+        ]
+      },
+      "insertAfterSelection": {
+        "input": {
+          "expectedSourceText": "string",
+          "insertedText": "string"
+        },
+        "success": "void",
+        "rules": [
+          "re-read the current selection at action time",
+          "require exact equality with expectedSourceText",
+          "if equality fails return SELECTION_CHANGED",
+          "insert insertedText immediately after the current selection",
+          "do not add whitespace, paragraph breaks, or formatting semantics"
+        ]
+      }
+    }
+  },
+  "hostFailureCodes": [
+    "OFFICE_NOT_READY",
+    "WRONG_HOST",
+    "UNSUPPORTED_REQUIREMENT_SET",
+    "SELECTION_UNAVAILABLE",
+    "SELECTION_CHANGED",
+    "DOCUMENT_WRITE_FAILED"
+  ],
+  "selectionPolicy": {
+    "emptySelection": "valid-host-read-but-not-translatable-by-application",
+    "comparison": "exact-code-unit-string-equality",
+    "stalePreviewProtection": true,
+    "persistentBinding": false,
+    "trackedRangeAcrossUiActions": false
+  },
+  "officeExecutionPolicy": {
+    "batchModel": "Word.run",
+    "syncRequiredBeforeReadingLoadedSelectionText": true,
+    "freshSelectionForEveryMutation": true,
+    "officeErrorsMappedAtAdapterBoundary": true,
+    "officeErrorObjectsExposedToSdk": false
+  },
+  "phase9UiContractBoundary": {
+    "copyUnicodeBraille": "browser-clipboard-ui-responsibility",
+    "replaceSelection": "host-adapter-responsibility",
+    "insertAfterSelection": "host-adapter-responsibility",
+    "translation": "sdk-responsibility"
+  },
+  "outOfScope": [
+    "task-pane implementation",
+    "ribbon implementation",
+    "manifest.xml implementation",
+    "Office.js dependency installation",
+    "HTTPS development server",
+    "sideloading",
+    "Excel",
+    "PowerPoint",
+    "Marketplace publication",
+    "persistent Word bindings",
+    "tracked Word.Range objects across UI actions",
+    "application-owned normalization",
+    "application-owned Braille rules"
+  ]
+}
