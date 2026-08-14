@@ -871,3 +871,24 @@ test(
     );
   },
 );
+
+test(
+  "preview command builds the Microsoft 365 dependency closure from a clean workspace",
+  async () => {
+    const packageJson =
+      JSON.parse(
+        await readFile(
+          new URL(
+            "../package.json",
+            import.meta.url,
+          ),
+          "utf8",
+        ),
+      );
+
+    assert.equal(
+      packageJson.scripts.preview,
+      "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
+    );
+  },
+);

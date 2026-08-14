@@ -22,7 +22,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
     "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs",
-    "preview": "pnpm run build && node preview-addin.mjs"
+    "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs"
   },
   "dependencies": {
     "@persian-braille/sdk": "workspace:*"
