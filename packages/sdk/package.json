@@ -1,7 +1,7 @@
 {
   "name": "@persian-braille/sdk",
   "version": "2.0.0-dev",
-  "private": true,
+  "private": false,
   "type": "module",
   "engines": {
     "node": ">=24.19.0 <25",
@@ -20,10 +20,34 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
     "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs"
   },
   "dependencies": {
     "@persian-braille/core": "workspace:*"
+  },
+  "description": "Public TypeScript SDK for Persian Braille translation backed by @persian-braille/core.",
+  "license": "MIT",
+  "author": "Soroush Neyestani",
+  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+  },
+  "keywords": [
+    "persian",
+    "braille",
+    "accessibility",
+    "sdk",
+    "typescript",
+    "unicode",
+    "iran"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }

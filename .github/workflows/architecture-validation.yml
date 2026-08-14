@@ -20,6 +20,9 @@ on:
       - "conformance/**"
       - "docs/conformance/**"
       - "tools/conformance/**"
+      - "docs/sdk/**"
+      - "tools/sdk/**"
+      - "LICENSE"
       - "apps/**"
       - "integrations/**"
       - "tools/architecture/**"
@@ -86,6 +89,9 @@ jobs:
         run: pnpm run test
       - name: Validate profile conformance
         run: pnpm run validate:conformance
+
+      - name: Validate public SDK package
+        run: pnpm run validate:sdk-package
 
       - name: Clean generated build artifacts
         run: pnpm run clean

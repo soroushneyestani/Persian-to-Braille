@@ -1,7 +1,7 @@
 {
   "name": "@persian-braille/core",
   "version": "2.0.0-dev",
-  "private": true,
+  "private": false,
   "type": "module",
   "engines": {
     "node": ">=24.19.0 <25",
@@ -20,8 +20,31 @@
   "scripts": {
     "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
     "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true})\"",
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
     "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
     "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs"
+  },
+  "description": "Specification-driven Persian Braille translation engine for the fa-ir-g1 profile.",
+  "license": "MIT",
+  "author": "Soroush Neyestani",
+  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+  },
+  "keywords": [
+    "persian",
+    "braille",
+    "accessibility",
+    "translation",
+    "unicode",
+    "iran"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
