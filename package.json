@@ -25,12 +25,13 @@
     "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
     "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
     "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
-    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism",
+    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism && pnpm run validate:phase8-consumer-contract",
     "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs",
     "conformance:write-report": "pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write",
     "test:conformance": "pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs",
     "validate:conformance": "pnpm run test:conformance && node tools/conformance/profile-conformance-report.mjs --check",
-    "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs"
+    "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
+    "validate:phase8-consumer-contract": "node tools/architecture/validate-phase8-consumer-contract.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
