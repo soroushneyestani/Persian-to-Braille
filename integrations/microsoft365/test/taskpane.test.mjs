@@ -689,3 +689,185 @@ test(
     }
   },
 );
+
+test(
+  "task-pane readiness rejects a standalone browser outside Office",
+  async () => {
+    const {
+      evaluateWordTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateWordTaskPaneReadiness(
+        {
+          host: null,
+          platform: null,
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return false;
+          },
+          supportsWordApi11() {
+            return false;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      false,
+    );
+    assert.equal(
+      result.code,
+      "OFFICE_NOT_READY",
+    );
+  },
+);
+
+test(
+  "task-pane readiness rejects a non-Word Office host",
+  async () => {
+    const {
+      evaluateWordTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateWordTaskPaneReadiness(
+        {
+          host: "Excel",
+          platform: "PC",
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return false;
+          },
+          supportsWordApi11() {
+            return false;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      false,
+    );
+    assert.equal(
+      result.code,
+      "WRONG_HOST",
+    );
+  },
+);
+
+test(
+  "task-pane readiness requires the Word runtime after Office.onReady",
+  async () => {
+    const {
+      evaluateWordTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateWordTaskPaneReadiness(
+        {
+          host: "Word",
+          platform: "PC",
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return true;
+          },
+          supportsWordApi11() {
+            return true;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      false,
+    );
+    assert.equal(
+      result.code,
+      "OFFICE_NOT_READY",
+    );
+  },
+);
+
+test(
+  "task-pane readiness accepts a supported Word runtime",
+  async () => {
+    const {
+      evaluateWordTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateWordTaskPaneReadiness(
+        {
+          host: "Word",
+          platform: "PC",
+        },
+        {
+          isReady() {
+            return true;
+          },
+          isWordHost() {
+            return true;
+          },
+          supportsWordApi11() {
+            return true;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "written";
+          },
+        },
+      );
+
+    assert.deepEqual(
+      result,
+      {
+        ok: true,
+      },
+    );
+  },
+);

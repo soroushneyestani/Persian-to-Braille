@@ -12,9 +12,20 @@ import {
   createWordTaskPaneDomView,
 } from "./dom-view.js";
 
+import {
+  evaluateWordTaskPaneReadiness,
+} from "./readiness.js";
+
+import type {
+  OfficeReadyInfoPort,
+} from "./readiness.js";
+
 interface OfficeReadyPort {
   onReady(
-    callback: () => void,
+    callback: (
+      info:
+        OfficeReadyInfoPort,
+    ) => void,
   ):
     | Promise<unknown>
     | void;
@@ -22,15 +33,12 @@ interface OfficeReadyPort {
 
 function officeReadyPort():
   OfficeReadyPort | undefined {
-  const candidate =
-    (
-      globalThis as unknown as {
-        Office?:
-          OfficeReadyPort;
-      }
-    ).Office;
-
-  return candidate;
+  return (
+    globalThis as unknown as {
+      Office?:
+        OfficeReadyPort;
+    }
+  ).Office;
 }
 
 const view =
@@ -87,7 +95,25 @@ if (!office) {
   try {
     const ready =
       office.onReady(
-        () => {
+        (info) => {
+          const readiness =
+            evaluateWordTaskPaneReadiness(
+              info,
+              runtime,
+            );
+
+          if (!readiness.ok) {
+            view.setReady(false);
+            view.showFailure({
+              domain: "host",
+              code:
+                readiness.code,
+              message:
+                readiness.message,
+            });
+            return;
+          }
+
           controller
             .initialize();
         },
@@ -104,6 +130,7 @@ if (!office) {
         ready as Promise<unknown>
       ).catch(
         () => {
+          view.setReady(false);
           view.showFailure({
             domain: "host",
             code:
@@ -115,6 +142,7 @@ if (!office) {
       );
     }
   } catch {
+    view.setReady(false);
     view.showFailure({
       domain: "host",
       code:
