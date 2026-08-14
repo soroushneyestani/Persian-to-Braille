@@ -241,10 +241,11 @@ Core and SDK tarballs.
 
 ## Final local fixed point
 
-The Phase 7 closure candidate must pass the following commands from the feature
-branch:
+The Phase 7 closure candidate must pass the following commands from a clean
+feature-branch state:
 
 ```text
+pnpm run clean
 pnpm run typecheck
 pnpm run test
 pnpm run validate:normalization
@@ -253,6 +254,26 @@ pnpm run validate:runtime
 pnpm run validate:conformance
 pnpm run validate:sdk-package
 ```
+
+### Clean-state workspace typecheck invariant
+
+Consumer packages resolve internal workspace package types through each
+package's published `dist` export boundary.
+
+Therefore the root workspace typecheck gate first builds the workspace in
+dependency order and then runs each package's `--noEmit` typecheck:
+
+```text
+pnpm run build
+pnpm -r --if-present run typecheck
+```
+
+This prevents a false green result that depends on stale `dist` artifacts from
+an earlier build and makes `pnpm run typecheck` reproducible immediately after
+`pnpm run clean`.
+
+Individual package `typecheck` scripts remain non-emitting checks; dependency
+materialization is an orchestration responsibility of the root workspace gate.
 
 The latest pre-closure fixed point established:
 
@@ -350,9 +371,12 @@ Phase 7 implementation lineage:
 75d1456 Implement Phase 7 public SDK facade
 4a75386 Add Phase 7 SDK consumer contract tests
 230452e Add Phase 7 SDK packaging and release readiness
+c7c5b6b Close Phase 7 public SDK
 ```
 
-The Phase 7 closure commit follows this lineage.
+A post-closure clean-state audit exposed and corrected the workspace typecheck
+orchestration dependency on pre-existing `dist` output. The final Phase 7
+closure state includes that correction after `c7c5b6b`.
 
 Commit hashes may change if the branch is rebased before merge; the semantic
 phase ordering is authoritative.
