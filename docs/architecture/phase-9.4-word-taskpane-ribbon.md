@@ -269,3 +269,40 @@ and is never labelled `Word ready`.
 
 This correction does not change Word translation, SDK behavior, manifest
 semantics, or document mutation behavior.
+
+## Clean-state preview bootstrap correction
+
+The first HTTPS preview attempt after `pnpm run clean` exposed a dependency
+bootstrap gap.
+
+The Microsoft 365 package imports the public SDK through the workspace package
+boundary. After a repository clean, the SDK's compiled `dist` declarations no
+longer exist. A package-local:
+
+```text
+pnpm run build
+```
+
+therefore cannot be assumed to resolve the SDK package from a completely clean
+workspace.
+
+The preview command now performs a dependency-aware build of the Microsoft 365
+package closure:
+
+```text
+pnpm --filter @persian-braille/microsoft365... run build
+```
+
+before starting the HTTPS server.
+
+This materializes:
+
+```text
+Core -> SDK -> Microsoft 365
+```
+
+and makes the documented preview command valid immediately after a repository
+clean.
+
+The package-local `build` command remains a normal package build and does not
+silently rebuild unrelated workspace packages.
