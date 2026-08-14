@@ -35,7 +35,8 @@
     "validate:phase8-consumers": "pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs",
     "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs",
     "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test",
-    "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs"
+    "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs",
+    "validate:phase9-word-sideload-evidence": "node tools/architecture/validate-phase9-word-sideload-evidence.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
