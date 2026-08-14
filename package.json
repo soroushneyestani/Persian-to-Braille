@@ -33,7 +33,8 @@
     "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
     "validate:phase8-consumer-contract": "node tools/architecture/validate-phase8-consumer-contract.mjs",
     "validate:phase8-consumers": "pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs",
-    "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs"
+    "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs",
+    "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test"
   },
   "devDependencies": {
     "typescript": "6.0.3"
