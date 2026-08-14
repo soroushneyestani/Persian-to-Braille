@@ -87,6 +87,9 @@ jobs:
 
       - name: Run workspace tests
         run: pnpm run test
+
+      - name: Validate Phase 8 consumer integration
+        run: pnpm run validate:phase8-consumers
       - name: Validate profile conformance
         run: pnpm run validate:conformance
 
