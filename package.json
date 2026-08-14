@@ -29,9 +29,21 @@
     "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs",
     "conformance:write-report": "pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write",
     "test:conformance": "pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs",
-    "validate:conformance": "pnpm run test:conformance && node tools/conformance/profile-conformance-report.mjs --check"
+    "validate:conformance": "pnpm run test:conformance && node tools/conformance/profile-conformance-report.mjs --check",
+    "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
+  },
+  "description": "Specification-driven Persian Braille translation workspace.",
+  "license": "MIT",
+  "author": "Soroush Neyestani",
+  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
   }
 }
