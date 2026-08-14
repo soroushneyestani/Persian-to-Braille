@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1",
+  "phase": "9.5",
+  "name": "Word Web / Windows / Mac Sideload & Regression Evidence",
+  "decision": {
+    "status": "evidence-frozen-with-deferred-cross-client-execution",
+    "maintainerAcceptedDeferral": true,
+    "phase9MayProceedToClosure": true,
+    "releaseGate": "Re-run actual Word on the web and Word for Microsoft 365 on Mac verification before Phase 11 Marketplace submission."
+  },
+  "manifest": {
+    "path": "integrations/microsoft365/manifest.xml",
+    "microsoftValidator": {
+      "status": "pass",
+      "tool": "office-addin-manifest",
+      "execution": "pnpm dlx",
+      "result": "The manifest is valid."
+    }
+  },
+  "localHttps": {
+    "certificateTool": "office-addin-dev-certs",
+    "trustedLocalhost": true,
+    "origin": "https://localhost:3000",
+    "taskPaneUrl": "https://localhost:3000/taskpane.html",
+    "httpStatusObserved": 200
+  },
+  "clients": [
+    {
+      "client": "Word for Microsoft 365 on Windows",
+      "status": "verified-pass",
+      "execution": "real-client",
+      "evidence": [
+        "development sideload registration succeeded",
+        "Word launched from office-addin-debugging",
+        "Home ribbon command visible",
+        "task pane opened",
+        "task pane reported Word ready",
+        "selected Persian text was read from the live Word document",
+        "translation preview was produced through the public SDK",
+        "Copy Braille succeeded",
+        "Insert After succeeded",
+        "Replace Selection succeeded",
+        "stale preview mutation was blocked with SELECTION_CHANGED"
+      ],
+      "cleanup": "office-addin-debugging stop completed successfully"
+    },
+    {
+      "client": "Word on the web",
+      "status": "expected-not-executed",
+      "execution": "deferred",
+      "reason": "No Word on the web test environment was available during Phase 9.",
+      "evidence": [
+        "manifest is Microsoft-validator valid",
+        "manifest declares WordApi 1.1",
+        "task pane uses HTTPS resources",
+        "Office-specific translation logic is shared with the verified Windows client"
+      ],
+      "releaseGate": "Actual sideload and workflow verification required before Phase 11 Marketplace submission."
+    },
+    {
+      "client": "Word for Microsoft 365 on Mac",
+      "status": "expected-not-executed",
+      "execution": "deferred",
+      "reason": "No macOS Word test environment was available during Phase 9.",
+      "evidence": [
+        "manifest is Microsoft-validator valid",
+        "manifest declares WordApi 1.1",
+        "task pane uses host-neutral Office.js APIs within the frozen Phase 9 contract",
+        "Office-specific translation logic is shared with the verified Windows client"
+      ],
+      "releaseGate": "Actual sideload and workflow verification required before Phase 11 Marketplace submission."
+    }
+  ],
+  "windowsWorkflowChecks": {
+    "ribbonCommand": "pass",
+    "taskPaneOpen": "pass",
+    "wordReady": "pass",
+    "selectionRead": "pass",
+    "sdkTranslation": "pass",
+    "copyBraille": "pass",
+    "insertAfter": "pass",
+    "replaceSelection": "pass",
+    "staleSelectionGuard": "pass"
+  },
+  "nonClaims": [
+    "Word on the web was not executed in Phase 9.",
+    "Word for Microsoft 365 on Mac was not executed in Phase 9.",
+    "No statement that Web or Mac passed end-to-end testing is permitted.",
+    "Marketplace readiness is not claimed by Phase 9.5.",
+    "The fa-ir-g1 profile remains draft."
+  ]
+}
