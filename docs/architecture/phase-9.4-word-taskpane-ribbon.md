@@ -231,3 +231,41 @@ Those belong to Phase 9.5.
 ## Next
 
 **Phase 9.5 - Web / Windows / Mac Sideload and Regression**
+
+## Browser readiness correction
+
+A standalone browser smoke test exposed an important distinction in Office.js
+initialization:
+
+```text
+Office.js library loaded
+!=
+Word host ready
+```
+
+Microsoft documents that `Office.onReady()` can resolve when an add-in page is
+opened directly in a browser. In that case the ready information has no Office
+host/platform.
+
+The task-pane composition root therefore treats `Office.onReady()` only as the
+library-initialization boundary. It enables the Word UI only after all of these
+conditions are true:
+
+```text
+Office.onReady supplied an Office host
+current Office host is Word
+Word runtime global is available
+WordApi 1.1 is supported
+```
+
+A standalone browser now remains:
+
+```text
+Waiting for Word
+OFFICE_NOT_READY
+```
+
+and is never labelled `Word ready`.
+
+This correction does not change Word translation, SDK behavior, manifest
+semantics, or document mutation behavior.
