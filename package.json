@@ -18,7 +18,7 @@
   "scripts": {
     "build": "pnpm -r --if-present run build",
     "test": "pnpm -r --if-present run test",
-    "typecheck": "pnpm -r --if-present run typecheck",
+    "typecheck": "pnpm run build && pnpm -r --if-present run typecheck",
     "clean": "pnpm -r --if-present run clean",
     "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs",
     "validate:boundaries": "node tools/architecture/validate-package-boundaries.mjs",
