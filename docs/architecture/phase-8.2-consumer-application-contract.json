@@ -1,0 +1,170 @@
+{
+  "contractVersion": "1.0.0",
+  "phase": "8.2",
+  "name": "CLI and Web consumer application contract",
+  "translationOwner": "@persian-braille/sdk",
+  "architecture": {
+    "flow": "Specification -> Core -> SDK -> Consumers",
+    "cliDependency": "@persian-braille/sdk",
+    "webDependency": "@persian-braille/sdk",
+    "forbiddenDirectDependencies": [
+      "@persian-braille/core",
+      "spec/fa-ir"
+    ],
+    "applicationOwnedTranslationSemantics": false
+  },
+  "cli": {
+    "package": "@persian-braille/cli",
+    "executable": "persian-braille",
+    "commands": {
+      "translate": {
+        "inputSources": [
+          "arguments",
+          "stdin"
+        ],
+        "inputSourceRule": "exactly-one",
+        "formats": [
+          "unicode",
+          "cells",
+          "json"
+        ],
+        "defaultFormat": "unicode",
+        "jsonEnvelopeVersion": "1",
+        "humanSuccessOutput": {
+          "unicode": "unicodeBraille followed by one newline",
+          "cells": "cells joined by one ASCII space followed by one newline"
+        },
+        "jsonEnvelope": {
+          "schemaVersion": "1",
+          "command": "translate",
+          "result": "PersianBrailleTranslationResult"
+        }
+      },
+      "profile": {
+        "formats": [
+          "text",
+          "json"
+        ],
+        "defaultFormat": "text",
+        "source": "translator.profile"
+      }
+    },
+    "exitCodes": {
+      "success": 0,
+      "translationFailure": 1,
+      "usageError": 2,
+      "internalError": 3
+    },
+    "streams": {
+      "humanSuccess": "stdout",
+      "humanTranslationFailure": "stderr",
+      "jsonTranslationResult": "stdout",
+      "usageError": "stderr",
+      "internalError": "stderr"
+    },
+    "rules": [
+      "No ANSI color is required for correctness.",
+      "Expected SDK translation failures must preserve the SDK failure code.",
+      "JSON mode must remain machine-readable and deterministic.",
+      "No stack trace is part of the normal user-facing contract."
+    ]
+  },
+  "web": {
+    "package": "@persian-braille/web",
+    "runtime": "browser-local",
+    "translationNetworkRequests": false,
+    "inputPersistence": "none",
+    "requiredControls": [
+      "print-text-input",
+      "translate",
+      "clear",
+      "copy-unicode-braille"
+    ],
+    "requiredPresentation": [
+      "unicode-braille",
+      "cells",
+      "profile-id",
+      "profile-version",
+      "profile-status",
+      "profile-direction",
+      "normalized-text",
+      "structural-tokens",
+      "translation-error"
+    ],
+    "draftProfileDisclosure": true,
+    "accessibility": [
+      "Every form control has an accessible name.",
+      "All actions are keyboard operable.",
+      "There is no keyboard trap.",
+      "Translation failures are announced through an accessible live/alert region.",
+      "Output is available as selectable text and not only as visual graphics.",
+      "Copy success/failure feedback is exposed accessibly."
+    ],
+    "privacy": [
+      "Translation runs locally through the bundled SDK.",
+      "Phase 8 does not persist entered text in localStorage or sessionStorage.",
+      "Phase 8 does not transmit entered text to a translation service."
+    ]
+  },
+  "parity": {
+    "required": [
+      "CLI and Web pass user text to the SDK without application-owned normalization.",
+      "CLI JSON and Web details preserve SDK profile metadata.",
+      "CLI JSON and Web details preserve SDK failure codes.",
+      "CLI and Web expose the same unicodeBraille and cells for the same successful SDK result.",
+      "Neither consumer exposes Core execution internals."
+    ],
+    "presentationMayDiffer": [
+      "human-readable labels",
+      "layout",
+      "terminal versus browser interaction",
+      "copy controls",
+      "CLI exit codes"
+    ]
+  },
+  "testing": {
+    "cli": [
+      "package/runtime entrypoint test",
+      "argument input success",
+      "stdin input success",
+      "unicode output",
+      "cells output",
+      "JSON success envelope",
+      "JSON failure envelope",
+      "exit-code mapping",
+      "profile command",
+      "usage errors",
+      "determinism"
+    ],
+    "web": [
+      "browser build",
+      "SDK translation integration",
+      "success rendering",
+      "failure rendering",
+      "profile draft disclosure",
+      "copy interaction",
+      "clear interaction",
+      "keyboard/accessibility contract",
+      "no direct Core dependency"
+    ],
+    "integration": [
+      "CLI/Web successful-result parity",
+      "CLI/Web failure-code parity",
+      "clean-state build/typecheck/test"
+    ]
+  },
+  "outOfScope": [
+    "file input",
+    "server-side translation API",
+    "accounts or authentication",
+    "analytics",
+    "persistent translation history",
+    "service worker or PWA offline cache",
+    "Core trace exposure",
+    "normative rule promotion",
+    "reverse Braille translation",
+    "Braille Music",
+    "Microsoft 365 behavior",
+    "npm publication"
+  ]
+}
