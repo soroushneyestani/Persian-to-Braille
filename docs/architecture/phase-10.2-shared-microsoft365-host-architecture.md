@@ -237,26 +237,44 @@ Presentation
 The base manifest must not contain application-specific API sets that would
 need to be simultaneously supported by every target host.
 
-Phase 10.5 will materialize three sibling `VersionOverridesV1_0` sections:
+Phase 10.5 originally attempted three sibling
+`VersionOverridesV1_0` sections. The official Microsoft manifest validator
+rejected that shape under the task-pane `OfficeApp` schema.
+
+The corrected manifest architecture is:
 
 ```text
-Document
-  AddinCommands 1.1
-  WordApi 1.1
+one VersionOverridesV1_0
+  Requirements
+    AddinCommands 1.1
 
-Workbook
-  AddinCommands 1.1
-  ExcelApi 1.1
+  Hosts
+    Document
+      Word command surface
 
-Presentation
-  AddinCommands 1.1
-  PowerPointApi 1.5
+    Workbook
+      Excel command surface
+
+    Presentation
+      PowerPoint command surface
 ```
 
-Each VersionOverrides section owns its corresponding host command structure.
+Application-specific API baselines are intentionally **not** placed in the
+multi-host manifest requirement sets. They remain host-specific runtime gates:
 
-The three-host XML is not accepted until the official Microsoft manifest
-validator passes.
+```text
+Word        -> WordApi 1.1
+Excel       -> ExcelApi 1.1
+PowerPoint  -> PowerPointApi 1.5
+```
+
+The shared readiness layer enforces these with
+`Office.context.requirements.isSetSupported`, so an API requirement for one
+Office application cannot accidentally suppress commands for the other hosts.
+
+This is a Phase 10.5 schema correction to the original Decision 5. The
+three-host XML is not accepted until the official Microsoft manifest validator
+passes.
 
 ## Readiness architecture
 

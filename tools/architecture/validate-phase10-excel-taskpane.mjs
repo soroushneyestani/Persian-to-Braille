@@ -96,15 +96,8 @@ const manifestSha =
     .update(manifest)
     .digest("hex");
 
-if (
-  manifestSha !==
-  baseline.currentMicrosoft365State
-    .manifestSha256AtAudit
-) {
-  fail(
-    "manifest changed during 10.3b; multi-host manifest work belongs to Phase 10.5",
-  );
-}
+// Phase 10.3b task-pane invariants remain valid after the manifest
+// intentionally evolves in Phase 10.5.
 
 for (
   const [value, token, label] of [
@@ -163,7 +156,7 @@ console.log(
   "Excel: one plain-text cell | Replace only",
 );
 console.log(
-  "Manifest: unchanged / Word-only until Phase 10.5",
+  "10.3b invariant: Word/Excel shared task-pane behavior remains valid",
 );
 console.log(
   "Later host dispatch extensions are allowed when validated separately",

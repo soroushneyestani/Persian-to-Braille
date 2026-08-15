@@ -86,7 +86,7 @@ equal(
 );
 equal(
   contract.manifestArchitecture?.versionOverridesStrategy,
-  "one sibling VersionOverridesV1_0 per Office application",
+  "one VersionOverridesV1_0 with three host command entries",
   "VersionOverrides strategy",
 );
 equal(

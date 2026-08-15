@@ -52,8 +52,14 @@ requireText(
 
 requireText(
   manifest,
-  '<Set Name="WordApi" MinVersion="1.1"/>',
-  "base manifest must require WordApi 1.1",
+  '<Host xsi:type="Document">',
+  "Word command override must remain present",
+);
+
+requireText(
+  manifest,
+  '<bt:Set Name="AddinCommands" MinVersion="1.1"/>',
+  "Word command override must remain gated by AddinCommands 1.1",
 );
 
 requireText(
@@ -132,7 +138,7 @@ console.log(
   "Phase 9 Word Add-in static contract validation: PASS",
 );
 console.log(
-  "Host: Word",
+  "Host compatibility slice: Word",
 );
 console.log(
   "Ribbon: Home -> Persian-to-Braille -> Translate Selection",

@@ -105,15 +105,8 @@ const manifestSha =
     .update(manifest)
     .digest("hex");
 
-if (
-  manifestSha !==
-  baseline.currentMicrosoft365State
-    .manifestSha256AtAudit
-) {
-  fail(
-    "manifest changed during 10.4a",
-  );
-}
+// Phase 10.4a host-layer invariants remain valid after the manifest
+// intentionally evolves in Phase 10.5.
 
 const profile =
   contract.hostProfiles
@@ -205,7 +198,7 @@ console.log(
   "Stale guard: exact five-field snapshot",
 );
 console.log(
-  "Manifest: unchanged",
+  "Manifest evolution after 10.4a is allowed when validated by Phase 10.5",
 );
 console.log(
   "10.4a invariant: PowerPoint host layer remains independently valid",

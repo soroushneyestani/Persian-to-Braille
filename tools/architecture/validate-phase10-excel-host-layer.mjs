@@ -89,15 +89,8 @@ const manifestSha =
     .update(manifest)
     .digest("hex");
 
-if (
-  manifestSha !==
-  baseline.currentMicrosoft365State
-    .manifestSha256AtAudit
-) {
-  fail(
-    "manifest changed during 10.3a; multi-host manifest work belongs to Phase 10.5",
-  );
-}
+// Phase 10.3a host-layer invariants remain valid after the manifest
+// intentionally evolves in Phase 10.5.
 
 for (
   const [value, token, label] of [
@@ -157,7 +150,7 @@ console.log(
   "Stale guard: exact cell snapshot",
 );
 console.log(
-  "Manifest: unchanged from Phase 9",
+  "10.3a invariant: Excel host layer remains valid after later manifest evolution",
 );
 console.log(
   "Word task pane/runtime: untouched in 10.3a",
