@@ -17,7 +17,7 @@ import {
 } from "node:url";
 
 import {
-  createProductionManifest,
+  createMarketplaceSubmissionManifest,
 } from "./marketplace/production-manifest.mjs";
 
 const here =
@@ -62,7 +62,7 @@ const developmentManifest =
   );
 
 const production =
-  createProductionManifest(
+  createMarketplaceSubmissionManifest(
     developmentManifest,
     productionBaseUrl,
   );
@@ -111,6 +111,18 @@ console.log(
 );
 console.log(
   `Production base URL: ${production.baseUrl}`,
+);
+
+console.log(
+  `Marketplace Support URL: ${production.complianceUrls.support}`,
+);
+
+console.log(
+  `Marketplace Privacy URL: ${production.complianceUrls.privacy}`,
+);
+
+console.log(
+  `Marketplace EULA URL: ${production.complianceUrls.eula}`,
 );
 console.log(
   "Hosted site payload: marketplace-dist/site",

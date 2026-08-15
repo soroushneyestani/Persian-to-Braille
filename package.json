@@ -64,7 +64,9 @@
     "validate:phase11-3a-compliance-baseline": "node tools/architecture/validate-phase11-3a-compliance-baseline.mjs",
     "validate:phase11-3a": "pnpm run validate:phase11-2 && pnpm run validate:phase11-3a-compliance-baseline",
     "validate:phase11-3b-compliance-pages": "node tools/architecture/validate-phase11-3b-compliance-pages.mjs",
-    "validate:phase11-3b": "pnpm run validate:phase11-3a && pnpm --filter @persian-braille/microsoft365 run test:marketplace-compliance && pnpm run validate:phase11-3b-compliance-pages"
+    "validate:phase11-3b": "pnpm run validate:phase11-3a && pnpm --filter @persian-braille/microsoft365 run test:marketplace-compliance && pnpm run validate:phase11-3b-compliance-pages",
+    "validate:phase11-3c-support-url": "node tools/architecture/validate-phase11-3c-production-support-url.mjs",
+    "validate:phase11-3c": "pnpm run validate:phase11-3b && pnpm --filter @persian-braille/microsoft365 run test:marketplace-support-url && pnpm run validate:phase11-3c-support-url"
   },
   "devDependencies": {
     "typescript": "6.0.3"
