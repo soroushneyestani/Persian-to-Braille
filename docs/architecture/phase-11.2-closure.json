@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.2",
+  "title": "Production Hosting / HTTPS / Production Manifest Closure",
+  "status": "closed",
+  "subphases": {
+    "11.2a": {
+      "name": "Production Manifest / Deployment Architecture",
+      "status": "closed"
+    },
+    "11.2b": {
+      "name": "Actual HTTPS Hosting + Remote Validation",
+      "status": "closed"
+    }
+  },
+  "developmentManifest": {
+    "status": "preserved",
+    "baseUrl": "https://localhost:3000"
+  },
+  "production": {
+    "hosting": "GitHub Pages",
+    "origin": "https://soroushneyestani.github.io/Persian-to-Braille",
+    "https": "verified-pass",
+    "remoteProbe": "pass",
+    "officeJsCdn": "pass",
+    "iconCacheHeaders": "pass"
+  },
+  "phase10Regression": "pass",
+  "marketplaceSupportUrl": "deferred-to-11.3",
+  "nextPhase": "11.3",
+  "nextPhaseName": "Support / Privacy / EULA / Publisher Identity"
+}

@@ -1,0 +1,308 @@
+Phase 11.2b — Live GitHub Pages / Marketplace HTTPS Evidence
+
+Recorded: 2026-08-15T12:37:22Z
+Branch: phase11-marketplace
+Commit: bc8575d0522be57b521aedd3f722a9a084fd53ec
+Production origin: https://soroushneyestani.github.io/Persian-to-Braille
+
+GitHub Actions observation supplied during live verification:
+- Workflow: Microsoft 365 Marketplace Pages
+- Workflow run: #3
+- Overall status: SUCCESS
+- build job: PASS
+- deploy job: PASS
+- Pages artifact: github-pages-1
+- submission manifest artifact: microsoft365-marketplace-manifest
+- Environment: github-pages
+- Allowed deployment branches: main, phase11-marketplace
+
+NOTE:
+The GitHub Actions observation above is manually recorded from the successful
+GitHub Actions run. The executable evidence below is reproduced directly by
+this script.
+
+====================================================================================================
+COMMAND: pnpm run validate:phase11-2b-candidate
+EXIT: 0
+====================================================================================================
+$ pnpm run validate:phase11-2a && pnpm run validate:phase11-pages-deployment
+$ pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest
+$ pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline
+$ pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure
+$ pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit
+$ pnpm run spec:prepare && tsc -p tsconfig.json
+$ node ../../tools/architecture/build-runtime-spec-bundle.mjs
+Persian Braille runtime specification bundle generated.
+Profile: fa-ir-g1 0.1.0 (draft)
+Rules: 175
+Statuses: candidate=138, normative=37
+Types: character=132, context=7, layout=27, mode=5, normalization=1, sequence=3
+Canonical source SHA-256: dcdb19f08c34d0f39784dfc8404ff8f177141460705d6b701f6d33755829c682
+Output: packages/core/src/generated/fa-ir-g1.runtime.ts
+$ tsc -p tsconfig.json
+$ node tools/architecture/validate-phase10-office-baseline.mjs
+Phase 10.1 Excel / PowerPoint baseline validation: PASS
+10.1 historical implementation snapshot: Word only
+Production manifest family: add-in-only XML
+Word baseline: WordApi 1.1
+Excel baseline: ExcelApi 1.1
+PowerPoint baseline: PowerPointApi 1.5
+Baseline scope: historical audit; later manifest evolution is allowed.
+$ node tools/architecture/validate-phase10-shared-host-architecture.mjs
+Phase 10.2 shared Microsoft 365 host architecture: PASS
+Word: WordApi 1.1 | Replace + Insert After
+Excel: ExcelApi 1.1 | single text cell | Replace only
+PowerPoint: PowerPointApi 1.5 | selected text | Replace only
+Manifest: add-in-only XML | host-scoped VersionOverrides
+Translation boundary: Microsoft365 -> SDK -> Core
+Contract scope: frozen host architecture; later implementations are allowed.
+$ node tools/architecture/validate-phase10-excel-host-layer.mjs
+Phase 10.3a Excel host-layer validation: PASS
+Excel: ExcelApi 1.1 | one plain-text cell | Replace only
+Stale guard: exact cell snapshot
+10.3a invariant: Excel host layer remains valid after later manifest evolution
+Word task pane/runtime: untouched in 10.3a
+Next: Phase 10.3b shared task pane + Excel dispatch
+$ node tools/architecture/validate-phase10-excel-taskpane.mjs
+Phase 10.3b shared task-pane validation: PASS
+10.3b invariants: Office.onReady still supports Word | Excel
+Word: Replace + Insert After
+Excel: one plain-text cell | Replace only
+10.3b invariant: Word/Excel shared task-pane behavior remains valid
+Later host dispatch extensions are allowed when validated separately
+$ node tools/architecture/validate-phase10-powerpoint-host-layer.mjs
+Phase 10.4a PowerPoint host-layer validation: PASS
+PowerPoint: PowerPointApi 1.5 | selected text range | Replace only
+Snapshot: slideId + shapeId + start + length + text
+Stale guard: exact five-field snapshot
+Manifest evolution after 10.4a is allowed when validated by Phase 10.5
+10.4a invariant: PowerPoint host layer remains independently valid
+Later task-pane integration is allowed when validated separately
+$ node tools/architecture/validate-phase10-powerpoint-taskpane.mjs
+Phase 10.4b PowerPoint task-pane validation: PASS
+Dispatch: Office.onReady -> Word | Excel | PowerPoint
+Word: Replace + Insert After
+Excel: Replace only
+PowerPoint: PowerPointApi 1.5 | selected text range | Replace only
+10.4b invariant: three-host task-pane dispatch remains valid
+Next: Phase 10.5 Sideload / Regression / Cross-host Evidence
+$ pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure
+$ node tools/architecture/validate-phase10-multihost-manifest.mjs
+Phase 10.5a multi-host manifest static validation: PASS
+Base hosts: Document | Workbook | Presentation
+VersionOverrides: one V1_0 section with three Host command entries
+Manifest requirement: AddinCommands 1.1 only
+Runtime API gates: WordApi 1.1 | ExcelApi 1.1 | PowerPointApi 1.5
+Permission: ReadWriteDocument
+Official Microsoft manifest validation: REQUIRED SEPARATELY
+$ node tools/architecture/validate-phase10-windows-live-evidence.mjs
+Phase 10.5 Windows live evidence validation: PASS
+Word / Windows: LIVE VERIFIED / PASS
+Excel / Windows: LIVE VERIFIED / PASS
+PowerPoint / Windows: LIVE VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Next: Phase 10.5d closure
+$ node tools/architecture/validate-phase10-5-closure.mjs
+Phase 10.5 closure validation: PASS
+10.5a manifest + Microsoft validation: CLOSED
+10.5b Windows live sideload: CLOSED
+10.5c cross-host regression evidence: CLOSED
+Word / Excel / PowerPoint Windows: VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Next: Phase 10.6 Phase 10 Closure
+$ pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure
+$ node tools/architecture/validate-phase9-word-host-contract.mjs
+Phase 9 Word host adapter contract validation: PASS
+Host: Word
+Clients: Web, Microsoft 365 Windows, Microsoft 365 Mac
+Manifest baseline: add-in-only XML
+Minimum requirement set: WordApi 1.1
+Architecture: Word -> SDK only
+Mutation guard: current selection must exactly equal preview source
+$ pnpm --filter @persian-braille/microsoft365 run test
+$ pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs
+$ pnpm run spec:prepare && tsc -p tsconfig.json
+$ node ../../tools/architecture/build-runtime-spec-bundle.mjs
+Persian Braille runtime specification bundle generated.
+Profile: fa-ir-g1 0.1.0 (draft)
+Rules: 175
+Statuses: candidate=138, normative=37
+Types: character=132, context=7, layout=27, mode=5, normalization=1, sequence=3
+Canonical source SHA-256: dcdb19f08c34d0f39784dfc8404ff8f177141460705d6b701f6d33755829c682
+Output: packages/core/src/generated/fa-ir-g1.runtime.ts
+$ tsc -p tsconfig.json
+$ tsc -p tsconfig.json && node build-addin.mjs
+Persian-to-Braille Microsoft 365 Add-in static build: PASS
+Task pane: addin-dist/taskpane.html
+Runtime boundary: Microsoft365 -> SDK -> Core
+Office.js: Microsoft CDN
+✔ Excel host adapter preserves one plain-text cell verbatim (1.1565ms)
+✔ Excel adapter rejects access before Office readiness (0.1483ms)
+✔ Excel adapter rejects non-Excel Office hosts (0.096ms)
+✔ Excel adapter enforces ExcelApi 1.1 (0.1058ms)
+✔ Excel adapter rejects multi-cell selections (0.1187ms)
+✔ Excel adapter rejects non-string cells (0.1025ms)
+✔ Excel adapter rejects formula cells even when their result is text (0.1149ms)
+✔ Excel selection service translates through the public SDK (4.1879ms)
+✔ empty Excel text cell is an application failure (0.1758ms)
+✔ Excel SDK failures remain translation-domain results (0.8974ms)
+✔ Excel replace writes the exact successful SDK Unicode Braille result (1.3584ms)
+✔ Excel selection change blocks stale preview mutation (0.1067ms)
+✔ Excel workbook write exceptions map to WORKBOOK_WRITE_FAILED (0.1416ms)
+✔ global Excel runtime reports not ready outside an Office host (0.1567ms)
+✔ Office Excel runtime uses Excel.run and exact snapshot stale guard (0.5105ms)
+✔ PowerPoint host adapter preserves selected text and five-field snapshot (0.9114ms)
+✔ PowerPoint adapter rejects access before Office readiness (0.141ms)
+✔ PowerPoint adapter rejects non-PowerPoint Office hosts (0.0929ms)
+✔ PowerPoint adapter enforces PowerPointApi 1.5 (0.0826ms)
+✔ PowerPoint adapter reports no selected text as SELECTION_UNAVAILABLE (0.107ms)
+✔ PowerPoint selection service translates through the public SDK (4.809ms)
+✔ empty PowerPoint selected text is an application failure (0.2919ms)
+✔ PowerPoint SDK failures remain translation-domain results (1.2521ms)
+✔ PowerPoint replace writes the exact successful SDK Unicode Braille result (1.2408ms)
+✔ PowerPoint selection change blocks stale preview mutation (1.9252ms)
+✔ PowerPoint presentation write exceptions map to PRESENTATION_WRITE_FAILED (0.764ms)
+✔ global PowerPoint runtime reports not ready outside an Office host (0.1137ms)
+✔ Office PowerPoint runtime uses PowerPoint.run and exact five-field stale guard (0.4739ms)
+✔ controller initializes the Word task pane (1.3317ms)
+✔ successful selection translation renders only the public projection (0.2408ms)
+✔ host selection failure remains a host-domain UI failure (0.1794ms)
+✔ empty selection remains an application-domain UI failure (0.139ms)
+✔ SDK failures are projected without inventing Word translation semantics (0.1661ms)
+✔ copy writes the exact SDK Unicode Braille result (0.2262ms)
+✔ clipboard failure is surfaced without changing translation semantics (0.304ms)
+✔ replace delegates the exact successful preview to the selection service (0.2037ms)
+✔ insert-after delegates the exact successful preview to the selection service (0.1785ms)
+✔ failed Word mutation remains a host-domain UI failure (1.0563ms)
+✔ task pane references production Office.js CDN and public SDK import map (4.25ms)
+✔ manifest preserves the Word Home ribbon task-pane command in the multi-host manifest (0.7345ms)
+✔ static build materializes task pane, SDK, Core, and Office command icons (1.1287ms)
+✔ task-pane readiness rejects a standalone browser outside Office (1.3851ms)
+✔ task-pane readiness rejects a non-Word Office host (0.1485ms)
+✔ task-pane readiness requires the Word runtime after Office.onReady (0.3125ms)
+✔ task-pane readiness accepts a supported Word runtime (0.2068ms)
+✔ preview command builds the Microsoft 365 dependency closure from a clean workspace (0.9608ms)
+✔ shared task-pane controller initializes Excel with replace-only capabilities (0.6197ms)
+✔ shared task-pane controller rejects Insert After for Excel (0.2086ms)
+✔ shared task-pane readiness accepts a supported Excel runtime (0.182ms)
+✔ shared task-pane readiness preserves supported Word dispatch (0.1197ms)
+✔ shared task-pane controller initializes PowerPoint with replace-only capabilities (0.2307ms)
+✔ shared task-pane controller rejects Insert After for PowerPoint (0.1807ms)
+✔ shared task-pane readiness accepts a supported PowerPoint runtime (0.1205ms)
+✔ shared task-pane readiness enforces PowerPointApi 1.5 (0.1097ms)
+✔ global runtime reports not ready outside an Office host (0.7081ms)
+✔ host adapter preserves selected text verbatim (0.6005ms)
+✔ host adapter rejects access before Office readiness (0.1248ms)
+✔ host adapter rejects non-Word Office hosts (0.0959ms)
+✔ host adapter enforces WordApi 1.1 (0.1061ms)
+✔ selection read failures remain host failures (0.1341ms)
+✔ selection service translates through the public SDK (4.0174ms)
+✔ empty selection is an application failure, not an SDK or host failure (0.1428ms)
+✔ SDK translation failure remains a translation-domain result (1.3536ms)
+✔ current U+0622 behavior is delegated entirely to the SDK (1.1797ms)
+✔ replace writes the exact successful SDK Unicode Braille result (0.6359ms)
+✔ insert-after writes the exact successful SDK Unicode Braille result (0.5172ms)
+✔ selection change blocks stale preview mutation (0.8994ms)
+✔ document write exceptions map to DOCUMENT_WRITE_FAILED (0.1332ms)
+✔ Office runtime port uses Word.run, load/sync, and exact stale-selection guard (0.5026ms)
+ℹ tests 69
+ℹ suites 0
+ℹ pass 69
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.465
+$ node tools/architecture/validate-phase9-word-addin.mjs
+Phase 9 Word Add-in static contract validation: PASS
+Host compatibility slice: Word
+Ribbon: Home -> Persian-to-Braille -> Translate Selection
+Task pane: HTTPS localhost
+Office.js: Microsoft CDN
+Translation boundary: task pane -> Microsoft365 selection service -> SDK
+$ node tools/architecture/validate-phase9-word-sideload-evidence.mjs
+Phase 9.5 Word sideload evidence validation: PASS
+Windows: VERIFIED / PASS
+Web: EXPECTED / NOT EXECUTED
+Mac: EXPECTED / NOT EXECUTED
+Deferred release gate: actual Web + Mac execution before Phase 11 closure
+$ node tools/architecture/validate-phase9-closure.mjs
+Phase 9 closure validation: PASS
+Word Windows: VERIFIED / PASS
+Word Web: EXPECTED / NOT EXECUTED
+Word Mac: EXPECTED / NOT EXECUTED
+Architecture: Specification -> Core -> SDK -> Microsoft365 -> Word
+Phase 11 release gate: actual Web + Mac execution
+$ node tools/architecture/validate-phase10-closure.mjs
+Phase 10 Microsoft 365 Full Add-in closure validation: PASS
+Phase 10.1: CLOSED
+Phase 10.2: CLOSED
+Phase 10.3: CLOSED
+Phase 10.4: CLOSED
+Phase 10.5: CLOSED
+Phase 10.6: CLOSED
+Word / Excel / PowerPoint Windows: VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Boundary: Microsoft365 -> SDK -> Core
+Next: Phase 11 Microsoft Marketplace
+$ node tools/architecture/validate-phase11-marketplace-baseline.mjs
+Phase 11.1 Marketplace submission baseline validation: PASS
+Phase 10 merged regression baseline: PASS
+Windows: VERIFIED / PASS
+Production hosting / Support / Privacy / EULA: GAPS RECORDED
+Web / Mac: RELEASE GATES
+iOS/iPad: DECISION GATE
+Next: Phase 11.2 Production Hosting / HTTPS / Production Manifest
+$ node --test test/marketplace-build.test.mjs
+✔ production base URL accepts an HTTPS origin (0.637ms)
+✔ production base URL preserves a project path and removes trailing slash (0.1294ms)
+✔ production base URL rejects "" (0.1794ms)
+✔ production base URL rejects "http://example.com" (0.0868ms)
+✔ production base URL rejects "https://localhost:3000" (0.0686ms)
+✔ production base URL rejects "https://127.0.0.1:3000" (0.0582ms)
+✔ production base URL rejects "https://example.com/app?mode=prod" (0.0561ms)
+✔ production base URL rejects "https://example.com/app#fragment" (0.0525ms)
+✔ production manifest rewrites only the frozen localhost deployment base (0.2891ms)
+✔ 11.2a intentionally leaves SupportUrl for Phase 11.3 (0.1965ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.9655
+$ node tools/architecture/validate-phase11-production-manifest-architecture.mjs
+Phase 11.2a production manifest / deployment architecture: PASS
+Development manifest: PRESERVED / localhost
+Marketplace manifest: GENERATED FROM EXPLICIT HTTPS BASE URL
+Production hosting: NOT YET EXECUTED
+SupportUrl replacement: DEFERRED TO 11.3
+Next: Phase 11.2b actual HTTPS hosting + remote validation
+$ node tools/architecture/validate-phase11-github-pages-deployment.mjs
+Phase 11.2b GitHub Pages deployment candidate validation: PASS
+Expected origin: https://soroushneyestani.github.io/Persian-to-Braille
+Development localhost manifest: PRESERVED
+Pages deployment: SOURCE-CONTROLLED / LIVE EXECUTION REQUIRED
+Next gate: enable Pages -> push branch -> run remote probe
+
+====================================================================================================
+COMMAND: pnpm run probe:phase11-marketplace-remote
+EXIT: 0
+====================================================================================================
+$ node tools/architecture/probe-phase11-marketplace-remote.mjs
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/taskpane.html
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/commands.html
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/styles.css
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/assets/icon-16.png
+       cache-control: max-age=600
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/assets/icon-32.png
+       cache-control: max-age=600
+[PASS] https://soroushneyestani.github.io/Persian-to-Braille/assets/icon-80.png
+       cache-control: max-age=600
+
+Phase 11.2b remote Marketplace HTTPS probe: PASS
+Origin: https://soroushneyestani.github.io/Persian-to-Braille
+Task pane Office.js CDN: PASS
+Required static endpoints: PASS
+Icon cache headers: PASS
