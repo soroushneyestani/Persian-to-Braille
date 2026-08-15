@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.4b",
+  "locale": "en-US",
+  "name": "Persian-to-Braille",
+  "summary": "Translate selected Persian text to Unicode Braille in Word, Excel, and PowerPoint.",
+  "description": "Translate selected Persian text to Braille through the shared Persian-to-Braille SDK.\n\nPersian-to-Braille helps people who work with Persian text create Unicode Braille directly inside Microsoft Word, Excel, and PowerPoint. The add-in is designed for accessibility-focused workflows where a user needs a clear, repeatable way to convert selected Persian content without copying the document into a separate translation service.\n\nIn Word, select Persian text and open the Persian-to-Braille task pane to preview the translation. A successful result can replace the current selection or be inserted after it. In Excel, select one plain-text cell to preview and replace its contents with the translated Braille result. In PowerPoint, select a text range and replace it after reviewing the preview. Each host uses selection checks before writing back so that a stale preview is not silently applied to changed content.\n\nThe Microsoft 365 integration uses the same public Persian-to-Braille SDK as the standalone project. The Office layer does not implement a separate translation table. This keeps Word, Excel, PowerPoint, CLI, web, and future integrations aligned with the same core translation behavior.\n\nThe current release is intended for users, educators, accessibility specialists, developers, and organizations working with Persian-language Braille content. It can support document preparation, educational material, accessibility testing, demonstrations, and workflows that need Unicode Braille output for selected Persian text.\n\nNo publisher-controlled account, sign-in flow, analytics system, or cloud translation service is required by the audited add-in release. Translation runs through the client-side SDK and Core. Microsoft Office infrastructure, Office.js, the user’s Microsoft 365 environment, and the project’s static hosting remain separate platform services governed by their own terms and technical processing.\n\nPersian-to-Braille is an open-source project. The Core and SDK are released under the MIT License. Support, privacy information, and end-user terms are available from the project’s public HTTPS pages for users and organizations worldwide.",
+  "searchKeywords": [
+    "Persian",
+    "Farsi",
+    "Braille",
+    "accessibility",
+    "translation"
+  ],
+  "publisher": {
+    "manifestProviderName": "Soroush Neyestani",
+    "partnerCenterStatus": "external-blocked"
+  },
+  "hosts": [
+    "Word",
+    "Excel",
+    "PowerPoint"
+  ],
+  "categories": {
+    "status": "deferred-to-live-partner-center-ui",
+    "requiredCount": {
+      "min": 1,
+      "max": 3
+    },
+    "decision": "Select the most accurate accessibility/productivity category or categories from the live Partner Center Properties taxonomy when publisher enrollment becomes available; do not invent a category identifier in source control."
+  },
+  "industries": {
+    "selected": [],
+    "decision": "None; the add-in is not industry-specific.",
+    "maximumAllowed": 2
+  },
+  "complianceUrls": {
+    "support": "https://soroushneyestani.github.io/Persian-to-Braille/support.html",
+    "privacy": "https://soroushneyestani.github.io/Persian-to-Braille/privacy.html",
+    "eula": "https://soroushneyestani.github.io/Persian-to-Braille/eula.html"
+  },
+  "screenshots": [
+    {
+      "id": "word-selection",
+      "status": "planned",
+      "host": "Word",
+      "caption": "Translate a selected Persian passage, preview the Unicode Braille result, then replace or insert it."
+    },
+    {
+      "id": "excel-text-cell",
+      "status": "planned",
+      "host": "Excel",
+      "caption": "Translate one selected plain-text Excel cell and replace it with the reviewed Braille result."
+    },
+    {
+      "id": "powerpoint-text-range",
+      "status": "planned",
+      "host": "PowerPoint",
+      "caption": "Translate a selected PowerPoint text range and replace it after previewing the Braille output."
+    }
+  ],
+  "video": {
+    "status": "not-required"
+  },
+  "storeListingIcon": {
+    "status": "pending-partner-center-ui",
+    "decision": "Use the same visual identity as the manifest icon and satisfy the live Partner Center upload requirements."
+  },
+  "manifestIcons": {
+    "iconUrl": "assets/icon-32.png",
+    "highResolutionIconUrl": "assets/icon-64.png",
+    "commandIcon80": "assets/icon-80.png"
+  },
+  "manualPreviewDistribution": {
+    "status": "planned-separate-subtrack",
+    "classification": "manual-sideload-preview",
+    "mustNotClaimMarketplacePublication": true
+  }
+}
