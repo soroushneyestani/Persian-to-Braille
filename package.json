@@ -79,7 +79,9 @@
     "build:marketplace-preview": "pnpm --filter @persian-braille/microsoft365 run build:marketplace && pnpm run build:manual-preview",
     "test:manual-preview": "node --test integrations/microsoft365/test/manual-preview-distribution.test.mjs",
     "validate:phase11-4c-manual-preview": "node tools/architecture/validate-phase11-4c-public-manual-preview.mjs",
-    "validate:phase11-4c": "pnpm run validate:phase11-4b && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4c-manual-preview"
+    "validate:phase11-4c": "pnpm run validate:phase11-4b && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4c-manual-preview",
+    "validate:phase11-4c-live-manual-preview": "node tools/architecture/validate-phase11-4c-live-manual-preview.mjs",
+    "validate:phase11-4c-live": "pnpm run validate:phase11-4c && pnpm run validate:phase11-4c-live-manual-preview"
   },
   "devDependencies": {
     "typescript": "6.0.3"

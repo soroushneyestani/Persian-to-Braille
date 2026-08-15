@@ -1,0 +1,170 @@
+{
+  "phase": "11.4c-live",
+  "mode": "READ-ONLY",
+  "branch": "phase11-marketplace",
+  "head": "fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1",
+  "shortHead": "fc44696",
+  "checks": {
+    "branch": {
+      "pass": true,
+      "detail": "phase11-marketplace (expected phase11-marketplace)"
+    },
+    "HEAD": {
+      "pass": true,
+      "detail": "fc44696 (expected fc44696)"
+    },
+    "working tree": {
+      "pass": true,
+      "detail": "clean (probe evidence files ignored)"
+    },
+    "origin branch HEAD": {
+      "pass": true,
+      "detail": "fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1"
+    },
+    "Pages workflow current HEAD": {
+      "pass": true,
+      "detail": "run #5 / attempt 1"
+    },
+    "Pages workflow status": {
+      "pass": true,
+      "detail": "completed"
+    },
+    "Pages workflow conclusion": {
+      "pass": true,
+      "detail": "success"
+    },
+    "install HTTP": {
+      "pass": true,
+      "detail": "200 | SHA-256 a6fba93e1fe49138503a27c370f93ee65674d8efe47bd463fab796025f82d31d"
+    },
+    "manifest HTTP": {
+      "pass": true,
+      "detail": "200 | SHA-256 a3d05cadd9a668186b474e1222123717abc41893b247a5790498e87e0136ee73"
+    },
+    "css HTTP": {
+      "pass": true,
+      "detail": "200 | SHA-256 266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05"
+    },
+    "manual preview title": {
+      "pass": true,
+      "detail": "present"
+    },
+    "Marketplace disclaimer": {
+      "pass": true,
+      "detail": "present"
+    },
+    "download link": {
+      "pass": true,
+      "detail": "present"
+    },
+    "web sideload instruction": {
+      "pass": true,
+      "detail": "present"
+    },
+    "admin deployment instruction": {
+      "pass": true,
+      "detail": "present"
+    },
+    "Windows network-share warning": {
+      "pass": true,
+      "detail": "present"
+    },
+    "verification guard": {
+      "pass": true,
+      "detail": "present"
+    },
+    "publication guard": {
+      "pass": true,
+      "detail": "present"
+    },
+    "install live/source content": {
+      "pass": true,
+      "detail": "MATCH"
+    },
+    "manifest no localhost": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "production base URL": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "production SupportUrl": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "64x64 high-resolution icon": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "Word host": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "Excel host": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "PowerPoint host": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "live/generated manifest content": {
+      "pass": true,
+      "detail": "MATCH"
+    }
+  },
+  "endpoints": {
+    "install": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+      "status": 200,
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+      "sha256": "a6fba93e1fe49138503a27c370f93ee65674d8efe47bd463fab796025f82d31d",
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 5107,
+      "attempt": 1
+    },
+    "manifest": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+      "status": 200,
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+      "sha256": "a3d05cadd9a668186b474e1222123717abc41893b247a5790498e87e0136ee73",
+      "contentType": "application/xml",
+      "contentLength": 7406,
+      "attempt": 1
+    },
+    "css": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/compliance.css",
+      "status": 200,
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/compliance.css",
+      "sha256": "266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05",
+      "contentType": "text/css; charset=utf-8",
+      "contentLength": 1458,
+      "attempt": 1
+    }
+  },
+  "workflow": {
+    "id": 31892620659,
+    "runNumber": 5,
+    "runAttempt": 1,
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1",
+    "htmlUrl": "https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31892620659"
+  },
+  "remoteHead": "fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1",
+  "installSourceSha256": "a6fba93e1fe49138503a27c370f93ee65674d8efe47bd463fab796025f82d31d",
+  "installLiveMatchesCommittedSource": true,
+  "declaredHostValues": [
+    "Document",
+    "Presentation",
+    "Workbook"
+  ],
+  "localGeneratedManifest": {
+    "path": "C:/Projects/Persian-to-Braille/integrations/microsoft365/marketplace-dist/manifest.xml",
+    "sha256": "a3d05cadd9a668186b474e1222123717abc41893b247a5790498e87e0136ee73",
+    "liveMatches": true
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,60 @@
+PHASE 11.4c LIVE MANUAL PREVIEW PROBE — V2
+==============================================================================
+Mode: READ-ONLY
+Branch: phase11-marketplace
+HEAD: fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1
+
+[PASS] branch: phase11-marketplace (expected phase11-marketplace)
+[PASS] HEAD: fc44696 (expected fc44696)
+[PASS] working tree: clean (probe evidence files ignored)
+
+REMOTE BRANCH
+------------------------------------------------------------------------------
+[PASS] origin branch HEAD: fc446963f7e8c8d4cb032a6eeff9fc9eb6fe85f1
+
+GITHUB ACTIONS
+------------------------------------------------------------------------------
+[PASS] Pages workflow current HEAD: run #5 / attempt 1
+[PASS] Pages workflow status: completed
+[PASS] Pages workflow conclusion: success
+Run URL: https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31892620659
+
+LIVE HTTPS ENDPOINTS
+------------------------------------------------------------------------------
+[PASS] install HTTP: 200 | SHA-256 a6fba93e1fe49138503a27c370f93ee65674d8efe47bd463fab796025f82d31d
+[PASS] manifest HTTP: 200 | SHA-256 a3d05cadd9a668186b474e1222123717abc41893b247a5790498e87e0136ee73
+[PASS] css HTTP: 200 | SHA-256 266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05
+
+INSTALL PAGE CONTENT
+------------------------------------------------------------------------------
+[PASS] manual preview title: present
+[PASS] Marketplace disclaimer: present
+[PASS] download link: present
+[PASS] web sideload instruction: present
+[PASS] admin deployment instruction: present
+[PASS] Windows network-share warning: present
+[PASS] verification guard: present
+[PASS] publication guard: present
+[PASS] install live/source content: MATCH
+
+HOSTED MANIFEST CONTENT
+------------------------------------------------------------------------------
+[PASS] manifest no localhost: PASS
+[PASS] production base URL: PASS
+[PASS] production SupportUrl: PASS
+[PASS] 64x64 high-resolution icon: PASS
+[PASS] Word host: PASS
+[PASS] Excel host: PASS
+[PASS] PowerPoint host: PASS
+[PASS] live/generated manifest content: MATCH
+
+CLASSIFICATION
+------------------------------------------------------------------------------
+[EXTERNAL] Partner Center publisher enrollment remains EXTERNAL BLOCKED / NOT SATISFIED.
+[INFO] Public channel classification remains MANUAL SIDELOAD PREVIEW / NOT MARKETPLACE PUBLICATION.
+[INFO] Web / Mac remain EXPECTED / NOT EXECUTED; this probe verifies hosting, not Office runtime execution.
+
+RESULT
+------------------------------------------------------------------------------
+[PASS] Phase 11.4c live manual preview HTTPS verification
+Next: freeze Phase 11.4c live evidence, then continue Marketplace screenshots / listing assets.
