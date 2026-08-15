@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1",
+  "phase": "10.2",
+  "title": "Shared Microsoft 365 Host Architecture",
+  "status": "architecture-frozen-no-excel-or-powerpoint-runtime-yet",
+  "architecture": {
+    "dependencyFlow": [
+      "specification",
+      "core",
+      "sdk",
+      "microsoft365-shared-host-layer",
+      "host-adapter"
+    ],
+    "hostAdapters": [
+      "word",
+      "excel",
+      "powerpoint"
+    ],
+    "sdkIsOnlyTranslationDependency": true,
+    "coreDirectAccessFromMicrosoft365Forbidden": true,
+    "sharedTaskPaneController": true,
+    "hostCapabilityDrivenActions": true
+  },
+  "hostProfiles": {
+    "word": {
+      "officeHost": "Word",
+      "manifestHost": "Document",
+      "requirementSet": "WordApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "contiguous-text-range",
+      "phase10Actions": {
+        "translate": true,
+        "copy": true,
+        "replace": true,
+        "insertAfter": true
+      },
+      "staleGuard": "exact-current-selected-text-must-equal-preview-source",
+      "status": "existing-phase9-verified"
+    },
+    "excel": {
+      "officeHost": "Excel",
+      "manifestHost": "Workbook",
+      "requirementSet": "ExcelApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "single-cell-plain-text-only",
+      "phase10Actions": {
+        "translate": true,
+        "copy": true,
+        "replace": true,
+        "insertAfter": false
+      },
+      "selectionRules": {
+        "rowCount": 1,
+        "columnCount": 1,
+        "requiredValueType": "String",
+        "formulaCellsRejected": true,
+        "multiCellSelectionsRejected": true,
+        "discontiguousSelectionBehavior": "getSelectedRange failure maps to host selection failure"
+      },
+      "snapshot": [
+        "address",
+        "rowCount",
+        "columnCount",
+        "valueType",
+        "rawValue",
+        "formulaProjection"
+      ],
+      "staleGuard": "fresh selected cell must match the preview snapshot exactly before mutation",
+      "replaceWrite": "write exact SDK unicodeBraille as the new single-cell value",
+      "insertAfterReasonDeferred": "Appending by rewriting the cell can cause Excel formula coercion for text beginning with formula markers and would require host-specific escaping/format semantics. Phase 10 MVP does not invent those semantics.",
+      "status": "contract-only"
+    },
+    "powerpoint": {
+      "officeHost": "PowerPoint",
+      "manifestHost": "Presentation",
+      "requirementSet": "PowerPointApi",
+      "minimumVersion": "1.5",
+      "selectionModel": "selected-text-range",
+      "phase10Actions": {
+        "translate": true,
+        "copy": true,
+        "replace": true,
+        "insertAfter": false
+      },
+      "snapshot": [
+        "slideId",
+        "shapeId",
+        "start",
+        "length",
+        "text"
+      ],
+      "staleGuard": "fresh selected text range must match slide, shape, start, length, and text exactly before mutation",
+      "replaceWrite": "set selected TextRange.text to exact SDK unicodeBraille",
+      "insertAfterReasonDeferred": "PowerPoint does not expose Word.Range.insertText semantics on TextRange. Reconstructing selected text plus Braille would be a replacement with possible formatting consequences, so Phase 10 MVP does not label that as Insert After.",
+      "status": "contract-only"
+    }
+  },
+  "sharedContracts": {
+    "hostKind": [
+      "word",
+      "excel",
+      "powerpoint"
+    ],
+    "capabilityDescriptor": [
+      "hostKind",
+      "hostLabel",
+      "requirementSet",
+      "minimumVersion",
+      "canReplace",
+      "canInsertAfter"
+    ],
+    "selectionService": {
+      "translationMethod": "translateSelection",
+      "replaceMethod": "replaceWithBraille",
+      "insertAfterMethod": "optional insertBrailleAfter",
+      "previewRule": "controller may inspect only common sourceText and SDK translation projection; host mutation context remains opaque to the shared UI",
+      "mutationRule": "host service owns stale-selection validation and all Office object-model writes"
+    },
+    "viewRules": [
+      "ready state displays active host label",
+      "unsupported actions are disabled or hidden by capability, never simulated",
+      "copy remains browser/task-pane clipboard behavior",
+      "SDK failure projection remains host-neutral",
+      "host failure remains distinct from application and translation failure domains"
+    ]
+  },
+  "failureModel": {
+    "commonStructuralFailure": {
+      "ok": false,
+      "domain": "host",
+      "code": "string",
+      "message": "string"
+    },
+    "frozenWordCodesRemainValid": [
+      "OFFICE_NOT_READY",
+      "WRONG_HOST",
+      "UNSUPPORTED_REQUIREMENT_SET",
+      "SELECTION_UNAVAILABLE",
+      "SELECTION_CHANGED",
+      "DOCUMENT_WRITE_FAILED"
+    ],
+    "phase10HostSpecificCodesMayExtendWithoutRewritingWordHistory": true,
+    "plannedExcelCodes": [
+      "SELECTION_UNAVAILABLE",
+      "SELECTION_SHAPE_UNSUPPORTED",
+      "SELECTION_CONTENT_UNSUPPORTED",
+      "SELECTION_CHANGED",
+      "WORKBOOK_WRITE_FAILED"
+    ],
+    "plannedPowerPointCodes": [
+      "SELECTION_UNAVAILABLE",
+      "SELECTION_CHANGED",
+      "PRESENTATION_WRITE_FAILED"
+    ]
+  },
+  "manifestArchitecture": {
+    "family": "add-in-only XML",
+    "baseHosts": [
+      "Document",
+      "Workbook",
+      "Presentation"
+    ],
+    "baseApplicationSpecificSets": [],
+    "versionOverridesStrategy": "one sibling VersionOverridesV1_0 per Office application",
+    "hostOverrides": [
+      {
+        "host": "Document",
+        "requirements": [
+          {
+            "name": "AddinCommands",
+            "minimumVersion": "1.1"
+          },
+          {
+            "name": "WordApi",
+            "minimumVersion": "1.1"
+          }
+        ]
+      },
+      {
+        "host": "Workbook",
+        "requirements": [
+          {
+            "name": "AddinCommands",
+            "minimumVersion": "1.1"
+          },
+          {
+            "name": "ExcelApi",
+            "minimumVersion": "1.1"
+          }
+        ]
+      },
+      {
+        "host": "Presentation",
+        "requirements": [
+          {
+            "name": "AddinCommands",
+            "minimumVersion": "1.1"
+          },
+          {
+            "name": "PowerPointApi",
+            "minimumVersion": "1.5"
+          }
+        ]
+      }
+    ],
+    "commandRule": "duplicate the command host child structure for each Office application",
+    "officialManifestValidationRequiredBeforeAcceptance": true
+  },
+  "implementationOrder": [
+    "10.2 freeze architecture only",
+    "10.3 refactor shared task-pane layer and implement Excel adapter",
+    "10.3 keep all Word regressions green",
+    "10.4 implement PowerPoint adapter",
+    "10.5 materialize and validate the three-host manifest and collect live-host evidence",
+    "10.6 closure"
+  ],
+  "nonGoals": [
+    "multi-cell Excel translation in Phase 10 MVP",
+    "Excel formula translation or formula rewriting",
+    "Excel Insert After in Phase 10 MVP",
+    "PowerPoint Insert After in Phase 10 MVP",
+    "Office-specific Braille rules",
+    "direct Core calls from Office integration",
+    "claiming live Excel or PowerPoint verification before it occurs"
+  ]
+}
