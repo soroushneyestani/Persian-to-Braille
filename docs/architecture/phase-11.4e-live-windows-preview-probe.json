@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.4e-live",
+  "result": "PASS",
+  "classification": "WINDOWS SIDELOAD/TESTING PREVIEW / NOT MARKETPLACE PUBLICATION",
+  "git": {
+    "branch": "phase11-marketplace",
+    "head": "8c42ea364f0c7c7bf7b44fec7eb3d9f8e9218ecf",
+    "clean": true
+  },
+  "githubActions": {
+    "id": 31898463624,
+    "runNumber": 9,
+    "runAttempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "8c42ea364f0c7c7bf7b44fec7eb3d9f8e9218ecf",
+    "htmlUrl": "https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31898463624"
+  },
+  "textEndpoints": [
+    {
+      "name": "install.html",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sourceSha256Normalized": "147ccc5d45d9cf5c3705c4bace7238942f40c1aba912ba0bbc415004e6fcd385",
+      "liveSha256Normalized": "147ccc5d45d9cf5c3705c4bace7238942f40c1aba912ba0bbc415004e6fcd385",
+      "sourceMatch": true,
+      "requiredTokens": {
+        "Windows Desktop Preview": true,
+        "Download Windows Desktop Preview Installer": true,
+        "راهنمای نصب نسخه دسکتاپ ویندوز": true,
+        "Get Add-ins": true,
+        "Advanced": true,
+        "SHARED FOLDER": true,
+        "Persian-to-Braille": true,
+        "Translate Selection": true,
+        "./install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd": true,
+        "./install/screenshots/word-selection.png": true,
+        "./install/screenshots/excel-text-cell.png": true,
+        "./install/screenshots/powerpoint-text-range.png": true,
+        "not Microsoft Marketplace publication": true
+      },
+      "noLocalhost": true
+    },
+    {
+      "name": "Windows installer CMD",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "sourceSha256Normalized": "dd94a4da983d2d93bfa4e36878b48baae02fd77cf62f7fee22bd5aaacf7a03eb",
+      "liveSha256Normalized": "dd94a4da983d2d93bfa4e36878b48baae02fd77cf62f7fee22bd5aaacf7a03eb",
+      "sourceMatch": true,
+      "requiredTokens": {
+        "Persian-to-Braille - Windows Desktop Preview Installer": true,
+        "windows-preview-setup.ps1": true,
+        "ExecutionPolicy Bypass": true,
+        "NOT a Microsoft Marketplace installer": true
+      },
+      "noLocalhost": true
+    },
+    {
+      "name": "Windows setup PowerShell",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/windows/windows-preview-setup.ps1",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/windows/windows-preview-setup.ps1",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "sourceSha256Normalized": "078e735ce682d06659b88cbe2a928c33cfa6f6f937384fa8710e7c1e91267b0f",
+      "liveSha256Normalized": "078e735ce682d06659b88cbe2a928c33cfa6f6f937384fa8710e7c1e91267b0f",
+      "sourceMatch": true,
+      "requiredTokens": {
+        "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml": true,
+        "33ec7928-1204-5bb3-88e6-d778413e9234": true,
+        "New-SmbShare": true,
+        "HKCU:\\Software\\Microsoft\\Office\\16.0\\WEF\\TrustedCatalogs": true,
+        "SHARED FOLDER": true,
+        "Get Add-ins or Advanced": true,
+        "It is not Microsoft Marketplace publication.": true
+      },
+      "noLocalhost": true
+    }
+  ],
+  "binaryEndpoints": [
+    {
+      "name": "Word screenshot",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/word-selection.png",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/word-selection.png",
+      "status": 200,
+      "contentType": "image/png",
+      "byteSize": 104024,
+      "sourceSha256": "5ff9c27793c6ed1d094587707b7ae2f9e1af573d15419c85289fb58a22556cb4",
+      "liveSha256": "5ff9c27793c6ed1d094587707b7ae2f9e1af573d15419c85289fb58a22556cb4",
+      "sourceMatch": true,
+      "pngSignature": true
+    },
+    {
+      "name": "Excel screenshot",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/excel-text-cell.png",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/excel-text-cell.png",
+      "status": 200,
+      "contentType": "image/png",
+      "byteSize": 111772,
+      "sourceSha256": "ca7b48056a5a671bdf79f978043d14cb3c1d0c1b165882b4f7f77197910bb77f",
+      "liveSha256": "ca7b48056a5a671bdf79f978043d14cb3c1d0c1b165882b4f7f77197910bb77f",
+      "sourceMatch": true,
+      "pngSignature": true
+    },
+    {
+      "name": "PowerPoint screenshot",
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/powerpoint-text-range.png",
+      "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/screenshots/powerpoint-text-range.png",
+      "status": 200,
+      "contentType": "image/png",
+      "byteSize": 117654,
+      "sourceSha256": "0af7cf1a68123fb114ec676595862deee0b3595c36ebf860b3544eac21a42a6e",
+      "liveSha256": "0af7cf1a68123fb114ec676595862deee0b3595c36ebf860b3544eac21a42a6e",
+      "sourceMatch": true,
+      "pngSignature": true
+    }
+  ],
+  "manifest": {
+    "name": "Hosted production manifest",
+    "url": "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+    "finalUrl": "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+    "status": 200,
+    "contentType": "application/xml",
+    "sha256Normalized": "a3d05cadd9a668186b474e1222123717abc41893b247a5790498e87e0136ee73",
+    "noLocalhost": true,
+    "productionBasePresent": true,
+    "addinIdPresent": true
+  },
+  "platformClaims": {
+    "windowsDesktop": "verified-preview-distribution",
+    "web": "expected-not-executed",
+    "mac": "expected-not-executed"
+  },
+  "publisherGate": "external-blocked-preserved",
+  "failures": []
+}

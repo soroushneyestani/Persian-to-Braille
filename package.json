@@ -85,6 +85,8 @@
     "validate:phase11-4d": "pnpm run validate:phase11-4c-live && node tools/architecture/validate-phase11-4d-marketplace-screenshots.mjs",
     "validate:phase11-4e-windows-preview-installer": "node tools/architecture/validate-phase11-4e-windows-preview-installer.mjs",
     "validate:phase11-4e": "pnpm run validate:phase11-4d && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4e-windows-preview-installer",
+    "validate:phase11-windows-desktop-scope": "node tools/architecture/validate-phase11-windows-desktop-scope.mjs",
+    "validate:phase11-4e-live": "pnpm run validate:phase11-4e && pnpm run validate:phase11-windows-desktop-scope",
     "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
     "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs"
   },

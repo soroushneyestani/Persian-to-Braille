@@ -1,0 +1,34 @@
+PERSIAN-TO-BRAILLE - PHASE 11.4e LIVE WINDOWS PREVIEW PROBE
+==============================================================================
+Branch: phase11-marketplace
+HEAD: 8c42ea364f0c7c7bf7b44fec7eb3d9f8e9218ecf
+Working tree: CLEAN
+
+[INFO] Pages workflow: run #9 / attempt 1
+[INFO] Workflow status: completed
+[INFO] Workflow conclusion: success
+[PASS] Pages workflow for current HEAD: SUCCESS
+
+[PASS] install.html: HTTP 200 / SOURCE MATCH
+[PASS] Windows installer CMD: HTTP 200 / SOURCE MATCH
+[PASS] Windows setup PowerShell: HTTP 200 / SOURCE MATCH
+
+[PASS] Word screenshot: HTTP 200 / SOURCE MATCH
+[PASS] Excel screenshot: HTTP 200 / SOURCE MATCH
+[PASS] PowerPoint screenshot: HTTP 200 / SOURCE MATCH
+
+[PASS] Hosted production manifest: HTTP 200 / PRODUCTION / NO LOCALHOST
+
+==============================================================================
+PHASE 11.4e LIVE WINDOWS PREVIEW: PASS
+install.html: LIVE HTTPS / SOURCE MATCH / PASS
+Windows installer CMD: LIVE HTTPS / SOURCE MATCH / PASS
+PowerShell setup helper: LIVE HTTPS / SOURCE MATCH / PASS
+Word screenshot: LIVE HTTPS / SOURCE MATCH / PASS
+Excel screenshot: LIVE HTTPS / SOURCE MATCH / PASS
+PowerPoint screenshot: LIVE HTTPS / SOURCE MATCH / PASS
+Hosted manifest: LIVE HTTPS / PRODUCTION / PASS
+Marketplace publication claim: NONE
+Publisher gate: EXTERNAL BLOCKED / PRESERVED
+Web / Mac: EXPECTED / NOT EXECUTED
+Next: run the downloaded Windows installer on a real Windows Microsoft 365 desktop.
