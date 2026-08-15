@@ -19,13 +19,13 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json && node build-addin.mjs",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
-    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs",
+    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs",
     "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs"
   },
   "dependencies": {
     "@persian-braille/sdk": "workspace:*"
   },
-  "description": "Microsoft Word host integration for Persian Braille translation through @persian-braille/sdk."
+  "description": "Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk."
 }
