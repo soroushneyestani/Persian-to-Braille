@@ -55,7 +55,7 @@ jobs:
       - name: Build Marketplace bundle
         env:
           OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Persian-to-Braille
-        run: pnpm --filter @persian-braille/microsoft365 run build:marketplace
+        run: pnpm run build:marketplace-preview
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
