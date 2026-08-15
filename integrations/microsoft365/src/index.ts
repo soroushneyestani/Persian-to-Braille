@@ -75,6 +75,44 @@ export type {
   OfficeExcelGlobals,
 } from "./excel/runtime.js";
 
+export {
+  POWERPOINT_HOST_FAILURE_CODES,
+} from "./powerpoint/types.js";
+
+export {
+  createGlobalOfficePowerPointRuntime,
+  createOfficePowerPointRuntime,
+} from "./powerpoint/runtime.js";
+
+export {
+  createPowerPointHostAdapter,
+} from "./powerpoint/adapter.js";
+
+export {
+  createPowerPointSelectionService,
+} from "./powerpoint/selection-service.js";
+
+export type {
+  PersianBraillePowerPointHostAdapter,
+  PersianBraillePowerPointSelectionService,
+  PowerPointEmptySelectionFailure,
+  PowerPointHostFailure,
+  PowerPointHostFailureCode,
+  PowerPointHostSelectionTranslationFailure,
+  PowerPointMutationResult,
+  PowerPointSdkSelectionTranslationFailure,
+  PowerPointSelectionReadResult,
+  PowerPointSelectionSnapshot,
+  PowerPointSelectionTranslationResult,
+  PowerPointSelectionTranslationSuccess,
+} from "./powerpoint/types.js";
+
+export type {
+  OfficePowerPointGlobals,
+  PowerPointRuntimeMutationOutcome,
+  PowerPointRuntimePort,
+} from "./powerpoint/runtime.js";
+
 export type {
   OfficeApplicationFailure,
   OfficeHostCapabilities,
