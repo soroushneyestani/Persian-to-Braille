@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.5",
+  "title": "Windows Desktop Certification Matrix",
+  "status": "validated-candidate",
+  "matrixType": "internal-windows-desktop-release-certification",
+  "releaseScope": "Microsoft 365 Desktop on Windows",
+  "architectureBoundary": "Microsoft365 -> SDK -> Core",
+  "hosts": {
+    "word": {
+      "manifestHost": "Document",
+      "requirementSet": "WordApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "contiguous text range",
+      "replace": true,
+      "insertAfter": true,
+      "staleGuard": "exact source-text equality before mutation",
+      "runtimeBatch": "Word.run",
+      "windowsRuntimeEvidence": "verified-pass",
+      "windowsInstallerEvidence": "verified-pass",
+      "screenshotEvidence": "captured-pass",
+      "failureCodes": [
+        "OFFICE_NOT_READY",
+        "WRONG_HOST",
+        "UNSUPPORTED_REQUIREMENT_SET",
+        "SELECTION_UNAVAILABLE",
+        "SELECTION_CHANGED",
+        "DOCUMENT_WRITE_FAILED"
+      ]
+    },
+    "excel": {
+      "manifestHost": "Workbook",
+      "requirementSet": "ExcelApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "exactly one selected plain-text cell",
+      "replace": true,
+      "insertAfter": false,
+      "multiCellGuard": "SELECTION_SHAPE_UNSUPPORTED",
+      "formulaAndNonStringGuard": "SELECTION_CONTENT_UNSUPPORTED",
+      "staleGuard": "exact cell snapshot before mutation",
+      "runtimeBatch": "Excel.run",
+      "windowsRuntimeEvidence": "verified-pass",
+      "windowsInstallerEvidence": "verified-pass",
+      "screenshotEvidence": "captured-pass",
+      "failureCodes": [
+        "OFFICE_NOT_READY",
+        "WRONG_HOST",
+        "UNSUPPORTED_REQUIREMENT_SET",
+        "SELECTION_UNAVAILABLE",
+        "SELECTION_SHAPE_UNSUPPORTED",
+        "SELECTION_CONTENT_UNSUPPORTED",
+        "SELECTION_CHANGED",
+        "WORKBOOK_WRITE_FAILED"
+      ]
+    },
+    "powerpoint": {
+      "manifestHost": "Presentation",
+      "requirementSet": "PowerPointApi",
+      "minimumVersion": "1.5",
+      "selectionModel": "selected text range",
+      "replace": true,
+      "insertAfter": false,
+      "snapshotFields": [
+        "slideId",
+        "shapeId",
+        "start",
+        "length",
+        "text"
+      ],
+      "staleGuard": "exact five-field snapshot before mutation",
+      "runtimeBatch": "PowerPoint.run",
+      "windowsRuntimeEvidence": "verified-pass",
+      "windowsInstallerEvidence": "verified-pass",
+      "screenshotEvidence": "captured-pass",
+      "failureCodes": [
+        "OFFICE_NOT_READY",
+        "WRONG_HOST",
+        "UNSUPPORTED_REQUIREMENT_SET",
+        "SELECTION_UNAVAILABLE",
+        "SELECTION_CHANGED",
+        "PRESENTATION_WRITE_FAILED"
+      ]
+    }
+  },
+  "shared": {
+    "manifestFamily": "add-in-only XML",
+    "versionOverridesCount": 1,
+    "sharedRequirement": "AddinCommands 1.1",
+    "permission": "ReadWriteDocument",
+    "taskPaneDispatch": "Office.onReady -> Word | Excel | PowerPoint",
+    "translationBoundary": "Microsoft365 -> SDK -> Core",
+    "officeJs": "Microsoft CDN",
+    "productionHosting": "GitHub Pages HTTPS",
+    "productionManifest": "verified",
+    "supportPrivacyEula": "live-https-verified",
+    "windowsPreviewInstaller": "live-https-and-real-windows-verified",
+    "windowsScreenshots": {
+      "word": "captured-pass",
+      "excel": "captured-pass",
+      "powerpoint": "captured-pass"
+    },
+    "microsoft365RegressionTests": {
+      "expected": 69,
+      "pass": 69,
+      "fail": 0
+    },
+    "u0622ReleaseCorrection": "preserved"
+  },
+  "releaseChecks": {
+    "wordWindows": "pass",
+    "excelWindows": "pass",
+    "powerpointWindows": "pass",
+    "installerDownload": "pass",
+    "installerExecution": "pass",
+    "officeDiscovery": "pass",
+    "translateSelection": "pass",
+    "productionHttps": "pass",
+    "noLocalhostInProductionPreview": "pass",
+    "screenshots": "pass",
+    "phase9Regression": "pass",
+    "phase10Regression": "pass"
+  },
+  "deferred": {
+    "officeOnTheWeb": "Phase 16",
+    "microsoft365Mac": "Phase 17",
+    "microsoftMarketplacePartnerCenter": "Phase 18"
+  },
+  "nonClaims": [
+    "Office on the web live verification",
+    "Microsoft 365 for Mac live verification",
+    "iOS/iPad certification",
+    "Partner Center publisher enrollment",
+    "Microsoft Marketplace publication"
+  ],
+  "next": "Phase 11.6 Windows Desktop Release Package + Test Notes"
+}
