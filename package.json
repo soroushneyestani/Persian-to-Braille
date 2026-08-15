@@ -52,7 +52,9 @@
     "validate:phase10-closure": "node tools/architecture/validate-phase10-closure.mjs",
     "validate:phase10": "pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure",
     "validate:phase11-marketplace-baseline": "node tools/architecture/validate-phase11-marketplace-baseline.mjs",
-    "validate:phase11-1": "pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline"
+    "validate:phase11-1": "pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline",
+    "validate:phase11-production-manifest": "node tools/architecture/validate-phase11-production-manifest-architecture.mjs",
+    "validate:phase11-2a": "pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest"
   },
   "devDependencies": {
     "typescript": "6.0.3"
