@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "record": "phase-11-post-merge-finalization",
+  "result": "CLOSED",
+  "releaseScope": "Microsoft 365 Desktop on Windows",
+  "main": {
+    "baseHead": "ced547ad72eb0fed85a7ae32d240e63c4bc6453e",
+    "integrationMode": "rewritten-equivalent-commit",
+    "integratedRepairCommit": "ced547ad72eb0fed85a7ae32d240e63c4bc6453e",
+    "integratedRepairParentCount": 1,
+    "integratedClosureCommit": "406d6c0cc7f4d74542a5ac851019ebffa811ddd2"
+  },
+  "preMergeHistory": {
+    "phase117Candidate": "242547ed0a4262a6b56b06d22546a010ed07fc30",
+    "closureBranchHead": "e44d0c3",
+    "finalFeatureBranchHead": "3423e97",
+    "finalFeatureTreeEquivalentToMain": true,
+    "closureTreeEquivalentToMain": true
+  },
+  "githubPullRequest": {
+    "status": "MERGED_AND_CLOSED",
+    "checks": {
+      "architectureValidation": "PASS",
+      "specificationValidation": "PASS",
+      "marketplacePagesBuild": "PASS",
+      "marketplacePagesDeploy": "PASS",
+      "total": "4/4 PASS"
+    },
+    "remoteFeatureBranch": "DELETED",
+    "evidenceBasis": "GitHub UI observed by maintainer after merge"
+  },
+  "u0622Repair": {
+    "canonicalRegeneration": "PASS / FIXED POINT",
+    "coreTests": "211/211 PASS",
+    "microsoft365Tests": "69/69 PASS",
+    "conformanceValidation": "PASS",
+    "runtimeValidation": "PASS",
+    "historicalAdjudication": "DEFERRED / PRESERVED",
+    "normativePromotion": "NONE",
+    "phase214AdmittedCandidates": 138,
+    "releaseCorrections": 1,
+    "rule": {
+      "id": "FA-G1-VAR-001",
+      "status": "candidate",
+      "dots": "345",
+      "unicodeBraille": "U+281C"
+    },
+    "vector": {
+      "id": "FA-CONF-VAR-001",
+      "status": "draft"
+    }
+  },
+  "canonicalInventory": {
+    "rules": 176,
+    "candidate": 139,
+    "normative": 37,
+    "vectors": 176,
+    "draft": 139,
+    "active": 37
+  },
+  "deferred": {
+    "web": "Phase 16",
+    "mac": "Phase 17",
+    "marketplacePartnerCenter": "Phase 18"
+  },
+  "phase12Started": false,
+  "finalPhase11Status": "CLOSED / FINAL"
+}
