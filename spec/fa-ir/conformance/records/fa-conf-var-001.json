@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "FA-CONF-VAR-001",
-  "status": "active",
+  "status": "draft",
   "version": "0.1.0",
   "profile": "fa-ir-g1",
   "profileVersion": "0.1.0",
@@ -22,11 +22,12 @@
     "structuralTokens": []
   },
   "tags": [
-    "core-alphabet",
+    "release-correction",
+    "orthography",
     "scalar"
   ],
   "notes": [
-    "Materialized conformance vector for the fa-ir-g1 rule record.",
-    "Activated because FA-G1-LETTER-001 is normative."
+    "Draft conformance vector for release correction FA-REL-CORR-U0622-001.",
+    "Activation requires a separate normative promotion."
   ]
 }

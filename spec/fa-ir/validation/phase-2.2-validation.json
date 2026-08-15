@@ -7,14 +7,15 @@
   "summary": {
     "schemasValidated": 3,
     "profileDocuments": 1,
-    "materializedRules": 175,
-    "candidateRules": 138,
+    "materializedRules": 176,
+    "candidateRules": 139,
     "normativeRules": 37,
-    "conformanceVectors": 175,
+    "conformanceVectors": 176,
     "activeConformanceVectors": 37,
-    "draftConformanceVectors": 138,
+    "releaseCorrectionRules": 1,
+    "draftConformanceVectors": 139,
     "promotionRecordsObserved": 37,
-    "uniqueDecisionItemsConsumed": 175,
+    "uniqueDecisionItemsConsumed": 176,
     "consensusDecisionItemsConsumed": 37,
     "adjudicatedDecisionItemsConsumed": 138,
     "structuralRules": 29,
@@ -27,20 +28,21 @@
   "validatedArtifacts": {
     "profile": {
       "path": "spec/fa-ir/profiles/fa-ir-g1.json",
-      "sha256": "2448C00BFE7ED94F067912C9C836E5FF3092E203B78C0C88976A7B2DF3706EF7"
+      "sha256": "A145FF5DA6EA145CF97ABAEE004472E46F30E4859E8B150F70A504B73B3D9E4E"
     },
     "manifest": {
       "path": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
-      "sha256": "AC7536F794A9DF48D771BE0751B7473EB5B090F0F1FA19035DBF071B185FDDDD"
+      "sha256": "B2B2F711F19944B0B049C4D5A7A1BDB08BD1E10D720D90518497F13DA96C9A6A"
     },
     "ruleDirectory": "spec/fa-ir/rules/records",
     "conformanceDirectory": "spec/fa-ir/conformance/records"
   },
   "invariants": [
     "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
-    "Profile rule IDs resolve exactly to all 175 materialized rule files.",
+    "Profile rule IDs resolve exactly to all 176 materialized rule files.",
     "Every rule consumes registered sources and preserves its Phase 1 classification.",
     "All 37 consensus decisions and all 138 admitted REVIEW-REQUIRED decisions are consumed exactly once.",
+    "One explicit Phase 11 release correction consumes FA-VAR-001 without rewriting its historical deferred adjudication.",
     "Every rule has exactly one reciprocal conformance vector.",
     "Vector context matches rule context.",
     "Braille cell arrays deterministically derive their Unicode Braille strings.",

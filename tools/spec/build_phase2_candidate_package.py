@@ -37,6 +37,10 @@ ADJUDICATION_RECORD_DIR = (
     ROOT / "spec" / "fa-ir" / "adjudications" / "records"
 )
 
+RELEASE_CORRECTION_DIR = (
+    ROOT / "spec" / "fa-ir" / "governance" / "release-corrections"
+)
+
 RULE_DIR = ROOT / "spec" / "fa-ir" / "rules" / "records"
 CONF_DIR = ROOT / "spec" / "fa-ir" / "conformance" / "records"
 
@@ -628,6 +632,194 @@ def candidate_rule_and_vector(
     return rule, vector
 
 
+def load_release_correction_candidates(
+    master_items: dict[str, dict],
+) -> tuple[list[dict], list[dict], dict]:
+    # Explicit maintainer release corrections are a separate non-normative
+    # materialization route. They do not rewrite Phase 2.14 adjudications.
+    if not RELEASE_CORRECTION_DIR.exists():
+        return [], [], {}
+
+    generated_rules: list[dict] = []
+    generated_vectors: list[dict] = []
+    realized: dict[str, dict] = {}
+
+    for correction_path in sorted(RELEASE_CORRECTION_DIR.glob("*.json")):
+        correction = read_json(correction_path)
+        decision = correction.get("maintainerDecision", {})
+
+        if decision.get("decision") != "admit-candidate-direct-character-rule":
+            continue
+
+        if correction.get("stage") != "11-release-correction":
+            raise RuntimeError(
+                f"Unsupported release-correction stage: {correction_path.name}"
+            )
+        if decision.get("ruleStatus") != "candidate":
+            raise RuntimeError(
+                f"Release correction must materialize candidate status: {correction_path.name}"
+            )
+        if decision.get("normativePromotion") is not False:
+            raise RuntimeError(
+                f"Release correction may not authorize normative promotion: {correction_path.name}"
+            )
+        if correction.get("materialization", {}).get("promotionEligible") is not False:
+            raise RuntimeError(
+                f"Release correction may not set promotionEligible: {correction_path.name}"
+            )
+
+        subject = correction.get("subject", {})
+        decision_id = subject.get("decisionItemId")
+        if decision_id not in master_items:
+            raise RuntimeError(
+                f"Release correction references unknown decision: {decision_id}"
+            )
+        if master_items[decision_id].get("classification") != "REVIEW-REQUIRED":
+            raise RuntimeError(
+                f"Release correction must preserve REVIEW-REQUIRED classification: {decision_id}"
+            )
+
+        historical = correction.get("historicalGovernance", {})
+        if (
+            historical.get("adjudicationResult") != "deferred"
+            or historical.get("historicalRecordMutated") is not False
+            or historical.get("phase1ClassificationMutated") is not False
+        ):
+            raise RuntimeError(
+                f"Release correction rewrites frozen historical governance: {correction_path.name}"
+            )
+
+        rule_id = correction.get("materialization", {}).get("ruleId")
+        vector_id = correction.get("materialization", {}).get("conformanceId")
+        text = subject.get("char")
+        codepoints = subject.get("codePoints")
+        dots = decision.get("dots")
+        expected_braille = decision.get("unicodeBraille")
+
+        if not isinstance(rule_id, str) or not isinstance(vector_id, str):
+            raise RuntimeError(
+                f"Release correction materialization IDs are missing: {correction_path.name}"
+            )
+        if not isinstance(text, str) or not text:
+            raise RuntimeError(
+                f"Release correction subject character is missing: {correction_path.name}"
+            )
+        if codepoints != code_points(text):
+            raise RuntimeError(
+                f"Release correction code-point mismatch: {correction_path.name}"
+            )
+        if not isinstance(dots, str):
+            raise RuntimeError(
+                f"Release correction dots are missing: {correction_path.name}"
+            )
+
+        cells = split_dots(dots)
+        if unicode_braille(cells) != expected_braille:
+            raise RuntimeError(
+                f"Release correction Unicode Braille mismatch: {correction_path.name}"
+            )
+
+        basis = correction.get("basis", {})
+        source_ids = list(
+            dict.fromkeys(
+                source_id
+                for source_id in (
+                    basis.get("legacy", {}).get("source"),
+                    basis.get("stable", {}).get("source"),
+                    basis.get("draft", {}).get("source"),
+                )
+                if isinstance(source_id, str) and source_id
+            )
+        )
+        if not source_ids:
+            raise RuntimeError(
+                f"Release correction has no evidence sources: {correction_path.name}"
+            )
+
+        rule = {
+            "schemaVersion": SCHEMA_VERSION,
+            "id": rule_id,
+            "profile": PROFILE_ID,
+            "type": "character",
+            "status": "candidate",
+            "version": ARTIFACT_VERSION,
+            "direction": "forward",
+            "priority": 1000,
+            "input": {
+                "kind": "scalar",
+                "text": text,
+                "codePoints": codepoints,
+            },
+            "output": {
+                "cells": cells,
+                "unicodeBraille": expected_braille,
+                "structuralToken": None,
+            },
+            "normalization": {
+                "form": "none",
+                "canonicalInput": text,
+                "notes": (
+                    "Explicit maintainer release correction preserves the current "
+                    "no-rewrite Unicode normalization policy."
+                ),
+            },
+            "evidence": {
+                "decisionItemIds": [decision_id],
+                "sourceIds": source_ids,
+                "rationale": (
+                    f"Explicit maintainer release correction {correction['id']} "
+                    "admits this direct scalar as a draft candidate while the "
+                    "historical adjudication remains deferred."
+                ),
+                "conflictsResolved": [],
+            },
+            "conformance": {"vectorIds": [vector_id]},
+            "notes": [
+                f"Materialized from maintainer release correction {correction['id']}.",
+                "Historical Phase 1/2 adjudication is preserved unchanged.",
+                "Candidate admission does not imply normative promotion.",
+            ],
+        }
+
+        vector = {
+            "schemaVersion": SCHEMA_VERSION,
+            "id": vector_id,
+            "status": "draft",
+            "version": ARTIFACT_VERSION,
+            "profile": PROFILE_ID,
+            "profileVersion": PROFILE_VERSION,
+            "ruleIds": [rule_id],
+            "input": {"text": text, "codePoints": codepoints},
+            "expected": {
+                "cells": cells,
+                "unicodeBraille": expected_braille,
+                "structuralTokens": [],
+            },
+            "tags": ["release-correction", "orthography", "scalar"],
+            "notes": [
+                f"Draft conformance vector for release correction {correction['id']}.",
+                "Activation requires a separate normative promotion.",
+            ],
+        }
+
+        if rule_id in realized:
+            raise RuntimeError(f"Duplicate release-correction rule ID: {rule_id}")
+
+        generated_rules.append(rule)
+        generated_vectors.append(vector)
+        realized[rule_id] = {
+            "releaseCorrectionId": correction["id"],
+            "releaseCorrectionPath": str(
+                correction_path.relative_to(ROOT)
+            ).replace("\\", "/"),
+            "releaseCorrectionSha256": sha256_bytes(correction_path.read_bytes()),
+            "decisionItemId": decision_id,
+            "conformanceId": vector_id,
+        }
+
+    return generated_rules, generated_vectors, realized
+
+
 def load_adjudicated_candidates() -> tuple[list[dict], list[dict], dict]:
     if not ADMISSION_FILE.exists():
         return [], [], {}
@@ -1030,12 +1222,24 @@ rules.extend(adjudicated_rules)
 vectors.extend(adjudicated_vectors)
 adjudicated_rule_ids = {rule["id"] for rule in adjudicated_rules}
 
+release_correction_rules, release_correction_vectors, realized_release_corrections = (
+    load_release_correction_candidates(master_items)
+)
+rules.extend(release_correction_rules)
+vectors.extend(release_correction_vectors)
+release_correction_rule_ids = {
+    rule["id"] for rule in release_correction_rules
+}
+
 # Apply explicit promotion records to the generated baseline.
 rules_by_id = {rule["id"]: rule for rule in rules}
 vectors_by_id = {vector["id"]: vector for vector in vectors}
 
 for (promoted_rule_id, promoted_version), promotion in applied_promotions.items():
-    if promoted_rule_id in adjudicated_rule_ids:
+    if (
+        promoted_rule_id in adjudicated_rule_ids
+        or promoted_rule_id in release_correction_rule_ids
+    ):
         raise RuntimeError(
             "Current normative-promotion policy does not authorize promotion "
             f"of adjudicated REVIEW-REQUIRED candidate {promoted_rule_id}"
@@ -1068,7 +1272,11 @@ for (promoted_rule_id, promoted_version), promotion in applied_promotions.items(
 rules.sort(key=lambda row: row["id"])
 vectors.sort(key=lambda row: row["id"])
 
-expected_total = 37 + len(adjudicated_rules)
+expected_total = (
+    37
+    + len(adjudicated_rules)
+    + len(release_correction_rules)
+)
 if len(rules) != expected_total or len(vectors) != expected_total:
     raise RuntimeError(
         f"Expected {expected_total} rules/vectors, got "
@@ -1153,6 +1361,18 @@ for rule in rules:
                 "admissionAuthorized": False,
             }
         )
+    if rule["id"] in realized_release_corrections:
+        correction = realized_release_corrections[rule["id"]]
+        entry.update(
+            {
+                "provenanceType": "phase-11-release-correction",
+                "admissionAuthorized": False,
+                "releaseCorrectionId": correction["releaseCorrectionId"],
+                "releaseCorrectionPath": correction["releaseCorrectionPath"],
+                "releaseCorrectionSha256": correction["releaseCorrectionSha256"],
+            }
+        )
+
     rule_manifest_entries.append(entry)
 
 conf_manifest_entries = []
@@ -1229,6 +1449,7 @@ manifest = {
         "promotionRecordsApplied": len(applied_promotions),
         "phase1ConsensusRules": 37,
         "adjudicatedCandidateRules": len(adjudicated_rules),
+        "releaseCorrectionRules": len(release_correction_rules),
         "draftConformanceVectors": sum(
             1 for vector in vectors if vector["status"] == "draft"
         ),
@@ -1264,7 +1485,9 @@ if adjudicated_rules:
         "",
         f"- Total rules: {len(rules)}",
         f"- Normative baseline rules: {normative_count}",
-        f"- Adjudicated candidate rules: {candidate_count}",
+        f"- Candidate rules: {candidate_count}",
+        f"- Phase 2.14 adjudicated candidates: {len(adjudicated_rules)}",
+        f"- Phase 11 release corrections: {len(release_correction_rules)}",
         f"- Total conformance vectors: {len(vectors)}",
         f"- Active vectors: {active_vector_count}",
         f"- Draft vectors: {len(vectors) - active_vector_count}",
@@ -1278,6 +1501,10 @@ if adjudicated_rules:
         "The 138 Phase 2.14 materializations remain `candidate`; their reciprocal "
         "conformance vectors remain `draft`. Candidate admission does not set "
         "`promotionEligible` and does not authorize normative promotion.",
+        "",
+        "Explicit maintainer release corrections are materialized through a separate "
+        "non-normative route. They do not rewrite historical adjudications and their "
+        "conformance vectors remain `draft` until separate promotion governance.",
         "",
         "The `fa-ir-g1` profile remains `draft`.",
         "",
@@ -1376,6 +1603,9 @@ print(
 print(f"Promotion records applied: {len(applied_promotions)}")
 print(
     f"Adjudicated candidates   : {len(adjudicated_rules)}"
+)
+print(
+    f"Release corrections      : {len(release_correction_rules)}"
 )
 print(f"Dot-7/dot-8 rules        : 0")
 print(f"Generated data/docs      : {len(generated_files)}")

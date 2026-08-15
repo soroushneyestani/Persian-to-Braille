@@ -91,6 +91,24 @@ def build_sandbox() -> tempfile.TemporaryDirectory:
             raise RuntimeError(f"Missing negative-test source path: {src}")
         copy_path(src, root)
 
+    # PHASE11_RELEASE_CORRECTION_SANDBOX_COPY
+    release_correction_src = (
+        ROOT / "spec" / "fa-ir" / "governance" / "release-corrections"
+    )
+    release_correction_dst = (
+        Path(td.name)
+        / "spec" / "fa-ir" / "governance" / "release-corrections"
+    )
+    if not release_correction_src.is_dir():
+        raise AssertionError(
+            "Pristine source is missing governed release-correction inputs"
+        )
+    shutil.copytree(
+        release_correction_src,
+        release_correction_dst,
+        dirs_exist_ok=True,
+    )
+
     return td
 
 

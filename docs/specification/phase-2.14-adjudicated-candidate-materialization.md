@@ -2,12 +2,14 @@
 
 The canonical `fa-ir-g1` package now materializes both the previously promoted Phase 1 consensus baseline and the explicitly approved Phase 2.14 adjudicated candidates in one deterministic pass.
 
-- Total rules: 175
+- Total rules: 176
 - Normative baseline rules: 37
-- Adjudicated candidate rules: 138
-- Total conformance vectors: 175
+- Candidate rules: 139
+- Phase 2.14 adjudicated candidates: 138
+- Phase 11 release corrections: 1
+- Total conformance vectors: 176
 - Active vectors: 37
-- Draft vectors: 138
+- Draft vectors: 139
 - Promotion records applied: 37
 
 ## Lifecycle boundary
@@ -15,6 +17,8 @@ The canonical `fa-ir-g1` package now materializes both the previously promoted P
 The 37 previously promoted baseline rules retain `normative` status and their reciprocal conformance vectors remain `active`.
 
 The 138 Phase 2.14 materializations remain `candidate`; their reciprocal conformance vectors remain `draft`. Candidate admission does not set `promotionEligible` and does not authorize normative promotion.
+
+Explicit maintainer release corrections are materialized through a separate non-normative route. They do not rewrite historical adjudications and their conformance vectors remain `draft` until separate promotion governance.
 
 The `fa-ir-g1` profile remains `draft`.
 

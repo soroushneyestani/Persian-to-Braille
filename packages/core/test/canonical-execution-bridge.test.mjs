@@ -99,8 +99,8 @@ function syntheticTextForVector(vector) {
 }
 
 test("freezes the canonical Phase 5 rule/vector inventory", () => {
-  assert.equal(rules.length, 175);
-  assert.equal(vectors.length, 175);
+  assert.equal(rules.length, 176);
+  assert.equal(vectors.length, 176);
 
   const active = vectors.filter(
     (vector) =>
@@ -112,10 +112,10 @@ test("freezes the canonical Phase 5 rule/vector inventory", () => {
   );
 
   assert.equal(active.length, 37);
-  assert.equal(draft.length, 138);
+  assert.equal(draft.length, 139);
 });
 
-test("preserves vector lifecycle against rule lifecycle for all 175 records", () => {
+test("preserves vector lifecycle against rule lifecycle for all 176 records", () => {
   for (const vector of vectors) {
     assert.equal(
       vector.ruleIds.length,
