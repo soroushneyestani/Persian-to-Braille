@@ -43,7 +43,8 @@
     "validate:phase10-shared-host-architecture": "node tools/architecture/validate-phase10-shared-host-architecture.mjs",
     "validate:phase10-excel-host-layer": "node tools/architecture/validate-phase10-excel-host-layer.mjs",
     "validate:phase10-excel-taskpane": "node tools/architecture/validate-phase10-excel-taskpane.mjs",
-    "validate:phase10-powerpoint-host-layer": "node tools/architecture/validate-phase10-powerpoint-host-layer.mjs"
+    "validate:phase10-powerpoint-host-layer": "node tools/architecture/validate-phase10-powerpoint-host-layer.mjs",
+    "validate:phase10-powerpoint-taskpane": "node tools/architecture/validate-phase10-powerpoint-taskpane.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"

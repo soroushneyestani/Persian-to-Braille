@@ -1263,3 +1263,455 @@ test(
     );
   },
 );
+
+// Phase 10.4b shared task-pane / PowerPoint dispatch regression.
+test(
+  "shared task-pane controller initializes PowerPoint with replace-only capabilities",
+  async () => {
+    const {
+      createOfficeTaskPaneController,
+    } =
+      await import(
+        "../dist/taskpane/controller.js"
+      );
+
+    const {
+      POWERPOINT_TASK_PANE_CAPABILITIES,
+    } =
+      await import(
+        "../dist/taskpane/host-config.js"
+      );
+
+    const events = [];
+    const replaced = [];
+
+    const preview = {
+      ...successPreview(),
+      mutationContext: {
+        slideId:
+          "slide-1",
+        shapeId:
+          "shape-7",
+        start: 3,
+        length: 4,
+        text:
+          "سلام",
+      },
+    };
+
+    const service = {
+      translator: {},
+      async translateSelection() {
+        return preview;
+      },
+      async replaceWithBraille(
+        current,
+      ) {
+        replaced.push(
+          current,
+        );
+
+        return {
+          ok: true,
+        };
+      },
+    };
+
+    const view = {
+      setCapabilities(
+        capabilities,
+      ) {
+        events.push({
+          type:
+            "capabilities",
+          capabilities,
+        });
+      },
+      setReady(value) {
+        events.push({
+          type:
+            "ready",
+          value,
+        });
+      },
+      setBusy(value) {
+        events.push({
+          type:
+            "busy",
+          value,
+        });
+      },
+      showIdle(message) {
+        events.push({
+          type:
+            "idle",
+          message,
+        });
+      },
+      showSuccess(
+        presentation,
+      ) {
+        events.push({
+          type:
+            "success",
+          presentation,
+        });
+      },
+      showFailure(
+        presentation,
+      ) {
+        events.push({
+          type:
+            "failure",
+          presentation,
+        });
+      },
+      announce(message) {
+        events.push({
+          type:
+            "announce",
+          message,
+        });
+      },
+    };
+
+    const controller =
+      createOfficeTaskPaneController(
+        service,
+        view,
+        {
+          async writeText() {},
+        },
+        POWERPOINT_TASK_PANE_CAPABILITIES,
+      );
+
+    controller.initialize();
+
+    assert.equal(
+      events[0]
+        .capabilities
+        .hostKind,
+      "powerpoint",
+    );
+
+    assert.equal(
+      events[0]
+        .capabilities
+        .minimumVersion,
+      "1.5",
+    );
+
+    assert.equal(
+      events[0]
+        .capabilities
+        .canInsertAfter,
+      false,
+    );
+
+    await controller
+      .translateSelection();
+
+    await controller
+      .replaceSelection();
+
+    assert.equal(
+      replaced.length,
+      1,
+    );
+
+    assert.equal(
+      replaced[0],
+      preview,
+    );
+  },
+);
+
+test(
+  "shared task-pane controller rejects Insert After for PowerPoint",
+  async () => {
+    const {
+      createOfficeTaskPaneController,
+    } =
+      await import(
+        "../dist/taskpane/controller.js"
+      );
+
+    const {
+      POWERPOINT_TASK_PANE_CAPABILITIES,
+    } =
+      await import(
+        "../dist/taskpane/host-config.js"
+      );
+
+    const failures = [];
+
+    const service = {
+      translator: {},
+      async translateSelection() {
+        return {
+          ...successPreview(),
+          mutationContext: {
+            slideId:
+              "slide-1",
+            shapeId:
+              "shape-7",
+            start: 3,
+            length: 4,
+            text:
+              "سلام",
+          },
+        };
+      },
+      async replaceWithBraille() {
+        return {
+          ok: true,
+        };
+      },
+    };
+
+    const view = {
+      setCapabilities() {},
+      setReady() {},
+      setBusy() {},
+      showIdle() {},
+      showSuccess() {},
+      showFailure(
+        presentation,
+      ) {
+        failures.push(
+          presentation,
+        );
+      },
+      announce() {},
+    };
+
+    const controller =
+      createOfficeTaskPaneController(
+        service,
+        view,
+        {
+          async writeText() {},
+        },
+        POWERPOINT_TASK_PANE_CAPABILITIES,
+      );
+
+    await controller
+      .translateSelection();
+
+    await controller
+      .insertAfterSelection();
+
+    assert.equal(
+      failures.length,
+      1,
+    );
+
+    assert.equal(
+      failures[0].domain,
+      "application",
+    );
+
+    assert.equal(
+      failures[0].code,
+      "ACTION_UNSUPPORTED",
+    );
+  },
+);
+
+test(
+  "shared task-pane readiness accepts a supported PowerPoint runtime",
+  async () => {
+    const {
+      evaluateOfficeTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateOfficeTaskPaneReadiness(
+        {
+          host:
+            "PowerPoint",
+          platform:
+            "PC",
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return false;
+          },
+          supportsWordApi11() {
+            return false;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isExcelHost() {
+            return false;
+          },
+          supportsExcelApi11() {
+            return false;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedCell() {
+            return "selection-changed";
+          },
+        },
+        {
+          isReady() {
+            return true;
+          },
+          isPowerPointHost() {
+            return true;
+          },
+          supportsPowerPointApi15() {
+            return true;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedText() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      true,
+    );
+
+    assert.equal(
+      result.hostKind,
+      "powerpoint",
+    );
+
+    assert.equal(
+      result.capabilities
+        .requirementSet,
+      "PowerPointApi",
+    );
+
+    assert.equal(
+      result.capabilities
+        .minimumVersion,
+      "1.5",
+    );
+
+    assert.equal(
+      result.capabilities
+        .canReplace,
+      true,
+    );
+
+    assert.equal(
+      result.capabilities
+        .canInsertAfter,
+      false,
+    );
+  },
+);
+
+test(
+  "shared task-pane readiness enforces PowerPointApi 1.5",
+  async () => {
+    const {
+      evaluateOfficeTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateOfficeTaskPaneReadiness(
+        {
+          host:
+            "PowerPoint",
+          platform:
+            "PC",
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return false;
+          },
+          supportsWordApi11() {
+            return false;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isExcelHost() {
+            return false;
+          },
+          supportsExcelApi11() {
+            return false;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedCell() {
+            return "selection-changed";
+          },
+        },
+        {
+          isReady() {
+            return true;
+          },
+          isPowerPointHost() {
+            return true;
+          },
+          supportsPowerPointApi15() {
+            return false;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedText() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      false,
+    );
+
+    assert.equal(
+      result.code,
+      "UNSUPPORTED_REQUIREMENT_SET",
+    );
+  },
+);

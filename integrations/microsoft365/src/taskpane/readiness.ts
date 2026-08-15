@@ -12,6 +12,10 @@ import type {
 } from "../excel/runtime.js";
 
 import type {
+  PowerPointRuntimePort,
+} from "../powerpoint/runtime.js";
+
+import type {
   WordHostFailure,
 } from "../word/types.js";
 
@@ -21,6 +25,7 @@ import type {
 
 import {
   EXCEL_TASK_PANE_CAPABILITIES,
+  POWERPOINT_TASK_PANE_CAPABILITIES,
   WORD_TASK_PANE_CAPABILITIES,
 } from "./host-config.js";
 
@@ -41,8 +46,9 @@ export type OfficeTaskPaneReadinessResult =
   | {
       readonly ok: true;
       readonly hostKind:
-        "word" |
-        "excel";
+        | "word"
+        | "excel"
+        | "powerpoint";
       readonly capabilities:
         OfficeHostCapabilities;
     }
@@ -142,6 +148,8 @@ export function evaluateOfficeTaskPaneReadiness(
     WordRuntimePort,
   excelRuntime:
     ExcelRuntimePort,
+  powerPointRuntime?:
+    PowerPointRuntimePort,
 ): OfficeTaskPaneReadinessResult {
   if (
     !info ||
@@ -220,8 +228,41 @@ export function evaluateOfficeTaskPaneReadiness(
     });
   }
 
+  if (
+    powerPointRuntime
+      ?.isPowerPointHost()
+  ) {
+    if (
+      !powerPointRuntime
+        .isReady()
+    ) {
+      return officeFailure(
+        "OFFICE_NOT_READY",
+        "Office.js and the PowerPoint runtime must be ready before presentation access.",
+      );
+    }
+
+    if (
+      !powerPointRuntime
+        .supportsPowerPointApi15()
+    ) {
+      return officeFailure(
+        "UNSUPPORTED_REQUIREMENT_SET",
+        "PowerPointApi 1.5 is required for PowerPoint translation.",
+      );
+    }
+
+    return Object.freeze({
+      ok: true,
+      hostKind:
+        "powerpoint",
+      capabilities:
+        POWERPOINT_TASK_PANE_CAPABILITIES,
+    });
+  }
+
   return officeFailure(
     "WRONG_HOST",
-    "Phase 10.3 supports Microsoft Word and Excel task-pane translation.",
+    "Phase 10 supports Microsoft Word, Excel, and PowerPoint task-pane translation.",
   );
 }

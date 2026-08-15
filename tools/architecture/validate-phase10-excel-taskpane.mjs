@@ -141,7 +141,6 @@ for (
     [view, "@persian-braille/core", "shared DOM view"],
     [main, "@persian-braille/core", "task-pane main"],
     [readiness, "@persian-braille/core", "shared readiness"],
-    [main, "createGlobalOfficePowerPointRuntime", "Phase 10.3b main"],
   ]
 ) {
   forbidText(
@@ -155,7 +154,7 @@ console.log(
   "Phase 10.3b shared task-pane validation: PASS",
 );
 console.log(
-  "Dispatch: Office.onReady -> Word | Excel",
+  "10.3b invariants: Office.onReady still supports Word | Excel",
 );
 console.log(
   "Word: Replace + Insert After",
@@ -167,5 +166,5 @@ console.log(
   "Manifest: unchanged / Word-only until Phase 10.5",
 );
 console.log(
-  "Next: Phase 10.4 PowerPoint Translation Integration",
+  "Later host dispatch extensions are allowed when validated separately",
 );

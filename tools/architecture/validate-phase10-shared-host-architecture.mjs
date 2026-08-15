@@ -1,4 +1,4 @@
-import { access, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 
 const root = new URL("../../", import.meta.url);
 
@@ -99,20 +99,9 @@ if (!packageJson.scripts?.["validate:phase10-shared-host-architecture"]) {
   fail("root validation script is not registered");
 }
 
-// Phase 10.2 is contract-only. Runtime implementation belongs to 10.3/10.4.
-for (const path of [
-  "integrations/microsoft365/src/excel",
-  "integrations/microsoft365/src/powerpoint",
-]) {
-  try {
-    await access(new URL(path, root));
-    fail(`${path} exists before its implementation phase`);
-  } catch (error) {
-    if (error?.message?.includes("exists before")) {
-      throw error;
-    }
-  }
-}
+// Phase 10.2 validates the frozen architecture contract only.
+// Later implementation phases are allowed to materialize Excel and PowerPoint
+// source trees as long as they preserve this contract.
 
 console.log("Phase 10.2 shared Microsoft 365 host architecture: PASS");
 console.log("Word: WordApi 1.1 | Replace + Insert After");
@@ -120,4 +109,4 @@ console.log("Excel: ExcelApi 1.1 | single text cell | Replace only");
 console.log("PowerPoint: PowerPointApi 1.5 | selected text | Replace only");
 console.log("Manifest: add-in-only XML | host-scoped VersionOverrides");
 console.log("Translation boundary: Microsoft365 -> SDK -> Core");
-console.log("Next: Phase 10.3 shared task pane refactor + Excel");
+console.log("Contract scope: frozen host architecture; later implementations are allowed.");
