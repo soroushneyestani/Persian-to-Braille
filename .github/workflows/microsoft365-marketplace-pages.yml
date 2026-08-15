@@ -1,0 +1,86 @@
+name: Microsoft 365 Marketplace Pages
+
+on:
+  push:
+    branches:
+      - phase11-marketplace
+      - main
+    paths:
+      - ".github/workflows/microsoft365-marketplace-pages.yml"
+      - "integrations/microsoft365/**"
+      - "packages/core/**"
+      - "packages/sdk/**"
+      - "spec/**"
+      - "tools/architecture/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: microsoft365-marketplace-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Activate pnpm
+        run: corepack prepare pnpm@11.21.0 --activate
+
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate Phase 11.2a architecture
+        run: pnpm run validate:phase11-2a
+
+      - name: Build Marketplace bundle
+        env:
+          OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Persian-to-Braille
+        run: pnpm --filter @persian-braille/microsoft365 run build:marketplace
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: integrations/microsoft365/marketplace-dist/site
+
+      - name: Upload submission manifest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: microsoft365-marketplace-manifest
+          path: integrations/microsoft365/marketplace-dist/manifest.xml
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4

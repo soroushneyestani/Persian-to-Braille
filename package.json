@@ -54,7 +54,10 @@
     "validate:phase11-marketplace-baseline": "node tools/architecture/validate-phase11-marketplace-baseline.mjs",
     "validate:phase11-1": "pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline",
     "validate:phase11-production-manifest": "node tools/architecture/validate-phase11-production-manifest-architecture.mjs",
-    "validate:phase11-2a": "pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest"
+    "validate:phase11-2a": "pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest",
+    "validate:phase11-pages-deployment": "node tools/architecture/validate-phase11-github-pages-deployment.mjs",
+    "validate:phase11-2b-candidate": "pnpm run validate:phase11-2a && pnpm run validate:phase11-pages-deployment",
+    "probe:phase11-marketplace-remote": "node tools/architecture/probe-phase11-marketplace-remote.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
