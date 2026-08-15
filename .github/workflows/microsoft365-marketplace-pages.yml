@@ -63,6 +63,7 @@ jobs:
       - name: Upload Pages site
         uses: actions/upload-pages-artifact@v4
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: integrations/microsoft365/marketplace-dist/site
 
       - name: Upload submission manifest artifact
@@ -84,3 +85,5 @@ jobs:
       - name: Deploy GitHub Pages site
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
