@@ -57,6 +57,9 @@ jobs:
           OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Persian-to-Braille
         run: pnpm run build:marketplace-preview
 
+      - name: Build Windows Desktop release package
+        run: pnpm run build:windows-desktop-release
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
@@ -65,6 +68,13 @@ jobs:
         with:
           name: github-pages-${{ github.run_attempt }}
           path: integrations/microsoft365/marketplace-dist/site
+
+      - name: Upload Windows Desktop release package
+        uses: actions/upload-artifact@v4
+        with:
+          name: persian-to-braille-windows-desktop-release-${{ github.run_attempt }}
+          path: integrations/microsoft365/marketplace-dist/windows-desktop-release
+          if-no-files-found: error
 
       - name: Upload submission manifest artifact
         uses: actions/upload-artifact@v4
