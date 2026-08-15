@@ -93,6 +93,8 @@
     "test:windows-desktop-release": "node --test integrations/microsoft365/test/windows-desktop-release-package.test.mjs",
     "validate:phase11-6-windows-release": "node tools/architecture/validate-phase11-6-windows-desktop-release-package.mjs",
     "validate:phase11-6": "pnpm run validate:phase11-4e && pnpm run validate:phase11-windows-desktop-scope && pnpm run validate:phase11-5-windows-certification && pnpm run validate:phase11-public-trust-wording && pnpm run build:marketplace-preview && pnpm run build:windows-desktop-release && pnpm run test:windows-desktop-release && pnpm run validate:phase11-6-windows-release",
+    "validate:phase11-7-preflight": "node tools/architecture/validate-phase11-7-windows-desktop-release-preflight.mjs",
+    "validate:phase11-7": "pnpm run validate:phase11-6 && pnpm run validate:phase11-7-preflight",
     "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
     "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs",
     "validate:phase11-public-trust-wording": "node tools/architecture/validate-phase11-public-trust-wording.mjs"

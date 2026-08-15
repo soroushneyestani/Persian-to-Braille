@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.7",
+  "result": "PASS",
+  "classification": "internal-windows-desktop-release-preflight",
+  "git": {
+    "branch": "phase11-marketplace",
+    "head": "242547ed0a4262a6b56b06d22546a010ed07fc30",
+    "cleanBefore": true,
+    "cleanAfter": true
+  },
+  "runtime": {
+    "node": "v22.14.0",
+    "pnpm": "11.21.0"
+  },
+  "productionBase": "https://soroushneyestani.github.io/Persian-to-Braille",
+  "phase116Validation": "PASS",
+  "releasePackage": {
+    "path": "C:/Projects/Persian-to-Braille/integrations/microsoft365/marketplace-dist/windows-desktop-release",
+    "provenanceChecks": {
+      "phase": true,
+      "branch": true,
+      "head": true,
+      "workingTreeClean": true,
+      "releaseScope": true,
+      "architectureBoundary": true
+    },
+    "packageChecks": {
+      "phase": true,
+      "packageType": true,
+      "releaseScope": true,
+      "architectureBoundary": true,
+      "webDeferred": true,
+      "macDeferred": true,
+      "marketplaceDeferred": true
+    },
+    "productionManifestChecks": {
+      "noLocalhost": true,
+      "no127": true,
+      "productionBase": true,
+      "addinId": true
+    },
+    "declaredPayloadCount": 10,
+    "packageManifestSha256": "8ebc50cf24b921d0dc75c3063df233bbc380d7cf617a4e9e60d8e814ea735ffc"
+  },
+  "githubActions": {
+    "matchingRunFound": true,
+    "id": 31900419098,
+    "runNumber": 13,
+    "runAttempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "242547ed0a4262a6b56b06d22546a010ed07fc30",
+    "htmlUrl": "https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31900419098"
+  },
+  "githubArtifact": {
+    "found": true,
+    "id": 9250927199,
+    "name": "persian-to-braille-windows-desktop-release-1",
+    "sizeInBytes": 320238,
+    "expired": false,
+    "createdAt": "2026-08-15T18:11:48Z"
+  },
+  "scope": {
+    "windowsDesktop": "release-scope",
+    "web": "Phase 16",
+    "mac": "Phase 17",
+    "marketplacePartnerCenter": "Phase 18"
+  },
+  "failures": []
+}
