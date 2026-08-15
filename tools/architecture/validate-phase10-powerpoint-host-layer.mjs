@@ -171,7 +171,6 @@ for (
     [adapter, "@persian-braille/core", "adapter"],
     [service, "@persian-braille/core", "selection service"],
     [service, "insertBrailleAfter", "PowerPoint selection service"],
-    [taskpaneMain, "createGlobalOfficePowerPointRuntime", "10.4a task-pane main"],
   ]
 ) {
   forbidText(
@@ -209,8 +208,8 @@ console.log(
   "Manifest: unchanged",
 );
 console.log(
-  "Shared task pane: untouched in 10.4a",
+  "10.4a invariant: PowerPoint host layer remains independently valid",
 );
 console.log(
-  "Next: Phase 10.4b PowerPoint task-pane dispatch",
+  "Later task-pane integration is allowed when validated separately",
 );

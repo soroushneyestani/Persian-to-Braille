@@ -2,7 +2,10 @@ import {
   createExcelHostAdapter,
   createExcelSelectionService,
   createGlobalOfficeExcelRuntime,
+  createGlobalOfficePowerPointRuntime,
   createGlobalOfficeWordRuntime,
+  createPowerPointHostAdapter,
+  createPowerPointSelectionService,
   createWordHostAdapter,
   createWordSelectionService,
 } from "../index.js";
@@ -55,6 +58,9 @@ const wordRuntime =
 const excelRuntime =
   createGlobalOfficeExcelRuntime();
 
+const powerPointRuntime =
+  createGlobalOfficePowerPointRuntime();
+
 const wordService =
   createWordSelectionService(
     createWordHostAdapter(
@@ -66,6 +72,13 @@ const excelService =
   createExcelSelectionService(
     createExcelHostAdapter(
       excelRuntime,
+    ),
+  );
+
+const powerPointService =
+  createPowerPointSelectionService(
+    createPowerPointHostAdapter(
+      powerPointRuntime,
     ),
   );
 
@@ -93,7 +106,7 @@ if (!office) {
     code:
       "OFFICE_NOT_READY",
     message:
-      "Office.js did not load. Open this task pane from Microsoft Word or Excel.",
+      "Office.js did not load. Open this task pane from Microsoft Word, Excel, or PowerPoint.",
   });
 } else {
   try {
@@ -105,6 +118,7 @@ if (!office) {
               info,
               wordRuntime,
               excelRuntime,
+              powerPointRuntime,
             );
 
           if (!readiness.ok) {
@@ -119,32 +133,39 @@ if (!office) {
             return;
           }
 
+          let controller;
+
           if (
             readiness.hostKind ===
               "word"
           ) {
-            const controller =
+            controller =
               createOfficeTaskPaneController(
                 wordService,
                 view,
                 clipboard,
                 readiness.capabilities,
               );
-
-            view.bind(
-              controller,
-            );
-            controller.initialize();
-            return;
+          } else if (
+            readiness.hostKind ===
+              "excel"
+          ) {
+            controller =
+              createOfficeTaskPaneController(
+                excelService,
+                view,
+                clipboard,
+                readiness.capabilities,
+              );
+          } else {
+            controller =
+              createOfficeTaskPaneController(
+                powerPointService,
+                view,
+                clipboard,
+                readiness.capabilities,
+              );
           }
-
-          const controller =
-            createOfficeTaskPaneController(
-              excelService,
-              view,
-              clipboard,
-              readiness.capabilities,
-            );
 
           view.bind(
             controller,

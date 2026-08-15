@@ -23,3 +23,15 @@ export const EXCEL_TASK_PANE_CAPABILITIES:
     canReplace: true,
     canInsertAfter: false,
   });
+
+export const POWERPOINT_TASK_PANE_CAPABILITIES:
+  OfficeHostCapabilities =
+  Object.freeze({
+    hostKind: "powerpoint",
+    hostLabel: "PowerPoint",
+    requirementSet:
+      "PowerPointApi",
+    minimumVersion: "1.5",
+    canReplace: true,
+    canInsertAfter: false,
+  });
