@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.4d",
+  "title": "Marketplace Screenshot Assets",
+  "status": "captured-and-validated",
+  "locale": "en-US",
+  "listingName": "Persian-to-Braille",
+  "assetPolicy": {
+    "exactPartnerCenterDimensionRequirementObserved": false,
+    "projectReadabilityFloor": {
+      "minimumWidth": 1200,
+      "minimumHeight": 700,
+      "landscapeRequired": true
+    },
+    "noWebOrMacLiveVerificationClaim": true,
+    "noMarketplacePublicationClaim": true
+  },
+  "screenshots": [
+    {
+      "host": "Word",
+      "filename": "word-selection.png",
+      "selectionModel": "contiguous-text-range",
+      "capabilitiesShown": [
+        "Translate Selection",
+        "Braille Preview",
+        "Copy Braille",
+        "Replace Selection",
+        "Insert After"
+      ],
+      "caption": "Translate a selected Persian passage, preview the Unicode Braille result, then replace or insert it.",
+      "path": "integrations/microsoft365/marketplace/listing/assets/screenshots/word-selection.png",
+      "status": "captured",
+      "capturePlatform": "Microsoft 365 Desktop on Windows",
+      "format": "image/png",
+      "width": 1920,
+      "height": 1032,
+      "byteSize": 104024,
+      "sha256": "5ff9c27793c6ed1d094587707b7ae2f9e1af573d15419c85289fb58a22556cb4",
+      "privacyReview": {
+        "privateDocumentContent": false,
+        "privateFilePath": false,
+        "privateEmailAddress": false,
+        "hostUIAndProductNameAllowed": true
+      }
+    },
+    {
+      "host": "Excel",
+      "filename": "excel-text-cell.png",
+      "selectionModel": "single-plain-text-cell",
+      "capabilitiesShown": [
+        "Translate Selection",
+        "Braille Preview",
+        "Copy Braille",
+        "Replace Selection"
+      ],
+      "caption": "Translate one selected plain-text Excel cell and replace it with the reviewed Braille result.",
+      "path": "integrations/microsoft365/marketplace/listing/assets/screenshots/excel-text-cell.png",
+      "status": "captured",
+      "capturePlatform": "Microsoft 365 Desktop on Windows",
+      "format": "image/png",
+      "width": 1920,
+      "height": 1032,
+      "byteSize": 111772,
+      "sha256": "ca7b48056a5a671bdf79f978043d14cb3c1d0c1b165882b4f7f77197910bb77f",
+      "privacyReview": {
+        "privateDocumentContent": false,
+        "privateFilePath": false,
+        "privateEmailAddress": false,
+        "hostUIAndProductNameAllowed": true
+      }
+    },
+    {
+      "host": "PowerPoint",
+      "filename": "powerpoint-text-range.png",
+      "selectionModel": "selected-text-range",
+      "capabilitiesShown": [
+        "Translate Selection",
+        "Braille Preview",
+        "Copy Braille",
+        "Replace Selection"
+      ],
+      "caption": "Translate a selected PowerPoint text range and replace it after previewing the Braille output.",
+      "path": "integrations/microsoft365/marketplace/listing/assets/screenshots/powerpoint-text-range.png",
+      "status": "captured",
+      "capturePlatform": "Microsoft 365 Desktop on Windows",
+      "format": "image/png",
+      "width": 1920,
+      "height": 1032,
+      "byteSize": 117654,
+      "sha256": "0af7cf1a68123fb114ec676595862deee0b3595c36ebf860b3544eac21a42a6e",
+      "privacyReview": {
+        "privateDocumentContent": false,
+        "privateFilePath": false,
+        "privateEmailAddress": false,
+        "hostUIAndProductNameAllowed": true
+      }
+    }
+  ],
+  "summary": {
+    "requiredHostSet": [
+      "Word",
+      "Excel",
+      "PowerPoint"
+    ],
+    "capturedCount": 3,
+    "windowsDesktopCaptured": true,
+    "webLiveVerified": false,
+    "macLiveVerified": false,
+    "publisherGate": "external-blocked-preserved"
+  }
+}
