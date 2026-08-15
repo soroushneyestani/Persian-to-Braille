@@ -37,3 +37,56 @@ export type {
   WordRuntimeMutationOutcome,
   WordRuntimePort,
 } from "./word/runtime.js";
+export {
+  EXCEL_HOST_FAILURE_CODES,
+} from "./excel/types.js";
+
+export {
+  createGlobalOfficeExcelRuntime,
+  createOfficeExcelRuntime,
+} from "./excel/runtime.js";
+
+export {
+  createExcelHostAdapter,
+} from "./excel/adapter.js";
+
+export {
+  createExcelSelectionService,
+} from "./excel/selection-service.js";
+
+export type {
+  ExcelEmptySelectionFailure,
+  ExcelHostFailure,
+  ExcelHostFailureCode,
+  ExcelHostSelectionTranslationFailure,
+  ExcelMutationResult,
+  ExcelSdkSelectionTranslationFailure,
+  ExcelSelectionReadResult,
+  ExcelSelectionSnapshot,
+  ExcelSelectionTranslationResult,
+  ExcelSelectionTranslationSuccess,
+  PersianBrailleExcelHostAdapter,
+  PersianBrailleExcelSelectionService,
+} from "./excel/types.js";
+
+export type {
+  ExcelRuntimeMutationOutcome,
+  ExcelRuntimePort,
+  OfficeExcelGlobals,
+} from "./excel/runtime.js";
+
+export type {
+  OfficeApplicationFailure,
+  OfficeHostCapabilities,
+  OfficeHostFailure,
+  OfficeHostKind,
+  OfficeHostTranslationFailure,
+  OfficeMutationResult,
+  OfficeMutationSuccess,
+  OfficeSdkTranslationFailure,
+  OfficeSdkTranslationFailureResult,
+  OfficeSdkTranslationSuccess,
+  OfficeSelectionService,
+  OfficeSelectionTranslationResult,
+  OfficeTranslationPreview,
+} from "./shared/types.js";
