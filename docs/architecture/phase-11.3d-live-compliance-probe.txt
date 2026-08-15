@@ -1,0 +1,62 @@
+PHASE 11.3d LIVE COMPLIANCE PROBE
+========================================================================
+Branch: phase11-marketplace
+HEAD: 93cbe792197ffe164224c75e327504ac3aa73fbf
+Origin: https://soroushneyestani.github.io/Persian-to-Braille
+
+[PASS] Git baseline: phase11-marketplace @ 93cbe79
+[PASS] Working tree: clean
+
+GITHUB PAGES DEPLOYMENT RUN
+------------------------------------------------------------------------
+Run: #4 attempt 1
+Event: push
+Status: completed
+Conclusion: success
+Run URL: https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31887242220
+[PASS] GitHub Actions deployment: current HEAD completed successfully
+
+LIVE HTTPS ENDPOINTS
+------------------------------------------------------------------------
+[CHECK] https://soroushneyestani.github.io/Persian-to-Braille/support.html
+        HTTP: 200
+        Final URL: https://soroushneyestani.github.io/Persian-to-Braille/support.html
+        Content-Type: text/html; charset=utf-8
+        Local normalized SHA-256:  8216ee0ed788fb7dca56d6f50095b024b98306a6061c1dde5bade3df718100b5
+        Remote normalized SHA-256: 8216ee0ed788fb7dca56d6f50095b024b98306a6061c1dde5bade3df718100b5
+        Result: PASS (live content matches committed source)
+
+[CHECK] https://soroushneyestani.github.io/Persian-to-Braille/privacy.html
+        HTTP: 200
+        Final URL: https://soroushneyestani.github.io/Persian-to-Braille/privacy.html
+        Content-Type: text/html; charset=utf-8
+        Local normalized SHA-256:  88abd9adb8ab80c0f42721b6bc98f695ae002a785c8409953398017eaef8b9f6
+        Remote normalized SHA-256: 88abd9adb8ab80c0f42721b6bc98f695ae002a785c8409953398017eaef8b9f6
+        Result: PASS (live content matches committed source)
+
+[CHECK] https://soroushneyestani.github.io/Persian-to-Braille/eula.html
+        HTTP: 200
+        Final URL: https://soroushneyestani.github.io/Persian-to-Braille/eula.html
+        Content-Type: text/html; charset=utf-8
+        Local normalized SHA-256:  4e448567c3ef2e13f58f672d92a101178fa552bce69138f82ff6dd35e5e70810
+        Remote normalized SHA-256: 4e448567c3ef2e13f58f672d92a101178fa552bce69138f82ff6dd35e5e70810
+        Result: PASS (live content matches committed source)
+
+[CHECK] https://soroushneyestani.github.io/Persian-to-Braille/compliance.css
+        HTTP: 200
+        Final URL: https://soroushneyestani.github.io/Persian-to-Braille/compliance.css
+        Content-Type: text/css; charset=utf-8
+        Local normalized SHA-256:  266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05
+        Remote normalized SHA-256: 266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05
+        Result: PASS (live content matches committed source)
+
+FINAL CLASSIFICATION
+------------------------------------------------------------------------
+[PASS] Support page: LIVE HTTPS / CONTENT VERIFIED
+[PASS] Privacy page: LIVE HTTPS / CONTENT VERIFIED
+[PASS] EULA page: LIVE HTTPS / CONTENT VERIFIED
+[PASS] Compliance stylesheet: LIVE HTTPS / CONTENT VERIFIED
+[PASS] Deployment run: CURRENT HEAD / SUCCESS
+
+Phase 11.3d live HTTPS compliance verification: PASS
+Next: freeze Phase 11.3d evidence, then Phase 11.3e Publisher Identity / Partner Center gate

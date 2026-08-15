@@ -1,0 +1,55 @@
+{
+  "phase": "11.3d",
+  "status": "live-https-compliance-verified",
+  "branch": "phase11-marketplace",
+  "head": "93cbe792197ffe164224c75e327504ac3aa73fbf",
+  "headShort": "93cbe79",
+  "origin": "https://soroushneyestani.github.io/Persian-to-Braille",
+  "deployment": {
+    "workflow": "Microsoft 365 Marketplace Pages",
+    "runNumber": 4,
+    "runAttempt": 1,
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "runUrl": "https://github.com/soroushneyestani/Persian-to-Braille/actions/runs/31887242220"
+  },
+  "endpoints": {
+    "support": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/support.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "normalizedSha256": "8216ee0ed788fb7dca56d6f50095b024b98306a6061c1dde5bade3df718100b5",
+      "result": "pass"
+    },
+    "privacy": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/privacy.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "normalizedSha256": "88abd9adb8ab80c0f42721b6bc98f695ae002a785c8409953398017eaef8b9f6",
+      "result": "pass"
+    },
+    "eula": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/eula.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "normalizedSha256": "4e448567c3ef2e13f58f672d92a101178fa552bce69138f82ff6dd35e5e70810",
+      "result": "pass"
+    },
+    "stylesheet": {
+      "url": "https://soroushneyestani.github.io/Persian-to-Braille/compliance.css",
+      "http": 200,
+      "contentType": "text/css; charset=utf-8",
+      "normalizedSha256": "266e0a66af351c382eebb75fff9b02a904f0b374340a5f3dd14a5e8ec0c02b05",
+      "result": "pass"
+    }
+  },
+  "classification": {
+    "support": "live-https-content-verified",
+    "privacy": "live-https-content-verified",
+    "eula": "live-https-content-verified",
+    "stylesheet": "live-https-content-verified",
+    "deploymentRun": "current-head-success"
+  },
+  "next": "11.3e Publisher Identity / Partner Center gate"
+}
