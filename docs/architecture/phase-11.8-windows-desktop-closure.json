@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.8",
+  "result": "CLOSED",
+  "releaseScope": "Microsoft 365 Desktop on Windows",
+  "architectureBoundary": "Microsoft365 -> SDK -> Core",
+  "closurePreparationBaseHead": "f9274a8c4cc9fd49d2e3dcb9abc1067d6b84a73e",
+  "finalWindowsCandidate": {
+    "head": "242547ed0a4262a6b56b06d22546a010ed07fc30",
+    "phase117Result": "PASS",
+    "githubActionsRunNumber": 13,
+    "githubActionsRunId": 31900419098,
+    "githubActionsConclusion": "success",
+    "artifactName": "persian-to-braille-windows-desktop-release-1",
+    "artifactId": 9250927199,
+    "packageManifestSha256": "8ebc50cf24b921d0dc75c3063df233bbc380d7cf617a4e9e60d8e814ea735ffc"
+  },
+  "windowsHosts": {
+    "word": "PASS",
+    "excel": "PASS",
+    "powerpoint": "PASS"
+  },
+  "regression": {
+    "microsoft365": "69/69 PASS",
+    "runtimeRules": 176,
+    "candidateRules": 139,
+    "normativeRules": 37,
+    "u0622": "included",
+    "publicTrustWording": "PASS"
+  },
+  "distribution": {
+    "productionHttps": "PASS",
+    "windowsInstaller": "PASS",
+    "releasePackage": "PASS",
+    "releasePreflight": "PASS",
+    "ciArtifact": "PASS"
+  },
+  "historicalEvidencePolicy": "preserved; later Windows scope decision supersedes old release-gate semantics",
+  "deferred": {
+    "web": "Phase 16",
+    "mac": "Phase 17",
+    "marketplacePartnerCenter": "Phase 18"
+  },
+  "nonClaims": [
+    "Office on the Web live verification",
+    "Microsoft 365 for Mac live verification",
+    "Microsoft certification",
+    "Microsoft Marketplace publication",
+    "Partner Center publisher enrollment"
+  ],
+  "next": "Phase 12 Developer Ecosystem"
+}
