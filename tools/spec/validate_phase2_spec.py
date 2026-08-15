@@ -41,6 +41,10 @@ ADJUDICATION_RECORD_DIR = (
     ROOT / "spec" / "fa-ir" / "adjudications" / "records"
 )
 
+RELEASE_CORRECTION_DIR = (
+    ROOT / "spec" / "fa-ir" / "governance" / "release-corrections"
+)
+
 RULE_DIR = ROOT / "spec" / "fa-ir" / "rules" / "records"
 CONF_DIR = ROOT / "spec" / "fa-ir" / "conformance" / "records"
 
@@ -50,17 +54,18 @@ REPORT_MD = ROOT / "docs" / "specification" / "phase-2.3-validation.md"
 
 EXPECTED_PROFILE = "fa-ir-g1"
 EXPECTED_PROFILE_VERSION = "0.1.0"
-EXPECTED_RULE_COUNT = 175
-EXPECTED_VECTOR_COUNT = 175
-EXPECTED_DECISION_COUNT = 175
+EXPECTED_RULE_COUNT = 176
+EXPECTED_VECTOR_COUNT = 176
+EXPECTED_DECISION_COUNT = 176
 EXPECTED_MANIFEST_STAGE = "2.14"
 EXPECTED_NORMATIVE_RULES = 37
-EXPECTED_CANDIDATE_RULES = 138
+EXPECTED_CANDIDATE_RULES = 139
 EXPECTED_ACTIVE_VECTORS = 37
-EXPECTED_DRAFT_VECTORS = 138
+EXPECTED_DRAFT_VECTORS = 139
 EXPECTED_STRUCTURAL_RULES = 29
 EXPECTED_CONSENSUS_DECISIONS = 37
 EXPECTED_ADJUDICATED_DECISIONS = 138
+EXPECTED_RELEASE_CORRECTIONS = 1
 EXPECTED_CANDIDATE_TYPES = {
     "character": 98,
     "context": 6,
@@ -302,6 +307,48 @@ def prefix_rules_can_overlap(
     return True
 
 
+def load_release_corrections() -> dict[str, dict]:
+    result: dict[str, dict] = {}
+    if not RELEASE_CORRECTION_DIR.exists():
+        return result
+
+    for path in sorted(RELEASE_CORRECTION_DIR.glob("*.json")):
+        correction = read_json(path)
+        decision = correction.get("maintainerDecision", {})
+        if decision.get("decision") != "admit-candidate-direct-character-rule":
+            continue
+
+        if (
+            correction.get("stage") != "11-release-correction"
+            or decision.get("ruleStatus") != "candidate"
+            or decision.get("normativePromotion") is not False
+            or correction.get("materialization", {}).get("promotionEligible") is not False
+        ):
+            fail(f"Invalid release-correction governance record: {path.name}")
+
+        rule_id = correction.get("materialization", {}).get("ruleId")
+        conformance_id = correction.get("materialization", {}).get("conformanceId")
+        decision_id = correction.get("subject", {}).get("decisionItemId")
+        if not all(isinstance(value, str) and value for value in (
+            rule_id,
+            conformance_id,
+            decision_id,
+        )):
+            fail(f"Incomplete release-correction materialization: {path.name}")
+        if rule_id in result:
+            fail(f"Duplicate release-correction rule ID: {rule_id}")
+
+        result[rule_id] = {
+            "id": correction["id"],
+            "decisionItemId": decision_id,
+            "conformanceId": conformance_id,
+            "path": rel(path),
+            "sha256": sha256(path),
+        }
+
+    return result
+
+
 def validate() -> dict:
     registry = read_json(REGISTRY)
     master = read_json(MASTER)
@@ -512,6 +559,11 @@ def validate() -> dict:
         "Manifest adjudicated-candidate count",
     )
     assert_equal(
+        summary["releaseCorrectionRules"],
+        EXPECTED_RELEASE_CORRECTIONS,
+        "Manifest release-correction count",
+    )
+    assert_equal(
         summary["structuralRules"],
         EXPECTED_STRUCTURAL_RULES,
         "Manifest structural-rule count",
@@ -583,11 +635,18 @@ def validate() -> dict:
     consumed_decisions = []
     consumed_consensus = []
     consumed_adjudicated = []
+    consumed_release_corrections = []
     referenced_sources = set()
     exact_signatures = {}
     rule_input_texts = []
     structural_rule_ids = set()
     adjudicated_rule_ids = set()
+    release_corrections_by_rule = load_release_corrections()
+    assert_equal(
+        len(release_corrections_by_rule),
+        EXPECTED_RELEASE_CORRECTIONS,
+        "Release-correction record count",
+    )
 
     admission_by_decision = {}
     if admission is not None:
@@ -700,6 +759,55 @@ def validate() -> dict:
             decision = master_items[decision_id]
             classification = decision["classification"]
 
+            if (
+                rule["status"] == "candidate"
+                and rule_id in release_corrections_by_rule
+            ):
+                correction = release_corrections_by_rule[rule_id]
+                assert_equal(
+                    classification,
+                    "REVIEW-REQUIRED",
+                    f"Release-correction candidate {rule_id} must preserve "
+                    f"REVIEW-REQUIRED classification of {decision_id}",
+                )
+                assert_equal(
+                    decision_id,
+                    correction["decisionItemId"],
+                    f"Release-correction decision provenance {rule_id}",
+                )
+                assert_equal(
+                    rule["conformance"]["vectorIds"],
+                    [correction["conformanceId"]],
+                    f"Release-correction conformance ID {rule_id}",
+                )
+                manifest_entry = manifest_rule_entries[rule_id]
+                assert_equal(
+                    manifest_entry["provenanceType"],
+                    "phase-11-release-correction",
+                    f"Release-correction manifest provenance {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry["admissionAuthorized"],
+                    False,
+                    f"Release correction must not claim adjudication admission {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry.get("releaseCorrectionId"),
+                    correction["id"],
+                    f"Release-correction manifest ID {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry.get("releaseCorrectionPath"),
+                    correction["path"],
+                    f"Release-correction manifest path {rule_id}",
+                )
+                assert_equal(
+                    manifest_entry.get("releaseCorrectionSha256"),
+                    correction["sha256"],
+                    f"Release-correction manifest hash {rule_id}",
+                )
+                consumed_release_corrections.append(decision_id)
+
             if rule["status"] == "normative":
                 assert_equal(
                     classification,
@@ -708,7 +816,7 @@ def validate() -> dict:
                     f"{decision_id}",
                 )
                 consumed_consensus.append(decision_id)
-            else:
+            elif rule_id not in release_corrections_by_rule:
                 assert_equal(
                     classification,
                     "REVIEW-REQUIRED",
@@ -896,6 +1004,20 @@ def validate() -> dict:
         len(consumed_decisions),
         EXPECTED_DECISION_COUNT,
         "Each materialized rule must consume exactly one decision",
+    )
+
+    assert_equal(
+        len(consumed_release_corrections),
+        EXPECTED_RELEASE_CORRECTIONS,
+        "Release-correction decisions consumed",
+    )
+    assert_equal(
+        set(consumed_release_corrections),
+        {
+            row["decisionItemId"]
+            for row in release_corrections_by_rule.values()
+        },
+        "Release-correction decision set",
     )
 
     expected_consensus = {
@@ -1086,6 +1208,7 @@ def validate() -> dict:
             "normativeRules": normative_count,
             "conformanceVectors": len(vector_by_id),
             "activeConformanceVectors": active_vector_count,
+            "releaseCorrectionRules": len(release_corrections_by_rule),
             "draftConformanceVectors": draft_vector_count,
             "promotionRecordsObserved": len(promotions),
             "uniqueDecisionItemsConsumed": len(unique_decisions),
@@ -1112,9 +1235,10 @@ def validate() -> dict:
         },
         "invariants": [
             "All rule/profile/vector documents validate against Draft 2020-12 schemas.",
-            "Profile rule IDs resolve exactly to all 175 materialized rule files.",
+            "Profile rule IDs resolve exactly to all 176 materialized rule files.",
             "Every rule consumes registered sources and preserves its Phase 1 classification.",
             "All 37 consensus decisions and all 138 admitted REVIEW-REQUIRED decisions are consumed exactly once.",
+            "One explicit Phase 11 release correction consumes FA-VAR-001 without rewriting its historical deferred adjudication.",
             "Every rule has exactly one reciprocal conformance vector.",
             "Vector context matches rule context.",
             "Braille cell arrays deterministically derive their Unicode Braille strings.",

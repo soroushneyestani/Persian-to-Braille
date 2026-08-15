@@ -24,7 +24,7 @@
   "normalization": {
     "form": "none",
     "canonicalInput": "آ",
-    "notes": "Phase 2.2 does not promote unresolved global Unicode normalization policy."
+    "notes": "Explicit maintainer release correction preserves the current no-rewrite Unicode normalization policy."
   },
   "evidence": {
     "decisionItemIds": [
@@ -35,17 +35,17 @@
       "SRC-LIBLOUIS-G1",
       "SRC-LIBLOUIS-2054"
     ],
-    "rationale": "Pinned stable and draft mappings agree, and the institutional 1393/2014 manual is reported by SRC-LIBLOUIS-2053 to match the core alphabet on printed pages 32-33.",
+    "rationale": "Explicit maintainer release correction FA-REL-CORR-U0622-001 admits this direct scalar as a draft candidate while the historical adjudication remains deferred.",
     "conflictsResolved": []
   },
   "conformance": {
     "vectorIds": [
-      "FA-CONF-LETTER-001"
+      "FA-CONF-VAR-001"
     ]
   },
   "notes": [
-    "Generated from a Phase 1 CONSENSUS-CANDIDATE decision.",
-    "Materialized lifecycle status is controlled by promotion records.",
-    "Normative status materialized from promotion record FA-PROMO-G1-LETTER-001-001."
+    "Materialized from maintainer release correction FA-REL-CORR-U0622-001.",
+    "Historical Phase 1/2 adjudication is preserved unchanged.",
+    "Candidate admission does not imply normative promotion."
   ]
 }

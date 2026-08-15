@@ -185,6 +185,35 @@ if (
   );
 }
 
+if (
+  conformance.status !== "draft"
+  || JSON.stringify(conformance.ruleIds)
+    !== JSON.stringify(["FA-G1-VAR-001"])
+  || JSON.stringify(rule.conformance?.vectorIds)
+    !== JSON.stringify(["FA-CONF-VAR-001"])
+) {
+  fail(
+    "U+0622 candidate rule/vector lifecycle or reciprocal linkage mismatch",
+  );
+}
+
+const materializer =
+  await text(
+    "tools/spec/build_phase2_candidate_package.py",
+  );
+
+for (const token of [
+  "RELEASE_CORRECTION_DIR",
+  "load_release_correction_candidates",
+  "phase-11-release-correction",
+]) {
+  if (!materializer.includes(token)) {
+    fail(
+      `canonical Phase 2 materializer is missing ${token}`,
+    );
+  }
+}
+
 const runtime =
   await text(
     "packages/core/src/generated/fa-ir-g1.runtime.ts",

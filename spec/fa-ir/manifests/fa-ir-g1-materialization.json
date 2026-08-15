@@ -6,16 +6,16 @@
     "version": "0.1.0",
     "status": "draft",
     "path": "spec/fa-ir/profiles/fa-ir-g1.json",
-    "sha256": "2448C00BFE7ED94F067912C9C836E5FF3092E203B78C0C88976A7B2DF3706EF7"
+    "sha256": "A145FF5DA6EA145CF97ABAEE004472E46F30E4859E8B150F70A504B73B3D9E4E"
   },
   "status": "materialized-package",
   "profileNormative": false,
   "summary": {
-    "decisionItemsConsumed": 175,
-    "rules": 175,
-    "candidateRules": 138,
+    "decisionItemsConsumed": 176,
+    "rules": 176,
+    "candidateRules": 139,
     "normativeRules": 37,
-    "conformanceVectors": 175,
+    "conformanceVectors": 176,
     "activeConformanceVectors": 37,
     "coreAlphabetRules": 32,
     "orthographicRules": 1,
@@ -24,7 +24,8 @@
     "promotionRecordsApplied": 37,
     "phase1ConsensusRules": 37,
     "adjudicatedCandidateRules": 138,
-    "draftConformanceVectors": 138,
+    "releaseCorrectionRules": 1,
+    "draftConformanceVectors": 139,
     "structuralRules": 29,
     "candidateTargetTypes": {
       "character": 98,
@@ -2025,6 +2026,18 @@
       "adjudicationRecordId": "FA-ADJ-PUNC-013-001",
       "adjudicationRecordPath": "spec/fa-ir/adjudications/records/fa-adj-punc-013-001.json",
       "adjudicationRecordSha256": "61811BF365C9B21E55D4B582BA0CBA587FE8374057D70E61EA546BD83AC109FC"
+    },
+    {
+      "id": "FA-G1-VAR-001",
+      "status": "candidate",
+      "path": "spec/fa-ir/rules/records/fa-g1-var-001.json",
+      "sha256": "76F26E1146DA30071BF2C9721A4D28B6F71C67EAFEAE4D53B311756981EAB56B",
+      "decisionItemId": "FA-VAR-001",
+      "provenanceType": "phase-11-release-correction",
+      "admissionAuthorized": false,
+      "releaseCorrectionId": "FA-REL-CORR-U0622-001",
+      "releaseCorrectionPath": "spec/fa-ir/governance/release-corrections/fa-rel-corr-u0622-001.json",
+      "releaseCorrectionSha256": "D7BDDAFDCEE019F4EAE2684BE31E34622CBF290957C06B90CBF6403D2B463CD1"
     }
   ],
   "conformanceVectors": [
@@ -3077,6 +3090,12 @@
       "status": "draft",
       "path": "spec/fa-ir/conformance/records/fa-conf-punc-unicode-ellipsis-001.json",
       "sha256": "E1F58EC0B4598A8CE05D10BEC4B0D32B2FD4A07EF36A8A1265B2A4750A9ED3A6"
+    },
+    {
+      "id": "FA-CONF-VAR-001",
+      "status": "draft",
+      "path": "spec/fa-ir/conformance/records/fa-conf-var-001.json",
+      "sha256": "0954F6455CFEA2315553D21FB3556F2CBF24E314A28DD26C43DCD534FF2F246B"
     }
   ]
 }
