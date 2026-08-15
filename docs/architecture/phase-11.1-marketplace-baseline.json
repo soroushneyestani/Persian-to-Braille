@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.1",
+  "title": "Microsoft Marketplace Submission Baseline Audit",
+  "auditDate": "2026-08-15",
+  "branch": "phase11-marketplace",
+  "baselineCommit": "c9a82483354832a3f292117ca20ae4875881e324",
+  "status": "closed-baseline-gaps-recorded",
+  "phase10Regression": "pass",
+  "currentManifest": {
+    "family": "add-in-only XML",
+    "id": "33ec7928-1204-5bb3-88e6-d778413e9234",
+    "version": "2.0.0.0",
+    "providerName": "Soroush Neyestani",
+    "displayName": "Persian-to-Braille",
+    "hosts": [
+      "Document",
+      "Workbook",
+      "Presentation"
+    ],
+    "permission": "ReadWriteDocument",
+    "officeJs": "https://appsforoffice.microsoft.com/lib/1/hosted/office.js",
+    "supportUrl": "https://github.com/soroushneyestani/Persian-to-Braille",
+    "developmentBaseUrl": "https://localhost:3000"
+  },
+  "ready": {
+    "phase11Branch": true,
+    "phase10MergedBaseline": true,
+    "phase10Regression": true,
+    "wordExcelPowerPointDeclared": true,
+    "windowsRealClientVerification": true,
+    "officeJsProductionCdn": true,
+    "manifestSchemaPreviouslyValidatedByMicrosoft": true,
+    "highResolutionIconElementPresent": true
+  },
+  "repositoryGaps": {
+    "marketplaceSupportPage": "required",
+    "productionHttpsHosting": "required",
+    "productionManifestUrls": "required",
+    "productionIconUrls": "required",
+    "privacyPolicyHttpsUrl": "required",
+    "eulaHttpsUrl": "required",
+    "marketplaceListingMetadataAssets": "required",
+    "certificationTestNotes": "required"
+  },
+  "externalAccountGates": {
+    "partnerCenterPublisherAccount": "not-verified-from-repository",
+    "publisherProviderNameAlignment": "not-verified-from-repository",
+    "microsoft365CopilotProgramEnrollment": "not-verified-from-repository"
+  },
+  "platformGates": {
+    "windows": "verified-pass",
+    "web": "release-gate-not-executed",
+    "mac": "release-gate-not-executed",
+    "ios": "decision-gate"
+  },
+  "evidence": "docs/architecture/phase-11.1-marketplace-baseline-audit.txt",
+  "nextPhase": "11.2",
+  "nextPhaseName": "Production Hosting / HTTPS / Production Manifest"
+}
