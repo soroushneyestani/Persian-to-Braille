@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1",
+  "phase": "10.1",
+  "title": "Excel / PowerPoint Host Baseline Audit",
+  "repositoryBaseline": {
+    "branch": "phase10-excel-powerpoint",
+    "head": "548d9b9e99e6abb1d8d98c8e1ee465dc3127dfd1",
+    "main": "548d9b9e99e6abb1d8d98c8e1ee465dc3127dfd1",
+    "originMain": "548d9b9e99e6abb1d8d98c8e1ee465dc3127dfd1",
+    "phase9ClosureCommitAtAuditStart": "548d9b9e99e6abb1d8d98c8e1ee465dc3127dfd1",
+    "rawAuditSha256": "a1dd6346b4e604a1a8c4b18cbaa001d80e6d2b692ae7cdbdd38b1fa637ed667b"
+  },
+  "currentMicrosoft365State": {
+    "package": "@persian-braille/microsoft365",
+    "sdkDependency": "@persian-braille/sdk",
+    "manifestPath": "integrations/microsoft365/manifest.xml",
+    "manifestSha256AtAudit": "9b9572195859d96edcd45f7c47e29285be8fd3e79c67058a1120f7e479e7348a",
+    "manifestHost": "Document",
+    "manifestRequirementSet": {
+      "name": "WordApi",
+      "minVersion": "1.1"
+    },
+    "implementedHostAdapters": [
+      "word"
+    ],
+    "excelRuntimeImplemented": false,
+    "powerPointRuntimeImplemented": false,
+    "wordRegressionMustRemainGreen": true
+  },
+  "phase10ProductionManifestDecision": {
+    "format": "add-in-only XML",
+    "reason": "Microsoft documents the add-in-only XML manifest as production-supported for Excel, PowerPoint, and Word; Phase 10 has no requirement that justifies a manifest-family migration.",
+    "targetTaskPaneHosts": [
+      {
+        "manifestName": "Document",
+        "application": "Word"
+      },
+      {
+        "manifestName": "Workbook",
+        "application": "Excel"
+      },
+      {
+        "manifestName": "Presentation",
+        "application": "PowerPoint"
+      }
+    ],
+    "baseManifestRule": "Do not combine WordApi, ExcelApi, and PowerPointApi application-specific Sets in one base Requirements block.",
+    "hostScopedRequirementStrategy": "Use host-scoped VersionOverrides/Requirements following Microsoft's multi-application requirement configuration guidance; validate the resulting XML with Microsoft's manifest validator before accepting the manifest change.",
+    "mandatoryValidator": "office-addin-manifest"
+  },
+  "minimumHostApiBaselines": {
+    "word": {
+      "set": "WordApi",
+      "minVersion": "1.1",
+      "status": "frozen-from-phase9"
+    },
+    "excel": {
+      "set": "ExcelApi",
+      "minVersion": "1.1",
+      "status": "phase10-baseline",
+      "basis": [
+        "Workbook.getSelectedRange is ExcelApi 1.1",
+        "Range.text is ExcelApi 1.1 and read-only",
+        "Range.values is ExcelApi 1.1 and writable",
+        "Range.formulas is ExcelApi 1.1",
+        "Range rowCount/columnCount are ExcelApi 1.1"
+      ]
+    },
+    "powerPoint": {
+      "set": "PowerPointApi",
+      "minVersion": "1.5",
+      "status": "phase10-baseline",
+      "basis": [
+        "Presentation.getSelectedTextRange is PowerPointApi 1.5",
+        "Presentation.getSelectedTextRangeOrNullObject is PowerPointApi 1.5",
+        "TextRange.text is writable and is PowerPointApi 1.4",
+        "The dedicated PowerPointApi 1.5 API list includes selected text range APIs"
+      ]
+    }
+  },
+  "sharedArchitectureConstraintsForPhase10_2": {
+    "mustRemainShared": [
+      "public SDK translation boundary",
+      "task-pane visual shell where host semantics do not differ",
+      "clipboard copy behavior",
+      "translation projection rendering",
+      "profile lifecycle disclosure",
+      "host-vs-SDK error-domain separation"
+    ],
+    "mustRemainHostSpecific": [
+      "Office host identity check",
+      "requirement-set check",
+      "Office object-model runtime bridge",
+      "selection snapshot",
+      "stale-selection validation",
+      "document/workbook/presentation mutation semantics"
+    ],
+    "forbidden": [
+      "Office-specific Braille mappings",
+      "Office-specific Unicode normalization",
+      "Office-specific rule precedence",
+      "calling Core directly from Microsoft 365",
+      "weakening the existing Word stale-preview guard",
+      "pretending Excel Range and PowerPoint TextRange have Word.Range semantics"
+    ]
+  },
+  "openDecisionsForPhase10_2": [
+    {
+      "id": "P10-ARCH-001",
+      "topic": "Excel selection cardinality",
+      "question": "Whether the Phase 10 Excel MVP supports one cell only, one contiguous multi-cell range, or a deterministic 2D cell translation projection."
+    },
+    {
+      "id": "P10-ARCH-002",
+      "topic": "Excel formula/non-text protection",
+      "question": "How formula, numeric, boolean, error, blank, and rich data cells are classified for preview and mutation."
+    },
+    {
+      "id": "P10-ARCH-003",
+      "topic": "PowerPoint Insert After semantics",
+      "question": "How Insert After is represented for selected PowerPoint text without assuming Word.Range.insertText semantics."
+    },
+    {
+      "id": "P10-ARCH-004",
+      "topic": "Shared task-pane capability model",
+      "question": "Whether host-specific actions are represented through a capability-driven controller/view rather than Word-specific controller methods and labels."
+    },
+    {
+      "id": "P10-ARCH-005",
+      "topic": "Multi-host manifest materialization",
+      "question": "Exact XML shape for Document/Workbook/Presentation host-scoped commands and requirement sets."
+    }
+  ],
+  "sourceAudit": {
+    "primarySourcePolicy": "Current Microsoft Learn documentation only for Office platform/API claims.",
+    "checkedOn": "2026-08-15",
+    "sources": [
+      "Office Add-ins manifest",
+      "Specify Office hosts and API requirements with the add-in only manifest",
+      "Understand the logic of API requirement configuration",
+      "Create add-in commands with the add-in only manifest",
+      "Excel.Workbook class",
+      "Excel.Range class",
+      "Excel JavaScript API requirement sets",
+      "PowerPoint.Presentation class",
+      "PowerPoint.TextRange class",
+      "PowerPoint JavaScript API requirement set 1.5",
+      "PowerPoint JavaScript API requirement sets"
+    ],
+    "documentationNote": "The PowerPoint requirement-set overview contains summary text that is inconsistent with the dedicated 1.5 page. The dedicated PowerPointApi 1.5 API list and the Presentation.getSelectedTextRange member reference both identify selected-text-range APIs as PowerPointApi 1.5; Phase 10 therefore freezes 1.5 for this feature and requires runtime/manifest validation."
+  },
+  "phase10_1Exit": {
+    "status": "baseline-frozen-no-feature-code",
+    "next": "Phase 10.2 - Shared Microsoft 365 Host Architecture"
+  }
+}
