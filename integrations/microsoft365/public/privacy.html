@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <title>Persian-to-Braille Privacy Policy</title>
+  <meta
+    name="description"
+    content="Privacy Policy for the Persian-to-Braille Microsoft 365 Add-in."
+  >
+  <link rel="stylesheet" href="./compliance.css">
+</head>
+<body>
+  <main class="legal-shell">
+    <header class="legal-header">
+      <p class="eyebrow">Persian-to-Braille for Microsoft 365</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">
+        This policy describes the data-handling behavior of the
+        Persian-to-Braille Microsoft 365 Add-in.
+      </p>
+    </header>
+
+    <nav class="legal-nav" aria-label="Compliance pages">
+      <a href="./support.html">Support</a>
+      <a aria-current="page" href="./privacy.html">Privacy</a>
+      <a href="./eula.html">EULA</a>
+    </nav>
+
+    <section>
+      <h2>Scope</h2>
+      <p>
+        This Privacy Policy applies to the Persian-to-Braille add-in for
+        Microsoft Word, Excel, and PowerPoint published by Soroush Neyestani.
+      </p>
+    </section>
+
+    <section>
+      <h2>Office content processed by the add-in</h2>
+      <p>
+        When you explicitly request a translation, the add-in reads the
+        currently supported Office selection needed to perform that operation.
+        The selected content is processed by the Persian-to-Braille SDK and
+        Core within the add-in's client-side runtime to produce a Braille
+        preview.
+      </p>
+      <p>
+        The add-in writes a Braille result back to the Office document only
+        when you explicitly choose a supported write action such as Replace
+        Selection or, in Word, Insert After.
+      </p>
+    </section>
+
+    <section>
+      <h2>Application-owned collection and storage</h2>
+      <p>
+        In the audited release, the add-in does not implement its own account
+        system, authentication service, advertising system, analytics SDK, or
+        telemetry SDK.
+      </p>
+      <p>
+        The add-in does not implement application-owned persistence of selected
+        Office content through localStorage, sessionStorage, IndexedDB, or
+        application cookies.
+      </p>
+      <p>
+        The audited add-in runtime does not implement an application-owned
+        fetch, XMLHttpRequest, WebSocket, or EventSource path that sends the
+        selected Office content to a publisher-controlled server.
+      </p>
+    </section>
+
+    <section>
+      <h2>Clipboard actions</h2>
+      <p>
+        If you choose Copy Braille, the generated Braille result is written to
+        the clipboard as a user-requested client-side action.
+      </p>
+    </section>
+
+    <section>
+      <h2>Microsoft and hosting infrastructure</h2>
+      <p>
+        The add-in runs inside Microsoft Office and loads the Microsoft Office
+        JavaScript library from Microsoft's hosted Office.js content delivery
+        network.
+      </p>
+      <p>
+        Production add-in web assets are served through GitHub Pages. Microsoft,
+        GitHub, the browser, network providers, or the Office host may process
+        ordinary technical request information as part of providing their
+        platforms and network infrastructure. That infrastructure processing is
+        separate from application-owned translation logic.
+      </p>
+      <p>
+        This policy does not make an absolute claim that no network request,
+        platform log, or infrastructure metadata exists outside the add-in's
+        own application logic.
+      </p>
+    </section>
+
+    <section>
+      <h2>Publisher-side retention</h2>
+      <p>
+        The audited release does not include a publisher-operated backend,
+        database, or account service for retaining selected Office content.
+        Accordingly, the add-in itself does not provide a publisher-side
+        storage mechanism for translated selections.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sale, advertising, and profiling</h2>
+      <p>
+        The audited release does not implement advertising, behavioral
+        profiling, or an application-owned mechanism for selling user content
+        or translation data.
+      </p>
+    </section>
+
+    <section>
+      <h2>Security and user responsibility</h2>
+      <p>
+        Avoid placing confidential or sensitive material in public support
+        channels. Use Office and your device in accordance with your
+        organization's security policies.
+      </p>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>
+        If the add-in later introduces a backend service, account system,
+        analytics, telemetry, or other material data-processing behavior, this
+        policy must be updated before that behavior is represented as covered
+        by this version of the policy.
+      </p>
+    </section>
+
+    <section>
+      <h2>Privacy questions</h2>
+      <p>
+        Privacy questions can be initiated through the
+        <a href="./support.html">public support page</a>. Do not post personal,
+        confidential, or sensitive information in the public issue tracker.
+      </p>
+    </section>
+
+    <footer class="legal-footer">
+      <p>Effective date and last updated: 15 August 2026.</p>
+      <p>
+        <a href="./support.html">Support</a>
+        <span aria-hidden="true"> · </span>
+        <a href="./eula.html">End User License Agreement</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
