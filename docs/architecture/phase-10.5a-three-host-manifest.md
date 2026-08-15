@@ -2,7 +2,7 @@
 
 ## Status
 
-**IMPLEMENTED — OFFICIAL MICROSOFT MANIFEST VALIDATION REQUIRED BEFORE ACCEPTANCE**
+**CLOSED — OFFICIAL MICROSOFT MANIFEST VALIDATION PASS**
 
 Phase 10.5a materializes the manifest architecture frozen in Phase 10.2 after
 the Word, Excel, and PowerPoint runtime/task-pane integrations have all been
@@ -109,7 +109,7 @@ invariants without forbidding the manifest evolution that their own roadmap
 deferred to Phase 10.5.
 
 The Phase 9 Word static validator continues to require the Word host, Word
-command surface, WordApi 1.1 requirement, HTTPS task pane, and
+command surface, runtime WordApi 1.1 gate, HTTPS task pane, and
 ReadWriteDocument permission.
 
 ## Acceptance gates

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "phase": "10.6",
+  "title": "Phase 10 Microsoft 365 Full Add-in Closure",
+  "closureDate": "2026-08-15",
+  "branch": "phase10-excel-powerpoint",
+  "baselineCommit": "4c670f7d9df94b402ee167e29a3732485937784f",
+  "status": "closed",
+  "architecture": {
+    "translationBoundary": [
+      "specification",
+      "core",
+      "sdk",
+      "microsoft365",
+      "office-host"
+    ],
+    "microsoft365DirectCoreAccess": false,
+    "sdkIsOnlyTranslationDependency": true,
+    "sharedTaskPane": true,
+    "manifestFamily": "add-in-only XML"
+  },
+  "phases": {
+    "10.1": {
+      "name": "Excel / PowerPoint Platform Baseline Audit",
+      "status": "closed",
+      "validator": "validate:phase10-office-baseline"
+    },
+    "10.2": {
+      "name": "Shared Microsoft 365 Host Architecture",
+      "status": "closed",
+      "validator": "validate:phase10-shared-host-architecture"
+    },
+    "10.3": {
+      "name": "Excel Translation Integration",
+      "status": "closed",
+      "validators": [
+        "validate:phase10-excel-host-layer",
+        "validate:phase10-excel-taskpane"
+      ]
+    },
+    "10.4": {
+      "name": "PowerPoint Translation Integration",
+      "status": "closed",
+      "validators": [
+        "validate:phase10-powerpoint-host-layer",
+        "validate:phase10-powerpoint-taskpane"
+      ]
+    },
+    "10.5": {
+      "name": "Sideload / Regression / Cross-host Evidence",
+      "status": "closed",
+      "validator": "validate:phase10-5"
+    },
+    "10.6": {
+      "name": "Phase 10 Closure",
+      "status": "closed",
+      "validator": "validate:phase10-closure"
+    }
+  },
+  "hostContracts": {
+    "word": {
+      "manifestHost": "Document",
+      "requirementSet": "WordApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "contiguous text range",
+      "replace": true,
+      "insertAfter": true,
+      "staleGuard": "SELECTION_CHANGED",
+      "windows": "verified-pass"
+    },
+    "excel": {
+      "manifestHost": "Workbook",
+      "requirementSet": "ExcelApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "exactly one selected plain-text cell",
+      "replace": true,
+      "insertAfter": false,
+      "multiCellGuard": "SELECTION_SHAPE_UNSUPPORTED",
+      "formulaGuard": "SELECTION_CONTENT_UNSUPPORTED",
+      "staleGuard": "SELECTION_CHANGED",
+      "windows": "verified-pass"
+    },
+    "powerpoint": {
+      "manifestHost": "Presentation",
+      "requirementSet": "PowerPointApi",
+      "minimumVersion": "1.5",
+      "selectionModel": "selected text range",
+      "replace": true,
+      "insertAfter": false,
+      "staleGuard": "SELECTION_CHANGED",
+      "windows": "verified-pass"
+    }
+  },
+  "manifest": {
+    "baseHosts": [
+      "Document",
+      "Workbook",
+      "Presentation"
+    ],
+    "versionOverridesCount": 1,
+    "versionOverridesHosts": [
+      "Document",
+      "Workbook",
+      "Presentation"
+    ],
+    "sharedRequirement": {
+      "name": "AddinCommands",
+      "minimumVersion": "1.1"
+    },
+    "applicationApiRequirements": "runtime-gated",
+    "permission": "ReadWriteDocument",
+    "officialMicrosoftValidation": "pass"
+  },
+  "regression": {
+    "microsoft365Tests": {
+      "tests": 69,
+      "pass": 69,
+      "fail": 0
+    },
+    "microsoft365Typecheck": "pass",
+    "phase9Regression": "pass",
+    "phase10ExecutableAuditFailures": 0
+  },
+  "platformClaims": {
+    "windows": {
+      "word": "verified-pass",
+      "excel": "verified-pass",
+      "powerpoint": "verified-pass"
+    },
+    "web": "expected-not-executed",
+    "mac": "expected-not-executed"
+  },
+  "evidence": [
+    "docs/architecture/phase-10.5a-office-manifest-validation.txt",
+    "docs/architecture/phase-10.5b-windows-live-sideload-evidence.json",
+    "docs/architecture/phase-10.5c-cross-host-regression-evidence.md",
+    "docs/architecture/phase-10.5d-closure.json",
+    "docs/architecture/phase-10.6-final-closure-audit.txt"
+  ],
+  "auditNotes": [
+    "The Phase 10.6 audit focus-file list referenced integrations/microsoft365/src/shared/host-config.ts, but the implemented shared task-pane capability configuration is integrations/microsoft365/src/taskpane/host-config.ts. This was an audit-tool path issue, not a repository defect; the capability scan and executable validators inspected the actual implementation successfully.",
+    "The raw audit checked repository cleanliness before writing its own stage10-6 output file. The closure patch moves that transient root output into docs/architecture as evidence."
+  ],
+  "nextPhase": "11",
+  "nextPhaseName": "Microsoft Marketplace"
+}

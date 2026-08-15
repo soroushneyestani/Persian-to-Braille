@@ -48,7 +48,9 @@
     "validate:phase10-multihost-manifest": "node tools/architecture/validate-phase10-multihost-manifest.mjs",
     "validate:phase10-windows-live-evidence": "node tools/architecture/validate-phase10-windows-live-evidence.mjs",
     "validate:phase10-5-closure": "node tools/architecture/validate-phase10-5-closure.mjs",
-    "validate:phase10-5": "pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure"
+    "validate:phase10-5": "pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure",
+    "validate:phase10-closure": "node tools/architecture/validate-phase10-closure.mjs",
+    "validate:phase10": "pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure"
   },
   "devDependencies": {
     "typescript": "6.0.3"
