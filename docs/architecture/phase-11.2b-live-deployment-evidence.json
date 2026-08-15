@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.2b",
+  "title": "Live GitHub Pages HTTPS Deployment Evidence",
+  "recordedAtUtc": "2026-08-15T12:37:22Z",
+  "branch": "phase11-marketplace",
+  "commit": "bc8575d0522be57b521aedd3f722a9a084fd53ec",
+  "status": "verified-pass",
+  "hosting": {
+    "provider": "GitHub Pages",
+    "origin": "https://soroushneyestani.github.io/Persian-to-Braille",
+    "https": "verified-pass"
+  },
+  "githubActions": {
+    "workflow": "Microsoft 365 Marketplace Pages",
+    "runNumberObserved": 3,
+    "overallStatusObserved": "success",
+    "buildJobObserved": "pass",
+    "deployJobObserved": "pass",
+    "pagesArtifactObserved": "github-pages-1",
+    "submissionManifestArtifactObserved": "microsoft365-marketplace-manifest",
+    "environment": "github-pages",
+    "allowedBranchesObserved": [
+      "main",
+      "phase11-marketplace"
+    ],
+    "observationMode": "manual UI evidence supplied during live verification"
+  },
+  "remoteProbe": {
+    "status": "pass",
+    "taskpane": "pass",
+    "commands": "pass",
+    "styles": "pass",
+    "icon16": "pass",
+    "icon32": "pass",
+    "icon80": "pass",
+    "officeJsMicrosoftCdn": "pass",
+    "iconCacheControl": "max-age=600"
+  },
+  "developmentManifest": "preserved-localhost",
+  "supportUrl": "deferred-to-phase-11.3",
+  "nextPhase": "11.3",
+  "nextPhaseName": "Support / Privacy / EULA / Publisher Identity"
+}
