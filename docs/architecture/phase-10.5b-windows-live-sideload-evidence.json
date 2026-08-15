@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "phase": "10.5b",
+  "title": "Windows live sideload evidence",
+  "verificationDate": "2026-08-15",
+  "branch": "phase10-excel-powerpoint",
+  "baselineCommit": "77d47b0",
+  "addInId": "33ec7928-1204-5bb3-88e6-d778413e9234",
+  "platform": {
+    "os": "Windows",
+    "officeChannel": "Microsoft 365 desktop",
+    "execution": "live-real-client"
+  },
+  "manifest": {
+    "path": "integrations/microsoft365/manifest.xml",
+    "family": "add-in-only XML",
+    "microsoftValidator": {
+      "status": "pass",
+      "evidencePath": "docs/architecture/phase-10.5a-office-manifest-validation.txt",
+      "terminalResult": "The manifest is valid."
+    }
+  },
+  "sideloadLifecycle": {
+    "tool": "office-addin-debugging",
+    "startCommand": "pnpm dlx office-addin-debugging start integrations/microsoft365/manifest.xml desktop",
+    "stopCommand": "pnpm dlx office-addin-debugging stop integrations/microsoft365/manifest.xml",
+    "hosts": [
+      {
+        "host": "word",
+        "officeApp": "Word",
+        "launch": "pass",
+        "debuggingStarted": true,
+        "cleanup": "pass",
+        "observedStopResult": "Debugging has been stopped."
+      },
+      {
+        "host": "excel",
+        "officeApp": "Excel",
+        "launch": "pass",
+        "debuggingStarted": true,
+        "cleanup": "pass",
+        "observedStopResult": "Debugging has been stopped."
+      },
+      {
+        "host": "powerpoint",
+        "officeApp": "PowerPoint",
+        "launch": "pass",
+        "debuggingStarted": true,
+        "cleanup": "pass",
+        "observedStopResult": "Debugging has been stopped."
+      }
+    ]
+  },
+  "clients": {
+    "word": {
+      "client": "Word for Microsoft 365 on Windows",
+      "status": "verified-pass",
+      "requirementSet": "WordApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "contiguous text range",
+      "checks": {
+        "ribbonCommand": "pass",
+        "taskPaneOpen": "pass",
+        "hostReadiness": "pass",
+        "selectionRead": "pass",
+        "sdkTranslation": "pass",
+        "braillePreview": "pass",
+        "copyBraille": "pass",
+        "replaceSelection": "pass",
+        "insertAfter": "pass",
+        "staleSelectionGuard": {
+          "status": "pass",
+          "expectedCode": "SELECTION_CHANGED"
+        }
+      }
+    },
+    "excel": {
+      "client": "Excel for Microsoft 365 on Windows",
+      "status": "verified-pass",
+      "requirementSet": "ExcelApi",
+      "minimumVersion": "1.1",
+      "selectionModel": "exactly one selected plain-text cell",
+      "checks": {
+        "ribbonCommand": "pass",
+        "taskPaneOpen": "pass",
+        "hostReadiness": "pass",
+        "singlePlainTextCell": "pass",
+        "sdkTranslation": "pass",
+        "braillePreview": "pass",
+        "copyBraille": "pass",
+        "replaceSelection": "pass",
+        "insertAfter": "not-supported",
+        "multiCellRejection": {
+          "status": "pass",
+          "expectedCode": "SELECTION_SHAPE_UNSUPPORTED"
+        },
+        "formulaProtection": {
+          "status": "pass",
+          "expectedCode": "SELECTION_CONTENT_UNSUPPORTED"
+        },
+        "staleSelectionGuard": {
+          "status": "pass",
+          "expectedCode": "SELECTION_CHANGED"
+        }
+      }
+    },
+    "powerpoint": {
+      "client": "PowerPoint for Microsoft 365 on Windows",
+      "status": "verified-pass",
+      "requirementSet": "PowerPointApi",
+      "minimumVersion": "1.5",
+      "selectionModel": "selected text range",
+      "checks": {
+        "ribbonCommand": "pass",
+        "taskPaneOpen": "pass",
+        "hostReadiness": "pass",
+        "selectedTextRead": "pass",
+        "sdkTranslation": "pass",
+        "braillePreview": "pass",
+        "copyBraille": "pass",
+        "replaceSelection": "pass",
+        "insertAfter": "not-supported",
+        "staleSelectionGuard": {
+          "status": "pass",
+          "expectedCode": "SELECTION_CHANGED"
+        }
+      }
+    }
+  },
+  "deferredClients": [
+    {
+      "host": "word",
+      "client": "Word on the web",
+      "status": "expected-not-executed"
+    },
+    {
+      "host": "word",
+      "client": "Word for Microsoft 365 on Mac",
+      "status": "expected-not-executed"
+    },
+    {
+      "host": "excel",
+      "client": "Excel on the web",
+      "status": "expected-not-executed"
+    },
+    {
+      "host": "excel",
+      "client": "Excel for Microsoft 365 on Mac",
+      "status": "expected-not-executed"
+    },
+    {
+      "host": "powerpoint",
+      "client": "PowerPoint on the web",
+      "status": "expected-not-executed"
+    },
+    {
+      "host": "powerpoint",
+      "client": "PowerPoint for Microsoft 365 on Mac",
+      "status": "expected-not-executed"
+    }
+  ],
+  "regressionSnapshot": {
+    "microsoft365Tests": {
+      "tests": 69,
+      "pass": 69,
+      "fail": 0
+    },
+    "phase9WordRegression": "pass",
+    "phase10MultiHostManifestStatic": "pass",
+    "phase10SharedHostArchitecture": "pass"
+  },
+  "evidencePolicy": {
+    "manualWindowsVerification": true,
+    "screenshotsObservedDuringVerification": true,
+    "screenshotsStoredInRepository": false,
+    "webOrMacPassClaimAllowed": false,
+    "note": "Windows checks were executed against real Office desktop hosts. Web and Mac remain explicitly not executed."
+  }
+}
