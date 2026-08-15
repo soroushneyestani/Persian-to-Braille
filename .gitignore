@@ -15,3 +15,6 @@ dist/
 *.tsbuildinfo
 /packages/core/src/generated/
 integrations/microsoft365/addin-dist/
+
+# Microsoft 365 Marketplace production build output
+integrations/microsoft365/marketplace-dist/
