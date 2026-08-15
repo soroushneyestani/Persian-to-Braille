@@ -1,0 +1,1402 @@
+
+====================================================================================================
+PHASE 11.3a — SUPPORT / PRIVACY / EULA / PUBLISHER COMPLIANCE BASELINE AUDIT
+====================================================================================================
+Mode: repository read-only audit.
+
+Purpose:
+  - freeze the compliance facts before drafting public legal/support pages
+  - inspect actual add-in data/network/storage behavior
+  - identify what the Privacy Policy can truthfully state
+  - identify Support URL requirements and current mismatch
+  - identify EULA / Terms work
+  - keep Partner Center publisher identity as an explicit external gate
+  - preserve Phase 11.2 production-hosting closure
+
+====================================================================================================
+GIT STATUS
+====================================================================================================
+exit=0
+[no output]
+
+====================================================================================================
+GIT BRANCH
+====================================================================================================
+exit=0
+phase11-marketplace
+
+====================================================================================================
+GIT HEAD
+====================================================================================================
+exit=0
+ede64ea42e1df8ef9151bcdbd1f167a951172fe4
+
+====================================================================================================
+GIT LOG -12
+====================================================================================================
+exit=0
+ede64ea (HEAD -> phase11-marketplace) docs(microsoft365): close Phase 11.2 production hosting
+bc8575d (origin/phase11-marketplace) fix(ci): isolate Pages artifacts per run attempt
+adbf368 fix(ci): install pnpm before Node cache setup
+2e2fc17 feat(microsoft365): add GitHub Pages Marketplace deployment
+ea9c475 feat(microsoft365): add Marketplace production manifest architecture
+3d41edb docs(microsoft365): freeze Phase 11 Marketplace baseline
+c9a8248 (origin/main, origin/HEAD, main) docs(microsoft365): close Phase 10 full add-in
+5bd4751 test(microsoft365): close Phase 10.5 cross-host verification
+2692796 feat(microsoft365): add validated three-host manifest
+3b4c353 feat(microsoft365): add PowerPoint task pane dispatch
+40e8f3d feat(microsoft365): add PowerPoint translation host layer
+0cac6f6 feat(microsoft365): add shared Word Excel task pane dispatch
+
+====================================================================================================
+GIT DIFF CHECK
+====================================================================================================
+exit=0
+[no output]
+
+====================================================================================================
+PHASE 11.2 FROZEN REGRESSION BASELINE
+====================================================================================================
+command: pnpm run validate:phase11-2
+exit=0
+$ pnpm run validate:phase11-2b-candidate && pnpm run validate:phase11-2b-live && pnpm run validate:phase11-2-closure
+$ pnpm run validate:phase11-2a && pnpm run validate:phase11-pages-deployment
+$ pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest
+$ pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline
+$ pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure
+$ pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit
+$ pnpm run spec:prepare && tsc -p tsconfig.json
+$ node ../../tools/architecture/build-runtime-spec-bundle.mjs
+Persian Braille runtime specification bundle generated.
+Profile: fa-ir-g1 0.1.0 (draft)
+Rules: 175
+Statuses: candidate=138, normative=37
+Types: character=132, context=7, layout=27, mode=5, normalization=1, sequence=3
+Canonical source SHA-256: dcdb19f08c34d0f39784dfc8404ff8f177141460705d6b701f6d33755829c682
+Output: packages/core/src/generated/fa-ir-g1.runtime.ts
+$ tsc -p tsconfig.json
+$ node tools/architecture/validate-phase10-office-baseline.mjs
+Phase 10.1 Excel / PowerPoint baseline validation: PASS
+10.1 historical implementation snapshot: Word only
+Production manifest family: add-in-only XML
+Word baseline: WordApi 1.1
+Excel baseline: ExcelApi 1.1
+PowerPoint baseline: PowerPointApi 1.5
+Baseline scope: historical audit; later manifest evolution is allowed.
+$ node tools/architecture/validate-phase10-shared-host-architecture.mjs
+Phase 10.2 shared Microsoft 365 host architecture: PASS
+Word: WordApi 1.1 | Replace + Insert After
+Excel: ExcelApi 1.1 | single text cell | Replace only
+PowerPoint: PowerPointApi 1.5 | selected text | Replace only
+Manifest: add-in-only XML | host-scoped VersionOverrides
+Translation boundary: Microsoft365 -> SDK -> Core
+Contract scope: frozen host architecture; later implementations are allowed.
+$ node tools/architecture/validate-phase10-excel-host-layer.mjs
+Phase 10.3a Excel host-layer validation: PASS
+Excel: ExcelApi 1.1 | one plain-text cell | Replace only
+Stale guard: exact cell snapshot
+10.3a invariant: Excel host layer remains valid after later manifest evolution
+Word task pane/runtime: untouched in 10.3a
+Next: Phase 10.3b shared task pane + Excel dispatch
+$ node tools/architecture/validate-phase10-excel-taskpane.mjs
+Phase 10.3b shared task-pane validation: PASS
+10.3b invariants: Office.onReady still supports Word | Excel
+Word: Replace + Insert After
+Excel: one plain-text cell | Replace only
+10.3b invariant: Word/Excel shared task-pane behavior remains valid
+Later host dispatch extensions are allowed when validated separately
+$ node tools/architecture/validate-phase10-powerpoint-host-layer.mjs
+Phase 10.4a PowerPoint host-layer validation: PASS
+PowerPoint: PowerPointApi 1.5 | selected text range | Replace only
+Snapshot: slideId + shapeId + start + length + text
+Stale guard: exact five-field snapshot
+Manifest evolution after 10.4a is allowed when validated by Phase 10.5
+10.4a invariant: PowerPoint host layer remains independently valid
+Later task-pane integration is allowed when validated separately
+$ node tools/architecture/validate-phase10-powerpoint-taskpane.mjs
+Phase 10.4b PowerPoint task-pane validation: PASS
+Dispatch: Office.onReady -> Word | Excel | PowerPoint
+Word: Replace + Insert After
+Excel: Replace only
+PowerPoint: PowerPointApi 1.5 | selected text range | Replace only
+10.4b invariant: three-host task-pane dispatch remains valid
+Next: Phase 10.5 Sideload / Regression / Cross-host Evidence
+$ pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure
+$ node tools/architecture/validate-phase10-multihost-manifest.mjs
+Phase 10.5a multi-host manifest static validation: PASS
+Base hosts: Document | Workbook | Presentation
+VersionOverrides: one V1_0 section with three Host command entries
+Manifest requirement: AddinCommands 1.1 only
+Runtime API gates: WordApi 1.1 | ExcelApi 1.1 | PowerPointApi 1.5
+Permission: ReadWriteDocument
+Official Microsoft manifest validation: REQUIRED SEPARATELY
+$ node tools/architecture/validate-phase10-windows-live-evidence.mjs
+Phase 10.5 Windows live evidence validation: PASS
+Word / Windows: LIVE VERIFIED / PASS
+Excel / Windows: LIVE VERIFIED / PASS
+PowerPoint / Windows: LIVE VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Next: Phase 10.5d closure
+$ node tools/architecture/validate-phase10-5-closure.mjs
+Phase 10.5 closure validation: PASS
+10.5a manifest + Microsoft validation: CLOSED
+10.5b Windows live sideload: CLOSED
+10.5c cross-host regression evidence: CLOSED
+Word / Excel / PowerPoint Windows: VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Next: Phase 10.6 Phase 10 Closure
+$ pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure
+$ node tools/architecture/validate-phase9-word-host-contract.mjs
+Phase 9 Word host adapter contract validation: PASS
+Host: Word
+Clients: Web, Microsoft 365 Windows, Microsoft 365 Mac
+Manifest baseline: add-in-only XML
+Minimum requirement set: WordApi 1.1
+Architecture: Word -> SDK only
+Mutation guard: current selection must exactly equal preview source
+$ pnpm --filter @persian-braille/microsoft365 run test
+$ pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs
+$ pnpm run spec:prepare && tsc -p tsconfig.json
+$ node ../../tools/architecture/build-runtime-spec-bundle.mjs
+Persian Braille runtime specification bundle generated.
+Profile: fa-ir-g1 0.1.0 (draft)
+Rules: 175
+Statuses: candidate=138, normative=37
+Types: character=132, context=7, layout=27, mode=5, normalization=1, sequence=3
+Canonical source SHA-256: dcdb19f08c34d0f39784dfc8404ff8f177141460705d6b701f6d33755829c682
+Output: packages/core/src/generated/fa-ir-g1.runtime.ts
+$ tsc -p tsconfig.json
+$ tsc -p tsconfig.json && node build-addin.mjs
+Persian-to-Braille Microsoft 365 Add-in static build: PASS
+Task pane: addin-dist/taskpane.html
+Runtime boundary: Microsoft365 -> SDK -> Core
+Office.js: Microsoft CDN
+✔ Excel host adapter preserves one plain-text cell verbatim (2.6532ms)
+✔ Excel adapter rejects access before Office readiness (0.2809ms)
+✔ Excel adapter rejects non-Excel Office hosts (0.1662ms)
+✔ Excel adapter enforces ExcelApi 1.1 (0.3202ms)
+✔ Excel adapter rejects multi-cell selections (0.3004ms)
+✔ Excel adapter rejects non-string cells (0.2728ms)
+✔ Excel adapter rejects formula cells even when their result is text (0.3602ms)
+✔ Excel selection service translates through the public SDK (5.0029ms)
+✔ empty Excel text cell is an application failure (0.1756ms)
+✔ Excel SDK failures remain translation-domain results (0.8575ms)
+✔ Excel replace writes the exact successful SDK Unicode Braille result (1.4338ms)
+✔ Excel selection change blocks stale preview mutation (0.1987ms)
+✔ Excel workbook write exceptions map to WORKBOOK_WRITE_FAILED (0.2621ms)
+✔ global Excel runtime reports not ready outside an Office host (0.2667ms)
+✔ Office Excel runtime uses Excel.run and exact snapshot stale guard (0.79ms)
+✔ PowerPoint host adapter preserves selected text and five-field snapshot (0.9633ms)
+✔ PowerPoint adapter rejects access before Office readiness (0.1451ms)
+✔ PowerPoint adapter rejects non-PowerPoint Office hosts (0.097ms)
+✔ PowerPoint adapter enforces PowerPointApi 1.5 (0.0957ms)
+✔ PowerPoint adapter reports no selected text as SELECTION_UNAVAILABLE (0.1317ms)
+✔ PowerPoint selection service translates through the public SDK (5.5723ms)
+✔ empty PowerPoint selected text is an application failure (0.3333ms)
+✔ PowerPoint SDK failures remain translation-domain results (1.6472ms)
+✔ PowerPoint replace writes the exact successful SDK Unicode Braille result (2.0856ms)
+✔ PowerPoint selection change blocks stale preview mutation (1.9263ms)
+✔ PowerPoint presentation write exceptions map to PRESENTATION_WRITE_FAILED (1.4269ms)
+✔ global PowerPoint runtime reports not ready outside an Office host (0.1995ms)
+✔ Office PowerPoint runtime uses PowerPoint.run and exact five-field stale guard (0.7924ms)
+✔ controller initializes the Word task pane (1.2697ms)
+✔ successful selection translation renders only the public projection (0.2222ms)
+✔ host selection failure remains a host-domain UI failure (0.1563ms)
+✔ empty selection remains an application-domain UI failure (0.1343ms)
+✔ SDK failures are projected without inventing Word translation semantics (0.1765ms)
+✔ copy writes the exact SDK Unicode Braille result (0.1587ms)
+✔ clipboard failure is surfaced without changing translation semantics (0.1752ms)
+✔ replace delegates the exact successful preview to the selection service (0.1978ms)
+✔ insert-after delegates the exact successful preview to the selection service (0.7368ms)
+✔ failed Word mutation remains a host-domain UI failure (0.3276ms)
+✔ task pane references production Office.js CDN and public SDK import map (6.1996ms)
+✔ manifest preserves the Word Home ribbon task-pane command in the multi-host manifest (0.9778ms)
+✔ static build materializes task pane, SDK, Core, and Office command icons (1.0593ms)
+✔ task-pane readiness rejects a standalone browser outside Office (1.4515ms)
+✔ task-pane readiness rejects a non-Word Office host (0.1532ms)
+✔ task-pane readiness requires the Word runtime after Office.onReady (0.0944ms)
+✔ task-pane readiness accepts a supported Word runtime (0.0912ms)
+✔ preview command builds the Microsoft 365 dependency closure from a clean workspace (1.0038ms)
+✔ shared task-pane controller initializes Excel with replace-only capabilities (0.6508ms)
+✔ shared task-pane controller rejects Insert After for Excel (0.2057ms)
+✔ shared task-pane readiness accepts a supported Excel runtime (0.1865ms)
+✔ shared task-pane readiness preserves supported Word dispatch (0.1165ms)
+✔ shared task-pane controller initializes PowerPoint with replace-only capabilities (0.3127ms)
+✔ shared task-pane controller rejects Insert After for PowerPoint (0.2155ms)
+✔ shared task-pane readiness accepts a supported PowerPoint runtime (0.1157ms)
+✔ shared task-pane readiness enforces PowerPointApi 1.5 (0.1005ms)
+✔ global runtime reports not ready outside an Office host (1.0533ms)
+✔ host adapter preserves selected text verbatim (0.9621ms)
+✔ host adapter rejects access before Office readiness (0.1803ms)
+✔ host adapter rejects non-Word Office hosts (0.1481ms)
+✔ host adapter enforces WordApi 1.1 (0.1539ms)
+✔ selection read failures remain host failures (0.1798ms)
+✔ selection service translates through the public SDK (5.5375ms)
+✔ empty selection is an application failure, not an SDK or host failure (0.2214ms)
+✔ SDK translation failure remains a translation-domain result (2.3547ms)
+✔ current U+0622 behavior is delegated entirely to the SDK (1.1426ms)
+✔ replace writes the exact successful SDK Unicode Braille result (0.6587ms)
+✔ insert-after writes the exact successful SDK Unicode Braille result (0.6443ms)
+✔ selection change blocks stale preview mutation (0.6279ms)
+✔ document write exceptions map to DOCUMENT_WRITE_FAILED (0.1411ms)
+✔ Office runtime port uses Word.run, load/sync, and exact stale-selection guard (0.4652ms)
+ℹ tests 69
+ℹ suites 0
+ℹ pass 69
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.0319
+$ node tools/architecture/validate-phase9-word-addin.mjs
+Phase 9 Word Add-in static contract validation: PASS
+Host compatibility slice: Word
+Ribbon: Home -> Persian-to-Braille -> Translate Selection
+Task pane: HTTPS localhost
+Office.js: Microsoft CDN
+Translation boundary: task pane -> Microsoft365 selection service -> SDK
+$ node tools/architecture/validate-phase9-word-sideload-evidence.mjs
+Phase 9.5 Word sideload evidence validation: PASS
+Windows: VERIFIED / PASS
+Web: EXPECTED / NOT EXECUTED
+Mac: EXPECTED / NOT EXECUTED
+Deferred release gate: actual Web + Mac execution before Phase 11 closure
+$ node tools/architecture/validate-phase9-closure.mjs
+Phase 9 closure validation: PASS
+Word Windows: VERIFIED / PASS
+Word Web: EXPECTED / NOT EXECUTED
+Word Mac: EXPECTED / NOT EXECUTED
+Architecture: Specification -> Core -> SDK -> Microsoft365 -> Word
+Phase 11 release gate: actual Web + Mac execution
+$ node tools/architecture/validate-phase10-closure.mjs
+Phase 10 Microsoft 365 Full Add-in closure validation: PASS
+Phase 10.1: CLOSED
+Phase 10.2: CLOSED
+Phase 10.3: CLOSED
+Phase 10.4: CLOSED
+Phase 10.5: CLOSED
+Phase 10.6: CLOSED
+Word / Excel / PowerPoint Windows: VERIFIED / PASS
+Web / Mac: EXPECTED / NOT EXECUTED
+Boundary: Microsoft365 -> SDK -> Core
+Next: Phase 11 Microsoft Marketplace
+$ node tools/architecture/validate-phase11-marketplace-baseline.mjs
+Phase 11.1 Marketplace submission baseline validation: PASS
+Phase 10 merged regression baseline: PASS
+Windows: VERIFIED / PASS
+Production hosting / Support / Privacy / EULA: GAPS RECORDED
+Web / Mac: RELEASE GATES
+iOS/iPad: DECISION GATE
+Next: Phase 11.2 Production Hosting / HTTPS / Production Manifest
+$ node --test test/marketplace-build.test.mjs
+✔ production base URL accepts an HTTPS origin (0.6469ms)
+✔ production base URL preserves a project path and removes trailing slash (0.1301ms)
+✔ production base URL rejects "" (0.186ms)
+✔ production base URL rejects "http://example.com" (0.0711ms)
+✔ production base URL rejects "https://localhost:3000" (0.067ms)
+✔ production base URL rejects "https://127.0.0.1:3000" (0.0655ms)
+✔ production base URL rejects "https://example.com/app?mode=prod" (0.0562ms)
+✔ production base URL rejects "https://example.com/app#fragment" (0.0583ms)
+✔ production manifest rewrites only the frozen localhost deployment base (0.2851ms)
+✔ 11.2a intentionally leaves SupportUrl for Phase 11.3 (0.202ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.696
+$ node tools/architecture/validate-phase11-production-manifest-architecture.mjs
+Phase 11.2a production manifest / deployment architecture: PASS
+Development manifest: PRESERVED / localhost
+Marketplace manifest: GENERATED FROM EXPLICIT HTTPS BASE URL
+Production hosting: NOT YET EXECUTED
+SupportUrl replacement: DEFERRED TO 11.3
+Next: Phase 11.2b actual HTTPS hosting + remote validation
+$ node tools/architecture/validate-phase11-github-pages-deployment.mjs
+Phase 11.2b GitHub Pages deployment candidate validation: PASS
+Expected origin: https://soroushneyestani.github.io/Persian-to-Braille
+Development localhost manifest: PRESERVED
+Pages deployment: SOURCE-CONTROLLED / LIVE EXECUTION REQUIRED
+Next gate: enable Pages -> push branch -> run remote probe
+$ node tools/architecture/validate-phase11-2b-live-deployment.mjs
+Phase 11.2b live GitHub Pages deployment evidence: PASS
+Production HTTPS: VERIFIED / PASS
+Remote endpoints: PASS
+Office.js CDN: PASS
+Icon cache headers: PASS
+$ node tools/architecture/validate-phase11-2-closure.mjs
+Phase 11.2 Production Hosting / HTTPS / Production Manifest closure: PASS
+Phase 11.2a: CLOSED
+Phase 11.2b: CLOSED
+Production: GitHub Pages / HTTPS VERIFIED
+Next: Phase 11.3 Support / Privacy / EULA / Publisher Identity
+
+====================================================================================================
+FILE: integrations\microsoft365\manifest.xml
+====================================================================================================
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+  <Id>33ec7928-1204-5bb3-88e6-d778413e9234</Id>
+  <Version>2.0.0.0</Version>
+  <ProviderName>Soroush Neyestani</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Persian-to-Braille"/>
+  <Description DefaultValue="Translate selected Persian text to Braille through the shared Persian-to-Braille SDK."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>
+  <AppDomains>
+    <AppDomain>https://github.com</AppDomain>
+  </AppDomains>
+
+  <!--
+    All three task-pane hosts are installable from the same add-in-only
+    manifest. Application-specific API baselines are checked at runtime with
+    Office.context.requirements.isSetSupported so no cross-host API sets are
+    accidentally ANDed by manifest requirement evaluation.
+  -->
+  <Hosts>
+    <Host Name="Document"/>
+    <Host Name="Workbook"/>
+    <Host Name="Presentation"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides
+    xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.1">
+        <bt:Set Name="AddinCommands" MinVersion="1.1"/>
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="PersianBraille.CommandsGroup">
+                <Label resid="Group.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+
+                <Control xsi:type="Button" id="PersianBraille.TranslateSelectionButton">
+                  <Label resid="Button.Label"/>
+                  <Supertip>
+                    <Title resid="Button.Label"/>
+                    <Description resid="Button.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>PersianBraille.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="PersianBraille.Excel.CommandsGroup">
+                <Label resid="Group.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+
+                <Control xsi:type="Button" id="PersianBraille.Excel.TranslateSelectionButton">
+                  <Label resid="Button.Label"/>
+                  <Supertip>
+                    <Title resid="Button.Label"/>
+                    <Description resid="Button.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>PersianBraille.Excel.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="PersianBraille.PowerPoint.CommandsGroup">
+                <Label resid="Group.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+
+                <Control xsi:type="Button" id="PersianBraille.PowerPoint.TranslateSelectionButton">
+                  <Label resid="Button.Label"/>
+                  <Supertip>
+                    <Title resid="Button.Label"/>
+                    <Description resid="Button.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>PersianBraille.PowerPoint.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="Group.Label" DefaultValue="Persian-to-Braille"/>
+        <bt:String id="Button.Label" DefaultValue="Translate Selection"/>
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String
+          id="Button.Tooltip"
+          DefaultValue="Open Persian-to-Braille and translate the current supported selection."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
+
+====================================================================================================
+FILE: integrations\microsoft365\marketplace\production-manifest.mjs
+====================================================================================================
+const DEVELOPMENT_BASE_URL = "https://localhost:3000";
+
+function isLoopbackHost(hostname) {
+  const value = hostname.toLowerCase();
+
+  return (
+    value === "localhost" ||
+    value === "127.0.0.1" ||
+    value === "::1" ||
+    value === "[::1]"
+  );
+}
+
+export function normalizeProductionBaseUrl(input) {
+  if (typeof input !== "string" || input.trim() === "") {
+    throw new Error(
+      "OFFICE_ADDIN_PRODUCTION_BASE_URL is required.",
+    );
+  }
+
+  let url;
+
+  try {
+    url = new URL(input.trim());
+  } catch {
+    throw new Error(
+      "Production base URL must be an absolute HTTPS URL.",
+    );
+  }
+
+  if (url.protocol !== "https:") {
+    throw new Error(
+      "Production base URL must use HTTPS.",
+    );
+  }
+
+  if (
+    url.username !== "" ||
+    url.password !== ""
+  ) {
+    throw new Error(
+      "Production base URL must not contain credentials.",
+    );
+  }
+
+  if (isLoopbackHost(url.hostname)) {
+    throw new Error(
+      "Production base URL must not use localhost or another loopback host.",
+    );
+  }
+
+  if (url.search !== "" || url.hash !== "") {
+    throw new Error(
+      "Production base URL must not contain a query string or fragment.",
+    );
+  }
+
+  const pathname =
+    url.pathname === "/"
+      ? ""
+      : url.pathname.replace(/\/+$/, "");
+
+  return `${url.origin}${pathname}`;
+}
+
+export function createProductionManifest(
+  developmentManifest,
+  productionBaseUrl,
+) {
+  const baseUrl =
+    normalizeProductionBaseUrl(
+      productionBaseUrl,
+    );
+
+  if (
+    !developmentManifest.includes(
+      DEVELOPMENT_BASE_URL,
+    )
+  ) {
+    throw new Error(
+      "Development manifest no longer contains the frozen localhost base URL.",
+    );
+  }
+
+  const productionManifest =
+    developmentManifest
+      .split(DEVELOPMENT_BASE_URL)
+      .join(baseUrl);
+
+  if (
+    productionManifest.includes(
+      DEVELOPMENT_BASE_URL,
+    )
+  ) {
+    throw new Error(
+      "Production manifest still contains the development localhost base URL.",
+    );
+  }
+
+  return {
+    baseUrl,
+    manifest: productionManifest,
+  };
+}
+
+export {
+  DEVELOPMENT_BASE_URL,
+};
+
+====================================================================================================
+FILE: integrations\microsoft365\build-marketplace.mjs
+====================================================================================================
+import {
+  cp,
+  mkdir,
+  readFile,
+  rm,
+  unlink,
+  writeFile,
+} from "node:fs/promises";
+
+import {
+  dirname,
+  resolve,
+} from "node:path";
+
+import {
+  fileURLToPath,
+} from "node:url";
+
+import {
+  createProductionManifest,
+} from "./marketplace/production-manifest.mjs";
+
+const here =
+  dirname(
+    fileURLToPath(
+      import.meta.url,
+    ),
+  );
+
+const addinDist =
+  resolve(
+    here,
+    "addin-dist",
+  );
+
+const output =
+  resolve(
+    here,
+    "marketplace-dist",
+  );
+
+const siteOutput =
+  resolve(
+    output,
+    "site",
+  );
+
+const sourceManifest =
+  resolve(
+    here,
+    "manifest.xml",
+  );
+
+const productionBaseUrl =
+  process.env
+    .OFFICE_ADDIN_PRODUCTION_BASE_URL;
+
+const developmentManifest =
+  await readFile(
+    sourceManifest,
+    "utf8",
+  );
+
+const production =
+  createProductionManifest(
+    developmentManifest,
+    productionBaseUrl,
+  );
+
+await rm(
+  output,
+  {
+    recursive: true,
+    force: true,
+  },
+);
+
+await mkdir(
+  output,
+  {
+    recursive: true,
+  },
+);
+
+await cp(
+  addinDist,
+  siteOutput,
+  {
+    recursive: true,
+  },
+);
+
+await unlink(
+  resolve(
+    siteOutput,
+    "manifest.xml",
+  ),
+);
+
+await writeFile(
+  resolve(
+    output,
+    "manifest.xml",
+  ),
+  production.manifest,
+  "utf8",
+);
+
+console.log(
+  "Persian-to-Braille Marketplace bundle: PASS",
+);
+console.log(
+  `Production base URL: ${production.baseUrl}`,
+);
+console.log(
+  "Hosted site payload: marketplace-dist/site",
+);
+console.log(
+  "Submission manifest: marketplace-dist/manifest.xml",
+);
+console.log(
+  "Development manifest remains unchanged: manifest.xml",
+);
+
+====================================================================================================
+FILE: integrations\microsoft365\public\taskpane.html
+====================================================================================================
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <title>Persian-to-Braille for Microsoft 365</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+    type="text/javascript"
+  ></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "@persian-braille/sdk": "./vendor/sdk/index.js",
+      "@persian-braille/core": "./vendor/core/index.js"
+    }
+  }
+  </script>
+  <script
+    type="module"
+    src="./app/taskpane/main.js"
+  ></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <p class="eyebrow">Microsoft 365 Add-in</p>
+      <h1>Persian-to-Braille</h1>
+      <p class="intro">
+        Translate the current supported Office selection with the shared
+        Persian Braille SDK.
+      </p>
+      <p
+        id="office-ready-state"
+        class="ready-state"
+        data-ready="false"
+      >
+        Waiting for Microsoft Office
+      </p>
+    </header>
+
+    <section class="actions" aria-label="Translation actions">
+      <button
+        id="translate-selection"
+        type="button"
+        disabled
+      >
+        Translate Selection
+      </button>
+      <button
+        id="clear-output"
+        type="button"
+      >
+        Clear
+      </button>
+    </section>
+
+    <section
+      id="translation-result"
+      class="panel"
+      hidden
+      aria-labelledby="result-title"
+    >
+      <h2 id="result-title">Braille preview</h2>
+
+      <dl class="result-grid">
+        <div>
+          <dt>Selected text</dt>
+          <dd
+            id="source-output"
+            class="output source"
+            dir="rtl"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Unicode Braille</dt>
+          <dd
+            id="braille-output"
+            class="output braille"
+            dir="ltr"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Cells</dt>
+          <dd
+            id="cells-output"
+            class="output code-output"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Normalized text</dt>
+          <dd
+            id="normalized-output"
+            class="output"
+            dir="rtl"
+          ></dd>
+        </div>
+
+        <div>
+          <dt>Structural tokens</dt>
+          <dd
+            id="structural-output"
+            class="output code-output"
+          ></dd>
+        </div>
+      </dl>
+
+      <div
+        class="document-actions"
+        aria-label="Braille result actions"
+      >
+        <button
+          id="copy-braille"
+          type="button"
+          disabled
+        >
+          Copy Braille
+        </button>
+        <button
+          id="replace-selection"
+          type="button"
+          disabled
+        >
+          Replace Selection
+        </button>
+        <button
+          id="insert-after-selection"
+          type="button"
+          disabled
+        >
+          Insert After
+        </button>
+      </div>
+    </section>
+
+    <section
+      id="translation-error"
+      class="panel error-panel"
+      role="alert"
+      hidden
+    >
+      <h2>Translation unavailable</h2>
+      <p>
+        <strong id="error-code"></strong>
+      </p>
+      <p id="error-message"></p>
+    </section>
+
+    <p
+      id="taskpane-status"
+      class="status"
+      aria-live="polite"
+    ></p>
+
+    <footer>
+      <p>
+        Profile: <strong>fa-ir-g1 0.1.0</strong>
+        <span class="draft-badge">draft</span>
+      </p>
+      <p>
+        Translation rules remain owned by the shared project
+        specification and SDK.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
+
+====================================================================================================
+FILE: integrations\microsoft365\public\commands.html
+====================================================================================================
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Persian-to-Braille commands</title>
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+    type="text/javascript"
+  ></script>
+</head>
+<body>
+</body>
+</html>
+
+====================================================================================================
+FILE: .github\workflows\microsoft365-marketplace-pages.yml
+====================================================================================================
+name: Microsoft 365 Marketplace Pages
+
+on:
+  push:
+    branches:
+      - phase11-marketplace
+      - main
+    paths:
+      - ".github/workflows/microsoft365-marketplace-pages.yml"
+      - "integrations/microsoft365/**"
+      - "packages/core/**"
+      - "packages/sdk/**"
+      - "spec/**"
+      - "tools/architecture/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: microsoft365-marketplace-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: "11.21.0"
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate Phase 11.2a architecture
+        run: pnpm run validate:phase11-2a
+
+      - name: Build Marketplace bundle
+        env:
+          OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Persian-to-Braille
+        run: pnpm --filter @persian-braille/microsoft365 run build:marketplace
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: github-pages-${{ github.run_attempt }}
+          path: integrations/microsoft365/marketplace-dist/site
+
+      - name: Upload submission manifest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: microsoft365-marketplace-manifest
+          path: integrations/microsoft365/marketplace-dist/manifest.xml
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+
+====================================================================================================
+FILE: docs\architecture\phase-11.2-closure.json
+====================================================================================================
+{
+  "schemaVersion": 1,
+  "phase": "11.2",
+  "title": "Production Hosting / HTTPS / Production Manifest Closure",
+  "status": "closed",
+  "subphases": {
+    "11.2a": {
+      "name": "Production Manifest / Deployment Architecture",
+      "status": "closed"
+    },
+    "11.2b": {
+      "name": "Actual HTTPS Hosting + Remote Validation",
+      "status": "closed"
+    }
+  },
+  "developmentManifest": {
+    "status": "preserved",
+    "baseUrl": "https://localhost:3000"
+  },
+  "production": {
+    "hosting": "GitHub Pages",
+    "origin": "https://soroushneyestani.github.io/Persian-to-Braille",
+    "https": "verified-pass",
+    "remoteProbe": "pass",
+    "officeJsCdn": "pass",
+    "iconCacheHeaders": "pass"
+  },
+  "phase10Regression": "pass",
+  "marketplaceSupportUrl": "deferred-to-11.3",
+  "nextPhase": "11.3",
+  "nextPhaseName": "Support / Privacy / EULA / Publisher Identity"
+}
+
+====================================================================================================
+FILE: docs\architecture\phase-11.2b-live-deployment-evidence.json
+====================================================================================================
+{
+  "schemaVersion": 1,
+  "phase": "11.2b",
+  "title": "Live GitHub Pages HTTPS Deployment Evidence",
+  "recordedAtUtc": "2026-08-15T12:37:22Z",
+  "branch": "phase11-marketplace",
+  "commit": "bc8575d0522be57b521aedd3f722a9a084fd53ec",
+  "status": "verified-pass",
+  "hosting": {
+    "provider": "GitHub Pages",
+    "origin": "https://soroushneyestani.github.io/Persian-to-Braille",
+    "https": "verified-pass"
+  },
+  "githubActions": {
+    "workflow": "Microsoft 365 Marketplace Pages",
+    "runNumberObserved": 3,
+    "overallStatusObserved": "success",
+    "buildJobObserved": "pass",
+    "deployJobObserved": "pass",
+    "pagesArtifactObserved": "github-pages-1",
+    "submissionManifestArtifactObserved": "microsoft365-marketplace-manifest",
+    "environment": "github-pages",
+    "allowedBranchesObserved": [
+      "main",
+      "phase11-marketplace"
+    ],
+    "observationMode": "manual UI evidence supplied during live verification"
+  },
+  "remoteProbe": {
+    "status": "pass",
+    "taskpane": "pass",
+    "commands": "pass",
+    "styles": "pass",
+    "icon16": "pass",
+    "icon32": "pass",
+    "icon80": "pass",
+    "officeJsMicrosoftCdn": "pass",
+    "iconCacheControl": "max-age=600"
+  },
+  "developmentManifest": "preserved-localhost",
+  "supportUrl": "deferred-to-phase-11.3",
+  "nextPhase": "11.3",
+  "nextPhaseName": "Support / Privacy / EULA / Publisher Identity"
+}
+
+====================================================================================================
+FILE: README.md
+====================================================================================================
+# Persian-to-Braille
+برای تبدیل زبان فارسی به بریل ما نمیتوانیم یک به یک کاراکترها را عیناً با نصب یک فونت بریل تبدیل کنیم برای اینکار باید هرکدام از کاراکترها به کارکترهای استانداردی که زبان بریل میشناسد تبدیل شود و سپس بعد از آن کارکترهای نتیجه با استفاده از فونت بریل نمایش داده شود
+
+====================================================================================================
+FILE: LICENSE
+====================================================================================================
+MIT License
+
+Copyright (c) 2026 Soroush Neyestani
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+====================================================================================================
+FILE: package.json
+====================================================================================================
+{
+  "name": "persian-to-braille",
+  "version": "2.0.0-dev",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "pnpm": "11.21.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.19.0",
+      "onFail": "download"
+    }
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "test": "pnpm -r --if-present run test",
+    "typecheck": "pnpm run build && pnpm -r --if-present run typecheck",
+    "clean": "pnpm -r --if-present run clean",
+    "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs",
+    "validate:boundaries": "node tools/architecture/validate-package-boundaries.mjs",
+    "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
+    "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
+    "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
+    "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism && pnpm run validate:phase8-consumer-contract && pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-addin",
+    "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs",
+    "conformance:write-report": "pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write",
+    "test:conformance": "pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs",
+    "validate:conformance": "pnpm run test:conformance && node tools/conformance/profile-conformance-report.mjs --check",
+    "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
+    "validate:phase8-consumer-contract": "node tools/architecture/validate-phase8-consumer-contract.mjs",
+    "validate:phase8-consumers": "pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs",
+    "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs",
+    "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test",
+    "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs",
+    "validate:phase9-word-sideload-evidence": "node tools/architecture/validate-phase9-word-sideload-evidence.mjs",
+    "validate:phase9-closure": "node tools/architecture/validate-phase9-closure.mjs",
+    "validate:phase9": "pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure",
+    "validate:phase10-office-baseline": "node tools/architecture/validate-phase10-office-baseline.mjs",
+    "validate:phase10-shared-host-architecture": "node tools/architecture/validate-phase10-shared-host-architecture.mjs",
+    "validate:phase10-excel-host-layer": "node tools/architecture/validate-phase10-excel-host-layer.mjs",
+    "validate:phase10-excel-taskpane": "node tools/architecture/validate-phase10-excel-taskpane.mjs",
+    "validate:phase10-powerpoint-host-layer": "node tools/architecture/validate-phase10-powerpoint-host-layer.mjs",
+    "validate:phase10-powerpoint-taskpane": "node tools/architecture/validate-phase10-powerpoint-taskpane.mjs",
+    "validate:phase10-multihost-manifest": "node tools/architecture/validate-phase10-multihost-manifest.mjs",
+    "validate:phase10-windows-live-evidence": "node tools/architecture/validate-phase10-windows-live-evidence.mjs",
+    "validate:phase10-5-closure": "node tools/architecture/validate-phase10-5-closure.mjs",
+    "validate:phase10-5": "pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure",
+    "validate:phase10-closure": "node tools/architecture/validate-phase10-closure.mjs",
+    "validate:phase10": "pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure",
+    "validate:phase11-marketplace-baseline": "node tools/architecture/validate-phase11-marketplace-baseline.mjs",
+    "validate:phase11-1": "pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline",
+    "validate:phase11-production-manifest": "node tools/architecture/validate-phase11-production-manifest-architecture.mjs",
+    "validate:phase11-2a": "pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest",
+    "validate:phase11-pages-deployment": "node tools/architecture/validate-phase11-github-pages-deployment.mjs",
+    "validate:phase11-2b-candidate": "pnpm run validate:phase11-2a && pnpm run validate:phase11-pages-deployment",
+    "probe:phase11-marketplace-remote": "node tools/architecture/probe-phase11-marketplace-remote.mjs",
+    "validate:phase11-2b-live": "node tools/architecture/validate-phase11-2b-live-deployment.mjs",
+    "validate:phase11-2-closure": "node tools/architecture/validate-phase11-2-closure.mjs",
+    "validate:phase11-2": "pnpm run validate:phase11-2b-candidate && pnpm run validate:phase11-2b-live && pnpm run validate:phase11-2-closure"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  },
+  "description": "Specification-driven Persian Braille translation workspace.",
+  "license": "MIT",
+  "author": "Soroush Neyestani",
+  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+  }
+}
+
+====================================================================================================
+FILE: integrations\microsoft365\package.json
+====================================================================================================
+{
+  "name": "@persian-braille/microsoft365",
+  "version": "2.0.0-dev",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "pnpm": "11.21.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node build-addin.mjs",
+    "typecheck": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs",
+    "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
+    "build:marketplace": "pnpm run build && node build-marketplace.mjs",
+    "test:marketplace": "node --test test/marketplace-build.test.mjs"
+  },
+  "dependencies": {
+    "@persian-braille/sdk": "workspace:*"
+  },
+  "description": "Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk."
+}
+
+====================================================================================================
+RUNTIME NETWORK / EXTERNAL-ENDPOINT SCAN
+====================================================================================================
+integrations\microsoft365\public\commands.html:7: [absolute-http] https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+integrations\microsoft365\public\taskpane.html:12: [absolute-http] https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+integrations\microsoft365\marketplace\production-manifest.mjs:1: [absolute-http] https://localhost:3000
+
+====================================================================================================
+RUNTIME BROWSER STORAGE / COOKIE SCAN
+====================================================================================================
+[none]
+
+====================================================================================================
+RUNTIME IDENTITY / AUTHENTICATION SCAN
+====================================================================================================
+[none]
+
+====================================================================================================
+RUNTIME ANALYTICS / TELEMETRY SCAN
+====================================================================================================
+[none]
+
+====================================================================================================
+SUPPORT / PRIVACY / EULA ARTIFACT SCAN
+====================================================================================================
+integrations\microsoft365\manifest.xml:16: [support-url] SupportUrl
+integrations\microsoft365\addin-dist\manifest.xml:16: [support-url] SupportUrl
+integrations\microsoft365\test\marketplace-build.test.mjs:125: [support-url] SupportUrl
+integrations\microsoft365\test\marketplace-build.test.mjs:135: [support-url] SupportUrl
+docs\architecture\phase-10.6-final-closure-audit.txt:179: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:2154: [support-page] support page
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:2152: [privacy-policy] Privacy Policy
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:18: [eula] EULA
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1879: [eula] eula
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1879: [eula] EULA
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:2153: [eula] EULA
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:2167: [eula] EULA
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1866: [terms] TERMS AND CONDITIONS
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1867: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1868: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1869: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1870: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1871: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1872: [terms] TERMS AND CONDITIONS
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1880: [terms] TERMS AND CONDITIONS
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1881: [terms] Terms of Use
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1882: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1883: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1884: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1885: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1886: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1887: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1888: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1889: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1890: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1891: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1892: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1893: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1894: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1895: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1896: [terms] Terms and Conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1897: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1898: [terms] terms and conditions
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:307: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:353: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1980: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:1981: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline-audit.txt:2025: [support-url] SupportUrl
+docs\architecture\phase-11.1-marketplace-baseline.json:23: [support-url] supportUrl
+docs\architecture\phase-11.1-marketplace-baseline.md:79: [privacy-policy] Privacy Policy
+docs\architecture\phase-11.1-marketplace-baseline.md:80: [eula] End User License Agreement
+docs\architecture\phase-11.1-marketplace-baseline.md:80: [eula] EULA
+docs\architecture\phase-11.2-closure.json:31: [eula] EULA
+docs\architecture\phase-11.2-closure.json:29: [support-url] SupportUrl
+docs\architecture\phase-11.2-closure.md:38: [eula] EULA
+docs\architecture\phase-11.2a-production-manifest-architecture.md:100: [eula] EULA
+docs\architecture\phase-11.2a-production-manifest-architecture.md:104: [support-url] SupportUrl
+docs\architecture\phase-11.2b-github-pages-deployment.md:104: [eula] EULA
+docs\architecture\phase-11.2b-github-pages-deployment.md:109: [support-url] SupportUrl
+docs\architecture\phase-11.2b-live-deployment-evidence.json:43: [eula] EULA
+docs\architecture\phase-11.2b-live-deployment-evidence.json:41: [support-url] supportUrl
+docs\architecture\phase-11.2b-live-deployment-evidence.txt:252: [eula] EULA
+docs\architecture\phase-11.2b-live-deployment-evidence.txt:266: [support-url] SupportUrl
+docs\architecture\phase-11.2b-live-deployment-evidence.txt:280: [support-url] SupportUrl
+
+====================================================================================================
+PHASE 11.3a BASELINE CLASSIFICATION
+====================================================================================================
+[PASS] Phase 11 branch: current=phase11-marketplace; expected=phase11-marketplace
+[PASS] Phase 11.2 closure commit baseline: HEAD=ede64ea; expected prefix=ede64ea
+[PASS] Working tree before audit: clean
+[PASS] Phase 11.2 aggregate regression: exit=0
+[INFO] Manifest ProviderName: Soroush Neyestani
+[GAP] Marketplace SupportUrl: https://github.com/soroushneyestani/Persian-to-Braille
+[PASS] 11.2 production materializer does not yet replace SupportUrl; expected to change in 11.3
+[GAP] Public support page: not present
+[GAP] Public privacy page: not present
+[GAP] Public eula page: not present
+[PASS] Phase 11.2 closure validator remains registered
+[EXTERNAL] Partner Center publisher account enrollment: cannot be verified from repository
+[EXTERNAL] Partner Center publisher name must be checked against ProviderName='Soroush Neyestani'
+[EXTERNAL] Microsoft 365 and Copilot program enrollment: cannot be verified from repository
+[PRIVACY-AUDIT] Do not claim 'no data collection' until the network/storage/telemetry scans above have been reviewed for true positives and hosting implications.
+
+====================================================================================================
+PROPOSED PHASE 11.3 EXECUTION ORDER
+====================================================================================================
+11.3a  Compliance behavior + publisher baseline audit      <- current
+11.3b  Public Support / Privacy / EULA pages
+11.3c  Production SupportUrl integration + Marketplace build validation
+11.3d  Live HTTPS compliance-page verification
+11.3e  Publisher identity / Partner Center external gate
+11.3f  Phase 11.3 closure
+
+====================================================================================================
+FINAL GIT DIFF CHECK
+====================================================================================================
+exit=0
+[no output]

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "phase": "11.3a",
+  "title": "Support / Privacy / EULA / Publisher Compliance Baseline",
+  "auditDate": "2026-08-15",
+  "branch": "phase11-marketplace",
+  "baselineCommit": "ede64ea42e1df8ef9151bcdbd1f167a951172fe4",
+  "status": "closed-baseline-gaps-recorded",
+  "phase112Regression": "pass",
+  "manifest": {
+    "providerName": "Soroush Neyestani",
+    "supportUrl": "https://github.com/soroushneyestani/Persian-to-Braille",
+    "supportUrlMarketplaceReady": false
+  },
+  "runtimeFindings": {
+    "appOwnedFetchXhrWebSocket": "none-found",
+    "browserStorage": "none-found",
+    "cookies": "none-found",
+    "authentication": "none-found",
+    "analyticsTelemetry": "none-found",
+    "externalRuntimeDependency": "Microsoft-hosted Office.js CDN",
+    "developmentMaterializerConstant": "https://localhost:3000"
+  },
+  "privacyDraftingConstraints": {
+    "mayState": [
+      "No app-owned analytics or telemetry mechanism was found in the audited runtime.",
+      "No app-owned browser persistence mechanism was found in the audited runtime.",
+      "No app-owned authentication or account system was found in the audited runtime.",
+      "No app-owned fetch, XMLHttpRequest, WebSocket, or EventSource call was found in the audited runtime.",
+      "Translation remains within the Microsoft 365 client-side SDK/Core execution path found in the audited repository."
+    ],
+    "mustNotStateAbsolutely": [
+      "No network activity occurs.",
+      "No third party ever receives technical request metadata.",
+      "No data is ever logged by Microsoft, GitHub Pages, the browser, or Office."
+    ]
+  },
+  "repositoryGaps": {
+    "publicSupportPage": "required",
+    "publicPrivacyPage": "required",
+    "publicEulaPage": "required",
+    "productionSupportUrlRewrite": "required"
+  },
+  "externalGates": {
+    "partnerCenterPublisherEnrollment": "not-verified",
+    "publisherNameAlignment": "not-verified",
+    "microsoft365CopilotProgramEnrollment": "not-verified"
+  },
+  "nextPhase": "11.3b",
+  "nextPhaseName": "Public Support / Privacy / EULA pages",
+  "evidence": "docs/architecture/phase-11.3a-compliance-baseline-audit.txt"
+}
