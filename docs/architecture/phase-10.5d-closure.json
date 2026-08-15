@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "phase": "10.5d",
+  "title": "Phase 10.5 closure",
+  "closureDate": "2026-08-15",
+  "branch": "phase10-excel-powerpoint",
+  "baselineCommit": "77d47b0",
+  "status": "closed",
+  "subphases": {
+    "10.5a": {
+      "name": "Multi-host manifest materialization and official validation",
+      "status": "closed",
+      "evidence": [
+        "docs/architecture/phase-10.5a-three-host-manifest.md",
+        "docs/architecture/phase-10.5a-office-manifest-validation.txt"
+      ],
+      "result": "Microsoft manifest validator: The manifest is valid."
+    },
+    "10.5b": {
+      "name": "Windows live sideload",
+      "status": "closed",
+      "evidence": [
+        "docs/architecture/phase-10.5b-windows-live-sideload-evidence.json",
+        "docs/architecture/phase-10.5b-windows-live-sideload-evidence.md"
+      ],
+      "windowsHosts": {
+        "word": "verified-pass",
+        "excel": "verified-pass",
+        "powerpoint": "verified-pass"
+      }
+    },
+    "10.5c": {
+      "name": "Cross-host regression evidence",
+      "status": "closed",
+      "evidence": [
+        "docs/architecture/phase-10.5c-cross-host-regression-evidence.md"
+      ],
+      "automatedRegression": {
+        "microsoft365Tests": {
+          "tests": 69,
+          "pass": 69,
+          "fail": 0
+        },
+        "phase9WordRegression": "pass",
+        "phase10ManifestStatic": "pass",
+        "phase10SharedHostArchitecture": "pass",
+        "phase10WindowsLiveEvidence": "pass"
+      }
+    }
+  },
+  "hostMatrix": {
+    "word": {
+      "requirementSet": "WordApi",
+      "minimumVersion": "1.1",
+      "windows": "verified-pass",
+      "replace": true,
+      "insertAfter": true,
+      "staleGuard": "SELECTION_CHANGED"
+    },
+    "excel": {
+      "requirementSet": "ExcelApi",
+      "minimumVersion": "1.1",
+      "windows": "verified-pass",
+      "replace": true,
+      "insertAfter": false,
+      "multiCellGuard": "SELECTION_SHAPE_UNSUPPORTED",
+      "formulaGuard": "SELECTION_CONTENT_UNSUPPORTED",
+      "staleGuard": "SELECTION_CHANGED"
+    },
+    "powerpoint": {
+      "requirementSet": "PowerPointApi",
+      "minimumVersion": "1.5",
+      "windows": "verified-pass",
+      "replace": true,
+      "insertAfter": false,
+      "staleGuard": "SELECTION_CHANGED"
+    }
+  },
+  "manifest": {
+    "family": "add-in-only XML",
+    "baseHosts": [
+      "Document",
+      "Workbook",
+      "Presentation"
+    ],
+    "versionOverrides": {
+      "count": 1,
+      "hosts": [
+        "Document",
+        "Workbook",
+        "Presentation"
+      ],
+      "manifestRequirement": {
+        "name": "AddinCommands",
+        "minimumVersion": "1.1"
+      }
+    },
+    "applicationApiRequirementPolicy": "runtime-gated",
+    "officialValidation": "pass"
+  },
+  "deferred": {
+    "web": "expected-not-executed",
+    "mac": "expected-not-executed",
+    "releaseGate": "Actual Web and Mac execution remains deferred and must not be described as live verified before execution."
+  },
+  "nextPhase": "10.6"
+}
