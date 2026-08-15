@@ -38,7 +38,8 @@
     "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs",
     "validate:phase9-word-sideload-evidence": "node tools/architecture/validate-phase9-word-sideload-evidence.mjs",
     "validate:phase9-closure": "node tools/architecture/validate-phase9-closure.mjs",
-    "validate:phase9": "pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure"
+    "validate:phase9": "pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure",
+    "validate:phase10-office-baseline": "node tools/architecture/validate-phase10-office-baseline.mjs"
   },
   "devDependencies": {
     "typescript": "6.0.3"
