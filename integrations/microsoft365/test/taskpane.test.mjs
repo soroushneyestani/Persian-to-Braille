@@ -892,3 +892,374 @@ test(
     );
   },
 );
+
+// Phase 10.3b shared task-pane / Excel dispatch regression.
+test(
+  "shared task-pane controller initializes Excel with replace-only capabilities",
+  async () => {
+    const {
+      createOfficeTaskPaneController,
+    } =
+      await import(
+        "../dist/taskpane/controller.js"
+      );
+    const {
+      EXCEL_TASK_PANE_CAPABILITIES,
+    } =
+      await import(
+        "../dist/taskpane/host-config.js"
+      );
+
+    const events = [];
+    const replaced = [];
+    const preview = {
+      ...successPreview(),
+      mutationContext: {
+        address:
+          "Sheet1!A1",
+        rowCount: 1,
+        columnCount: 1,
+        valueType:
+          "String",
+        rawValue:
+          "سلام",
+        formulaProjection:
+          "سلام",
+      },
+    };
+
+    const service = {
+      translator: {},
+      async translateSelection() {
+        return preview;
+      },
+      async replaceWithBraille(
+        current,
+      ) {
+        replaced.push(
+          current,
+        );
+        return {
+          ok: true,
+        };
+      },
+    };
+
+    const view = {
+      setCapabilities(
+        capabilities,
+      ) {
+        events.push({
+          type:
+            "capabilities",
+          capabilities,
+        });
+      },
+      setReady(value) {
+        events.push({
+          type: "ready",
+          value,
+        });
+      },
+      setBusy(value) {
+        events.push({
+          type: "busy",
+          value,
+        });
+      },
+      showIdle(message) {
+        events.push({
+          type: "idle",
+          message,
+        });
+      },
+      showSuccess(
+        presentation,
+      ) {
+        events.push({
+          type: "success",
+          presentation,
+        });
+      },
+      showFailure(
+        presentation,
+      ) {
+        events.push({
+          type: "failure",
+          presentation,
+        });
+      },
+      announce(message) {
+        events.push({
+          type: "announce",
+          message,
+        });
+      },
+    };
+
+    const controller =
+      createOfficeTaskPaneController(
+        service,
+        view,
+        {
+          async writeText() {},
+        },
+        EXCEL_TASK_PANE_CAPABILITIES,
+      );
+
+    controller.initialize();
+
+    assert.equal(
+      events[0]
+        .capabilities
+        .hostKind,
+      "excel",
+    );
+    assert.equal(
+      events[0]
+        .capabilities
+        .canInsertAfter,
+      false,
+    );
+
+    await controller
+      .translateSelection();
+    await controller
+      .replaceSelection();
+
+    assert.equal(
+      replaced.length,
+      1,
+    );
+    assert.equal(
+      replaced[0],
+      preview,
+    );
+  },
+);
+
+test(
+  "shared task-pane controller rejects Insert After for Excel",
+  async () => {
+    const {
+      createOfficeTaskPaneController,
+    } =
+      await import(
+        "../dist/taskpane/controller.js"
+      );
+    const {
+      EXCEL_TASK_PANE_CAPABILITIES,
+    } =
+      await import(
+        "../dist/taskpane/host-config.js"
+      );
+
+    const events = [];
+    const service = {
+      translator: {},
+      async translateSelection() {
+        return {
+          ...successPreview(),
+          mutationContext: {
+            address:
+              "Sheet1!A1",
+          },
+        };
+      },
+      async replaceWithBraille() {
+        return {
+          ok: true,
+        };
+      },
+    };
+
+    const view = {
+      setCapabilities() {},
+      setReady() {},
+      setBusy() {},
+      showIdle() {},
+      showSuccess() {},
+      showFailure(
+        presentation,
+      ) {
+        events.push(
+          presentation,
+        );
+      },
+      announce() {},
+    };
+
+    const controller =
+      createOfficeTaskPaneController(
+        service,
+        view,
+        {
+          async writeText() {},
+        },
+        EXCEL_TASK_PANE_CAPABILITIES,
+      );
+
+    await controller
+      .translateSelection();
+    await controller
+      .insertAfterSelection();
+
+    assert.equal(
+      events.length,
+      1,
+    );
+    assert.equal(
+      events[0].domain,
+      "application",
+    );
+    assert.equal(
+      events[0].code,
+      "ACTION_UNSUPPORTED",
+    );
+  },
+);
+
+test(
+  "shared task-pane readiness accepts a supported Excel runtime",
+  async () => {
+    const {
+      evaluateOfficeTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateOfficeTaskPaneReadiness(
+        {
+          host: "Excel",
+          platform: "PC",
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isWordHost() {
+            return false;
+          },
+          supportsWordApi11() {
+            return false;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "selection-changed";
+          },
+        },
+        {
+          isReady() {
+            return true;
+          },
+          isExcelHost() {
+            return true;
+          },
+          supportsExcelApi11() {
+            return true;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedCell() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      true,
+    );
+    assert.equal(
+      result.hostKind,
+      "excel",
+    );
+    assert.equal(
+      result.capabilities
+        .canReplace,
+      true,
+    );
+    assert.equal(
+      result.capabilities
+        .canInsertAfter,
+      false,
+    );
+  },
+);
+
+test(
+  "shared task-pane readiness preserves supported Word dispatch",
+  async () => {
+    const {
+      evaluateOfficeTaskPaneReadiness,
+    } =
+      await import(
+        "../dist/taskpane/readiness.js"
+      );
+
+    const result =
+      evaluateOfficeTaskPaneReadiness(
+        {
+          host: "Word",
+          platform: "PC",
+        },
+        {
+          isReady() {
+            return true;
+          },
+          isWordHost() {
+            return true;
+          },
+          supportsWordApi11() {
+            return true;
+          },
+          async readSelectionText() {
+            return "";
+          },
+          async mutateSelection() {
+            return "written";
+          },
+        },
+        {
+          isReady() {
+            return false;
+          },
+          isExcelHost() {
+            return false;
+          },
+          supportsExcelApi11() {
+            return false;
+          },
+          async readSelectionSnapshot() {
+            throw new Error(
+              "not used",
+            );
+          },
+          async replaceSelectedCell() {
+            return "selection-changed";
+          },
+        },
+      );
+
+    assert.equal(
+      result.ok,
+      true,
+    );
+    assert.equal(
+      result.hostKind,
+      "word",
+    );
+    assert.equal(
+      result.capabilities
+        .canInsertAfter,
+      true,
+    );
+  },
+);
