@@ -1,0 +1,43 @@
+{
+  "phase": "11.4a",
+  "status": "baseline-audited",
+  "branch": "phase11-marketplace",
+  "baselineCommit": "86bbfdf",
+  "listingIdentity": {
+    "displayName": "Persian-to-Braille",
+    "displayNameChars": 18,
+    "manifestDescriptionChars": 85,
+    "providerName": "Soroush Neyestani",
+    "defaultLocale": "en-US"
+  },
+  "iconAudit": {
+    "iconUrl": {
+      "path": "integrations/microsoft365/public/assets/icon-32.png",
+      "dimensions": [
+        32,
+        32
+      ],
+      "classification": "pass"
+    },
+    "highResolutionIconUrl": {
+      "path": "integrations/microsoft365/public/assets/icon-80.png",
+      "dimensions": [
+        80,
+        80
+      ],
+      "requiredDimensions": [
+        64,
+        64
+      ],
+      "classification": "gap"
+    }
+  },
+  "gaps": [
+    "HighResolutionIconUrl currently points to an 80x80 asset instead of the audited 64x64 requirement.",
+    "No dedicated Marketplace listing metadata/assets directory exists yet.",
+    "Final Partner Center categories are not yet defined.",
+    "Marketplace screenshots/captions are not yet prepared."
+  ],
+  "externalGate": "Partner Center publisher enrollment remains blocked per Phase 11.3e; this does not block listing preparation.",
+  "next": "Phase 11.4b Listing Metadata Contract + icon remediation decision"
+}
