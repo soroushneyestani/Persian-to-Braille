@@ -1,19 +1,22 @@
 import {
+  createExcelHostAdapter,
+  createExcelSelectionService,
+  createGlobalOfficeExcelRuntime,
   createGlobalOfficeWordRuntime,
   createWordHostAdapter,
   createWordSelectionService,
 } from "../index.js";
 
 import {
-  createWordTaskPaneController,
+  createOfficeTaskPaneController,
 } from "./controller.js";
 
 import {
-  createWordTaskPaneDomView,
+  createOfficeTaskPaneDomView,
 } from "./dom-view.js";
 
 import {
-  evaluateWordTaskPaneReadiness,
+  evaluateOfficeTaskPaneReadiness,
 } from "./readiness.js";
 
 import type {
@@ -42,42 +45,43 @@ function officeReadyPort():
 }
 
 const view =
-  createWordTaskPaneDomView(
+  createOfficeTaskPaneDomView(
     document,
   );
 
-const runtime =
+const wordRuntime =
   createGlobalOfficeWordRuntime();
 
-const service =
+const excelRuntime =
+  createGlobalOfficeExcelRuntime();
+
+const wordService =
   createWordSelectionService(
     createWordHostAdapter(
-      runtime,
+      wordRuntime,
     ),
   );
 
-const controller =
-  createWordTaskPaneController(
-    service,
-    view,
-    {
-      async writeText(text) {
-        await navigator
-          .clipboard
-          .writeText(
-            text,
-          );
-      },
-    },
+const excelService =
+  createExcelSelectionService(
+    createExcelHostAdapter(
+      excelRuntime,
+    ),
   );
 
-view.bind(
-  controller,
-);
+const clipboard = {
+  async writeText(text: string) {
+    await navigator
+      .clipboard
+      .writeText(
+        text,
+      );
+  },
+};
 
 view.setReady(false);
 view.showIdle(
-  "Waiting for Microsoft Word…",
+  "Waiting for Microsoft Office…",
 );
 
 const office =
@@ -89,7 +93,7 @@ if (!office) {
     code:
       "OFFICE_NOT_READY",
     message:
-      "Office.js did not load. Open this task pane from Microsoft Word.",
+      "Office.js did not load. Open this task pane from Microsoft Word or Excel.",
   });
 } else {
   try {
@@ -97,9 +101,10 @@ if (!office) {
       office.onReady(
         (info) => {
           const readiness =
-            evaluateWordTaskPaneReadiness(
+            evaluateOfficeTaskPaneReadiness(
               info,
-              runtime,
+              wordRuntime,
+              excelRuntime,
             );
 
           if (!readiness.ok) {
@@ -114,8 +119,37 @@ if (!office) {
             return;
           }
 
-          controller
-            .initialize();
+          if (
+            readiness.hostKind ===
+              "word"
+          ) {
+            const controller =
+              createOfficeTaskPaneController(
+                wordService,
+                view,
+                clipboard,
+                readiness.capabilities,
+              );
+
+            view.bind(
+              controller,
+            );
+            controller.initialize();
+            return;
+          }
+
+          const controller =
+            createOfficeTaskPaneController(
+              excelService,
+              view,
+              clipboard,
+              readiness.capabilities,
+            );
+
+          view.bind(
+            controller,
+          );
+          controller.initialize();
         },
       );
 
@@ -136,7 +170,7 @@ if (!office) {
             code:
               "OFFICE_NOT_READY",
             message:
-              "Microsoft Word did not complete Office.js initialization.",
+              "Microsoft Office did not complete Office.js initialization.",
           });
         },
       );
@@ -148,7 +182,7 @@ if (!office) {
       code:
         "OFFICE_NOT_READY",
       message:
-        "Microsoft Word did not complete Office.js initialization.",
+        "Microsoft Office did not complete Office.js initialization.",
     });
   }
 }

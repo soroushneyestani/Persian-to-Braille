@@ -1,8 +1,12 @@
 import type {
-  WordTaskPaneController,
-  WordTaskPaneFailurePresentation,
-  WordTaskPaneSuccessPresentation,
-  WordTaskPaneView,
+  OfficeHostCapabilities,
+} from "../shared/types.js";
+
+import type {
+  OfficeTaskPaneController,
+  OfficeTaskPaneFailurePresentation,
+  OfficeTaskPaneSuccessPresentation,
+  OfficeTaskPaneView,
 } from "./controller.js";
 
 interface TaskPaneElements {
@@ -147,26 +151,30 @@ function elements(
   };
 }
 
-export interface WordTaskPaneDomView
-  extends WordTaskPaneView {
+export interface OfficeTaskPaneDomView
+  extends OfficeTaskPaneView {
   bind(
     controller:
-      WordTaskPaneController,
+      OfficeTaskPaneController,
   ): void;
 
   clear(): void;
 }
 
-export function createWordTaskPaneDomView(
+export function createOfficeTaskPaneDomView(
   document:
     Document,
-): WordTaskPaneDomView {
+): OfficeTaskPaneDomView {
   const ui =
     elements(document);
 
   let ready = false;
   let busy = false;
   let hasPreview = false;
+  let capabilities:
+    OfficeHostCapabilities |
+    null =
+      null;
 
   function updateActions() {
     ui.translateButton.disabled =
@@ -182,11 +190,23 @@ export function createWordTaskPaneDomView(
 
     ui.replaceButton.disabled =
       busy ||
-      !hasPreview;
+      !hasPreview ||
+      !capabilities?.canReplace;
 
     ui.insertButton.disabled =
       busy ||
-      !hasPreview;
+      !hasPreview ||
+      !capabilities
+        ?.canInsertAfter;
+
+    ui.replaceButton.hidden =
+      capabilities !== null &&
+      !capabilities.canReplace;
+
+    ui.insertButton.hidden =
+      capabilities !== null &&
+      !capabilities
+        .canInsertAfter;
   }
 
   function clearPanels() {
@@ -200,7 +220,7 @@ export function createWordTaskPaneDomView(
   return Object.freeze({
     bind(
       controller:
-        WordTaskPaneController,
+        OfficeTaskPaneController,
     ) {
       ui.translateButton
         .addEventListener(
@@ -257,15 +277,28 @@ export function createWordTaskPaneDomView(
       updateActions();
     },
 
+    setCapabilities(
+      value:
+        OfficeHostCapabilities,
+    ) {
+      capabilities =
+        value;
+      updateActions();
+    },
+
     setReady(
       value: boolean,
     ) {
       ready = value;
 
+      const hostLabel =
+        capabilities?.hostLabel ??
+        "Microsoft 365";
+
       ui.readyState.textContent =
         value
-          ? "Word ready"
-          : "Waiting for Word";
+          ? `${hostLabel} ready`
+          : `Waiting for ${hostLabel}`;
 
       ui.readyState
         .setAttribute(
@@ -302,7 +335,7 @@ export function createWordTaskPaneDomView(
 
     showSuccess(
       presentation:
-        WordTaskPaneSuccessPresentation,
+        OfficeTaskPaneSuccessPresentation,
     ) {
       ui.errorPanel.hidden =
         true;
@@ -329,7 +362,7 @@ export function createWordTaskPaneDomView(
 
     showFailure(
       presentation:
-        WordTaskPaneFailurePresentation,
+        OfficeTaskPaneFailurePresentation,
     ) {
       ui.resultPanel.hidden =
         true;
@@ -356,3 +389,9 @@ export function createWordTaskPaneDomView(
     },
   });
 }
+
+export type WordTaskPaneDomView =
+  OfficeTaskPaneDomView;
+
+export const createWordTaskPaneDomView =
+  createOfficeTaskPaneDomView;

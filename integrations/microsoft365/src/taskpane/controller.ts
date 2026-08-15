@@ -1,11 +1,19 @@
 import type {
+  OfficeHostCapabilities,
+  OfficeHostFailure,
+  OfficeMutationResult,
+  OfficeSdkTranslationSuccess,
+} from "../shared/types.js";
+
+import type {
   PersianBrailleWordSelectionService,
-  WordHostFailure,
-  WordMutationResult,
-  WordSelectionTranslationSuccess,
 } from "../word/types.js";
 
-export interface WordTaskPaneSuccessPresentation {
+import {
+  WORD_TASK_PANE_CAPABILITIES,
+} from "./host-config.js";
+
+export interface OfficeTaskPaneSuccessPresentation {
   readonly sourceText: string;
   readonly unicodeBraille: string;
   readonly cells: string;
@@ -13,7 +21,7 @@ export interface WordTaskPaneSuccessPresentation {
   readonly structuralTokens: string;
 }
 
-export interface WordTaskPaneFailurePresentation {
+export interface OfficeTaskPaneFailurePresentation {
   readonly domain:
     | "host"
     | "application"
@@ -23,7 +31,12 @@ export interface WordTaskPaneFailurePresentation {
   readonly message: string;
 }
 
-export interface WordTaskPaneView {
+export interface OfficeTaskPaneView {
+  setCapabilities?(
+    capabilities:
+      OfficeHostCapabilities,
+  ): void;
+
   setReady(
     ready: boolean,
   ): void;
@@ -38,12 +51,12 @@ export interface WordTaskPaneView {
 
   showSuccess(
     presentation:
-      WordTaskPaneSuccessPresentation,
+      OfficeTaskPaneSuccessPresentation,
   ): void;
 
   showFailure(
     presentation:
-      WordTaskPaneFailurePresentation,
+      OfficeTaskPaneFailurePresentation,
   ): void;
 
   announce(
@@ -57,7 +70,7 @@ export interface ClipboardPort {
   ): Promise<void>;
 }
 
-export interface WordTaskPaneController {
+export interface OfficeTaskPaneController {
   initialize(): void;
 
   translateSelection():
@@ -73,6 +86,64 @@ export interface WordTaskPaneController {
     Promise<void>;
 }
 
+export interface TaskPaneTranslationSuccess {
+  readonly ok: true;
+  readonly sourceText: string;
+  readonly translation:
+    OfficeSdkTranslationSuccess;
+}
+
+interface TaskPaneHostTranslationFailure {
+  readonly ok: false;
+  readonly source: "host";
+  readonly failure:
+    OfficeHostFailure;
+}
+
+interface TaskPaneApplicationFailure {
+  readonly ok: false;
+  readonly source: "application";
+  readonly code: string;
+  readonly message: string;
+}
+
+interface TaskPaneTranslationFailure {
+  readonly ok: false;
+  readonly source: "translation";
+  readonly sourceText?: string;
+  readonly translation:
+    unknown;
+}
+
+type TaskPaneTranslationResult<
+  TPreview extends
+    TaskPaneTranslationSuccess,
+> =
+  | TPreview
+  | TaskPaneHostTranslationFailure
+  | TaskPaneApplicationFailure
+  | TaskPaneTranslationFailure;
+
+export interface OfficeTaskPaneSelectionService<
+  TPreview extends
+    TaskPaneTranslationSuccess,
+> {
+  translateSelection():
+    Promise<
+      TaskPaneTranslationResult<
+        TPreview
+      >
+    >;
+
+  replaceWithBraille(
+    preview: TPreview,
+  ): Promise<OfficeMutationResult>;
+
+  insertBrailleAfter?(
+    preview: TPreview,
+  ): Promise<OfficeMutationResult>;
+}
+
 interface PublicFailureShape {
   readonly code?: unknown;
   readonly message?: unknown;
@@ -84,7 +155,7 @@ interface PublicFailureShape {
 
 function sdkFailurePresentation(
   value: unknown,
-): WordTaskPaneFailurePresentation {
+): OfficeTaskPaneFailurePresentation {
   const shape =
     value as PublicFailureShape;
 
@@ -107,8 +178,8 @@ function sdkFailurePresentation(
 
 function hostFailurePresentation(
   failure:
-    WordHostFailure,
-): WordTaskPaneFailurePresentation {
+    OfficeHostFailure,
+): OfficeTaskPaneFailurePresentation {
   return {
     domain: "host",
     code: failure.code,
@@ -118,8 +189,8 @@ function hostFailurePresentation(
 
 function successPresentation(
   preview:
-    WordSelectionTranslationSuccess,
-): WordTaskPaneSuccessPresentation {
+    TaskPaneTranslationSuccess,
+): OfficeTaskPaneSuccessPresentation {
   return {
     sourceText:
       preview.sourceText,
@@ -140,16 +211,50 @@ function successPresentation(
   };
 }
 
-export function createWordTaskPaneController(
+function initialInstruction(
+  capabilities:
+    OfficeHostCapabilities,
+): string {
+  if (
+    capabilities.hostKind ===
+      "excel"
+  ) {
+    return "Select one non-empty plain-text cell in Excel, then choose Translate Selection.";
+  }
+
+  return `Select Persian text in ${capabilities.hostLabel}, then choose Translate Selection.`;
+}
+
+function unsupportedAction(
+  capabilities:
+    OfficeHostCapabilities,
+  action: string,
+): OfficeTaskPaneFailurePresentation {
+  return {
+    domain: "application",
+    code: "ACTION_UNSUPPORTED",
+    message:
+      `${action} is not available for ${capabilities.hostLabel} in the current Microsoft 365 integration.`,
+  };
+}
+
+export function createOfficeTaskPaneController<
+  TPreview extends
+    TaskPaneTranslationSuccess,
+>(
   service:
-    PersianBrailleWordSelectionService,
+    OfficeTaskPaneSelectionService<
+      TPreview
+    >,
   view:
-    WordTaskPaneView,
+    OfficeTaskPaneView,
   clipboard:
     ClipboardPort,
-): WordTaskPaneController {
+  capabilities:
+    OfficeHostCapabilities,
+): OfficeTaskPaneController {
   let preview:
-    WordSelectionTranslationSuccess |
+    TPreview |
     null =
       null;
 
@@ -158,8 +263,8 @@ export function createWordTaskPaneController(
   async function runMutation(
     operation: (
       current:
-        WordSelectionTranslationSuccess,
-    ) => Promise<WordMutationResult>,
+        TPreview,
+    ) => Promise<OfficeMutationResult>,
     successMessage: string,
   ): Promise<void> {
     if (
@@ -203,9 +308,14 @@ export function createWordTaskPaneController(
 
   return Object.freeze({
     initialize() {
+      view.setCapabilities?.(
+        capabilities,
+      );
       view.setReady(true);
       view.showIdle(
-        "Select Persian text in Word, then choose Translate Selection.",
+        initialInstruction(
+          capabilities,
+        ),
       );
     },
 
@@ -301,25 +411,80 @@ export function createWordTaskPaneController(
     },
 
     async replaceSelection() {
+      if (
+        !capabilities.canReplace
+      ) {
+        view.showFailure(
+          unsupportedAction(
+            capabilities,
+            "Replace Selection",
+          ),
+        );
+        return;
+      }
+
       await runMutation(
         (current) =>
           service
             .replaceWithBraille(
               current,
             ),
-        "Word selection replaced with the current Braille result.",
+        `${capabilities.hostLabel} selection replaced with the current Braille result.`,
       );
     },
 
     async insertAfterSelection() {
+      if (
+        !capabilities
+          .canInsertAfter ||
+        !service
+          .insertBrailleAfter
+      ) {
+        view.showFailure(
+          unsupportedAction(
+            capabilities,
+            "Insert After",
+          ),
+        );
+        return;
+      }
+
       await runMutation(
         (current) =>
           service
-            .insertBrailleAfter(
+            .insertBrailleAfter!(
               current,
             ),
-        "Braille inserted after the current Word selection.",
+        `Braille inserted after the current ${capabilities.hostLabel} selection.`,
       );
     },
   });
+}
+
+export type WordTaskPaneSuccessPresentation =
+  OfficeTaskPaneSuccessPresentation;
+
+export type WordTaskPaneFailurePresentation =
+  OfficeTaskPaneFailurePresentation;
+
+export type WordTaskPaneView =
+  OfficeTaskPaneView;
+
+export type WordTaskPaneController =
+  OfficeTaskPaneController;
+
+export function createWordTaskPaneController(
+  service:
+    PersianBrailleWordSelectionService,
+  view:
+    WordTaskPaneView,
+  clipboard:
+    ClipboardPort,
+): WordTaskPaneController {
+  return createOfficeTaskPaneController(
+    service,
+    view,
+    clipboard,
+    WORD_TASK_PANE_CAPABILITIES,
+  );
 }
