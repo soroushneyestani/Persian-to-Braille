@@ -1,0 +1,16 @@
+{
+  "phase": "11.3e",
+  "status": "external-blocked",
+  "branch": "phase11-marketplace",
+  "baselineCommit": "45168f9",
+  "manifestProviderName": "Soroush Neyestani",
+  "program": "Microsoft 365 and Copilot",
+  "publisherEnrollment": "not-completed",
+  "publisherIdentityVerification": "not-available-yet",
+  "blockingCondition": "No eligible verified publisher company identity is currently available for Microsoft 365 and Copilot enrollment.",
+  "privacy": {
+    "recordPersonalImmigrationDetails": false,
+    "recordSensitiveLegalStatus": false
+  },
+  "nextParallelWork": "Phase 11.4 Marketplace Listing Metadata and Assets"
+}

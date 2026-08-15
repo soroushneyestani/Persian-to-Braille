@@ -68,7 +68,9 @@
     "validate:phase11-3c-support-url": "node tools/architecture/validate-phase11-3c-production-support-url.mjs",
     "validate:phase11-3c": "pnpm run validate:phase11-3b && pnpm --filter @persian-braille/microsoft365 run test:marketplace-support-url && pnpm run validate:phase11-3c-support-url",
     "validate:phase11-3d-live-compliance": "node tools/architecture/validate-phase11-3d-live-compliance.mjs",
-    "validate:phase11-3d": "pnpm run validate:phase11-3c && pnpm run validate:phase11-3d-live-compliance"
+    "validate:phase11-3d": "pnpm run validate:phase11-3c && pnpm run validate:phase11-3d-live-compliance",
+    "validate:phase11-3e-external-gate": "node tools/architecture/validate-phase11-3e-external-gate.mjs",
+    "validate:phase11-3e": "pnpm run validate:phase11-3d && pnpm run validate:phase11-3e-external-gate"
   },
   "devDependencies": {
     "typescript": "6.0.3"
