@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install Persian-to-Braille — Manual Preview</title>
+  <meta
+    name="description"
+    content="Manual preview installation options for the Persian-to-Braille Microsoft 365 add-in."
+  >
+  <link rel="stylesheet" href="./compliance.css">
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <p><strong>Persian-to-Braille</strong></p>
+        <h1>Manual Preview Installation</h1>
+        <p>
+          Persian-to-Braille is not currently published through Microsoft
+          Marketplace. This page provides a manual preview distribution
+          channel for users and organizations that want to evaluate the
+          Microsoft 365 add-in before Marketplace publication is available.
+        </p>
+      </header>
+
+      <section aria-labelledby="download">
+        <h2 id="download">Download the manifest</h2>
+        <p>
+          The hosted manifest below points only to the production HTTPS build
+          of Persian-to-Braille.
+        </p>
+        <p>
+          <a href="./install/manifest.xml" download>
+            Download the Microsoft 365 add-in manifest
+          </a>
+        </p>
+        <p>
+          Stable manifest URL:
+          <code>https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml</code>
+        </p>
+      </section>
+
+      <section aria-labelledby="web-preview">
+        <h2 id="web-preview">Individual preview — Office on the web</h2>
+        <ol>
+          <li>Download the manifest from this page.</li>
+          <li>Open Word, Excel, or PowerPoint in Office on the web.</li>
+          <li>Open a document or presentation.</li>
+          <li>Select <strong>Home → Add-ins → More Settings</strong>.</li>
+          <li>Select <strong>Upload My Add-in</strong>.</li>
+          <li>Choose the downloaded manifest XML file and upload it.</li>
+        </ol>
+        <p>
+          Microsoft documents this flow as sideloading for development and
+          testing. A web-sideloaded manifest is stored in the browser's local
+          storage, so clearing browser data or switching browsers can require
+          sideloading it again.
+        </p>
+      </section>
+
+      <section aria-labelledby="org-deploy">
+        <h2 id="org-deploy">Organization deployment — Microsoft 365 admin</h2>
+        <p>
+          Microsoft 365 administrators can centrally deploy an add-in-only
+          manifest to supported users and groups through the Microsoft 365
+          admin center.
+        </p>
+        <ol>
+          <li>Open the Microsoft 365 admin center.</li>
+          <li>Go to <strong>Settings → Integrated apps</strong>.</li>
+          <li>Open the Add-ins deployment flow.</li>
+          <li>Choose the custom add-in option.</li>
+          <li>
+            Upload the downloaded manifest, or provide the stable manifest URL
+            shown above when the tenant UI offers URL-based manifest upload.
+          </li>
+          <li>Assign the add-in to the intended users or groups.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="mac-preview">
+        <h2 id="mac-preview">Mac preview</h2>
+        <p>
+          Microsoft also documents manual manifest sideloading on Mac for
+          testing. The manifest is copied into the Office application's
+          <code>wef</code> folder and the host application is restarted.
+          Refer to Microsoft's current sideloading documentation for the
+          host-specific folder path.
+        </p>
+      </section>
+
+      <section aria-labelledby="windows-note">
+        <h2 id="windows-note">Windows desktop note</h2>
+        <p>
+          A Windows network-share catalog is not presented here as a public
+          installation method. Microsoft documents network-share deployment
+          as a testing mechanism and states that it is not supported for
+          production add-ins.
+        </p>
+      </section>
+
+      <section aria-labelledby="scope">
+        <h2 id="scope">Current verified scope</h2>
+        <ul>
+          <li>Word on Windows: live verified.</li>
+          <li>Excel on Windows: live verified.</li>
+          <li>PowerPoint on Windows: live verified.</li>
+          <li>Web and Mac: release-gate execution remains pending.</li>
+        </ul>
+        <p>
+          Manual availability does not change those verification claims.
+        </p>
+      </section>
+
+      <section aria-labelledby="links">
+        <h2 id="links">Project information</h2>
+        <ul>
+          <li><a href="./support.html">Support</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+          <li><a href="./eula.html">EULA</a></li>
+          <li>
+            <a href="https://github.com/soroushneyestani/Persian-to-Braille">
+              Source code
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>
+          Manual Preview / Sideload Distribution — not Microsoft Marketplace
+          publication.
+        </p>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
