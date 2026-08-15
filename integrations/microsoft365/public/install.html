@@ -24,6 +24,149 @@
         </p>
       </header>
 
+      <section aria-labelledby="windows-preview">
+        <h2 id="windows-preview">Windows Desktop Preview</h2>
+        <p>
+          For Microsoft 365 Desktop on Windows, the preview installer prepares
+          the same local network-share catalog and trusted Office add-in
+          catalog used by the verified Windows sideload flow.
+        </p>
+        <p>
+          <a
+            href="./install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd"
+            download
+          >
+            Download Windows Desktop Preview Installer
+          </a>
+        </p>
+        <p>
+          The installer downloads the production manifest over HTTPS, creates
+          a local add-in catalog, registers that catalog for the current
+          Windows user, and then opens Word. Windows may show a UAC prompt
+          because creating the local SMB share requires elevated permission.
+          The installer never installs a separate Braille engine inside Office:
+          the add-in still uses the hosted Microsoft365 → SDK → Core runtime.
+        </p>
+        <p>
+          This is a Windows sideload/testing convenience. It is not Microsoft Marketplace publication.
+          Microsoft documents network-share
+          deployment as a testing mechanism and states that it is not supported
+          for production add-ins.
+        </p>
+
+        <div lang="fa" dir="rtl">
+          <h3>راهنمای نصب نسخه دسکتاپ ویندوز</h3>
+          <p>
+            ابتدا فایل
+            <strong>Windows Desktop Preview Installer</strong>
+            را دانلود و اجرا کنید. نصب‌کننده فایل Manifest رسمی را از آدرس
+            HTTPS پروژه دریافت می‌کند و تنظیمات لازم برای نمایش افزونه در
+            Microsoft Word، Excel و PowerPoint را انجام می‌دهد.
+          </p>
+          <p>
+            اگر Word، Excel یا PowerPoint باز باشد، نصب‌کننده از شما می‌خواهد
+            ابتدا برنامه‌های Office را ببندید تا فایل‌های ذخیره‌نشده به‌صورت
+            ناخواسته بسته نشوند. در صورت نمایش پنجره UAC ویندوز، اجازه ادامه
+            نصب را بدهید.
+          </p>
+          <ol>
+            <li>
+              پس از پایان نصب، Microsoft Word، Excel یا PowerPoint را باز کنید.
+            </li>
+            <li>
+              از نوار بالای Office روی <strong>Add-ins</strong> کلیک کنید.
+            </li>
+            <li>
+              در پنجره کوچک بازشده روی <strong>Get Add-ins</strong> کلیک کنید.
+              در بعضی نسخه‌های Microsoft 365 همین گزینه با عنوان
+              <strong>Advanced</strong> نمایش داده می‌شود.
+            </li>
+            <li>
+              در پنجره <strong>Office Add-ins</strong> وارد تب
+              <strong>SHARED FOLDER</strong> شوید.
+            </li>
+            <li>
+              گزینه <strong>Persian-to-Braille</strong> را انتخاب کنید.
+            </li>
+            <li>
+              روی <strong>Add</strong> کلیک کنید.
+            </li>
+            <li>
+              اکنون دکمه <strong>Translate Selection</strong> در Ribbon
+              برنامه در دسترس است.
+            </li>
+            <li>
+              متن فارسی را انتخاب کنید، روی
+              <strong>Translate Selection</strong> بزنید و نتیجه Braille را
+              در Task Pane مشاهده کنید.
+            </li>
+          </ol>
+          <p>
+            این روش برای نسخه پیش‌نمایش و آزمایش روی Windows Desktop است و
+            به معنی انتشار افزونه در Microsoft Marketplace نیست.
+          </p>
+        </div>
+
+        <h3>Windows setup steps</h3>
+        <ol>
+          <li>Download and run the Windows Desktop Preview Installer.</li>
+          <li>Allow the Windows UAC prompt if it appears.</li>
+          <li>Close and reopen Word, Excel, or PowerPoint after setup.</li>
+          <li>Select <strong>Home → Add-ins</strong>.</li>
+          <li>
+            Choose <strong>Get Add-ins</strong>, or
+            <strong>Advanced</strong> when that label is shown.
+          </li>
+          <li>Open the <strong>SHARED FOLDER</strong> tab.</li>
+          <li>Select <strong>Persian-to-Braille</strong>.</li>
+          <li>Choose <strong>Add</strong>.</li>
+          <li>Use <strong>Translate Selection</strong> from the ribbon.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="screenshots">
+        <h2 id="screenshots">Windows Desktop preview</h2>
+
+        <h3>Word</h3>
+        <figure>
+          <img
+            src="./install/screenshots/word-selection.png"
+            alt="Persian-to-Braille translating selected Persian text in Microsoft Word"
+            style="max-width:100%;height:auto"
+          >
+          <figcaption>
+            Translate a selected Persian passage, preview the Unicode Braille
+            result, then replace or insert it.
+          </figcaption>
+        </figure>
+
+        <h3>Excel</h3>
+        <figure>
+          <img
+            src="./install/screenshots/excel-text-cell.png"
+            alt="Persian-to-Braille translating one selected plain-text cell in Microsoft Excel"
+            style="max-width:100%;height:auto"
+          >
+          <figcaption>
+            Translate one selected plain-text Excel cell and replace it with
+            the reviewed Braille result.
+          </figcaption>
+        </figure>
+
+        <h3>PowerPoint</h3>
+        <figure>
+          <img
+            src="./install/screenshots/powerpoint-text-range.png"
+            alt="Persian-to-Braille translating a selected text range in Microsoft PowerPoint"
+            style="max-width:100%;height:auto"
+          >
+          <figcaption>
+            Translate a selected PowerPoint text range and replace it after
+            previewing the Braille output.
+          </figcaption>
+        </figure>
+      </section>
+
       <section aria-labelledby="download">
         <h2 id="download">Download the manifest</h2>
         <p>
@@ -93,10 +236,10 @@
       <section aria-labelledby="windows-note">
         <h2 id="windows-note">Windows desktop note</h2>
         <p>
-          A Windows network-share catalog is not presented here as a public
-          installation method. Microsoft documents network-share deployment
-          as a testing mechanism and states that it is not supported for
-          production add-ins.
+          The Windows Desktop Preview Installer automates preparation of a
+          local network-share catalog for sideload testing. Microsoft documents
+          network-share deployment as a testing mechanism and states that it is
+          not supported for production add-ins.
         </p>
       </section>
 
