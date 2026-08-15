@@ -13,7 +13,7 @@ echo.
 set "SETUP_URL=https://soroushneyestani.github.io/Persian-to-Braille/install/windows/windows-preview-setup.ps1"
 set "SETUP_FILE=%TEMP%\PersianToBrailleWindowsPreviewSetup.ps1"
 
-echo [1/2] Downloading the signed-source setup helper over HTTPS...
+echo [1/2] Downloading the project setup helper over HTTPS...
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue'; Invoke-WebRequest -UseBasicParsing -Uri '%SETUP_URL%' -OutFile '%SETUP_FILE%'"
 if errorlevel 1 (
   echo.
