@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-CONF-VAR-001",
+  "status": "active",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1",
+  "profileVersion": "0.1.0",
+  "ruleIds": [
+    "FA-G1-VAR-001"
+  ],
+  "input": {
+    "text": "آ",
+    "codePoints": [
+      "U+0622"
+    ]
+  },
+  "expected": {
+    "cells": [
+      "345"
+    ],
+    "unicodeBraille": "⠜",
+    "structuralTokens": []
+  },
+  "tags": [
+    "core-alphabet",
+    "scalar"
+  ],
+  "notes": [
+    "Materialized conformance vector for the fa-ir-g1 rule record.",
+    "Activated because FA-G1-LETTER-001 is normative."
+  ]
+}

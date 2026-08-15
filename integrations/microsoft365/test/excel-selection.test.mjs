@@ -317,9 +317,9 @@ test(
             readSelectionSnapshot:
               async () =>
                 snapshot({
-                  rawValue: "آ",
+                  rawValue: "😀",
                   formulaProjection:
-                    "آ",
+                    "😀",
                 }),
           }),
         ),

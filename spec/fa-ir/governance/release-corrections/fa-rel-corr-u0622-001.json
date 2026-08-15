@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REL-CORR-U0622-001",
+  "stage": "11-release-correction",
+  "profileId": "fa-ir-g1",
+  "subject": {
+    "decisionItemId": "FA-VAR-001",
+    "char": "آ",
+    "codePoints": [
+      "U+0622"
+    ]
+  },
+  "trigger": {
+    "kind": "live-host-regression",
+    "host": "Microsoft Word on Windows",
+    "observedBehavior": "A Persian selection containing U+0622 failed through the shared SDK/Core path while the equivalent spelling without U+0622 translated successfully."
+  },
+  "historicalGovernance": {
+    "adjudicationRecordId": "FA-ADJ-VAR-001-001",
+    "adjudicationResult": "deferred",
+    "historicalRecordMutated": false,
+    "phase1ClassificationMutated": false
+  },
+  "maintainerDecision": {
+    "authority": "project-maintainer",
+    "decision": "admit-candidate-direct-character-rule",
+    "ruleStatus": "candidate",
+    "ruleType": "character",
+    "dots": "345",
+    "unicodeBraille": "⠜",
+    "normativePromotion": false,
+    "officialIranianStandardClaim": false
+  },
+  "basis": {
+    "stable": {
+      "source": "SRC-LIBLOUIS-G1",
+      "dots": "345"
+    },
+    "draft": {
+      "source": "SRC-LIBLOUIS-2054",
+      "dots": "345"
+    },
+    "legacy": {
+      "source": "SRC-LEGACY-V1",
+      "word": ">",
+      "excel": ">",
+      "sql": "> "
+    },
+    "resolution": "The release correction resolves the earlier architecture ambiguity in favor of a direct scalar character rule because both pinned implementations map U+0622 directly to dots 345 and legacy Word/Excel also preserve a dedicated scalar mapping."
+  },
+  "materialization": {
+    "ruleId": "FA-G1-VAR-001",
+    "conformanceId": "FA-CONF-VAR-001",
+    "profileStatus": "draft",
+    "promotionEligible": false
+  }
+}
