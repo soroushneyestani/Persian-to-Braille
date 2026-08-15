@@ -1,4 +1,6 @@
 const DEVELOPMENT_BASE_URL = "https://localhost:3000";
+const DEVELOPMENT_SUPPORT_URL =
+  "https://github.com/soroushneyestani/Persian-to-Braille";
 
 function isLoopbackHost(hostname) {
   const value = hostname.toLowerCase();
@@ -63,6 +65,21 @@ export function normalizeProductionBaseUrl(input) {
   return `${url.origin}${pathname}`;
 }
 
+export function createMarketplaceComplianceUrls(
+  productionBaseUrl,
+) {
+  const baseUrl =
+    normalizeProductionBaseUrl(
+      productionBaseUrl,
+    );
+
+  return {
+    support: `${baseUrl}/support.html`,
+    privacy: `${baseUrl}/privacy.html`,
+    eula: `${baseUrl}/eula.html`,
+  };
+}
+
 export function createProductionManifest(
   developmentManifest,
   productionBaseUrl,
@@ -103,6 +120,61 @@ export function createProductionManifest(
   };
 }
 
+export function createMarketplaceSubmissionManifest(
+  developmentManifest,
+  productionBaseUrl,
+) {
+  const production =
+    createProductionManifest(
+      developmentManifest,
+      productionBaseUrl,
+    );
+
+  const developmentSupport =
+    `<SupportUrl DefaultValue="${DEVELOPMENT_SUPPORT_URL}"/>`;
+
+  if (
+    !production.manifest.includes(
+      developmentSupport,
+    )
+  ) {
+    throw new Error(
+      "Development manifest no longer contains the frozen development SupportUrl.",
+    );
+  }
+
+  const complianceUrls =
+    createMarketplaceComplianceUrls(
+      production.baseUrl,
+    );
+
+  const marketplaceSupport =
+    `<SupportUrl DefaultValue="${complianceUrls.support}"/>`;
+
+  const marketplaceManifest =
+    production.manifest.replace(
+      developmentSupport,
+      marketplaceSupport,
+    );
+
+  if (
+    marketplaceManifest.includes(
+      developmentSupport,
+    )
+  ) {
+    throw new Error(
+      "Marketplace manifest still contains the frozen development SupportUrl.",
+    );
+  }
+
+  return {
+    baseUrl: production.baseUrl,
+    complianceUrls,
+    manifest: marketplaceManifest,
+  };
+}
+
 export {
   DEVELOPMENT_BASE_URL,
+  DEVELOPMENT_SUPPORT_URL,
 };

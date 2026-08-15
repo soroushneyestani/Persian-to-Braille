@@ -25,7 +25,8 @@
     "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
     "build:marketplace": "pnpm run build && node build-marketplace.mjs",
     "test:marketplace": "node --test test/marketplace-build.test.mjs",
-    "test:marketplace-compliance": "pnpm run build && node --test test/marketplace-compliance-pages.test.mjs"
+    "test:marketplace-compliance": "pnpm run build && node --test test/marketplace-compliance-pages.test.mjs",
+    "test:marketplace-support-url": "node --test test/marketplace-support-url.test.mjs"
   },
   "dependencies": {
     "@persian-braille/sdk": "workspace:*"
