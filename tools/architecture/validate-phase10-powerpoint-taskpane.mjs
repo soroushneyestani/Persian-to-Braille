@@ -103,15 +103,8 @@ const manifestSha =
     .update(manifest)
     .digest("hex");
 
-if (
-  manifestSha !==
-  baseline.currentMicrosoft365State
-    .manifestSha256AtAudit
-) {
-  fail(
-    "manifest changed during 10.4b; multi-host manifest work belongs to Phase 10.5",
-  );
-}
+// Phase 10.4b task-pane invariants remain valid after the manifest
+// intentionally evolves in Phase 10.5.
 
 const profile =
   contract.hostProfiles
@@ -197,7 +190,7 @@ console.log(
   "PowerPoint: PowerPointApi 1.5 | selected text range | Replace only",
 );
 console.log(
-  "Manifest: unchanged / Word-only until Phase 10.5",
+  "10.4b invariant: three-host task-pane dispatch remains valid",
 );
 console.log(
   "Next: Phase 10.5 Sideload / Regression / Cross-host Evidence",

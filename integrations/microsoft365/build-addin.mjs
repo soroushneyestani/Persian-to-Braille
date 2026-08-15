@@ -166,7 +166,7 @@ await writeFile(
 );
 
 console.log(
-  "Persian-to-Braille Word Add-in static build: PASS",
+  "Persian-to-Braille Microsoft 365 Add-in static build: PASS",
 );
 console.log(
   "Task pane: addin-dist/taskpane.html",

@@ -624,7 +624,7 @@ test(
 );
 
 test(
-  "manifest defines one Word Home ribbon task-pane command",
+  "manifest preserves the Word Home ribbon task-pane command in the multi-host manifest",
   async () => {
     const manifest =
       await readFile(
@@ -653,7 +653,11 @@ test(
     );
     assert.match(
       manifest,
-      /WordApi" MinVersion="1\.1"/,
+      /AddinCommands" MinVersion="1\.1"/,
+    );
+    assert.match(
+      manifest,
+      /id="PersianBraille\.TranslateSelectionButton"/,
     );
   },
 );

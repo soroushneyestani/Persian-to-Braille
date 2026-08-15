@@ -73,20 +73,8 @@ equal(
   "PowerPoint requirement version",
 );
 
-if (!manifest.includes('<Host Name="Document"/>')) {
-  fail("Phase 9 Word manifest baseline is no longer present during Phase 10.1.");
-}
-
-if (!manifest.includes('<Set Name="WordApi" MinVersion="1.1"/>')) {
-  fail("Phase 9 WordApi 1.1 baseline changed before Phase 10.2.");
-}
-
-if (
-  manifest.includes('Name="ExcelApi"') ||
-  manifest.includes('Name="PowerPointApi"')
-) {
-  fail("Phase 10.1 must not implement Excel/PowerPoint manifest requirements yet.");
-}
+// Phase 10.1 records the historical Word-only manifest state in its
+// machine-readable audit artifact. Later Phase 10 manifest evolution is allowed.
 
 const openIds = new Set(
   data.openDecisionsForPhase10_2.map((item) => item.id),
@@ -109,9 +97,9 @@ if (!packageJson.scripts?.["validate:phase10-office-baseline"]) {
 }
 
 console.log("Phase 10.1 Excel / PowerPoint baseline validation: PASS");
-console.log("Current implementation: Word only");
+console.log("10.1 historical implementation snapshot: Word only");
 console.log("Production manifest family: add-in-only XML");
 console.log("Word baseline: WordApi 1.1");
 console.log("Excel baseline: ExcelApi 1.1");
 console.log("PowerPoint baseline: PowerPointApi 1.5");
-console.log("Next: Phase 10.2 shared host architecture");
+console.log("Baseline scope: historical audit; later manifest evolution is allowed.");

@@ -161,50 +161,44 @@
       "Presentation"
     ],
     "baseApplicationSpecificSets": [],
-    "versionOverridesStrategy": "one sibling VersionOverridesV1_0 per Office application",
+    "versionOverridesStrategy": "one VersionOverridesV1_0 with three host command entries",
     "hostOverrides": [
       {
         "host": "Document",
-        "requirements": [
-          {
-            "name": "AddinCommands",
-            "minimumVersion": "1.1"
-          },
-          {
-            "name": "WordApi",
-            "minimumVersion": "1.1"
-          }
-        ]
+        "runtimeRequirement": {
+          "name": "WordApi",
+          "minimumVersion": "1.1"
+        }
       },
       {
         "host": "Workbook",
-        "requirements": [
-          {
-            "name": "AddinCommands",
-            "minimumVersion": "1.1"
-          },
-          {
-            "name": "ExcelApi",
-            "minimumVersion": "1.1"
-          }
-        ]
+        "runtimeRequirement": {
+          "name": "ExcelApi",
+          "minimumVersion": "1.1"
+        }
       },
       {
         "host": "Presentation",
-        "requirements": [
-          {
-            "name": "AddinCommands",
-            "minimumVersion": "1.1"
-          },
-          {
-            "name": "PowerPointApi",
-            "minimumVersion": "1.5"
-          }
-        ]
+        "runtimeRequirement": {
+          "name": "PowerPointApi",
+          "minimumVersion": "1.5"
+        }
       }
     ],
-    "commandRule": "duplicate the command host child structure for each Office application",
-    "officialManifestValidationRequiredBeforeAcceptance": true
+    "commandRule": "one shared VersionOverrides Hosts collection with one command child structure per Office application",
+    "officialManifestValidationRequiredBeforeAcceptance": true,
+    "versionOverridesRequirements": [
+      {
+        "name": "AddinCommands",
+        "minimumVersion": "1.1"
+      }
+    ],
+    "applicationApiRequirementRule": "application-specific API baselines are enforced at runtime with Office.context.requirements.isSetSupported",
+    "phase10_5SchemaCorrection": {
+      "reason": "The official Microsoft manifest validator rejected multiple sibling task-pane VersionOverridesV1_0 elements under OfficeApp.",
+      "validatorError": "OfficeApp has invalid child VersionOverrides after the first VersionOverrides; schema expects ExtendedOverrides or XML signature.",
+      "resolution": "Use one task-pane VersionOverridesV1_0 containing Document, Workbook, and Presentation command hosts; keep only AddinCommands 1.1 in manifest requirements and enforce WordApi/ExcelApi/PowerPointApi baselines at runtime."
+    }
   },
   "implementationOrder": [
     "10.2 freeze architecture only",
