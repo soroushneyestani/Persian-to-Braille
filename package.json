@@ -72,7 +72,9 @@
     "validate:phase11-3e-external-gate": "node tools/architecture/validate-phase11-3e-external-gate.mjs",
     "validate:phase11-3e": "pnpm run validate:phase11-3d && pnpm run validate:phase11-3e-external-gate",
     "validate:phase11-4a-baseline": "node tools/architecture/validate-phase11-4a-marketplace-listing-baseline.mjs",
-    "validate:phase11-4a": "pnpm run validate:phase11-3e && pnpm run validate:phase11-4a-baseline"
+    "validate:phase11-4a": "pnpm run validate:phase11-3e && pnpm run validate:phase11-4a-baseline",
+    "validate:phase11-4b-listing-contract": "node tools/architecture/validate-phase11-4b-marketplace-listing-contract.mjs",
+    "validate:phase11-4b": "pnpm run validate:phase11-4a && pnpm run validate:phase11-4b-listing-contract"
   },
   "devDependencies": {
     "typescript": "6.0.3"

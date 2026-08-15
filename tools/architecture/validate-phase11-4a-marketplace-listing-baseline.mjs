@@ -118,11 +118,15 @@ requireText(
   "development manifest",
 );
 
-requireText(
-  manifest,
-  'https://localhost:3000/assets/icon-80.png',
-  "development manifest",
-);
+if (
+  !manifest.includes("https://localhost:3000/assets/icon-80.png")
+  && !manifest.includes("https://localhost:3000/assets/icon-64.png")
+) {
+  fail(
+    "development manifest must preserve the audited high-resolution icon "
+    + "baseline or a validated later remediation",
+  );
+}
 
 await stat(
   new URL(

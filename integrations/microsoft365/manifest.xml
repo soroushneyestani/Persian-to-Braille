@@ -12,7 +12,7 @@
   <DisplayName DefaultValue="Persian-to-Braille"/>
   <Description DefaultValue="Translate selected Persian text to Braille through the shared Persian-to-Braille SDK."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>
   <AppDomains>
     <AppDomain>https://github.com</AppDomain>
