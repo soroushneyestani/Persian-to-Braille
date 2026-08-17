@@ -1,0 +1,63 @@
+============================================================================================
+PHASE 12.1a — DEVELOPER ECOSYSTEM BASELINE CORRECTION
+============================================================================================
+
+MODE: READ-ONLY
+
+[GIT]
+Branch      : phase12-developer-ecosystem
+HEAD        : 77b7b20f66e9fcd758d6cca36aa76749667ac13c
+origin/main : 77b7b20f66e9fcd758d6cca36aa76749667ac13c
+
+[CORRECTION 1 — CLI SURFACE]
+Original audit path : packages/cli
+Actual path         : apps/cli
+Actual CLI exists   : YES
+Package name        : @persian-braille/cli
+
+[CORRECTION 2 — OFFICE SOURCE BOUNDARY]
+Generated build output excluded: integrations/microsoft365/addin-dist/**
+Microsoft365 SOURCE direct Core imports: 0
+Microsoft365 SOURCE SDK imports        : 13
+  integrations/microsoft365/test/excel-selection.test.mjs:6  } from "@persian-braille/sdk";
+  integrations/microsoft365/test/powerpoint-selection.test.mjs:6  } from "@persian-braille/sdk";
+  integrations/microsoft365/test/word-selection.test.mjs:6  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/excel/selection-service.ts:3  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/excel/selection-service.ts:7  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/excel/types.ts:3  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/powerpoint/selection-service.ts:3  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/powerpoint/selection-service.ts:7  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/powerpoint/types.ts:3  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/shared/types.ts:4  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/word/selection-service.ts:3  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/word/selection-service.ts:7  } from "@persian-braille/sdk";
+  integrations/microsoft365/src/word/types.ts:4  } from "@persian-braille/sdk";
+Source boundary: PASS
+
+[PUBLIC PACKAGE SHAPE]
+SDK public package metadata : PASS
+Core public package metadata: PASS
+
+[SDK DEVELOPER EXPERIENCE]
+README exists        : True
+Install guidance     : True
+Usage guidance       : True
+Error guidance       : True
+Dedicated examples   : 0
+  <none detected>
+
+[PHASE 12.1a CONCLUSION]
+CLI is PRESENT under apps/cli; Phase 12.1 path assumption corrected.
+Microsoft365 SOURCE boundary is CLEAN: Office -> SDK -> Core.
+The prior Core hit was inside generated addin-dist vendor output, not Microsoft365 source.
+Core and SDK already have public-package metadata; Phase 12 should focus on developer experience and contract hardening.
+The clearest current gap is a dedicated runnable examples/quickstart surface.
+
+[CANDIDATE NEXT STEP — PHASE 12.2]
+Freeze Developer SDK Contract + Examples Architecture before implementation.
+
+Text : stage12-1a-developer-ecosystem-baseline-correction.txt
+JSON : stage12-1a-developer-ecosystem-baseline-correction.json
+
+DO NOT COMMIT AUDIT OUTPUTS YET.
+============================================================================================

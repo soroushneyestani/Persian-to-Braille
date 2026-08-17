@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "phase": "12.2",
+  "name": "Developer SDK Contract and Examples Architecture Freeze",
+  "status": "FROZEN",
+  "baseline": {
+    "head": "77b7b20f66e9fcd758d6cca36aa76749667ac13c",
+    "branch": "phase12-developer-ecosystem",
+    "phase12_1": "docs/architecture/phase-12.1-developer-ecosystem-baseline-audit.json",
+    "phase12_1a": "docs/architecture/phase-12.1a-developer-ecosystem-baseline-correction.json"
+  },
+  "architecture": {
+    "dependencyDirection": "Consumer -> Public SDK -> Core",
+    "coreOfficeIndependent": true,
+    "officeDirectCoreSourceImportsAllowed": false,
+    "deepImportsFromSdkAllowed": false,
+    "firstPartyConsumers": [
+      "@persian-braille/cli",
+      "@persian-braille/web",
+      "@persian-braille/microsoft365"
+    ],
+    "applicationIntegrationGuidance": "Use @persian-braille/sdk rather than importing Core directly."
+  },
+  "sdk": {
+    "package": "@persian-braille/sdk",
+    "versionAtFreeze": "2.0.0-dev",
+    "moduleSystem": "ESM",
+    "entrypoint": ".",
+    "runtimeExports": [
+      "PersianBrailleTranslationError",
+      "createPersianBrailleTranslator"
+    ],
+    "typeExports": [
+      "CreatePersianBrailleTranslator",
+      "PersianBrailleProfileInfo",
+      "PersianBrailleTranslationErrorData",
+      "PersianBrailleTranslationFailure",
+      "PersianBrailleTranslationFailureCode",
+      "PersianBrailleTranslationResult",
+      "PersianBrailleTranslationSuccess",
+      "PersianBrailleTranslator",
+      "PersianBrailleUnicodeLocation"
+    ],
+    "stability": {
+      "phase12ExistingNamesAreCompatibilityProtected": true,
+      "breakingRenamesOrRemovalsAllowed": false,
+      "newForwardTranslationAPIsAllowedWithValidation": true,
+      "reverseTranslationAPIsAllowed": false
+    }
+  },
+  "consumerRuntimeMatrix": {
+    "node": {
+      "status": "SUPPORTED_BY_PACKAGE_ENGINE",
+      "range": ">=24.19.0 <25",
+      "module": "ESM"
+    },
+    "browserBundler": {
+      "status": "VALIDATED_FIRST_PARTY_CONSUMER",
+      "evidence": "apps/web"
+    },
+    "officeTaskPaneBundle": {
+      "status": "VALIDATED_FIRST_PARTY_CONSUMER",
+      "evidence": "integrations/microsoft365"
+    },
+    "commonjs": {
+      "status": "NOT_CLAIMED"
+    },
+    "deno": {
+      "status": "NOT_CLAIMED"
+    },
+    "bun": {
+      "status": "NOT_CLAIMED"
+    },
+    "directBrowserCdnImport": {
+      "status": "NOT_CLAIMED"
+    }
+  },
+  "errorContract": {
+    "publicErrorClass": "PersianBrailleTranslationError",
+    "structuredFailureType": "PersianBrailleTranslationFailure",
+    "failureCodeType": "PersianBrailleTranslationFailureCode",
+    "errorDataType": "PersianBrailleTranslationErrorData",
+    "requireExamples": true
+  },
+  "examplesArchitecture": {
+    "root": "examples",
+    "implementationPhase": "12.3",
+    "required": [
+      {
+        "id": "node-basic",
+        "path": "examples/node-basic",
+        "purpose": "Minimal Node.js ESM consumer using only @persian-braille/sdk."
+      },
+      {
+        "id": "browser-basic",
+        "path": "examples/browser-basic",
+        "purpose": "Minimal browser/bundler consumer using only @persian-braille/sdk."
+      },
+      {
+        "id": "error-handling",
+        "path": "examples/error-handling",
+        "purpose": "Structured failure/error handling through the public SDK contract."
+      },
+      {
+        "id": "integration-adapter",
+        "path": "examples/integration-adapter",
+        "purpose": "Starter pattern for a third-party integration without importing Core."
+      }
+    ],
+    "rules": [
+      "Examples import @persian-braille/sdk only.",
+      "Examples must not import @persian-braille/core.",
+      "Examples must be runnable and tested in CI.",
+      "Examples must demonstrate the documented public entrypoint only.",
+      "At least one example must demonstrate structured failure handling."
+    ]
+  },
+  "packageConsumerValidation": {
+    "implementationPhase": "12.4",
+    "requirements": [
+      "Build the SDK and create a packed package artifact.",
+      "Install the packed SDK into an isolated consumer fixture.",
+      "Compile a TypeScript consumer against emitted declarations.",
+      "Execute a runtime translation through the package entrypoint.",
+      "Reject dependence on workspace-only deep import paths."
+    ]
+  },
+  "scopeGuard": {
+    "reverseTranslation": "DEFERRED_TO_PHASE_13",
+    "brailleMusic": "DEFERRED_TO_PHASE_14",
+    "generalMultilanguageFramework": "DEFERRED_TO_PHASE_15",
+    "officeWeb": "DEFERRED_TO_PHASE_16",
+    "officeMac": "DEFERRED_TO_PHASE_17",
+    "marketplacePublication": "DEFERRED_TO_PHASE_18"
+  },
+  "plannedSubphases": [
+    {
+      "phase": "12.3",
+      "name": "Runnable SDK Examples and Quickstarts"
+    },
+    {
+      "phase": "12.4",
+      "name": "Packed Package Consumer Validation"
+    },
+    {
+      "phase": "12.5",
+      "name": "Developer Documentation and Integration Guide"
+    },
+    {
+      "phase": "12.6",
+      "name": "Developer Ecosystem Regression and Closure"
+    }
+  ]
+}
