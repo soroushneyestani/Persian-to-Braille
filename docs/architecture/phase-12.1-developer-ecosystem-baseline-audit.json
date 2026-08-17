@@ -1,0 +1,729 @@
+{
+  "phase": "12.1",
+  "name": "Developer Ecosystem Baseline Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase12-developer-ecosystem",
+    "head": "77b7b20f66e9fcd758d6cca36aa76749667ac13c",
+    "originMain": "77b7b20f66e9fcd758d6cca36aa76749667ac13c",
+    "clean": true,
+    "status": []
+  },
+  "rootPackage": {
+    "name": "persian-to-braille",
+    "version": "2.0.0-dev",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@11.21.0",
+    "engines": {
+      "node": ">=24.19.0 <25",
+      "pnpm": "11.21.0"
+    },
+    "devEngines": {
+      "runtime": {
+        "name": "node",
+        "version": "24.19.0",
+        "onFail": "download"
+      }
+    },
+    "scripts": {
+      "build": "pnpm -r --if-present run build",
+      "test": "pnpm -r --if-present run test",
+      "typecheck": "pnpm run build && pnpm -r --if-present run typecheck",
+      "clean": "pnpm -r --if-present run clean",
+      "spec:bundle": "node tools/architecture/build-runtime-spec-bundle.mjs",
+      "validate:boundaries": "node tools/architecture/validate-package-boundaries.mjs",
+      "validate:hygiene": "node tools/architecture/validate-repository-hygiene.mjs",
+      "validate:spec-determinism": "node tools/architecture/validate-runtime-spec-determinism.mjs",
+      "validate:runtime": "node tools/architecture/validate-runtime-spec-consumption.mjs",
+      "validate:architecture": "pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm run validate:spec-determinism && pnpm run validate:phase8-consumer-contract && pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-addin",
+      "validate:normalization": "node tools/normalization/validate-phase4-normalization.mjs",
+      "conformance:write-report": "pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write",
+      "test:conformance": "pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs",
+      "validate:conformance": "pnpm run test:conformance && node tools/conformance/profile-conformance-report.mjs --check",
+      "validate:sdk-package": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
+      "validate:phase8-consumer-contract": "node tools/architecture/validate-phase8-consumer-contract.mjs",
+      "validate:phase8-consumers": "pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs",
+      "validate:phase9-word-contract": "node tools/architecture/validate-phase9-word-host-contract.mjs",
+      "validate:phase9-word-selection": "pnpm --filter @persian-braille/microsoft365 run test",
+      "validate:phase9-word-addin": "node tools/architecture/validate-phase9-word-addin.mjs",
+      "validate:phase9-word-sideload-evidence": "node tools/architecture/validate-phase9-word-sideload-evidence.mjs",
+      "validate:phase9-closure": "node tools/architecture/validate-phase9-closure.mjs",
+      "validate:phase9": "pnpm run validate:phase9-word-contract && pnpm run validate:phase9-word-selection && pnpm run validate:phase9-word-addin && pnpm run validate:phase9-word-sideload-evidence && pnpm run validate:phase9-closure",
+      "validate:phase10-office-baseline": "node tools/architecture/validate-phase10-office-baseline.mjs",
+      "validate:phase10-shared-host-architecture": "node tools/architecture/validate-phase10-shared-host-architecture.mjs",
+      "validate:phase10-excel-host-layer": "node tools/architecture/validate-phase10-excel-host-layer.mjs",
+      "validate:phase10-excel-taskpane": "node tools/architecture/validate-phase10-excel-taskpane.mjs",
+      "validate:phase10-powerpoint-host-layer": "node tools/architecture/validate-phase10-powerpoint-host-layer.mjs",
+      "validate:phase10-powerpoint-taskpane": "node tools/architecture/validate-phase10-powerpoint-taskpane.mjs",
+      "validate:phase10-multihost-manifest": "node tools/architecture/validate-phase10-multihost-manifest.mjs",
+      "validate:phase10-windows-live-evidence": "node tools/architecture/validate-phase10-windows-live-evidence.mjs",
+      "validate:phase10-5-closure": "node tools/architecture/validate-phase10-5-closure.mjs",
+      "validate:phase10-5": "pnpm run validate:phase10-multihost-manifest && pnpm run validate:phase10-windows-live-evidence && pnpm run validate:phase10-5-closure",
+      "validate:phase10-closure": "node tools/architecture/validate-phase10-closure.mjs",
+      "validate:phase10": "pnpm --filter @persian-braille/microsoft365 run typecheck && pnpm run validate:phase10-office-baseline && pnpm run validate:phase10-shared-host-architecture && pnpm run validate:phase10-excel-host-layer && pnpm run validate:phase10-excel-taskpane && pnpm run validate:phase10-powerpoint-host-layer && pnpm run validate:phase10-powerpoint-taskpane && pnpm run validate:phase10-5 && pnpm run validate:phase9 && pnpm run validate:phase10-closure",
+      "validate:phase11-marketplace-baseline": "node tools/architecture/validate-phase11-marketplace-baseline.mjs",
+      "validate:phase11-1": "pnpm run validate:phase10 && pnpm run validate:phase11-marketplace-baseline",
+      "validate:phase11-production-manifest": "node tools/architecture/validate-phase11-production-manifest-architecture.mjs",
+      "validate:phase11-2a": "pnpm run validate:phase11-1 && pnpm --filter @persian-braille/microsoft365 run test:marketplace && pnpm run validate:phase11-production-manifest",
+      "validate:phase11-pages-deployment": "node tools/architecture/validate-phase11-github-pages-deployment.mjs",
+      "validate:phase11-2b-candidate": "pnpm run validate:phase11-2a && pnpm run validate:phase11-pages-deployment",
+      "probe:phase11-marketplace-remote": "node tools/architecture/probe-phase11-marketplace-remote.mjs",
+      "validate:phase11-2b-live": "node tools/architecture/validate-phase11-2b-live-deployment.mjs",
+      "validate:phase11-2-closure": "node tools/architecture/validate-phase11-2-closure.mjs",
+      "validate:phase11-2": "pnpm run validate:phase11-2b-candidate && pnpm run validate:phase11-2b-live && pnpm run validate:phase11-2-closure",
+      "validate:phase11-3a-compliance-baseline": "node tools/architecture/validate-phase11-3a-compliance-baseline.mjs",
+      "validate:phase11-3a": "pnpm run validate:phase11-2 && pnpm run validate:phase11-3a-compliance-baseline",
+      "validate:phase11-3b-compliance-pages": "node tools/architecture/validate-phase11-3b-compliance-pages.mjs",
+      "validate:phase11-3b": "pnpm run validate:phase11-3a && pnpm --filter @persian-braille/microsoft365 run test:marketplace-compliance && pnpm run validate:phase11-3b-compliance-pages",
+      "validate:phase11-3c-support-url": "node tools/architecture/validate-phase11-3c-production-support-url.mjs",
+      "validate:phase11-3c": "pnpm run validate:phase11-3b && pnpm --filter @persian-braille/microsoft365 run test:marketplace-support-url && pnpm run validate:phase11-3c-support-url",
+      "validate:phase11-3d-live-compliance": "node tools/architecture/validate-phase11-3d-live-compliance.mjs",
+      "validate:phase11-3d": "pnpm run validate:phase11-3c && pnpm run validate:phase11-3d-live-compliance",
+      "validate:phase11-3e-external-gate": "node tools/architecture/validate-phase11-3e-external-gate.mjs",
+      "validate:phase11-3e": "pnpm run validate:phase11-3d && pnpm run validate:phase11-3e-external-gate",
+      "validate:phase11-4a-baseline": "node tools/architecture/validate-phase11-4a-marketplace-listing-baseline.mjs",
+      "validate:phase11-4a": "pnpm run validate:phase11-3e && pnpm run validate:phase11-4a-baseline",
+      "validate:phase11-4b-listing-contract": "node tools/architecture/validate-phase11-4b-marketplace-listing-contract.mjs",
+      "validate:phase11-4b": "pnpm run validate:phase11-4a && pnpm run validate:phase11-4b-listing-contract",
+      "build:manual-preview": "node integrations/microsoft365/build-manual-preview.mjs",
+      "build:marketplace-preview": "pnpm --filter @persian-braille/microsoft365 run build:marketplace && pnpm run build:manual-preview",
+      "test:manual-preview": "node --test integrations/microsoft365/test/manual-preview-distribution.test.mjs",
+      "validate:phase11-4c-manual-preview": "node tools/architecture/validate-phase11-4c-public-manual-preview.mjs",
+      "validate:phase11-4c": "pnpm run validate:phase11-4b && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4c-manual-preview",
+      "validate:phase11-4c-live-manual-preview": "node tools/architecture/validate-phase11-4c-live-manual-preview.mjs",
+      "validate:phase11-4c-live": "pnpm run validate:phase11-4c && pnpm run validate:phase11-4c-live-manual-preview",
+      "validate:phase11-4d": "pnpm run validate:phase11-4c-live && node tools/architecture/validate-phase11-4d-marketplace-screenshots.mjs",
+      "validate:phase11-4e-windows-preview-installer": "node tools/architecture/validate-phase11-4e-windows-preview-installer.mjs",
+      "validate:phase11-4e": "pnpm run validate:phase11-4d && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4e-windows-preview-installer",
+      "validate:phase11-windows-desktop-scope": "node tools/architecture/validate-phase11-windows-desktop-scope.mjs",
+      "validate:phase11-4e-live": "pnpm run validate:phase11-4e && pnpm run validate:phase11-windows-desktop-scope",
+      "validate:phase11-5-windows-certification": "node tools/architecture/validate-phase11-5-windows-desktop-certification.mjs",
+      "validate:phase11-5": "pnpm run validate:phase11-4e-live && pnpm run validate:phase11-5-windows-certification",
+      "build:windows-desktop-release": "node integrations/microsoft365/build-windows-desktop-release.mjs",
+      "test:windows-desktop-release": "node --test integrations/microsoft365/test/windows-desktop-release-package.test.mjs",
+      "validate:phase11-6-windows-release": "node tools/architecture/validate-phase11-6-windows-desktop-release-package.mjs",
+      "validate:phase11-6": "pnpm run validate:phase11-4e && pnpm run validate:phase11-windows-desktop-scope && pnpm run validate:phase11-5-windows-certification && pnpm run validate:phase11-public-trust-wording && pnpm run build:marketplace-preview && pnpm run build:windows-desktop-release && pnpm run test:windows-desktop-release && pnpm run validate:phase11-6-windows-release",
+      "validate:phase11-7-preflight": "node tools/architecture/validate-phase11-7-windows-desktop-release-preflight.mjs",
+      "validate:phase11-7": "pnpm run validate:phase11-6 && pnpm run validate:phase11-7-preflight",
+      "validate:phase11-8-closure": "node tools/architecture/validate-phase11-8-windows-desktop-closure.mjs",
+      "validate:phase11-8": "pnpm run validate:phase11-7-preflight && pnpm run validate:phase11-windows-desktop-scope && pnpm run validate:phase11-public-trust-wording && pnpm run validate:phase11-8-closure",
+      "validate:phase11-post-merge-finalization": "node tools/architecture/validate-phase11-post-merge-finalization.mjs",
+      "validate:phase11-final": "pnpm run validate:phase11-8 && pnpm run validate:phase11-post-merge-finalization",
+      "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
+      "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs",
+      "validate:phase11-public-trust-wording": "node tools/architecture/validate-phase11-public-trust-wording.mjs"
+    },
+    "devDependencies": {
+      "typescript": "6.0.3"
+    },
+    "description": "Specification-driven Persian Braille translation workspace.",
+    "license": "MIT",
+    "author": "Soroush Neyestani",
+    "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git"
+    },
+    "bugs": {
+      "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+    }
+  },
+  "pnpmWorkspace": "packages:\n  - 'packages/*'\n  - 'apps/*'\n  - 'integrations/*'\n\nengineStrict: true\nnodeVersion: 24.19.0\npmOnFail: error\nsaveExact: true\n",
+  "license": {
+    "path": "LICENSE",
+    "sha256": "c24a832093f198dc219cf064e690ea951b43cac1d3062723bc0fd942d7ab3302",
+    "mitDetected": true
+  },
+  "packages": [
+    {
+      "path": "packages/core",
+      "exists": true,
+      "packageJson": {
+        "name": "@persian-braille/core",
+        "version": "2.0.0-dev",
+        "private": false,
+        "type": "module",
+        "engines": {
+          "node": ">=24.19.0 <25",
+          "pnpm": "11.21.0"
+        },
+        "files": [
+          "dist"
+        ],
+        "exports": {
+          ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+          }
+        },
+        "types": "./dist/index.d.ts",
+        "scripts": {
+          "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
+          "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
+          "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+          "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
+          "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs"
+        },
+        "description": "Specification-driven Persian Braille translation engine for the fa-ir-g1 profile.",
+        "license": "MIT",
+        "author": "Soroush Neyestani",
+        "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+          "directory": "packages/core"
+        },
+        "bugs": {
+          "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+        },
+        "keywords": [
+          "persian",
+          "braille",
+          "accessibility",
+          "translation",
+          "unicode",
+          "iran"
+        ],
+        "publishConfig": {
+          "access": "public"
+        }
+      },
+      "entryFile": "packages/core/src/index.ts",
+      "publicExportLines": [
+        "export * from \"./specification.js\";",
+        "export * from \"./normalization.js\";",
+        "export * from \"./unicode-preprocessor.js\";",
+        "export * from \"./translation.js\";",
+        "export * from \"./rule-selector.js\";",
+        "export * from \"./engine-token-producer.js\";",
+        "export * from \"./mode-rule-executor.js\";",
+        "export * from \"./forward-translator.js\";"
+      ],
+      "testFiles": [
+        "packages/core/test/canonical-execution-bridge.test.mjs",
+        "packages/core/test/forward-translator.test.mjs",
+        "packages/core/test/rule-selector.test.mjs",
+        "packages/core/test/unicode-preprocessor.test.mjs"
+      ]
+    },
+    {
+      "path": "packages/sdk",
+      "exists": true,
+      "packageJson": {
+        "name": "@persian-braille/sdk",
+        "version": "2.0.0-dev",
+        "private": false,
+        "type": "module",
+        "engines": {
+          "node": ">=24.19.0 <25",
+          "pnpm": "11.21.0"
+        },
+        "files": [
+          "dist"
+        ],
+        "exports": {
+          ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+          }
+        },
+        "types": "./dist/index.d.ts",
+        "scripts": {
+          "build": "tsc -p tsconfig.json",
+          "typecheck": "tsc -p tsconfig.json --noEmit",
+          "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+          "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs"
+        },
+        "dependencies": {
+          "@persian-braille/core": "workspace:*"
+        },
+        "description": "Public TypeScript SDK for Persian Braille translation backed by @persian-braille/core.",
+        "license": "MIT",
+        "author": "Soroush Neyestani",
+        "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+          "directory": "packages/sdk"
+        },
+        "bugs": {
+          "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+        },
+        "keywords": [
+          "persian",
+          "braille",
+          "accessibility",
+          "sdk",
+          "typescript",
+          "unicode",
+          "iran"
+        ],
+        "publishConfig": {
+          "access": "public"
+        }
+      },
+      "entryFile": "packages/sdk/src/index.ts",
+      "publicExportLines": [
+        "export {",
+        "export type {"
+      ],
+      "testFiles": [
+        "packages/sdk/test/public-api.test.mjs"
+      ]
+    },
+    {
+      "path": "packages/cli",
+      "exists": false,
+      "packageJson": null,
+      "entryFile": null,
+      "publicExportLines": [],
+      "testFiles": []
+    },
+    {
+      "path": "apps/web",
+      "exists": true,
+      "packageJson": {
+        "name": "@persian-braille/web",
+        "version": "2.0.0-dev",
+        "private": true,
+        "type": "module",
+        "engines": {
+          "node": ">=24.19.0 <25",
+          "pnpm": "11.21.0"
+        },
+        "files": [
+          "dist"
+        ],
+        "exports": {
+          ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+          }
+        },
+        "types": "./dist/index.d.ts",
+        "scripts": {
+          "build": "tsc -p tsconfig.json && node build-static.mjs",
+          "typecheck": "tsc -p tsconfig.json --noEmit",
+          "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+          "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/web-playground.test.mjs",
+          "preview": "node preview.mjs"
+        },
+        "dependencies": {
+          "@persian-braille/sdk": "workspace:*"
+        },
+        "description": "Browser-local Persian Braille playground powered by @persian-braille/sdk."
+      },
+      "entryFile": "apps/web/src/index.ts",
+      "publicExportLines": [
+        "export {",
+        "export type {"
+      ],
+      "testFiles": [
+        "apps/web/test/web-playground.test.mjs"
+      ]
+    },
+    {
+      "path": "integrations/microsoft365",
+      "exists": true,
+      "packageJson": {
+        "name": "@persian-braille/microsoft365",
+        "version": "2.0.0-dev",
+        "private": true,
+        "type": "module",
+        "engines": {
+          "node": ">=24.19.0 <25",
+          "pnpm": "11.21.0"
+        },
+        "files": [
+          "dist"
+        ],
+        "exports": {
+          ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+          }
+        },
+        "types": "./dist/index.d.ts",
+        "scripts": {
+          "build": "tsc -p tsconfig.json && node build-addin.mjs",
+          "typecheck": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit",
+          "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+          "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs",
+          "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
+          "build:marketplace": "pnpm run build && node build-marketplace.mjs",
+          "test:marketplace": "node --test test/marketplace-build.test.mjs",
+          "test:marketplace-compliance": "pnpm run build && node --test test/marketplace-compliance-pages.test.mjs",
+          "test:marketplace-support-url": "node --test test/marketplace-support-url.test.mjs"
+        },
+        "dependencies": {
+          "@persian-braille/sdk": "workspace:*"
+        },
+        "description": "Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk."
+      },
+      "entryFile": "integrations/microsoft365/src/index.ts",
+      "publicExportLines": [
+        "export {",
+        "export {",
+        "export {",
+        "export {",
+        "export type {",
+        "export type {",
+        "export {",
+        "export {",
+        "export {",
+        "export {",
+        "export type {",
+        "export type {",
+        "export {",
+        "export {",
+        "export {",
+        "export {",
+        "export type {",
+        "export type {",
+        "export type {"
+      ],
+      "testFiles": [
+        "integrations/microsoft365/test/excel-selection.test.mjs",
+        "integrations/microsoft365/test/manual-preview-distribution.test.mjs",
+        "integrations/microsoft365/test/marketplace-build.test.mjs",
+        "integrations/microsoft365/test/marketplace-compliance-pages.test.mjs",
+        "integrations/microsoft365/test/marketplace-support-url.test.mjs",
+        "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+        "integrations/microsoft365/test/taskpane.test.mjs",
+        "integrations/microsoft365/test/windows-desktop-release-package.test.mjs",
+        "integrations/microsoft365/test/word-selection.test.mjs"
+      ]
+    }
+  ],
+  "architectureBoundary": {
+    "microsoft365DirectCoreImports": [
+      {
+        "file": "integrations/microsoft365/addin-dist/vendor/sdk/translator.js",
+        "line": 1,
+        "text": "import { createForwardTranslator, getBundledSpecification, } from \"@persian-braille/core\";"
+      }
+    ],
+    "microsoft365SdkImports": [
+      {
+        "file": "integrations/microsoft365/test/excel-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/test/word-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/shared/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      }
+    ],
+    "allDirectCoreImports": [
+      {
+        "file": "packages/sdk/src/translator.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/core\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/vendor/sdk/translator.js",
+        "line": 1,
+        "text": "import { createForwardTranslator, getBundledSpecification, } from \"@persian-braille/core\";"
+      }
+    ],
+    "allSdkImports": [
+      {
+        "file": "packages/sdk/README.md",
+        "line": 35,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "packages/sdk/README.md",
+        "line": 63,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/test/excel-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/test/word-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/excel/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/powerpoint/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/shared/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/src/word/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/web/src/controller.ts",
+        "line": 5,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/web/src/dom-view.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/web/src/main.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/web/test/web-playground.test.mjs",
+        "line": 16,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/cli/src/app.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/cli/src/app.ts",
+        "line": 8,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "apps/cli/test/cli.test.mjs",
+        "line": 16,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "file": "tools/sdk/validate-sdk-package.mjs",
+        "line": 724,
+        "text": "const sdk = await import(\"@persian-braille/sdk\");"
+      }
+    ]
+  },
+  "developerDocs": [
+    "docs/architecture/phase-8.5-consumer-integration-regression.md",
+    "docs/architecture/phase-9.2-word-host-adapter-contract.md",
+    "docs/sdk/phase-7-closure.md",
+    "docs/sdk/phase-7.1-baseline-audit.md",
+    "docs/sdk/phase-7.2-public-api-contract.md",
+    "docs/sdk/phase-7.3-sdk-implementation.md",
+    "docs/sdk/phase-7.4-consumer-error-tests.md",
+    "docs/sdk/phase-7.5-packaging-release-readiness.md"
+  ],
+  "examples": [],
+  "baselineGaps": [
+    "No dedicated SDK/examples surface detected.",
+    "Microsoft365 contains direct imports from Core; Phase 12 architecture boundary requires review."
+  ],
+  "phase12Policy": {
+    "coreOfficeIndependent": true,
+    "microsoft365DependsOnPublicSdkOnly": true,
+    "noPhase13ReverseTranslation": true,
+    "noPhase14BrailleMusic": true,
+    "noPhase15GeneralFramework": true,
+    "noPhase16WebOfficeWork": true,
+    "noPhase17MacWork": true,
+    "noPhase18MarketplacePublication": true
+  }
+}
