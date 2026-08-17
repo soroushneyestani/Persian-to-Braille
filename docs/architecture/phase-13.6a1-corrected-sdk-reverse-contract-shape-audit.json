@@ -1,0 +1,158 @@
+{
+  "phase": "13.6a1",
+  "name": "Corrected SDK Reverse Contract Shape Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "aa5ce927d218ab2535d93e7b1e36d2fdb7a97317",
+    "upstream": "aa5ce927d218ab2535d93e7b1e36d2fdb7a97317",
+    "cleanExceptPhase13_6aAuditOutputs": true
+  },
+  "correction": {
+    "originalDecisionInput": {
+      "coreFactoryPublic": true,
+      "sdkCoreDependencyPresent": true,
+      "reverseSdkStillAbsent": true,
+      "frozenContractEvidenceComplete": false
+    },
+    "falseNegativeConfirmed": true,
+    "incorrectlyInventedPublicType": "PersianBrailleReverseDiagnosticCode",
+    "canonicalContractExplanation": "Phase 13.2 freezes PersianBrailleReverseDiagnostic as a public SDK type and freezes six diagnostic code string values, but does not list PersianBrailleReverseDiagnosticCode in sdkContract.newTypeExports."
+  },
+  "canonicalSdkReverseSurface": {
+    "runtime": [
+      "PersianBrailleReverseTranslationError",
+      "createPersianBrailleReverseTranslator"
+    ],
+    "types": [
+      "CreatePersianBrailleReverseTranslator",
+      "PersianBrailleReverseProfileInfo",
+      "PersianBrailleReverseTranslationOptions",
+      "PersianBrailleReverseDigitFamily",
+      "PersianBrailleReversePunctuationStyle",
+      "PersianBrailleReverseEllipsisStyle",
+      "PersianBrailleReverseAmbiguityPolicy",
+      "PersianBrailleReverseDiagnostic",
+      "PersianBrailleReverseTranslationFailureCode",
+      "PersianBrailleReverseTranslationFailure",
+      "PersianBrailleReverseTranslationResult",
+      "PersianBrailleReverseTranslationSuccess",
+      "PersianBrailleReverseTranslator",
+      "PersianBrailleReverseUnicodeLocation"
+    ],
+    "factory": {
+      "name": "createPersianBrailleReverseTranslator",
+      "defaultOptionsArgument": "optional PersianBrailleReverseTranslationOptions",
+      "returns": "PersianBrailleReverseTranslator"
+    },
+    "translatorMethods": {
+      "translateFromBraille": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationResult",
+        "throwsExpectedFailures": false
+      },
+      "translateFromBrailleOrThrow": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationSuccess",
+        "throwsExpectedFailures": true
+      }
+    },
+    "profileInfo": {
+      "direction": "braille-to-print"
+    },
+    "failureCodes": [
+      "INVALID_BRAILLE_INPUT",
+      "UNKNOWN_BRAILLE_CELL",
+      "UNKNOWN_BRAILLE_SEQUENCE",
+      "AMBIGUOUS_REVERSE_MATCH",
+      "MALFORMED_MODE_SEQUENCE",
+      "UNTERMINATED_LATIN_SPAN",
+      "DANGLING_CAPITAL_INDICATOR",
+      "UNSUPPORTED_REVERSE_STATE"
+    ],
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION",
+      "CANONICALIZED_ELLIPSIS",
+      "AMBIGUITY_CANONICALIZED",
+      "LOSSY_LAYOUT_RECONSTRUCTION",
+      "LOSSY_NORMALIZATION_RECONSTRUCTION"
+    ]
+  },
+  "corePublicBoundary": {
+    "factory": true,
+    "runtimePath": true,
+    "typesPath": true
+  },
+  "coreRequiredTypeSurface": {
+    "required": [
+      "ReverseAmbiguityPolicy",
+      "ReverseDiagnostic",
+      "ReverseDiagnosticCode",
+      "ReverseDigitFamily",
+      "ReverseEllipsisStyle",
+      "ReverseProfileSnapshot",
+      "ReversePunctuationStyle",
+      "ReverseTranslationFailure",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationOptions",
+      "ReverseTranslationOutcome",
+      "ReverseTranslationSuccess",
+      "ReverseTranslator",
+      "ReverseUnicodeLocation"
+    ],
+    "exportedByReverseTranslationSource": [
+      "ReverseDigitFamily",
+      "ReversePunctuationStyle",
+      "ReverseEllipsisStyle",
+      "ReverseAmbiguityPolicy",
+      "ReverseTranslationOptions",
+      "ReverseDiagnosticCode",
+      "ReverseDiagnostic",
+      "ReverseProfileSnapshot",
+      "ReverseUnicodeLocation",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationSuccess",
+      "ReverseTranslationFailure",
+      "ReverseTranslationOutcome",
+      "ReverseTranslator"
+    ],
+    "missing": []
+  },
+  "sdk": {
+    "coreDependency": "workspace:*",
+    "reverseSurfaceCurrentlyAbsent": {
+      "runtime": true,
+      "types": true
+    },
+    "packageExports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      }
+    },
+    "forwardPattern": {
+      "index": "packages/sdk/src/index.ts",
+      "publicApi": "packages/sdk/src/public-api.ts",
+      "runtimeFacade": "packages/sdk/src/translator.ts",
+      "test": "packages/sdk/test/public-api.test.mjs"
+    }
+  },
+  "readinessChecks": {
+    "originalFalseNegativeConfirmed": true,
+    "canonicalRuntimeExportsExact": true,
+    "canonicalTypeExportsCount14": true,
+    "diagnosticCodeIsValueSetNotPublicType": true,
+    "coreReverseBoundaryPublic": true,
+    "coreReverseTypesComplete": true,
+    "sdkDependsOnCore": true,
+    "sdkReverseRuntimeStillAbsent": true,
+    "sdkReverseTypesStillAbsent": true,
+    "forwardSdkFilesRemainSingleFacadePattern": true
+  },
+  "blockers": [],
+  "decision": "READY_TO_FREEZE_PHASE13_6_SDK_IMPLEMENTATION_SHAPE",
+  "recommendedNextStep": "Freeze the exact SDK reverse implementation mapping from the canonical Phase 13.2 sdkContract and the public Core reverse types/factory. Keep the 14-type SDK surface exact; do not add PersianBrailleReverseDiagnosticCode unless the canonical Phase 13.2 contract is intentionally amended in a separate step."
+}

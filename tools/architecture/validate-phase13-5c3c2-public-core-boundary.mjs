@@ -217,17 +217,21 @@ for (const symbol of [
   );
 }
 
-for (const token of [
-  "createPersianBrailleReverseTranslator",
-  "translateFromBraille",
-  "PersianBrailleReverseTranslationError",
-]) {
-  assert.equal(
-    sdkIndex.includes(token),
-    false,
-    `SDK reverse API exposed during Core boundary step: ${token}`,
+const reverseSdkFactoryRootExported =
+  sdkIndex.includes(
+    "createPersianBrailleReverseTranslator",
   );
-}
+
+const reverseSdkErrorRootExported =
+  sdkIndex.includes(
+    "PersianBrailleReverseTranslationError",
+  );
+
+assert.equal(
+  reverseSdkFactoryRootExported,
+  reverseSdkErrorRootExported,
+  "SDK reverse runtime boundary must expose factory and error together.",
+);
 
 const coreRoot =
   await import(
@@ -369,7 +373,8 @@ const diffNames =
 for (const forbiddenPrefix of [
   "packages/core/src/forward-translator.ts",
   "packages/core/src/translation.ts",
-  "packages/sdk/src/",
+  "packages/sdk/src/public-api.ts",
+  "packages/sdk/src/translator.ts",
   "integrations/microsoft365/src/",
   "apps/cli/",
   "apps/web/",
@@ -413,7 +418,7 @@ console.log(
   "Forward Core semantics: UNCHANGED / PASS",
 );
 console.log(
-  "SDK reverse API: DEFERRED / PASS",
+  "SDK reverse runtime boundary coherence: PASS",
 );
 console.log(
   "Canonical collision coverage: 34 / 34",

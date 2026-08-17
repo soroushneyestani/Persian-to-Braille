@@ -193,19 +193,23 @@ for (const token of [
   );
 }
 
-// The freeze is documentation-only. No reverse API implementation may appear
-// in the SDK before Phase 13.3+ implementation work.
-for (const token of [
-  "translateFromBraille",
-  "createPersianBrailleReverseTranslator",
-  "PersianBrailleReverseTranslationError",
-]) {
-  assert.equal(
-    sdkIndex.includes(token),
-    false,
-    `reverse runtime leaked into SDK during architecture freeze: ${token}`,
+// Historical Phase 13.2 froze the SDK reverse contract before runtime exposure.
+// Later milestones may expose the frozen runtime boundary atomically.
+const reverseSdkFactoryRootExported =
+  sdkIndex.includes(
+    "createPersianBrailleReverseTranslator",
   );
-}
+
+const reverseSdkErrorRootExported =
+  sdkIndex.includes(
+    "PersianBrailleReverseTranslationError",
+  );
+
+assert.equal(
+  reverseSdkFactoryRootExported,
+  reverseSdkErrorRootExported,
+  "SDK reverse runtime boundary must expose factory and error together.",
+);
 
 assert.equal(
   contract.conformanceContract.forwardVectorsMayBeBlindlySwapped,
@@ -299,7 +303,7 @@ console.log(
 );
 
 console.log(
-  "Reverse SDK implementation during freeze: NONE / PASS",
+  "Reverse SDK runtime boundary coherence: PASS",
 );
 
 console.log(

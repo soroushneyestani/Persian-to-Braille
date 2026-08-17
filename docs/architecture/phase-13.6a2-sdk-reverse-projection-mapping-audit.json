@@ -1,0 +1,320 @@
+{
+  "phase": "13.6a2",
+  "name": "SDK Reverse Projection Mapping Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "aa5ce927d218ab2535d93e7b1e36d2fdb7a97317",
+    "upstream": "aa5ce927d218ab2535d93e7b1e36d2fdb7a97317",
+    "cleanExceptPhase13_6AuditOutputs": true
+  },
+  "canonicalSdkContractFull": {
+    "forwardApiPreservedUnchanged": true,
+    "newRuntimeExports": [
+      "PersianBrailleReverseTranslationError",
+      "createPersianBrailleReverseTranslator"
+    ],
+    "newTypeExports": [
+      "CreatePersianBrailleReverseTranslator",
+      "PersianBrailleReverseProfileInfo",
+      "PersianBrailleReverseTranslationOptions",
+      "PersianBrailleReverseDigitFamily",
+      "PersianBrailleReversePunctuationStyle",
+      "PersianBrailleReverseEllipsisStyle",
+      "PersianBrailleReverseAmbiguityPolicy",
+      "PersianBrailleReverseDiagnostic",
+      "PersianBrailleReverseTranslationFailureCode",
+      "PersianBrailleReverseTranslationFailure",
+      "PersianBrailleReverseTranslationResult",
+      "PersianBrailleReverseTranslationSuccess",
+      "PersianBrailleReverseTranslator",
+      "PersianBrailleReverseUnicodeLocation"
+    ],
+    "factory": {
+      "name": "createPersianBrailleReverseTranslator",
+      "defaultOptionsArgument": "optional PersianBrailleReverseTranslationOptions",
+      "returns": "PersianBrailleReverseTranslator"
+    },
+    "translatorMethods": {
+      "translateFromBraille": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationResult",
+        "throwsExpectedFailures": false
+      },
+      "translateFromBrailleOrThrow": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationSuccess",
+        "throwsExpectedFailures": true
+      }
+    },
+    "profileInfo": {
+      "direction": "braille-to-print"
+    },
+    "success": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "text",
+        "cells",
+        "diagnostics",
+        "lossy"
+      ]
+    },
+    "failure": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "code",
+        "message",
+        "location?",
+        "brailleCharacter?",
+        "candidateRuleIds?",
+        "candidateTexts?",
+        "causeCode?"
+      ]
+    },
+    "failureCodes": [
+      "INVALID_BRAILLE_INPUT",
+      "UNKNOWN_BRAILLE_CELL",
+      "UNKNOWN_BRAILLE_SEQUENCE",
+      "AMBIGUOUS_REVERSE_MATCH",
+      "MALFORMED_MODE_SEQUENCE",
+      "UNTERMINATED_LATIN_SPAN",
+      "DANGLING_CAPITAL_INDICATOR",
+      "UNSUPPORTED_REVERSE_STATE"
+    ],
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION",
+      "CANONICALIZED_ELLIPSIS",
+      "AMBIGUITY_CANONICALIZED",
+      "LOSSY_LAYOUT_RECONSTRUCTION",
+      "LOSSY_NORMALIZATION_RECONSTRUCTION"
+    ]
+  },
+  "canonicalSubobjects": {
+    "runtime": [
+      "PersianBrailleReverseTranslationError",
+      "createPersianBrailleReverseTranslator"
+    ],
+    "types": [
+      "CreatePersianBrailleReverseTranslator",
+      "PersianBrailleReverseProfileInfo",
+      "PersianBrailleReverseTranslationOptions",
+      "PersianBrailleReverseDigitFamily",
+      "PersianBrailleReversePunctuationStyle",
+      "PersianBrailleReverseEllipsisStyle",
+      "PersianBrailleReverseAmbiguityPolicy",
+      "PersianBrailleReverseDiagnostic",
+      "PersianBrailleReverseTranslationFailureCode",
+      "PersianBrailleReverseTranslationFailure",
+      "PersianBrailleReverseTranslationResult",
+      "PersianBrailleReverseTranslationSuccess",
+      "PersianBrailleReverseTranslator",
+      "PersianBrailleReverseUnicodeLocation"
+    ],
+    "factory": {
+      "name": "createPersianBrailleReverseTranslator",
+      "defaultOptionsArgument": "optional PersianBrailleReverseTranslationOptions",
+      "returns": "PersianBrailleReverseTranslator"
+    },
+    "methods": {
+      "translateFromBraille": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationResult",
+        "throwsExpectedFailures": false
+      },
+      "translateFromBrailleOrThrow": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationSuccess",
+        "throwsExpectedFailures": true
+      }
+    },
+    "profile": {
+      "direction": "braille-to-print"
+    },
+    "options": null,
+    "success": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "text",
+        "cells",
+        "diagnostics",
+        "lossy"
+      ]
+    },
+    "failure": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "code",
+        "message",
+        "location?",
+        "brailleCharacter?",
+        "candidateRuleIds?",
+        "candidateTexts?",
+        "causeCode?"
+      ]
+    },
+    "error": null
+  },
+  "coreReverseDeclarations": {
+    "ReverseDigitFamily": {
+      "name": "ReverseDigitFamily",
+      "found": true,
+      "text": "export type ReverseDigitFamily =\n  | \"persian\"\n  | \"ascii\"\n  | \"arabic-indic\";"
+    },
+    "ReversePunctuationStyle": {
+      "name": "ReversePunctuationStyle",
+      "found": true,
+      "text": "export type ReversePunctuationStyle =\n  | \"persian\"\n  | \"ascii\";"
+    },
+    "ReverseEllipsisStyle": {
+      "name": "ReverseEllipsisStyle",
+      "found": true,
+      "text": "export type ReverseEllipsisStyle =\n  | \"unicode\"\n  | \"three-dots\";"
+    },
+    "ReverseAmbiguityPolicy": {
+      "name": "ReverseAmbiguityPolicy",
+      "found": true,
+      "text": "export type ReverseAmbiguityPolicy =\n  | \"canonicalize\"\n  | \"error\";"
+    },
+    "ReverseTranslationOptions": {
+      "name": "ReverseTranslationOptions",
+      "found": true,
+      "text": "export interface ReverseTranslationOptions {\n  readonly digitFamily?: ReverseDigitFamily;\n  readonly punctuationStyle?: ReversePunctuationStyle;\n  readonly ellipsisStyle?: ReverseEllipsisStyle;\n  readonly ambiguityPolicy?: ReverseAmbiguityPolicy;\n}"
+    },
+    "ReverseDiagnosticCode": {
+      "name": "ReverseDiagnosticCode",
+      "found": true,
+      "text": "export type ReverseDiagnosticCode =\n  | \"CANONICALIZED_DIGIT_FAMILY\"\n  | \"CANONICALIZED_PUNCTUATION\"\n  | \"CANONICALIZED_ELLIPSIS\"\n  | \"AMBIGUITY_CANONICALIZED\"\n  | \"LOSSY_LAYOUT_RECONSTRUCTION\"\n  | \"LOSSY_NORMALIZATION_RECONSTRUCTION\";"
+    },
+    "ReverseDiagnostic": {
+      "name": "ReverseDiagnostic",
+      "found": true,
+      "text": "export interface ReverseDiagnostic {\n  readonly code: ReverseDiagnosticCode;\n  readonly message: string;\n  readonly ruleIds: readonly string[];\n}"
+    },
+    "ReverseProfileSnapshot": {
+      "name": "ReverseProfileSnapshot",
+      "found": true,
+      "text": "export interface ReverseProfileSnapshot {\n  readonly profileId: \"fa-ir-g1-reverse\";\n  readonly profileVersion: \"0.1.0\";\n  readonly profileStatus: \"draft\";\n  readonly direction: \"braille-to-print\";\n}"
+    },
+    "ReverseUnicodeLocation": {
+      "name": "ReverseUnicodeLocation",
+      "found": true,
+      "text": "export interface ReverseUnicodeLocation {\n  readonly utf16Offset: number;\n  readonly codePointIndex: number;\n  readonly codePoint: string;\n}"
+    },
+    "ReverseTranslationFailureCode": {
+      "name": "ReverseTranslationFailureCode",
+      "found": true,
+      "text": "export type ReverseTranslationFailureCode =\n  | \"INVALID_BRAILLE_INPUT\"\n  | \"UNKNOWN_BRAILLE_CELL\"\n  | \"UNKNOWN_BRAILLE_SEQUENCE\"\n  | \"AMBIGUOUS_REVERSE_MATCH\"\n  | \"MALFORMED_MODE_SEQUENCE\"\n  | \"UNTERMINATED_LATIN_SPAN\"\n  | \"DANGLING_CAPITAL_INDICATOR\"\n  | \"UNSUPPORTED_REVERSE_STATE\";"
+    },
+    "ReverseTranslationSuccess": {
+      "name": "ReverseTranslationSuccess",
+      "found": true,
+      "text": "export interface ReverseTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: ReverseProfileSnapshot;\n  readonly text: string;\n  readonly cells: readonly string[];\n  readonly diagnostics: readonly ReverseDiagnostic[];\n  readonly lossy: boolean;\n}"
+    },
+    "ReverseTranslationFailure": {
+      "name": "ReverseTranslationFailure",
+      "found": true,
+      "text": "export interface ReverseTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: ReverseProfileSnapshot;\n  readonly code: ReverseTranslationFailureCode;\n  readonly message: string;\n  readonly location?: ReverseUnicodeLocation;\n  readonly brailleCharacter?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly candidateTexts?: readonly string[];\n  readonly causeCode?: string;\n}"
+    },
+    "ReverseTranslationOutcome": {
+      "name": "ReverseTranslationOutcome",
+      "found": true,
+      "text": "export type ReverseTranslationOutcome =\n  | ReverseTranslationSuccess\n  | ReverseTranslationFailure;"
+    },
+    "ReverseTranslator": {
+      "name": "ReverseTranslator",
+      "found": true,
+      "text": "export interface ReverseTranslator {\n  translate(\n    inputBraille: string,\n    options?: ReverseTranslationOptions,\n  ): ReverseTranslationOutcome;\n}"
+    }
+  },
+  "coreFactoryEvidence": {
+    "marker": "export function createReverseTranslator",
+    "matchCount": 1,
+    "startLine": 1931,
+    "endLine": 1939,
+    "text": " 1931:  * Public Core reverse translator factory.\n 1932:  *\n 1933:  * Exposed from @persian-braille/core in Phase 13.5c-3c2.\n 1934:  * SDK reverse exposure remains intentionally deferred.\n 1935:  */\n 1936: export function createReverseTranslator():\n 1937: ReverseTranslator {\n 1938:   return new SpecificationDrivenReverseTranslator();\n 1939: }"
+  },
+  "coreTranslateEvidence": {
+    "marker": "translate(",
+    "matchCount": 1,
+    "startLine": 617,
+    "endLine": 647,
+    "text": "  617:       latin;\n  618: \n  619:     this.maxLength =\n  620:       maxLength;\n  621:   }\n  622: \n  623:   translate(\n  624:     inputBraille: string,\n  625:     options:\n  626:       ReverseTranslationOptions = {},\n  627:   ): ReverseTranslationOutcome {\n  628:     const tokenized =\n  629:       tokenize(inputBraille);\n  630: \n  631:     if (!tokenized.ok) {\n  632:       return tokenized.failure;\n  633:     }\n  634: \n  635:     const resolved =\n  636:       optionsWithDefaults(options);\n  637: \n  638:     const state: ParserState = {\n  639:       numericMode: false,\n  640:       numericSawDigit: false,\n  641:       latinSpan: false,\n  642:       pendingCapital: false,\n  643:       delimiterStack: [],\n  644:     };\n  645: \n  646:     const output:\n  647:       string[] = [];"
+  },
+  "forwardSdkProjectionEvidence": {
+    "function createProfileInfo": {
+      "marker": "function createProfileInfo",
+      "matchCount": 1,
+      "startLine": 169,
+      "endLine": 227,
+      "text": "  169:   );\n  170: }\n  171: \n  172: function createProfileInfo(): PersianBrailleProfileInfo {\n  173:   const specification =\n  174:     getBundledSpecification();\n  175: \n  176:   return Object.freeze({\n  177:     id: specification.profileId,\n  178:     version:\n  179:       specification.profileVersion,\n  180:     status:\n  181:       readProfileStatus(\n  182:         specification,\n  183:       ),\n  184:     direction: \"print-to-braille\",\n  185:   });\n  186: }\n  187: \n  188: function freezeStrings(\n  189:   values: readonly string[],\n  190: ): readonly string[] {\n  191:   return Object.freeze([...values]);\n  192: }\n  193: \n  194: function projectSuccess(\n  195:   input: string,\n  196:   profile: PersianBrailleProfileInfo,\n  197:   outcome: {\n  198:     readonly normalizedText: string;\n  199:     readonly cells: readonly string[];\n  200:     readonly unicodeBraille: string;\n  201:     readonly structuralTokens:\n  202:       readonly string[];\n  203:   },\n  204: ): PersianBrailleTranslationSuccess {\n  205:   return Object.freeze({\n  206:     ok: true,\n  207:     input,\n  208:     profile,\n  209:     normalizedText:\n  210:       outcome.normalizedText,\n  211:     cells:\n  212:       freezeStrings(outcome.cells),\n  213:     unicodeBraille:\n  214:       outcome.unicodeBraille,\n  215:     structuralTokens:\n  216:       freezeStrings(\n  217:         outcome.structuralTokens,\n  218:       ),\n  219:   });\n  220: }\n  221: \n  222: function projectFailure(\n  223:   input: string,\n  224:   profile: PersianBrailleProfileInfo,\n  225:   outcome: unknown,\n  226: ): PersianBrailleTranslationFailure {\n  227:   const message ="
+    },
+    "function projectSuccess": {
+      "marker": "function projectSuccess",
+      "matchCount": 1,
+      "startLine": 191,
+      "endLine": 249,
+      "text": "  191:   return Object.freeze([...values]);\n  192: }\n  193: \n  194: function projectSuccess(\n  195:   input: string,\n  196:   profile: PersianBrailleProfileInfo,\n  197:   outcome: {\n  198:     readonly normalizedText: string;\n  199:     readonly cells: readonly string[];\n  200:     readonly unicodeBraille: string;\n  201:     readonly structuralTokens:\n  202:       readonly string[];\n  203:   },\n  204: ): PersianBrailleTranslationSuccess {\n  205:   return Object.freeze({\n  206:     ok: true,\n  207:     input,\n  208:     profile,\n  209:     normalizedText:\n  210:       outcome.normalizedText,\n  211:     cells:\n  212:       freezeStrings(outcome.cells),\n  213:     unicodeBraille:\n  214:       outcome.unicodeBraille,\n  215:     structuralTokens:\n  216:       freezeStrings(\n  217:         outcome.structuralTokens,\n  218:       ),\n  219:   });\n  220: }\n  221: \n  222: function projectFailure(\n  223:   input: string,\n  224:   profile: PersianBrailleProfileInfo,\n  225:   outcome: unknown,\n  226: ): PersianBrailleTranslationFailure {\n  227:   const message =\n  228:     readString(outcome, \"message\");\n  229: \n  230:   if (message === undefined) {\n  231:     throw new Error(\n  232:       \"Core translation failure did not expose a message.\",\n  233:     );\n  234:   }\n  235: \n  236:   const failure: {\n  237:     ok: false;\n  238:     input: string;\n  239:     profile: PersianBrailleProfileInfo;\n  240:     code: PersianBrailleTranslationFailureCode;\n  241:     message: string;\n  242:     location?: PersianBrailleUnicodeLocation;\n  243:     character?: string;\n  244:     codePoint?: string;\n  245:     candidateRuleIds?: readonly string[];\n  246:     causeCode?: string;\n  247:   } = {\n  248:     ok: false,\n  249:     input,"
+    },
+    "function projectFailure": {
+      "marker": "function projectFailure",
+      "matchCount": 1,
+      "startLine": 219,
+      "endLine": 277,
+      "text": "  219:   });\n  220: }\n  221: \n  222: function projectFailure(\n  223:   input: string,\n  224:   profile: PersianBrailleProfileInfo,\n  225:   outcome: unknown,\n  226: ): PersianBrailleTranslationFailure {\n  227:   const message =\n  228:     readString(outcome, \"message\");\n  229: \n  230:   if (message === undefined) {\n  231:     throw new Error(\n  232:       \"Core translation failure did not expose a message.\",\n  233:     );\n  234:   }\n  235: \n  236:   const failure: {\n  237:     ok: false;\n  238:     input: string;\n  239:     profile: PersianBrailleProfileInfo;\n  240:     code: PersianBrailleTranslationFailureCode;\n  241:     message: string;\n  242:     location?: PersianBrailleUnicodeLocation;\n  243:     character?: string;\n  244:     codePoint?: string;\n  245:     candidateRuleIds?: readonly string[];\n  246:     causeCode?: string;\n  247:   } = {\n  248:     ok: false,\n  249:     input,\n  250:     profile,\n  251:     code:\n  252:       readFailureCode(outcome),\n  253:     message,\n  254:   };\n  255: \n  256:   const location =\n  257:     readLocation(outcome);\n  258:   const character =\n  259:     readString(\n  260:       outcome,\n  261:       \"character\",\n  262:     );\n  263:   const codePoint =\n  264:     readString(\n  265:       outcome,\n  266:       \"codePoint\",\n  267:     );\n  268:   const candidateRuleIds =\n  269:     readStringArray(\n  270:       outcome,\n  271:       \"candidateRuleIds\",\n  272:     );\n  273:   const causeCode =\n  274:     readCauseCode(outcome);\n  275: \n  276:   if (location !== undefined) {\n  277:     failure.location = location;"
+    },
+    "export class PersianBrailleTranslationError": {
+      "marker": "export class PersianBrailleTranslationError",
+      "matchCount": 1,
+      "startLine": 299,
+      "endLine": 357,
+      "text": "  299:   return Object.freeze(failure);\n  300: }\n  301: \n  302: export class PersianBrailleTranslationError\n  303:   extends Error\n  304:   implements PersianBrailleTranslationErrorData {\n  305:   readonly code:\n  306:     PersianBrailleTranslationFailureCode;\n  307: \n  308:   readonly result:\n  309:     PersianBrailleTranslationFailure;\n  310: \n  311:   constructor(\n  312:     result:\n  313:       PersianBrailleTranslationFailure,\n  314:   ) {\n  315:     super(result.message);\n  316: \n  317:     this.name =\n  318:       \"PersianBrailleTranslationError\";\n  319:     this.code = result.code;\n  320:     this.result = result;\n  321: \n  322:     Object.freeze(this);\n  323:   }\n  324: }\n  325: \n  326: class CoreBackedPersianBrailleTranslator\n  327:   implements PersianBrailleTranslator {\n  328:   readonly profile:\n  329:     PersianBrailleProfileInfo;\n  330: \n  331:   readonly #coreTranslator =\n  332:     createForwardTranslator();\n  333: \n  334:   constructor() {\n  335:     this.profile =\n  336:       createProfileInfo();\n  337:   }\n  338: \n  339:   translate(\n  340:     input: string,\n  341:   ): PersianBrailleTranslationResult {\n  342:     const outcome =\n  343:       this.#coreTranslator.translate(\n  344:         input,\n  345:       );\n  346: \n  347:     if (outcome.ok) {\n  348:       return projectSuccess(\n  349:         input,\n  350:         this.profile,\n  351:         outcome,\n  352:       );\n  353:     }\n  354: \n  355:     return projectFailure(\n  356:       input,\n  357:       this.profile,"
+    },
+    "class CoreBackedPersianBrailleTranslator": {
+      "marker": "class CoreBackedPersianBrailleTranslator",
+      "matchCount": 1,
+      "startLine": 323,
+      "endLine": 381,
+      "text": "  323:   }\n  324: }\n  325: \n  326: class CoreBackedPersianBrailleTranslator\n  327:   implements PersianBrailleTranslator {\n  328:   readonly profile:\n  329:     PersianBrailleProfileInfo;\n  330: \n  331:   readonly #coreTranslator =\n  332:     createForwardTranslator();\n  333: \n  334:   constructor() {\n  335:     this.profile =\n  336:       createProfileInfo();\n  337:   }\n  338: \n  339:   translate(\n  340:     input: string,\n  341:   ): PersianBrailleTranslationResult {\n  342:     const outcome =\n  343:       this.#coreTranslator.translate(\n  344:         input,\n  345:       );\n  346: \n  347:     if (outcome.ok) {\n  348:       return projectSuccess(\n  349:         input,\n  350:         this.profile,\n  351:         outcome,\n  352:       );\n  353:     }\n  354: \n  355:     return projectFailure(\n  356:       input,\n  357:       this.profile,\n  358:       outcome,\n  359:     );\n  360:   }\n  361: \n  362:   translateOrThrow(\n  363:     input: string,\n  364:   ): PersianBrailleTranslationSuccess {\n  365:     const result =\n  366:       this.translate(input);\n  367: \n  368:     if (!result.ok) {\n  369:       throw new PersianBrailleTranslationError(\n  370:         result,\n  371:       );\n  372:     }\n  373: \n  374:     return result;\n  375:   }\n  376: }\n  377: \n  378: export function createPersianBrailleTranslator(\n  379: ): PersianBrailleTranslator {\n  380:   return new CoreBackedPersianBrailleTranslator();\n  381: }"
+    },
+    "export function createPersianBrailleTranslator": {
+      "marker": "export function createPersianBrailleTranslator",
+      "matchCount": 1,
+      "startLine": 375,
+      "endLine": 381,
+      "text": "  375:   }\n  376: }\n  377: \n  378: export function createPersianBrailleTranslator(\n  379: ): PersianBrailleTranslator {\n  380:   return new CoreBackedPersianBrailleTranslator();\n  381: }"
+    }
+  },
+  "sdkCurrentSurface": {
+    "indexSource": "export {\n  PersianBrailleTranslationError,\n  createPersianBrailleTranslator,\n} from \"./translator.js\";\n\nexport type {\n  CreatePersianBrailleTranslator,\n  PersianBrailleProfileInfo,\n  PersianBrailleTranslationErrorData,\n  PersianBrailleTranslationFailure,\n  PersianBrailleTranslationFailureCode,\n  PersianBrailleTranslationResult,\n  PersianBrailleTranslationSuccess,\n  PersianBrailleTranslator,\n  PersianBrailleUnicodeLocation,\n} from \"./public-api.js\";\n",
+    "publicApiSource": "/**\n * Stable consumer-facing contract for @persian-braille/sdk.\n *\n * Phase 7.2 defines types only. Runtime behavior is implemented in Phase 7.3.\n * The SDK contract deliberately does not expose Core execution internals.\n */\n\nexport type PersianBrailleTranslationFailureCode =\n  | \"PREPROCESSING_FAILED\"\n  | \"UNKNOWN_CHARACTER\"\n  | \"UNKNOWN_SEQUENCE\"\n  | \"AMBIGUOUS_MATCH\"\n  | \"UNSUPPORTED_ENGINE_STATE\";\n\nexport interface PersianBrailleUnicodeLocation {\n  readonly codePointIndex: number;\n  readonly utf16Index: number;\n}\n\nexport interface PersianBrailleProfileInfo {\n  readonly id: string;\n  readonly version: string;\n  readonly status: string;\n  readonly direction: \"print-to-braille\";\n}\n\nexport interface PersianBrailleTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly normalizedText: string;\n  readonly cells: readonly string[];\n  readonly unicodeBraille: string;\n  readonly structuralTokens: readonly string[];\n}\n\nexport interface PersianBrailleTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly message: string;\n  readonly location?: PersianBrailleUnicodeLocation;\n  readonly character?: string;\n  readonly codePoint?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly causeCode?: string;\n}\n\nexport type PersianBrailleTranslationResult =\n  | PersianBrailleTranslationSuccess\n  | PersianBrailleTranslationFailure;\n\nexport interface PersianBrailleTranslationErrorData {\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly result: PersianBrailleTranslationFailure;\n}\n\nexport interface PersianBrailleTranslator {\n  /**\n   * Immutable metadata for the bundled profile used by this translator.\n   */\n  readonly profile: PersianBrailleProfileInfo;\n\n  /**\n   * Translate print text to Persian Braille without throwing for expected\n   * translation failures.\n   */\n  translate(\n    input: string,\n  ): PersianBrailleTranslationResult;\n\n  /**\n   * Translate print text to Persian Braille and throw the SDK translation\n   * error for an expected translation failure.\n   */\n  translateOrThrow(\n    input: string,\n  ): PersianBrailleTranslationSuccess;\n}\n\n/**\n * Runtime factory signature reserved by the Phase 7 public API contract.\n *\n * Phase 7.3 will export a function named `createPersianBrailleTranslator`\n * with this signature.\n */\nexport type CreatePersianBrailleTranslator = (\n) => PersianBrailleTranslator;\n"
+  },
+  "readinessChecks": {
+    "a1Ready": true,
+    "canonicalRuntimeListPresent": true,
+    "canonicalTypeListPresent": true,
+    "canonicalFactoryPresent": true,
+    "canonicalMethodsPresent": true,
+    "canonicalProfilePresent": true,
+    "allCoreReverseDeclarationsFound": true,
+    "coreFactoryEvidenceFound": true,
+    "forwardProjectionEvidencePresent": true,
+    "sdkReverseRuntimeAbsentBeforeMaterialization": true,
+    "sdkReverseTypesAbsentBeforeMaterialization": true
+  },
+  "blockers": [],
+  "decision": "READY_TO_DESIGN_PHASE13_6B_SDK_REVERSE_PROJECTION",
+  "designRule": "Phase 13.6b must map the canonical SDK contract onto the public Core reverse factory/types while preserving the established forward SDK facade conventions: SDK-owned result objects, SDK-owned error class, frozen projections, no Core internals leaked, and no forward API changes. If a canonical sdkContract sub-object is absent, do not invent it; derive only from explicitly frozen fields and the actual Core declarations."
+}

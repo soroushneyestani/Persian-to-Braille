@@ -1,0 +1,677 @@
+========================================================================================================================
+PHASE 13.6a3 — SDK REVERSE DEFERRED-ASSUMPTION AUDIT
+========================================================================================================================
+
+Branch   : phase13-reverse-translation
+HEAD     : aa5ce927d218ab2535d93e7b1e36d2fdb7a97317
+Upstream : aa5ce927d218ab2535d93e7b1e36d2fdb7a97317
+
+[SUMMARY]
+Files with relevant assumptions: 11
+Historical deferred guard files: 8
+Runtime exact-surface test files: 1
+Historical status-log files: 6
+
+[FILES]
+
+packages/sdk/test/public-api.test.mjs
+  classifications: sdk-runtime-exact-surface-test
+  --- lines 4-32 ---
+    4: const sdk = await import(
+    5:   "@persian-braille/sdk"
+    6: );
+    7:
+    8: function createTranslator() {
+    9:   return sdk.createPersianBrailleTranslator();
+   10: }
+   11:
+   12: test("exports only the selected runtime SDK surface", () => {
+   13:   assert.deepEqual(
+   14:     Object.keys(sdk).sort(),
+   15:     [
+   16:       "PersianBrailleTranslationError",
+   17:       "createPersianBrailleTranslator",
+   18:     ],
+   19:   );
+   20:
+   21:   assert.equal(
+   22:     "createForwardTranslator" in sdk,
+   23:     false,
+   24:   );
+   25:   assert.equal(
+   26:     "getBundledSpecification" in sdk,
+   27:     false,
+   28:   );
+   29:   assert.equal(
+   30:     "RuleSelector" in sdk,
+   31:     false,
+   32:   );
+
+tools/architecture/validate-phase12-5-developer-docs.mjs
+  classifications: reverse-method-absence-evidence
+  --- lines 179-242 ---
+  179:   "PersianBrailleTranslationSuccess",
+  180:   "PersianBrailleTranslator",
+  181:   "PersianBrailleUnicodeLocation",
+  182: ];
+  183:
+  184: for (const symbol of [
+  185:   ...runtimeExports,
+  186:   ...typeExports,
+  187: ]) {
+  188:   assert.ok(
+  189:     sdkIndex.includes(
+  190:       symbol,
+  191:     ),
+  192:     `SDK public index missing frozen symbol: ${symbol}`,
+  193:   );
+  194:
+  195:   assert.ok(
+  196:     sdkReadme.includes(
+  197:       `\`${symbol}\``,
+  198:     ),
+  199:     `SDK README missing frozen public symbol: ${symbol}`,
+  200:   );
+  201: }
+  202:
+  203: assert.deepEqual(
+  204:   Object.keys(
+  205:     sdkPackage.exports,
+  206:   ),
+  207:   ["."],
+  208: );
+  209:
+  210: assert.equal(
+  211:   contract.architecture.deepImportsFromSdkAllowed,
+  212:   false,
+  213: );
+  214:
+  215: assert.equal(
+  216:   sdkReadme.includes(
+  217:     "translateFromBraille",
+  218:   ),
+  219:   true,
+  220:   "README must explicitly defer, not silently omit, reverse translation.",
+  221: );
+  222:
+  223: for (const phrase of [
+  224:   "does not expose or promise a `translateFromBraille` API",
+  225:   "Reverse translation is deliberately outside this phase",
+  226: ]) {
+  227:   assert.ok(
+  228:     sdkReadme.includes(
+  229:       phrase,
+  230:     ),
+  231:     `SDK README scope guard missing: ${phrase}`,
+  232:   );
+  233: }
+  234:
+  235: for (const token of [
+  236:   "public entrypoint and deep-import policy",
+  237:   "SDK README navigation to the runnable examples",
+  238:   "versioning and compatibility policy",
+  239:   "Application/Integration -> SDK -> Core",
+  240:   "ERR_PACKAGE_PATH_NOT_EXPORTED",
+  241:   "Phase 12.6",
+  242: ]) {
+
+tools/architecture/validate-phase12-6-developer-ecosystem-closure.mjs
+  classifications: reverse-method-absence-evidence
+  --- lines 191-219 ---
+  191:
+  192: for (const file of sdkSourceFiles) {
+  193:   const source =
+  194:     await readFile(
+  195:       file,
+  196:       "utf8",
+  197:     );
+  198:
+  199:   assert.equal(
+  200:     source.includes(
+  201:       "translateFromBraille",
+  202:     ),
+  203:     false,
+  204:     `Phase 13 reverse API leaked into Phase 12 source: ${
+  205:       path.relative(root, file).replaceAll("\\", "/")
+  206:     }`,
+  207:   );
+  208: }
+  209:
+  210: const normalizedClosure =
+  211:   closure.replace(
+  212:     /\s+/g,
+  213:     " ",
+  214:   );
+  215:
+  216: for (const token of [
+  217:   "Phase 12.3",
+  218:   "Phase 12.5",
+  219:   "repository package-boundary validation",
+
+tools/architecture/validate-phase13-2-reverse-contract.mjs
+  classifications: historical-sdk-deferred-guard, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 171-222 ---
+  171:   contract.outputPolicies.layoutReconstruction.zwnjExactRecoveryClaimed,
+  172:   false,
+  173: );
+  174:
+  175: assert.equal(
+  176:   contract.sdkContract.forwardApiPreservedUnchanged,
+  177:   true,
+  178: );
+  179:
+  180: for (const token of [
+  181:   "translateFromBraille",
+  182:   "translateFromBrailleOrThrow",
+  183:   "createPersianBrailleReverseTranslator",
+  184:   "PersianBrailleReverseTranslationError",
+  185:   "AMBIGUOUS_REVERSE_MATCH",
+  186:   "DANGLING_CAPITAL_INDICATOR",
+  187: ]) {
+  188:   assert.ok(
+  189:     JSON.stringify(
+  190:       contract.sdkContract,
+  191:     ).includes(token),
+  192:     `reverse SDK contract missing: ${token}`,
+  193:   );
+  194: }
+  195:
+  196: // The freeze is documentation-only. No reverse API implementation may appear
+  197: // in the SDK before Phase 13.3+ implementation work.
+  198: for (const token of [
+  199:   "translateFromBraille",
+  200:   "createPersianBrailleReverseTranslator",
+  201:   "PersianBrailleReverseTranslationError",
+  202: ]) {
+  203:   assert.equal(
+  204:     sdkIndex.includes(token),
+  205:     false,
+  206:     `reverse runtime leaked into SDK during architecture freeze: ${token}`,
+  207:   );
+  208: }
+  209:
+  210: assert.equal(
+  211:   contract.conformanceContract.forwardVectorsMayBeBlindlySwapped,
+  212:   false,
+  213: );
+  214:
+  215: assert.equal(
+  216:   contract.conformanceContract.reverseVectorsAreIndependent,
+  217:   true,
+  218: );
+  219:
+  220: for (const required of [
+  221:   "numeric mode and digit-family rendering",
+  222:   "Latin span begin/end",
+  --- lines 292-311 ---
+  292:
+  293: console.log(
+  294:   "Default ambiguity policy: CANONICALIZE + DIAGNOSTIC",
+  295: );
+  296:
+  297: console.log(
+  298:   "Forward Phase 12 SDK API: PRESERVED / UNCHANGED",
+  299: );
+  300:
+  301: console.log(
+  302:   "Reverse SDK implementation during freeze: NONE / PASS",
+  303: );
+  304:
+  305: console.log(
+  306:   "Independent reverse conformance: REQUIRED",
+  307: );
+  308:
+  309: console.log(
+  310:   "Next: Phase 13.3 Reverse Specification and Conformance Foundation",
+  311: );
+
+tools/architecture/validate-phase13-3-reverse-spec-foundation.mjs
+  classifications: historical-sdk-deferred-guard, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 398-433 ---
+  398:
+  399: assert.equal(
+  400:   byId.get(
+  401:     "FA-REV-CONF-CAP-ZWNJ-001",
+  402:   ).expected.supported,
+  403:   false,
+  404: );
+  405:
+  406: // Phase 13.3 is specification-only. Runtime reverse API must not leak yet.
+  407: for (const token of [
+  408:   "translateFromBraille",
+  409:   "createPersianBrailleReverseTranslator",
+  410:   "PersianBrailleReverseTranslationError",
+  411: ]) {
+  412:   assert.equal(
+  413:     sdkIndex.includes(token),
+  414:     false,
+  415:     `reverse SDK implementation leaked during Phase 13.3: ${token}`,
+  416:   );
+  417: }
+  418:
+  419: // Preserve frozen/source boundaries.
+  420: const diffNames =
+  421:   execFileSync(
+  422:     "git",
+  423:     [
+  424:       "diff",
+  425:       "--name-only",
+  426:       "HEAD",
+  427:     ],
+  428:     {
+  429:       cwd: root,
+  430:       encoding: "utf8",
+  431:     },
+  432:   )
+  433:   .split(/\r?\n/)
+
+tools/architecture/validate-phase13-5-reverse-core-coverage.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 238-275 ---
+  238:     "./reverse-translation.js",
+  239:   );
+  240:
+  241: assert.equal(
+  242:   reverseRuntimeRootExported,
+  243:   reverseTypesRootExported,
+  244:   "Core reverse root boundary must expose runtime and types together.",
+  245: );
+  246:
+  247: for (const token of [
+  248:   "createPersianBrailleReverseTranslator",
+  249:   "translateFromBraille",
+  250:   "PersianBrailleReverseTranslationError",
+  251: ]) {
+  252:   assert.equal(
+  253:     sdkIndex.includes(
+  254:       token,
+  255:     ),
+  256:     false,
+  257:     `SDK reverse API exposed prematurely: ${token}`,
+  258:   );
+  259: }
+  260:
+  261: const diffNames =
+  262:   execFileSync(
+  263:     "git",
+  264:     [
+  265:       "diff",
+  266:       "--name-only",
+  267:       "HEAD",
+  268:     ],
+  269:     {
+  270:       cwd: root,
+  271:       encoding: "utf8",
+  272:     },
+  273:   )
+  274:   .split(/\r?\n/)
+  275:   .filter(Boolean);
+  --- lines 315-329 ---
+  315: console.log(
+  316:   "Remaining numeric parser rules: 2",
+  317: );
+  318: console.log(
+  319:   "Collision signatures still requiring state coverage: 27",
+  320: );
+  321: console.log(
+  322:   "Core reverse root boundary coherence: PASS",
+  323: );
+  324: console.log(
+  325:   "SDK reverse API: DEFERRED / PASS",
+  326: );
+  327: console.log(
+  328:   "Next: Phase 13.5c Stateful Numeric and Collision Coverage",
+  329: );
+
+tools/architecture/validate-phase13-5c1-numeric-parser-completion.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 168-203 ---
+  168:     "./reverse-translation.js",
+  169:   );
+  170:
+  171: assert.equal(
+  172:   reverseRuntimeRootExported,
+  173:   reverseTypesRootExported,
+  174:   "Core reverse root boundary must expose runtime and types together.",
+  175: );
+  176:
+  177: for (const token of [
+  178:   "createPersianBrailleReverseTranslator",
+  179:   "translateFromBraille",
+  180:   "PersianBrailleReverseTranslationError",
+  181: ]) {
+  182:   assert.equal(
+  183:     sdkIndex.includes(token),
+  184:     false,
+  185:     `SDK reverse API exposed prematurely: ${token}`,
+  186:   );
+  187: }
+  188:
+  189: const diffNames =
+  190:   execFileSync(
+  191:     "git",
+  192:     [
+  193:       "diff",
+  194:       "--name-only",
+  195:       "HEAD",
+  196:     ],
+  197:     {
+  198:       cwd: root,
+  199:       encoding: "utf8",
+  200:     },
+  201:   )
+  202:   .split(/\r?\n/)
+  203:   .filter(Boolean);
+  --- lines 235-249 ---
+  235: console.log(
+  236:   "Numeric fraction separator state: PASS",
+  237: );
+  238: console.log(
+  239:   "Reverse conformance vectors: 37",
+  240: );
+  241: console.log(
+  242:   "Core reverse root boundary coherence: PASS",
+  243: );
+  244: console.log(
+  245:   "SDK reverse API: DEFERRED / PASS",
+  246: );
+  247: console.log(
+  248:   "Next: Phase 13.5c-2 Numeric Collision Coverage",
+  249: );
+
+tools/architecture/validate-phase13-5c2-numeric-collision-resolution.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 205-240 ---
+  205:     "./reverse-translation.js",
+  206:   );
+  207:
+  208: assert.equal(
+  209:   reverseRuntimeRootExported,
+  210:   reverseTypesRootExported,
+  211:   "Core reverse root boundary must expose runtime and types together.",
+  212: );
+  213:
+  214: for (const token of [
+  215:   "createPersianBrailleReverseTranslator",
+  216:   "translateFromBraille",
+  217:   "PersianBrailleReverseTranslationError",
+  218: ]) {
+  219:   assert.equal(
+  220:     sdkIndex.includes(token),
+  221:     false,
+  222:     `SDK reverse API exposed prematurely: ${token}`,
+  223:   );
+  224: }
+  225:
+  226: const diffNames =
+  227:   execFileSync(
+  228:     "git",
+  229:     [
+  230:       "diff",
+  231:       "--name-only",
+  232:       "HEAD",
+  233:     ],
+  234:     {
+  235:       cwd: root,
+  236:       encoding: "utf8",
+  237:     },
+  238:   )
+  239:   .split(/\r?\n/)
+  240:   .filter(Boolean);
+  --- lines 286-300 ---
+  286: console.log(
+  287:   "Reverse conformance vectors: 71",
+  288: );
+  289: console.log(
+  290:   "Remaining non-numeric collision signatures: 17",
+  291: );
+  292: console.log(
+  293:   "Core reverse root boundary coherence: PASS",
+  294: );
+  295: console.log(
+  296:   "SDK reverse API: DEFERRED / PASS",
+  297: );
+  298: console.log(
+  299:   "Next: Phase 13.5c-3 Remaining Cross-Mode Collision Coverage",
+  300: );
+
+tools/architecture/validate-phase13-5c3a-language-mode-collision-resolution.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 150-185 ---
+  150:     "./reverse-translation.js",
+  151:   );
+  152:
+  153: assert.equal(
+  154:   reverseRuntimeRootExported,
+  155:   reverseTypesRootExported,
+  156:   "Core reverse root boundary must expose runtime and types together.",
+  157: );
+  158:
+  159: for (const token of [
+  160:   "createPersianBrailleReverseTranslator",
+  161:   "translateFromBraille",
+  162:   "PersianBrailleReverseTranslationError",
+  163: ]) {
+  164:   assert.equal(
+  165:     sdkIndex.includes(token),
+  166:     false,
+  167:     `SDK reverse API exposed prematurely: ${token}`,
+  168:   );
+  169: }
+  170:
+  171: const diffNames = execFileSync(
+  172:   "git",
+  173:   ["diff", "--name-only", "HEAD"],
+  174:   { cwd: root, encoding: "utf8" },
+  175: )
+  176:   .split(/\r?\n/)
+  177:   .filter(Boolean);
+  178:
+  179: for (const forbiddenPrefix of [
+  180:   "spec/fa-ir/rules/records/",
+  181:   "spec/fa-ir/conformance/records/",
+  182:   "packages/core/src/forward-translator.ts",
+  183:   "packages/core/src/rule-selector.ts",
+  184:   "packages/core/src/mode-rule-executor.ts",
+  185:   "packages/sdk/src/",
+  --- lines 196-207 ---
+  196:
+  197: console.log("Phase 13.5c-3a Language-Mode Collision Resolution: PASS");
+  198: console.log("Cross-mode Persian/Latin signatures: 12 / 12");
+  199: console.log("Latin-only signatures: 4 / 4");
+  200: console.log("Percent / lowercase-p overlap: PASS");
+  201: console.log("New language-mode vectors: 68 / PASS");
+  202: console.log("Reverse conformance vectors: 139");
+  203: console.log("Canonical collision coverage: 33 / 34");
+  204: console.log("Remaining collision signature: 23");
+  205: console.log("Core reverse root boundary coherence: PASS");
+  206: console.log("SDK reverse API: DEFERRED / PASS");
+  207: console.log("Next: Phase 13.5c-3b Remaining Punctuation Collision");
+
+tools/architecture/validate-phase13-5c3b-remaining-punctuation-collision.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 256-291 ---
+  256:     "./reverse-translation.js",
+  257:   );
+  258:
+  259: assert.equal(
+  260:   reverseRuntimeRootExported,
+  261:   reverseTypesRootExported,
+  262:   "Core reverse root boundary must expose runtime and types together.",
+  263: );
+  264:
+  265: for (const token of [
+  266:   "createPersianBrailleReverseTranslator",
+  267:   "translateFromBraille",
+  268:   "PersianBrailleReverseTranslationError",
+  269: ]) {
+  270:   assert.equal(
+  271:     sdkIndex.includes(token),
+  272:     false,
+  273:     `SDK reverse API exposed prematurely: ${token}`,
+  274:   );
+  275: }
+  276:
+  277: const diffNames =
+  278:   execFileSync(
+  279:     "git",
+  280:     [
+  281:       "diff",
+  282:       "--name-only",
+  283:       "HEAD",
+  284:     ],
+  285:     {
+  286:       cwd: root,
+  287:       encoding: "utf8",
+  288:     },
+  289:   )
+  290:   .split(/\r?\n/)
+  291:   .filter(Boolean);
+  --- lines 315-343 ---
+  315:         oldComment:
+  316: `/**
+  317:  * Phase 13.4 Core-internal factory.
+  318:  * Public Core/SDK exposure is intentionally deferred.
+  319:  */`,
+  320:         newComment:
+  321: `/**
+  322:  * Public Core reverse translator factory.
+  323:  *
+  324:  * Exposed from @persian-braille/core in Phase 13.5c-3c2.
+  325:  * SDK reverse exposure remains intentionally deferred.
+  326:  */`,
+  327:       },
+  328:     ],
+  329:   ]);
+  330:
+  331: for (const [
+  332:   relativePath,
+  333:   {
+  334:     oldComment,
+  335:     newComment,
+  336:   },
+  337: ] of commentOnlyLaterPhaseFiles) {
+  338:   if (!diffNames.includes(relativePath)) {
+  339:     continue;
+  340:   }
+  341:
+  342:   const headSource =
+  343:     execFileSync(
+  --- lines 436-450 ---
+  436: console.log(
+  437:   "Canonical collision coverage: 34 / 34",
+  438: );
+  439: console.log(
+  440:   "Remaining collision signatures: 0",
+  441: );
+  442: console.log(
+  443:   "Core reverse root boundary coherence: PASS",
+  444: );
+  445: console.log(
+  446:   "SDK reverse API: DEFERRED / PASS",
+  447: );
+  448: console.log(
+  449:   "Next: Phase 13.5c-3c Final Coverage and Public Core Boundary Reassessment",
+  450: );
+
+tools/architecture/validate-phase13-5c3c2-public-core-boundary.mjs
+  classifications: historical-sdk-deferred-guard, historical-status-log, reverse-method-absence-evidence, sdk-index-absence-assertion
+  --- lines 105-133 ---
+  105: assert.equal(
+  106:   reverseTranslatorSource.includes(
+  107:     "Public Core/SDK exposure is intentionally deferred.",
+  108:   ),
+  109:   false,
+  110:   "Stale deferred Core exposure comment remains after public Core boundary.",
+  111: );
+  112:
+  113: assert.equal(
+  114:   reverseTranslatorSource.includes(
+  115:     "SDK reverse exposure remains intentionally deferred.",
+  116:   ),
+  117:   true,
+  118: );
+  119:
+  120:
+  121: const corePackage =
+  122:   await json(
+  123:     "packages/core/package.json",
+  124:   );
+  125:
+  126: const sdkIndex =
+  127:   await text(
+  128:     "packages/sdk/src/index.ts",
+  129:   );
+  130:
+  131: const distTypes =
+  132:   await text(
+  133:     "packages/core/dist/index.d.ts",
+  --- lines 211-246 ---
+  211:   "ReverseUnicodeLocation",
+  212: ]) {
+  213:   assert.equal(
+  214:     distTypes.includes(symbol),
+  215:     true,
+  216:     `Core root declaration missing reverse type: ${symbol}`,
+  217:   );
+  218: }
+  219:
+  220: for (const token of [
+  221:   "createPersianBrailleReverseTranslator",
+  222:   "translateFromBraille",
+  223:   "PersianBrailleReverseTranslationError",
+  224: ]) {
+  225:   assert.equal(
+  226:     sdkIndex.includes(token),
+  227:     false,
+  228:     `SDK reverse API exposed during Core boundary step: ${token}`,
+  229:   );
+  230: }
+  231:
+  232: const coreRoot =
+  233:   await import(
+  234:     pathToFileURL(
+  235:       path.join(
+  236:         root,
+  237:         "packages/core/dist/index.js",
+  238:       ),
+  239:     ).href
+  240:   );
+  241:
+  242: assert.equal(
+  243:   typeof coreRoot.createReverseTranslator,
+  244:   "function",
+  245: );
+  246:
+  --- lines 406-423 ---
+  406: console.log(
+  407:   "Historical Core-boundary validators: 6 / COMPOSABLE",
+  408: );
+  409: console.log(
+  410:   "Phase 13.4 foundation boundary test: COMPOSABLE / PASS",
+  411: );
+  412: console.log(
+  413:   "Forward Core semantics: UNCHANGED / PASS",
+  414: );
+  415: console.log(
+  416:   "SDK reverse API: DEFERRED / PASS",
+  417: );
+  418: console.log(
+  419:   "Canonical collision coverage: 34 / 34",
+  420: );
+  421: console.log(
+  422:   "Next: frozen SDK reverse API materialization",
+  423: );
+
+[MATERIALIZATION RULE]
+  historicalValidators: Only exact SDK-reverse-private/deferred assertions may become milestone-composable. Preserve all unrelated historical checks.
+  sdkRuntimeSurfaceTest: Update the exact package-root runtime surface to include only the two canonical Phase 13.6 reverse runtime exports in addition to the frozen forward runtime exports.
+  forwardSdk: Existing forward runtime/type behavior must remain unchanged.
+  office: Microsoft 365 must not start consuming reverse SDK in Phase 13.6.
+
+Decision: READY_FOR_PHASE13_6B_MATERIALIZATION_PLANNING
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-6a3-sdk-reverse-deferred-assumption-audit.txt
+JSON : stage13-6a3-sdk-reverse-deferred-assumption-audit.json
+========================================================================================================================

@@ -202,7 +202,8 @@ const diffNames =
 for (const forbiddenPrefix of [
   "spec/fa-ir/rules/records/",
   "spec/fa-ir/conformance/records/",
-  "packages/sdk/src/",
+  "packages/sdk/src/public-api.ts",
+  "packages/sdk/src/translator.ts",
   "integrations/microsoft365/src/",
   "apps/cli/",
   "apps/web/",
@@ -247,7 +248,7 @@ console.log(
   "Forward rule/vector semantics: UNCHANGED / PASS",
 );
 console.log(
-  "SDK / CLI / Web / Microsoft 365: DEFERRED / PASS",
+  "Phase 13.4 frozen SDK source / CLI / Web / Microsoft 365 boundaries: PRESERVED / PASS",
 );
 console.log(
   "Core reverse root boundary coherence: PASS",
