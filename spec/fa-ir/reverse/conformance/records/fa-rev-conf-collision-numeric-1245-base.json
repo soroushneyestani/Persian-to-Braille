@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-1245-BASE",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-base-persian",
+  "sourceForwardRuleIds": [
+    "FA-G1-DIGIT-ARABIC-INDIC-007",
+    "FA-G1-DIGIT-ASCII-007",
+    "FA-G1-DIGIT-PERSIAN-007",
+    "FA-G1-LATIN-007",
+    "FA-G1-LATIN-033",
+    "FA-G1-LETTER-026"
+  ],
+  "input": {
+    "cells": [
+      "1245"
+    ],
+    "unicodeBraille": "⠛"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "گ",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Base Persian state selects the unique Persian letter when present; otherwise ambiguity remains."
+  ]
+}

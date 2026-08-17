@@ -37,9 +37,14 @@ async function json(relativePath) {
   );
 }
 
-const audit =
+const behaviorAudit =
   await json(
-    "docs/architecture/phase-13.5c-stateful-numeric-collision-audit.json",
+    "docs/architecture/phase-13.5c2-numeric-collision-behavior-audit.json",
+  );
+
+const designAudit =
+  await json(
+    "docs/architecture/phase-13.5c2a-numeric-collision-resolution-design-audit.json",
   );
 
 const manifest =
@@ -63,28 +68,24 @@ const sdkIndex =
   );
 
 assert.equal(
-  audit.baseline.remainingParserRequiredRules,
-  2,
+  behaviorAudit.baseline
+    .numericRelatedRemainingCollisionSignatures,
+  10,
 );
 
-for (const token of [
-  "numeric-fraction-separator",
-  "numeric-begin",
-  "numericFraction",
-  "numericBeginMatch",
-]) {
-  assert.ok(
-    reverseSource.includes(token),
-    `numeric parser completion missing token: ${token}`,
-  );
-}
-
-assert.ok(
-  manifest.summary.vectors >= 37,
+assert.equal(
+  designAudit.baseModeResolutionSummary.length,
+  8,
 );
 
-assert.ok(
-  manifest.summary.translationVectors >= 35,
+assert.equal(
+  manifest.summary.vectors,
+  71,
+);
+
+assert.equal(
+  manifest.summary.translationVectors,
+  69,
 );
 
 assert.equal(
@@ -92,20 +93,17 @@ assert.equal(
   2,
 );
 
-const numericStateIds =
+const collisionIds =
   manifest.vectorIds.filter(
     (id) =>
       id.startsWith(
-        "FA-REV-CONF-STATE-NUMERIC-",
+        "FA-REV-CONF-COLLISION-NUMERIC-",
       ),
   );
 
-assert.deepEqual(
-  numericStateIds.sort(),
-  [
-    "FA-REV-CONF-STATE-NUMERIC-BEGIN-001",
-    "FA-REV-CONF-STATE-NUMERIC-FRACTION-001",
-  ],
+assert.equal(
+  collisionIds.length,
+  34,
 );
 
 const recordDir =
@@ -131,6 +129,9 @@ assert.equal(
 const coveredRuleIds =
   new Set();
 
+let signature15BaseFailure =
+  null;
+
 for (const name of recordNames) {
   const record =
     JSON.parse(
@@ -146,15 +147,53 @@ for (const name of recordNames) {
   for (const ruleId of record.sourceForwardRuleIds) {
     coveredRuleIds.add(ruleId);
   }
+
+  if (
+    record.id
+    === "FA-REV-CONF-COLLISION-NUMERIC-15-BASE"
+  ) {
+    signature15BaseFailure =
+      record;
+  }
 }
 
-for (const ruleId of [
-  "FA-G1-NUM-FRACTION-SLASH-001",
-  "FA-G1-NUMRULE-002",
+for (const row of behaviorAudit.numericCollisions) {
+  assert.ok(
+    row.candidates.some(
+      (candidate) =>
+        coveredRuleIds.has(
+          candidate.ruleId,
+        ),
+    ),
+    `numeric collision signature not covered: ${row.signature}`,
+  );
+}
+
+assert.ok(
+  signature15BaseFailure !== null,
+);
+
+assert.equal(
+  signature15BaseFailure.expected.ok,
+  false,
+);
+
+assert.equal(
+  signature15BaseFailure.expected.code,
+  "AMBIGUOUS_REVERSE_MATCH",
+);
+
+for (const token of [
+  "numericInternalCandidates",
+  '"numeric-internal"',
+  "numericEndMatch",
+  '"numeric-end"',
+  "basePersianCandidate",
+  "preLatinPercentMatch",
 ]) {
   assert.ok(
-    coveredRuleIds.has(ruleId),
-    `remaining parser-required rule is not covered: ${ruleId}`,
+    reverseSource.includes(token),
+    `numeric collision source marker missing: ${token}`,
   );
 }
 
@@ -211,27 +250,41 @@ for (const forbiddenPrefix of [
   assert.equal(
     diffNames.some(
       (name) =>
-        name.startsWith(forbiddenPrefix),
+        name.startsWith(
+          forbiddenPrefix,
+        ),
     ),
     false,
-    `Phase 13.5c-1 touched frozen/deferred boundary: ${forbiddenPrefix}`,
+    `Phase 13.5c-2 touched frozen/deferred boundary: ${forbiddenPrefix}`,
   );
 }
 
 console.log(
-  "Phase 13.5c-1 Numeric Parser Completion: PASS",
+  "Phase 13.5c-2 Numeric Collision Resolution: PASS",
 );
 console.log(
-  "PARSER_RULE_REQUIRED coverage: 8 / 8",
+  "Numeric-related collision signatures covered: 10 / 10",
 );
 console.log(
-  "Numeric begin reverse state: PASS",
+  "Base Persian digit/text collisions: 7 resolved / PASS",
 );
 console.log(
-  "Numeric fraction separator state: PASS",
+  "Signature 15 base ambiguity: PRESERVED / PASS",
 );
 console.log(
-  "Reverse conformance vectors: 37",
+  "Numeric internal separator: PASS",
+);
+console.log(
+  "Numeric end / percent precedence: PASS",
+);
+console.log(
+  "New collision vectors: 34 / PASS",
+);
+console.log(
+  "Reverse conformance vectors: 71",
+);
+console.log(
+  "Remaining non-numeric collision signatures: 17",
 );
 console.log(
   "Core root reverse export: DEFERRED / PASS",
@@ -240,5 +293,5 @@ console.log(
   "SDK reverse API: DEFERRED / PASS",
 );
 console.log(
-  "Next: Phase 13.5c-2 Numeric Collision Coverage",
+  "Next: Phase 13.5c-3 Remaining Cross-Mode Collision Coverage",
 );

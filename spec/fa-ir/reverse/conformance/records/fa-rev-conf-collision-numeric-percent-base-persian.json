@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-PERCENT-BASE-PERSIAN",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-end-percent",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-SCALAR-016",
+    "FA-G1-PUNC-SCALAR-017"
+  ],
+  "input": {
+    "cells": [
+      "25",
+      "1234"
+    ],
+    "unicodeBraille": "⠒⠏"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "٪",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_PUNCTUATION"
+    ]
+  },
+  "notes": [
+    "Outside numeric mode the percent sequence resolves before dot-25 can open a Latin span."
+  ]
+}

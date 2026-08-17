@@ -770,6 +770,77 @@ implements ReverseTranslator {
           continue;
         }
 
+        const numericInternalCandidates =
+          this.numericInternalCandidates(
+            tokenized.tokens,
+            index,
+            state,
+            resolved,
+          );
+
+        if (
+          numericInternalCandidates
+          !== null
+        ) {
+          const internal =
+            this.resolveCandidates(
+              inputBraille,
+              numericInternalCandidates,
+              resolved,
+              state,
+              token,
+              diagnostics,
+              diagnosticCodes,
+            );
+
+          if (!internal.ok) {
+            return internal.failure;
+          }
+
+          output.push(
+            internal.text,
+          );
+
+          index += 1;
+          continue;
+        }
+
+        const numericEndMatch =
+          this.numericEndMatch(
+            tokenized.tokens,
+            index,
+            state,
+          );
+
+        if (numericEndMatch !== null) {
+          const numericEnd =
+            this.resolveCandidates(
+              inputBraille,
+              numericEndMatch.candidates,
+              resolved,
+              state,
+              token,
+              diagnostics,
+              diagnosticCodes,
+            );
+
+          if (!numericEnd.ok) {
+            return numericEnd.failure;
+          }
+
+          output.push(
+            numericEnd.text,
+          );
+
+          state.numericMode = false;
+          state.numericSawDigit = false;
+
+          index +=
+            numericEndMatch.length;
+
+          continue;
+        }
+
         if (!state.numericSawDigit) {
           return failure(
             inputBraille,
@@ -926,6 +997,56 @@ implements ReverseTranslator {
         state.numericMode = true;
         state.numericSawDigit = false;
         index += 1;
+        continue;
+      }
+
+      const preLatinPercentMatch =
+        this.longestMatch(
+          tokenized.tokens,
+          index,
+        );
+
+      const preLatinPercentCandidates =
+        (
+          preLatinPercentMatch
+            ?.candidates
+          ?? []
+        )
+        .filter(
+          (candidate) =>
+            candidate.ruleId
+            === "FA-G1-PUNC-SCALAR-016"
+            || candidate.ruleId
+            === "FA-G1-PUNC-SCALAR-017",
+        );
+
+      if (
+        preLatinPercentMatch !== null
+        && preLatinPercentMatch.length > 1
+        && preLatinPercentCandidates.length > 0
+      ) {
+        const percent =
+          this.resolveCandidates(
+            inputBraille,
+            preLatinPercentCandidates,
+            resolved,
+            state,
+            token,
+            diagnostics,
+            diagnosticCodes,
+          );
+
+        if (!percent.ok) {
+          return percent.failure;
+        }
+
+        output.push(
+          percent.text,
+        );
+
+        index +=
+          preLatinPercentMatch.length;
+
         continue;
       }
 
@@ -1317,6 +1438,93 @@ implements ReverseTranslator {
     };
   }
 
+  private numericInternalCandidates(
+    tokens: readonly InputToken[],
+    index: number,
+    state: ParserState,
+    options: ResolvedOptions,
+  ): readonly Candidate[] | null {
+    if (!state.numericSawDigit) {
+      return null;
+    }
+
+    const token =
+      tokens[index];
+
+    if (
+      token === undefined
+      || token.kind !== "cell"
+    ) {
+      return null;
+    }
+
+    const candidates =
+      (
+        this.candidatesBySignature
+          .get(token.cell)
+        ?? []
+      )
+      .filter(
+        (candidate) =>
+          candidate.tokenClass
+          === "numeric-internal",
+      );
+
+    if (candidates.length === 0) {
+      return null;
+    }
+
+    const next =
+      tokens[index + 1];
+
+    if (
+      next === undefined
+      || next.kind !== "cell"
+      || this.digits
+        .get(next.cell)
+        ?.get(
+          options.digitFamily,
+        ) === undefined
+    ) {
+      return null;
+    }
+
+    return candidates;
+  }
+
+  private numericEndMatch(
+    tokens: readonly InputToken[],
+    index: number,
+    state: ParserState,
+  ): {
+    readonly length: number;
+    readonly candidates:
+      readonly Candidate[];
+  } | null {
+    if (!state.numericSawDigit) {
+      return null;
+    }
+
+    const match =
+      this.longestMatch(
+        tokens,
+        index,
+      );
+
+    if (
+      match === null
+      || !match.candidates.some(
+        (candidate) =>
+          candidate.tokenClass
+          === "numeric-end",
+      )
+    ) {
+      return null;
+    }
+
+    return match;
+  }
+
   private longestMatch(
     tokens: readonly InputToken[],
     index: number,
@@ -1461,6 +1669,42 @@ implements ReverseTranslator {
       return {
         ok: true,
         text: "(",
+      };
+    }
+
+    const digitCollision =
+      candidates.some(
+        (candidate) =>
+          this.digitFamily(
+            candidate.ruleId,
+          ) !== null,
+      );
+
+    const persianLetterCandidates =
+      candidates.filter(
+        (candidate) =>
+          candidate.ruleId.startsWith(
+            "FA-G1-LETTER-",
+          )
+          && candidate.text !== null,
+      );
+
+    const basePersianCandidate =
+      (
+        !state.numericMode
+        && !state.latinSpan
+        && digitCollision
+        && persianLetterCandidates.length
+        === 1
+      )
+        ? persianLetterCandidates[0]!
+        : null;
+
+    if (basePersianCandidate !== null) {
+      return {
+        ok: true,
+        text:
+          basePersianCandidate.text!,
       };
     }
 

@@ -1,0 +1,920 @@
+================================================================================================================
+PHASE 13.5c-2a — NUMERIC COLLISION RESOLUTION DESIGN AUDIT
+================================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : b644bb26215c3d28330e08d7edf6a16eda7274f3
+
+[CANONICAL COLLISION RULES]
+  FA-G1-NUMRULE-003 | status=candidate | type=context
+    input ={'kind': 'context', 'text': ',', 'codePoints': ['U+002C'], 'before': 'digit', 'after': 'digit', 'tokenClass': 'numeric-internal'}
+    output={'cells': ['3'], 'unicodeBraille': '⠄', 'structuralToken': None}
+  FA-G1-NUMRULE-004 | status=candidate | type=context
+    input ={'kind': 'context', 'text': '٬', 'codePoints': ['U+066C'], 'before': 'digit', 'after': 'digit', 'tokenClass': 'numeric-internal'}
+    output={'cells': ['3'], 'unicodeBraille': '⠄', 'structuralToken': None}
+  FA-G1-NUMRULE-007 | status=candidate | type=context
+    input ={'kind': 'context', 'text': '%', 'codePoints': ['U+0025'], 'before': 'digit', 'tokenClass': 'numeric-end'}
+    output={'cells': ['25', '1234'], 'unicodeBraille': '⠒⠏', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-016 | status=candidate | type=character
+    input ={'kind': 'scalar', 'text': '%', 'codePoints': ['U+0025']}
+    output={'cells': ['25', '1234'], 'unicodeBraille': '⠒⠏', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-017 | status=candidate | type=character
+    input ={'kind': 'scalar', 'text': '٪', 'codePoints': ['U+066A']}
+    output={'cells': ['25', '1234'], 'unicodeBraille': '⠒⠏', 'structuralToken': None}
+
+[BASE-MODE DIGIT COLLISION SUMMARY]
+  digit-collision-124-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-023'] | exactlyOne=True
+  digit-collision-1245-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-026'] | exactlyOne=True
+  digit-collision-125-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-031'] | exactlyOne=True
+  digit-collision-14-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-007'] | exactlyOne=True
+  digit-collision-145-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-010'] | exactlyOne=True
+  digit-collision-15-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=[] | exactlyOne=False
+  digit-collision-24-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-032'] | exactlyOne=True
+  digit-collision-245-base-mode | code='AMBIGUOUS_REVERSE_MATCH' | Persian candidates=['FA-G1-LETTER-006'] | exactlyOne=True
+
+[NUMERIC-INTERNAL RUNTIME]
+  numeric-internal-default-persian -> ok=False text=None code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-002', 'FA-G1-DIGIT-ASCII-002', 'FA-G1-DIGIT-PERSIAN-002', 'FA-G1-LATIN-002', 'FA-G1-LATIN-028', 'FA-G1-LETTER-002']
+  numeric-internal-ascii -> ok=False text=None code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-002', 'FA-G1-DIGIT-ASCII-002', 'FA-G1-DIGIT-PERSIAN-002', 'FA-G1-LATIN-002', 'FA-G1-LATIN-028', 'FA-G1-LETTER-002']
+  numeric-internal-strict -> ok=False text=None code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-NUMRULE-003', 'FA-G1-NUMRULE-004']
+
+[NUMERIC-END / PERCENT RUNTIME]
+  numeric-end-default-persian -> ok=False text=None code='UNTERMINATED_LATIN_SPAN' candidates=None
+  numeric-end-ascii -> ok=False text=None code='UNTERMINATED_LATIN_SPAN' candidates=None
+  percent-outside-numeric-default -> ok=False text=None code='UNTERMINATED_LATIN_SPAN' candidates=None
+  percent-outside-numeric-strict -> ok=False text=None code='UNTERMINATED_LATIN_SPAN' candidates=None
+
+[POLICY / CONTRACT EVIDENCE]
+  policyMentionsPersianPunctuation           : YES
+  policyMentionsAsciiPunctuation             : YES
+  profileMentionsAmbiguityCanonicalize       : NO
+  contractMentionsPairedPunctuation          : YES
+  contractMentionsPunctuationPolicy          : YES
+  reverseTypesMentionPunctuationStyle        : YES
+
+[SOURCE EVIDENCE]
+  token='numericMode' matches=8
+    lines 37-77
+   37: interface LayoutToken {
+   38:   readonly kind: "layout";
+   39:   readonly character: string;
+   40:   readonly utf16Offset: number;
+   41:   readonly codePointIndex: number;
+   42: }
+   43: 
+   44: type InputToken =
+   45:   | CellToken
+   46:   | LayoutToken;
+   47: 
+   48: interface ParserState {
+   49:   numericMode: boolean;
+   50:   numericSawDigit: boolean;
+   51:   latinSpan: boolean;
+   52:   pendingCapital: boolean;
+   53:   readonly delimiterStack: string[];
+   54: }
+   55: 
+   56: interface ResolvedOptions {
+   57:   readonly digitFamily: ReverseDigitFamily;
+   58:   readonly punctuationStyle: ReversePunctuationStyle;
+   59:   readonly ellipsisStyle: ReverseEllipsisStyle;
+   60:   readonly ambiguityPolicy: ReverseAmbiguityPolicy;
+   61: }
+   62: 
+   63: const PROFILE: ReverseProfileSnapshot = {
+   64:   profileId: "fa-ir-g1-reverse",
+   65:   profileVersion: "0.1.0",
+   66:   profileStatus: "draft",
+   67:   direction: "braille-to-print",
+   68: };
+   69: 
+   70: const DEFAULT_OPTIONS: ResolvedOptions = {
+   71:   digitFamily: "persian",
+   72:   punctuationStyle: "persian",
+   73:   ellipsisStyle: "unicode",
+   74:   ambiguityPolicy: "canonicalize",
+   75: };
+   76: 
+   77: const PERSIAN_PUNCTUATION =
+    lines 627-667
+  627:   ): ReverseTranslationOutcome {
+  628:     const tokenized =
+  629:       tokenize(inputBraille);
+  630: 
+  631:     if (!tokenized.ok) {
+  632:       return tokenized.failure;
+  633:     }
+  634: 
+  635:     const resolved =
+  636:       optionsWithDefaults(options);
+  637: 
+  638:     const state: ParserState = {
+  639:       numericMode: false,
+  640:       numericSawDigit: false,
+  641:       latinSpan: false,
+  642:       pendingCapital: false,
+  643:       delimiterStack: [],
+  644:     };
+  645: 
+  646:     const output:
+  647:       string[] = [];
+  648: 
+  649:     const diagnostics:
+  650:       ReverseDiagnostic[] = [];
+  651: 
+  652:     const diagnosticCodes =
+  653:       new Set<ReverseDiagnosticCode>();
+  654: 
+  655:     let index = 0;
+  656: 
+  657:     while (
+  658:       index < tokenized.tokens.length
+  659:     ) {
+  660:       const token =
+  661:         tokenized.tokens[index]!;
+  662: 
+  663:       if (token.kind === "layout") {
+  664:         if (state.pendingCapital) {
+  665:           return failure(
+  666:             inputBraille,
+  667:             "DANGLING_CAPITAL_INDICATOR",
+    lines 670-710
+  670:           );
+  671:         }
+  672: 
+  673:         if (state.latinSpan) {
+  674:           return failure(
+  675:             inputBraille,
+  676:             "UNTERMINATED_LATIN_SPAN",
+  677:             "Latin span reached a layout boundary.",
+  678:             { token },
+  679:           );
+  680:         }
+  681: 
+  682:         state.numericMode = false;
+  683:         state.numericSawDigit = false;
+  684: 
+  685:         output.push(
+  686:           token.character,
+  687:         );
+  688:         index += 1;
+  689:         continue;
+  690:       }
+  691: 
+  692:       if (state.numericMode) {
+  693:         const digit =
+  694:           this.digits
+  695:             .get(token.cell)
+  696:             ?.get(
+  697:               resolved.digitFamily,
+  698:             );
+  699: 
+  700:         if (digit !== undefined) {
+  701:           output.push(
+  702:             digit.text!,
+  703:           );
+  704: 
+  705:           state.numericSawDigit = true;
+  706: 
+  707:           this.addDiagnostic(
+  708:             diagnostics,
+  709:             diagnosticCodes,
+  710:             "CANONICALIZED_DIGIT_FAMILY",
+    lines 680-720
+  680:         }
+  681: 
+  682:         state.numericMode = false;
+  683:         state.numericSawDigit = false;
+  684: 
+  685:         output.push(
+  686:           token.character,
+  687:         );
+  688:         index += 1;
+  689:         continue;
+  690:       }
+  691: 
+  692:       if (state.numericMode) {
+  693:         const digit =
+  694:           this.digits
+  695:             .get(token.cell)
+  696:             ?.get(
+  697:               resolved.digitFamily,
+  698:             );
+  699: 
+  700:         if (digit !== undefined) {
+  701:           output.push(
+  702:             digit.text!,
+  703:           );
+  704: 
+  705:           state.numericSawDigit = true;
+  706: 
+  707:           this.addDiagnostic(
+  708:             diagnostics,
+  709:             diagnosticCodes,
+  710:             "CANONICALIZED_DIGIT_FAMILY",
+  711:             (
+  712:               this.candidatesBySignature
+  713:                 .get(token.cell)
+  714:               ?? []
+  715:             )
+  716:             .filter(
+  717:               (candidate) =>
+  718:                 this.digitFamily(
+  719:                   candidate.ruleId,
+  720:                 ) !== null,
+  token='numericSawDigit' matches=11
+    lines 38-78
+   38:   readonly kind: "layout";
+   39:   readonly character: string;
+   40:   readonly utf16Offset: number;
+   41:   readonly codePointIndex: number;
+   42: }
+   43: 
+   44: type InputToken =
+   45:   | CellToken
+   46:   | LayoutToken;
+   47: 
+   48: interface ParserState {
+   49:   numericMode: boolean;
+   50:   numericSawDigit: boolean;
+   51:   latinSpan: boolean;
+   52:   pendingCapital: boolean;
+   53:   readonly delimiterStack: string[];
+   54: }
+   55: 
+   56: interface ResolvedOptions {
+   57:   readonly digitFamily: ReverseDigitFamily;
+   58:   readonly punctuationStyle: ReversePunctuationStyle;
+   59:   readonly ellipsisStyle: ReverseEllipsisStyle;
+   60:   readonly ambiguityPolicy: ReverseAmbiguityPolicy;
+   61: }
+   62: 
+   63: const PROFILE: ReverseProfileSnapshot = {
+   64:   profileId: "fa-ir-g1-reverse",
+   65:   profileVersion: "0.1.0",
+   66:   profileStatus: "draft",
+   67:   direction: "braille-to-print",
+   68: };
+   69: 
+   70: const DEFAULT_OPTIONS: ResolvedOptions = {
+   71:   digitFamily: "persian",
+   72:   punctuationStyle: "persian",
+   73:   ellipsisStyle: "unicode",
+   74:   ambiguityPolicy: "canonicalize",
+   75: };
+   76: 
+   77: const PERSIAN_PUNCTUATION =
+   78:   new Set(["،", "؛", "؟", "٫", "٬", "٪"]);
+    lines 628-668
+  628:     const tokenized =
+  629:       tokenize(inputBraille);
+  630: 
+  631:     if (!tokenized.ok) {
+  632:       return tokenized.failure;
+  633:     }
+  634: 
+  635:     const resolved =
+  636:       optionsWithDefaults(options);
+  637: 
+  638:     const state: ParserState = {
+  639:       numericMode: false,
+  640:       numericSawDigit: false,
+  641:       latinSpan: false,
+  642:       pendingCapital: false,
+  643:       delimiterStack: [],
+  644:     };
+  645: 
+  646:     const output:
+  647:       string[] = [];
+  648: 
+  649:     const diagnostics:
+  650:       ReverseDiagnostic[] = [];
+  651: 
+  652:     const diagnosticCodes =
+  653:       new Set<ReverseDiagnosticCode>();
+  654: 
+  655:     let index = 0;
+  656: 
+  657:     while (
+  658:       index < tokenized.tokens.length
+  659:     ) {
+  660:       const token =
+  661:         tokenized.tokens[index]!;
+  662: 
+  663:       if (token.kind === "layout") {
+  664:         if (state.pendingCapital) {
+  665:           return failure(
+  666:             inputBraille,
+  667:             "DANGLING_CAPITAL_INDICATOR",
+  668:             "Capital indicator reached a layout boundary.",
+    lines 671-711
+  671:         }
+  672: 
+  673:         if (state.latinSpan) {
+  674:           return failure(
+  675:             inputBraille,
+  676:             "UNTERMINATED_LATIN_SPAN",
+  677:             "Latin span reached a layout boundary.",
+  678:             { token },
+  679:           );
+  680:         }
+  681: 
+  682:         state.numericMode = false;
+  683:         state.numericSawDigit = false;
+  684: 
+  685:         output.push(
+  686:           token.character,
+  687:         );
+  688:         index += 1;
+  689:         continue;
+  690:       }
+  691: 
+  692:       if (state.numericMode) {
+  693:         const digit =
+  694:           this.digits
+  695:             .get(token.cell)
+  696:             ?.get(
+  697:               resolved.digitFamily,
+  698:             );
+  699: 
+  700:         if (digit !== undefined) {
+  701:           output.push(
+  702:             digit.text!,
+  703:           );
+  704: 
+  705:           state.numericSawDigit = true;
+  706: 
+  707:           this.addDiagnostic(
+  708:             diagnostics,
+  709:             diagnosticCodes,
+  710:             "CANONICALIZED_DIGIT_FAMILY",
+  711:             (
+    lines 693-733
+  693:         const digit =
+  694:           this.digits
+  695:             .get(token.cell)
+  696:             ?.get(
+  697:               resolved.digitFamily,
+  698:             );
+  699: 
+  700:         if (digit !== undefined) {
+  701:           output.push(
+  702:             digit.text!,
+  703:           );
+  704: 
+  705:           state.numericSawDigit = true;
+  706: 
+  707:           this.addDiagnostic(
+  708:             diagnostics,
+  709:             diagnosticCodes,
+  710:             "CANONICALIZED_DIGIT_FAMILY",
+  711:             (
+  712:               this.candidatesBySignature
+  713:                 .get(token.cell)
+  714:               ?? []
+  715:             )
+  716:             .filter(
+  717:               (candidate) =>
+  718:                 this.digitFamily(
+  719:                   candidate.ruleId,
+  720:                 ) !== null,
+  721:             )
+  722:             .map(
+  723:               (candidate) =>
+  724:                 candidate.ruleId,
+  725:             ),
+  726:           );
+  727: 
+  728:           index += 1;
+  729:           continue;
+  730:         }
+  731: 
+  732:         const decimal =
+  733:           this.numericDecimal(
+  token='numericDecimal' matches=2
+    lines 721-761
+  721:             )
+  722:             .map(
+  723:               (candidate) =>
+  724:                 candidate.ruleId,
+  725:             ),
+  726:           );
+  727: 
+  728:           index += 1;
+  729:           continue;
+  730:         }
+  731: 
+  732:         const decimal =
+  733:           this.numericDecimal(
+  734:             tokenized.tokens,
+  735:             index,
+  736:             state,
+  737:             resolved,
+  738:           );
+  739: 
+  740:         if (decimal !== null) {
+  741:           output.push(
+  742:             decimal.text,
+  743:           );
+  744: 
+  745:           this.addDiagnostic(
+  746:             diagnostics,
+  747:             diagnosticCodes,
+  748:             "CANONICALIZED_PUNCTUATION",
+  749:             decimal.ruleIds,
+  750:           );
+  751: 
+  752:           index += 1;
+  753:           continue;
+  754:         }
+  755: 
+  756:         const fraction =
+  757:           this.numericFraction(
+  758:             tokenized.tokens,
+  759:             index,
+  760:             state,
+  761:             resolved,
+    lines 1146-1186
+ 1146:       if (
+ 1147:         uppercase
+ 1148:           ? isUpper
+ 1149:           : isLower
+ 1150:       ) {
+ 1151:         return candidate;
+ 1152:       }
+ 1153:     }
+ 1154: 
+ 1155:     return null;
+ 1156:   }
+ 1157: 
+ 1158:   private numericDecimal(
+ 1159:     tokens: readonly InputToken[],
+ 1160:     index: number,
+ 1161:     state: ParserState,
+ 1162:     options: ResolvedOptions,
+ 1163:   ): {
+ 1164:     readonly text: string;
+ 1165:     readonly ruleIds:
+ 1166:       readonly string[];
+ 1167:   } | null {
+ 1168:     if (!state.numericSawDigit) {
+ 1169:       return null;
+ 1170:     }
+ 1171: 
+ 1172:     const token =
+ 1173:       tokens[index];
+ 1174: 
+ 1175:     if (
+ 1176:       token === undefined
+ 1177:       || token.kind !== "cell"
+ 1178:     ) {
+ 1179:       return null;
+ 1180:     }
+ 1181: 
+ 1182:     const candidates =
+ 1183:       (
+ 1184:         this.candidatesBySignature
+ 1185:           .get(token.cell)
+ 1186:         ?? []
+  token='numericFraction' matches=2
+    lines 745-785
+  745:           this.addDiagnostic(
+  746:             diagnostics,
+  747:             diagnosticCodes,
+  748:             "CANONICALIZED_PUNCTUATION",
+  749:             decimal.ruleIds,
+  750:           );
+  751: 
+  752:           index += 1;
+  753:           continue;
+  754:         }
+  755: 
+  756:         const fraction =
+  757:           this.numericFraction(
+  758:             tokenized.tokens,
+  759:             index,
+  760:             state,
+  761:             resolved,
+  762:           );
+  763: 
+  764:         if (fraction !== null) {
+  765:           output.push(
+  766:             fraction.text,
+  767:           );
+  768: 
+  769:           index += 1;
+  770:           continue;
+  771:         }
+  772: 
+  773:         if (!state.numericSawDigit) {
+  774:           return failure(
+  775:             inputBraille,
+  776:             "MALFORMED_MODE_SEQUENCE",
+  777:             "Numeric indicator was not followed by a digit.",
+  778:             { token },
+  779:           );
+  780:         }
+  781: 
+  782:         state.numericMode = false;
+  783:         state.numericSawDigit = false;
+  784:         continue;
+  785:       }
+    lines 1230-1270
+ 1230:     }
+ 1231: 
+ 1232:     return {
+ 1233:       text: selected.text,
+ 1234:       ruleIds:
+ 1235:         candidates.map(
+ 1236:           (candidate) =>
+ 1237:             candidate.ruleId,
+ 1238:         ),
+ 1239:     };
+ 1240:   }
+ 1241: 
+ 1242:   private numericFraction(
+ 1243:     tokens: readonly InputToken[],
+ 1244:     index: number,
+ 1245:     state: ParserState,
+ 1246:     options: ResolvedOptions,
+ 1247:   ): {
+ 1248:     readonly text: string;
+ 1249:     readonly ruleIds:
+ 1250:       readonly string[];
+ 1251:   } | null {
+ 1252:     if (!state.numericSawDigit) {
+ 1253:       return null;
+ 1254:     }
+ 1255: 
+ 1256:     const token =
+ 1257:       tokens[index];
+ 1258: 
+ 1259:     if (
+ 1260:       token === undefined
+ 1261:       || token.kind !== "cell"
+ 1262:     ) {
+ 1263:       return null;
+ 1264:     }
+ 1265: 
+ 1266:     const candidates =
+ 1267:       (
+ 1268:         this.candidatesBySignature
+ 1269:           .get(token.cell)
+ 1270:         ?? []
+  token='numeric-internal' matches=0
+  token='numeric-end' matches=0
+  token='pickPunctuation' matches=2
+    lines 1456-1496
+ 1456:         };
+ 1457:       }
+ 1458: 
+ 1459:       state.delimiterStack.push("(");
+ 1460: 
+ 1461:       return {
+ 1462:         ok: true,
+ 1463:         text: "(",
+ 1464:       };
+ 1465:     }
+ 1466: 
+ 1467:     const punctuation =
+ 1468:       this.pickPunctuation(
+ 1469:         texts,
+ 1470:         options.punctuationStyle,
+ 1471:       );
+ 1472: 
+ 1473:     if (punctuation !== null) {
+ 1474:       if (
+ 1475:         options.ambiguityPolicy
+ 1476:         === "error"
+ 1477:       ) {
+ 1478:         const details =
+ 1479:           candidateDetails(
+ 1480:             candidates,
+ 1481:           );
+ 1482: 
+ 1483:         return {
+ 1484:           ok: false,
+ 1485:           failure: failure(
+ 1486:             input,
+ 1487:             "AMBIGUOUS_REVERSE_MATCH",
+ 1488:             "Multiple print punctuation forms share this Braille form.",
+ 1489:             {
+ 1490:               token,
+ 1491:               candidateRuleIds:
+ 1492:                 details.ruleIds,
+ 1493:               candidateTexts:
+ 1494:                 details.texts,
+ 1495:             },
+ 1496:           ),
+    lines 1526-1566
+ 1526:         "Parser state and configured policy cannot resolve this collision.",
+ 1527:         {
+ 1528:           token,
+ 1529:           candidateRuleIds:
+ 1530:             details.ruleIds,
+ 1531:           candidateTexts:
+ 1532:             details.texts,
+ 1533:         },
+ 1534:       ),
+ 1535:     };
+ 1536:   }
+ 1537: 
+ 1538:   private pickPunctuation(
+ 1539:     texts: readonly string[],
+ 1540:     style:
+ 1541:       ReversePunctuationStyle,
+ 1542:   ): string | null {
+ 1543:     const set =
+ 1544:       style === "persian"
+ 1545:         ? PERSIAN_PUNCTUATION
+ 1546:         : ASCII_PUNCTUATION;
+ 1547: 
+ 1548:     for (const text of texts) {
+ 1549:       if (set.has(text)) {
+ 1550:         return text;
+ 1551:       }
+ 1552:     }
+ 1553: 
+ 1554:     return null;
+ 1555:   }
+ 1556: 
+ 1557:   private addDiagnostic(
+ 1558:     diagnostics: ReverseDiagnostic[],
+ 1559:     seen: Set<ReverseDiagnosticCode>,
+ 1560:     code: ReverseDiagnosticCode,
+ 1561:     ruleIds: readonly string[],
+ 1562:   ): void {
+ 1563:     if (seen.has(code)) {
+ 1564:       return;
+ 1565:     }
+ 1566: 
+  token='longestMatch' matches=3
+    lines 849-889
+  849:         }
+  850: 
+  851:         output.push(
+  852:           latinCandidate.text!,
+  853:         );
+  854: 
+  855:         state.pendingCapital = false;
+  856:         index += 1;
+  857:         continue;
+  858:       }
+  859: 
+  860:       const numericBeginMatch =
+  861:         this.longestMatch(
+  862:           tokenized.tokens,
+  863:           index,
+  864:         );
+  865: 
+  866:       const numericBeginCandidate =
+  867:         numericBeginMatch
+  868:           ?.candidates.find(
+  869:             (candidate) =>
+  870:               candidate.tokenClass
+  871:               === "numeric-begin",
+  872:           );
+  873: 
+  874:       if (
+  875:         numericBeginMatch !== null
+  876:         && numericBeginMatch !== undefined
+  877:         && numericBeginCandidate !== undefined
+  878:         && numericBeginCandidate.text !== null
+  879:       ) {
+  880:         const next =
+  881:           tokenized.tokens[
+  882:             index
+  883:             + numericBeginMatch.length
+  884:           ];
+  885: 
+  886:         if (
+  887:           next === undefined
+  888:           || next.kind !== "cell"
+  889:           || this.digits
+    lines 936-976
+  936: 
+  937:       if (
+  938:         latinBegin !== undefined
+  939:         && token.cell === latinBegin
+  940:       ) {
+  941:         state.latinSpan = true;
+  942:         state.pendingCapital = false;
+  943:         index += 1;
+  944:         continue;
+  945:       }
+  946: 
+  947:       const match =
+  948:         this.longestMatch(
+  949:           tokenized.tokens,
+  950:           index,
+  951:         );
+  952: 
+  953:       /*
+  954:        * A single dot-6 is the Latin capital indicator, but the canonical
+  955:        * ellipsis is the three-cell sequence dot-6 dot-6 dot-6.
+  956:        *
+  957:        * Outside an active Latin span the capital indicator is not an eligible
+  958:        * mode transition. Therefore a valid multi-cell rule must be given
+  959:        * longest-match precedence before the dangling-capital failure is
+  960:        * considered. This keeps dot-6 context-sensitive rather than globally
+  961:        * reserved.
+  962:        */
+  963:       if (
+  964:         match !== null
+  965:         && match.length > 1
+  966:       ) {
+  967:         const resolvedSequence =
+  968:           this.resolveCandidates(
+  969:             inputBraille,
+  970:             match.candidates,
+  971:             resolved,
+  972:             state,
+  973:             token,
+  974:             diagnostics,
+  975:             diagnosticCodes,
+  976:           );
+    lines 1308-1348
+ 1308:     }
+ 1309: 
+ 1310:     return {
+ 1311:       text: selected.text,
+ 1312:       ruleIds:
+ 1313:         candidates.map(
+ 1314:           (candidate) =>
+ 1315:             candidate.ruleId,
+ 1316:         ),
+ 1317:     };
+ 1318:   }
+ 1319: 
+ 1320:   private longestMatch(
+ 1321:     tokens: readonly InputToken[],
+ 1322:     index: number,
+ 1323:   ): {
+ 1324:     readonly length: number;
+ 1325:     readonly candidates:
+ 1326:       readonly Candidate[];
+ 1327:   } | null {
+ 1328:     const available:
+ 1329:       string[] = [];
+ 1330: 
+ 1331:     for (
+ 1332:       let offset = 0;
+ 1333:       offset < this.maxLength;
+ 1334:       offset += 1
+ 1335:     ) {
+ 1336:       const token =
+ 1337:         tokens[index + offset];
+ 1338: 
+ 1339:       if (
+ 1340:         token === undefined
+ 1341:         || token.kind !== "cell"
+ 1342:       ) {
+ 1343:         break;
+ 1344:       }
+ 1345: 
+ 1346:       available.push(
+ 1347:         token.cell,
+ 1348:       );
+  token='latin-span-begin' matches=1
+    lines 922-962
+  922:         numericIndicator !== undefined
+  923:         && token.cell
+  924:         === numericIndicator
+  925:       ) {
+  926:         state.numericMode = true;
+  927:         state.numericSawDigit = false;
+  928:         index += 1;
+  929:         continue;
+  930:       }
+  931: 
+  932:       const latinBegin =
+  933:         this.modeCells.get(
+  934:           "latin-span-begin",
+  935:         );
+  936: 
+  937:       if (
+  938:         latinBegin !== undefined
+  939:         && token.cell === latinBegin
+  940:       ) {
+  941:         state.latinSpan = true;
+  942:         state.pendingCapital = false;
+  943:         index += 1;
+  944:         continue;
+  945:       }
+  946: 
+  947:       const match =
+  948:         this.longestMatch(
+  949:           tokenized.tokens,
+  950:           index,
+  951:         );
+  952: 
+  953:       /*
+  954:        * A single dot-6 is the Latin capital indicator, but the canonical
+  955:        * ellipsis is the three-cell sequence dot-6 dot-6 dot-6.
+  956:        *
+  957:        * Outside an active Latin span the capital indicator is not an eligible
+  958:        * mode transition. Therefore a valid multi-cell rule must be given
+  959:        * longest-match precedence before the dangling-capital failure is
+  960:        * considered. This keeps dot-6 context-sensitive rather than globally
+  961:        * reserved.
+  962:        */
+  token='AMBIGUOUS_REVERSE_MATCH' matches=2
+    lines 1475-1515
+ 1475:         options.ambiguityPolicy
+ 1476:         === "error"
+ 1477:       ) {
+ 1478:         const details =
+ 1479:           candidateDetails(
+ 1480:             candidates,
+ 1481:           );
+ 1482: 
+ 1483:         return {
+ 1484:           ok: false,
+ 1485:           failure: failure(
+ 1486:             input,
+ 1487:             "AMBIGUOUS_REVERSE_MATCH",
+ 1488:             "Multiple print punctuation forms share this Braille form.",
+ 1489:             {
+ 1490:               token,
+ 1491:               candidateRuleIds:
+ 1492:                 details.ruleIds,
+ 1493:               candidateTexts:
+ 1494:                 details.texts,
+ 1495:             },
+ 1496:           ),
+ 1497:         };
+ 1498:       }
+ 1499: 
+ 1500:       this.addDiagnostic(
+ 1501:         diagnostics,
+ 1502:         diagnosticCodes,
+ 1503:         "CANONICALIZED_PUNCTUATION",
+ 1504:         candidates.map(
+ 1505:           (candidate) =>
+ 1506:             candidate.ruleId,
+ 1507:         ),
+ 1508:       );
+ 1509: 
+ 1510:       return {
+ 1511:         ok: true,
+ 1512:         text: punctuation,
+ 1513:       };
+ 1514:     }
+ 1515: 
+    lines 1513-1553
+ 1513:       };
+ 1514:     }
+ 1515: 
+ 1516:     const details =
+ 1517:       candidateDetails(
+ 1518:         candidates,
+ 1519:       );
+ 1520: 
+ 1521:     return {
+ 1522:       ok: false,
+ 1523:       failure: failure(
+ 1524:         input,
+ 1525:         "AMBIGUOUS_REVERSE_MATCH",
+ 1526:         "Parser state and configured policy cannot resolve this collision.",
+ 1527:         {
+ 1528:           token,
+ 1529:           candidateRuleIds:
+ 1530:             details.ruleIds,
+ 1531:           candidateTexts:
+ 1532:             details.texts,
+ 1533:         },
+ 1534:       ),
+ 1535:     };
+ 1536:   }
+ 1537: 
+ 1538:   private pickPunctuation(
+ 1539:     texts: readonly string[],
+ 1540:     style:
+ 1541:       ReversePunctuationStyle,
+ 1542:   ): string | null {
+ 1543:     const set =
+ 1544:       style === "persian"
+ 1545:         ? PERSIAN_PUNCTUATION
+ 1546:         : ASCII_PUNCTUATION;
+ 1547: 
+ 1548:     for (const text of texts) {
+ 1549:       if (set.has(text)) {
+ 1550:         return text;
+ 1551:       }
+ 1552:     }
+ 1553: 
+  token='persian-letter' matches=0
+
+[DECISIONS TO FREEZE]
+  BASE-PERSIAN-PREFERENCE: When a base-mode collision has exactly one canonical Persian-letter candidate plus digit/Latin candidates, should base Persian state select that Persian letter before generic ambiguity handling?
+    evidence: Seven probed digit-cross-mode signatures have exactly one Persian-letter candidate and currently fail AMBIGUOUS_REVERSE_MATCH.
+  NUMERIC-INTERNAL-POLICY: Should tokenClass numeric-internal preserve numeric mode and choose Arabic thousands separator for punctuationStyle=persian and comma for punctuationStyle=ascii?
+    evidence: FA-G1-NUMRULE-003 and -004 share cell 3 and currently are not handled as numeric state.
+  NUMERIC-END-PERCENT: Should the 25 1234 sequence be recognized before dot-25 Latin-span begin, then emit canonical percent according to punctuation policy and terminate numeric mode when encountered inside a numeric run?
+    evidence: Current percent probes are misparsed as Latin-span begin and fail UNTERMINATED_LATIN_SPAN.
+  SIGNATURE-15-BASE: Should signature 15 remain ambiguous in base mode because it has digit and Latin candidates but no Persian-letter candidate?
+    evidence: This is structurally different from the seven base-mode collisions that do contain one Persian-letter candidate.
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c2a-numeric-collision-resolution-design-audit.txt
+JSON : stage13-5c2a-numeric-collision-resolution-design-audit.json
+================================================================================================================
