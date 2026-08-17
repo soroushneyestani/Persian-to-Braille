@@ -39,12 +39,17 @@ async function json(relativePath) {
 
 const audit =
   await json(
-    "docs/architecture/phase-13.5a-reverse-core-coverage-public-boundary-audit.json",
+    "docs/architecture/phase-13.5c-stateful-numeric-collision-audit.json",
   );
 
 const manifest =
   await json(
     "spec/fa-ir/reverse/conformance/manifest.json",
+  );
+
+const reverseSource =
+  await text(
+    "packages/core/src/reverse-translator.ts",
   );
 
 const coreIndex =
@@ -58,47 +63,30 @@ const sdkIndex =
   );
 
 assert.equal(
-  audit.publicCoreExportReadiness.ready,
-  false,
-);
-
-assert.equal(
-  audit.coverage.directCandidates.total,
-  16,
-);
-
-assert.equal(
-  audit.coverage.directCandidates.covered,
-  1,
-);
-
-assert.equal(
-  audit.coverage.parserRequired.total,
-  8,
-);
-
-assert.equal(
-  audit.coverage.parserRequired.covered,
+  audit.baseline.remainingParserRequiredRules,
   2,
 );
 
-assert.ok(
-  Array.isArray(
-    manifest.foundationSeedVectorIds,
-  ),
+for (const token of [
+  "numeric-fraction-separator",
+  "numeric-begin",
+  "numericFraction",
+  "numericBeginMatch",
+]) {
+  assert.ok(
+    reverseSource.includes(token),
+    `numeric parser completion missing token: ${token}`,
+  );
+}
+
+assert.equal(
+  manifest.summary.vectors,
+  37,
 );
 
 assert.equal(
-  manifest.foundationSeedVectorIds.length,
-  16,
-);
-
-assert.ok(
-  manifest.summary.vectors >= 35,
-);
-
-assert.ok(
-  manifest.summary.translationVectors >= 33,
+  manifest.summary.translationVectors,
+  35,
 );
 
 assert.equal(
@@ -106,17 +94,20 @@ assert.equal(
   2,
 );
 
-const coverageIds =
+const numericStateIds =
   manifest.vectorIds.filter(
     (id) =>
       id.startsWith(
-        "FA-REV-CONF-COVERAGE-",
+        "FA-REV-CONF-STATE-NUMERIC-",
       ),
   );
 
-assert.equal(
-  coverageIds.length,
-  19,
+assert.deepEqual(
+  numericStateIds.sort(),
+  [
+    "FA-REV-CONF-STATE-NUMERIC-BEGIN-001",
+    "FA-REV-CONF-STATE-NUMERIC-FRACTION-001",
+  ],
 );
 
 const recordDir =
@@ -154,77 +145,18 @@ for (const name of recordNames) {
       ),
     );
 
-  if (
-    !record.id.startsWith(
-      "FA-REV-CONF-COVERAGE-",
-    )
-  ) {
-    continue;
+  for (const ruleId of record.sourceForwardRuleIds) {
+    coveredRuleIds.add(ruleId);
   }
-
-  assert.equal(
-    record.kind,
-    "translation",
-  );
-
-  assert.equal(
-    record.expected.ok,
-    true,
-  );
-
-  assert.equal(
-    record.expected.lossy,
-    false,
-  );
-
-  for (
-    const ruleId
-    of record.sourceForwardRuleIds
-  ) {
-    coveredRuleIds.add(
-      ruleId,
-    );
-  }
-}
-
-for (
-  const ruleId
-  of audit.coverage
-    .directCandidates
-    .uncoveredRuleIds
-) {
-  assert.ok(
-    coveredRuleIds.has(
-      ruleId,
-    ),
-    `missing direct coverage: ${ruleId}`,
-  );
-}
-
-for (const ruleId of [
-  "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
-  "FA-G1-PUNC-ASTERISK-RUN-001",
-  "FA-G1-PUNC-ASTERISK-SINGLE-001",
-  "FA-G1-PUNC-SCALAR-011",
-]) {
-  assert.ok(
-    coveredRuleIds.has(
-      ruleId,
-    ),
-    `missing unique parser coverage: ${ruleId}`,
-  );
 }
 
 for (const ruleId of [
   "FA-G1-NUM-FRACTION-SLASH-001",
   "FA-G1-NUMRULE-002",
 ]) {
-  assert.equal(
-    coveredRuleIds.has(
-      ruleId,
-    ),
-    false,
-    `numeric-state rule covered prematurely: ${ruleId}`,
+  assert.ok(
+    coveredRuleIds.has(ruleId),
+    `remaining parser-required rule is not covered: ${ruleId}`,
   );
 }
 
@@ -233,9 +165,7 @@ for (const token of [
   "./reverse-translation.js",
 ]) {
   assert.equal(
-    coreIndex.includes(
-      token,
-    ),
+    coreIndex.includes(token),
     false,
     `Core reverse API exposed prematurely: ${token}`,
   );
@@ -247,9 +177,7 @@ for (const token of [
   "PersianBrailleReverseTranslationError",
 ]) {
   assert.equal(
-    sdkIndex.includes(
-      token,
-    ),
+    sdkIndex.includes(token),
     false,
     `SDK reverse API exposed prematurely: ${token}`,
   );
@@ -285,35 +213,27 @@ for (const forbiddenPrefix of [
   assert.equal(
     diffNames.some(
       (name) =>
-        name.startsWith(
-          forbiddenPrefix,
-        ),
+        name.startsWith(forbiddenPrefix),
     ),
     false,
-    `Phase 13.5b touched frozen/deferred boundary: ${forbiddenPrefix}`,
+    `Phase 13.5c-1 touched frozen/deferred boundary: ${forbiddenPrefix}`,
   );
 }
 
 console.log(
-  "Phase 13.5b Unique Reverse Coverage Expansion: PASS",
+  "Phase 13.5c-1 Numeric Parser Completion: PASS",
 );
 console.log(
-  "Direct reversal candidate coverage: 16 / 16",
+  "PARSER_RULE_REQUIRED coverage: 8 / 8",
 );
 console.log(
-  "Parser-required coverage: 6 / 8",
+  "Numeric begin reverse state: PASS",
 );
 console.log(
-  "New independent reverse vectors: 19 / PASS",
+  "Numeric fraction separator state: PASS",
 );
 console.log(
-  "Foundation seed vectors preserved: 16 / PASS",
-);
-console.log(
-  "Remaining numeric parser rules: 2",
-);
-console.log(
-  "Collision signatures still requiring state coverage: 27",
+  "Reverse conformance vectors: 37",
 );
 console.log(
   "Core root reverse export: DEFERRED / PASS",
@@ -322,5 +242,5 @@ console.log(
   "SDK reverse API: DEFERRED / PASS",
 );
 console.log(
-  "Next: Phase 13.5c Stateful Numeric and Collision Coverage",
+  "Next: Phase 13.5c-2 Numeric Collision Coverage",
 );

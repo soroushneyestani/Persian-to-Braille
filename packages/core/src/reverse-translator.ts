@@ -753,6 +753,23 @@ implements ReverseTranslator {
           continue;
         }
 
+        const fraction =
+          this.numericFraction(
+            tokenized.tokens,
+            index,
+            state,
+            resolved,
+          );
+
+        if (fraction !== null) {
+          output.push(
+            fraction.text,
+          );
+
+          index += 1;
+          continue;
+        }
+
         if (!state.numericSawDigit) {
           return failure(
             inputBraille,
@@ -837,6 +854,62 @@ implements ReverseTranslator {
 
         state.pendingCapital = false;
         index += 1;
+        continue;
+      }
+
+      const numericBeginMatch =
+        this.longestMatch(
+          tokenized.tokens,
+          index,
+        );
+
+      const numericBeginCandidate =
+        numericBeginMatch
+          ?.candidates.find(
+            (candidate) =>
+              candidate.tokenClass
+              === "numeric-begin",
+          );
+
+      if (
+        numericBeginMatch !== null
+        && numericBeginMatch !== undefined
+        && numericBeginCandidate !== undefined
+        && numericBeginCandidate.text !== null
+      ) {
+        const next =
+          tokenized.tokens[
+            index
+            + numericBeginMatch.length
+          ];
+
+        if (
+          next === undefined
+          || next.kind !== "cell"
+          || this.digits
+            .get(next.cell)
+            ?.get(
+              resolved.digitFamily,
+            ) === undefined
+        ) {
+          return failure(
+            inputBraille,
+            "MALFORMED_MODE_SEQUENCE",
+            "Numeric-begin sequence was not followed by an admitted digit.",
+            { token },
+          );
+        }
+
+        output.push(
+          numericBeginCandidate.text,
+        );
+
+        state.numericMode = true;
+        state.numericSawDigit = false;
+
+        index +=
+          numericBeginMatch.length;
+
         continue;
       }
 
@@ -1147,6 +1220,84 @@ implements ReverseTranslator {
       candidates.find(
         (candidate) =>
           candidate.text === wanted,
+      );
+
+    if (
+      selected === undefined
+      || selected.text === null
+    ) {
+      return null;
+    }
+
+    return {
+      text: selected.text,
+      ruleIds:
+        candidates.map(
+          (candidate) =>
+            candidate.ruleId,
+        ),
+    };
+  }
+
+  private numericFraction(
+    tokens: readonly InputToken[],
+    index: number,
+    state: ParserState,
+    options: ResolvedOptions,
+  ): {
+    readonly text: string;
+    readonly ruleIds:
+      readonly string[];
+  } | null {
+    if (!state.numericSawDigit) {
+      return null;
+    }
+
+    const token =
+      tokens[index];
+
+    if (
+      token === undefined
+      || token.kind !== "cell"
+    ) {
+      return null;
+    }
+
+    const candidates =
+      (
+        this.candidatesBySignature
+          .get(token.cell)
+        ?? []
+      )
+      .filter(
+        (candidate) =>
+          candidate.tokenClass
+          === "numeric-fraction-separator",
+      );
+
+    if (candidates.length === 0) {
+      return null;
+    }
+
+    const next =
+      tokens[index + 1];
+
+    if (
+      next === undefined
+      || next.kind !== "cell"
+      || this.digits
+        .get(next.cell)
+        ?.get(
+          options.digitFamily,
+        ) === undefined
+    ) {
+      return null;
+    }
+
+    const selected =
+      candidates.find(
+        (candidate) =>
+          candidate.text === "/",
       );
 
     if (

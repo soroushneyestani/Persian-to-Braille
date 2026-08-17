@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "stateful-numeric-parser",
+  "options": {},
+  "id": "FA-REV-CONF-STATE-NUMERIC-BEGIN-001",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-002",
+    "FA-G1-DIGIT-PERSIAN-001"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "4",
+      "1"
+    ],
+    "unicodeBraille": "⠼⠈⠁"
+  },
+  "expected": {
+    "ok": true,
+    "text": "#۱",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY"
+    ]
+  },
+  "notes": [
+    "Numeric-begin is recognized before the generic numeric indicator and enters numeric mode."
+  ]
+}
