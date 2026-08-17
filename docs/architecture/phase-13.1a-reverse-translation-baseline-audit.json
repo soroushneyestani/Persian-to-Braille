@@ -1,0 +1,667 @@
+{
+  "phase": "13.1a",
+  "name": "Reverse Translation Baseline and Invertibility Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81",
+    "upstream": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81",
+    "cleanBeforeAudit": true
+  },
+  "phase12Boundary": {
+    "closurePath": "docs/architecture/phase-12.6-developer-ecosystem-closure.md",
+    "phase13DeferredAndPreserved": true
+  },
+  "packages": {
+    "core": {
+      "name": "@persian-braille/core",
+      "version": "2.0.0-dev",
+      "private": false
+    },
+    "sdk": {
+      "name": "@persian-braille/sdk",
+      "version": "2.0.0-dev",
+      "private": false,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      }
+    }
+  },
+  "sdkPublicSurface": {
+    "phase12RuntimeExportsPresent": {
+      "PersianBrailleTranslationError": true,
+      "createPersianBrailleTranslator": true
+    },
+    "phase12TypeExportsPresent": {
+      "CreatePersianBrailleTranslator": true,
+      "PersianBrailleProfileInfo": true,
+      "PersianBrailleTranslationErrorData": true,
+      "PersianBrailleTranslationFailure": true,
+      "PersianBrailleTranslationFailureCode": true,
+      "PersianBrailleTranslationResult": true,
+      "PersianBrailleTranslationSuccess": true,
+      "PersianBrailleTranslator": true,
+      "PersianBrailleUnicodeLocation": true
+    },
+    "reverseExportsPresent": {
+      "translateFromBraille": false,
+      "BrailleToPersian": false,
+      "ReverseTranslator": false,
+      "createPersianBrailleReverseTranslator": false
+    }
+  },
+  "reverseTermScan": {
+    "filesScanned": 1175,
+    "allHits": [
+      {
+        "path": "docs/architecture/phase-12.1-developer-ecosystem-baseline-audit.txt",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 109,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Reverse translation is NOT Phase 12."
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-12.1a-developer-ecosystem-baseline-correction.json",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 361,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Do not introduce reverse translation or new Braille domains.\""
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-12.2-developer-sdk-contract.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 58,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Reverse translation is explicitly outside this phase."
+          },
+          {
+            "line": 129,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "- reverse translation → Phase 13;"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-12.4-packed-consumer-validation.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 68,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "No reverse translation is added."
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-12.5-developer-documentation-and-integration-guide.md",
+        "terms": [
+          "reverse translation",
+          "reverse-translation"
+        ],
+        "previews": [
+          {
+            "line": 22,
+            "terms": [
+              "reverse-translation"
+            ],
+            "text": "- deferred reverse-translation scope."
+          },
+          {
+            "line": 31,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "imports, Deno, Bun, or reverse translation."
+          },
+          {
+            "line": 45,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "- reverse translation as deferred to Phase 13."
+          },
+          {
+            "line": 121,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Reverse translation is not part of Phase 12 and remains assigned to Phase 13."
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-12.6-developer-ecosystem-closure.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 107,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "- Braille-to-Persian reverse translation;"
+          },
+          {
+            "line": 117,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Phase 13 — Reverse Translation"
+          },
+          {
+            "line": 138,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Phase 13 — Reverse Translation"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-3-closure.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 208,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "- reverse translation;"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-8.2-consumer-application-contract.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 403,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "reverse translation"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-9-closure.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 286,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "reverse translation"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-9.1-word-office-baseline-audit.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 29,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "reverse translation"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/phase-9.5-word-sideload-regression.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 260,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "reverse translation"
+          }
+        ]
+      },
+      {
+        "path": "docs/architecture/specification-consumption.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 130,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "- reverse translation."
+          }
+        ]
+      },
+      {
+        "path": "docs/sdk/phase-7.1-baseline-audit.md",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 197,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "implement reverse translation"
+          }
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/rule.schema.json",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 71,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"description\": \"Phase 2 defines forward print-to-Braille rules only. Reverse translation will use a later schema/version.\""
+          }
+        ]
+      },
+      {
+        "path": "tools/architecture/validate-phase12-2-developer-sdk-contract.mjs",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 179,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "console.log(\"Reverse translation: DEFERRED TO PHASE 13\");"
+          }
+        ]
+      },
+      {
+        "path": "tools/architecture/validate-phase12-5-developer-docs.mjs",
+        "terms": [
+          "reverse translation",
+          "translateFromBraille"
+        ],
+        "previews": [
+          {
+            "line": 217,
+            "terms": [
+              "translateFromBraille"
+            ],
+            "text": "\"translateFromBraille\","
+          },
+          {
+            "line": 220,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"README must explicitly defer, not silently omit, reverse translation.\","
+          },
+          {
+            "line": 224,
+            "terms": [
+              "translateFromBraille"
+            ],
+            "text": "\"does not expose or promise a `translateFromBraille` API\","
+          },
+          {
+            "line": 225,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Reverse translation is deliberately outside this phase\","
+          },
+          {
+            "line": 288,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Reverse translation scope guard: Phase 13 / PASS\","
+          }
+        ]
+      },
+      {
+        "path": "tools/architecture/validate-phase12-6-developer-ecosystem-closure.mjs",
+        "terms": [
+          "reverse translation",
+          "translateFromBraille"
+        ],
+        "previews": [
+          {
+            "line": 201,
+            "terms": [
+              "translateFromBraille"
+            ],
+            "text": "\"translateFromBraille\","
+          },
+          {
+            "line": 222,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Phase 13 — Reverse Translation\","
+          },
+          {
+            "line": 267,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Reverse translation API in Phase 12 source: NONE / PASS\","
+          }
+        ]
+      },
+      {
+        "path": "tools/spec/build_phase2_schemas.py",
+        "terms": [
+          "reverse translation"
+        ],
+        "previews": [
+          {
+            "line": 152,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "\"Reverse translation will use a later schema/version.\""
+          },
+          {
+            "line": 655,
+            "terms": [
+              "reverse translation"
+            ],
+            "text": "Reverse translation is a later roadmap phase and must not constrain the first"
+          }
+        ]
+      }
+    ],
+    "coreOrSdkSourceHits": [],
+    "conformanceHits": []
+  },
+  "canonicalForwardRuleDataset": {
+    "selectedPath": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+    "ruleCount": 176,
+    "types": {
+      "<unknown>": 176
+    },
+    "statuses": {
+      "candidate": 139,
+      "normative": 37
+    },
+    "topCandidateDatasets": [
+      {
+        "path": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+        "ruleIds": 176,
+        "rulesWithDetectedOutput": 0,
+        "rulesWithDetectedType": 0,
+        "statuses": {
+          "candidate": 139,
+          "normative": 37
+        }
+      },
+      {
+        "path": "spec/fa-ir/governance/consensus-promotion-plan.json",
+        "ruleIds": 37,
+        "rulesWithDetectedOutput": 37,
+        "rulesWithDetectedType": 0,
+        "statuses": {
+          "<unknown>": 37
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-000.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-001.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-002.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-003.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-004.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-005.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-006.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-007.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-008.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      },
+      {
+        "path": "spec/fa-ir/rules/records/fa-g1-digit-arabic-indic-009.json",
+        "ruleIds": 1,
+        "rulesWithDetectedOutput": 1,
+        "rulesWithDetectedType": 1,
+        "statuses": {
+          "candidate": 1
+        }
+      }
+    ]
+  },
+  "canonicalConformanceDataset": {
+    "selectedPath": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+    "vectorCount": 176,
+    "topCandidateDatasets": [
+      {
+        "path": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+        "vectorIds": 176
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-000.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-001.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-002.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-003.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-004.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-005.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-006.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-007.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-008.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-arabic-indic-009.json",
+        "vectorIds": 1
+      },
+      {
+        "path": "spec/fa-ir/conformance/records/fa-conf-digit-ascii-000.json",
+        "vectorIds": 1
+      }
+    ]
+  },
+  "invertibility": {
+    "rulesWithDetectedOutput": 0,
+    "rulesWithoutDetectedOutput": 176,
+    "uniqueOutputSignatures": 0,
+    "collisionOutputSignatures": 0,
+    "rulesParticipatingInCollisions": 0,
+    "missingOutputRuleIdsPreview": [
+      "FA-G1-DIGIT-ARABIC-INDIC-000",
+      "FA-G1-DIGIT-ARABIC-INDIC-001",
+      "FA-G1-DIGIT-ARABIC-INDIC-002",
+      "FA-G1-DIGIT-ARABIC-INDIC-003",
+      "FA-G1-DIGIT-ARABIC-INDIC-004",
+      "FA-G1-DIGIT-ARABIC-INDIC-005",
+      "FA-G1-DIGIT-ARABIC-INDIC-006",
+      "FA-G1-DIGIT-ARABIC-INDIC-007",
+      "FA-G1-DIGIT-ARABIC-INDIC-008",
+      "FA-G1-DIGIT-ARABIC-INDIC-009",
+      "FA-G1-DIGIT-ASCII-000",
+      "FA-G1-DIGIT-ASCII-001",
+      "FA-G1-DIGIT-ASCII-002",
+      "FA-G1-DIGIT-ASCII-003",
+      "FA-G1-DIGIT-ASCII-004",
+      "FA-G1-DIGIT-ASCII-005",
+      "FA-G1-DIGIT-ASCII-006",
+      "FA-G1-DIGIT-ASCII-007",
+      "FA-G1-DIGIT-ASCII-008",
+      "FA-G1-DIGIT-ASCII-009",
+      "FA-G1-DIGIT-PERSIAN-000",
+      "FA-G1-DIGIT-PERSIAN-001",
+      "FA-G1-DIGIT-PERSIAN-002",
+      "FA-G1-DIGIT-PERSIAN-003",
+      "FA-G1-DIGIT-PERSIAN-004",
+      "FA-G1-DIGIT-PERSIAN-005",
+      "FA-G1-DIGIT-PERSIAN-006",
+      "FA-G1-DIGIT-PERSIAN-007",
+      "FA-G1-DIGIT-PERSIAN-008",
+      "FA-G1-DIGIT-PERSIAN-009"
+    ],
+    "collisions": {},
+    "structuralRuleCount": 0,
+    "structuralRuleIdsPreview": [],
+    "note": "Collision detection is evidence-oriented and depends on best-effort extraction of forward output fields. It is not a reverse-engine implementation or a proof of invertibility."
+  },
+  "conclusions": {
+    "phase13ScopeConfirmedByPhase12Closure": true,
+    "existingReverseApiInSdk": false,
+    "existingReverseImplementationInCoreOrSdkSource": false,
+    "existingReverseConformanceEvidence": false,
+    "canonicalRuleDatasetDetected": true,
+    "canonicalRuleCountDetected": 176,
+    "canonicalVectorDatasetDetected": true,
+    "canonicalVectorCountDetected": 176,
+    "outputCollisionEvidenceDetected": false,
+    "structuralRulesRequireReverseArchitectureReview": false
+  },
+  "readiness": "NO OUTPUT COLLISIONS DETECTED BY AUDIT HEURISTIC — STILL REQUIRE STRUCTURAL/STATEFUL REVERSE DESIGN",
+  "phase13_1bQuestions": [
+    "Pin the exact canonical forward rule/vector artifacts that Phase 13 reverse derivation is allowed to consume.",
+    "Classify each forward rule as directly reversible, state-dependent, ambiguous, lossy, or forward-only.",
+    "Define the reverse ambiguity contract: deterministic preferred reading vs multiple candidates vs explicit ambiguity result.",
+    "Define reverse handling for number mode, Latin mode, layout, normalization, sequences, punctuation, and indicators.",
+    "Freeze reverse API/result/error types before implementation.",
+    "Build reverse conformance vectors independently rather than assuming forward vectors can simply be swapped."
+  ]
+}

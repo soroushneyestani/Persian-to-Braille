@@ -1,0 +1,173 @@
+====================================================================================================
+PHASE 13.1a — REVERSE TRANSLATION BASELINE AUDIT CORRECTION
+====================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 2a5e424ca1c9aa8fc010a063a3382769d01d2e81
+
+[WHY THE FIRST 13.1a RESULT WAS INCONCLUSIVE]
+The first audit selected the materialization manifest as the forward-rule dataset.
+That manifest carries inventory/lifecycle references but is not the canonical per-rule mapping body.
+Therefore the first audit's 0/176 detected outputs and 0 collisions must NOT be used as invertibility evidence.
+
+[CORRECT CANONICAL SOURCES]
+Rules       : spec/fa-ir/rules/records/*.json
+Conformance : spec/fa-ir/conformance/records/*.json
+Profile     : spec/fa-ir/profiles/fa-ir-g1.json
+
+[FORWARD INVENTORY]
+Rules      : 176
+Vectors    : 176
+Types      : character=133, context=7, layout=27, mode=5, normalization=1, sequence=3
+Statuses   : candidate=139, normative=37
+Directions : forward=176
+Profile inventory match : PASS
+Rule/vector reciprocity  : PASS
+
+[REPRESENTATION INVENTORY]
+structural-input-to-cells          : 4
+structural-token-only              : 29
+text-to-cells                      : 143
+rules-with-braille-cells           : 147
+rules-without-braille-cells        : 29
+
+[BRAILLE CELL COLLISION EVIDENCE]
+Unique emitted cell signatures        : 58
+Cell signatures used by >1 rule       : 34
+Rules participating in collisions    : 123
+Cell-emitting rules outside collision : 24
+
+[COLLISION KINDS]
+distinct-print-inputs                        : 33
+same-print-input-multiple-forward-rules      : 1
+
+[COLLISION PREVIEW]
+cells='1' unicode='⠁' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-001 | type=character | text='١' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-001 | type=character | text='1' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-001 | type=character | text='۱' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-001 | type=character | text='A' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-027 | type=character | text='a' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-001 | type=character | text='ا' | tokenClass=None | before=None | after=None
+cells='12' unicode='⠃' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-002 | type=character | text='٢' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-002 | type=character | text='2' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-002 | type=character | text='۲' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-002 | type=character | text='B' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-028 | type=character | text='b' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-002 | type=character | text='ب' | tokenClass=None | before=None | after=None
+cells='124' unicode='⠋' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-006 | type=character | text='٦' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-006 | type=character | text='6' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-006 | type=character | text='۶' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-006 | type=character | text='F' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-032 | type=character | text='f' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-023 | type=character | text='ف' | tokenClass=None | before=None | after=None
+cells='1245' unicode='⠛' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-007 | type=character | text='٧' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-007 | type=character | text='7' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-007 | type=character | text='۷' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-007 | type=character | text='G' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-033 | type=character | text='g' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-026 | type=character | text='گ' | tokenClass=None | before=None | after=None
+cells='125' unicode='⠓' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-008 | type=character | text='٨' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-008 | type=character | text='8' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-008 | type=character | text='۸' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-008 | type=character | text='H' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-034 | type=character | text='h' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-031 | type=character | text='ه' | tokenClass=None | before=None | after=None
+cells='14' unicode='⠉' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-003 | type=character | text='٣' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-003 | type=character | text='3' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-003 | type=character | text='۳' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-003 | type=character | text='C' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-029 | type=character | text='c' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-007 | type=character | text='چ' | tokenClass=None | before=None | after=None
+cells='145' unicode='⠙' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-004 | type=character | text='٤' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-004 | type=character | text='4' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-004 | type=character | text='۴' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-004 | type=character | text='D' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-030 | type=character | text='d' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-010 | type=character | text='د' | tokenClass=None | before=None | after=None
+cells='24' unicode='⠊' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-009 | type=character | text='٩' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-009 | type=character | text='9' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-009 | type=character | text='۹' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-009 | type=character | text='I' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-035 | type=character | text='i' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-032 | type=character | text='ی' | tokenClass=None | before=None | after=None
+cells='245' unicode='⠚' rules=6 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-000 | type=character | text='٠' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-000 | type=character | text='0' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-000 | type=character | text='۰' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-010 | type=character | text='J' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-036 | type=character | text='j' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-006 | type=character | text='ج' | tokenClass=None | before=None | after=None
+cells='15' unicode='⠑' rules=5 kind=distinct-print-inputs
+  FA-G1-DIGIT-ARABIC-INDIC-005 | type=character | text='٥' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-ASCII-005 | type=character | text='5' | tokenClass=None | before=None | after=None
+  FA-G1-DIGIT-PERSIAN-005 | type=character | text='۵' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-005 | type=character | text='E' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-031 | type=character | text='e' | tokenClass=None | before=None | after=None
+cells='2' unicode='⠂' rules=4 kind=distinct-print-inputs
+  FA-G1-NUMRULE-005 | type=context | text='.' | tokenClass='numeric-decimal-separator' | before='digit' | after='digit'
+  FA-G1-NUMRULE-006 | type=context | text='٫' | tokenClass='numeric-decimal-separator' | before='digit' | after='digit'
+  FA-G1-PUNC-SCALAR-005 | type=character | text=',' | tokenClass=None | before=None | after=None
+  FA-G1-PUNC-SCALAR-006 | type=character | text='،' | tokenClass=None | before=None | after=None
+cells='123' unicode='⠇' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-012 | type=character | text='L' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-038 | type=character | text='l' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-027 | type=character | text='ل' | tokenClass=None | before=None | after=None
+cells='1234' unicode='⠏' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-016 | type=character | text='P' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-042 | type=character | text='p' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-003 | type=character | text='پ' | tokenClass=None | before=None | after=None
+cells='12345' unicode='⠟' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-017 | type=character | text='Q' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-043 | type=character | text='q' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-024 | type=character | text='ق' | tokenClass=None | before=None | after=None
+cells='1235' unicode='⠗' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-018 | type=character | text='R' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-044 | type=character | text='r' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-012 | type=character | text='ر' | tokenClass=None | before=None | after=None
+cells='13' unicode='⠅' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-011 | type=character | text='K' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-037 | type=character | text='k' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-025 | type=character | text='ک' | tokenClass=None | before=None | after=None
+cells='134' unicode='⠍' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-013 | type=character | text='M' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-039 | type=character | text='m' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-028 | type=character | text='م' | tokenClass=None | before=None | after=None
+cells='1345' unicode='⠝' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-014 | type=character | text='N' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-040 | type=character | text='n' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-029 | type=character | text='ن' | tokenClass=None | before=None | after=None
+cells='1346' unicode='⠭' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-024 | type=character | text='X' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-050 | type=character | text='x' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-009 | type=character | text='خ' | tokenClass=None | before=None | after=None
+cells='1356' unicode='⠵' rules=3 kind=distinct-print-inputs
+  FA-G1-LATIN-026 | type=character | text='Z' | tokenClass=None | before=None | after=None
+  FA-G1-LATIN-052 | type=character | text='z' | tokenClass=None | before=None | after=None
+  FA-G1-LETTER-013 | type=character | text='ز' | tokenClass=None | before=None | after=None
+
+[CORRECTED CONCLUSION]
+FORWARD SPEC IS NOT NAIVELY INVERTIBLE BY A GLOBAL BRAILLE-CELL -> PRINT LOOKUP.
+Some collisions may be resolvable by parser state/context; Phase 13.1b must classify them.
+
+[NEXT — PHASE 13.1b]
+1. Freeze the canonical reverse derivation source as the 176 individual forward rule records plus their 176 conformance records/profile inventory.
+2. Classify every rule into reverse categories without treating cell collisions as automatically fatal.
+3. Define parser state for numeric mode, Latin mode, context rules, indicators, sequences, layout, and normalization.
+4. Define ambiguity semantics for cases that remain ambiguous after state/context resolution.
+5. Freeze reverse SDK result/error/API contracts before implementing the engine.
+6. Create independent reverse conformance vectors and explicit round-trip properties; do not merely swap forward vectors.
+
+DO NOT IMPLEMENT THE REVERSE ENGINE FROM THE FIRST 13.1a REPORT.
+DO NOT COMMIT AUDIT OUTPUTS YET.
+
+Text : stage13-1a-reverse-translation-baseline-correction.txt
+JSON : stage13-1a-reverse-translation-baseline-correction.json
+====================================================================================================
