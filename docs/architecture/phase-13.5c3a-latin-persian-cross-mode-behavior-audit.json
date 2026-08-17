@@ -1,0 +1,3173 @@
+{
+  "phase": "13.5c-3a",
+  "name": "Latin / Persian Cross-Mode Behavior Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "a670a53fc11a2379f8417ed4bbf02c1017d2ff7c",
+    "upstream": "a670a53fc11a2379f8417ed4bbf02c1017d2ff7c",
+    "cleanExcept13_5c3Audit": true
+  },
+  "baseline": {
+    "remainingCollisionSignatures": 17,
+    "crossModeSignatures": 12,
+    "latinOnlySignatures": 4,
+    "punctuationSignaturesDeferred": 1,
+    "runtimeCases": 64
+  },
+  "parserFeatureEvidence": {
+    "basePersianCandidate": true,
+    "basePersianStillDigitGated": true,
+    "latinSpan": true,
+    "pendingCapital": true,
+    "strictAmbiguity": true
+  },
+  "groupSummary": {
+    "base Persian state behavior": {
+      "cases": 16,
+      "hintMatches": 4,
+      "hintFailures": 12
+    },
+    "base state under strict ambiguity policy": {
+      "cases": 16,
+      "hintMatches": 4,
+      "hintFailures": 12
+    },
+    "Latin span lowercase state": {
+      "cases": 16,
+      "hintMatches": 15,
+      "hintFailures": 1
+    },
+    "Latin span pending-capital state": {
+      "cases": 16,
+      "hintMatches": 16,
+      "hintFailures": 0
+    }
+  },
+  "runtimeCases": [
+    {
+      "id": "cross-mode-123-base-default",
+      "signature": "123",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "123"
+      ],
+      "options": {},
+      "expectedTextHint": "ل",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "candidateTexts": [
+        "L",
+        "l",
+        "ل"
+      ],
+      "unicodeBraille": "⠇",
+      "actual": {
+        "ok": false,
+        "input": "⠇",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2807"
+        },
+        "brailleCharacter": "⠇",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-012",
+          "FA-G1-LATIN-038",
+          "FA-G1-LETTER-027"
+        ],
+        "candidateTexts": [
+          "L",
+          "l",
+          "ل"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-123-base-strict",
+      "signature": "123",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "123"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ل",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "candidateTexts": [
+        "L",
+        "l",
+        "ل"
+      ],
+      "unicodeBraille": "⠇",
+      "actual": {
+        "ok": false,
+        "input": "⠇",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2807"
+        },
+        "brailleCharacter": "⠇",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-012",
+          "FA-G1-LATIN-038",
+          "FA-G1-LETTER-027"
+        ],
+        "candidateTexts": [
+          "L",
+          "l",
+          "ل"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-123-latin-lower",
+      "signature": "123",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "123",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "l",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "candidateTexts": [
+        "L",
+        "l",
+        "ل"
+      ],
+      "unicodeBraille": "⠒⠇⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠇⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "l",
+        "cells": [
+          "25",
+          "123",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-123-latin-upper",
+      "signature": "123",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "123",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "L",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "candidateTexts": [
+        "L",
+        "l",
+        "ل"
+      ],
+      "unicodeBraille": "⠒⠠⠇⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠇⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "L",
+        "cells": [
+          "25",
+          "6",
+          "123",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1234-base-default",
+      "signature": "1234",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1234"
+      ],
+      "options": {},
+      "expectedTextHint": "پ",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "candidateTexts": [
+        "P",
+        "p",
+        "پ"
+      ],
+      "unicodeBraille": "⠏",
+      "actual": {
+        "ok": false,
+        "input": "⠏",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280F"
+        },
+        "brailleCharacter": "⠏",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-016",
+          "FA-G1-LATIN-042",
+          "FA-G1-LETTER-003"
+        ],
+        "candidateTexts": [
+          "P",
+          "p",
+          "پ"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1234-base-strict",
+      "signature": "1234",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1234"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "پ",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "candidateTexts": [
+        "P",
+        "p",
+        "پ"
+      ],
+      "unicodeBraille": "⠏",
+      "actual": {
+        "ok": false,
+        "input": "⠏",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280F"
+        },
+        "brailleCharacter": "⠏",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-016",
+          "FA-G1-LATIN-042",
+          "FA-G1-LETTER-003"
+        ],
+        "candidateTexts": [
+          "P",
+          "p",
+          "پ"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1234-latin-lower",
+      "signature": "1234",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1234",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "p",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "candidateTexts": [
+        "P",
+        "p",
+        "پ"
+      ],
+      "unicodeBraille": "⠒⠏⠒",
+      "actual": {
+        "ok": false,
+        "input": "⠒⠏⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "UNTERMINATED_LATIN_SPAN",
+        "message": "Input ended inside an open Latin span.",
+        "location": {
+          "utf16Offset": 2,
+          "codePointIndex": 2,
+          "codePoint": "U+2812"
+        },
+        "brailleCharacter": "⠒"
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1234-latin-upper",
+      "signature": "1234",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1234",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "P",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "candidateTexts": [
+        "P",
+        "p",
+        "پ"
+      ],
+      "unicodeBraille": "⠒⠠⠏⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠏⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "P",
+        "cells": [
+          "25",
+          "6",
+          "1234",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-12345-base-default",
+      "signature": "12345",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "12345"
+      ],
+      "options": {},
+      "expectedTextHint": "ق",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "candidateTexts": [
+        "Q",
+        "q",
+        "ق"
+      ],
+      "unicodeBraille": "⠟",
+      "actual": {
+        "ok": false,
+        "input": "⠟",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281F"
+        },
+        "brailleCharacter": "⠟",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-017",
+          "FA-G1-LATIN-043",
+          "FA-G1-LETTER-024"
+        ],
+        "candidateTexts": [
+          "Q",
+          "q",
+          "ق"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-12345-base-strict",
+      "signature": "12345",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "12345"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ق",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "candidateTexts": [
+        "Q",
+        "q",
+        "ق"
+      ],
+      "unicodeBraille": "⠟",
+      "actual": {
+        "ok": false,
+        "input": "⠟",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281F"
+        },
+        "brailleCharacter": "⠟",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-017",
+          "FA-G1-LATIN-043",
+          "FA-G1-LETTER-024"
+        ],
+        "candidateTexts": [
+          "Q",
+          "q",
+          "ق"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-12345-latin-lower",
+      "signature": "12345",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "12345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "q",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "candidateTexts": [
+        "Q",
+        "q",
+        "ق"
+      ],
+      "unicodeBraille": "⠒⠟⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠟⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "q",
+        "cells": [
+          "25",
+          "12345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-12345-latin-upper",
+      "signature": "12345",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "12345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "Q",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "candidateTexts": [
+        "Q",
+        "q",
+        "ق"
+      ],
+      "unicodeBraille": "⠒⠠⠟⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠟⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "Q",
+        "cells": [
+          "25",
+          "6",
+          "12345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1235-base-default",
+      "signature": "1235",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1235"
+      ],
+      "options": {},
+      "expectedTextHint": "ر",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "candidateTexts": [
+        "R",
+        "r",
+        "ر"
+      ],
+      "unicodeBraille": "⠗",
+      "actual": {
+        "ok": false,
+        "input": "⠗",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2817"
+        },
+        "brailleCharacter": "⠗",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-018",
+          "FA-G1-LATIN-044",
+          "FA-G1-LETTER-012"
+        ],
+        "candidateTexts": [
+          "R",
+          "r",
+          "ر"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1235-base-strict",
+      "signature": "1235",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1235"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ر",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "candidateTexts": [
+        "R",
+        "r",
+        "ر"
+      ],
+      "unicodeBraille": "⠗",
+      "actual": {
+        "ok": false,
+        "input": "⠗",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2817"
+        },
+        "brailleCharacter": "⠗",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-018",
+          "FA-G1-LATIN-044",
+          "FA-G1-LETTER-012"
+        ],
+        "candidateTexts": [
+          "R",
+          "r",
+          "ر"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1235-latin-lower",
+      "signature": "1235",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1235",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "r",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "candidateTexts": [
+        "R",
+        "r",
+        "ر"
+      ],
+      "unicodeBraille": "⠒⠗⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠗⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "r",
+        "cells": [
+          "25",
+          "1235",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1235-latin-upper",
+      "signature": "1235",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1235",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "R",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "candidateTexts": [
+        "R",
+        "r",
+        "ر"
+      ],
+      "unicodeBraille": "⠒⠠⠗⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠗⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "R",
+        "cells": [
+          "25",
+          "6",
+          "1235",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-13-base-default",
+      "signature": "13",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "13"
+      ],
+      "options": {},
+      "expectedTextHint": "ک",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "candidateTexts": [
+        "K",
+        "k",
+        "ک"
+      ],
+      "unicodeBraille": "⠅",
+      "actual": {
+        "ok": false,
+        "input": "⠅",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2805"
+        },
+        "brailleCharacter": "⠅",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-011",
+          "FA-G1-LATIN-037",
+          "FA-G1-LETTER-025"
+        ],
+        "candidateTexts": [
+          "K",
+          "k",
+          "ک"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-13-base-strict",
+      "signature": "13",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "13"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ک",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "candidateTexts": [
+        "K",
+        "k",
+        "ک"
+      ],
+      "unicodeBraille": "⠅",
+      "actual": {
+        "ok": false,
+        "input": "⠅",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2805"
+        },
+        "brailleCharacter": "⠅",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-011",
+          "FA-G1-LATIN-037",
+          "FA-G1-LETTER-025"
+        ],
+        "candidateTexts": [
+          "K",
+          "k",
+          "ک"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-13-latin-lower",
+      "signature": "13",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "13",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "k",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "candidateTexts": [
+        "K",
+        "k",
+        "ک"
+      ],
+      "unicodeBraille": "⠒⠅⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠅⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "k",
+        "cells": [
+          "25",
+          "13",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-13-latin-upper",
+      "signature": "13",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "13",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "K",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "candidateTexts": [
+        "K",
+        "k",
+        "ک"
+      ],
+      "unicodeBraille": "⠒⠠⠅⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠅⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "K",
+        "cells": [
+          "25",
+          "6",
+          "13",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-134-base-default",
+      "signature": "134",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "134"
+      ],
+      "options": {},
+      "expectedTextHint": "م",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "candidateTexts": [
+        "M",
+        "m",
+        "م"
+      ],
+      "unicodeBraille": "⠍",
+      "actual": {
+        "ok": false,
+        "input": "⠍",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280D"
+        },
+        "brailleCharacter": "⠍",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-013",
+          "FA-G1-LATIN-039",
+          "FA-G1-LETTER-028"
+        ],
+        "candidateTexts": [
+          "M",
+          "m",
+          "م"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-134-base-strict",
+      "signature": "134",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "134"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "م",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "candidateTexts": [
+        "M",
+        "m",
+        "م"
+      ],
+      "unicodeBraille": "⠍",
+      "actual": {
+        "ok": false,
+        "input": "⠍",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280D"
+        },
+        "brailleCharacter": "⠍",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-013",
+          "FA-G1-LATIN-039",
+          "FA-G1-LETTER-028"
+        ],
+        "candidateTexts": [
+          "M",
+          "m",
+          "م"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-134-latin-lower",
+      "signature": "134",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "134",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "m",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "candidateTexts": [
+        "M",
+        "m",
+        "م"
+      ],
+      "unicodeBraille": "⠒⠍⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠍⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "m",
+        "cells": [
+          "25",
+          "134",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-134-latin-upper",
+      "signature": "134",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "134",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "M",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "candidateTexts": [
+        "M",
+        "m",
+        "م"
+      ],
+      "unicodeBraille": "⠒⠠⠍⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠍⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "M",
+        "cells": [
+          "25",
+          "6",
+          "134",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1345-base-default",
+      "signature": "1345",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1345"
+      ],
+      "options": {},
+      "expectedTextHint": "ن",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "candidateTexts": [
+        "N",
+        "n",
+        "ن"
+      ],
+      "unicodeBraille": "⠝",
+      "actual": {
+        "ok": false,
+        "input": "⠝",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281D"
+        },
+        "brailleCharacter": "⠝",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-014",
+          "FA-G1-LATIN-040",
+          "FA-G1-LETTER-029"
+        ],
+        "candidateTexts": [
+          "N",
+          "n",
+          "ن"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1345-base-strict",
+      "signature": "1345",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1345"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ن",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "candidateTexts": [
+        "N",
+        "n",
+        "ن"
+      ],
+      "unicodeBraille": "⠝",
+      "actual": {
+        "ok": false,
+        "input": "⠝",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281D"
+        },
+        "brailleCharacter": "⠝",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-014",
+          "FA-G1-LATIN-040",
+          "FA-G1-LETTER-029"
+        ],
+        "candidateTexts": [
+          "N",
+          "n",
+          "ن"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1345-latin-lower",
+      "signature": "1345",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "n",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "candidateTexts": [
+        "N",
+        "n",
+        "ن"
+      ],
+      "unicodeBraille": "⠒⠝⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠝⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "n",
+        "cells": [
+          "25",
+          "1345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1345-latin-upper",
+      "signature": "1345",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "N",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "candidateTexts": [
+        "N",
+        "n",
+        "ن"
+      ],
+      "unicodeBraille": "⠒⠠⠝⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠝⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "N",
+        "cells": [
+          "25",
+          "6",
+          "1345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1346-base-default",
+      "signature": "1346",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1346"
+      ],
+      "options": {},
+      "expectedTextHint": "خ",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "candidateTexts": [
+        "X",
+        "x",
+        "خ"
+      ],
+      "unicodeBraille": "⠭",
+      "actual": {
+        "ok": false,
+        "input": "⠭",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+282D"
+        },
+        "brailleCharacter": "⠭",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-024",
+          "FA-G1-LATIN-050",
+          "FA-G1-LETTER-009"
+        ],
+        "candidateTexts": [
+          "X",
+          "x",
+          "خ"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1346-base-strict",
+      "signature": "1346",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1346"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "خ",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "candidateTexts": [
+        "X",
+        "x",
+        "خ"
+      ],
+      "unicodeBraille": "⠭",
+      "actual": {
+        "ok": false,
+        "input": "⠭",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+282D"
+        },
+        "brailleCharacter": "⠭",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-024",
+          "FA-G1-LATIN-050",
+          "FA-G1-LETTER-009"
+        ],
+        "candidateTexts": [
+          "X",
+          "x",
+          "خ"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1346-latin-lower",
+      "signature": "1346",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1346",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "x",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "candidateTexts": [
+        "X",
+        "x",
+        "خ"
+      ],
+      "unicodeBraille": "⠒⠭⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠭⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "x",
+        "cells": [
+          "25",
+          "1346",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1346-latin-upper",
+      "signature": "1346",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1346",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "X",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "candidateTexts": [
+        "X",
+        "x",
+        "خ"
+      ],
+      "unicodeBraille": "⠒⠠⠭⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠭⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "X",
+        "cells": [
+          "25",
+          "6",
+          "1346",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1356-base-default",
+      "signature": "1356",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1356"
+      ],
+      "options": {},
+      "expectedTextHint": "ز",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "candidateTexts": [
+        "Z",
+        "z",
+        "ز"
+      ],
+      "unicodeBraille": "⠵",
+      "actual": {
+        "ok": false,
+        "input": "⠵",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2835"
+        },
+        "brailleCharacter": "⠵",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-026",
+          "FA-G1-LATIN-052",
+          "FA-G1-LETTER-013"
+        ],
+        "candidateTexts": [
+          "Z",
+          "z",
+          "ز"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1356-base-strict",
+      "signature": "1356",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1356"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ز",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "candidateTexts": [
+        "Z",
+        "z",
+        "ز"
+      ],
+      "unicodeBraille": "⠵",
+      "actual": {
+        "ok": false,
+        "input": "⠵",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2835"
+        },
+        "brailleCharacter": "⠵",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-026",
+          "FA-G1-LATIN-052",
+          "FA-G1-LETTER-013"
+        ],
+        "candidateTexts": [
+          "Z",
+          "z",
+          "ز"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-1356-latin-lower",
+      "signature": "1356",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1356",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "z",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "candidateTexts": [
+        "Z",
+        "z",
+        "ز"
+      ],
+      "unicodeBraille": "⠒⠵⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠵⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "z",
+        "cells": [
+          "25",
+          "1356",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-1356-latin-upper",
+      "signature": "1356",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1356",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "Z",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "candidateTexts": [
+        "Z",
+        "z",
+        "ز"
+      ],
+      "unicodeBraille": "⠒⠠⠵⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠵⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "Z",
+        "cells": [
+          "25",
+          "6",
+          "1356",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-234-base-default",
+      "signature": "234",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "234"
+      ],
+      "options": {},
+      "expectedTextHint": "س",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "candidateTexts": [
+        "S",
+        "s",
+        "س"
+      ],
+      "unicodeBraille": "⠎",
+      "actual": {
+        "ok": false,
+        "input": "⠎",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280E"
+        },
+        "brailleCharacter": "⠎",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-019",
+          "FA-G1-LATIN-045",
+          "FA-G1-LETTER-015"
+        ],
+        "candidateTexts": [
+          "S",
+          "s",
+          "س"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-234-base-strict",
+      "signature": "234",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "234"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "س",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "candidateTexts": [
+        "S",
+        "s",
+        "س"
+      ],
+      "unicodeBraille": "⠎",
+      "actual": {
+        "ok": false,
+        "input": "⠎",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+280E"
+        },
+        "brailleCharacter": "⠎",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-019",
+          "FA-G1-LATIN-045",
+          "FA-G1-LETTER-015"
+        ],
+        "candidateTexts": [
+          "S",
+          "s",
+          "س"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-234-latin-lower",
+      "signature": "234",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "234",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "s",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "candidateTexts": [
+        "S",
+        "s",
+        "س"
+      ],
+      "unicodeBraille": "⠒⠎⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠎⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "s",
+        "cells": [
+          "25",
+          "234",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-234-latin-upper",
+      "signature": "234",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "234",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "S",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "candidateTexts": [
+        "S",
+        "s",
+        "س"
+      ],
+      "unicodeBraille": "⠒⠠⠎⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠎⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "S",
+        "cells": [
+          "25",
+          "6",
+          "234",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-2345-base-default",
+      "signature": "2345",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "2345"
+      ],
+      "options": {},
+      "expectedTextHint": "ت",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "candidateTexts": [
+        "T",
+        "t",
+        "ت"
+      ],
+      "unicodeBraille": "⠞",
+      "actual": {
+        "ok": false,
+        "input": "⠞",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281E"
+        },
+        "brailleCharacter": "⠞",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-020",
+          "FA-G1-LATIN-046",
+          "FA-G1-LETTER-004"
+        ],
+        "candidateTexts": [
+          "T",
+          "t",
+          "ت"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-2345-base-strict",
+      "signature": "2345",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "2345"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "ت",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "candidateTexts": [
+        "T",
+        "t",
+        "ت"
+      ],
+      "unicodeBraille": "⠞",
+      "actual": {
+        "ok": false,
+        "input": "⠞",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+281E"
+        },
+        "brailleCharacter": "⠞",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-020",
+          "FA-G1-LATIN-046",
+          "FA-G1-LETTER-004"
+        ],
+        "candidateTexts": [
+          "T",
+          "t",
+          "ت"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-2345-latin-lower",
+      "signature": "2345",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "2345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "t",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "candidateTexts": [
+        "T",
+        "t",
+        "ت"
+      ],
+      "unicodeBraille": "⠒⠞⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠞⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "t",
+        "cells": [
+          "25",
+          "2345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-2345-latin-upper",
+      "signature": "2345",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "2345",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "T",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "candidateTexts": [
+        "T",
+        "t",
+        "ت"
+      ],
+      "unicodeBraille": "⠒⠠⠞⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠞⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "T",
+        "cells": [
+          "25",
+          "6",
+          "2345",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-2456-base-default",
+      "signature": "2456",
+      "family": "cross-mode",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "2456"
+      ],
+      "options": {},
+      "expectedTextHint": "و",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "candidateTexts": [
+        "W",
+        "w",
+        "و"
+      ],
+      "unicodeBraille": "⠺",
+      "actual": {
+        "ok": false,
+        "input": "⠺",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+283A"
+        },
+        "brailleCharacter": "⠺",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-023",
+          "FA-G1-LATIN-049",
+          "FA-G1-LETTER-030"
+        ],
+        "candidateTexts": [
+          "W",
+          "w",
+          "و"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-2456-base-strict",
+      "signature": "2456",
+      "family": "cross-mode",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "2456"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": "و",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "candidateTexts": [
+        "W",
+        "w",
+        "و"
+      ],
+      "unicodeBraille": "⠺",
+      "actual": {
+        "ok": false,
+        "input": "⠺",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+283A"
+        },
+        "brailleCharacter": "⠺",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-023",
+          "FA-G1-LATIN-049",
+          "FA-G1-LETTER-030"
+        ],
+        "candidateTexts": [
+          "W",
+          "w",
+          "و"
+        ]
+      },
+      "expectedHintMatched": false
+    },
+    {
+      "id": "cross-mode-2456-latin-lower",
+      "signature": "2456",
+      "family": "cross-mode",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "2456",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "w",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "candidateTexts": [
+        "W",
+        "w",
+        "و"
+      ],
+      "unicodeBraille": "⠒⠺⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠺⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "w",
+        "cells": [
+          "25",
+          "2456",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "cross-mode-2456-latin-upper",
+      "signature": "2456",
+      "family": "cross-mode",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "2456",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "W",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "candidateTexts": [
+        "W",
+        "w",
+        "و"
+      ],
+      "unicodeBraille": "⠒⠠⠺⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠺⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "W",
+        "cells": [
+          "25",
+          "6",
+          "2456",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-1236-base-default",
+      "signature": "1236",
+      "family": "latin",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "1236"
+      ],
+      "options": {},
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "candidateTexts": [
+        "V",
+        "v"
+      ],
+      "unicodeBraille": "⠧",
+      "actual": {
+        "ok": false,
+        "input": "⠧",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2827"
+        },
+        "brailleCharacter": "⠧",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-022",
+          "FA-G1-LATIN-048"
+        ],
+        "candidateTexts": [
+          "V",
+          "v"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-1236-base-strict",
+      "signature": "1236",
+      "family": "latin",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "1236"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "candidateTexts": [
+        "V",
+        "v"
+      ],
+      "unicodeBraille": "⠧",
+      "actual": {
+        "ok": false,
+        "input": "⠧",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2827"
+        },
+        "brailleCharacter": "⠧",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-022",
+          "FA-G1-LATIN-048"
+        ],
+        "candidateTexts": [
+          "V",
+          "v"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-1236-latin-lower",
+      "signature": "1236",
+      "family": "latin",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "1236",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "v",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "candidateTexts": [
+        "V",
+        "v"
+      ],
+      "unicodeBraille": "⠒⠧⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠧⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "v",
+        "cells": [
+          "25",
+          "1236",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-1236-latin-upper",
+      "signature": "1236",
+      "family": "latin",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "1236",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "V",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "candidateTexts": [
+        "V",
+        "v"
+      ],
+      "unicodeBraille": "⠒⠠⠧⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠧⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "V",
+        "cells": [
+          "25",
+          "6",
+          "1236",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-13456-base-default",
+      "signature": "13456",
+      "family": "latin",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "13456"
+      ],
+      "options": {},
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "candidateTexts": [
+        "Y",
+        "y"
+      ],
+      "unicodeBraille": "⠽",
+      "actual": {
+        "ok": false,
+        "input": "⠽",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+283D"
+        },
+        "brailleCharacter": "⠽",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-025",
+          "FA-G1-LATIN-051"
+        ],
+        "candidateTexts": [
+          "Y",
+          "y"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-13456-base-strict",
+      "signature": "13456",
+      "family": "latin",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "13456"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "candidateTexts": [
+        "Y",
+        "y"
+      ],
+      "unicodeBraille": "⠽",
+      "actual": {
+        "ok": false,
+        "input": "⠽",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+283D"
+        },
+        "brailleCharacter": "⠽",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-025",
+          "FA-G1-LATIN-051"
+        ],
+        "candidateTexts": [
+          "Y",
+          "y"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-13456-latin-lower",
+      "signature": "13456",
+      "family": "latin",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "13456",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "y",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "candidateTexts": [
+        "Y",
+        "y"
+      ],
+      "unicodeBraille": "⠒⠽⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠽⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "y",
+        "cells": [
+          "25",
+          "13456",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-13456-latin-upper",
+      "signature": "13456",
+      "family": "latin",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "13456",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "Y",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "candidateTexts": [
+        "Y",
+        "y"
+      ],
+      "unicodeBraille": "⠒⠠⠽⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠽⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "Y",
+        "cells": [
+          "25",
+          "6",
+          "13456",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-135-base-default",
+      "signature": "135",
+      "family": "latin",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "135"
+      ],
+      "options": {},
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "candidateTexts": [
+        "O",
+        "o"
+      ],
+      "unicodeBraille": "⠕",
+      "actual": {
+        "ok": false,
+        "input": "⠕",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2815"
+        },
+        "brailleCharacter": "⠕",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-015",
+          "FA-G1-LATIN-041"
+        ],
+        "candidateTexts": [
+          "O",
+          "o"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-135-base-strict",
+      "signature": "135",
+      "family": "latin",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "135"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "candidateTexts": [
+        "O",
+        "o"
+      ],
+      "unicodeBraille": "⠕",
+      "actual": {
+        "ok": false,
+        "input": "⠕",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2815"
+        },
+        "brailleCharacter": "⠕",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-015",
+          "FA-G1-LATIN-041"
+        ],
+        "candidateTexts": [
+          "O",
+          "o"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-135-latin-lower",
+      "signature": "135",
+      "family": "latin",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "135",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "o",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "candidateTexts": [
+        "O",
+        "o"
+      ],
+      "unicodeBraille": "⠒⠕⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠕⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "o",
+        "cells": [
+          "25",
+          "135",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-135-latin-upper",
+      "signature": "135",
+      "family": "latin",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "135",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "O",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "candidateTexts": [
+        "O",
+        "o"
+      ],
+      "unicodeBraille": "⠒⠠⠕⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠕⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "O",
+        "cells": [
+          "25",
+          "6",
+          "135",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-136-base-default",
+      "signature": "136",
+      "family": "latin",
+      "purpose": "base Persian state behavior",
+      "cells": [
+        "136"
+      ],
+      "options": {},
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "candidateTexts": [
+        "U",
+        "u"
+      ],
+      "unicodeBraille": "⠥",
+      "actual": {
+        "ok": false,
+        "input": "⠥",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2825"
+        },
+        "brailleCharacter": "⠥",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-021",
+          "FA-G1-LATIN-047"
+        ],
+        "candidateTexts": [
+          "U",
+          "u"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-136-base-strict",
+      "signature": "136",
+      "family": "latin",
+      "purpose": "base state under strict ambiguity policy",
+      "cells": [
+        "136"
+      ],
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedTextHint": null,
+      "expectedFailureHint": "AMBIGUOUS_REVERSE_MATCH",
+      "candidateRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "candidateTexts": [
+        "U",
+        "u"
+      ],
+      "unicodeBraille": "⠥",
+      "actual": {
+        "ok": false,
+        "input": "⠥",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2825"
+        },
+        "brailleCharacter": "⠥",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-021",
+          "FA-G1-LATIN-047"
+        ],
+        "candidateTexts": [
+          "U",
+          "u"
+        ]
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-136-latin-lower",
+      "signature": "136",
+      "family": "latin",
+      "purpose": "Latin span lowercase state",
+      "cells": [
+        "25",
+        "136",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "u",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "candidateTexts": [
+        "U",
+        "u"
+      ],
+      "unicodeBraille": "⠒⠥⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠥⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "u",
+        "cells": [
+          "25",
+          "136",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "latin-only-136-latin-upper",
+      "signature": "136",
+      "family": "latin",
+      "purpose": "Latin span pending-capital state",
+      "cells": [
+        "25",
+        "6",
+        "136",
+        "25"
+      ],
+      "options": {},
+      "expectedTextHint": "U",
+      "expectedFailureHint": null,
+      "candidateRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "candidateTexts": [
+        "U",
+        "u"
+      ],
+      "unicodeBraille": "⠒⠠⠥⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠥⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "U",
+        "cells": [
+          "25",
+          "6",
+          "136",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      },
+      "expectedHintMatched": true
+    }
+  ],
+  "crossModeBaseFailures": [
+    "cross-mode-123-base-default",
+    "cross-mode-123-base-strict",
+    "cross-mode-1234-base-default",
+    "cross-mode-1234-base-strict",
+    "cross-mode-12345-base-default",
+    "cross-mode-12345-base-strict",
+    "cross-mode-1235-base-default",
+    "cross-mode-1235-base-strict",
+    "cross-mode-13-base-default",
+    "cross-mode-13-base-strict",
+    "cross-mode-134-base-default",
+    "cross-mode-134-base-strict",
+    "cross-mode-1345-base-default",
+    "cross-mode-1345-base-strict",
+    "cross-mode-1346-base-default",
+    "cross-mode-1346-base-strict",
+    "cross-mode-1356-base-default",
+    "cross-mode-1356-base-strict",
+    "cross-mode-234-base-default",
+    "cross-mode-234-base-strict",
+    "cross-mode-2345-base-default",
+    "cross-mode-2345-base-strict",
+    "cross-mode-2456-base-default",
+    "cross-mode-2456-base-strict"
+  ],
+  "latinStateFailures": [
+    "cross-mode-1234-latin-lower"
+  ],
+  "latinOnlyBaseFailures": [],
+  "decisionCandidate": {
+    "basePersianLanguageModeRule": "If a base-mode collision has exactly one Persian-letter candidate and Latin upper/lower candidates, prefer the Persian letter before generic ambiguity handling.",
+    "latinOnlyOutsideModeRule": "If a collision has only Latin upper/lower candidates and no active Latin span, preserve ambiguity.",
+    "latinModeRule": "Inside Latin span, lowercase/uppercase state resolves the candidate before generic ambiguity handling."
+  },
+  "recommendedNext": "If the probe confirms the expected pattern, materialize a narrow broadening of basePersianCandidate from digit-gated cross-mode collisions to language-mode collisions, add independent conformance for all 16 signatures, and leave signature 23 for Phase 13.5c-3b."
+}

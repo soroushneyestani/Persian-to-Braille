@@ -1,0 +1,105 @@
+================================================================================================================
+PHASE 13.5c-3a — LATIN / PERSIAN CROSS-MODE BEHAVIOR AUDIT
+================================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : a670a53fc11a2379f8417ed4bbf02c1017d2ff7c
+
+[BASELINE]
+Cross-mode signatures            : 12
+Latin-only signatures            : 4
+Punctuation signature deferred   : 1
+Runtime probe cases              : 64
+
+[PARSER FEATURE EVIDENCE]
+  basePersianCandidate           : YES
+  basePersianStillDigitGated     : YES
+  latinSpan                      : YES
+  pendingCapital                 : YES
+  strictAmbiguity                : YES
+
+[GROUP SUMMARY]
+  base Persian state behavior: 4/16 match, 12 fail
+  base state under strict ambiguity policy: 4/16 match, 12 fail
+  Latin span lowercase state: 15/16 match, 1 fail
+  Latin span pending-capital state: 16/16 match, 0 fail
+
+[RUNTIME CASES]
+  cross-mode-123-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-012', 'FA-G1-LATIN-038', 'FA-G1-LETTER-027'] | hintMatched=False
+  cross-mode-123-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-012', 'FA-G1-LATIN-038', 'FA-G1-LETTER-027'] | hintMatched=False
+  cross-mode-123-latin-lower -> OK text='l' | hintMatched=True
+  cross-mode-123-latin-upper -> OK text='L' | hintMatched=True
+  cross-mode-1234-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-016', 'FA-G1-LATIN-042', 'FA-G1-LETTER-003'] | hintMatched=False
+  cross-mode-1234-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-016', 'FA-G1-LATIN-042', 'FA-G1-LETTER-003'] | hintMatched=False
+  cross-mode-1234-latin-lower -> FAIL code='UNTERMINATED_LATIN_SPAN' candidates=None | hintMatched=False
+  cross-mode-1234-latin-upper -> OK text='P' | hintMatched=True
+  cross-mode-12345-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-017', 'FA-G1-LATIN-043', 'FA-G1-LETTER-024'] | hintMatched=False
+  cross-mode-12345-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-017', 'FA-G1-LATIN-043', 'FA-G1-LETTER-024'] | hintMatched=False
+  cross-mode-12345-latin-lower -> OK text='q' | hintMatched=True
+  cross-mode-12345-latin-upper -> OK text='Q' | hintMatched=True
+  cross-mode-1235-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-018', 'FA-G1-LATIN-044', 'FA-G1-LETTER-012'] | hintMatched=False
+  cross-mode-1235-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-018', 'FA-G1-LATIN-044', 'FA-G1-LETTER-012'] | hintMatched=False
+  cross-mode-1235-latin-lower -> OK text='r' | hintMatched=True
+  cross-mode-1235-latin-upper -> OK text='R' | hintMatched=True
+  cross-mode-13-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-011', 'FA-G1-LATIN-037', 'FA-G1-LETTER-025'] | hintMatched=False
+  cross-mode-13-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-011', 'FA-G1-LATIN-037', 'FA-G1-LETTER-025'] | hintMatched=False
+  cross-mode-13-latin-lower -> OK text='k' | hintMatched=True
+  cross-mode-13-latin-upper -> OK text='K' | hintMatched=True
+  cross-mode-134-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-013', 'FA-G1-LATIN-039', 'FA-G1-LETTER-028'] | hintMatched=False
+  cross-mode-134-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-013', 'FA-G1-LATIN-039', 'FA-G1-LETTER-028'] | hintMatched=False
+  cross-mode-134-latin-lower -> OK text='m' | hintMatched=True
+  cross-mode-134-latin-upper -> OK text='M' | hintMatched=True
+  cross-mode-1345-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-014', 'FA-G1-LATIN-040', 'FA-G1-LETTER-029'] | hintMatched=False
+  cross-mode-1345-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-014', 'FA-G1-LATIN-040', 'FA-G1-LETTER-029'] | hintMatched=False
+  cross-mode-1345-latin-lower -> OK text='n' | hintMatched=True
+  cross-mode-1345-latin-upper -> OK text='N' | hintMatched=True
+  cross-mode-1346-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-024', 'FA-G1-LATIN-050', 'FA-G1-LETTER-009'] | hintMatched=False
+  cross-mode-1346-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-024', 'FA-G1-LATIN-050', 'FA-G1-LETTER-009'] | hintMatched=False
+  cross-mode-1346-latin-lower -> OK text='x' | hintMatched=True
+  cross-mode-1346-latin-upper -> OK text='X' | hintMatched=True
+  cross-mode-1356-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-026', 'FA-G1-LATIN-052', 'FA-G1-LETTER-013'] | hintMatched=False
+  cross-mode-1356-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-026', 'FA-G1-LATIN-052', 'FA-G1-LETTER-013'] | hintMatched=False
+  cross-mode-1356-latin-lower -> OK text='z' | hintMatched=True
+  cross-mode-1356-latin-upper -> OK text='Z' | hintMatched=True
+  cross-mode-234-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-019', 'FA-G1-LATIN-045', 'FA-G1-LETTER-015'] | hintMatched=False
+  cross-mode-234-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-019', 'FA-G1-LATIN-045', 'FA-G1-LETTER-015'] | hintMatched=False
+  cross-mode-234-latin-lower -> OK text='s' | hintMatched=True
+  cross-mode-234-latin-upper -> OK text='S' | hintMatched=True
+  cross-mode-2345-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-020', 'FA-G1-LATIN-046', 'FA-G1-LETTER-004'] | hintMatched=False
+  cross-mode-2345-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-020', 'FA-G1-LATIN-046', 'FA-G1-LETTER-004'] | hintMatched=False
+  cross-mode-2345-latin-lower -> OK text='t' | hintMatched=True
+  cross-mode-2345-latin-upper -> OK text='T' | hintMatched=True
+  cross-mode-2456-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-023', 'FA-G1-LATIN-049', 'FA-G1-LETTER-030'] | hintMatched=False
+  cross-mode-2456-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-023', 'FA-G1-LATIN-049', 'FA-G1-LETTER-030'] | hintMatched=False
+  cross-mode-2456-latin-lower -> OK text='w' | hintMatched=True
+  cross-mode-2456-latin-upper -> OK text='W' | hintMatched=True
+  latin-only-1236-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-022', 'FA-G1-LATIN-048'] | hintMatched=True
+  latin-only-1236-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-022', 'FA-G1-LATIN-048'] | hintMatched=True
+  latin-only-1236-latin-lower -> OK text='v' | hintMatched=True
+  latin-only-1236-latin-upper -> OK text='V' | hintMatched=True
+  latin-only-13456-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-025', 'FA-G1-LATIN-051'] | hintMatched=True
+  latin-only-13456-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-025', 'FA-G1-LATIN-051'] | hintMatched=True
+  latin-only-13456-latin-lower -> OK text='y' | hintMatched=True
+  latin-only-13456-latin-upper -> OK text='Y' | hintMatched=True
+  latin-only-135-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-015', 'FA-G1-LATIN-041'] | hintMatched=True
+  latin-only-135-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-015', 'FA-G1-LATIN-041'] | hintMatched=True
+  latin-only-135-latin-lower -> OK text='o' | hintMatched=True
+  latin-only-135-latin-upper -> OK text='O' | hintMatched=True
+  latin-only-136-base-default -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-021', 'FA-G1-LATIN-047'] | hintMatched=True
+  latin-only-136-base-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-LATIN-021', 'FA-G1-LATIN-047'] | hintMatched=True
+  latin-only-136-latin-lower -> OK text='u' | hintMatched=True
+  latin-only-136-latin-upper -> OK text='U' | hintMatched=True
+
+Cross-mode base failures : ['cross-mode-123-base-default', 'cross-mode-123-base-strict', 'cross-mode-1234-base-default', 'cross-mode-1234-base-strict', 'cross-mode-12345-base-default', 'cross-mode-12345-base-strict', 'cross-mode-1235-base-default', 'cross-mode-1235-base-strict', 'cross-mode-13-base-default', 'cross-mode-13-base-strict', 'cross-mode-134-base-default', 'cross-mode-134-base-strict', 'cross-mode-1345-base-default', 'cross-mode-1345-base-strict', 'cross-mode-1346-base-default', 'cross-mode-1346-base-strict', 'cross-mode-1356-base-default', 'cross-mode-1356-base-strict', 'cross-mode-234-base-default', 'cross-mode-234-base-strict', 'cross-mode-2345-base-default', 'cross-mode-2345-base-strict', 'cross-mode-2456-base-default', 'cross-mode-2456-base-strict']
+Latin-state failures     : ['cross-mode-1234-latin-lower']
+Latin-only base failures : []
+
+[DECISION CANDIDATE]
+  Base Persian: unique Persian-letter + Latin candidates -> Persian
+  Latin-only outside Latin mode -> ambiguity preserved
+  Latin span + capital state -> Latin lower/upper
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c3a-latin-persian-cross-mode-behavior-audit.txt
+JSON : stage13-5c3a-latin-persian-cross-mode-behavior-audit.json
+================================================================================================================

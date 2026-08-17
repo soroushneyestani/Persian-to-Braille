@@ -1,0 +1,138 @@
+================================================================================================================
+PHASE 13.5c-3 — REMAINING COLLISION COVERAGE AUDIT
+================================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : a670a53fc11a2379f8417ed4bbf02c1017d2ff7c
+
+[BASELINE]
+Forward rules                 : 176
+Reverse vectors               : 71
+Canonical collision signatures: 34
+Covered collision signatures  : 17
+Remaining collision signatures: 17
+
+[REMAINING FAMILY COUNTS]
+  cross-mode                   : 12
+  latin                        : 4
+  punctuation-sequence         : 1
+
+[REMAINING COLLISIONS]
+  signature=123 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-012 | text='L' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-038 | text='l' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-027 | text='ل' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=1234 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-016 | text='P' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-042 | text='p' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-003 | text='پ' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=12345 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-017 | text='Q' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-043 | text='q' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-024 | text='ق' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=1235 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-018 | text='R' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-044 | text='r' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-012 | text='ر' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=1236 | family=latin
+    domains      : ['latin-lower', 'latin-upper']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'latin-mode-state-required']
+    FA-G1-LATIN-022 | text='V' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-048 | text='v' | domain='latin-lower' | type='character' | tokenClass=None
+  signature=13 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-011 | text='K' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-037 | text='k' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-025 | text='ک' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=134 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-013 | text='M' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-039 | text='m' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-028 | text='م' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=1345 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-014 | text='N' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-040 | text='n' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-029 | text='ن' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=13456 | family=latin
+    domains      : ['latin-lower', 'latin-upper']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'latin-mode-state-required']
+    FA-G1-LATIN-025 | text='Y' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-051 | text='y' | domain='latin-lower' | type='character' | tokenClass=None
+  signature=1346 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-024 | text='X' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-050 | text='x' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-009 | text='خ' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=135 | family=latin
+    domains      : ['latin-lower', 'latin-upper']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'latin-mode-state-required']
+    FA-G1-LATIN-015 | text='O' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-041 | text='o' | domain='latin-lower' | type='character' | tokenClass=None
+  signature=1356 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-026 | text='Z' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-052 | text='z' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-013 | text='ز' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=136 | family=latin
+    domains      : ['latin-lower', 'latin-upper']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'latin-mode-state-required']
+    FA-G1-LATIN-021 | text='U' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-047 | text='u' | domain='latin-lower' | type='character' | tokenClass=None
+  signature=23 | family=punctuation-sequence
+    domains      : ['punctuation-or-symbol']
+    requirements : ['collision-resolution-required', 'print-variant-policy-or-ambiguity-required']
+    FA-G1-PUNC-SCALAR-007 | text=';' | domain='punctuation-or-symbol' | type='character' | tokenClass=None
+    FA-G1-PUNC-SCALAR-008 | text='؛' | domain='punctuation-or-symbol' | type='character' | tokenClass=None
+  signature=234 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-019 | text='S' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-045 | text='s' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-015 | text='س' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=2345 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-020 | text='T' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-046 | text='t' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-004 | text='ت' | domain='persian-letter' | type='character' | tokenClass=None
+  signature=2456 | family=cross-mode
+    domains      : ['latin-lower', 'latin-upper', 'persian-letter']
+    requirements : ['capitalization-state-required', 'collision-resolution-required', 'language-mode-state-required', 'latin-mode-state-required']
+    FA-G1-LATIN-023 | text='W' | domain='latin-upper' | type='character' | tokenClass=None
+    FA-G1-LATIN-049 | text='w' | domain='latin-lower' | type='character' | tokenClass=None
+    FA-G1-LETTER-030 | text='و' | domain='persian-letter' | type='character' | tokenClass=None
+
+[PARSER FEATURE EVIDENCE]
+  basePersianCandidate         : YES
+  latinSpan                    : YES
+  pendingCapital               : YES
+  pairedDelimiterStack         : YES
+  pickPunctuation              : YES
+  longestMatch                 : YES
+  strictAmbiguity              : YES
+  coreRootReverseExport        : NO
+  sdkReverseRuntime            : NO
+
+[NEXT SPLIT]
+  13.5c-3a — Latin / Persian cross-mode collisions
+  13.5c-3b — punctuation / paired-symbol / sequence collisions
+  13.5c-3c — recompute 34/34 + public Core boundary reassessment
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c3-remaining-collision-coverage-audit.txt
+JSON : stage13-5c3-remaining-collision-coverage-audit.json
+================================================================================================================

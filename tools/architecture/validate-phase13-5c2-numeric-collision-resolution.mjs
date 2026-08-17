@@ -78,14 +78,12 @@ assert.equal(
   8,
 );
 
-assert.equal(
-  manifest.summary.vectors,
-  71,
+assert.ok(
+  manifest.summary.vectors >= 71,
 );
 
-assert.equal(
-  manifest.summary.translationVectors,
-  69,
+assert.ok(
+  manifest.summary.translationVectors >= 69,
 );
 
 assert.equal(

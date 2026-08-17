@@ -1,0 +1,492 @@
+{
+  "phase": "13.5c-3a2",
+  "name": "Language Mode / Percent Overlap Design Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "a670a53fc11a2379f8417ed4bbf02c1017d2ff7c",
+    "upstream": "a670a53fc11a2379f8417ed4bbf02c1017d2ff7c",
+    "cleanExceptPriorAudits": true
+  },
+  "confirmedRuntimePattern": {
+    "crossModeBaseFailures": 24,
+    "latinStateFailures": [
+      "cross-mode-1234-latin-lower"
+    ],
+    "latinOnlyBaseFailures": []
+  },
+  "canonicalOverlap": {
+    "latinBegin": {
+      "ruleId": "FA-G1-LATIN-MODE-002",
+      "cells": [
+        "25"
+      ]
+    },
+    "latinEnd": {
+      "ruleId": "FA-G1-LATIN-MODE-003",
+      "cells": [
+        "25"
+      ]
+    },
+    "latinLowerP": {
+      "ruleId": "FA-G1-LATIN-042",
+      "text": "p",
+      "cells": [
+        "1234"
+      ]
+    },
+    "latinUpperP": {
+      "ruleId": "FA-G1-LATIN-016",
+      "text": "P",
+      "cells": [
+        "1234"
+      ]
+    },
+    "persianPe": {
+      "ruleId": "FA-G1-LETTER-003",
+      "text": "پ",
+      "cells": [
+        "1234"
+      ]
+    },
+    "percentAscii": {
+      "ruleId": "FA-G1-PUNC-SCALAR-016",
+      "text": "%",
+      "cells": [
+        "25",
+        "1234"
+      ]
+    },
+    "percentPersian": {
+      "ruleId": "FA-G1-PUNC-SCALAR-017",
+      "text": "٪",
+      "cells": [
+        "25",
+        "1234"
+      ]
+    },
+    "numericEnd": {
+      "ruleId": "FA-G1-NUMRULE-007",
+      "text": "%",
+      "cells": [
+        "25",
+        "1234"
+      ]
+    }
+  },
+  "runtimeOverlapProbe": [
+    {
+      "id": "percent-base-default",
+      "cells": [
+        "25",
+        "1234"
+      ],
+      "options": {},
+      "expectedIntent": "standalone 25 1234 remains percent punctuation",
+      "unicodeBraille": "⠒⠏",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠏",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "٪",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "diagnostics": [
+          {
+            "code": "CANONICALIZED_PUNCTUATION",
+            "message": "Original print punctuation style is not recoverable from this Braille form.",
+            "ruleIds": [
+              "FA-G1-PUNC-SCALAR-016",
+              "FA-G1-PUNC-SCALAR-017"
+            ]
+          }
+        ],
+        "lossy": true
+      }
+    },
+    {
+      "id": "percent-base-ascii",
+      "cells": [
+        "25",
+        "1234"
+      ],
+      "options": {
+        "punctuationStyle": "ascii"
+      },
+      "expectedIntent": "standalone percent respects ASCII punctuation policy",
+      "unicodeBraille": "⠒⠏",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠏",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "%",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "diagnostics": [
+          {
+            "code": "CANONICALIZED_PUNCTUATION",
+            "message": "Original print punctuation style is not recoverable from this Braille form.",
+            "ruleIds": [
+              "FA-G1-PUNC-SCALAR-016",
+              "FA-G1-PUNC-SCALAR-017"
+            ]
+          }
+        ],
+        "lossy": true
+      }
+    },
+    {
+      "id": "latin-p-lower",
+      "cells": [
+        "25",
+        "1234",
+        "25"
+      ],
+      "options": {},
+      "expectedIntent": "25 1234 25 is a syntactically closed Latin span containing p",
+      "unicodeBraille": "⠒⠏⠒",
+      "actual": {
+        "ok": false,
+        "input": "⠒⠏⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "UNTERMINATED_LATIN_SPAN",
+        "message": "Input ended inside an open Latin span.",
+        "location": {
+          "utf16Offset": 2,
+          "codePointIndex": 2,
+          "codePoint": "U+2812"
+        },
+        "brailleCharacter": "⠒"
+      }
+    },
+    {
+      "id": "latin-p-upper",
+      "cells": [
+        "25",
+        "6",
+        "1234",
+        "25"
+      ],
+      "options": {},
+      "expectedIntent": "capitalized P remains valid inside Latin span",
+      "unicodeBraille": "⠒⠠⠏⠒",
+      "actual": {
+        "ok": true,
+        "input": "⠒⠠⠏⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "P",
+        "cells": [
+          "25",
+          "6",
+          "1234",
+          "25"
+        ],
+        "diagnostics": [],
+        "lossy": false
+      }
+    },
+    {
+      "id": "latin-pl-lower",
+      "cells": [
+        "25",
+        "1234",
+        "123",
+        "25"
+      ],
+      "options": {},
+      "expectedIntent": "closed Latin span beginning with p must not be stolen by percent precedence",
+      "unicodeBraille": "⠒⠏⠇⠒",
+      "actual": {
+        "ok": false,
+        "input": "⠒⠏⠇⠒",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Parser state and configured policy cannot resolve this collision.",
+        "location": {
+          "utf16Offset": 2,
+          "codePointIndex": 2,
+          "codePoint": "U+2807"
+        },
+        "brailleCharacter": "⠇",
+        "candidateRuleIds": [
+          "FA-G1-LATIN-012",
+          "FA-G1-LATIN-038",
+          "FA-G1-LETTER-027"
+        ],
+        "candidateTexts": [
+          "L",
+          "l",
+          "ل"
+        ]
+      }
+    }
+  ],
+  "crossModeShape": [
+    {
+      "signature": "123",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "1234",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "12345",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "1235",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "13",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "134",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "1345",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "1346",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "1356",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "234",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "2345",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    },
+    {
+      "signature": "2456",
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "hasExactlyOnePersianLetter": true,
+      "hasLatinLower": true,
+      "hasLatinUpper": true
+    }
+  ],
+  "allCrossModeShapeUniform": true,
+  "sourceEvidence": [
+    {
+      "token": "preLatinPercentMatch",
+      "matchCount": 5,
+      "snippets": [
+        {
+          "startLine": 991,
+          "endLine": 1035,
+          "text": "  991: \n  992:       if (\n  993:         numericIndicator !== undefined\n  994:         && token.cell\n  995:         === numericIndicator\n  996:       ) {\n  997:         state.numericMode = true;\n  998:         state.numericSawDigit = false;\n  999:         index += 1;\n 1000:         continue;\n 1001:       }\n 1002: \n 1003:       const preLatinPercentMatch =\n 1004:         this.longestMatch(\n 1005:           tokenized.tokens,\n 1006:           index,\n 1007:         );\n 1008: \n 1009:       const preLatinPercentCandidates =\n 1010:         (\n 1011:           preLatinPercentMatch\n 1012:             ?.candidates\n 1013:           ?? []\n 1014:         )\n 1015:         .filter(\n 1016:           (candidate) =>\n 1017:             candidate.ruleId\n 1018:             === \"FA-G1-PUNC-SCALAR-016\"\n 1019:             || candidate.ruleId\n 1020:             === \"FA-G1-PUNC-SCALAR-017\",\n 1021:         );\n 1022: \n 1023:       if (\n 1024:         preLatinPercentMatch !== null\n 1025:         && preLatinPercentMatch.length > 1\n 1026:         && preLatinPercentCandidates.length > 0\n 1027:       ) {\n 1028:         const percent =\n 1029:           this.resolveCandidates(\n 1030:             inputBraille,\n 1031:             preLatinPercentCandidates,\n 1032:             resolved,\n 1033:             state,\n 1034:             token,\n 1035:             diagnostics,"
+        },
+        {
+          "startLine": 999,
+          "endLine": 1043,
+          "text": "  999:         index += 1;\n 1000:         continue;\n 1001:       }\n 1002: \n 1003:       const preLatinPercentMatch =\n 1004:         this.longestMatch(\n 1005:           tokenized.tokens,\n 1006:           index,\n 1007:         );\n 1008: \n 1009:       const preLatinPercentCandidates =\n 1010:         (\n 1011:           preLatinPercentMatch\n 1012:             ?.candidates\n 1013:           ?? []\n 1014:         )\n 1015:         .filter(\n 1016:           (candidate) =>\n 1017:             candidate.ruleId\n 1018:             === \"FA-G1-PUNC-SCALAR-016\"\n 1019:             || candidate.ruleId\n 1020:             === \"FA-G1-PUNC-SCALAR-017\",\n 1021:         );\n 1022: \n 1023:       if (\n 1024:         preLatinPercentMatch !== null\n 1025:         && preLatinPercentMatch.length > 1\n 1026:         && preLatinPercentCandidates.length > 0\n 1027:       ) {\n 1028:         const percent =\n 1029:           this.resolveCandidates(\n 1030:             inputBraille,\n 1031:             preLatinPercentCandidates,\n 1032:             resolved,\n 1033:             state,\n 1034:             token,\n 1035:             diagnostics,\n 1036:             diagnosticCodes,\n 1037:           );\n 1038: \n 1039:         if (!percent.ok) {\n 1040:           return percent.failure;\n 1041:         }\n 1042: \n 1043:         output.push("
+        },
+        {
+          "startLine": 1012,
+          "endLine": 1056,
+          "text": " 1012:             ?.candidates\n 1013:           ?? []\n 1014:         )\n 1015:         .filter(\n 1016:           (candidate) =>\n 1017:             candidate.ruleId\n 1018:             === \"FA-G1-PUNC-SCALAR-016\"\n 1019:             || candidate.ruleId\n 1020:             === \"FA-G1-PUNC-SCALAR-017\",\n 1021:         );\n 1022: \n 1023:       if (\n 1024:         preLatinPercentMatch !== null\n 1025:         && preLatinPercentMatch.length > 1\n 1026:         && preLatinPercentCandidates.length > 0\n 1027:       ) {\n 1028:         const percent =\n 1029:           this.resolveCandidates(\n 1030:             inputBraille,\n 1031:             preLatinPercentCandidates,\n 1032:             resolved,\n 1033:             state,\n 1034:             token,\n 1035:             diagnostics,\n 1036:             diagnosticCodes,\n 1037:           );\n 1038: \n 1039:         if (!percent.ok) {\n 1040:           return percent.failure;\n 1041:         }\n 1042: \n 1043:         output.push(\n 1044:           percent.text,\n 1045:         );\n 1046: \n 1047:         index +=\n 1048:           preLatinPercentMatch.length;\n 1049: \n 1050:         continue;\n 1051:       }\n 1052: \n 1053:       const latinBegin =\n 1054:         this.modeCells.get(\n 1055:           \"latin-span-begin\",\n 1056:         );"
+        },
+        {
+          "startLine": 1013,
+          "endLine": 1057,
+          "text": " 1013:           ?? []\n 1014:         )\n 1015:         .filter(\n 1016:           (candidate) =>\n 1017:             candidate.ruleId\n 1018:             === \"FA-G1-PUNC-SCALAR-016\"\n 1019:             || candidate.ruleId\n 1020:             === \"FA-G1-PUNC-SCALAR-017\",\n 1021:         );\n 1022: \n 1023:       if (\n 1024:         preLatinPercentMatch !== null\n 1025:         && preLatinPercentMatch.length > 1\n 1026:         && preLatinPercentCandidates.length > 0\n 1027:       ) {\n 1028:         const percent =\n 1029:           this.resolveCandidates(\n 1030:             inputBraille,\n 1031:             preLatinPercentCandidates,\n 1032:             resolved,\n 1033:             state,\n 1034:             token,\n 1035:             diagnostics,\n 1036:             diagnosticCodes,\n 1037:           );\n 1038: \n 1039:         if (!percent.ok) {\n 1040:           return percent.failure;\n 1041:         }\n 1042: \n 1043:         output.push(\n 1044:           percent.text,\n 1045:         );\n 1046: \n 1047:         index +=\n 1048:           preLatinPercentMatch.length;\n 1049: \n 1050:         continue;\n 1051:       }\n 1052: \n 1053:       const latinBegin =\n 1054:         this.modeCells.get(\n 1055:           \"latin-span-begin\",\n 1056:         );\n 1057: "
+        }
+      ]
+    },
+    {
+      "token": "const latinBegin",
+      "matchCount": 1,
+      "snippets": [
+        {
+          "startLine": 1041,
+          "endLine": 1085,
+          "text": " 1041:         }\n 1042: \n 1043:         output.push(\n 1044:           percent.text,\n 1045:         );\n 1046: \n 1047:         index +=\n 1048:           preLatinPercentMatch.length;\n 1049: \n 1050:         continue;\n 1051:       }\n 1052: \n 1053:       const latinBegin =\n 1054:         this.modeCells.get(\n 1055:           \"latin-span-begin\",\n 1056:         );\n 1057: \n 1058:       if (\n 1059:         latinBegin !== undefined\n 1060:         && token.cell === latinBegin\n 1061:       ) {\n 1062:         state.latinSpan = true;\n 1063:         state.pendingCapital = false;\n 1064:         index += 1;\n 1065:         continue;\n 1066:       }\n 1067: \n 1068:       const match =\n 1069:         this.longestMatch(\n 1070:           tokenized.tokens,\n 1071:           index,\n 1072:         );\n 1073: \n 1074:       /*\n 1075:        * A single dot-6 is the Latin capital indicator, but the canonical\n 1076:        * ellipsis is the three-cell sequence dot-6 dot-6 dot-6.\n 1077:        *\n 1078:        * Outside an active Latin span the capital indicator is not an eligible\n 1079:        * mode transition. Therefore a valid multi-cell rule must be given\n 1080:        * longest-match precedence before the dangling-capital failure is\n 1081:        * considered. This keeps dot-6 context-sensitive rather than globally\n 1082:        * reserved.\n 1083:        */\n 1084:       if (\n 1085:         match !== null"
+        }
+      ]
+    },
+    {
+      "token": "basePersianCandidate",
+      "matchCount": 3,
+      "snippets": [
+        {
+          "startLine": 1680,
+          "endLine": 1724,
+          "text": " 1680:           ) !== null,\n 1681:       );\n 1682: \n 1683:     const persianLetterCandidates =\n 1684:       candidates.filter(\n 1685:         (candidate) =>\n 1686:           candidate.ruleId.startsWith(\n 1687:             \"FA-G1-LETTER-\",\n 1688:           )\n 1689:           && candidate.text !== null,\n 1690:       );\n 1691: \n 1692:     const basePersianCandidate =\n 1693:       (\n 1694:         !state.numericMode\n 1695:         && !state.latinSpan\n 1696:         && digitCollision\n 1697:         && persianLetterCandidates.length\n 1698:         === 1\n 1699:       )\n 1700:         ? persianLetterCandidates[0]!\n 1701:         : null;\n 1702: \n 1703:     if (basePersianCandidate !== null) {\n 1704:       return {\n 1705:         ok: true,\n 1706:         text:\n 1707:           basePersianCandidate.text!,\n 1708:       };\n 1709:     }\n 1710: \n 1711:     const punctuation =\n 1712:       this.pickPunctuation(\n 1713:         texts,\n 1714:         options.punctuationStyle,\n 1715:       );\n 1716: \n 1717:     if (punctuation !== null) {\n 1718:       if (\n 1719:         options.ambiguityPolicy\n 1720:         === \"error\"\n 1721:       ) {\n 1722:         const details =\n 1723:           candidateDetails(\n 1724:             candidates,"
+        },
+        {
+          "startLine": 1691,
+          "endLine": 1735,
+          "text": " 1691: \n 1692:     const basePersianCandidate =\n 1693:       (\n 1694:         !state.numericMode\n 1695:         && !state.latinSpan\n 1696:         && digitCollision\n 1697:         && persianLetterCandidates.length\n 1698:         === 1\n 1699:       )\n 1700:         ? persianLetterCandidates[0]!\n 1701:         : null;\n 1702: \n 1703:     if (basePersianCandidate !== null) {\n 1704:       return {\n 1705:         ok: true,\n 1706:         text:\n 1707:           basePersianCandidate.text!,\n 1708:       };\n 1709:     }\n 1710: \n 1711:     const punctuation =\n 1712:       this.pickPunctuation(\n 1713:         texts,\n 1714:         options.punctuationStyle,\n 1715:       );\n 1716: \n 1717:     if (punctuation !== null) {\n 1718:       if (\n 1719:         options.ambiguityPolicy\n 1720:         === \"error\"\n 1721:       ) {\n 1722:         const details =\n 1723:           candidateDetails(\n 1724:             candidates,\n 1725:           );\n 1726: \n 1727:         return {\n 1728:           ok: false,\n 1729:           failure: failure(\n 1730:             input,\n 1731:             \"AMBIGUOUS_REVERSE_MATCH\",\n 1732:             \"Multiple print punctuation forms share this Braille form.\",\n 1733:             {\n 1734:               token,\n 1735:               candidateRuleIds:"
+        },
+        {
+          "startLine": 1695,
+          "endLine": 1739,
+          "text": " 1695:         && !state.latinSpan\n 1696:         && digitCollision\n 1697:         && persianLetterCandidates.length\n 1698:         === 1\n 1699:       )\n 1700:         ? persianLetterCandidates[0]!\n 1701:         : null;\n 1702: \n 1703:     if (basePersianCandidate !== null) {\n 1704:       return {\n 1705:         ok: true,\n 1706:         text:\n 1707:           basePersianCandidate.text!,\n 1708:       };\n 1709:     }\n 1710: \n 1711:     const punctuation =\n 1712:       this.pickPunctuation(\n 1713:         texts,\n 1714:         options.punctuationStyle,\n 1715:       );\n 1716: \n 1717:     if (punctuation !== null) {\n 1718:       if (\n 1719:         options.ambiguityPolicy\n 1720:         === \"error\"\n 1721:       ) {\n 1722:         const details =\n 1723:           candidateDetails(\n 1724:             candidates,\n 1725:           );\n 1726: \n 1727:         return {\n 1728:           ok: false,\n 1729:           failure: failure(\n 1730:             input,\n 1731:             \"AMBIGUOUS_REVERSE_MATCH\",\n 1732:             \"Multiple print punctuation forms share this Braille form.\",\n 1733:             {\n 1734:               token,\n 1735:               candidateRuleIds:\n 1736:                 details.ruleIds,\n 1737:               candidateTexts:\n 1738:                 details.texts,\n 1739:             },"
+        }
+      ]
+    },
+    {
+      "token": "digitCollision",
+      "matchCount": 2,
+      "snippets": [
+        {
+          "startLine": 1663,
+          "endLine": 1707,
+          "text": " 1663:           text: \")\",\n 1664:         };\n 1665:       }\n 1666: \n 1667:       state.delimiterStack.push(\"(\");\n 1668: \n 1669:       return {\n 1670:         ok: true,\n 1671:         text: \"(\",\n 1672:       };\n 1673:     }\n 1674: \n 1675:     const digitCollision =\n 1676:       candidates.some(\n 1677:         (candidate) =>\n 1678:           this.digitFamily(\n 1679:             candidate.ruleId,\n 1680:           ) !== null,\n 1681:       );\n 1682: \n 1683:     const persianLetterCandidates =\n 1684:       candidates.filter(\n 1685:         (candidate) =>\n 1686:           candidate.ruleId.startsWith(\n 1687:             \"FA-G1-LETTER-\",\n 1688:           )\n 1689:           && candidate.text !== null,\n 1690:       );\n 1691: \n 1692:     const basePersianCandidate =\n 1693:       (\n 1694:         !state.numericMode\n 1695:         && !state.latinSpan\n 1696:         && digitCollision\n 1697:         && persianLetterCandidates.length\n 1698:         === 1\n 1699:       )\n 1700:         ? persianLetterCandidates[0]!\n 1701:         : null;\n 1702: \n 1703:     if (basePersianCandidate !== null) {\n 1704:       return {\n 1705:         ok: true,\n 1706:         text:\n 1707:           basePersianCandidate.text!,"
+        },
+        {
+          "startLine": 1684,
+          "endLine": 1728,
+          "text": " 1684:       candidates.filter(\n 1685:         (candidate) =>\n 1686:           candidate.ruleId.startsWith(\n 1687:             \"FA-G1-LETTER-\",\n 1688:           )\n 1689:           && candidate.text !== null,\n 1690:       );\n 1691: \n 1692:     const basePersianCandidate =\n 1693:       (\n 1694:         !state.numericMode\n 1695:         && !state.latinSpan\n 1696:         && digitCollision\n 1697:         && persianLetterCandidates.length\n 1698:         === 1\n 1699:       )\n 1700:         ? persianLetterCandidates[0]!\n 1701:         : null;\n 1702: \n 1703:     if (basePersianCandidate !== null) {\n 1704:       return {\n 1705:         ok: true,\n 1706:         text:\n 1707:           basePersianCandidate.text!,\n 1708:       };\n 1709:     }\n 1710: \n 1711:     const punctuation =\n 1712:       this.pickPunctuation(\n 1713:         texts,\n 1714:         options.punctuationStyle,\n 1715:       );\n 1716: \n 1717:     if (punctuation !== null) {\n 1718:       if (\n 1719:         options.ambiguityPolicy\n 1720:         === \"error\"\n 1721:       ) {\n 1722:         const details =\n 1723:           candidateDetails(\n 1724:             candidates,\n 1725:           );\n 1726: \n 1727:         return {\n 1728:           ok: false,"
+        }
+      ]
+    },
+    {
+      "token": "selectLatinCandidate",
+      "matchCount": 0,
+      "snippets": []
+    }
+  ],
+  "decisionsToFreeze": [
+    {
+      "id": "BASE-PERSIAN-LANGUAGE-MODE",
+      "decision": "In base Persian state, when a collision has exactly one Persian-letter candidate and Latin lower/upper candidates, select the Persian letter before ambiguity policy."
+    },
+    {
+      "id": "LATIN-ONLY-OUTSIDE-SPAN",
+      "decision": "If a collision has only Latin upper/lower candidates and no active Latin span, keep AMBIGUOUS_REVERSE_MATCH."
+    },
+    {
+      "id": "PERCENT-VS-LATIN-P",
+      "decision": "At 25 1234, prefer a syntactically valid closed Latin span when the opening dot-25 can be parsed through a matching Latin end; otherwise preserve standalone percent multi-cell punctuation precedence."
+    },
+    {
+      "id": "STRICT-AFTER-STATE",
+      "decision": "Strict ambiguity remains subordinate to an already-resolved parser state; base Persian or Latin-span state may resolve before strict ambiguity handling."
+    }
+  ],
+  "recommendedImplementationShape": {
+    "basePersianChange": "Broaden existing basePersianCandidate from digit-gated collisions to language-mode collisions while preserving the existing digit collision behavior.",
+    "percentOverlapChange": "Before preLatinPercentMatch consumes 25 1234, detect whether the current dot-25 begins a syntactically valid closable Latin span. If yes, let Latin-mode parsing proceed. If not, retain percent canonicalization.",
+    "conformanceTarget": "Materialize all 16 Latin/Persian signatures plus explicit percent-vs-Latin-p regression vectors; leave signature 23 for Phase 13.5c-3b."
+  }
+}

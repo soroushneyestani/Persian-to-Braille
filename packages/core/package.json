@@ -22,7 +22,7 @@
     "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
     "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
-    "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs test/reverse-translator-foundation.test.mjs test/reverse-translator-coverage.test.mjs test/reverse-translator-stateful-numeric.test.mjs test/reverse-translator-numeric-collisions.test.mjs"
+    "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs test/reverse-translator-foundation.test.mjs test/reverse-translator-coverage.test.mjs test/reverse-translator-stateful-numeric.test.mjs test/reverse-translator-numeric-collisions.test.mjs test/reverse-translator-language-collisions.test.mjs"
   },
   "description": "Specification-driven Persian Braille translation engine for the fa-ir-g1 profile.",
   "license": "MIT",

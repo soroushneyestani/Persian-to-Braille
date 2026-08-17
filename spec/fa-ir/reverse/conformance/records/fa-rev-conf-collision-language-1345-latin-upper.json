@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-LANGUAGE-1345-LATIN-UPPER",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-language-cross-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-MODE-002",
+    "FA-G1-LATIN-MODE-004",
+    "FA-G1-LATIN-014",
+    "FA-G1-LATIN-040",
+    "FA-G1-LETTER-029",
+    "FA-G1-LATIN-MODE-003"
+  ],
+  "input": {
+    "cells": [
+      "25",
+      "6",
+      "1345",
+      "25"
+    ],
+    "unicodeBraille": "⠒⠠⠝⠒"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "N",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Pending-capital state selects the uppercase Latin candidate inside an active Latin span."
+  ]
+}

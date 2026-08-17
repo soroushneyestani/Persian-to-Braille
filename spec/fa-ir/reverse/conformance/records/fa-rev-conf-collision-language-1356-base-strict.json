@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-LANGUAGE-1356-BASE-STRICT",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-language-cross-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-026",
+    "FA-G1-LATIN-052",
+    "FA-G1-LETTER-013"
+  ],
+  "input": {
+    "cells": [
+      "1356"
+    ],
+    "unicodeBraille": "⠵"
+  },
+  "options": {
+    "ambiguityPolicy": "error"
+  },
+  "expected": {
+    "ok": true,
+    "text": "ز",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Base Persian state selects the unique Persian-letter candidate before generic ambiguity handling."
+  ]
+}

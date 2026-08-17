@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-OVERLAP-PERCENT-LATIN-PL-LOWER",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "overlap-percent-latin",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-MODE-002",
+    "FA-G1-LATIN-016",
+    "FA-G1-LATIN-042",
+    "FA-G1-LETTER-003",
+    "FA-G1-LATIN-012",
+    "FA-G1-LATIN-038",
+    "FA-G1-LETTER-027",
+    "FA-G1-LATIN-MODE-003"
+  ],
+  "input": {
+    "cells": [
+      "25",
+      "1234",
+      "123",
+      "25"
+    ],
+    "unicodeBraille": "⠒⠏⠇⠒"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "pl",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "A longer Latin span beginning with p must not be stolen by percent precedence."
+  ]
+}

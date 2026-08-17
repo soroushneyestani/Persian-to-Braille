@@ -1,0 +1,511 @@
+================================================================================================================
+PHASE 13.5c-3a2 — LANGUAGE MODE / PERCENT OVERLAP DESIGN AUDIT
+================================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : a670a53fc11a2379f8417ed4bbf02c1017d2ff7c
+
+[CONFIRMED 13.5c-3a PATTERN]
+Cross-mode base failures : 24
+Latin-state failures     : ['cross-mode-1234-latin-lower']
+Latin-only base failures : []
+
+[CANONICAL 25 / 1234 OVERLAP]
+  Latin begin        : ['25']
+  Latin lower p      : ['1234']
+  Latin end          : ['25']
+  Percent punctuation: ['25', '1234']
+
+[OVERLAP RUNTIME PROBE]
+  percent-base-default -> OK text='٪'
+    intent: standalone 25 1234 remains percent punctuation
+  percent-base-ascii -> OK text='%'
+    intent: standalone percent respects ASCII punctuation policy
+  latin-p-lower -> FAIL code='UNTERMINATED_LATIN_SPAN'
+    intent: 25 1234 25 is a syntactically closed Latin span containing p
+  latin-p-upper -> OK text='P'
+    intent: capitalized P remains valid inside Latin span
+  latin-pl-lower -> FAIL code='AMBIGUOUS_REVERSE_MATCH'
+    intent: closed Latin span beginning with p must not be stolen by percent precedence
+
+[CROSS-MODE SHAPE]
+  signatures: 12
+  uniform Persian+Latin lower+upper shape: YES
+
+[SOURCE EVIDENCE]
+  token='preLatinPercentMatch' matches=5
+    lines 991-1035
+  991:
+  992:       if (
+  993:         numericIndicator !== undefined
+  994:         && token.cell
+  995:         === numericIndicator
+  996:       ) {
+  997:         state.numericMode = true;
+  998:         state.numericSawDigit = false;
+  999:         index += 1;
+ 1000:         continue;
+ 1001:       }
+ 1002:
+ 1003:       const preLatinPercentMatch =
+ 1004:         this.longestMatch(
+ 1005:           tokenized.tokens,
+ 1006:           index,
+ 1007:         );
+ 1008:
+ 1009:       const preLatinPercentCandidates =
+ 1010:         (
+ 1011:           preLatinPercentMatch
+ 1012:             ?.candidates
+ 1013:           ?? []
+ 1014:         )
+ 1015:         .filter(
+ 1016:           (candidate) =>
+ 1017:             candidate.ruleId
+ 1018:             === "FA-G1-PUNC-SCALAR-016"
+ 1019:             || candidate.ruleId
+ 1020:             === "FA-G1-PUNC-SCALAR-017",
+ 1021:         );
+ 1022:
+ 1023:       if (
+ 1024:         preLatinPercentMatch !== null
+ 1025:         && preLatinPercentMatch.length > 1
+ 1026:         && preLatinPercentCandidates.length > 0
+ 1027:       ) {
+ 1028:         const percent =
+ 1029:           this.resolveCandidates(
+ 1030:             inputBraille,
+ 1031:             preLatinPercentCandidates,
+ 1032:             resolved,
+ 1033:             state,
+ 1034:             token,
+ 1035:             diagnostics,
+    lines 999-1043
+  999:         index += 1;
+ 1000:         continue;
+ 1001:       }
+ 1002:
+ 1003:       const preLatinPercentMatch =
+ 1004:         this.longestMatch(
+ 1005:           tokenized.tokens,
+ 1006:           index,
+ 1007:         );
+ 1008:
+ 1009:       const preLatinPercentCandidates =
+ 1010:         (
+ 1011:           preLatinPercentMatch
+ 1012:             ?.candidates
+ 1013:           ?? []
+ 1014:         )
+ 1015:         .filter(
+ 1016:           (candidate) =>
+ 1017:             candidate.ruleId
+ 1018:             === "FA-G1-PUNC-SCALAR-016"
+ 1019:             || candidate.ruleId
+ 1020:             === "FA-G1-PUNC-SCALAR-017",
+ 1021:         );
+ 1022:
+ 1023:       if (
+ 1024:         preLatinPercentMatch !== null
+ 1025:         && preLatinPercentMatch.length > 1
+ 1026:         && preLatinPercentCandidates.length > 0
+ 1027:       ) {
+ 1028:         const percent =
+ 1029:           this.resolveCandidates(
+ 1030:             inputBraille,
+ 1031:             preLatinPercentCandidates,
+ 1032:             resolved,
+ 1033:             state,
+ 1034:             token,
+ 1035:             diagnostics,
+ 1036:             diagnosticCodes,
+ 1037:           );
+ 1038:
+ 1039:         if (!percent.ok) {
+ 1040:           return percent.failure;
+ 1041:         }
+ 1042:
+ 1043:         output.push(
+    lines 1012-1056
+ 1012:             ?.candidates
+ 1013:           ?? []
+ 1014:         )
+ 1015:         .filter(
+ 1016:           (candidate) =>
+ 1017:             candidate.ruleId
+ 1018:             === "FA-G1-PUNC-SCALAR-016"
+ 1019:             || candidate.ruleId
+ 1020:             === "FA-G1-PUNC-SCALAR-017",
+ 1021:         );
+ 1022:
+ 1023:       if (
+ 1024:         preLatinPercentMatch !== null
+ 1025:         && preLatinPercentMatch.length > 1
+ 1026:         && preLatinPercentCandidates.length > 0
+ 1027:       ) {
+ 1028:         const percent =
+ 1029:           this.resolveCandidates(
+ 1030:             inputBraille,
+ 1031:             preLatinPercentCandidates,
+ 1032:             resolved,
+ 1033:             state,
+ 1034:             token,
+ 1035:             diagnostics,
+ 1036:             diagnosticCodes,
+ 1037:           );
+ 1038:
+ 1039:         if (!percent.ok) {
+ 1040:           return percent.failure;
+ 1041:         }
+ 1042:
+ 1043:         output.push(
+ 1044:           percent.text,
+ 1045:         );
+ 1046:
+ 1047:         index +=
+ 1048:           preLatinPercentMatch.length;
+ 1049:
+ 1050:         continue;
+ 1051:       }
+ 1052:
+ 1053:       const latinBegin =
+ 1054:         this.modeCells.get(
+ 1055:           "latin-span-begin",
+ 1056:         );
+    lines 1013-1057
+ 1013:           ?? []
+ 1014:         )
+ 1015:         .filter(
+ 1016:           (candidate) =>
+ 1017:             candidate.ruleId
+ 1018:             === "FA-G1-PUNC-SCALAR-016"
+ 1019:             || candidate.ruleId
+ 1020:             === "FA-G1-PUNC-SCALAR-017",
+ 1021:         );
+ 1022:
+ 1023:       if (
+ 1024:         preLatinPercentMatch !== null
+ 1025:         && preLatinPercentMatch.length > 1
+ 1026:         && preLatinPercentCandidates.length > 0
+ 1027:       ) {
+ 1028:         const percent =
+ 1029:           this.resolveCandidates(
+ 1030:             inputBraille,
+ 1031:             preLatinPercentCandidates,
+ 1032:             resolved,
+ 1033:             state,
+ 1034:             token,
+ 1035:             diagnostics,
+ 1036:             diagnosticCodes,
+ 1037:           );
+ 1038:
+ 1039:         if (!percent.ok) {
+ 1040:           return percent.failure;
+ 1041:         }
+ 1042:
+ 1043:         output.push(
+ 1044:           percent.text,
+ 1045:         );
+ 1046:
+ 1047:         index +=
+ 1048:           preLatinPercentMatch.length;
+ 1049:
+ 1050:         continue;
+ 1051:       }
+ 1052:
+ 1053:       const latinBegin =
+ 1054:         this.modeCells.get(
+ 1055:           "latin-span-begin",
+ 1056:         );
+ 1057:
+  token='const latinBegin' matches=1
+    lines 1041-1085
+ 1041:         }
+ 1042:
+ 1043:         output.push(
+ 1044:           percent.text,
+ 1045:         );
+ 1046:
+ 1047:         index +=
+ 1048:           preLatinPercentMatch.length;
+ 1049:
+ 1050:         continue;
+ 1051:       }
+ 1052:
+ 1053:       const latinBegin =
+ 1054:         this.modeCells.get(
+ 1055:           "latin-span-begin",
+ 1056:         );
+ 1057:
+ 1058:       if (
+ 1059:         latinBegin !== undefined
+ 1060:         && token.cell === latinBegin
+ 1061:       ) {
+ 1062:         state.latinSpan = true;
+ 1063:         state.pendingCapital = false;
+ 1064:         index += 1;
+ 1065:         continue;
+ 1066:       }
+ 1067:
+ 1068:       const match =
+ 1069:         this.longestMatch(
+ 1070:           tokenized.tokens,
+ 1071:           index,
+ 1072:         );
+ 1073:
+ 1074:       /*
+ 1075:        * A single dot-6 is the Latin capital indicator, but the canonical
+ 1076:        * ellipsis is the three-cell sequence dot-6 dot-6 dot-6.
+ 1077:        *
+ 1078:        * Outside an active Latin span the capital indicator is not an eligible
+ 1079:        * mode transition. Therefore a valid multi-cell rule must be given
+ 1080:        * longest-match precedence before the dangling-capital failure is
+ 1081:        * considered. This keeps dot-6 context-sensitive rather than globally
+ 1082:        * reserved.
+ 1083:        */
+ 1084:       if (
+ 1085:         match !== null
+  token='basePersianCandidate' matches=3
+    lines 1680-1724
+ 1680:           ) !== null,
+ 1681:       );
+ 1682:
+ 1683:     const persianLetterCandidates =
+ 1684:       candidates.filter(
+ 1685:         (candidate) =>
+ 1686:           candidate.ruleId.startsWith(
+ 1687:             "FA-G1-LETTER-",
+ 1688:           )
+ 1689:           && candidate.text !== null,
+ 1690:       );
+ 1691:
+ 1692:     const basePersianCandidate =
+ 1693:       (
+ 1694:         !state.numericMode
+ 1695:         && !state.latinSpan
+ 1696:         && digitCollision
+ 1697:         && persianLetterCandidates.length
+ 1698:         === 1
+ 1699:       )
+ 1700:         ? persianLetterCandidates[0]!
+ 1701:         : null;
+ 1702:
+ 1703:     if (basePersianCandidate !== null) {
+ 1704:       return {
+ 1705:         ok: true,
+ 1706:         text:
+ 1707:           basePersianCandidate.text!,
+ 1708:       };
+ 1709:     }
+ 1710:
+ 1711:     const punctuation =
+ 1712:       this.pickPunctuation(
+ 1713:         texts,
+ 1714:         options.punctuationStyle,
+ 1715:       );
+ 1716:
+ 1717:     if (punctuation !== null) {
+ 1718:       if (
+ 1719:         options.ambiguityPolicy
+ 1720:         === "error"
+ 1721:       ) {
+ 1722:         const details =
+ 1723:           candidateDetails(
+ 1724:             candidates,
+    lines 1691-1735
+ 1691:
+ 1692:     const basePersianCandidate =
+ 1693:       (
+ 1694:         !state.numericMode
+ 1695:         && !state.latinSpan
+ 1696:         && digitCollision
+ 1697:         && persianLetterCandidates.length
+ 1698:         === 1
+ 1699:       )
+ 1700:         ? persianLetterCandidates[0]!
+ 1701:         : null;
+ 1702:
+ 1703:     if (basePersianCandidate !== null) {
+ 1704:       return {
+ 1705:         ok: true,
+ 1706:         text:
+ 1707:           basePersianCandidate.text!,
+ 1708:       };
+ 1709:     }
+ 1710:
+ 1711:     const punctuation =
+ 1712:       this.pickPunctuation(
+ 1713:         texts,
+ 1714:         options.punctuationStyle,
+ 1715:       );
+ 1716:
+ 1717:     if (punctuation !== null) {
+ 1718:       if (
+ 1719:         options.ambiguityPolicy
+ 1720:         === "error"
+ 1721:       ) {
+ 1722:         const details =
+ 1723:           candidateDetails(
+ 1724:             candidates,
+ 1725:           );
+ 1726:
+ 1727:         return {
+ 1728:           ok: false,
+ 1729:           failure: failure(
+ 1730:             input,
+ 1731:             "AMBIGUOUS_REVERSE_MATCH",
+ 1732:             "Multiple print punctuation forms share this Braille form.",
+ 1733:             {
+ 1734:               token,
+ 1735:               candidateRuleIds:
+    lines 1695-1739
+ 1695:         && !state.latinSpan
+ 1696:         && digitCollision
+ 1697:         && persianLetterCandidates.length
+ 1698:         === 1
+ 1699:       )
+ 1700:         ? persianLetterCandidates[0]!
+ 1701:         : null;
+ 1702:
+ 1703:     if (basePersianCandidate !== null) {
+ 1704:       return {
+ 1705:         ok: true,
+ 1706:         text:
+ 1707:           basePersianCandidate.text!,
+ 1708:       };
+ 1709:     }
+ 1710:
+ 1711:     const punctuation =
+ 1712:       this.pickPunctuation(
+ 1713:         texts,
+ 1714:         options.punctuationStyle,
+ 1715:       );
+ 1716:
+ 1717:     if (punctuation !== null) {
+ 1718:       if (
+ 1719:         options.ambiguityPolicy
+ 1720:         === "error"
+ 1721:       ) {
+ 1722:         const details =
+ 1723:           candidateDetails(
+ 1724:             candidates,
+ 1725:           );
+ 1726:
+ 1727:         return {
+ 1728:           ok: false,
+ 1729:           failure: failure(
+ 1730:             input,
+ 1731:             "AMBIGUOUS_REVERSE_MATCH",
+ 1732:             "Multiple print punctuation forms share this Braille form.",
+ 1733:             {
+ 1734:               token,
+ 1735:               candidateRuleIds:
+ 1736:                 details.ruleIds,
+ 1737:               candidateTexts:
+ 1738:                 details.texts,
+ 1739:             },
+  token='digitCollision' matches=2
+    lines 1663-1707
+ 1663:           text: ")",
+ 1664:         };
+ 1665:       }
+ 1666:
+ 1667:       state.delimiterStack.push("(");
+ 1668:
+ 1669:       return {
+ 1670:         ok: true,
+ 1671:         text: "(",
+ 1672:       };
+ 1673:     }
+ 1674:
+ 1675:     const digitCollision =
+ 1676:       candidates.some(
+ 1677:         (candidate) =>
+ 1678:           this.digitFamily(
+ 1679:             candidate.ruleId,
+ 1680:           ) !== null,
+ 1681:       );
+ 1682:
+ 1683:     const persianLetterCandidates =
+ 1684:       candidates.filter(
+ 1685:         (candidate) =>
+ 1686:           candidate.ruleId.startsWith(
+ 1687:             "FA-G1-LETTER-",
+ 1688:           )
+ 1689:           && candidate.text !== null,
+ 1690:       );
+ 1691:
+ 1692:     const basePersianCandidate =
+ 1693:       (
+ 1694:         !state.numericMode
+ 1695:         && !state.latinSpan
+ 1696:         && digitCollision
+ 1697:         && persianLetterCandidates.length
+ 1698:         === 1
+ 1699:       )
+ 1700:         ? persianLetterCandidates[0]!
+ 1701:         : null;
+ 1702:
+ 1703:     if (basePersianCandidate !== null) {
+ 1704:       return {
+ 1705:         ok: true,
+ 1706:         text:
+ 1707:           basePersianCandidate.text!,
+    lines 1684-1728
+ 1684:       candidates.filter(
+ 1685:         (candidate) =>
+ 1686:           candidate.ruleId.startsWith(
+ 1687:             "FA-G1-LETTER-",
+ 1688:           )
+ 1689:           && candidate.text !== null,
+ 1690:       );
+ 1691:
+ 1692:     const basePersianCandidate =
+ 1693:       (
+ 1694:         !state.numericMode
+ 1695:         && !state.latinSpan
+ 1696:         && digitCollision
+ 1697:         && persianLetterCandidates.length
+ 1698:         === 1
+ 1699:       )
+ 1700:         ? persianLetterCandidates[0]!
+ 1701:         : null;
+ 1702:
+ 1703:     if (basePersianCandidate !== null) {
+ 1704:       return {
+ 1705:         ok: true,
+ 1706:         text:
+ 1707:           basePersianCandidate.text!,
+ 1708:       };
+ 1709:     }
+ 1710:
+ 1711:     const punctuation =
+ 1712:       this.pickPunctuation(
+ 1713:         texts,
+ 1714:         options.punctuationStyle,
+ 1715:       );
+ 1716:
+ 1717:     if (punctuation !== null) {
+ 1718:       if (
+ 1719:         options.ambiguityPolicy
+ 1720:         === "error"
+ 1721:       ) {
+ 1722:         const details =
+ 1723:           candidateDetails(
+ 1724:             candidates,
+ 1725:           );
+ 1726:
+ 1727:         return {
+ 1728:           ok: false,
+  token='selectLatinCandidate' matches=0
+
+[DECISIONS TO FREEZE]
+  1. Base Persian unique Persian-letter + Latin candidates -> Persian
+  2. Latin-only outside span -> ambiguity preserved
+  3. 25 1234 + closable Latin span -> Latin; otherwise percent
+  4. Strict ambiguity runs after parser-state resolution
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c3a2-language-mode-percent-overlap-design-audit.txt
+JSON : stage13-5c3a2-language-mode-percent-overlap-design-audit.json
+================================================================================================================
