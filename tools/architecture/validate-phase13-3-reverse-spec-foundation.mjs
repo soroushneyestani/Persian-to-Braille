@@ -209,18 +209,25 @@ assert.equal(
 );
 
 assert.deepEqual(
-  manifest.vectorIds,
+  manifest.foundationSeedVectorIds,
   expectedVectorIds,
 );
 
-assert.equal(
-  manifest.summary.vectors,
-  16,
+for (const seedId of expectedVectorIds) {
+  assert.ok(
+    manifest.vectorIds.includes(
+      seedId,
+    ),
+    `Phase 13.3 foundation seed missing from expanded manifest: ${seedId}`,
+  );
+}
+
+assert.ok(
+  manifest.summary.vectors >= 16,
 );
 
-assert.equal(
-  manifest.summary.translationVectors,
-  14,
+assert.ok(
+  manifest.summary.translationVectors >= 14,
 );
 
 assert.equal(
@@ -245,7 +252,7 @@ const recordNames =
 
 assert.equal(
   recordNames.length,
-  expectedVectorIds.length,
+  manifest.vectorIds.length,
 );
 
 const seen = new Set();
@@ -276,10 +283,10 @@ for (const name of recordNames) {
   );
 
   assert.ok(
-    expectedVectorIds.includes(
+    manifest.vectorIds.includes(
       record.id,
     ),
-    `unexpected reverse vector id: ${record.id}`,
+    `reverse record is missing from manifest: ${record.id}`,
   );
 
   assert.equal(
@@ -330,7 +337,7 @@ for (const name of recordNames) {
 
 assert.equal(
   seen.size,
-  expectedVectorIds.length,
+  manifest.vectorIds.length,
 );
 
 assert.equal(

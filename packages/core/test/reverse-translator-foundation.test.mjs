@@ -67,15 +67,39 @@ const records =
     ),
   );
 
-const translations =
+const manifest =
+  JSON.parse(
+    await readFile(
+      path.join(
+        root,
+        "spec/fa-ir/reverse/conformance/manifest.json",
+      ),
+      "utf8",
+    ),
+  );
+
+const foundationSeedIds =
+  new Set(
+    manifest.foundationSeedVectorIds,
+  );
+
+const foundationRecords =
   records.filter(
+    (record) =>
+      foundationSeedIds.has(
+        record.id,
+      ),
+  );
+
+const translations =
+  foundationRecords.filter(
     (record) =>
       record.kind
       === "translation",
   );
 
 const capabilities =
-  records.filter(
+  foundationRecords.filter(
     (record) =>
       record.kind
       === "capability",

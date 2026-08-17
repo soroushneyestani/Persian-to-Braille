@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COVERAGE-DIRECT-VAR-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "coverage-direct-unique",
+  "sourceForwardRuleIds": [
+    "FA-G1-VAR-001"
+  ],
+  "input": {
+    "cells": [
+      "345"
+    ],
+    "unicodeBraille": "⠜"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "آ",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Phase 13.5b explicit coverage for a non-colliding direct reversal candidate."
+  ]
+}

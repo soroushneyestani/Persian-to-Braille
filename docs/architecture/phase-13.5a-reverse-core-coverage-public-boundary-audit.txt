@@ -1,0 +1,117 @@
+============================================================================================================
+PHASE 13.5a — REVERSE CORE COVERAGE AND PUBLIC CORE BOUNDARY AUDIT
+============================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 5b2f463b0b09b8a8969502ee83486be39c46d2ad
+
+[BASELINE]
+Forward rules                  : 176
+Cell-emitting rules            : 147
+No-cell rules                  : 29
+Unique Braille signatures      : 58
+Collision signatures           : 34
+Reverse seed vectors           : 16
+Seed-linked forward rule IDs   : 23
+
+[DIRECT REVERSAL COVERAGE]
+Total / covered / uncovered    : 16 / 1 / 15
+  UNCovered direct: FA-G1-LETTER-008
+  UNCovered direct: FA-G1-LETTER-011
+  UNCovered direct: FA-G1-LETTER-014
+  UNCovered direct: FA-G1-LETTER-016
+  UNCovered direct: FA-G1-LETTER-017
+  UNCovered direct: FA-G1-LETTER-018
+  UNCovered direct: FA-G1-LETTER-019
+  UNCovered direct: FA-G1-LETTER-020
+  UNCovered direct: FA-G1-LETTER-021
+  UNCovered direct: FA-G1-LETTER-022
+  UNCovered direct: FA-G1-ORTHO-SUPERSCRIPT-ALEF-001
+  UNCovered direct: FA-G1-PUNC-SCALAR-001
+  UNCovered direct: FA-G1-PUNC-SCALAR-004
+  UNCovered direct: FA-G1-PUNC-SCALAR-010
+  UNCovered direct: FA-G1-VAR-001
+
+[PARSER-RULE COVERAGE]
+Total / covered / uncovered    : 8 / 2 / 6
+  UNCovered parser: FA-G1-NUM-FRACTION-SLASH-001
+  UNCovered parser: FA-G1-NUMRULE-002
+  UNCovered parser: FA-G1-ORTHO-EZAFE-SEQUENCE-001
+  UNCovered parser: FA-G1-PUNC-ASTERISK-RUN-001
+  UNCovered parser: FA-G1-PUNC-ASTERISK-SINGLE-001
+  UNCovered parser: FA-G1-PUNC-SCALAR-011
+
+[COLLISION SIGNATURE COVERAGE]
+Covered collision signatures   : 7
+Uncovered collision signatures : 27
+  123 -> FA-G1-LATIN-012, FA-G1-LATIN-038, FA-G1-LETTER-027
+  1234 -> FA-G1-LATIN-016, FA-G1-LATIN-042, FA-G1-LETTER-003
+  12345 -> FA-G1-LATIN-017, FA-G1-LATIN-043, FA-G1-LETTER-024
+  1235 -> FA-G1-LATIN-018, FA-G1-LATIN-044, FA-G1-LETTER-012
+  1236 -> FA-G1-LATIN-022, FA-G1-LATIN-048
+  124 -> FA-G1-DIGIT-ARABIC-INDIC-006, FA-G1-DIGIT-ASCII-006, FA-G1-DIGIT-PERSIAN-006, FA-G1-LATIN-006, FA-G1-LATIN-032, FA-G1-LETTER-023
+  1245 -> FA-G1-DIGIT-ARABIC-INDIC-007, FA-G1-DIGIT-ASCII-007, FA-G1-DIGIT-PERSIAN-007, FA-G1-LATIN-007, FA-G1-LATIN-033, FA-G1-LETTER-026
+  125 -> FA-G1-DIGIT-ARABIC-INDIC-008, FA-G1-DIGIT-ASCII-008, FA-G1-DIGIT-PERSIAN-008, FA-G1-LATIN-008, FA-G1-LATIN-034, FA-G1-LETTER-031
+  13 -> FA-G1-LATIN-011, FA-G1-LATIN-037, FA-G1-LETTER-025
+  134 -> FA-G1-LATIN-013, FA-G1-LATIN-039, FA-G1-LETTER-028
+  1345 -> FA-G1-LATIN-014, FA-G1-LATIN-040, FA-G1-LETTER-029
+  13456 -> FA-G1-LATIN-025, FA-G1-LATIN-051
+  1346 -> FA-G1-LATIN-024, FA-G1-LATIN-050, FA-G1-LETTER-009
+  135 -> FA-G1-LATIN-015, FA-G1-LATIN-041
+  1356 -> FA-G1-LATIN-026, FA-G1-LATIN-052, FA-G1-LETTER-013
+  136 -> FA-G1-LATIN-021, FA-G1-LATIN-047
+  14 -> FA-G1-DIGIT-ARABIC-INDIC-003, FA-G1-DIGIT-ASCII-003, FA-G1-DIGIT-PERSIAN-003, FA-G1-LATIN-003, FA-G1-LATIN-029, FA-G1-LETTER-007
+  145 -> FA-G1-DIGIT-ARABIC-INDIC-004, FA-G1-DIGIT-ASCII-004, FA-G1-DIGIT-PERSIAN-004, FA-G1-LATIN-004, FA-G1-LATIN-030, FA-G1-LETTER-010
+  15 -> FA-G1-DIGIT-ARABIC-INDIC-005, FA-G1-DIGIT-ASCII-005, FA-G1-DIGIT-PERSIAN-005, FA-G1-LATIN-005, FA-G1-LATIN-031
+  23 -> FA-G1-PUNC-SCALAR-007, FA-G1-PUNC-SCALAR-008
+  234 -> FA-G1-LATIN-019, FA-G1-LATIN-045, FA-G1-LETTER-015
+  2345 -> FA-G1-LATIN-020, FA-G1-LATIN-046, FA-G1-LETTER-004
+  24 -> FA-G1-DIGIT-ARABIC-INDIC-009, FA-G1-DIGIT-ASCII-009, FA-G1-DIGIT-PERSIAN-009, FA-G1-LATIN-009, FA-G1-LATIN-035, FA-G1-LETTER-032
+  245 -> FA-G1-DIGIT-ARABIC-INDIC-000, FA-G1-DIGIT-ASCII-000, FA-G1-DIGIT-PERSIAN-000, FA-G1-LATIN-010, FA-G1-LATIN-036, FA-G1-LETTER-006
+  2456 -> FA-G1-LATIN-023, FA-G1-LATIN-049, FA-G1-LETTER-030
+  25 1234 -> FA-G1-NUMRULE-007, FA-G1-PUNC-SCALAR-016, FA-G1-PUNC-SCALAR-017
+  3 -> FA-G1-NUMRULE-003, FA-G1-NUMRULE-004
+
+[IMPLEMENTED FEATURE EVIDENCE]
+  unicodeBrailleTokenizer            : YES
+  candidateIndex                     : YES
+  numericIndicator                   : YES
+  numericDecimal                     : YES
+  digitFamilies                      : YES
+  latinSpan                          : YES
+  latinCapital                       : YES
+  longestMatch                       : YES
+  ellipsis                           : YES
+  pairedParentheses                  : YES
+  punctuationCanonicalization        : YES
+  strictAmbiguity                    : YES
+  layoutPassThrough                  : YES
+
+[PUBLIC BOUNDARY]
+  coreRootExportsReverseTranslator   : False
+  coreRootExportsReverseTypes        : False
+  sdkContainsReverseRuntime          : False
+  corePackageRootExportOnly          : True
+  frozenSdkContractReconfirmed       : True
+
+[PUBLIC CORE EXPORT READINESS]
+NOT READY
+  - 15 direct reversal candidates remain outside reverse conformance coverage.
+  - 27 collided Braille signatures remain outside the current reverse seed coverage.
+  - 6 parser-rule records remain outside current reverse conformance coverage.
+
+[RECOMMENDED PHASE 13.5 SCOPE]
+  - cover all 16 direct-reversal candidates explicitly
+  - add representative conformance for every collided signature family
+  - cover all parser-required rules and state transitions
+  - add malformed/unknown sequence cases
+  - add Braille-stability and canonical-print round-trip tests
+  - test punctuation style and ellipsis style options explicitly
+  - test layout pass-through and numeric-mode termination boundaries
+
+Boundary decision: DEFER_CORE_ROOT_EXPORT_UNTIL_COVERAGE_BLOCKERS_ARE_CLOSED
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5a-reverse-core-coverage-public-boundary-audit.txt
+JSON : stage13-5a-reverse-core-coverage-public-boundary-audit.json
+============================================================================================================
