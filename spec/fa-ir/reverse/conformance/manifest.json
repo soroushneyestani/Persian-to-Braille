@@ -154,11 +154,14 @@
     "FA-REV-CONF-OVERLAP-PERCENT-LATIN-BASE-PERSIAN",
     "FA-REV-CONF-OVERLAP-PERCENT-LATIN-BASE-ASCII",
     "FA-REV-CONF-OVERLAP-PERCENT-LATIN-P-LOWER",
-    "FA-REV-CONF-OVERLAP-PERCENT-LATIN-PL-LOWER"
+    "FA-REV-CONF-OVERLAP-PERCENT-LATIN-PL-LOWER",
+    "FA-REV-CONF-COLLISION-PUNCTUATION-SEMICOLON-PERSIAN",
+    "FA-REV-CONF-COLLISION-PUNCTUATION-SEMICOLON-ASCII",
+    "FA-REV-CONF-COLLISION-PUNCTUATION-SEMICOLON-STRICT"
   ],
   "summary": {
-    "vectors": 139,
-    "translationVectors": 137,
+    "vectors": 142,
+    "translationVectors": 140,
     "capabilityVectors": 2,
     "suites": {
       "ambiguity-strict": 1,
@@ -183,7 +186,8 @@
       "collision-numeric-end-percent": 5,
       "collision-language-cross-mode": 48,
       "collision-language-latin-only": 16,
-      "overlap-percent-latin": 4
+      "overlap-percent-latin": 4,
+      "collision-punctuation-variant": 3
     }
   },
   "plannedSuites": [

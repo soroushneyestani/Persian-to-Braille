@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-PUNCTUATION-SEMICOLON-STRICT",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-punctuation-variant",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-SCALAR-007",
+    "FA-G1-PUNC-SCALAR-008"
+  ],
+  "input": {
+    "cells": [
+      "23"
+    ],
+    "unicodeBraille": "⠆"
+  },
+  "options": {
+    "ambiguityPolicy": "error"
+  },
+  "expected": {
+    "ok": false,
+    "code": "AMBIGUOUS_REVERSE_MATCH",
+    "candidateRuleIds": [
+      "FA-G1-PUNC-SCALAR-007",
+      "FA-G1-PUNC-SCALAR-008"
+    ],
+    "candidateTexts": [
+      ";",
+      "؛"
+    ]
+  },
+  "notes": [
+    "Strict ambiguity policy rejects the two print semicolon variants sharing one Braille cell."
+  ]
+}
