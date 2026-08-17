@@ -1,0 +1,106 @@
+{
+  "phase": "12.5a",
+  "name": "Developer Documentation Baseline Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase12-developer-ecosystem",
+    "head": "43235df61decad62179969861f3bfaed71062d11",
+    "upstream": "43235df61decad62179969861f3bfaed71062d11",
+    "headSubject": "test(sdk): validate Phase 12 packed consumer boundary",
+    "cleanBeforeAudit": true
+  },
+  "files": {
+    "docsSdkCount": 6,
+    "docsSdk": [
+      {
+        "path": "docs/sdk/phase-7-closure.md",
+        "lines": 428
+      },
+      {
+        "path": "docs/sdk/phase-7.1-baseline-audit.md",
+        "lines": 252
+      },
+      {
+        "path": "docs/sdk/phase-7.2-public-api-contract.md",
+        "lines": 327
+      },
+      {
+        "path": "docs/sdk/phase-7.3-sdk-implementation.md",
+        "lines": 221
+      },
+      {
+        "path": "docs/sdk/phase-7.4-consumer-error-tests.md",
+        "lines": 223
+      },
+      {
+        "path": "docs/sdk/phase-7.5-packaging-release-readiness.md",
+        "lines": 375
+      }
+    ]
+  },
+  "publicSurface": {
+    "runtimeExports": {
+      "PersianBrailleTranslationError": true,
+      "createPersianBrailleTranslator": true
+    },
+    "typeExports": {
+      "CreatePersianBrailleTranslator": true,
+      "PersianBrailleProfileInfo": true,
+      "PersianBrailleTranslationErrorData": true,
+      "PersianBrailleTranslationFailure": true,
+      "PersianBrailleTranslationFailureCode": true,
+      "PersianBrailleTranslationResult": true,
+      "PersianBrailleTranslationSuccess": true,
+      "PersianBrailleTranslator": true,
+      "PersianBrailleUnicodeLocation": true
+    }
+  },
+  "checks": {
+    "sdkReadmeHasInstallGuidance": true,
+    "sdkReadmeHasMinimalQuickstart": true,
+    "sdkReadmeDocumentsSuccessResult": true,
+    "sdkReadmeDocumentsFailureResult": true,
+    "sdkReadmeLinksExamples": false,
+    "sdkReadmeDocumentsPublicEntrypointOnly": false,
+    "sdkReadmeDocumentsRuntimeMatrix": true,
+    "sdkReadmeDocumentsVersioningStability": false,
+    "examplesIndexCoversFourExamples": true,
+    "nodeExampleUsesPublicSdk": true,
+    "browserExampleAvoidsDirectCdnClaim": true,
+    "errorExampleDocumentsTopLevelFailure": true,
+    "adapterExampleDocumentsSdkBoundary": true,
+    "phase12PackedDocumentsDeepImportRule": true,
+    "publicRuntimeExportsAllPresent": true,
+    "publicTypeExportsAllPresent": true,
+    "sdkPackagePublic": true,
+    "sdkPackageSingleRootExport": true,
+    "phase12_3ScriptPresent": true,
+    "phase12_4ScriptPresent": true,
+    "phase12ContractFrozen": true
+  },
+  "overclaimChecks": {
+    "claimsCommonJsSupport": false,
+    "claimsDirectBrowserCdnSupport": false,
+    "claimsDenoSupport": false,
+    "claimsBunSupport": false,
+    "claimsReverseTranslation": false
+  },
+  "localMarkdownLinkIssues": {},
+  "recommendedPhase12_5Sections": {
+    "installation": true,
+    "minimalQuickstart": true,
+    "resultContract": true,
+    "runtimeSupportMatrix": true,
+    "publicEntrypointAndDeepImportPolicy": false,
+    "examplesNavigation": false,
+    "thirdPartyIntegrationPattern": true,
+    "versioningAndCompatibility": false,
+    "scopeAndDeferredCapabilities": true
+  },
+  "missingPhase12_5Sections": [
+    "publicEntrypointAndDeepImportPolicy",
+    "examplesNavigation",
+    "versioningAndCompatibility"
+  ],
+  "conclusion": "DEVELOPER DOCS NEED TARGETED PHASE 12.5 HARDENING"
+}
