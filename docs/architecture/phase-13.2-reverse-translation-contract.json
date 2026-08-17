@@ -1,0 +1,283 @@
+{
+  "phase": "13.2",
+  "name": "Reverse Translation Architecture and Contract Freeze",
+  "status": "FROZEN",
+  "profile": {
+    "forwardProfileId": "fa-ir-g1",
+    "reverseProfileId": "fa-ir-g1-reverse",
+    "version": "0.1.0",
+    "direction": "braille-to-print"
+  },
+  "canonicalSources": {
+    "forwardRules": "spec/fa-ir/rules/records/*.json",
+    "forwardConformance": "spec/fa-ir/conformance/records/*.json",
+    "forwardProfile": "spec/fa-ir/profiles/fa-ir-g1.json",
+    "reversePolicyTarget": "spec/fa-ir/reverse/policy/fa-ir-g1-reverse-policy.json",
+    "reverseConformanceTarget": "spec/fa-ir/reverse/conformance/records/*.json",
+    "ruleCount": 176,
+    "vectorCount": 176
+  },
+  "phase13_1Evidence": {
+    "directReversalCandidates": 16,
+    "parserRuleRequired": 8,
+    "stateOrPolicyRequired": 123,
+    "structuralReconstructionRequired": 29,
+    "collisionGroups": 34,
+    "segmentationOverlapSignatures": 4,
+    "policyRelevantCollisionGroups": 15
+  },
+  "architecture": {
+    "pipeline": [
+      "Unicode Braille input normalization",
+      "Braille cell tokenization",
+      "longest-match sequence recognition",
+      "stateful mode/context parser",
+      "candidate resolution",
+      "canonical print rendering",
+      "diagnostics/result projection"
+    ],
+    "parserState": {
+      "baseLanguage": [
+        "persian",
+        "latin"
+      ],
+      "numericMode": [
+        "inactive",
+        "active"
+      ],
+      "latinSpan": [
+        "inactive",
+        "active"
+      ],
+      "pendingCapital": [
+        "false",
+        "true"
+      ],
+      "delimiterStack": "required for same-cell paired punctuation such as parentheses",
+      "contextWindow": "required for numeric separators, numeric-end markers, and mode boundaries"
+    },
+    "resolutionOrder": [
+      "explicit structural/mode indicator",
+      "active parser state",
+      "longest matching multi-cell rule",
+      "context rule",
+      "unique scalar candidate",
+      "configured canonicalization policy",
+      "ambiguity result"
+    ],
+    "deepRuleInversionAllowed": false,
+    "naiveGlobalCellLookupAllowed": false,
+    "forwardRuleMutationRequired": false
+  },
+  "inputContract": {
+    "primaryInput": "Unicode Braille string",
+    "brailleRange": "U+2800..U+28FF",
+    "acceptedLayoutCharacters": [
+      "U+0020",
+      "U+0009",
+      "U+000A",
+      "U+000D"
+    ],
+    "layoutInterpretation": "accepted literal layout separators are normalized into canonical print layout; exact original layout provenance is not recoverable from Braille cells alone",
+    "nonBrailleNonLayout": "failure"
+  },
+  "outputPolicies": {
+    "digitFamily": {
+      "default": "persian",
+      "allowed": [
+        "persian",
+        "ascii",
+        "arabic-indic"
+      ],
+      "reason": "numeric mode identifies digit semantics but cannot recover which of the three forward print digit families produced the same cells"
+    },
+    "punctuationStyle": {
+      "default": "persian",
+      "allowed": [
+        "persian",
+        "ascii"
+      ],
+      "persianCanonical": {
+        "comma": "،",
+        "semicolon": "؛",
+        "questionMark": "؟",
+        "decimalSeparator": "٫",
+        "groupSeparator": "٬",
+        "percent": "٪"
+      },
+      "asciiCanonical": {
+        "comma": ",",
+        "semicolon": ";",
+        "questionMark": "?",
+        "decimalSeparator": ".",
+        "groupSeparator": ",",
+        "percent": "%"
+      }
+    },
+    "ellipsisStyle": {
+      "default": "unicode",
+      "allowed": [
+        "unicode",
+        "three-dots"
+      ],
+      "unicode": "…",
+      "threeDots": "..."
+    },
+    "ambiguityPolicy": {
+      "default": "canonicalize",
+      "allowed": [
+        "canonicalize",
+        "error"
+      ],
+      "canonicalize": "choose the configured canonical print form and emit a diagnostic whenever source spelling cannot be recovered uniquely",
+      "error": "return AMBIGUOUS_REVERSE_MATCH rather than choosing among unresolved candidates"
+    },
+    "pairedPunctuation": {
+      "strategy": "parser-context",
+      "fallback": "ambiguity-policy",
+      "note": "same-cell open/close punctuation must be resolved from syntactic position and delimiter stack; never by arbitrary fixed lookup"
+    },
+    "layoutReconstruction": {
+      "default": "canonical",
+      "exactSourceLayoutRoundTripClaimed": false,
+      "zwnjExactRecoveryClaimed": false,
+      "note": "29 no-cell forward rules prove that exact source layout/normalization provenance cannot be reconstructed from a plain Braille cell stream"
+    }
+  },
+  "sdkContract": {
+    "forwardApiPreservedUnchanged": true,
+    "newRuntimeExports": [
+      "PersianBrailleReverseTranslationError",
+      "createPersianBrailleReverseTranslator"
+    ],
+    "newTypeExports": [
+      "CreatePersianBrailleReverseTranslator",
+      "PersianBrailleReverseProfileInfo",
+      "PersianBrailleReverseTranslationOptions",
+      "PersianBrailleReverseDigitFamily",
+      "PersianBrailleReversePunctuationStyle",
+      "PersianBrailleReverseEllipsisStyle",
+      "PersianBrailleReverseAmbiguityPolicy",
+      "PersianBrailleReverseDiagnostic",
+      "PersianBrailleReverseTranslationFailureCode",
+      "PersianBrailleReverseTranslationFailure",
+      "PersianBrailleReverseTranslationResult",
+      "PersianBrailleReverseTranslationSuccess",
+      "PersianBrailleReverseTranslator",
+      "PersianBrailleReverseUnicodeLocation"
+    ],
+    "factory": {
+      "name": "createPersianBrailleReverseTranslator",
+      "defaultOptionsArgument": "optional PersianBrailleReverseTranslationOptions",
+      "returns": "PersianBrailleReverseTranslator"
+    },
+    "translatorMethods": {
+      "translateFromBraille": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationResult",
+        "throwsExpectedFailures": false
+      },
+      "translateFromBrailleOrThrow": {
+        "input": "string",
+        "options": "optional PersianBrailleReverseTranslationOptions",
+        "returns": "PersianBrailleReverseTranslationSuccess",
+        "throwsExpectedFailures": true
+      }
+    },
+    "profileInfo": {
+      "direction": "braille-to-print"
+    },
+    "success": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "text",
+        "cells",
+        "diagnostics",
+        "lossy"
+      ]
+    },
+    "failure": {
+      "fields": [
+        "ok",
+        "input",
+        "profile",
+        "code",
+        "message",
+        "location?",
+        "brailleCharacter?",
+        "candidateRuleIds?",
+        "candidateTexts?",
+        "causeCode?"
+      ]
+    },
+    "failureCodes": [
+      "INVALID_BRAILLE_INPUT",
+      "UNKNOWN_BRAILLE_CELL",
+      "UNKNOWN_BRAILLE_SEQUENCE",
+      "AMBIGUOUS_REVERSE_MATCH",
+      "MALFORMED_MODE_SEQUENCE",
+      "UNTERMINATED_LATIN_SPAN",
+      "DANGLING_CAPITAL_INDICATOR",
+      "UNSUPPORTED_REVERSE_STATE"
+    ],
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION",
+      "CANONICALIZED_ELLIPSIS",
+      "AMBIGUITY_CANONICALIZED",
+      "LOSSY_LAYOUT_RECONSTRUCTION",
+      "LOSSY_NORMALIZATION_RECONSTRUCTION"
+    ]
+  },
+  "coreContract": {
+    "publicCoreImplementationTarget": "packages/core",
+    "reverseEngineMustRemainPlatformAgnostic": true,
+    "sdkMayDependOnCoreReverseApi": true,
+    "appsAndIntegrationsMustConsumeSdk": true,
+    "officeSpecificLogicInCore": false,
+    "derivedIndex": "reverse candidate index may be generated from canonical forward records, but resolution semantics belong to the reverse policy/parser and must not be inferred from cell collisions alone"
+  },
+  "conformanceContract": {
+    "forwardVectorsMayBeBlindlySwapped": false,
+    "reverseVectorsAreIndependent": true,
+    "requiredSuites": [
+      "direct unique-cell reversals",
+      "numeric mode and digit-family rendering",
+      "Latin span begin/end",
+      "capital indicator handling",
+      "contextual numeric separators",
+      "punctuation canonicalization",
+      "paired punctuation parser context",
+      "longest-match sequences",
+      "ambiguous matches under canonicalize policy",
+      "ambiguous matches under error policy",
+      "malformed Braille input",
+      "malformed/unterminated modes",
+      "layout reconstruction",
+      "normalization lossiness",
+      "Braille stability round trips",
+      "canonical print round trips"
+    ],
+    "roundTripPolicies": {
+      "exactPrintRoundTrip": "only for explicitly reversible subset",
+      "canonicalPrintRoundTrip": "reverse(forward(print)) must equal the configured canonical print form where forward information is lossy",
+      "brailleStability": "forward(reverse(braille)) should reproduce the accepted canonical Braille cell stream for supported non-layout cases",
+      "structuralExactness": "not claimed from plain Unicode Braille input"
+    }
+  },
+  "scopeGuards": {
+    "noBrailleMusic": "Phase 14",
+    "noGeneralMultilanguageFramework": "Phase 15",
+    "noOfficeWebWork": "Phase 16",
+    "noMacWork": "Phase 17",
+    "noMarketplaceWork": "Phase 18",
+    "noForwardSemanticRewrite": true
+  },
+  "next": {
+    "phase": "13.3",
+    "name": "Reverse Specification and Conformance Foundation"
+  }
+}

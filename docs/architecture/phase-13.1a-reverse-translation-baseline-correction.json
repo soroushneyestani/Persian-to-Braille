@@ -1,0 +1,2277 @@
+{
+  "phase": "13.1a-correction",
+  "name": "Reverse Translation Baseline Audit Correction",
+  "mode": "READ-ONLY / CANONICAL RECORD-BASED",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81",
+    "upstream": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81"
+  },
+  "reasonForCorrection": {
+    "initialAuditSelectedManifestAsRuleDataset": true,
+    "initialAuditDetectedOutputs": 0,
+    "correction": "Invertibility must be audited from the canonical individual rule records under spec/fa-ir/rules/records, not from the materialization manifest."
+  },
+  "canonicalSources": {
+    "profile": "spec/fa-ir/profiles/fa-ir-g1.json",
+    "manifest": "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+    "ruleDirectory": "spec/fa-ir/rules/records",
+    "conformanceDirectory": "spec/fa-ir/conformance/records"
+  },
+  "forwardInventory": {
+    "rules": 176,
+    "vectors": 176,
+    "types": {
+      "character": 133,
+      "context": 7,
+      "layout": 27,
+      "mode": 5,
+      "normalization": 1,
+      "sequence": 3
+    },
+    "statuses": {
+      "candidate": 139,
+      "normative": 37
+    },
+    "directions": {
+      "forward": 176
+    },
+    "profileRuleIdsExactMatch": true,
+    "ruleVectorReciprocity": "PASS"
+  },
+  "representationInventory": {
+    "classes": {
+      "structural-input-to-cells": 4,
+      "structural-token-only": 29,
+      "text-to-cells": 143
+    },
+    "rulesWithBrailleCells": 147,
+    "rulesWithoutBrailleCells": 29,
+    "structuralTokenOutputsByType": {
+      "layout": 27,
+      "mode": 1,
+      "normalization": 1
+    },
+    "noCellRuleIds": [
+      "FA-G1-LATIN-MODE-001",
+      "FA-G1-LAYOUT-001",
+      "FA-G1-LAYOUT-002",
+      "FA-G1-LAYOUT-003",
+      "FA-G1-LAYOUT-004",
+      "FA-G1-LAYOUT-005",
+      "FA-G1-LAYOUT-006",
+      "FA-G1-LAYOUT-007",
+      "FA-G1-LAYOUT-008",
+      "FA-G1-LAYOUT-009",
+      "FA-G1-LAYOUT-010",
+      "FA-G1-LAYOUT-011",
+      "FA-G1-LAYOUT-012",
+      "FA-G1-LAYOUT-013",
+      "FA-G1-LAYOUT-014",
+      "FA-G1-LAYOUT-015",
+      "FA-G1-LAYOUT-016",
+      "FA-G1-LAYOUT-017",
+      "FA-G1-LAYOUT-018",
+      "FA-G1-LAYOUT-019",
+      "FA-G1-LAYOUT-020",
+      "FA-G1-LAYOUT-021",
+      "FA-G1-LAYOUT-022",
+      "FA-G1-LAYOUT-023",
+      "FA-G1-LAYOUT-024",
+      "FA-G1-LAYOUT-025",
+      "FA-G1-LAYOUT-026",
+      "FA-G1-LAYOUT-027",
+      "FA-G1-NORM-ZWNJ-001"
+    ]
+  },
+  "brailleCellInvertibility": {
+    "uniqueCellSignatures": 58,
+    "collisionCellSignatures": 34,
+    "rulesParticipatingInCellCollisions": 123,
+    "cellEmittingRulesOutsideCollisions": 24,
+    "collisionKinds": {
+      "distinct-print-inputs": 33,
+      "same-print-input-multiple-forward-rules": 1
+    },
+    "collisions": {
+      "1": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-001",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "١",
+            "codePoints": [
+              "U+0661"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-001",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "1",
+            "codePoints": [
+              "U+0031"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-001",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۱",
+            "codePoints": [
+              "U+06F1"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-001",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "A",
+            "codePoints": [
+              "U+0041"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-027",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "a",
+            "codePoints": [
+              "U+0061"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-001",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ا",
+            "codePoints": [
+              "U+0627"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠁"
+        }
+      ],
+      "12": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-002",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٢",
+            "codePoints": [
+              "U+0662"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-002",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "2",
+            "codePoints": [
+              "U+0032"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-002",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۲",
+            "codePoints": [
+              "U+06F2"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-002",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "B",
+            "codePoints": [
+              "U+0042"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-028",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "b",
+            "codePoints": [
+              "U+0062"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-002",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ب",
+            "codePoints": [
+              "U+0628"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠃"
+        }
+      ],
+      "124": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-006",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٦",
+            "codePoints": [
+              "U+0666"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-006",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "6",
+            "codePoints": [
+              "U+0036"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-006",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۶",
+            "codePoints": [
+              "U+06F6"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-006",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "F",
+            "codePoints": [
+              "U+0046"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-032",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "f",
+            "codePoints": [
+              "U+0066"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-023",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ف",
+            "codePoints": [
+              "U+0641"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠋"
+        }
+      ],
+      "1245": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-007",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٧",
+            "codePoints": [
+              "U+0667"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-007",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "7",
+            "codePoints": [
+              "U+0037"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-007",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۷",
+            "codePoints": [
+              "U+06F7"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-007",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "G",
+            "codePoints": [
+              "U+0047"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-033",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "g",
+            "codePoints": [
+              "U+0067"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-026",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "گ",
+            "codePoints": [
+              "U+06AF"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠛"
+        }
+      ],
+      "125": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-008",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٨",
+            "codePoints": [
+              "U+0668"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-008",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "8",
+            "codePoints": [
+              "U+0038"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-008",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۸",
+            "codePoints": [
+              "U+06F8"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-008",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "H",
+            "codePoints": [
+              "U+0048"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-034",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "h",
+            "codePoints": [
+              "U+0068"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-031",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ه",
+            "codePoints": [
+              "U+0647"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠓"
+        }
+      ],
+      "14": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-003",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٣",
+            "codePoints": [
+              "U+0663"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-003",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "3",
+            "codePoints": [
+              "U+0033"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-003",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۳",
+            "codePoints": [
+              "U+06F3"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-003",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "C",
+            "codePoints": [
+              "U+0043"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-029",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "c",
+            "codePoints": [
+              "U+0063"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-007",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "چ",
+            "codePoints": [
+              "U+0686"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠉"
+        }
+      ],
+      "145": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-004",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٤",
+            "codePoints": [
+              "U+0664"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-004",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "4",
+            "codePoints": [
+              "U+0034"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-004",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۴",
+            "codePoints": [
+              "U+06F4"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-004",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "D",
+            "codePoints": [
+              "U+0044"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-030",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "d",
+            "codePoints": [
+              "U+0064"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-010",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "د",
+            "codePoints": [
+              "U+062F"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠙"
+        }
+      ],
+      "24": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-009",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٩",
+            "codePoints": [
+              "U+0669"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-009",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "9",
+            "codePoints": [
+              "U+0039"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-009",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۹",
+            "codePoints": [
+              "U+06F9"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-009",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "I",
+            "codePoints": [
+              "U+0049"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-035",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "i",
+            "codePoints": [
+              "U+0069"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-032",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ی",
+            "codePoints": [
+              "U+06CC"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠊"
+        }
+      ],
+      "245": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-000",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٠",
+            "codePoints": [
+              "U+0660"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-000",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "0",
+            "codePoints": [
+              "U+0030"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-000",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۰",
+            "codePoints": [
+              "U+06F0"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-010",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "J",
+            "codePoints": [
+              "U+004A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-036",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "j",
+            "codePoints": [
+              "U+006A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-006",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ج",
+            "codePoints": [
+              "U+062C"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠚"
+        }
+      ],
+      "15": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-005",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٥",
+            "codePoints": [
+              "U+0665"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠑"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-005",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "5",
+            "codePoints": [
+              "U+0035"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠑"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-005",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "۵",
+            "codePoints": [
+              "U+06F5"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠑"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-005",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "E",
+            "codePoints": [
+              "U+0045"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠑"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-031",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "e",
+            "codePoints": [
+              "U+0065"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠑"
+        }
+      ],
+      "2": [
+        {
+          "ruleId": "FA-G1-NUMRULE-005",
+          "type": "context",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "context",
+            "text": ".",
+            "codePoints": [
+              "U+002E"
+            ],
+            "before": "digit",
+            "after": "digit",
+            "tokenClass": "numeric-decimal-separator"
+          },
+          "unicodeBraille": "⠂"
+        },
+        {
+          "ruleId": "FA-G1-NUMRULE-006",
+          "type": "context",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "context",
+            "text": "٫",
+            "codePoints": [
+              "U+066B"
+            ],
+            "before": "digit",
+            "after": "digit",
+            "tokenClass": "numeric-decimal-separator"
+          },
+          "unicodeBraille": "⠂"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-005",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": ",",
+            "codePoints": [
+              "U+002C"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠂"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-006",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "،",
+            "codePoints": [
+              "U+060C"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠂"
+        }
+      ],
+      "123": [
+        {
+          "ruleId": "FA-G1-LATIN-012",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "L",
+            "codePoints": [
+              "U+004C"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠇"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-038",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "l",
+            "codePoints": [
+              "U+006C"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠇"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-027",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ل",
+            "codePoints": [
+              "U+0644"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠇"
+        }
+      ],
+      "1234": [
+        {
+          "ruleId": "FA-G1-LATIN-016",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "P",
+            "codePoints": [
+              "U+0050"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠏"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-042",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "p",
+            "codePoints": [
+              "U+0070"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠏"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-003",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "پ",
+            "codePoints": [
+              "U+067E"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠏"
+        }
+      ],
+      "12345": [
+        {
+          "ruleId": "FA-G1-LATIN-017",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "Q",
+            "codePoints": [
+              "U+0051"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠟"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-043",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "q",
+            "codePoints": [
+              "U+0071"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠟"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-024",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ق",
+            "codePoints": [
+              "U+0642"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠟"
+        }
+      ],
+      "1235": [
+        {
+          "ruleId": "FA-G1-LATIN-018",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "R",
+            "codePoints": [
+              "U+0052"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠗"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-044",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "r",
+            "codePoints": [
+              "U+0072"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠗"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-012",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ر",
+            "codePoints": [
+              "U+0631"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠗"
+        }
+      ],
+      "13": [
+        {
+          "ruleId": "FA-G1-LATIN-011",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "K",
+            "codePoints": [
+              "U+004B"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠅"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-037",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "k",
+            "codePoints": [
+              "U+006B"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠅"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-025",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ک",
+            "codePoints": [
+              "U+06A9"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠅"
+        }
+      ],
+      "134": [
+        {
+          "ruleId": "FA-G1-LATIN-013",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "M",
+            "codePoints": [
+              "U+004D"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠍"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-039",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "m",
+            "codePoints": [
+              "U+006D"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠍"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-028",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "م",
+            "codePoints": [
+              "U+0645"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠍"
+        }
+      ],
+      "1345": [
+        {
+          "ruleId": "FA-G1-LATIN-014",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "N",
+            "codePoints": [
+              "U+004E"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠝"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-040",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "n",
+            "codePoints": [
+              "U+006E"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠝"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-029",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ن",
+            "codePoints": [
+              "U+0646"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠝"
+        }
+      ],
+      "1346": [
+        {
+          "ruleId": "FA-G1-LATIN-024",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "X",
+            "codePoints": [
+              "U+0058"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠭"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-050",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "x",
+            "codePoints": [
+              "U+0078"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠭"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-009",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "خ",
+            "codePoints": [
+              "U+062E"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠭"
+        }
+      ],
+      "1356": [
+        {
+          "ruleId": "FA-G1-LATIN-026",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "Z",
+            "codePoints": [
+              "U+005A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠵"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-052",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "z",
+            "codePoints": [
+              "U+007A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠵"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-013",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ز",
+            "codePoints": [
+              "U+0632"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠵"
+        }
+      ],
+      "234": [
+        {
+          "ruleId": "FA-G1-LATIN-019",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "S",
+            "codePoints": [
+              "U+0053"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠎"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-045",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "s",
+            "codePoints": [
+              "U+0073"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠎"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-015",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "س",
+            "codePoints": [
+              "U+0633"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠎"
+        }
+      ],
+      "2345": [
+        {
+          "ruleId": "FA-G1-LATIN-020",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "T",
+            "codePoints": [
+              "U+0054"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠞"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-046",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "t",
+            "codePoints": [
+              "U+0074"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠞"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-004",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "ت",
+            "codePoints": [
+              "U+062A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠞"
+        }
+      ],
+      "2456": [
+        {
+          "ruleId": "FA-G1-LATIN-023",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "W",
+            "codePoints": [
+              "U+0057"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠺"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-049",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "w",
+            "codePoints": [
+              "U+0077"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠺"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-030",
+          "type": "character",
+          "status": "normative",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "و",
+            "codePoints": [
+              "U+0648"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠺"
+        }
+      ],
+      "25": [
+        {
+          "ruleId": "FA-G1-LATIN-MODE-002",
+          "type": "mode",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "structural",
+            "text": null,
+            "codePoints": null,
+            "before": null,
+            "after": null,
+            "tokenClass": "latin-span-begin"
+          },
+          "unicodeBraille": "⠒"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-MODE-003",
+          "type": "mode",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "structural",
+            "text": null,
+            "codePoints": null,
+            "before": null,
+            "after": null,
+            "tokenClass": "latin-span-end"
+          },
+          "unicodeBraille": "⠒"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-009",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": ":",
+            "codePoints": [
+              "U+003A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠒"
+        }
+      ],
+      "25 1234": [
+        {
+          "ruleId": "FA-G1-NUMRULE-007",
+          "type": "context",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "context",
+            "text": "%",
+            "codePoints": [
+              "U+0025"
+            ],
+            "before": "digit",
+            "after": null,
+            "tokenClass": "numeric-end"
+          },
+          "unicodeBraille": "⠒⠏"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-016",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "%",
+            "codePoints": [
+              "U+0025"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠒⠏"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-017",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "٪",
+            "codePoints": [
+              "U+066A"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠒⠏"
+        }
+      ],
+      "1236": [
+        {
+          "ruleId": "FA-G1-LATIN-022",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "V",
+            "codePoints": [
+              "U+0056"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠧"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-048",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "v",
+            "codePoints": [
+              "U+0076"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠧"
+        }
+      ],
+      "13456": [
+        {
+          "ruleId": "FA-G1-LATIN-025",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "Y",
+            "codePoints": [
+              "U+0059"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠽"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-051",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "y",
+            "codePoints": [
+              "U+0079"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠽"
+        }
+      ],
+      "135": [
+        {
+          "ruleId": "FA-G1-LATIN-015",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "O",
+            "codePoints": [
+              "U+004F"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠕"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-041",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "o",
+            "codePoints": [
+              "U+006F"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠕"
+        }
+      ],
+      "136": [
+        {
+          "ruleId": "FA-G1-LATIN-021",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "U",
+            "codePoints": [
+              "U+0055"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠥"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-047",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "u",
+            "codePoints": [
+              "U+0075"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠥"
+        }
+      ],
+      "23": [
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-007",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": ";",
+            "codePoints": [
+              "U+003B"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠆"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-008",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "؛",
+            "codePoints": [
+              "U+061B"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠆"
+        }
+      ],
+      "2356": [
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-019",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "(",
+            "codePoints": [
+              "U+0028"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠶"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-020",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": ")",
+            "codePoints": [
+              "U+0029"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠶"
+        }
+      ],
+      "236": [
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-002",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "?",
+            "codePoints": [
+              "U+003F"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠦"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-003",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "؟",
+            "codePoints": [
+              "U+061F"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠦"
+        }
+      ],
+      "3": [
+        {
+          "ruleId": "FA-G1-NUMRULE-003",
+          "type": "context",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "context",
+            "text": ",",
+            "codePoints": [
+              "U+002C"
+            ],
+            "before": "digit",
+            "after": "digit",
+            "tokenClass": "numeric-internal"
+          },
+          "unicodeBraille": "⠄"
+        },
+        {
+          "ruleId": "FA-G1-NUMRULE-004",
+          "type": "context",
+          "status": "candidate",
+          "priority": 100,
+          "input": {
+            "kind": "context",
+            "text": "٬",
+            "codePoints": [
+              "U+066C"
+            ],
+            "before": "digit",
+            "after": "digit",
+            "tokenClass": "numeric-internal"
+          },
+          "unicodeBraille": "⠄"
+        }
+      ],
+      "6 6 6": [
+        {
+          "ruleId": "FA-G1-PUNC-ELLIPSIS-001",
+          "type": "sequence",
+          "status": "normative",
+          "priority": 100,
+          "input": {
+            "kind": "sequence",
+            "text": "...",
+            "codePoints": [
+              "U+002E",
+              "U+002E",
+              "U+002E"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠠⠠⠠"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+          "type": "character",
+          "status": "candidate",
+          "priority": 1000,
+          "input": {
+            "kind": "scalar",
+            "text": "…",
+            "codePoints": [
+              "U+2026"
+            ],
+            "before": null,
+            "after": null,
+            "tokenClass": null
+          },
+          "unicodeBraille": "⠠⠠⠠"
+        }
+      ]
+    },
+    "note": "A cell collision is not automatically an unrecoverable ambiguity. Mode indicators, context, sequence structure, and parser state may disambiguate some collisions. This report identifies where a naive cell-to-print lookup is insufficient."
+  },
+  "sdkReverseSurface": {
+    "translateFromBraille": false,
+    "BrailleToPersian": false,
+    "ReverseTranslator": false,
+    "createPersianBrailleReverseTranslator": false
+  },
+  "conclusions": {
+    "existingReverseSdkApi": false,
+    "naiveGlobalCellLookupIsSufficient": false,
+    "reverseParserStateIsRequired": true,
+    "phase13_1bRequired": true
+  },
+  "phase13_1bRequiredWork": [
+    "Freeze the canonical reverse derivation source as the 176 individual forward rule records plus their 176 conformance records/profile inventory.",
+    "Classify every rule into reverse categories without treating cell collisions as automatically fatal.",
+    "Define parser state for numeric mode, Latin mode, context rules, indicators, sequences, layout, and normalization.",
+    "Define ambiguity semantics for cases that remain ambiguous after state/context resolution.",
+    "Freeze reverse SDK result/error/API contracts before implementing the engine.",
+    "Create independent reverse conformance vectors and explicit round-trip properties; do not merely swap forward vectors."
+  ]
+}

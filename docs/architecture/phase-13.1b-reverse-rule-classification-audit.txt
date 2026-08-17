@@ -1,0 +1,117 @@
+======================================================================================================
+PHASE 13.1b — REVERSE RULE CLASSIFICATION AND AMBIGUITY AUDIT
+======================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 2a5e424ca1c9aa8fc010a063a3382769d01d2e81
+
+[BASELINE]
+Corrected Phase 13.1a : PASS
+Canonical rules       : 176
+Conformance vectors   : 176
+
+[PRELIMINARY RULE CLASSES]
+DIRECT_REVERSAL_CANDIDATE              : 16
+PARSER_RULE_REQUIRED                   : 8
+STATE_OR_POLICY_REQUIRED               : 123
+STRUCTURAL_RECONSTRUCTION_REQUIRED     : 29
+
+[DOMAIN INVENTORY]
+character-other                        : 1
+context                                : 7
+digit-arabic-indic                     : 10
+digit-ascii                            : 10
+digit-persian                          : 10
+latin-lower                            : 26
+latin-upper                            : 26
+layout                                 : 27
+mode                                   : 5
+normalization                          : 1
+persian-letter                         : 33
+punctuation-or-symbol                  : 17
+sequence                               : 3
+
+[RULE-LEVEL REQUIREMENTS]
+capitalization-state-required                    : 103
+collision-resolution-required                    : 120
+context-state-required                           : 11
+digit-family-output-policy-required              : 59
+language-mode-state-required                     : 90
+latin-mode-state-required                        : 103
+layout-reconstruction-policy-required            : 27
+longest-match-sequence-parser-required           : 4
+mode-boundary-state-required                     : 3
+mode-state-required                              : 5
+normalization-reconstruction-policy-required     : 1
+numeric-mode-state-required                      : 59
+numeric-vs-text-mode-state-required              : 59
+print-variant-policy-or-ambiguity-required       : 15
+segmentation-review-required                     : 7
+structural-reconstruction-required               : 29
+
+[COLLISION GROUP REQUIREMENTS]
+Collision groups                              : 34
+capitalization-state-required                    : 26
+collision-resolution-required                    : 33
+context-state-required                           : 3
+digit-family-output-policy-required              : 10
+language-mode-state-required                     : 21
+latin-mode-state-required                        : 26
+longest-match-sequence-parser-required           : 1
+mode-boundary-state-required                     : 1
+numeric-mode-state-required                      : 10
+numeric-vs-text-mode-state-required              : 10
+print-variant-policy-or-ambiguity-required       : 5
+
+[POLICY-RELEVANT COLLISION GROUPS]
+Groups needing digit-family or print-variant policy: 15
+cells='1' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['1', 'A', 'a', 'ا', '١', '۱'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='12' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['2', 'B', 'b', 'ب', '٢', '۲'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='124' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['6', 'F', 'f', 'ف', '٦', '۶'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='1245' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['7', 'G', 'g', '٧', 'گ', '۷'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='125' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['8', 'H', 'h', 'ه', '٨', '۸'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='14' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['3', 'C', 'c', '٣', 'چ', '۳'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='145' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['4', 'D', 'd', 'د', '٤', '۴'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='15' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper prints=['5', 'E', 'e', '٥', '۵'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='2' domains=context,punctuation-or-symbol prints=[',', '.', '،', '٫'] requirements=['collision-resolution-required', 'context-state-required', 'print-variant-policy-or-ambiguity-required']
+cells='23' domains=punctuation-or-symbol prints=[';', '؛'] requirements=['collision-resolution-required', 'print-variant-policy-or-ambiguity-required']
+cells='2356' domains=punctuation-or-symbol prints=['(', ')'] requirements=['collision-resolution-required', 'print-variant-policy-or-ambiguity-required']
+cells='236' domains=punctuation-or-symbol prints=['?', '؟'] requirements=['collision-resolution-required', 'print-variant-policy-or-ambiguity-required']
+cells='24' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['9', 'I', 'i', '٩', 'ی', '۹'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='245' domains=digit-arabic-indic,digit-ascii,digit-persian,latin-lower,latin-upper,persian-letter prints=['0', 'J', 'j', 'ج', '٠', '۰'] requirements=['capitalization-state-required', 'collision-resolution-required', 'digit-family-output-policy-required', 'language-mode-state-required', 'latin-mode-state-required', 'numeric-mode-state-required', 'numeric-vs-text-mode-state-required']
+cells='25 1234' domains=context,punctuation-or-symbol prints=['%', '٪'] requirements=['collision-resolution-required', 'context-state-required', 'print-variant-policy-or-ambiguity-required']
+
+[SEGMENTATION / LONGEST-MATCH]
+Cell signatures decomposable into 2+ known signatures: 4
+cells='25 1234' -> FA-G1-NUMRULE-007, FA-G1-PUNC-SCALAR-016, FA-G1-PUNC-SCALAR-017
+cells='35 35 35 35' -> FA-G1-PUNC-ASTERISK-RUN-001
+cells='6 36' -> FA-G1-PUNC-SCALAR-011
+cells='6 6 6' -> FA-G1-PUNC-ELLIPSIS-001, FA-G1-PUNC-UNICODE-ELLIPSIS-001
+
+[ARCHITECTURE CONSEQUENCES]
+1. Reverse translation cannot be implemented as a global Braille-cell lookup table.
+2. The reverse engine needs explicit parser state for numeric and Latin modes plus capitalization.
+3. Numeric mode does not identify which print digit family (ASCII, Persian, Arabic-Indic) should be emitted; Phase 13 needs an explicit output policy.
+4. Some punctuation/context collisions retain multiple print spellings after semantic context is known; they need a canonicalization or ambiguity policy.
+5. 29 no-cell forward rules require an explicit reconstruction contract rather than blind inversion.
+6. Multi-cell and sequence signatures require longest-match / segmentation rules.
+7. Reverse conformance must be authored independently and should include ambiguity, state transitions, malformed Braille, and round-trip properties.
+
+[NEXT]
+Phase 13.2 — Reverse Translation Architecture and Contract Freeze
+  - reverse parser state machine
+  - digit-family output policy
+  - punctuation canonicalization / ambiguity policy
+  - layout and normalization reconstruction policy
+  - result and error model
+  - public SDK API shape
+  - reverse conformance schema and round-trip policy
+
+IMPORTANT: `DIRECT_REVERSAL_CANDIDATE` is an audit classification, not a normative reverse rule.
+DO NOT IMPLEMENT OR COMMIT REVERSE SEMANTICS FROM THIS AUDIT ALONE.
+
+Text : stage13-1b-reverse-rule-classification-audit.txt
+JSON : stage13-1b-reverse-rule-classification-audit.json
+
+DO NOT COMMIT AUDIT OUTPUTS YET.
+======================================================================================================

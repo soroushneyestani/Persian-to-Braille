@@ -1,0 +1,6208 @@
+{
+  "phase": "13.1b",
+  "name": "Reverse Rule Classification and Ambiguity Audit",
+  "mode": "READ-ONLY / PRELIMINARY CLASSIFICATION",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81",
+    "upstream": "2a5e424ca1c9aa8fc010a063a3382769d01d2e81"
+  },
+  "baseline": {
+    "correctedPhase13_1a": "PASS",
+    "rules": 176,
+    "vectors": 176
+  },
+  "classificationVocabulary": {
+    "DIRECT_REVERSAL_CANDIDATE": "Unique single-cell character rule with no detected segmentation overlap. Candidate only; not yet normative reverse semantics.",
+    "STATE_OR_POLICY_REQUIRED": "Cell signature collides with another forward rule and requires parser state, context, or explicit output policy.",
+    "PARSER_RULE_REQUIRED": "Non-colliding rule that still requires sequence/context/mode or multi-cell parser treatment.",
+    "STRUCTURAL_RECONSTRUCTION_REQUIRED": "Forward rule emits no Braille cells; reverse behavior must be defined by structural/layout/normalization reconstruction policy."
+  },
+  "summary": {
+    "preliminaryClasses": {
+      "DIRECT_REVERSAL_CANDIDATE": 16,
+      "PARSER_RULE_REQUIRED": 8,
+      "STATE_OR_POLICY_REQUIRED": 123,
+      "STRUCTURAL_RECONSTRUCTION_REQUIRED": 29
+    },
+    "domains": {
+      "character-other": 1,
+      "context": 7,
+      "digit-arabic-indic": 10,
+      "digit-ascii": 10,
+      "digit-persian": 10,
+      "latin-lower": 26,
+      "latin-upper": 26,
+      "layout": 27,
+      "mode": 5,
+      "normalization": 1,
+      "persian-letter": 33,
+      "punctuation-or-symbol": 17,
+      "sequence": 3
+    },
+    "ruleRequirementCounts": {
+      "capitalization-state-required": 103,
+      "collision-resolution-required": 120,
+      "context-state-required": 11,
+      "digit-family-output-policy-required": 59,
+      "language-mode-state-required": 90,
+      "latin-mode-state-required": 103,
+      "layout-reconstruction-policy-required": 27,
+      "longest-match-sequence-parser-required": 4,
+      "mode-boundary-state-required": 3,
+      "mode-state-required": 5,
+      "normalization-reconstruction-policy-required": 1,
+      "numeric-mode-state-required": 59,
+      "numeric-vs-text-mode-state-required": 59,
+      "print-variant-policy-or-ambiguity-required": 15,
+      "segmentation-review-required": 7,
+      "structural-reconstruction-required": 29
+    },
+    "collisionGroups": 34,
+    "collisionRequirementGroupCounts": {
+      "capitalization-state-required": 26,
+      "collision-resolution-required": 33,
+      "context-state-required": 3,
+      "digit-family-output-policy-required": 10,
+      "language-mode-state-required": 21,
+      "latin-mode-state-required": 26,
+      "longest-match-sequence-parser-required": 1,
+      "mode-boundary-state-required": 1,
+      "numeric-mode-state-required": 10,
+      "numeric-vs-text-mode-state-required": 10,
+      "print-variant-policy-or-ambiguity-required": 5
+    },
+    "segmentationOverlapSignatures": 4,
+    "policyRelevantCollisionGroups": 15
+  },
+  "collisionGroups": [
+    {
+      "signature": "1",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "1",
+        "A",
+        "a",
+        "ا",
+        "١",
+        "۱"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "12",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "2",
+        "B",
+        "b",
+        "ب",
+        "٢",
+        "۲"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "123",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "L",
+        "l",
+        "ل"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1234",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "P",
+        "p",
+        "پ"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "12345",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "Q",
+        "q",
+        "ق"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1235",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "R",
+        "r",
+        "ر"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1236",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "V",
+        "v"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "124",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "6",
+        "F",
+        "f",
+        "ف",
+        "٦",
+        "۶"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1245",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "7",
+        "G",
+        "g",
+        "٧",
+        "گ",
+        "۷"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "125",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "8",
+        "H",
+        "h",
+        "ه",
+        "٨",
+        "۸"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "13",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "K",
+        "k",
+        "ک"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "134",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "M",
+        "m",
+        "م"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1345",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "N",
+        "n",
+        "ن"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "13456",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "Y",
+        "y"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1346",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "X",
+        "x",
+        "خ"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "135",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "O",
+        "o"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1356",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "Z",
+        "z",
+        "ز"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "136",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "U",
+        "u"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "14",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "3",
+        "C",
+        "c",
+        "٣",
+        "چ",
+        "۳"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "145",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "4",
+        "D",
+        "d",
+        "د",
+        "٤",
+        "۴"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "15",
+      "ruleCount": 5,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "5",
+        "E",
+        "e",
+        "٥",
+        "۵"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "2",
+      "ruleCount": 4,
+      "ruleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "domains": [
+        "context",
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        ",",
+        ".",
+        "،",
+        "٫"
+      ],
+      "tokenClasses": [
+        "numeric-decimal-separator"
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "23",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-007",
+        "FA-G1-PUNC-SCALAR-008"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        ";",
+        "؛"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "234",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "S",
+        "s",
+        "س"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "2345",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "T",
+        "t",
+        "ت"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "2356",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-019",
+        "FA-G1-PUNC-SCALAR-020"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "(",
+        ")"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "236",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-002",
+        "FA-G1-PUNC-SCALAR-003"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "?",
+        "؟"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "24",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "9",
+        "I",
+        "i",
+        "٩",
+        "ی",
+        "۹"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "245",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "0",
+        "J",
+        "j",
+        "ج",
+        "٠",
+        "۰"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "2456",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "domains": [
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "W",
+        "w",
+        "و"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "signature": "25",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-LATIN-MODE-002",
+        "FA-G1-LATIN-MODE-003",
+        "FA-G1-PUNC-SCALAR-009"
+      ],
+      "domains": [
+        "mode",
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        ":"
+      ],
+      "tokenClasses": [
+        "latin-span-begin",
+        "latin-span-end"
+      ],
+      "requirements": [
+        "mode-boundary-state-required"
+      ]
+    },
+    {
+      "signature": "25 1234",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ],
+      "domains": [
+        "context",
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "%",
+        "٪"
+      ],
+      "tokenClasses": [
+        "numeric-end"
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "3",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-NUMRULE-003",
+        "FA-G1-NUMRULE-004"
+      ],
+      "domains": [
+        "context"
+      ],
+      "printValues": [
+        ",",
+        "٬"
+      ],
+      "tokenClasses": [
+        "numeric-internal"
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required"
+      ]
+    },
+    {
+      "signature": "6 6 6",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-ELLIPSIS-001",
+        "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+      ],
+      "domains": [
+        "punctuation-or-symbol",
+        "sequence"
+      ],
+      "printValues": [
+        "...",
+        "…"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "longest-match-sequence-parser-required"
+      ]
+    }
+  ],
+  "segmentationOverlapGroups": [
+    {
+      "signature": "25 1234",
+      "ruleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ]
+    },
+    {
+      "signature": "35 35 35 35",
+      "ruleIds": [
+        "FA-G1-PUNC-ASTERISK-RUN-001"
+      ]
+    },
+    {
+      "signature": "6 36",
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-011"
+      ]
+    },
+    {
+      "signature": "6 6 6",
+      "ruleIds": [
+        "FA-G1-PUNC-ELLIPSIS-001",
+        "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+      ]
+    }
+  ],
+  "policyRelevantCollisionGroups": [
+    {
+      "signature": "1",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "1",
+        "A",
+        "a",
+        "ا",
+        "١",
+        "۱"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "12",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "2",
+        "B",
+        "b",
+        "ب",
+        "٢",
+        "۲"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "124",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "6",
+        "F",
+        "f",
+        "ف",
+        "٦",
+        "۶"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1245",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "7",
+        "G",
+        "g",
+        "٧",
+        "گ",
+        "۷"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "125",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "8",
+        "H",
+        "h",
+        "ه",
+        "٨",
+        "۸"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "14",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "3",
+        "C",
+        "c",
+        "٣",
+        "چ",
+        "۳"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "145",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "4",
+        "D",
+        "d",
+        "د",
+        "٤",
+        "۴"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "15",
+      "ruleCount": 5,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper"
+      ],
+      "printValues": [
+        "5",
+        "E",
+        "e",
+        "٥",
+        "۵"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "2",
+      "ruleCount": 4,
+      "ruleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "domains": [
+        "context",
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        ",",
+        ".",
+        "،",
+        "٫"
+      ],
+      "tokenClasses": [
+        "numeric-decimal-separator"
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "23",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-007",
+        "FA-G1-PUNC-SCALAR-008"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        ";",
+        "؛"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "2356",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-019",
+        "FA-G1-PUNC-SCALAR-020"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "(",
+        ")"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "236",
+      "ruleCount": 2,
+      "ruleIds": [
+        "FA-G1-PUNC-SCALAR-002",
+        "FA-G1-PUNC-SCALAR-003"
+      ],
+      "domains": [
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "?",
+        "؟"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "signature": "24",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "9",
+        "I",
+        "i",
+        "٩",
+        "ی",
+        "۹"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "245",
+      "ruleCount": 6,
+      "ruleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "domains": [
+        "digit-arabic-indic",
+        "digit-ascii",
+        "digit-persian",
+        "latin-lower",
+        "latin-upper",
+        "persian-letter"
+      ],
+      "printValues": [
+        "0",
+        "J",
+        "j",
+        "ج",
+        "٠",
+        "۰"
+      ],
+      "tokenClasses": [],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "25 1234",
+      "ruleCount": 3,
+      "ruleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ],
+      "domains": [
+        "context",
+        "punctuation-or-symbol"
+      ],
+      "printValues": [
+        "%",
+        "٪"
+      ],
+      "tokenClasses": [
+        "numeric-end"
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-000",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٠",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "١",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-002",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٢",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-003",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٣",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-004",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٤",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-005",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٥",
+      "inputTokenClass": null,
+      "cells": [
+        "15"
+      ],
+      "cellSignature": "15",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-006",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٦",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-007",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٧",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-008",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٨",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-009",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-arabic-indic",
+      "inputText": "٩",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-000",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "0",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "1",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-002",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "2",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-003",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "3",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-004",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "4",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-005",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "5",
+      "inputTokenClass": null,
+      "cells": [
+        "15"
+      ],
+      "cellSignature": "15",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-006",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "6",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-007",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "7",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-008",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "8",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-ASCII-009",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-ascii",
+      "inputText": "9",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-000",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۰",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۱",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-002",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۲",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-003",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۳",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-004",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۴",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-005",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۵",
+      "inputTokenClass": null,
+      "cells": [
+        "15"
+      ],
+      "cellSignature": "15",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-006",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۶",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-007",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۷",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-008",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۸",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-DIGIT-PERSIAN-009",
+      "type": "character",
+      "status": "candidate",
+      "domain": "digit-persian",
+      "inputText": "۹",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "A",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-002",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "B",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-003",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "C",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-004",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "D",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-005",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "E",
+      "inputTokenClass": null,
+      "cells": [
+        "15"
+      ],
+      "cellSignature": "15",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-006",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "F",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-007",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "G",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-008",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "H",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-009",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "I",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-010",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "J",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-011",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "K",
+      "inputTokenClass": null,
+      "cells": [
+        "13"
+      ],
+      "cellSignature": "13",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-012",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "L",
+      "inputTokenClass": null,
+      "cells": [
+        "123"
+      ],
+      "cellSignature": "123",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-013",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "M",
+      "inputTokenClass": null,
+      "cells": [
+        "134"
+      ],
+      "cellSignature": "134",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-014",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "N",
+      "inputTokenClass": null,
+      "cells": [
+        "1345"
+      ],
+      "cellSignature": "1345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-015",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "O",
+      "inputTokenClass": null,
+      "cells": [
+        "135"
+      ],
+      "cellSignature": "135",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-016",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "P",
+      "inputTokenClass": null,
+      "cells": [
+        "1234"
+      ],
+      "cellSignature": "1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-017",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "Q",
+      "inputTokenClass": null,
+      "cells": [
+        "12345"
+      ],
+      "cellSignature": "12345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-018",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "R",
+      "inputTokenClass": null,
+      "cells": [
+        "1235"
+      ],
+      "cellSignature": "1235",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-019",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "S",
+      "inputTokenClass": null,
+      "cells": [
+        "234"
+      ],
+      "cellSignature": "234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-020",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "T",
+      "inputTokenClass": null,
+      "cells": [
+        "2345"
+      ],
+      "cellSignature": "2345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-021",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "U",
+      "inputTokenClass": null,
+      "cells": [
+        "136"
+      ],
+      "cellSignature": "136",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-022",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "V",
+      "inputTokenClass": null,
+      "cells": [
+        "1236"
+      ],
+      "cellSignature": "1236",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-023",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "W",
+      "inputTokenClass": null,
+      "cells": [
+        "2456"
+      ],
+      "cellSignature": "2456",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-024",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "X",
+      "inputTokenClass": null,
+      "cells": [
+        "1346"
+      ],
+      "cellSignature": "1346",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-025",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "Y",
+      "inputTokenClass": null,
+      "cells": [
+        "13456"
+      ],
+      "cellSignature": "13456",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-026",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-upper",
+      "inputText": "Z",
+      "inputTokenClass": null,
+      "cells": [
+        "1356"
+      ],
+      "cellSignature": "1356",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-027",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "a",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-028",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "b",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-029",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "c",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-030",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "d",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-031",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "e",
+      "inputTokenClass": null,
+      "cells": [
+        "15"
+      ],
+      "cellSignature": "15",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "FA-G1-DIGIT-ASCII-005",
+        "FA-G1-DIGIT-PERSIAN-005",
+        "FA-G1-LATIN-005",
+        "FA-G1-LATIN-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-032",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "f",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-033",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "g",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-034",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "h",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-035",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "i",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-036",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "j",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-037",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "k",
+      "inputTokenClass": null,
+      "cells": [
+        "13"
+      ],
+      "cellSignature": "13",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-038",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "l",
+      "inputTokenClass": null,
+      "cells": [
+        "123"
+      ],
+      "cellSignature": "123",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-039",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "m",
+      "inputTokenClass": null,
+      "cells": [
+        "134"
+      ],
+      "cellSignature": "134",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-040",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "n",
+      "inputTokenClass": null,
+      "cells": [
+        "1345"
+      ],
+      "cellSignature": "1345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-041",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "o",
+      "inputTokenClass": null,
+      "cells": [
+        "135"
+      ],
+      "cellSignature": "135",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-015",
+        "FA-G1-LATIN-041"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-042",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "p",
+      "inputTokenClass": null,
+      "cells": [
+        "1234"
+      ],
+      "cellSignature": "1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-043",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "q",
+      "inputTokenClass": null,
+      "cells": [
+        "12345"
+      ],
+      "cellSignature": "12345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-044",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "r",
+      "inputTokenClass": null,
+      "cells": [
+        "1235"
+      ],
+      "cellSignature": "1235",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-045",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "s",
+      "inputTokenClass": null,
+      "cells": [
+        "234"
+      ],
+      "cellSignature": "234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-046",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "t",
+      "inputTokenClass": null,
+      "cells": [
+        "2345"
+      ],
+      "cellSignature": "2345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-047",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "u",
+      "inputTokenClass": null,
+      "cells": [
+        "136"
+      ],
+      "cellSignature": "136",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-021",
+        "FA-G1-LATIN-047"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-048",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "v",
+      "inputTokenClass": null,
+      "cells": [
+        "1236"
+      ],
+      "cellSignature": "1236",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-022",
+        "FA-G1-LATIN-048"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-049",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "w",
+      "inputTokenClass": null,
+      "cells": [
+        "2456"
+      ],
+      "cellSignature": "2456",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-050",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "x",
+      "inputTokenClass": null,
+      "cells": [
+        "1346"
+      ],
+      "cellSignature": "1346",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-051",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "y",
+      "inputTokenClass": null,
+      "cells": [
+        "13456"
+      ],
+      "cellSignature": "13456",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-025",
+        "FA-G1-LATIN-051"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-052",
+      "type": "character",
+      "status": "candidate",
+      "domain": "latin-lower",
+      "inputText": "z",
+      "inputTokenClass": null,
+      "cells": [
+        "1356"
+      ],
+      "cellSignature": "1356",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-MODE-001",
+      "type": "mode",
+      "status": "candidate",
+      "domain": "mode",
+      "inputText": null,
+      "inputTokenClass": "latin-character-class",
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "mode:latin-character-class",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "mode-state-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-MODE-002",
+      "type": "mode",
+      "status": "candidate",
+      "domain": "mode",
+      "inputText": null,
+      "inputTokenClass": "latin-span-begin",
+      "cells": [
+        "25"
+      ],
+      "cellSignature": "25",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-MODE-002",
+        "FA-G1-LATIN-MODE-003",
+        "FA-G1-PUNC-SCALAR-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "mode-boundary-state-required",
+        "mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-MODE-003",
+      "type": "mode",
+      "status": "candidate",
+      "domain": "mode",
+      "inputText": null,
+      "inputTokenClass": "latin-span-end",
+      "cells": [
+        "25"
+      ],
+      "cellSignature": "25",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-MODE-002",
+        "FA-G1-LATIN-MODE-003",
+        "FA-G1-PUNC-SCALAR-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "mode-boundary-state-required",
+        "mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LATIN-MODE-004",
+      "type": "mode",
+      "status": "candidate",
+      "domain": "mode",
+      "inputText": null,
+      "inputTokenClass": "latin-capital-indicator",
+      "cells": [
+        "6"
+      ],
+      "cellSignature": "6",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-001",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+0020",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-002",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "\t",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:layout-control:U+0009",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-003",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "\n",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:line-boundary-candidate:U+000A",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-004",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "\u000b",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:layout-control:U+000B",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-005",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "\f",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:layout-control:U+000C",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-006",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "\r",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:line-boundary-candidate:U+000D",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-007",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:nonbreaking-inline-spacing:U+00A0",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-008",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2000",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-009",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2001",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-010",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2002",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-011",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2003",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-012",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2004",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-013",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2005",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-014",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2006",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-015",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:nonbreaking-inline-spacing:U+2007",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-016",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2008",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-017",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+2009",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-018",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+200A",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-019",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "​",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:format-layout-control:U+200B",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-020",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:line-boundary-candidate:U+2028",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-021",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:paragraph-boundary-candidate:U+2029",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-022",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:nonbreaking-inline-spacing:U+202F",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-023",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": " ",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:inline-spacing:U+205F",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-024",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "⁠",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:format-layout-control:U+2060",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-025",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "⠀",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:braille-space:U+2800",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-026",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "﻿",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:format-layout-control:U+FEFF",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LAYOUT-027",
+      "type": "layout",
+      "status": "candidate",
+      "domain": "layout",
+      "inputText": "‌",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "layout:shaping-control:U+200C",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "layout-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-001",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ا",
+      "inputTokenClass": null,
+      "cells": [
+        "1"
+      ],
+      "cellSignature": "1",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "FA-G1-DIGIT-ASCII-001",
+        "FA-G1-DIGIT-PERSIAN-001",
+        "FA-G1-LATIN-001",
+        "FA-G1-LATIN-027",
+        "FA-G1-LETTER-001"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-002",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ب",
+      "inputTokenClass": null,
+      "cells": [
+        "12"
+      ],
+      "cellSignature": "12",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "FA-G1-DIGIT-ASCII-002",
+        "FA-G1-DIGIT-PERSIAN-002",
+        "FA-G1-LATIN-002",
+        "FA-G1-LATIN-028",
+        "FA-G1-LETTER-002"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-003",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "پ",
+      "inputTokenClass": null,
+      "cells": [
+        "1234"
+      ],
+      "cellSignature": "1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-016",
+        "FA-G1-LATIN-042",
+        "FA-G1-LETTER-003"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-004",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ت",
+      "inputTokenClass": null,
+      "cells": [
+        "2345"
+      ],
+      "cellSignature": "2345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-020",
+        "FA-G1-LATIN-046",
+        "FA-G1-LETTER-004"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-005",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ث",
+      "inputTokenClass": null,
+      "cells": [
+        "1456"
+      ],
+      "cellSignature": "1456",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-006",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ج",
+      "inputTokenClass": null,
+      "cells": [
+        "245"
+      ],
+      "cellSignature": "245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "FA-G1-DIGIT-ASCII-000",
+        "FA-G1-DIGIT-PERSIAN-000",
+        "FA-G1-LATIN-010",
+        "FA-G1-LATIN-036",
+        "FA-G1-LETTER-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-007",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "چ",
+      "inputTokenClass": null,
+      "cells": [
+        "14"
+      ],
+      "cellSignature": "14",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "FA-G1-DIGIT-ASCII-003",
+        "FA-G1-DIGIT-PERSIAN-003",
+        "FA-G1-LATIN-003",
+        "FA-G1-LATIN-029",
+        "FA-G1-LETTER-007"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-008",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ح",
+      "inputTokenClass": null,
+      "cells": [
+        "156"
+      ],
+      "cellSignature": "156",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-009",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "خ",
+      "inputTokenClass": null,
+      "cells": [
+        "1346"
+      ],
+      "cellSignature": "1346",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-024",
+        "FA-G1-LATIN-050",
+        "FA-G1-LETTER-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-010",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "د",
+      "inputTokenClass": null,
+      "cells": [
+        "145"
+      ],
+      "cellSignature": "145",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "FA-G1-DIGIT-ASCII-004",
+        "FA-G1-DIGIT-PERSIAN-004",
+        "FA-G1-LATIN-004",
+        "FA-G1-LATIN-030",
+        "FA-G1-LETTER-010"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-011",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ذ",
+      "inputTokenClass": null,
+      "cells": [
+        "2346"
+      ],
+      "cellSignature": "2346",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-012",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ر",
+      "inputTokenClass": null,
+      "cells": [
+        "1235"
+      ],
+      "cellSignature": "1235",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-018",
+        "FA-G1-LATIN-044",
+        "FA-G1-LETTER-012"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-013",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ز",
+      "inputTokenClass": null,
+      "cells": [
+        "1356"
+      ],
+      "cellSignature": "1356",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-026",
+        "FA-G1-LATIN-052",
+        "FA-G1-LETTER-013"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-014",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ژ",
+      "inputTokenClass": null,
+      "cells": [
+        "346"
+      ],
+      "cellSignature": "346",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-015",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "س",
+      "inputTokenClass": null,
+      "cells": [
+        "234"
+      ],
+      "cellSignature": "234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-019",
+        "FA-G1-LATIN-045",
+        "FA-G1-LETTER-015"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-016",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ش",
+      "inputTokenClass": null,
+      "cells": [
+        "146"
+      ],
+      "cellSignature": "146",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-017",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ص",
+      "inputTokenClass": null,
+      "cells": [
+        "12346"
+      ],
+      "cellSignature": "12346",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-018",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ض",
+      "inputTokenClass": null,
+      "cells": [
+        "1246"
+      ],
+      "cellSignature": "1246",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-019",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ط",
+      "inputTokenClass": null,
+      "cells": [
+        "23456"
+      ],
+      "cellSignature": "23456",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-020",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ظ",
+      "inputTokenClass": null,
+      "cells": [
+        "123456"
+      ],
+      "cellSignature": "123456",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-021",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ع",
+      "inputTokenClass": null,
+      "cells": [
+        "12356"
+      ],
+      "cellSignature": "12356",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-022",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "غ",
+      "inputTokenClass": null,
+      "cells": [
+        "126"
+      ],
+      "cellSignature": "126",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-LETTER-023",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ف",
+      "inputTokenClass": null,
+      "cells": [
+        "124"
+      ],
+      "cellSignature": "124",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "FA-G1-DIGIT-ASCII-006",
+        "FA-G1-DIGIT-PERSIAN-006",
+        "FA-G1-LATIN-006",
+        "FA-G1-LATIN-032",
+        "FA-G1-LETTER-023"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-024",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ق",
+      "inputTokenClass": null,
+      "cells": [
+        "12345"
+      ],
+      "cellSignature": "12345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-017",
+        "FA-G1-LATIN-043",
+        "FA-G1-LETTER-024"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-025",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ک",
+      "inputTokenClass": null,
+      "cells": [
+        "13"
+      ],
+      "cellSignature": "13",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-011",
+        "FA-G1-LATIN-037",
+        "FA-G1-LETTER-025"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-026",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "گ",
+      "inputTokenClass": null,
+      "cells": [
+        "1245"
+      ],
+      "cellSignature": "1245",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "FA-G1-DIGIT-ASCII-007",
+        "FA-G1-DIGIT-PERSIAN-007",
+        "FA-G1-LATIN-007",
+        "FA-G1-LATIN-033",
+        "FA-G1-LETTER-026"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-027",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ل",
+      "inputTokenClass": null,
+      "cells": [
+        "123"
+      ],
+      "cellSignature": "123",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-012",
+        "FA-G1-LATIN-038",
+        "FA-G1-LETTER-027"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-028",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "م",
+      "inputTokenClass": null,
+      "cells": [
+        "134"
+      ],
+      "cellSignature": "134",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-013",
+        "FA-G1-LATIN-039",
+        "FA-G1-LETTER-028"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-029",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ن",
+      "inputTokenClass": null,
+      "cells": [
+        "1345"
+      ],
+      "cellSignature": "1345",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-014",
+        "FA-G1-LATIN-040",
+        "FA-G1-LETTER-029"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-030",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "و",
+      "inputTokenClass": null,
+      "cells": [
+        "2456"
+      ],
+      "cellSignature": "2456",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-023",
+        "FA-G1-LATIN-049",
+        "FA-G1-LETTER-030"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "language-mode-state-required",
+        "latin-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-031",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ه",
+      "inputTokenClass": null,
+      "cells": [
+        "125"
+      ],
+      "cellSignature": "125",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "FA-G1-DIGIT-ASCII-008",
+        "FA-G1-DIGIT-PERSIAN-008",
+        "FA-G1-LATIN-008",
+        "FA-G1-LATIN-034",
+        "FA-G1-LETTER-031"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-LETTER-032",
+      "type": "character",
+      "status": "normative",
+      "domain": "persian-letter",
+      "inputText": "ی",
+      "inputTokenClass": null,
+      "cells": [
+        "24"
+      ],
+      "cellSignature": "24",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "FA-G1-DIGIT-ASCII-009",
+        "FA-G1-DIGIT-PERSIAN-009",
+        "FA-G1-LATIN-009",
+        "FA-G1-LATIN-035",
+        "FA-G1-LETTER-032"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NORM-ZWNJ-001",
+      "type": "normalization",
+      "status": "candidate",
+      "domain": "normalization",
+      "inputText": "‌",
+      "inputTokenClass": null,
+      "cells": [],
+      "cellSignature": null,
+      "structuralToken": "normalization:zwnj-orthographic-boundary",
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+      "requirements": [
+        "normalization-reconstruction-policy-required",
+        "structural-reconstruction-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUM-FRACTION-SLASH-001",
+      "type": "context",
+      "status": "normative",
+      "domain": "context",
+      "inputText": "/",
+      "inputTokenClass": "numeric-fraction-separator",
+      "cells": [
+        "34"
+      ],
+      "cellSignature": "34",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "context-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-001",
+      "type": "mode",
+      "status": "candidate",
+      "domain": "mode",
+      "inputText": null,
+      "inputTokenClass": "numeric-indicator",
+      "cells": [
+        "3456"
+      ],
+      "cellSignature": "3456",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "mode-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-002",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": "#",
+      "inputTokenClass": "numeric-begin",
+      "cells": [
+        "3456",
+        "4"
+      ],
+      "cellSignature": "3456 4",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "context-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-003",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": ",",
+      "inputTokenClass": "numeric-internal",
+      "cells": [
+        "3"
+      ],
+      "cellSignature": "3",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-003",
+        "FA-G1-NUMRULE-004"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-004",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": "٬",
+      "inputTokenClass": "numeric-internal",
+      "cells": [
+        "3"
+      ],
+      "cellSignature": "3",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-003",
+        "FA-G1-NUMRULE-004"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-005",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": ".",
+      "inputTokenClass": "numeric-decimal-separator",
+      "cells": [
+        "2"
+      ],
+      "cellSignature": "2",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-006",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": "٫",
+      "inputTokenClass": "numeric-decimal-separator",
+      "cells": [
+        "2"
+      ],
+      "cellSignature": "2",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-007",
+      "type": "context",
+      "status": "candidate",
+      "domain": "context",
+      "inputText": "%",
+      "inputTokenClass": "numeric-end",
+      "cells": [
+        "25",
+        "1234"
+      ],
+      "cellSignature": "25 1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ],
+      "segmentationOverlap": true,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
+      "type": "sequence",
+      "status": "candidate",
+      "domain": "sequence",
+      "inputText": "هٔ",
+      "inputTokenClass": null,
+      "cells": [
+        "125",
+        "0",
+        "24"
+      ],
+      "cellSignature": "125 0 24",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "longest-match-sequence-parser-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+      "type": "character",
+      "status": "normative",
+      "domain": "character-other",
+      "inputText": "ٰ",
+      "inputTokenClass": null,
+      "cells": [
+        "5"
+      ],
+      "cellSignature": "5",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ASTERISK-RUN-001",
+      "type": "sequence",
+      "status": "normative",
+      "domain": "sequence",
+      "inputText": "***",
+      "inputTokenClass": null,
+      "cells": [
+        "35",
+        "35",
+        "35",
+        "35"
+      ],
+      "cellSignature": "35 35 35 35",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": true,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "longest-match-sequence-parser-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ASTERISK-SINGLE-001",
+      "type": "character",
+      "status": "normative",
+      "domain": "punctuation-or-symbol",
+      "inputText": "*",
+      "inputTokenClass": null,
+      "cells": [
+        "35",
+        "35"
+      ],
+      "cellSignature": "35 35",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-PUNC-ELLIPSIS-001",
+      "type": "sequence",
+      "status": "normative",
+      "domain": "sequence",
+      "inputText": "...",
+      "inputTokenClass": null,
+      "cells": [
+        "6",
+        "6",
+        "6"
+      ],
+      "cellSignature": "6 6 6",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-ELLIPSIS-001",
+        "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+      ],
+      "segmentationOverlap": true,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "longest-match-sequence-parser-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "!",
+      "inputTokenClass": null,
+      "cells": [
+        "235"
+      ],
+      "cellSignature": "235",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-002",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "?",
+      "inputTokenClass": null,
+      "cells": [
+        "236"
+      ],
+      "cellSignature": "236",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-002",
+        "FA-G1-PUNC-SCALAR-003"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-003",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "؟",
+      "inputTokenClass": null,
+      "cells": [
+        "236"
+      ],
+      "cellSignature": "236",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-002",
+        "FA-G1-PUNC-SCALAR-003"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-004",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": ".",
+      "inputTokenClass": null,
+      "cells": [
+        "256"
+      ],
+      "cellSignature": "256",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-005",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": ",",
+      "inputTokenClass": null,
+      "cells": [
+        "2"
+      ],
+      "cellSignature": "2",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-006",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "،",
+      "inputTokenClass": null,
+      "cells": [
+        "2"
+      ],
+      "cellSignature": "2",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-005",
+        "FA-G1-NUMRULE-006",
+        "FA-G1-PUNC-SCALAR-005",
+        "FA-G1-PUNC-SCALAR-006"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-007",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": ";",
+      "inputTokenClass": null,
+      "cells": [
+        "23"
+      ],
+      "cellSignature": "23",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-007",
+        "FA-G1-PUNC-SCALAR-008"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-008",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "؛",
+      "inputTokenClass": null,
+      "cells": [
+        "23"
+      ],
+      "cellSignature": "23",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-007",
+        "FA-G1-PUNC-SCALAR-008"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-009",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": ":",
+      "inputTokenClass": null,
+      "cells": [
+        "25"
+      ],
+      "cellSignature": "25",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-LATIN-MODE-002",
+        "FA-G1-LATIN-MODE-003",
+        "FA-G1-PUNC-SCALAR-009"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "mode-boundary-state-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-010",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "-",
+      "inputTokenClass": null,
+      "cells": [
+        "36"
+      ],
+      "cellSignature": "36",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-011",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "–",
+      "inputTokenClass": null,
+      "cells": [
+        "6",
+        "36"
+      ],
+      "cellSignature": "6 36",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": true,
+      "preliminaryClass": "PARSER_RULE_REQUIRED",
+      "requirements": [
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-016",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "%",
+      "inputTokenClass": null,
+      "cells": [
+        "25",
+        "1234"
+      ],
+      "cellSignature": "25 1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ],
+      "segmentationOverlap": true,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-017",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "٪",
+      "inputTokenClass": null,
+      "cells": [
+        "25",
+        "1234"
+      ],
+      "cellSignature": "25 1234",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-NUMRULE-007",
+        "FA-G1-PUNC-SCALAR-016",
+        "FA-G1-PUNC-SCALAR-017"
+      ],
+      "segmentationOverlap": true,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-019",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "(",
+      "inputTokenClass": null,
+      "cells": [
+        "2356"
+      ],
+      "cellSignature": "2356",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-019",
+        "FA-G1-PUNC-SCALAR-020"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-SCALAR-020",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": ")",
+      "inputTokenClass": null,
+      "cells": [
+        "2356"
+      ],
+      "cellSignature": "2356",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-SCALAR-019",
+        "FA-G1-PUNC-SCALAR-020"
+      ],
+      "segmentationOverlap": false,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "print-variant-policy-or-ambiguity-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "punctuation-or-symbol",
+      "inputText": "…",
+      "inputTokenClass": null,
+      "cells": [
+        "6",
+        "6",
+        "6"
+      ],
+      "cellSignature": "6 6 6",
+      "structuralToken": null,
+      "collides": true,
+      "collisionRuleIds": [
+        "FA-G1-PUNC-ELLIPSIS-001",
+        "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+      ],
+      "segmentationOverlap": true,
+      "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+      "requirements": [
+        "collision-resolution-required",
+        "longest-match-sequence-parser-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    },
+    {
+      "ruleId": "FA-G1-VAR-001",
+      "type": "character",
+      "status": "candidate",
+      "domain": "persian-letter",
+      "inputText": "آ",
+      "inputTokenClass": null,
+      "cells": [
+        "345"
+      ],
+      "cellSignature": "345",
+      "structuralToken": null,
+      "collides": false,
+      "collisionRuleIds": [],
+      "segmentationOverlap": false,
+      "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+      "requirements": []
+    }
+  ],
+  "architectureImplications": [
+    "Reverse translation cannot be implemented as a global Braille-cell lookup table.",
+    "The reverse engine needs explicit parser state for numeric and Latin modes plus capitalization.",
+    "Numeric mode does not identify which print digit family (ASCII, Persian, Arabic-Indic) should be emitted; Phase 13 needs an explicit output policy.",
+    "Some punctuation/context collisions retain multiple print spellings after semantic context is known; they need a canonicalization or ambiguity policy.",
+    "29 no-cell forward rules require an explicit reconstruction contract rather than blind inversion.",
+    "Multi-cell and sequence signatures require longest-match / segmentation rules.",
+    "Reverse conformance must be authored independently and should include ambiguity, state transitions, malformed Braille, and round-trip properties."
+  ],
+  "nextPhase": {
+    "id": "13.2",
+    "name": "Reverse Translation Architecture and Contract Freeze",
+    "mustFreeze": [
+      "reverse parser state machine",
+      "digit-family output policy",
+      "punctuation canonicalization / ambiguity policy",
+      "layout and normalization reconstruction policy",
+      "result and error model",
+      "public SDK API shape",
+      "reverse conformance schema and round-trip policy"
+    ]
+  }
+}

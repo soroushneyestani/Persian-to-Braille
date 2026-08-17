@@ -1,0 +1,55 @@
+==================================================================================================
+PHASE 13.1a — REVERSE TRANSLATION BASELINE AND INVERTIBILITY AUDIT
+==================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 2a5e424ca1c9aa8fc010a063a3382769d01d2e81
+Phase 12 closure preserves Phase 13 Reverse Translation: YES
+
+[CURRENT SDK REVERSE SURFACE]
+translateFromBraille                         : ABSENT
+BrailleToPersian                             : ABSENT
+ReverseTranslator                            : ABSENT
+createPersianBrailleReverseTranslator        : ABSENT
+
+[REVERSE-LIKE SOURCE / CONFORMANCE SCAN]
+Text files scanned                         : 1175
+Core/SDK source files with reverse terms   : 0
+Conformance files with reverse terms       : 0
+
+[CANONICAL FORWARD RULE DATASET]
+Selected : spec/fa-ir/manifests/fa-ir-g1-materialization.json
+Rules    : 176
+Types    : <unknown>=176
+Statuses : candidate=139, normative=37
+
+[CANONICAL CONFORMANCE DATASET]
+Selected : spec/fa-ir/manifests/fa-ir-g1-materialization.json
+Vectors  : 176
+
+[FORWARD OUTPUT INVERTIBILITY EVIDENCE]
+Rules with detected forward output         : 0
+Rules without detected forward output      : 176
+Unique detected output signatures          : 0
+Output signatures with >1 forward rule     : 0
+Rules participating in collisions          : 0
+Structural/stateful forward rules           : 0
+
+[BASELINE CONCLUSION]
+NO OUTPUT COLLISIONS DETECTED BY AUDIT HEURISTIC — STILL REQUIRE STRUCTURAL/STATEFUL REVERSE DESIGN
+
+[PHASE 13.1b DESIGN QUESTIONS]
+1. Pin the exact canonical forward rule/vector artifacts that Phase 13 reverse derivation is allowed to consume.
+2. Classify each forward rule as directly reversible, state-dependent, ambiguous, lossy, or forward-only.
+3. Define the reverse ambiguity contract: deterministic preferred reading vs multiple candidates vs explicit ambiguity result.
+4. Define reverse handling for number mode, Latin mode, layout, normalization, sequences, punctuation, and indicators.
+5. Freeze reverse API/result/error types before implementation.
+6. Build reverse conformance vectors independently rather than assuming forward vectors can simply be swapped.
+
+IMPORTANT: Collision extraction is an audit heuristic. Do not implement reverse mapping directly from this report.
+
+Text : stage13-1a-reverse-translation-baseline-audit.txt
+JSON : stage13-1a-reverse-translation-baseline-audit.json
+
+DO NOT COMMIT AUDIT OUTPUTS YET.
+==================================================================================================
