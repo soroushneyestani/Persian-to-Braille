@@ -1,0 +1,94 @@
+============================================================================================================
+PHASE 13.5c — STATEFUL NUMERIC AND COLLISION COVERAGE AUDIT
+============================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : b0fbfa42b5c899aaeece2542397387698bed59bc
+
+[BASELINE]
+Forward rules                  : 176
+Reverse vectors                : 35
+Foundation seeds               : 16
+Phase 13.5b coverage vectors   : 19
+Collision signatures           : 34
+Covered collision signatures   : 7
+Uncovered collision signatures : 27
+Parser-required coverage        : 6 / 8
+
+[REMAINING PARSER-REQUIRED RULES]
+  FA-G1-NUM-FRACTION-SLASH-001 | input={'kind': 'context', 'text': '/', 'codePoints': ['U+002F'], 'before': 'digit', 'after': 'digit', 'tokenClass': 'numeric-fraction-separator'} | output={'cells': ['34'], 'unicodeBraille': '⠌', 'structuralToken': None}
+  FA-G1-NUMRULE-002 | input={'kind': 'context', 'text': '#', 'codePoints': ['U+0023'], 'after': 'digit', 'tokenClass': 'numeric-begin'} | output={'cells': ['3456', '4'], 'unicodeBraille': '⠼⠈', 'structuralToken': None}
+
+[UNCOVERED COLLISION FAMILIES]
+  cross-mode               : 20
+    123 -> FA-G1-LATIN-012, FA-G1-LATIN-038, FA-G1-LETTER-027
+    1234 -> FA-G1-LATIN-016, FA-G1-LATIN-042, FA-G1-LETTER-003
+    12345 -> FA-G1-LATIN-017, FA-G1-LATIN-043, FA-G1-LETTER-024
+    1235 -> FA-G1-LATIN-018, FA-G1-LATIN-044, FA-G1-LETTER-012
+    124 -> FA-G1-DIGIT-ARABIC-INDIC-006, FA-G1-DIGIT-ASCII-006, FA-G1-DIGIT-PERSIAN-006, FA-G1-LATIN-006, FA-G1-LATIN-032, FA-G1-LETTER-023
+    1245 -> FA-G1-DIGIT-ARABIC-INDIC-007, FA-G1-DIGIT-ASCII-007, FA-G1-DIGIT-PERSIAN-007, FA-G1-LATIN-007, FA-G1-LATIN-033, FA-G1-LETTER-026
+    125 -> FA-G1-DIGIT-ARABIC-INDIC-008, FA-G1-DIGIT-ASCII-008, FA-G1-DIGIT-PERSIAN-008, FA-G1-LATIN-008, FA-G1-LATIN-034, FA-G1-LETTER-031
+    13 -> FA-G1-LATIN-011, FA-G1-LATIN-037, FA-G1-LETTER-025
+    134 -> FA-G1-LATIN-013, FA-G1-LATIN-039, FA-G1-LETTER-028
+    1345 -> FA-G1-LATIN-014, FA-G1-LATIN-040, FA-G1-LETTER-029
+    1346 -> FA-G1-LATIN-024, FA-G1-LATIN-050, FA-G1-LETTER-009
+    1356 -> FA-G1-LATIN-026, FA-G1-LATIN-052, FA-G1-LETTER-013
+    14 -> FA-G1-DIGIT-ARABIC-INDIC-003, FA-G1-DIGIT-ASCII-003, FA-G1-DIGIT-PERSIAN-003, FA-G1-LATIN-003, FA-G1-LATIN-029, FA-G1-LETTER-007
+    145 -> FA-G1-DIGIT-ARABIC-INDIC-004, FA-G1-DIGIT-ASCII-004, FA-G1-DIGIT-PERSIAN-004, FA-G1-LATIN-004, FA-G1-LATIN-030, FA-G1-LETTER-010
+    15 -> FA-G1-DIGIT-ARABIC-INDIC-005, FA-G1-DIGIT-ASCII-005, FA-G1-DIGIT-PERSIAN-005, FA-G1-LATIN-005, FA-G1-LATIN-031
+    234 -> FA-G1-LATIN-019, FA-G1-LATIN-045, FA-G1-LETTER-015
+    2345 -> FA-G1-LATIN-020, FA-G1-LATIN-046, FA-G1-LETTER-004
+    24 -> FA-G1-DIGIT-ARABIC-INDIC-009, FA-G1-DIGIT-ASCII-009, FA-G1-DIGIT-PERSIAN-009, FA-G1-LATIN-009, FA-G1-LATIN-035, FA-G1-LETTER-032
+    245 -> FA-G1-DIGIT-ARABIC-INDIC-000, FA-G1-DIGIT-ASCII-000, FA-G1-DIGIT-PERSIAN-000, FA-G1-LATIN-010, FA-G1-LATIN-036, FA-G1-LETTER-006
+    2456 -> FA-G1-LATIN-023, FA-G1-LATIN-049, FA-G1-LETTER-030
+  latin                    : 4
+    1236 -> FA-G1-LATIN-022, FA-G1-LATIN-048
+    13456 -> FA-G1-LATIN-025, FA-G1-LATIN-051
+    135 -> FA-G1-LATIN-015, FA-G1-LATIN-041
+    136 -> FA-G1-LATIN-021, FA-G1-LATIN-047
+  numeric                  : 1
+    3 -> FA-G1-NUMRULE-003, FA-G1-NUMRULE-004
+  punctuation-sequence     : 2
+    23 -> FA-G1-PUNC-SCALAR-007, FA-G1-PUNC-SCALAR-008
+    25 1234 -> FA-G1-NUMRULE-007, FA-G1-PUNC-SCALAR-016, FA-G1-PUNC-SCALAR-017
+
+[CURRENT PARSER FEATURE EVIDENCE]
+  numericModeState                   : YES
+  numericSawDigitState               : YES
+  numericIndicator                   : YES
+  numericDecimalSeparator            : YES
+  numericFractionSeparator           : NO
+  numericBegin                       : NO
+  numericEnd                         : NO
+  latinSpanBegin                     : YES
+  latinSpanEnd                       : YES
+  latinCapital                       : YES
+  longestMatch                       : YES
+  punctuationCanonicalization        : YES
+  ellipsisPolicy                     : YES
+  pairedDelimiterState               : YES
+  strictAmbiguity                    : YES
+
+[PUBLIC BOUNDARY]
+  coreRootExportsReverseTranslator   : False
+  coreRootExportsReverseTypes        : False
+  sdkContainsReverseRuntime          : False
+
+[RECOMMENDED EXECUTION ORDER]
+  13.5c-1 — numeric parser completion
+    close parser-required coverage to 8/8 before broad collision materialization
+  13.5c-2 — numeric collision families
+    cover digit-family, separator, percent, and numeric/text mode collisions
+  13.5c-3 — latin/persian cross-mode collisions
+    prove language-mode and capitalization resolution across shared Braille cells
+  13.5c-4 — punctuation and paired-symbol collisions
+    complete canonicalization, strict ambiguity, and delimiter-stack evidence
+  13.5c-5 — public Core boundary reassessment
+    re-run full coverage audit before exposing reverse Core root exports
+
+READINESS: READY_TO_IMPLEMENT_STATEFUL_COLLISION_COVERAGE
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c-stateful-numeric-collision-audit.txt
+JSON : stage13-5c-stateful-numeric-collision-audit.json
+============================================================================================================

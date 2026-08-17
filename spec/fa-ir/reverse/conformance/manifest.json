@@ -50,11 +50,13 @@
     "FA-REV-CONF-COVERAGE-PARSER-ORTHO-EZAFE-SEQUENCE-001",
     "FA-REV-CONF-COVERAGE-PARSER-PUNC-ASTERISK-RUN-001",
     "FA-REV-CONF-COVERAGE-PARSER-PUNC-ASTERISK-SINGLE-001",
-    "FA-REV-CONF-COVERAGE-PARSER-PUNC-SCALAR-011"
+    "FA-REV-CONF-COVERAGE-PARSER-PUNC-SCALAR-011",
+    "FA-REV-CONF-STATE-NUMERIC-BEGIN-001",
+    "FA-REV-CONF-STATE-NUMERIC-FRACTION-001"
   ],
   "summary": {
-    "vectors": 35,
-    "translationVectors": 33,
+    "vectors": 37,
+    "translationVectors": 35,
     "capabilityVectors": 2,
     "suites": {
       "ambiguity-strict": 1,
@@ -70,7 +72,8 @@
       "numeric-context": 1,
       "numeric-digit-family": 3,
       "paired-punctuation": 1,
-      "punctuation-canonicalization": 1
+      "punctuation-canonicalization": 1,
+      "stateful-numeric-parser": 2
     }
   },
   "plannedSuites": [

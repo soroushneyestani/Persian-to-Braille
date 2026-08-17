@@ -1,0 +1,713 @@
+{
+  "phase": "13.5c",
+  "name": "Stateful Numeric and Collision Coverage Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "b0fbfa42b5c899aaeece2542397387698bed59bc",
+    "upstream": "b0fbfa42b5c899aaeece2542397387698bed59bc",
+    "clean": true
+  },
+  "baseline": {
+    "forwardRules": 176,
+    "reverseVectors": 35,
+    "foundationSeeds": 16,
+    "phase13_5bCoverageVectors": 19,
+    "collisionSignatures": 34,
+    "coveredCollisionSignatures": 7,
+    "uncoveredCollisionSignatures": 27,
+    "parserRequiredRules": 8,
+    "remainingParserRequiredRules": 2
+  },
+  "remainingNumericParserRules": [
+    {
+      "ruleId": "FA-G1-NUM-FRACTION-SLASH-001",
+      "type": "context",
+      "status": "normative",
+      "input": {
+        "kind": "context",
+        "text": "/",
+        "codePoints": [
+          "U+002F"
+        ],
+        "before": "digit",
+        "after": "digit",
+        "tokenClass": "numeric-fraction-separator"
+      },
+      "output": {
+        "cells": [
+          "34"
+        ],
+        "unicodeBraille": "⠌",
+        "structuralToken": null
+      },
+      "classification": {
+        "domain": "context",
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": [
+          "context-state-required"
+        ],
+        "segmentationOverlap": false
+      }
+    },
+    {
+      "ruleId": "FA-G1-NUMRULE-002",
+      "type": "context",
+      "status": "candidate",
+      "input": {
+        "kind": "context",
+        "text": "#",
+        "codePoints": [
+          "U+0023"
+        ],
+        "after": "digit",
+        "tokenClass": "numeric-begin"
+      },
+      "output": {
+        "cells": [
+          "3456",
+          "4"
+        ],
+        "unicodeBraille": "⠼⠈",
+        "structuralToken": null
+      },
+      "classification": {
+        "domain": "context",
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": [
+          "context-state-required"
+        ],
+        "segmentationOverlap": false
+      }
+    }
+  ],
+  "uncoveredCollisionFamilies": {
+    "cross-mode": [
+      {
+        "signature": "123",
+        "ruleIds": [
+          "FA-G1-LATIN-012",
+          "FA-G1-LATIN-038",
+          "FA-G1-LETTER-027"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1234",
+        "ruleIds": [
+          "FA-G1-LATIN-016",
+          "FA-G1-LATIN-042",
+          "FA-G1-LETTER-003"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "12345",
+        "ruleIds": [
+          "FA-G1-LATIN-017",
+          "FA-G1-LATIN-043",
+          "FA-G1-LETTER-024"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1235",
+        "ruleIds": [
+          "FA-G1-LATIN-018",
+          "FA-G1-LATIN-044",
+          "FA-G1-LETTER-012"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "124",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-006",
+          "FA-G1-DIGIT-ASCII-006",
+          "FA-G1-DIGIT-PERSIAN-006",
+          "FA-G1-LATIN-006",
+          "FA-G1-LATIN-032",
+          "FA-G1-LETTER-023"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1245",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-007",
+          "FA-G1-DIGIT-ASCII-007",
+          "FA-G1-DIGIT-PERSIAN-007",
+          "FA-G1-LATIN-007",
+          "FA-G1-LATIN-033",
+          "FA-G1-LETTER-026"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "125",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-008",
+          "FA-G1-DIGIT-ASCII-008",
+          "FA-G1-DIGIT-PERSIAN-008",
+          "FA-G1-LATIN-008",
+          "FA-G1-LATIN-034",
+          "FA-G1-LETTER-031"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "13",
+        "ruleIds": [
+          "FA-G1-LATIN-011",
+          "FA-G1-LATIN-037",
+          "FA-G1-LETTER-025"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "134",
+        "ruleIds": [
+          "FA-G1-LATIN-013",
+          "FA-G1-LATIN-039",
+          "FA-G1-LETTER-028"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1345",
+        "ruleIds": [
+          "FA-G1-LATIN-014",
+          "FA-G1-LATIN-040",
+          "FA-G1-LETTER-029"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1346",
+        "ruleIds": [
+          "FA-G1-LATIN-024",
+          "FA-G1-LATIN-050",
+          "FA-G1-LETTER-009"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "1356",
+        "ruleIds": [
+          "FA-G1-LATIN-026",
+          "FA-G1-LATIN-052",
+          "FA-G1-LETTER-013"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "14",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-003",
+          "FA-G1-DIGIT-ASCII-003",
+          "FA-G1-DIGIT-PERSIAN-003",
+          "FA-G1-LATIN-003",
+          "FA-G1-LATIN-029",
+          "FA-G1-LETTER-007"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "145",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-004",
+          "FA-G1-DIGIT-ASCII-004",
+          "FA-G1-DIGIT-PERSIAN-004",
+          "FA-G1-LATIN-004",
+          "FA-G1-LATIN-030",
+          "FA-G1-LETTER-010"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "15",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-005",
+          "FA-G1-DIGIT-ASCII-005",
+          "FA-G1-DIGIT-PERSIAN-005",
+          "FA-G1-LATIN-005",
+          "FA-G1-LATIN-031"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "234",
+        "ruleIds": [
+          "FA-G1-LATIN-019",
+          "FA-G1-LATIN-045",
+          "FA-G1-LETTER-015"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "2345",
+        "ruleIds": [
+          "FA-G1-LATIN-020",
+          "FA-G1-LATIN-046",
+          "FA-G1-LETTER-004"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "24",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-009",
+          "FA-G1-DIGIT-ASCII-009",
+          "FA-G1-DIGIT-PERSIAN-009",
+          "FA-G1-LATIN-009",
+          "FA-G1-LATIN-035",
+          "FA-G1-LETTER-032"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "245",
+        "ruleIds": [
+          "FA-G1-DIGIT-ARABIC-INDIC-000",
+          "FA-G1-DIGIT-ASCII-000",
+          "FA-G1-DIGIT-PERSIAN-000",
+          "FA-G1-LATIN-010",
+          "FA-G1-LATIN-036",
+          "FA-G1-LETTER-006"
+        ],
+        "domains": [
+          "digit-arabic-indic",
+          "digit-ascii",
+          "digit-persian",
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "signature": "2456",
+        "ruleIds": [
+          "FA-G1-LATIN-023",
+          "FA-G1-LATIN-049",
+          "FA-G1-LETTER-030"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper",
+          "persian-letter"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "language-mode-state-required",
+          "latin-mode-state-required"
+        ]
+      }
+    ],
+    "latin": [
+      {
+        "signature": "1236",
+        "ruleIds": [
+          "FA-G1-LATIN-022",
+          "FA-G1-LATIN-048"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "13456",
+        "ruleIds": [
+          "FA-G1-LATIN-025",
+          "FA-G1-LATIN-051"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "135",
+        "ruleIds": [
+          "FA-G1-LATIN-015",
+          "FA-G1-LATIN-041"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "latin-mode-state-required"
+        ]
+      },
+      {
+        "signature": "136",
+        "ruleIds": [
+          "FA-G1-LATIN-021",
+          "FA-G1-LATIN-047"
+        ],
+        "domains": [
+          "latin-lower",
+          "latin-upper"
+        ],
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "latin-mode-state-required"
+        ]
+      }
+    ],
+    "numeric": [
+      {
+        "signature": "3",
+        "ruleIds": [
+          "FA-G1-NUMRULE-003",
+          "FA-G1-NUMRULE-004"
+        ],
+        "domains": [
+          "context"
+        ],
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required"
+        ]
+      }
+    ],
+    "punctuation-sequence": [
+      {
+        "signature": "23",
+        "ruleIds": [
+          "FA-G1-PUNC-SCALAR-007",
+          "FA-G1-PUNC-SCALAR-008"
+        ],
+        "domains": [
+          "punctuation-or-symbol"
+        ],
+        "requirements": [
+          "collision-resolution-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "signature": "25 1234",
+        "ruleIds": [
+          "FA-G1-NUMRULE-007",
+          "FA-G1-PUNC-SCALAR-016",
+          "FA-G1-PUNC-SCALAR-017"
+        ],
+        "domains": [
+          "context",
+          "punctuation-or-symbol"
+        ],
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      }
+    ]
+  },
+  "uncoveredCollisionFamilyCounts": {
+    "cross-mode": 20,
+    "latin": 4,
+    "numeric": 1,
+    "punctuation-sequence": 2
+  },
+  "parserFeatureEvidence": {
+    "numericModeState": true,
+    "numericSawDigitState": true,
+    "numericIndicator": true,
+    "numericDecimalSeparator": true,
+    "numericFractionSeparator": false,
+    "numericBegin": false,
+    "numericEnd": false,
+    "latinSpanBegin": true,
+    "latinSpanEnd": true,
+    "latinCapital": true,
+    "longestMatch": true,
+    "punctuationCanonicalization": true,
+    "ellipsisPolicy": true,
+    "pairedDelimiterState": true,
+    "strictAmbiguity": true
+  },
+  "publicBoundary": {
+    "coreRootExportsReverseTranslator": false,
+    "coreRootExportsReverseTypes": false,
+    "sdkContainsReverseRuntime": false
+  },
+  "recommendedExecutionOrder": [
+    {
+      "step": "13.5c-1",
+      "name": "numeric parser completion",
+      "targets": [
+        "FA-G1-NUM-FRACTION-SLASH-001",
+        "FA-G1-NUMRULE-002"
+      ],
+      "goal": "close parser-required coverage to 8/8 before broad collision materialization"
+    },
+    {
+      "step": "13.5c-2",
+      "name": "numeric collision families",
+      "goal": "cover digit-family, separator, percent, and numeric/text mode collisions"
+    },
+    {
+      "step": "13.5c-3",
+      "name": "latin/persian cross-mode collisions",
+      "goal": "prove language-mode and capitalization resolution across shared Braille cells"
+    },
+    {
+      "step": "13.5c-4",
+      "name": "punctuation and paired-symbol collisions",
+      "goal": "complete canonicalization, strict ambiguity, and delimiter-stack evidence"
+    },
+    {
+      "step": "13.5c-5",
+      "name": "public Core boundary reassessment",
+      "goal": "re-run full coverage audit before exposing reverse Core root exports"
+    }
+  ],
+  "readiness": "READY_TO_IMPLEMENT_STATEFUL_COLLISION_COVERAGE"
+}
