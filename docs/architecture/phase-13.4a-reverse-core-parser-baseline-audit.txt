@@ -1,0 +1,128 @@
+========================================================================================================
+PHASE 13.4a — REVERSE CORE PARSER FOUNDATION BASELINE AUDIT
+========================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 6cf926917724b970235019dcca8d4f1293294214
+
+[PHASE 13 CONTRACT BASELINE]
+Phase 13.2 contract      : FROZEN
+Reverse profile          : fa-ir-g1-reverse
+Reverse direction        : braille-to-print
+Reverse policy           : fa-ir-g1-reverse-policy
+Reverse seed vectors     : 16
+
+[CORE PACKAGE]
+Name                     : @persian-braille/core
+Version                  : 2.0.0-dev
+Source files             : 10
+Test files               : 4
+
+[CORE SOURCE FILES]
+  packages/core/src/engine-token-producer.ts
+  packages/core/src/forward-translator.ts
+  packages/core/src/generated/fa-ir-g1.runtime.ts
+  packages/core/src/index.ts
+  packages/core/src/mode-rule-executor.ts
+  packages/core/src/normalization.ts
+  packages/core/src/rule-selector.ts
+  packages/core/src/specification.ts
+  packages/core/src/translation.ts
+  packages/core/src/unicode-preprocessor.ts
+
+[CORE EXPORTS]
+  packages/core/src/engine-token-producer.ts -> createEngineTokenProducer
+  packages/core/src/forward-translator.ts -> createForwardTranslator
+  packages/core/src/generated/fa-ir-g1.runtime.ts -> faIrG1RuntimeSpecification
+  packages/core/src/mode-rule-executor.ts -> ModeRuleExecutor, createModeRuleExecutor
+  packages/core/src/normalization.ts -> NormalizationAnnotation, NormalizationFailure, NormalizationFailureCode, NormalizationOutcome, NormalizationPolicySnapshot, NormalizationSuccess, RecognizedFormatControl, UnicodeLocation, UnicodeNormalizationForm, UnicodePreprocessor, UnknownFormatControlFailure, UnknownFormatControlPolicy
+  packages/core/src/rule-selector.ts -> RuleSelectionAmbiguous, RuleSelectionMatch, RuleSelectionNoMatch, RuleSelectionOutcome, RuleSelector, createRuleSelector
+  packages/core/src/specification.ts -> JsonObject, JsonPrimitive, JsonValue, RuntimeSpecificationBundle, RuntimeSpecificationSource, RuntimeSpecificationSummary, getBundledSpecification
+  packages/core/src/translation.ts -> AmbiguousMatchFailure, ContextClassificationRequest, ContextClassifier, ContextSnapshot, EngineToken, EngineTokenClass, EngineTokenProducer, EngineTokenProductionRequest, ForwardTranslator, PreprocessingTranslationFailure, RuleLifecycleStatus, RuleMatch, RuleOutputSnapshot, SemanticContextClass, TranslationFailure, TranslationFailureCode, TranslationInputKind, TranslationOutcome, TranslationProfileSnapshot, TranslationRuleType, TranslationSuccess, TranslationTrace, UnicodeSpan, UnknownCharacterFailure, UnknownSequenceFailure, UnsupportedEngineStateFailure
+  packages/core/src/unicode-preprocessor.ts -> createUnicodePreprocessor
+
+[LIKELY FORWARD RUNTIME FILES]
+  packages/core/src/engine-token-producer.ts
+  packages/core/src/forward-translator.ts
+  packages/core/src/generated/fa-ir-g1.runtime.ts
+  packages/core/src/index.ts
+  packages/core/src/mode-rule-executor.ts
+  packages/core/src/normalization.ts
+  packages/core/src/rule-selector.ts
+  packages/core/src/specification.ts
+  packages/core/src/translation.ts
+  packages/core/src/unicode-preprocessor.ts
+  packages/core/test/canonical-execution-bridge.test.mjs
+  packages/core/test/forward-translator.test.mjs
+  packages/core/test/rule-selector.test.mjs
+  packages/core/test/unicode-preprocessor.test.mjs
+
+[REVERSE RUNTIME LEAK SCAN]
+  NONE — Phase 13.4 starts with no reverse Core runtime.
+
+[PHASE 13.3 SEED SUITES]
+  ambiguity-strict                 : 1
+  direct-unique                    : 1
+  invalid-input                    : 1
+  latin-capital                    : 1
+  latin-span                       : 1
+  longest-match                    : 1
+  lossiness-capability             : 2
+  malformed-mode                   : 2
+  numeric-context                  : 1
+  numeric-digit-family             : 3
+  paired-punctuation               : 1
+  punctuation-canonicalization     : 1
+
+[KEY FORWARD RULE EVIDENCE]
+  FA-G1-NUMRULE-001 | type=mode | input={'kind': 'structural', 'tokenClass': 'numeric-indicator'} | output={'cells': ['3456'], 'unicodeBraille': '⠼', 'structuralToken': None}
+  FA-G1-DIGIT-PERSIAN-001 | type=character | input={'kind': 'scalar', 'text': '۱', 'codePoints': ['U+06F1']} | output={'cells': ['1'], 'unicodeBraille': '⠁', 'structuralToken': None}
+  FA-G1-DIGIT-ASCII-001 | type=character | input={'kind': 'scalar', 'text': '1', 'codePoints': ['U+0031']} | output={'cells': ['1'], 'unicodeBraille': '⠁', 'structuralToken': None}
+  FA-G1-DIGIT-ARABIC-INDIC-001 | type=character | input={'kind': 'scalar', 'text': '١', 'codePoints': ['U+0661']} | output={'cells': ['1'], 'unicodeBraille': '⠁', 'structuralToken': None}
+  FA-G1-NUMRULE-005 | type=context | input={'kind': 'context', 'text': '.', 'codePoints': ['U+002E'], 'before': 'digit', 'after': 'digit', 'tokenClass': 'numeric-decimal-separator'} | output={'cells': ['2'], 'unicodeBraille': '⠂', 'structuralToken': None}
+  FA-G1-NUMRULE-006 | type=context | input={'kind': 'context', 'text': '٫', 'codePoints': ['U+066B'], 'before': 'digit', 'after': 'digit', 'tokenClass': 'numeric-decimal-separator'} | output={'cells': ['2'], 'unicodeBraille': '⠂', 'structuralToken': None}
+  FA-G1-LATIN-MODE-002 | type=mode | input={'kind': 'structural', 'tokenClass': 'latin-span-begin'} | output={'cells': ['25'], 'unicodeBraille': '⠒', 'structuralToken': None}
+  FA-G1-LATIN-MODE-003 | type=mode | input={'kind': 'structural', 'tokenClass': 'latin-span-end'} | output={'cells': ['25'], 'unicodeBraille': '⠒', 'structuralToken': None}
+  FA-G1-LATIN-MODE-004 | type=mode | input={'kind': 'structural', 'tokenClass': 'latin-capital-indicator'} | output={'cells': ['6'], 'unicodeBraille': '⠠', 'structuralToken': None}
+  FA-G1-LATIN-001 | type=character | input={'kind': 'scalar', 'text': 'A', 'codePoints': ['U+0041']} | output={'cells': ['1'], 'unicodeBraille': '⠁', 'structuralToken': None}
+  FA-G1-LATIN-027 | type=character | input={'kind': 'scalar', 'text': 'a', 'codePoints': ['U+0061']} | output={'cells': ['1'], 'unicodeBraille': '⠁', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-002 | type=character | input={'kind': 'scalar', 'text': '?', 'codePoints': ['U+003F']} | output={'cells': ['236'], 'unicodeBraille': '⠦', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-003 | type=character | input={'kind': 'scalar', 'text': '؟', 'codePoints': ['U+061F']} | output={'cells': ['236'], 'unicodeBraille': '⠦', 'structuralToken': None}
+  FA-G1-PUNC-ELLIPSIS-001 | type=sequence | input={'kind': 'sequence', 'text': '...', 'codePoints': ['U+002E', 'U+002E', 'U+002E']} | output={'cells': ['6', '6', '6'], 'unicodeBraille': '⠠⠠⠠', 'structuralToken': None}
+  FA-G1-PUNC-UNICODE-ELLIPSIS-001 | type=character | input={'kind': 'scalar', 'text': '…', 'codePoints': ['U+2026']} | output={'cells': ['6', '6', '6'], 'unicodeBraille': '⠠⠠⠠', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-019 | type=character | input={'kind': 'scalar', 'text': '(', 'codePoints': ['U+0028']} | output={'cells': ['2356'], 'unicodeBraille': '⠶', 'structuralToken': None}
+  FA-G1-PUNC-SCALAR-020 | type=character | input={'kind': 'scalar', 'text': ')', 'codePoints': ['U+0029']} | output={'cells': ['2356'], 'unicodeBraille': '⠶', 'structuralToken': None}
+  FA-G1-LAYOUT-001 | type=layout | input={'kind': 'scalar', 'text': ' ', 'codePoints': ['U+0020']} | output={'cells': [], 'unicodeBraille': None, 'structuralToken': 'layout:inline-spacing:U+0020'}
+  FA-G1-NORM-ZWNJ-001 | type=normalization | input={'kind': 'scalar', 'text': '\u200c', 'codePoints': ['U+200C']} | output={'cells': [], 'unicodeBraille': None, 'structuralToken': 'normalization:zwnj-orthographic-boundary'}
+
+[PHASE 13.4 IMPLEMENTATION QUESTIONS]
+1. Which existing Core module owns public translation execution, and where can a reverse engine be added without changing the forward public contract?
+2. Which existing Core types for runtime rules, cells, Unicode locations, errors, and execution results can be reused safely?
+3. How are generated runtime-spec records loaded today, and should reverse candidate indexing be generated or built at runtime from the canonical forward bundle?
+4. Which forward mode/context helpers are implementation-specific and must NOT be inverted mechanically?
+5. What is the smallest Phase 13.4 parser subset that can satisfy the 16 Phase 13.3 seed vectors while remaining internal to Core?
+
+[RECOMMENDED PHASE 13.4 SCOPE]
+Allowed:
+  - new Core-internal reverse types
+  - Unicode Braille tokenizer
+  - reverse candidate index
+  - parser state model
+  - longest-match recognizer
+  - numeric-mode handling
+  - Latin span/capital state
+  - basic candidate resolver
+  - Core-only tests against Phase 13.3 seed vectors
+Deferred:
+  - public SDK reverse API
+  - CLI reverse mode
+  - Web reverse UI
+  - Microsoft 365 reverse integration
+  - full reverse coverage beyond the Phase 13.3 seed foundation
+  - Braille Music
+  - multi-language framework
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-4a-reverse-core-parser-baseline-audit.txt
+JSON : stage13-4a-reverse-core-parser-baseline-audit.json
+========================================================================================================
