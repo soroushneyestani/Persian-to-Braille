@@ -1,0 +1,105 @@
+{
+  "phase": "12.4a",
+  "name": "Packed Package Consumer Baseline Audit",
+  "mode": "READ-ONLY SOURCE AUDIT + EXISTING VALIDATION EXECUTION",
+  "git": {
+    "branch": "phase12-developer-ecosystem",
+    "head": "70ff7a024f703a417bb306e259a4204ef2212c6d",
+    "upstream": "70ff7a024f703a417bb306e259a4204ef2212c6d",
+    "cleanBeforeAudit": true
+  },
+  "pnpmDispatch": {
+    "resolvedCommand": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/s",
+      "/c",
+      "C:\\Users\\Soroush\\AppData\\Local\\pnpm\\bin\\pnpm.cmd"
+    ]
+  },
+  "existingValidator": {
+    "path": "tools/sdk/validate-sdk-package.mjs",
+    "rootScript": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
+    "capabilities": {
+      "validatorExists": true,
+      "rootValidationScriptExists": true,
+      "packsPackageArtifact": true,
+      "usesTemporaryIsolation": true,
+      "installsPackedArtifact": true,
+      "executesRuntimeSmoke": true,
+      "mentionsTypeScriptCompilation": true,
+      "checksPublicEntrypointOrExports": true,
+      "checksDeepImportRejection": false,
+      "cleansTemporaryArtifacts": true
+    },
+    "executionExitCode": 0,
+    "executionPass": true,
+    "executionOutput": [
+      "$ pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs",
+      "$ pnpm run spec:prepare && tsc -p tsconfig.json",
+      "$ node ../../tools/architecture/build-runtime-spec-bundle.mjs",
+      "Persian Braille runtime specification bundle generated.",
+      "Profile: fa-ir-g1 0.1.0 (draft)",
+      "Rules: 176",
+      "Statuses: candidate=139, normative=37",
+      "Types: character=133, context=7, layout=27, mode=5, normalization=1, sequence=3",
+      "Canonical source SHA-256: 82fa5523b90c3b422542ba1f43ccbcdadc94bd9c38cf224672d60ee3621a13d9",
+      "Output: packages/core/src/generated/fa-ir-g1.runtime.ts",
+      "$ tsc -p tsconfig.json",
+      "Phase 7.5 SDK package validation: PASS",
+      "Core: @persian-braille/core@2.0.0-dev",
+      "SDK: @persian-braille/sdk@2.0.0-dev",
+      "Packed SDK Core dependency: 2.0.0-dev",
+      "Packed license: MIT",
+      "Scoped publication access: public",
+      "Prerelease publication tag policy: next (explicit CLI gate)",
+      "Isolated packed SDK smoke: PASS"
+    ]
+  },
+  "packageState": {
+    "sdk": {
+      "name": "@persian-braille/sdk",
+      "version": "2.0.0-dev",
+      "private": false,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "types": "./dist/index.d.ts",
+      "files": [
+        "dist"
+      ],
+      "dependencies": {
+        "@persian-braille/core": "workspace:*"
+      }
+    },
+    "core": {
+      "name": "@persian-braille/core",
+      "version": "2.0.0-dev",
+      "private": false,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "types": "./dist/index.d.ts",
+      "files": [
+        "dist"
+      ]
+    }
+  },
+  "phase12_4Requirements": {
+    "buildAndPackSdk": true,
+    "isolatedConsumerInstall": true,
+    "typescriptConsumerCompile": true,
+    "runtimeTranslationThroughEntrypoint": true,
+    "deepImportNotRequiredOrRejected": false
+  },
+  "gaps": [
+    "deepImportNotRequiredOrRejected"
+  ],
+  "conclusion": "EXISTING VALIDATOR PROVIDES PARTIAL COVERAGE; HARDENING REQUIRED"
+}
