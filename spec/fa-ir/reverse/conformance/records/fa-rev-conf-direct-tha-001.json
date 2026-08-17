@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-DIRECT-THA-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "direct-unique",
+  "sourceForwardRuleIds": [
+    "FA-G1-LETTER-005"
+  ],
+  "input": {
+    "cells": [
+      "1456"
+    ],
+    "unicodeBraille": "⠹"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "ث",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": []
+}

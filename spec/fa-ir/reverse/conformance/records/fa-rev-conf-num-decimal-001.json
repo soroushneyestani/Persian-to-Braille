@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-NUM-DECIMAL-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "numeric-context",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-PERSIAN-001",
+    "FA-G1-DIGIT-PERSIAN-002",
+    "FA-G1-NUMRULE-005",
+    "FA-G1-NUMRULE-006"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "1",
+      "2",
+      "12"
+    ],
+    "unicodeBraille": "⠼⠁⠂⠃"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "۱٫۲",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION"
+    ]
+  },
+  "notes": [
+    "The decimal cell is resolved through active numeric state."
+  ]
+}

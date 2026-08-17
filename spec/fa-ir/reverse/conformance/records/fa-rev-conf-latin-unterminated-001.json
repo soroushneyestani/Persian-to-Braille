@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-LATIN-UNTERMINATED-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "malformed-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-MODE-002",
+    "FA-G1-LATIN-027"
+  ],
+  "input": {
+    "unicodeBraille": "⠒⠁",
+    "cells": [
+      "25",
+      "1"
+    ]
+  },
+  "options": {},
+  "expected": {
+    "ok": false,
+    "code": "UNTERMINATED_LATIN_SPAN",
+    "candidateRuleIds": [],
+    "candidateTexts": []
+  },
+  "notes": []
+}

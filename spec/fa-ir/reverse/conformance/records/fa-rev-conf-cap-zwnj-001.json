@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-CAP-ZWNJ-001",
+  "kind": "capability",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "lossiness-capability",
+  "sourceForwardRuleIds": [
+    "FA-G1-NORM-ZWNJ-001"
+  ],
+  "capability": "exact-zwnj-recovery",
+  "expected": {
+    "supported": false,
+    "reason": "The forward ZWNJ normalization rule emits no Braille cells, so exact ZWNJ provenance cannot be reconstructed from a plain Braille cell stream."
+  },
+  "notes": []
+}

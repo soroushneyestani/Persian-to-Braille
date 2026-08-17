@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-INVALID-INPUT-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "invalid-input",
+  "sourceForwardRuleIds": [],
+  "input": {
+    "unicodeBraille": "A"
+  },
+  "options": {},
+  "expected": {
+    "ok": false,
+    "code": "INVALID_BRAILLE_INPUT",
+    "candidateRuleIds": [],
+    "candidateTexts": []
+  },
+  "notes": []
+}

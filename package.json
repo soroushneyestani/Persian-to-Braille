@@ -106,6 +106,7 @@
     "validate:phase12-6": "pnpm run validate:phase12-3 && pnpm run validate:phase12-5 && pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm --filter @persian-braille/core run test && pnpm --filter @persian-braille/sdk run test && node tools/architecture/validate-phase12-6-developer-ecosystem-closure.mjs",
     "validate:phase12": "pnpm run validate:phase12-6",
     "validate:phase13-2": "node tools/architecture/validate-phase13-2-reverse-contract.mjs",
+    "validate:phase13-3": "pnpm run validate:phase13-2 && node tools/architecture/validate-phase13-3-reverse-spec-foundation.mjs",
     "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
     "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs",
     "validate:phase11-public-trust-wording": "node tools/architecture/validate-phase11-public-trust-wording.mjs"

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-NUM-PERSIAN-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "numeric-digit-family",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-PERSIAN-001",
+    "FA-G1-DIGIT-ASCII-001",
+    "FA-G1-DIGIT-ARABIC-INDIC-001"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "1"
+    ],
+    "unicodeBraille": "⠼⠁"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "۱",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY"
+    ]
+  },
+  "notes": []
+}

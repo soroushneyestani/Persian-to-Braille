@@ -1,0 +1,105 @@
+======================================================================================================
+PHASE 13.3a — REVERSE SPECIFICATION AND CONFORMANCE FOUNDATION BASELINE AUDIT
+======================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 83a0717057fab442a6fab1ebc670efa9c7934e24
+
+[PHASE 13.2 CONTRACT]
+Status            : FROZEN
+Reverse profile   : fa-ir-g1-reverse
+Direction         : braille-to-print
+
+[FORWARD BASELINE]
+Rules             : 176
+Vectors           : 176
+Profile           : fa-ir-g1 0.1.0 (draft)
+
+[EXISTING REVERSE SPEC ARTIFACTS]
+  NONE
+
+[SCHEMA CONVENTIONS]
+All schema candidates         : 6
+Rule schema candidates        : 1
+Profile schema candidates     : 1
+Conformance schema candidates : 1
+  spec/fa-ir/schema/adjudication-record.schema.json | title='Persian Braille Evidence Adjudication Record' | required=['schemaVersion', 'id', 'policyVersion', 'profileId', 'decisionItemId', 'queueId', 'packetId', 'planItemId', 'phase1Classification', 'track', 'disposition', 'decision', 'basis', 'materialization', 'scope', 'rationale']
+  spec/fa-ir/schema/candidate-admission.schema.json | title='Persian Braille Adjudicated Candidate Admission Manifest' | required=['schemaVersion', 'stage', 'status', 'policyVersion', 'profile', 'summary', 'governanceBoundary', 'inputs', 'entries']
+  spec/fa-ir/schema/conformance.schema.json | title='Persian Braille Conformance Vector' | required=['schemaVersion', 'id', 'status', 'version', 'profile', 'profileVersion', 'ruleIds', 'input', 'expected']
+  spec/fa-ir/schema/profile.schema.json | title='Persian Braille Profile' | required=['schemaVersion', 'id', 'status', 'language', 'region', 'grade', 'cellSize', 'direction', 'version', 'ruleIds', 'normalizationPolicy', 'fallbackPolicy']
+  spec/fa-ir/schema/promotion-record.schema.json | title='Persian Braille Normative Promotion Record' | required=['schemaVersion', 'id', 'policyVersion', 'ruleId', 'profileId', 'ruleVersion', 'fromStatus', 'toStatus', 'decision', 'basis', 'checks', 'scope', 'review', 'rationale']
+  spec/fa-ir/schema/rule.schema.json | title='Persian Braille Rule' | required=['schemaVersion', 'id', 'profile', 'type', 'status', 'version', 'direction', 'input', 'output', 'evidence', 'conformance']
+
+[RECOMMENDED PHASE 13.3 FOUNDATION]
+  spec/fa-ir/reverse/README.md
+  spec/fa-ir/reverse/schemas/reverse-policy.schema.json
+  spec/fa-ir/reverse/schemas/reverse-profile.schema.json
+  spec/fa-ir/reverse/schemas/reverse-conformance.schema.json
+  spec/fa-ir/reverse/policy/fa-ir-g1-reverse-policy.json
+  spec/fa-ir/reverse/profiles/fa-ir-g1-reverse.json
+  spec/fa-ir/reverse/conformance/manifest.json
+  docs/architecture/phase-13.3-reverse-specification-and-conformance-foundation.md
+  tools/architecture/validate-phase13-3-reverse-spec-foundation.mjs
+
+[SEED REVERSE CONFORMANCE POLICY]
+Swap all 176 forward vectors blindly : NO
+Representative independent seeds      : YES
+  - direct unique mapping
+  - numeric default Persian rendering
+  - numeric ASCII option
+  - numeric Arabic-Indic option
+  - Latin span
+  - capital indicator
+  - punctuation canonicalization
+  - strict ambiguity failure
+  - ellipsis longest-match
+  - paired punctuation context
+  - layout lossiness
+  - normalization lossiness
+
+[SEED CANDIDATE PREVIEW]
+direct             : 12 preview item(s)
+  FA-G1-LETTER-005 | persian-letter | text='ث' | cells=['1456']
+  FA-G1-LETTER-008 | persian-letter | text='ح' | cells=['156']
+  FA-G1-LETTER-011 | persian-letter | text='ذ' | cells=['2346']
+  FA-G1-LETTER-014 | persian-letter | text='ژ' | cells=['346']
+  FA-G1-LETTER-016 | persian-letter | text='ش' | cells=['146']
+numeric            : 12 preview item(s)
+  FA-G1-DIGIT-ARABIC-INDIC-000 | digit-arabic-indic | text='٠' | cells=['245']
+  FA-G1-DIGIT-ARABIC-INDIC-001 | digit-arabic-indic | text='١' | cells=['1']
+  FA-G1-DIGIT-ARABIC-INDIC-002 | digit-arabic-indic | text='٢' | cells=['12']
+  FA-G1-DIGIT-ARABIC-INDIC-003 | digit-arabic-indic | text='٣' | cells=['14']
+  FA-G1-DIGIT-ARABIC-INDIC-004 | digit-arabic-indic | text='٤' | cells=['145']
+latin              : 12 preview item(s)
+  FA-G1-DIGIT-ARABIC-INDIC-000 | digit-arabic-indic | text='٠' | cells=['245']
+  FA-G1-DIGIT-ARABIC-INDIC-001 | digit-arabic-indic | text='١' | cells=['1']
+  FA-G1-DIGIT-ARABIC-INDIC-002 | digit-arabic-indic | text='٢' | cells=['12']
+  FA-G1-DIGIT-ARABIC-INDIC-003 | digit-arabic-indic | text='٣' | cells=['14']
+  FA-G1-DIGIT-ARABIC-INDIC-004 | digit-arabic-indic | text='٤' | cells=['145']
+punctuation        : 12 preview item(s)
+  FA-G1-NUMRULE-005 | context | text='.' | cells=['2']
+  FA-G1-NUMRULE-006 | context | text='٫' | cells=['2']
+  FA-G1-NUMRULE-007 | context | text='%' | cells=['25', '1234']
+  FA-G1-PUNC-ASTERISK-SINGLE-001 | punctuation-or-symbol | text='*' | cells=['35', '35']
+  FA-G1-PUNC-ELLIPSIS-001 | sequence | text='...' | cells=['6', '6', '6']
+sequence           : 8 preview item(s)
+  FA-G1-NUMRULE-007 | context | text='%' | cells=['25', '1234']
+  FA-G1-ORTHO-EZAFE-SEQUENCE-001 | sequence | text='هٔ' | cells=['125', '0', '24']
+  FA-G1-PUNC-ASTERISK-RUN-001 | sequence | text='***' | cells=['35', '35', '35', '35']
+  FA-G1-PUNC-ELLIPSIS-001 | sequence | text='...' | cells=['6', '6', '6']
+  FA-G1-PUNC-SCALAR-011 | punctuation-or-symbol | text='–' | cells=['6', '36']
+structural         : 12 preview item(s)
+  FA-G1-LATIN-MODE-001 | mode | text=None | cells=[]
+  FA-G1-LAYOUT-001 | layout | text=' ' | cells=[]
+  FA-G1-LAYOUT-002 | layout | text='\t' | cells=[]
+  FA-G1-LAYOUT-003 | layout | text='\n' | cells=[]
+  FA-G1-LAYOUT-004 | layout | text='\x0b' | cells=[]
+
+[READINESS]
+READY_TO_MATERIALIZE_PHASE_13_3_FOUNDATION
+
+Text : stage13-3a-reverse-spec-foundation-audit.txt
+JSON : stage13-3a-reverse-spec-foundation-audit.json
+
+DO NOT COMMIT AUDIT OUTPUTS YET.
+======================================================================================================

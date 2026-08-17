@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-CAP-LAYOUT-001",
+  "kind": "capability",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "lossiness-capability",
+  "sourceForwardRuleIds": [
+    "FA-G1-LAYOUT-001",
+    "FA-G1-LAYOUT-002",
+    "FA-G1-LAYOUT-003"
+  ],
+  "capability": "exact-source-layout-round-trip",
+  "expected": {
+    "supported": false,
+    "reason": "The forward profile contains layout rules that emit no Braille cells, so plain Unicode Braille cannot recover the original source layout provenance exactly."
+  },
+  "notes": []
+}

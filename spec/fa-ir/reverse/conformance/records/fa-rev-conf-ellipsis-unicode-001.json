@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-ELLIPSIS-UNICODE-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "longest-match",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-ELLIPSIS-001",
+    "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+  ],
+  "input": {
+    "cells": [
+      "6",
+      "6",
+      "6"
+    ],
+    "unicodeBraille": "⠠⠠⠠"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "…",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_ELLIPSIS"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-profile.schema.json",
+  "title": "Persian Braille Reverse Profile",
+  "description": "Profile metadata for the Phase 13 Braille-to-print engine.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "region",
+    "grade",
+    "cellSize",
+    "direction",
+    "version",
+    "sourceForwardProfile",
+    "policy",
+    "conformanceManifest",
+    "capabilities"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "const": "fa-ir-g1-reverse"
+    },
+    "status": {
+      "enum": [
+        "draft"
+      ]
+    },
+    "language": {
+      "const": "fa"
+    },
+    "region": {
+      "const": "IR"
+    },
+    "grade": {
+      "const": 1
+    },
+    "cellSize": {
+      "enum": [
+        6,
+        8
+      ]
+    },
+    "direction": {
+      "const": "braille-to-print"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceForwardProfile": {
+      "const": "fa-ir-g1"
+    },
+    "policy": {
+      "const": "fa-ir-g1-reverse-policy"
+    },
+    "conformanceManifest": {
+      "const": "spec/fa-ir/reverse/conformance/manifest.json"
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unicodeBrailleInput",
+        "statefulNumericMode",
+        "statefulLatinMode",
+        "canonicalizationDiagnostics",
+        "exactSourceLayoutRoundTrip",
+        "exactZwnjRecovery"
+      ],
+      "properties": {
+        "unicodeBrailleInput": {
+          "const": true
+        },
+        "statefulNumericMode": {
+          "const": true
+        },
+        "statefulLatinMode": {
+          "const": true
+        },
+        "canonicalizationDiagnostics": {
+          "const": true
+        },
+        "exactSourceLayoutRoundTrip": {
+          "const": false
+        },
+        "exactZwnjRecovery": {
+          "const": false
+        }
+      }
+    }
+  }
+}

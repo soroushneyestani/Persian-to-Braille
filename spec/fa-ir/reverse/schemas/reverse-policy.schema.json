@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-policy.schema.json",
+  "title": "Persian Braille Reverse Translation Policy",
+  "description": "Phase 13 policy contract for deterministic Braille-to-print resolution and canonicalization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "version",
+    "profile",
+    "direction",
+    "sourceForwardProfile",
+    "parser",
+    "rendering",
+    "ambiguity",
+    "reconstruction",
+    "scope"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "const": "fa-ir-g1-reverse-policy"
+    },
+    "status": {
+      "enum": [
+        "draft"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "const": "fa-ir-g1-reverse"
+    },
+    "direction": {
+      "const": "braille-to-print"
+    },
+    "sourceForwardProfile": {
+      "const": "fa-ir-g1"
+    },
+    "parser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "longestMatch",
+        "numericMode",
+        "latinSpan",
+        "capitalization",
+        "delimiterStack",
+        "contextWindow"
+      ],
+      "properties": {
+        "longestMatch": {
+          "const": true
+        },
+        "numericMode": {
+          "const": true
+        },
+        "latinSpan": {
+          "const": true
+        },
+        "capitalization": {
+          "const": true
+        },
+        "delimiterStack": {
+          "const": true
+        },
+        "contextWindow": {
+          "const": true
+        }
+      }
+    },
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "digitFamily",
+        "punctuationStyle",
+        "ellipsisStyle"
+      ],
+      "properties": {
+        "digitFamily": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "default",
+            "allowed"
+          ],
+          "properties": {
+            "default": {
+              "const": "persian"
+            },
+            "allowed": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "persian",
+                  "ascii",
+                  "arabic-indic"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 3,
+              "maxItems": 3
+            }
+          }
+        },
+        "punctuationStyle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "default",
+            "allowed"
+          ],
+          "properties": {
+            "default": {
+              "const": "persian"
+            },
+            "allowed": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "persian",
+                  "ascii"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        "ellipsisStyle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "default",
+            "allowed"
+          ],
+          "properties": {
+            "default": {
+              "const": "unicode"
+            },
+            "allowed": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "unicode",
+                  "three-dots"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        }
+      }
+    },
+    "ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default",
+        "allowed"
+      ],
+      "properties": {
+        "default": {
+          "const": "canonicalize"
+        },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "canonicalize",
+              "error"
+            ]
+          },
+          "uniqueItems": true,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "reconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exactSourceLayoutRoundTrip",
+        "exactZwnjRecovery"
+      ],
+      "properties": {
+        "exactSourceLayoutRoundTrip": {
+          "const": false
+        },
+        "exactZwnjRecovery": {
+          "const": false
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forwardSemanticsMutable",
+        "brailleMusic",
+        "generalMultilanguageFramework",
+        "officeWeb",
+        "officeMac",
+        "marketplace"
+      ],
+      "properties": {
+        "forwardSemanticsMutable": {
+          "const": false
+        },
+        "brailleMusic": {
+          "const": false
+        },
+        "generalMultilanguageFramework": {
+          "const": false
+        },
+        "officeWeb": {
+          "const": false
+        },
+        "officeMac": {
+          "const": false
+        },
+        "marketplace": {
+          "const": false
+        }
+      }
+    }
+  }
+}
