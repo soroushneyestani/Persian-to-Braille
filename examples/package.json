@@ -1,0 +1,17 @@
+{
+  "name": "@persian-braille/examples",
+  "version": "2.0.0-dev",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "pnpm": "11.21.0"
+  },
+  "scripts": {
+    "test": "node --test test/examples.test.mjs"
+  },
+  "dependencies": {
+    "@persian-braille/sdk": "workspace:*"
+  },
+  "description": "Runnable public-SDK examples for the Persian-to-Braille developer ecosystem."
+}
