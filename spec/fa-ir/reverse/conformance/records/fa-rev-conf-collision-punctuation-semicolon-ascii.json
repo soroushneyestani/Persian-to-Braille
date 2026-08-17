@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-PUNCTUATION-SEMICOLON-ASCII",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-punctuation-variant",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-SCALAR-007",
+    "FA-G1-PUNC-SCALAR-008"
+  ],
+  "input": {
+    "cells": [
+      "23"
+    ],
+    "unicodeBraille": "⠆"
+  },
+  "options": {
+    "punctuationStyle": "ascii"
+  },
+  "expected": {
+    "ok": true,
+    "text": ";",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_PUNCTUATION"
+    ]
+  },
+  "notes": [
+    "ASCII punctuation policy canonicalizes the shared semicolon cell to ASCII semicolon."
+  ]
+}

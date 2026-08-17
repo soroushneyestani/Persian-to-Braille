@@ -112,6 +112,7 @@
     "validate:phase13-5c1": "pnpm run validate:phase13-5 && node tools/architecture/validate-phase13-5c1-numeric-parser-completion.mjs",
     "validate:phase13-5c2": "pnpm run validate:phase13-5c1 && node tools/architecture/validate-phase13-5c2-numeric-collision-resolution.mjs",
     "validate:phase13-5c3a": "pnpm run validate:phase13-5c2 && node tools/architecture/validate-phase13-5c3a-language-mode-collision-resolution.mjs",
+    "validate:phase13-5c3b": "pnpm run validate:phase13-5c3a && node tools/architecture/validate-phase13-5c3b-remaining-punctuation-collision.mjs",
     "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
     "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs",
     "validate:phase11-public-trust-wording": "node tools/architecture/validate-phase11-public-trust-wording.mjs"

@@ -44,8 +44,12 @@ assert.deepEqual(
 );
 assert.equal(designAudit.allCrossModeShapeUniform, true);
 
-assert.equal(manifest.summary.vectors, 139);
-assert.equal(manifest.summary.translationVectors, 137);
+assert.ok(
+  manifest.summary.vectors >= 139,
+);
+assert.ok(
+  manifest.summary.translationVectors >= 137,
+);
 assert.equal(manifest.summary.capabilityVectors, 2);
 
 const phaseIds = manifest.vectorIds.filter(
@@ -111,7 +115,18 @@ const remainingSignatures = collisionEntries
   .map(([signature]) => signature)
   .sort();
 
-assert.deepEqual(remainingSignatures, ["23"]);
+assert.ok(
+  remainingSignatures.every(
+    (signature) =>
+      signature === "23",
+  ),
+  "Phase 13.5c-3a permits only signature 23 to remain after later composable phases.",
+);
+
+assert.ok(
+  remainingSignatures.length <= 1,
+  "Phase 13.5c-3a must leave at most one canonical collision signature.",
+);
 
 for (const token of [
   "languageModeCollision",

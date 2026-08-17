@@ -1,0 +1,299 @@
+{
+  "phase": "13.5c-3b",
+  "name": "Remaining Punctuation Collision Behavior Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "74face0509e6f9f7d5a6c7522c4620290f3d53d8",
+    "upstream": "74face0509e6f9f7d5a6c7522c4620290f3d53d8",
+    "clean": true
+  },
+  "baseline": {
+    "reverseVectors": 139,
+    "translationVectors": 137,
+    "capabilityVectors": 2,
+    "canonicalCollisionSignatures": 34,
+    "remainingCollisionSignatures": [
+      "23"
+    ]
+  },
+  "canonicalCollision": {
+    "signature": "23",
+    "unicodeBraille": "⠆",
+    "ascii": {
+      "ruleId": "FA-G1-PUNC-SCALAR-007",
+      "text": ";",
+      "cells": [
+        "23"
+      ],
+      "status": "candidate",
+      "type": "character"
+    },
+    "persian": {
+      "ruleId": "FA-G1-PUNC-SCALAR-008",
+      "text": "؛",
+      "cells": [
+        "23"
+      ],
+      "status": "candidate",
+      "type": "character"
+    }
+  },
+  "runtimeProbe": [
+    {
+      "id": "semicolon-default",
+      "unicodeBraille": "⠆",
+      "options": {},
+      "expectedHint": {
+        "ok": true,
+        "text": "؛"
+      },
+      "actual": {
+        "ok": true,
+        "input": "⠆",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": "؛",
+        "cells": [
+          "23"
+        ],
+        "diagnostics": [
+          {
+            "code": "CANONICALIZED_PUNCTUATION",
+            "message": "Original print punctuation style is not recoverable from this Braille form.",
+            "ruleIds": [
+              "FA-G1-PUNC-SCALAR-007",
+              "FA-G1-PUNC-SCALAR-008"
+            ]
+          }
+        ],
+        "lossy": true
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "semicolon-ascii",
+      "unicodeBraille": "⠆",
+      "options": {
+        "punctuationStyle": "ascii"
+      },
+      "expectedHint": {
+        "ok": true,
+        "text": ";"
+      },
+      "actual": {
+        "ok": true,
+        "input": "⠆",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "text": ";",
+        "cells": [
+          "23"
+        ],
+        "diagnostics": [
+          {
+            "code": "CANONICALIZED_PUNCTUATION",
+            "message": "Original print punctuation style is not recoverable from this Braille form.",
+            "ruleIds": [
+              "FA-G1-PUNC-SCALAR-007",
+              "FA-G1-PUNC-SCALAR-008"
+            ]
+          }
+        ],
+        "lossy": true
+      },
+      "expectedHintMatched": true
+    },
+    {
+      "id": "semicolon-strict",
+      "unicodeBraille": "⠆",
+      "options": {
+        "ambiguityPolicy": "error"
+      },
+      "expectedHint": {
+        "ok": false,
+        "code": "AMBIGUOUS_REVERSE_MATCH"
+      },
+      "actual": {
+        "ok": false,
+        "input": "⠆",
+        "profile": {
+          "profileId": "fa-ir-g1-reverse",
+          "profileVersion": "0.1.0",
+          "profileStatus": "draft",
+          "direction": "braille-to-print"
+        },
+        "code": "AMBIGUOUS_REVERSE_MATCH",
+        "message": "Multiple print punctuation forms share this Braille form.",
+        "location": {
+          "utf16Offset": 0,
+          "codePointIndex": 0,
+          "codePoint": "U+2806"
+        },
+        "brailleCharacter": "⠆",
+        "candidateRuleIds": [
+          "FA-G1-PUNC-SCALAR-007",
+          "FA-G1-PUNC-SCALAR-008"
+        ],
+        "candidateTexts": [
+          ";",
+          "؛"
+        ]
+      },
+      "expectedHintMatched": true
+    }
+  ],
+  "allExpectedRuntimeHintsMatch": true,
+  "policySnapshot": {
+    "schemaVersion": 1,
+    "id": "fa-ir-g1-reverse-policy",
+    "status": "draft",
+    "version": "0.1.0",
+    "profile": "fa-ir-g1-reverse",
+    "direction": "braille-to-print",
+    "sourceForwardProfile": "fa-ir-g1",
+    "parser": {
+      "longestMatch": true,
+      "numericMode": true,
+      "latinSpan": true,
+      "capitalization": true,
+      "delimiterStack": true,
+      "contextWindow": true
+    },
+    "rendering": {
+      "digitFamily": {
+        "default": "persian",
+        "allowed": [
+          "persian",
+          "ascii",
+          "arabic-indic"
+        ]
+      },
+      "punctuationStyle": {
+        "default": "persian",
+        "allowed": [
+          "persian",
+          "ascii"
+        ]
+      },
+      "ellipsisStyle": {
+        "default": "unicode",
+        "allowed": [
+          "unicode",
+          "three-dots"
+        ]
+      }
+    },
+    "ambiguity": {
+      "default": "canonicalize",
+      "allowed": [
+        "canonicalize",
+        "error"
+      ]
+    },
+    "reconstruction": {
+      "exactSourceLayoutRoundTrip": false,
+      "exactZwnjRecovery": false
+    },
+    "scope": {
+      "forwardSemanticsMutable": false,
+      "brailleMusic": false,
+      "generalMultilanguageFramework": false,
+      "officeWeb": false,
+      "officeMac": false,
+      "marketplace": false
+    }
+  },
+  "profileSnapshot": {
+    "schemaVersion": 1,
+    "id": "fa-ir-g1-reverse",
+    "status": "draft",
+    "language": "fa",
+    "region": "IR",
+    "grade": 1,
+    "cellSize": 6,
+    "direction": "braille-to-print",
+    "version": "0.1.0",
+    "sourceForwardProfile": "fa-ir-g1",
+    "policy": "fa-ir-g1-reverse-policy",
+    "conformanceManifest": "spec/fa-ir/reverse/conformance/manifest.json",
+    "capabilities": {
+      "unicodeBrailleInput": true,
+      "statefulNumericMode": true,
+      "statefulLatinMode": true,
+      "canonicalizationDiagnostics": true,
+      "exactSourceLayoutRoundTrip": false,
+      "exactZwnjRecovery": false
+    }
+  },
+  "sourceEvidence": [
+    {
+      "token": "pickPunctuation",
+      "matchCount": 2,
+      "snippets": [
+        {
+          "startLine": 1804,
+          "endLine": 1848,
+          "text": " 1804:         === 1\n 1805:       )\n 1806:         ? persianLetterCandidates[0]!\n 1807:         : null;\n 1808: \n 1809:     if (basePersianCandidate !== null) {\n 1810:       return {\n 1811:         ok: true,\n 1812:         text:\n 1813:           basePersianCandidate.text!,\n 1814:       };\n 1815:     }\n 1816: \n 1817:     const punctuation =\n 1818:       this.pickPunctuation(\n 1819:         texts,\n 1820:         options.punctuationStyle,\n 1821:       );\n 1822: \n 1823:     if (punctuation !== null) {\n 1824:       if (\n 1825:         options.ambiguityPolicy\n 1826:         === \"error\"\n 1827:       ) {\n 1828:         const details =\n 1829:           candidateDetails(\n 1830:             candidates,\n 1831:           );\n 1832: \n 1833:         return {\n 1834:           ok: false,\n 1835:           failure: failure(\n 1836:             input,\n 1837:             \"AMBIGUOUS_REVERSE_MATCH\",\n 1838:             \"Multiple print punctuation forms share this Braille form.\",\n 1839:             {\n 1840:               token,\n 1841:               candidateRuleIds:\n 1842:                 details.ruleIds,\n 1843:               candidateTexts:\n 1844:                 details.texts,\n 1845:             },\n 1846:           ),\n 1847:         };\n 1848:       }"
+        },
+        {
+          "startLine": 1874,
+          "endLine": 1918,
+          "text": " 1874:         input,\n 1875:         \"AMBIGUOUS_REVERSE_MATCH\",\n 1876:         \"Parser state and configured policy cannot resolve this collision.\",\n 1877:         {\n 1878:           token,\n 1879:           candidateRuleIds:\n 1880:             details.ruleIds,\n 1881:           candidateTexts:\n 1882:             details.texts,\n 1883:         },\n 1884:       ),\n 1885:     };\n 1886:   }\n 1887: \n 1888:   private pickPunctuation(\n 1889:     texts: readonly string[],\n 1890:     style:\n 1891:       ReversePunctuationStyle,\n 1892:   ): string | null {\n 1893:     const set =\n 1894:       style === \"persian\"\n 1895:         ? PERSIAN_PUNCTUATION\n 1896:         : ASCII_PUNCTUATION;\n 1897: \n 1898:     for (const text of texts) {\n 1899:       if (set.has(text)) {\n 1900:         return text;\n 1901:       }\n 1902:     }\n 1903: \n 1904:     return null;\n 1905:   }\n 1906: \n 1907:   private addDiagnostic(\n 1908:     diagnostics: ReverseDiagnostic[],\n 1909:     seen: Set<ReverseDiagnosticCode>,\n 1910:     code: ReverseDiagnosticCode,\n 1911:     ruleIds: readonly string[],\n 1912:   ): void {\n 1913:     if (seen.has(code)) {\n 1914:       return;\n 1915:     }\n 1916: \n 1917:     seen.add(code);\n 1918: "
+        }
+      ]
+    },
+    {
+      "token": "CANONICALIZED_PUNCTUATION",
+      "matchCount": 3,
+      "snippets": [
+        {
+          "startLine": 382,
+          "endLine": 426,
+          "text": "  382:             : [candidate.text],\n  383:       ),\n  384:   };\n  385: }\n  386: \n  387: function diagnosticMessage(\n  388:   code: ReverseDiagnosticCode,\n  389: ): string {\n  390:   switch (code) {\n  391:     case \"CANONICALIZED_DIGIT_FAMILY\":\n  392:       return (\n  393:         \"Original print digit family is \"\n  394:         + \"not recoverable from numeric Braille.\"\n  395:       );\n  396:     case \"CANONICALIZED_PUNCTUATION\":\n  397:       return (\n  398:         \"Original print punctuation style is \"\n  399:         + \"not recoverable from this Braille form.\"\n  400:       );\n  401:     case \"CANONICALIZED_ELLIPSIS\":\n  402:       return (\n  403:         \"The shared ellipsis form was rendered \"\n  404:         + \"using the configured canonical style.\"\n  405:       );\n  406:     case \"AMBIGUITY_CANONICALIZED\":\n  407:       return \"An ambiguous source spelling was canonicalized.\";\n  408:     case \"LOSSY_LAYOUT_RECONSTRUCTION\":\n  409:       return \"Exact source layout provenance is not recoverable.\";\n  410:     case \"LOSSY_NORMALIZATION_RECONSTRUCTION\":\n  411:       return \"Exact normalization provenance is not recoverable.\";\n  412:   }\n  413: }\n  414: \n  415: class SpecificationDrivenReverseTranslator\n  416: implements ReverseTranslator {\n  417:   private readonly candidatesBySignature:\n  418:     ReadonlyMap<\n  419:       string,\n  420:       readonly Candidate[]\n  421:     >;\n  422: \n  423:   private readonly modeCells:\n  424:     ReadonlyMap<string, string>;\n  425: \n  426:   private readonly digits:"
+        },
+        {
+          "startLine": 734,
+          "endLine": 778,
+          "text": "  734:             tokenized.tokens,\n  735:             index,\n  736:             state,\n  737:             resolved,\n  738:           );\n  739: \n  740:         if (decimal !== null) {\n  741:           output.push(\n  742:             decimal.text,\n  743:           );\n  744: \n  745:           this.addDiagnostic(\n  746:             diagnostics,\n  747:             diagnosticCodes,\n  748:             \"CANONICALIZED_PUNCTUATION\",\n  749:             decimal.ruleIds,\n  750:           );\n  751: \n  752:           index += 1;\n  753:           continue;\n  754:         }\n  755: \n  756:         const fraction =\n  757:           this.numericFraction(\n  758:             tokenized.tokens,\n  759:             index,\n  760:             state,\n  761:             resolved,\n  762:           );\n  763: \n  764:         if (fraction !== null) {\n  765:           output.push(\n  766:             fraction.text,\n  767:           );\n  768: \n  769:           index += 1;\n  770:           continue;\n  771:         }\n  772: \n  773:         const numericInternalCandidates =\n  774:           this.numericInternalCandidates(\n  775:             tokenized.tokens,\n  776:             index,\n  777:             state,\n  778:             resolved,"
+        },
+        {
+          "startLine": 1839,
+          "endLine": 1883,
+          "text": " 1839:             {\n 1840:               token,\n 1841:               candidateRuleIds:\n 1842:                 details.ruleIds,\n 1843:               candidateTexts:\n 1844:                 details.texts,\n 1845:             },\n 1846:           ),\n 1847:         };\n 1848:       }\n 1849: \n 1850:       this.addDiagnostic(\n 1851:         diagnostics,\n 1852:         diagnosticCodes,\n 1853:         \"CANONICALIZED_PUNCTUATION\",\n 1854:         candidates.map(\n 1855:           (candidate) =>\n 1856:             candidate.ruleId,\n 1857:         ),\n 1858:       );\n 1859: \n 1860:       return {\n 1861:         ok: true,\n 1862:         text: punctuation,\n 1863:       };\n 1864:     }\n 1865: \n 1866:     const details =\n 1867:       candidateDetails(\n 1868:         candidates,\n 1869:       );\n 1870: \n 1871:     return {\n 1872:       ok: false,\n 1873:       failure: failure(\n 1874:         input,\n 1875:         \"AMBIGUOUS_REVERSE_MATCH\",\n 1876:         \"Parser state and configured policy cannot resolve this collision.\",\n 1877:         {\n 1878:           token,\n 1879:           candidateRuleIds:\n 1880:             details.ruleIds,\n 1881:           candidateTexts:\n 1882:             details.texts,\n 1883:         },"
+        }
+      ]
+    },
+    {
+      "token": "AMBIGUOUS_REVERSE_MATCH",
+      "matchCount": 2,
+      "snippets": [
+        {
+          "startLine": 1823,
+          "endLine": 1867,
+          "text": " 1823:     if (punctuation !== null) {\n 1824:       if (\n 1825:         options.ambiguityPolicy\n 1826:         === \"error\"\n 1827:       ) {\n 1828:         const details =\n 1829:           candidateDetails(\n 1830:             candidates,\n 1831:           );\n 1832: \n 1833:         return {\n 1834:           ok: false,\n 1835:           failure: failure(\n 1836:             input,\n 1837:             \"AMBIGUOUS_REVERSE_MATCH\",\n 1838:             \"Multiple print punctuation forms share this Braille form.\",\n 1839:             {\n 1840:               token,\n 1841:               candidateRuleIds:\n 1842:                 details.ruleIds,\n 1843:               candidateTexts:\n 1844:                 details.texts,\n 1845:             },\n 1846:           ),\n 1847:         };\n 1848:       }\n 1849: \n 1850:       this.addDiagnostic(\n 1851:         diagnostics,\n 1852:         diagnosticCodes,\n 1853:         \"CANONICALIZED_PUNCTUATION\",\n 1854:         candidates.map(\n 1855:           (candidate) =>\n 1856:             candidate.ruleId,\n 1857:         ),\n 1858:       );\n 1859: \n 1860:       return {\n 1861:         ok: true,\n 1862:         text: punctuation,\n 1863:       };\n 1864:     }\n 1865: \n 1866:     const details =\n 1867:       candidateDetails("
+        },
+        {
+          "startLine": 1861,
+          "endLine": 1905,
+          "text": " 1861:         ok: true,\n 1862:         text: punctuation,\n 1863:       };\n 1864:     }\n 1865: \n 1866:     const details =\n 1867:       candidateDetails(\n 1868:         candidates,\n 1869:       );\n 1870: \n 1871:     return {\n 1872:       ok: false,\n 1873:       failure: failure(\n 1874:         input,\n 1875:         \"AMBIGUOUS_REVERSE_MATCH\",\n 1876:         \"Parser state and configured policy cannot resolve this collision.\",\n 1877:         {\n 1878:           token,\n 1879:           candidateRuleIds:\n 1880:             details.ruleIds,\n 1881:           candidateTexts:\n 1882:             details.texts,\n 1883:         },\n 1884:       ),\n 1885:     };\n 1886:   }\n 1887: \n 1888:   private pickPunctuation(\n 1889:     texts: readonly string[],\n 1890:     style:\n 1891:       ReversePunctuationStyle,\n 1892:   ): string | null {\n 1893:     const set =\n 1894:       style === \"persian\"\n 1895:         ? PERSIAN_PUNCTUATION\n 1896:         : ASCII_PUNCTUATION;\n 1897: \n 1898:     for (const text of texts) {\n 1899:       if (set.has(text)) {\n 1900:         return text;\n 1901:       }\n 1902:     }\n 1903: \n 1904:     return null;\n 1905:   }"
+        }
+      ]
+    }
+  ],
+  "decisionCandidate": {
+    "default": "؛",
+    "asciiPolicy": ";",
+    "strictAmbiguity": "AMBIGUOUS_REVERSE_MATCH",
+    "diagnosticOnCanonicalization": "CANONICALIZED_PUNCTUATION"
+  },
+  "recommendedNext": "If all runtime hints match, no parser semantic patch is needed. Materialize independent conformance for signature 23, then recompute collision coverage to 34/34 and proceed to the Phase 13.5c-3c Core public-boundary reassessment."
+}
