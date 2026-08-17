@@ -1020,8 +1020,15 @@ implements ReverseTranslator {
             === "FA-G1-PUNC-SCALAR-017",
         );
 
+      const hasClosableLatinSpan =
+        this.hasClosableLatinSpan(
+          tokenized.tokens,
+          index,
+        );
+
       if (
-        preLatinPercentMatch !== null
+        !hasClosableLatinSpan
+        && preLatinPercentMatch !== null
         && preLatinPercentMatch.length > 1
         && preLatinPercentCandidates.length > 0
       ) {
@@ -1438,6 +1445,93 @@ implements ReverseTranslator {
     };
   }
 
+  private hasClosableLatinSpan(
+    tokens: readonly InputToken[],
+    index: number,
+  ): boolean {
+    const boundary =
+      this.modeCells.get(
+        "latin-span-begin",
+      );
+
+    const start =
+      tokens[index];
+
+    if (
+      boundary === undefined
+      || start === undefined
+      || start.kind !== "cell"
+      || start.cell !== boundary
+    ) {
+      return false;
+    }
+
+    let sawCharacter = false;
+    let pendingCapital = false;
+
+    for (
+      let cursor = index + 1;
+      cursor < tokens.length;
+      cursor += 1
+    ) {
+      const token =
+        tokens[cursor];
+
+      if (
+        token === undefined
+        || token.kind !== "cell"
+      ) {
+        return false;
+      }
+
+      if (token.cell === boundary) {
+        return (
+          sawCharacter
+          && !pendingCapital
+        );
+      }
+
+      const candidates =
+        this.candidatesBySignature
+          .get(token.cell)
+        ?? [];
+
+      const isCapitalIndicator =
+        candidates.some(
+          (candidate) =>
+            candidate.ruleId
+            === "FA-G1-LATIN-MODE-004",
+        );
+
+      if (isCapitalIndicator) {
+        if (pendingCapital) {
+          return false;
+        }
+
+        pendingCapital = true;
+        continue;
+      }
+
+      const hasLatinCharacter =
+        candidates.some(
+          (candidate) =>
+            candidate.ruleId.startsWith(
+              "FA-G1-LATIN-",
+            )
+            && candidate.text !== null,
+        );
+
+      if (!hasLatinCharacter) {
+        return false;
+      }
+
+      sawCharacter = true;
+      pendingCapital = false;
+    }
+
+    return false;
+  }
+
   private numericInternalCandidates(
     tokens: readonly InputToken[],
     index: number,
@@ -1680,6 +1774,18 @@ implements ReverseTranslator {
           ) !== null,
       );
 
+    const latinCollision =
+      candidates.some(
+        (candidate) =>
+          candidate.ruleId.startsWith(
+            "FA-G1-LATIN-",
+          ),
+      );
+
+    const languageModeCollision =
+      digitCollision
+      || latinCollision;
+
     const persianLetterCandidates =
       candidates.filter(
         (candidate) =>
@@ -1693,7 +1799,7 @@ implements ReverseTranslator {
       (
         !state.numericMode
         && !state.latinSpan
-        && digitCollision
+        && languageModeCollision
         && persianLetterCandidates.length
         === 1
       )

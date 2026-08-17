@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-LANGUAGE-135-BASE-STRICT",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-language-latin-only",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-015",
+    "FA-G1-LATIN-041"
+  ],
+  "input": {
+    "cells": [
+      "135"
+    ],
+    "unicodeBraille": "⠕"
+  },
+  "options": {
+    "ambiguityPolicy": "error"
+  },
+  "expected": {
+    "ok": false,
+    "code": "AMBIGUOUS_REVERSE_MATCH",
+    "candidateRuleIds": [
+      "FA-G1-LATIN-015",
+      "FA-G1-LATIN-041"
+    ],
+    "candidateTexts": [
+      "O",
+      "o"
+    ]
+  },
+  "notes": [
+    "Latin-only collision remains ambiguous outside an explicit Latin span."
+  ]
+}

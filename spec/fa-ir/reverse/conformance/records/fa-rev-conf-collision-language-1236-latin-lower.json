@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-LANGUAGE-1236-LATIN-LOWER",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-language-latin-only",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-MODE-002",
+    "FA-G1-LATIN-022",
+    "FA-G1-LATIN-048",
+    "FA-G1-LATIN-MODE-003"
+  ],
+  "input": {
+    "cells": [
+      "25",
+      "1236",
+      "25"
+    ],
+    "unicodeBraille": "⠒⠧⠒"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "v",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Active Latin span selects the lowercase Latin candidate for the shared Braille cell."
+  ]
+}
