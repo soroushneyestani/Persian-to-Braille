@@ -1,0 +1,93 @@
+{
+  "phase": "13.5c-3c1",
+  "name": "Corrected Public Core Boundary Readiness Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "upstream": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "cleanExceptPriorAuditOutputs": true
+  },
+  "previousAudit": {
+    "decision": "NOT_READY_FOR_PUBLIC_CORE_BOUNDARY",
+    "blockingItems": [
+      "reverse Core type contract incomplete"
+    ],
+    "falseNegativeConfirmed": true,
+    "falseNegativeReason": "The previous readiness heuristic looked for `ReverseTranslationResult` and `ReverseFailure`, but the implemented/frozen Core contract uses `ReverseTranslationOutcome` and `ReverseTranslationFailure`."
+  },
+  "canonicalBaseline": {
+    "forwardRules": 176,
+    "reverseVectors": 142,
+    "translationVectors": 140,
+    "capabilityVectors": 2,
+    "canonicalCollisionSignatures": 34,
+    "remainingCollisionSignatures": [],
+    "directReversalCandidates": 16,
+    "directReversalUncovered": [],
+    "parserRequiredRules": 8,
+    "parserRequiredUncovered": []
+  },
+  "actualReverseContract": {
+    "typeExports": [
+      "ReverseAmbiguityPolicy",
+      "ReverseDiagnostic",
+      "ReverseDiagnosticCode",
+      "ReverseDigitFamily",
+      "ReverseEllipsisStyle",
+      "ReverseProfileSnapshot",
+      "ReversePunctuationStyle",
+      "ReverseTranslationFailure",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationOptions",
+      "ReverseTranslationOutcome",
+      "ReverseTranslationSuccess",
+      "ReverseTranslator",
+      "ReverseUnicodeLocation"
+    ],
+    "runtimeExports": [
+      "createReverseTranslator"
+    ],
+    "missingExpectedTypes": [],
+    "unexpectedReverseContractExports": [],
+    "missingExpectedRuntime": []
+  },
+  "contractChecks": {
+    "exactExpectedTypeSurfacePresent": true,
+    "runtimeFactoryPresent": true,
+    "outcomeUnionUsesSuccessAndFailure": true,
+    "translatorReturnsOutcome": true,
+    "factoryReturnsReverseTranslator": true,
+    "coreRootReverseStillPrivate": true,
+    "sdkReverseStillDeferred": true
+  },
+  "blockingItems": [],
+  "decision": "READY_FOR_PUBLIC_CORE_BOUNDARY_FREEZE",
+  "exactPublicCoreSurfaceCandidate": {
+    "runtime": [
+      "createReverseTranslator"
+    ],
+    "types": [
+      "ReverseAmbiguityPolicy",
+      "ReverseDiagnostic",
+      "ReverseDiagnosticCode",
+      "ReverseDigitFamily",
+      "ReverseEllipsisStyle",
+      "ReverseProfileSnapshot",
+      "ReversePunctuationStyle",
+      "ReverseTranslationFailure",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationOptions",
+      "ReverseTranslationOutcome",
+      "ReverseTranslationSuccess",
+      "ReverseTranslator",
+      "ReverseUnicodeLocation"
+    ],
+    "rootIndexStrategy": "Use explicit named exports from reverse-translator.js and explicit type exports from reverse-translation.js. Do not use export * for the new reverse boundary.",
+    "packageExportsChangeRequired": false,
+    "packageExportsReason": "@persian-braille/core already exposes only the package root through dist/index.js/dist/index.d.ts; the reverse API should be added to that root surface without adding a new subpath.",
+    "sdkChangesAllowedInThisStep": false,
+    "forwardCoreChangesAllowedInThisStep": false
+  },
+  "recommendedNext": "If decision is READY_FOR_PUBLIC_CORE_BOUNDARY_FREEZE, materialize a narrow Phase 13.5c-3c2 boundary freeze: document the exact Core root reverse exports above, then expose only those symbols from packages/core/src/index.ts, add root-boundary tests/validator, run the full Phase 13 chain, and keep the SDK reverse API deferred to its separate step."
+}

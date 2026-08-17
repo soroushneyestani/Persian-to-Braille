@@ -1,0 +1,209 @@
+{
+  "phase": "13.5c-3c2",
+  "name": "Public Core Boundary Historical Validator Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "upstream": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "cleanExceptPriorAudits": true
+  },
+  "boundaryFreezeInput": {
+    "decision": "READY_FOR_PUBLIC_CORE_BOUNDARY_FREEZE",
+    "runtime": [
+      "createReverseTranslator"
+    ],
+    "types": [
+      "ReverseAmbiguityPolicy",
+      "ReverseDiagnostic",
+      "ReverseDiagnosticCode",
+      "ReverseDigitFamily",
+      "ReverseEllipsisStyle",
+      "ReverseProfileSnapshot",
+      "ReversePunctuationStyle",
+      "ReverseTranslationFailure",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationOptions",
+      "ReverseTranslationOutcome",
+      "ReverseTranslationSuccess",
+      "ReverseTranslator",
+      "ReverseUnicodeLocation"
+    ],
+    "packageExportsChangeRequired": false,
+    "sdkChangesAllowed": false,
+    "forwardCoreChangesAllowed": false
+  },
+  "coreIndexEvidence": [
+    {
+      "startLine": 3,
+      "endLine": 8,
+      "text": "    3: export * from \"./unicode-preprocessor.js\";\n    4: export * from \"./translation.js\";\n    5: export * from \"./rule-selector.js\";\n    6: export * from \"./engine-token-producer.js\";\n    7: export * from \"./mode-rule-executor.js\";\n    8: export * from \"./forward-translator.js\";"
+    }
+  ],
+  "reverseTranslationEvidence": [
+    {
+      "startLine": 1,
+      "endLine": 33,
+      "text": "    1: /**\n    2:  * Core-internal Phase 13.4 reverse translation contracts.\n    3:  * Not re-exported from the Core root in this phase.\n    4:  */\n    5: \n    6: export type ReverseDigitFamily =\n    7:   | \"persian\"\n    8:   | \"ascii\"\n    9:   | \"arabic-indic\";\n   10: \n   11: export type ReversePunctuationStyle =\n   12:   | \"persian\"\n   13:   | \"ascii\";\n   14: \n   15: export type ReverseEllipsisStyle =\n   16:   | \"unicode\"\n   17:   | \"three-dots\";\n   18: \n   19: export type ReverseAmbiguityPolicy =\n   20:   | \"canonicalize\"\n   21:   | \"error\";\n   22: \n   23: export interface ReverseTranslationOptions {\n   24:   readonly digitFamily?: ReverseDigitFamily;\n   25:   readonly punctuationStyle?: ReversePunctuationStyle;\n   26:   readonly ellipsisStyle?: ReverseEllipsisStyle;\n   27:   readonly ambiguityPolicy?: ReverseAmbiguityPolicy;\n   28: }\n   29: \n   30: export type ReverseDiagnosticCode =\n   31:   | \"CANONICALIZED_DIGIT_FAMILY\"\n   32:   | \"CANONICALIZED_PUNCTUATION\"\n   33:   | \"CANONICALIZED_ELLIPSIS\""
+    },
+    {
+      "startLine": 35,
+      "endLine": 60,
+      "text": "   35:   | \"LOSSY_LAYOUT_RECONSTRUCTION\"\n   36:   | \"LOSSY_NORMALIZATION_RECONSTRUCTION\";\n   37: \n   38: export interface ReverseDiagnostic {\n   39:   readonly code: ReverseDiagnosticCode;\n   40:   readonly message: string;\n   41:   readonly ruleIds: readonly string[];\n   42: }\n   43: \n   44: export interface ReverseProfileSnapshot {\n   45:   readonly profileId: \"fa-ir-g1-reverse\";\n   46:   readonly profileVersion: \"0.1.0\";\n   47:   readonly profileStatus: \"draft\";\n   48:   readonly direction: \"braille-to-print\";\n   49: }\n   50: \n   51: export interface ReverseUnicodeLocation {\n   52:   readonly utf16Offset: number;\n   53:   readonly codePointIndex: number;\n   54:   readonly codePoint: string;\n   55: }\n   56: \n   57: export type ReverseTranslationFailureCode =\n   58:   | \"INVALID_BRAILLE_INPUT\"\n   59:   | \"UNKNOWN_BRAILLE_CELL\"\n   60:   | \"UNKNOWN_BRAILLE_SEQUENCE\""
+    },
+    {
+      "startLine": 64,
+      "endLine": 70,
+      "text": "   64:   | \"DANGLING_CAPITAL_INDICATOR\"\n   65:   | \"UNSUPPORTED_REVERSE_STATE\";\n   66: \n   67: export interface ReverseTranslationSuccess {\n   68:   readonly ok: true;\n   69:   readonly input: string;\n   70:   readonly profile: ReverseProfileSnapshot;"
+    },
+    {
+      "startLine": 74,
+      "endLine": 80,
+      "text": "   74:   readonly lossy: boolean;\n   75: }\n   76: \n   77: export interface ReverseTranslationFailure {\n   78:   readonly ok: false;\n   79:   readonly input: string;\n   80:   readonly profile: ReverseProfileSnapshot;"
+    },
+    {
+      "startLine": 87,
+      "endLine": 97,
+      "text": "   87:   readonly causeCode?: string;\n   88: }\n   89: \n   90: export type ReverseTranslationOutcome =\n   91:   | ReverseTranslationSuccess\n   92:   | ReverseTranslationFailure;\n   93: \n   94: export interface ReverseTranslator {\n   95:   translate(\n   96:     inputBraille: string,\n   97:     options?: ReverseTranslationOptions,"
+    }
+  ],
+  "reverseTranslatorEvidence": [
+    {
+      "startLine": 1927,
+      "endLine": 1937,
+      "text": " 1927:   }\n 1928: }\n 1929: \n 1930: /**\n 1931:  * Phase 13.4 Core-internal factory.\n 1932:  * Public Core/SDK exposure is intentionally deferred.\n 1933:  */\n 1934: export function createReverseTranslator():\n 1935: ReverseTranslator {\n 1936:   return new SpecificationDrivenReverseTranslator();\n 1937: }"
+    }
+  ],
+  "historicalValidatorEvidence": [
+    {
+      "path": "tools/architecture/validate-phase13-4-reverse-core-parser.mjs",
+      "snippets": [
+        {
+          "startLine": 119,
+          "endLine": 139,
+          "text": "  119:   \"CANONICALIZED_PUNCTUATION\",\n  120:   \"CANONICALIZED_ELLIPSIS\",\n  121:   \"AMBIGUOUS_REVERSE_MATCH\",\n  122:   \"UNTERMINATED_LATIN_SPAN\",\n  123:   \"DANGLING_CAPITAL_INDICATOR\",\n  124:   \"createReverseTranslator\",\n  125: ]) {\n  126:   assert.ok(\n  127:     reverseTranslator.includes(token),\n  128:     `reverse parser foundation missing: ${token}`,\n  129:   );\n  130: }\n  131: \n  132: for (const forbidden of [\n  133:   \"./reverse-translator.js\",\n  134:   \"./reverse-translation.js\",\n  135: ]) {\n  136:   assert.equal(\n  137:     coreIndex.includes(forbidden),\n  138:     false,\n  139:     `reverse Core internals leaked through root index: ${forbidden}`,"
+        },
+        {
+          "startLine": 240,
+          "endLine": 252,
+          "text": "  240: );\n  241: console.log(\n  242:   \"Forward rule/vector semantics: UNCHANGED / PASS\",\n  243: );\n  244: console.log(\n  245:   \"SDK / CLI / Web / Microsoft 365: DEFERRED / PASS\",\n  246: );\n  247: console.log(\n  248:   \"Core root reverse export: NOT YET EXPOSED / PASS\",\n  249: );\n  250: console.log(\n  251:   \"Next: Phase 13.5 Reverse Core Coverage and Public Core Boundary\",\n  252: );"
+        }
+      ]
+    },
+    {
+      "path": "tools/architecture/validate-phase13-5-reverse-core-coverage.mjs",
+      "snippets": [
+        {
+          "startLine": 227,
+          "endLine": 245,
+          "text": "  227:     `numeric-state rule covered prematurely: ${ruleId}`,\n  228:   );\n  229: }\n  230: \n  231: for (const token of [\n  232:   \"./reverse-translator.js\",\n  233:   \"./reverse-translation.js\",\n  234: ]) {\n  235:   assert.equal(\n  236:     coreIndex.includes(\n  237:       token,\n  238:     ),\n  239:     false,\n  240:     `Core reverse API exposed prematurely: ${token}`,\n  241:   );\n  242: }\n  243: \n  244: for (const token of [\n  245:   \"createPersianBrailleReverseTranslator\","
+        },
+        {
+          "startLine": 249,
+          "endLine": 259,
+          "text": "  249:   assert.equal(\n  250:     sdkIndex.includes(\n  251:       token,\n  252:     ),\n  253:     false,\n  254:     `SDK reverse API exposed prematurely: ${token}`,\n  255:   );\n  256: }\n  257: \n  258: const diffNames =\n  259:   execFileSync("
+        },
+        {
+          "startLine": 314,
+          "endLine": 326,
+          "text": "  314: );\n  315: console.log(\n  316:   \"Collision signatures still requiring state coverage: 27\",\n  317: );\n  318: console.log(\n  319:   \"Core root reverse export: DEFERRED / PASS\",\n  320: );\n  321: console.log(\n  322:   \"SDK reverse API: DEFERRED / PASS\",\n  323: );\n  324: console.log(\n  325:   \"Next: Phase 13.5c Stateful Numeric and Collision Coverage\",\n  326: );"
+        }
+      ]
+    },
+    {
+      "path": "tools/architecture/validate-phase13-5c1-numeric-parser-completion.mjs",
+      "snippets": [
+        {
+          "startLine": 157,
+          "endLine": 173,
+          "text": "  157:     `remaining parser-required rule is not covered: ${ruleId}`,\n  158:   );\n  159: }\n  160: \n  161: for (const token of [\n  162:   \"./reverse-translator.js\",\n  163:   \"./reverse-translation.js\",\n  164: ]) {\n  165:   assert.equal(\n  166:     coreIndex.includes(token),\n  167:     false,\n  168:     `Core reverse API exposed prematurely: ${token}`,\n  169:   );\n  170: }\n  171: \n  172: for (const token of [\n  173:   \"createPersianBrailleReverseTranslator\","
+        },
+        {
+          "startLine": 175,
+          "endLine": 185,
+          "text": "  175:   \"PersianBrailleReverseTranslationError\",\n  176: ]) {\n  177:   assert.equal(\n  178:     sdkIndex.includes(token),\n  179:     false,\n  180:     `SDK reverse API exposed prematurely: ${token}`,\n  181:   );\n  182: }\n  183: \n  184: const diffNames =\n  185:   execFileSync("
+        },
+        {
+          "startLine": 232,
+          "endLine": 244,
+          "text": "  232: );\n  233: console.log(\n  234:   \"Reverse conformance vectors: 37\",\n  235: );\n  236: console.log(\n  237:   \"Core root reverse export: DEFERRED / PASS\",\n  238: );\n  239: console.log(\n  240:   \"SDK reverse API: DEFERRED / PASS\",\n  241: );\n  242: console.log(\n  243:   \"Next: Phase 13.5c-2 Numeric Collision Coverage\",\n  244: );"
+        }
+      ]
+    },
+    {
+      "path": "tools/architecture/validate-phase13-5c2-numeric-collision-resolution.mjs",
+      "snippets": [
+        {
+          "startLine": 194,
+          "endLine": 210,
+          "text": "  194:     `numeric collision source marker missing: ${token}`,\n  195:   );\n  196: }\n  197: \n  198: for (const token of [\n  199:   \"./reverse-translator.js\",\n  200:   \"./reverse-translation.js\",\n  201: ]) {\n  202:   assert.equal(\n  203:     coreIndex.includes(token),\n  204:     false,\n  205:     `Core reverse API exposed prematurely: ${token}`,\n  206:   );\n  207: }\n  208: \n  209: for (const token of [\n  210:   \"createPersianBrailleReverseTranslator\","
+        },
+        {
+          "startLine": 212,
+          "endLine": 222,
+          "text": "  212:   \"PersianBrailleReverseTranslationError\",\n  213: ]) {\n  214:   assert.equal(\n  215:     sdkIndex.includes(token),\n  216:     false,\n  217:     `SDK reverse API exposed prematurely: ${token}`,\n  218:   );\n  219: }\n  220: \n  221: const diffNames =\n  222:   execFileSync("
+        },
+        {
+          "startLine": 283,
+          "endLine": 295,
+          "text": "  283: );\n  284: console.log(\n  285:   \"Remaining non-numeric collision signatures: 17\",\n  286: );\n  287: console.log(\n  288:   \"Core root reverse export: DEFERRED / PASS\",\n  289: );\n  290: console.log(\n  291:   \"SDK reverse API: DEFERRED / PASS\",\n  292: );\n  293: console.log(\n  294:   \"Next: Phase 13.5c-3 Remaining Cross-Mode Collision Coverage\",\n  295: );"
+        }
+      ]
+    },
+    {
+      "path": "tools/architecture/validate-phase13-5c3a-language-mode-collision-resolution.mjs",
+      "snippets": [
+        {
+          "startLine": 139,
+          "endLine": 155,
+          "text": "  139:     `Phase 13.5c-3a source marker missing: ${token}`,\n  140:   );\n  141: }\n  142: \n  143: for (const token of [\n  144:   \"./reverse-translator.js\",\n  145:   \"./reverse-translation.js\",\n  146: ]) {\n  147:   assert.equal(\n  148:     coreIndex.includes(token),\n  149:     false,\n  150:     `Core reverse API exposed prematurely: ${token}`,\n  151:   );\n  152: }\n  153: \n  154: for (const token of [\n  155:   \"createPersianBrailleReverseTranslator\","
+        },
+        {
+          "startLine": 157,
+          "endLine": 167,
+          "text": "  157:   \"PersianBrailleReverseTranslationError\",\n  158: ]) {\n  159:   assert.equal(\n  160:     sdkIndex.includes(token),\n  161:     false,\n  162:     `SDK reverse API exposed prematurely: ${token}`,\n  163:   );\n  164: }\n  165: \n  166: const diffNames = execFileSync(\n  167:   \"git\","
+        },
+        {
+          "startLine": 195,
+          "endLine": 202,
+          "text": "  195: console.log(\"Percent / lowercase-p overlap: PASS\");\n  196: console.log(\"New language-mode vectors: 68 / PASS\");\n  197: console.log(\"Reverse conformance vectors: 139\");\n  198: console.log(\"Canonical collision coverage: 33 / 34\");\n  199: console.log(\"Remaining collision signature: 23\");\n  200: console.log(\"Core root reverse export: DEFERRED / PASS\");\n  201: console.log(\"SDK reverse API: DEFERRED / PASS\");\n  202: console.log(\"Next: Phase 13.5c-3b Remaining Punctuation Collision\");"
+        }
+      ]
+    },
+    {
+      "path": "tools/architecture/validate-phase13-5c3b-remaining-punctuation-collision.mjs",
+      "snippets": [
+        {
+          "startLine": 245,
+          "endLine": 261,
+          "text": "  245: assert.ok(\n  246:   semicolonRecords.every(Boolean),\n  247: );\n  248: \n  249: for (const token of [\n  250:   \"./reverse-translator.js\",\n  251:   \"./reverse-translation.js\",\n  252: ]) {\n  253:   assert.equal(\n  254:     coreIndex.includes(token),\n  255:     false,\n  256:     `Core reverse API exposed prematurely: ${token}`,\n  257:   );\n  258: }\n  259: \n  260: for (const token of [\n  261:   \"createPersianBrailleReverseTranslator\","
+        },
+        {
+          "startLine": 263,
+          "endLine": 273,
+          "text": "  263:   \"PersianBrailleReverseTranslationError\",\n  264: ]) {\n  265:   assert.equal(\n  266:     sdkIndex.includes(token),\n  267:     false,\n  268:     `SDK reverse API exposed prematurely: ${token}`,\n  269:   );\n  270: }\n  271: \n  272: const diffNames =\n  273:   execFileSync("
+        },
+        {
+          "startLine": 330,
+          "endLine": 342,
+          "text": "  330: );\n  331: console.log(\n  332:   \"Remaining collision signatures: 0\",\n  333: );\n  334: console.log(\n  335:   \"Core root reverse export: DEFERRED / PASS\",\n  336: );\n  337: console.log(\n  338:   \"SDK reverse API: DEFERRED / PASS\",\n  339: );\n  340: console.log(\n  341:   \"Next: Phase 13.5c-3c Final Coverage and Public Core Boundary Reassessment\",\n  342: );"
+        }
+      ]
+    }
+  ],
+  "validatorFilesWithBoundaryAssumptions": [
+    "tools/architecture/validate-phase13-4-reverse-core-parser.mjs",
+    "tools/architecture/validate-phase13-5-reverse-core-coverage.mjs",
+    "tools/architecture/validate-phase13-5c1-numeric-parser-completion.mjs",
+    "tools/architecture/validate-phase13-5c2-numeric-collision-resolution.mjs",
+    "tools/architecture/validate-phase13-5c3a-language-mode-collision-resolution.mjs",
+    "tools/architecture/validate-phase13-5c3b-remaining-punctuation-collision.mjs"
+  ],
+  "recommendedMaterialization": {
+    "coreIndex": "Add explicit named runtime export for createReverseTranslator and explicit type exports for the 14 frozen reverse types.",
+    "comments": "Update stale Phase 13.4 internal-only comments in reverse contract/factory files without changing runtime semantics.",
+    "historicalValidators": "Convert only exact Core-root-private assertions that block later Phase 13 composition into milestone-compatible invariants. Do not weaken SDK-deferred assertions.",
+    "newBoundaryTest": "Import the reverse factory/types through the Core root and execute representative success/failure behavior.",
+    "newValidator": "Assert exact public Core root surface, unchanged package exports, SDK reverse still deferred, forward Core untouched, and full Phase 13.5c-3b chain passes."
+  }
+}

@@ -140,16 +140,21 @@ for (const token of [
   );
 }
 
-for (const token of [
-  "./reverse-translator.js",
-  "./reverse-translation.js",
-]) {
-  assert.equal(
-    coreIndex.includes(token),
-    false,
-    `Core reverse API exposed prematurely: ${token}`,
+const reverseRuntimeRootExported =
+  coreIndex.includes(
+    "./reverse-translator.js",
   );
-}
+
+const reverseTypesRootExported =
+  coreIndex.includes(
+    "./reverse-translation.js",
+  );
+
+assert.equal(
+  reverseRuntimeRootExported,
+  reverseTypesRootExported,
+  "Core reverse root boundary must expose runtime and types together.",
+);
 
 for (const token of [
   "createPersianBrailleReverseTranslator",
@@ -197,6 +202,6 @@ console.log("New language-mode vectors: 68 / PASS");
 console.log("Reverse conformance vectors: 139");
 console.log("Canonical collision coverage: 33 / 34");
 console.log("Remaining collision signature: 23");
-console.log("Core root reverse export: DEFERRED / PASS");
+console.log("Core reverse root boundary coherence: PASS");
 console.log("SDK reverse API: DEFERRED / PASS");
 console.log("Next: Phase 13.5c-3b Remaining Punctuation Collision");

@@ -232,7 +232,7 @@ test(
 );
 
 test(
-  "keeps reverse Core modules internal in Phase 13.4",
+  "keeps the reverse Core root boundary coherent across Phase 13 milestones",
   async () => {
     const indexSource =
       await readFile(
@@ -243,18 +243,20 @@ test(
         "utf8",
       );
 
-    assert.equal(
+    const runtimePublic =
       indexSource.includes(
         "./reverse-translator.js",
-      ),
-      false,
-    );
+      );
 
-    assert.equal(
+    const typesPublic =
       indexSource.includes(
         "./reverse-translation.js",
-      ),
-      false,
+      );
+
+    assert.equal(
+      runtimePublic,
+      typesPublic,
+      "Core reverse root boundary must expose runtime and types together.",
     );
   },
 );

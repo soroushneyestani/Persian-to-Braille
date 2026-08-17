@@ -246,16 +246,21 @@ assert.ok(
   semicolonRecords.every(Boolean),
 );
 
-for (const token of [
-  "./reverse-translator.js",
-  "./reverse-translation.js",
-]) {
-  assert.equal(
-    coreIndex.includes(token),
-    false,
-    `Core reverse API exposed prematurely: ${token}`,
+const reverseRuntimeRootExported =
+  coreIndex.includes(
+    "./reverse-translator.js",
   );
-}
+
+const reverseTypesRootExported =
+  coreIndex.includes(
+    "./reverse-translation.js",
+  );
+
+assert.equal(
+  reverseRuntimeRootExported,
+  reverseTypesRootExported,
+  "Core reverse root boundary must expose runtime and types together.",
+);
 
 for (const token of [
   "createPersianBrailleReverseTranslator",
@@ -285,9 +290,112 @@ const diffNames =
   .split(/\r?\n/)
   .filter(Boolean);
 
+const commentOnlyLaterPhaseFiles =
+  new Map([
+    [
+      "packages/core/src/reverse-translation.ts",
+      {
+        oldComment:
+`/**
+ * Core-internal Phase 13.4 reverse translation contracts.
+ * Not re-exported from the Core root in this phase.
+ */`,
+        newComment:
+`/**
+ * Public Core reverse translation contracts.
+ *
+ * The frozen Phase 13.5c-3c2 Core root boundary explicitly re-exports
+ * these types from @persian-braille/core.
+ */`,
+      },
+    ],
+    [
+      "packages/core/src/reverse-translator.ts",
+      {
+        oldComment:
+`/**
+ * Phase 13.4 Core-internal factory.
+ * Public Core/SDK exposure is intentionally deferred.
+ */`,
+        newComment:
+`/**
+ * Public Core reverse translator factory.
+ *
+ * Exposed from @persian-braille/core in Phase 13.5c-3c2.
+ * SDK reverse exposure remains intentionally deferred.
+ */`,
+      },
+    ],
+  ]);
+
+for (const [
+  relativePath,
+  {
+    oldComment,
+    newComment,
+  },
+] of commentOnlyLaterPhaseFiles) {
+  if (!diffNames.includes(relativePath)) {
+    continue;
+  }
+
+  const headSource =
+    execFileSync(
+      "git",
+      [
+        "show",
+        `HEAD:${relativePath}`,
+      ],
+      {
+        cwd: root,
+        encoding: "utf8",
+      },
+    );
+
+  const currentSource =
+    await readFile(
+      path.join(
+        root,
+        relativePath,
+      ),
+      "utf8",
+    );
+
+  assert.equal(
+    headSource.includes(
+      oldComment,
+    ),
+    true,
+    `Historical reverse source baseline comment missing: ${relativePath}`,
+  );
+
+  assert.equal(
+    currentSource.includes(
+      newComment,
+    ),
+    true,
+    `Current public-Core comment missing: ${relativePath}`,
+  );
+
+  assert.equal(
+    currentSource,
+    headSource.replace(
+      oldComment,
+      newComment,
+    ),
+    `Phase 13.5c-3c2 changed reverse runtime semantics while composing c3b: ${relativePath}`,
+  );
+}
+
+const c3bRelevantDiffNames =
+  diffNames.filter(
+    (name) =>
+      !commentOnlyLaterPhaseFiles.has(
+        name,
+      ),
+  );
+
 for (const forbiddenPrefix of [
-  "packages/core/src/reverse-translator.ts",
-  "packages/core/src/reverse-translation.ts",
   "spec/fa-ir/rules/records/",
   "spec/fa-ir/conformance/records/",
   "packages/core/src/forward-translator.ts",
@@ -299,7 +407,7 @@ for (const forbiddenPrefix of [
   "apps/web/",
 ]) {
   assert.equal(
-    diffNames.some(
+    c3bRelevantDiffNames.some(
       (name) =>
         name.startsWith(
           forbiddenPrefix,
@@ -332,7 +440,7 @@ console.log(
   "Remaining collision signatures: 0",
 );
 console.log(
-  "Core root reverse export: DEFERRED / PASS",
+  "Core reverse root boundary coherence: PASS",
 );
 console.log(
   "SDK reverse API: DEFERRED / PASS",

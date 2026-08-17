@@ -1,6 +1,8 @@
 /**
- * Core-internal Phase 13.4 reverse translation contracts.
- * Not re-exported from the Core root in this phase.
+ * Public Core reverse translation contracts.
+ *
+ * The frozen Phase 13.5c-3c2 Core root boundary explicitly re-exports
+ * these types from @persian-braille/core.
  */
 
 export type ReverseDigitFamily =

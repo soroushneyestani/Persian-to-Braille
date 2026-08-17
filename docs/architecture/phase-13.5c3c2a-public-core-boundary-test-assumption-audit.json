@@ -1,0 +1,41 @@
+{
+  "phase": "13.5c-3c2a",
+  "name": "Public Core Boundary Test-Assumption Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "upstream": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "cleanExceptPriorAudits": true
+  },
+  "tokens": [
+    "./reverse-translator.js",
+    "./reverse-translation.js",
+    "reverse Core modules internal",
+    "Core root reverse",
+    "Core reverse API exposed prematurely",
+    "reverse Core internals leaked",
+    "coreIndex",
+    "packages/core/src/index.ts",
+    "src/index.ts",
+    "Not re-exported from the Core root"
+  ],
+  "filesScanned": 11,
+  "filesWithBoundaryAssumptions": [
+    "packages/core/test/reverse-translator-foundation.test.mjs"
+  ],
+  "evidence": [
+    {
+      "scope": "core-test",
+      "path": "packages/core/test/reverse-translator-foundation.test.mjs",
+      "snippets": [
+        {
+          "startLine": 229,
+          "endLine": 260,
+          "text": "  229:       );\n  230:     }\n  231:   },\n  232: );\n  233: \n  234: test(\n  235:   \"keeps reverse Core modules internal in Phase 13.4\",\n  236:   async () => {\n  237:     const indexSource =\n  238:       await readFile(\n  239:         path.join(\n  240:           root,\n  241:           \"packages/core/src/index.ts\",\n  242:         ),\n  243:         \"utf8\",\n  244:       );\n  245: \n  246:     assert.equal(\n  247:       indexSource.includes(\n  248:         \"./reverse-translator.js\",\n  249:       ),\n  250:       false,\n  251:     );\n  252: \n  253:     assert.equal(\n  254:       indexSource.includes(\n  255:         \"./reverse-translation.js\",\n  256:       ),\n  257:       false,\n  258:     );\n  259:   },\n  260: );"
+        }
+      ]
+    }
+  ],
+  "recommendedMaterializationRule": "Before exposing the reverse API from the Core root, update only historical tests that assert root privacy. Preserve all runtime semantics, SDK-deferred assertions, forward behavior, and conformance expectations."
+}

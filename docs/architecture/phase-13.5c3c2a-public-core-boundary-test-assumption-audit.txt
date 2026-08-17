@@ -1,0 +1,53 @@
+================================================================================================================
+PHASE 13.5c-3c2a — PUBLIC CORE BOUNDARY TEST-ASSUMPTION AUDIT
+================================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : 6927c37c34620f90d7e770bfa42a6bb6b104db0d
+
+Test/source files scanned : 11
+Files with boundary assumptions: 1
+
+[core-test] packages/core/test/reverse-translator-foundation.test.mjs
+  lines 229-260
+  229:       );
+  230:     }
+  231:   },
+  232: );
+  233:
+  234: test(
+  235:   "keeps reverse Core modules internal in Phase 13.4",
+  236:   async () => {
+  237:     const indexSource =
+  238:       await readFile(
+  239:         path.join(
+  240:           root,
+  241:           "packages/core/src/index.ts",
+  242:         ),
+  243:         "utf8",
+  244:       );
+  245:
+  246:     assert.equal(
+  247:       indexSource.includes(
+  248:         "./reverse-translator.js",
+  249:       ),
+  250:       false,
+  251:     );
+  252:
+  253:     assert.equal(
+  254:       indexSource.includes(
+  255:         "./reverse-translation.js",
+  256:       ),
+  257:       false,
+  258:     );
+  259:   },
+  260: );
+
+[MATERIALIZATION RULE]
+Update only historical root-privacy assertions that would conflict with the new public Core milestone.
+Do not weaken runtime, conformance, SDK-deferred, or forward assertions.
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c3c2a-public-core-boundary-test-assumption-audit.txt
+JSON : stage13-5c3c2a-public-core-boundary-test-assumption-audit.json
+================================================================================================================
