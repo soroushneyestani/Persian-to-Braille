@@ -129,16 +129,21 @@ for (const token of [
   );
 }
 
-for (const forbidden of [
-  "./reverse-translator.js",
-  "./reverse-translation.js",
-]) {
-  assert.equal(
-    coreIndex.includes(forbidden),
-    false,
-    `reverse Core internals leaked through root index: ${forbidden}`,
+const reverseRuntimeRootExported =
+  coreIndex.includes(
+    "./reverse-translator.js",
   );
-}
+
+const reverseTypesRootExported =
+  coreIndex.includes(
+    "./reverse-translation.js",
+  );
+
+assert.equal(
+  reverseRuntimeRootExported,
+  reverseTypesRootExported,
+  "Core reverse root boundary must expose runtime and types together.",
+);
 
 assert.ok(
   corePackage.scripts.test.includes(
@@ -245,7 +250,7 @@ console.log(
   "SDK / CLI / Web / Microsoft 365: DEFERRED / PASS",
 );
 console.log(
-  "Core root reverse export: NOT YET EXPOSED / PASS",
+  "Core reverse root boundary coherence: PASS",
 );
 console.log(
   "Next: Phase 13.5 Reverse Core Coverage and Public Core Boundary",

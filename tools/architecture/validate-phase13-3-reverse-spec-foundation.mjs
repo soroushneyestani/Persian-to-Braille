@@ -443,6 +443,7 @@ const laterPhaseAllowedFiles =
   new Set([
     "packages/core/src/reverse-translation.ts",
     "packages/core/src/reverse-translator.ts",
+    "packages/core/src/index.ts",
     "packages/core/test/reverse-translator-foundation.test.mjs",
     "packages/core/package.json",
     "docs/architecture/phase-13.4-reverse-core-parser-foundation.md",

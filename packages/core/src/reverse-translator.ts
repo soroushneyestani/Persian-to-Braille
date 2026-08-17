@@ -1928,8 +1928,10 @@ implements ReverseTranslator {
 }
 
 /**
- * Phase 13.4 Core-internal factory.
- * Public Core/SDK exposure is intentionally deferred.
+ * Public Core reverse translator factory.
+ *
+ * Exposed from @persian-braille/core in Phase 13.5c-3c2.
+ * SDK reverse exposure remains intentionally deferred.
  */
 export function createReverseTranslator():
 ReverseTranslator {

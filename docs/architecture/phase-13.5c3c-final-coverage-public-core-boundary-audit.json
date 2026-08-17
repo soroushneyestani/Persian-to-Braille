@@ -1,0 +1,221 @@
+{
+  "phase": "13.5c-3c",
+  "name": "Final Coverage and Public Core Boundary Reassessment",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "upstream": "6927c37c34620f90d7e770bfa42a6bb6b104db0d",
+    "clean": true
+  },
+  "canonicalBaseline": {
+    "forwardRules": 176,
+    "reverseVectors": 142,
+    "translationVectors": 140,
+    "capabilityVectors": 2,
+    "canonicalCollisionSignatures": 34,
+    "remainingCollisionSignatures": [],
+    "directReversalCandidates": 16,
+    "directReversalUncovered": [],
+    "parserRequiredRules": 8,
+    "parserRequiredUncovered": []
+  },
+  "publicBoundaryCurrentState": {
+    "coreRootReversePublic": false,
+    "coreRootReversePaths": {
+      "./reverse-translator.js": false,
+      "./reverse-translation.js": false
+    },
+    "sdkReversePublic": false,
+    "corePackageExports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      }
+    },
+    "rootWorkspacePackageExports": null
+  },
+  "internalReverseSurface": {
+    "reverseTranslationExports": [
+      "ReverseAmbiguityPolicy",
+      "ReverseDiagnostic",
+      "ReverseDiagnosticCode",
+      "ReverseDigitFamily",
+      "ReverseEllipsisStyle",
+      "ReverseProfileSnapshot",
+      "ReversePunctuationStyle",
+      "ReverseTranslationFailure",
+      "ReverseTranslationFailureCode",
+      "ReverseTranslationOptions",
+      "ReverseTranslationOutcome",
+      "ReverseTranslationSuccess",
+      "ReverseTranslator",
+      "ReverseUnicodeLocation"
+    ],
+    "reverseTranslatorExports": [
+      "createReverseTranslator"
+    ],
+    "runtimeMarkers": {
+      "createReverseTranslator": true,
+      "ReverseTranslator": true,
+      "ReverseTranslationResult": false,
+      "ReverseTranslationOptions": true,
+      "ReverseDiagnostic": true,
+      "ReverseFailure": false
+    }
+  },
+  "forwardCoreSurfaceReference": {
+    "forwardTranslatorExports": [
+      "createForwardTranslator"
+    ],
+    "coreIndexEvidence": {
+      "forward-translator": [
+        {
+          "startLine": 4,
+          "endLine": 8,
+          "text": "    4: export * from \"./translation.js\";\n    5: export * from \"./rule-selector.js\";\n    6: export * from \"./engine-token-producer.js\";\n    7: export * from \"./mode-rule-executor.js\";\n    8: export * from \"./forward-translator.js\";"
+        }
+      ],
+      "create": [],
+      "Translator": []
+    }
+  },
+  "reverseSourceEvidence": {
+    "reverseTranslation": {
+      "export": [
+        {
+          "startLine": 1,
+          "endLine": 7,
+          "text": "    1: /**\n    2:  * Core-internal Phase 13.4 reverse translation contracts.\n    3:  * Not re-exported from the Core root in this phase.\n    4:  */\n    5: \n    6: export type ReverseDigitFamily =\n    7:   | \"persian\""
+        },
+        {
+          "startLine": 2,
+          "endLine": 10,
+          "text": "    2:  * Core-internal Phase 13.4 reverse translation contracts.\n    3:  * Not re-exported from the Core root in this phase.\n    4:  */\n    5: \n    6: export type ReverseDigitFamily =\n    7:   | \"persian\"\n    8:   | \"ascii\"\n    9:   | \"arabic-indic\";\n   10: "
+        },
+        {
+          "startLine": 7,
+          "endLine": 15,
+          "text": "    7:   | \"persian\"\n    8:   | \"ascii\"\n    9:   | \"arabic-indic\";\n   10: \n   11: export type ReversePunctuationStyle =\n   12:   | \"persian\"\n   13:   | \"ascii\";\n   14: \n   15: export type ReverseEllipsisStyle ="
+        },
+        {
+          "startLine": 11,
+          "endLine": 19,
+          "text": "   11: export type ReversePunctuationStyle =\n   12:   | \"persian\"\n   13:   | \"ascii\";\n   14: \n   15: export type ReverseEllipsisStyle =\n   16:   | \"unicode\"\n   17:   | \"three-dots\";\n   18: \n   19: export type ReverseAmbiguityPolicy ="
+        },
+        {
+          "startLine": 15,
+          "endLine": 23,
+          "text": "   15: export type ReverseEllipsisStyle =\n   16:   | \"unicode\"\n   17:   | \"three-dots\";\n   18: \n   19: export type ReverseAmbiguityPolicy =\n   20:   | \"canonicalize\"\n   21:   | \"error\";\n   22: \n   23: export interface ReverseTranslationOptions {"
+        },
+        {
+          "startLine": 19,
+          "endLine": 27,
+          "text": "   19: export type ReverseAmbiguityPolicy =\n   20:   | \"canonicalize\"\n   21:   | \"error\";\n   22: \n   23: export interface ReverseTranslationOptions {\n   24:   readonly digitFamily?: ReverseDigitFamily;\n   25:   readonly punctuationStyle?: ReversePunctuationStyle;\n   26:   readonly ellipsisStyle?: ReverseEllipsisStyle;\n   27:   readonly ambiguityPolicy?: ReverseAmbiguityPolicy;"
+        },
+        {
+          "startLine": 26,
+          "endLine": 34,
+          "text": "   26:   readonly ellipsisStyle?: ReverseEllipsisStyle;\n   27:   readonly ambiguityPolicy?: ReverseAmbiguityPolicy;\n   28: }\n   29: \n   30: export type ReverseDiagnosticCode =\n   31:   | \"CANONICALIZED_DIGIT_FAMILY\"\n   32:   | \"CANONICALIZED_PUNCTUATION\"\n   33:   | \"CANONICALIZED_ELLIPSIS\"\n   34:   | \"AMBIGUITY_CANONICALIZED\""
+        },
+        {
+          "startLine": 34,
+          "endLine": 42,
+          "text": "   34:   | \"AMBIGUITY_CANONICALIZED\"\n   35:   | \"LOSSY_LAYOUT_RECONSTRUCTION\"\n   36:   | \"LOSSY_NORMALIZATION_RECONSTRUCTION\";\n   37: \n   38: export interface ReverseDiagnostic {\n   39:   readonly code: ReverseDiagnosticCode;\n   40:   readonly message: string;\n   41:   readonly ruleIds: readonly string[];\n   42: }"
+        },
+        {
+          "startLine": 40,
+          "endLine": 48,
+          "text": "   40:   readonly message: string;\n   41:   readonly ruleIds: readonly string[];\n   42: }\n   43: \n   44: export interface ReverseProfileSnapshot {\n   45:   readonly profileId: \"fa-ir-g1-reverse\";\n   46:   readonly profileVersion: \"0.1.0\";\n   47:   readonly profileStatus: \"draft\";\n   48:   readonly direction: \"braille-to-print\";"
+        },
+        {
+          "startLine": 47,
+          "endLine": 55,
+          "text": "   47:   readonly profileStatus: \"draft\";\n   48:   readonly direction: \"braille-to-print\";\n   49: }\n   50: \n   51: export interface ReverseUnicodeLocation {\n   52:   readonly utf16Offset: number;\n   53:   readonly codePointIndex: number;\n   54:   readonly codePoint: string;\n   55: }"
+        },
+        {
+          "startLine": 53,
+          "endLine": 61,
+          "text": "   53:   readonly codePointIndex: number;\n   54:   readonly codePoint: string;\n   55: }\n   56: \n   57: export type ReverseTranslationFailureCode =\n   58:   | \"INVALID_BRAILLE_INPUT\"\n   59:   | \"UNKNOWN_BRAILLE_CELL\"\n   60:   | \"UNKNOWN_BRAILLE_SEQUENCE\"\n   61:   | \"AMBIGUOUS_REVERSE_MATCH\""
+        },
+        {
+          "startLine": 63,
+          "endLine": 71,
+          "text": "   63:   | \"UNTERMINATED_LATIN_SPAN\"\n   64:   | \"DANGLING_CAPITAL_INDICATOR\"\n   65:   | \"UNSUPPORTED_REVERSE_STATE\";\n   66: \n   67: export interface ReverseTranslationSuccess {\n   68:   readonly ok: true;\n   69:   readonly input: string;\n   70:   readonly profile: ReverseProfileSnapshot;\n   71:   readonly text: string;"
+        },
+        {
+          "startLine": 73,
+          "endLine": 81,
+          "text": "   73:   readonly diagnostics: readonly ReverseDiagnostic[];\n   74:   readonly lossy: boolean;\n   75: }\n   76: \n   77: export interface ReverseTranslationFailure {\n   78:   readonly ok: false;\n   79:   readonly input: string;\n   80:   readonly profile: ReverseProfileSnapshot;\n   81:   readonly code: ReverseTranslationFailureCode;"
+        },
+        {
+          "startLine": 86,
+          "endLine": 94,
+          "text": "   86:   readonly candidateTexts?: readonly string[];\n   87:   readonly causeCode?: string;\n   88: }\n   89: \n   90: export type ReverseTranslationOutcome =\n   91:   | ReverseTranslationSuccess\n   92:   | ReverseTranslationFailure;\n   93: \n   94: export interface ReverseTranslator {"
+        },
+        {
+          "startLine": 90,
+          "endLine": 98,
+          "text": "   90: export type ReverseTranslationOutcome =\n   91:   | ReverseTranslationSuccess\n   92:   | ReverseTranslationFailure;\n   93: \n   94: export interface ReverseTranslator {\n   95:   translate(\n   96:     inputBraille: string,\n   97:     options?: ReverseTranslationOptions,\n   98:   ): ReverseTranslationOutcome;"
+        }
+      ],
+      "ReverseTranslator": [
+        {
+          "startLine": 90,
+          "endLine": 98,
+          "text": "   90: export type ReverseTranslationOutcome =\n   91:   | ReverseTranslationSuccess\n   92:   | ReverseTranslationFailure;\n   93: \n   94: export interface ReverseTranslator {\n   95:   translate(\n   96:     inputBraille: string,\n   97:     options?: ReverseTranslationOptions,\n   98:   ): ReverseTranslationOutcome;"
+        }
+      ],
+      "ReverseTranslationResult": [],
+      "ReverseTranslationOptions": [
+        {
+          "startLine": 19,
+          "endLine": 27,
+          "text": "   19: export type ReverseAmbiguityPolicy =\n   20:   | \"canonicalize\"\n   21:   | \"error\";\n   22: \n   23: export interface ReverseTranslationOptions {\n   24:   readonly digitFamily?: ReverseDigitFamily;\n   25:   readonly punctuationStyle?: ReversePunctuationStyle;\n   26:   readonly ellipsisStyle?: ReverseEllipsisStyle;\n   27:   readonly ambiguityPolicy?: ReverseAmbiguityPolicy;"
+        },
+        {
+          "startLine": 93,
+          "endLine": 99,
+          "text": "   93: \n   94: export interface ReverseTranslator {\n   95:   translate(\n   96:     inputBraille: string,\n   97:     options?: ReverseTranslationOptions,\n   98:   ): ReverseTranslationOutcome;\n   99: }"
+        }
+      ]
+    },
+    "reverseTranslator": {
+      "export": [
+        {
+          "startLine": 1930,
+          "endLine": 1937,
+          "text": " 1930: /**\n 1931:  * Phase 13.4 Core-internal factory.\n 1932:  * Public Core/SDK exposure is intentionally deferred.\n 1933:  */\n 1934: export function createReverseTranslator():\n 1935: ReverseTranslator {\n 1936:   return new SpecificationDrivenReverseTranslator();\n 1937: }"
+        }
+      ],
+      "createReverseTranslator": [
+        {
+          "startLine": 1930,
+          "endLine": 1937,
+          "text": " 1930: /**\n 1931:  * Phase 13.4 Core-internal factory.\n 1932:  * Public Core/SDK exposure is intentionally deferred.\n 1933:  */\n 1934: export function createReverseTranslator():\n 1935: ReverseTranslator {\n 1936:   return new SpecificationDrivenReverseTranslator();\n 1937: }"
+        }
+      ]
+    }
+  },
+  "frozenSdkContractMarkers": {
+    "createPersianBrailleReverseTranslator": "createPersianBrailleReverseTranslator",
+    "translateFromBraille": "translateFromBraille",
+    "translateFromBrailleOrThrow": "translateFromBrailleOrThrow",
+    "PersianBrailleReverseTranslationError": "PersianBrailleReverseTranslationError"
+  },
+  "publicBoundaryReadiness": {
+    "collisionCoverageComplete": true,
+    "directCoverageComplete": true,
+    "parserCoverageComplete": true,
+    "reverseConformancePresent": true,
+    "internalRuntimeFactoryPresent": true,
+    "internalTypesPresent": false,
+    "coreRootReverseStillPrivate": true,
+    "sdkReverseStillDeferred": true
+  },
+  "blockingItems": [
+    "reverse Core type contract incomplete"
+  ],
+  "decision": "NOT_READY_FOR_PUBLIC_CORE_BOUNDARY",
+  "recommendedNext": "If the decision is READY_FOR_PUBLIC_CORE_BOUNDARY_MATERIALIZATION, freeze the exact Core root export surface in a narrow design step, materialize only the public Core reverse boundary, validate the package/root exports and full Phase 13 chain, then proceed to the separate SDK reverse API implementation frozen in Phase 13.2."
+}
