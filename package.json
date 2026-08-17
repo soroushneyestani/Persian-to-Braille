@@ -100,6 +100,7 @@
     "validate:phase11-post-merge-finalization": "node tools/architecture/validate-phase11-post-merge-finalization.mjs",
     "validate:phase11-final": "pnpm run validate:phase11-8 && pnpm run validate:phase11-post-merge-finalization",
     "validate:phase12-2": "node tools/architecture/validate-phase12-2-developer-sdk-contract.mjs",
+    "validate:phase12-3": "pnpm run validate:phase12-2 && pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm --filter @persian-braille/examples run test && node tools/architecture/validate-phase12-3-runnable-examples.mjs",
     "test:u0622-release-regression": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs",
     "validate:u0622-release-correction": "pnpm run spec:bundle && pnpm run test:u0622-release-regression && pnpm --filter @persian-braille/microsoft365 run test && node tools/architecture/validate-u0622-release-correction.mjs",
     "validate:phase11-public-trust-wording": "node tools/architecture/validate-phase11-public-trust-wording.mjs"
