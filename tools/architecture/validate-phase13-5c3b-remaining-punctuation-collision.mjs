@@ -262,17 +262,21 @@ assert.equal(
   "Core reverse root boundary must expose runtime and types together.",
 );
 
-for (const token of [
-  "createPersianBrailleReverseTranslator",
-  "translateFromBraille",
-  "PersianBrailleReverseTranslationError",
-]) {
-  assert.equal(
-    sdkIndex.includes(token),
-    false,
-    `SDK reverse API exposed prematurely: ${token}`,
+const reverseSdkFactoryRootExported =
+  sdkIndex.includes(
+    "createPersianBrailleReverseTranslator",
   );
-}
+
+const reverseSdkErrorRootExported =
+  sdkIndex.includes(
+    "PersianBrailleReverseTranslationError",
+  );
+
+assert.equal(
+  reverseSdkFactoryRootExported,
+  reverseSdkErrorRootExported,
+  "SDK reverse runtime boundary must expose factory and error together.",
+);
 
 const diffNames =
   execFileSync(
@@ -401,7 +405,8 @@ for (const forbiddenPrefix of [
   "packages/core/src/forward-translator.ts",
   "packages/core/src/rule-selector.ts",
   "packages/core/src/mode-rule-executor.ts",
-  "packages/sdk/src/",
+  "packages/sdk/src/public-api.ts",
+  "packages/sdk/src/translator.ts",
   "integrations/microsoft365/src/",
   "apps/cli/",
   "apps/web/",
@@ -443,7 +448,7 @@ console.log(
   "Core reverse root boundary coherence: PASS",
 );
 console.log(
-  "SDK reverse API: DEFERRED / PASS",
+  "SDK reverse runtime boundary coherence: PASS",
 );
 console.log(
   "Next: Phase 13.5c-3c Final Coverage and Public Core Boundary Reassessment",

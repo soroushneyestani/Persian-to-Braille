@@ -196,8 +196,96 @@ Removing or renaming those exports is a breaking change and is not permitted
 while closing Phase 12. Compatible additive APIs require validation before they
 become part of the documented public contract.
 
-Reverse translation is deliberately outside this phase and remains deferred to
-Phase 13; Phase 12 does not expose or promise a `translateFromBraille` API.
+### Reverse translation
+
+Phase 13 adds the public Braille-to-Persian SDK facade. Import it from the
+package root; deep imports remain unsupported.
+
+```ts
+import {
+  PersianBrailleReverseTranslationError,
+  createPersianBrailleReverseTranslator,
+} from "@persian-braille/sdk";
+
+const reverse =
+  createPersianBrailleReverseTranslator();
+
+const result =
+  reverse.translateFromBraille("⠆");
+
+if (result.ok) {
+  console.log(result.text);
+}
+```
+
+The two reverse runtime exports are:
+
+- `PersianBrailleReverseTranslationError`
+- `createPersianBrailleReverseTranslator`
+
+The public reverse type surface is:
+
+- `CreatePersianBrailleReverseTranslator`
+- `PersianBrailleReverseProfileInfo`
+- `PersianBrailleReverseTranslationOptions`
+- `PersianBrailleReverseDigitFamily`
+- `PersianBrailleReversePunctuationStyle`
+- `PersianBrailleReverseEllipsisStyle`
+- `PersianBrailleReverseAmbiguityPolicy`
+- `PersianBrailleReverseDiagnostic`
+- `PersianBrailleReverseTranslationFailureCode`
+- `PersianBrailleReverseTranslationFailure`
+- `PersianBrailleReverseTranslationResult`
+- `PersianBrailleReverseTranslationSuccess`
+- `PersianBrailleReverseTranslator`
+- `PersianBrailleReverseUnicodeLocation`
+
+`PersianBrailleReverseDiagnosticCode` is intentionally not a separate public
+type export. Diagnostic codes are represented by the `code` field of
+`PersianBrailleReverseDiagnostic`.
+
+The reverse translator exposes two methods:
+
+- `translateFromBraille(input, options?)` returns
+  `PersianBrailleReverseTranslationResult` and does not throw for expected
+  translation failures.
+- `translateFromBrailleOrThrow(input, options?)` returns
+  `PersianBrailleReverseTranslationSuccess` or throws
+  `PersianBrailleReverseTranslationError` for an expected failure.
+
+Factory-level options are defaults. Per-call options override those defaults.
+The supported option fields are:
+
+- `digitFamily`: `"persian"` (default), `"ascii"`, or `"arabic-indic"`
+- `punctuationStyle`: `"persian"` (default) or `"ascii"`
+- `ellipsisStyle`: `"unicode"` (default) or `"three-dots"`
+- `ambiguityPolicy`: `"canonicalize"` (default) or `"error"`
+
+Expected reverse failure codes are:
+
+- `INVALID_BRAILLE_INPUT`
+- `UNKNOWN_BRAILLE_CELL`
+- `UNKNOWN_BRAILLE_SEQUENCE`
+- `AMBIGUOUS_REVERSE_MATCH`
+- `MALFORMED_MODE_SEQUENCE`
+- `UNTERMINATED_LATIN_SPAN`
+- `DANGLING_CAPITAL_INDICATOR`
+- `UNSUPPORTED_REVERSE_STATE`
+
+Successful reverse results may include these diagnostics:
+
+- `CANONICALIZED_DIGIT_FAMILY`
+- `CANONICALIZED_PUNCTUATION`
+- `CANONICALIZED_ELLIPSIS`
+- `AMBIGUITY_CANONICALIZED`
+- `LOSSY_LAYOUT_RECONSTRUCTION`
+- `LOSSY_NORMALIZATION_RECONSTRUCTION`
+
+Reverse translation is intentionally canonical rather than a claim of exact
+source reconstruction. Digit-family, punctuation, ellipsis, layout, and
+normalization provenance can be lossy; inspect `diagnostics` and `lossy` on
+successful results. Exact layout and ZWNJ source provenance are not claimed.
+
 
 ### License
 

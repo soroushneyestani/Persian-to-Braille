@@ -13,7 +13,9 @@ test("exports only the selected runtime SDK surface", () => {
   assert.deepEqual(
     Object.keys(sdk).sort(),
     [
+      "PersianBrailleReverseTranslationError",
       "PersianBrailleTranslationError",
+      "createPersianBrailleReverseTranslator",
       "createPersianBrailleTranslator",
     ],
   );

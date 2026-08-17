@@ -189,7 +189,26 @@ const sdkSourceFiles =
       ),
   );
 
-for (const file of sdkSourceFiles) {
+const phase12FrozenSdkSourceFiles =
+  sdkSourceFiles.filter(
+    (file) =>
+      ![
+        "packages/sdk/src/reverse-public-api.ts",
+        "packages/sdk/src/reverse-translator.ts",
+      ].includes(
+        path
+          .relative(
+            root,
+            file,
+          )
+          .replaceAll(
+            "\\",
+            "/",
+          ),
+      ),
+  );
+
+for (const file of phase12FrozenSdkSourceFiles) {
   const source =
     await readFile(
       file,
@@ -201,7 +220,7 @@ for (const file of sdkSourceFiles) {
       "translateFromBraille",
     ),
     false,
-    `Phase 13 reverse API leaked into Phase 12 source: ${
+    `Phase 13 reverse API leaked into frozen Phase 12 SDK source: ${
       path.relative(root, file).replaceAll("\\", "/")
     }`,
   );
@@ -264,7 +283,7 @@ console.log(
 );
 
 console.log(
-  "Reverse translation API in Phase 12 source: NONE / PASS",
+  "Frozen Phase 12 SDK source remains reverse-free: PASS",
 );
 
 console.log(

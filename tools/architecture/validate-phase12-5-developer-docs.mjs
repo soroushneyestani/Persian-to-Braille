@@ -212,23 +212,87 @@ assert.equal(
   false,
 );
 
-assert.equal(
-  sdkReadme.includes(
-    "translateFromBraille",
-  ),
-  true,
-  "README must explicitly defer, not silently omit, reverse translation.",
-);
-
+// Phase 12 originally documented reverse translation as deferred. The current
+// package README is a living public document, so later Phase 13 milestones may
+// add the frozen reverse SDK contract while the historical Phase 12 guide stays
+// unchanged.
 for (const phrase of [
   "does not expose or promise a `translateFromBraille` API",
   "Reverse translation is deliberately outside this phase",
 ]) {
-  assert.ok(
+  assert.equal(
     sdkReadme.includes(
       phrase,
     ),
-    `SDK README scope guard missing: ${phrase}`,
+    false,
+    `SDK README retains stale reverse deferral wording: ${phrase}`,
+  );
+}
+
+const reverseRuntimeExports = [
+  "PersianBrailleReverseTranslationError",
+  "createPersianBrailleReverseTranslator",
+];
+
+const reverseTypeExports = [
+  "CreatePersianBrailleReverseTranslator",
+  "PersianBrailleReverseProfileInfo",
+  "PersianBrailleReverseTranslationOptions",
+  "PersianBrailleReverseDigitFamily",
+  "PersianBrailleReversePunctuationStyle",
+  "PersianBrailleReverseEllipsisStyle",
+  "PersianBrailleReverseAmbiguityPolicy",
+  "PersianBrailleReverseDiagnostic",
+  "PersianBrailleReverseTranslationFailureCode",
+  "PersianBrailleReverseTranslationFailure",
+  "PersianBrailleReverseTranslationResult",
+  "PersianBrailleReverseTranslationSuccess",
+  "PersianBrailleReverseTranslator",
+  "PersianBrailleReverseUnicodeLocation",
+];
+
+for (const symbol of [
+  ...reverseRuntimeExports,
+  ...reverseTypeExports,
+]) {
+  assert.ok(
+    sdkIndex.includes(
+      symbol,
+    ),
+    `SDK public index missing Phase 13 reverse symbol: ${symbol}`,
+  );
+
+  assert.ok(
+    sdkReadme.includes(
+      `\`${symbol}\``,
+    ),
+    `SDK README missing Phase 13 reverse symbol: ${symbol}`,
+  );
+}
+
+assert.equal(
+  sdkIndex.includes(
+    "PersianBrailleReverseDiagnosticCode",
+  ),
+  false,
+);
+
+for (const token of [
+  "translateFromBraille",
+  "translateFromBrailleOrThrow",
+  "digitFamily",
+  "punctuationStyle",
+  "ellipsisStyle",
+  "ambiguityPolicy",
+  "AMBIGUOUS_REVERSE_MATCH",
+  "LOSSY_LAYOUT_RECONSTRUCTION",
+  "lossy",
+]) {
+  assert.ok(
+    sdkReadme.includes(
+      token,
+    ),
+    `SDK README missing reverse documentation token: ${token}`,
   );
 }
 
@@ -285,7 +349,7 @@ console.log(
 );
 
 console.log(
-  "Reverse translation scope guard: Phase 13 / PASS",
+  "Living SDK README reverse documentation: Phase 13.6 / PASS",
 );
 
 console.log(

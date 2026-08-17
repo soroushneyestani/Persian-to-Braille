@@ -1,0 +1,104 @@
+====================================================================================================================
+PHASE 13.6a1 — CORRECTED SDK REVERSE CONTRACT SHAPE AUDIT
+====================================================================================================================
+
+Branch   : phase13-reverse-translation
+HEAD     : aa5ce927d218ab2535d93e7b1e36d2fdb7a97317
+Upstream : aa5ce927d218ab2535d93e7b1e36d2fdb7a97317
+
+[CORRECTION]
+Original Phase 13.6a false negative: CONFIRMED
+Incorrectly expected public type: PersianBrailleReverseDiagnosticCode
+Canonical Phase 13.2 newTypeExports count: 14
+PersianBrailleReverseDiagnosticCode in canonical newTypeExports: NO
+
+[CANONICAL SDK RUNTIME EXPORTS]
+  - PersianBrailleReverseTranslationError
+  - createPersianBrailleReverseTranslator
+
+[CANONICAL SDK TYPE EXPORTS]
+  - CreatePersianBrailleReverseTranslator
+  - PersianBrailleReverseProfileInfo
+  - PersianBrailleReverseTranslationOptions
+  - PersianBrailleReverseDigitFamily
+  - PersianBrailleReversePunctuationStyle
+  - PersianBrailleReverseEllipsisStyle
+  - PersianBrailleReverseAmbiguityPolicy
+  - PersianBrailleReverseDiagnostic
+  - PersianBrailleReverseTranslationFailureCode
+  - PersianBrailleReverseTranslationFailure
+  - PersianBrailleReverseTranslationResult
+  - PersianBrailleReverseTranslationSuccess
+  - PersianBrailleReverseTranslator
+  - PersianBrailleReverseUnicodeLocation
+
+[FACTORY]
+{
+  "name": "createPersianBrailleReverseTranslator",
+  "defaultOptionsArgument": "optional PersianBrailleReverseTranslationOptions",
+  "returns": "PersianBrailleReverseTranslator"
+}
+
+[TRANSLATOR METHODS]
+{
+  "translateFromBraille": {
+    "input": "string",
+    "options": "optional PersianBrailleReverseTranslationOptions",
+    "returns": "PersianBrailleReverseTranslationResult",
+    "throwsExpectedFailures": false
+  },
+  "translateFromBrailleOrThrow": {
+    "input": "string",
+    "options": "optional PersianBrailleReverseTranslationOptions",
+    "returns": "PersianBrailleReverseTranslationSuccess",
+    "throwsExpectedFailures": true
+  }
+}
+
+[PROFILE INFO]
+{
+  "direction": "braille-to-print"
+}
+
+[FAILURE CODES]
+  - INVALID_BRAILLE_INPUT
+  - UNKNOWN_BRAILLE_CELL
+  - UNKNOWN_BRAILLE_SEQUENCE
+  - AMBIGUOUS_REVERSE_MATCH
+  - MALFORMED_MODE_SEQUENCE
+  - UNTERMINATED_LATIN_SPAN
+  - DANGLING_CAPITAL_INDICATOR
+  - UNSUPPORTED_REVERSE_STATE
+
+[DIAGNOSTIC CODE VALUES]
+  - CANONICALIZED_DIGIT_FAMILY
+  - CANONICALIZED_PUNCTUATION
+  - CANONICALIZED_ELLIPSIS
+  - AMBIGUITY_CANONICALIZED
+  - LOSSY_LAYOUT_RECONSTRUCTION
+  - LOSSY_NORMALIZATION_RECONSTRUCTION
+
+[CORE PUBLIC BOUNDARY]
+  factory: PASS
+  runtimePath: PASS
+  typesPath: PASS
+
+[READINESS CHECKS]
+  originalFalseNegativeConfirmed: PASS
+  canonicalRuntimeExportsExact: PASS
+  canonicalTypeExportsCount14: PASS
+  diagnosticCodeIsValueSetNotPublicType: PASS
+  coreReverseBoundaryPublic: PASS
+  coreReverseTypesComplete: PASS
+  sdkDependsOnCore: PASS
+  sdkReverseRuntimeStillAbsent: PASS
+  sdkReverseTypesStillAbsent: PASS
+  forwardSdkFilesRemainSingleFacadePattern: PASS
+
+Blockers: NONE
+Decision: READY_TO_FREEZE_PHASE13_6_SDK_IMPLEMENTATION_SHAPE
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-6a1-corrected-sdk-reverse-contract-shape-audit.txt
+JSON : stage13-6a1-corrected-sdk-reverse-contract-shape-audit.json
+====================================================================================================================

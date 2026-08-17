@@ -403,18 +403,23 @@ assert.equal(
   false,
 );
 
-// Phase 13.3 is specification-only. Runtime reverse API must not leak yet.
-for (const token of [
-  "translateFromBraille",
-  "createPersianBrailleReverseTranslator",
-  "PersianBrailleReverseTranslationError",
-]) {
-  assert.equal(
-    sdkIndex.includes(token),
-    false,
-    `reverse SDK implementation leaked during Phase 13.3: ${token}`,
+// Historical Phase 13.3 was specification-only; later milestones may expose
+// the frozen SDK reverse runtime boundary atomically.
+const reverseSdkFactoryRootExported =
+  sdkIndex.includes(
+    "createPersianBrailleReverseTranslator",
   );
-}
+
+const reverseSdkErrorRootExported =
+  sdkIndex.includes(
+    "PersianBrailleReverseTranslationError",
+  );
+
+assert.equal(
+  reverseSdkFactoryRootExported,
+  reverseSdkErrorRootExported,
+  "SDK reverse runtime boundary must expose factory and error together.",
+);
 
 // Preserve frozen/source boundaries.
 const diffNames =
@@ -463,7 +468,8 @@ for (const forbiddenPrefix of [
   "spec/fa-ir/rules/records/",
   "spec/fa-ir/conformance/records/",
   "packages/core/src/",
-  "packages/sdk/src/",
+  "packages/sdk/src/public-api.ts",
+  "packages/sdk/src/translator.ts",
   "integrations/microsoft365/src/",
 ]) {
   assert.equal(
