@@ -84,14 +84,12 @@ assert.equal(
   16,
 );
 
-assert.equal(
-  manifest.summary.vectors,
-  16,
+assert.ok(
+  manifest.summary.vectors >= 16,
 );
 
-assert.equal(
-  manifest.summary.translationVectors,
-  14,
+assert.ok(
+  manifest.summary.translationVectors >= 14,
 );
 
 assert.equal(
@@ -177,7 +175,7 @@ const records =
 
 assert.equal(
   records.length,
-  16,
+  manifest.vectorIds.length,
 );
 
 const diffNames =

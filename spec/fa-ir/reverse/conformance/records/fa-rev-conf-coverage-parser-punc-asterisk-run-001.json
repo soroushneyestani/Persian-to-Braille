@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COVERAGE-PARSER-PUNC-ASTERISK-RUN-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "coverage-parser-unique-sequence",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-ASTERISK-RUN-001"
+  ],
+  "input": {
+    "cells": [
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "unicodeBraille": "⠔⠔⠔⠔"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "***",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Phase 13.5b coverage for a parser-required non-colliding rule already supported by longest-match."
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "phase": "13.5a",
+  "name": "Reverse Core Coverage and Public Core Boundary Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "5b2f463b0b09b8a8969502ee83486be39c46d2ad",
+    "upstream": "5b2f463b0b09b8a8969502ee83486be39c46d2ad",
+    "clean": true
+  },
+  "baseline": {
+    "forwardRules": 176,
+    "cellEmittingRules": 147,
+    "noCellRules": 29,
+    "uniqueCellSignatures": 58,
+    "collisionSignatures": 34,
+    "uniqueOnlySignatures": 24,
+    "reverseSeedVectors": 16,
+    "reverseManifestVectors": 16,
+    "reverseSeedSourceForwardRuleIds": 23
+  },
+  "coverage": {
+    "coveredSourceForwardRuleIds": [
+      "FA-G1-DIGIT-ARABIC-INDIC-001",
+      "FA-G1-DIGIT-ASCII-001",
+      "FA-G1-DIGIT-PERSIAN-001",
+      "FA-G1-DIGIT-PERSIAN-002",
+      "FA-G1-LATIN-001",
+      "FA-G1-LATIN-027",
+      "FA-G1-LATIN-MODE-002",
+      "FA-G1-LATIN-MODE-003",
+      "FA-G1-LATIN-MODE-004",
+      "FA-G1-LAYOUT-001",
+      "FA-G1-LAYOUT-002",
+      "FA-G1-LAYOUT-003",
+      "FA-G1-LETTER-005",
+      "FA-G1-NORM-ZWNJ-001",
+      "FA-G1-NUMRULE-001",
+      "FA-G1-NUMRULE-005",
+      "FA-G1-NUMRULE-006",
+      "FA-G1-PUNC-ELLIPSIS-001",
+      "FA-G1-PUNC-SCALAR-002",
+      "FA-G1-PUNC-SCALAR-003",
+      "FA-G1-PUNC-SCALAR-019",
+      "FA-G1-PUNC-SCALAR-020",
+      "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+    ],
+    "coveredCollisionSignatures": [
+      "1",
+      "12",
+      "2",
+      "2356",
+      "236",
+      "25",
+      "6 6 6"
+    ],
+    "uncoveredCollisionSignatures": [
+      "123",
+      "1234",
+      "12345",
+      "1235",
+      "1236",
+      "124",
+      "1245",
+      "125",
+      "13",
+      "134",
+      "1345",
+      "13456",
+      "1346",
+      "135",
+      "1356",
+      "136",
+      "14",
+      "145",
+      "15",
+      "23",
+      "234",
+      "2345",
+      "24",
+      "245",
+      "2456",
+      "25 1234",
+      "3"
+    ],
+    "directCandidates": {
+      "total": 16,
+      "covered": 1,
+      "uncovered": 15,
+      "coveredRuleIds": [
+        "FA-G1-LETTER-005"
+      ],
+      "uncoveredRuleIds": [
+        "FA-G1-LETTER-008",
+        "FA-G1-LETTER-011",
+        "FA-G1-LETTER-014",
+        "FA-G1-LETTER-016",
+        "FA-G1-LETTER-017",
+        "FA-G1-LETTER-018",
+        "FA-G1-LETTER-019",
+        "FA-G1-LETTER-020",
+        "FA-G1-LETTER-021",
+        "FA-G1-LETTER-022",
+        "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+        "FA-G1-PUNC-SCALAR-001",
+        "FA-G1-PUNC-SCALAR-004",
+        "FA-G1-PUNC-SCALAR-010",
+        "FA-G1-VAR-001"
+      ]
+    },
+    "parserRequired": {
+      "total": 8,
+      "covered": 2,
+      "uncovered": 6,
+      "coveredRuleIds": [
+        "FA-G1-LATIN-MODE-004",
+        "FA-G1-NUMRULE-001"
+      ],
+      "uncoveredRuleIds": [
+        "FA-G1-NUM-FRACTION-SLASH-001",
+        "FA-G1-NUMRULE-002",
+        "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
+        "FA-G1-PUNC-ASTERISK-RUN-001",
+        "FA-G1-PUNC-ASTERISK-SINGLE-001",
+        "FA-G1-PUNC-SCALAR-011"
+      ]
+    },
+    "preliminaryClasses": {
+      "DIRECT_REVERSAL_CANDIDATE": {
+        "total": 16,
+        "covered": 1,
+        "uncovered": 15
+      },
+      "PARSER_RULE_REQUIRED": {
+        "total": 8,
+        "covered": 2,
+        "uncovered": 6
+      },
+      "STATE_OR_POLICY_REQUIRED": {
+        "total": 123,
+        "covered": 16,
+        "uncovered": 107
+      },
+      "STRUCTURAL_RECONSTRUCTION_REQUIRED": {
+        "total": 29,
+        "covered": 4,
+        "uncovered": 25
+      }
+    },
+    "domains": {
+      "character-other": {
+        "total": 1,
+        "covered": 0,
+        "uncovered": 1
+      },
+      "context": {
+        "total": 7,
+        "covered": 2,
+        "uncovered": 5
+      },
+      "digit-arabic-indic": {
+        "total": 10,
+        "covered": 1,
+        "uncovered": 9
+      },
+      "digit-ascii": {
+        "total": 10,
+        "covered": 1,
+        "uncovered": 9
+      },
+      "digit-persian": {
+        "total": 10,
+        "covered": 2,
+        "uncovered": 8
+      },
+      "latin-lower": {
+        "total": 26,
+        "covered": 1,
+        "uncovered": 25
+      },
+      "latin-upper": {
+        "total": 26,
+        "covered": 1,
+        "uncovered": 25
+      },
+      "layout": {
+        "total": 27,
+        "covered": 3,
+        "uncovered": 24
+      },
+      "mode": {
+        "total": 5,
+        "covered": 4,
+        "uncovered": 1
+      },
+      "normalization": {
+        "total": 1,
+        "covered": 1,
+        "uncovered": 0
+      },
+      "persian-letter": {
+        "total": 33,
+        "covered": 1,
+        "uncovered": 32
+      },
+      "punctuation-or-symbol": {
+        "total": 17,
+        "covered": 5,
+        "uncovered": 12
+      },
+      "sequence": {
+        "total": 3,
+        "covered": 1,
+        "uncovered": 2
+      }
+    },
+    "requirements": {
+      "capitalization-state-required": {
+        "total": 103,
+        "covered": 6,
+        "uncovered": 97
+      },
+      "collision-resolution-required": {
+        "total": 120,
+        "covered": 14,
+        "uncovered": 106
+      },
+      "context-state-required": {
+        "total": 11,
+        "covered": 2,
+        "uncovered": 9
+      },
+      "digit-family-output-policy-required": {
+        "total": 59,
+        "covered": 6,
+        "uncovered": 53
+      },
+      "language-mode-state-required": {
+        "total": 90,
+        "covered": 6,
+        "uncovered": 84
+      },
+      "latin-mode-state-required": {
+        "total": 103,
+        "covered": 6,
+        "uncovered": 97
+      },
+      "layout-reconstruction-policy-required": {
+        "total": 27,
+        "covered": 3,
+        "uncovered": 24
+      },
+      "longest-match-sequence-parser-required": {
+        "total": 4,
+        "covered": 2,
+        "uncovered": 2
+      },
+      "mode-boundary-state-required": {
+        "total": 3,
+        "covered": 2,
+        "uncovered": 1
+      },
+      "mode-state-required": {
+        "total": 5,
+        "covered": 4,
+        "uncovered": 1
+      },
+      "normalization-reconstruction-policy-required": {
+        "total": 1,
+        "covered": 1,
+        "uncovered": 0
+      },
+      "numeric-mode-state-required": {
+        "total": 59,
+        "covered": 6,
+        "uncovered": 53
+      },
+      "numeric-vs-text-mode-state-required": {
+        "total": 59,
+        "covered": 6,
+        "uncovered": 53
+      },
+      "print-variant-policy-or-ambiguity-required": {
+        "total": 15,
+        "covered": 8,
+        "uncovered": 7
+      },
+      "segmentation-review-required": {
+        "total": 7,
+        "covered": 2,
+        "uncovered": 5
+      },
+      "structural-reconstruction-required": {
+        "total": 29,
+        "covered": 4,
+        "uncovered": 25
+      }
+    }
+  },
+  "implementedFeatureEvidence": {
+    "unicodeBrailleTokenizer": true,
+    "candidateIndex": true,
+    "numericIndicator": true,
+    "numericDecimal": true,
+    "digitFamilies": true,
+    "latinSpan": true,
+    "latinCapital": true,
+    "longestMatch": true,
+    "ellipsis": true,
+    "pairedParentheses": true,
+    "punctuationCanonicalization": true,
+    "strictAmbiguity": true,
+    "layoutPassThrough": true
+  },
+  "publicBoundary": {
+    "coreRootExportsReverseTranslator": false,
+    "coreRootExportsReverseTypes": false,
+    "sdkContainsReverseRuntime": false,
+    "corePackageRootExportOnly": true
+  },
+  "frozenSdkContractReconfirmed": true,
+  "publicCoreExportReadiness": {
+    "ready": false,
+    "blockers": [
+      "15 direct reversal candidates remain outside reverse conformance coverage.",
+      "27 collided Braille signatures remain outside the current reverse seed coverage.",
+      "6 parser-rule records remain outside current reverse conformance coverage."
+    ]
+  },
+  "recommendedPhase13_5Scope": {
+    "coverageWork": [
+      "cover all 16 direct-reversal candidates explicitly",
+      "add representative conformance for every collided signature family",
+      "cover all parser-required rules and state transitions",
+      "add malformed/unknown sequence cases",
+      "add Braille-stability and canonical-print round-trip tests",
+      "test punctuation style and ellipsis style options explicitly",
+      "test layout pass-through and numeric-mode termination boundaries"
+    ],
+    "publicBoundaryDecision": "DEFER_CORE_ROOT_EXPORT_UNTIL_COVERAGE_BLOCKERS_ARE_CLOSED",
+    "stillDeferred": [
+      "public SDK reverse API",
+      "CLI reverse mode",
+      "Web reverse UI",
+      "Microsoft 365 reverse integration",
+      "Braille Music",
+      "general multi-language framework"
+    ]
+  }
+}
