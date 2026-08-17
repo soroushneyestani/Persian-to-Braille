@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-PUNC-QUESTION-STRICT-001",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "ambiguity-strict",
+  "sourceForwardRuleIds": [
+    "FA-G1-PUNC-SCALAR-002",
+    "FA-G1-PUNC-SCALAR-003"
+  ],
+  "input": {
+    "unicodeBraille": "⠦",
+    "cells": [
+      "236"
+    ]
+  },
+  "options": {
+    "ambiguityPolicy": "error"
+  },
+  "expected": {
+    "ok": false,
+    "code": "AMBIGUOUS_REVERSE_MATCH",
+    "candidateRuleIds": [
+      "FA-G1-PUNC-SCALAR-002",
+      "FA-G1-PUNC-SCALAR-003"
+    ],
+    "candidateTexts": [
+      "?",
+      "؟"
+    ]
+  },
+  "notes": []
+}

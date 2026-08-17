@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "fa-ir-g1-reverse-policy",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "direction": "braille-to-print",
+  "sourceForwardProfile": "fa-ir-g1",
+  "parser": {
+    "longestMatch": true,
+    "numericMode": true,
+    "latinSpan": true,
+    "capitalization": true,
+    "delimiterStack": true,
+    "contextWindow": true
+  },
+  "rendering": {
+    "digitFamily": {
+      "default": "persian",
+      "allowed": [
+        "persian",
+        "ascii",
+        "arabic-indic"
+      ]
+    },
+    "punctuationStyle": {
+      "default": "persian",
+      "allowed": [
+        "persian",
+        "ascii"
+      ]
+    },
+    "ellipsisStyle": {
+      "default": "unicode",
+      "allowed": [
+        "unicode",
+        "three-dots"
+      ]
+    }
+  },
+  "ambiguity": {
+    "default": "canonicalize",
+    "allowed": [
+      "canonicalize",
+      "error"
+    ]
+  },
+  "reconstruction": {
+    "exactSourceLayoutRoundTrip": false,
+    "exactZwnjRecovery": false
+  },
+  "scope": {
+    "forwardSemanticsMutable": false,
+    "brailleMusic": false,
+    "generalMultilanguageFramework": false,
+    "officeWeb": false,
+    "officeMac": false,
+    "marketplace": false
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-conformance.schema.json",
+  "title": "Persian Braille Reverse Conformance Vector",
+  "description": "Independent reverse-translation conformance vector or capability assertion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "status",
+    "version",
+    "profile",
+    "profileVersion",
+    "suite",
+    "sourceForwardRuleIds",
+    "expected",
+    "notes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^FA-REV-CONF-[A-Z0-9-]+$"
+    },
+    "kind": {
+      "enum": [
+        "translation",
+        "capability"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "active"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "const": "fa-ir-g1-reverse"
+    },
+    "profileVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suite": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceForwardRuleIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^FA-G1-"
+      },
+      "uniqueItems": true
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unicodeBraille"
+      ],
+      "properties": {
+        "unicodeBraille": {
+          "type": "string"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(0|[1-8]+)$"
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "digitFamily": {
+          "enum": [
+            "persian",
+            "ascii",
+            "arabic-indic"
+          ]
+        },
+        "punctuationStyle": {
+          "enum": [
+            "persian",
+            "ascii"
+          ]
+        },
+        "ellipsisStyle": {
+          "enum": [
+            "unicode",
+            "three-dots"
+          ]
+        },
+        "ambiguityPolicy": {
+          "enum": [
+            "canonicalize",
+            "error"
+          ]
+        }
+      }
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "translation"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "input",
+          "options"
+        ],
+        "properties": {
+          "expected": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "ok",
+                  "text",
+                  "lossy",
+                  "diagnosticCodes"
+                ],
+                "properties": {
+                  "ok": {
+                    "const": true
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "lossy": {
+                    "type": "boolean"
+                  },
+                  "diagnosticCodes": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "CANONICALIZED_DIGIT_FAMILY",
+                        "CANONICALIZED_PUNCTUATION",
+                        "CANONICALIZED_ELLIPSIS",
+                        "AMBIGUITY_CANONICALIZED",
+                        "LOSSY_LAYOUT_RECONSTRUCTION",
+                        "LOSSY_NORMALIZATION_RECONSTRUCTION"
+                      ]
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "ok",
+                  "code",
+                  "candidateRuleIds",
+                  "candidateTexts"
+                ],
+                "properties": {
+                  "ok": {
+                    "const": false
+                  },
+                  "code": {
+                    "enum": [
+                      "INVALID_BRAILLE_INPUT",
+                      "UNKNOWN_BRAILLE_CELL",
+                      "UNKNOWN_BRAILLE_SEQUENCE",
+                      "AMBIGUOUS_REVERSE_MATCH",
+                      "MALFORMED_MODE_SEQUENCE",
+                      "UNTERMINATED_LATIN_SPAN",
+                      "DANGLING_CAPITAL_INDICATOR",
+                      "UNSUPPORTED_REVERSE_STATE"
+                    ]
+                  },
+                  "candidateRuleIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "candidateTexts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "capability"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "capability"
+        ],
+        "properties": {
+          "expected": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "supported",
+              "reason"
+            ],
+            "properties": {
+              "supported": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

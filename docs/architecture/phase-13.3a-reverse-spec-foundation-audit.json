@@ -1,0 +1,1335 @@
+{
+  "phase": "13.3a",
+  "name": "Reverse Specification and Conformance Foundation Baseline Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "83a0717057fab442a6fab1ebc670efa9c7934e24",
+    "upstream": "83a0717057fab442a6fab1ebc670efa9c7934e24",
+    "clean": true
+  },
+  "phase13_2": {
+    "status": "FROZEN",
+    "reverseProfileId": "fa-ir-g1-reverse",
+    "direction": "braille-to-print"
+  },
+  "forwardBaseline": {
+    "rules": 176,
+    "vectors": 176,
+    "profileId": "fa-ir-g1",
+    "profileVersion": "0.1.0",
+    "profileStatus": "draft"
+  },
+  "existingReverseSpecFiles": [],
+  "schemaConventionAudit": {
+    "allSchemaCandidates": [
+      {
+        "path": "spec/fa-ir/schema/adjudication-record.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "allOf",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Evidence Adjudication Record",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "policyVersion",
+          "profileId",
+          "decisionItemId",
+          "queueId",
+          "packetId",
+          "planItemId",
+          "phase1Classification",
+          "track",
+          "disposition",
+          "decision",
+          "basis",
+          "materialization",
+          "scope",
+          "rationale"
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/candidate-admission.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Adjudicated Candidate Admission Manifest",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "stage",
+          "status",
+          "policyVersion",
+          "profile",
+          "summary",
+          "governanceBoundary",
+          "inputs",
+          "entries"
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/conformance.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Conformance Vector",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "status",
+          "version",
+          "profile",
+          "profileVersion",
+          "ruleIds",
+          "input",
+          "expected"
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/profile.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Profile",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "status",
+          "language",
+          "region",
+          "grade",
+          "cellSize",
+          "direction",
+          "version",
+          "ruleIds",
+          "normalizationPolicy",
+          "fallbackPolicy"
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/promotion-record.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Normative Promotion Record",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "policyVersion",
+          "ruleId",
+          "profileId",
+          "ruleVersion",
+          "fromStatus",
+          "toStatus",
+          "decision",
+          "basis",
+          "checks",
+          "scope",
+          "review",
+          "rationale"
+        ]
+      },
+      {
+        "path": "spec/fa-ir/schema/rule.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Rule",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "profile",
+          "type",
+          "status",
+          "version",
+          "direction",
+          "input",
+          "output",
+          "evidence",
+          "conformance"
+        ]
+      }
+    ],
+    "ruleSchemaCandidates": [
+      {
+        "path": "spec/fa-ir/schema/rule.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Rule",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "profile",
+          "type",
+          "status",
+          "version",
+          "direction",
+          "input",
+          "output",
+          "evidence",
+          "conformance"
+        ]
+      }
+    ],
+    "profileSchemaCandidates": [
+      {
+        "path": "spec/fa-ir/schema/profile.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Profile",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "status",
+          "language",
+          "region",
+          "grade",
+          "cellSize",
+          "direction",
+          "version",
+          "ruleIds",
+          "normalizationPolicy",
+          "fallbackPolicy"
+        ]
+      }
+    ],
+    "conformanceSchemaCandidates": [
+      {
+        "path": "spec/fa-ir/schema/conformance.schema.json",
+        "parse": "PASS",
+        "topLevelKeys": [
+          "$id",
+          "$schema",
+          "additionalProperties",
+          "description",
+          "properties",
+          "required",
+          "title",
+          "type"
+        ],
+        "title": "Persian Braille Conformance Vector",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "required": [
+          "schemaVersion",
+          "id",
+          "status",
+          "version",
+          "profile",
+          "profileVersion",
+          "ruleIds",
+          "input",
+          "expected"
+        ]
+      }
+    ],
+    "schemaVersionCountsAcrossFaIrJson": {
+      "1": 917,
+      "None": 6
+    },
+    "statusCountsAcrossFaIrJson": {
+      "active": 37,
+      "candidate": 139,
+      "draft": 140,
+      "evidence-collected": 253,
+      "evidence-only": 1,
+      "execution-complete": 1,
+      "materialized-package": 1,
+      "normative": 37,
+      "planning-only": 2,
+      "route-ready": 1
+    }
+  },
+  "seedCandidatePreview": {
+    "direct": [
+      {
+        "ruleId": "FA-G1-LETTER-005",
+        "domain": "persian-letter",
+        "inputText": "ث",
+        "cells": [
+          "1456"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-008",
+        "domain": "persian-letter",
+        "inputText": "ح",
+        "cells": [
+          "156"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-011",
+        "domain": "persian-letter",
+        "inputText": "ذ",
+        "cells": [
+          "2346"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-014",
+        "domain": "persian-letter",
+        "inputText": "ژ",
+        "cells": [
+          "346"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-016",
+        "domain": "persian-letter",
+        "inputText": "ش",
+        "cells": [
+          "146"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-017",
+        "domain": "persian-letter",
+        "inputText": "ص",
+        "cells": [
+          "12346"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-018",
+        "domain": "persian-letter",
+        "inputText": "ض",
+        "cells": [
+          "1246"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-019",
+        "domain": "persian-letter",
+        "inputText": "ط",
+        "cells": [
+          "23456"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-020",
+        "domain": "persian-letter",
+        "inputText": "ظ",
+        "cells": [
+          "123456"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-021",
+        "domain": "persian-letter",
+        "inputText": "ع",
+        "cells": [
+          "12356"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-LETTER-022",
+        "domain": "persian-letter",
+        "inputText": "غ",
+        "cells": [
+          "126"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-ORTHO-SUPERSCRIPT-ALEF-001",
+        "domain": "character-other",
+        "inputText": "ٰ",
+        "cells": [
+          "5"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      }
+    ],
+    "numeric": [
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "domain": "digit-arabic-indic",
+        "inputText": "٠",
+        "cells": [
+          "245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "domain": "digit-arabic-indic",
+        "inputText": "١",
+        "cells": [
+          "1"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "domain": "digit-arabic-indic",
+        "inputText": "٢",
+        "cells": [
+          "12"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "domain": "digit-arabic-indic",
+        "inputText": "٣",
+        "cells": [
+          "14"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "domain": "digit-arabic-indic",
+        "inputText": "٤",
+        "cells": [
+          "145"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "domain": "digit-arabic-indic",
+        "inputText": "٥",
+        "cells": [
+          "15"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "domain": "digit-arabic-indic",
+        "inputText": "٦",
+        "cells": [
+          "124"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "domain": "digit-arabic-indic",
+        "inputText": "٧",
+        "cells": [
+          "1245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "domain": "digit-arabic-indic",
+        "inputText": "٨",
+        "cells": [
+          "125"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "domain": "digit-arabic-indic",
+        "inputText": "٩",
+        "cells": [
+          "24"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ASCII-000",
+        "domain": "digit-ascii",
+        "inputText": "0",
+        "cells": [
+          "245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ASCII-001",
+        "domain": "digit-ascii",
+        "inputText": "1",
+        "cells": [
+          "1"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      }
+    ],
+    "latin": [
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-000",
+        "domain": "digit-arabic-indic",
+        "inputText": "٠",
+        "cells": [
+          "245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "domain": "digit-arabic-indic",
+        "inputText": "١",
+        "cells": [
+          "1"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-002",
+        "domain": "digit-arabic-indic",
+        "inputText": "٢",
+        "cells": [
+          "12"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-003",
+        "domain": "digit-arabic-indic",
+        "inputText": "٣",
+        "cells": [
+          "14"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-004",
+        "domain": "digit-arabic-indic",
+        "inputText": "٤",
+        "cells": [
+          "145"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-005",
+        "domain": "digit-arabic-indic",
+        "inputText": "٥",
+        "cells": [
+          "15"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-006",
+        "domain": "digit-arabic-indic",
+        "inputText": "٦",
+        "cells": [
+          "124"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-007",
+        "domain": "digit-arabic-indic",
+        "inputText": "٧",
+        "cells": [
+          "1245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-008",
+        "domain": "digit-arabic-indic",
+        "inputText": "٨",
+        "cells": [
+          "125"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-009",
+        "domain": "digit-arabic-indic",
+        "inputText": "٩",
+        "cells": [
+          "24"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ASCII-000",
+        "domain": "digit-ascii",
+        "inputText": "0",
+        "cells": [
+          "245"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-DIGIT-ASCII-001",
+        "domain": "digit-ascii",
+        "inputText": "1",
+        "cells": [
+          "1"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "capitalization-state-required",
+          "collision-resolution-required",
+          "digit-family-output-policy-required",
+          "language-mode-state-required",
+          "latin-mode-state-required",
+          "numeric-mode-state-required",
+          "numeric-vs-text-mode-state-required"
+        ]
+      }
+    ],
+    "punctuation": [
+      {
+        "ruleId": "FA-G1-NUMRULE-005",
+        "domain": "context",
+        "inputText": ".",
+        "cells": [
+          "2"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-NUMRULE-006",
+        "domain": "context",
+        "inputText": "٫",
+        "cells": [
+          "2"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-NUMRULE-007",
+        "domain": "context",
+        "inputText": "%",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-ASTERISK-SINGLE-001",
+        "domain": "punctuation-or-symbol",
+        "inputText": "*",
+        "cells": [
+          "35",
+          "35"
+        ],
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-PUNC-ELLIPSIS-001",
+        "domain": "sequence",
+        "inputText": "...",
+        "cells": [
+          "6",
+          "6",
+          "6"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "longest-match-sequence-parser-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-001",
+        "domain": "punctuation-or-symbol",
+        "inputText": "!",
+        "cells": [
+          "235"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-002",
+        "domain": "punctuation-or-symbol",
+        "inputText": "?",
+        "cells": [
+          "236"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-003",
+        "domain": "punctuation-or-symbol",
+        "inputText": "؟",
+        "cells": [
+          "236"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-004",
+        "domain": "punctuation-or-symbol",
+        "inputText": ".",
+        "cells": [
+          "256"
+        ],
+        "preliminaryClass": "DIRECT_REVERSAL_CANDIDATE",
+        "requirements": []
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-005",
+        "domain": "punctuation-or-symbol",
+        "inputText": ",",
+        "cells": [
+          "2"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-006",
+        "domain": "punctuation-or-symbol",
+        "inputText": "،",
+        "cells": [
+          "2"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-007",
+        "domain": "punctuation-or-symbol",
+        "inputText": ";",
+        "cells": [
+          "23"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "print-variant-policy-or-ambiguity-required"
+        ]
+      }
+    ],
+    "sequence": [
+      {
+        "ruleId": "FA-G1-NUMRULE-007",
+        "domain": "context",
+        "inputText": "%",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-ORTHO-EZAFE-SEQUENCE-001",
+        "domain": "sequence",
+        "inputText": "هٔ",
+        "cells": [
+          "125",
+          "0",
+          "24"
+        ],
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": [
+          "longest-match-sequence-parser-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-ASTERISK-RUN-001",
+        "domain": "sequence",
+        "inputText": "***",
+        "cells": [
+          "35",
+          "35",
+          "35",
+          "35"
+        ],
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": [
+          "longest-match-sequence-parser-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-ELLIPSIS-001",
+        "domain": "sequence",
+        "inputText": "...",
+        "cells": [
+          "6",
+          "6",
+          "6"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "longest-match-sequence-parser-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-011",
+        "domain": "punctuation-or-symbol",
+        "inputText": "–",
+        "cells": [
+          "6",
+          "36"
+        ],
+        "preliminaryClass": "PARSER_RULE_REQUIRED",
+        "requirements": [
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-016",
+        "domain": "punctuation-or-symbol",
+        "inputText": "%",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-SCALAR-017",
+        "domain": "punctuation-or-symbol",
+        "inputText": "٪",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "context-state-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+        "domain": "punctuation-or-symbol",
+        "inputText": "…",
+        "cells": [
+          "6",
+          "6",
+          "6"
+        ],
+        "preliminaryClass": "STATE_OR_POLICY_REQUIRED",
+        "requirements": [
+          "collision-resolution-required",
+          "longest-match-sequence-parser-required",
+          "print-variant-policy-or-ambiguity-required",
+          "segmentation-review-required"
+        ]
+      }
+    ],
+    "structural": [
+      {
+        "ruleId": "FA-G1-LATIN-MODE-001",
+        "domain": "mode",
+        "inputText": null,
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "mode-state-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-001",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-002",
+        "domain": "layout",
+        "inputText": "\t",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-003",
+        "domain": "layout",
+        "inputText": "\n",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-004",
+        "domain": "layout",
+        "inputText": "\u000b",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-005",
+        "domain": "layout",
+        "inputText": "\f",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-006",
+        "domain": "layout",
+        "inputText": "\r",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-007",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-008",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-009",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-010",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      },
+      {
+        "ruleId": "FA-G1-LAYOUT-011",
+        "domain": "layout",
+        "inputText": " ",
+        "cells": [],
+        "preliminaryClass": "STRUCTURAL_RECONSTRUCTION_REQUIRED",
+        "requirements": [
+          "layout-reconstruction-policy-required",
+          "structural-reconstruction-required"
+        ]
+      }
+    ]
+  },
+  "recommendedFoundation": {
+    "directories": [
+      "spec/fa-ir/reverse/",
+      "spec/fa-ir/reverse/schemas/",
+      "spec/fa-ir/reverse/policy/",
+      "spec/fa-ir/reverse/profiles/",
+      "spec/fa-ir/reverse/conformance/records/"
+    ],
+    "files": [
+      "spec/fa-ir/reverse/README.md",
+      "spec/fa-ir/reverse/schemas/reverse-policy.schema.json",
+      "spec/fa-ir/reverse/schemas/reverse-profile.schema.json",
+      "spec/fa-ir/reverse/schemas/reverse-conformance.schema.json",
+      "spec/fa-ir/reverse/policy/fa-ir-g1-reverse-policy.json",
+      "spec/fa-ir/reverse/profiles/fa-ir-g1-reverse.json",
+      "spec/fa-ir/reverse/conformance/manifest.json",
+      "docs/architecture/phase-13.3-reverse-specification-and-conformance-foundation.md",
+      "tools/architecture/validate-phase13-3-reverse-spec-foundation.mjs"
+    ],
+    "seedVectorPolicy": {
+      "materializeAll176BySwappingForwardVectors": false,
+      "materializeRepresentativeSeedsFirst": true,
+      "seedDomains": [
+        "direct unique mapping",
+        "numeric default Persian rendering",
+        "numeric ASCII option",
+        "numeric Arabic-Indic option",
+        "Latin span",
+        "capital indicator",
+        "punctuation canonicalization",
+        "strict ambiguity failure",
+        "ellipsis longest-match",
+        "paired punctuation context",
+        "layout lossiness",
+        "normalization lossiness"
+      ]
+    }
+  },
+  "readiness": "READY_TO_MATERIALIZE_PHASE_13_3_FOUNDATION"
+}

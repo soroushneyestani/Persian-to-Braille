@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "fa-ir-g1-reverse",
+  "status": "draft",
+  "language": "fa",
+  "region": "IR",
+  "grade": 1,
+  "cellSize": 6,
+  "direction": "braille-to-print",
+  "version": "0.1.0",
+  "sourceForwardProfile": "fa-ir-g1",
+  "policy": "fa-ir-g1-reverse-policy",
+  "conformanceManifest": "spec/fa-ir/reverse/conformance/manifest.json",
+  "capabilities": {
+    "unicodeBrailleInput": true,
+    "statefulNumericMode": true,
+    "statefulLatinMode": true,
+    "canonicalizationDiagnostics": true,
+    "exactSourceLayoutRoundTrip": false,
+    "exactZwnjRecovery": false
+  }
+}
