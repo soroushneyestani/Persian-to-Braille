@@ -426,6 +426,31 @@ const diffNames =
   .split(/\r?\n/)
   .filter(Boolean);
 
+/*
+ * Phase 13.3 owns the reverse specification/conformance foundation, not later
+ * runtime phases. Keep its frozen forward/SDK/integration guards strict while
+ * allowing only the explicitly known Phase 13.4 Core parser files to coexist
+ * when the historical Phase 13.3 validator is composed into validate:phase13-4.
+ */
+const laterPhaseAllowedFiles =
+  new Set([
+    "packages/core/src/reverse-translation.ts",
+    "packages/core/src/reverse-translator.ts",
+    "packages/core/test/reverse-translator-foundation.test.mjs",
+    "packages/core/package.json",
+    "docs/architecture/phase-13.4-reverse-core-parser-foundation.md",
+    "docs/architecture/phase-13.4a-reverse-core-parser-baseline-audit.json",
+    "docs/architecture/phase-13.4a-reverse-core-parser-baseline-audit.txt",
+    "tools/architecture/validate-phase13-4-reverse-core-parser.mjs",
+    "package.json",
+  ]);
+
+const phase13_3RelevantDiffNames =
+  diffNames.filter(
+    (name) =>
+      !laterPhaseAllowedFiles.has(name),
+  );
+
 for (const forbiddenPrefix of [
   "spec/fa-ir/rules/records/",
   "spec/fa-ir/conformance/records/",
@@ -434,7 +459,7 @@ for (const forbiddenPrefix of [
   "integrations/microsoft365/src/",
 ]) {
   assert.equal(
-    diffNames.some(
+    phase13_3RelevantDiffNames.some(
       (name) => name.startsWith(
         forbiddenPrefix,
       ),

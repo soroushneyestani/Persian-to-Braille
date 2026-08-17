@@ -1,0 +1,3443 @@
+{
+  "phase": "13.4a",
+  "name": "Reverse Core Parser Foundation Baseline Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "6cf926917724b970235019dcca8d4f1293294214",
+    "upstream": "6cf926917724b970235019dcca8d4f1293294214",
+    "clean": true
+  },
+  "phase13Contracts": {
+    "phase13_2Status": "FROZEN",
+    "reverseProfileId": "fa-ir-g1-reverse",
+    "reverseDirection": "braille-to-print",
+    "reversePolicyId": "fa-ir-g1-reverse-policy",
+    "reverseSeedVectors": 16
+  },
+  "forwardBaseline": {
+    "profileId": "fa-ir-g1",
+    "version": "0.1.0",
+    "status": "draft",
+    "ruleIds": 176
+  },
+  "corePackage": {
+    "name": "@persian-braille/core",
+    "version": "2.0.0-dev",
+    "type": "module",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      }
+    },
+    "scripts": {
+      "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
+      "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
+      "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+      "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
+      "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs"
+    },
+    "dependencies": null,
+    "devDependencies": null
+  },
+  "coreInventory": {
+    "sourceFiles": [
+      "packages/core/src/engine-token-producer.ts",
+      "packages/core/src/forward-translator.ts",
+      "packages/core/src/generated/fa-ir-g1.runtime.ts",
+      "packages/core/src/index.ts",
+      "packages/core/src/mode-rule-executor.ts",
+      "packages/core/src/normalization.ts",
+      "packages/core/src/rule-selector.ts",
+      "packages/core/src/specification.ts",
+      "packages/core/src/translation.ts",
+      "packages/core/src/unicode-preprocessor.ts"
+    ],
+    "testFiles": [
+      "packages/core/test/canonical-execution-bridge.test.mjs",
+      "packages/core/test/forward-translator.test.mjs",
+      "packages/core/test/rule-selector.test.mjs",
+      "packages/core/test/unicode-preprocessor.test.mjs"
+    ],
+    "sourceFileCount": 10,
+    "testFileCount": 4,
+    "exportsByFile": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "exports": [
+          "createEngineTokenProducer"
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "exports": [
+          "createForwardTranslator"
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "exports": [
+          "faIrG1RuntimeSpecification"
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "exports": [
+          "ModeRuleExecutor",
+          "createModeRuleExecutor"
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "exports": [
+          "NormalizationAnnotation",
+          "NormalizationFailure",
+          "NormalizationFailureCode",
+          "NormalizationOutcome",
+          "NormalizationPolicySnapshot",
+          "NormalizationSuccess",
+          "RecognizedFormatControl",
+          "UnicodeLocation",
+          "UnicodeNormalizationForm",
+          "UnicodePreprocessor",
+          "UnknownFormatControlFailure",
+          "UnknownFormatControlPolicy"
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "exports": [
+          "RuleSelectionAmbiguous",
+          "RuleSelectionMatch",
+          "RuleSelectionNoMatch",
+          "RuleSelectionOutcome",
+          "RuleSelector",
+          "createRuleSelector"
+        ]
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "exports": [
+          "JsonObject",
+          "JsonPrimitive",
+          "JsonValue",
+          "RuntimeSpecificationBundle",
+          "RuntimeSpecificationSource",
+          "RuntimeSpecificationSummary",
+          "getBundledSpecification"
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "exports": [
+          "AmbiguousMatchFailure",
+          "ContextClassificationRequest",
+          "ContextClassifier",
+          "ContextSnapshot",
+          "EngineToken",
+          "EngineTokenClass",
+          "EngineTokenProducer",
+          "EngineTokenProductionRequest",
+          "ForwardTranslator",
+          "PreprocessingTranslationFailure",
+          "RuleLifecycleStatus",
+          "RuleMatch",
+          "RuleOutputSnapshot",
+          "SemanticContextClass",
+          "TranslationFailure",
+          "TranslationFailureCode",
+          "TranslationInputKind",
+          "TranslationOutcome",
+          "TranslationProfileSnapshot",
+          "TranslationRuleType",
+          "TranslationSuccess",
+          "TranslationTrace",
+          "UnicodeSpan",
+          "UnknownCharacterFailure",
+          "UnknownSequenceFailure",
+          "UnsupportedEngineStateFailure"
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "exports": [
+          "createUnicodePreprocessor"
+        ]
+      }
+    ],
+    "importEdges": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "imports": [
+          "./normalization.js",
+          "./rule-selector.js",
+          "./translation.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "imports": [
+          "./engine-token-producer.js",
+          "./mode-rule-executor.js",
+          "./rule-selector.js",
+          "./specification.js",
+          "./translation.js",
+          "./unicode-preprocessor.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "imports": [
+          "./engine-token-producer.js",
+          "./forward-translator.js",
+          "./mode-rule-executor.js",
+          "./normalization.js",
+          "./rule-selector.js",
+          "./specification.js",
+          "./translation.js",
+          "./unicode-preprocessor.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "imports": [
+          "./specification.js",
+          "./translation.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "imports": [
+          "./normalization.js",
+          "./specification.js",
+          "./translation.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "imports": [
+          "./generated/fa-ir-g1.runtime.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "imports": [
+          "./normalization.js"
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "imports": [
+          "./normalization.js",
+          "./specification.js"
+        ]
+      }
+    ],
+    "likelyForwardRuntimeFiles": [
+      "packages/core/src/engine-token-producer.ts",
+      "packages/core/src/forward-translator.ts",
+      "packages/core/src/generated/fa-ir-g1.runtime.ts",
+      "packages/core/src/index.ts",
+      "packages/core/src/mode-rule-executor.ts",
+      "packages/core/src/normalization.ts",
+      "packages/core/src/rule-selector.ts",
+      "packages/core/src/specification.ts",
+      "packages/core/src/translation.ts",
+      "packages/core/src/unicode-preprocessor.ts",
+      "packages/core/test/canonical-execution-bridge.test.mjs",
+      "packages/core/test/forward-translator.test.mjs",
+      "packages/core/test/rule-selector.test.mjs",
+      "packages/core/test/unicode-preprocessor.test.mjs"
+    ]
+  },
+  "sourceTokenEvidence": {
+    "translate": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 183,
+            "text": "translate("
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 206,
+            "text": "translate(inputText: string): TranslationOutcome;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 8,
+            "text": "function translateOk(input) {"
+          },
+          {
+            "line": 10,
+            "text": "const result = translator.translate(input);"
+          },
+          {
+            "line": 21,
+            "text": "test(\"translates a Persian scalar sequence end-to-end\", () => {"
+          },
+          {
+            "line": 22,
+            "text": "const result = translateOk("
+          },
+          {
+            "line": 40,
+            "text": "const result = translateOk(\"***\");"
+          },
+          {
+            "line": 55,
+            "text": "const result = translateOk(\"1.2\");"
+          }
+        ]
+      }
+    ],
+    "translator": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 13,
+            "text": "ForwardTranslator,"
+          },
+          {
+            "line": 180,
+            "text": "class SpecificationDrivenForwardTranslator"
+          },
+          {
+            "line": 181,
+            "text": "implements ForwardTranslator"
+          },
+          {
+            "line": 427,
+            "text": "export function createForwardTranslator(): ForwardTranslator {"
+          },
+          {
+            "line": 428,
+            "text": "return new SpecificationDrivenForwardTranslator();"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 8,
+            "text": "export * from \"./forward-translator.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 205,
+            "text": "export interface ForwardTranslator {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 5,
+            "text": "createForwardTranslator,"
+          },
+          {
+            "line": 9,
+            "text": "const translator = createForwardTranslator();"
+          },
+          {
+            "line": 10,
+            "text": "const result = translator.translate(input);"
+          },
+          {
+            "line": 198,
+            "text": "const translator = createForwardTranslator();"
+          },
+          {
+            "line": 199,
+            "text": "const result = translator.translate("
+          },
+          {
+            "line": 220,
+            "text": "const translator = createForwardTranslator();"
+          }
+        ]
+      }
+    ],
+    "engine": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 3,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 4,
+            "text": "EngineTokenProducer,"
+          },
+          {
+            "line": 5,
+            "text": "EngineTokenProductionRequest,"
+          },
+          {
+            "line": 129,
+            "text": "class SpecificationDrivenEngineTokenProducer"
+          },
+          {
+            "line": 130,
+            "text": "implements EngineTokenProducer"
+          },
+          {
+            "line": 133,
+            "text": "request: EngineTokenProductionRequest,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 9,
+            "text": "import { createEngineTokenProducer } from \"./engine-token-producer.js\";"
+          },
+          {
+            "line": 12,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 175,
+            "text": "token: EngineToken,"
+          },
+          {
+            "line": 215,
+            "text": "createEngineTokenProducer();"
+          },
+          {
+            "line": 227,
+            "text": "new Map<number, EngineToken[]>();"
+          },
+          {
+            "line": 241,
+            "text": "const engineTokens: EngineToken[] = [];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 6,
+            "text": "export * from \"./engine-token-producer.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 9,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 10,
+            "text": "EngineTokenClass,"
+          },
+          {
+            "line": 20,
+            "text": "readonly tokenClass: EngineTokenClass;"
+          },
+          {
+            "line": 25,
+            "text": "execute(token: EngineToken): RuleMatch | null;"
+          },
+          {
+            "line": 119,
+            "text": "function isEngineTokenClass("
+          },
+          {
+            "line": 121,
+            "text": "): value is EngineTokenClass {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 11,
+            "text": "EngineTokenClass,"
+          },
+          {
+            "line": 38,
+            "text": "readonly tokenClass: EngineTokenClass | null;"
+          },
+          {
+            "line": 242,
+            "text": "function isEngineTokenClass("
+          },
+          {
+            "line": 244,
+            "text": "): value is EngineTokenClass {"
+          },
+          {
+            "line": 421,
+            "text": "!isEngineTokenClass(tokenClassRaw)"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 26,
+            "text": "export type EngineTokenClass ="
+          },
+          {
+            "line": 67,
+            "text": "export interface EngineToken {"
+          },
+          {
+            "line": 68,
+            "text": "readonly tokenClass: EngineTokenClass;"
+          },
+          {
+            "line": 86,
+            "text": "readonly tokenClass: EngineTokenClass | null;"
+          },
+          {
+            "line": 93,
+            "text": "readonly engineTokens: readonly EngineToken[];"
+          },
+          {
+            "line": 113,
+            "text": "| \"UNSUPPORTED_ENGINE_STATE\";"
+          }
+        ]
+      }
+    ],
+    "runtime": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 225,
+            "text": "* Produces Phase 5.4 engine-state tokens from admitted runtime rule classes."
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 4,
+            "text": "RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 46,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 125,
+            "text": "specification: RuntimeSpecificationBundle,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 5,
+            "text": "export const faIrG1RuntimeSpecification = {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 4,
+            "text": "RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 183,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 272,
+            "text": "specification: RuntimeSpecificationBundle,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 4,
+            "text": "RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 310,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 459,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 570,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 716,
+            "text": "* runtime specification bundle."
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "previews": [
+          {
+            "line": 1,
+            "text": "import { faIrG1RuntimeSpecification } from \"./generated/fa-ir-g1.runtime.js\";"
+          },
+          {
+            "line": 14,
+            "text": "export interface RuntimeSpecificationSource {"
+          },
+          {
+            "line": 22,
+            "text": "export interface RuntimeSpecificationSummary {"
+          },
+          {
+            "line": 28,
+            "text": "export interface RuntimeSpecificationBundle {"
+          },
+          {
+            "line": 33,
+            "text": "readonly source: RuntimeSpecificationSource;"
+          },
+          {
+            "line": 34,
+            "text": "readonly summary: RuntimeSpecificationSummary;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 4,
+            "text": "RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 79,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 128,
+            "text": "specification: RuntimeSpecificationBundle,"
+          },
+          {
+            "line": 206,
+            "text": "constructor(specification: RuntimeSpecificationBundle) {"
+          },
+          {
+            "line": 262,
+            "text": "* runtime specification bundle."
+          }
+        ]
+      }
+    ],
+    "rule": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 1,
+            "text": "import { createRuleSelector } from \"./rule-selector.js\";"
+          },
+          {
+            "line": 6,
+            "text": "RuleMatch,"
+          },
+          {
+            "line": 11,
+            "text": "const LATIN_RULE_PREFIX = \"FA-G1-LATIN-\";"
+          },
+          {
+            "line": 66,
+            "text": "): RuleMatch | null {"
+          },
+          {
+            "line": 68,
+            "text": "createRuleSelector().select("
+          },
+          {
+            "line": 79,
+            "text": "match: RuleMatch | null,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 8,
+            "text": "import { createRuleSelector } from \"./rule-selector.js\";"
+          },
+          {
+            "line": 10,
+            "text": "import { createModeRuleExecutor } from \"./mode-rule-executor.js\";"
+          },
+          {
+            "line": 14,
+            "text": "RuleMatch,"
+          },
+          {
+            "line": 104,
+            "text": "match: RuleMatch,"
+          },
+          {
+            "line": 127,
+            "text": "readonly ruleIds: readonly string[];"
+          },
+          {
+            "line": 131,
+            "text": "const ruleById ="
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 2,
+            "text": "// Source of truth: spec/fa-ir profile and rule artifacts."
+          },
+          {
+            "line": 12,
+            "text": "\"rulesDirectory\": \"spec/fa-ir/rules/records\","
+          },
+          {
+            "line": 15,
+            "text": "\"ruleCanonicalJsonSha256\": \"038656a943c3be86bbff6a8d31ea3292540055cc4cd1b1a9dbb900c7526c0e3d\""
+          },
+          {
+            "line": 18,
+            "text": "\"ruleCount\": 176,"
+          },
+          {
+            "line": 42,
+            "text": "\"ruleIds\": ["
+          },
+          {
+            "line": 190,
+            "text": "\"FA-G1-NUMRULE-001\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 5,
+            "text": "export * from \"./rule-selector.js\";"
+          },
+          {
+            "line": 7,
+            "text": "export * from \"./mode-rule-executor.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 11,
+            "text": "RuleLifecycleStatus,"
+          },
+          {
+            "line": 12,
+            "text": "RuleMatch,"
+          },
+          {
+            "line": 13,
+            "text": "RuleOutputSnapshot,"
+          },
+          {
+            "line": 16,
+            "text": "interface ModeRuleView {"
+          },
+          {
+            "line": 18,
+            "text": "readonly lifecycleStatus: RuleLifecycleStatus;"
+          },
+          {
+            "line": 21,
+            "text": "readonly output: RuleOutputSnapshot;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "previews": [
+          {
+            "line": 5,
+            "text": "* normalization, Braille translation, or rule execution."
+          },
+          {
+            "line": 43,
+            "text": "* Canonical specification rules that recognize this code point."
+          },
+          {
+            "line": 44,
+            "text": "* Multiple rules are allowed because one code point may participate in"
+          },
+          {
+            "line": 47,
+            "text": "readonly ruleIds: readonly string[];"
+          },
+          {
+            "line": 50,
+            "text": "* Structural tokens exposed by the recognizing rules, when present."
+          },
+          {
+            "line": 58,
+            "text": "readonly ruleStatuses: readonly string[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 12,
+            "text": "RuleLifecycleStatus,"
+          },
+          {
+            "line": 13,
+            "text": "RuleMatch,"
+          },
+          {
+            "line": 14,
+            "text": "RuleOutputSnapshot,"
+          },
+          {
+            "line": 17,
+            "text": "TranslationRuleType,"
+          },
+          {
+            "line": 24,
+            "text": "interface TextualRuleView {"
+          },
+          {
+            "line": 26,
+            "text": "readonly lifecycleStatus: RuleLifecycleStatus;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "previews": [
+          {
+            "line": 16,
+            "text": "readonly rulesDirectory: string;"
+          },
+          {
+            "line": 19,
+            "text": "readonly ruleCanonicalJsonSha256: string;"
+          },
+          {
+            "line": 23,
+            "text": "readonly ruleCount: number;"
+          },
+          {
+            "line": 36,
+            "text": "readonly rules: readonly JsonObject[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 8,
+            "text": "export type RuleLifecycleStatus = \"candidate\" | \"normative\";"
+          },
+          {
+            "line": 10,
+            "text": "export type TranslationRuleType ="
+          },
+          {
+            "line": 72,
+            "text": "export interface RuleOutputSnapshot {"
+          },
+          {
+            "line": 78,
+            "text": "export interface RuleMatch {"
+          },
+          {
+            "line": 79,
+            "text": "readonly ruleId: string;"
+          },
+          {
+            "line": 80,
+            "text": "readonly lifecycleStatus: RuleLifecycleStatus;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 18,
+            "text": "interface FormatControlRuleView {"
+          },
+          {
+            "line": 129,
+            "text": "): ReadonlyMap<string, readonly FormatControlRuleView[]> {"
+          },
+          {
+            "line": 130,
+            "text": "const mutable = new Map<string, FormatControlRuleView[]>();"
+          },
+          {
+            "line": 132,
+            "text": "for (const rule of specification.rules) {"
+          },
+          {
+            "line": 133,
+            "text": "const input = readObject(rule, \"input\");"
+          },
+          {
+            "line": 151,
+            "text": "const id = requireString(rule, \"id\", \"rule\");"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 16,
+            "text": "createModeRuleExecutor,"
+          },
+          {
+            "line": 17,
+            "text": "createRuleSelector,"
+          },
+          {
+            "line": 48,
+            "text": "const rules = readRecordDirectory("
+          },
+          {
+            "line": 53,
+            "text": "\"rules\","
+          },
+          {
+            "line": 68,
+            "text": "const ruleById = new Map("
+          },
+          {
+            "line": 69,
+            "text": "rules.map((rule) => ["
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 39,
+            "text": "test(\"uses the canonical sequence rule in the forward pipeline\", () => {"
+          },
+          {
+            "line": 48,
+            "text": "(match) => match.ruleId,"
+          },
+          {
+            "line": 70,
+            "text": "match.ruleId ==="
+          },
+          {
+            "line": 71,
+            "text": "\"FA-G1-NUMRULE-001\","
+          },
+          {
+            "line": 88,
+            "text": "match.ruleId ==="
+          },
+          {
+            "line": 89,
+            "text": "\"FA-G1-NUMRULE-001\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/rule-selector.test.mjs",
+        "previews": [
+          {
+            "line": 5,
+            "text": "createRuleSelector,"
+          },
+          {
+            "line": 9,
+            "text": "const selector = createRuleSelector();"
+          },
+          {
+            "line": 14,
+            "text": "result.match.ruleId,"
+          },
+          {
+            "line": 28,
+            "text": "const selector = createRuleSelector();"
+          },
+          {
+            "line": 33,
+            "text": "result.match.ruleId,"
+          },
+          {
+            "line": 40,
+            "text": "const selector = createRuleSelector();"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/unicode-preprocessor.test.mjs",
+        "previews": [
+          {
+            "line": 12,
+            "text": "function admittedFormatControlRules() {"
+          },
+          {
+            "line": 16,
+            "text": "for (const rule of specification.rules) {"
+          },
+          {
+            "line": 17,
+            "text": "const text = rule?.input?.text;"
+          },
+          {
+            "line": 29,
+            "text": "id: rule.id,"
+          },
+          {
+            "line": 30,
+            "text": "status: rule.status,"
+          },
+          {
+            "line": 31,
+            "text": "structuralToken: rule?.output?.structuralToken,"
+          }
+        ]
+      }
+    ],
+    "profile": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 16,
+            "text": "TranslationProfileSnapshot,"
+          },
+          {
+            "line": 45,
+            "text": "function createProfileSnapshot("
+          },
+          {
+            "line": 47,
+            "text": "normalizationPolicy: TranslationProfileSnapshot[\"normalizationPolicy\"],"
+          },
+          {
+            "line": 48,
+            "text": "): TranslationProfileSnapshot {"
+          },
+          {
+            "line": 50,
+            "text": "specification.profile,"
+          },
+          {
+            "line": 56,
+            "text": "\"Invalid canonical specification: profile.fallbackPolicy is required.\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 2,
+            "text": "// Source of truth: spec/fa-ir profile and rule artifacts."
+          },
+          {
+            "line": 7,
+            "text": "\"profileId\": \"fa-ir-g1\","
+          },
+          {
+            "line": 8,
+            "text": "\"profileVersion\": \"0.1.0\","
+          },
+          {
+            "line": 9,
+            "text": "\"profileStatus\": \"draft\","
+          },
+          {
+            "line": 11,
+            "text": "\"profilePath\": \"spec/fa-ir/profiles/fa-ir-g1.json\","
+          },
+          {
+            "line": 14,
+            "text": "\"profileCanonicalJsonSha256\": \"e8c5be8da4f22b7ee9649a7fbdafaa365829748c0a3499beffdf38b8451dc1b1\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "previews": [
+          {
+            "line": 18,
+            "text": "readonly profileId: string;"
+          },
+          {
+            "line": 19,
+            "text": "readonly profileVersion: string;"
+          },
+          {
+            "line": 98,
+            "text": "* Contract for deterministic, profile-driven Unicode preprocessing."
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "previews": [
+          {
+            "line": 15,
+            "text": "readonly profilePath: string;"
+          },
+          {
+            "line": 18,
+            "text": "readonly profileCanonicalJsonSha256: string;"
+          },
+          {
+            "line": 30,
+            "text": "readonly profileId: string;"
+          },
+          {
+            "line": 31,
+            "text": "readonly profileVersion: string;"
+          },
+          {
+            "line": 32,
+            "text": "readonly profileStatus: string;"
+          },
+          {
+            "line": 35,
+            "text": "readonly profile: JsonObject;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 38,
+            "text": "export interface TranslationProfileSnapshot {"
+          },
+          {
+            "line": 39,
+            "text": "readonly profileId: string;"
+          },
+          {
+            "line": 40,
+            "text": "readonly profileVersion: string;"
+          },
+          {
+            "line": 41,
+            "text": "readonly profileStatus: string;"
+          },
+          {
+            "line": 104,
+            "text": "readonly profile: TranslationProfileSnapshot;"
+          },
+          {
+            "line": 131,
+            "text": "readonly profile: TranslationProfileSnapshot;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 82,
+            "text": "specification.profile,"
+          },
+          {
+            "line": 88,
+            "text": "\"Invalid canonical specification: profile.normalizationPolicy is required.\","
+          },
+          {
+            "line": 95,
+            "text": "\"profile.normalizationPolicy\","
+          },
+          {
+            "line": 100,
+            "text": "\"profile.normalizationPolicy\","
+          },
+          {
+            "line": 120,
+            "text": "profileId: specification.profileId,"
+          },
+          {
+            "line": 121,
+            "text": "profileVersion: specification.profileVersion,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/unicode-preprocessor.test.mjs",
+        "previews": [
+          {
+            "line": 52,
+            "text": "profileId: \"fa-ir-g1\","
+          },
+          {
+            "line": 53,
+            "text": "profileVersion: \"0.1.0\","
+          },
+          {
+            "line": 201,
+            "text": "profileId: \"fa-ir-g1\","
+          },
+          {
+            "line": 202,
+            "text": "profileVersion: \"0.1.0\","
+          }
+        ]
+      }
+    ],
+    "select": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 1,
+            "text": "import { createRuleSelector } from \"./rule-selector.js\";"
+          },
+          {
+            "line": 68,
+            "text": "createRuleSelector().select("
+          },
+          {
+            "line": 138,
+            "text": "const selector = createRuleSelector();"
+          },
+          {
+            "line": 141,
+            "text": "const outcome = selector.select("
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 8,
+            "text": "import { createRuleSelector } from \"./rule-selector.js\";"
+          },
+          {
+            "line": 212,
+            "text": "const selector ="
+          },
+          {
+            "line": 213,
+            "text": "createRuleSelector();"
+          },
+          {
+            "line": 300,
+            "text": "const selection ="
+          },
+          {
+            "line": 301,
+            "text": "selector.select("
+          },
+          {
+            "line": 306,
+            "text": "if (selection.kind === \"ambiguous\") {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 5,
+            "text": "export * from \"./rule-selector.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 42,
+            "text": "export interface RuleSelectionMatch {"
+          },
+          {
+            "line": 47,
+            "text": "export interface RuleSelectionNoMatch {"
+          },
+          {
+            "line": 54,
+            "text": "export interface RuleSelectionAmbiguous {"
+          },
+          {
+            "line": 60,
+            "text": "export type RuleSelectionOutcome ="
+          },
+          {
+            "line": 61,
+            "text": "| RuleSelectionMatch"
+          },
+          {
+            "line": 62,
+            "text": "| RuleSelectionNoMatch"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 17,
+            "text": "createRuleSelector,"
+          },
+          {
+            "line": 142,
+            "text": "const selector = createRuleSelector();"
+          },
+          {
+            "line": 267,
+            "text": "const selection ="
+          },
+          {
+            "line": 268,
+            "text": "selector.select("
+          },
+          {
+            "line": 274,
+            "text": "selection.kind,"
+          },
+          {
+            "line": 280,
+            "text": "selection.kind !== \"match\""
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/rule-selector.test.mjs",
+        "previews": [
+          {
+            "line": 5,
+            "text": "createRuleSelector,"
+          },
+          {
+            "line": 8,
+            "text": "test(\"selects the canonical asterisk sequence before its scalar component\", () => {"
+          },
+          {
+            "line": 9,
+            "text": "const selector = createRuleSelector();"
+          },
+          {
+            "line": 10,
+            "text": "const result = selector.select(\"***\", 0);"
+          },
+          {
+            "line": 27,
+            "text": "test(\"selects the scalar asterisk when no longer sequence is eligible\", () => {"
+          },
+          {
+            "line": 28,
+            "text": "const selector = createRuleSelector();"
+          }
+        ]
+      }
+    ],
+    "token": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 3,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 4,
+            "text": "EngineTokenProducer,"
+          },
+          {
+            "line": 5,
+            "text": "EngineTokenProductionRequest,"
+          },
+          {
+            "line": 120,
+            "text": "previousMatch?.tokenClass === \"numeric-begin\" ||"
+          },
+          {
+            "line": 121,
+            "text": "previousMatch?.tokenClass === \"numeric-internal\" ||"
+          },
+          {
+            "line": 122,
+            "text": "previousMatch?.tokenClass ==="
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 9,
+            "text": "import { createEngineTokenProducer } from \"./engine-token-producer.js\";"
+          },
+          {
+            "line": 12,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 107,
+            "text": "structuralTokens: string[],"
+          },
+          {
+            "line": 117,
+            "text": "if (match.output.structuralToken !== null) {"
+          },
+          {
+            "line": 118,
+            "text": "structuralTokens.push("
+          },
+          {
+            "line": 119,
+            "text": "match.output.structuralToken,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 255,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 307,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 359,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 411,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 463,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 515,
+            "text": "\"structuralToken\": null"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 6,
+            "text": "export * from \"./engine-token-producer.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 9,
+            "text": "EngineToken,"
+          },
+          {
+            "line": 10,
+            "text": "EngineTokenClass,"
+          },
+          {
+            "line": 20,
+            "text": "readonly tokenClass: EngineTokenClass;"
+          },
+          {
+            "line": 25,
+            "text": "execute(token: EngineToken): RuleMatch | null;"
+          },
+          {
+            "line": 119,
+            "text": "function isEngineTokenClass("
+          },
+          {
+            "line": 121,
+            "text": "): value is EngineTokenClass {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "previews": [
+          {
+            "line": 50,
+            "text": "* Structural tokens exposed by the recognizing rules, when present."
+          },
+          {
+            "line": 52,
+            "text": "readonly structuralTokens: readonly string[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 11,
+            "text": "EngineTokenClass,"
+          },
+          {
+            "line": 38,
+            "text": "readonly tokenClass: EngineTokenClass | null;"
+          },
+          {
+            "line": 242,
+            "text": "function isEngineTokenClass("
+          },
+          {
+            "line": 244,
+            "text": "): value is EngineTokenClass {"
+          },
+          {
+            "line": 270,
+            "text": "const structuralTokenValue = output[\"structuralToken\"];"
+          },
+          {
+            "line": 279,
+            "text": "const structuralToken ="
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 26,
+            "text": "export type EngineTokenClass ="
+          },
+          {
+            "line": 67,
+            "text": "export interface EngineToken {"
+          },
+          {
+            "line": 68,
+            "text": "readonly tokenClass: EngineTokenClass;"
+          },
+          {
+            "line": 75,
+            "text": "readonly structuralToken: string | null;"
+          },
+          {
+            "line": 86,
+            "text": "readonly tokenClass: EngineTokenClass | null;"
+          },
+          {
+            "line": 93,
+            "text": "readonly engineTokens: readonly EngineToken[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 21,
+            "text": "readonly structuralToken?: string;"
+          },
+          {
+            "line": 154,
+            "text": "const structuralToken ="
+          },
+          {
+            "line": 157,
+            "text": ": readString(output, \"structuralToken\");"
+          },
+          {
+            "line": 160,
+            "text": "structuralToken === undefined"
+          },
+          {
+            "line": 162,
+            "text": ": { id, status, structuralToken };"
+          },
+          {
+            "line": 180,
+            "text": "const structuralTokens = rules.flatMap((rule) =>"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 75,
+            "text": "function expectedStructuralTokens(match) {"
+          },
+          {
+            "line": 76,
+            "text": "return match.output.structuralToken === null"
+          },
+          {
+            "line": 78,
+            "text": ": [match.output.structuralToken];"
+          },
+          {
+            "line": 158,
+            "text": "const tokenClass ="
+          },
+          {
+            "line": 159,
+            "text": "vector.input.tokenClass;"
+          },
+          {
+            "line": 162,
+            "text": "typeof tokenClass,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 189,
+            "text": "result.structuralTokens,"
+          },
+          {
+            "line": 256,
+            "text": "assert.deepEqual(first.structuralTokens, []);"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/rule-selector.test.mjs",
+        "previews": [
+          {
+            "line": 57,
+            "text": "result.match.tokenClass,"
+          },
+          {
+            "line": 100,
+            "text": "result.match.output.structuralToken,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/unicode-preprocessor.test.mjs",
+        "previews": [
+          {
+            "line": 31,
+            "text": "structuralToken: rule?.output?.structuralToken,"
+          },
+          {
+            "line": 102,
+            "text": "annotation.structuralTokens,"
+          },
+          {
+            "line": 104,
+            "text": "typeof rule.structuralToken === \"string\""
+          },
+          {
+            "line": 105,
+            "text": "? [rule.structuralToken]"
+          },
+          {
+            "line": 137,
+            "text": "for (const structuralToken of vector.expected.structuralTokens) {"
+          },
+          {
+            "line": 139,
+            "text": "annotation.structuralTokens.includes(structuralToken),"
+          }
+        ]
+      }
+    ],
+    "mode": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 234,
+            "text": "* The producer never defines Braille cell values; structural mode rules in"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 10,
+            "text": "import { createModeRuleExecutor } from \"./mode-rule-executor.js\";"
+          },
+          {
+            "line": 216,
+            "text": "const modeExecutor ="
+          },
+          {
+            "line": 217,
+            "text": "createModeRuleExecutor();"
+          },
+          {
+            "line": 260,
+            "text": "const modeMatch ="
+          },
+          {
+            "line": 261,
+            "text": "modeExecutor.execute(token);"
+          },
+          {
+            "line": 263,
+            "text": "if (modeMatch === null) {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 25,
+            "text": "\"mode\": 5,"
+          },
+          {
+            "line": 125,
+            "text": "\"FA-G1-LATIN-MODE-001\","
+          },
+          {
+            "line": 126,
+            "text": "\"FA-G1-LATIN-MODE-002\","
+          },
+          {
+            "line": 127,
+            "text": "\"FA-G1-LATIN-MODE-003\","
+          },
+          {
+            "line": 128,
+            "text": "\"FA-G1-LATIN-MODE-004\","
+          },
+          {
+            "line": 271,
+            "text": "\"rationale\": \"Stable and draft Liblouis implementations agree on this digit mapping, and the preserved legacy v1 evidence independently supports the same digit-family behavior. The project accepts the aligned character m"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/index.ts",
+        "previews": [
+          {
+            "line": 7,
+            "text": "export * from \"./mode-rule-executor.js\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 16,
+            "text": "interface ModeRuleView {"
+          },
+          {
+            "line": 24,
+            "text": "export interface ModeRuleExecutor {"
+          },
+          {
+            "line": 182,
+            "text": "function buildModeRules("
+          },
+          {
+            "line": 184,
+            "text": "): ReadonlyMap<EngineTokenClass, ModeRuleView> {"
+          },
+          {
+            "line": 186,
+            "text": "new Map<EngineTokenClass, ModeRuleView>();"
+          },
+          {
+            "line": 189,
+            "text": "if (readString(rule, \"type\") !== \"mode\") {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 225,
+            "text": "value === \"mode\" ||"
+          },
+          {
+            "line": 365,
+            "text": "// mode rules to the later forward-pipeline/state-machine deliverable."
+          },
+          {
+            "line": 368,
+            "text": "rawType === \"mode\" ||"
+          },
+          {
+            "line": 719,
+            "text": "* 5.4 structural/mode-state execution."
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 14,
+            "text": "| \"mode\""
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 16,
+            "text": "createModeRuleExecutor,"
+          },
+          {
+            "line": 143,
+            "text": "const modeExecutor ="
+          },
+          {
+            "line": 144,
+            "text": "createModeRuleExecutor();"
+          },
+          {
+            "line": 157,
+            "text": "if (rule.type === \"mode\") {"
+          },
+          {
+            "line": 173,
+            "text": "modeExecutor.execute({"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 152,
+            "text": "\"FA-G1-LATIN-MODE-002\","
+          },
+          {
+            "line": 161,
+            "text": "\"FA-G1-LATIN-MODE-003\","
+          },
+          {
+            "line": 178,
+            "text": "\"FA-G1-LATIN-MODE-004\","
+          }
+        ]
+      }
+    ],
+    "normalize": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 191,
+            "text": "preprocessor.normalize(inputText);"
+          },
+          {
+            "line": 208,
+            "text": "const normalizedText ="
+          },
+          {
+            "line": 211,
+            "text": "Array.from(normalizedText);"
+          },
+          {
+            "line": 221,
+            "text": "text: normalizedText,"
+          },
+          {
+            "line": 302,
+            "text": "normalizedText,"
+          },
+          {
+            "line": 411,
+            "text": "normalizedText,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "previews": [
+          {
+            "line": 104,
+            "text": "normalize(inputText: string): NormalizationOutcome;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 100,
+            "text": "readonly normalizedText: string;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 211,
+            "text": "normalize(inputText: string): NormalizationOutcome {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 209,
+            "text": "preprocessor.normalize("
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/unicode-preprocessor.test.mjs",
+        "previews": [
+          {
+            "line": 42,
+            "text": "const result = preprocessor.normalize(input);"
+          },
+          {
+            "line": 64,
+            "text": "const result = preprocessor.normalize(input);"
+          },
+          {
+            "line": 81,
+            "text": "const result = preprocessor.normalize(character);"
+          },
+          {
+            "line": 120,
+            "text": "const result = preprocessor.normalize(vector.input.text);"
+          },
+          {
+            "line": 147,
+            "text": "const result = preprocessor.normalize(\"\\u200C\");"
+          },
+          {
+            "line": 173,
+            "text": "const result = preprocessor.normalize(input);"
+          }
+        ]
+      }
+    ],
+    "structural": [
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "previews": [
+          {
+            "line": 234,
+            "text": "* The producer never defines Braille cell values; structural mode rules in"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 107,
+            "text": "structuralTokens: string[],"
+          },
+          {
+            "line": 117,
+            "text": "if (match.output.structuralToken !== null) {"
+          },
+          {
+            "line": 118,
+            "text": "structuralTokens.push("
+          },
+          {
+            "line": 119,
+            "text": "match.output.structuralToken,"
+          },
+          {
+            "line": 124,
+            "text": "function appendNormalizationStructuralTokens("
+          },
+          {
+            "line": 129,
+            "text": "structuralTokens: string[],"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 255,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 307,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 359,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 411,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 463,
+            "text": "\"structuralToken\": null"
+          },
+          {
+            "line": 515,
+            "text": "\"structuralToken\": null"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 142,
+            "text": "const structuralTokenValue ="
+          },
+          {
+            "line": 143,
+            "text": "output[\"structuralToken\"];"
+          },
+          {
+            "line": 152,
+            "text": "const structuralToken ="
+          },
+          {
+            "line": 153,
+            "text": "structuralTokenValue === null"
+          },
+          {
+            "line": 155,
+            "text": ": typeof structuralTokenValue === \"string\""
+          },
+          {
+            "line": 156,
+            "text": "? structuralTokenValue"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "previews": [
+          {
+            "line": 50,
+            "text": "* Structural tokens exposed by the recognizing rules, when present."
+          },
+          {
+            "line": 52,
+            "text": "readonly structuralTokens: readonly string[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 238,
+            "text": "value === \"structural\""
+          },
+          {
+            "line": 270,
+            "text": "const structuralTokenValue = output[\"structuralToken\"];"
+          },
+          {
+            "line": 279,
+            "text": "const structuralToken ="
+          },
+          {
+            "line": 280,
+            "text": "structuralTokenValue === null"
+          },
+          {
+            "line": 282,
+            "text": ": typeof structuralTokenValue === \"string\""
+          },
+          {
+            "line": 283,
+            "text": "? structuralTokenValue"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 22,
+            "text": "| \"structural\";"
+          },
+          {
+            "line": 75,
+            "text": "readonly structuralToken: string | null;"
+          },
+          {
+            "line": 103,
+            "text": "readonly structuralTokens: readonly string[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "previews": [
+          {
+            "line": 21,
+            "text": "readonly structuralToken?: string;"
+          },
+          {
+            "line": 154,
+            "text": "const structuralToken ="
+          },
+          {
+            "line": 157,
+            "text": ": readString(output, \"structuralToken\");"
+          },
+          {
+            "line": 160,
+            "text": "structuralToken === undefined"
+          },
+          {
+            "line": 162,
+            "text": ": { id, status, structuralToken };"
+          },
+          {
+            "line": 180,
+            "text": "const structuralTokens = rules.flatMap((rule) =>"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 75,
+            "text": "function expectedStructuralTokens(match) {"
+          },
+          {
+            "line": 76,
+            "text": "return match.output.structuralToken === null"
+          },
+          {
+            "line": 78,
+            "text": ": [match.output.structuralToken];"
+          },
+          {
+            "line": 198,
+            "text": "expectedStructuralTokens(match),"
+          },
+          {
+            "line": 199,
+            "text": "vector.expected.structuralTokens,"
+          },
+          {
+            "line": 249,
+            "text": ".structuralTokens"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 189,
+            "text": "result.structuralTokens,"
+          },
+          {
+            "line": 256,
+            "text": "assert.deepEqual(first.structuralTokens, []);"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/rule-selector.test.mjs",
+        "previews": [
+          {
+            "line": 100,
+            "text": "result.match.output.structuralToken,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/unicode-preprocessor.test.mjs",
+        "previews": [
+          {
+            "line": 31,
+            "text": "structuralToken: rule?.output?.structuralToken,"
+          },
+          {
+            "line": 102,
+            "text": "annotation.structuralTokens,"
+          },
+          {
+            "line": 104,
+            "text": "typeof rule.structuralToken === \"string\""
+          },
+          {
+            "line": 105,
+            "text": "? [rule.structuralToken]"
+          },
+          {
+            "line": 137,
+            "text": "for (const structuralToken of vector.expected.structuralTokens) {"
+          },
+          {
+            "line": 139,
+            "text": "annotation.structuralTokens.includes(structuralToken),"
+          }
+        ]
+      }
+    ],
+    "unicodeBraille": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 111,
+            "text": "if (match.output.unicodeBraille !== null) {"
+          },
+          {
+            "line": 113,
+            "text": "match.output.unicodeBraille,"
+          },
+          {
+            "line": 413,
+            "text": "unicodeBraille:"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 254,
+            "text": "\"unicodeBraille\": \"⠚\","
+          },
+          {
+            "line": 306,
+            "text": "\"unicodeBraille\": \"⠁\","
+          },
+          {
+            "line": 358,
+            "text": "\"unicodeBraille\": \"⠃\","
+          },
+          {
+            "line": 410,
+            "text": "\"unicodeBraille\": \"⠉\","
+          },
+          {
+            "line": 462,
+            "text": "\"unicodeBraille\": \"⠙\","
+          },
+          {
+            "line": 514,
+            "text": "\"unicodeBraille\": \"⠑\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 140,
+            "text": "const unicodeBrailleValue ="
+          },
+          {
+            "line": 141,
+            "text": "output[\"unicodeBraille\"];"
+          },
+          {
+            "line": 145,
+            "text": "const unicodeBraille ="
+          },
+          {
+            "line": 146,
+            "text": "unicodeBrailleValue === null"
+          },
+          {
+            "line": 148,
+            "text": ": typeof unicodeBrailleValue === \"string\""
+          },
+          {
+            "line": 149,
+            "text": "? unicodeBrailleValue"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 269,
+            "text": "const unicodeBrailleValue = output[\"unicodeBraille\"];"
+          },
+          {
+            "line": 272,
+            "text": "const unicodeBraille ="
+          },
+          {
+            "line": 273,
+            "text": "unicodeBrailleValue === null"
+          },
+          {
+            "line": 275,
+            "text": ": typeof unicodeBrailleValue === \"string\""
+          },
+          {
+            "line": 276,
+            "text": "? unicodeBrailleValue"
+          },
+          {
+            "line": 286,
+            "text": "if (unicodeBraille === undefined) {"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 74,
+            "text": "readonly unicodeBraille: string | null;"
+          },
+          {
+            "line": 102,
+            "text": "readonly unicodeBraille: string;"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 193,
+            "text": "match.output.unicodeBraille,"
+          },
+          {
+            "line": 194,
+            "text": "vector.expected.unicodeBraille,"
+          },
+          {
+            "line": 241,
+            "text": "vector.expected.unicodeBraille,"
+          },
+          {
+            "line": 297,
+            "text": ".unicodeBraille,"
+          },
+          {
+            "line": 298,
+            "text": "vector.expected.unicodeBraille,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 27,
+            "text": "result.unicodeBraille,"
+          },
+          {
+            "line": 43,
+            "text": "result.unicodeBraille,"
+          },
+          {
+            "line": 64,
+            "text": "result.unicodeBraille,"
+          },
+          {
+            "line": 144,
+            "text": "result.unicodeBraille,"
+          },
+          {
+            "line": 171,
+            "text": "result.unicodeBraille,"
+          },
+          {
+            "line": 187,
+            "text": "assert.equal(result.unicodeBraille, \"\");"
+          }
+        ]
+      }
+    ],
+    "cells": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 105,
+            "text": "cells: string[],"
+          },
+          {
+            "line": 109,
+            "text": "cells.push(...match.output.cells);"
+          },
+          {
+            "line": 238,
+            "text": "const cells: string[] = [];"
+          },
+          {
+            "line": 281,
+            "text": "cells,"
+          },
+          {
+            "line": 349,
+            "text": "cells,"
+          },
+          {
+            "line": 412,
+            "text": "cells,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "previews": [
+          {
+            "line": 39,
+            "text": "\"cellSize\": 6,"
+          },
+          {
+            "line": 251,
+            "text": "\"cells\": ["
+          },
+          {
+            "line": 303,
+            "text": "\"cells\": ["
+          },
+          {
+            "line": 355,
+            "text": "\"cells\": ["
+          },
+          {
+            "line": 407,
+            "text": "\"cells\": ["
+          },
+          {
+            "line": 459,
+            "text": "\"cells\": ["
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "previews": [
+          {
+            "line": 172,
+            "text": "cells: requireStringArray("
+          },
+          {
+            "line": 174,
+            "text": "\"cells\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 299,
+            "text": "cells: requireStringArray("
+          },
+          {
+            "line": 301,
+            "text": "\"cells\","
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 73,
+            "text": "readonly cells: readonly string[];"
+          },
+          {
+            "line": 101,
+            "text": "readonly cells: readonly string[];"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "previews": [
+          {
+            "line": 188,
+            "text": "match.output.cells,"
+          },
+          {
+            "line": 189,
+            "text": "vector.expected.cells,"
+          },
+          {
+            "line": 236,
+            "text": "vector.expected.cells,"
+          },
+          {
+            "line": 291,
+            "text": "selection.match.output.cells,"
+          },
+          {
+            "line": 292,
+            "text": "vector.expected.cells,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "previews": [
+          {
+            "line": 57,
+            "text": "assert.deepEqual(result.cells, ["
+          },
+          {
+            "line": 80,
+            "text": "assert.deepEqual(result.cells, ["
+          },
+          {
+            "line": 254,
+            "text": "assert.deepEqual(first.cells, []);"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/test/rule-selector.test.mjs",
+        "previews": [
+          {
+            "line": 19,
+            "text": "assert.deepEqual(result.match.output.cells, ["
+          }
+        ]
+      }
+    ],
+    "candidateRuleIds": [
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "previews": [
+          {
+            "line": 314,
+            "text": "candidateRuleIds:"
+          },
+          {
+            "line": 315,
+            "text": "selection.candidateRuleIds,"
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "previews": [
+          {
+            "line": 57,
+            "text": "readonly candidateRuleIds: readonly string[];"
+          },
+          {
+            "line": 687,
+            "text": "candidateRuleIds: winners.map("
+          }
+        ]
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "previews": [
+          {
+            "line": 150,
+            "text": "readonly candidateRuleIds: readonly string[];"
+          }
+        ]
+      }
+    ]
+  },
+  "reverseLeakScan": {
+    "coreSourceHits": [],
+    "existingReverseRuntimeInCore": false
+  },
+  "phase13_3SeedEvidence": {
+    "suiteCounts": {
+      "ambiguity-strict": 1,
+      "direct-unique": 1,
+      "invalid-input": 1,
+      "latin-capital": 1,
+      "latin-span": 1,
+      "longest-match": 1,
+      "lossiness-capability": 2,
+      "malformed-mode": 2,
+      "numeric-context": 1,
+      "numeric-digit-family": 3,
+      "paired-punctuation": 1,
+      "punctuation-canonicalization": 1
+    },
+    "vectors": [
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-cap-layout-001.json",
+        "id": "FA-REV-CONF-CAP-LAYOUT-001",
+        "kind": "capability",
+        "suite": "lossiness-capability",
+        "sourceForwardRuleIds": [
+          "FA-G1-LAYOUT-001",
+          "FA-G1-LAYOUT-002",
+          "FA-G1-LAYOUT-003"
+        ],
+        "input": null,
+        "options": null,
+        "expected": {
+          "supported": false,
+          "reason": "The forward profile contains layout rules that emit no Braille cells, so plain Unicode Braille cannot recover the original source layout provenance exactly."
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-cap-zwnj-001.json",
+        "id": "FA-REV-CONF-CAP-ZWNJ-001",
+        "kind": "capability",
+        "suite": "lossiness-capability",
+        "sourceForwardRuleIds": [
+          "FA-G1-NORM-ZWNJ-001"
+        ],
+        "input": null,
+        "options": null,
+        "expected": {
+          "supported": false,
+          "reason": "The forward ZWNJ normalization rule emits no Braille cells, so exact ZWNJ provenance cannot be reconstructed from a plain Braille cell stream."
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-direct-tha-001.json",
+        "id": "FA-REV-CONF-DIRECT-THA-001",
+        "kind": "translation",
+        "suite": "direct-unique",
+        "sourceForwardRuleIds": [
+          "FA-G1-LETTER-005"
+        ],
+        "input": {
+          "cells": [
+            "1456"
+          ],
+          "unicodeBraille": "⠹"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "ث",
+          "lossy": false,
+          "diagnosticCodes": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-ellipsis-unicode-001.json",
+        "id": "FA-REV-CONF-ELLIPSIS-UNICODE-001",
+        "kind": "translation",
+        "suite": "longest-match",
+        "sourceForwardRuleIds": [
+          "FA-G1-PUNC-ELLIPSIS-001",
+          "FA-G1-PUNC-UNICODE-ELLIPSIS-001"
+        ],
+        "input": {
+          "cells": [
+            "6",
+            "6",
+            "6"
+          ],
+          "unicodeBraille": "⠠⠠⠠"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "…",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_ELLIPSIS"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-invalid-input-001.json",
+        "id": "FA-REV-CONF-INVALID-INPUT-001",
+        "kind": "translation",
+        "suite": "invalid-input",
+        "sourceForwardRuleIds": [],
+        "input": {
+          "unicodeBraille": "A"
+        },
+        "options": {},
+        "expected": {
+          "ok": false,
+          "code": "INVALID_BRAILLE_INPUT",
+          "candidateRuleIds": [],
+          "candidateTexts": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-latin-capital-001.json",
+        "id": "FA-REV-CONF-LATIN-CAPITAL-001",
+        "kind": "translation",
+        "suite": "latin-capital",
+        "sourceForwardRuleIds": [
+          "FA-G1-LATIN-MODE-002",
+          "FA-G1-LATIN-MODE-004",
+          "FA-G1-LATIN-001",
+          "FA-G1-LATIN-MODE-003"
+        ],
+        "input": {
+          "cells": [
+            "25",
+            "6",
+            "1",
+            "25"
+          ],
+          "unicodeBraille": "⠒⠠⠁⠒"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "A",
+          "lossy": false,
+          "diagnosticCodes": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-latin-dangling-capital-001.json",
+        "id": "FA-REV-CONF-LATIN-DANGLING-CAPITAL-001",
+        "kind": "translation",
+        "suite": "malformed-mode",
+        "sourceForwardRuleIds": [
+          "FA-G1-LATIN-MODE-002",
+          "FA-G1-LATIN-MODE-004",
+          "FA-G1-LATIN-MODE-003"
+        ],
+        "input": {
+          "unicodeBraille": "⠒⠠⠒",
+          "cells": [
+            "25",
+            "6",
+            "25"
+          ]
+        },
+        "options": {},
+        "expected": {
+          "ok": false,
+          "code": "DANGLING_CAPITAL_INDICATOR",
+          "candidateRuleIds": [],
+          "candidateTexts": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-latin-lower-001.json",
+        "id": "FA-REV-CONF-LATIN-LOWER-001",
+        "kind": "translation",
+        "suite": "latin-span",
+        "sourceForwardRuleIds": [
+          "FA-G1-LATIN-MODE-002",
+          "FA-G1-LATIN-027",
+          "FA-G1-LATIN-MODE-003"
+        ],
+        "input": {
+          "cells": [
+            "25",
+            "1",
+            "25"
+          ],
+          "unicodeBraille": "⠒⠁⠒"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "a",
+          "lossy": false,
+          "diagnosticCodes": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-latin-unterminated-001.json",
+        "id": "FA-REV-CONF-LATIN-UNTERMINATED-001",
+        "kind": "translation",
+        "suite": "malformed-mode",
+        "sourceForwardRuleIds": [
+          "FA-G1-LATIN-MODE-002",
+          "FA-G1-LATIN-027"
+        ],
+        "input": {
+          "unicodeBraille": "⠒⠁",
+          "cells": [
+            "25",
+            "1"
+          ]
+        },
+        "options": {},
+        "expected": {
+          "ok": false,
+          "code": "UNTERMINATED_LATIN_SPAN",
+          "candidateRuleIds": [],
+          "candidateTexts": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-num-arabic-indic-001.json",
+        "id": "FA-REV-CONF-NUM-ARABIC-INDIC-001",
+        "kind": "translation",
+        "suite": "numeric-digit-family",
+        "sourceForwardRuleIds": [
+          "FA-G1-NUMRULE-001",
+          "FA-G1-DIGIT-PERSIAN-001",
+          "FA-G1-DIGIT-ASCII-001",
+          "FA-G1-DIGIT-ARABIC-INDIC-001"
+        ],
+        "input": {
+          "cells": [
+            "3456",
+            "1"
+          ],
+          "unicodeBraille": "⠼⠁"
+        },
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expected": {
+          "ok": true,
+          "text": "١",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_DIGIT_FAMILY"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-num-ascii-001.json",
+        "id": "FA-REV-CONF-NUM-ASCII-001",
+        "kind": "translation",
+        "suite": "numeric-digit-family",
+        "sourceForwardRuleIds": [
+          "FA-G1-NUMRULE-001",
+          "FA-G1-DIGIT-PERSIAN-001",
+          "FA-G1-DIGIT-ASCII-001",
+          "FA-G1-DIGIT-ARABIC-INDIC-001"
+        ],
+        "input": {
+          "cells": [
+            "3456",
+            "1"
+          ],
+          "unicodeBraille": "⠼⠁"
+        },
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expected": {
+          "ok": true,
+          "text": "1",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_DIGIT_FAMILY"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-num-decimal-001.json",
+        "id": "FA-REV-CONF-NUM-DECIMAL-001",
+        "kind": "translation",
+        "suite": "numeric-context",
+        "sourceForwardRuleIds": [
+          "FA-G1-NUMRULE-001",
+          "FA-G1-DIGIT-PERSIAN-001",
+          "FA-G1-DIGIT-PERSIAN-002",
+          "FA-G1-NUMRULE-005",
+          "FA-G1-NUMRULE-006"
+        ],
+        "input": {
+          "cells": [
+            "3456",
+            "1",
+            "2",
+            "12"
+          ],
+          "unicodeBraille": "⠼⠁⠂⠃"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "۱٫۲",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_DIGIT_FAMILY",
+            "CANONICALIZED_PUNCTUATION"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-num-persian-001.json",
+        "id": "FA-REV-CONF-NUM-PERSIAN-001",
+        "kind": "translation",
+        "suite": "numeric-digit-family",
+        "sourceForwardRuleIds": [
+          "FA-G1-NUMRULE-001",
+          "FA-G1-DIGIT-PERSIAN-001",
+          "FA-G1-DIGIT-ASCII-001",
+          "FA-G1-DIGIT-ARABIC-INDIC-001"
+        ],
+        "input": {
+          "cells": [
+            "3456",
+            "1"
+          ],
+          "unicodeBraille": "⠼⠁"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "۱",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_DIGIT_FAMILY"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-paired-parens-001.json",
+        "id": "FA-REV-CONF-PAIRED-PARENS-001",
+        "kind": "translation",
+        "suite": "paired-punctuation",
+        "sourceForwardRuleIds": [
+          "FA-G1-PUNC-SCALAR-019",
+          "FA-G1-PUNC-SCALAR-020"
+        ],
+        "input": {
+          "cells": [
+            "2356",
+            "2356"
+          ],
+          "unicodeBraille": "⠶⠶"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "()",
+          "lossy": false,
+          "diagnosticCodes": []
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-punc-question-persian-001.json",
+        "id": "FA-REV-CONF-PUNC-QUESTION-PERSIAN-001",
+        "kind": "translation",
+        "suite": "punctuation-canonicalization",
+        "sourceForwardRuleIds": [
+          "FA-G1-PUNC-SCALAR-002",
+          "FA-G1-PUNC-SCALAR-003"
+        ],
+        "input": {
+          "cells": [
+            "236"
+          ],
+          "unicodeBraille": "⠦"
+        },
+        "options": {},
+        "expected": {
+          "ok": true,
+          "text": "؟",
+          "lossy": true,
+          "diagnosticCodes": [
+            "CANONICALIZED_PUNCTUATION"
+          ]
+        }
+      },
+      {
+        "path": "spec/fa-ir/reverse/conformance/records/fa-rev-conf-punc-question-strict-001.json",
+        "id": "FA-REV-CONF-PUNC-QUESTION-STRICT-001",
+        "kind": "translation",
+        "suite": "ambiguity-strict",
+        "sourceForwardRuleIds": [
+          "FA-G1-PUNC-SCALAR-002",
+          "FA-G1-PUNC-SCALAR-003"
+        ],
+        "input": {
+          "unicodeBraille": "⠦",
+          "cells": [
+            "236"
+          ]
+        },
+        "options": {
+          "ambiguityPolicy": "error"
+        },
+        "expected": {
+          "ok": false,
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "candidateRuleIds": [
+            "FA-G1-PUNC-SCALAR-002",
+            "FA-G1-PUNC-SCALAR-003"
+          ],
+          "candidateTexts": [
+            "?",
+            "؟"
+          ]
+        }
+      }
+    ],
+    "sourceForwardRules": [
+      {
+        "id": "FA-G1-NUMRULE-001",
+        "type": "mode",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "structural",
+          "tokenClass": "numeric-indicator"
+        },
+        "output": {
+          "cells": [
+            "3456"
+          ],
+          "unicodeBraille": "⠼",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-DIGIT-PERSIAN-001",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "۱",
+          "codePoints": [
+            "U+06F1"
+          ]
+        },
+        "output": {
+          "cells": [
+            "1"
+          ],
+          "unicodeBraille": "⠁",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-DIGIT-ASCII-001",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "1",
+          "codePoints": [
+            "U+0031"
+          ]
+        },
+        "output": {
+          "cells": [
+            "1"
+          ],
+          "unicodeBraille": "⠁",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-DIGIT-ARABIC-INDIC-001",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "١",
+          "codePoints": [
+            "U+0661"
+          ]
+        },
+        "output": {
+          "cells": [
+            "1"
+          ],
+          "unicodeBraille": "⠁",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-NUMRULE-005",
+        "type": "context",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "context",
+          "text": ".",
+          "codePoints": [
+            "U+002E"
+          ],
+          "before": "digit",
+          "after": "digit",
+          "tokenClass": "numeric-decimal-separator"
+        },
+        "output": {
+          "cells": [
+            "2"
+          ],
+          "unicodeBraille": "⠂",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-NUMRULE-006",
+        "type": "context",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "context",
+          "text": "٫",
+          "codePoints": [
+            "U+066B"
+          ],
+          "before": "digit",
+          "after": "digit",
+          "tokenClass": "numeric-decimal-separator"
+        },
+        "output": {
+          "cells": [
+            "2"
+          ],
+          "unicodeBraille": "⠂",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LATIN-MODE-002",
+        "type": "mode",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "structural",
+          "tokenClass": "latin-span-begin"
+        },
+        "output": {
+          "cells": [
+            "25"
+          ],
+          "unicodeBraille": "⠒",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LATIN-MODE-003",
+        "type": "mode",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "structural",
+          "tokenClass": "latin-span-end"
+        },
+        "output": {
+          "cells": [
+            "25"
+          ],
+          "unicodeBraille": "⠒",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LATIN-MODE-004",
+        "type": "mode",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "structural",
+          "tokenClass": "latin-capital-indicator"
+        },
+        "output": {
+          "cells": [
+            "6"
+          ],
+          "unicodeBraille": "⠠",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LATIN-001",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "A",
+          "codePoints": [
+            "U+0041"
+          ]
+        },
+        "output": {
+          "cells": [
+            "1"
+          ],
+          "unicodeBraille": "⠁",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LATIN-027",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "a",
+          "codePoints": [
+            "U+0061"
+          ]
+        },
+        "output": {
+          "cells": [
+            "1"
+          ],
+          "unicodeBraille": "⠁",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-SCALAR-002",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "?",
+          "codePoints": [
+            "U+003F"
+          ]
+        },
+        "output": {
+          "cells": [
+            "236"
+          ],
+          "unicodeBraille": "⠦",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-SCALAR-003",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "؟",
+          "codePoints": [
+            "U+061F"
+          ]
+        },
+        "output": {
+          "cells": [
+            "236"
+          ],
+          "unicodeBraille": "⠦",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-ELLIPSIS-001",
+        "type": "sequence",
+        "status": "normative",
+        "direction": "forward",
+        "priority": 100,
+        "input": {
+          "kind": "sequence",
+          "text": "...",
+          "codePoints": [
+            "U+002E",
+            "U+002E",
+            "U+002E"
+          ]
+        },
+        "output": {
+          "cells": [
+            "6",
+            "6",
+            "6"
+          ],
+          "unicodeBraille": "⠠⠠⠠",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-UNICODE-ELLIPSIS-001",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "…",
+          "codePoints": [
+            "U+2026"
+          ]
+        },
+        "output": {
+          "cells": [
+            "6",
+            "6",
+            "6"
+          ],
+          "unicodeBraille": "⠠⠠⠠",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-SCALAR-019",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "(",
+          "codePoints": [
+            "U+0028"
+          ]
+        },
+        "output": {
+          "cells": [
+            "2356"
+          ],
+          "unicodeBraille": "⠶",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-PUNC-SCALAR-020",
+        "type": "character",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": ")",
+          "codePoints": [
+            "U+0029"
+          ]
+        },
+        "output": {
+          "cells": [
+            "2356"
+          ],
+          "unicodeBraille": "⠶",
+          "structuralToken": null
+        }
+      },
+      {
+        "id": "FA-G1-LAYOUT-001",
+        "type": "layout",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": " ",
+          "codePoints": [
+            "U+0020"
+          ]
+        },
+        "output": {
+          "cells": [],
+          "unicodeBraille": null,
+          "structuralToken": "layout:inline-spacing:U+0020"
+        }
+      },
+      {
+        "id": "FA-G1-NORM-ZWNJ-001",
+        "type": "normalization",
+        "status": "candidate",
+        "direction": "forward",
+        "priority": 1000,
+        "input": {
+          "kind": "scalar",
+          "text": "‌",
+          "codePoints": [
+            "U+200C"
+          ]
+        },
+        "output": {
+          "cells": [],
+          "unicodeBraille": null,
+          "structuralToken": "normalization:zwnj-orthographic-boundary"
+        }
+      }
+    ]
+  },
+  "implementationQuestions": [
+    "Which existing Core module owns public translation execution, and where can a reverse engine be added without changing the forward public contract?",
+    "Which existing Core types for runtime rules, cells, Unicode locations, errors, and execution results can be reused safely?",
+    "How are generated runtime-spec records loaded today, and should reverse candidate indexing be generated or built at runtime from the canonical forward bundle?",
+    "Which forward mode/context helpers are implementation-specific and must NOT be inverted mechanically?",
+    "What is the smallest Phase 13.4 parser subset that can satisfy the 16 Phase 13.3 seed vectors while remaining internal to Core?"
+  ],
+  "recommendedPhase13_4Scope": {
+    "allowed": [
+      "new Core-internal reverse types",
+      "Unicode Braille tokenizer",
+      "reverse candidate index",
+      "parser state model",
+      "longest-match recognizer",
+      "numeric-mode handling",
+      "Latin span/capital state",
+      "basic candidate resolver",
+      "Core-only tests against Phase 13.3 seed vectors"
+    ],
+    "deferred": [
+      "public SDK reverse API",
+      "CLI reverse mode",
+      "Web reverse UI",
+      "Microsoft 365 reverse integration",
+      "full reverse coverage beyond the Phase 13.3 seed foundation",
+      "Braille Music",
+      "multi-language framework"
+    ]
+  }
+}
