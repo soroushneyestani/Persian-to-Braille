@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-124-DIGIT-ASCII",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-digit-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-ARABIC-INDIC-006",
+    "FA-G1-DIGIT-ASCII-006",
+    "FA-G1-DIGIT-PERSIAN-006",
+    "FA-G1-LATIN-006",
+    "FA-G1-LATIN-032",
+    "FA-G1-LETTER-023"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "124"
+    ],
+    "unicodeBraille": "⠼⠋"
+  },
+  "options": {
+    "digitFamily": "ascii"
+  },
+  "expected": {
+    "ok": true,
+    "text": "6",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY"
+    ]
+  },
+  "notes": [
+    "Representative ASCII digit-family option is preserved inside a shared-cell collision."
+  ]
+}

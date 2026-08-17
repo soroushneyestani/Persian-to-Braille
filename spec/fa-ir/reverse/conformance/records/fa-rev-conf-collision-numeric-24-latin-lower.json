@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-24-LATIN-LOWER",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-latin-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-LATIN-MODE-002",
+    "FA-G1-DIGIT-ARABIC-INDIC-009",
+    "FA-G1-DIGIT-ASCII-009",
+    "FA-G1-DIGIT-PERSIAN-009",
+    "FA-G1-LATIN-009",
+    "FA-G1-LATIN-035",
+    "FA-G1-LETTER-032",
+    "FA-G1-LATIN-MODE-003"
+  ],
+  "input": {
+    "cells": [
+      "25",
+      "24",
+      "25"
+    ],
+    "unicodeBraille": "⠒⠊⠒"
+  },
+  "options": {},
+  "expected": {
+    "ok": true,
+    "text": "i",
+    "lossy": false,
+    "diagnosticCodes": []
+  },
+  "notes": [
+    "Latin span state resolves the shared cell to the lowercase Latin candidate."
+  ]
+}

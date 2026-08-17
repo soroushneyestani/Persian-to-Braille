@@ -1,0 +1,145 @@
+==============================================================================================================
+PHASE 13.5c-2 — NUMERIC COLLISION BEHAVIOR AUDIT
+==============================================================================================================
+
+Branch : phase13-reverse-translation
+HEAD   : b644bb26215c3d28330e08d7edf6a16eda7274f3
+
+[BASELINE]
+Reverse vectors                     : 37
+Numeric-related collision signatures: 10
+  digit cross-mode                  : 8
+  numeric-internal                  : 1
+  numeric-end / percent             : 1
+
+[PARSER FEATURE EVIDENCE]
+  numericMode                  : YES
+  numericSawDigit              : YES
+  numericBegin                 : YES
+  numericFraction              : YES
+  numericInternal              : NO
+  numericEnd                   : NO
+  digitFamilyMap               : YES
+  latinSpan                    : YES
+  capitalState                 : YES
+  punctuationPolicy            : YES
+  strictAmbiguity              : YES
+
+[RUNTIME PROBE]
+  digit-collision-124-numeric-persian -> OK text='۶' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۶' matched=True
+  digit-collision-124-numeric-ascii -> OK text='6' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='6' matched=True
+  digit-collision-124-numeric-arabic-indic -> OK text='٦' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٦' matched=True
+  digit-collision-124-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-006', 'FA-G1-DIGIT-ASCII-006', 'FA-G1-DIGIT-PERSIAN-006', 'FA-G1-LATIN-006', 'FA-G1-LATIN-032', 'FA-G1-LETTER-023']
+    expectedHint='ف' matched=False
+  digit-collision-124-latin-lower -> OK text='f' diagnostics=[]
+    expectedHint='f' matched=True
+  digit-collision-124-latin-upper -> OK text='F' diagnostics=[]
+    expectedHint='F' matched=True
+  digit-collision-1245-numeric-persian -> OK text='۷' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۷' matched=True
+  digit-collision-1245-numeric-ascii -> OK text='7' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='7' matched=True
+  digit-collision-1245-numeric-arabic-indic -> OK text='٧' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٧' matched=True
+  digit-collision-1245-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-007', 'FA-G1-DIGIT-ASCII-007', 'FA-G1-DIGIT-PERSIAN-007', 'FA-G1-LATIN-007', 'FA-G1-LATIN-033', 'FA-G1-LETTER-026']
+    expectedHint='گ' matched=False
+  digit-collision-1245-latin-lower -> OK text='g' diagnostics=[]
+    expectedHint='g' matched=True
+  digit-collision-1245-latin-upper -> OK text='G' diagnostics=[]
+    expectedHint='G' matched=True
+  digit-collision-125-numeric-persian -> OK text='۸' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۸' matched=True
+  digit-collision-125-numeric-ascii -> OK text='8' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='8' matched=True
+  digit-collision-125-numeric-arabic-indic -> OK text='٨' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٨' matched=True
+  digit-collision-125-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-008', 'FA-G1-DIGIT-ASCII-008', 'FA-G1-DIGIT-PERSIAN-008', 'FA-G1-LATIN-008', 'FA-G1-LATIN-034', 'FA-G1-LETTER-031']
+    expectedHint='ه' matched=False
+  digit-collision-125-latin-lower -> OK text='h' diagnostics=[]
+    expectedHint='h' matched=True
+  digit-collision-125-latin-upper -> OK text='H' diagnostics=[]
+    expectedHint='H' matched=True
+  digit-collision-14-numeric-persian -> OK text='۳' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۳' matched=True
+  digit-collision-14-numeric-ascii -> OK text='3' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='3' matched=True
+  digit-collision-14-numeric-arabic-indic -> OK text='٣' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٣' matched=True
+  digit-collision-14-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-003', 'FA-G1-DIGIT-ASCII-003', 'FA-G1-DIGIT-PERSIAN-003', 'FA-G1-LATIN-003', 'FA-G1-LATIN-029', 'FA-G1-LETTER-007']
+    expectedHint='چ' matched=False
+  digit-collision-14-latin-lower -> OK text='c' diagnostics=[]
+    expectedHint='c' matched=True
+  digit-collision-14-latin-upper -> OK text='C' diagnostics=[]
+    expectedHint='C' matched=True
+  digit-collision-145-numeric-persian -> OK text='۴' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۴' matched=True
+  digit-collision-145-numeric-ascii -> OK text='4' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='4' matched=True
+  digit-collision-145-numeric-arabic-indic -> OK text='٤' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٤' matched=True
+  digit-collision-145-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-004', 'FA-G1-DIGIT-ASCII-004', 'FA-G1-DIGIT-PERSIAN-004', 'FA-G1-LATIN-004', 'FA-G1-LATIN-030', 'FA-G1-LETTER-010']
+    expectedHint='د' matched=False
+  digit-collision-145-latin-lower -> OK text='d' diagnostics=[]
+    expectedHint='d' matched=True
+  digit-collision-145-latin-upper -> OK text='D' diagnostics=[]
+    expectedHint='D' matched=True
+  digit-collision-15-numeric-persian -> OK text='۵' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۵' matched=True
+  digit-collision-15-numeric-ascii -> OK text='5' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='5' matched=True
+  digit-collision-15-numeric-arabic-indic -> OK text='٥' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٥' matched=True
+  digit-collision-15-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-005', 'FA-G1-DIGIT-ASCII-005', 'FA-G1-DIGIT-PERSIAN-005', 'FA-G1-LATIN-005', 'FA-G1-LATIN-031']
+  digit-collision-15-latin-lower -> OK text='e' diagnostics=[]
+    expectedHint='e' matched=True
+  digit-collision-15-latin-upper -> OK text='E' diagnostics=[]
+    expectedHint='E' matched=True
+  digit-collision-24-numeric-persian -> OK text='۹' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۹' matched=True
+  digit-collision-24-numeric-ascii -> OK text='9' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='9' matched=True
+  digit-collision-24-numeric-arabic-indic -> OK text='٩' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٩' matched=True
+  digit-collision-24-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-009', 'FA-G1-DIGIT-ASCII-009', 'FA-G1-DIGIT-PERSIAN-009', 'FA-G1-LATIN-009', 'FA-G1-LATIN-035', 'FA-G1-LETTER-032']
+    expectedHint='ی' matched=False
+  digit-collision-24-latin-lower -> OK text='i' diagnostics=[]
+    expectedHint='i' matched=True
+  digit-collision-24-latin-upper -> OK text='I' diagnostics=[]
+    expectedHint='I' matched=True
+  digit-collision-245-numeric-persian -> OK text='۰' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='۰' matched=True
+  digit-collision-245-numeric-ascii -> OK text='0' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='0' matched=True
+  digit-collision-245-numeric-arabic-indic -> OK text='٠' diagnostics=['CANONICALIZED_DIGIT_FAMILY']
+    expectedHint='٠' matched=True
+  digit-collision-245-base-mode -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-000', 'FA-G1-DIGIT-ASCII-000', 'FA-G1-DIGIT-PERSIAN-000', 'FA-G1-LATIN-010', 'FA-G1-LATIN-036', 'FA-G1-LETTER-006']
+    expectedHint='ج' matched=False
+  digit-collision-245-latin-lower -> OK text='j' diagnostics=[]
+    expectedHint='j' matched=True
+  digit-collision-245-latin-upper -> OK text='J' diagnostics=[]
+    expectedHint='J' matched=True
+  numeric-internal-default-persian -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-002', 'FA-G1-DIGIT-ASCII-002', 'FA-G1-DIGIT-PERSIAN-002', 'FA-G1-LATIN-002', 'FA-G1-LATIN-028', 'FA-G1-LETTER-002']
+    expectedHint='۱٬۲' matched=False
+  numeric-internal-ascii -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-DIGIT-ARABIC-INDIC-002', 'FA-G1-DIGIT-ASCII-002', 'FA-G1-DIGIT-PERSIAN-002', 'FA-G1-LATIN-002', 'FA-G1-LATIN-028', 'FA-G1-LETTER-002']
+    expectedHint='۱,۲' matched=False
+  numeric-internal-strict -> FAIL code='AMBIGUOUS_REVERSE_MATCH' candidates=['FA-G1-NUMRULE-003', 'FA-G1-NUMRULE-004']
+  numeric-end-default-persian -> FAIL code='UNTERMINATED_LATIN_SPAN' candidates=None
+  numeric-end-ascii -> FAIL code='UNTERMINATED_LATIN_SPAN' candidates=None
+  percent-outside-numeric-default -> FAIL code='UNTERMINATED_LATIN_SPAN' candidates=None
+  percent-outside-numeric-strict -> FAIL code='UNTERMINATED_LATIN_SPAN' candidates=None
+
+Expected-hint failures : ['digit-collision-124-base-mode', 'digit-collision-1245-base-mode', 'digit-collision-125-base-mode', 'digit-collision-14-base-mode', 'digit-collision-145-base-mode', 'digit-collision-24-base-mode', 'digit-collision-245-base-mode', 'numeric-internal-default-persian', 'numeric-internal-ascii']
+Non-success probe cases: ['digit-collision-124-base-mode', 'digit-collision-1245-base-mode', 'digit-collision-125-base-mode', 'digit-collision-14-base-mode', 'digit-collision-145-base-mode', 'digit-collision-15-base-mode', 'digit-collision-24-base-mode', 'digit-collision-245-base-mode', 'numeric-internal-default-persian', 'numeric-internal-ascii', 'numeric-internal-strict', 'numeric-end-default-persian', 'numeric-end-ascii', 'percent-outside-numeric-default', 'percent-outside-numeric-strict']
+
+[MATERIALIZATION BUCKETS]
+  1. digit-mode-resolution
+  2. numeric-internal-separator
+  3. numeric-end-percent
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage13-5c2-numeric-collision-behavior-audit.txt
+JSON : stage13-5c2-numeric-collision-behavior-audit.json
+==============================================================================================================

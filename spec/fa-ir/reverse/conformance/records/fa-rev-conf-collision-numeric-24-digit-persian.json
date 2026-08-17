@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-24-DIGIT-PERSIAN",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-digit-mode",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-ARABIC-INDIC-009",
+    "FA-G1-DIGIT-ASCII-009",
+    "FA-G1-DIGIT-PERSIAN-009",
+    "FA-G1-LATIN-009",
+    "FA-G1-LATIN-035",
+    "FA-G1-LETTER-032"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "24"
+    ],
+    "unicodeBraille": "⠼⠊"
+  },
+  "options": {
+    "digitFamily": "persian"
+  },
+  "expected": {
+    "ok": true,
+    "text": "۹",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY"
+    ]
+  },
+  "notes": [
+    "Numeric mode resolves the shared cell through the Persian digit-family policy."
+  ]
+}

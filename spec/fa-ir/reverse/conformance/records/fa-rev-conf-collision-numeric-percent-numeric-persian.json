@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-PERCENT-NUMERIC-PERSIAN",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-end-percent",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-PERSIAN-001",
+    "FA-G1-NUMRULE-007",
+    "FA-G1-PUNC-SCALAR-016",
+    "FA-G1-PUNC-SCALAR-017",
+    "FA-G1-DIGIT-ARABIC-INDIC-003",
+    "FA-G1-DIGIT-ASCII-003",
+    "FA-G1-DIGIT-PERSIAN-003",
+    "FA-G1-LATIN-003",
+    "FA-G1-LATIN-029",
+    "FA-G1-LETTER-007"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "1",
+      "25",
+      "1234",
+      "14"
+    ],
+    "unicodeBraille": "⠼⠁⠒⠏⠉"
+  },
+  "options": {
+    "punctuationStyle": "persian"
+  },
+  "expected": {
+    "ok": true,
+    "text": "۱٪چ",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION"
+    ]
+  },
+  "notes": [
+    "Numeric-end percent canonicalizes, consumes the two-cell sequence, and terminates numeric mode."
+  ]
+}

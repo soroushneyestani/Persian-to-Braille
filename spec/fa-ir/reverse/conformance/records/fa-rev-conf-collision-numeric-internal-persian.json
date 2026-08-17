@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "FA-REV-CONF-COLLISION-NUMERIC-INTERNAL-PERSIAN",
+  "kind": "translation",
+  "status": "draft",
+  "version": "0.1.0",
+  "profile": "fa-ir-g1-reverse",
+  "profileVersion": "0.1.0",
+  "suite": "collision-numeric-internal",
+  "sourceForwardRuleIds": [
+    "FA-G1-NUMRULE-001",
+    "FA-G1-DIGIT-PERSIAN-001",
+    "FA-G1-NUMRULE-003",
+    "FA-G1-NUMRULE-004",
+    "FA-G1-DIGIT-PERSIAN-002"
+  ],
+  "input": {
+    "cells": [
+      "3456",
+      "1",
+      "3",
+      "12"
+    ],
+    "unicodeBraille": "⠼⠁⠄⠃"
+  },
+  "options": {
+    "punctuationStyle": "persian"
+  },
+  "expected": {
+    "ok": true,
+    "text": "۱٬۲",
+    "lossy": true,
+    "diagnosticCodes": [
+      "CANONICALIZED_DIGIT_FAMILY",
+      "CANONICALIZED_PUNCTUATION"
+    ]
+  },
+  "notes": [
+    "Numeric-internal separator remains inside numeric mode and follows punctuation policy."
+  ]
+}

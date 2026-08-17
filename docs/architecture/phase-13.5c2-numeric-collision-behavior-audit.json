@@ -1,0 +1,2773 @@
+{
+  "phase": "13.5c-2",
+  "name": "Numeric Collision Behavior Audit",
+  "mode": "READ-ONLY",
+  "git": {
+    "branch": "phase13-reverse-translation",
+    "head": "b644bb26215c3d28330e08d7edf6a16eda7274f3",
+    "upstream": "b644bb26215c3d28330e08d7edf6a16eda7274f3",
+    "clean": true
+  },
+  "baseline": {
+    "reverseVectors": 37,
+    "numericRelatedRemainingCollisionSignatures": 10,
+    "digitCrossModeSignatures": 8,
+    "numericInternalSignatures": 1,
+    "numericEndPercentSignatures": 1
+  },
+  "numericCollisions": [
+    {
+      "signature": "124",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-006",
+          "text": "٦",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-006",
+          "text": "6",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-006",
+          "text": "۶",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-006",
+          "text": "F",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-032",
+          "text": "f",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-023",
+          "text": "ف",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "1245",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-007",
+          "text": "٧",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-007",
+          "text": "7",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-007",
+          "text": "۷",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-007",
+          "text": "G",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-033",
+          "text": "g",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-026",
+          "text": "گ",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "125",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-008",
+          "text": "٨",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-008",
+          "text": "8",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-008",
+          "text": "۸",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-008",
+          "text": "H",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-034",
+          "text": "h",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-031",
+          "text": "ه",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "14",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-003",
+          "text": "٣",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-003",
+          "text": "3",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-003",
+          "text": "۳",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-003",
+          "text": "C",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-029",
+          "text": "c",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-007",
+          "text": "چ",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "145",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-004",
+          "text": "٤",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-004",
+          "text": "4",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-004",
+          "text": "۴",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-004",
+          "text": "D",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-030",
+          "text": "d",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-010",
+          "text": "د",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "15",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-005",
+          "text": "٥",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-005",
+          "text": "5",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-005",
+          "text": "۵",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-005",
+          "text": "E",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-031",
+          "text": "e",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "24",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-009",
+          "text": "٩",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-009",
+          "text": "9",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-009",
+          "text": "۹",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-009",
+          "text": "I",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-035",
+          "text": "i",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-032",
+          "text": "ی",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "245",
+      "family": "digit-cross-mode",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-DIGIT-ARABIC-INDIC-000",
+          "text": "٠",
+          "tokenClass": null,
+          "domain": "digit-arabic-indic",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-ASCII-000",
+          "text": "0",
+          "tokenClass": null,
+          "domain": "digit-ascii",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-DIGIT-PERSIAN-000",
+          "text": "۰",
+          "tokenClass": null,
+          "domain": "digit-persian",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-010",
+          "text": "J",
+          "tokenClass": null,
+          "domain": "latin-upper",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LATIN-036",
+          "text": "j",
+          "tokenClass": null,
+          "domain": "latin-lower",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-LETTER-006",
+          "text": "ج",
+          "tokenClass": null,
+          "domain": "persian-letter",
+          "status": "normative",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "capitalization-state-required",
+        "collision-resolution-required",
+        "digit-family-output-policy-required",
+        "language-mode-state-required",
+        "latin-mode-state-required",
+        "numeric-mode-state-required",
+        "numeric-vs-text-mode-state-required"
+      ]
+    },
+    {
+      "signature": "3",
+      "family": "numeric-internal",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-NUMRULE-003",
+          "text": ",",
+          "tokenClass": "numeric-internal",
+          "domain": "context",
+          "status": "candidate",
+          "type": "context"
+        },
+        {
+          "ruleId": "FA-G1-NUMRULE-004",
+          "text": "٬",
+          "tokenClass": "numeric-internal",
+          "domain": "context",
+          "status": "candidate",
+          "type": "context"
+        }
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required"
+      ]
+    },
+    {
+      "signature": "25 1234",
+      "family": "numeric-end-percent",
+      "candidates": [
+        {
+          "ruleId": "FA-G1-NUMRULE-007",
+          "text": "%",
+          "tokenClass": "numeric-end",
+          "domain": "context",
+          "status": "candidate",
+          "type": "context"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-016",
+          "text": "%",
+          "tokenClass": null,
+          "domain": "punctuation-or-symbol",
+          "status": "candidate",
+          "type": "character"
+        },
+        {
+          "ruleId": "FA-G1-PUNC-SCALAR-017",
+          "text": "٪",
+          "tokenClass": null,
+          "domain": "punctuation-or-symbol",
+          "status": "candidate",
+          "type": "character"
+        }
+      ],
+      "requirements": [
+        "collision-resolution-required",
+        "context-state-required",
+        "print-variant-policy-or-ambiguity-required",
+        "segmentation-review-required"
+      ]
+    }
+  ],
+  "parserFeatureEvidence": {
+    "numericMode": true,
+    "numericSawDigit": true,
+    "numericBegin": true,
+    "numericFraction": true,
+    "numericInternal": false,
+    "numericEnd": false,
+    "digitFamilyMap": true,
+    "latinSpan": true,
+    "capitalState": true,
+    "punctuationPolicy": true,
+    "strictAmbiguity": true
+  },
+  "runtimeProbe": {
+    "cases": [
+      {
+        "id": "digit-collision-124-numeric-persian",
+        "cells": [
+          "3456",
+          "124"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۶",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠋",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠋",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۶",
+          "cells": [
+            "3456",
+            "124"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-006",
+                "FA-G1-DIGIT-ASCII-006",
+                "FA-G1-DIGIT-PERSIAN-006"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-124-numeric-ascii",
+        "cells": [
+          "3456",
+          "124"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "6",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠋",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠋",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "6",
+          "cells": [
+            "3456",
+            "124"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-006",
+                "FA-G1-DIGIT-ASCII-006",
+                "FA-G1-DIGIT-PERSIAN-006"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-124-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "124"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٦",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠋",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠋",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٦",
+          "cells": [
+            "3456",
+            "124"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-006",
+                "FA-G1-DIGIT-ASCII-006",
+                "FA-G1-DIGIT-PERSIAN-006"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-124-base-mode",
+        "cells": [
+          "124"
+        ],
+        "options": {},
+        "expectedHint": "ف",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠋",
+        "actual": {
+          "ok": false,
+          "input": "⠋",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+280B"
+          },
+          "brailleCharacter": "⠋",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-006",
+            "FA-G1-DIGIT-ASCII-006",
+            "FA-G1-DIGIT-PERSIAN-006",
+            "FA-G1-LATIN-006",
+            "FA-G1-LATIN-032",
+            "FA-G1-LETTER-023"
+          ],
+          "candidateTexts": [
+            "٦",
+            "6",
+            "۶",
+            "F",
+            "f",
+            "ف"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-124-latin-lower",
+        "cells": [
+          "25",
+          "124",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "f",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠋⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠋⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "f",
+          "cells": [
+            "25",
+            "124",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-124-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "124",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "F",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠋⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠋⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "F",
+          "cells": [
+            "25",
+            "6",
+            "124",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-1245-numeric-persian",
+        "cells": [
+          "3456",
+          "1245"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۷",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠛",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠛",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۷",
+          "cells": [
+            "3456",
+            "1245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-007",
+                "FA-G1-DIGIT-ASCII-007",
+                "FA-G1-DIGIT-PERSIAN-007"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-1245-numeric-ascii",
+        "cells": [
+          "3456",
+          "1245"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "7",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠛",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠛",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "7",
+          "cells": [
+            "3456",
+            "1245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-007",
+                "FA-G1-DIGIT-ASCII-007",
+                "FA-G1-DIGIT-PERSIAN-007"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-1245-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "1245"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٧",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠛",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠛",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٧",
+          "cells": [
+            "3456",
+            "1245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-007",
+                "FA-G1-DIGIT-ASCII-007",
+                "FA-G1-DIGIT-PERSIAN-007"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-1245-base-mode",
+        "cells": [
+          "1245"
+        ],
+        "options": {},
+        "expectedHint": "گ",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠛",
+        "actual": {
+          "ok": false,
+          "input": "⠛",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+281B"
+          },
+          "brailleCharacter": "⠛",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-007",
+            "FA-G1-DIGIT-ASCII-007",
+            "FA-G1-DIGIT-PERSIAN-007",
+            "FA-G1-LATIN-007",
+            "FA-G1-LATIN-033",
+            "FA-G1-LETTER-026"
+          ],
+          "candidateTexts": [
+            "٧",
+            "7",
+            "۷",
+            "G",
+            "g",
+            "گ"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-1245-latin-lower",
+        "cells": [
+          "25",
+          "1245",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "g",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠛⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠛⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "g",
+          "cells": [
+            "25",
+            "1245",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-1245-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "1245",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "G",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠛⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠛⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "G",
+          "cells": [
+            "25",
+            "6",
+            "1245",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-125-numeric-persian",
+        "cells": [
+          "3456",
+          "125"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۸",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠓",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠓",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۸",
+          "cells": [
+            "3456",
+            "125"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-008",
+                "FA-G1-DIGIT-ASCII-008",
+                "FA-G1-DIGIT-PERSIAN-008"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-125-numeric-ascii",
+        "cells": [
+          "3456",
+          "125"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "8",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠓",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠓",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "8",
+          "cells": [
+            "3456",
+            "125"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-008",
+                "FA-G1-DIGIT-ASCII-008",
+                "FA-G1-DIGIT-PERSIAN-008"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-125-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "125"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٨",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠓",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠓",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٨",
+          "cells": [
+            "3456",
+            "125"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-008",
+                "FA-G1-DIGIT-ASCII-008",
+                "FA-G1-DIGIT-PERSIAN-008"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-125-base-mode",
+        "cells": [
+          "125"
+        ],
+        "options": {},
+        "expectedHint": "ه",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠓",
+        "actual": {
+          "ok": false,
+          "input": "⠓",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+2813"
+          },
+          "brailleCharacter": "⠓",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-008",
+            "FA-G1-DIGIT-ASCII-008",
+            "FA-G1-DIGIT-PERSIAN-008",
+            "FA-G1-LATIN-008",
+            "FA-G1-LATIN-034",
+            "FA-G1-LETTER-031"
+          ],
+          "candidateTexts": [
+            "٨",
+            "8",
+            "۸",
+            "H",
+            "h",
+            "ه"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-125-latin-lower",
+        "cells": [
+          "25",
+          "125",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "h",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠓⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠓⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "h",
+          "cells": [
+            "25",
+            "125",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-125-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "125",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "H",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠓⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠓⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "H",
+          "cells": [
+            "25",
+            "6",
+            "125",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-14-numeric-persian",
+        "cells": [
+          "3456",
+          "14"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۳",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠉",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۳",
+          "cells": [
+            "3456",
+            "14"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-003",
+                "FA-G1-DIGIT-ASCII-003",
+                "FA-G1-DIGIT-PERSIAN-003"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-14-numeric-ascii",
+        "cells": [
+          "3456",
+          "14"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "3",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠉",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "3",
+          "cells": [
+            "3456",
+            "14"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-003",
+                "FA-G1-DIGIT-ASCII-003",
+                "FA-G1-DIGIT-PERSIAN-003"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-14-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "14"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٣",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠉",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٣",
+          "cells": [
+            "3456",
+            "14"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-003",
+                "FA-G1-DIGIT-ASCII-003",
+                "FA-G1-DIGIT-PERSIAN-003"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-14-base-mode",
+        "cells": [
+          "14"
+        ],
+        "options": {},
+        "expectedHint": "چ",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠉",
+        "actual": {
+          "ok": false,
+          "input": "⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+2809"
+          },
+          "brailleCharacter": "⠉",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-003",
+            "FA-G1-DIGIT-ASCII-003",
+            "FA-G1-DIGIT-PERSIAN-003",
+            "FA-G1-LATIN-003",
+            "FA-G1-LATIN-029",
+            "FA-G1-LETTER-007"
+          ],
+          "candidateTexts": [
+            "٣",
+            "3",
+            "۳",
+            "C",
+            "c",
+            "چ"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-14-latin-lower",
+        "cells": [
+          "25",
+          "14",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "c",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠉⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠉⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "c",
+          "cells": [
+            "25",
+            "14",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-14-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "14",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "C",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠉⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠉⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "C",
+          "cells": [
+            "25",
+            "6",
+            "14",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-145-numeric-persian",
+        "cells": [
+          "3456",
+          "145"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۴",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠙",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠙",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۴",
+          "cells": [
+            "3456",
+            "145"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-004",
+                "FA-G1-DIGIT-ASCII-004",
+                "FA-G1-DIGIT-PERSIAN-004"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-145-numeric-ascii",
+        "cells": [
+          "3456",
+          "145"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "4",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠙",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠙",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "4",
+          "cells": [
+            "3456",
+            "145"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-004",
+                "FA-G1-DIGIT-ASCII-004",
+                "FA-G1-DIGIT-PERSIAN-004"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-145-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "145"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٤",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠙",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠙",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٤",
+          "cells": [
+            "3456",
+            "145"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-004",
+                "FA-G1-DIGIT-ASCII-004",
+                "FA-G1-DIGIT-PERSIAN-004"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-145-base-mode",
+        "cells": [
+          "145"
+        ],
+        "options": {},
+        "expectedHint": "د",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠙",
+        "actual": {
+          "ok": false,
+          "input": "⠙",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+2819"
+          },
+          "brailleCharacter": "⠙",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-004",
+            "FA-G1-DIGIT-ASCII-004",
+            "FA-G1-DIGIT-PERSIAN-004",
+            "FA-G1-LATIN-004",
+            "FA-G1-LATIN-030",
+            "FA-G1-LETTER-010"
+          ],
+          "candidateTexts": [
+            "٤",
+            "4",
+            "۴",
+            "D",
+            "d",
+            "د"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-145-latin-lower",
+        "cells": [
+          "25",
+          "145",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "d",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠙⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠙⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "d",
+          "cells": [
+            "25",
+            "145",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-145-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "145",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "D",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠙⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠙⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "D",
+          "cells": [
+            "25",
+            "6",
+            "145",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-15-numeric-persian",
+        "cells": [
+          "3456",
+          "15"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۵",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠑",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠑",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۵",
+          "cells": [
+            "3456",
+            "15"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-005",
+                "FA-G1-DIGIT-ASCII-005",
+                "FA-G1-DIGIT-PERSIAN-005"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-15-numeric-ascii",
+        "cells": [
+          "3456",
+          "15"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "5",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠑",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠑",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "5",
+          "cells": [
+            "3456",
+            "15"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-005",
+                "FA-G1-DIGIT-ASCII-005",
+                "FA-G1-DIGIT-PERSIAN-005"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-15-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "15"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٥",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠑",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠑",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٥",
+          "cells": [
+            "3456",
+            "15"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-005",
+                "FA-G1-DIGIT-ASCII-005",
+                "FA-G1-DIGIT-PERSIAN-005"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-15-base-mode",
+        "cells": [
+          "15"
+        ],
+        "options": {},
+        "expectedHint": null,
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠑",
+        "actual": {
+          "ok": false,
+          "input": "⠑",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+2811"
+          },
+          "brailleCharacter": "⠑",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-005",
+            "FA-G1-DIGIT-ASCII-005",
+            "FA-G1-DIGIT-PERSIAN-005",
+            "FA-G1-LATIN-005",
+            "FA-G1-LATIN-031"
+          ],
+          "candidateTexts": [
+            "٥",
+            "5",
+            "۵",
+            "E",
+            "e"
+          ]
+        },
+        "expectedHintMatched": null
+      },
+      {
+        "id": "digit-collision-15-latin-lower",
+        "cells": [
+          "25",
+          "15",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "e",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠑⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠑⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "e",
+          "cells": [
+            "25",
+            "15",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-15-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "15",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "E",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠑⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠑⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "E",
+          "cells": [
+            "25",
+            "6",
+            "15",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-24-numeric-persian",
+        "cells": [
+          "3456",
+          "24"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۹",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠊",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠊",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۹",
+          "cells": [
+            "3456",
+            "24"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-009",
+                "FA-G1-DIGIT-ASCII-009",
+                "FA-G1-DIGIT-PERSIAN-009"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-24-numeric-ascii",
+        "cells": [
+          "3456",
+          "24"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "9",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠊",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠊",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "9",
+          "cells": [
+            "3456",
+            "24"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-009",
+                "FA-G1-DIGIT-ASCII-009",
+                "FA-G1-DIGIT-PERSIAN-009"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-24-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "24"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٩",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠊",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠊",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٩",
+          "cells": [
+            "3456",
+            "24"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-009",
+                "FA-G1-DIGIT-ASCII-009",
+                "FA-G1-DIGIT-PERSIAN-009"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-24-base-mode",
+        "cells": [
+          "24"
+        ],
+        "options": {},
+        "expectedHint": "ی",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠊",
+        "actual": {
+          "ok": false,
+          "input": "⠊",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+280A"
+          },
+          "brailleCharacter": "⠊",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-009",
+            "FA-G1-DIGIT-ASCII-009",
+            "FA-G1-DIGIT-PERSIAN-009",
+            "FA-G1-LATIN-009",
+            "FA-G1-LATIN-035",
+            "FA-G1-LETTER-032"
+          ],
+          "candidateTexts": [
+            "٩",
+            "9",
+            "۹",
+            "I",
+            "i",
+            "ی"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-24-latin-lower",
+        "cells": [
+          "25",
+          "24",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "i",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠊⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠊⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "i",
+          "cells": [
+            "25",
+            "24",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-24-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "24",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "I",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠊⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠊⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "I",
+          "cells": [
+            "25",
+            "6",
+            "24",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-245-numeric-persian",
+        "cells": [
+          "3456",
+          "245"
+        ],
+        "options": {
+          "digitFamily": "persian"
+        },
+        "expectedHint": "۰",
+        "purpose": "numeric mode -> Persian digit",
+        "unicodeBraille": "⠼⠚",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠚",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "۰",
+          "cells": [
+            "3456",
+            "245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-000",
+                "FA-G1-DIGIT-ASCII-000",
+                "FA-G1-DIGIT-PERSIAN-000"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-245-numeric-ascii",
+        "cells": [
+          "3456",
+          "245"
+        ],
+        "options": {
+          "digitFamily": "ascii"
+        },
+        "expectedHint": "0",
+        "purpose": "numeric mode -> ASCII digit",
+        "unicodeBraille": "⠼⠚",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠚",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "0",
+          "cells": [
+            "3456",
+            "245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-000",
+                "FA-G1-DIGIT-ASCII-000",
+                "FA-G1-DIGIT-PERSIAN-000"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-245-numeric-arabic-indic",
+        "cells": [
+          "3456",
+          "245"
+        ],
+        "options": {
+          "digitFamily": "arabic-indic"
+        },
+        "expectedHint": "٠",
+        "purpose": "numeric mode -> Arabic-Indic digit",
+        "unicodeBraille": "⠼⠚",
+        "actual": {
+          "ok": true,
+          "input": "⠼⠚",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "٠",
+          "cells": [
+            "3456",
+            "245"
+          ],
+          "diagnostics": [
+            {
+              "code": "CANONICALIZED_DIGIT_FAMILY",
+              "message": "Original print digit family is not recoverable from numeric Braille.",
+              "ruleIds": [
+                "FA-G1-DIGIT-ARABIC-INDIC-000",
+                "FA-G1-DIGIT-ASCII-000",
+                "FA-G1-DIGIT-PERSIAN-000"
+              ]
+            }
+          ],
+          "lossy": true
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-245-base-mode",
+        "cells": [
+          "245"
+        ],
+        "options": {},
+        "expectedHint": "ج",
+        "purpose": "same cell in base Persian mode",
+        "unicodeBraille": "⠚",
+        "actual": {
+          "ok": false,
+          "input": "⠚",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 0,
+            "codePointIndex": 0,
+            "codePoint": "U+281A"
+          },
+          "brailleCharacter": "⠚",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-000",
+            "FA-G1-DIGIT-ASCII-000",
+            "FA-G1-DIGIT-PERSIAN-000",
+            "FA-G1-LATIN-010",
+            "FA-G1-LATIN-036",
+            "FA-G1-LETTER-006"
+          ],
+          "candidateTexts": [
+            "٠",
+            "0",
+            "۰",
+            "J",
+            "j",
+            "ج"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "digit-collision-245-latin-lower",
+        "cells": [
+          "25",
+          "245",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "j",
+        "purpose": "same cell in Latin span",
+        "unicodeBraille": "⠒⠚⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠚⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "j",
+          "cells": [
+            "25",
+            "245",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "digit-collision-245-latin-upper",
+        "cells": [
+          "25",
+          "6",
+          "245",
+          "25"
+        ],
+        "options": {},
+        "expectedHint": "J",
+        "purpose": "same cell in Latin capital state",
+        "unicodeBraille": "⠒⠠⠚⠒",
+        "actual": {
+          "ok": true,
+          "input": "⠒⠠⠚⠒",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "text": "J",
+          "cells": [
+            "25",
+            "6",
+            "245",
+            "25"
+          ],
+          "diagnostics": [],
+          "lossy": false
+        },
+        "expectedHintMatched": true
+      },
+      {
+        "id": "numeric-internal-default-persian",
+        "cells": [
+          "3456",
+          "1",
+          "3",
+          "12"
+        ],
+        "options": {},
+        "expectedHint": "۱٬۲",
+        "purpose": "numeric internal separator, default punctuation",
+        "unicodeBraille": "⠼⠁⠄⠃",
+        "actual": {
+          "ok": false,
+          "input": "⠼⠁⠄⠃",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 3,
+            "codePointIndex": 3,
+            "codePoint": "U+2803"
+          },
+          "brailleCharacter": "⠃",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-002",
+            "FA-G1-DIGIT-ASCII-002",
+            "FA-G1-DIGIT-PERSIAN-002",
+            "FA-G1-LATIN-002",
+            "FA-G1-LATIN-028",
+            "FA-G1-LETTER-002"
+          ],
+          "candidateTexts": [
+            "٢",
+            "2",
+            "۲",
+            "B",
+            "b",
+            "ب"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "numeric-internal-ascii",
+        "cells": [
+          "3456",
+          "1",
+          "3",
+          "12"
+        ],
+        "options": {
+          "punctuationStyle": "ascii"
+        },
+        "expectedHint": "۱,۲",
+        "purpose": "numeric internal separator, ASCII punctuation",
+        "unicodeBraille": "⠼⠁⠄⠃",
+        "actual": {
+          "ok": false,
+          "input": "⠼⠁⠄⠃",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Parser state and configured policy cannot resolve this collision.",
+          "location": {
+            "utf16Offset": 3,
+            "codePointIndex": 3,
+            "codePoint": "U+2803"
+          },
+          "brailleCharacter": "⠃",
+          "candidateRuleIds": [
+            "FA-G1-DIGIT-ARABIC-INDIC-002",
+            "FA-G1-DIGIT-ASCII-002",
+            "FA-G1-DIGIT-PERSIAN-002",
+            "FA-G1-LATIN-002",
+            "FA-G1-LATIN-028",
+            "FA-G1-LETTER-002"
+          ],
+          "candidateTexts": [
+            "٢",
+            "2",
+            "۲",
+            "B",
+            "b",
+            "ب"
+          ]
+        },
+        "expectedHintMatched": false
+      },
+      {
+        "id": "numeric-internal-strict",
+        "cells": [
+          "3456",
+          "1",
+          "3",
+          "12"
+        ],
+        "options": {
+          "ambiguityPolicy": "error"
+        },
+        "expectedHint": null,
+        "purpose": "does state resolve before strict ambiguity?",
+        "unicodeBraille": "⠼⠁⠄⠃",
+        "actual": {
+          "ok": false,
+          "input": "⠼⠁⠄⠃",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "AMBIGUOUS_REVERSE_MATCH",
+          "message": "Multiple print punctuation forms share this Braille form.",
+          "location": {
+            "utf16Offset": 2,
+            "codePointIndex": 2,
+            "codePoint": "U+2804"
+          },
+          "brailleCharacter": "⠄",
+          "candidateRuleIds": [
+            "FA-G1-NUMRULE-003",
+            "FA-G1-NUMRULE-004"
+          ],
+          "candidateTexts": [
+            ",",
+            "٬"
+          ]
+        },
+        "expectedHintMatched": null
+      },
+      {
+        "id": "numeric-end-default-persian",
+        "cells": [
+          "3456",
+          "1",
+          "25",
+          "1234",
+          "14"
+        ],
+        "options": {},
+        "expectedHint": null,
+        "purpose": "percent canonicalization + numeric-mode termination",
+        "unicodeBraille": "⠼⠁⠒⠏⠉",
+        "actual": {
+          "ok": false,
+          "input": "⠼⠁⠒⠏⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "UNTERMINATED_LATIN_SPAN",
+          "message": "Input ended inside an open Latin span.",
+          "location": {
+            "utf16Offset": 4,
+            "codePointIndex": 4,
+            "codePoint": "U+2809"
+          },
+          "brailleCharacter": "⠉"
+        },
+        "expectedHintMatched": null
+      },
+      {
+        "id": "numeric-end-ascii",
+        "cells": [
+          "3456",
+          "1",
+          "25",
+          "1234",
+          "14"
+        ],
+        "options": {
+          "punctuationStyle": "ascii"
+        },
+        "expectedHint": null,
+        "purpose": "ASCII percent + numeric-mode termination",
+        "unicodeBraille": "⠼⠁⠒⠏⠉",
+        "actual": {
+          "ok": false,
+          "input": "⠼⠁⠒⠏⠉",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "UNTERMINATED_LATIN_SPAN",
+          "message": "Input ended inside an open Latin span.",
+          "location": {
+            "utf16Offset": 4,
+            "codePointIndex": 4,
+            "codePoint": "U+2809"
+          },
+          "brailleCharacter": "⠉"
+        },
+        "expectedHintMatched": null
+      },
+      {
+        "id": "percent-outside-numeric-default",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "options": {},
+        "expectedHint": null,
+        "purpose": "percent collision outside numeric mode",
+        "unicodeBraille": "⠒⠏",
+        "actual": {
+          "ok": false,
+          "input": "⠒⠏",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "UNTERMINATED_LATIN_SPAN",
+          "message": "Input ended inside an open Latin span.",
+          "location": {
+            "utf16Offset": 1,
+            "codePointIndex": 1,
+            "codePoint": "U+280F"
+          },
+          "brailleCharacter": "⠏"
+        },
+        "expectedHintMatched": null
+      },
+      {
+        "id": "percent-outside-numeric-strict",
+        "cells": [
+          "25",
+          "1234"
+        ],
+        "options": {
+          "ambiguityPolicy": "error"
+        },
+        "expectedHint": null,
+        "purpose": "strict percent ambiguity outside numeric mode",
+        "unicodeBraille": "⠒⠏",
+        "actual": {
+          "ok": false,
+          "input": "⠒⠏",
+          "profile": {
+            "profileId": "fa-ir-g1-reverse",
+            "profileVersion": "0.1.0",
+            "profileStatus": "draft",
+            "direction": "braille-to-print"
+          },
+          "code": "UNTERMINATED_LATIN_SPAN",
+          "message": "Input ended inside an open Latin span.",
+          "location": {
+            "utf16Offset": 1,
+            "codePointIndex": 1,
+            "codePoint": "U+280F"
+          },
+          "brailleCharacter": "⠏"
+        },
+        "expectedHintMatched": null
+      }
+    ],
+    "expectedHintFailures": [
+      "digit-collision-124-base-mode",
+      "digit-collision-1245-base-mode",
+      "digit-collision-125-base-mode",
+      "digit-collision-14-base-mode",
+      "digit-collision-145-base-mode",
+      "digit-collision-24-base-mode",
+      "digit-collision-245-base-mode",
+      "numeric-internal-default-persian",
+      "numeric-internal-ascii"
+    ],
+    "nonSuccessCases": [
+      "digit-collision-124-base-mode",
+      "digit-collision-1245-base-mode",
+      "digit-collision-125-base-mode",
+      "digit-collision-14-base-mode",
+      "digit-collision-145-base-mode",
+      "digit-collision-15-base-mode",
+      "digit-collision-24-base-mode",
+      "digit-collision-245-base-mode",
+      "numeric-internal-default-persian",
+      "numeric-internal-ascii",
+      "numeric-internal-strict",
+      "numeric-end-default-persian",
+      "numeric-end-ascii",
+      "percent-outside-numeric-default",
+      "percent-outside-numeric-strict"
+    ]
+  },
+  "recommendedMaterializationBuckets": [
+    {
+      "bucket": "digit-mode-resolution",
+      "signatures": [
+        "124",
+        "1245",
+        "125",
+        "14",
+        "145",
+        "15",
+        "24",
+        "245"
+      ]
+    },
+    {
+      "bucket": "numeric-internal-separator",
+      "signatures": [
+        "3"
+      ]
+    },
+    {
+      "bucket": "numeric-end-percent",
+      "signatures": [
+        "25 1234"
+      ]
+    }
+  ]
+}
