@@ -205,7 +205,7 @@ server.listen(
   "localhost",
   () => {
     console.log(
-      `Persian-to-Braille Microsoft 365 Add-in: https://localhost:${port}`,
+      `Braille Hub Microsoft 365 Add-in: https://localhost:${port}`,
     );
     console.log(
       `Task pane: https://localhost:${port}/taskpane.html`,

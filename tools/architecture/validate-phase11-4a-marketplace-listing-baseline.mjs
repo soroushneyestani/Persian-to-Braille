@@ -96,7 +96,7 @@ for (const token of [
 
 requireText(
   manifest,
-  '<DisplayName DefaultValue="Persian-to-Braille"/>',
+  '<DisplayName DefaultValue="Braille Hub"/>',
   "development manifest",
 );
 

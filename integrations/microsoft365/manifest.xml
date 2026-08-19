@@ -9,8 +9,8 @@
   <Version>2.0.0.0</Version>
   <ProviderName>Soroush Neyestani</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Persian-to-Braille"/>
-  <Description DefaultValue="Translate selected Persian text to Braille through the shared Persian-to-Braille SDK."/>
+  <DisplayName DefaultValue="Braille Hub"/>
+  <Description DefaultValue="Text and music accessibility through Braille Hub for Microsoft 365."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>
@@ -168,14 +168,14 @@
       </bt:Urls>
 
       <bt:ShortStrings>
-        <bt:String id="Group.Label" DefaultValue="Persian-to-Braille"/>
+        <bt:String id="Group.Label" DefaultValue="Braille Hub"/>
         <bt:String id="Button.Label" DefaultValue="Translate Selection"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
         <bt:String
           id="Button.Tooltip"
-          DefaultValue="Open Persian-to-Braille and translate the current supported selection."/>
+          DefaultValue="Open Braille Hub for text and music accessibility workflows."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

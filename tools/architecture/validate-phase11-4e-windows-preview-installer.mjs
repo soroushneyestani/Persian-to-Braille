@@ -34,7 +34,7 @@ const tests = await text(
 );
 const bootstrapper = await bytes(
   "integrations/microsoft365/public/install/windows/"
-    + "Persian-to-Braille-Windows-Preview-Installer.cmd",
+    + "Braille-Hub-Windows-Preview-Installer.cmd",
 );
 const setupHelper = await bytes(
   "integrations/microsoft365/public/install/windows/"
@@ -50,12 +50,12 @@ const packageJson = JSON.parse(
 for (const token of [
   "Manual Preview Installation",
   "Windows Desktop Preview",
-  "./install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+  "./install/windows/Braille-Hub-Windows-Preview-Installer.cmd",
   "راهنمای نصب نسخه دسکتاپ ویندوز",
   "Get Add-ins",
   "Advanced",
   "SHARED FOLDER",
-  "Persian-to-Braille",
+  "Braille Hub",
   "Translate Selection",
   "./install/screenshots/word-selection.png",
   "./install/screenshots/excel-text-cell.png",
@@ -110,7 +110,7 @@ assert.doesNotMatch(setupText, /Stop-Process/);
 for (const token of [
   "hostedWindowsDir",
   "hostedScreenshotDir",
-  "Persian-to-Braille-Windows-Preview-Installer.cmd",
+  "Braille-Hub-Windows-Preview-Installer.cmd",
   "windows-preview-setup.ps1",
   "word-selection.png",
   "excel-text-cell.png",
@@ -158,8 +158,8 @@ const distRoot = path.join(
 for (const [sourceRel, hostedRel] of [
   [
     "integrations/microsoft365/public/install/windows/"
-      + "Persian-to-Braille-Windows-Preview-Installer.cmd",
-    "install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+      + "Braille-Hub-Windows-Preview-Installer.cmd",
+    "install/windows/Braille-Hub-Windows-Preview-Installer.cmd",
   ],
   [
     "integrations/microsoft365/public/install/windows/windows-preview-setup.ps1",

@@ -1,4 +1,4 @@
-# Persian-to-Braille — Windows Desktop Test Notes
+# Braille Hub — Windows Desktop Test Notes
 
 ## Purpose
 
@@ -21,7 +21,7 @@ Required hosts: Word, Excel, PowerPoint.
 4. Confirm Office is not force-closed.
 5. Open Word, Excel, or PowerPoint.
 6. Open `Add-ins -> Get Add-ins / Advanced -> SHARED FOLDER`.
-7. Select `Persian-to-Braille`.
+7. Select `Braille Hub`.
 8. Choose `Add`.
 9. Confirm `Translate Selection` appears.
 

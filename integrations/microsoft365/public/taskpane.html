@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
-  <title>Persian-to-Braille for Microsoft 365</title>
+  <title>Braille Hub for Microsoft 365</title>
   <link rel="stylesheet" href="./styles.css">
   <script
     src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
@@ -29,8 +29,13 @@
 <body>
   <main class="app-shell">
     <header class="app-header">
+        <img
+          class="brand-logo"
+          src="./assets/braille-hub-logo.png"
+          alt="Braille Hub — Text & Music Accessibility"
+        >
       <p class="eyebrow">Microsoft 365 Add-in</p>
-      <h1>Persian-to-Braille</h1>
+      <h1 class="visually-hidden">Braille Hub</h1>
 
       <nav class="feature-tabs" role="tablist" aria-label="Braille features">
         <button
@@ -94,7 +99,7 @@
       <h2 id="music-braille-title">Braille Music from MIDI</h2>
       <p class="music-help">
         Choose a Standard MIDI file, then choose exactly one MIDI line. The file is read locally in this task pane
-        and translated through the public Persian-to-Braille SDK.
+        and translated through the shared Braille Hub translation platform.
       </p>
 
       <div class="music-file-row">

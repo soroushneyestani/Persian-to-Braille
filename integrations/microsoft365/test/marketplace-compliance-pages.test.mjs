@@ -26,7 +26,7 @@ test("public compliance pages exist and use the shared compliance stylesheet", a
   for (const page of pages) {
     const value = await source(page);
     assert.match(value, /compliance\.css/);
-    assert.match(value, /Persian-to-Braille/);
+    assert.match(value, /Braille Hub/);
   }
 });
 

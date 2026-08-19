@@ -87,12 +87,12 @@ test("Windows preview section documents installer and final Office UI steps", as
 
   for (const expected of [
     "Windows Desktop Preview",
-    "./install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "./install/windows/Braille-Hub-Windows-Preview-Installer.cmd",
     "راهنمای نصب نسخه دسکتاپ ویندوز",
     "Get Add-ins",
     "Advanced",
     "SHARED FOLDER",
-    "Persian-to-Braille",
+    "Braille Hub",
     "Translate Selection",
     "not Microsoft Marketplace publication",
   ]) {
@@ -128,7 +128,7 @@ test("Windows installer sources are ASCII-only preview tooling", async () => {
   const bootstrapper = await bytes(
     path.join(
       windowsDir,
-      "Persian-to-Braille-Windows-Preview-Installer.cmd",
+      "Braille-Hub-Windows-Preview-Installer.cmd",
     ),
   );
   const helper = await bytes(
@@ -212,7 +212,7 @@ test("manual preview build publishes exact Windows installer sources", async () 
   );
 
   for (const filename of [
-    "Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "Braille-Hub-Windows-Preview-Installer.cmd",
     "windows-preview-setup.ps1",
   ]) {
     assert.deepEqual(

@@ -1,4 +1,4 @@
-# Persian-to-Braille — Windows Desktop Release Notes
+# Braille Hub — Windows Desktop Release Notes
 
 ## Classification
 
