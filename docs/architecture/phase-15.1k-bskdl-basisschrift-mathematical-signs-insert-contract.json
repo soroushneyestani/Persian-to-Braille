@@ -1,0 +1,1325 @@
+{
+  "phase": "15.1K",
+  "title": "BSKDL Basisschrift Mathematical Signs and Insert Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "section": "2.10",
+    "sectionExtractionSha256": "a3c8c43ec2a94b80ba983a557eca207713fe2430029dfde9bbdf8af282dce700",
+    "pdfStartPage": 83,
+    "pdfEndBoundaryPage": 91
+  },
+  "coverage": {
+    "sections": [
+      "2.10"
+    ],
+    "tableRows": 35,
+    "atomicSymbolForms": 37,
+    "ruleRecords": 20,
+    "validationCases": 10
+  },
+  "inlineMathState": {
+    "id": "GERMAN_TEXT_INLINE_MATH",
+    "entry": {
+      "defaultAnnouncement": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      }
+    },
+    "defaultPolicy": "The first mathematical sign in a textual expression is announced with point 4.",
+    "usualExceptions": [
+      "MULTIPLICATION_DOT",
+      "REAR_UPPER_INDEX",
+      "REAR_LOWER_INDEX"
+    ],
+    "continuation": {
+      "firstAnnouncementMayCoverSubsequentMathSigns": true
+    },
+    "termination": [
+      "BRAILLE_BLANK",
+      "HYPHEN",
+      "SLASH",
+      "LETTER_CASE_ANNOUNCEMENT",
+      "CANCELLATION_POINT"
+    ],
+    "unmarkedLetters": "LOWERCASE"
+  },
+  "symbolTable": [
+    {
+      "id": "PLUS",
+      "print": "+",
+      "braille": {
+        "unicode": "⠖",
+        "codepoints": [
+          "U+2816"
+        ],
+        "dots": [
+          "235"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "MINUS",
+      "print": "−",
+      "braille": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "PLUS_MINUS",
+      "print": "±",
+      "braille": {
+        "unicode": "⠖⠤",
+        "codepoints": [
+          "U+2816",
+          "U+2824"
+        ],
+        "dots": [
+          "235",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "MULTIPLICATION_DOT",
+      "print": "∙",
+      "braille": {
+        "unicode": "⠄",
+        "codepoints": [
+          "U+2804"
+        ],
+        "dots": [
+          "3"
+        ],
+        "cellCount": 1
+      },
+      "point4NormallyOmitted": true,
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "MULTIPLICATION_CROSS",
+      "print": "×",
+      "braille": {
+        "unicode": "⠦",
+        "codepoints": [
+          "U+2826"
+        ],
+        "dots": [
+          "236"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "MULTIPLICATION_STAR",
+      "print": "*",
+      "braille": {
+        "unicode": "⠐⠦",
+        "codepoints": [
+          "U+2810",
+          "U+2826"
+        ],
+        "dots": [
+          "5",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "alternativeTextForm": {
+        "unicode": "⠠⠔",
+        "codepoints": [
+          "U+2820",
+          "U+2814"
+        ],
+        "dots": [
+          "6",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DIVISION_OR_RATIO_COLON",
+      "print": ":",
+      "braille": {
+        "unicode": "⠒",
+        "codepoints": [
+          "U+2812"
+        ],
+        "dots": [
+          "25"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "EQUAL",
+      "print": "=",
+      "braille": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "FRACTION_BAR_OR_SLASH",
+      "print": "/",
+      "braille": {
+        "unicode": "⠳",
+        "codepoints": [
+          "U+2833"
+        ],
+        "dots": [
+          "1256"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "SQUARE_ROOT",
+      "printRole": "WURZEL_AUS",
+      "braille": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LOWER_INDEX",
+      "printRole": "LOWER_INDEX",
+      "braille": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "UPPER_INDEX_OR_EXPONENT",
+      "printRole": "EXPONENT_OR_UPPER_INDEX",
+      "braille": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "ROUND_BRACKETS",
+      "print": "()",
+      "brailleOpen": {
+        "unicode": "⠣",
+        "codepoints": [
+          "U+2823"
+        ],
+        "dots": [
+          "126"
+        ],
+        "cellCount": 1
+      },
+      "brailleClose": {
+        "unicode": "⠜",
+        "codepoints": [
+          "U+281C"
+        ],
+        "dots": [
+          "345"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "SQUARE_BRACKETS",
+      "print": "[]",
+      "brailleOpen": {
+        "unicode": "⠷",
+        "codepoints": [
+          "U+2837"
+        ],
+        "dots": [
+          "12356"
+        ],
+        "cellCount": 1
+      },
+      "brailleClose": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "NOT_EQUAL",
+      "print": "≠",
+      "braille": {
+        "unicode": "⠔⠶",
+        "codepoints": [
+          "U+2814",
+          "U+2836"
+        ],
+        "dots": [
+          "35",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "IDENTICAL_EQUAL",
+      "print": "≡",
+      "braille": {
+        "unicode": "⠶⠶",
+        "codepoints": [
+          "U+2836",
+          "U+2836"
+        ],
+        "dots": [
+          "2356",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "EQUIVALENT",
+      "print": "~",
+      "braille": {
+        "unicode": "⠢",
+        "codepoints": [
+          "U+2822"
+        ],
+        "dots": [
+          "26"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "NOT_EQUIVALENT",
+      "print": "≁",
+      "braille": {
+        "unicode": "⠔⠢",
+        "codepoints": [
+          "U+2814",
+          "U+2822"
+        ],
+        "dots": [
+          "35",
+          "26"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "APPROX_EQUAL",
+      "print": "≈",
+      "braille": {
+        "unicode": "⠢⠢",
+        "codepoints": [
+          "U+2822",
+          "U+2822"
+        ],
+        "dots": [
+          "26",
+          "26"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "RIGHT_ARROW",
+      "print": "→",
+      "braille": {
+        "unicode": "⠒⠂",
+        "codepoints": [
+          "U+2812",
+          "U+2802"
+        ],
+        "dots": [
+          "25",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LEFT_ARROW",
+      "print": "←",
+      "braille": {
+        "unicode": "⠐⠒",
+        "codepoints": [
+          "U+2810",
+          "U+2812"
+        ],
+        "dots": [
+          "5",
+          "25"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DOUBLE_ARROW",
+      "print": "↔",
+      "braille": {
+        "unicode": "⠐⠒⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2812",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "25",
+          "2"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "UP_ARROW",
+      "print": "↑",
+      "braille": {
+        "unicode": "⠹⠆⠂",
+        "codepoints": [
+          "U+2839",
+          "U+2806",
+          "U+2802"
+        ],
+        "dots": [
+          "1456",
+          "23",
+          "2"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DOWN_ARROW",
+      "print": "↓",
+      "braille": {
+        "unicode": "⠹⠐⠆",
+        "codepoints": [
+          "U+2839",
+          "U+2810",
+          "U+2806"
+        ],
+        "dots": [
+          "1456",
+          "5",
+          "23"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DIVIDES",
+      "print": "|",
+      "braille": {
+        "unicode": "⠈⠇",
+        "codepoints": [
+          "U+2808",
+          "U+2807"
+        ],
+        "dots": [
+          "4",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "NOT_DIVIDES",
+      "print": "∤",
+      "braille": {
+        "unicode": "⠔⠈⠇",
+        "codepoints": [
+          "U+2814",
+          "U+2808",
+          "U+2807"
+        ],
+        "dots": [
+          "35",
+          "4",
+          "123"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LESS_THAN",
+      "print": "<",
+      "braille": {
+        "unicode": "⠪⠄",
+        "codepoints": [
+          "U+282A",
+          "U+2804"
+        ],
+        "dots": [
+          "246",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LESS_OR_EQUAL",
+      "print": "≤",
+      "braille": {
+        "unicode": "⠪⠶",
+        "codepoints": [
+          "U+282A",
+          "U+2836"
+        ],
+        "dots": [
+          "246",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "GREATER_THAN",
+      "print": ">",
+      "braille": {
+        "unicode": "⠕⠂",
+        "codepoints": [
+          "U+2815",
+          "U+2802"
+        ],
+        "dots": [
+          "135",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "GREATER_OR_EQUAL",
+      "print": "≥",
+      "braille": {
+        "unicode": "⠕⠶",
+        "codepoints": [
+          "U+2815",
+          "U+2836"
+        ],
+        "dots": [
+          "135",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "SUBSET",
+      "print": "⊂",
+      "braille": {
+        "unicode": "⠣⠄",
+        "codepoints": [
+          "U+2823",
+          "U+2804"
+        ],
+        "dots": [
+          "126",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "SUPERSET",
+      "print": "⊃",
+      "braille": {
+        "unicode": "⠜⠂",
+        "codepoints": [
+          "U+281C",
+          "U+2802"
+        ],
+        "dots": [
+          "345",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LOGICAL_AND",
+      "print": "∧",
+      "braille": {
+        "unicode": "⠬⠂",
+        "codepoints": [
+          "U+282C",
+          "U+2802"
+        ],
+        "dots": [
+          "346",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LOGICAL_OR",
+      "print": "∨",
+      "braille": {
+        "unicode": "⠩⠂",
+        "codepoints": [
+          "U+2829",
+          "U+2802"
+        ],
+        "dots": [
+          "146",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "LOGICAL_NOT",
+      "print": "¬",
+      "braille": {
+        "unicode": "⠒⠔",
+        "codepoints": [
+          "U+2812",
+          "U+2814"
+        ],
+        "dots": [
+          "25",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.10",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "fullMathProfileBoundary": {
+    "mode": "FULL_MATHEMATIKSCHRIFT_SPAN",
+    "startMarker": {
+      "unicode": "⠐⠂",
+      "codepoints": [
+        "U+2810",
+        "U+2802"
+      ],
+      "dots": [
+        "5",
+        "2"
+      ],
+      "cellCount": 2
+    },
+    "endMarker": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "inlinePoint4AnnouncementActive": false,
+    "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED",
+    "shortExpressionAlternative": {
+      "explicitMarkersRequired": false,
+      "blankCountBefore": 2,
+      "blankCountAfter": 2
+    }
+  },
+  "architecturalFinding": {
+    "inlineMathIsPartOfGermanTextProfile": true,
+    "inlineMathHasScopedAnnouncementState": true,
+    "mathSignsAreNotContextFreeMappings": true,
+    "exponentAndIndexFormSubgrammar": true,
+    "numericStateInteractsWithMath": true,
+    "caseStateInteractsWithMath": true,
+    "complexMathRequiresProfileSwitch": true,
+    "mathProfileOwnsInternalRulesAfterSwitch": true,
+    "textLanguageAndMathModalityAreSeparateDimensions": true
+  },
+  "profileResolverContract": {
+    "possibleActions": [
+      "KEEP_GERMAN_TEXT_INLINE_MATH",
+      "SWITCH_TO_GERMAN_MATH_PROFILE"
+    ],
+    "decisionInputs": [
+      "EXPRESSION_COMPLEXITY",
+      "AMBIGUITY",
+      "EXPLICIT_TRANSCRIPTION_POLICY",
+      "SOURCE_MATH_STRUCTURE"
+    ],
+    "phase17MigrationTarget": "BRAILLE_MODALITY_SPAN_RESOLVER"
+  },
+  "crossDependencies": {
+    "numericState": "15.1E",
+    "caseState": "15.1G",
+    "strokeAndSlashBoundaries": "15.1F",
+    "mathRulebook": "DAS_SYSTEM_DER_MATHEMATIKSCHRIFT_IN_DER_DEUTSCHEN_BRAILLESCHRIFT"
+  },
+  "rules": [
+    {
+      "id": "DE-MATH-001",
+      "section": "2.10",
+      "kind": "INLINE_MATH_ANNOUNCEMENT",
+      "summary": "Mathematical signs from the section 2.10 table are normally announced with point 4 when embedded in German text.",
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-002",
+      "section": "2.10",
+      "kind": "INLINE_ANNOUNCEMENT_EXCEPTIONS",
+      "summary": "The multiplication dot, exponents and rear indices normally omit the point-4 announcement.",
+      "exceptions": [
+        "MULTIPLICATION_DOT",
+        "REAR_UPPER_INDEX",
+        "REAR_LOWER_INDEX"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-003",
+      "section": "2.10",
+      "kind": "INLINE_MATH_SCOPE",
+      "summary": "When several mathematical signs occur in one expression, announcement of the first may remain effective through the expression.",
+      "terminators": [
+        "BRAILLE_BLANK",
+        "HYPHEN",
+        "SLASH",
+        "LETTER_CASE_ANNOUNCEMENT",
+        "CANCELLATION_POINT"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-004",
+      "section": "2.10",
+      "kind": "UNANNOUNCED_LETTER_CASE",
+      "summary": "Letters inside the inline mathematical context that are not explicitly case-announced are interpreted as lowercase.",
+      "defaultCase": "LOWERCASE",
+      "dependency": "15.1G",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-005",
+      "section": "2.10",
+      "kind": "MATH_SPACING_IN_TEXT",
+      "summary": "Mathematical signs between words have a blank on both sides; a blank between a mathematical sign and a following number or variable is omitted.",
+      "spacing": {
+        "betweenWords": "BLANK_BOTH_SIDES",
+        "beforeNumber": "NO_INTERVENING_BLANK",
+        "beforeVariable": "NO_INTERVENING_BLANK"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-006",
+      "section": "2.10",
+      "kind": "MULTIPLICATION_DOT",
+      "summary": "A blank before the multiplication dot may be omitted. A number following the multiplication dot must carry a number indicator.",
+      "blankBeforeOptional": true,
+      "followingNumberRequiresNumberIndicator": true,
+      "dependency": "DE-NUM-001",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-007",
+      "section": "2.10",
+      "kind": "MULTIPLICATION_ALTERNATIVES",
+      "summary": "A print letter x used as multiplication may be retained instead of replacing it with the mathematical multiplication-cross sign. The multiplication star also has an alternate text representation.",
+      "printXMayBePreserved": true,
+      "starAlternative": {
+        "unicode": "⠠⠔",
+        "codepoints": [
+          "U+2820",
+          "U+2814"
+        ],
+        "dots": [
+          "6",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-008",
+      "section": "2.10",
+      "kind": "EXPONENT",
+      "marker": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      },
+      "summary": "Superscripts and exponents are introduced by the exponent sign.",
+      "integerPolicy": "Positive or negative whole-number exponents use lowered digits without a number indicator.",
+      "lettersAndFractionsFollowImmediately": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-009",
+      "section": "2.10",
+      "kind": "LOWER_INDEX",
+      "marker": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "summary": "Subscripts are introduced by the lower-index sign. When both lower and upper rear indices occur, the lower index normally precedes the upper index.",
+      "rearOrder": [
+        "LOWER_INDEX",
+        "UPPER_INDEX"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-010",
+      "section": "2.10",
+      "kind": "FRONT_REAR_INDEX_ANNOUNCEMENT",
+      "summary": "Rear upper/lower index markers are preferably used without preceding point 4; front upper/lower index markers require point 4.",
+      "rear": "POINT4_PREFERABLY_OMITTED",
+      "front": "POINT4_REQUIRED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-011",
+      "section": "2.10",
+      "kind": "INDEX_INTERNAL_SPACE",
+      "summary": "A blank occurring inside an exponent or index is replaced by point 4 so that the exponent/index scope is not terminated.",
+      "replacement": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-012",
+      "section": "2.10",
+      "kind": "RELATION_NEGATION",
+      "summary": "A relation is negated by prefixing dots 3-5.",
+      "negationPrefix": {
+        "unicode": "⠔",
+        "codepoints": [
+          "U+2814"
+        ],
+        "dots": [
+          "35"
+        ],
+        "cellCount": 1
+      },
+      "example": {
+        "equal": {
+          "unicode": "⠶",
+          "codepoints": [
+            "U+2836"
+          ],
+          "dots": [
+            "2356"
+          ],
+          "cellCount": 1
+        },
+        "notEqual": {
+          "unicode": "⠔⠶",
+          "codepoints": [
+            "U+2814",
+            "U+2836"
+          ],
+          "dots": [
+            "35",
+            "2356"
+          ],
+          "cellCount": 2
+        }
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-013",
+      "section": "2.10",
+      "kind": "EXTENDED_MATH_SYMBOLS",
+      "summary": "Additional symbols may be taken from the German Mathematikschrift rulebook and, when used through the text technique, are also announced with point 4.",
+      "externalNormativeDependency": "DAS_SYSTEM_DER_MATHEMATIKSCHRIFT_IN_DER_DEUTSCHEN_BRAILLESCHRIFT",
+      "nonMathTextExplanationRecommended": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-014",
+      "section": "2.10",
+      "kind": "AMBIGUITY_FALLBACK",
+      "summary": "When point-4 inline notation is ambiguous, the full Mathematikschrift rules and delimiters may be used to eliminate ambiguity.",
+      "fallbackMode": "FULL_MATHEMATIKSCHRIFT_SPAN",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-015",
+      "section": "2.10",
+      "kind": "MEASUREMENT_UNIT_POLICY",
+      "summary": "The special Mathematikschrift unit indicator is normally not used in German Textschrift.",
+      "matheschriftUnitMarker": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "textschriftDefaultUse": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-016",
+      "section": "2.10",
+      "kind": "FULL_MATH_PROFILE_SWITCH",
+      "summary": "Complex mathematical expressions should switch from the inline Textschrift technique to the German Mathematikschrift system.",
+      "profileSwitch": true,
+      "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-017",
+      "section": "2.10",
+      "kind": "TEXT_TO_MATH_DELIMITER",
+      "marker": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The Text-to-Math delimiter is placed immediately before the Mathematikschrift span without an intervening blank.",
+      "blankBeforeSpan": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-018",
+      "section": "2.10",
+      "kind": "MATH_TO_TEXT_DELIMITER",
+      "marker": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The Math-to-Text delimiter follows the end of the Mathematikschrift span immediately.",
+      "blankBeforeMarker": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-019",
+      "section": "2.10",
+      "kind": "FULL_MATH_INTERNAL_POLICY",
+      "summary": "Inside a full Mathematikschrift span, the inline Textschrift point-4 announcement technique for mathematical signs no longer applies.",
+      "inlinePoint4AnnouncementActive": false,
+      "delegation": "GERMAN_MATH_BRAILLE_PROFILE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-MATH-020",
+      "section": "2.10",
+      "kind": "SHORT_MATH_WHITESPACE_BOUNDARY",
+      "summary": "A short Mathematikschrift expression may be separated from Textschrift by two blanks before and after instead of explicit announcement/termination delimiters.",
+      "blankCountBefore": 2,
+      "blankCountAfter": 2,
+      "explicitMarkersMayBeOmitted": true,
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-MATH-CASE-001",
+      "purpose": "plus-before-number",
+      "inputShape": "+5",
+      "expectedPrefix": {
+        "unicode": "⠈⠖⠼",
+        "codepoints": [
+          "U+2808",
+          "U+2816",
+          "U+283C"
+        ],
+        "dots": [
+          "4",
+          "235",
+          "3456"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-MATH-001",
+        "DE-MATH-005",
+        "DE-NUM-001"
+      ]
+    },
+    {
+      "id": "DE-MATH-CASE-002",
+      "purpose": "two-consecutive-plus-signs",
+      "inputShape": "++",
+      "expectedBraille": {
+        "unicode": "⠈⠖⠖",
+        "codepoints": [
+          "U+2808",
+          "U+2816",
+          "U+2816"
+        ],
+        "dots": [
+          "4",
+          "235",
+          "235"
+        ],
+        "cellCount": 3
+      },
+      "rule": "DE-MATH-003"
+    },
+    {
+      "id": "DE-MATH-CASE-003",
+      "purpose": "negative-number",
+      "inputShape": "-16,3",
+      "expectedPrefix": {
+        "unicode": "⠈⠤⠼",
+        "codepoints": [
+          "U+2808",
+          "U+2824",
+          "U+283C"
+        ],
+        "dots": [
+          "4",
+          "36",
+          "3456"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-MATH-001",
+        "DE-NUM-001"
+      ]
+    },
+    {
+      "id": "DE-MATH-CASE-004",
+      "purpose": "multiplication-dot-followed-by-number",
+      "expectedBoundary": {
+        "unicode": "⠄⠼",
+        "codepoints": [
+          "U+2804",
+          "U+283C"
+        ],
+        "dots": [
+          "3",
+          "3456"
+        ],
+        "cellCount": 2
+      },
+      "point4BeforeMultiplicationDot": false,
+      "rules": [
+        "DE-MATH-002",
+        "DE-MATH-006"
+      ]
+    },
+    {
+      "id": "DE-MATH-CASE-005",
+      "purpose": "rear-exponent",
+      "expectedMarker": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      },
+      "point4NormallyBeforeMarker": false,
+      "rule": "DE-MATH-010"
+    },
+    {
+      "id": "DE-MATH-CASE-006",
+      "purpose": "front-exponent",
+      "expectedPrefix": {
+        "unicode": "⠈⠌",
+        "codepoints": [
+          "U+2808",
+          "U+280C"
+        ],
+        "dots": [
+          "4",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-MATH-010"
+    },
+    {
+      "id": "DE-MATH-CASE-007",
+      "purpose": "negated-equality",
+      "expectedTableSign": {
+        "unicode": "⠔⠶",
+        "codepoints": [
+          "U+2814",
+          "U+2836"
+        ],
+        "dots": [
+          "35",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-MATH-012"
+    },
+    {
+      "id": "DE-MATH-CASE-008",
+      "purpose": "full-math-explicit-span",
+      "expectedStart": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "expectedEnd": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rules": [
+        "DE-MATH-016",
+        "DE-MATH-017",
+        "DE-MATH-018"
+      ]
+    },
+    {
+      "id": "DE-MATH-CASE-009",
+      "purpose": "short-math-double-blank-boundary",
+      "explicitMarkers": false,
+      "blankCountBefore": 2,
+      "blankCountAfter": 2,
+      "rule": "DE-MATH-020"
+    },
+    {
+      "id": "DE-MATH-CASE-010",
+      "purpose": "full-math-disables-inline-point4",
+      "mode": "FULL_MATHEMATIKSCHRIFT_SPAN",
+      "inlinePoint4AnnouncementActive": false,
+      "rule": "DE-MATH-019"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "mathProfileImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "fullMathRulebookAuditRequired": true,
+    "requiresLaterConformancePromotion": true
+  }
+}

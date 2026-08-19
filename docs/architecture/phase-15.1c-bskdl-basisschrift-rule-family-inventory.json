@@ -1,0 +1,412 @@
+{
+  "phase": "15.1C",
+  "title": "BSKDL Basisschrift Rule-Family Inventory",
+  "status": "IN_PROGRESS",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "abbreviation": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "sourceCoverage": {
+    "chapter": "2",
+    "chapterTitle": "Die Basisschrift",
+    "printedPageStart": 27,
+    "printedPageEnd": 87,
+    "topLevelFamilies": 13,
+    "sectionReferences": 50,
+    "topLevelCoverageComplete": true
+  },
+  "inheritance": {
+    "vollschrift": "ALL_BASISSCHRIFT_SIGNS_AND_RULES",
+    "kurzschrift": "ALL_BASIS_AND_VOLLSCHRIFT_SIGNS_AND_RULES"
+  },
+  "scopePolicy": {
+    "standaloneMathSystem": "OUTSIDE_INITIAL_TEXT_PROFILE",
+    "mathBoundaryRules": "IN_SCOPE",
+    "standaloneComputerBrailleSystem": "OUTSIDE_INITIAL_TEXT_PROFILE",
+    "computerBrailleBoundaryRules": "IN_SCOPE",
+    "foreignLanguageBoundaryRules": "IN_SCOPE",
+    "ruleExtractionStarted": false,
+    "coreImplementationStarted": false
+  },
+  "families": [
+    {
+      "id": "DE-BASIS-01",
+      "section": "2.1",
+      "title": "Das Alphabet",
+      "printedPageStart": 27,
+      "concern": "ATOMIC_CHARACTER_MAPPING",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-02",
+      "section": "2.2",
+      "title": "Satz- und Sonderzeichen",
+      "printedPageStart": 27,
+      "concern": "PUNCTUATION_AND_SPECIAL_SIGNS",
+      "children": [
+        {
+          "section": "2.2.1",
+          "title": "Einformige Zeichen",
+          "printedPageStart": 27
+        },
+        {
+          "section": "2.2.2",
+          "title": "Mehrformige Zeichen",
+          "printedPageStart": 28
+        },
+        {
+          "section": "2.2.3",
+          "title": "Brailleschrifttechnische Hilfs- und Zusatzzeichen",
+          "printedPageStart": 31
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-03",
+      "section": "2.3",
+      "title": "Zahlen",
+      "printedPageStart": 33,
+      "concern": "STATEFUL_NUMERIC_NOTATION",
+      "children": [
+        {
+          "section": "2.3.1",
+          "title": "Arabische Zahlen",
+          "printedPageStart": 33
+        },
+        {
+          "section": "2.3.1.1",
+          "title": "Grundzahlen",
+          "printedPageStart": 33
+        },
+        {
+          "section": "2.3.1.2",
+          "title": "Ordnungszahlen",
+          "printedPageStart": 35
+        },
+        {
+          "section": "2.3.1.3",
+          "title": "Zeitangaben",
+          "printedPageStart": 36
+        },
+        {
+          "section": "2.3.1.4",
+          "title": "Dezimalklassifikatoren, Kapitel- und Versnummern",
+          "printedPageStart": 37
+        },
+        {
+          "section": "2.3.1.5",
+          "title": "Zahlenbrüche",
+          "printedPageStart": 38
+        },
+        {
+          "section": "2.3.1.6",
+          "title": "Prozent, Promille, Grad, Minute, Sekunde",
+          "printedPageStart": 38
+        },
+        {
+          "section": "2.3.1.7",
+          "title": "Paragrafzeichen",
+          "printedPageStart": 39
+        },
+        {
+          "section": "2.3.1.8",
+          "title": "Ankündigungspflichtige Satzzeichen nach Zahlen und zwischen Ziffern",
+          "printedPageStart": 40
+        },
+        {
+          "section": "2.3.2",
+          "title": "Römische Zahlen",
+          "printedPageStart": 41
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-04",
+      "section": "2.4",
+      "title": "Verbindungen mit Zahlen",
+      "printedPageStart": 42,
+      "concern": "NUMBER_TEXT_BOUNDARIES",
+      "children": [
+        {
+          "section": "2.4.1",
+          "title": "Zahlen am Anfang von Wörtern",
+          "printedPageStart": 42
+        },
+        {
+          "section": "2.4.2",
+          "title": "Zahlen und Einheiten",
+          "printedPageStart": 43
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-05",
+      "section": "2.5",
+      "title": "Striche",
+      "printedPageStart": 44,
+      "concern": "DASH_SLASH_BOUNDARY_RULES",
+      "children": [
+        {
+          "section": "2.5.1",
+          "title": "Waagerechter Strich",
+          "printedPageStart": 44
+        },
+        {
+          "section": "2.5.1.1",
+          "title": "Trennungsstrich",
+          "printedPageStart": 44
+        },
+        {
+          "section": "2.5.1.2",
+          "title": "Bindestrich",
+          "printedPageStart": 45
+        },
+        {
+          "section": "2.5.1.3",
+          "title": "Gedankenstrich, Auslassungsstrich, Ergänzungsstrich, Strecken- und Vergleichsstrich",
+          "printedPageStart": 45
+        },
+        {
+          "section": "2.5.1.4",
+          "title": "Aufzählungszeichen",
+          "printedPageStart": 47
+        },
+        {
+          "section": "2.5.1.5",
+          "title": "Strich zwischen Zahlen",
+          "printedPageStart": 48
+        },
+        {
+          "section": "2.5.1.6",
+          "title": "Strich als Minuszeichen",
+          "printedPageStart": 48
+        },
+        {
+          "section": "2.5.2",
+          "title": "Schrägstrich",
+          "printedPageStart": 48
+        },
+        {
+          "section": "2.5.3",
+          "title": "Senkrechter Strich",
+          "printedPageStart": 50
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-06",
+      "section": "2.6",
+      "title": "Groß- und Kleinschreibung",
+      "printedPageStart": 51,
+      "concern": "CASE_STATE_MACHINE",
+      "children": [
+        {
+          "section": "2.6.1",
+          "title": "Großer Erstbuchstabe",
+          "printedPageStart": 52
+        },
+        {
+          "section": "2.6.2",
+          "title": "Einzelgroßbuchstaben und Großbuchstabenfolgen",
+          "printedPageStart": 53
+        },
+        {
+          "section": "2.6.3",
+          "title": "Kleinbuchstaben",
+          "printedPageStart": 55
+        },
+        {
+          "section": "2.6.4",
+          "title": "Gemischte Groß- und Kleinbuchstaben",
+          "printedPageStart": 56
+        },
+        {
+          "section": "2.6.5",
+          "title": "Griechische Buchstaben",
+          "printedPageStart": 58
+        },
+        {
+          "section": "2.6.6",
+          "title": "Nicht ableitbare Groß-/Kleinschreibung",
+          "printedPageStart": 58
+        },
+        {
+          "section": "2.6.7",
+          "title": "Binnengroßschreibung",
+          "printedPageStart": 59
+        },
+        {
+          "section": "2.6.8",
+          "title": "Abkürzungen mit Punkt",
+          "printedPageStart": 62
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-07",
+      "section": "2.7",
+      "title": "Hervorhebungen",
+      "printedPageStart": 65,
+      "concern": "EMPHASIS_STATE_MACHINE",
+      "children": [
+        {
+          "section": "2.7.1",
+          "title": "Erste Hervorhebungsart",
+          "printedPageStart": 65
+        },
+        {
+          "section": "2.7.2",
+          "title": "Zweite Hervorhebungsart",
+          "printedPageStart": 66
+        },
+        {
+          "section": "2.7.3",
+          "title": "Versalien",
+          "printedPageStart": 67
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-08",
+      "section": "2.8",
+      "title": "Akzentbuchstaben und Buchstaben in besonderer Form",
+      "printedPageStart": 68,
+      "concern": "DIACRITIC_AND_SPECIAL_LETTER_FORMS",
+      "children": [
+        {
+          "section": "2.8.1",
+          "title": "Akzentbuchstaben",
+          "printedPageStart": 68
+        },
+        {
+          "section": "2.8.2",
+          "title": "Buchstaben in besonderer Form",
+          "printedPageStart": 70
+        }
+      ],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-09",
+      "section": "2.9",
+      "title": "Fremdsprachliche Einschübe",
+      "printedPageStart": 71,
+      "concern": "EMBEDDED_LANGUAGE_BOUNDARY",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-10",
+      "section": "2.10",
+      "title": "Mathematische Zeichen und Einschübe",
+      "printedPageStart": 73,
+      "concern": "EMBEDDED_MATH_BOUNDARY",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-11",
+      "section": "2.11",
+      "title": "Einschübe in Computerbraille",
+      "printedPageStart": 81,
+      "concern": "EMBEDDED_COMPUTER_BRAILLE_BOUNDARY",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-12",
+      "section": "2.12",
+      "title": "Trennzeichen für Tabellenzellen",
+      "printedPageStart": 84,
+      "concern": "STRUCTURAL_TABLE_SEPARATOR",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    {
+      "id": "DE-BASIS-13",
+      "section": "2.13",
+      "title": "Satzzeichen in Wörtern",
+      "printedPageStart": 85,
+      "concern": "IN_WORD_PUNCTUATION_BOUNDARIES",
+      "children": [],
+      "normativeRuleExtraction": "PENDING",
+      "executableImplementation": false,
+      "inheritsInto": [
+        "vollschrift",
+        "kurzschrift"
+      ]
+    }
+  ]
+}

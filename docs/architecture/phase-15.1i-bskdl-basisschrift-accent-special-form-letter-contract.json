@@ -1,0 +1,1497 @@
+{
+  "phase": "15.1I",
+  "title": "BSKDL Basisschrift Accent and Special-Form Letter Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.8",
+      "2.8.1",
+      "2.8.2"
+    ],
+    "ruleRecords": 12,
+    "validationCases": 10,
+    "frenchExactRecords": 14,
+    "italianExactRecords": 6
+  },
+  "accentStrategies": {
+    "generic": {
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "representation": "POINT4_PLUS_BASE_LETTER",
+      "precision": "DIACRITIC_PRESENT_UNSPECIFIED"
+    },
+    "exact": {
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "representation": "POINT4_PLUS_LANGUAGE_SPECIFIC_BRAILLE_CELL",
+      "languageContextRequired": true
+    }
+  },
+  "exactLanguageTables": {
+    "fr": [
+      {
+        "print": "à",
+        "language": "fr",
+        "base": "a",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠷",
+          "codepoints": [
+            "U+2837"
+          ],
+          "dots": [
+            "12356"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠷",
+          "codepoints": [
+            "U+2808",
+            "U+2837"
+          ],
+          "dots": [
+            "4",
+            "12356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠁",
+          "codepoints": [
+            "U+2808",
+            "U+2801"
+          ],
+          "dots": [
+            "4",
+            "1"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "â",
+        "language": "fr",
+        "base": "a",
+        "kind": "CIRCUMFLEX",
+        "foreignBrailleCell": {
+          "unicode": "⠡",
+          "codepoints": [
+            "U+2821"
+          ],
+          "dots": [
+            "16"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠡",
+          "codepoints": [
+            "U+2808",
+            "U+2821"
+          ],
+          "dots": [
+            "4",
+            "16"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠁",
+          "codepoints": [
+            "U+2808",
+            "U+2801"
+          ],
+          "dots": [
+            "4",
+            "1"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ç",
+        "language": "fr",
+        "base": "c",
+        "kind": "CEDILLA",
+        "foreignBrailleCell": {
+          "unicode": "⠯",
+          "codepoints": [
+            "U+282F"
+          ],
+          "dots": [
+            "12346"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠯",
+          "codepoints": [
+            "U+2808",
+            "U+282F"
+          ],
+          "dots": [
+            "4",
+            "12346"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠉",
+          "codepoints": [
+            "U+2808",
+            "U+2809"
+          ],
+          "dots": [
+            "4",
+            "14"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "é",
+        "language": "fr",
+        "base": "e",
+        "kind": "ACUTE",
+        "foreignBrailleCell": {
+          "unicode": "⠿",
+          "codepoints": [
+            "U+283F"
+          ],
+          "dots": [
+            "123456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠿",
+          "codepoints": [
+            "U+2808",
+            "U+283F"
+          ],
+          "dots": [
+            "4",
+            "123456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "è",
+        "language": "fr",
+        "base": "e",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠮",
+          "codepoints": [
+            "U+282E"
+          ],
+          "dots": [
+            "2346"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠮",
+          "codepoints": [
+            "U+2808",
+            "U+282E"
+          ],
+          "dots": [
+            "4",
+            "2346"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ê",
+        "language": "fr",
+        "base": "e",
+        "kind": "CIRCUMFLEX",
+        "foreignBrailleCell": {
+          "unicode": "⠣",
+          "codepoints": [
+            "U+2823"
+          ],
+          "dots": [
+            "126"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠣",
+          "codepoints": [
+            "U+2808",
+            "U+2823"
+          ],
+          "dots": [
+            "4",
+            "126"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ë",
+        "language": "fr",
+        "base": "e",
+        "kind": "DIAERESIS",
+        "foreignBrailleCell": {
+          "unicode": "⠫",
+          "codepoints": [
+            "U+282B"
+          ],
+          "dots": [
+            "1246"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠫",
+          "codepoints": [
+            "U+2808",
+            "U+282B"
+          ],
+          "dots": [
+            "4",
+            "1246"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "î",
+        "language": "fr",
+        "base": "i",
+        "kind": "CIRCUMFLEX",
+        "foreignBrailleCell": {
+          "unicode": "⠩",
+          "codepoints": [
+            "U+2829"
+          ],
+          "dots": [
+            "146"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠩",
+          "codepoints": [
+            "U+2808",
+            "U+2829"
+          ],
+          "dots": [
+            "4",
+            "146"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠊",
+          "codepoints": [
+            "U+2808",
+            "U+280A"
+          ],
+          "dots": [
+            "4",
+            "24"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ï",
+        "language": "fr",
+        "base": "i",
+        "kind": "DIAERESIS",
+        "foreignBrailleCell": {
+          "unicode": "⠻",
+          "codepoints": [
+            "U+283B"
+          ],
+          "dots": [
+            "12456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠻",
+          "codepoints": [
+            "U+2808",
+            "U+283B"
+          ],
+          "dots": [
+            "4",
+            "12456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠊",
+          "codepoints": [
+            "U+2808",
+            "U+280A"
+          ],
+          "dots": [
+            "4",
+            "24"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ô",
+        "language": "fr",
+        "base": "o",
+        "kind": "CIRCUMFLEX",
+        "foreignBrailleCell": {
+          "unicode": "⠹",
+          "codepoints": [
+            "U+2839"
+          ],
+          "dots": [
+            "1456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠹",
+          "codepoints": [
+            "U+2808",
+            "U+2839"
+          ],
+          "dots": [
+            "4",
+            "1456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠕",
+          "codepoints": [
+            "U+2808",
+            "U+2815"
+          ],
+          "dots": [
+            "4",
+            "135"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "œ",
+        "language": "fr",
+        "base": "oe",
+        "kind": "LIGATURE",
+        "foreignBrailleCell": {
+          "unicode": "⠪",
+          "codepoints": [
+            "U+282A"
+          ],
+          "dots": [
+            "246"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠪",
+          "codepoints": [
+            "U+2808",
+            "U+282A"
+          ],
+          "dots": [
+            "4",
+            "246"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": null,
+        "genericFallback": "NOT_DEFINED_BY_2_8_1"
+      },
+      {
+        "print": "ù",
+        "language": "fr",
+        "base": "u",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠾",
+          "codepoints": [
+            "U+283E"
+          ],
+          "dots": [
+            "23456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠾",
+          "codepoints": [
+            "U+2808",
+            "U+283E"
+          ],
+          "dots": [
+            "4",
+            "23456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠥",
+          "codepoints": [
+            "U+2808",
+            "U+2825"
+          ],
+          "dots": [
+            "4",
+            "136"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "û",
+        "language": "fr",
+        "base": "u",
+        "kind": "CIRCUMFLEX",
+        "foreignBrailleCell": {
+          "unicode": "⠱",
+          "codepoints": [
+            "U+2831"
+          ],
+          "dots": [
+            "156"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠱",
+          "codepoints": [
+            "U+2808",
+            "U+2831"
+          ],
+          "dots": [
+            "4",
+            "156"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠥",
+          "codepoints": [
+            "U+2808",
+            "U+2825"
+          ],
+          "dots": [
+            "4",
+            "136"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ü",
+        "language": "fr",
+        "base": "u",
+        "kind": "DIAERESIS",
+        "foreignBrailleCell": {
+          "unicode": "⠳",
+          "codepoints": [
+            "U+2833"
+          ],
+          "dots": [
+            "1256"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠳",
+          "codepoints": [
+            "U+2808",
+            "U+2833"
+          ],
+          "dots": [
+            "4",
+            "1256"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠥",
+          "codepoints": [
+            "U+2808",
+            "U+2825"
+          ],
+          "dots": [
+            "4",
+            "136"
+          ],
+          "cellCount": 2
+        }
+      }
+    ],
+    "it": [
+      {
+        "print": "à",
+        "language": "it",
+        "base": "a",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠷",
+          "codepoints": [
+            "U+2837"
+          ],
+          "dots": [
+            "12356"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠷",
+          "codepoints": [
+            "U+2808",
+            "U+2837"
+          ],
+          "dots": [
+            "4",
+            "12356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠁",
+          "codepoints": [
+            "U+2808",
+            "U+2801"
+          ],
+          "dots": [
+            "4",
+            "1"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "é",
+        "language": "it",
+        "base": "e",
+        "kind": "ACUTE",
+        "foreignBrailleCell": {
+          "unicode": "⠿",
+          "codepoints": [
+            "U+283F"
+          ],
+          "dots": [
+            "123456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠿",
+          "codepoints": [
+            "U+2808",
+            "U+283F"
+          ],
+          "dots": [
+            "4",
+            "123456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "è",
+        "language": "it",
+        "base": "e",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠮",
+          "codepoints": [
+            "U+282E"
+          ],
+          "dots": [
+            "2346"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠮",
+          "codepoints": [
+            "U+2808",
+            "U+282E"
+          ],
+          "dots": [
+            "4",
+            "2346"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ì",
+        "language": "it",
+        "base": "i",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠌",
+          "codepoints": [
+            "U+280C"
+          ],
+          "dots": [
+            "34"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠌",
+          "codepoints": [
+            "U+2808",
+            "U+280C"
+          ],
+          "dots": [
+            "4",
+            "34"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠊",
+          "codepoints": [
+            "U+2808",
+            "U+280A"
+          ],
+          "dots": [
+            "4",
+            "24"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ò",
+        "language": "it",
+        "base": "o",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠬",
+          "codepoints": [
+            "U+282C"
+          ],
+          "dots": [
+            "346"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠬",
+          "codepoints": [
+            "U+2808",
+            "U+282C"
+          ],
+          "dots": [
+            "4",
+            "346"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠕",
+          "codepoints": [
+            "U+2808",
+            "U+2815"
+          ],
+          "dots": [
+            "4",
+            "135"
+          ],
+          "cellCount": 2
+        }
+      },
+      {
+        "print": "ù",
+        "language": "it",
+        "base": "u",
+        "kind": "GRAVE",
+        "foreignBrailleCell": {
+          "unicode": "⠾",
+          "codepoints": [
+            "U+283E"
+          ],
+          "dots": [
+            "23456"
+          ],
+          "cellCount": 1
+        },
+        "germanExactForm": {
+          "unicode": "⠈⠾",
+          "codepoints": [
+            "U+2808",
+            "U+283E"
+          ],
+          "dots": [
+            "4",
+            "23456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.8.1",
+        "normative": true,
+        "executable": false,
+        "germanGenericForm": {
+          "unicode": "⠈⠥",
+          "codepoints": [
+            "U+2808",
+            "U+2825"
+          ],
+          "dots": [
+            "4",
+            "136"
+          ],
+          "cellCount": 2
+        }
+      }
+    ]
+  },
+  "explicitCrossLanguageExamples": [
+    {
+      "print": "é",
+      "kind": "ACUTE",
+      "samePrintDifferentBraille": true,
+      "systems": {
+        "fr": {
+          "unicode": "⠿",
+          "codepoints": [
+            "U+283F"
+          ],
+          "dots": [
+            "123456"
+          ],
+          "cellCount": 1
+        },
+        "it": {
+          "unicode": "⠿",
+          "codepoints": [
+            "U+283F"
+          ],
+          "dots": [
+            "123456"
+          ],
+          "cellCount": 1
+        },
+        "pt": {
+          "unicode": "⠿",
+          "codepoints": [
+            "U+283F"
+          ],
+          "dots": [
+            "123456"
+          ],
+          "cellCount": 1
+        },
+        "es": {
+          "unicode": "⠮",
+          "codepoints": [
+            "U+282E"
+          ],
+          "dots": [
+            "2346"
+          ],
+          "cellCount": 1
+        }
+      },
+      "sourceSection": "2.8.1"
+    },
+    {
+      "print": "Å",
+      "base": "a",
+      "kind": "RING_ABOVE",
+      "language": "sv",
+      "genericGermanForm": {
+        "unicode": "⠈⠁",
+        "codepoints": [
+          "U+2808",
+          "U+2801"
+        ],
+        "dots": [
+          "4",
+          "1"
+        ],
+        "cellCount": 2
+      },
+      "exactGermanForm": {
+        "unicode": "⠈⠡",
+        "codepoints": [
+          "U+2808",
+          "U+2821"
+        ],
+        "dots": [
+          "4",
+          "16"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.8.1",
+      "sourceRole": "EXPLICIT_EXAMPLE"
+    },
+    {
+      "print": "ñ",
+      "base": "n",
+      "kind": "TILDE",
+      "language": "es",
+      "genericGermanForm": {
+        "unicode": "⠈⠝",
+        "codepoints": [
+          "U+2808",
+          "U+281D"
+        ],
+        "dots": [
+          "4",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "exactGermanForm": {
+        "unicode": "⠈⠻",
+        "codepoints": [
+          "U+2808",
+          "U+283B"
+        ],
+        "dots": [
+          "4",
+          "12456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.8.1",
+      "sourceRole": "EXPLICIT_EXAMPLE"
+    }
+  ],
+  "specialFormLetters": {
+    "euro": {
+      "print": "€",
+      "baseLetter": "e",
+      "braille": {
+        "unicode": "⠈⠑",
+        "codepoints": [
+          "U+2808",
+          "U+2811"
+        ],
+        "dots": [
+          "4",
+          "15"
+        ],
+        "cellCount": 2
+      }
+    },
+    "poundOrLira": {
+      "print": "£",
+      "baseLetter": "l",
+      "braille": {
+        "unicode": "⠈⠇",
+        "codepoints": [
+          "U+2808",
+          "U+2807"
+        ],
+        "dots": [
+          "4",
+          "123"
+        ],
+        "cellCount": 2
+      }
+    },
+    "dollar": {
+      "print": "$",
+      "baseLetter": "s",
+      "braille": {
+        "unicode": "⠈⠎",
+        "codepoints": [
+          "U+2808",
+          "U+280E"
+        ],
+        "dots": [
+          "4",
+          "234"
+        ],
+        "cellCount": 2
+      }
+    },
+    "cent": {
+      "print": "¢",
+      "baseLetter": "c",
+      "braille": {
+        "unicode": "⠈⠉",
+        "codepoints": [
+          "U+2808",
+          "U+2809"
+        ],
+        "dots": [
+          "4",
+          "14"
+        ],
+        "cellCount": 2
+      }
+    }
+  },
+  "architecturalFinding": {
+    "accentMappingIsLanguageDependent": true,
+    "genericAndExactStrategiesExist": true,
+    "point4RequiredInAllGermanTextProfiles": true,
+    "exactMappingNeedsLanguageContext": true,
+    "shortSpanAndForeignSpanAreDifferent": true,
+    "ligatureNeedsSeparateRepresentation": true,
+    "currencySymbolsReuseSpecialFormMechanism": true,
+    "currencySpacingIsSourceSensitive": true
+  },
+  "crossDependencies": {
+    "caseState": "2.6",
+    "numericState": "DE-NUM-001",
+    "foreignLanguageSpans": "2.9",
+    "announcementTechnique": "2.2.3"
+  },
+  "rules": [
+    {
+      "id": "DE-ACCENT-001",
+      "section": "2.8.1",
+      "kind": "LANGUAGE_DEPENDENT_ACCENT_CELL",
+      "summary": "The same accented print letter may use different Braille cells in different language-specific Braille systems.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-002",
+      "section": "2.8.1",
+      "kind": "GENERIC_DIACRITIC_METHOD",
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "summary": "When knowledge of the foreign Braille system cannot be assumed, point 4 is placed before the German Braille cell of the base letter.",
+      "precision": "DIACRITIC_PRESENT_BUT_UNSPECIFIED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-003",
+      "section": "2.8.1",
+      "kind": "EXACT_LANGUAGE_SPECIFIC_METHOD",
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "summary": "For exact written representation, point 4 may precede the language-specific accented Braille cell.",
+      "requiresLanguageSpecificMapping": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-004",
+      "section": "2.8.1",
+      "kind": "POINT4_REQUIRED",
+      "summary": "Point-4 announcement is required for this German-text technique in Basis-, Voll- and Kurzschrift.",
+      "profiles": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-005",
+      "section": "2.8.1",
+      "kind": "SHORT_FOREIGN_SPAN_SCOPE",
+      "summary": "The accent technique is intended for isolated foreign words or short passages within German text.",
+      "longerForeignSpanDependency": "2.9",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-006",
+      "section": "2.8.1",
+      "kind": "FRENCH_EXACT_TABLE",
+      "recordCount": 14,
+      "summary": "BSKDL publishes an explicit French accented-letter and oe-ligature Braille table.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-007",
+      "section": "2.8.1",
+      "kind": "ITALIAN_EXACT_TABLE",
+      "recordCount": 6,
+      "summary": "BSKDL publishes an explicit Italian accented-letter Braille table.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-ACCENT-008",
+      "section": "2.8.1",
+      "kind": "LIGATURE_DISTINCTION",
+      "summary": "The French oe ligature has an explicit language-specific Braille cell; section 2.8.1 does not define it as a generic base-letter plus diacritic case.",
+      "normative": false,
+      "executable": false,
+      "architecturalInference": true,
+      "evidenceRole": "TABLE_STRUCTURE_INFERENCE"
+    },
+    {
+      "id": "DE-SPECIAL-001",
+      "section": "2.8.2",
+      "kind": "SPECIAL_FORM_LETTER",
+      "summary": "Specially formed letter-like symbols use point 4 before the corresponding letter cell.",
+      "marker": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-SPECIAL-002",
+      "section": "2.8.2",
+      "kind": "CURRENCY_POSITION",
+      "summary": "Currency-style special-form signs may precede a number or follow it according to the source.",
+      "positions": [
+        "BEFORE_NUMBER",
+        "AFTER_NUMBER"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-SPECIAL-003",
+      "section": "2.8.2",
+      "kind": "CURRENCY_SPACING",
+      "summary": "When a special-form sign follows a number, the source may place it with or without a blank.",
+      "afterNumberSpacing": [
+        "NO_BLANK",
+        "ONE_BLANK"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-SPECIAL-004",
+      "section": "2.8.2",
+      "kind": "NUMERIC_INTERACTION",
+      "summary": "A number adjacent to a special-form currency sign retains normal German numeric notation.",
+      "dependency": "DE-NUM-001",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-ACCENT-CASE-001",
+      "input": "è",
+      "language": "fr",
+      "strategy": "GENERIC",
+      "expectedBraille": {
+        "unicode": "⠈⠑",
+        "codepoints": [
+          "U+2808",
+          "U+2811"
+        ],
+        "dots": [
+          "4",
+          "15"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-ACCENT-002"
+    },
+    {
+      "id": "DE-ACCENT-CASE-002",
+      "input": "è",
+      "language": "fr",
+      "strategy": "EXACT",
+      "expectedBraille": {
+        "unicode": "⠈⠮",
+        "codepoints": [
+          "U+2808",
+          "U+282E"
+        ],
+        "dots": [
+          "4",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-ACCENT-003"
+    },
+    {
+      "id": "DE-ACCENT-CASE-003",
+      "input": "î",
+      "language": "fr",
+      "strategy": "GENERIC",
+      "expectedBraille": {
+        "unicode": "⠈⠊",
+        "codepoints": [
+          "U+2808",
+          "U+280A"
+        ],
+        "dots": [
+          "4",
+          "24"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-ACCENT-002"
+    },
+    {
+      "id": "DE-ACCENT-CASE-004",
+      "input": "î",
+      "language": "fr",
+      "strategy": "EXACT",
+      "expectedBraille": {
+        "unicode": "⠈⠩",
+        "codepoints": [
+          "U+2808",
+          "U+2829"
+        ],
+        "dots": [
+          "4",
+          "146"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-ACCENT-003"
+    },
+    {
+      "id": "DE-ACCENT-CASE-005",
+      "input": "ñ",
+      "language": "es",
+      "strategy": "GENERIC",
+      "expectedBraille": {
+        "unicode": "⠈⠝",
+        "codepoints": [
+          "U+2808",
+          "U+281D"
+        ],
+        "dots": [
+          "4",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceRole": "EXPLICIT_BSKDL_EXAMPLE",
+      "rule": "DE-ACCENT-002"
+    },
+    {
+      "id": "DE-ACCENT-CASE-006",
+      "input": "ñ",
+      "language": "es",
+      "strategy": "EXACT",
+      "expectedBraille": {
+        "unicode": "⠈⠻",
+        "codepoints": [
+          "U+2808",
+          "U+283B"
+        ],
+        "dots": [
+          "4",
+          "12456"
+        ],
+        "cellCount": 2
+      },
+      "sourceRole": "EXPLICIT_BSKDL_EXAMPLE",
+      "rule": "DE-ACCENT-003"
+    },
+    {
+      "id": "DE-ACCENT-CASE-007",
+      "input": "Å",
+      "language": "sv",
+      "strategy": "EXACT",
+      "expectedBraille": {
+        "unicode": "⠈⠡",
+        "codepoints": [
+          "U+2808",
+          "U+2821"
+        ],
+        "dots": [
+          "4",
+          "16"
+        ],
+        "cellCount": 2
+      },
+      "sourceRole": "EXPLICIT_BSKDL_EXAMPLE",
+      "rule": "DE-ACCENT-003"
+    },
+    {
+      "id": "DE-SPECIAL-CASE-001",
+      "input": "€20",
+      "expectedBraille": {
+        "unicode": "⠈⠑⠼⠃⠚",
+        "codepoints": [
+          "U+2808",
+          "U+2811",
+          "U+283C",
+          "U+2803",
+          "U+281A"
+        ],
+        "dots": [
+          "4",
+          "15",
+          "3456",
+          "12",
+          "245"
+        ],
+        "cellCount": 5
+      },
+      "rules": [
+        "DE-SPECIAL-001",
+        "DE-SPECIAL-002",
+        "DE-NUM-001"
+      ]
+    },
+    {
+      "id": "DE-SPECIAL-CASE-002",
+      "input": "20€",
+      "expectedBraille": {
+        "unicode": "⠼⠃⠚⠈⠑",
+        "codepoints": [
+          "U+283C",
+          "U+2803",
+          "U+281A",
+          "U+2808",
+          "U+2811"
+        ],
+        "dots": [
+          "3456",
+          "12",
+          "245",
+          "4",
+          "15"
+        ],
+        "cellCount": 5
+      },
+      "rules": [
+        "DE-SPECIAL-002",
+        "DE-SPECIAL-003",
+        "DE-NUM-001"
+      ]
+    },
+    {
+      "id": "DE-SPECIAL-CASE-003",
+      "input": "20 €",
+      "expectedBraille": {
+        "beforeBlank": {
+          "unicode": "⠼⠃⠚",
+          "codepoints": [
+            "U+283C",
+            "U+2803",
+            "U+281A"
+          ],
+          "dots": [
+            "3456",
+            "12",
+            "245"
+          ],
+          "cellCount": 3
+        },
+        "blank": "U+0020_OR_BRAILLE_BLANK",
+        "afterBlank": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        }
+      },
+      "rules": [
+        "DE-SPECIAL-002",
+        "DE-SPECIAL-003",
+        "DE-NUM-001"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "requiresLanguagePolicyBeforePromotion": true,
+    "requiresLaterConformancePromotion": true
+  },
+  "precisionConsolidation": {
+    "status": "APPLIED",
+    "scope": [
+      "normative-vs-table-inference-classification"
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "phase": "15.1O",
+  "title": "BSKDL Basisschrift Closure Audit",
+  "status": "CLOSURE_AUDIT_PASS_WITH_DEFERRED_DEPENDENCIES",
+  "auditedAt": "2026-08-19",
+  "branch": "phase15-german-braille",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "inputArtifactSet": {
+    "jsonCount": 14,
+    "markdownCount": 14,
+    "bases": [
+      "phase-15.1-german-braille-standards-audit",
+      "phase-15.1b-liblouis-german-implementation-audit",
+      "phase-15.1c-bskdl-basisschrift-rule-family-inventory",
+      "phase-15.1d-bskdl-basisschrift-normative-symbol-foundation",
+      "phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract",
+      "phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract",
+      "phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract",
+      "phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract",
+      "phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract",
+      "phase-15.1j-bskdl-basisschrift-foreign-language-span-contract",
+      "phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract",
+      "phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract",
+      "phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract",
+      "phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract"
+    ]
+  },
+  "chapter2Coverage": {
+    "2.1": {
+      "owner": "phase-15.1d-bskdl-basisschrift-normative-symbol-foundation",
+      "covered": true
+    },
+    "2.2": {
+      "owner": "phase-15.1d-bskdl-basisschrift-normative-symbol-foundation",
+      "covered": true
+    },
+    "2.3": {
+      "owner": "phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract",
+      "covered": true
+    },
+    "2.4": {
+      "owner": "phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract",
+      "covered": true
+    },
+    "2.5": {
+      "owner": "phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract",
+      "covered": true
+    },
+    "2.6": {
+      "owner": "phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract",
+      "covered": true
+    },
+    "2.7": {
+      "owner": "phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract",
+      "covered": true
+    },
+    "2.8": {
+      "owner": "phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract",
+      "covered": true
+    },
+    "2.9": {
+      "owner": "phase-15.1j-bskdl-basisschrift-foreign-language-span-contract",
+      "covered": true
+    },
+    "2.10": {
+      "owner": "phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract",
+      "covered": true
+    },
+    "2.11": {
+      "owner": "phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract",
+      "covered": true
+    },
+    "2.12": {
+      "owner": "phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract",
+      "covered": true
+    },
+    "2.13": {
+      "owner": "phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract",
+      "covered": true
+    }
+  },
+  "crossArtifactValidation": {
+    "sourceShaConsistent": true,
+    "sourcePdfNotVendored": true,
+    "jsonMarkdownPairsComplete": true,
+    "encodingClean": true,
+    "ruleIdsUnique": true,
+    "validationCaseIdsUnique": true,
+    "validationRuleReferencesResolved": true,
+    "serializedBrailleSixDotInvariant": true,
+    "noExecutableRules": true,
+    "noImplementationStarted": true,
+    "allNormativeContractsNotPromoted": true,
+    "precisionConsolidationApplied": true,
+    "directExtractionHashesVerified": true,
+    "officialMathematikschriftTerminology": true,
+    "liblouisRemainsNonNormativeComparator": true
+  },
+  "counts": {
+    "uniqueRuleIds": 150,
+    "uniqueValidationCaseIds": 88,
+    "chapter2TopLevelSections": 13,
+    "deferredDependencies": 7
+  },
+  "deferredDependencies": [
+    {
+      "id": "BSKDL_4_8",
+      "blocksChapter2CoverageClosure": false,
+      "blocksFullConformancePromotion": true
+    },
+    {
+      "id": "GERMAN_MATHEMATIKSCHRIFT_RULEBOOK",
+      "blocksChapter2CoverageClosure": false,
+      "blocksFullMathConformance": true
+    },
+    {
+      "id": "FULL_EIGHT_DOT_MAPPING",
+      "blocksChapter2CoverageClosure": false,
+      "blocksFullComputerbrailleConformance": true
+    },
+    {
+      "id": "UNNUMBERED_EMPTY_CELL_POLICY",
+      "blocksChapter2CoverageClosure": false,
+      "mustRemainUninferred": true
+    },
+    {
+      "id": "VOLLSCHRIFT_CHAPTER_3",
+      "blocksChapter2CoverageClosure": false,
+      "blocksGermanProfileConformance": true
+    },
+    {
+      "id": "KURZSCHRIFT_CHAPTER_4",
+      "blocksChapter2CoverageClosure": false,
+      "blocksGermanProfileConformance": true
+    },
+    {
+      "id": "SWISS_DEVIATIONS_4_10",
+      "blocksChapter2CoverageClosure": false,
+      "blocksRegionalProfileFreeze": true
+    }
+  ],
+  "closureDecision": {
+    "chapter2NormativeRuleFamilyCoverage": "PASS",
+    "basisschriftStandardsAuditClosure": "PASS_WITH_DEFERRED_DEPENDENCIES",
+    "basisschriftConformancePromotion": "NOT_READY",
+    "implementationStatus": "NOT_STARTED",
+    "profileIdsFrozen": false
+  },
+  "phase15ProductRequirement": {
+    "microsoft365TextTabs": [
+      "Persian",
+      "English",
+      "German"
+    ],
+    "germanModes": [
+      "Basisschrift",
+      "Vollschrift",
+      "Kurzschrift"
+    ],
+    "germanTabImplementationPhase": "15.7",
+    "status": "REQUIREMENT_FROZEN_NOT_IMPLEMENTED"
+  },
+  "promotionPolicy": {
+    "basisschriftStandardsAuditClosed": true,
+    "basisschriftConformancePromoted": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "profileIdentifiersFrozen": false
+  },
+  "nextPhase": {
+    "phase": "15.2",
+    "title": "Vollschrift Normative Audit",
+    "primaryNormativeChapter": "3 Die Vollschrift",
+    "implementation": false
+  }
+}

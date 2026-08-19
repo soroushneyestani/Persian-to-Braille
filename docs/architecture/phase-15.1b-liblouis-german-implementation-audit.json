@@ -1,0 +1,544 @@
+{
+  "phase": "15.1B",
+  "title": "Liblouis German Implementation Audit",
+  "status": "IN_PROGRESS",
+  "retrievedAt": "2026-08-19",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "upstream": {
+    "repository": "https://github.com/liblouis/liblouis",
+    "branch": "master",
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e"
+  },
+  "normativeAuthority": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "abbreviation": "BSKDL"
+  },
+  "tableCorrespondence": {
+    "basisschrift": {
+      "table": "de-g0.utb",
+      "liblouisGrade": 0,
+      "brailleHubProfileId": "NOT_YET_FROZEN"
+    },
+    "vollschrift": {
+      "table": "de-g1.ctb",
+      "liblouisGrade": 1,
+      "brailleHubProfileId": "NOT_YET_FROZEN"
+    },
+    "kurzschrift": {
+      "table": "de-g2.ctb",
+      "liblouisGrade": 2,
+      "brailleHubProfileId": "NOT_YET_FROZEN"
+    }
+  },
+  "capabilityPolicy": {
+    "forwardDifferentialComparator": true,
+    "reverseEquivalence": "NOT_ASSUMED",
+    "reverseAuditRequired": true,
+    "capitalizationParity": "REQUIRES_DIRECT_BSKDL_AUDIT",
+    "regionalParity": "REQUIRES_DIRECT_BSKDL_AUDIT"
+  },
+  "implementationPolicy": {
+    "rulesPromotedToBrailleHub": false,
+    "liblouisIsNormative": false
+  },
+  "profiles": {
+    "basisschrift": {
+      "file": "de-g0.utb",
+      "sha256": "4708e78848eff4bc35f33035013a346c122a203ee36ce84a9ee5410616481ca9",
+      "bytes": 1905,
+      "lines": 57,
+      "metadata": {
+        "name": {
+          "kind": "-",
+          "value": "Deutsche Basisschrift"
+        },
+        "index-name": {
+          "kind": "-",
+          "value": "German, uncontracted"
+        },
+        "display-name": {
+          "kind": "-",
+          "value": "German uncontracted braille"
+        },
+        "language": {
+          "kind": "+",
+          "value": "de"
+        },
+        "type": {
+          "kind": "+",
+          "value": "literary"
+        },
+        "contraction": {
+          "kind": "+",
+          "value": "no"
+        },
+        "grade": {
+          "kind": "+",
+          "value": "0"
+        },
+        "direction": {
+          "kind": "+",
+          "value": "forward"
+        }
+      },
+      "includes": [
+        "de-eurobrl6.dis",
+        "de-chardefs6.cti",
+        "de-accents.cti",
+        "de-g0-core.uti",
+        "latinLowercase.uti"
+      ],
+      "observedIdentity": {
+        "name": "Deutsche Basisschrift",
+        "grade": "0",
+        "contraction": "no",
+        "direction": "forward"
+      },
+      "dependencyClosure": [
+        {
+          "file": "de-g0.utb",
+          "status": "PRESENT",
+          "sha256": "4708e78848eff4bc35f33035013a346c122a203ee36ce84a9ee5410616481ca9",
+          "bytes": 1905,
+          "includes": [
+            "de-eurobrl6.dis",
+            "de-chardefs6.cti",
+            "de-accents.cti",
+            "de-g0-core.uti",
+            "latinLowercase.uti"
+          ]
+        },
+        {
+          "file": "de-eurobrl6.dis",
+          "status": "PRESENT",
+          "sha256": "f1cce767372a2c2ed49bb86d2490fc79da543d52b449a20e2aadd387ab511796",
+          "bytes": 2365,
+          "includes": []
+        },
+        {
+          "file": "de-chardefs6.cti",
+          "status": "PRESENT",
+          "sha256": "a53ed0b0d43b750e45517f7d9ef44d1a1f3dd41b89b4ce930192cac808182a3d",
+          "bytes": 17196,
+          "includes": [
+            "spaces.uti",
+            "digits6DotsPlusDot6.uti",
+            "latinLetterDef6Dots.uti"
+          ]
+        },
+        {
+          "file": "spaces.uti",
+          "status": "PRESENT",
+          "sha256": "ea10c41e08e9f44b2b471b80a7f291f62d249f0bbb70b64f319e20e95388e2b9",
+          "bytes": 2170,
+          "includes": []
+        },
+        {
+          "file": "digits6DotsPlusDot6.uti",
+          "status": "PRESENT",
+          "sha256": "2f55f9aa520b4c098d1fe4cba5055a706cff8882662f944cee2bcf6aa130d7a8",
+          "bytes": 1095,
+          "includes": []
+        },
+        {
+          "file": "latinLetterDef6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "323fe46ee894216871675675823dd0681389669325d99b3b149ca0ea6550d842",
+          "bytes": 2071,
+          "includes": []
+        },
+        {
+          "file": "de-accents.cti",
+          "status": "PRESENT",
+          "sha256": "41976a2f818d2a613b612b43283078c822a8be61de811080811d319ecc309988",
+          "bytes": 17553,
+          "includes": []
+        },
+        {
+          "file": "de-g0-core.uti",
+          "status": "PRESENT",
+          "sha256": "ae14761c688d4fd6c32fb76a8ae614f7df06e53e9a10ceb403173e35a2c180a1",
+          "bytes": 27612,
+          "includes": [
+            "litdigits6Dots.uti",
+            "countries.cti"
+          ]
+        },
+        {
+          "file": "litdigits6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "ada88ce1b56031d91b789b9ee26a7e8b7f25934c4d564cea1f919ff6d8b1211e",
+          "bytes": 987,
+          "includes": []
+        },
+        {
+          "file": "countries.cti",
+          "status": "PRESENT",
+          "sha256": "e05bdd4f09745ca46a46e7370d4cc75ddcec9e3513b4c39de4637143957ea537",
+          "bytes": 6966,
+          "includes": []
+        },
+        {
+          "file": "latinLowercase.uti",
+          "status": "PRESENT",
+          "sha256": "4e8aa4d7b0fad5a1debd7a17373738e5b0211a58e408c4278732cd93309dc745",
+          "bytes": 10835,
+          "includes": []
+        }
+      ]
+    },
+    "vollschrift": {
+      "file": "de-g1.ctb",
+      "sha256": "e19b87ed623a5d41270783414023f38810001f4cbc0894548908159d5c01eeba",
+      "bytes": 1842,
+      "lines": 54,
+      "metadata": {
+        "name": {
+          "kind": "-",
+          "value": "Deutsche Vollschrift"
+        },
+        "index-name": {
+          "kind": "-",
+          "value": "German, partially contracted"
+        },
+        "display-name": {
+          "kind": "-",
+          "value": "German partially contracted braille"
+        },
+        "language": {
+          "kind": "+",
+          "value": "de"
+        },
+        "type": {
+          "kind": "+",
+          "value": "literary"
+        },
+        "contraction": {
+          "kind": "+",
+          "value": "partial"
+        },
+        "grade": {
+          "kind": "+",
+          "value": "1"
+        },
+        "direction": {
+          "kind": "+",
+          "value": "forward"
+        },
+        "has-nocross": {
+          "kind": "-",
+          "value": "yes"
+        }
+      },
+      "includes": [
+        "de-g0.utb",
+        "de-g1-core.cti"
+      ],
+      "observedIdentity": {
+        "name": "Deutsche Vollschrift",
+        "grade": "1",
+        "contraction": "partial",
+        "direction": "forward"
+      },
+      "dependencyClosure": [
+        {
+          "file": "de-g1.ctb",
+          "status": "PRESENT",
+          "sha256": "e19b87ed623a5d41270783414023f38810001f4cbc0894548908159d5c01eeba",
+          "bytes": 1842,
+          "includes": [
+            "de-g0.utb",
+            "de-g1-core.cti"
+          ]
+        },
+        {
+          "file": "de-g0.utb",
+          "status": "PRESENT",
+          "sha256": "4708e78848eff4bc35f33035013a346c122a203ee36ce84a9ee5410616481ca9",
+          "bytes": 1905,
+          "includes": [
+            "de-eurobrl6.dis",
+            "de-chardefs6.cti",
+            "de-accents.cti",
+            "de-g0-core.uti",
+            "latinLowercase.uti"
+          ]
+        },
+        {
+          "file": "de-eurobrl6.dis",
+          "status": "PRESENT",
+          "sha256": "f1cce767372a2c2ed49bb86d2490fc79da543d52b449a20e2aadd387ab511796",
+          "bytes": 2365,
+          "includes": []
+        },
+        {
+          "file": "de-chardefs6.cti",
+          "status": "PRESENT",
+          "sha256": "a53ed0b0d43b750e45517f7d9ef44d1a1f3dd41b89b4ce930192cac808182a3d",
+          "bytes": 17196,
+          "includes": [
+            "spaces.uti",
+            "digits6DotsPlusDot6.uti",
+            "latinLetterDef6Dots.uti"
+          ]
+        },
+        {
+          "file": "spaces.uti",
+          "status": "PRESENT",
+          "sha256": "ea10c41e08e9f44b2b471b80a7f291f62d249f0bbb70b64f319e20e95388e2b9",
+          "bytes": 2170,
+          "includes": []
+        },
+        {
+          "file": "digits6DotsPlusDot6.uti",
+          "status": "PRESENT",
+          "sha256": "2f55f9aa520b4c098d1fe4cba5055a706cff8882662f944cee2bcf6aa130d7a8",
+          "bytes": 1095,
+          "includes": []
+        },
+        {
+          "file": "latinLetterDef6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "323fe46ee894216871675675823dd0681389669325d99b3b149ca0ea6550d842",
+          "bytes": 2071,
+          "includes": []
+        },
+        {
+          "file": "de-accents.cti",
+          "status": "PRESENT",
+          "sha256": "41976a2f818d2a613b612b43283078c822a8be61de811080811d319ecc309988",
+          "bytes": 17553,
+          "includes": []
+        },
+        {
+          "file": "de-g0-core.uti",
+          "status": "PRESENT",
+          "sha256": "ae14761c688d4fd6c32fb76a8ae614f7df06e53e9a10ceb403173e35a2c180a1",
+          "bytes": 27612,
+          "includes": [
+            "litdigits6Dots.uti",
+            "countries.cti"
+          ]
+        },
+        {
+          "file": "litdigits6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "ada88ce1b56031d91b789b9ee26a7e8b7f25934c4d564cea1f919ff6d8b1211e",
+          "bytes": 987,
+          "includes": []
+        },
+        {
+          "file": "countries.cti",
+          "status": "PRESENT",
+          "sha256": "e05bdd4f09745ca46a46e7370d4cc75ddcec9e3513b4c39de4637143957ea537",
+          "bytes": 6966,
+          "includes": []
+        },
+        {
+          "file": "latinLowercase.uti",
+          "status": "PRESENT",
+          "sha256": "4e8aa4d7b0fad5a1debd7a17373738e5b0211a58e408c4278732cd93309dc745",
+          "bytes": 10835,
+          "includes": []
+        },
+        {
+          "file": "de-g1-core.cti",
+          "status": "PRESENT",
+          "sha256": "0b163a8e8c6c0848f339bec9c7e6978ab2f0485496b3363fac8e83945461c9da",
+          "bytes": 2814,
+          "includes": [
+            "de-g1-core-patterns.dic"
+          ]
+        },
+        {
+          "file": "de-g1-core-patterns.dic",
+          "status": "PRESENT",
+          "sha256": "1cffedf7b487caf31dd5cafa442a329461496adb7f6db29a27a90b8310ae8578",
+          "bytes": 40958,
+          "includes": []
+        }
+      ]
+    },
+    "kurzschrift": {
+      "file": "de-g2.ctb",
+      "sha256": "eb00a9c603885434bdc0615e1d7090d4e68db1d51a0f299f500c5d9d9494016e",
+      "bytes": 1923,
+      "lines": 57,
+      "metadata": {
+        "name": {
+          "kind": "-",
+          "value": "Deutsche Kurzschrift"
+        },
+        "index-name": {
+          "kind": "-",
+          "value": "German, contracted"
+        },
+        "display-name": {
+          "kind": "-",
+          "value": "German contracted braille"
+        },
+        "language": {
+          "kind": "+",
+          "value": "de"
+        },
+        "type": {
+          "kind": "+",
+          "value": "literary"
+        },
+        "contraction": {
+          "kind": "+",
+          "value": "full"
+        },
+        "grade": {
+          "kind": "+",
+          "value": "2"
+        },
+        "direction": {
+          "kind": "+",
+          "value": "forward"
+        },
+        "has-nocross": {
+          "kind": "-",
+          "value": "yes"
+        }
+      },
+      "includes": [
+        "de-g0.utb",
+        "de-g2-core.cti",
+        "braille-patterns.cti"
+      ],
+      "observedIdentity": {
+        "name": "Deutsche Kurzschrift",
+        "grade": "2",
+        "contraction": "full",
+        "direction": "forward"
+      },
+      "dependencyClosure": [
+        {
+          "file": "de-g2.ctb",
+          "status": "PRESENT",
+          "sha256": "eb00a9c603885434bdc0615e1d7090d4e68db1d51a0f299f500c5d9d9494016e",
+          "bytes": 1923,
+          "includes": [
+            "de-g0.utb",
+            "de-g2-core.cti",
+            "braille-patterns.cti"
+          ]
+        },
+        {
+          "file": "de-g0.utb",
+          "status": "PRESENT",
+          "sha256": "4708e78848eff4bc35f33035013a346c122a203ee36ce84a9ee5410616481ca9",
+          "bytes": 1905,
+          "includes": [
+            "de-eurobrl6.dis",
+            "de-chardefs6.cti",
+            "de-accents.cti",
+            "de-g0-core.uti",
+            "latinLowercase.uti"
+          ]
+        },
+        {
+          "file": "de-eurobrl6.dis",
+          "status": "PRESENT",
+          "sha256": "f1cce767372a2c2ed49bb86d2490fc79da543d52b449a20e2aadd387ab511796",
+          "bytes": 2365,
+          "includes": []
+        },
+        {
+          "file": "de-chardefs6.cti",
+          "status": "PRESENT",
+          "sha256": "a53ed0b0d43b750e45517f7d9ef44d1a1f3dd41b89b4ce930192cac808182a3d",
+          "bytes": 17196,
+          "includes": [
+            "spaces.uti",
+            "digits6DotsPlusDot6.uti",
+            "latinLetterDef6Dots.uti"
+          ]
+        },
+        {
+          "file": "spaces.uti",
+          "status": "PRESENT",
+          "sha256": "ea10c41e08e9f44b2b471b80a7f291f62d249f0bbb70b64f319e20e95388e2b9",
+          "bytes": 2170,
+          "includes": []
+        },
+        {
+          "file": "digits6DotsPlusDot6.uti",
+          "status": "PRESENT",
+          "sha256": "2f55f9aa520b4c098d1fe4cba5055a706cff8882662f944cee2bcf6aa130d7a8",
+          "bytes": 1095,
+          "includes": []
+        },
+        {
+          "file": "latinLetterDef6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "323fe46ee894216871675675823dd0681389669325d99b3b149ca0ea6550d842",
+          "bytes": 2071,
+          "includes": []
+        },
+        {
+          "file": "de-accents.cti",
+          "status": "PRESENT",
+          "sha256": "41976a2f818d2a613b612b43283078c822a8be61de811080811d319ecc309988",
+          "bytes": 17553,
+          "includes": []
+        },
+        {
+          "file": "de-g0-core.uti",
+          "status": "PRESENT",
+          "sha256": "ae14761c688d4fd6c32fb76a8ae614f7df06e53e9a10ceb403173e35a2c180a1",
+          "bytes": 27612,
+          "includes": [
+            "litdigits6Dots.uti",
+            "countries.cti"
+          ]
+        },
+        {
+          "file": "litdigits6Dots.uti",
+          "status": "PRESENT",
+          "sha256": "ada88ce1b56031d91b789b9ee26a7e8b7f25934c4d564cea1f919ff6d8b1211e",
+          "bytes": 987,
+          "includes": []
+        },
+        {
+          "file": "countries.cti",
+          "status": "PRESENT",
+          "sha256": "e05bdd4f09745ca46a46e7370d4cc75ddcec9e3513b4c39de4637143957ea537",
+          "bytes": 6966,
+          "includes": []
+        },
+        {
+          "file": "latinLowercase.uti",
+          "status": "PRESENT",
+          "sha256": "4e8aa4d7b0fad5a1debd7a17373738e5b0211a58e408c4278732cd93309dc745",
+          "bytes": 10835,
+          "includes": []
+        },
+        {
+          "file": "de-g2-core.cti",
+          "status": "PRESENT",
+          "sha256": "038a71c52785e5625ebb5dd5ddf3f05e142c611929de2815e998e8fa3cf3c75f",
+          "bytes": 34907,
+          "includes": [
+            "de-g2-core-patterns.dic"
+          ]
+        },
+        {
+          "file": "de-g2-core-patterns.dic",
+          "status": "PRESENT",
+          "sha256": "0cc31ee939d013fbf4fc94b1e74b13c69f7b7117e7e042149d790034aa56a166",
+          "bytes": 219279,
+          "includes": []
+        },
+        {
+          "file": "braille-patterns.cti",
+          "status": "PRESENT",
+          "sha256": "4fb5580c3dd8fb6629b1c2330cc95e8a5a603062604db1715f84ea77b99b493d",
+          "bytes": 26718,
+          "includes": []
+        }
+      ]
+    }
+  }
+}

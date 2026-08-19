@@ -1,0 +1,330 @@
+{
+  "phase": "15.1M",
+  "title": "BSKDL Basisschrift Table-Cell Separator and Structural Table Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "section": "2.12",
+    "sectionExtractionSha256": "485087e9e8e2d7a953eec343eb5d481498fb6a680b9553b3f0ca1764ea4464de",
+    "pdfStartPage": 94,
+    "pdfEndBoundaryPage": 95
+  },
+  "coverage": {
+    "sections": [
+      "2.12"
+    ],
+    "ruleRecords": 8,
+    "validationCases": 5
+  },
+  "separator": {
+    "braille": {
+      "unicode": "⠒⠒",
+      "codepoints": [
+        "U+2812",
+        "U+2812"
+      ],
+      "dots": [
+        "25",
+        "25"
+      ],
+      "cellCount": 2
+    },
+    "structuralRole": "TABLE_CELL_BOUNDARY",
+    "defaultSpacing": {
+      "before": "BRAILLE_BLANK",
+      "after": "BRAILLE_BLANK"
+    }
+  },
+  "targetColumnTechnique": {
+    "optional": true,
+    "placement": "IMMEDIATELY_AFTER_SEPARATOR",
+    "numericNotation": "GERMAN_ARABIC_NUMBER_NOTATION",
+    "normativeExampleColumn7": {
+      "unicode": "⠒⠒⠼⠛",
+      "codepoints": [
+        "U+2812",
+        "U+2812",
+        "U+283C",
+        "U+281B"
+      ],
+      "dots": [
+        "25",
+        "25",
+        "3456",
+        "1245"
+      ],
+      "cellCount": 4
+    },
+    "emptyCellEffect": {
+      "repeatedSeparatorsRequired": false
+    }
+  },
+  "unknowns": [
+    {
+      "id": "UNNUMBERED_EMPTY_CELL_SERIALIZATION",
+      "status": "NOT_FULLY_SPECIFIED_BY_SECTION_2_12",
+      "mustNotInfer": true
+    }
+  ],
+  "architecturalFinding": {
+    "tableSeparatorIsStructural": true,
+    "tableSerializationDependsOnLayout": true,
+    "separatorAndColumnNumberFormCompositeToken": true,
+    "numericStateInteractsWithTableStructure": true,
+    "emptyCellRepresentationIsPolicySensitive": true,
+    "sourceDoesNotFullySpecifyUnnumberedEmptyCells": true
+  },
+  "futureArchitecture": {
+    "owner": "DOCUMENT_STRUCTURE_AND_LAYOUT_LAYER",
+    "phase17MigrationTarget": "STRUCTURAL_BRAILLE_SERIALIZATION_POLICY",
+    "coreTextMappingShouldOwnThis": false
+  },
+  "crossDependencies": {
+    "numericNotation": "15.1E",
+    "layout": "DOCUMENT_STRUCTURE_LAYER"
+  },
+  "rules": [
+    {
+      "id": "DE-TABLE-001",
+      "section": "2.12",
+      "kind": "LINEARIZED_TABLE_ROW",
+      "summary": "When table columns cannot be represented side by side and cells of a row are rendered sequentially, a structural cell separator is used between adjacent cells.",
+      "representation": "ROW_CELLS_SEQUENTIAL",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-002",
+      "section": "2.12",
+      "kind": "TABLE_CELL_SEPARATOR",
+      "marker": {
+        "unicode": "⠒⠒",
+        "codepoints": [
+          "U+2812",
+          "U+2812"
+        ],
+        "dots": [
+          "25",
+          "25"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The structural table-cell separator is the two-cell Braille sequence dots 2-5, dots 2-5.",
+      "structural": true,
+      "ordinaryTextPunctuation": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-003",
+      "section": "2.12",
+      "kind": "SEPARATOR_SPACING",
+      "summary": "The table-cell separator stands between Braille blanks.",
+      "before": "BRAILLE_BLANK_REQUIRED",
+      "after": "BRAILLE_BLANK_REQUIRED_UNLESS_COLUMN_NUMBER_FOLLOWS_IMMEDIATELY",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-004",
+      "section": "2.12",
+      "kind": "OPTIONAL_TARGET_COLUMN_NUMBER",
+      "summary": "The number of the following table column may be written immediately after the table-cell separator.",
+      "optional": true,
+      "placement": "IMMEDIATELY_AFTER_SEPARATOR",
+      "numericDependency": "15.1E",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-005",
+      "section": "2.12",
+      "kind": "COLUMN_NUMBER_NUMERIC_FORM",
+      "summary": "The normative example for transition to column 7 uses the ordinary German number indicator and digit form after the separator.",
+      "example": {
+        "targetColumn": 7,
+        "separator": {
+          "unicode": "⠒⠒",
+          "codepoints": [
+            "U+2812",
+            "U+2812"
+          ],
+          "dots": [
+            "25",
+            "25"
+          ],
+          "cellCount": 2
+        },
+        "numberIndicator": {
+          "unicode": "⠼",
+          "codepoints": [
+            "U+283C"
+          ],
+          "dots": [
+            "3456"
+          ],
+          "cellCount": 1
+        },
+        "digit": {
+          "unicode": "⠛",
+          "codepoints": [
+            "U+281B"
+          ],
+          "dots": [
+            "1245"
+          ],
+          "cellCount": 1
+        },
+        "combined": {
+          "unicode": "⠒⠒⠼⠛",
+          "codepoints": [
+            "U+2812",
+            "U+2812",
+            "U+283C",
+            "U+281B"
+          ],
+          "dots": [
+            "25",
+            "25",
+            "3456",
+            "1245"
+          ],
+          "cellCount": 4
+        }
+      },
+      "numericDependency": "DE-NUM-001",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-006",
+      "section": "2.12",
+      "kind": "EMPTY_CELL_OMISSION_WITH_COLUMN_NUMBER",
+      "summary": "When the target-column-number technique is used, empty table cells need not be represented by repeated table-cell separators.",
+      "columnNumberTechniqueActive": true,
+      "repeatedSeparatorForEmptyCellsRequired": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-007",
+      "section": "2.12",
+      "kind": "UNNUMBERED_EMPTY_CELL_POLICY",
+      "summary": "Section 2.12 does not explicitly establish a complete empty-cell serialization policy for the case where target-column numbers are not used.",
+      "policy": "NOT_FULLY_SPECIFIED_BY_SECTION_2_12",
+      "inferenceProhibited": true,
+      "normative": false,
+      "executable": false
+    },
+    {
+      "id": "DE-TABLE-008",
+      "section": "2.12",
+      "kind": "STRUCTURAL_LAYER_OWNERSHIP",
+      "summary": "Table-cell separation represents document structure and must not be modeled as an ordinary character-substitution rule.",
+      "architecturalClassification": "STRUCTURAL_SERIALIZATION",
+      "futureOwner": "DOCUMENT_STRUCTURE_AND_LAYOUT_LAYER",
+      "normative": false,
+      "architecturalInference": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-TABLE-CASE-001",
+      "purpose": "plain-cell-separator",
+      "expectedSeparator": {
+        "unicode": "⠒⠒",
+        "codepoints": [
+          "U+2812",
+          "U+2812"
+        ],
+        "dots": [
+          "25",
+          "25"
+        ],
+        "cellCount": 2
+      },
+      "expectedBefore": "BRAILLE_BLANK",
+      "expectedAfter": "BRAILLE_BLANK",
+      "rules": [
+        "DE-TABLE-002",
+        "DE-TABLE-003"
+      ]
+    },
+    {
+      "id": "DE-TABLE-CASE-002",
+      "purpose": "transition-to-column-7",
+      "targetColumn": 7,
+      "expectedCore": {
+        "unicode": "⠒⠒⠼⠛",
+        "codepoints": [
+          "U+2812",
+          "U+2812",
+          "U+283C",
+          "U+281B"
+        ],
+        "dots": [
+          "25",
+          "25",
+          "3456",
+          "1245"
+        ],
+        "cellCount": 4
+      },
+      "expectedAfter": "BRAILLE_BLANK",
+      "rules": [
+        "DE-TABLE-004",
+        "DE-TABLE-005"
+      ]
+    },
+    {
+      "id": "DE-TABLE-CASE-003",
+      "purpose": "number-immediately-follows-separator",
+      "interveningBlank": false,
+      "expectedPrefix": {
+        "unicode": "⠒⠒⠼⠛",
+        "codepoints": [
+          "U+2812",
+          "U+2812",
+          "U+283C",
+          "U+281B"
+        ],
+        "dots": [
+          "25",
+          "25",
+          "3456",
+          "1245"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-TABLE-004"
+    },
+    {
+      "id": "DE-TABLE-CASE-004",
+      "purpose": "empty-cell-omission-with-column-number",
+      "columnNumberTechniqueActive": true,
+      "emptyCellsPresent": true,
+      "repeatedSeparatorRequired": false,
+      "rule": "DE-TABLE-006"
+    },
+    {
+      "id": "DE-TABLE-CASE-005",
+      "purpose": "unnumbered-empty-cell-policy-remains-open",
+      "columnNumberTechniqueActive": false,
+      "expectedPolicy": "NOT_FULLY_SPECIFIED_BY_SECTION_2_12",
+      "rule": "DE-TABLE-007"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "structuralSerializerImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "unresolvedEmptyCellPolicyExists": true,
+    "requiresLaterConformancePromotion": true
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "phase": "15.1H",
+  "title": "BSKDL Basisschrift Emphasis and Versalien Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.7",
+      "2.7.1",
+      "2.7.2",
+      "2.7.3"
+    ],
+    "ruleRecords": 15,
+    "validationCases": 9
+  },
+  "markers": {
+    "primaryWord": {
+      "unicode": "⠸",
+      "codepoints": [
+        "U+2838"
+      ],
+      "dots": [
+        "456"
+      ],
+      "cellCount": 1
+    },
+    "primaryMultiword": {
+      "unicode": "⠸⠸",
+      "codepoints": [
+        "U+2838",
+        "U+2838"
+      ],
+      "dots": [
+        "456",
+        "456"
+      ],
+      "cellCount": 2
+    },
+    "primaryPartInterior": {
+      "unicode": "⠠⠸",
+      "codepoints": [
+        "U+2820",
+        "U+2838"
+      ],
+      "dots": [
+        "6",
+        "456"
+      ],
+      "cellCount": 2
+    },
+    "primaryTerminator": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "secondaryWordOrPart": {
+      "unicode": "⠐⠸",
+      "codepoints": [
+        "U+2810",
+        "U+2838"
+      ],
+      "dots": [
+        "5",
+        "456"
+      ],
+      "cellCount": 2
+    },
+    "secondaryMultiword": {
+      "unicode": "⠐⠐⠸",
+      "codepoints": [
+        "U+2810",
+        "U+2810",
+        "U+2838"
+      ],
+      "dots": [
+        "5",
+        "5",
+        "456"
+      ],
+      "cellCount": 3
+    },
+    "secondaryTerminator": {
+      "unicode": "⠐⠄",
+      "codepoints": [
+        "U+2810",
+        "U+2804"
+      ],
+      "dots": [
+        "5",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "versalienWord": {
+      "unicode": "⠘",
+      "codepoints": [
+        "U+2818"
+      ],
+      "dots": [
+        "45"
+      ],
+      "cellCount": 1
+    },
+    "versalienMultiword": {
+      "unicode": "⠘⠘",
+      "codepoints": [
+        "U+2818",
+        "U+2818"
+      ],
+      "dots": [
+        "45",
+        "45"
+      ],
+      "cellCount": 2
+    },
+    "versalienTerminator": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    }
+  },
+  "architecturalFinding": {
+    "emphasisIsStateful": true,
+    "twoDistinctEmphasisChannels": true,
+    "wordPartEmphasisSupported": true,
+    "wordBoundaryUsesHyphenAndSlash": true,
+    "sourceFormattingNeedsMappingPolicy": true,
+    "versalienMayForceBasisschrift": true,
+    "versalienAlternativeRepresentationExists": true,
+    "hostFormattingMustNotBeHardcodedIntoCore": true
+  },
+  "hostPolicyBoundary": {
+    "wordBold": "NOT_YET_MAPPED",
+    "wordItalic": "NOT_YET_MAPPED",
+    "wordUnderline": "NOT_YET_MAPPED",
+    "fontColor": "NOT_YET_MAPPED",
+    "highlightColor": "NOT_YET_MAPPED",
+    "mappingOwner": "HOST_OR_TRANSCRIPTION_POLICY"
+  },
+  "crossDependencies": {
+    "hyphenBoundary": "DE-STROKE-002",
+    "slashBoundary": "DE-STROKE-012",
+    "capitalSequence": "DE-CASE-006",
+    "generalAnnouncementTermination": "2.2.3"
+  },
+  "rules": [
+    {
+      "id": "DE-EMPH-001",
+      "section": "2.7",
+      "kind": "EMPHASIS_ABSTRACTION",
+      "summary": "German Braille provides a bounded emphasis mechanism rather than preserving every visual print-formatting distinction directly.",
+      "hostFormattingMapping": "SEPARATE_POLICY_REQUIRED",
+      "normative": false,
+      "executable": false,
+      "architecturalInference": true,
+      "evidenceRole": "ARCHITECTURAL_SYNTHESIS_FROM_SECTION_2_7"
+    },
+    {
+      "id": "DE-EMPH-002",
+      "section": "2.7.1",
+      "kind": "PRIMARY_SINGLE_WORD",
+      "marker": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "summary": "A single word using the first emphasis type is prefixed by the primary emphasis marker.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-003",
+      "section": "2.7.1",
+      "kind": "PRIMARY_WORD_BOUNDARY",
+      "summary": "Blank, hyphen and slash all act as word boundaries for first-emphasis scope.",
+      "boundaries": [
+        "BRAILLE_BLANK",
+        "HYPHEN",
+        "SLASH"
+      ],
+      "dependencies": [
+        "DE-STROKE-002",
+        "DE-STROKE-012"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-004",
+      "section": "2.7.1",
+      "kind": "PRIMARY_MULTIWORD",
+      "startMarker": {
+        "unicode": "⠸⠸",
+        "codepoints": [
+          "U+2838",
+          "U+2838"
+        ],
+        "dots": [
+          "456",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "endMarker": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "An emphasis spanning more than one word may use a multiword start marker and explicit termination after the final word.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-005",
+      "section": "2.7.1",
+      "kind": "PRIMARY_SHORT_SPAN_OPTIMIZATION",
+      "summary": "For emphasis spanning one to three words, each word may instead be individually marked to save Braille space.",
+      "maximumWords": 3,
+      "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-006",
+      "section": "2.7.1",
+      "kind": "PRIMARY_WORD_PART",
+      "summary": "A first-emphasis word part uses the primary marker at word start and dot-6 plus the primary marker when emphasis begins inside a word.",
+      "startAtWordBeginning": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "startInsideWord": {
+        "unicode": "⠠⠸",
+        "codepoints": [
+          "U+2820",
+          "U+2838"
+        ],
+        "dots": [
+          "6",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "explicitEndBeforeRemainder": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "wordEndAlsoTerminates": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-007",
+      "section": "2.7.2",
+      "kind": "SECONDARY_SINGLE_WORD_OR_PART",
+      "marker": {
+        "unicode": "⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The second emphasis type uses its alternate marker for one word and for the start of a highlighted word part.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-008",
+      "section": "2.7.2",
+      "kind": "SECONDARY_MULTIWORD",
+      "startMarker": {
+        "unicode": "⠐⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "5",
+          "456"
+        ],
+        "cellCount": 3
+      },
+      "endMarker": {
+        "unicode": "⠐⠄",
+        "codepoints": [
+          "U+2810",
+          "U+2804"
+        ],
+        "dots": [
+          "5",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A multiword span using the second emphasis type has a dedicated start and end sequence.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-009",
+      "section": "2.7.2",
+      "kind": "SECONDARY_WORD_PART_END",
+      "endMarker": {
+        "unicode": "⠐⠄",
+        "codepoints": [
+          "U+2810",
+          "U+2804"
+        ],
+        "dots": [
+          "5",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The secondary emphasis terminator may occur inside a word when only a word part is marked.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-010",
+      "section": "2.7.2",
+      "kind": "SECONDARY_TWO_WORD_OPTIMIZATION",
+      "summary": "When the second emphasis spans exactly two words, each word may be marked individually to save space.",
+      "wordCount": 2,
+      "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-011",
+      "section": "2.7.2",
+      "kind": "DISTINCT_EMPHASIS_CHANNELS",
+      "summary": "Primary and secondary emphasis may coexist to distinguish two different highlighted classes in the same source.",
+      "channels": [
+        "PRIMARY",
+        "SECONDARY"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-012",
+      "section": "2.7.3",
+      "kind": "VERSALIEN_EXPLICIT_MODE",
+      "summary": "When all-capitals styling must remain recognizable as such, the span is represented in Basisschrift.",
+      "requiresBasisschrift": true,
+      "contractionsAllowed": false,
+      "dependency": "DE-CASE-006",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-013",
+      "section": "2.7.3",
+      "kind": "VERSALIEN_SINGLE_WORD",
+      "marker": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "summary": "One all-capitals word is introduced by the capital-sequence marker.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-014",
+      "section": "2.7.3",
+      "kind": "VERSALIEN_MULTIWORD",
+      "startMarker": {
+        "unicode": "⠘⠘",
+        "codepoints": [
+          "U+2818",
+          "U+2818"
+        ],
+        "dots": [
+          "45",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "endMarker": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A multiword all-capitals passage may use the double capital marker and explicit terminator.",
+      "strategy": {
+        "twoOrMoreWords": "MULTIWORD_FORM_ALLOWED",
+        "upToThreeWords": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+        "fourOrMoreWords": "MULTIWORD_FORM_SHOULD_BE_USED"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-EMPH-015",
+      "section": "2.7.3",
+      "kind": "VERSALIEN_ALTERNATIVE_EMPHASIS",
+      "summary": "An alternative emphasis technique may be used instead of explicit Versalien encoding, for example when remaining in Kurzschrift.",
+      "semanticTradeoff": "VISUAL_ALL_CAPS_MAY_BE_REPRESENTED_AS_EMPHASIS",
+      "profileRelevant": true,
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-EMPH-CASE-001",
+      "purpose": "primary-single-word",
+      "spanShape": "ONE_WORD",
+      "expectedPrefix": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "rule": "DE-EMPH-002"
+    },
+    {
+      "id": "DE-EMPH-CASE-002",
+      "purpose": "primary-multiword",
+      "spanShape": "MULTIPLE_WORDS",
+      "expectedStart": {
+        "unicode": "⠸⠸",
+        "codepoints": [
+          "U+2838",
+          "U+2838"
+        ],
+        "dots": [
+          "456",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "expectedEnd": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-004"
+    },
+    {
+      "id": "DE-EMPH-CASE-003",
+      "purpose": "primary-part-at-word-start",
+      "spanShape": "WORD_PART_START",
+      "expectedStart": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "expectedEndBeforeRemainder": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-006"
+    },
+    {
+      "id": "DE-EMPH-CASE-004",
+      "purpose": "primary-part-inside-word",
+      "spanShape": "WORD_PART_INTERIOR",
+      "expectedStart": {
+        "unicode": "⠠⠸",
+        "codepoints": [
+          "U+2820",
+          "U+2838"
+        ],
+        "dots": [
+          "6",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-006"
+    },
+    {
+      "id": "DE-EMPH-CASE-005",
+      "purpose": "secondary-single-word",
+      "spanShape": "ONE_WORD",
+      "expectedPrefix": {
+        "unicode": "⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-007"
+    },
+    {
+      "id": "DE-EMPH-CASE-006",
+      "purpose": "secondary-multiword",
+      "spanShape": "MULTIPLE_WORDS",
+      "expectedStart": {
+        "unicode": "⠐⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "5",
+          "456"
+        ],
+        "cellCount": 3
+      },
+      "expectedEnd": {
+        "unicode": "⠐⠄",
+        "codepoints": [
+          "U+2810",
+          "U+2804"
+        ],
+        "dots": [
+          "5",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-008"
+    },
+    {
+      "id": "DE-EMPH-CASE-007",
+      "purpose": "secondary-part-word-end",
+      "spanShape": "WORD_PART",
+      "expectedEnd": {
+        "unicode": "⠐⠄",
+        "codepoints": [
+          "U+2810",
+          "U+2804"
+        ],
+        "dots": [
+          "5",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-EMPH-009"
+    },
+    {
+      "id": "DE-EMPH-CASE-008",
+      "purpose": "versalien-single-word",
+      "spanShape": "ONE_ALL_CAPS_WORD",
+      "expectedPrefix": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "requiresBasisschrift": true,
+      "rules": [
+        "DE-EMPH-012",
+        "DE-EMPH-013"
+      ]
+    },
+    {
+      "id": "DE-EMPH-CASE-009",
+      "purpose": "versalien-four-word-passage",
+      "spanShape": "FOUR_OR_MORE_ALL_CAPS_WORDS",
+      "expectedStart": {
+        "unicode": "⠘⠘",
+        "codepoints": [
+          "U+2818",
+          "U+2818"
+        ],
+        "dots": [
+          "45",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "expectedEnd": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "strategy": "MULTIWORD_FORM_SHOULD_BE_USED",
+      "rule": "DE-EMPH-014"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeFormattingMappingStarted": false,
+    "officeIntegrationStarted": false,
+    "requiresLaterConformancePromotion": true
+  },
+  "precisionConsolidation": {
+    "status": "APPLIED",
+    "scope": [
+      "normative-vs-architectural-classification"
+    ]
+  }
+}
