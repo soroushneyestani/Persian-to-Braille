@@ -1,0 +1,1011 @@
+{
+  "phase": "15.1N",
+  "title": "BSKDL Basisschrift In-Word Punctuation and Contraction-Transparency Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "section": "2.13",
+    "sectionExtractionSha256": "1785b5cb589888c2b006d9daa420cc99e94f519cde8a9987e20731f9f89887be",
+    "pdfStartPage": 95,
+    "pdfEndBoundaryPage": 99
+  },
+  "coverage": {
+    "sections": [
+      "2.13"
+    ],
+    "ruleRecords": 11,
+    "sourceExamples": 10,
+    "validationCases": 9,
+    "profiles": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "cancellationPoint": {
+    "unicode": "⠠",
+    "codepoints": [
+      "U+2820"
+    ],
+    "dots": [
+      "6"
+    ],
+    "cellCount": 1
+  },
+  "coveredPunctuationClasses": [
+    "COMMA",
+    "SEMICOLON",
+    "COLON",
+    "QUESTION_MARK",
+    "EXCLAMATION_MARK",
+    "BRACKETS",
+    "QUOTATION_MARKS",
+    "ARROWS"
+  ],
+  "sentencePeriodException": true,
+  "specialForms": {
+    "squareBracketInternal": {
+      "unicode": "⠠⠠⠶",
+      "codepoints": [
+        "U+2820",
+        "U+2820",
+        "U+2836"
+      ],
+      "dots": [
+        "6",
+        "6",
+        "2356"
+      ],
+      "cellCount": 3
+    },
+    "doubleQuoteInternal": {
+      "open": {
+        "unicode": "⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "close": {
+        "unicode": "⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "356"
+        ],
+        "cellCount": 2
+      }
+    },
+    "halfQuoteInternal": {
+      "open": {
+        "unicode": "⠠⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "236"
+        ],
+        "cellCount": 3
+      },
+      "close": {
+        "unicode": "⠠⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "356"
+        ],
+        "cellCount": 3
+      }
+    }
+  },
+  "contractionTransparency": {
+    "coveredInWordPunctuation": true,
+    "behavior": "IGNORE_FOR_CONTRACTION_MATCHING_BUT_PRESERVE_IN_OUTPUT",
+    "appliesTo": [
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "positionModel": {
+    "wordInternal": {
+      "lexicalMaterialBefore": true,
+      "lexicalMaterialAfter": true,
+      "cancellationPointRequired": true
+    },
+    "wordEdge": {
+      "section213InternalRule": "NOT_APPLIED_AS_INTERNAL_SIGN",
+      "ordinaryPunctuationRulesRemain": true
+    }
+  },
+  "sourceExamples": [
+    {
+      "id": "DE-INWORD-EX-001",
+      "profile": "basisschrift",
+      "print": "Hundert(e)",
+      "braille": {
+        "unicode": "⠓⠥⠝⠙⠑⠗⠞⠠⠶⠑⠶",
+        "codepoints": [
+          "U+2813",
+          "U+2825",
+          "U+281D",
+          "U+2819",
+          "U+2811",
+          "U+2817",
+          "U+281E",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+2836"
+        ],
+        "dots": [
+          "125",
+          "136",
+          "1345",
+          "145",
+          "15",
+          "1235",
+          "2345",
+          "6",
+          "2356",
+          "15",
+          "2356"
+        ],
+        "cellCount": 11
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-002",
+      "profile": "basisschrift",
+      "print": "Hundert[e]",
+      "braille": {
+        "unicode": "⠓⠥⠝⠙⠑⠗⠞⠠⠠⠶⠑⠠⠶",
+        "codepoints": [
+          "U+2813",
+          "U+2825",
+          "U+281D",
+          "U+2819",
+          "U+2811",
+          "U+2817",
+          "U+281E",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+2820",
+          "U+2836"
+        ],
+        "dots": [
+          "125",
+          "136",
+          "1345",
+          "145",
+          "15",
+          "1235",
+          "2345",
+          "6",
+          "6",
+          "2356",
+          "15",
+          "6",
+          "2356"
+        ],
+        "cellCount": 13
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-003",
+      "profile": "basisschrift",
+      "print": "Student(inn)en",
+      "braille": {
+        "unicode": "⠎⠞⠥⠙⠑⠝⠞⠠⠶⠊⠝⠝⠠⠶⠑⠝",
+        "codepoints": [
+          "U+280E",
+          "U+281E",
+          "U+2825",
+          "U+2819",
+          "U+2811",
+          "U+281D",
+          "U+281E",
+          "U+2820",
+          "U+2836",
+          "U+280A",
+          "U+281D",
+          "U+281D",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "234",
+          "2345",
+          "136",
+          "145",
+          "15",
+          "1345",
+          "2345",
+          "6",
+          "2356",
+          "24",
+          "1345",
+          "1345",
+          "6",
+          "2356",
+          "15",
+          "1345"
+        ],
+        "cellCount": 16
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-004",
+      "profile": "basisschrift",
+      "print": "Student[inn]en",
+      "braille": {
+        "unicode": "⠎⠞⠥⠙⠑⠝⠞⠠⠠⠶⠊⠝⠝⠠⠠⠶⠑⠝",
+        "codepoints": [
+          "U+280E",
+          "U+281E",
+          "U+2825",
+          "U+2819",
+          "U+2811",
+          "U+281D",
+          "U+281E",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+280A",
+          "U+281D",
+          "U+281D",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "234",
+          "2345",
+          "136",
+          "145",
+          "15",
+          "1345",
+          "2345",
+          "6",
+          "6",
+          "2356",
+          "24",
+          "1345",
+          "1345",
+          "6",
+          "6",
+          "2356",
+          "15",
+          "1345"
+        ],
+        "cellCount": 18
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-005",
+      "profile": "basisschrift",
+      "print": "Haus\"rats\"versicherung",
+      "braille": {
+        "unicode": "⠓⠁⠥⠎⠠⠦⠗⠁⠞⠎⠠⠴⠧⠑⠗⠎⠊⠉⠓⠑⠗⠥⠝⠛",
+        "codepoints": [
+          "U+2813",
+          "U+2801",
+          "U+2825",
+          "U+280E",
+          "U+2820",
+          "U+2826",
+          "U+2817",
+          "U+2801",
+          "U+281E",
+          "U+280E",
+          "U+2820",
+          "U+2834",
+          "U+2827",
+          "U+2811",
+          "U+2817",
+          "U+280E",
+          "U+280A",
+          "U+2809",
+          "U+2813",
+          "U+2811",
+          "U+2817",
+          "U+2825",
+          "U+281D",
+          "U+281B"
+        ],
+        "dots": [
+          "125",
+          "1",
+          "136",
+          "234",
+          "6",
+          "236",
+          "1235",
+          "1",
+          "2345",
+          "234",
+          "6",
+          "356",
+          "1236",
+          "15",
+          "1235",
+          "234",
+          "24",
+          "14",
+          "125",
+          "15",
+          "1235",
+          "136",
+          "1345",
+          "1245"
+        ],
+        "cellCount": 24
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-006",
+      "profile": "basisschrift",
+      "print": "Haus'rats'versicherung",
+      "braille": {
+        "unicode": "⠓⠁⠥⠎⠠⠠⠦⠗⠁⠞⠎⠠⠠⠴⠧⠑⠗⠎⠊⠉⠓⠑⠗⠥⠝⠛",
+        "codepoints": [
+          "U+2813",
+          "U+2801",
+          "U+2825",
+          "U+280E",
+          "U+2820",
+          "U+2820",
+          "U+2826",
+          "U+2817",
+          "U+2801",
+          "U+281E",
+          "U+280E",
+          "U+2820",
+          "U+2820",
+          "U+2834",
+          "U+2827",
+          "U+2811",
+          "U+2817",
+          "U+280E",
+          "U+280A",
+          "U+2809",
+          "U+2813",
+          "U+2811",
+          "U+2817",
+          "U+2825",
+          "U+281D",
+          "U+281B"
+        ],
+        "dots": [
+          "125",
+          "1",
+          "136",
+          "234",
+          "6",
+          "6",
+          "236",
+          "1235",
+          "1",
+          "2345",
+          "234",
+          "6",
+          "6",
+          "356",
+          "1236",
+          "15",
+          "1235",
+          "234",
+          "24",
+          "14",
+          "125",
+          "15",
+          "1235",
+          "136",
+          "1345",
+          "1245"
+        ],
+        "cellCount": 26
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-007",
+      "profile": "vollschrift",
+      "print": "Student(inn)en",
+      "braille": {
+        "unicode": "⠾⠥⠙⠑⠝⠞⠠⠶⠊⠝⠝⠠⠶⠑⠝",
+        "codepoints": [
+          "U+283E",
+          "U+2825",
+          "U+2819",
+          "U+2811",
+          "U+281D",
+          "U+281E",
+          "U+2820",
+          "U+2836",
+          "U+280A",
+          "U+281D",
+          "U+281D",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "23456",
+          "136",
+          "145",
+          "15",
+          "1345",
+          "2345",
+          "6",
+          "2356",
+          "24",
+          "1345",
+          "1345",
+          "6",
+          "2356",
+          "15",
+          "1345"
+        ],
+        "cellCount": 15
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-008",
+      "profile": "vollschrift",
+      "print": "Student[inn]en",
+      "braille": {
+        "unicode": "⠾⠥⠙⠑⠝⠞⠠⠠⠶⠊⠝⠝⠠⠠⠶⠑⠝",
+        "codepoints": [
+          "U+283E",
+          "U+2825",
+          "U+2819",
+          "U+2811",
+          "U+281D",
+          "U+281E",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+280A",
+          "U+281D",
+          "U+281D",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "23456",
+          "136",
+          "145",
+          "15",
+          "1345",
+          "2345",
+          "6",
+          "6",
+          "2356",
+          "24",
+          "1345",
+          "1345",
+          "6",
+          "6",
+          "2356",
+          "15",
+          "1345"
+        ],
+        "cellCount": 17
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-009",
+      "profile": "kurzschrift",
+      "print": "Student(inn)en",
+      "braille": {
+        "unicode": "⠾⠥⠙⠉⠞⠠⠶⠔⠝⠠⠶⠉",
+        "codepoints": [
+          "U+283E",
+          "U+2825",
+          "U+2819",
+          "U+2809",
+          "U+281E",
+          "U+2820",
+          "U+2836",
+          "U+2814",
+          "U+281D",
+          "U+2820",
+          "U+2836",
+          "U+2809"
+        ],
+        "dots": [
+          "23456",
+          "136",
+          "145",
+          "14",
+          "2345",
+          "6",
+          "2356",
+          "35",
+          "1345",
+          "6",
+          "2356",
+          "14"
+        ],
+        "cellCount": 12
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    },
+    {
+      "id": "DE-INWORD-EX-010",
+      "profile": "kurzschrift",
+      "print": "Student[inn]en",
+      "braille": {
+        "unicode": "⠾⠥⠙⠉⠞⠠⠠⠶⠔⠝⠠⠠⠶⠉",
+        "codepoints": [
+          "U+283E",
+          "U+2825",
+          "U+2819",
+          "U+2809",
+          "U+281E",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+2814",
+          "U+281D",
+          "U+2820",
+          "U+2820",
+          "U+2836",
+          "U+2809"
+        ],
+        "dots": [
+          "23456",
+          "136",
+          "145",
+          "14",
+          "2345",
+          "6",
+          "6",
+          "2356",
+          "35",
+          "1345",
+          "6",
+          "6",
+          "2356",
+          "14"
+        ],
+        "cellCount": 14
+      },
+      "section": "2.13",
+      "status": "NORMATIVE_SOURCE_EXAMPLE"
+    }
+  ],
+  "architecturalFinding": {
+    "punctuationAndLexicalAnalysisAreSeparate": true,
+    "inWordPunctuationIsContractionTransparent": true,
+    "punctuationSerializationRemainsVisible": true,
+    "profileSpecificLexicalBrailleMayDiffer": true,
+    "inWordPunctuationSemanticsRemainUniform": true,
+    "wordPositionIsSemanticallyRelevant": true
+  },
+  "futureArchitecture": {
+    "lexicalStage": "CONTRACTION_MATCHING_WITH_TRANSPARENT_INWORD_PUNCTUATION",
+    "serializationStage": "REINSERT_PUNCTUATION_WITH_SECTION_2_13_FORMS",
+    "phase17MigrationTarget": "PROFILE_AWARE_LEXICAL_AND_SERIALIZATION_PIPELINE"
+  },
+  "crossDependencies": {
+    "punctuationFoundation": "15.1D",
+    "vollschrift": "PHASE15_VOLLSCHRIFT_NOT_YET_AUDITED",
+    "kurzschrift": "PHASE15_KURZSCHRIFT_NOT_YET_AUDITED"
+  },
+  "rules": [
+    {
+      "id": "DE-INWORD-001",
+      "section": "2.13",
+      "kind": "PROFILE_SCOPE",
+      "summary": "The in-word punctuation rules of section 2.13 apply uniformly to Basisschrift, Vollschrift and Kurzschrift.",
+      "profiles": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-002",
+      "section": "2.13",
+      "kind": "COVERED_PUNCTUATION_CLASSES",
+      "summary": "Comma, semicolon, colon, question mark, exclamation mark, brackets, quotation marks and arrows are covered when they occur inside words.",
+      "classes": [
+        "COMMA",
+        "SEMICOLON",
+        "COLON",
+        "QUESTION_MARK",
+        "EXCLAMATION_MARK",
+        "BRACKETS",
+        "QUOTATION_MARKS",
+        "ARROWS"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-003",
+      "section": "2.13",
+      "kind": "SENTENCE_PERIOD_EXCEPTION",
+      "summary": "The sentence period is explicitly excluded from the general in-word cancellation-point rule.",
+      "excludedClass": "SENTENCE_PERIOD",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-004",
+      "section": "2.13",
+      "kind": "CANCELLATION_POINT_PREFIX",
+      "summary": "A covered punctuation sign or arrow that occurs inside a word receives a preceding cancellation point.",
+      "marker": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "condition": "SIGN_OCCURS_INSIDE_WORD",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-005",
+      "section": "2.13",
+      "kind": "WORD_INTERNAL_POSITION",
+      "summary": "The additional cancellation point applies to punctuation that is internal to lexical word material; source examples distinguish such signs from closing punctuation at the word edge.",
+      "internalCondition": {
+        "lexicalMaterialBefore": true,
+        "lexicalMaterialAfter": true
+      },
+      "evidence": [
+        "Hundert(e)",
+        "Student(inn)en",
+        "Hundert[e]",
+        "Student[inn]en"
+      ],
+      "normative": true,
+      "executable": false,
+      "evidenceRole": "NORMATIVE_EXAMPLE_DERIVATION",
+      "directProseRule": false
+    },
+    {
+      "id": "DE-INWORD-006",
+      "section": "2.13",
+      "kind": "SQUARE_BRACKET_SPECIAL_FORM",
+      "summary": "A square bracket occurring inside a word uses the three-cell in-word form shown by section 2.13.",
+      "inWordForm": {
+        "unicode": "⠠⠠⠶",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2836"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "2356"
+        ],
+        "cellCount": 3
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-007",
+      "section": "2.13",
+      "kind": "DOUBLE_QUOTE_INWORD_FORMS",
+      "summary": "Ordinary quotation marks inside a word are represented with the cancellation point preceding the ordinary opening or closing quotation sign.",
+      "opening": {
+        "unicode": "⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "closing": {
+        "unicode": "⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "356"
+        ],
+        "cellCount": 2
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-008",
+      "section": "2.13",
+      "kind": "HALF_QUOTE_INWORD_FORMS",
+      "summary": "Single or half quotation marks inside words use the three-cell forms specified by section 2.13.",
+      "opening": {
+        "unicode": "⠠⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "236"
+        ],
+        "cellCount": 3
+      },
+      "closing": {
+        "unicode": "⠠⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "356"
+        ],
+        "cellCount": 3
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-009",
+      "section": "2.13",
+      "kind": "CONTRACTION_TRANSPARENCY",
+      "summary": "For contraction decisions, covered punctuation inside a word has no effect and is treated as though it did not exist.",
+      "transparentToContractionAnalysis": true,
+      "ignoredFor": [
+        "VOLLSCHRIFT_CONTRACTION_MATCHING",
+        "KURZSCHRIFT_CONTRACTION_MATCHING"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-INWORD-010",
+      "section": "2.13",
+      "kind": "PUNCTUATION_EMISSION_PRESERVED",
+      "summary": "Contraction transparency affects lexical analysis only; the punctuation itself remains present in the Braille output.",
+      "lexicalAnalysis": "IGNORE_COVERED_INWORD_PUNCTUATION",
+      "outputSerialization": "PRESERVE_PUNCTUATION_WITH_INWORD_FORM",
+      "normative": true,
+      "executable": false,
+      "evidenceRole": "NORMATIVE_PROSE_PLUS_SOURCE_EXAMPLES"
+    },
+    {
+      "id": "DE-INWORD-011",
+      "section": "2.13",
+      "kind": "LEXICAL_AND_SERIALIZATION_LAYERING",
+      "summary": "A future implementation should separate contraction analysis from punctuation serialization so in-word signs can remain visible while being transparent to lexical matching.",
+      "architecturalInference": true,
+      "normative": false,
+      "futureOwner": [
+        "LEXICAL_CONTRACTION_ENGINE",
+        "TEXT_SERIALIZATION_LAYER"
+      ],
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-INWORD-CASE-001",
+      "purpose": "round-parenthesis-at-word-edge",
+      "sourceExample": "DE-INWORD-EX-001",
+      "openingIsInternal": true,
+      "closingIsInternal": false,
+      "rule": "DE-INWORD-005"
+    },
+    {
+      "id": "DE-INWORD-CASE-002",
+      "purpose": "round-parentheses-both-internal",
+      "sourceExample": "DE-INWORD-EX-003",
+      "openingIsInternal": true,
+      "closingIsInternal": true,
+      "rule": "DE-INWORD-005"
+    },
+    {
+      "id": "DE-INWORD-CASE-003",
+      "purpose": "square-bracket-internal-form",
+      "expectedInternalForm": {
+        "unicode": "⠠⠠⠶",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2836"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "2356"
+        ],
+        "cellCount": 3
+      },
+      "sourceExample": "DE-INWORD-EX-004",
+      "rule": "DE-INWORD-006"
+    },
+    {
+      "id": "DE-INWORD-CASE-004",
+      "purpose": "double-quotation-inword",
+      "expectedOpen": {
+        "unicode": "⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "expectedClose": {
+        "unicode": "⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "356"
+        ],
+        "cellCount": 2
+      },
+      "sourceExample": "DE-INWORD-EX-005",
+      "rule": "DE-INWORD-007"
+    },
+    {
+      "id": "DE-INWORD-CASE-005",
+      "purpose": "half-quotation-inword",
+      "expectedOpen": {
+        "unicode": "⠠⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "236"
+        ],
+        "cellCount": 3
+      },
+      "expectedClose": {
+        "unicode": "⠠⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "6",
+          "356"
+        ],
+        "cellCount": 3
+      },
+      "sourceExample": "DE-INWORD-EX-006",
+      "rule": "DE-INWORD-008"
+    },
+    {
+      "id": "DE-INWORD-CASE-006",
+      "purpose": "vollschrift-punctuation-stability",
+      "basisExample": "DE-INWORD-EX-003",
+      "vollExample": "DE-INWORD-EX-007",
+      "punctuationSemanticsEqual": true,
+      "lexicalBrailleMayDiffer": true,
+      "rules": [
+        "DE-INWORD-001",
+        "DE-INWORD-009"
+      ]
+    },
+    {
+      "id": "DE-INWORD-CASE-007",
+      "purpose": "kurzschrift-punctuation-stability",
+      "basisExample": "DE-INWORD-EX-003",
+      "kurzExample": "DE-INWORD-EX-009",
+      "punctuationSemanticsEqual": true,
+      "lexicalBrailleMayDiffer": true,
+      "rules": [
+        "DE-INWORD-001",
+        "DE-INWORD-009"
+      ]
+    },
+    {
+      "id": "DE-INWORD-CASE-008",
+      "purpose": "contraction-transparent-punctuation",
+      "coveredPunctuationIgnoredDuring": "CONTRACTION_MATCHING",
+      "punctuationStillSerialized": true,
+      "rules": [
+        "DE-INWORD-009",
+        "DE-INWORD-010"
+      ]
+    },
+    {
+      "id": "DE-INWORD-CASE-009",
+      "purpose": "sentence-period-excluded",
+      "punctuationClass": "SENTENCE_PERIOD",
+      "generalCancellationRuleApplies": false,
+      "rule": "DE-INWORD-003"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "vollschriftImplementationStarted": false,
+    "kurzschriftImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "chapter2RuleFamilyCoverageComplete": true,
+    "fullBasisschriftClosureComplete": false,
+    "requiresClosureAudit": true,
+    "requiresLaterConformancePromotion": true
+  },
+  "precisionConsolidation": {
+    "status": "APPLIED",
+    "scope": [
+      "example-derived-position-semantics"
+    ]
+  }
+}

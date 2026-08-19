@@ -1,0 +1,1723 @@
+{
+  "phase": "15.1D",
+  "title": "BSKDL Basisschrift Normative Symbol Foundation",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.1",
+      "2.2.1",
+      "2.2.2",
+      "2.2.3"
+    ],
+    "alphabetSigns": 30,
+    "singleFormSigns": 12,
+    "multiFormSigns": 32,
+    "technicalSigns": 21
+  },
+  "semanticPolicy": {
+    "unicodeBrailleIsNormativeSerialization": false,
+    "dotsAreDerivedFromUnicodeBraille": true,
+    "caseRulesDeferredToSection": "2.6",
+    "contextualRulesPreservedSeparately": true,
+    "coreImplementationStarted": false
+  },
+  "alphabet": [
+    {
+      "print": "a",
+      "braille": {
+        "unicode": "⠁",
+        "codepoints": [
+          "U+2801"
+        ],
+        "dots": [
+          "1"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "b",
+      "braille": {
+        "unicode": "⠃",
+        "codepoints": [
+          "U+2803"
+        ],
+        "dots": [
+          "12"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "c",
+      "braille": {
+        "unicode": "⠉",
+        "codepoints": [
+          "U+2809"
+        ],
+        "dots": [
+          "14"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "d",
+      "braille": {
+        "unicode": "⠙",
+        "codepoints": [
+          "U+2819"
+        ],
+        "dots": [
+          "145"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "e",
+      "braille": {
+        "unicode": "⠑",
+        "codepoints": [
+          "U+2811"
+        ],
+        "dots": [
+          "15"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "f",
+      "braille": {
+        "unicode": "⠋",
+        "codepoints": [
+          "U+280B"
+        ],
+        "dots": [
+          "124"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "g",
+      "braille": {
+        "unicode": "⠛",
+        "codepoints": [
+          "U+281B"
+        ],
+        "dots": [
+          "1245"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "h",
+      "braille": {
+        "unicode": "⠓",
+        "codepoints": [
+          "U+2813"
+        ],
+        "dots": [
+          "125"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "i",
+      "braille": {
+        "unicode": "⠊",
+        "codepoints": [
+          "U+280A"
+        ],
+        "dots": [
+          "24"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "j",
+      "braille": {
+        "unicode": "⠚",
+        "codepoints": [
+          "U+281A"
+        ],
+        "dots": [
+          "245"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "k",
+      "braille": {
+        "unicode": "⠅",
+        "codepoints": [
+          "U+2805"
+        ],
+        "dots": [
+          "13"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "l",
+      "braille": {
+        "unicode": "⠇",
+        "codepoints": [
+          "U+2807"
+        ],
+        "dots": [
+          "123"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "m",
+      "braille": {
+        "unicode": "⠍",
+        "codepoints": [
+          "U+280D"
+        ],
+        "dots": [
+          "134"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "n",
+      "braille": {
+        "unicode": "⠝",
+        "codepoints": [
+          "U+281D"
+        ],
+        "dots": [
+          "1345"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "o",
+      "braille": {
+        "unicode": "⠕",
+        "codepoints": [
+          "U+2815"
+        ],
+        "dots": [
+          "135"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "p",
+      "braille": {
+        "unicode": "⠏",
+        "codepoints": [
+          "U+280F"
+        ],
+        "dots": [
+          "1234"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "q",
+      "braille": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "r",
+      "braille": {
+        "unicode": "⠗",
+        "codepoints": [
+          "U+2817"
+        ],
+        "dots": [
+          "1235"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "s",
+      "braille": {
+        "unicode": "⠎",
+        "codepoints": [
+          "U+280E"
+        ],
+        "dots": [
+          "234"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "t",
+      "braille": {
+        "unicode": "⠞",
+        "codepoints": [
+          "U+281E"
+        ],
+        "dots": [
+          "2345"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "u",
+      "braille": {
+        "unicode": "⠥",
+        "codepoints": [
+          "U+2825"
+        ],
+        "dots": [
+          "136"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "v",
+      "braille": {
+        "unicode": "⠧",
+        "codepoints": [
+          "U+2827"
+        ],
+        "dots": [
+          "1236"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "w",
+      "braille": {
+        "unicode": "⠺",
+        "codepoints": [
+          "U+283A"
+        ],
+        "dots": [
+          "2456"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "x",
+      "braille": {
+        "unicode": "⠭",
+        "codepoints": [
+          "U+282D"
+        ],
+        "dots": [
+          "1346"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "y",
+      "braille": {
+        "unicode": "⠽",
+        "codepoints": [
+          "U+283D"
+        ],
+        "dots": [
+          "13456"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "z",
+      "braille": {
+        "unicode": "⠵",
+        "codepoints": [
+          "U+2835"
+        ],
+        "dots": [
+          "1356"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "ä",
+      "braille": {
+        "unicode": "⠜",
+        "codepoints": [
+          "U+281C"
+        ],
+        "dots": [
+          "345"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "ö",
+      "braille": {
+        "unicode": "⠪",
+        "codepoints": [
+          "U+282A"
+        ],
+        "dots": [
+          "246"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "ü",
+      "braille": {
+        "unicode": "⠳",
+        "codepoints": [
+          "U+2833"
+        ],
+        "dots": [
+          "1256"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "ß",
+      "braille": {
+        "unicode": "⠮",
+        "codepoints": [
+          "U+282E"
+        ],
+        "dots": [
+          "2346"
+        ],
+        "cellCount": 1
+      },
+      "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+      "sourceSection": "2.1",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "singleFormSigns": [
+    {
+      "print": ",",
+      "semantic": "COMMA",
+      "braille": {
+        "unicode": "⠂",
+        "codepoints": [
+          "U+2802"
+        ],
+        "dots": [
+          "2"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": ";",
+      "semantic": "SEMICOLON",
+      "braille": {
+        "unicode": "⠆",
+        "codepoints": [
+          "U+2806"
+        ],
+        "dots": [
+          "23"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": ":",
+      "semantic": "COLON",
+      "braille": {
+        "unicode": "⠒",
+        "codepoints": [
+          "U+2812"
+        ],
+        "dots": [
+          "25"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "?",
+      "semantic": "QUESTION_MARK",
+      "braille": {
+        "unicode": "⠢",
+        "codepoints": [
+          "U+2822"
+        ],
+        "dots": [
+          "26"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "!",
+      "semantic": "EXCLAMATION_MARK",
+      "braille": {
+        "unicode": "⠖",
+        "codepoints": [
+          "U+2816"
+        ],
+        "dots": [
+          "235"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "()",
+      "semantic": "ROUND_BRACKET_OPEN_OR_CLOSE",
+      "braille": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "„",
+      "semantic": "OPENING_QUOTATION_MARK",
+      "braille": {
+        "unicode": "⠦",
+        "codepoints": [
+          "U+2826"
+        ],
+        "dots": [
+          "236"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "“",
+      "semantic": "CLOSING_QUOTATION_MARK",
+      "braille": {
+        "unicode": "⠴",
+        "codepoints": [
+          "U+2834"
+        ],
+        "dots": [
+          "356"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "§",
+      "semantic": "SECTION_SIGN",
+      "braille": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": ".",
+      "semantic": "FULL_STOP",
+      "braille": {
+        "unicode": "⠄",
+        "codepoints": [
+          "U+2804"
+        ],
+        "dots": [
+          "3"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "–",
+      "semantic": "HORIZONTAL_DASH_BASE_SIGN",
+      "braille": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "print": "‚",
+      "semantic": "APOSTROPHE",
+      "braille": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.1",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "multiFormSigns": [
+    {
+      "semantic": "DASH_EXTENSION_OR_PRIMARY_LIST_MARKER",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SEPARATOR_OR_SECONDARY_LIST_MARKER",
+      "braille": {
+        "unicode": "⠐⠤",
+        "codepoints": [
+          "U+2810",
+          "U+2824"
+        ],
+        "dots": [
+          "5",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SQUARE_BRACKET_OPEN_OR_CLOSE",
+      "braille": {
+        "unicode": "⠠⠶",
+        "codepoints": [
+          "U+2820",
+          "U+2836"
+        ],
+        "dots": [
+          "6",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "ANGLE_BRACKET_OPEN_OR_CLOSE",
+      "braille": {
+        "unicode": "⠐⠶",
+        "codepoints": [
+          "U+2810",
+          "U+2836"
+        ],
+        "dots": [
+          "5",
+          "2356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "CURLY_BRACKET_OPEN_OR_CLOSE",
+      "braille": {
+        "unicode": "⠐⠷",
+        "codepoints": [
+          "U+2810",
+          "U+2837"
+        ],
+        "dots": [
+          "5",
+          "12356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PHONETIC_BRACKET_OPEN",
+      "braille": {
+        "unicode": "⠘⠷",
+        "codepoints": [
+          "U+2818",
+          "U+2837"
+        ],
+        "dots": [
+          "45",
+          "12356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PHONETIC_BRACKET_CLOSE",
+      "braille": {
+        "unicode": "⠘⠾",
+        "codepoints": [
+          "U+2818",
+          "U+283E"
+        ],
+        "dots": [
+          "45",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PHONEMIC_BRACKET_OPEN_OR_CLOSE",
+      "braille": {
+        "unicode": "⠘⠌",
+        "codepoints": [
+          "U+2818",
+          "U+280C"
+        ],
+        "dots": [
+          "45",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SINGLE_QUOTATION_OPEN",
+      "braille": {
+        "unicode": "⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SINGLE_QUOTATION_CLOSE",
+      "braille": {
+        "unicode": "⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "FORWARD_SLASH",
+      "braille": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "ELLIPSIS_OR_CONTINUATION",
+      "braille": {
+        "unicode": "⠄⠄⠄",
+        "codepoints": [
+          "U+2804",
+          "U+2804",
+          "U+2804"
+        ],
+        "dots": [
+          "3",
+          "3",
+          "3"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "AMPERSAND",
+      "braille": {
+        "unicode": "⠐⠥",
+        "codepoints": [
+          "U+2810",
+          "U+2825"
+        ],
+        "dots": [
+          "5",
+          "136"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "ASTERISK",
+      "braille": {
+        "unicode": "⠠⠔",
+        "codepoints": [
+          "U+2820",
+          "U+2814"
+        ],
+        "dots": [
+          "6",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "RIGHT_ARROW",
+      "braille": {
+        "unicode": "⠒⠒⠕",
+        "codepoints": [
+          "U+2812",
+          "U+2812",
+          "U+2815"
+        ],
+        "dots": [
+          "25",
+          "25",
+          "135"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "LEFT_ARROW",
+      "braille": {
+        "unicode": "⠪⠒⠒",
+        "codepoints": [
+          "U+282A",
+          "U+2812",
+          "U+2812"
+        ],
+        "dots": [
+          "246",
+          "25",
+          "25"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "DOUBLE_ARROW",
+      "braille": {
+        "unicode": "⠪⠒⠒⠕",
+        "codepoints": [
+          "U+282A",
+          "U+2812",
+          "U+2812",
+          "U+2815"
+        ],
+        "dots": [
+          "246",
+          "25",
+          "25",
+          "135"
+        ],
+        "cellCount": 4
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PERCENT",
+      "braille": {
+        "unicode": "⠼⠚⠴",
+        "codepoints": [
+          "U+283C",
+          "U+281A",
+          "U+2834"
+        ],
+        "dots": [
+          "3456",
+          "245",
+          "356"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PER_MILLE",
+      "braille": {
+        "unicode": "⠼⠚⠴⠴",
+        "codepoints": [
+          "U+283C",
+          "U+281A",
+          "U+2834",
+          "U+2834"
+        ],
+        "dots": [
+          "3456",
+          "245",
+          "356",
+          "356"
+        ],
+        "cellCount": 4
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "DEGREE",
+      "braille": {
+        "unicode": "⠈⠴",
+        "codepoints": [
+          "U+2808",
+          "U+2834"
+        ],
+        "dots": [
+          "4",
+          "356"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "MINUTE",
+      "braille": {
+        "unicode": "⠈⠔",
+        "codepoints": [
+          "U+2808",
+          "U+2814"
+        ],
+        "dots": [
+          "4",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SECOND",
+      "braille": {
+        "unicode": "⠈⠔⠔",
+        "codepoints": [
+          "U+2808",
+          "U+2814",
+          "U+2814"
+        ],
+        "dots": [
+          "4",
+          "35",
+          "35"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "BACKSLASH",
+      "braille": {
+        "unicode": "⠈⠌",
+        "codepoints": [
+          "U+2808",
+          "U+280C"
+        ],
+        "dots": [
+          "4",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "AT_SIGN",
+      "braille": {
+        "unicode": "⠈⠜",
+        "codepoints": [
+          "U+2808",
+          "U+281C"
+        ],
+        "dots": [
+          "4",
+          "345"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "UNDERSCORE",
+      "braille": {
+        "unicode": "⠈⠸",
+        "codepoints": [
+          "U+2808",
+          "U+2838"
+        ],
+        "dots": [
+          "4",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "NUMBER_OR_HASH_SIGN",
+      "braille": {
+        "unicode": "⠈⠼",
+        "codepoints": [
+          "U+2808",
+          "U+283C"
+        ],
+        "dots": [
+          "4",
+          "3456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "EURO_SIGN",
+      "braille": {
+        "unicode": "⠈⠑",
+        "codepoints": [
+          "U+2808",
+          "U+2811"
+        ],
+        "dots": [
+          "4",
+          "15"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "DOLLAR_SIGN",
+      "braille": {
+        "unicode": "⠈⠎",
+        "codepoints": [
+          "U+2808",
+          "U+280E"
+        ],
+        "dots": [
+          "4",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "CENT_SIGN",
+      "braille": {
+        "unicode": "⠈⠉",
+        "codepoints": [
+          "U+2808",
+          "U+2809"
+        ],
+        "dots": [
+          "4",
+          "14"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "POUND_OR_LIRA_SIGN",
+      "braille": {
+        "unicode": "⠈⠇",
+        "codepoints": [
+          "U+2808",
+          "U+2807"
+        ],
+        "dots": [
+          "4",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "COPYRIGHT_SIGN",
+      "braille": {
+        "unicode": "⠶⠘⠉⠶",
+        "codepoints": [
+          "U+2836",
+          "U+2818",
+          "U+2809",
+          "U+2836"
+        ],
+        "dots": [
+          "2356",
+          "45",
+          "14",
+          "2356"
+        ],
+        "cellCount": 4
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "REGISTERED_TRADEMARK_SIGN",
+      "braille": {
+        "unicode": "⠶⠘⠗⠶",
+        "codepoints": [
+          "U+2836",
+          "U+2818",
+          "U+2817",
+          "U+2836"
+        ],
+        "dots": [
+          "2356",
+          "45",
+          "1235",
+          "2356"
+        ],
+        "cellCount": 4
+      },
+      "sourceSection": "2.2.2",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "technicalSigns": [
+    {
+      "semantic": "BRAILLE_TRANSCRIBER_BRACKET",
+      "braille": {
+        "unicode": "⠠⠰⠶",
+        "codepoints": [
+          "U+2820",
+          "U+2830",
+          "U+2836"
+        ],
+        "dots": [
+          "6",
+          "56",
+          "2356"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "NUMBER_INDICATOR",
+      "braille": {
+        "unicode": "⠼",
+        "codepoints": [
+          "U+283C"
+        ],
+        "dots": [
+          "3456"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "INITIAL_CAPITAL_INDICATOR",
+      "braille": {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "INTERNAL_CAPITAL_INDICATOR_VOLL_KURZ",
+      "braille": {
+        "unicode": "⠐⠨",
+        "codepoints": [
+          "U+2810",
+          "U+2828"
+        ],
+        "dots": [
+          "5",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "CAPITAL_SEQUENCE_INDICATOR",
+      "braille": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "MULTIWORD_CAPITAL_INDICATOR",
+      "braille": {
+        "unicode": "⠘⠘",
+        "codepoints": [
+          "U+2818",
+          "U+2818"
+        ],
+        "dots": [
+          "45",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "LOWERCASE_INDICATOR_OR_CANCELLATION_POINT",
+      "braille": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "MULTIPURPOSE_ANNOUNCEMENT_INDICATOR",
+      "braille": {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PRIMARY_EMPHASIS_WORD",
+      "braille": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "PRIMARY_EMPHASIS_MULTIWORD",
+      "braille": {
+        "unicode": "⠸⠸",
+        "codepoints": [
+          "U+2838",
+          "U+2838"
+        ],
+        "dots": [
+          "456",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SECONDARY_EMPHASIS_WORD_OR_PART",
+      "braille": {
+        "unicode": "⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SECONDARY_EMPHASIS_MULTIWORD",
+      "braille": {
+        "unicode": "⠐⠐⠸",
+        "codepoints": [
+          "U+2810",
+          "U+2810",
+          "U+2838"
+        ],
+        "dots": [
+          "5",
+          "5",
+          "456"
+        ],
+        "cellCount": 3
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "SECONDARY_EMPHASIS_TERMINATOR",
+      "braille": {
+        "unicode": "⠐⠄",
+        "codepoints": [
+          "U+2810",
+          "U+2804"
+        ],
+        "dots": [
+          "5",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "TABLE_CELL_SEPARATOR",
+      "braille": {
+        "unicode": "⠒⠒",
+        "codepoints": [
+          "U+2812",
+          "U+2812"
+        ],
+        "dots": [
+          "25",
+          "25"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "BASIS_VOLL_WORD_INDICATOR_OR_INSERT_TERMINATOR",
+      "braille": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "BASIS_VOLL_MULTIWORD_INDICATOR",
+      "braille": {
+        "unicode": "⠤⠄",
+        "codepoints": [
+          "U+2824",
+          "U+2804"
+        ],
+        "dots": [
+          "36",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "MATHEMATICAL_INSERT_INDICATOR",
+      "braille": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "FOREIGN_BRAILLE_SINGLE_INDICATOR",
+      "braille": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "FOREIGN_BRAILLE_MULTIWORD_INDICATOR",
+      "braille": {
+        "unicode": "⠰⠰",
+        "codepoints": [
+          "U+2830",
+          "U+2830"
+        ],
+        "dots": [
+          "56",
+          "56"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "COMPUTER_BRAILLE_SINGLE_WORD_INDICATOR",
+      "braille": {
+        "unicode": "⠠⠨",
+        "codepoints": [
+          "U+2820",
+          "U+2828"
+        ],
+        "dots": [
+          "6",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "semantic": "COMPUTER_BRAILLE_MULTIWORD_INDICATOR",
+      "braille": {
+        "unicode": "⠨⠨",
+        "codepoints": [
+          "U+2828",
+          "U+2828"
+        ],
+        "dots": [
+          "46",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceSection": "2.2.3",
+      "normative": true,
+      "executable": false
+    }
+  ]
+}

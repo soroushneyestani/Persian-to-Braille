@@ -1,0 +1,834 @@
+{
+  "phase": "15.1G",
+  "title": "BSKDL Basisschrift Capitalization and Case-State Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.6",
+      "2.6.1",
+      "2.6.2",
+      "2.6.3",
+      "2.6.4",
+      "2.6.5",
+      "2.6.6",
+      "2.6.7",
+      "2.6.8"
+    ],
+    "ruleRecords": 21,
+    "validationCases": 12
+  },
+  "markers": {
+    "initialCapital": {
+      "unicode": "⠨",
+      "codepoints": [
+        "U+2828"
+      ],
+      "dots": [
+        "46"
+      ],
+      "cellCount": 1
+    },
+    "capitalSequence": {
+      "unicode": "⠘",
+      "codepoints": [
+        "U+2818"
+      ],
+      "dots": [
+        "45"
+      ],
+      "cellCount": 1
+    },
+    "lowercase": {
+      "unicode": "⠠",
+      "codepoints": [
+        "U+2820"
+      ],
+      "dots": [
+        "6"
+      ],
+      "cellCount": 1
+    },
+    "internalCapitalVollKurz": {
+      "unicode": "⠐⠨",
+      "codepoints": [
+        "U+2810",
+        "U+2828"
+      ],
+      "dots": [
+        "5",
+        "46"
+      ],
+      "cellCount": 2
+    },
+    "greek": {
+      "unicode": "⠰",
+      "codepoints": [
+        "U+2830"
+      ],
+      "dots": [
+        "56"
+      ],
+      "cellCount": 1
+    }
+  },
+  "caseModes": {
+    "default": {
+      "id": "SELECTIVE_CASE_MARKING",
+      "description": "Ordinary German words normally do not encode case unless a BSKDL rule requires it.",
+      "mandatoryCaseContexts": [
+        "ABBREVIATION_WITHOUT_ABBREVIATION_POINT",
+        "UNIT_WITHOUT_ABBREVIATION_POINT",
+        "ROMAN_NUMERAL",
+        "STRUCTURING_LETTER_PROFILE_DEPENDENT"
+      ],
+      "optionalContexts": [
+        "POLITE_PRONOUN_CAPITALIZATION",
+        "NONSTANDARD_OR_SEMANTIC_CASE"
+      ]
+    },
+    "explicitCapitals": {
+      "id": "SYSTEMATIC_CAPITAL_MARKING",
+      "description": "All uppercase letters are explicitly announced; unannounced letters are interpreted as lowercase.",
+      "useCases": [
+        "EDUCATION",
+        "DICTIONARIES",
+        "OTHER_EXPLICIT_CASE_REQUIREMENTS"
+      ]
+    }
+  },
+  "architecturalFinding": {
+    "ordinaryTextCaseOftenImplicit": true,
+    "mandatoryCaseContextsExist": true,
+    "systematicCapitalModeExists": true,
+    "caseMayForceBasisschrift": true,
+    "caseCanSuppressContractions": true,
+    "mixedCaseRequiresSemanticGrouping": true,
+    "greekHasIndependentScope": true,
+    "profileSpecificCaseBehaviorExists": true,
+    "internalCapitalHasMultipleStrategies": true
+  },
+  "crossDependencies": {
+    "numericRomanNumerals": "DE-NUM-013",
+    "hyphenBoundary": "DE-STROKE-002",
+    "accentLetters": "2.8.1",
+    "foreignLanguage": "2.9"
+  },
+  "rules": [
+    {
+      "id": "DE-CASE-001",
+      "section": "2.6",
+      "kind": "DEFAULT_CASE_POLICY",
+      "summary": "German Braille normally does not distinguish uppercase and lowercase in ordinary running text.",
+      "mode": "SELECTIVE_CASE_MARKING",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-002",
+      "section": "2.6",
+      "kind": "MANDATORY_CASE_CONTEXTS",
+      "summary": "Case must be represented for abbreviations and units without abbreviation points, Roman numerals, and profile-dependent structuring letters.",
+      "dependencies": [
+        "DE-NUM-013",
+        "2.6.2",
+        "2.6.3"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-003",
+      "section": "2.6",
+      "kind": "SYSTEMATIC_CAPITAL_MODE",
+      "summary": "A document may explicitly mark all uppercase letters; in that mode unannounced letters are lowercase.",
+      "mode": "SYSTEMATIC_CAPITAL_MARKING",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-004",
+      "section": "2.6.1",
+      "kind": "INITIAL_CAPITAL",
+      "marker": {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      },
+      "summary": "A capital letter followed by one or more lowercase letters uses the dots-4-6 marker.",
+      "followingLowercaseRequiresMarker": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-005",
+      "section": "2.6.1",
+      "kind": "INITIAL_CAPITAL_ABBREVIATION",
+      "marker": {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      },
+      "summary": "An abbreviation or letter sequence beginning with one uppercase letter followed by lowercase letters uses the initial-capital marker and does not permit contractions.",
+      "contractionsAllowed": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-006",
+      "section": "2.6.2",
+      "kind": "CAPITAL_SEQUENCE",
+      "marker": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "summary": "A single uppercase letter or an uninterrupted uppercase sequence uses the capital-sequence marker.",
+      "requiresBasisschrift": true,
+      "contractionsAllowed": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-007",
+      "section": "2.6.2",
+      "kind": "ADJACENT_ABBREVIATIONS",
+      "summary": "When several case-announced abbreviations occur successively, each abbreviation is announced independently.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-008",
+      "section": "2.6.3",
+      "kind": "LOWERCASE_ANNOUNCEMENT",
+      "marker": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "summary": "Lowercase abbreviations and units without an abbreviation point, and lowercase Roman numerals, require the lowercase marker.",
+      "contractionsAllowed": false,
+      "normative": true,
+      "executable": false,
+      "contractionSuppressionEquivalentToBasisschrift": true
+    },
+    {
+      "id": "DE-CASE-009",
+      "section": "2.6.3",
+      "kind": "STRUCTURING_LOWERCASE_LETTER",
+      "summary": "A lowercase structuring letter is marked in Kurzschrift; in Basis- and Vollschrift a standalone lowercase letter is normally unmarked.",
+      "profileBehavior": {
+        "basisschrift": "UNMARKED_BY_DEFAULT",
+        "vollschrift": "UNMARKED_BY_DEFAULT",
+        "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-010",
+      "section": "2.6.4",
+      "kind": "MIXED_CASE_SEQUENCE",
+      "summary": "Non-word letter sequences containing internal case changes are written in Basisschrift and partitioned into case-homogeneous semantic groups.",
+      "requiresBasisschrift": true,
+      "markers": {
+        "uppercaseSequence": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "lowercaseSequence": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "capitalThenLowercase": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        }
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-011",
+      "section": "2.6.4",
+      "kind": "CASE_GROUPING_PRIORITY",
+      "summary": "When more than one valid case segmentation exists, semantic grouping has priority and the number of announcement signs should then be minimized.",
+      "priority": [
+        "SEMANTIC_GROUPING",
+        "MINIMIZE_ANNOUNCEMENT_SIGNS"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-012",
+      "section": "2.6.5",
+      "kind": "GREEK_LETTER_SCOPE",
+      "marker": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "summary": "Greek letters in mathematical or technical contexts are announced by the Greek/foreign letter marker.",
+      "termination": [
+        "BRAILLE_BLANK",
+        "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-013",
+      "section": "2.6.5",
+      "kind": "GREEK_UPPERCASE",
+      "summary": "An uppercase Greek letter uses the Greek marker followed by the appropriate German uppercase announcement marker.",
+      "prefix": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "caseMarkers": [
+        {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        }
+      ],
+      "foreignSpanTerminationRequiredForUnits": false,
+      "dependency": "2.9",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-014",
+      "section": "2.6.6",
+      "kind": "NON_DERIVABLE_CASE",
+      "summary": "Case that differs from normal orthographic expectation may be explicitly represented.",
+      "lowercaseWordMarker": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "markedLowercaseWordRequiresBasisschrift": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-015",
+      "section": "2.6.7",
+      "kind": "INTERNAL_CAPITAL_BASIS_METHOD",
+      "summary": "Internal capitalization may be represented using the mixed-case Basisschrift method of section 2.6.4.",
+      "availableProfiles": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "requiresBasisschriftSpan": true,
+      "normative": true,
+      "executable": false,
+      "pureBasisschriftPassagePolicy": {
+        "context": "PURE_BASISSCHRIFT_PASSAGE",
+        "leadingCapitalMarkerMayBeOmitted": true
+      }
+    },
+    {
+      "id": "DE-CASE-016",
+      "section": "2.6.7",
+      "kind": "INTERNAL_CAPITAL_COMPACT_METHOD",
+      "marker": {
+        "unicode": "⠐⠨",
+        "codepoints": [
+          "U+2810",
+          "U+2828"
+        ],
+        "dots": [
+          "5",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "summary": "In Voll- and Kurzschrift, one internal uppercase letter may be announced without switching the whole word to Basisschrift when this saves space.",
+      "availableProfiles": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "useOnlyWhenSpaceSaving": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-017",
+      "section": "2.6.8",
+      "kind": "ABBREVIATION_WITH_POINT",
+      "summary": "Case is normally not represented in abbreviations that use an abbreviation point.",
+      "profileBehavior": {
+        "basisschrift": "CASE_NORMALLY_OMITTED",
+        "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+        "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-018",
+      "section": "2.6.8",
+      "kind": "SENTENCE_PERIOD_SINGLE_LETTER",
+      "summary": "A standalone letter before a sentence-ending period remains subject to normal letter-case rules; the sentence period must not be mistaken for an abbreviation point.",
+      "profileBehavior": {
+        "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+        "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+        "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-019",
+      "section": "2.6.1",
+      "kind": "KURZSCHRIFT_INITIAL_CQXY",
+      "summary": "In Kurzschrift, initial uppercase C, Q, X and Y place the uppercase announcement before the dot-6 cancellation point that belongs to the letter form.",
+      "appliesToProfiles": [
+        "kurzschrift"
+      ],
+      "letters": [
+        "C",
+        "Q",
+        "X",
+        "Y"
+      ],
+      "sequenceOrder": [
+        "UPPERCASE_ANNOUNCEMENT",
+        "DOT6_CANCELLATION_POINT",
+        "LETTER"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-020",
+      "section": "2.6.3",
+      "kind": "KURZSCHRIFT_LOWERCASE_SEQUENCE_DISAMBIGUATION",
+      "summary": "In a dot-6-announced lowercase sequence in Kurzschrift, c, q, x, y and sharp-s may need an additional dot 6 when the initial lowercase marker does not unambiguously introduce the sequence.",
+      "appliesToProfiles": [
+        "kurzschrift"
+      ],
+      "letters": [
+        "c",
+        "q",
+        "x",
+        "y",
+        "ß"
+      ],
+      "additionalDot6MayBeUsed": true,
+      "condition": "INITIAL_LOWERCASE_MARKER_NOT_UNAMBIGUOUS_FOR_SEQUENCE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-CASE-021",
+      "section": "2.6",
+      "kind": "POLITE_PRONOUN_CAPITALIZATION",
+      "summary": "Customary capitalization of polite forms may optionally be carried into Braille.",
+      "required": false,
+      "customary": true,
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-CASE-CASE-001",
+      "section": "2.6.1",
+      "input": "Haus",
+      "expectedBraille": {
+        "unicode": "⠨⠓⠁⠥⠎",
+        "codepoints": [
+          "U+2828",
+          "U+2813",
+          "U+2801",
+          "U+2825",
+          "U+280E"
+        ],
+        "dots": [
+          "46",
+          "125",
+          "1",
+          "136",
+          "234"
+        ],
+        "cellCount": 5
+      },
+      "rule": "DE-CASE-004"
+    },
+    {
+      "id": "DE-CASE-CASE-002",
+      "section": "2.6.2",
+      "input": "AUA",
+      "expectedBraille": {
+        "unicode": "⠘⠁⠥⠁",
+        "codepoints": [
+          "U+2818",
+          "U+2801",
+          "U+2825",
+          "U+2801"
+        ],
+        "dots": [
+          "45",
+          "1",
+          "136",
+          "1"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-CASE-006"
+    },
+    {
+      "id": "DE-CASE-CASE-003",
+      "section": "2.6.2",
+      "input": "III",
+      "expectedBraille": {
+        "unicode": "⠘⠊⠊⠊",
+        "codepoints": [
+          "U+2818",
+          "U+280A",
+          "U+280A",
+          "U+280A"
+        ],
+        "dots": [
+          "45",
+          "24",
+          "24",
+          "24"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-CASE-002",
+        "DE-CASE-006",
+        "DE-NUM-013"
+      ]
+    },
+    {
+      "id": "DE-CASE-CASE-004",
+      "section": "2.6.3",
+      "input": "abc",
+      "context": "LOWERCASE_ABBREVIATION",
+      "expectedBraille": {
+        "unicode": "⠠⠁⠃⠉",
+        "codepoints": [
+          "U+2820",
+          "U+2801",
+          "U+2803",
+          "U+2809"
+        ],
+        "dots": [
+          "6",
+          "1",
+          "12",
+          "14"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-CASE-008"
+    },
+    {
+      "id": "DE-CASE-CASE-005",
+      "section": "2.6.4",
+      "input": "kW",
+      "expectedBraille": {
+        "unicode": "⠠⠅⠘⠺",
+        "codepoints": [
+          "U+2820",
+          "U+2805",
+          "U+2818",
+          "U+283A"
+        ],
+        "dots": [
+          "6",
+          "13",
+          "45",
+          "2456"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-CASE-010"
+    },
+    {
+      "id": "DE-CASE-CASE-006",
+      "section": "2.6.4",
+      "input": "hPa",
+      "expectedBraille": {
+        "unicode": "⠠⠓⠨⠏⠁",
+        "codepoints": [
+          "U+2820",
+          "U+2813",
+          "U+2828",
+          "U+280F",
+          "U+2801"
+        ],
+        "dots": [
+          "6",
+          "125",
+          "46",
+          "1234",
+          "1"
+        ],
+        "cellCount": 5
+      },
+      "rule": "DE-CASE-010"
+    },
+    {
+      "id": "DE-CASE-CASE-007",
+      "section": "2.6.5",
+      "input": "kΩ",
+      "expectedBraille": {
+        "unicode": "⠠⠅⠰⠘⠺",
+        "codepoints": [
+          "U+2820",
+          "U+2805",
+          "U+2830",
+          "U+2818",
+          "U+283A"
+        ],
+        "dots": [
+          "6",
+          "13",
+          "56",
+          "45",
+          "2456"
+        ],
+        "cellCount": 5
+      },
+      "rules": [
+        "DE-CASE-008",
+        "DE-CASE-012",
+        "DE-CASE-013"
+      ]
+    },
+    {
+      "id": "DE-CASE-CASE-008",
+      "section": "2.6.6",
+      "input": "iPhone",
+      "expectedBraille": {
+        "unicode": "⠠⠊⠨⠏⠓⠕⠝⠑",
+        "codepoints": [
+          "U+2820",
+          "U+280A",
+          "U+2828",
+          "U+280F",
+          "U+2813",
+          "U+2815",
+          "U+281D",
+          "U+2811"
+        ],
+        "dots": [
+          "6",
+          "24",
+          "46",
+          "1234",
+          "125",
+          "135",
+          "1345",
+          "15"
+        ],
+        "cellCount": 8
+      },
+      "rules": [
+        "DE-CASE-014",
+        "DE-CASE-004"
+      ]
+    },
+    {
+      "id": "DE-CASE-CASE-009",
+      "section": "2.6.7",
+      "input": "McDonald",
+      "method": "BASISSCHRIFT",
+      "expectedBraille": {
+        "unicode": "⠨⠍⠉⠨⠙⠕⠝⠁⠇⠙",
+        "codepoints": [
+          "U+2828",
+          "U+280D",
+          "U+2809",
+          "U+2828",
+          "U+2819",
+          "U+2815",
+          "U+281D",
+          "U+2801",
+          "U+2807",
+          "U+2819"
+        ],
+        "dots": [
+          "46",
+          "134",
+          "14",
+          "46",
+          "145",
+          "135",
+          "1345",
+          "1",
+          "123",
+          "145"
+        ],
+        "cellCount": 10
+      },
+      "rule": "DE-CASE-015"
+    },
+    {
+      "id": "DE-CASE-CASE-010",
+      "section": "2.6.7",
+      "input": "eBalance",
+      "method": "COMPACT_VOLL_OR_KURZ",
+      "expectedPrefix": {
+        "unicode": "⠑⠐⠨⠃",
+        "codepoints": [
+          "U+2811",
+          "U+2810",
+          "U+2828",
+          "U+2803"
+        ],
+        "dots": [
+          "15",
+          "5",
+          "46",
+          "12"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-CASE-016"
+    },
+    {
+      "id": "DE-CASE-CASE-011",
+      "section": "2.6.8",
+      "input": "z. B.",
+      "expectedBraille": {
+        "unicode": "⠵⠄⠃⠄",
+        "codepoints": [
+          "U+2835",
+          "U+2804",
+          "U+2803",
+          "U+2804"
+        ],
+        "dots": [
+          "1356",
+          "3",
+          "12",
+          "3"
+        ],
+        "cellCount": 4
+      },
+      "rule": "DE-CASE-017",
+      "note": "Preferred compact representation omits the print blank between related abbreviated items."
+    },
+    {
+      "id": "DE-CASE-CASE-012",
+      "section": "2.6.1",
+      "input": "Yvonne",
+      "context": "KURZSCHRIFT_INITIAL_CQXY",
+      "expectedPrefix": {
+        "unicode": "⠨⠠⠽",
+        "codepoints": [
+          "U+2828",
+          "U+2820",
+          "U+283D"
+        ],
+        "dots": [
+          "46",
+          "6",
+          "13456"
+        ],
+        "cellCount": 3
+      },
+      "rule": "DE-CASE-019"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "requiresLaterConformancePromotion": true
+  },
+  "precisionConsolidation": {
+    "status": "APPLIED",
+    "scope": [
+      "contraction-suppression",
+      "kurzschrift-cqxy",
+      "lowercase-sequence-disambiguation",
+      "polite-pronouns",
+      "pure-basisschrift-passage"
+    ]
+  }
+}

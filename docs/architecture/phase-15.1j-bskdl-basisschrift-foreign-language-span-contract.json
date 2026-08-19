@@ -1,0 +1,439 @@
+{
+  "phase": "15.1J",
+  "title": "BSKDL Basisschrift Foreign-Language Span Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "section": "2.9",
+    "sectionExtractionSha256": "ab80df8d3743a5844a017d390a55f935cd9864b7fd3bf10b2b6e01aa6e19c25e",
+    "pdfStartPage": 81,
+    "pdfEndBoundaryPage": 83
+  },
+  "coverage": {
+    "sections": [
+      "2.9"
+    ],
+    "ruleRecords": 14,
+    "validationCases": 7
+  },
+  "spanModes": {
+    "germanSystem": {
+      "id": "GERMAN_BRAILLE_FOREIGN_CONTENT",
+      "description": "Foreign-language print content is rendered using German Basis-, Voll- or Kurzschrift.",
+      "brailleProfileChanges": false,
+      "availableGermanProfiles": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "contractionPolicy": {
+        "allowedClass": "LAUTGRUPPENKUERZUNGEN_ONLY",
+        "pronunciationSensitive": true,
+        "crossWordSeamAllowed": false
+      }
+    },
+    "foreignSystem": {
+      "id": "FOREIGN_BRAILLE_SYSTEM_SPAN",
+      "description": "The active Braille system itself switches to the foreign-language Braille system.",
+      "brailleProfileChanges": true,
+      "allForeignSystemSignsApply": true,
+      "languageOrAlphabetIdentityRequired": "WHEN_NOT_CLEAR_FROM_CONTEXT"
+    }
+  },
+  "markers": {
+    "singleForeignSystem": {
+      "unicode": "⠰",
+      "codepoints": [
+        "U+2830"
+      ],
+      "dots": [
+        "56"
+      ],
+      "cellCount": 1
+    },
+    "multiwordForeignSystem": {
+      "unicode": "⠰⠰",
+      "codepoints": [
+        "U+2830",
+        "U+2830"
+      ],
+      "dots": [
+        "56",
+        "56"
+      ],
+      "cellCount": 2
+    },
+    "foreignSystemTerminator": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    }
+  },
+  "architecturalFinding": {
+    "contentLanguageAndBrailleProfileAreDistinct": true,
+    "foreignTextMayRemainInGermanProfile": true,
+    "foreignTextMaySwitchBrailleProfile": true,
+    "profileSwitchHasExplicitBoundaries": true,
+    "targetProfileOwnsInternalSigns": true,
+    "targetProfileIdentityMayNeedAnnotation": true,
+    "shortSpanOptimizationExists": true,
+    "germanRenderedForeignContractionsRestricted": true,
+    "profileResolverRequired": true
+  },
+  "profileResolverContract": {
+    "inputDimensions": [
+      "CONTENT_LANGUAGE",
+      "ACTIVE_BRAILLE_PROFILE",
+      "SPAN_LENGTH",
+      "EXPLICIT_PROFILE_REQUEST",
+      "CONTEXTUAL_PROFILE_IDENTITY"
+    ],
+    "possibleActions": [
+      "KEEP_GERMAN_PROFILE",
+      "SWITCH_TO_FOREIGN_PROFILE",
+      "REQUIRE_PROFILE_ANNOTATION"
+    ],
+    "phase17MigrationTarget": "BRAILLE_PROFILE_SPAN_RESOLVER"
+  },
+  "crossDependencies": {
+    "accentHandling": "15.1I",
+    "caseAndGreek": "15.1G",
+    "basisVollInsertMarkers": "BSKDL_4.8_NOT_YET_AUDITED"
+  },
+  "rules": [
+    {
+      "id": "DE-FLANG-001",
+      "section": "2.9",
+      "kind": "GERMAN_SYSTEM_FOREIGN_CONTENT",
+      "summary": "Foreign-language inserts may be rendered under German Basis-, Voll- or Kurzschrift.",
+      "mode": "GERMAN_BRAILLE_FOREIGN_CONTENT",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-002",
+      "section": "2.9",
+      "kind": "GERMAN_SYSTEM_CONTRACTION_LIMIT",
+      "summary": "Within foreign-language content rendered under German Braille, only Lautgruppenkürzungen may be used.",
+      "allowedContractionClass": "LAUTGRUPPENKUERZUNGEN_ONLY",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-003",
+      "section": "2.9",
+      "kind": "PRONUNCIATION_SENSITIVE_CONTRACTION",
+      "summary": "When pronunciation is known it should be considered when selecting German Lautgruppenkürzungen for foreign text.",
+      "pronunciationAware": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-004",
+      "section": "2.9",
+      "kind": "NO_CROSS_WORD_SEAM_CONTRACTION",
+      "summary": "A contraction must not cross a word seam inside a foreign-language insert.",
+      "crossWordSeamAllowed": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-005",
+      "section": "2.9",
+      "kind": "UNAMBIGUOUS_GERMAN_INSERT_MODE",
+      "summary": "BSKDL recommends an unambiguous explicit Basis/Voll representation where appropriate.",
+      "markerDefinitionDependency": "4.8",
+      "observedExample": {
+        "start": {
+          "unicode": "⠤⠄",
+          "codepoints": [
+            "U+2824",
+            "U+2804"
+          ],
+          "dots": [
+            "36",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "end": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        }
+      },
+      "markerStatus": "OBSERVED_IN_2_9_EXAMPLE_NOT_FROZEN_UNTIL_4_8_AUDIT",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-006",
+      "section": "2.9",
+      "kind": "FOREIGN_SYSTEM_SWITCH",
+      "summary": "A foreign Braille system may be used instead of German Braille for an embedded span.",
+      "mode": "FOREIGN_BRAILLE_SYSTEM_SPAN",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-007",
+      "section": "2.9",
+      "kind": "FOREIGN_SINGLE_WORD",
+      "startMarker": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "summary": "One word in a foreign Braille system is introduced by the single foreign-system marker.",
+      "scope": "ONE_WORD",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-008",
+      "section": "2.9",
+      "kind": "FOREIGN_MULTIWORD",
+      "startMarker": {
+        "unicode": "⠰⠰",
+        "codepoints": [
+          "U+2830",
+          "U+2830"
+        ],
+        "dots": [
+          "56",
+          "56"
+        ],
+        "cellCount": 2
+      },
+      "endMarker": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A multiword foreign-system span uses a double foreign marker and explicit terminator.",
+      "scope": "MULTIWORD",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-009",
+      "section": "2.9",
+      "kind": "FOREIGN_SYSTEM_FULL_SEMANTICS",
+      "summary": "Once a foreign Braille system is active, all Braille signs and rules of that system apply.",
+      "delegation": "TARGET_BRAILLE_PROFILE",
+      "includes": [
+        "ALPHABET",
+        "ACCENTS",
+        "PUNCTUATION",
+        "ANNOUNCEMENT_SIGNS",
+        "CONTRACTIONS"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-010",
+      "section": "2.9",
+      "kind": "FOREIGN_PROFILE_IDENTITY",
+      "summary": "The foreign alphabet or Braille system must be identified by annotation when it is not clear from context.",
+      "resolutionOrder": [
+        "CONTEXT",
+        "EXPLICIT_ANNOTATION"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-011",
+      "section": "2.9",
+      "kind": "SHORT_SPAN_OPTIMIZATION",
+      "summary": "For foreign-system spans of one to three words, each word may be individually marked to save space.",
+      "minimumWords": 1,
+      "maximumWords": 3,
+      "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS_ALLOWED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-012",
+      "section": "2.9",
+      "kind": "ACCENT_POLICY_BOUNDARY",
+      "summary": "A full foreign-system span permits the foreign system's own accented-letter signs without German point-4 accent announcement.",
+      "dependency": "DE-ACCENT-003",
+      "distinction": {
+        "germanAccentTechnique": "POINT4_REQUIRED",
+        "foreignSystemSpan": "TARGET_SYSTEM_RULES_APPLY"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-013",
+      "section": "2.9",
+      "kind": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT",
+      "summary": "Foreign-system punctuation and announcement signs may replace the German equivalents inside the switched span.",
+      "delegation": "TARGET_BRAILLE_PROFILE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-FLANG-014",
+      "section": "2.9",
+      "kind": "FOREIGN_CONTRACTION_SYSTEM",
+      "summary": "The contraction system of the foreign Braille profile may be used inside a foreign-system span.",
+      "delegation": "TARGET_BRAILLE_PROFILE",
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-FLANG-CASE-001",
+      "purpose": "foreign-system-single-word",
+      "spanWords": 1,
+      "expectedPrefix": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "rule": "DE-FLANG-007"
+    },
+    {
+      "id": "DE-FLANG-CASE-002",
+      "purpose": "foreign-system-multiword",
+      "spanWords": 4,
+      "expectedStart": {
+        "unicode": "⠰⠰",
+        "codepoints": [
+          "U+2830",
+          "U+2830"
+        ],
+        "dots": [
+          "56",
+          "56"
+        ],
+        "cellCount": 2
+      },
+      "expectedEnd": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-FLANG-008"
+    },
+    {
+      "id": "DE-FLANG-CASE-003",
+      "purpose": "two-word-space-saving-mode",
+      "spanWords": 2,
+      "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS",
+      "markerPerWord": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "rule": "DE-FLANG-011"
+    },
+    {
+      "id": "DE-FLANG-CASE-004",
+      "purpose": "three-word-space-saving-mode",
+      "spanWords": 3,
+      "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS",
+      "markerPerWord": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "rule": "DE-FLANG-011"
+    },
+    {
+      "id": "DE-FLANG-CASE-005",
+      "purpose": "foreign-accent-profile-switch",
+      "mode": "FOREIGN_BRAILLE_SYSTEM_SPAN",
+      "germanPoint4Required": false,
+      "targetProfileRulesApply": true,
+      "rules": [
+        "DE-FLANG-009",
+        "DE-FLANG-012"
+      ]
+    },
+    {
+      "id": "DE-FLANG-CASE-006",
+      "purpose": "unknown-foreign-system",
+      "contextIdentifiesSystem": false,
+      "annotationRequired": true,
+      "rule": "DE-FLANG-010"
+    },
+    {
+      "id": "DE-FLANG-CASE-007",
+      "purpose": "german-system-foreign-content",
+      "mode": "GERMAN_BRAILLE_FOREIGN_CONTENT",
+      "allowedContractionClass": "LAUTGRUPPENKUERZUNGEN_ONLY",
+      "crossWordSeamAllowed": false,
+      "rules": [
+        "DE-FLANG-001",
+        "DE-FLANG-002",
+        "DE-FLANG-004"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "profileResolverImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "section4_8DependencyStillOpen": true,
+    "requiresLaterConformancePromotion": true
+  }
+}

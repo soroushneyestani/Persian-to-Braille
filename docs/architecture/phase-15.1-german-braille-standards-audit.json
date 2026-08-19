@@ -1,0 +1,63 @@
+{
+  "phase": "15.1",
+  "title": "German Braille Standards Audit",
+  "status": "IN_PROGRESS",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "abbreviation": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "validSince": "2018-01-01",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "byteSize": 1657986,
+    "repositoryPolicy": "reference-only-not-vendored"
+  },
+  "jurisdictions": [
+    "DE",
+    "AT",
+    "CH"
+  ],
+  "textSystems": {
+    "basisschrift": {
+      "cell": "6-dot",
+      "contractionLevel": "none",
+      "phase15Target": true
+    },
+    "vollschrift": {
+      "cell": "6-dot",
+      "inherits": [
+        "basisschrift"
+      ],
+      "additionalSoundGroupContractions": 8,
+      "phase15Target": true
+    },
+    "kurzschrift": {
+      "cell": "6-dot",
+      "inherits": [
+        "basisschrift",
+        "vollschrift"
+      ],
+      "soundGroupContractionsTotal": 39,
+      "additionalRuleFamilies": true,
+      "phase15Target": true
+    }
+  },
+  "regionalPolicy": {
+    "commonRules": true,
+    "swissDeviationsPresent": true,
+    "profileShape": "NOT_YET_FROZEN"
+  },
+  "excludedFromInitialTextProfile": [
+    "stenography",
+    "8-dot computer braille",
+    "mathematical braille",
+    "music braille"
+  ],
+  "implementationPolicy": {
+    "normativeAuthority": "BSKDL",
+    "thirdPartyTables": "reference-and-differential-audit-only",
+    "implementationStarted": false
+  }
+}

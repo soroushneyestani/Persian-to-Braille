@@ -1,0 +1,648 @@
+{
+  "phase": "15.1F",
+  "title": "BSKDL Basisschrift Stroke Slash and Boundary Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.5",
+      "2.5.1",
+      "2.5.1.1",
+      "2.5.1.2",
+      "2.5.1.3",
+      "2.5.1.4",
+      "2.5.1.5",
+      "2.5.1.6",
+      "2.5.2",
+      "2.5.3"
+    ],
+    "ruleRecords": 17,
+    "syntheticCases": 6
+  },
+  "architecturalFinding": {
+    "sameBrailleSequenceMayHaveDifferentRoles": true,
+    "semanticDispatchRequired": true,
+    "spacingIsContextSensitive": true,
+    "lineBreakPolicyIsContextSensitive": true,
+    "wordBoundaryPolicyIsContextSensitive": true,
+    "numericStateInteractionPresent": true,
+    "mathBoundaryInteractionPresent": true
+  },
+  "symbolDependencies": {
+    "baseDash": {
+      "unicode": "⠤",
+      "codepoints": [
+        "U+2824"
+      ],
+      "dots": [
+        "36"
+      ],
+      "cellCount": 1
+    },
+    "forwardSlash": {
+      "unicode": "⠐⠂",
+      "codepoints": [
+        "U+2810",
+        "U+2802"
+      ],
+      "dots": [
+        "5",
+        "2"
+      ],
+      "cellCount": 2
+    },
+    "primaryExtendedDash": {
+      "unicode": "⠠⠤",
+      "codepoints": [
+        "U+2820",
+        "U+2824"
+      ],
+      "dots": [
+        "6",
+        "36"
+      ],
+      "cellCount": 2
+    },
+    "secondarySeparator": {
+      "unicode": "⠐⠤",
+      "codepoints": [
+        "U+2810",
+        "U+2824"
+      ],
+      "dots": [
+        "5",
+        "36"
+      ],
+      "cellCount": 2
+    }
+  },
+  "rules": [
+    {
+      "id": "DE-STROKE-001",
+      "section": "2.5.1.1",
+      "kind": "LINE_BREAK_HYPHEN",
+      "printRole": "TRENNUNGSSTRICH",
+      "braille": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "summary": "The line-break hyphen normally occurs at the end of a Braille line and follows German syllabification rules.",
+      "lineBreak": {
+        "purpose": "WORD_HYPHENATION",
+        "allowedAfter": true
+      },
+      "contractionInteraction": {
+        "basisschrift": "NONE",
+        "vollschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE",
+        "kurzschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-002",
+      "section": "2.5.1.2",
+      "kind": "HYPHEN",
+      "printRole": "BINDESTRICH",
+      "braille": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "summary": "The hyphen connects independent words or abbreviations and acts as a word boundary for German Braille rules.",
+      "boundarySemantics": {
+        "isWordBoundary": true,
+        "equivalentToSpaceForRuleBoundaries": true,
+        "affects": [
+          "contraction",
+          "capitalization",
+          "emphasis",
+          "embedded-spans"
+        ]
+      },
+      "lineBreak": {
+        "allowedAfter": true,
+        "atLineEndAlsoActsAsTrennungsstrich": true
+      },
+      "exceptions": [
+        {
+          "context": "COMPUTER_BRAILLE_INSERT",
+          "isWordBoundary": false,
+          "sourceDependency": "2.11"
+        }
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-003",
+      "section": "2.5.1.3",
+      "kind": "EM_DASH",
+      "printRole": "GEDANKENSTRICH",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The Gedankenstrich attaches directly to the preceding word; normally one Braille blank follows unless punctuation follows.",
+      "spacing": {
+        "before": "NONE",
+        "after": "ONE_UNLESS_PUNCTUATION"
+      },
+      "lineBreak": {
+        "allowedImmediatelyBefore": true
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-004",
+      "section": "2.5.1.3",
+      "kind": "OMISSION_DASH",
+      "printRole": "AUSLASSUNGSSTRICH",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The same extended dash sequence represents a missing entry in a table.",
+      "context": "TABLE_MISSING_ENTRY",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-005",
+      "section": "2.5.1.3",
+      "kind": "SUPPLEMENTARY_DASH",
+      "printRole": "ERGAENZUNGSSTRICH",
+      "summary": "The supplementary dash represents an omitted part of a word and does not create a word boundary.",
+      "forms": {
+        "beforeWord": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "afterWord": {
+          "unicode": "⠤",
+          "codepoints": [
+            "U+2824"
+          ],
+          "dots": [
+            "36"
+          ],
+          "cellCount": 1
+        }
+      },
+      "boundarySemantics": {
+        "isWordBoundary": false
+      },
+      "contractionSemantics": "Treat the omitted word part as present when evaluating contraction context.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-006",
+      "section": "2.5.1.3",
+      "kind": "RANGE_DASH",
+      "printRole": "STRECKENSTRICH",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The route/range dash uses the extended dash sequence without surrounding Braille blanks.",
+      "spacing": {
+        "before": "NONE",
+        "after": "NONE"
+      },
+      "lineBreak": {
+        "allowedAfter": true
+      },
+      "semanticSelectionRequired": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-007",
+      "section": "2.5.1.3",
+      "kind": "COMPARISON_DASH",
+      "printRole": "VERGLEICHSSTRICH",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A comparison dash may use the range-dash spacing or may be placed between blanks.",
+      "spacingVariants": [
+        "NO_SURROUNDING_BLANKS",
+        "SURROUNDED_BY_BLANKS"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-008",
+      "section": "2.5.1.4",
+      "kind": "PRIMARY_LIST_MARKER",
+      "braille": {
+        "unicode": "⠠⠤",
+        "codepoints": [
+          "U+2820",
+          "U+2824"
+        ],
+        "dots": [
+          "6",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A non-ordinal list marker is normalized to the primary Braille list marker regardless of the visual print bullet shape.",
+      "layout": {
+        "mustBeginLine": true,
+        "blankAfter": true
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-009",
+      "section": "2.5.1.4",
+      "kind": "SECONDARY_LIST_MARKER",
+      "braille": {
+        "unicode": "⠐⠤",
+        "codepoints": [
+          "U+2810",
+          "U+2824"
+        ],
+        "dots": [
+          "5",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A second distinguishable list-marker level or variant may use the alternate Braille marker.",
+      "layout": {
+        "mustBeginLine": true,
+        "blankAfter": true
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-010",
+      "section": "2.5.1.5",
+      "kind": "DASH_BETWEEN_NUMBERS",
+      "braille": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "summary": "A dash between or inside numbers has no surrounding blank and the number indicator must be repeated for the following number.",
+      "spacing": {
+        "before": "NONE",
+        "after": "NONE"
+      },
+      "numericState": {
+        "terminatesPriorNumericComponent": true,
+        "reenterNumericAfterDash": true
+      },
+      "dependencies": [
+        "DE-NUM-001",
+        "DE-NUM-002"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-011",
+      "section": "2.5.1.6",
+      "kind": "MINUS",
+      "braille": {
+        "unicode": "⠈⠤",
+        "codepoints": [
+          "U+2808",
+          "U+2824"
+        ],
+        "dots": [
+          "4",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A horizontal stroke with mathematical minus semantics is announced as a mathematical sign.",
+      "semanticSelectionRequired": true,
+      "dependency": "2.10",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-012",
+      "section": "2.5.2",
+      "kind": "SLASH",
+      "braille": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The slash connects independent words or abbreviations and acts as a German Braille word boundary.",
+      "boundarySemantics": {
+        "isWordBoundary": true
+      },
+      "lineBreak": {
+        "allowedAfter": true
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-013",
+      "section": "2.5.2",
+      "kind": "SLASH_SPACING",
+      "summary": "A slash normally has no surrounding blanks when each side contains one word or one number; multiword sides normally use surrounding blanks.",
+      "spacingPolicy": {
+        "singleWordOrNumberEachSide": "NO_BLANKS",
+        "multiwordEitherSide": "SURROUND_WITH_BLANKS",
+        "sourceLayoutMayBePreserved": true
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-014",
+      "section": "2.5.2",
+      "kind": "NUMERIC_SLASH",
+      "braille": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "summary": "The text slash may occur between numeric components; the following numeric component re-enters numeric state.",
+      "numericState": {
+        "reenterNumericAfterSlash": true
+      },
+      "dependencies": [
+        "DE-NUM-001",
+        "DE-NUM-002"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-015",
+      "section": "2.5.2",
+      "kind": "MATHEMATICAL_FRACTION_BAR_OPTION",
+      "braille": {
+        "unicode": "⠈⠳",
+        "codepoints": [
+          "U+2808",
+          "U+2833"
+        ],
+        "dots": [
+          "4",
+          "1256"
+        ],
+        "cellCount": 2
+      },
+      "summary": "When slash semantics are unambiguously a mathematical fraction bar, the mathematical fraction-bar sign may be used with dot-4 announcement.",
+      "dependency": "2.10",
+      "optionalAlternative": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-016",
+      "section": "2.5.3",
+      "kind": "VERTICAL_SEPARATOR",
+      "braille": {
+        "unicode": "⠐⠤",
+        "codepoints": [
+          "U+2810",
+          "U+2824"
+        ],
+        "dots": [
+          "5",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A vertical print separator used to distinguish terms or concepts maps to the secondary separator sequence.",
+      "spacing": {
+        "conceptSeparator": "SURROUNDED_BY_BLANKS",
+        "wordSplitMarker": "NO_BLANKS"
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-STROKE-017",
+      "section": "2.5.3",
+      "kind": "MIDDLE_DOT",
+      "braille": {
+        "unicode": "⠐⠤",
+        "codepoints": [
+          "U+2810",
+          "U+2824"
+        ],
+        "dots": [
+          "5",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "summary": "A middle dot in contexts such as publisher information uses the same Braille sequence.",
+      "semanticSelectionRequired": true,
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "syntheticValidationCases": [
+    {
+      "id": "DE-STROKE-CASE-001",
+      "purpose": "hyphenated-word",
+      "input": "Hamburg-Altona",
+      "expectedBrailleCore": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "rule": "DE-STROKE-002"
+    },
+    {
+      "id": "DE-STROKE-CASE-002",
+      "purpose": "dash-between-numbers",
+      "input": "10-12",
+      "expectedBoundarySequence": {
+        "unicode": "⠤⠼",
+        "codepoints": [
+          "U+2824",
+          "U+283C"
+        ],
+        "dots": [
+          "36",
+          "3456"
+        ],
+        "cellCount": 2
+      },
+      "meaning": "dash followed by renewed number indicator",
+      "rule": "DE-STROKE-010"
+    },
+    {
+      "id": "DE-STROKE-CASE-003",
+      "purpose": "minus-sign",
+      "input": "-1",
+      "expectedPrefix": {
+        "unicode": "⠈⠤⠼",
+        "codepoints": [
+          "U+2808",
+          "U+2824",
+          "U+283C"
+        ],
+        "dots": [
+          "4",
+          "36",
+          "3456"
+        ],
+        "cellCount": 3
+      },
+      "rule": "DE-STROKE-011"
+    },
+    {
+      "id": "DE-STROKE-CASE-004",
+      "purpose": "text-slash",
+      "input": "und/oder",
+      "expectedSeparator": {
+        "unicode": "⠐⠂",
+        "codepoints": [
+          "U+2810",
+          "U+2802"
+        ],
+        "dots": [
+          "5",
+          "2"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-STROKE-012"
+    },
+    {
+      "id": "DE-STROKE-CASE-005",
+      "purpose": "numeric-slash",
+      "input": "2/2014",
+      "expectedBoundarySequence": {
+        "unicode": "⠐⠂⠼",
+        "codepoints": [
+          "U+2810",
+          "U+2802",
+          "U+283C"
+        ],
+        "dots": [
+          "5",
+          "2",
+          "3456"
+        ],
+        "cellCount": 3
+      },
+      "rule": "DE-STROKE-014"
+    },
+    {
+      "id": "DE-STROKE-CASE-006",
+      "purpose": "vertical-word-split",
+      "input": "Ab|satz",
+      "expectedSeparator": {
+        "unicode": "⠐⠤",
+        "codepoints": [
+          "U+2810",
+          "U+2824"
+        ],
+        "dots": [
+          "5",
+          "36"
+        ],
+        "cellCount": 2
+      },
+      "rule": "DE-STROKE-016"
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "requiresLaterConformancePromotion": true
+  }
+}

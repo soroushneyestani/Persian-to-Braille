@@ -1,0 +1,630 @@
+{
+  "phase": "15.1E",
+  "title": "BSKDL Basisschrift Numeric Grammar and State Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf"
+  },
+  "coverage": {
+    "sections": [
+      "2.3",
+      "2.3.1",
+      "2.3.1.1",
+      "2.3.1.2",
+      "2.3.1.3",
+      "2.3.1.4",
+      "2.3.1.5",
+      "2.3.1.6",
+      "2.3.1.7",
+      "2.3.1.8",
+      "2.3.2",
+      "2.4",
+      "2.4.1",
+      "2.4.2"
+    ],
+    "ruleRecords": 15,
+    "syntheticCases": 6
+  },
+  "numericStateContract": {
+    "state": "ARABIC_NUMERIC",
+    "enter": {
+      "trigger": "ARABIC_DIGIT_SEQUENCE",
+      "emitPrefix": {
+        "unicode": "⠼",
+        "codepoints": [
+          "U+283C"
+        ],
+        "dots": [
+          "3456"
+        ],
+        "cellCount": 1
+      }
+    },
+    "digitAlphabet": {
+      "1": {
+        "unicode": "⠁",
+        "codepoint": "U+2801",
+        "dots": "1"
+      },
+      "2": {
+        "unicode": "⠃",
+        "codepoint": "U+2803",
+        "dots": "12"
+      },
+      "3": {
+        "unicode": "⠉",
+        "codepoint": "U+2809",
+        "dots": "14"
+      },
+      "4": {
+        "unicode": "⠙",
+        "codepoint": "U+2819",
+        "dots": "145"
+      },
+      "5": {
+        "unicode": "⠑",
+        "codepoint": "U+2811",
+        "dots": "15"
+      },
+      "6": {
+        "unicode": "⠋",
+        "codepoint": "U+280B",
+        "dots": "124"
+      },
+      "7": {
+        "unicode": "⠛",
+        "codepoint": "U+281B",
+        "dots": "1245"
+      },
+      "8": {
+        "unicode": "⠓",
+        "codepoint": "U+2813",
+        "dots": "125"
+      },
+      "9": {
+        "unicode": "⠊",
+        "codepoint": "U+280A",
+        "dots": "24"
+      },
+      "0": {
+        "unicode": "⠚",
+        "codepoint": "U+281A",
+        "dots": "245"
+      }
+    },
+    "continuationCharacters": {
+      "digits": true,
+      "decimalComma": {
+        "unicode": "⠂",
+        "codepoint": "U+2802",
+        "dots": "2"
+      },
+      "decimalOrGroupingPoint": {
+        "unicode": "⠄",
+        "codepoint": "U+2804",
+        "dots": "3"
+      },
+      "leadingApostrophe": {
+        "braille": {
+          "unicode": "⠠",
+          "codepoint": "U+2820",
+          "dots": "6"
+        },
+        "position": "AFTER_NUMBER_INDICATOR_BEFORE_DIGITS"
+      },
+      "leadingZeroReplacementDash": {
+        "braille": {
+          "unicode": "⠤",
+          "codepoint": "U+2824",
+          "dots": "36"
+        },
+        "position": "AFTER_NUMBER_INDICATOR"
+      }
+    },
+    "termination": {
+      "spaceTerminates": true,
+      "otherNonContinuationCharacterTerminates": true,
+      "rule": "Numeric scope continues only across digits and the explicitly permitted numeric continuation signs."
+    }
+  },
+  "loweredDigitAlphabet": {
+    "1": {
+      "unicode": "⠂",
+      "codepoint": "U+2802",
+      "dots": "2"
+    },
+    "2": {
+      "unicode": "⠆",
+      "codepoint": "U+2806",
+      "dots": "23"
+    },
+    "3": {
+      "unicode": "⠒",
+      "codepoint": "U+2812",
+      "dots": "25"
+    },
+    "4": {
+      "unicode": "⠲",
+      "codepoint": "U+2832",
+      "dots": "256"
+    },
+    "5": {
+      "unicode": "⠢",
+      "codepoint": "U+2822",
+      "dots": "26"
+    },
+    "6": {
+      "unicode": "⠖",
+      "codepoint": "U+2816",
+      "dots": "235"
+    },
+    "7": {
+      "unicode": "⠶",
+      "codepoint": "U+2836",
+      "dots": "2356"
+    },
+    "8": {
+      "unicode": "⠦",
+      "codepoint": "U+2826",
+      "dots": "236"
+    },
+    "9": {
+      "unicode": "⠔",
+      "codepoint": "U+2814",
+      "dots": "35"
+    },
+    "0": {
+      "unicode": "⠴",
+      "codepoint": "U+2834",
+      "dots": "356"
+    }
+  },
+  "rules": [
+    {
+      "id": "DE-NUM-001",
+      "section": "2.3.1.1",
+      "kind": "CARDINAL_NUMBER",
+      "summary": "Arabic digits use the a-j Braille cells under one leading number indicator.",
+      "state": "ARABIC_NUMERIC",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-002",
+      "section": "2.3.1.1",
+      "kind": "NUMERIC_SCOPE",
+      "summary": "The number indicator remains effective through digits and defined decimal/grouping continuation signs; other boundaries terminate numeric scope.",
+      "state": "ARABIC_NUMERIC",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-003",
+      "section": "2.3.1.1",
+      "kind": "DECIMAL_AND_GROUPING",
+      "summary": "Decimal comma uses dot 2. Decimal point and digit-grouping point use dot 3.",
+      "symbols": {
+        "decimalComma": {
+          "unicode": "⠂",
+          "codepoint": "U+2802",
+          "dots": "2"
+        },
+        "decimalOrGroupingPoint": {
+          "unicode": "⠄",
+          "codepoint": "U+2804",
+          "dots": "3"
+        }
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-004",
+      "section": "2.3.1.1",
+      "kind": "DIGIT_GROUPING",
+      "summary": "Print-space grouping is normally represented by a grouping point; long identifier-like digit groups may retain spaces if the number indicator is repeated for each new group.",
+      "normative": true,
+      "executable": false,
+      "printApostropheGrouping": {
+        "replacement": {
+          "unicode": "⠄",
+          "codepoint": "U+2804",
+          "dots": "3"
+        },
+        "requiredWhenUsedAsPrintGrouping": true
+      },
+      "ungroupedLongNumbersMayBeGroupedForReadability": true,
+      "groupingRequiredForOriginallyUngroupedNumbers": false
+    },
+    {
+      "id": "DE-NUM-005",
+      "section": "2.3.1.1",
+      "kind": "LEADING_NUMERIC_SPECIALS",
+      "summary": "A leading apostrophe, leading decimal point, or dash replacing a leading zero follows the number indicator and remains part of the numeric form.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-006",
+      "section": "2.3.1.2",
+      "kind": "ORDINAL",
+      "summary": "Ordinals may be represented with ordinary digits followed by dot 3 or with the compact lowered-digit notation.",
+      "loweredDigitAlphabet": {
+        "1": {
+          "unicode": "⠂",
+          "codepoint": "U+2802",
+          "dots": "2"
+        },
+        "2": {
+          "unicode": "⠆",
+          "codepoint": "U+2806",
+          "dots": "23"
+        },
+        "3": {
+          "unicode": "⠒",
+          "codepoint": "U+2812",
+          "dots": "25"
+        },
+        "4": {
+          "unicode": "⠲",
+          "codepoint": "U+2832",
+          "dots": "256"
+        },
+        "5": {
+          "unicode": "⠢",
+          "codepoint": "U+2822",
+          "dots": "26"
+        },
+        "6": {
+          "unicode": "⠖",
+          "codepoint": "U+2816",
+          "dots": "235"
+        },
+        "7": {
+          "unicode": "⠶",
+          "codepoint": "U+2836",
+          "dots": "2356"
+        },
+        "8": {
+          "unicode": "⠦",
+          "codepoint": "U+2826",
+          "dots": "236"
+        },
+        "9": {
+          "unicode": "⠔",
+          "codepoint": "U+2814",
+          "dots": "35"
+        },
+        "0": {
+          "unicode": "⠴",
+          "codepoint": "U+2834",
+          "dots": "356"
+        }
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-007",
+      "section": "2.3.1.3",
+      "kind": "DATE_AND_TIME",
+      "summary": "Dates and times preserve relevant print structure. A hyphen requires a new number indicator; an ambiguous textual colon is announced before the next numeric component.",
+      "dependencies": [
+        "DE-NUM-012",
+        "2.5.1.2"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-008",
+      "section": "2.3.1.4",
+      "kind": "DECIMAL_CLASSIFIER",
+      "summary": "Decimal classifiers and chapter/verse references support both print-like notation and a compact alternating lowered/normal numeric notation.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-009",
+      "section": "2.3.1.5",
+      "kind": "FRACTION",
+      "summary": "For simple natural-number fractions, the numerator uses cardinal digits and the denominator is appended using lowered digits without its own number indicator.",
+      "mixedFractionPolicy": "A mixed-number fractional component is attached without a space but begins with its own number indicator.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-010",
+      "section": "2.3.1.6",
+      "kind": "PERCENT_PROMILLE_ANGLE",
+      "summary": "Percent, promille, degree, minute, and second follow dedicated sign sequences and usually attach to the preceding number without an intervening space.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-011",
+      "section": "2.3.1.7",
+      "kind": "SECTION_SIGN",
+      "summary": "The section sign is restricted to direct use before Arabic or Roman numbers; repeated print section signs remain repeated and the separating space is omitted.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-012",
+      "section": "2.3.1.8",
+      "kind": "AMBIGUOUS_PUNCTUATION",
+      "summary": "Punctuation that could be confused with lowered digits requires announcement after an Arabic number or between digits. Text punctuation uses dot 6; mathematical operation usage follows math announcement.",
+      "textAnnouncement": {
+        "unicode": "⠠",
+        "codepoint": "U+2820",
+        "dots": "6"
+      },
+      "mathAnnouncement": {
+        "unicode": "⠈",
+        "codepoint": "U+2808",
+        "dots": "4"
+      },
+      "normative": true,
+      "executable": false,
+      "ambiguousTextPunctuation": [
+        "SEMICOLON",
+        "COLON",
+        "QUESTION_MARK",
+        "EXCLAMATION_MARK",
+        "BRACKET",
+        "QUOTATION_MARK"
+      ],
+      "flowingTextClosingException": {
+        "appliesTo": [
+          "CLOSING_ROUND_BRACKET",
+          "CLOSING_QUOTATION_MARK"
+        ],
+        "cancellationPointMayUsuallyBeOmitted": true
+      }
+    },
+    {
+      "id": "DE-NUM-013",
+      "section": "2.3.2",
+      "kind": "ROMAN_NUMERAL",
+      "summary": "Roman numerals use the corresponding letter cells and must preserve upper/lower-case semantics through the German case-announcement rules.",
+      "dependencies": [
+        "2.6",
+        "2.6.2",
+        "2.6.3"
+      ],
+      "caseStateImplementation": "DEFERRED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-NUM-014",
+      "section": "2.4.1",
+      "kind": "NUMBER_WORD_BOUNDARY",
+      "summary": "A word or word-part may directly follow a number unless its first Braille sign could be interpreted as a cardinal digit or denominator; ambiguous cases require dot 6 or another appropriate announcement.",
+      "ambiguityBreaker": {
+        "unicode": "⠠",
+        "codepoint": "U+2820",
+        "dots": "6"
+      },
+      "normative": true,
+      "executable": false,
+      "vollKurzContractionPolicy": "Apply contractions where they do not create ambiguity."
+    },
+    {
+      "id": "DE-NUM-015",
+      "section": "2.4.2",
+      "kind": "NUMBER_UNIT_BOUNDARY",
+      "summary": "Spacing between number and unit follows the print source, while half-spaces may be omitted for compact Braille. A line break between the number and its unit is prohibited.",
+      "lineBreakAllowed": false,
+      "normative": true,
+      "executable": false
+    }
+  ],
+  "syntheticValidationCases": [
+    {
+      "id": "DE-NUM-CASE-001",
+      "purpose": "cardinal",
+      "input": "25",
+      "expectedBraille": {
+        "unicode": "⠼⠃⠑",
+        "codepoints": [
+          "U+283C",
+          "U+2803",
+          "U+2811"
+        ],
+        "dots": [
+          "3456",
+          "12",
+          "15"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-NUM-001"
+      ]
+    },
+    {
+      "id": "DE-NUM-CASE-002",
+      "purpose": "decimal-comma",
+      "input": "2,5",
+      "expectedBraille": {
+        "unicode": "⠼⠃⠂⠑",
+        "codepoints": [
+          "U+283C",
+          "U+2803",
+          "U+2802",
+          "U+2811"
+        ],
+        "dots": [
+          "3456",
+          "12",
+          "2",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-NUM-001",
+        "DE-NUM-003"
+      ]
+    },
+    {
+      "id": "DE-NUM-CASE-003",
+      "purpose": "ordinal-lowered",
+      "input": "5.",
+      "expectedBraille": {
+        "unicode": "⠼⠢",
+        "codepoints": [
+          "U+283C",
+          "U+2822"
+        ],
+        "dots": [
+          "3456",
+          "26"
+        ],
+        "cellCount": 2
+      },
+      "rules": [
+        "DE-NUM-006"
+      ]
+    },
+    {
+      "id": "DE-NUM-CASE-004",
+      "purpose": "simple-fraction",
+      "input": "1/2",
+      "expectedBraille": {
+        "unicode": "⠼⠁⠆",
+        "codepoints": [
+          "U+283C",
+          "U+2801",
+          "U+2806"
+        ],
+        "dots": [
+          "3456",
+          "1",
+          "23"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-NUM-009"
+      ]
+    },
+    {
+      "id": "DE-NUM-CASE-005",
+      "purpose": "date-with-hyphen-number-indicator-reset",
+      "input": "2026-08-19",
+      "expectedBraille": {
+        "unicode": "⠼⠃⠚⠃⠋⠤⠼⠚⠓⠤⠼⠁⠊",
+        "codepoints": [
+          "U+283C",
+          "U+2803",
+          "U+281A",
+          "U+2803",
+          "U+280B",
+          "U+2824",
+          "U+283C",
+          "U+281A",
+          "U+2813",
+          "U+2824",
+          "U+283C",
+          "U+2801",
+          "U+280A"
+        ],
+        "dots": [
+          "3456",
+          "12",
+          "245",
+          "12",
+          "124",
+          "36",
+          "3456",
+          "245",
+          "125",
+          "36",
+          "3456",
+          "1",
+          "24"
+        ],
+        "cellCount": 13
+      },
+      "rules": [
+        "DE-NUM-007"
+      ]
+    },
+    {
+      "id": "DE-NUM-CASE-006",
+      "purpose": "time-with-textual-colon-number-indicator-reset",
+      "input": "11:20",
+      "expectedBraille": {
+        "unicode": "⠼⠁⠁⠠⠒⠼⠃⠚",
+        "codepoints": [
+          "U+283C",
+          "U+2801",
+          "U+2801",
+          "U+2820",
+          "U+2812",
+          "U+283C",
+          "U+2803",
+          "U+281A"
+        ],
+        "dots": [
+          "3456",
+          "1",
+          "1",
+          "6",
+          "25",
+          "3456",
+          "12",
+          "245"
+        ],
+        "cellCount": 8
+      },
+      "rules": [
+        "DE-NUM-007",
+        "DE-NUM-012"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "requiresLaterConformancePromotion": true,
+    "normativeRuleFamilyCoverageComplete": true,
+    "fullConformancePromotionComplete": false
+  },
+  "deferredDependencies": [
+    {
+      "section": "2.5.1.5",
+      "reason": "Dash between numbers interacts with numeric re-entry."
+    },
+    {
+      "section": "2.5.2",
+      "reason": "Slash can terminate and re-enter numeric state."
+    },
+    {
+      "section": "2.6",
+      "reason": "Roman numerals depend on case-state rules."
+    },
+    {
+      "section": "2.10",
+      "reason": "Mathematical punctuation uses a distinct announcement policy."
+    }
+  ],
+  "precisionConsolidation": {
+    "status": "APPLIED",
+    "scope": [
+      "grouping",
+      "ordinal-terminology",
+      "punctuation-ambiguity",
+      "date-time-cases",
+      "promotion-semantics",
+      "deferred-dependencies"
+    ]
+  }
+}
