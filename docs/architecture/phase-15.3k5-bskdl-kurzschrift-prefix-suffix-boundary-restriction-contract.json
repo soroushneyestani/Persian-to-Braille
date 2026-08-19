@@ -1,0 +1,186 @@
+{
+  "phase": "15.3K5",
+  "title": "BSKDL Kurzschrift §4.9.5 Prä-/Suffix Boundary Restriction Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section49ExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "subsection": "4.9.5",
+    "subsectionTitle": "Beachtung von Prä- und Suffixen",
+    "subsectionSha256": "5fa60b49150b2f993d142e815ecda7c5a1a53d1eb2f0b698dd79d20da4acbe28"
+  },
+  "coverage": {
+    "formalRules": 3,
+    "directLexicalExamples": 0,
+    "policyValidationCases": 4,
+    "validationCases": 4,
+    "doubleConsonantExceptionCaptured": true,
+    "doubtCrossReferenceCaptured": true,
+    "subsectionFormalCoverageComplete": true,
+    "allSection49SourceSubsectionsAudited": true,
+    "section49ConsolidatedClosureComplete": false
+  },
+  "grammar": {
+    "defaultBoundaryPolicy": "DO_NOT_JOIN_CLEAR_PREFIX_OR_SUFFIX_TO_STEM_BY_CONTRACTION",
+    "exception": "DOUBLE_CONSONANT",
+    "exceptionSemantics": "GENERAL_PROHIBITION_NOT_AUTOMATICALLY_APPLIED",
+    "exceptionCreatesMandatoryContraction": false,
+    "doubtHandling": {
+      "delegateTo": "4.1.2.4",
+      "localPolicy": "NONE"
+    }
+  },
+  "formalRules": [
+    {
+      "id": "DE-KURZ-REST-495-001",
+      "sourceSection": "4.9.5",
+      "kind": "CLEAR_AFFIX_BOUNDARY_MUST_NOT_BE_JOINED_TO_STEM",
+      "summary": "Clearly recognizable prefixes and suffixes must not be joined to the word stem by a contraction.",
+      "normative": true,
+      "scope": [
+        "CLEARLY_RECOGNIZABLE_PREFIX",
+        "CLEARLY_RECOGNIZABLE_SUFFIX"
+      ],
+      "defaultDecision": "DO_NOT_JOIN_CONTRACTION_ACROSS_AFFIX_STEM_BOUNDARY",
+      "dependencies": [
+        "AFFIX_STEM_BOUNDARY_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-495-002",
+      "sourceSection": "4.9.5",
+      "kind": "DOUBLE_CONSONANT_EXCEPTION",
+      "summary": "The §4.9.5 affix/stem boundary prohibition has an exception for double consonants.",
+      "normative": true,
+      "precision": "This exception removes the general §4.9.5 prohibition in the specified double-consonant context; it does not by itself create a universal MUST-CONTRACT rule.",
+      "decision": "BOUNDARY_PROHIBITION_NOT_AUTOMATICALLY_APPLIED",
+      "dependencies": [
+        "DOUBLE_CONSONANT_BOUNDARY_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-495-003",
+      "sourceSection": "4.9.5",
+      "kind": "DOUBT_POLICY_DELEGATION",
+      "summary": "Doubt cases are delegated by the source to §4.1.2.4.",
+      "normative": true,
+      "delegatesTo": "4.1.2.4",
+      "localDoubtRuleInvented": false,
+      "dependencies": [
+        "PHASE_15_3C_SECTION_4_1_2_4_RULE_SET"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-REST-495-POLICY-001",
+      "category": "CLEAR_PREFIX_BOUNDARY",
+      "condition": "CLEARLY_RECOGNIZABLE_PREFIX",
+      "expectedDecision": "DO_NOT_JOIN_CONTRACTION_WITH_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-495-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-495-POLICY-002",
+      "category": "CLEAR_SUFFIX_BOUNDARY",
+      "condition": "CLEARLY_RECOGNIZABLE_SUFFIX",
+      "expectedDecision": "DO_NOT_JOIN_CONTRACTION_WITH_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-495-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-495-POLICY-003",
+      "category": "DOUBLE_CONSONANT_EXCEPTION",
+      "condition": "DOUBLE_CONSONANT_AT_RELEVANT_BOUNDARY",
+      "expectedDecision": "GENERAL_BOUNDARY_PROHIBITION_NOT_AUTOMATICALLY_APPLIED",
+      "mustContractInferred": false,
+      "ruleRefs": [
+        "DE-KURZ-REST-495-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-495-POLICY-004",
+      "category": "DOUBT_CASE",
+      "condition": "BOUNDARY_CLASSIFICATION_DOUBTFUL",
+      "expectedDecision": "DELEGATE_TO_SECTION_4_1_2_4",
+      "localRuleInvented": false,
+      "ruleRefs": [
+        "DE-KURZ-REST-495-003"
+      ]
+    }
+  ],
+  "doubtInteraction": {
+    "status": "FORMALLY_LINKED",
+    "sourceSection": "4.9.5",
+    "delegatedSection": "4.1.2.4",
+    "providerArtifact": "phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract.json",
+    "providerArtifactPhase": "15.3C",
+    "providerEvidenceLocated": true,
+    "localSemanticDuplication": false,
+    "implementationRequirement": "§4.9.5 boundary uncertainty must reuse the already-audited §4.1.2.4 doubt/boundary handling rather than invent a separate Kurzschrift policy."
+  },
+  "dependencyResolution": {
+    "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "component": "PREFIX_SUFFIX_BOUNDARY_RESTRICTIONS",
+    "status": "COMPONENT_FORMALLY_RESOLVED",
+    "resolvedBy": "15.3K5",
+    "sourceSection": "4.9.5",
+    "allSourceSubsectionsAudited": true,
+    "sourceSubsections": [
+      "4.9.1",
+      "4.9.2",
+      "4.9.3",
+      "4.9.4",
+      "4.9.5"
+    ],
+    "overallCanonicalDependency": "PENDING_CONSOLIDATED_K6_CLOSURE"
+  },
+  "openDependencies": [
+    {
+      "id": "AFFIX_STEM_BOUNDARY_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "DOUBLE_CONSONANT_BOUNDARY_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "PHASE_15_3C_SECTION_4_1_2_4_RULE_SET",
+      "requiredForExecutableGeneralization": true,
+      "formalAuditStatus": "AVAILABLE",
+      "providerPhase": "15.3C"
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true,
+      "sourceAuditStatus": "ALL_SUBSECTIONS_FORMALLY_AUDITED",
+      "canonicalClosureStatus": "PENDING_K6"
+    }
+  ],
+  "promotionPolicy": {
+    "formalSubsectionAuditComplete": true,
+    "affixBoundaryRuleCaptured": true,
+    "doubleConsonantExceptionCaptured": true,
+    "doubtDelegationCaptured": true,
+    "allSection49SourceSubsectionsAudited": true,
+    "section49CanonicalClosureComplete": false,
+    "runtimeAffixSegmentationReady": false,
+    "runtimeDoubleConsonantBoundaryReady": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3K6",
+    "sourceSection": "4.9",
+    "title": "Consolidated Kurzschrift Application Restrictions Closure"
+  }
+}

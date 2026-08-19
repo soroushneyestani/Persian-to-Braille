@@ -1,0 +1,284 @@
+{
+  "phase": "15.3M2",
+  "title": "Liblouis de-g2 Static BSKDL Family Crosswalk",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "corePath": "tables/de-g2-core.cti",
+    "coreSha256": "038a71c52785e5625ebb5dd5ddf3f05e142c611929de2815e998e8fa3cf3c75f",
+    "nonCommentLines": 558,
+    "directiveFamilies": 14,
+    "directiveCounts": {
+      "nocross": 305,
+      "word": 142,
+      "noback": 38,
+      "letter": 33,
+      "always": 18,
+      "noletsign": 11,
+      "endword": 3,
+      "begword": 2,
+      "include": 1,
+      "letsign": 1,
+      "noletsignafter": 1,
+      "noletsignbefore": 1,
+      "prfword": 1,
+      "sufword": 1
+    }
+  },
+  "classificationVocabulary": [
+    "EXACT_STATIC_CORRESPONDENCE",
+    "IMPLEMENTATION_MECHANISM_ONLY",
+    "NO_SAFE_BSKDL_EQUIVALENCE"
+  ],
+  "directiveCrosswalk": [
+    {
+      "opcode": "nocross",
+      "count": 305,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Translation-rule modifier using Liblouis syllable-boundary logic.",
+      "relatedBskdlAreas": [
+        "4.1.2",
+        "4.9.2",
+        "4.9.4"
+      ],
+      "reason": "Liblouis syllable-boundary suppression is not identical to BSKDL Wortfuge, word-stem, pronunciation, or morphology constraints.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "word",
+      "count": 142,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Whole-word positional translation primitive.",
+      "relatedBskdlAreas": [
+        "4.3",
+        "4.4",
+        "4.9"
+      ],
+      "reason": "A Liblouis whole-word entry may encode many different BSKDL concepts or implementation exceptions.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "noback",
+      "count": 38,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Translation-direction control excluding the following operation from back-translation.",
+      "relatedBskdlAreas": [],
+      "reason": "Engine-direction machinery, not a German Braille normative rule family.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "letter",
+      "count": 33,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Character-definition/intermediate symbol machinery.",
+      "relatedBskdlAreas": [],
+      "reason": "Observed entries use private-use characters and implementation dot forms; no BSKDL family equivalence is inferred.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "always",
+      "count": 18,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "General translation primitive applied where its Liblouis eligibility rules permit.",
+      "relatedBskdlAreas": [
+        "MULTIPLE"
+      ],
+      "reason": "The opcode is generic and can implement unrelated normative or non-normative behaviors.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "noletsign",
+      "count": 11,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Letter-sign suppression configuration.",
+      "relatedBskdlAreas": [
+        "4.7"
+      ],
+      "reason": "It is potentially adjacent to Aufhebung/indicator behavior but is not established as equivalent to the BSKDL Aufhebungspunkt.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "endword",
+      "count": 3,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "End-of-word positional translation primitive.",
+      "relatedBskdlAreas": [
+        "4.1",
+        "4.2",
+        "4.3-4.6"
+      ],
+      "reason": "Position primitive used as an implementation mechanism; not one normative BSKDL category.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "begword",
+      "count": 2,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Beginning-of-word positional translation primitive.",
+      "relatedBskdlAreas": [
+        "4.1",
+        "4.2",
+        "4.3-4.6"
+      ],
+      "reason": "Position primitive, not a BSKDL rule-family identity.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "include",
+      "count": 1,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Table/resource composition mechanism.",
+      "relatedBskdlAreas": [],
+      "reason": "Implementation composition only.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "letsign",
+      "count": 1,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Letter-sign indicator configuration.",
+      "relatedBskdlAreas": [
+        "4.7"
+      ],
+      "reason": "No direct identity with BSKDL Aufhebungspunkt is established.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "noletsignafter",
+      "count": 1,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Context-specific suppression of Liblouis letter-sign insertion.",
+      "relatedBskdlAreas": [
+        "4.7"
+      ],
+      "reason": "Indicator-engine context rule, not proven equivalent to a BSKDL rule.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "noletsignbefore",
+      "count": 1,
+      "classification": "NO_SAFE_BSKDL_EQUIVALENCE",
+      "liblouisRole": "Context-specific suppression of Liblouis letter-sign insertion.",
+      "relatedBskdlAreas": [
+        "4.7"
+      ],
+      "reason": "Indicator-engine context rule, not proven equivalent to a BSKDL rule.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "prfword",
+      "count": 1,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Word-or-end-of-word positional translation primitive.",
+      "relatedBskdlAreas": [
+        "4.3-4.6"
+      ],
+      "reason": "Liblouis positional eligibility primitive rather than a normative BSKDL family.",
+      "normativeEquivalence": false
+    },
+    {
+      "opcode": "sufword",
+      "count": 1,
+      "classification": "IMPLEMENTATION_MECHANISM_ONLY",
+      "liblouisRole": "Word-or-beginning-of-word positional translation primitive.",
+      "relatedBskdlAreas": [
+        "4.2",
+        "4.3-4.6"
+      ],
+      "reason": "Liblouis positional eligibility primitive rather than a normative BSKDL family.",
+      "normativeEquivalence": false
+    }
+  ],
+  "classificationCounts": {
+    "EXACT_STATIC_CORRESPONDENCE": 0,
+    "IMPLEMENTATION_MECHANISM_ONLY": 8,
+    "NO_SAFE_BSKDL_EQUIVALENCE": 6
+  },
+  "staticLexicalCandidates": [
+    {
+      "term": "LÄSS",
+      "liblouis": {
+        "opcode": "nocross",
+        "line": 363,
+        "rawRule": "nocross always    läss       5-123"
+      },
+      "auditedBskdlPhase": "15.3H",
+      "reasonForCandidate": "The lexical item is explicitly present in both comparator data and the audited Umlautungspunkt artifact.",
+      "status": "DEFER_TO_M3_STATIC_LEXICAL_AUDIT"
+    },
+    {
+      "term": "ÜBRIG",
+      "liblouis": {
+        "opcode": "nocross",
+        "line": 556,
+        "rawRule": "nocross always    übrig      1256a-45a"
+      },
+      "auditedBskdlPhase": "15.3F",
+      "reasonForCandidate": "The term exists in both sources, but the Liblouis raw dot operand contains implementation notation that must be decoded before comparison.",
+      "status": "DEFER_TO_M3_STATIC_LEXICAL_AUDIT"
+    },
+    {
+      "term": "WÄRTS",
+      "liblouis": {
+        "opcode": "endword",
+        "line": 530,
+        "rawRule": "endword    wärts      2456"
+      },
+      "auditedBskdlPhase": "15.3D",
+      "reasonForCandidate": "The lexical suffix exists in both, but surrounding BSKDL control cells and Liblouis positional machinery must be reconciled before any exact mapping claim.",
+      "status": "DEFER_TO_M3_STATIC_LEXICAL_AUDIT"
+    },
+    {
+      "term": "SCHAFT",
+      "liblouis": {
+        "opcode": "sufword",
+        "line": 434,
+        "rawRule": "sufword    schaft     156a-1-124-2345"
+      },
+      "auditedBskdlPhase": "15.3D",
+      "reasonForCandidate": "The term exists in both, but raw Liblouis internal notation and BSKDL suffix-control structure are not yet normalized.",
+      "status": "DEFER_TO_M3_STATIC_LEXICAL_AUDIT"
+    }
+  ],
+  "decision": {
+    "status": "PASS",
+    "directiveFamilies": 14,
+    "exactStaticCorrespondenceAtOpcodeFamilyLevel": 0,
+    "implementationMechanismOnly": 8,
+    "noSafeBskdlEquivalence": 6,
+    "staticLexicalCandidates": 4,
+    "liblouisNormative": false,
+    "semanticRulePromotion": false,
+    "opcodeToBskdlOneToOneMapping": false,
+    "readyForStaticLexicalAudit": true
+  },
+  "semanticBasis": {
+    "liblouisManualAreas": [
+      "Translation Opcodes",
+      "Braille Indicator Opcodes",
+      "Hyphenation Tables"
+    ],
+    "semanticBasisIsNormativeForGermanBraille": false,
+    "purpose": "Interpret Liblouis implementation constructs conservatively; BSKDL remains the normative source."
+  },
+  "promotionPolicy": {
+    "staticFamilyCrosswalkComplete": true,
+    "opcodeFamilyExactEquivalenceFound": false,
+    "lexicalCorrespondenceAuditComplete": false,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M3",
+    "title": "Liblouis de-g2 Static Lexical Correspondence Audit",
+    "plannedScope": [
+      "Decode Liblouis raw dot operands and internal marker notation.",
+      "Compare candidate lexical mappings against already-audited BSKDL mappings.",
+      "Separate exact static matches from contextual or implementation-only representations.",
+      "Do not perform runtime differential translation yet."
+    ]
+  }
+}

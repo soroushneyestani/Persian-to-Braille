@@ -1,0 +1,388 @@
+{
+  "phase": "15.3A",
+  "title": "BSKDL Kurzschrift Rule-Family Inventory",
+  "status": "INVENTORY_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterTitle": "Die Kurzschrift",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "pdfStartPage": 103,
+    "finalNormativeSection": "4.10",
+    "finalNormativeSectionPdfPage": 145,
+    "pdfEndBoundaryPage": 147,
+    "endBoundary": "Anhang"
+  },
+  "coverage": {
+    "topLevelRuleFamilies": 10,
+    "sectionReferences": 32,
+    "expectedSectionReferences": 32,
+    "headingSequenceExact": true,
+    "chapterExtractionVerified": true
+  },
+  "sectionIndex": [
+    {
+      "section": "4.1",
+      "line": 7,
+      "headingLine": "4.1 Lautgruppenkürzungen"
+    },
+    {
+      "section": "4.1.1",
+      "line": 11,
+      "headingLine": "4.1.1 Liste der Lautgruppenkürzungen"
+    },
+    {
+      "section": "4.1.2",
+      "line": 253,
+      "headingLine": "4.1.2 Regeln für Lautgruppenkürzungen"
+    },
+    {
+      "section": "4.1.2.1",
+      "line": 254,
+      "headingLine": "4.1.2.1 Keine Verwechslung mit Buchstaben"
+    },
+    {
+      "section": "4.1.2.2",
+      "line": 270,
+      "headingLine": "4.1.2.2 Keine Verwechslung mit Satzzeichen"
+    },
+    {
+      "section": "4.1.2.3",
+      "line": 297,
+      "headingLine": "4.1.2.3 Kürzungsverbote am Wortanfang"
+    },
+    {
+      "section": "4.1.2.4",
+      "line": 314,
+      "headingLine": "4.1.2.4 Wort- und Sprechsilbenfugen, Prä- und Suffixe"
+    },
+    {
+      "section": "4.1.2.5",
+      "line": 423,
+      "headingLine": "4.1.2.5 Vokale, Berücksichtigung der Aussprache"
+    },
+    {
+      "section": "4.1.2.6",
+      "line": 518,
+      "headingLine": "4.1.2.6 Rangfolge bei mehreren"
+    },
+    {
+      "section": "4.1.2.7",
+      "line": 586,
+      "headingLine": "4.1.2.7 Worttrennung"
+    },
+    {
+      "section": "4.1.2.8",
+      "line": 606,
+      "headingLine": "4.1.2.8 Kürzungen für Lautgruppen nach Apostroph"
+    },
+    {
+      "section": "4.2",
+      "line": 620,
+      "headingLine": "4.2 Kürzungen vor und nach Wortstämmen"
+    },
+    {
+      "section": "4.2.1",
+      "line": 621,
+      "headingLine": "4.2.1 Kürzungen vor Wortstämmen"
+    },
+    {
+      "section": "4.2.2",
+      "line": 675,
+      "headingLine": "4.2.2 Kürzungen nach Wortstämmen"
+    },
+    {
+      "section": "4.3",
+      "line": 812,
+      "headingLine": "4.3 Einformige Wort- und Wortstamm-"
+    },
+    {
+      "section": "4.3.1",
+      "line": 843,
+      "headingLine": "4.3.1 Einformige Kürzungen, nur alleinstehend"
+    },
+    {
+      "section": "4.3.2",
+      "line": 881,
+      "headingLine": "4.3.2 Einformige Wortkürzungen, alleinstehend"
+    },
+    {
+      "section": "4.3.3",
+      "line": 941,
+      "headingLine": "4.3.3 Einformige Kürzungen, alleinstehend oder"
+    },
+    {
+      "section": "4.3.4",
+      "line": 998,
+      "headingLine": "4.3.4 Einformige Kürzungen, alleinstehend, mit"
+    },
+    {
+      "section": "4.3.5",
+      "line": 1039,
+      "headingLine": "4.3.5 Einformige Kürzungen, nur mit"
+    },
+    {
+      "section": "4.4",
+      "line": 1123,
+      "headingLine": "4.4 Zweiformige Kürzungen"
+    },
+    {
+      "section": "4.5",
+      "line": 1300,
+      "headingLine": "4.5 Komma-Kürzungen (Kürzungen mit"
+    },
+    {
+      "section": "4.6",
+      "line": 1334,
+      "headingLine": "4.6 Der Umlautungspunkt"
+    },
+    {
+      "section": "4.7",
+      "line": 1419,
+      "headingLine": "4.7 Der Aufhebungspunkt"
+    },
+    {
+      "section": "4.8",
+      "line": 1458,
+      "headingLine": "4.8 Einschübe in Basis- oder Vollschrift"
+    },
+    {
+      "section": "4.9",
+      "line": 1488,
+      "headingLine": "4.9 Beschränkungen bei der Anwendung"
+    },
+    {
+      "section": "4.9.1",
+      "line": 1490,
+      "headingLine": "4.9.1 Übernahme der Vollschriftregeln"
+    },
+    {
+      "section": "4.9.2",
+      "line": 1495,
+      "headingLine": "4.9.2 Beachtung von Wortfugen"
+    },
+    {
+      "section": "4.9.3",
+      "line": 1503,
+      "headingLine": "4.9.3 Eigennamen"
+    },
+    {
+      "section": "4.9.4",
+      "line": 1557,
+      "headingLine": "4.9.4 Beachtung von Wortstämmen"
+    },
+    {
+      "section": "4.9.5",
+      "line": 1609,
+      "headingLine": "4.9.5 Beachtung von Prä- und Suffixen"
+    },
+    {
+      "section": "4.10",
+      "line": 1613,
+      "headingLine": "4.10 Abweichungen in der Schweiz"
+    }
+  ],
+  "families": [
+    {
+      "section": "4.1",
+      "sourceHeading": "4.1 Lautgruppenkürzungen",
+      "architectureLabel": "LAUTGRUPPENKUERZUNGEN",
+      "sectionReferences": [
+        "4.1",
+        "4.1.1",
+        "4.1.2",
+        "4.1.2.1",
+        "4.1.2.2",
+        "4.1.2.3",
+        "4.1.2.4",
+        "4.1.2.5",
+        "4.1.2.6",
+        "4.1.2.7",
+        "4.1.2.8"
+      ],
+      "sectionReferenceCount": 11,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.2",
+      "sourceHeading": "4.2 Kürzungen vor und nach Wortstämmen",
+      "architectureLabel": "STEM_BOUND_PREFIX_SUFFIX_CONTRACTIONS",
+      "sectionReferences": [
+        "4.2",
+        "4.2.1",
+        "4.2.2"
+      ],
+      "sectionReferenceCount": 3,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.3",
+      "sourceHeading": "4.3 Einformige Wort- und Wortstamm-",
+      "architectureLabel": "ONE_FORM_WORD_AND_STEM_CONTRACTIONS",
+      "sectionReferences": [
+        "4.3",
+        "4.3.1",
+        "4.3.2",
+        "4.3.3",
+        "4.3.4",
+        "4.3.5"
+      ],
+      "sectionReferenceCount": 6,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.4",
+      "sourceHeading": "4.4 Zweiformige Kürzungen",
+      "architectureLabel": "TWO_FORM_CONTRACTIONS",
+      "sectionReferences": [
+        "4.4"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.5",
+      "sourceHeading": "4.5 Komma-Kürzungen (Kürzungen mit",
+      "architectureLabel": "COMMA_CONTRACTIONS",
+      "sectionReferences": [
+        "4.5"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.6",
+      "sourceHeading": "4.6 Der Umlautungspunkt",
+      "architectureLabel": "UMLAUTUNGSPUNKT",
+      "sectionReferences": [
+        "4.6"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.7",
+      "sourceHeading": "4.7 Der Aufhebungspunkt",
+      "architectureLabel": "AUFHEBUNGSPUNKT",
+      "sectionReferences": [
+        "4.7"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.8",
+      "sourceHeading": "4.8 Einschübe in Basis- oder Vollschrift",
+      "architectureLabel": "BASIS_OR_VOLLSCHRIFT_INSERTS",
+      "sectionReferences": [
+        "4.8"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.9",
+      "sourceHeading": "4.9 Beschränkungen bei der Anwendung",
+      "architectureLabel": "CONTRACTION_APPLICATION_RESTRICTIONS",
+      "sectionReferences": [
+        "4.9",
+        "4.9.1",
+        "4.9.2",
+        "4.9.3",
+        "4.9.4",
+        "4.9.5"
+      ],
+      "sectionReferenceCount": 6,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    },
+    {
+      "section": "4.10",
+      "sourceHeading": "4.10 Abweichungen in der Schweiz",
+      "architectureLabel": "SWISS_DEVIATIONS",
+      "sectionReferences": [
+        "4.10"
+      ],
+      "sectionReferenceCount": 1,
+      "classificationRole": "ARCHITECTURAL_INVENTORY_ONLY"
+    }
+  ],
+  "crossPhaseDependencyWitnesses": [
+    {
+      "dependency": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "originPhase": "15.2",
+      "sourceSection": "4.1.2.6",
+      "sourceHeading": "4.1.2.6 Rangfolge bei mehreren",
+      "evidence": {
+        "line": 523,
+        "sourceLine": "– In \"sst\" das Doppel-s, z. B.: ",
+        "context": [
+          {
+            "line": 521,
+            "text": "Kürzungsmöglichkeiten hat, so kürzt man nach nachstehender "
+          },
+          {
+            "line": 522,
+            "text": "Rangfolge: "
+          },
+          {
+            "line": 523,
+            "text": "– In \"sst\" das Doppel-s, z. B.: "
+          },
+          {
+            "line": 524,
+            "text": "fasst "
+          },
+          {
+            "line": 525,
+            "text": "⠋⠁⠮⠞ "
+          },
+          {
+            "line": 526,
+            "text": "geküsst "
+          }
+        ]
+      },
+      "status": "DIRECT_NORMATIVE_WITNESS_LOCATED",
+      "formalResolutionStatus": "PRECEDENCE_CONTRACT_NOT_YET_MATERIALIZED",
+      "plannedFormalResolutionPhase": "15.3E",
+      "blockingPhase15_3AClosure": false
+    },
+    {
+      "dependency": "KURZSCHRIFT_INTERACTION_AUDIT",
+      "originPhase": "15.2",
+      "relevantSections": [
+        "4.1.2.4",
+        "4.1.2.5",
+        "4.1.2.6",
+        "4.9",
+        "4.9.1",
+        "4.9.2",
+        "4.9.3",
+        "4.9.4",
+        "4.9.5"
+      ],
+      "status": "IN_SCOPE_NOT_YET_FORMALIZED"
+    }
+  ],
+  "scopePolicy": {
+    "inventoryOnly": true,
+    "formalRuleExtractionStarted": false,
+    "contractionInventoryPromoted": false,
+    "precedenceModelPromoted": false,
+    "regionalPolicyPromoted": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3B",
+    "title": "Kurzschrift Lautgruppenkürzungen Inventory",
+    "purpose": "Extract and audit the Chapter 4.1 Kurzschrift sound-group contraction inventory before formal rule promotion."
+  }
+}

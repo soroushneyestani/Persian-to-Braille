@@ -1,0 +1,125 @@
+{
+  "phase": "15.3L2",
+  "title": "Kurzschrift Cross-Artifact Consistency Closure",
+  "status": "PASS_WITH_OPEN_RUNTIME_DEPENDENCIES",
+  "decision": {
+    "status": "PASS",
+    "formalSourceArtifactsConsistent": true,
+    "taxonomyContradictionRemaining": false,
+    "legacyEMarkerRemaining": false,
+    "historicalFMarkerPreserved": true,
+    "section49CanonicalResolution": "FORMALLY_RESOLVED",
+    "bskdl48CanonicalResolution": "FORMALLY_RESOLVED",
+    "sixDotSerialization": "PASS",
+    "duplicateFormalRuleIds": 0,
+    "duplicateValidationCaseIds": 0,
+    "runtimePrecedenceOverInferred": false,
+    "formalConsistencyClosureComplete": true,
+    "executableSpecificationReady": false,
+    "phase15_3ReadyForComparatorAudit": true
+  },
+  "normativeSource": {
+    "organization": "BSKDL",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669"
+  },
+  "coverage": {
+    "artifactPairsAudited": 17,
+    "repositoryArtifactsAudited": 34,
+    "formalRuleIds": 119,
+    "uniqueFormalRuleIds": 119,
+    "validationCaseIds": 645,
+    "uniqueValidationCaseIds": 645,
+    "serializedSixDotAudit": "PASS",
+    "encodingAudit": "PASS"
+  },
+  "phase153EPatchVerification": {
+    "sha256": "89625536ddfda699d44c8a641395c634eff1c64a96d9bcb00441ad6ae90c063f",
+    "legacyTaxonomyMarker": "ABSENT",
+    "newTaxonomyDistinction": "PRESENT",
+    "replacementDependency": "PRESENT",
+    "formalRules": 27,
+    "validationCases": 103
+  },
+  "taxonomyState": {
+    "sourceCategoryDistinction": "ESTABLISHED",
+    "section43Term": "zweiformige Lautgruppenkürzungen",
+    "section43StandalonePolicy": "FORBIDDEN",
+    "section44Term": "Zweiformige Kürzungen",
+    "section44StandalonePolicy": "ALLOWED",
+    "section44ResolvesSection43Taxonomy": false,
+    "runtimeDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION",
+    "runtimeDependencyStatus": "OPEN_TERMINOLOGY_PRECISION_DEPENDENCY",
+    "consistencyContradiction": false
+  },
+  "section49State": {
+    "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "canonicalStatus": "FORMALLY_RESOLVED",
+    "resolverPhase": "15.3K6",
+    "historicalFghSnapshotsPreserved": true
+  },
+  "bskdl48State": {
+    "dependency": "BSKDL_4_8",
+    "canonicalStatus": "FORMALLY_RESOLVED",
+    "resolverPhase": "15.3J"
+  },
+  "controlAndMarkerState": {
+    "punkt5": "⠐",
+    "punkt6": "⠠",
+    "singleWordInsertAnnouncement": "⠠⠄",
+    "multiWordInsertAnnouncement": "⠤⠄",
+    "multiWordInsertDeannouncement": "⠠⠄",
+    "status": "CONSISTENT"
+  },
+  "runtimePrecedence": {
+    "state": "NOT_NORMATIVELY_TOTAL_ORDERED",
+    "status": "PRESERVED"
+  },
+  "openDependencies": [
+    {
+      "id": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION",
+      "type": "TERMINOLOGY_PRECISION",
+      "blockingFormalSourceConsistency": false,
+      "blockingRuntimeGeneralization": false,
+      "status": "OPEN"
+    },
+    {
+      "id": "RUNTIME_RESTRICTION_EVALUATION_MODEL",
+      "type": "EXECUTABLE_ARCHITECTURE",
+      "blockingFormalSourceConsistency": false,
+      "blockingRuntimeGeneralization": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "MORPHOLOGICAL_AND_LEXICAL_PROVIDERS",
+      "type": "RUNTIME_PROVIDER_SET",
+      "blockingFormalSourceConsistency": false,
+      "blockingRuntimeGeneralization": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "LIBLOUIS_DE_G2_COMPARATOR_AUDIT",
+      "type": "NON_NORMATIVE_COMPARATOR",
+      "blockingFormalSourceConsistency": false,
+      "blockingPhase15_3Closure": true,
+      "status": "NOT_STARTED"
+    }
+  ],
+  "promotionPolicy": {
+    "crossArtifactConsistencyClosed": true,
+    "formalSourceConsistencyComplete": true,
+    "taxonomyContradictionRemaining": false,
+    "runtimeDependenciesRemain": true,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false,
+    "readyForLiblouisDeG2Audit": true
+  },
+  "next": {
+    "phase": "15.3M",
+    "title": "Liblouis de-g2 Comparator Audit",
+    "role": "NON_NORMATIVE_COMPARATOR",
+    "implementationPromotionAllowed": false
+  }
+}

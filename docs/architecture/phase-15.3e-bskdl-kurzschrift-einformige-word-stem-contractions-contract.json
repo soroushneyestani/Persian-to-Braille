@@ -1,0 +1,2985 @@
+{
+  "phase": "15.3E",
+  "title": "BSKDL Kurzschrift Einformige Wort- und Wortstammkürzungen Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.3",
+    "sectionTitle": "Einformige Wort- und Wortstammkürzungen",
+    "sectionExtractionSha256": "b3c778d76e6caf289aa11c8c340262a355eff08a93c0c3253ba81e6206977c15"
+  },
+  "coverage": {
+    "subsectionsExpected": 5,
+    "subsectionsAudited": 5,
+    "subsectionMappingDefinitions": 53,
+    "groupMappingCounts": {
+      "4.3.1": 19,
+      "4.3.2": 22,
+      "4.3.3": 3,
+      "4.3.4": 3,
+      "4.3.5": 6
+    },
+    "standaloneMappingsFrom4_3_1Through4_3_4": 47,
+    "standaloneLautgruppeWords": 6,
+    "standaloneWordSignsTotal": 53,
+    "standaloneExcludedCells": 10,
+    "nonblankSixDotCellsAccountedFor": 63,
+    "nonblankSixDotSignSpacePartition": "PASS",
+    "extensionOnlyStemMappings": 6,
+    "extensionOnlyCellsReusingStandaloneWordSigns": 5,
+    "extensionOnlyCellsFromStandaloneExcludedSet": 1,
+    "formalRules": 27,
+    "validationCases": 103,
+    "sixDotValidation": true,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "standaloneSignSpace": {
+    "sourceDeclaredStandaloneWordSigns": 53,
+    "derivedStandaloneMappings": {
+      "4.3.1-4.3.4": 47,
+      "lautgruppeWords": 6,
+      "total": 53
+    },
+    "excludedStandaloneCells": [
+      {
+        "unicode": "⠂",
+        "codepoints": [
+          "U+2802"
+        ],
+        "dots": [
+          "2"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠆",
+        "codepoints": [
+          "U+2806"
+        ],
+        "dots": [
+          "23"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠒",
+        "codepoints": [
+          "U+2812"
+        ],
+        "dots": [
+          "25"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠈",
+        "codepoints": [
+          "U+2808"
+        ],
+        "dots": [
+          "4"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠐",
+        "codepoints": [
+          "U+2810"
+        ],
+        "dots": [
+          "5"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      }
+    ],
+    "all63NonblankSixDotCellsPartitioned": true
+  },
+  "standaloneLautgruppeWords": [
+    {
+      "meaning": "AN",
+      "contraction": {
+        "unicode": "⠖",
+        "codepoints": [
+          "U+2816"
+        ],
+        "dots": [
+          "235"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    },
+    {
+      "meaning": "EIN",
+      "contraction": {
+        "unicode": "⠫",
+        "codepoints": [
+          "U+282B"
+        ],
+        "dots": [
+          "1246"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    },
+    {
+      "meaning": "ER",
+      "contraction": {
+        "unicode": "⠻",
+        "codepoints": [
+          "U+283B"
+        ],
+        "dots": [
+          "12456"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    },
+    {
+      "meaning": "ES",
+      "contraction": {
+        "unicode": "⠿",
+        "codepoints": [
+          "U+283F"
+        ],
+        "dots": [
+          "123456"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    },
+    {
+      "meaning": "ICH",
+      "contraction": {
+        "unicode": "⠼",
+        "codepoints": [
+          "U+283C"
+        ],
+        "dots": [
+          "3456"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    },
+    {
+      "meaning": "IN",
+      "contraction": {
+        "unicode": "⠔",
+        "codepoints": [
+          "U+2814"
+        ],
+        "dots": [
+          "35"
+        ],
+        "cellCount": 1
+      },
+      "origin": "LAUTGRUPPENKUERZUNG_REUSED_AS_WORD"
+    }
+  ],
+  "mappings": [
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 1,
+      "meaning": "ALS",
+      "contraction": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠩",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 2,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 2,
+      "meaning": "AUCH",
+      "contraction": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠌",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 3,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 3,
+      "meaning": "DAS",
+      "contraction": {
+        "unicode": "⠙",
+        "codepoints": [
+          "U+2819"
+        ],
+        "dots": [
+          "145"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠙",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 4,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 4,
+      "meaning": "DASS",
+      "contraction": {
+        "unicode": "⠮",
+        "codepoints": [
+          "U+282E"
+        ],
+        "dots": [
+          "2346"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠮",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 5,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 5,
+      "meaning": "DEN",
+      "contraction": {
+        "unicode": "⠑",
+        "codepoints": [
+          "U+2811"
+        ],
+        "dots": [
+          "15"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠑",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 6,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 6,
+      "meaning": "DER",
+      "contraction": {
+        "unicode": "⠗",
+        "codepoints": [
+          "U+2817"
+        ],
+        "dots": [
+          "1235"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠗",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 7,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 7,
+      "meaning": "DES",
+      "contraction": {
+        "unicode": "⠄",
+        "codepoints": [
+          "U+2804"
+        ],
+        "dots": [
+          "3"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠄",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 8,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 8,
+      "meaning": "DIE",
+      "contraction": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠬",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 9,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 9,
+      "meaning": "IHM",
+      "contraction": {
+        "unicode": "⠦",
+        "codepoints": [
+          "U+2826"
+        ],
+        "dots": [
+          "236"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠦",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 10,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 10,
+      "meaning": "IM",
+      "contraction": {
+        "unicode": "⠤",
+        "codepoints": [
+          "U+2824"
+        ],
+        "dots": [
+          "36"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠤",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 11,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 11,
+      "meaning": "IST",
+      "contraction": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠾",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 12,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 12,
+      "meaning": "KANN",
+      "contraction": {
+        "unicode": "⠅",
+        "codepoints": [
+          "U+2805"
+        ],
+        "dots": [
+          "13"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠅",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 13,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 13,
+      "meaning": "LÄSST",
+      "contraction": {
+        "unicode": "⠇",
+        "codepoints": [
+          "U+2807"
+        ],
+        "dots": [
+          "123"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠇",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 14,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 14,
+      "meaning": "MAN",
+      "contraction": {
+        "unicode": "⠍",
+        "codepoints": [
+          "U+280D"
+        ],
+        "dots": [
+          "134"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠍",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 15,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 15,
+      "meaning": "ODER",
+      "contraction": {
+        "unicode": "⠕",
+        "codepoints": [
+          "U+2815"
+        ],
+        "dots": [
+          "135"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠕",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 16,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 16,
+      "meaning": "SCHON",
+      "contraction": {
+        "unicode": "⠱",
+        "codepoints": [
+          "U+2831"
+        ],
+        "dots": [
+          "156"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠱",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 17,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 17,
+      "meaning": "SICH",
+      "contraction": {
+        "unicode": "⠉",
+        "codepoints": [
+          "U+2809"
+        ],
+        "dots": [
+          "14"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠉",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 18,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 18,
+      "meaning": "SIE",
+      "contraction": {
+        "unicode": "⠎",
+        "codepoints": [
+          "U+280E"
+        ],
+        "dots": [
+          "234"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠎",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 19,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.1",
+      "groupOrder": 19,
+      "meaning": "WAS",
+      "contraction": {
+        "unicode": "⠺",
+        "codepoints": [
+          "U+283A"
+        ],
+        "dots": [
+          "2456"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠺",
+      "semantics": "STANDALONE_ONLY",
+      "sourceLineWithinSubsection": 20,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 1,
+      "meaning": "ABER",
+      "contraction": {
+        "unicode": "⠁",
+        "codepoints": [
+          "U+2801"
+        ],
+        "dots": [
+          "1"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠁",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 8,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 2,
+      "meaning": "AUF",
+      "contraction": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠡",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 9,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 3,
+      "meaning": "BEI",
+      "contraction": {
+        "unicode": "⠃",
+        "codepoints": [
+          "U+2803"
+        ],
+        "dots": [
+          "12"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠃",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 10,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 4,
+      "meaning": "DEM",
+      "contraction": {
+        "unicode": "⠷",
+        "codepoints": [
+          "U+2837"
+        ],
+        "dots": [
+          "12356"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠷",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 11,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 5,
+      "meaning": "DURCH",
+      "contraction": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠹",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 12,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 6,
+      "meaning": "FÜR",
+      "contraction": {
+        "unicode": "⠋",
+        "codepoints": [
+          "U+280B"
+        ],
+        "dots": [
+          "124"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠋",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 13,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 7,
+      "meaning": "GEGEN",
+      "contraction": {
+        "unicode": "⠛",
+        "codepoints": [
+          "U+281B"
+        ],
+        "dots": [
+          "1245"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠛",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 14,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 8,
+      "meaning": "GEWESEN",
+      "contraction": {
+        "unicode": "⠯",
+        "codepoints": [
+          "U+282F"
+        ],
+        "dots": [
+          "12346"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠯",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 15,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 9,
+      "meaning": "IMMER",
+      "contraction": {
+        "unicode": "⠭",
+        "codepoints": [
+          "U+282D"
+        ],
+        "dots": [
+          "1346"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠭",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 16,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 10,
+      "meaning": "JETZT",
+      "contraction": {
+        "unicode": "⠚",
+        "codepoints": [
+          "U+281A"
+        ],
+        "dots": [
+          "245"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠚",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 17,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 11,
+      "meaning": "MEHR",
+      "contraction": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠶",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 18,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 12,
+      "meaning": "MIT",
+      "contraction": {
+        "unicode": "⠞",
+        "codepoints": [
+          "U+281E"
+        ],
+        "dots": [
+          "2345"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠞",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 19,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 13,
+      "meaning": "NICHT",
+      "contraction": {
+        "unicode": "⠝",
+        "codepoints": [
+          "U+281D"
+        ],
+        "dots": [
+          "1345"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠝",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 20,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 14,
+      "meaning": "SO",
+      "contraction": {
+        "unicode": "⠏",
+        "codepoints": [
+          "U+280F"
+        ],
+        "dots": [
+          "1234"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠏",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 21,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 15,
+      "meaning": "ÜBER",
+      "contraction": {
+        "unicode": "⠳",
+        "codepoints": [
+          "U+2833"
+        ],
+        "dots": [
+          "1256"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠳",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 22,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 16,
+      "meaning": "UND",
+      "contraction": {
+        "unicode": "⠥",
+        "codepoints": [
+          "U+2825"
+        ],
+        "dots": [
+          "136"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠥",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 23,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 17,
+      "meaning": "UNTER",
+      "contraction": {
+        "unicode": "⠲",
+        "codepoints": [
+          "U+2832"
+        ],
+        "dots": [
+          "256"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠲",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 27,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 18,
+      "meaning": "VOLL",
+      "contraction": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠟",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 28,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 19,
+      "meaning": "VON",
+      "contraction": {
+        "unicode": "⠧",
+        "codepoints": [
+          "U+2827"
+        ],
+        "dots": [
+          "1236"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠧",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 30,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 20,
+      "meaning": "VOR",
+      "contraction": {
+        "unicode": "⠢",
+        "codepoints": [
+          "U+2822"
+        ],
+        "dots": [
+          "26"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠢",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 31,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 21,
+      "meaning": "WIE",
+      "contraction": {
+        "unicode": "⠣",
+        "codepoints": [
+          "U+2823"
+        ],
+        "dots": [
+          "126"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠣",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 32,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.2",
+      "groupOrder": 22,
+      "meaning": "ZU",
+      "contraction": {
+        "unicode": "⠵",
+        "codepoints": [
+          "U+2835"
+        ],
+        "dots": [
+          "1356"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠵",
+      "semantics": "STANDALONE_OR_MARKED_EXTENSION_OR_COMPOSITION",
+      "sourceLineWithinSubsection": 33,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.3",
+      "groupOrder": 1,
+      "meaning": "IHR",
+      "contraction": {
+        "unicode": "⠊",
+        "codepoints": [
+          "U+280A"
+        ],
+        "dots": [
+          "24"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠊",
+      "semantics": "STANDALONE_OR_RESTRICTED_WORD_INITIAL",
+      "sourceLineWithinSubsection": 6,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.3",
+      "groupOrder": 2,
+      "meaning": "SEIN",
+      "contraction": {
+        "unicode": "⠪",
+        "codepoints": [
+          "U+282A"
+        ],
+        "dots": [
+          "246"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠪",
+      "semantics": "STANDALONE_OR_RESTRICTED_WORD_INITIAL",
+      "sourceLineWithinSubsection": 7,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.3",
+      "groupOrder": 3,
+      "meaning": "WAR",
+      "contraction": {
+        "unicode": "⠴",
+        "codepoints": [
+          "U+2834"
+        ],
+        "dots": [
+          "356"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠴",
+      "semantics": "STANDALONE_OR_RESTRICTED_WORD_INITIAL",
+      "sourceLineWithinSubsection": 8,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.4",
+      "groupOrder": 1,
+      "meaning": "HATT",
+      "contraction": {
+        "unicode": "⠓",
+        "codepoints": [
+          "U+2813"
+        ],
+        "dots": [
+          "125"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠓",
+      "semantics": "STANDALONE_ENDINGS_OR_COMPOSITION_UNANNOUNCED",
+      "sourceLineWithinSubsection": 6,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.4",
+      "groupOrder": 2,
+      "meaning": "HÄTT",
+      "contraction": {
+        "unicode": "⠜",
+        "codepoints": [
+          "U+281C"
+        ],
+        "dots": [
+          "345"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠜",
+      "semantics": "STANDALONE_ENDINGS_OR_COMPOSITION_UNANNOUNCED",
+      "sourceLineWithinSubsection": 7,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.4",
+      "groupOrder": 3,
+      "meaning": "WELCH",
+      "contraction": {
+        "unicode": "⠽",
+        "codepoints": [
+          "U+283D"
+        ],
+        "dots": [
+          "13456"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠽",
+      "semantics": "STANDALONE_ENDINGS_OR_COMPOSITION_UNANNOUNCED",
+      "sourceLineWithinSubsection": 8,
+      "extensionMarker": null
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 1,
+      "meaning": "ALL",
+      "contraction": {
+        "unicode": "⠁",
+        "codepoints": [
+          "U+2801"
+        ],
+        "dots": [
+          "1"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠁⠤",
+      "sourceDisplayDots": [
+        "1",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 9,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 2,
+      "meaning": "BESONDER",
+      "contraction": {
+        "unicode": "⠆",
+        "codepoints": [
+          "U+2806"
+        ],
+        "dots": [
+          "23"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠆⠤",
+      "sourceDisplayDots": [
+        "23",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 11,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 3,
+      "meaning": "DIES",
+      "contraction": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠬⠤",
+      "sourceDisplayDots": [
+        "346",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 12,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 4,
+      "meaning": "MÖCHT",
+      "contraction": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠹⠤",
+      "sourceDisplayDots": [
+        "1456",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 13,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 5,
+      "meaning": "WURD",
+      "contraction": {
+        "unicode": "⠥",
+        "codepoints": [
+          "U+2825"
+        ],
+        "dots": [
+          "136"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠥⠤",
+      "sourceDisplayDots": [
+        "136",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 14,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    },
+    {
+      "sourceSection": "4.3.5",
+      "groupOrder": 6,
+      "meaning": "WÜRD",
+      "contraction": {
+        "unicode": "⠳",
+        "codepoints": [
+          "U+2833"
+        ],
+        "dots": [
+          "1256"
+        ],
+        "cellCount": 1
+      },
+      "sourceDisplayForm": "⠳⠤",
+      "sourceDisplayDots": [
+        "1256",
+        "36"
+      ],
+      "semantics": "EXTENSION_ONLY_WORD_STEM",
+      "sourceLineWithinSubsection": 15,
+      "extensionMarker": {
+        "unicode": "⠤",
+        "dots": "36",
+        "role": "SOURCE_PLACEHOLDER_FOR_REQUIRED_ENDING"
+      }
+    }
+  ],
+  "extensionOnlyCellReuseAudit": [
+    {
+      "meaning": "ALL",
+      "cell": {
+        "unicode": "⠁",
+        "codepoints": [
+          "U+2801"
+        ],
+        "dots": [
+          "1"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": true,
+      "standaloneMeaning": "ABER",
+      "cellOtherwiseExcludedFromStandalone": false
+    },
+    {
+      "meaning": "BESONDER",
+      "cell": {
+        "unicode": "⠆",
+        "codepoints": [
+          "U+2806"
+        ],
+        "dots": [
+          "23"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": false,
+      "standaloneMeaning": null,
+      "cellOtherwiseExcludedFromStandalone": true
+    },
+    {
+      "meaning": "DIES",
+      "cell": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": true,
+      "standaloneMeaning": "DIE",
+      "cellOtherwiseExcludedFromStandalone": false
+    },
+    {
+      "meaning": "MÖCHT",
+      "cell": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": true,
+      "standaloneMeaning": "DURCH",
+      "cellOtherwiseExcludedFromStandalone": false
+    },
+    {
+      "meaning": "WURD",
+      "cell": {
+        "unicode": "⠥",
+        "codepoints": [
+          "U+2825"
+        ],
+        "dots": [
+          "136"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": true,
+      "standaloneMeaning": "UND",
+      "cellOtherwiseExcludedFromStandalone": false
+    },
+    {
+      "meaning": "WÜRD",
+      "cell": {
+        "unicode": "⠳",
+        "codepoints": [
+          "U+2833"
+        ],
+        "dots": [
+          "1256"
+        ],
+        "cellCount": 1
+      },
+      "reusesStandaloneWordCell": true,
+      "standaloneMeaning": "ÜBER",
+      "cellOtherwiseExcludedFromStandalone": false
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-EIN-001",
+      "sourceSection": "4.3",
+      "kind": "STANDALONE_WORD_SIGN_COUNT",
+      "summary": "The source assigns standalone word meaning to 53 Braille signs.",
+      "normative": true,
+      "sourceWitnesses": [
+        "53 \"alleinstehend\""
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-002",
+      "sourceSection": "4.3",
+      "kind": "STANDALONE_EXCLUDED_CELL_SET",
+      "summary": "Ten Braille signs are deliberately not given standalone word meanings because their isolated tactile position is not considered sufficiently reliable.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Bei den restlichen zehn",
+        "nicht sicher genug ertastbar"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-003",
+      "sourceSection": "4.3",
+      "kind": "LAUTGRUPPE_AS_WORD",
+      "summary": "AN, EIN, ER, ES, ICH and IN use their Lautgruppenkürzung signs when functioning as independent words.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Lautgruppenkürzungen als Wörter",
+        "an ein er es ich in"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-004",
+      "sourceSection": "4.3",
+      "kind": "ICH_PUNCTUATION_RESTRICTION",
+      "summary": "Standalone ICH is written out when followed by punctuation that can be read as an ordinal-number sign.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur die Kürzung für \"ich\"",
+        "wenn ein Satzzeichen folgt",
+        "als Ordnungszahl gelesen werden kann"
+      ],
+      "dependencies": [
+        "PUNCTUATION_SEMANTIC_CLASSIFIER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-005",
+      "sourceSection": "4.3",
+      "kind": "VOLLSCHRIFT_LAUTGRUPPE_WORD_DISAMBIGUATION",
+      "summary": "An independent word consisting of a Vollschrift Lautgruppenkürzung receives an Aufhebungspunkt in Kurzschrift.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Eigenständigen Wörtern, die aus Lautgruppenkürzungen der Vollschrift bestehen",
+        "Aufhebungspunkt vorangestellt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-006",
+      "sourceSection": "4.3",
+      "kind": "TWO_FORM_LAUTGRUPPE_NOT_STANDALONE",
+      "summary": "Two-form Lautgruppenkürzungen may not be used standalone.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die zweiformigen Lautgruppenkürzungen dürfen nicht alleinstehend verwendet werden"
+      ],
+      "dependencies": [
+        "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-007",
+      "sourceSection": "4.3.1",
+      "kind": "STANDALONE_ONLY_INVENTORY",
+      "summary": "§4.3.1 defines nineteen one-form contractions restricted to standalone use.",
+      "normative": true,
+      "sourceWitnesses": [
+        "4.3.1 Einformige Kürzungen, nur alleinstehend"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-008",
+      "sourceSection": "4.3.1",
+      "kind": "STANDALONE_ONLY_SCOPE",
+      "summary": "The §4.3.1 contractions are not used with prefixes, suffixes or in word compounds.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur alleinstehend",
+        "nicht in Wortverbindungen benutzt"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-009",
+      "sourceSection": "4.3.1",
+      "kind": "NONSTANDALONE_FALLBACK",
+      "summary": "When a §4.3.1 word appears in an ineligible derived or compound form, it is written out or represented by another applicable contraction.",
+      "normative": true,
+      "sourceWitnesses": [
+        "werden sie ausgeschrieben",
+        "oder sie werden anders gekürzt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-010",
+      "sourceSection": "4.3.1",
+      "kind": "APOSTROPHIZED_ATTACHMENT_EXCEPTION",
+      "summary": "§4.3.1 contractions remain applicable when joined to apostrophized words, except for IHM.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Bei Verbindung mit apostrophierten Wörtern",
+        "mit Ausnahme von \"ihm\""
+      ],
+      "dependencies": [
+        "APOSTROPHE_TOKENIZATION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-011",
+      "sourceSection": "4.3.1",
+      "kind": "IM_HYPHEN_DISAMBIGUATION",
+      "summary": "IM is written out when it meets a hyphen, for disambiguation.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"Im\" wird beim Zusammentreffen mit einem Bindestrich",
+        "ausgeschrieben"
+      ],
+      "dependencies": [
+        "HYPHEN_BOUNDARY_INPUT_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-012",
+      "sourceSection": "4.3.2",
+      "kind": "MARKABLE_WORD_CONTRACTION_INVENTORY",
+      "summary": "§4.3.2 defines twenty-two one-form word contractions usable standalone.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die folgenden Kürzungen sind als eigenständige Wörter verwendbar"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-013",
+      "sourceSection": "4.3.2",
+      "kind": "POINT2_EXTENSION_OR_COMPOSITION_MARKER",
+      "summary": "When a §4.3.2 word contraction is extended or occurs in a word compound, Point 2 is prefixed to identify it.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Werden sie erweitert oder stehen sie in Wortverbindungen",
+        "durch Voransetzen des Punktes 2"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-014",
+      "sourceSection": "4.3.2",
+      "kind": "PREPOSITION_COMBINATION_POINT2",
+      "summary": "Prepositions from this group also receive Point 2 when combined with contracted words.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Stehen Präpositionen aus dieser Gruppe",
+        "ebenfalls mit Punkt 2 angekündigt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-015",
+      "sourceSection": "4.3.2",
+      "kind": "APOSTROPHE_SUPPRESSES_POINT2",
+      "summary": "When connected with apostrophized words, §4.3.2 contractions are used without the Point-2 announcement.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Bei Verbindung mit apostrophierten Wörtern",
+        "nicht mit Punkt 2 angekündigt"
+      ],
+      "dependencies": [
+        "APOSTROPHE_TOKENIZATION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-016",
+      "sourceSection": "4.3.2",
+      "kind": "RELATED_TWO_FORM_FORMS",
+      "summary": "BEIM, NICHTS, VOM, ZUM and ZUR are explicitly deferred by the source to the two-form contraction rules in §4.4.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"beim\", \"nichts\", \"vom\", \"zum\", \"zur\"",
+        "4.4 Zweiformige Kürzungen"
+      ],
+      "dependencies": [
+        "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-017",
+      "sourceSection": "4.3.3",
+      "kind": "RESTRICTED_WORD_INITIAL_INVENTORY",
+      "summary": "§4.3.3 defines IHR, SEIN and WAR.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Folgende drei Kürzungen",
+        "⠊ IHR",
+        "⠪ SEIN",
+        "⠴ WAR"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-018",
+      "sourceSection": "4.3.3",
+      "kind": "STANDALONE_OR_RESTRICTED_INITIAL_NO_POINT2",
+      "summary": "IHR, SEIN and WAR may be used standalone or under their stated word-initial conditions without Point 2.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur alleinstehend",
+        "am Wortanfang benutzt",
+        "keiner Ankündigung durch Punkt 2"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-019",
+      "sourceSection": "4.3.3",
+      "kind": "IHR_SEIN_INITIAL_CONTINUATION",
+      "summary": "At word start, IHR and SEIN may contract only before E or I.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"ihr\" und \"sein\"",
+        "nur vor \"e\" und \"i\""
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-020",
+      "sourceSection": "4.3.3",
+      "kind": "WAR_INITIAL_CONTINUATION",
+      "summary": "At word start, WAR may contract only before EN or ST.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"war\" darf am Wortanfang nur",
+        "vor \"en\" und \"st\""
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-021",
+      "sourceSection": "4.3.4",
+      "kind": "UNANNOUNCED_FLEXIBLE_INVENTORY",
+      "summary": "§4.3.4 defines HATT, HÄTT and WELCH.",
+      "normative": true,
+      "sourceWitnesses": [
+        "⠓ HATT",
+        "⠜ HÄTT",
+        "⠽ WELCH"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-022",
+      "sourceSection": "4.3.4",
+      "kind": "UNANNOUNCED_STANDALONE_ENDING_COMPOSITION",
+      "summary": "HATT, HÄTT and WELCH are used standalone, with endings, or in word compounds without an announcement.",
+      "normative": true,
+      "sourceWitnesses": [
+        "sowohl alleinstehend als auch in Wortverbindungen",
+        "mit Endungen ohne Ankündigung verwendet"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-023",
+      "sourceSection": "4.3.5",
+      "kind": "EXTENSION_ONLY_STEM_INVENTORY",
+      "summary": "§4.3.5 defines six one-form word stems that require an extension.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Folgende einformige Wortstämme",
+        "nur in Verbindung mit einer Erweiterung gekürzt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-024",
+      "sourceSection": "4.3.5",
+      "kind": "EXTENSION_REQUIRED",
+      "summary": "The six §4.3.5 stems are eligible only when a qualifying extension is present.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur in Verbindung mit einer Erweiterung gekürzt"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-025",
+      "sourceSection": "4.3.5",
+      "kind": "STANDALONE_OR_APOSTROPHE_SPELLOUT",
+      "summary": "As an independent word without ending, or with an apostrophe, a §4.3.5 stem must be written out.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Als eigenständiges Wort ohne Endung",
+        "oder mit Apostroph",
+        "stets auszuschreiben"
+      ],
+      "dependencies": [
+        "APOSTROPHE_TOKENIZATION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-EIN-026",
+      "sourceSection": "4.3.5",
+      "kind": "ERGÄNZUNGSSTRICH_PLACEHOLDER",
+      "summary": "The Ergänzungsstrich shown in the §4.3.5 inventory represents the required ending and is not the one-form contraction cell itself.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Der Ergänzungsstrich steht für die jeweils erforderliche Endung"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-EIN-027",
+      "sourceSection": "4.3.5",
+      "kind": "WUERD_UEBRIG_COLLISION",
+      "summary": "WÜRD is not used in WÜRDIG/UNWÜRDIG because the resulting sequence would collide with the two-form contraction for ÜBRIG.",
+      "normative": true,
+      "sourceWitnesses": [
+        "würdig",
+        "unwürdig",
+        "die Kürzung für \"übrig\""
+      ],
+      "dependencies": [
+        "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-EIN-CASE-001",
+      "sourceSection": "4.3",
+      "witness": "Pleite bin ich!",
+      "target": "ICH",
+      "expectedDecision": "SPELL_OUT_BEFORE_ORDINAL_COMPATIBLE_PUNCTUATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-004"
+      ],
+      "category": "LAUTGRUPPE_WORD_DISAMBIGUATION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-002",
+      "sourceSection": "4.3",
+      "witness": "Das Ei",
+      "target": "EI",
+      "expectedDecision": "PREFIX_AUFHEBUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-EIN-005"
+      ],
+      "category": "VOLLSCHRIFT_WORD_INTERACTION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-003",
+      "sourceSection": "4.3.1",
+      "witness": "obschon",
+      "target": "STANDALONE_ONLY_WORD_CONTRACTION",
+      "expectedDecision": "DO_NOT_REUSE_STANDALONE_FORM_IN_COMPOUND",
+      "ruleRefs": [
+        "DE-KURZ-EIN-008",
+        "DE-KURZ-EIN-009"
+      ],
+      "category": "STANDALONE_ONLY_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-004",
+      "sourceSection": "4.3.1",
+      "witness": "siezen",
+      "target": "STANDALONE_ONLY_WORD_CONTRACTION",
+      "expectedDecision": "DO_NOT_REUSE_STANDALONE_FORM_IN_COMPOUND",
+      "ruleRefs": [
+        "DE-KURZ-EIN-008",
+        "DE-KURZ-EIN-009"
+      ],
+      "category": "STANDALONE_ONLY_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-005",
+      "sourceSection": "4.3.1",
+      "witness": "ist's",
+      "target": "APOSTROPHIZED_ATTACHMENT",
+      "expectedDecision": "STANDALONE_CONTRACTION_REMAINS_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-010"
+      ],
+      "category": "APOSTROPHE_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-006",
+      "sourceSection": "4.3.1",
+      "witness": "Was'n Spaß",
+      "target": "APOSTROPHIZED_ATTACHMENT",
+      "expectedDecision": "STANDALONE_CONTRACTION_REMAINS_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-010"
+      ],
+      "category": "APOSTROPHE_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-007",
+      "sourceSection": "4.3.1",
+      "witness": "Auch-im-Verborgenen-Blühen",
+      "target": "IM",
+      "expectedDecision": "SPELL_OUT_AT_HYPHEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-011"
+      ],
+      "category": "HYPHEN_DISAMBIGUATION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-008",
+      "sourceSection": "4.3.2",
+      "witness": "Aberwitz",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-009",
+      "sourceSection": "4.3.2",
+      "witness": "hinauf",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-010",
+      "sourceSection": "4.3.2",
+      "witness": "herbei",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-011",
+      "sourceSection": "4.3.2",
+      "witness": "demnach",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-012",
+      "sourceSection": "4.3.2",
+      "witness": "hindurch",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-013",
+      "sourceSection": "4.3.2",
+      "witness": "Fürsorge",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-014",
+      "sourceSection": "4.3.2",
+      "witness": "Gegenteil",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-015",
+      "sourceSection": "4.3.2",
+      "witness": "dagewesen",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-016",
+      "sourceSection": "4.3.2",
+      "witness": "Immergrün",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-017",
+      "sourceSection": "4.3.2",
+      "witness": "Jetztmensch",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-018",
+      "sourceSection": "4.3.2",
+      "witness": "nunmehr",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-019",
+      "sourceSection": "4.3.2",
+      "witness": "Mitgift",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-020",
+      "sourceSection": "4.3.2",
+      "witness": "Tunichtgut",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-021",
+      "sourceSection": "4.3.2",
+      "witness": "sogar",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-022",
+      "sourceSection": "4.3.2",
+      "witness": "hinüber",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-023",
+      "sourceSection": "4.3.2",
+      "witness": "einundachtzig",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-024",
+      "sourceSection": "4.3.2",
+      "witness": "mitunter",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-025",
+      "sourceSection": "4.3.2",
+      "witness": "volle",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-026",
+      "sourceSection": "4.3.2",
+      "witness": "unvollendet",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-027",
+      "sourceSection": "4.3.2",
+      "witness": "wovon",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-028",
+      "sourceSection": "4.3.2",
+      "witness": "vorbeischauen",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-029",
+      "sourceSection": "4.3.2",
+      "witness": "inwiefern",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-030",
+      "sourceSection": "4.3.2",
+      "witness": "immerzu",
+      "target": "ONE_FORM_WORD_CONTRACTION",
+      "expectedDecision": "USE_POINT2_IN_EXTENSION_OR_WORD_COMPOSITION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-013"
+      ],
+      "category": "POINT2_MARKED_FORM"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-031",
+      "sourceSection": "4.3.2",
+      "witness": "vorm Haus",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-032",
+      "sourceSection": "4.3.2",
+      "witness": "übers Wasser",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-033",
+      "sourceSection": "4.3.2",
+      "witness": "unters Bett",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-034",
+      "sourceSection": "4.3.2",
+      "witness": "drauf",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-035",
+      "sourceSection": "4.3.2",
+      "witness": "nauf",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-036",
+      "sourceSection": "4.3.2",
+      "witness": "drunter und drüber",
+      "target": "PREPOSITION",
+      "expectedDecision": "USE_POINT2_IN_CONTRACTED_COMBINATION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-014"
+      ],
+      "category": "PREPOSITION_POINT2"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-037",
+      "sourceSection": "4.3.2",
+      "witness": "auf's",
+      "target": "APOSTROPHIZED_ATTACHMENT",
+      "expectedDecision": "OMIT_POINT2_ANNOUNCEMENT",
+      "ruleRefs": [
+        "DE-KURZ-EIN-015"
+      ],
+      "category": "APOSTROPHE_POINT2_SUPPRESSION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-038",
+      "sourceSection": "4.3.2",
+      "witness": "durch's",
+      "target": "APOSTROPHIZED_ATTACHMENT",
+      "expectedDecision": "OMIT_POINT2_ANNOUNCEMENT",
+      "ruleRefs": [
+        "DE-KURZ-EIN-015"
+      ],
+      "category": "APOSTROPHE_POINT2_SUPPRESSION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-039",
+      "sourceSection": "4.3.2",
+      "witness": "so'n Lärm",
+      "target": "APOSTROPHIZED_ATTACHMENT",
+      "expectedDecision": "OMIT_POINT2_ANNOUNCEMENT",
+      "ruleRefs": [
+        "DE-KURZ-EIN-015"
+      ],
+      "category": "APOSTROPHE_POINT2_SUPPRESSION"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-040",
+      "sourceSection": "4.3.3",
+      "witness": "ihre",
+      "target": "IHR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-041",
+      "sourceSection": "4.3.3",
+      "witness": "ihren",
+      "target": "IHR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-042",
+      "sourceSection": "4.3.3",
+      "witness": "ihrethalben",
+      "target": "IHR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-043",
+      "sourceSection": "4.3.3",
+      "witness": "ihrige",
+      "target": "IHR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-044",
+      "sourceSection": "4.3.3",
+      "witness": "Ihro Gnaden",
+      "target": "IHR",
+      "expectedDecision": "WORD_INITIAL_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-045",
+      "sourceSection": "4.3.3",
+      "witness": "ihrs",
+      "target": "IHR",
+      "expectedDecision": "WORD_INITIAL_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "IHR_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-046",
+      "sourceSection": "4.3.3",
+      "witness": "seine",
+      "target": "SEIN",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-047",
+      "sourceSection": "4.3.3",
+      "witness": "seines",
+      "target": "SEIN",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-048",
+      "sourceSection": "4.3.3",
+      "witness": "seinerseits",
+      "target": "SEIN",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-049",
+      "sourceSection": "4.3.3",
+      "witness": "die Seinigen",
+      "target": "SEIN",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-050",
+      "sourceSection": "4.3.3",
+      "witness": "das In-sich-Sein",
+      "target": "SEIN",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-051",
+      "sourceSection": "4.3.3",
+      "witness": "Dasein",
+      "target": "SEIN",
+      "expectedDecision": "SOURCE_FORM_REJECTS_SEIN_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-052",
+      "sourceSection": "4.3.3",
+      "witness": "Paris an der Seine",
+      "target": "SEIN",
+      "expectedDecision": "SOURCE_FORM_REJECTS_SEIN_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-053",
+      "sourceSection": "4.3.3",
+      "witness": "Seinsphilosophie",
+      "target": "SEIN",
+      "expectedDecision": "SOURCE_FORM_REJECTS_SEIN_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-019"
+      ],
+      "category": "SEIN_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-054",
+      "sourceSection": "4.3.3",
+      "witness": "du warst",
+      "target": "WAR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-055",
+      "sourceSection": "4.3.3",
+      "witness": "sie waren",
+      "target": "WAR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-056",
+      "sourceSection": "4.3.3",
+      "witness": "Warenhaus",
+      "target": "WAR",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-EIN-018",
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-057",
+      "sourceSection": "4.3.3",
+      "witness": "die Ware",
+      "target": "WAR",
+      "expectedDecision": "WORD_INITIAL_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-058",
+      "sourceSection": "4.3.3",
+      "witness": "das wars",
+      "target": "WAR",
+      "expectedDecision": "WORD_INITIAL_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-059",
+      "sourceSection": "4.3.3",
+      "witness": "ihr wart",
+      "target": "WAR",
+      "expectedDecision": "WORD_INITIAL_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-EIN-020"
+      ],
+      "category": "WAR_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-060",
+      "sourceSection": "4.3.4",
+      "witness": "hatt",
+      "target": "HATT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HATT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-061",
+      "sourceSection": "4.3.4",
+      "witness": "hatte",
+      "target": "HATT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HATT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-062",
+      "sourceSection": "4.3.4",
+      "witness": "hattest",
+      "target": "HATT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HATT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-063",
+      "sourceSection": "4.3.4",
+      "witness": "anhatte",
+      "target": "HATT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HATT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-064",
+      "sourceSection": "4.3.4",
+      "witness": "ich hatt' einen Kameraden",
+      "target": "HATT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HATT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-065",
+      "sourceSection": "4.3.4",
+      "witness": "hätt",
+      "target": "HÄTT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HAETT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-066",
+      "sourceSection": "4.3.4",
+      "witness": "hätte",
+      "target": "HÄTT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HAETT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-067",
+      "sourceSection": "4.3.4",
+      "witness": "hättest",
+      "target": "HÄTT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HAETT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-068",
+      "sourceSection": "4.3.4",
+      "witness": "aufhätte",
+      "target": "HÄTT",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "HAETT"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-069",
+      "sourceSection": "4.3.4",
+      "witness": "welch",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-070",
+      "sourceSection": "4.3.4",
+      "witness": "welche",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-071",
+      "sourceSection": "4.3.4",
+      "witness": "welchen",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-072",
+      "sourceSection": "4.3.4",
+      "witness": "welches",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-073",
+      "sourceSection": "4.3.4",
+      "witness": "welcherlei",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-074",
+      "sourceSection": "4.3.4",
+      "witness": "etwelche",
+      "target": "WELCH",
+      "expectedDecision": "USE_UNANNOUNCED_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-022"
+      ],
+      "category": "WELCH"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-075",
+      "sourceSection": "4.3.5",
+      "witness": "alle",
+      "target": "ALL",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "ALL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-076",
+      "sourceSection": "4.3.5",
+      "witness": "allein",
+      "target": "ALL",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "ALL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-077",
+      "sourceSection": "4.3.5",
+      "witness": "alles",
+      "target": "ALL",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "ALL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-078",
+      "sourceSection": "4.3.5",
+      "witness": "allenthalben",
+      "target": "ALL",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "ALL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-079",
+      "sourceSection": "4.3.5",
+      "witness": "allerdings",
+      "target": "ALL",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "ALL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-080",
+      "sourceSection": "4.3.5",
+      "witness": "Allergie",
+      "target": "ALL",
+      "expectedDecision": "DO_NOT_USE_EXTENSION_ONLY_ALL_FORM",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024",
+        "DE-KURZ-EIN-025"
+      ],
+      "category": "ALL_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-081",
+      "sourceSection": "4.3.5",
+      "witness": "das All",
+      "target": "ALL",
+      "expectedDecision": "DO_NOT_USE_EXTENSION_ONLY_ALL_FORM",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024",
+        "DE-KURZ-EIN-025"
+      ],
+      "category": "ALL_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-082",
+      "sourceSection": "4.3.5",
+      "witness": "das Weltall",
+      "target": "ALL",
+      "expectedDecision": "DO_NOT_USE_EXTENSION_ONLY_ALL_FORM",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024",
+        "DE-KURZ-EIN-025"
+      ],
+      "category": "ALL_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-083",
+      "sourceSection": "4.3.5",
+      "witness": "des Weltalls",
+      "target": "ALL",
+      "expectedDecision": "DO_NOT_USE_EXTENSION_ONLY_ALL_FORM",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024",
+        "DE-KURZ-EIN-025"
+      ],
+      "category": "ALL_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-084",
+      "sourceSection": "4.3.5",
+      "witness": "besondere",
+      "target": "BESONDER",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "BESONDER_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-085",
+      "sourceSection": "4.3.5",
+      "witness": "besonderer",
+      "target": "BESONDER",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "BESONDER_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-086",
+      "sourceSection": "4.3.5",
+      "witness": "insbesondere",
+      "target": "BESONDER",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "BESONDER_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-087",
+      "sourceSection": "4.3.5",
+      "witness": "besonders",
+      "target": "BESONDER",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "BESONDER_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-088",
+      "sourceSection": "4.3.5",
+      "witness": "diese",
+      "target": "DIES",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-089",
+      "sourceSection": "4.3.5",
+      "witness": "diesen",
+      "target": "DIES",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-090",
+      "sourceSection": "4.3.5",
+      "witness": "dieserhalb",
+      "target": "DIES",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-091",
+      "sourceSection": "4.3.5",
+      "witness": "diesmal",
+      "target": "DIES",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-092",
+      "sourceSection": "4.3.5",
+      "witness": "diesseits",
+      "target": "DIES",
+      "expectedDecision": "SOURCE_FORM_REJECTS_EXTENSION_ONLY_DIES",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-093",
+      "sourceSection": "4.3.5",
+      "witness": "diesbezüglich",
+      "target": "DIES",
+      "expectedDecision": "SOURCE_FORM_REJECTS_EXTENSION_ONLY_DIES",
+      "ruleRefs": [
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "DIES_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-094",
+      "sourceSection": "4.3.5",
+      "witness": "möchte",
+      "target": "MÖCHT",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "MOECHT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-095",
+      "sourceSection": "4.3.5",
+      "witness": "möchtet",
+      "target": "MÖCHT",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "MOECHT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-096",
+      "sourceSection": "4.3.5",
+      "witness": "vermöchte",
+      "target": "MÖCHT",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "MOECHT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-097",
+      "sourceSection": "4.3.5",
+      "witness": "wurde",
+      "target": "WURD",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "WURD_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-098",
+      "sourceSection": "4.3.5",
+      "witness": "wurdest",
+      "target": "WURD",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "WURD_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-099",
+      "sourceSection": "4.3.5",
+      "witness": "würde",
+      "target": "WÜRD",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "WUERD_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-100",
+      "sourceSection": "4.3.5",
+      "witness": "würdet",
+      "target": "WÜRD",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "WUERD_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-101",
+      "sourceSection": "4.3.5",
+      "witness": "die Würde",
+      "target": "WÜRD",
+      "expectedDecision": "USE_EXTENSION_ONLY_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-023",
+        "DE-KURZ-EIN-024"
+      ],
+      "category": "WUERD_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-102",
+      "sourceSection": "4.3.5",
+      "witness": "würdig",
+      "target": "WÜRD",
+      "expectedDecision": "SPELL_OUT_TO_AVOID_UEBRIG_COLLISION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-027"
+      ],
+      "category": "WUERD_COLLISION_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-EIN-CASE-103",
+      "sourceSection": "4.3.5",
+      "witness": "unwürdig",
+      "target": "WÜRD",
+      "expectedDecision": "SPELL_OUT_TO_AVOID_UEBRIG_COLLISION",
+      "ruleRefs": [
+        "DE-KURZ-EIN-027"
+      ],
+      "category": "WUERD_COLLISION_NEGATIVE"
+    }
+  ],
+  "crossPhaseInteractions": [
+    {
+      "interaction": "VOLLSCHRIFT_LAUTGRUPPE_AS_STANDALONE_WORD",
+      "sourceSection": "4.3",
+      "rule": "DE-KURZ-EIN-005",
+      "status": "FORMALLY_CAPTURED"
+    },
+    {
+      "interaction": "TWO_FORM_LAUTGRUPPE_TAXONOMY_DISTINCTION",
+      "sourceSection": "4.3",
+      "rule": "DE-KURZ-EIN-006",
+      "status": "FORMAL_RULE_CAPTURED_DISTINCTION_ESTABLISHED_TAXONOMY_RESOLUTION_PENDING",
+      "sourceTerm": "zweiformige Lautgruppenkürzungen",
+      "standalonePolicy": "FORBIDDEN",
+      "distinctFrom": {
+        "section": "4.4",
+        "term": "Zweiformige Kürzungen",
+        "standalonePolicy": "ALLOWED"
+      },
+      "resolutionSourcePhase": "15.3F",
+      "resolutionState": "NOT_RESOLVED_BY_SECTION_4_4",
+      "replacementDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+    },
+    {
+      "interaction": "WUERD_VS_UEBRIG_COLLISION",
+      "sourceSection": "4.3.5",
+      "rule": "DE-KURZ-EIN-027",
+      "status": "FORMAL_RULE_CAPTURED_MAPPING_DEPENDENCY_PENDING_4_4"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "PUNCTUATION_SEMANTIC_CLASSIFIER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "APOSTROPHE_TOKENIZATION_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "HYPHEN_BOUNDARY_INPUT_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY",
+      "requiredForExecutableGeneralization": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3F",
+    "title": "Kurzschrift Zweiformige Kürzungen Audit",
+    "sourceSection": "4.4"
+  }
+}

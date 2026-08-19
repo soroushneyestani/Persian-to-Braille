@@ -1,0 +1,403 @@
+{
+  "phase": "15.3M1",
+  "title": "Liblouis de-g2 Static Rule and Dependency Classification",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "repository": "https://github.com/liblouis/liblouis.git",
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "rootTable": "tables/de-g2.ctb",
+    "rootSha256": "eb00a9c603885434bdc0615e1d7090d4e68db1d51a0f299f500c5d9d9494016e",
+    "graphFiles": 15,
+    "graphEdges": 14,
+    "directDependencies": [
+      "tables/de-g0.utb",
+      "tables/de-g2-core.cti",
+      "tables/braille-patterns.cti"
+    ]
+  },
+  "classification": {
+    "rootOrchestratorFiles": 1,
+    "inheritedG0Files": 11,
+    "g2SpecificFiles": 2,
+    "genericSupportFiles": 1,
+    "completeGraphCoverage": true,
+    "branchOverlap": false
+  },
+  "staticArchitecture": {
+    "rootOrchestrator": {
+      "path": "tables/de-g2.ctb",
+      "includeOnly": true,
+      "directIncludeCount": 3,
+      "directIncludeOrder": [
+        {
+          "position": 1,
+          "path": "tables/de-g0.utb"
+        },
+        {
+          "position": 2,
+          "path": "tables/de-g2-core.cti"
+        },
+        {
+          "position": 3,
+          "path": "tables/braille-patterns.cti"
+        }
+      ]
+    },
+    "inheritedBaseline": {
+      "root": "tables/de-g0.utb",
+      "role": "INHERITED_G0_BASELINE",
+      "fileCount": 11,
+      "files": [
+        "tables/countries.cti",
+        "tables/de-accents.cti",
+        "tables/de-chardefs6.cti",
+        "tables/de-eurobrl6.dis",
+        "tables/de-g0-core.uti",
+        "tables/de-g0.utb",
+        "tables/digits6DotsPlusDot6.uti",
+        "tables/latinLetterDef6Dots.uti",
+        "tables/latinLowercase.uti",
+        "tables/litdigits6Dots.uti",
+        "tables/spaces.uti"
+      ],
+      "rootIncludeOnly": true
+    },
+    "g2Specific": {
+      "root": "tables/de-g2-core.cti",
+      "role": "G2_SPECIFIC_STATIC_IMPLEMENTATION",
+      "fileCount": 2,
+      "files": [
+        "tables/de-g2-core-patterns.dic",
+        "tables/de-g2-core.cti"
+      ],
+      "coreNonCommentLines": 558,
+      "coreIncludeCount": 1,
+      "patternDictionary": "tables/de-g2-core-patterns.dic",
+      "patternEntries": 26711
+    },
+    "genericSupport": {
+      "root": "tables/braille-patterns.cti",
+      "role": "GENERIC_BRAILLE_PATTERN_SUPPORT",
+      "fileCount": 1,
+      "files": [
+        "tables/braille-patterns.cti"
+      ]
+    }
+  },
+  "g2CoreDirectiveTokenCounts": {
+    "nocross": 305,
+    "word": 142,
+    "noback": 38,
+    "letter": 33,
+    "always": 18,
+    "noletsign": 11,
+    "endword": 3,
+    "begword": 2,
+    "include": 1,
+    "letsign": 1,
+    "noletsignafter": 1,
+    "noletsignbefore": 1,
+    "prfword": 1,
+    "sufword": 1
+  },
+  "files": [
+    {
+      "path": "tables/braille-patterns.cti",
+      "branch": "GENERIC_BRAILLE_PATTERN_SUPPORT",
+      "extensionRole": "TABLE_INCLUDE_RESOURCE",
+      "sha256": "4fb5580c3dd8fb6629b1c2330cc95e8a5a603062604db1715f84ea77b99b493d",
+      "bytes": 26718,
+      "lines": 287,
+      "nonCommentLines": 256,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "noback": 256
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/countries.cti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "TABLE_INCLUDE_RESOURCE",
+      "sha256": "e05bdd4f09745ca46a46e7370d4cc75ddcec9e3513b4c39de4637143957ea537",
+      "bytes": 6966,
+      "lines": 263,
+      "nonCommentLines": 242,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "compbrl": 242
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-accents.cti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "TABLE_INCLUDE_RESOURCE",
+      "sha256": "41976a2f818d2a613b612b43283078c822a8be61de811080811d319ecc309988",
+      "bytes": 17553,
+      "lines": 214,
+      "nonCommentLines": 188,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "base": 94,
+        "lowercase": 92,
+        "noback": 2
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-chardefs6.cti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "TABLE_INCLUDE_RESOURCE",
+      "sha256": "a53ed0b0d43b750e45517f7d9ef44d1a1f3dd41b89b4ce930192cac808182a3d",
+      "bytes": 17196,
+      "lines": 289,
+      "nonCommentLines": 209,
+      "includeDirectiveCount": 3,
+      "directiveTokenCounts": {
+        "sign": 109,
+        "math": 36,
+        "punctuation": 33,
+        "lowercase": 8,
+        "noback": 8,
+        "digit": 6,
+        "base": 4,
+        "include": 3,
+        "space": 2
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-eurobrl6.dis",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "DISPLAY_RESOURCE",
+      "sha256": "f1cce767372a2c2ed49bb86d2490fc79da543d52b449a20e2aadd387ab511796",
+      "bytes": 2365,
+      "lines": 101,
+      "nonCommentLines": 65,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "display": 65
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-g0-core.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "ae14761c688d4fd6c32fb76a8ae614f7df06e53e9a10ceb403173e35a2c180a1",
+      "bytes": 27612,
+      "lines": 732,
+      "nonCommentLines": 569,
+      "includeDirectiveCount": 2,
+      "directiveTokenCounts": {
+        "comp6": 189,
+        "noback": 137,
+        "midnum": 67,
+        "always": 52,
+        "endnum": 23,
+        "compbrl": 20,
+        "midword": 11,
+        "joinnum": 8,
+        "postpunc": 7,
+        "prepunc": 7,
+        "begnum": 6,
+        "begemphphrase": 4,
+        "begemphword": 4,
+        "emphclass": 4,
+        "endemphphrase": 4,
+        "endemphword": 4,
+        "lenemphphrase": 4,
+        "emphmodechars": 3,
+        "noemphchars": 3,
+        "include": 2,
+        "attribute": 1,
+        "begcapsword": 1,
+        "begcomp": 1,
+        "capsletter": 1,
+        "capsnocont": 1,
+        "endcapsword": 1,
+        "hyphen": 1,
+        "nonumsign": 1,
+        "numericmodechars": 1,
+        "numsign": 1
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-g0.utb",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "BASE_TABLE_RESOURCE",
+      "sha256": "4708e78848eff4bc35f33035013a346c122a203ee36ce84a9ee5410616481ca9",
+      "bytes": 1905,
+      "lines": 57,
+      "nonCommentLines": 5,
+      "includeDirectiveCount": 5,
+      "directiveTokenCounts": {
+        "include": 5
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-g2-core-patterns.dic",
+      "branch": "G2_SPECIFIC",
+      "extensionRole": "PATTERN_DATA",
+      "sha256": "0cc31ee939d013fbf4fc94b1e74b13c69f7b7117e7e042149d790034aa56a166",
+      "bytes": 219279,
+      "lines": 26711,
+      "nonCommentLines": 26711,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": null,
+      "patternEntryCount": 26711
+    },
+    {
+      "path": "tables/de-g2-core.cti",
+      "branch": "G2_SPECIFIC",
+      "extensionRole": "TABLE_INCLUDE_RESOURCE",
+      "sha256": "038a71c52785e5625ebb5dd5ddf3f05e142c611929de2815e998e8fa3cf3c75f",
+      "bytes": 34907,
+      "lines": 607,
+      "nonCommentLines": 558,
+      "includeDirectiveCount": 1,
+      "directiveTokenCounts": {
+        "nocross": 305,
+        "word": 142,
+        "noback": 38,
+        "letter": 33,
+        "always": 18,
+        "noletsign": 11,
+        "endword": 3,
+        "begword": 2,
+        "include": 1,
+        "letsign": 1,
+        "noletsignafter": 1,
+        "noletsignbefore": 1,
+        "prfword": 1,
+        "sufword": 1
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/de-g2.ctb",
+      "branch": "G2_ROOT_ORCHESTRATOR",
+      "extensionRole": "TABLE_RESOURCE",
+      "sha256": "eb00a9c603885434bdc0615e1d7090d4e68db1d51a0f299f500c5d9d9494016e",
+      "bytes": 1923,
+      "lines": 57,
+      "nonCommentLines": 3,
+      "includeDirectiveCount": 3,
+      "directiveTokenCounts": {
+        "include": 3
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/digits6DotsPlusDot6.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "2f55f9aa520b4c098d1fe4cba5055a706cff8882662f944cee2bcf6aa130d7a8",
+      "bytes": 1095,
+      "lines": 30,
+      "nonCommentLines": 10,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "digit": 10
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/latinLetterDef6Dots.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "323fe46ee894216871675675823dd0681389669325d99b3b149ca0ea6550d842",
+      "bytes": 2071,
+      "lines": 78,
+      "nonCommentLines": 52,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "base": 26,
+        "lowercase": 26
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/latinLowercase.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "4e8aa4d7b0fad5a1debd7a17373738e5b0211a58e408c4278732cd93309dc745",
+      "bytes": 10835,
+      "lines": 389,
+      "nonCommentLines": 361,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "noback": 361
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/litdigits6Dots.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "ada88ce1b56031d91b789b9ee26a7e8b7f25934c4d564cea1f919ff6d8b1211e",
+      "bytes": 987,
+      "lines": 30,
+      "nonCommentLines": 10,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "litdigit": 10
+      },
+      "patternEntryCount": null
+    },
+    {
+      "path": "tables/spaces.uti",
+      "branch": "INHERITED_G0_BASELINE",
+      "extensionRole": "SUPPORT_INCLUDE_RESOURCE",
+      "sha256": "ea10c41e08e9f44b2b471b80a7f291f62d249f0bbb70b64f319e20e95388e2b9",
+      "bytes": 2170,
+      "lines": 62,
+      "nonCommentLines": 30,
+      "includeDirectiveCount": 0,
+      "directiveTokenCounts": {
+        "space": 26,
+        "replace": 2,
+        "noback": 1,
+        "sign": 1
+      },
+      "patternEntryCount": null
+    }
+  ],
+  "interpretationPolicy": {
+    "liblouisRole": "NON_NORMATIVE_COMPARATOR",
+    "rootIncludeOrderObserved": true,
+    "rootIncludeOrderNormative": false,
+    "g0InheritanceObserved": true,
+    "g0InheritanceEqualsBSKDLInheritance": "NOT_ASSUMED",
+    "g2CoreRulesEqualBSKDLKurzschrift": "NOT_ASSUMED",
+    "patternDictionaryIsNormative": false,
+    "dictionaryEntriesParsedAsOpcodes": false,
+    "directiveTokensAreSemanticRules": "NOT_ASSUMED",
+    "forwardComparatorEligible": true,
+    "reverseEquivalenceAssumed": false,
+    "rulePromotionAllowed": false
+  },
+  "promotionPolicy": {
+    "staticDependencyClassificationComplete": true,
+    "semanticCrosswalkStarted": false,
+    "runtimeDifferentialTestingStarted": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M2",
+    "title": "Liblouis de-g2 Static BSKDL Family Crosswalk",
+    "plannedScope": [
+      "Inspect de-g2-core.cti without promoting its rules",
+      "Classify static implementation constructs against already-audited BSKDL Kurzschrift families",
+      "Separate exact correspondences, implementation-only mechanisms, and unresolved comparator behavior",
+      "Treat de-g2-core-patterns.dic as pattern data, never as a normative rule source"
+    ]
+  }
+}

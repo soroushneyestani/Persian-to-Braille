@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.3N",
+  "title": "German Kurzschrift Final Closure",
+  "generatedAtUtc": "2026-08-19T19:24:19Z",
+  "status": "PASS_WITH_DOCUMENTED_NON_NORMATIVE_COMPARATOR_DIVERGENCE",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "head": "5830e59c9bc3b8fcbc69f3efd1cb89666c30ccf7"
+  },
+  "scope": {
+    "language": "German",
+    "mode": "Kurzschrift",
+    "bskdlChapter": "4",
+    "formalSpecificationAudit": true,
+    "runtimeCoreImplementation": false
+  },
+  "normativeAuthority": {
+    "authority": "BSKDL_BACKED_FORMAL_ARTIFACTS",
+    "liblouisNormative": false,
+    "comparatorMayModifyNormativeBaseline": false
+  },
+  "formalBaseline": {
+    "formalRuleIds": 119,
+    "uniqueFormalRuleIds": 119,
+    "validationCaseIds": 645,
+    "uniqueValidationCaseIds": 645,
+    "duplicateFormalRuleIds": 0,
+    "duplicateValidationCaseIds": 0,
+    "sixDotSerialization": "PASS",
+    "sourceConsistency": "PASS"
+  },
+  "openDependencies": {
+    "total": 4,
+    "blockingFormalSourceConsistency": 0,
+    "blockingRuntimeGeneralization": 2,
+    "items": [
+      {
+        "id": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION",
+        "type": "TERMINOLOGY_PRECISION",
+        "blockingFormalSourceConsistency": false,
+        "blockingRuntimeGeneralization": false,
+        "status": "OPEN"
+      },
+      {
+        "id": "RUNTIME_RESTRICTION_EVALUATION_MODEL",
+        "type": "EXECUTABLE_ARCHITECTURE",
+        "blockingFormalSourceConsistency": false,
+        "blockingRuntimeGeneralization": true,
+        "status": "OPEN"
+      },
+      {
+        "id": "MORPHOLOGICAL_AND_LEXICAL_PROVIDERS",
+        "type": "RUNTIME_PROVIDER_SET",
+        "blockingFormalSourceConsistency": false,
+        "blockingRuntimeGeneralization": true,
+        "status": "OPEN"
+      },
+      {
+        "id": "LIBLOUIS_DE_G2_COMPARATOR_AUDIT",
+        "type": "NON_NORMATIVE_COMPARATOR",
+        "blockingFormalSourceConsistency": false,
+        "blockingPhase15_3Closure": true,
+        "status": "NOT_STARTED"
+      }
+    ],
+    "interpretation": "Open runtime/generalization dependencies do not block the completed formal Kurzschrift source/specification audit."
+  },
+  "runtimePrecedence": {
+    "state": "NOT_NORMATIVELY_TOTAL_ORDERED",
+    "status": "PRESERVED"
+  },
+  "comparatorAudit": {
+    "role": "NON_NORMATIVE_COMPARATOR",
+    "trackClosed": true,
+    "runtimeProbes": 258,
+    "rawExactMatches": 246,
+    "rawRuntimeDivergences": 12,
+    "finalAccounting": {
+      "EXACT_MATCH": 246,
+      "BRAILLE_SPACE_SERIALIZATION_DIFFERENCE": 6,
+      "SOURCE_ANNOTATION_SCOPE_DIFFERENCE": 2,
+      "SOURCE_BACKED_CONTEXT_MATCH": 1,
+      "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE": 2,
+      "CONFIRMED_SOURCE_BACKED_COMPARATOR_DIVERGENCE": 1
+    },
+    "confirmedSourceBackedComparatorDivergences": 1,
+    "blockingComparatorIssues": 0,
+    "normativeChanges": 0,
+    "documentedDivergence": {
+      "validationId": "DE-KURZ-REST-493-RESOLVE-001",
+      "print": "Den Haag",
+      "expectedBraille": "⠙⠉ ⠓⠁⠁⠛",
+      "comparatorBraille": "⠑⠀⠓⠁⠁⠛",
+      "disposition": "DOCUMENTED_NON_NORMATIVE_DIFFERENCE",
+      "normativeImpact": "NONE"
+    }
+  },
+  "implementationBoundary": {
+    "phase15_3ImplementsGermanCore": false,
+    "phase15_3RequiresLiblouisInProduction": false,
+    "phase15_3RequiresWineInProduction": false,
+    "phase15_3RequiresWslInProduction": false,
+    "phase15_3RequiresUbuntuInProduction": false,
+    "runtimeGeneralizationDeferred": true,
+    "formalSpecificationClosureIndependentOfComparator": true
+  },
+  "artifactManifest": {
+    "preClosurePairCount": 29,
+    "preClosureFileCount": 58,
+    "entries": [
+      {
+        "stem": "phase-15.3a-bskdl-kurzschrift-rule-family-inventory",
+        "json": {
+          "name": "phase-15.3a-bskdl-kurzschrift-rule-family-inventory.json",
+          "bytes": 10206,
+          "sha256": "f7cfb839c7bacb766da44997b938ff09cdc1a552779563c2a3536dc27d1053f3"
+        },
+        "markdown": {
+          "name": "phase-15.3a-bskdl-kurzschrift-rule-family-inventory.md",
+          "bytes": 1791,
+          "sha256": "b8f7edbae4b09bc9c2929966332a29769cbebbf0319168e330c58baa7852ed88"
+        }
+      },
+      {
+        "stem": "phase-15.3b-bskdl-kurzschrift-lautgruppenkuerzungen-inventory",
+        "json": {
+          "name": "phase-15.3b-bskdl-kurzschrift-lautgruppenkuerzungen-inventory.json",
+          "bytes": 28253,
+          "sha256": "0131f064796c9765403536cb55a737346270d0c89e06617b9d36b63ea48e17e4"
+        },
+        "markdown": {
+          "name": "phase-15.3b-bskdl-kurzschrift-lautgruppenkuerzungen-inventory.md",
+          "bytes": 3735,
+          "sha256": "c5a0295e6dff3895c65a1520c4aede9d92eb246f59049160d063012d1e000d07"
+        }
+      },
+      {
+        "stem": "phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract",
+        "json": {
+          "name": "phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract.json",
+          "bytes": 44484,
+          "sha256": "2d2f6aaae83912272cb24e217491db08cb7798751e46f1bfb01f5e4e7be2f45a"
+        },
+        "markdown": {
+          "name": "phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract.md",
+          "bytes": 3348,
+          "sha256": "91323c101d86d881e4da5524d73422795bd250a2e496873cfdb84a80ebcc49a1"
+        }
+      },
+      {
+        "stem": "phase-15.3d-bskdl-kurzschrift-prefix-suffix-contractions-contract",
+        "json": {
+          "name": "phase-15.3d-bskdl-kurzschrift-prefix-suffix-contractions-contract.json",
+          "bytes": 35848,
+          "sha256": "21bd871e360143aef55f3a867e9f0173a865eb318861a47b5f2020b68385073e"
+        },
+        "markdown": {
+          "name": "phase-15.3d-bskdl-kurzschrift-prefix-suffix-contractions-contract.md",
+          "bytes": 2935,
+          "sha256": "bcac676322f371afc2ec798242764272b8dbd7a39d52cd06acf339b770cd2f42"
+        }
+      },
+      {
+        "stem": "phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract",
+        "json": {
+          "name": "phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract.json",
+          "bytes": 76346,
+          "sha256": "89625536ddfda699d44c8a641395c634eff1c64a96d9bcb00441ad6ae90c063f"
+        },
+        "markdown": {
+          "name": "phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract.md",
+          "bytes": 3615,
+          "sha256": "46b84965b65ff2b7fbcfae678e67ab1f649e29ab19fdf843add2ee7123a5259d"
+        }
+      },
+      {
+        "stem": "phase-15.3f-bskdl-kurzschrift-zweiformige-kuerzungen-contract",
+        "json": {
+          "name": "phase-15.3f-bskdl-kurzschrift-zweiformige-kuerzungen-contract.json",
+          "bytes": 105162,
+          "sha256": "62d8ad26b5d257a9fcfa2de88376baa89695338b9765a3c06e92e2c90335e60f"
+        },
+        "markdown": {
+          "name": "phase-15.3f-bskdl-kurzschrift-zweiformige-kuerzungen-contract.md",
+          "bytes": 1705,
+          "sha256": "050446b74ffd6326c7c1f657c3fcd734b7bff26f513baa271e8390e4818a44aa"
+        }
+      },
+      {
+        "stem": "phase-15.3g-bskdl-kurzschrift-komma-kuerzungen-contract",
+        "json": {
+          "name": "phase-15.3g-bskdl-kurzschrift-komma-kuerzungen-contract.json",
+          "bytes": 28177,
+          "sha256": "d0310fb08593b54d92f2575cb4f9f6a26036a9754db1a2df0eaab46c03268f29"
+        },
+        "markdown": {
+          "name": "phase-15.3g-bskdl-kurzschrift-komma-kuerzungen-contract.md",
+          "bytes": 2528,
+          "sha256": "cd43b0e3bbdc20adb9a190cebfcda7c8224cb7a1ee320d3ce2319aab4d63768c"
+        }
+      },
+      {
+        "stem": "phase-15.3h-bskdl-kurzschrift-umlautungspunkt-contract",
+        "json": {
+          "name": "phase-15.3h-bskdl-kurzschrift-umlautungspunkt-contract.json",
+          "bytes": 53591,
+          "sha256": "97e23177408c182dd7d81ca16f773d80ca87feab657de42ab0eb83c0e2c5220d"
+        },
+        "markdown": {
+          "name": "phase-15.3h-bskdl-kurzschrift-umlautungspunkt-contract.md",
+          "bytes": 1831,
+          "sha256": "1731a97397c1265d21303597253963f0ef257884dba416604219b910f6688ff9"
+        }
+      },
+      {
+        "stem": "phase-15.3i-bskdl-kurzschrift-aufhebungspunkt-contract",
+        "json": {
+          "name": "phase-15.3i-bskdl-kurzschrift-aufhebungspunkt-contract.json",
+          "bytes": 15425,
+          "sha256": "887ec3a59fad00f27841fab3d3b7bb32730a7e782bd0875e27829cad3e7de9e7"
+        },
+        "markdown": {
+          "name": "phase-15.3i-bskdl-kurzschrift-aufhebungspunkt-contract.md",
+          "bytes": 2538,
+          "sha256": "f388dff610f21f26a04da0cdd7b9623ed76e2275b67c1ead8c14ce41bf79b3f7"
+        }
+      },
+      {
+        "stem": "phase-15.3j-bskdl-kurzschrift-basis-vollschrift-inserts-contract",
+        "json": {
+          "name": "phase-15.3j-bskdl-kurzschrift-basis-vollschrift-inserts-contract.json",
+          "bytes": 12643,
+          "sha256": "7a8a56a48e7ffd4dc2c9f21e6dbbf68d99416bdd665b848fdfb814268b76271e"
+        },
+        "markdown": {
+          "name": "phase-15.3j-bskdl-kurzschrift-basis-vollschrift-inserts-contract.md",
+          "bytes": 2262,
+          "sha256": "71edd53a95b7178682bbdf9cd2622378f5d0e87c3d7d2146dafad6bb1c817ce6"
+        }
+      },
+      {
+        "stem": "phase-15.3k1-bskdl-kurzschrift-vollschrift-rule-inheritance-contract",
+        "json": {
+          "name": "phase-15.3k1-bskdl-kurzschrift-vollschrift-rule-inheritance-contract.json",
+          "bytes": 3242,
+          "sha256": "4e85f823cf58d02251857973bbbcf508be69e1299ca0dcdda02bddbdb937a819"
+        },
+        "markdown": {
+          "name": "phase-15.3k1-bskdl-kurzschrift-vollschrift-rule-inheritance-contract.md",
+          "bytes": 986,
+          "sha256": "d3e35cbeb6013765db90a08ede4388f12e6ed88435bf58d4bf33ee9f5d961e20"
+        }
+      },
+      {
+        "stem": "phase-15.3k2-bskdl-kurzschrift-wortfugen-restriction-contract",
+        "json": {
+          "name": "phase-15.3k2-bskdl-kurzschrift-wortfugen-restriction-contract.json",
+          "bytes": 8047,
+          "sha256": "4d102c1ea02c43fd8dac650ccf9490c51891d68649ae02c8521b6057a0a5b3b5"
+        },
+        "markdown": {
+          "name": "phase-15.3k2-bskdl-kurzschrift-wortfugen-restriction-contract.md",
+          "bytes": 1397,
+          "sha256": "01f485b5e8915d6efbf933338bb86554b26dbc06c315aba130f0abd95bfd39f0"
+        }
+      },
+      {
+        "stem": "phase-15.3k3-bskdl-kurzschrift-eigennamen-restriction-contract",
+        "json": {
+          "name": "phase-15.3k3-bskdl-kurzschrift-eigennamen-restriction-contract.json",
+          "bytes": 18588,
+          "sha256": "3a0b90e7ab7ba11da7660d18a6e4312eddf2669a04b1cca5c36dc1f807258bdf"
+        },
+        "markdown": {
+          "name": "phase-15.3k3-bskdl-kurzschrift-eigennamen-restriction-contract.md",
+          "bytes": 1640,
+          "sha256": "db665e78668365a1e426d0019df504550884296ce7c21de240c6173403f250dd"
+        }
+      },
+      {
+        "stem": "phase-15.3k4-bskdl-kurzschrift-wortstamm-restriction-contract",
+        "json": {
+          "name": "phase-15.3k4-bskdl-kurzschrift-wortstamm-restriction-contract.json",
+          "bytes": 26022,
+          "sha256": "5a8370b38b7af8e84d524b91cff6d9e694914fd24da88be42c9e9f72bb17dc3f"
+        },
+        "markdown": {
+          "name": "phase-15.3k4-bskdl-kurzschrift-wortstamm-restriction-contract.md",
+          "bytes": 1970,
+          "sha256": "44d486d34bf2707544ad7b368974d5d5b4afc7b81e5bd99c1f5c9f21de2c4739"
+        }
+      },
+      {
+        "stem": "phase-15.3k5-bskdl-kurzschrift-prefix-suffix-boundary-restriction-contract",
+        "json": {
+          "name": "phase-15.3k5-bskdl-kurzschrift-prefix-suffix-boundary-restriction-contract.json",
+          "bytes": 6580,
+          "sha256": "00e694be3259a0f25daef96acf561dc137a04faa7701e8bec9cf0f92c6920359"
+        },
+        "markdown": {
+          "name": "phase-15.3k5-bskdl-kurzschrift-prefix-suffix-boundary-restriction-contract.md",
+          "bytes": 1666,
+          "sha256": "872a7ba941748e29da30d6455f2a2c58c9f3ed2368b89d190a2c5567ea5a6eba"
+        }
+      },
+      {
+        "stem": "phase-15.3k6-bskdl-kurzschrift-application-restrictions-closure",
+        "json": {
+          "name": "phase-15.3k6-bskdl-kurzschrift-application-restrictions-closure.json",
+          "bytes": 9013,
+          "sha256": "7c220af4a2ddc26115c5d31ce0cdb759c44cf300b5112d01f8e95500a53e314f"
+        },
+        "markdown": {
+          "name": "phase-15.3k6-bskdl-kurzschrift-application-restrictions-closure.md",
+          "bytes": 2323,
+          "sha256": "81a604ff796fa1829f376f34e2b98ef04d6ecec0346b083768c36efbfdfc5106"
+        }
+      },
+      {
+        "stem": "phase-15.3l1-kurzschrift-taxonomy-precision-patch",
+        "json": {
+          "name": "phase-15.3l1-kurzschrift-taxonomy-precision-patch.json",
+          "bytes": 2727,
+          "sha256": "c4fd75dd5c9e1c4e89060339297a6b6acac1260a393d6aede9e96400f66068f5"
+        },
+        "markdown": {
+          "name": "phase-15.3l1-kurzschrift-taxonomy-precision-patch.md",
+          "bytes": 1364,
+          "sha256": "45b8192649a1dc851f3990d57ba805899ad4ecb19ef3e09c8ebd76508077a0c8"
+        }
+      },
+      {
+        "stem": "phase-15.3l2-kurzschrift-cross-artifact-consistency-closure",
+        "json": {
+          "name": "phase-15.3l2-kurzschrift-cross-artifact-consistency-closure.json",
+          "bytes": 4197,
+          "sha256": "50e66893b824bcb22c0edc814e3a4662f27ff13926e9a8db3eb928eec6d91e0a"
+        },
+        "markdown": {
+          "name": "phase-15.3l2-kurzschrift-cross-artifact-consistency-closure.md",
+          "bytes": 1883,
+          "sha256": "8086d228ca197760e6643400b3abfc3ff360edb29ec6b8171ec7373a8e0b57a9"
+        }
+      },
+      {
+        "stem": "phase-15.3m1-liblouis-de-g2-static-dependency-classification",
+        "json": {
+          "name": "phase-15.3m1-liblouis-de-g2-static-dependency-classification.json",
+          "bytes": 11778,
+          "sha256": "e5d9a2d0f3f406a3e6b3a04db005b4c1f64b08ba974e1226eacdaca039bb28a5"
+        },
+        "markdown": {
+          "name": "phase-15.3m1-liblouis-de-g2-static-dependency-classification.md",
+          "bytes": 1794,
+          "sha256": "795b2d1a96e4cf3c4ca936581cd19725d128b8c96d4b81d975331f7d61177e26"
+        }
+      },
+      {
+        "stem": "phase-15.3m2-liblouis-de-g2-static-bskdl-family-crosswalk",
+        "json": {
+          "name": "phase-15.3m2-liblouis-de-g2-static-bskdl-family-crosswalk.json",
+          "bytes": 9728,
+          "sha256": "a298640507a3ef15e257dac86421a739f944636ff5db98b1ff8c1627e3d6c65f"
+        },
+        "markdown": {
+          "name": "phase-15.3m2-liblouis-de-g2-static-bskdl-family-crosswalk.md",
+          "bytes": 1651,
+          "sha256": "4baec18c013d212ca8907c425a08d654b4c184564c5fee3f48a6a6d5f80f5956"
+        }
+      },
+      {
+        "stem": "phase-15.3m3-liblouis-de-g2-static-lexical-correspondence-audit",
+        "json": {
+          "name": "phase-15.3m3-liblouis-de-g2-static-lexical-correspondence-audit.json",
+          "bytes": 6716,
+          "sha256": "942612bd8db2ee7f5fc35bfe0cc742239e62a969339ed31c89ad21fd0cab63de"
+        },
+        "markdown": {
+          "name": "phase-15.3m3-liblouis-de-g2-static-lexical-correspondence-audit.md",
+          "bytes": 1823,
+          "sha256": "91fae48e38d571186b26ee7f2bb7103080f697a765e60641adac66029ff71a4c"
+        }
+      },
+      {
+        "stem": "phase-15.3m4-liblouis-de-g2-controlled-runtime-build-preparation",
+        "json": {
+          "name": "phase-15.3m4-liblouis-de-g2-controlled-runtime-build-preparation.json",
+          "bytes": 5126,
+          "sha256": "1abde3fd9efc996cdaffc747bf0253fe1b4937eaec69aa31b382ff4f7fc20a78"
+        },
+        "markdown": {
+          "name": "phase-15.3m4-liblouis-de-g2-controlled-runtime-build-preparation.md",
+          "bytes": 1630,
+          "sha256": "7c5fc252dc229994a6a806384675783828bf7558200c2a23140e1199338b13a6"
+        }
+      },
+      {
+        "stem": "phase-15.3m5-liblouis-execution-environment-selection",
+        "json": {
+          "name": "phase-15.3m5-liblouis-execution-environment-selection.json",
+          "bytes": 5554,
+          "sha256": "3b0b2139ee92295317a697076ffa92e189690390494f42e13e0e645fb0cf46b3"
+        },
+        "markdown": {
+          "name": "phase-15.3m5-liblouis-execution-environment-selection.md",
+          "bytes": 1497,
+          "sha256": "a4fe313cc96e01be178ece37480bd6cf95f93e21dd56603c3187269599c16a10"
+        }
+      },
+      {
+        "stem": "phase-15.3m5b-wsl-ubuntu-22.04-provisioning-plan",
+        "json": {
+          "name": "phase-15.3m5b-wsl-ubuntu-22.04-provisioning-plan.json",
+          "bytes": 4371,
+          "sha256": "07532ea6f6768350b97eb95bbc5c357ee7e41205ac07f02f8b4deb9ca4c75165"
+        },
+        "markdown": {
+          "name": "phase-15.3m5b-wsl-ubuntu-22.04-provisioning-plan.md",
+          "bytes": 1136,
+          "sha256": "412153ee15fa835a4e3de1a98e00e7fecd09b533cf32438169aba22a34077bd7"
+        }
+      },
+      {
+        "stem": "phase-15.3m5c-wsl-ubuntu-22.04-provisioning-identity-freeze",
+        "json": {
+          "name": "phase-15.3m5c-wsl-ubuntu-22.04-provisioning-identity-freeze.json",
+          "bytes": 3759,
+          "sha256": "39ab791192b2b0fcfb1a6e3c7b55f77fb051816a765291ea44381797cf0c01e5"
+        },
+        "markdown": {
+          "name": "phase-15.3m5c-wsl-ubuntu-22.04-provisioning-identity-freeze.md",
+          "bytes": 1084,
+          "sha256": "0ff38ca647c31c557212c0e55b177e5d4bde8cc72367b6081b239763a614673d"
+        }
+      },
+      {
+        "stem": "phase-15.3m6-liblouis-frozen-ci-toolchain-provisioning-verification",
+        "json": {
+          "name": "phase-15.3m6-liblouis-frozen-ci-toolchain-provisioning-verification.json",
+          "bytes": 6247,
+          "sha256": "f1557b19db6839a07aceed33fbdee54ebe28969e1302b0a9061b42922b83d9ec"
+        },
+        "markdown": {
+          "name": "phase-15.3m6-liblouis-frozen-ci-toolchain-provisioning-verification.md",
+          "bytes": 1378,
+          "sha256": "abb821749cc509d50ba4b75f3d6d1974f400662003fb756dcc982e66aae0ec4e"
+        }
+      },
+      {
+        "stem": "phase-15.3m7-liblouis-frozen-runtime-build-and-verification",
+        "json": {
+          "name": "phase-15.3m7-liblouis-frozen-runtime-build-and-verification.json",
+          "bytes": 8063,
+          "sha256": "8466ea28d1e5b61ac960efe24248ce5cf771755a135d38395271f45135553936"
+        },
+        "markdown": {
+          "name": "phase-15.3m7-liblouis-frozen-runtime-build-and-verification.md",
+          "bytes": 5242,
+          "sha256": "d2a6ce01d4114cead141557a2bd5f530dc64b7e858dc5d2d0ed21ac4ba90cb0f"
+        }
+      },
+      {
+        "stem": "phase-15.3m8-liblouis-runtime-differential-comparator-audit",
+        "json": {
+          "name": "phase-15.3m8-liblouis-runtime-differential-comparator-audit.json",
+          "bytes": 4321,
+          "sha256": "c4545d44fed2a5006759aeca43a8c751cfd8f863b5a57d501ba11318dc41bf81"
+        },
+        "markdown": {
+          "name": "phase-15.3m8-liblouis-runtime-differential-comparator-audit.md",
+          "bytes": 5126,
+          "sha256": "535eaae197bf1bf2f51dd89a9873146099cba2e1e18a008c4119ef683bfced79"
+        }
+      },
+      {
+        "stem": "phase-15.3m9-liblouis-runtime-divergence-and-comparator-closure",
+        "json": {
+          "name": "phase-15.3m9-liblouis-runtime-divergence-and-comparator-closure.json",
+          "bytes": 4193,
+          "sha256": "7bb172aac73af2fe6994e8c0cefc6a486d5dc46c0708e54332ad0c3e8c4ac727"
+        },
+        "markdown": {
+          "name": "phase-15.3m9-liblouis-runtime-divergence-and-comparator-closure.md",
+          "bytes": 4903,
+          "sha256": "3b0ed4ad01047d6a1b742904bed405603936f77fcf84eb9b6ad3cb5348ffc15b"
+        }
+      }
+    ],
+    "canonicalManifestSha256": "777c474b5368872171b7f18fa9d188b05b1b3090839f396c0b18f3892956b992"
+  },
+  "closureDecision": {
+    "phase15_3Closed": true,
+    "formalKurzschriftSpecificationClosed": true,
+    "comparatorTrackClosed": true,
+    "blockingFormalIssues": 0,
+    "blockingComparatorIssues": 0,
+    "normativeChangesFromComparator": 0,
+    "documentedNonNormativeComparatorDivergences": 1,
+    "finalStatus": "PASS_WITH_DOCUMENTED_NON_NORMATIVE_COMPARATOR_DIVERGENCE",
+    "readyFor": "Phase 15.4 Swiss / regional audit"
+  }
+}

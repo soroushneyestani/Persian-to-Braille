@@ -1,0 +1,547 @@
+{
+  "phase": "15.3I",
+  "title": "BSKDL Kurzschrift Aufhebungspunkt Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.7",
+    "sectionTitle": "Der Aufhebungspunkt",
+    "sectionExtractionSha256": "5946ec525e87fdcb3f25408865e079f1e614d369fa62d143087939d7fc9f0266"
+  },
+  "coverage": {
+    "subsections": 0,
+    "positiveSourceExamples": 8,
+    "accentExceptionExamples": 1,
+    "positiveExamplePoint6Occurrences": 10,
+    "inWordSignCategories": 9,
+    "arrowPolicyCaptured": true,
+    "formalRules": 5,
+    "validationCases": 24,
+    "sixDotValidation": true,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "grammar": {
+    "marker": {
+      "unicode": "⠠",
+      "dots": "6",
+      "name": "Aufhebungspunkt"
+    },
+    "operation": "PREFIX_TO_SIGN_OR_SIGN_SEQUENCE",
+    "semanticEffect": "CANCEL_ADDITIONAL_MEANING",
+    "restoredMeaningLayer": "BASIS_OR_VOLLSCHRIFT",
+    "inWordSignPolicy": "PREFIX_POINT6_FOR_SOURCE_LISTED_CATEGORIES",
+    "arrowPolicy": "PREFIX_POINT6",
+    "accentedLetterPolicy": "OMIT_POINT6"
+  },
+  "positiveSourceExamples": [
+    {
+      "print": "Center",
+      "braille": "⠠⠉⠉⠞⠻",
+      "point6Occurrences": 1
+    },
+    {
+      "print": "Mocca",
+      "braille": "⠍⠕⠠⠉⠠⠉⠁",
+      "point6Occurrences": 2
+    },
+    {
+      "print": "Quelle",
+      "braille": "⠠⠟⠥⠑⠟⠑",
+      "point6Occurrences": 1
+    },
+    {
+      "print": "Xerxes",
+      "braille": "⠠⠭⠻⠠⠭⠿",
+      "point6Occurrences": 2
+    },
+    {
+      "print": "Das Ei",
+      "braille": "⠙ ⠠⠩",
+      "point6Occurrences": 1
+    },
+    {
+      "print": "Die Halbinsel Au (im Zürichsee)",
+      "braille": "⠬ ⠓⠒⠃⠔⠎⠽ ⠠⠡",
+      "point6Occurrences": 1
+    },
+    {
+      "print": "Che Guevara",
+      "braille": "⠠⠹⠑ ⠛⠥⠑⠧⠴⠁",
+      "point6Occurrences": 1
+    },
+    {
+      "print": "he (Ausruf)",
+      "braille": "⠠⠓⠑",
+      "point6Occurrences": 1
+    }
+  ],
+  "accentExceptionExample": {
+    "print": "Dubček",
+    "braille": "⠙⠥⠃⠈⠉⠑⠅",
+    "point6Occurrences": 0
+  },
+  "inWordSignCategories": [
+    {
+      "id": "COMMA",
+      "sourceTerm": "Komma"
+    },
+    {
+      "id": "SEMICOLON",
+      "sourceTerm": "Semikolon"
+    },
+    {
+      "id": "COLON",
+      "sourceTerm": "Doppelpunkt"
+    },
+    {
+      "id": "QUESTION_MARK",
+      "sourceTerm": "Fragezeichen"
+    },
+    {
+      "id": "EXCLAMATION_MARK",
+      "sourceTerm": "Ausrufezeichen"
+    },
+    {
+      "id": "ROUND_BRACKETS",
+      "sourceTerm": "runde Klammern"
+    },
+    {
+      "id": "SQUARE_BRACKETS",
+      "sourceTerm": "eckige Klammern"
+    },
+    {
+      "id": "QUOTATION_MARKS",
+      "sourceTerm": "Anführungszeichen"
+    },
+    {
+      "id": "CHECK_MARKS",
+      "sourceTerm": "Häkchen"
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-AUFHEB-001",
+      "sourceSection": "4.7",
+      "kind": "AUFHEBUNGSPUNKT_IDENTITY",
+      "summary": "Punkt 6 ⠠ is the Aufhebungspunkt.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-002",
+      "sourceSection": "4.7",
+      "kind": "RESTORE_ORIGINAL_BASE_OR_FULL_MEANING",
+      "summary": "When a sign or sign sequence must retain its original meaning, Punkt 6 is prefixed. It cancels the additional Kurzschrift meaning and restores the original Basis- or Vollschrift meaning.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-003",
+      "sourceSection": "4.7",
+      "kind": "IN_WORD_SIGN_ESCAPE_REQUIRED",
+      "summary": "The Aufhebungspunkt is required before the nine source-listed categories of signs when those signs occur inside a word.",
+      "normative": true,
+      "dependencies": [
+        "IN_WORD_PUNCTUATION_CLASSIFICATION"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-004",
+      "sourceSection": "4.7",
+      "kind": "ARROW_ESCAPE_REQUIRED",
+      "summary": "The Aufhebungspunkt is required before arrows.",
+      "normative": true,
+      "dependencies": [
+        "ARROW_SIGN_CLASSIFICATION"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-005",
+      "sourceSection": "4.7",
+      "kind": "ACCENTED_LETTER_EXCEPTION",
+      "summary": "The Aufhebungspunkt is omitted before letters written with an accent.",
+      "normative": true,
+      "dependencies": [
+        "ACCENTED_LETTER_RECOGNITION"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-001",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Center",
+      "expectedBraille": "⠠⠉⠉⠞⠻",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-002",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Mocca",
+      "expectedBraille": "⠍⠕⠠⠉⠠⠉⠁",
+      "point6Occurrences": 2,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-003",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Quelle",
+      "expectedBraille": "⠠⠟⠥⠑⠟⠑",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-004",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Xerxes",
+      "expectedBraille": "⠠⠭⠻⠠⠭⠿",
+      "point6Occurrences": 2,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-005",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Das Ei",
+      "expectedBraille": "⠙ ⠠⠩",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-006",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Die Halbinsel Au (im Zürichsee)",
+      "expectedBraille": "⠬ ⠓⠒⠃⠔⠎⠽ ⠠⠡",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-007",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "Che Guevara",
+      "expectedBraille": "⠠⠹⠑ ⠛⠥⠑⠧⠴⠁",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-EXAMPLE-008",
+      "category": "DIRECT_SOURCE_ESCAPE_EXAMPLE",
+      "print": "he (Ausruf)",
+      "expectedBraille": "⠠⠓⠑",
+      "point6Occurrences": 1,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001",
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-ACCENT-001",
+      "category": "DIRECT_SOURCE_ACCENT_EXCEPTION",
+      "print": "Dubček",
+      "expectedBraille": "⠙⠥⠃⠈⠉⠑⠅",
+      "expectedPoint6Occurrences": 0,
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-001",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "COMMA",
+      "sourceTerm": "Komma",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-002",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "SEMICOLON",
+      "sourceTerm": "Semikolon",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-003",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "COLON",
+      "sourceTerm": "Doppelpunkt",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-004",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "QUESTION_MARK",
+      "sourceTerm": "Fragezeichen",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-005",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "EXCLAMATION_MARK",
+      "sourceTerm": "Ausrufezeichen",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-006",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "ROUND_BRACKETS",
+      "sourceTerm": "runde Klammern",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-007",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "SQUARE_BRACKETS",
+      "sourceTerm": "eckige Klammern",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-008",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "QUOTATION_MARKS",
+      "sourceTerm": "Anführungszeichen",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-INWORD-009",
+      "category": "IN_WORD_SIGN_REQUIRES_AUFHEBUNGSPUNKT",
+      "signCategory": "CHECK_MARKS",
+      "sourceTerm": "Häkchen",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-ARROW-001",
+      "category": "ARROW_REQUIRES_AUFHEBUNGSPUNKT",
+      "expectedDecision": "PREFIX_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-POLICY-001",
+      "category": "MARKER_IDENTITY",
+      "expectedDecision": "POINT6_IS_AUFHEBUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-POLICY-002",
+      "category": "RESTORE_ORIGINAL_MEANING",
+      "expectedDecision": "CANCEL_ADDITIONAL_KURZSCHRIFT_MEANING",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-POLICY-003",
+      "category": "RESTORED_LAYER",
+      "expectedDecision": "RETURN_TO_BASIS_OR_VOLLSCHRIFT_MEANING",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-POLICY-004",
+      "category": "IN_WORD_SIGNS",
+      "expectedDecision": "LISTED_IN_WORD_SIGNS_REQUIRE_POINT6",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-AUFHEB-POLICY-005",
+      "category": "ACCENT_EXCEPTION",
+      "expectedDecision": "OMIT_POINT6_BEFORE_ACCENTED_LETTER",
+      "ruleRefs": [
+        "DE-KURZ-AUFHEB-005"
+      ]
+    }
+  ],
+  "literalBaseMeaningInteraction": {
+    "status": "GENERAL_ESCAPE_MECHANISM_FORMALLY_RESOLVED",
+    "origin": "§4.1 Lautgruppenkürzungen",
+    "mechanismSource": "§4.7",
+    "mechanism": {
+      "marker": "⠠",
+      "dots": "6",
+      "operation": "PREFIX_TO_SIGN_OR_SIGN_SEQUENCE",
+      "result": "RESTORE_ORIGINAL_BASIS_OR_VOLLSCHRIFT_MEANING"
+    },
+    "scopePolicy": "Specific contexts requiring literal base meanings remain governed by their originating rules, including §4.1.",
+    "importantPrecision": "§4.7 defines the general mechanism; it does not itself enumerate the literal c/q/x/y/ß rule set.",
+    "normativeRuleCreatedFromCrossPhaseInference": false
+  },
+  "inWordPunctuationInteraction": {
+    "status": "KURZSCHRIFT_ESCAPE_REQUIREMENT_CAPTURED",
+    "sourceCrossReferences": [
+      "2.3.1.8",
+      "2.13",
+      "4.1"
+    ],
+    "listedCategories": [
+      {
+        "id": "COMMA",
+        "sourceTerm": "Komma"
+      },
+      {
+        "id": "SEMICOLON",
+        "sourceTerm": "Semikolon"
+      },
+      {
+        "id": "COLON",
+        "sourceTerm": "Doppelpunkt"
+      },
+      {
+        "id": "QUESTION_MARK",
+        "sourceTerm": "Fragezeichen"
+      },
+      {
+        "id": "EXCLAMATION_MARK",
+        "sourceTerm": "Ausrufezeichen"
+      },
+      {
+        "id": "ROUND_BRACKETS",
+        "sourceTerm": "runde Klammern"
+      },
+      {
+        "id": "SQUARE_BRACKETS",
+        "sourceTerm": "eckige Klammern"
+      },
+      {
+        "id": "QUOTATION_MARKS",
+        "sourceTerm": "Anführungszeichen"
+      },
+      {
+        "id": "CHECK_MARKS",
+        "sourceTerm": "Häkchen"
+      }
+    ],
+    "runtimeRequirement": "Sign classification and word-internal position must be known before applying the §4.7 Punkt-6 rule."
+  },
+  "accentInteraction": {
+    "status": "FORMALLY_CAPTURED",
+    "rule": "OMIT_AUFHEBUNGSPUNKT_BEFORE_ACCENTED_LETTER",
+    "directExample": {
+      "print": "Dubček",
+      "braille": "⠙⠥⠃⠈⠉⠑⠅",
+      "point6Present": false
+    },
+    "runtimeDependency": "ACCENTED_LETTER_RECOGNITION"
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "dependency": "GENERAL_LITERAL_BASE_MEANING_ESCAPE",
+      "originPhase": "15.3C",
+      "status": "FORMALLY_RESOLVED",
+      "mechanism": "PREFIX_POINT6"
+    },
+    {
+      "dependency": "IN_WORD_PUNCTUATION_KURZSCHRIFT_ESCAPE",
+      "originSourceSections": [
+        "2.3.1.8",
+        "2.13",
+        "4.1"
+      ],
+      "status": "NORMATIVE_RULE_CAPTURED",
+      "runtimeClassification": "PENDING"
+    },
+    {
+      "dependency": "ACCENTED_LETTER_AUFHEBUNGSPUNKT_EXCEPTION",
+      "status": "FORMALLY_RESOLVED",
+      "directExample": "Dubček"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "IN_WORD_PUNCTUATION_CLASSIFICATION",
+      "requiredForExecutableGeneralization": true,
+      "note": "Normative punctuation inventory is already source-audited elsewhere; runtime Kurzschrift dispatch remains an implementation concern."
+    },
+    {
+      "id": "ARROW_SIGN_CLASSIFICATION",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "ACCENTED_LETTER_RECOGNITION",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "KURZSCHRIFT_ADDITIONAL_MEANING_DISPATCH",
+      "requiredForExecutableGeneralization": true,
+      "note": "Runtime must know when a cell or sequence would otherwise be read with its additional Kurzschrift meaning."
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "generalEscapeMechanismCaptured": true,
+    "inWordSignPolicyCaptured": true,
+    "accentExceptionCaptured": true,
+    "runtimeClassificationReady": false,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3J",
+    "title": "Kurzschrift Basis-/Vollschrift Insert Audit",
+    "sourceSection": "4.8"
+  }
+}

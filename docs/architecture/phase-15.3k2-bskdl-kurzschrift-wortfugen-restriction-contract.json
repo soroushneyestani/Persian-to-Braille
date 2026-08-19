@@ -1,0 +1,257 @@
+{
+  "phase": "15.3K2",
+  "title": "BSKDL Kurzschrift §4.9.2 Wortfugen Restriction Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section49ExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "subsection": "4.9.2",
+    "subsectionTitle": "Beachtung von Wortfugen",
+    "subsectionSha256": "4a4032f337b38e1a2f20448473a58353a75c4b972024d958b9742a51cf29258f"
+  },
+  "coverage": {
+    "formalRules": 2,
+    "directSourcePairs": 5,
+    "positiveSourceCases": 5,
+    "negativeSourceCases": 5,
+    "policyCases": 2,
+    "validationCases": 12,
+    "subsectionFormalCoverageComplete": true,
+    "section49FormalCoverageComplete": false
+  },
+  "grammar": {
+    "restriction": "NO_CONTRACTION_ACROSS_WORD_JUNCTION",
+    "scope": "GENERAL_KURZSCHRIFT",
+    "positiveInterpretation": "Contraction may remain available inside the valid lexical component."
+  },
+  "directSourcePairs": [
+    {
+      "contraction": "ABER",
+      "allowed": "Aberwitz",
+      "forbidden": "aberkennen",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION"
+    },
+    {
+      "contraction": "BLEIB",
+      "allowed": "Bleiberecht",
+      "forbidden": "Bleibeschichtung",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION"
+    },
+    {
+      "contraction": "GANZ",
+      "allowed": "Ganztagsschule",
+      "forbidden": "Jogginganzug",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION"
+    },
+    {
+      "contraction": "DANK",
+      "allowed": "Dankeschön",
+      "forbidden": "Mordanklage",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION"
+    },
+    {
+      "contraction": "PERSON",
+      "allowed": "Personenwaage",
+      "forbidden": "Supersonderpreis",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION"
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-REST-492-001",
+      "sourceSection": "4.9.2",
+      "kind": "NO_CONTRACTION_ACROSS_WORD_JUNCTION",
+      "summary": "A contraction must not span across a Wortfuge.",
+      "normative": true,
+      "sourceWitness": "Kürzungen über Wortfugen hinweg sind nicht zulässig.",
+      "scope": "ALL_KURZSCHRIFT_CONTRACTION_FAMILIES",
+      "dependencies": [
+        "WORD_JUNCTION_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-002",
+      "sourceSection": "4.9.2",
+      "kind": "CONTRACTION_ALLOWED_WITHIN_VALID_COMPONENT",
+      "summary": "A contraction remains permitted when its represented form belongs to the valid lexical/morphological component and does not cross the word junction.",
+      "normative": true,
+      "precision": "This rule records the positive side of the source examples and does not invent a broader morphological rule.",
+      "dependencies": [
+        "WORD_JUNCTION_SEGMENTATION_PROVIDER"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-REST-492-POS-001",
+      "category": "DIRECT_SOURCE_ALLOWED_CASE",
+      "contraction": "ABER",
+      "print": "Aberwitz",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-NEG-001",
+      "category": "DIRECT_SOURCE_FORBIDDEN_CASE",
+      "contraction": "ABER",
+      "print": "aberkennen",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POS-002",
+      "category": "DIRECT_SOURCE_ALLOWED_CASE",
+      "contraction": "BLEIB",
+      "print": "Bleiberecht",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-NEG-002",
+      "category": "DIRECT_SOURCE_FORBIDDEN_CASE",
+      "contraction": "BLEIB",
+      "print": "Bleibeschichtung",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POS-003",
+      "category": "DIRECT_SOURCE_ALLOWED_CASE",
+      "contraction": "GANZ",
+      "print": "Ganztagsschule",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-NEG-003",
+      "category": "DIRECT_SOURCE_FORBIDDEN_CASE",
+      "contraction": "GANZ",
+      "print": "Jogginganzug",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POS-004",
+      "category": "DIRECT_SOURCE_ALLOWED_CASE",
+      "contraction": "DANK",
+      "print": "Dankeschön",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-NEG-004",
+      "category": "DIRECT_SOURCE_FORBIDDEN_CASE",
+      "contraction": "DANK",
+      "print": "Mordanklage",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POS-005",
+      "category": "DIRECT_SOURCE_ALLOWED_CASE",
+      "contraction": "PERSON",
+      "print": "Personenwaage",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-NEG-005",
+      "category": "DIRECT_SOURCE_FORBIDDEN_CASE",
+      "contraction": "PERSON",
+      "print": "Supersonderpreis",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "FORBIDDEN_FORM_CROSSES_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POLICY-001",
+      "category": "WORD_JUNCTION_BOUNDARY",
+      "expectedDecision": "NEVER_CONTRACT_ACROSS_WORD_JUNCTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-492-POLICY-002",
+      "category": "FAMILY_SCOPE",
+      "expectedDecision": "RULE_APPLIES_GENERALLY_TO_KURZSCHRIFT_CONTRACTIONS",
+      "ruleRefs": [
+        "DE-KURZ-REST-492-001"
+      ],
+      "precision": "§4.9.2 states the prohibition generally rather than limiting it to a named contraction family."
+    }
+  ],
+  "dependencyResolution": {
+    "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "component": "WORD_JUNCTION_RESTRICTION",
+    "status": "COMPONENT_FORMALLY_RESOLVED",
+    "resolvedBy": "15.3K2",
+    "sourceSection": "4.9.2",
+    "overallSection49Dependency": "STILL_OPEN",
+    "remainingSubsections": [
+      "4.9.3",
+      "4.9.4",
+      "4.9.5"
+    ]
+  },
+  "openDependencies": [
+    {
+      "id": "WORD_JUNCTION_SEGMENTATION_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5",
+      "reason": "Runtime must identify lexical/morphological word junctions before deciding whether a contraction would cross them."
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true,
+      "status": "PARTIALLY_RESOLVED",
+      "remainingSubsections": [
+        "4.9.3",
+        "4.9.4",
+        "4.9.5"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "formalSubsectionAuditComplete": true,
+    "wordJunctionRestrictionCaptured": true,
+    "wordJunctionRuntimeSegmentationReady": false,
+    "section49OverallResolved": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3K3",
+    "sourceSection": "4.9.3",
+    "title": "Eigennamen"
+  }
+}

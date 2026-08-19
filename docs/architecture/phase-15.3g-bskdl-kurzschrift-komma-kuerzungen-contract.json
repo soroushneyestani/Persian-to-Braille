@@ -1,0 +1,1215 @@
+{
+  "phase": "15.3G",
+  "title": "BSKDL Kurzschrift Komma-Kürzungen Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.5",
+    "sectionTitle": "Komma-Kürzungen",
+    "sectionExtractionSha256": "e95f900395c6b03188b32750dad818cd4ee30efa6ad3052f4fb77e3a1b9f35fa"
+  },
+  "coverage": {
+    "subsections": 0,
+    "mappingCount": 23,
+    "uniqueMeanings": 23,
+    "uniqueBrailleSequences": 23,
+    "allMappingsTwoCell": true,
+    "allMappingsBeginWithPoint2": true,
+    "point2IntegralComponentCoverage": "23 / 23",
+    "sixDotValidation": true,
+    "formalRules": 6,
+    "mappingValidationCases": 23,
+    "policyValidationCases": 5,
+    "validationCasesTotal": 28,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "grammar": {
+    "family": "KOMMA_KUERZUNG",
+    "cellStructure": [
+      {
+        "position": 1,
+        "cell": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT"
+      },
+      {
+        "position": 2,
+        "role": "MEANING_SPECIFIC_CELL"
+      }
+    ],
+    "standaloneAllowed": true,
+    "prefixSuffixExtensionAllowed": true,
+    "wordCompositionAllowed": true,
+    "applicationRestrictions": "SECTION_4_9"
+  },
+  "mappings": [
+    {
+      "order": 1,
+      "meaning": "ANDER",
+      "braille": {
+        "unicode": "⠂⠻",
+        "codepoints": [
+          "U+2802",
+          "U+283B"
+        ],
+        "dots": [
+          "2",
+          "12456"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠻",
+        "dots": "12456"
+      }
+    },
+    {
+      "order": 2,
+      "meaning": "BRAUCH",
+      "braille": {
+        "unicode": "⠂⠌",
+        "codepoints": [
+          "U+2802",
+          "U+280C"
+        ],
+        "dots": [
+          "2",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠌",
+        "dots": "34"
+      }
+    },
+    {
+      "order": 3,
+      "meaning": "DÜRF",
+      "braille": {
+        "unicode": "⠂⠙",
+        "codepoints": [
+          "U+2802",
+          "U+2819"
+        ],
+        "dots": [
+          "2",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠙",
+        "dots": "145"
+      }
+    },
+    {
+      "order": 4,
+      "meaning": "EINANDER",
+      "braille": {
+        "unicode": "⠂⠫",
+        "codepoints": [
+          "U+2802",
+          "U+282B"
+        ],
+        "dots": [
+          "2",
+          "1246"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠫",
+        "dots": "1246"
+      }
+    },
+    {
+      "order": 5,
+      "meaning": "FAHR",
+      "braille": {
+        "unicode": "⠂⠗",
+        "codepoints": [
+          "U+2802",
+          "U+2817"
+        ],
+        "dots": [
+          "2",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠗",
+        "dots": "1235"
+      }
+    },
+    {
+      "order": 6,
+      "meaning": "HAB",
+      "braille": {
+        "unicode": "⠂⠓",
+        "codepoints": [
+          "U+2802",
+          "U+2813"
+        ],
+        "dots": [
+          "2",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠓",
+        "dots": "125"
+      }
+    },
+    {
+      "order": 7,
+      "meaning": "INTERESS",
+      "braille": {
+        "unicode": "⠂⠔",
+        "codepoints": [
+          "U+2802",
+          "U+2814"
+        ],
+        "dots": [
+          "2",
+          "35"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠔",
+        "dots": "35"
+      }
+    },
+    {
+      "order": 8,
+      "meaning": "KÖNN",
+      "braille": {
+        "unicode": "⠂⠅",
+        "codepoints": [
+          "U+2802",
+          "U+2805"
+        ],
+        "dots": [
+          "2",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠅",
+        "dots": "13"
+      }
+    },
+    {
+      "order": 9,
+      "meaning": "LASS",
+      "braille": {
+        "unicode": "⠂⠇",
+        "codepoints": [
+          "U+2802",
+          "U+2807"
+        ],
+        "dots": [
+          "2",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠇",
+        "dots": "123"
+      }
+    },
+    {
+      "order": 10,
+      "meaning": "MÖG",
+      "braille": {
+        "unicode": "⠂⠪",
+        "codepoints": [
+          "U+2802",
+          "U+282A"
+        ],
+        "dots": [
+          "2",
+          "246"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠪",
+        "dots": "246"
+      }
+    },
+    {
+      "order": 11,
+      "meaning": "MÜSS",
+      "braille": {
+        "unicode": "⠂⠍",
+        "codepoints": [
+          "U+2802",
+          "U+280D"
+        ],
+        "dots": [
+          "2",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠍",
+        "dots": "134"
+      }
+    },
+    {
+      "order": 12,
+      "meaning": "RICHT",
+      "braille": {
+        "unicode": "⠂⠼",
+        "codepoints": [
+          "U+2802",
+          "U+283C"
+        ],
+        "dots": [
+          "2",
+          "3456"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠼",
+        "dots": "3456"
+      }
+    },
+    {
+      "order": 13,
+      "meaning": "SCHRIEB",
+      "braille": {
+        "unicode": "⠂⠱",
+        "codepoints": [
+          "U+2802",
+          "U+2831"
+        ],
+        "dots": [
+          "2",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠱",
+        "dots": "156"
+      }
+    },
+    {
+      "order": 14,
+      "meaning": "SETZ",
+      "braille": {
+        "unicode": "⠂⠑",
+        "codepoints": [
+          "U+2802",
+          "U+2811"
+        ],
+        "dots": [
+          "2",
+          "15"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠑",
+        "dots": "15"
+      }
+    },
+    {
+      "order": 15,
+      "meaning": "SITZ",
+      "braille": {
+        "unicode": "⠂⠊",
+        "codepoints": [
+          "U+2802",
+          "U+280A"
+        ],
+        "dots": [
+          "2",
+          "24"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠊",
+        "dots": "24"
+      }
+    },
+    {
+      "order": 16,
+      "meaning": "SOLL",
+      "braille": {
+        "unicode": "⠂⠎",
+        "codepoints": [
+          "U+2802",
+          "U+280E"
+        ],
+        "dots": [
+          "2",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠎",
+        "dots": "234"
+      }
+    },
+    {
+      "order": 17,
+      "meaning": "SPIEL",
+      "braille": {
+        "unicode": "⠂⠬",
+        "codepoints": [
+          "U+2802",
+          "U+282C"
+        ],
+        "dots": [
+          "2",
+          "346"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠬",
+        "dots": "346"
+      }
+    },
+    {
+      "order": 18,
+      "meaning": "SPRECH",
+      "braille": {
+        "unicode": "⠂⠮",
+        "codepoints": [
+          "U+2802",
+          "U+282E"
+        ],
+        "dots": [
+          "2",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠮",
+        "dots": "2346"
+      }
+    },
+    {
+      "order": 19,
+      "meaning": "STAND",
+      "braille": {
+        "unicode": "⠂⠾",
+        "codepoints": [
+          "U+2802",
+          "U+283E"
+        ],
+        "dots": [
+          "2",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠾",
+        "dots": "23456"
+      }
+    },
+    {
+      "order": 20,
+      "meaning": "STELL",
+      "braille": {
+        "unicode": "⠂⠽",
+        "codepoints": [
+          "U+2802",
+          "U+283D"
+        ],
+        "dots": [
+          "2",
+          "13456"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠽",
+        "dots": "13456"
+      }
+    },
+    {
+      "order": 21,
+      "meaning": "WEIS",
+      "braille": {
+        "unicode": "⠂⠩",
+        "codepoints": [
+          "U+2802",
+          "U+2829"
+        ],
+        "dots": [
+          "2",
+          "146"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠩",
+        "dots": "146"
+      }
+    },
+    {
+      "order": 22,
+      "meaning": "WERD",
+      "braille": {
+        "unicode": "⠂⠺",
+        "codepoints": [
+          "U+2802",
+          "U+283A"
+        ],
+        "dots": [
+          "2",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠺",
+        "dots": "2456"
+      }
+    },
+    {
+      "order": 23,
+      "meaning": "WOLL",
+      "braille": {
+        "unicode": "⠂⠕",
+        "codepoints": [
+          "U+2802",
+          "U+2815"
+        ],
+        "dots": [
+          "2",
+          "135"
+        ],
+        "cellCount": 2
+      },
+      "point2": {
+        "unicode": "⠂",
+        "dots": "2",
+        "role": "INTEGRAL_COMPONENT_OF_CONTRACTION"
+      },
+      "semanticCell": {
+        "unicode": "⠕",
+        "dots": "135"
+      }
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-KOMMA-001",
+      "sourceSection": "4.5",
+      "kind": "KOMMA_CONTRACTION_INVENTORY",
+      "summary": "§4.5 defines 23 unique Komma-Kürzungen.",
+      "normative": true,
+      "sourceWitnesses": [
+        "4.5 Komma-Kürzungen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-KOMMA-002",
+      "sourceSection": "4.5",
+      "kind": "POINT2_INTEGRAL_COMPONENT",
+      "summary": "Punkt 2 is an integral cell of every §4.5 contraction; together with the following sign it creates a new meaning.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Nachstehende Zeichen erhalten zusammen mit dem vorangestellten Punkt 2 (Komma) eine neue Bedeutung",
+        "Der Punkt 2 ist hier Bestandteil der Kürzung"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-KOMMA-003",
+      "sourceSection": "4.5",
+      "kind": "STANDALONE_ALLOWED",
+      "summary": "Komma-Kürzungen may stand alone.",
+      "normative": true,
+      "sourceWitnesses": [
+        "können auch diese Kürzungen allein stehen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-KOMMA-004",
+      "sourceSection": "4.5",
+      "kind": "PREFIX_SUFFIX_EXTENSION_ALLOWED",
+      "summary": "Komma-Kürzungen may be extended with word particles including prefixes and suffixes.",
+      "normative": true,
+      "sourceWitnesses": [
+        "durch Wortpartikel (Prä- und Suffixe) ergänzt"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-005",
+      "sourceSection": "4.5",
+      "kind": "WORD_COMPOSITION_ALLOWED",
+      "summary": "Komma-Kürzungen may be combined with other words.",
+      "normative": true,
+      "sourceWitnesses": [
+        "mit anderen Wörtern zusammengesetzt werden"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-006",
+      "sourceSection": "4.5",
+      "kind": "APPLICATION_RESTRICTIONS_DEFERRED_TO_4_9",
+      "summary": "Application restrictions for Komma-Kürzungen are governed by §4.9.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Einschränkungen bei der Anwendung der Kürzungen siehe Kap. 4.9"
+      ],
+      "dependencies": [
+        "SECTION_4_9_APPLICATION_RESTRICTIONS"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-KOMMA-MAP-001",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "ANDER",
+      "expectedBraille": "⠂⠻",
+      "expectedDots": [
+        "2",
+        "12456"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-002",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "BRAUCH",
+      "expectedBraille": "⠂⠌",
+      "expectedDots": [
+        "2",
+        "34"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-003",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "DÜRF",
+      "expectedBraille": "⠂⠙",
+      "expectedDots": [
+        "2",
+        "145"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-004",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "EINANDER",
+      "expectedBraille": "⠂⠫",
+      "expectedDots": [
+        "2",
+        "1246"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-005",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "FAHR",
+      "expectedBraille": "⠂⠗",
+      "expectedDots": [
+        "2",
+        "1235"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-006",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAB",
+      "expectedBraille": "⠂⠓",
+      "expectedDots": [
+        "2",
+        "125"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-007",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "INTERESS",
+      "expectedBraille": "⠂⠔",
+      "expectedDots": [
+        "2",
+        "35"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-008",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "KÖNN",
+      "expectedBraille": "⠂⠅",
+      "expectedDots": [
+        "2",
+        "13"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-009",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "LASS",
+      "expectedBraille": "⠂⠇",
+      "expectedDots": [
+        "2",
+        "123"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-010",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "MÖG",
+      "expectedBraille": "⠂⠪",
+      "expectedDots": [
+        "2",
+        "246"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-011",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "MÜSS",
+      "expectedBraille": "⠂⠍",
+      "expectedDots": [
+        "2",
+        "134"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-012",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "RICHT",
+      "expectedBraille": "⠂⠼",
+      "expectedDots": [
+        "2",
+        "3456"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-013",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHRIEB",
+      "expectedBraille": "⠂⠱",
+      "expectedDots": [
+        "2",
+        "156"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-014",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SETZ",
+      "expectedBraille": "⠂⠑",
+      "expectedDots": [
+        "2",
+        "15"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-015",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SITZ",
+      "expectedBraille": "⠂⠊",
+      "expectedDots": [
+        "2",
+        "24"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-016",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SOLL",
+      "expectedBraille": "⠂⠎",
+      "expectedDots": [
+        "2",
+        "234"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-017",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SPIEL",
+      "expectedBraille": "⠂⠬",
+      "expectedDots": [
+        "2",
+        "346"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-018",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "SPRECH",
+      "expectedBraille": "⠂⠮",
+      "expectedDots": [
+        "2",
+        "2346"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-019",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "STAND",
+      "expectedBraille": "⠂⠾",
+      "expectedDots": [
+        "2",
+        "23456"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-020",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "STELL",
+      "expectedBraille": "⠂⠽",
+      "expectedDots": [
+        "2",
+        "13456"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-021",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "WEIS",
+      "expectedBraille": "⠂⠩",
+      "expectedDots": [
+        "2",
+        "146"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-022",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "WERD",
+      "expectedBraille": "⠂⠺",
+      "expectedDots": [
+        "2",
+        "2456"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-MAP-023",
+      "sourceSection": "4.5",
+      "category": "EXACT_MAPPING",
+      "meaning": "WOLL",
+      "expectedBraille": "⠂⠕",
+      "expectedDots": [
+        "2",
+        "135"
+      ],
+      "expectedPoint2Role": "INTEGRAL_COMPONENT_OF_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-001",
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-POLICY-001",
+      "sourceSection": "4.5",
+      "category": "POINT2_ROLE",
+      "expectedDecision": "INTEGRAL_COMPONENT_NOT_EXTERNAL_ANNOUNCEMENT",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-POLICY-002",
+      "sourceSection": "4.5",
+      "category": "STANDALONE",
+      "expectedDecision": "ALLOWED_SUBJECT_TO_4_9",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-003",
+        "DE-KURZ-KOMMA-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-POLICY-003",
+      "sourceSection": "4.5",
+      "category": "PREFIX_SUFFIX_EXTENSION",
+      "expectedDecision": "ALLOWED_SUBJECT_TO_4_9",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-004",
+        "DE-KURZ-KOMMA-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-POLICY-004",
+      "sourceSection": "4.5",
+      "category": "WORD_COMPOSITION",
+      "expectedDecision": "ALLOWED_SUBJECT_TO_4_9",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-005",
+        "DE-KURZ-KOMMA-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-KOMMA-POLICY-005",
+      "sourceSection": "4.5",
+      "category": "APPLICATION_RESTRICTIONS",
+      "expectedDecision": "DEFER_TO_SECTION_4_9",
+      "ruleRefs": [
+        "DE-KURZ-KOMMA-006"
+      ]
+    }
+  ],
+  "point2SemanticDistinction": {
+    "status": "FORMALLY_CAPTURED",
+    "sourceA": {
+      "phase": "15.3E",
+      "section": "4.3.2",
+      "rule": "DE-KURZ-EIN-013",
+      "role": "ANNOUNCEMENT_MARKER_FOR_EXTENDED_OR_COMPOSED_ONE_FORM_WORD_CONTRACTION"
+    },
+    "sourceB": {
+      "phase": "15.3G",
+      "section": "4.5",
+      "rule": "DE-KURZ-KOMMA-002",
+      "role": "INTEGRAL_COMPONENT_OF_KOMMA_CONTRACTION"
+    },
+    "implementationRequirement": "POINT2_ROLE_MUST_BE_CONTEXT_DISPATCHED",
+    "normativeRuleCreatedFromComparison": false
+  },
+  "lassLaesstInteraction": {
+    "origin": "§4.3.1 cross-reference to §§4.5 and 4.6",
+    "baseMeaning": "LASS",
+    "baseBraille": "⠂⠇",
+    "baseMappingStatus": "FORMALLY_RESOLVED_BY_4_5",
+    "laesstInteractionStatus": "PARTIAL_PENDING_SECTION_4_6",
+    "remainingDependency": "SECTION_4_6_UMLAUTUNGSPUNKT"
+  },
+  "section44SemanticParallel": {
+    "status": "SOURCE_EXPLICIT",
+    "relationship": "§4.5 explicitly states the same broad standalone/extension/composition capabilities as §4.4",
+    "restrictionDestination": "§4.9",
+    "mappingGrammarDifferent": true,
+    "difference": "§4.5 requires integral Punkt 2 as the first contraction cell"
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "dependency": "LASS_BASE_CONTRACTION",
+      "originPhase": "15.3E",
+      "sourceSection": "4.5",
+      "mapping": {
+        "meaning": "LASS",
+        "braille": "⠂⠇"
+      },
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "dependency": "LAESST_ALTERNATIVE_CONTRACTION_PATH",
+      "originPhase": "15.3E",
+      "status": "PARTIALLY_RESOLVED",
+      "resolvedHere": "LASS_BASE_MAPPING",
+      "remaining": "UMLAUTUNGSPUNKT_SEMANTICS",
+      "remainingPhase": "15.3H"
+    },
+    {
+      "dependency": "POINT2_ROLE_DISAMBIGUATION",
+      "originPhases": [
+        "15.3E",
+        "15.3G"
+      ],
+      "status": "FORMALLY_CAPTURED"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "SECTION_4_6_UMLAUTUNGSPUNKT",
+      "requiredForExecutableGeneralization": true,
+      "reason": "Required to resolve umlauted Komma-Kürzung stem interactions such as LASS/LÄSST."
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "sectionInventoryComplete": true,
+    "section4_6InteractionAudited": false,
+    "section4_9RestrictionsAudited": false,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3H",
+    "title": "Kurzschrift Umlautungspunkt Audit",
+    "sourceSection": "4.6"
+  }
+}

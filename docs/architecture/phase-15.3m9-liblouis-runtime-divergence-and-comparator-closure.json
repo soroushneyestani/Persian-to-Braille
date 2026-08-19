@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.3M9",
+  "title": "Liblouis Runtime Divergence and Comparator Closure",
+  "generatedAtUtc": "2026-08-19T19:10:59Z",
+  "status": "PASS_WITH_DOCUMENTED_COMPARATOR_DIVERGENCE",
+  "comparatorRole": "NON_NORMATIVE_COMPARATOR",
+  "normativeAuthority": false,
+  "normativeDecision": "NONE",
+  "purpose": "Close the Phase 15.3 Liblouis comparator track after frozen runtime verification, differential execution, divergence triage, and source-backed adjudication.",
+  "normativeBaseline": {
+    "formalRuleIds": 119,
+    "uniqueFormalRuleIds": 119,
+    "validationCaseIds": 645,
+    "uniqueValidationCaseIds": 645,
+    "authority": "BSKDL_BACKED_FORMAL_ARTIFACTS",
+    "comparatorMayModifyBaseline": false
+  },
+  "comparatorTrack": {
+    "runtimeBuildPhase": "15.3M7",
+    "runtimeAuditPhase": "15.3M8",
+    "liblouisVersion": "3.38.0",
+    "translationTable": "de-g2.ctb",
+    "displayTable": "unicode.dis",
+    "formalValidationCases": 645,
+    "runtimeProbes": 258,
+    "rawExactMatches": 246,
+    "rawRuntimeDivergences": 12
+  },
+  "finalComparatorAccounting": {
+    "EXACT_MATCH": 246,
+    "BRAILLE_SPACE_SERIALIZATION_DIFFERENCE": 6,
+    "SOURCE_ANNOTATION_SCOPE_DIFFERENCE": 2,
+    "SOURCE_BACKED_CONTEXT_MATCH": 1,
+    "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE": 2,
+    "CONFIRMED_SOURCE_BACKED_COMPARATOR_DIVERGENCE": 1
+  },
+  "confirmedComparatorDivergences": [
+    {
+      "validationId": "DE-KURZ-REST-493-RESOLVE-001",
+      "print": "Den Haag",
+      "expectedBraille": "⠙⠉ ⠓⠁⠁⠛",
+      "comparatorBraille": "⠑⠀⠓⠁⠁⠛",
+      "classification": "CONFIRMED_SOURCE_BACKED_COMPARATOR_DIVERGENCE",
+      "disposition": "DOCUMENTED_NON_NORMATIVE_DIFFERENCE",
+      "normativeImpact": "NONE"
+    }
+  ],
+  "lexicalLabelDisposition": {
+    "JED": "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE",
+    "INTERESS": "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE",
+    "LÄSS": "SOURCE_BACKED_CONTEXT_MATCH",
+    "invariant": "Mapping-backed lexical evidence does not automatically make the mapping label itself a valid source-backed runtime print input."
+  },
+  "closureBoundaries": {
+    "liblouisIsNormative": false,
+    "liblouisMayOverrideBskdl": false,
+    "comparatorMatchCreatesNormativeRule": false,
+    "comparatorDivergenceCreatesNormativeRule": false,
+    "comparatorDivergenceInvalidatesNormativeRule": false,
+    "germanCoreMayDependOnLiblouis": false,
+    "germanCoreMayDependOnWine": false,
+    "germanCoreMayDependOnWsl": false,
+    "germanCoreMayDependOnUbuntu": false,
+    "runtimeComparatorRequiredInProduction": false,
+    "comparatorArtifactsAreAuditEvidenceOnly": true,
+    "normativeAuthorityRemainsBskdl": true
+  },
+  "openComparatorIssues": {
+    "blockingNormativeSpecification": 0,
+    "blockingGermanCoreImplementation": 0,
+    "documentedNonNormativeDivergences": 1,
+    "items": [
+      {
+        "validationId": "DE-KURZ-REST-493-RESOLVE-001",
+        "print": "Den Haag",
+        "status": "DOCUMENTED_CLOSED_NON_NORMATIVE_DIVERGENCE",
+        "requiresNormativeChange": false,
+        "blocksPhase15_3Closure": false
+      }
+    ]
+  },
+  "evidence": {
+    "sourceArtifactSha256": {
+      "phase-15.3l2-kurzschrift-cross-artifact-consistency-closure.json": "50e66893b824bcb22c0edc814e3a4662f27ff13926e9a8db3eb928eec6d91e0a",
+      "phase-15.3m7-liblouis-frozen-runtime-build-and-verification.json": "8466ea28d1e5b61ac960efe24248ce5cf771755a135d38395271f45135553936",
+      "phase-15.3m7-liblouis-frozen-runtime-build-and-verification.md": "d2a6ce01d4114cead141557a2bd5f530dc64b7e858dc5d2d0ed21ac4ba90cb0f",
+      "phase-15.3m8-liblouis-runtime-differential-comparator-audit.json": "c4545d44fed2a5006759aeca43a8c751cfd8f863b5a57d501ba11318dc41bf81",
+      "phase-15.3m8-liblouis-runtime-differential-comparator-audit.md": "535eaae197bf1bf2f51dd89a9873146099cba2e1e18a008c4119ef683bfced79"
+    }
+  },
+  "decision": {
+    "m9Closed": true,
+    "comparatorTrackClosed": true,
+    "normativeChangesFromComparatorTrack": 0,
+    "confirmedSourceBackedComparatorDivergences": 1,
+    "blockingComparatorIssues": 0,
+    "finalStatus": "PASS_WITH_DOCUMENTED_COMPARATOR_DIVERGENCE",
+    "readyFor": "Phase 15.3N final Kurzschrift closure"
+  }
+}

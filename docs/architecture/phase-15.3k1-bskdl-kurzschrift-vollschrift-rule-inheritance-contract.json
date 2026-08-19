@@ -1,0 +1,87 @@
+{
+  "phase": "15.3K1",
+  "title": "BSKDL Kurzschrift §4.9.1 Vollschrift Rule Inheritance Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section49ExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "subsection": "4.9.1",
+    "subsectionTitle": "Übernahme der Vollschriftregeln",
+    "subsectionSha256": "67290dc5c649dd62ba13ff7040e277b795ac636c8495b92f25f783bb22a26300"
+  },
+  "coverage": {
+    "formalRules": 1,
+    "validationCases": 2,
+    "subsectionFormalCoverageComplete": true,
+    "section49FormalCoverageComplete": false
+  },
+  "formalRules": [
+    {
+      "id": "DE-KURZ-REST-491-001",
+      "sourceSection": "4.9.1",
+      "kind": "VOLLSCHRIFT_CONTRACTION_PROHIBITION_INHERITANCE",
+      "summary": "All contraction prohibitions defined for Vollschrift in Chapter 3 also apply to Kurzschrift.",
+      "normative": true,
+      "sourceWitness": "Die in Kap. 3 für die Vollschrift genannten Kürzungsverbote gelten auch für die Kurzschrift.",
+      "inheritance": {
+        "sourceLayer": "VOLLSCHRIFT",
+        "sourceChapter": "3",
+        "targetLayer": "KURZSCHRIFT",
+        "policy": "INHERIT_ALL_CONTRACTION_PROHIBITIONS"
+      },
+      "dependencies": [
+        "VOLLSCHRIFT_CHAPTER_3_RESTRICTION_SET"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-REST-491-CASE-001",
+      "category": "INHERITANCE_POLICY",
+      "expectedDecision": "CHAPTER_3_VOLLSCHRIFT_CONTRACTION_PROHIBITIONS_APPLY_TO_KURZSCHRIFT",
+      "ruleRefs": [
+        "DE-KURZ-REST-491-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-491-CASE-002",
+      "category": "NO_KURZSCHRIFT_OVERRIDE",
+      "expectedDecision": "KURZSCHRIFT_MUST_NOT_BYPASS_INHERITED_CHAPTER_3_PROHIBITIONS",
+      "ruleRefs": [
+        "DE-KURZ-REST-491-001"
+      ],
+      "sourcePrecision": "This is an architectural consequence of the normative inheritance rule; no additional source restriction is invented."
+    }
+  ],
+  "dependencyResolution": {
+    "dependency": "VOLLSCHRIFT_CHAPTER_3_RESTRICTION_INHERITANCE",
+    "status": "FORMALLY_RESOLVED",
+    "sourceSection": "4.9.1",
+    "resolvedRule": "DE-KURZ-REST-491-001",
+    "runtimeMaterialization": "PENDING"
+  },
+  "openDependencies": [
+    {
+      "id": "VOLLSCHRIFT_CHAPTER_3_RESTRICTION_SET",
+      "requiredForExecutableGeneralization": true,
+      "note": "The inheritance rule is now formal. Runtime execution requires the Chapter 3 prohibition set to be materialized as reusable constraints."
+    }
+  ],
+  "promotionPolicy": {
+    "formalSubsectionAuditComplete": true,
+    "inheritanceRuleCaptured": true,
+    "chapter3RestrictionSetMaterialized": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3K2",
+    "sourceSection": "4.9.2",
+    "title": "Beachtung von Wortfugen"
+  }
+}

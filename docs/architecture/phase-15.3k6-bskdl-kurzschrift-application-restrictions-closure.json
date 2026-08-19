@@ -1,0 +1,270 @@
+{
+  "phase": "15.3K6",
+  "title": "BSKDL Kurzschrift §4.9 Application Restrictions Closure",
+  "status": "PASS_WITH_RUNTIME_DEPENDENCIES",
+  "decision": "FORMALLY_RESOLVED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.9",
+    "sectionTitle": "Beschränkungen bei der Anwendung",
+    "sectionExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5"
+  },
+  "subsectionAudits": [
+    {
+      "phase": "15.3K1",
+      "section": "4.9.1",
+      "title": "Übernahme der Vollschriftregeln",
+      "subsectionSha256": "67290dc5c649dd62ba13ff7040e277b795ac636c8495b92f25f783bb22a26300",
+      "formalRules": 1,
+      "validationCases": 2,
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "phase": "15.3K2",
+      "section": "4.9.2",
+      "title": "Beachtung von Wortfugen",
+      "subsectionSha256": "4a4032f337b38e1a2f20448473a58353a75c4b972024d958b9742a51cf29258f",
+      "formalRules": 2,
+      "validationCases": 12,
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "phase": "15.3K3",
+      "section": "4.9.3",
+      "title": "Eigennamen",
+      "subsectionSha256": "970ae93b3838c2aa0ffe89ce5feec011ec75428d702258960425df7c1ed2c2a7",
+      "formalRules": 5,
+      "validationCases": 25,
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "phase": "15.3K4",
+      "section": "4.9.4",
+      "title": "Beachtung von Wortstämmen",
+      "subsectionSha256": "e28c680b6eb92a0306e95c7830c5d7892ca2e4fb908174b4ca34bd449bcdcb35",
+      "formalRules": 7,
+      "validationCases": 48,
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "phase": "15.3K5",
+      "section": "4.9.5",
+      "title": "Beachtung von Prä- und Suffixen",
+      "subsectionSha256": "5fa60b49150b2f993d142e815ecda7c5a1a53d1eb2f0b698dd79d20da4acbe28",
+      "formalRules": 3,
+      "validationCases": 4,
+      "status": "FORMALLY_RESOLVED"
+    }
+  ],
+  "coverage": {
+    "sourceSubsections": 5,
+    "sourceSubsectionsAudited": 5,
+    "restrictionFamilies": 5,
+    "formalRules": 18,
+    "uniqueFormalRuleIds": 18,
+    "validationCases": 91,
+    "uniqueValidationCaseIds": 91,
+    "incomingDeferredPhasesResolved": 3,
+    "section49FormalCoverageComplete": true,
+    "canonicalDependencyResolved": true,
+    "runtimeExecutableSpecificationReady": false
+  },
+  "restrictionFamilies": [
+    {
+      "id": "VOLLSCHRIFT_PROHIBITION_INHERITANCE",
+      "sourceSection": "4.9.1",
+      "phase": "15.3K1",
+      "primaryRuleIds": [
+        "DE-KURZ-REST-491-001"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "id": "WORD_JUNCTION_RESTRICTION",
+      "sourceSection": "4.9.2",
+      "phase": "15.3K2",
+      "primaryRuleIds": [
+        "DE-KURZ-REST-492-001",
+        "DE-KURZ-REST-492-002"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "id": "PROPER_NAME_RESTRICTIONS",
+      "sourceSection": "4.9.3",
+      "phase": "15.3K3",
+      "primaryRuleIds": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004",
+        "DE-KURZ-REST-493-005"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "id": "WORD_STEM_RESTRICTIONS",
+      "sourceSection": "4.9.4",
+      "phase": "15.3K4",
+      "primaryRuleIds": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002",
+        "DE-KURZ-REST-494-003",
+        "DE-KURZ-REST-494-004",
+        "DE-KURZ-REST-494-005",
+        "DE-KURZ-REST-494-006",
+        "DE-KURZ-REST-494-007"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "id": "PREFIX_SUFFIX_BOUNDARY_RESTRICTIONS",
+      "sourceSection": "4.9.5",
+      "phase": "15.3K5",
+      "primaryRuleIds": [
+        "DE-KURZ-REST-495-001",
+        "DE-KURZ-REST-495-002",
+        "DE-KURZ-REST-495-003"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    }
+  ],
+  "precisionInvariants": [
+    {
+      "id": "DOUBT_MODALITY_493_VS_494",
+      "status": "PRESERVED",
+      "section493": "DO_NOT_CONTRACT",
+      "section494": "SHOULD_NOT_CONTRACT",
+      "collapsed": false
+    },
+    {
+      "id": "PROPER_NAME_SEMANTIC_THRESHOLDS",
+      "status": "PRESERVED",
+      "oneFormAndKomma": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED",
+      "twoFormAndSection42Exception": "MEANING_UNEQUIVOCALLY_PRESERVED",
+      "collapsed": false
+    },
+    {
+      "id": "DOUBLE_CONSONANT_EXCEPTION_SCOPE",
+      "status": "PRESERVED",
+      "meaning": "§4.9.5 general affix/stem boundary prohibition is not automatically applied in the double-consonant case.",
+      "mandatoryContractionInferred": false
+    },
+    {
+      "id": "HISTORICAL_EXCEPTION_SCOPE",
+      "status": "PRESERVED",
+      "komm": "ALWAYS_ALLOWED",
+      "letzt": [
+        "letztes",
+        "zuletzt",
+        "verletzt"
+      ],
+      "geGenau": "RATIONALE_ONLY_NO_GENERIC_RULE_INFERRED"
+    },
+    {
+      "id": "SECTION_495_DOUBT_DELEGATION",
+      "status": "PRESERVED",
+      "delegate": "4.1.2.4",
+      "newLocalDoubtRuleInvented": false
+    }
+  ],
+  "incomingDependencyResolution": [
+    {
+      "originPhase": "15.3F",
+      "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "previousState": "DEFERRED_OR_OPEN",
+      "canonicalStateAfterK6": "FORMALLY_RESOLVED",
+      "resolutionScope": "NORMATIVE_SOURCE_AUDIT",
+      "runtimeExecutableState": "NOT_READY"
+    },
+    {
+      "originPhase": "15.3G",
+      "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "previousState": "DEFERRED_OR_OPEN",
+      "canonicalStateAfterK6": "FORMALLY_RESOLVED",
+      "resolutionScope": "NORMATIVE_SOURCE_AUDIT",
+      "runtimeExecutableState": "NOT_READY"
+    },
+    {
+      "originPhase": "15.3H",
+      "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "previousState": "DEFERRED_OR_OPEN",
+      "canonicalStateAfterK6": "FORMALLY_RESOLVED",
+      "resolutionScope": "NORMATIVE_SOURCE_AUDIT",
+      "runtimeExecutableState": "NOT_READY"
+    }
+  ],
+  "canonicalDependencyResolution": {
+    "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "status": "FORMALLY_RESOLVED",
+    "resolvedBy": "15.3K6",
+    "sourceSection": "4.9",
+    "sectionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "sourceSubsections": [
+      "4.9.1",
+      "4.9.2",
+      "4.9.3",
+      "4.9.4",
+      "4.9.5"
+    ],
+    "sourceSubsectionsAudited": 5,
+    "formalRules": 18,
+    "validationCases": 91,
+    "normativeSourceAuditComplete": true,
+    "runtimeExecutableSpecificationReady": false,
+    "implementationComplete": false,
+    "conformancePromoted": false
+  },
+  "runtimePrecedencePolicy": {
+    "status": "NOT_NORMATIVELY_TOTAL_ORDERED",
+    "sourceFinding": "§4.9 defines interacting restriction families and explicit exceptions, but this closure does not infer a complete runtime total precedence order that is not stated by the source.",
+    "implementationRequirement": "Phase 15.5 must materialize a deterministic evaluation model that preserves every source-backed prohibition, exception, delegation, and modality distinction.",
+    "normativeRuleInvented": false
+  },
+  "openRuntimeDependencies": [
+    "VOLLSCHRIFT_CHAPTER_3_RESTRICTION_SET",
+    "WORD_JUNCTION_SEGMENTATION_PROVIDER",
+    "PROPER_NAME_CONTEXT_PROVIDER",
+    "PRONUNCIATION_PROVIDER",
+    "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY",
+    "SEMANTIC_MEANING_PRESERVATION_PROVIDER",
+    "POLITICAL_GEOGRAPHIC_TERM_CLASSIFICATION",
+    "CONTRACTION_DOUBT_POLICY",
+    "WORD_STEM_IDENTITY_PROVIDER",
+    "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+    "HISTORICAL_KURZSCHRIFT_EXCEPTION_REGISTRY",
+    "AFFIX_STEM_BOUNDARY_PROVIDER",
+    "DOUBLE_CONSONANT_BOUNDARY_PROVIDER",
+    "PHASE_15_3C_SECTION_4_1_2_4_RULE_SET",
+    "RESTRICTION_EVALUATION_PRECEDENCE"
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "allSourceSubsectionsAudited": true,
+    "allRestrictionFamiliesCaptured": true,
+    "incomingSection49DependenciesResolved": true,
+    "section49CanonicalDependencyResolved": true,
+    "runtimeDependenciesRemain": true,
+    "runtimePrecedenceMaterialized": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3L",
+    "title": "Kurzschrift Cross-Artifact Consistency and Taxonomy Audit",
+    "plannedChecks": [
+      "Reconcile §4.3 two-form Lautgruppenkürzungen terminology against §4.4 Zweiformige Kürzungen",
+      "Patch any stale deferred-dependency wording now resolved by §§4.6-4.9",
+      "Verify Punkt 2 / Punkt 5 / Punkt 6 role distinctions across artifacts",
+      "Prepare clean input state for Liblouis de-g2 comparator audit"
+    ]
+  }
+}

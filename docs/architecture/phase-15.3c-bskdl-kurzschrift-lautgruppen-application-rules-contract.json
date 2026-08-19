@@ -1,0 +1,1541 @@
+{
+  "phase": "15.3C",
+  "title": "BSKDL Kurzschrift Lautgruppenkürzungen Application Rules Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.1.2",
+    "sectionTitle": "Regeln für Lautgruppenkürzungen",
+    "sectionExtractionSha256": "5eb9329de7a60d91db2e37764aae50f77809eb547edf8a9d99040e34adf22351"
+  },
+  "coverage": {
+    "subsectionsExpected": 8,
+    "subsectionsAudited": 8,
+    "subsectionTopologyExact": true,
+    "formalRules": 29,
+    "validationCases": 92,
+    "sourceListedOptionalVariantCases": 19,
+    "lautgruppenInventory": 39,
+    "sectionFormalRuleCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "formalRules": [
+    {
+      "id": "DE-KURZ-LG-001",
+      "sourceSection": "4.1.2.1",
+      "kind": "LITERAL_LETTER_DISAMBIGUATION",
+      "summary": "Literal c, q, x, y and ß require the Aufhebungspunkt because their cells are also used by Lautgruppenkürzungen.",
+      "normative": true,
+      "sourceWitnesses": [
+        "c (ch, ck und sch nicht mitgezählt), q, x und y sowie ß",
+        "Aufhebungspunkt 6"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-002",
+      "sourceSection": "4.1.2.2",
+      "kind": "PUNCTUATION_COLLISION_GUARD",
+      "summary": "A Lautgruppenkürzung must not be used where its cell would be ambiguous with a punctuation sign.",
+      "normative": true,
+      "sourceWitnesses": [
+        "sind zugleich Satzzeichen",
+        "nicht angewendet, wenn Verwechslung"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-003",
+      "sourceSection": "4.1.2.2",
+      "kind": "TE_WORD_INITIAL_PROHIBITION",
+      "summary": "The TE contraction is forbidden at word start.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"te\" am Wortanfang"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-004",
+      "sourceSection": "4.1.2.2",
+      "kind": "WORD_FINAL_PUNCTUATION_PROHIBITION",
+      "summary": "AL, AN, AR, BE and OR are forbidden at word end.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"al\", \"an\", \"ar\", \"be\" und \"or\" am Wortende"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-005",
+      "sourceSection": "4.1.2.2",
+      "kind": "EH_EDGE_PROHIBITION",
+      "summary": "EH is forbidden at word start and word end.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"eh\" am Wortanfang und -ende"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-006",
+      "sourceSection": "4.1.2.3",
+      "kind": "WORD_INITIAL_SEMANTIC_COLLISION_SET",
+      "summary": "The source defines an explicit set of Lautgruppen that may not contract at word start because the same signs have other meanings there.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Folgende Lautgruppen werden am Wortanfang nicht gekürzt",
+        "\"ach\"",
+        "\"ck\"",
+        "\"ich\"",
+        "\"ig\"",
+        "\"lich\"",
+        "\"ll\"",
+        "\"mm\"",
+        "\"te\""
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-007",
+      "sourceSection": "4.1.2.3",
+      "kind": "TWO_FORM_WORD_INITIAL_PROHIBITION",
+      "summary": "Two-form Lautgruppenkürzungen are also forbidden at word start.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Ebenfalls am Wortanfang nicht zulässig sind die zweiformigen Lautgruppenkürzungen"
+      ],
+      "dependencies": [
+        "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-008",
+      "sourceSection": "4.1.2.4",
+      "kind": "COMPOUND_SEAM_PROHIBITION",
+      "summary": "Lautgruppenkürzungen may not cross a clearly recognized compound-word seam.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Unzulässig sind Lautgruppenkürzungen über die eindeutige Wortfuge zusammengesetzter Wörter hinweg"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-009",
+      "sourceSection": "4.1.2.4",
+      "kind": "LEXICALIZED_COMPOUND_EXCEPTION",
+      "summary": "If a historical compound is no longer generally perceived or recognized as a compound, a Lautgruppenkürzung may cross that historical seam.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nicht mehr von allen Menschen als solches empfunden oder erkannt"
+      ],
+      "dependencies": [
+        "LEXICALIZATION_OR_COMPOUND_RECOGNITION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-010",
+      "sourceSection": "4.1.2.4",
+      "kind": "CROSS_SPOKEN_SYLLABLE_ELIGIBILITY",
+      "summary": "Kurzschrift Lautgruppen may span adjacent spoken syllables inside a word provided the rules of 4.1.2.4 through 4.1.2.8 remain satisfied.",
+      "normative": true,
+      "sourceWitnesses": [
+        "benachbarten Sprechsilben angehören",
+        "4.1.2.4-4.1.2.8"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-011",
+      "sourceSection": "4.1.2.4",
+      "kind": "CLEAR_PREFIX_SUFFIX_PRESERVATION",
+      "summary": "Clearly recognizable prefixes and suffixes must remain structurally preserved.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Eindeutig erkennbare Prä- und Suffixe",
+        "sollen erhalten bleiben"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-012",
+      "sourceSection": "4.1.2.4",
+      "kind": "PREFIX_BOUNDARY_UNCERTAINTY",
+      "summary": "The source does not define a complete fixed rule set for all prefixes because prefix-to-stem boundaries are not always unambiguous.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Für Präfixe können keine festen Regeln formuliert werden",
+        "nicht immer eindeutig"
+      ],
+      "dependencies": [
+        "PREFIX_SUFFIX_BOUNDARY_RESOLUTION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-013",
+      "sourceSection": "4.1.2.4",
+      "kind": "DOUBLE_CONSONANT_BOUNDARY_EXCEPTION",
+      "summary": "LL, MM (including KOMM) and SS may be used across a prefix-to-stem transition and in doubtful cases.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die Kürzungen für \"ll\", \"mm\" (auch \"komm\") und \"ss\" dürfen",
+        "beim Übergang vom Präfix zum Wortstamm"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-014",
+      "sourceSection": "4.1.2.4",
+      "kind": "SOURCE_LISTED_OPTIONAL_VARIANTS",
+      "summary": "For the source-listed doubt cases the standard distinguishes a recommended rendering and an also-permitted rendering. This does not create a global optionality rule.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Empfohlen Auch erlaubt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-015",
+      "sourceSection": "4.1.2.4",
+      "kind": "MANDATORY_SUFFIX_PRESERVATION_SET",
+      "summary": "The suffixes MENT, TUM, CHEN and LEIN must remain preserved.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die Suffixe (\"Nachsilben\" von Wortstämmen) \"ment\", \"tum\", \"chen\" und \"lein\" müssen erhalten bleiben"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-016",
+      "sourceSection": "4.1.2.4",
+      "kind": "AMBIGUOUS_SUFFIX_BOUNDARY_EXCEPTION",
+      "summary": "If the relevant stem/suffix boundary is not recognizable, the contraction may remain applicable; Engelein is the direct source witness.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"Engelein\" jedoch gekürzt",
+        "nicht erkennbar"
+      ],
+      "dependencies": [
+        "PREFIX_SUFFIX_BOUNDARY_RESOLUTION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-017",
+      "sourceSection": "4.1.2.5",
+      "kind": "SAME_SYLLABLE_VOWEL_PAIR_PROTECTION",
+      "summary": "Two vowels belonging to the same syllable must not be separated by contractions with neighboring consonants.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Zwei Vokale, die zu ein und derselben Silbe gehören, dürfen nicht"
+      ],
+      "dependencies": [
+        "PRONUNCIATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-018",
+      "sourceSection": "4.1.2.5",
+      "kind": "VOWEL_PAIR_SCOPE",
+      "summary": "The same-syllable protection applies both to double vowels and to two different vowels.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Dies gilt sowohl für zwei gleiche Vokale (Doppelvokal) als auch für zwei unterschiedliche"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-019",
+      "sourceSection": "4.1.2.5",
+      "kind": "CROSS_SYLLABLE_VOWEL_CONTRACTION_ELIGIBILITY",
+      "summary": "When the two vowels belong to two separate syllables, otherwise applicable contractions are used.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Sind die beiden Vokale auf zwei Silben verteilt, werden mögliche Kürzungen angewendet"
+      ],
+      "dependencies": [
+        "PRONUNCIATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-020",
+      "sourceSection": "4.1.2.5",
+      "kind": "INHERITED_VOLLSCHRIFT_VOWEL_RULE",
+      "summary": "The inherited Vollschrift rule remains in force: a Vollschrift vowel-group contraction may connect only vowels pronounced within one syllable.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Auch in Kurzschrift bleibt die Vollschriftregel erhalten",
+        "nur Vokale verbinden darf"
+      ],
+      "dependencies": [
+        "PRONUNCIATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-021",
+      "sourceSection": "4.1.2.6",
+      "kind": "SST_DOUBLE_S_PRECEDENCE",
+      "summary": "Within SST, the SS contraction has priority.",
+      "normative": true,
+      "sourceWitnesses": [
+        "In \"sst\" das Doppel-s"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-022",
+      "sourceSection": "4.1.2.6",
+      "kind": "CONSONANT_GROUP_PRECEDENCE",
+      "summary": "Within ALL, ELL, EMM, ESCH, ESS and EST, the consonant-group contraction has priority.",
+      "normative": true,
+      "sourceWitnesses": [
+        "In \"all\", \"ell\", \"emm\", \"esch\", \"ess\" und \"est\" die Konsonantengruppe"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-023",
+      "sourceSection": "4.1.2.6",
+      "kind": "BE_GE_PRECEDENCE",
+      "summary": "In the listed BEH/BEL/BEM/BEN/BER/BES and GEH/GEL/GEM/GEN/GER/GES patterns, BE or GE takes precedence when it has prefix or derivational character; the standard also provides established examples such as bereit, geheim and genau.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"beh\", \"bel\", \"bem\", \"ben\", \"ber\" und \"bes\"",
+        "\"geh\"",
+        "wenn sie Präfix-/Ableitungscharakter haben",
+        "bereit",
+        "geheim",
+        "genau"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-024",
+      "sourceSection": "4.1.2.6",
+      "kind": "VOWEL_INITIAL_GROUP_PRECEDENCE",
+      "summary": "The vowel-initial groups EH, EL, EM, EN, ER, ES and IG have priority in the source's precedence sequence.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die mit einem Vokal anlautenden Lautgruppen \"eh\", \"el\", \"em\", \"en\", \"er\", \"es\" und \"ig\""
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-025",
+      "sourceSection": "4.1.2.6",
+      "kind": "LEFT_TO_RIGHT_FALLBACK",
+      "summary": "In all remaining cases, Lautgruppen are contracted in order of occurrence.",
+      "normative": true,
+      "sourceWitnesses": [
+        "In allen übrigen Fällen werden Lautgruppen in der Reihenfolge ihres Vorkommens gekürzt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-026",
+      "sourceSection": "4.1.2.7",
+      "kind": "HYPHENATION_MAY_DISSOLVE_CONTRACTION",
+      "summary": "At word division, an existing contraction may be dissolved.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Bei Trennungen können Kürzungen ggf. aufgelöst werden"
+      ],
+      "dependencies": [
+        "HYPHENATION_BOUNDARY_INPUT_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-LG-027",
+      "sourceSection": "4.1.2.7",
+      "kind": "HYPHENATION_NEW_OPPORTUNITY",
+      "summary": "If dissolving due to word division creates a new contraction opportunity, that new contraction is applied.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Sollten sich dadurch neue Kürzungsmöglichkeiten ergeben, sind sie anzuwenden"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-028",
+      "sourceSection": "4.1.2.7",
+      "kind": "HYPHENATION_UNBROKEN_FALLBACK",
+      "summary": "Otherwise contraction proceeds as though the word were not divided.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Ansonsten wird so gekürzt, als ob das Wort nicht getrennt wäre"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-LG-029",
+      "sourceSection": "4.1.2.8",
+      "kind": "POST_APOSTROPHE_PROHIBITION_SET",
+      "summary": "Immediately after an apostrophe, AL, AN, AR, BE, EH, EL, EN, LL, MM, OR, SS and TE must not be used as Lautgruppenkürzungen.",
+      "normative": true,
+      "sourceWitnesses": [
+        "dürfen nach Apostroph die Kürzungen für folgende Lautgruppen nicht angewendet werden",
+        "\"al\", \"an\", \"ar\", \"be\", \"eh\", \"el\", \"en\", \"ll\", \"mm\", \"or\", \"ss\" und \"te\""
+      ],
+      "dependencies": []
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-LG-CASE-001",
+      "sourceSection": "4.1.2.1",
+      "witness": "Cello",
+      "target": "C",
+      "expectedDecision": "USE_LITERAL_LETTER_DISAMBIGUATION",
+      "ruleRefs": [
+        "DE-KURZ-LG-001"
+      ],
+      "category": "LITERAL_LETTER"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-002",
+      "sourceSection": "4.1.2.1",
+      "witness": "Quelle",
+      "target": "Q",
+      "expectedDecision": "USE_LITERAL_LETTER_DISAMBIGUATION",
+      "ruleRefs": [
+        "DE-KURZ-LG-001"
+      ],
+      "category": "LITERAL_LETTER"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-003",
+      "sourceSection": "4.1.2.1",
+      "witness": "Xylophon",
+      "target": "X/Y",
+      "expectedDecision": "USE_LITERAL_LETTER_DISAMBIGUATION",
+      "ruleRefs": [
+        "DE-KURZ-LG-001"
+      ],
+      "category": "LITERAL_LETTER"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-004",
+      "sourceSection": "4.1.2.1",
+      "witness": "Maßstab",
+      "target": "ß",
+      "expectedDecision": "USE_LITERAL_LETTER_DISAMBIGUATION",
+      "ruleRefs": [
+        "DE-KURZ-LG-001"
+      ],
+      "category": "LITERAL_LETTER"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-005",
+      "sourceSection": "4.1.2.2",
+      "witness": "Tal",
+      "target": "AL",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-004"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-006",
+      "sourceSection": "4.1.2.2",
+      "witness": "Kran",
+      "target": "AN",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-004"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-007",
+      "sourceSection": "4.1.2.2",
+      "witness": "Bar",
+      "target": "AR",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-004"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-008",
+      "sourceSection": "4.1.2.2",
+      "witness": "Rebe",
+      "target": "BE",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-004"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-009",
+      "sourceSection": "4.1.2.2",
+      "witness": "Ehe",
+      "target": "EH",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-005"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-010",
+      "sourceSection": "4.1.2.2",
+      "witness": "Reh",
+      "target": "EH",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-005"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-011",
+      "sourceSection": "4.1.2.2",
+      "witness": "Tor",
+      "target": "OR",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_END",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-004"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-012",
+      "sourceSection": "4.1.2.2",
+      "witness": "Test",
+      "target": "TE",
+      "expectedDecision": "KEEP_UNCONTRACTED_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-002",
+        "DE-KURZ-LG-003"
+      ],
+      "category": "PUNCTUATION_COLLISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-013",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"ach\"",
+      "target": "ACH",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-014",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"ck\"",
+      "target": "CK",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-015",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"eh\"",
+      "target": "EH",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-016",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"ich\"",
+      "target": "ICH",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-017",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"ig\"",
+      "target": "IG",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-018",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"lich\"",
+      "target": "LICH",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-019",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"ll\" und \"mm\"",
+      "target": "LL/MM",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-020",
+      "sourceSection": "4.1.2.3",
+      "witness": "\"te\"",
+      "target": "TE",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-006"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-021",
+      "sourceSection": "4.1.2.3",
+      "witness": "zweiformigen Lautgruppenkürzungen",
+      "target": "TWO_FORM",
+      "expectedDecision": "FORBIDDEN_AT_WORD_START",
+      "ruleRefs": [
+        "DE-KURZ-LG-007"
+      ],
+      "category": "WORD_INITIAL_PROHIBITION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-022",
+      "sourceSection": "4.1.2.4",
+      "witness": "Megalos",
+      "target": "AL",
+      "expectedDecision": "MUST_NOT_CROSS_CLEAR_COMPOUND_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-008"
+      ],
+      "category": "COMPOUND_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-023",
+      "sourceSection": "4.1.2.4",
+      "witness": "Speisesaal",
+      "target": "ES",
+      "expectedDecision": "MUST_NOT_CROSS_CLEAR_COMPOUND_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-008"
+      ],
+      "category": "COMPOUND_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-024",
+      "sourceSection": "4.1.2.4",
+      "witness": "Reiseleiter",
+      "target": "EL",
+      "expectedDecision": "MUST_NOT_CROSS_CLEAR_COMPOUND_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-008"
+      ],
+      "category": "COMPOUND_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-025",
+      "sourceSection": "4.1.2.4",
+      "witness": "Reinemachen",
+      "target": "EM",
+      "expectedDecision": "MUST_NOT_CROSS_CLEAR_COMPOUND_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-008"
+      ],
+      "category": "COMPOUND_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-026",
+      "sourceSection": "4.1.2.4",
+      "witness": "Nachtessen",
+      "target": "TE",
+      "expectedDecision": "MUST_NOT_CROSS_CLEAR_COMPOUND_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-008"
+      ],
+      "category": "COMPOUND_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-027",
+      "sourceSection": "4.1.2.4",
+      "witness": "jemand",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "MAY_CROSS_LEXICALIZED_HISTORICAL_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-009"
+      ],
+      "category": "LEXICALIZED_COMPOUND"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-028",
+      "sourceSection": "4.1.2.4",
+      "witness": "Nachtigall",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "MAY_CROSS_LEXICALIZED_HISTORICAL_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-LG-009"
+      ],
+      "category": "LEXICALIZED_COMPOUND"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-029",
+      "sourceSection": "4.1.2.4",
+      "witness": "Chinese",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-030",
+      "sourceSection": "4.1.2.4",
+      "witness": "Generation",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-031",
+      "sourceSection": "4.1.2.4",
+      "witness": "höflicher",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-032",
+      "sourceSection": "4.1.2.4",
+      "witness": "Stimme",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-033",
+      "sourceSection": "4.1.2.4",
+      "witness": "verkleinern",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-034",
+      "sourceSection": "4.1.2.4",
+      "witness": "Zauberei",
+      "target": "SOURCE_RENDERING",
+      "expectedDecision": "CROSS_SPOKEN_SYLLABLE_ALLOWED_IF_OTHER_RULES_PASS",
+      "ruleRefs": [
+        "DE-KURZ-LG-010"
+      ],
+      "category": "CROSS_SPOKEN_SYLLABLE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-035",
+      "sourceSection": "4.1.2.4",
+      "witness": "Intranet",
+      "target": "AN",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-036",
+      "sourceSection": "4.1.2.4",
+      "witness": "Arhythmisch",
+      "target": "AR",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-037",
+      "sourceSection": "4.1.2.4",
+      "witness": "Areligiös",
+      "target": "AR",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-038",
+      "sourceSection": "4.1.2.4",
+      "witness": "Dehydrieren",
+      "target": "EH",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-039",
+      "sourceSection": "4.1.2.4",
+      "witness": "Demontieren",
+      "target": "EM",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-040",
+      "sourceSection": "4.1.2.4",
+      "witness": "Antichrist",
+      "target": "ICH",
+      "expectedDecision": "MUST_PRESERVE_CLEAR_PREFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-011",
+        "DE-KURZ-LG-012"
+      ],
+      "category": "PREFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-041",
+      "sourceSection": "4.1.2.4",
+      "witness": "illegal",
+      "target": "LL",
+      "expectedDecision": "CONTRACTION_ALLOWED_ACROSS_PREFIX_STEM_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-013"
+      ],
+      "category": "DOUBLE_CONSONANT_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-042",
+      "sourceSection": "4.1.2.4",
+      "witness": "immobil",
+      "target": "MM",
+      "expectedDecision": "CONTRACTION_ALLOWED_ACROSS_PREFIX_STEM_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-013"
+      ],
+      "category": "DOUBLE_CONSONANT_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-043",
+      "sourceSection": "4.1.2.4",
+      "witness": "Kommission",
+      "target": "MM",
+      "expectedDecision": "CONTRACTION_ALLOWED_ACROSS_PREFIX_STEM_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-013"
+      ],
+      "category": "DOUBLE_CONSONANT_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-044",
+      "sourceSection": "4.1.2.4",
+      "witness": "assistieren",
+      "target": "SS",
+      "expectedDecision": "CONTRACTION_ALLOWED_ACROSS_PREFIX_STEM_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-013"
+      ],
+      "category": "DOUBLE_CONSONANT_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-045",
+      "sourceSection": "4.1.2.4",
+      "witness": "Reglement",
+      "target": "EM",
+      "expectedDecision": "MUST_NOT_CONTRACT_ACROSS_SUFFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-046",
+      "sourceSection": "4.1.2.4",
+      "witness": "Zement",
+      "target": "EM",
+      "expectedDecision": "CONTRACTION_REQUIRED_BY_SOURCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-047",
+      "sourceSection": "4.1.2.4",
+      "witness": "Wachstum",
+      "target": "ST",
+      "expectedDecision": "MUST_NOT_CONTRACT_ACROSS_SUFFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-048",
+      "sourceSection": "4.1.2.4",
+      "witness": "postum",
+      "target": "ST",
+      "expectedDecision": "CONTRACTION_REQUIRED_BY_SOURCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-049",
+      "sourceSection": "4.1.2.4",
+      "witness": "Hänschen",
+      "target": "SCH",
+      "expectedDecision": "MUST_NOT_CONTRACT_ACROSS_SUFFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-050",
+      "sourceSection": "4.1.2.4",
+      "witness": "Menschen",
+      "target": "SCH",
+      "expectedDecision": "CONTRACTION_REQUIRED_BY_SOURCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-051",
+      "sourceSection": "4.1.2.4",
+      "witness": "Kindelein",
+      "target": "EL",
+      "expectedDecision": "MUST_NOT_CONTRACT_ACROSS_SUFFIX_BOUNDARY",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-011"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-052",
+      "sourceSection": "4.1.2.4",
+      "witness": "Engelein",
+      "target": "EL",
+      "expectedDecision": "CONTRACTION_ALLOWED_DUE_BOUNDARY_UNCERTAINTY",
+      "ruleRefs": [
+        "DE-KURZ-LG-015",
+        "DE-KURZ-LG-016"
+      ],
+      "category": "SUFFIX_BOUNDARY"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-053",
+      "sourceSection": "4.1.2.5",
+      "witness": "Aachen",
+      "target": "ACH",
+      "expectedDecision": "MUST_NOT_SPLIT_SAME_SYLLABLE_VOWEL_PAIR",
+      "ruleRefs": [
+        "DE-KURZ-LG-017",
+        "DE-KURZ-LG-018"
+      ],
+      "category": "SAME_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-054",
+      "sourceSection": "4.1.2.5",
+      "witness": "Paare",
+      "target": "AR",
+      "expectedDecision": "MUST_NOT_SPLIT_SAME_SYLLABLE_VOWEL_PAIR",
+      "ruleRefs": [
+        "DE-KURZ-LG-017",
+        "DE-KURZ-LG-018"
+      ],
+      "category": "SAME_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-055",
+      "sourceSection": "4.1.2.5",
+      "witness": "Beeren",
+      "target": "BE/ER",
+      "expectedDecision": "MUST_NOT_SPLIT_SAME_SYLLABLE_VOWEL_PAIR",
+      "ruleRefs": [
+        "DE-KURZ-LG-017",
+        "DE-KURZ-LG-018"
+      ],
+      "category": "SAME_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-056",
+      "sourceSection": "4.1.2.5",
+      "witness": "Moorwiese",
+      "target": "OR",
+      "expectedDecision": "MUST_NOT_SPLIT_SAME_SYLLABLE_VOWEL_PAIR",
+      "ruleRefs": [
+        "DE-KURZ-LG-017",
+        "DE-KURZ-LG-018"
+      ],
+      "category": "SAME_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-057",
+      "sourceSection": "4.1.2.5",
+      "witness": "proof",
+      "target": "PRO",
+      "expectedDecision": "MUST_NOT_SPLIT_SAME_SYLLABLE_VOWEL_PAIR",
+      "ruleRefs": [
+        "DE-KURZ-LG-017",
+        "DE-KURZ-LG-018"
+      ],
+      "category": "SAME_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-058",
+      "sourceSection": "4.1.2.5",
+      "witness": "beerben",
+      "target": "BE/ER",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-059",
+      "sourceSection": "4.1.2.5",
+      "witness": "Feenmärchen",
+      "target": "EN",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-060",
+      "sourceSection": "4.1.2.5",
+      "witness": "Koordination",
+      "target": "OR",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-061",
+      "sourceSection": "4.1.2.5",
+      "witness": "Aeroflot",
+      "target": "ER",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-062",
+      "sourceSection": "4.1.2.5",
+      "witness": "Kokain",
+      "target": "IN",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-063",
+      "sourceSection": "4.1.2.5",
+      "witness": "Kasein",
+      "target": "IN",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-064",
+      "sourceSection": "4.1.2.5",
+      "witness": "Koffein",
+      "target": "IN",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-065",
+      "sourceSection": "4.1.2.5",
+      "witness": "kreieren",
+      "target": "IE",
+      "expectedDecision": "APPLY_ELIGIBLE_CONTRACTION_ACROSS_TWO_SYLLABLES",
+      "ruleRefs": [
+        "DE-KURZ-LG-019"
+      ],
+      "category": "CROSS_SYLLABLE_VOWELS"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-066",
+      "sourceSection": "4.1.2.5",
+      "witness": "Harmonie",
+      "target": "IE",
+      "expectedDecision": "VOLLSCHRIFT_IE_CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-LG-020"
+      ],
+      "category": "INHERITED_VOLLSCHRIFT_VOWEL_RULE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-067",
+      "sourceSection": "4.1.2.5",
+      "witness": "Familie",
+      "target": "IE",
+      "expectedDecision": "VOLLSCHRIFT_IE_CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-LG-020"
+      ],
+      "category": "INHERITED_VOLLSCHRIFT_VOWEL_RULE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-068",
+      "sourceSection": "4.1.2.6",
+      "witness": "fasst",
+      "target": "SS",
+      "expectedDecision": "SS_PRECEDES_ST_IN_SST",
+      "ruleRefs": [
+        "DE-KURZ-LG-021"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-069",
+      "sourceSection": "4.1.2.6",
+      "witness": "geküsst",
+      "target": "SS",
+      "expectedDecision": "SS_PRECEDES_ST_IN_SST",
+      "ruleRefs": [
+        "DE-KURZ-LG-021"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-070",
+      "sourceSection": "4.1.2.6",
+      "witness": "Halle",
+      "target": "LL",
+      "expectedDecision": "CONSONANT_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-022"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-071",
+      "sourceSection": "4.1.2.6",
+      "witness": "Klemme",
+      "target": "MM",
+      "expectedDecision": "CONSONANT_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-022"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-072",
+      "sourceSection": "4.1.2.6",
+      "witness": "Messer",
+      "target": "SS",
+      "expectedDecision": "CONSONANT_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-022"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-073",
+      "sourceSection": "4.1.2.6",
+      "witness": "fest",
+      "target": "ST",
+      "expectedDecision": "CONSONANT_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-022"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-074",
+      "sourceSection": "4.1.2.6",
+      "witness": "Besuch",
+      "target": "BE",
+      "expectedDecision": "BE_GE_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-023"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-075",
+      "sourceSection": "4.1.2.6",
+      "witness": "geliebt",
+      "target": "GE",
+      "expectedDecision": "BE_GE_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-023"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-076",
+      "sourceSection": "4.1.2.6",
+      "witness": "bereit",
+      "target": "BE",
+      "expectedDecision": "BE_GE_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-023"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-077",
+      "sourceSection": "4.1.2.6",
+      "witness": "geheim",
+      "target": "GE",
+      "expectedDecision": "BE_GE_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-023"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-078",
+      "sourceSection": "4.1.2.6",
+      "witness": "genau",
+      "target": "GE",
+      "expectedDecision": "BE_GE_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-023"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-079",
+      "sourceSection": "4.1.2.6",
+      "witness": "Gelee",
+      "target": "VOWEL_INITIAL_LAUTGRUPPE",
+      "expectedDecision": "VOWEL_INITIAL_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-024"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-080",
+      "sourceSection": "4.1.2.6",
+      "witness": "Benefiz",
+      "target": "VOWEL_INITIAL_LAUTGRUPPE",
+      "expectedDecision": "VOWEL_INITIAL_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-024"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-081",
+      "sourceSection": "4.1.2.6",
+      "witness": "Gera",
+      "target": "VOWEL_INITIAL_LAUTGRUPPE",
+      "expectedDecision": "VOWEL_INITIAL_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-024"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-082",
+      "sourceSection": "4.1.2.6",
+      "witness": "einige",
+      "target": "VOWEL_INITIAL_LAUTGRUPPE",
+      "expectedDecision": "VOWEL_INITIAL_GROUP_PRECEDENCE",
+      "ruleRefs": [
+        "DE-KURZ-LG-024"
+      ],
+      "category": "PRECEDENCE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-083",
+      "sourceSection": "4.1.2.7",
+      "witness": "je- mand",
+      "target": "HYPHENATION",
+      "expectedDecision": "RECOMPUTE_AFTER_WORD_DIVISION",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-084",
+      "sourceSection": "4.1.2.7",
+      "witness": "Quel- le",
+      "target": "HYPHENATION",
+      "expectedDecision": "RECOMPUTE_AFTER_WORD_DIVISION",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-085",
+      "sourceSection": "4.1.2.7",
+      "witness": "Hal- le",
+      "target": "HYPHENATION",
+      "expectedDecision": "RECOMPUTE_AFTER_WORD_DIVISION",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-086",
+      "sourceSection": "4.1.2.7",
+      "witness": "Be- lichtung",
+      "target": "HYPHENATION",
+      "expectedDecision": "OTHERWISE_PRESERVE_UNBROKEN_WORD_LOGIC",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-087",
+      "sourceSection": "4.1.2.7",
+      "witness": "Belich- tung",
+      "target": "HYPHENATION",
+      "expectedDecision": "OTHERWISE_PRESERVE_UNBROKEN_WORD_LOGIC",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-088",
+      "sourceSection": "4.1.2.7",
+      "witness": "Woll- teppich",
+      "target": "HYPHENATION",
+      "expectedDecision": "OTHERWISE_PRESERVE_UNBROKEN_WORD_LOGIC",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-089",
+      "sourceSection": "4.1.2.7",
+      "witness": "Wolltep- pich",
+      "target": "HYPHENATION",
+      "expectedDecision": "OTHERWISE_PRESERVE_UNBROKEN_WORD_LOGIC",
+      "ruleRefs": [
+        "DE-KURZ-LG-026",
+        "DE-KURZ-LG-027",
+        "DE-KURZ-LG-028"
+      ],
+      "category": "WORD_DIVISION"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-090",
+      "sourceSection": "4.1.2.8",
+      "witness": "D'Artagnan",
+      "target": "POST_APOSTROPHE_CONTRACTION_SET",
+      "expectedDecision": "FORBIDDEN_IMMEDIATELY_AFTER_APOSTROPHE",
+      "ruleRefs": [
+        "DE-KURZ-LG-029"
+      ],
+      "category": "APOSTROPHE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-091",
+      "sourceSection": "4.1.2.8",
+      "witness": "D'Elena",
+      "target": "POST_APOSTROPHE_CONTRACTION_SET",
+      "expectedDecision": "FORBIDDEN_IMMEDIATELY_AFTER_APOSTROPHE",
+      "ruleRefs": [
+        "DE-KURZ-LG-029"
+      ],
+      "category": "APOSTROPHE"
+    },
+    {
+      "id": "DE-KURZ-LG-CASE-092",
+      "sourceSection": "4.1.2.8",
+      "witness": "Dell'Angelo",
+      "target": "POST_APOSTROPHE_CONTRACTION_SET",
+      "expectedDecision": "FORBIDDEN_IMMEDIATELY_AFTER_APOSTROPHE",
+      "ruleRefs": [
+        "DE-KURZ-LG-029"
+      ],
+      "category": "APOSTROPHE"
+    }
+  ],
+  "sourceListedOptionalVariants": {
+    "sourceSection": "4.1.2.4",
+    "scope": "SOURCE_LISTED_DOUBTFUL_CASES_ONLY",
+    "generalOptionalityInferred": false,
+    "count": 19,
+    "words": [
+      "alogisch",
+      "Bigamie",
+      "binomisch",
+      "delegiert",
+      "demolieren",
+      "Demonstration",
+      "Demütigung",
+      "Denunziant",
+      "desolat",
+      "Dialekt",
+      "Renaissance",
+      "renovieren",
+      "reservieren",
+      "Research",
+      "Reset",
+      "resignieren",
+      "resistent",
+      "Resolution",
+      "Trigonometrie"
+    ]
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "dependency": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "originPhase": "15.2",
+      "resolutionRule": "DE-KURZ-LG-021",
+      "sourceSection": "4.1.2.6",
+      "status": "FORMALLY_RESOLVED",
+      "runtimeImplemented": false
+    },
+    {
+      "dependency": "KURZSCHRIFT_INTERACTION_AUDIT",
+      "originPhase": "15.2",
+      "coverageCompletedHere": [
+        "4.1.2.4",
+        "4.1.2.5",
+        "4.1.2.6"
+      ],
+      "remainingMajorSection": "4.9",
+      "status": "PARTIALLY_RESOLVED"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "PRONUNCIATION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "LEXICALIZATION_OR_COMPOUND_RECOGNITION_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "PREFIX_SUFFIX_BOUNDARY_RESOLUTION_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "HYPHENATION_BOUNDARY_INPUT_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "SECTION_4_4_TWO_FORM_CONTRACTION_INVENTORY",
+      "requiredForExecutableGeneralization": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3D",
+    "title": "Kurzschrift Prefix/Suffix Contractions Audit",
+    "sourceSections": [
+      "4.2",
+      "4.2.1",
+      "4.2.2"
+    ]
+  }
+}

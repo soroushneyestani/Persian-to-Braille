@@ -1,0 +1,133 @@
+{
+  "phase": "15.3M5C",
+  "title": "Controlled WSL Ubuntu 22.04 Provisioning and Identity Freeze",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "ciRunner": "ubuntu-22.04",
+    "target": "x86_64-w64-mingw32"
+  },
+  "environmentIdentity": {
+    "distribution": "Ubuntu-22.04",
+    "prettyName": "Ubuntu 22.04.5 LTS",
+    "versionId": "22.04",
+    "versionCodename": "jammy",
+    "ubuntuCodename": "jammy",
+    "architecture": "x86_64",
+    "kernelRelease": "6.6.87.2-microsoft-standard-WSL2",
+    "uname": "Linux Soroush 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "wslVersion": 2,
+    "wslStateAtAudit": "Stopped",
+    "defaultUnixUser": "oroush",
+    "defaultUnixUid": 1000
+  },
+  "frozenWorkflowPackageBaseline": {
+    "packages": [
+      {
+        "package": "autoconf",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "automake",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "curl",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "libtool",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "make",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "mingw-w64",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "pkg-config",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "texinfo",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "wine64",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "zip",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "patch",
+        "status": "NOT_INSTALLED",
+        "version": null
+      },
+      {
+        "package": "jq",
+        "status": "NOT_INSTALLED",
+        "version": null
+      }
+    ],
+    "total": 12,
+    "alreadyInstalledCount": 0,
+    "notInstalledCount": 12,
+    "interpretation": "Baseline only. Packages present in the base Ubuntu image were not installed by Phase 15.3M5C."
+  },
+  "mutationRecord": {
+    "hostMutation": "WSL_DISTRIBUTION_PROVISIONED",
+    "distributionInstalled": "Ubuntu-22.04",
+    "packageInstallationPerformed": false,
+    "liblouisBuildPerformed": false,
+    "projectRepositoryModifiedByProvisioning": false,
+    "frozenLiblouisCheckoutModified": false
+  },
+  "decision": {
+    "status": "PASS",
+    "distributionProvisioned": true,
+    "distributionInitialized": true,
+    "exactFrozenRunnerFamilyMatch": true,
+    "ubuntuVersionMatch": true,
+    "architectureMatch": true,
+    "wsl2Confirmed": true,
+    "nonRootDefaultUserConfirmed": true,
+    "environmentIdentityFrozen": true,
+    "packageBaselineCaptured": true,
+    "packageInstallationPerformedByM5C": false,
+    "liblouisBuildPerformed": false,
+    "runtimeTranslationPerformed": false,
+    "readyForToolchainProvisioning": true
+  },
+  "promotionPolicy": {
+    "environmentProvisioningComplete": true,
+    "toolchainProvisioned": false,
+    "runtimeBuilt": false,
+    "runtimeSmokeTestComplete": false,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M6",
+    "title": "Frozen CI Toolchain Provisioning and Verification",
+    "scope": "Install and verify only the frozen MinGW CI dependency set"
+  }
+}

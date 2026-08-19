@@ -1,0 +1,75 @@
+{
+  "phase": "15.3L1",
+  "title": "Kurzschrift Taxonomy Precision Patch",
+  "status": "PASS",
+  "patchMode": "MINIMAL_DETERMINISTIC",
+  "patchedArtifact": {
+    "phase": "15.3E",
+    "file": "docs\\architecture\\phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract.json",
+    "sha256Before": "e2598e1c31a4f474f53a831433762f31ac408b5869be319d6f553ccaa6ca096a",
+    "sha256After": "89625536ddfda699d44c8a641395c634eff1c64a96d9bcb00441ad6ae90c063f",
+    "objectsChanged": 1,
+    "formalRuleCountBeforeAndAfter": 27,
+    "validationCaseCountBeforeAndAfter": 103
+  },
+  "reason": {
+    "legacyState": "15.3E treated the §4.3 two-form Lautgruppe standalone interaction as a mapping dependency pending §4.4.",
+    "laterEvidencePhase": "15.3F",
+    "laterFinding": "§4.3 'zweiformige Lautgruppenkürzungen' and §4.4 'Zweiformige Kürzungen' are distinct source categories.",
+    "section44Resolution": "NOT_RESOLVED_BY_SECTION_4_4",
+    "replacementDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+  },
+  "before": {
+    "interactionObject": {
+      "interaction": "TWO_FORM_LAUTGRUPPE_STANDALONE_PROHIBITION",
+      "sourceSection": "4.3",
+      "rule": "DE-KURZ-EIN-006",
+      "status": "FORMAL_RULE_CAPTURED_MAPPING_DEPENDENCY_PENDING_4_4"
+    }
+  },
+  "after": {
+    "interactionObject": {
+      "interaction": "TWO_FORM_LAUTGRUPPE_TAXONOMY_DISTINCTION",
+      "sourceSection": "4.3",
+      "rule": "DE-KURZ-EIN-006",
+      "status": "FORMAL_RULE_CAPTURED_DISTINCTION_ESTABLISHED_TAXONOMY_RESOLUTION_PENDING",
+      "sourceTerm": "zweiformige Lautgruppenkürzungen",
+      "standalonePolicy": "FORBIDDEN",
+      "distinctFrom": {
+        "section": "4.4",
+        "term": "Zweiformige Kürzungen",
+        "standalonePolicy": "ALLOWED"
+      },
+      "resolutionSourcePhase": "15.3F",
+      "resolutionState": "NOT_RESOLVED_BY_SECTION_4_4",
+      "replacementDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+    }
+  },
+  "preserved": {
+    "normativeRule": "DE-KURZ-EIN-006",
+    "formalRules": 27,
+    "validationCases": 103,
+    "markdownModified": false,
+    "normativeMappingDataModified": false,
+    "brailleDataModified": false
+  },
+  "taxonomyDecision": {
+    "sourceA": {
+      "section": "4.3",
+      "term": "zweiformige Lautgruppenkürzungen",
+      "standalonePolicy": "FORBIDDEN"
+    },
+    "sourceB": {
+      "section": "4.4",
+      "term": "Zweiformige Kürzungen",
+      "standalonePolicy": "ALLOWED"
+    },
+    "conclusion": "DO_NOT_CONFLATE_THE_TWO_SOURCE_CATEGORIES",
+    "taxonomyResolution": "PENDING",
+    "runtimeDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+  },
+  "next": {
+    "phase": "15.3L2",
+    "title": "Final Cross-Artifact Consistency Closure"
+  }
+}
