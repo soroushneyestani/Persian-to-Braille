@@ -1,0 +1,331 @@
+{
+  "phase": "15.2C",
+  "title": "BSKDL Vollschrift Morphological Boundary Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "inherits": {
+    "inventory": "15.2A",
+    "eligibilityContract": "15.2B"
+  },
+  "boundaryModel": {
+    "normativeBoundaryClasses": [
+      "COMPOUND_WORD_SEAM",
+      "PREFIX_TO_STEM",
+      "STEM_TO_SUFFIX"
+    ],
+    "candidateEffect": "ONLY_CROSSING_CANDIDATE_IS_REJECTED",
+    "spanPredicate": {
+      "status": "ARCHITECTURAL_MODEL",
+      "crossesBoundary": "candidate.start < boundary < candidate.end"
+    }
+  },
+  "sourceExamples": {
+    "compoundWordSeams": [
+      "Wolgaufer",
+      "Wegeunfall",
+      "Nordseeinsel",
+      "Comicheft",
+      "Regierungschefin",
+      "Dienstag"
+    ],
+    "prefixStemSeams": [
+      "beurteilen",
+      "geimpft",
+      "eingeigelt",
+      "Reimport"
+    ],
+    "suffixSchChDistinction": [
+      "Gässchen",
+      "Häschen",
+      "Häuschen"
+    ]
+  },
+  "rules": [
+    {
+      "id": "DE-VOLL-MORPH-001",
+      "kind": "BOUNDARY_CLASSES",
+      "summary": "Chapter 3 distinguishes compound-word seams and clearly recognizable derivational prefix/suffix boundaries as contraction-relevant boundaries.",
+      "boundaryClasses": [
+        "COMPOUND_WORD_SEAM",
+        "PREFIX_TO_STEM",
+        "STEM_TO_SUFFIX"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-002",
+      "kind": "COMPOUND_SEAM_PROHIBITION",
+      "summary": "A Vollschrift contraction must not cross a compound-word seam.",
+      "candidateCrossingBoundary": "FORBIDDEN",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-003",
+      "kind": "COMPOUND_CROSS_PROFILE_SCOPE",
+      "summary": "The compound-word seam restriction applies to both Vollschrift and Kurzschrift.",
+      "profiles": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-004",
+      "kind": "DERIVATIONAL_SEAM_PROHIBITION",
+      "summary": "A contraction must not connect a clearly recognizable prefix or suffix with the word stem across its derivational seam.",
+      "candidateCrossingBoundary": "FORBIDDEN",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-005",
+      "kind": "DERIVATIONAL_CROSS_PROFILE_SCOPE",
+      "summary": "The derivational-seam restriction applies to both Vollschrift and Kurzschrift.",
+      "profiles": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-006",
+      "kind": "PREFIX_BOUNDARY_EXAMPLES",
+      "summary": "Chapter 3 explicitly demonstrates non-contraction across prefix/stem seams.",
+      "examples": [
+        "beurteilen",
+        "geimpft",
+        "eingeigelt",
+        "Reimport"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-007",
+      "kind": "SUFFIX_SCH_CH_DISTINCTION",
+      "summary": "In Gässchen, Häschen and Häuschen, sch may not be contracted across the derivational boundary, while ch remains permitted.",
+      "examples": [
+        "Gässchen",
+        "Häschen",
+        "Häuschen"
+      ],
+      "rejectedCandidate": "sch",
+      "remainingEligibleCandidate": "ch",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-008",
+      "kind": "CANDIDATE_LOCAL_BOUNDARY_EFFECT",
+      "summary": "The source examples demonstrate that a boundary invalidates the contraction candidate that crosses it, rather than globally disabling all contractions in the word.",
+      "evidenceRole": "NORMATIVE_EXAMPLE_DERIVATION",
+      "directProseRule": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-009",
+      "kind": "ABSTRACT_CANDIDATE_SPAN_MODEL",
+      "summary": "A software implementation may model a candidate as a source span and reject it when a relevant morphological boundary lies strictly inside that span.",
+      "architecturalInference": true,
+      "normative": false,
+      "crossingPredicate": "candidate.start < boundary < candidate.end",
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-MORPH-010",
+      "kind": "SEGMENTATION_PROVIDER_UNSPECIFIED",
+      "summary": "Chapter 3 makes morphological boundaries normatively relevant but does not specify a software algorithm or lexical database for discovering those boundaries.",
+      "architecturalInference": true,
+      "normative": false,
+      "resolutionStatus": "SEGMENTATION_POLICY_NOT_YET_FROZEN",
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-VOLL-MORPH-CASE-001",
+      "input": "Wolgaufer",
+      "candidate": "au",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-002",
+      "input": "Wegeunfall",
+      "candidate": "eu",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-003",
+      "input": "Nordseeinsel",
+      "candidate": "ei",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-004",
+      "input": "Comicheft",
+      "candidate": "ch",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-005",
+      "input": "Regierungschefin",
+      "candidate": "sch",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-006",
+      "input": "Dienstag",
+      "candidate": "st",
+      "boundaryClass": "COMPOUND_WORD_SEAM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-002"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-007",
+      "input": "beurteilen",
+      "candidate": "eu",
+      "boundaryClass": "PREFIX_TO_STEM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-004"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-008",
+      "input": "geimpft",
+      "candidate": "ei",
+      "boundaryClass": "PREFIX_TO_STEM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-004"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-009",
+      "input": "eingeigelt",
+      "candidate": "ei",
+      "boundaryClass": "PREFIX_TO_STEM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-004"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-010",
+      "input": "Reimport",
+      "candidate": "ei",
+      "boundaryClass": "PREFIX_TO_STEM",
+      "candidateCrossesBoundary": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rule": "DE-VOLL-MORPH-004"
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-011",
+      "input": "Gässchen",
+      "boundaryClass": "STEM_TO_SUFFIX",
+      "rejectedCandidate": "sch",
+      "rejectedCandidateCrossesBoundary": true,
+      "remainingCandidate": "ch",
+      "remainingCandidateCrossesBoundary": false,
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "rules": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-012",
+      "input": "Häschen",
+      "boundaryClass": "STEM_TO_SUFFIX",
+      "rejectedCandidate": "sch",
+      "rejectedCandidateCrossesBoundary": true,
+      "remainingCandidate": "ch",
+      "remainingCandidateCrossesBoundary": false,
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "rules": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-MORPH-CASE-013",
+      "input": "Häuschen",
+      "boundaryClass": "STEM_TO_SUFFIX",
+      "rejectedCandidate": "sch",
+      "rejectedCandidateCrossesBoundary": true,
+      "remainingCandidate": "ch",
+      "remainingCandidateCrossesBoundary": false,
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "rules": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ]
+    }
+  ],
+  "architecturalFinding": {
+    "wholeWordSuppressionIncorrect": true,
+    "candidateLevelEligibilityRequired": true,
+    "overlappingCandidatesNeedIndependentEvaluation": true,
+    "nestedFallbackCandidateCanRemainEligible": true,
+    "morphologicalSegmentationRequired": true,
+    "segmentationAlgorithmSpecifiedByBSKDL": false
+  },
+  "openDependencies": [
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "status": "NOT_YET_FROZEN",
+      "possibleFutureSources": [
+        "LEXICAL_DICTIONARY",
+        "MORPHOLOGICAL_ANALYZER",
+        "EXPLICIT_SOURCE_ANNOTATION",
+        "CURATED_EXCEPTION_DATA"
+      ],
+      "possibleFutureSourcesAreNormative": false
+    },
+    {
+      "id": "KURZSCHRIFT_MORPHOLOGICAL_INTERACTIONS",
+      "status": "CHAPTER_4_NOT_YET_AUDITED"
+    }
+  ],
+  "coverage": {
+    "formalRules": 10,
+    "validationCases": 13,
+    "compoundExamples": 6,
+    "prefixStemExamples": 4,
+    "suffixExamples": 3
+  },
+  "promotionPolicy": {
+    "morphologicalBoundaryContractComplete": true,
+    "segmentationPolicyResolved": false,
+    "kurzschriftInteractionsResolved": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}

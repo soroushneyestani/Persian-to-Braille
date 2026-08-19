@@ -1,0 +1,168 @@
+{
+  "phase": "15.2H",
+  "title": "German Vollschrift Standards Audit Closure",
+  "status": "CLOSED",
+  "retrievedAt": "2026-08-19",
+  "decision": "PASS_WITH_DEFERRED_DEPENDENCIES",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "chapter": "3 Die Vollschrift",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "validatedArtifacts": {
+    "15.2A": {
+      "file": "phase-15.2a-bskdl-vollschrift-rule-family-inventory.json",
+      "sha256": "fa1cc39c1716b6f53d6565a61ea674d400d6dd67269dbc64578eeaa3e4c6debf"
+    },
+    "15.2B": {
+      "file": "phase-15.2b-bskdl-vollschrift-formal-contraction-eligibility-contract.json",
+      "sha256": "420210509566e8187dc95c21a24580e54cb2ddc5bf3e3d5f371bc68a0e9c6013"
+    },
+    "15.2C": {
+      "file": "phase-15.2c-bskdl-vollschrift-morphological-boundary-contract.json",
+      "sha256": "d3f21a0308fd21f2905f6dff49a1fb3edc3ef3940774ffa85194a3353e925d79"
+    },
+    "15.2D": {
+      "file": "phase-15.2d-bskdl-vollschrift-pronunciation-eligibility-contract.json",
+      "sha256": "4520306e0f2d9bd74b73f8f681eb96c21ffc896e5cca59d32209827dd4cb7e57"
+    },
+    "15.2E": {
+      "file": "phase-15.2e-bskdl-vollschrift-st-special-policy-contract.json",
+      "sha256": "1ea45558f66f9b96cfd51e9b16304f145542d46c2048868f21cf872b99c91813"
+    },
+    "15.2F": {
+      "file": "phase-15.2f-bskdl-vollschrift-positive-negative-normative-suite.json",
+      "sha256": "7bbb372208be1621e372aec7f0d8322a9e151dd2f778359cbe332d815c97b906"
+    },
+    "15.2G": {
+      "file": "phase-15.2g-liblouis-vollschrift-static-differential-audit.json",
+      "sha256": "89f18600b255da2414ed7f6c0a60237101a1cb67e95f2fd2111b722ba7cfa38f"
+    }
+  },
+  "closureChecks": {
+    "ruleFamilyInventoryComplete": true,
+    "eligibilityContractComplete": true,
+    "morphologicalContractComplete": true,
+    "pronunciationContractComplete": true,
+    "stPolicyComplete": true,
+    "normativeSuiteComplete": true,
+    "liblouisStaticAuditComplete": true
+  },
+  "coverage": {
+    "ruleFamilies": 8,
+    "lautgruppenkuerzungen": 8,
+    "formalEligibilityRules": 14,
+    "morphologicalRules": 10,
+    "pronunciationRules": 14,
+    "stPolicyRules": 12,
+    "normativeFixtures": 48,
+    "directSourceRenderings": 24,
+    "liblouisStaticMappingsMatched": 8,
+    "liblouisStaticMappingsTotal": 8,
+    "liblouisRuntimeFixturesExecuted": 0
+  },
+  "deferredDependencies": {
+    "rawUniqueIds": [
+      "ABBREVIATION_SEMANTIC_RESOLUTION_POLICY",
+      "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "KURZSCHRIFT_DOUBLE_S_PRIORITY",
+      "KURZSCHRIFT_MORPHOLOGICAL_INTERACTIONS",
+      "KURZSCHRIFT_PRONUNCIATION_INTERACTIONS",
+      "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY",
+      "MORPHOLOGICAL_SEGMENTATION_POLICY",
+      "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "PRONUNCIATION_PROVIDER",
+      "PRONUNCIATION_RESOLUTION_POLICY"
+    ],
+    "rawUniqueCount": 10,
+    "canonical": [
+      {
+        "id": "CHAPTER_4_DOUBLE_S_PRIORITY",
+        "aliases": [
+          "KURZSCHRIFT_DOUBLE_S_PRIORITY"
+        ],
+        "resolutionPhase": "15.3",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      },
+      {
+        "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+        "aliases": [
+          "MORPHOLOGICAL_SEGMENTATION_POLICY"
+        ],
+        "resolutionPhase": "15.5",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      },
+      {
+        "id": "PRONUNCIATION_PROVIDER",
+        "aliases": [
+          "PRONUNCIATION_RESOLUTION_POLICY"
+        ],
+        "resolutionPhase": "15.5",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      },
+      {
+        "id": "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY",
+        "aliases": [],
+        "resolutionPhase": "15.5",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      },
+      {
+        "id": "ABBREVIATION_SEMANTIC_RESOLUTION_POLICY",
+        "aliases": [],
+        "resolutionPhase": "15.5",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      },
+      {
+        "id": "KURZSCHRIFT_INTERACTION_AUDIT",
+        "aliases": [
+          "KURZSCHRIFT_MORPHOLOGICAL_INTERACTIONS",
+          "KURZSCHRIFT_PRONUNCIATION_INTERACTIONS"
+        ],
+        "resolutionPhase": "15.3",
+        "blockingPhase15_2AuditClosure": false,
+        "blockingExecutableGeneralization": true
+      }
+    ],
+    "canonicalCount": 6,
+    "normalizationRole": "ARCHITECTURAL_CLOSURE_NORMALIZATION",
+    "normalizationIsNormative": false
+  },
+  "liblouisComparator": {
+    "role": "NON_NORMATIVE_COMPARATOR",
+    "staticAuditComplete": true,
+    "runtimeAuditComplete": false,
+    "runtimeAuditBlocking": false,
+    "behavioralParityEstablished": false,
+    "staticDivergencesEstablished": 0
+  },
+  "closureState": {
+    "chapter3NormativeAuditComplete": true,
+    "chapter3RuleFamilyCoverageComplete": true,
+    "chapter3SourceFixtureSuiteComplete": true,
+    "vollschriftExecutableSpecificationComplete": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "conformancePromotionStatus": "NOT_READY",
+    "profileIdsFrozen": false
+  },
+  "phaseBoundary": {
+    "phase15_2Closed": true,
+    "nextPhase": "15.3",
+    "nextPhaseTitle": "Kurzschrift Normative Audit",
+    "implementationStillDeferredTo": "15.5",
+    "germanSdkStillDeferredTo": "15.6",
+    "microsoft365GermanTabStillDeferredTo": "15.7"
+  },
+  "closureRationale": "Chapter 3 normative rule-family coverage, formal contracts, source fixtures and the available non-normative Liblouis static comparison are complete. Remaining dependencies concern Chapter 4 interaction or future executable resolution policies and therefore do not block closure of the Vollschrift standards audit."
+}

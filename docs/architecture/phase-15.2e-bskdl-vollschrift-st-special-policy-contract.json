@@ -1,0 +1,315 @@
+{
+  "phase": "15.2E",
+  "title": "BSKDL Vollschrift st Special Policy Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "inherits": {
+    "inventory": "15.2A",
+    "eligibilityContract": "15.2B",
+    "morphologicalContract": "15.2C",
+    "pronunciationContract": "15.2D"
+  },
+  "stPolicy": {
+    "braille": "⠾",
+    "spokenSyllableGeneralException": true,
+    "explicitExclusions": [
+      "STH_WHEN_TH_IS_ONE_SOUND",
+      "SST_DOUBLE_S_PRIORITY",
+      "ST_DOT_WHEN_MEANING_SANKT"
+    ],
+    "compoundBoundaryStillApplies": true,
+    "derivationalBoundaryStillApplies": true,
+    "unconditionalPermission": false
+  },
+  "rules": [
+    {
+      "id": "DE-VOLL-ST-001",
+      "kind": "ST_CONTRACTION_IDENTITY",
+      "summary": "The Vollschrift st Lautgruppenkürzung is the dedicated Braille cell for st.",
+      "print": "st",
+      "braille": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      },
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-002",
+      "kind": "SPOKEN_SYLLABLE_GENERAL_EXCEPTION",
+      "summary": "The general Vollschrift prohibition on crossing spoken-syllable boundaries does not apply to the st contraction.",
+      "generalRule": "DE-VOLL-PRON-001",
+      "exception": "st",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-003",
+      "kind": "GENERAL_BOUNDARY_RULES_STILL_APPLY",
+      "summary": "The special spoken-syllable exception for st does not cancel independent compound or derivational boundary prohibitions.",
+      "evidence": [
+        "Dienstag"
+      ],
+      "evidenceRole": "CROSS_RULE_SYNTHESIS",
+      "normative": false,
+      "architecturalInference": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-004",
+      "kind": "STH_TH_SINGLE_SOUND_EXCLUSION",
+      "summary": "st is not contracted in sth when th is pronounced as one sound.",
+      "pattern": "sth",
+      "condition": "TH_PRONOUNCED_AS_ONE_SOUND",
+      "decision": "KEEP_ST_LETTERS",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-005",
+      "kind": "STH_SOURCE_EXAMPLES",
+      "examples": [
+        "Ästhet",
+        "Asthma",
+        "Esther"
+      ],
+      "decision": "KEEP_ST_LETTERS",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-006",
+      "kind": "SST_DOUBLE_S_PRIORITY_EXCLUSION",
+      "summary": "st is not contracted in sst because the Kurzschrift double-s contraction has priority in the established rule.",
+      "pattern": "sst",
+      "decision": "KEEP_ST_LETTERS",
+      "chapter4Dependency": "KURZSCHRIFT_DOUBLE_S_PRIORITY",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-007",
+      "kind": "SST_SOURCE_EXAMPLE",
+      "examples": [
+        "bewusst"
+      ],
+      "decision": "KEEP_ST_LETTERS",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-008",
+      "kind": "SANKT_ABBREVIATION_EXCLUSION",
+      "summary": "The st contraction is not used in the abbreviation St. when it stands for Sankt.",
+      "printForm": "St.",
+      "semanticExpansion": "Sankt",
+      "decision": "KEEP_ST_LETTERS",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-009",
+      "kind": "SANKT_SOURCE_EXAMPLES",
+      "examples": [
+        "St. Gallen",
+        "St. Pölten",
+        "St. Pauli"
+      ],
+      "decision": "KEEP_ST_LETTERS",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-010",
+      "kind": "SEMANTIC_ABBREVIATION_REQUIREMENT",
+      "summary": "The source exclusion is tied to St. when the abbreviation represents Sankt; the document does not establish a blanket rule for every possible occurrence of the character sequence St.",
+      "evidenceRole": "DIRECT_SCOPE_RESTRAINT",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-011",
+      "kind": "ST_POLICY_NOT_GLOBAL_PERMISSION",
+      "summary": "Being exempt from the spoken-syllable boundary rule is not equivalent to an unconditional permission to contract st.",
+      "architecturalInference": true,
+      "normative": false,
+      "evidenceRole": "SYNTHESIS_OF_EXPLICIT_ST_EXCLUSIONS",
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-ST-012",
+      "kind": "CHAPTER4_PRIORITY_DEPENDENCY",
+      "summary": "The rationale for the sst exclusion depends on a Kurzschrift double-s priority rule that is referenced here but not yet independently audited.",
+      "dependency": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "dependencyStatus": "NOT_YET_AUDITED",
+      "architecturalInference": true,
+      "normative": false,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-VOLL-ST-CASE-001",
+      "input": "Stammgäste",
+      "candidate": "st",
+      "expectedDecision": "CONTRACT_WHERE_OTHER_RULES_ALLOW",
+      "rule": "DE-VOLL-ST-001"
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-002",
+      "input": "Dienstag",
+      "candidate": "st",
+      "crossesCompoundSeam": true,
+      "spokenSyllableExceptionApplies": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "COMPOUND_SEAM_STILL_BLOCKS",
+      "rules": [
+        "DE-VOLL-ST-002",
+        "DE-VOLL-ST-003"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-003",
+      "input": "Ästhet",
+      "candidate": "st",
+      "context": "sth",
+      "thPronouncedAsOneSound": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-004",
+      "input": "Asthma",
+      "candidate": "st",
+      "context": "sth",
+      "thPronouncedAsOneSound": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-005",
+      "input": "Esther",
+      "candidate": "st",
+      "context": "sth",
+      "thPronouncedAsOneSound": true,
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-006",
+      "input": "bewusst",
+      "candidate": "st",
+      "context": "sst",
+      "expectedDecision": "KEEP_LETTERS",
+      "dependency": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "rules": [
+        "DE-VOLL-ST-006",
+        "DE-VOLL-ST-007"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-007",
+      "input": "St. Gallen",
+      "candidate": "st",
+      "abbreviationMeaning": "Sankt",
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-008",
+      "input": "St. Pölten",
+      "candidate": "st",
+      "abbreviationMeaning": "Sankt",
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-009",
+      "input": "St. Pauli",
+      "candidate": "st",
+      "abbreviationMeaning": "Sankt",
+      "expectedDecision": "KEEP_LETTERS",
+      "rules": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ]
+    },
+    {
+      "id": "DE-VOLL-ST-CASE-010",
+      "input": "UNSEEN_ST_DOT_ABBREVIATION",
+      "candidate": "st",
+      "printForm": "St.",
+      "abbreviationMeaning": "UNKNOWN",
+      "expectedState": "SEMANTIC_SCOPE_UNRESOLVED",
+      "rule": "DE-VOLL-ST-010",
+      "normativeExample": false
+    }
+  ],
+  "architecturalFinding": {
+    "stRequiresDedicatedResolver": true,
+    "stCannotUseOnlyGenericPronunciationRule": true,
+    "semanticAbbreviationMeaningMayMatter": true,
+    "chapter4PriorityDependencyExists": true,
+    "unknownAbbreviationMeaningMustRemainRepresentable": true
+  },
+  "openDependencies": [
+    {
+      "id": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "status": "NOT_YET_AUDITED",
+      "referencedBy": [
+        "DE-VOLL-ST-006",
+        "DE-VOLL-ST-012"
+      ]
+    },
+    {
+      "id": "ABBREVIATION_SEMANTIC_RESOLUTION_POLICY",
+      "status": "NOT_YET_FROZEN",
+      "reason": "The St. exclusion is explicitly conditioned on the meaning Sankt."
+    }
+  ],
+  "coverage": {
+    "formalRules": 12,
+    "validationCases": 10,
+    "sthExamples": 3,
+    "sstExamples": 1,
+    "sanktExamples": 3,
+    "architecturalUnknownCases": 1
+  },
+  "promotionPolicy": {
+    "stSpecialPolicyContractComplete": true,
+    "chapter4DoubleSPriorityResolved": false,
+    "abbreviationSemanticPolicyResolved": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}

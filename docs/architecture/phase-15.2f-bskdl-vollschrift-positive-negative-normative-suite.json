@@ -1,0 +1,1255 @@
+{
+  "phase": "15.2F",
+  "title": "BSKDL Vollschrift Positive / Negative Normative Suite",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "inherits": {
+    "inventory": "15.2A",
+    "eligibilityContract": "15.2B",
+    "morphologicalContract": "15.2C",
+    "pronunciationContract": "15.2D",
+    "stSpecialPolicy": "15.2E"
+  },
+  "fixtureClasses": {
+    "MUST_CONTRACT": {
+      "meaning": "The identified source candidate must be contracted, subject only to the context expressed by the source case."
+    },
+    "MUST_NOT_CONTRACT": {
+      "meaning": "The identified source candidate must remain uncontracted."
+    },
+    "PARTIAL_CANDIDATE_FALLBACK": {
+      "meaning": "A larger candidate is rejected while a smaller overlapping candidate remains eligible."
+    },
+    "DEFERRED_DEPENDENCY": {
+      "meaning": "Chapter 3 establishes the observed behavior, but part of its rationale depends on a later chapter that has not yet been independently audited."
+    }
+  },
+  "fixtures": [
+    {
+      "id": "DE-VOLL-NORM-CASE-001",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Baum",
+      "candidate": "au",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-003"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠃⠡⠍",
+        "codepoints": [
+          "U+2803",
+          "U+2821",
+          "U+280D"
+        ],
+        "dots": [
+          "12",
+          "16",
+          "134"
+        ],
+        "cellCount": 3
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-002",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "heute",
+      "candidate": "eu",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-003"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠓⠣⠞⠑",
+        "codepoints": [
+          "U+2813",
+          "U+2823",
+          "U+281E",
+          "U+2811"
+        ],
+        "dots": [
+          "125",
+          "126",
+          "2345",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-003",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Eisen",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-003"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠩⠎⠑⠝",
+        "codepoints": [
+          "U+2829",
+          "U+280E",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "146",
+          "234",
+          "15",
+          "1345"
+        ],
+        "cellCount": 4
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-004",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Docht",
+      "candidate": "ch",
+      "ruleRefs": [
+        "DE-VOLL-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠙⠕⠹⠞",
+        "codepoints": [
+          "U+2819",
+          "U+2815",
+          "U+2839",
+          "U+281E"
+        ],
+        "dots": [
+          "145",
+          "135",
+          "1456",
+          "2345"
+        ],
+        "cellCount": 4
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-005",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Asche",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-010"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠁⠱⠑",
+        "codepoints": [
+          "U+2801",
+          "U+2831",
+          "U+2811"
+        ],
+        "dots": [
+          "1",
+          "156",
+          "15"
+        ],
+        "cellCount": 3
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-006",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Stammgäste",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-ST-001"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠾⠁⠍⠍⠛⠜⠾⠑",
+        "codepoints": [
+          "U+283E",
+          "U+2801",
+          "U+280D",
+          "U+280D",
+          "U+281B",
+          "U+281C",
+          "U+283E",
+          "U+2811"
+        ],
+        "dots": [
+          "23456",
+          "1",
+          "134",
+          "134",
+          "1245",
+          "345",
+          "23456",
+          "15"
+        ],
+        "cellCount": 8
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-007",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Bäume",
+      "candidate": "äu",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-003"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠃⠌⠍⠑",
+        "codepoints": [
+          "U+2803",
+          "U+280C",
+          "U+280D",
+          "U+2811"
+        ],
+        "dots": [
+          "12",
+          "34",
+          "134",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-008",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Liebe",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-002",
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-006"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠇⠬⠃⠑",
+        "codepoints": [
+          "U+2807",
+          "U+282C",
+          "U+2803",
+          "U+2811"
+        ],
+        "dots": [
+          "123",
+          "346",
+          "12",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-009",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "dienen",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-006"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-010",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Konnie",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-006"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-011",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "apple pie",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-006"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-012",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Beige",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-013",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Marseille",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-014",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Rio de Janeiro",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-015",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Au",
+      "candidate": "au",
+      "ruleRefs": [
+        "DE-VOLL-013"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-016",
+      "fixtureClass": "MUST_CONTRACT",
+      "input": "Ei",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-013"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-017",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Wolgaufer",
+      "candidate": "au",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-018",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Wegeunfall",
+      "candidate": "eu",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-019",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Nordseeinsel",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-020",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Comicheft",
+      "candidate": "ch",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-021",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Regierungschefin",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-022",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Dienstag",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "COMPOUND_WORD_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-023",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "beurteilen",
+      "candidate": "eu",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-004"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "DERIVATIONAL_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-024",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "geimpft",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-004"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "DERIVATIONAL_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-025",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "eingeigelt",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-004"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "DERIVATIONAL_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-026",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Reimport",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-004"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false,
+      "evidenceNote": "DERIVATIONAL_SEAM"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-027",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Vietnam",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-007"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-028",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Premierminister",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-007"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-029",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Interview",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-007"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-030",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Pierre",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-007"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-031",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Kapernaum",
+      "candidate": "au",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠅⠁⠏⠑⠗⠝⠁⠥⠍",
+        "codepoints": [
+          "U+2805",
+          "U+2801",
+          "U+280F",
+          "U+2811",
+          "U+2817",
+          "U+281D",
+          "U+2801",
+          "U+2825",
+          "U+280D"
+        ],
+        "dots": [
+          "13",
+          "1",
+          "1234",
+          "15",
+          "1235",
+          "1345",
+          "1",
+          "136",
+          "134"
+        ],
+        "cellCount": 9
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-032",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Museum",
+      "candidate": "eu",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠍⠥⠎⠑⠥⠍",
+        "codepoints": [
+          "U+280D",
+          "U+2825",
+          "U+280E",
+          "U+2811",
+          "U+2825",
+          "U+280D"
+        ],
+        "dots": [
+          "134",
+          "136",
+          "234",
+          "15",
+          "136",
+          "134"
+        ],
+        "cellCount": 6
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-033",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Koffein",
+      "candidate": "ei",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠅⠕⠋⠋⠑⠊⠝",
+        "codepoints": [
+          "U+2805",
+          "U+2815",
+          "U+280B",
+          "U+280B",
+          "U+2811",
+          "U+280A",
+          "U+281D"
+        ],
+        "dots": [
+          "13",
+          "135",
+          "124",
+          "124",
+          "15",
+          "24",
+          "1345"
+        ],
+        "cellCount": 7
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-034",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Jubiläum",
+      "candidate": "äu",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠚⠥⠃⠊⠇⠜⠥⠍",
+        "codepoints": [
+          "U+281A",
+          "U+2825",
+          "U+2803",
+          "U+280A",
+          "U+2807",
+          "U+281C",
+          "U+2825",
+          "U+280D"
+        ],
+        "dots": [
+          "245",
+          "136",
+          "12",
+          "24",
+          "123",
+          "345",
+          "136",
+          "134"
+        ],
+        "cellCount": 8
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-035",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Familie",
+      "candidate": "ie",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠋⠁⠍⠊⠇⠊⠑",
+        "codepoints": [
+          "U+280B",
+          "U+2801",
+          "U+280D",
+          "U+280A",
+          "U+2807",
+          "U+280A",
+          "U+2811"
+        ],
+        "dots": [
+          "124",
+          "1",
+          "134",
+          "24",
+          "123",
+          "24",
+          "15"
+        ],
+        "cellCount": 7
+      },
+      "sourceRenderingDirect": true
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-036",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Scherzo",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-PRON-010",
+        "DE-VOLL-PRON-011"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "sourceRenderingDirect": false
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-037",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Ästhet",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠜⠎⠞⠓⠑⠞",
+        "codepoints": [
+          "U+281C",
+          "U+280E",
+          "U+281E",
+          "U+2813",
+          "U+2811",
+          "U+281E"
+        ],
+        "dots": [
+          "345",
+          "234",
+          "2345",
+          "125",
+          "15",
+          "2345"
+        ],
+        "cellCount": 6
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "STH_WHERE_TH_IS_ONE_SOUND"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-038",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Asthma",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠁⠎⠞⠓⠍⠁",
+        "codepoints": [
+          "U+2801",
+          "U+280E",
+          "U+281E",
+          "U+2813",
+          "U+280D",
+          "U+2801"
+        ],
+        "dots": [
+          "1",
+          "234",
+          "2345",
+          "125",
+          "134",
+          "1"
+        ],
+        "cellCount": 6
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "STH_WHERE_TH_IS_ONE_SOUND"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-039",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "Esther",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-004",
+        "DE-VOLL-ST-005"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠑⠎⠞⠓⠑⠗",
+        "codepoints": [
+          "U+2811",
+          "U+280E",
+          "U+281E",
+          "U+2813",
+          "U+2811",
+          "U+2817"
+        ],
+        "dots": [
+          "15",
+          "234",
+          "2345",
+          "125",
+          "15",
+          "1235"
+        ],
+        "cellCount": 6
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "STH_WHERE_TH_IS_ONE_SOUND"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-040",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "St. Gallen",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠎⠞⠄⠀⠛⠁⠇⠇⠑⠝",
+        "codepoints": [
+          "U+280E",
+          "U+281E",
+          "U+2804",
+          "U+2800",
+          "U+281B",
+          "U+2801",
+          "U+2807",
+          "U+2807",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "234",
+          "2345",
+          "3",
+          "0",
+          "1245",
+          "1",
+          "123",
+          "123",
+          "15",
+          "1345"
+        ],
+        "cellCount": 10
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "ST_DOT_MEANS_SANKT"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-041",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "St. Pölten",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠎⠞⠄⠀⠏⠪⠇⠞⠑⠝",
+        "codepoints": [
+          "U+280E",
+          "U+281E",
+          "U+2804",
+          "U+2800",
+          "U+280F",
+          "U+282A",
+          "U+2807",
+          "U+281E",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "234",
+          "2345",
+          "3",
+          "0",
+          "1234",
+          "246",
+          "123",
+          "2345",
+          "15",
+          "1345"
+        ],
+        "cellCount": 10
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "ST_DOT_MEANS_SANKT"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-042",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "input": "St. Pauli",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-008",
+        "DE-VOLL-ST-009"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠎⠞⠄⠀⠏⠡⠇⠊",
+        "codepoints": [
+          "U+280E",
+          "U+281E",
+          "U+2804",
+          "U+2800",
+          "U+280F",
+          "U+2821",
+          "U+2807",
+          "U+280A"
+        ],
+        "dots": [
+          "234",
+          "2345",
+          "3",
+          "0",
+          "1234",
+          "16",
+          "123",
+          "24"
+        ],
+        "cellCount": 8
+      },
+      "sourceRenderingDirect": true,
+      "evidenceNote": "ST_DOT_MEANS_SANKT"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-043",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "input": "Gässchen",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "sourceRenderingDirect": false,
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-044",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "input": "Häschen",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "sourceRenderingDirect": false,
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-045",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "input": "Häuschen",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-MORPH-007",
+        "DE-VOLL-MORPH-008"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "sourceRenderingDirect": false,
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-046",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "input": "Bruschetta",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-PRON-009",
+        "DE-VOLL-002"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "expectedBraille": {
+        "unicode": "⠃⠗⠥⠎⠹⠑⠞⠞⠁",
+        "codepoints": [
+          "U+2803",
+          "U+2817",
+          "U+2825",
+          "U+280E",
+          "U+2839",
+          "U+2811",
+          "U+281E",
+          "U+281E",
+          "U+2801"
+        ],
+        "dots": [
+          "12",
+          "1235",
+          "136",
+          "234",
+          "1456",
+          "15",
+          "2345",
+          "2345",
+          "1"
+        ],
+        "cellCount": 9
+      },
+      "sourceRenderingDirect": true,
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-047",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "input": "Eschatologie",
+      "candidate": "sch",
+      "ruleRefs": [
+        "DE-VOLL-PRON-012"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "REJECT_SCH_ALLOW_CH",
+      "expectedBraille": {
+        "unicode": "⠑⠎⠹⠁⠞⠕⠇⠕⠛⠬",
+        "codepoints": [
+          "U+2811",
+          "U+280E",
+          "U+2839",
+          "U+2801",
+          "U+281E",
+          "U+2815",
+          "U+2807",
+          "U+2815",
+          "U+281B",
+          "U+282C"
+        ],
+        "dots": [
+          "15",
+          "234",
+          "1456",
+          "1",
+          "2345",
+          "135",
+          "123",
+          "135",
+          "1245",
+          "346"
+        ],
+        "cellCount": 10
+      },
+      "sourceRenderingDirect": true,
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch"
+    },
+    {
+      "id": "DE-VOLL-NORM-CASE-048",
+      "fixtureClass": "DEFERRED_DEPENDENCY",
+      "input": "bewusst",
+      "candidate": "st",
+      "ruleRefs": [
+        "DE-VOLL-ST-006",
+        "DE-VOLL-ST-007",
+        "DE-VOLL-ST-012"
+      ],
+      "normativeExample": true,
+      "sourceEvidence": "BSKDL_CHAPTER_3",
+      "expectedDecision": "KEEP_ST_LETTERS",
+      "expectedBraille": {
+        "unicode": "⠃⠑⠺⠥⠎⠎⠞",
+        "codepoints": [
+          "U+2803",
+          "U+2811",
+          "U+283A",
+          "U+2825",
+          "U+280E",
+          "U+280E",
+          "U+281E"
+        ],
+        "dots": [
+          "12",
+          "15",
+          "2456",
+          "136",
+          "234",
+          "234",
+          "2345"
+        ],
+        "cellCount": 7
+      },
+      "sourceRenderingDirect": true,
+      "dependency": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "evidenceNote": "The Chapter 3 output and st exclusion are normative; independent verification of the double-s priority rationale is deferred to the Chapter 4 audit."
+    }
+  ],
+  "nonFixtureNormativeWitnesses": [
+    {
+      "input": "Bordeaux",
+      "role": "MULTI_VOWEL_PRONUNCIATION_WITNESS",
+      "reason": "Chapter 3 uses Bordeaux to illustrate a pronunciation context involving up to three vowels. It is retained as rule evidence rather than promoted to a more specific candidate/output fixture without additional interpretation."
+    }
+  ],
+  "coverage": {
+    "normativeFixtures": 48,
+    "mustContract": 16,
+    "mustNotContract": 26,
+    "partialCandidateFallback": 5,
+    "deferredDependency": 1,
+    "directSourceRenderings": 24,
+    "ruleReferencesResolved": true,
+    "sixDotValidation": true
+  },
+  "architecturalFinding": {
+    "suiteIsSpecificationEvidence": true,
+    "suiteIsExecutableTranslator": false,
+    "candidateLevelAssertionsSupported": true,
+    "fullBrailleOutputAssertedOnlyWhenDirectlyCaptured": true,
+    "chapter4DependencyRemainsExplicit": true
+  },
+  "openDependencies": [
+    {
+      "id": "CHAPTER_4_DOUBLE_S_PRIORITY",
+      "status": "NOT_YET_AUDITED",
+      "fixtures": [
+        "bewusst"
+      ]
+    },
+    {
+      "id": "PRONUNCIATION_PROVIDER",
+      "status": "NOT_YET_FROZEN",
+      "blocksRuntimeGeneralization": true,
+      "blocksChapter3SourceFixtureAudit": false
+    },
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "status": "NOT_YET_FROZEN",
+      "blocksRuntimeGeneralization": true,
+      "blocksChapter3SourceFixtureAudit": false
+    }
+  ],
+  "promotionPolicy": {
+    "normativeSourceFixtureSuiteComplete": true,
+    "chapter3RuntimeConformanceComplete": false,
+    "chapter4DependencyResolved": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}

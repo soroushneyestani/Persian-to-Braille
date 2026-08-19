@@ -1,0 +1,796 @@
+{
+  "phase": "15.2B",
+  "title": "BSKDL Vollschrift Formal Contraction Eligibility Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "inherits": {
+    "phase": "15.1O",
+    "profile": "BASISSCHRIFT",
+    "allBaseSignsAndRulesActive": true
+  },
+  "contractionInventory": [
+    {
+      "id": "DE-VOLL-LG-AU",
+      "print": "au",
+      "braille": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-EU",
+      "print": "eu",
+      "braille": {
+        "unicode": "⠣",
+        "codepoints": [
+          "U+2823"
+        ],
+        "dots": [
+          "126"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-EI",
+      "print": "ei",
+      "braille": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-CH",
+      "print": "ch",
+      "braille": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-SCH",
+      "print": "sch",
+      "braille": {
+        "unicode": "⠱",
+        "codepoints": [
+          "U+2831"
+        ],
+        "dots": [
+          "156"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-ST",
+      "print": "st",
+      "braille": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-AEU",
+      "print": "äu",
+      "braille": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-IE",
+      "print": "ie",
+      "braille": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "DE-VOLL-001",
+      "kind": "BASISSCHRIFT_INHERITANCE",
+      "summary": "All signs and rules of Basisschrift remain active in Vollschrift.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-002",
+      "kind": "CONTRACTION_SET",
+      "summary": "Vollschrift adds exactly eight Lautgruppenkürzungen.",
+      "contractions": [
+        "au",
+        "eu",
+        "ei",
+        "ch",
+        "sch",
+        "st",
+        "äu",
+        "ie"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-003",
+      "kind": "COMPOUND_SEAM_PROHIBITION",
+      "summary": "A contraction must not cross a compound-word seam.",
+      "decision": "FORBID_IF_CANDIDATE_CROSSES_WORTFUGE",
+      "appliesTo": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-004",
+      "kind": "DERIVATIONAL_SEAM_PROHIBITION",
+      "summary": "Clearly recognizable prefixes and suffixes must not be connected to the word stem by a contraction.",
+      "decision": "FORBID_IF_CANDIDATE_CROSSES_PREFIX_OR_SUFFIX_BOUNDARY",
+      "appliesTo": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-005",
+      "kind": "SPOKEN_SYLLABLE_BOUNDARY",
+      "summary": "Except for st, Vollschrift contractions must not cross spoken-syllable boundaries.",
+      "decision": "FORBID_IF_CANDIDATE_CROSSES_SPOKEN_SYLLABLE_BOUNDARY",
+      "exception": "st",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-006",
+      "kind": "VOWEL_GROUP_PRONUNCIATION",
+      "summary": "Vowel-group contractions may be used only when the relevant letter sequence is pronounced as one sound or diphthong.",
+      "contractions": [
+        "au",
+        "eu",
+        "ei",
+        "äu",
+        "ie"
+      ],
+      "foreignPronunciationMayStillQualify": true,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-007",
+      "kind": "IE_PRONUNCIATION",
+      "summary": "The spelling ie is contractible when it forms the relevant single sound/diphthong and must remain uncontracted otherwise.",
+      "eligibleExamples": [
+        "dienen",
+        "Konnie",
+        "apple pie"
+      ],
+      "ineligibleExamples": [
+        "Vietnam",
+        "Premierminister",
+        "Interview",
+        "Pierre"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-008",
+      "kind": "EI_FOREIGN_PRONUNCIATION",
+      "summary": "The ei contraction remains permitted in source examples whose pronunciation differs from ordinary German pronunciation.",
+      "eligibleExamples": [
+        "Beige",
+        "Marseille",
+        "Rio de Janeiro"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-009",
+      "kind": "SCH_PRONUNCIATION",
+      "summary": "The sch contraction is permitted only when the letters are pronounced as one sound.",
+      "ineligibleExamples": [
+        "Scherzo"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-010",
+      "kind": "ST_STH_EXCEPTION",
+      "summary": "The st contraction is not used in sth when th is pronounced as a single sound.",
+      "examples": [
+        "Ästhet",
+        "Asthma",
+        "Esther"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-011",
+      "kind": "ST_SST_PRIORITY_EXCEPTION",
+      "summary": "The st contraction is not used in sst because Kurzschrift double-s contraction priority governs the established rule.",
+      "examples": [
+        "bewusst"
+      ],
+      "chapter4Dependency": "DOUBLE_S_PRIORITY_NOT_YET_AUDITED",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-012",
+      "kind": "ST_SANKT_ABBREVIATION_EXCEPTION",
+      "summary": "The st contraction is not used in the abbreviation St. when it represents Sankt.",
+      "examples": [
+        "St. Gallen",
+        "St. Pölten",
+        "St. Pauli"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-013",
+      "kind": "STANDALONE_WORD_ELIGIBILITY",
+      "summary": "A Vollschrift Lautgruppenkürzung may be used as an independent word.",
+      "examples": [
+        "Au",
+        "Ei"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-014",
+      "kind": "ORTHOGRAPHIC_SUBSTRING_NOT_SUFFICIENT",
+      "summary": "The existence of a matching character sequence alone is insufficient to decide whether a contraction may be used.",
+      "architecturalInference": true,
+      "normative": false,
+      "evidenceRole": "SYNTHESIS_OF_CHAPTER_3_RESTRICTIONS",
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-VOLL-CASE-001",
+      "input": "Baum",
+      "candidate": "au",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠃⠡⠍",
+        "codepoints": [
+          "U+2803",
+          "U+2821",
+          "U+280D"
+        ],
+        "dots": [
+          "12",
+          "16",
+          "134"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-002",
+      "input": "heute",
+      "candidate": "eu",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠓⠣⠞⠑",
+        "codepoints": [
+          "U+2813",
+          "U+2823",
+          "U+281E",
+          "U+2811"
+        ],
+        "dots": [
+          "125",
+          "126",
+          "2345",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-003",
+      "input": "Eisen",
+      "candidate": "ei",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠩⠎⠑⠝",
+        "codepoints": [
+          "U+2829",
+          "U+280E",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "146",
+          "234",
+          "15",
+          "1345"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-004",
+      "input": "Docht",
+      "candidate": "ch",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠙⠕⠹⠞",
+        "codepoints": [
+          "U+2819",
+          "U+2815",
+          "U+2839",
+          "U+281E"
+        ],
+        "dots": [
+          "145",
+          "135",
+          "1456",
+          "2345"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-VOLL-002"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-005",
+      "input": "Asche",
+      "candidate": "sch",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠁⠱⠑",
+        "codepoints": [
+          "U+2801",
+          "U+2831",
+          "U+2811"
+        ],
+        "dots": [
+          "1",
+          "156",
+          "15"
+        ],
+        "cellCount": 3
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-009"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-006",
+      "input": "Stammgäste",
+      "candidate": "st",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠾⠁⠍⠍⠛⠜⠾⠑",
+        "codepoints": [
+          "U+283E",
+          "U+2801",
+          "U+280D",
+          "U+280D",
+          "U+281B",
+          "U+281C",
+          "U+283E",
+          "U+2811"
+        ],
+        "dots": [
+          "23456",
+          "1",
+          "134",
+          "134",
+          "1245",
+          "345",
+          "23456",
+          "15"
+        ],
+        "cellCount": 8
+      },
+      "rules": [
+        "DE-VOLL-002"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-007",
+      "input": "Bäume",
+      "candidate": "äu",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠃⠌⠍⠑",
+        "codepoints": [
+          "U+2803",
+          "U+280C",
+          "U+280D",
+          "U+2811"
+        ],
+        "dots": [
+          "12",
+          "34",
+          "134",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-008",
+      "input": "Liebe",
+      "candidate": "ie",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠇⠬⠃⠑",
+        "codepoints": [
+          "U+2807",
+          "U+282C",
+          "U+2803",
+          "U+2811"
+        ],
+        "dots": [
+          "123",
+          "346",
+          "12",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "rules": [
+        "DE-VOLL-002",
+        "DE-VOLL-006",
+        "DE-VOLL-007"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-009",
+      "input": "Wolgaufer",
+      "candidate": "au",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-010",
+      "input": "Wegeunfall",
+      "candidate": "eu",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-011",
+      "input": "Nordseeinsel",
+      "candidate": "ei",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-012",
+      "input": "Comicheft",
+      "candidate": "ch",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-013",
+      "input": "Regierungschefin",
+      "candidate": "sch",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-014",
+      "input": "Dienstag",
+      "candidate": "st",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_COMPOUND_WORD_SEAM",
+      "rule": "DE-VOLL-003"
+    },
+    {
+      "id": "DE-VOLL-CASE-015",
+      "input": "beurteilen",
+      "candidate": "eu",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_DERIVATIONAL_SEAM",
+      "rule": "DE-VOLL-004"
+    },
+    {
+      "id": "DE-VOLL-CASE-016",
+      "input": "geimpft",
+      "candidate": "ei",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_DERIVATIONAL_SEAM",
+      "rule": "DE-VOLL-004"
+    },
+    {
+      "id": "DE-VOLL-CASE-017",
+      "input": "Reimport",
+      "candidate": "ei",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "CROSSES_DERIVATIONAL_SEAM",
+      "rule": "DE-VOLL-004"
+    },
+    {
+      "id": "DE-VOLL-CASE-018",
+      "input": "Häuschen",
+      "candidate": "sch",
+      "expectedDecision": "KEEP_S_AND_CONTRACT_CH",
+      "reason": "SCH_CROSSES_SUFFIX_SEAM_BUT_CH_IS_INTERNAL",
+      "rules": [
+        "DE-VOLL-004",
+        "DE-VOLL-002"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-019",
+      "input": "Vietnam",
+      "candidate": "ie",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "NOT_SINGLE_SOUND_OR_DIPHTHONG",
+      "rules": [
+        "DE-VOLL-006",
+        "DE-VOLL-007"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-020",
+      "input": "Pierre",
+      "candidate": "ie",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "NOT_SINGLE_SOUND_OR_DIPHTHONG",
+      "rules": [
+        "DE-VOLL-006",
+        "DE-VOLL-007"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-021",
+      "input": "Scherzo",
+      "candidate": "sch",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "SCH_NOT_ONE_SOUND",
+      "rule": "DE-VOLL-009"
+    },
+    {
+      "id": "DE-VOLL-CASE-022",
+      "input": "Beige",
+      "candidate": "ei",
+      "expectedDecision": "CONTRACT",
+      "reason": "SOURCE_PRONUNCIATION_ALLOWS_CONTRACTION",
+      "rules": [
+        "DE-VOLL-006",
+        "DE-VOLL-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-CASE-023",
+      "input": "Ästhet",
+      "candidate": "st",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "STH_WHERE_TH_IS_ONE_SOUND",
+      "rule": "DE-VOLL-010"
+    },
+    {
+      "id": "DE-VOLL-CASE-024",
+      "input": "Asthma",
+      "candidate": "st",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "STH_WHERE_TH_IS_ONE_SOUND",
+      "rule": "DE-VOLL-010"
+    },
+    {
+      "id": "DE-VOLL-CASE-025",
+      "input": "bewusst",
+      "candidate": "st",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "SST_DOUBLE_S_PRIORITY",
+      "rule": "DE-VOLL-011"
+    },
+    {
+      "id": "DE-VOLL-CASE-026",
+      "input": "St. Gallen",
+      "candidate": "st",
+      "expectedDecision": "KEEP_LETTERS",
+      "reason": "ST_ABBREVIATES_SANKT",
+      "rule": "DE-VOLL-012"
+    },
+    {
+      "id": "DE-VOLL-CASE-027",
+      "input": "Au",
+      "candidate": "au",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "standaloneWord": true,
+      "rule": "DE-VOLL-013"
+    },
+    {
+      "id": "DE-VOLL-CASE-028",
+      "input": "Ei",
+      "candidate": "ei",
+      "expectedDecision": "CONTRACT",
+      "expectedBraille": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "standaloneWord": true,
+      "rule": "DE-VOLL-013"
+    }
+  ],
+  "decisionPipeline": {
+    "status": "ARCHITECTURAL_INFERENCE_NOT_NORMATIVE_ORDER",
+    "steps": [
+      {
+        "step": 1,
+        "check": "CANDIDATE_EXISTS"
+      },
+      {
+        "step": 2,
+        "check": "COMPOUND_WORD_SEAM",
+        "failure": "KEEP_LETTERS"
+      },
+      {
+        "step": 3,
+        "check": "DERIVATIONAL_SEAM",
+        "failure": "KEEP_LETTERS"
+      },
+      {
+        "step": 4,
+        "check": "SPOKEN_SYLLABLE_BOUNDARY",
+        "failure": "KEEP_LETTERS",
+        "exception": "ST_HAS_SPECIAL_POLICY"
+      },
+      {
+        "step": 5,
+        "check": "PRONUNCIATION_ELIGIBILITY",
+        "failure": "KEEP_LETTERS"
+      },
+      {
+        "step": 6,
+        "check": "SPECIAL_SCH_OR_ST_POLICY",
+        "failure": "KEEP_LETTERS"
+      },
+      {
+        "step": 7,
+        "result": "CONTRACT"
+      }
+    ]
+  },
+  "architecturalFinding": {
+    "simpleSubstringReplacementForbidden": true,
+    "candidateDetectionSeparateFromEligibility": true,
+    "eligibilityRequiresMorphologicalContext": true,
+    "eligibilityMayRequirePronunciation": true,
+    "stNeedsDedicatedResolver": true,
+    "schNeedsPronunciationResolver": true,
+    "fallbackOnIneligibleCandidate": "KEEP_SOURCE_LETTERS",
+    "pipelineOrderIsImplementationDesign": true,
+    "pipelineOrderNormative": false
+  },
+  "openDependencies": [
+    {
+      "id": "KURZSCHRIFT_DOUBLE_S_PRIORITY",
+      "source": "Chapter 4",
+      "status": "NOT_YET_AUDITED",
+      "referencedBy": "DE-VOLL-011"
+    },
+    {
+      "id": "PRONUNCIATION_RESOLUTION_POLICY",
+      "status": "NOT_YET_FROZEN",
+      "reason": "Chapter 3 makes pronunciation normatively relevant but does not define a software pronunciation source."
+    },
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_POLICY",
+      "status": "NOT_YET_FROZEN",
+      "reason": "Compound and derivational seams must be known before contraction eligibility can be resolved."
+    }
+  ],
+  "coverage": {
+    "formalRules": 14,
+    "validationCases": 28,
+    "contractions": 8,
+    "positiveCoreMappings": 8,
+    "compoundNegativeCases": 6,
+    "derivationalCases": 4,
+    "pronunciationCases": 4,
+    "stSpecialCases": 4,
+    "standaloneCases": 2
+  },
+  "promotionPolicy": {
+    "vollschriftSpecificationComplete": false,
+    "eligibilityContractComplete": true,
+    "chapter4DependenciesResolved": false,
+    "pronunciationPolicyResolved": false,
+    "morphologicalPolicyResolved": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}
