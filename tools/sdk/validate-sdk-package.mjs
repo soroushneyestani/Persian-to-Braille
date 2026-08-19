@@ -455,6 +455,8 @@ for (
   );
 }
 
+const musicPackageDir = resolve(packages.sdk, "..", "music");
+
 const coreManifest =
   readJson(
     resolve(
@@ -462,6 +464,14 @@ const coreManifest =
       "package.json",
     ),
   );
+const musicManifest =
+  readJson(
+    resolve(
+      musicPackageDir,
+      "package.json",
+    ),
+  );
+
 const sdkManifest =
   readJson(
     resolve(
@@ -486,6 +496,13 @@ assert(
   "SDK development manifest must keep the workspace:* Core dependency.",
 );
 
+
+assert(
+  sdkManifest.dependencies?.[
+    "@persian-braille/music"
+  ] === "workspace:*",
+  "SDK development manifest must keep the workspace:* Music dependency.",
+);
 const sdkReadme =
   readFileSync(
     resolve(
@@ -544,12 +561,29 @@ try {
     },
   );
 
+  const musicPackDir =
+    resolve(
+      tempRoot,
+      "music-pack",
+    );
+  mkdirSync(
+    musicPackDir,
+    {
+      recursive: true,
+    },
+  );
+
   const coreTarball =
     pack(
       packages.core,
       corePackDir,
     );
-  const sdkTarball =
+    const musicTarball =
+    pack(
+      musicPackageDir,
+      musicPackDir,
+    );
+const sdkTarball =
     pack(
       packages.sdk,
       sdkPackDir,
@@ -559,7 +593,11 @@ try {
     readTarEntries(
       coreTarball,
     );
-  const sdkEntries =
+    const musicEntries =
+    readTarEntries(
+      musicTarball,
+    );
+const sdkEntries =
     readTarEntries(
       sdkTarball,
     );
@@ -567,6 +605,19 @@ try {
   assertTarballContents(
     "@persian-braille/core",
     coreEntries,
+    [
+      "package.json",
+      "README.md",
+      "LICENSE",
+      "dist/index.js",
+      "dist/index.d.ts",
+    ],
+  );
+
+
+  assertTarballContents(
+    "@persian-braille/music",
+    musicEntries,
     [
       "package.json",
       "README.md",
@@ -595,6 +646,16 @@ try {
   const packedCoreManifest =
     JSON.parse(
       coreEntries
+        .get(
+          "package/package.json",
+        )
+        .toString("utf8"),
+    );
+
+
+  const packedMusicManifest =
+    JSON.parse(
+      musicEntries
         .get(
           "package/package.json",
         )
@@ -635,6 +696,22 @@ try {
     ].join("\n"),
   );
 
+  const packedMusicDependency =
+    packedSdkManifest
+      .dependencies?.[
+        "@persian-braille/music"
+      ];
+
+  assert(
+    packedMusicDependency ===
+      musicManifest.version,
+    [
+      "SDK packed manifest did not resolve workspace:* to the exact Music version.",
+      `Expected: ${musicManifest.version}`,
+      `Actual: ${String(packedMusicDependency)}`,
+    ].join("\n"),
+  );
+
   assert(
     !String(
       packedCoreDependency,
@@ -662,7 +739,12 @@ try {
       installDir,
       coreTarball,
     );
-  const sdkSpec =
+    const musicSpec =
+    relativeFileSpec(
+      installDir,
+      musicTarball,
+    );
+const sdkSpec =
     relativeFileSpec(
       installDir,
       sdkTarball,
@@ -683,6 +765,8 @@ try {
         dependencies: {
           "@persian-braille/core":
             coreSpec,
+                    "@persian-braille/music":
+            musicSpec,
           "@persian-braille/sdk":
             sdkSpec,
         },
@@ -703,6 +787,7 @@ try {
       '  - "."',
       "overrides:",
       `  "@persian-braille/core": "${coreSpec}"`,
+      `  "@persian-braille/music": "${musicSpec}"`,
       "",
     ].join("\n"),
     "utf8",

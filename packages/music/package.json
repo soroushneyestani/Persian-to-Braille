@@ -1,14 +1,22 @@
 {
   "name": "@persian-braille/music",
-  "version": "0.0.0",
-  "private": true,
+  "version": "2.0.0-dev",
+  "private": false,
   "type": "module",
-  "description": "Internal platform-agnostic MIDI and Music Braille engine for Persian-to-Braille.",
+  "description": "Platform-agnostic MIDI and Braille Music engine for Persian-to-Braille.",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "pnpm": "11.21.0"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -17,5 +25,27 @@
     "test": "pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs test/midi-to-braille.test.mjs test/rhythm-coherence.test.mjs test/part-measure-in-accord.test.mjs test/meter-change-serialization.test.mjs test/midi-piano-roll-reducer.test.mjs test/midi-source-line.test.mjs"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "license": "MIT",
+  "author": "Soroush Neyestani",
+  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+    "directory": "packages/music"
+  },
+  "bugs": {
+    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+  },
+  "keywords": [
+    "braille",
+    "music-braille",
+    "midi",
+    "accessibility",
+    "typescript",
+    "unicode"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
