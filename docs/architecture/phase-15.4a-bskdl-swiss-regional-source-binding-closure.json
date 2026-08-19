@@ -1,0 +1,173 @@
+{
+  "phase": "15.4A",
+  "title": "BSKDL Swiss/Regional Source and Binding Closure",
+  "status": "SOURCE_AND_BINDING_AUDIT_COMPLETE_WITH_NON_BLOCKING_RUNTIME_DECISIONS",
+  "retrievedAt": "2026-08-19",
+  "repositoryBaseline": {
+    "branch": "phase15-german-braille",
+    "headBeforePhase15_4Artifacts": "08aa9d6",
+    "workingTreeBeforeGeneration": "CLEAN"
+  },
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "pdfSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "section": "4.10",
+    "sectionTitle": "Abweichungen in der Schweiz",
+    "pdfPage": 145,
+    "printedPage": 135,
+    "canonicalSectionSha256": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65",
+    "nextStructuralBoundary": "Anhang",
+    "section411Exists": false
+  },
+  "auditChain": {
+    "A1": {
+      "purpose": "Exact source span freeze",
+      "canonicalSourceSha256": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65"
+    },
+    "A2": {
+      "purpose": "Swiss/regional statement inventory",
+      "sourceStatements": 2,
+      "statementInventorySha256": "b46ba92e154c3efb45d8daed6e44e3f87a64910a8bafe077c5b5aafcd5b11eaa"
+    },
+    "A3_1": {
+      "purpose": "Closed-artifact evidence discovery",
+      "role": "DISCOVERY_ONLY",
+      "unicodeCasefoldCaveat": true
+    },
+    "A3_2": {
+      "purpose": "Evidence-backed binding adjudication",
+      "jsonSha256": "5f72821977c79fe409a95313ef93f0910c1169dac320f03d9be9e4eb254e0a44",
+      "bindingDecisions": 2,
+      "sourceStatementsBound": 2
+    }
+  },
+  "sourceStatements": [
+    {
+      "statementId": "DE-CH410-STMT-001",
+      "class": "REGIONAL_ORTHOGRAPHIC_SCOPE_CONSTRAINT",
+      "summary": "Eszett (ß) is not used in Switzerland.",
+      "affectedTextModes": [
+        "BASISSCHRIFT",
+        "VOLLSCHRIFT",
+        "KURZSCHRIFT"
+      ],
+      "bindingId": "DE-CH410-BIND-001",
+      "baseBrailleMapping": {
+        "print": "ß",
+        "braille": "⠮",
+        "dots": [
+          "2346"
+        ],
+        "sourceSection": "2.1",
+        "changedBySection410": false
+      },
+      "automaticInputNormalizationAuthorized": false
+    },
+    {
+      "statementId": "DE-CH410-STMT-002",
+      "class": "REGIONAL_KURZSCHRIFT_APPLICABILITY_EXTENSION",
+      "summary": "The existing §4.4 contractions for groß and schließ also apply to Swiss Doppel-s spelling.",
+      "affectedTextModes": [
+        "KURZSCHRIFT"
+      ],
+      "bindingId": "DE-CH410-BIND-002",
+      "baseRuleId": "DE-KURZ-ZWEI-001",
+      "regionalTargets": [
+        {
+          "swissForm": "gross",
+          "baseForm": "groß",
+          "baseValidationCase": "DE-KURZ-ZWEI-MAP-050",
+          "braille": "⠛⠮",
+          "dots": [
+            "1245",
+            "2346"
+          ]
+        },
+        {
+          "swissForm": "schliess",
+          "baseForm": "schließ",
+          "baseValidationCase": "DE-KURZ-ZWEI-MAP-117",
+          "braille": "⠱⠮",
+          "dots": [
+            "156",
+            "2346"
+          ]
+        }
+      ],
+      "newBrailleSequences": 0,
+      "baseMappingsChanged": false
+    }
+  ],
+  "explicitNonBinding": {
+    "ruleId": "DE-KURZ-LG-021",
+    "sourceSection": "4.1.2.6",
+    "kind": "SST_DOUBLE_S_PRECEDENCE",
+    "boundToSection410": false,
+    "reason": "Doppel-s in the SST precedence rule is unrelated to the Swiss regional spelling extension."
+  },
+  "architectureConclusion": {
+    "swissIsFourthTextMode": false,
+    "textModes": [
+      "BASISSCHRIFT",
+      "VOLLSCHRIFT",
+      "KURZSCHRIFT"
+    ],
+    "regionalDimension": "ORTHOGONAL_TO_TEXT_MODE",
+    "regionalConfigurationRequired": true,
+    "finalProfileIdentifier": "NOT_FROZEN",
+    "deCHIdentifierFrozen": false,
+    "apiShapeFrozen": false,
+    "implementationStarted": false
+  },
+  "nonBlockingOpenItems": [
+    {
+      "id": "CH-OPEN-001",
+      "question": "What should runtime do if explicit ß is supplied while Swiss regional configuration is active?",
+      "status": "UNRESOLVED",
+      "blockingPhase15_4AClosure": false,
+      "reason": "§4.10 states Swiss orthographic usage but does not specify an automatic input-normalization policy.",
+      "resolutionOwner": "Phase 15.4B/15.5"
+    },
+    {
+      "id": "CH-OPEN-002",
+      "question": "What final identifier represents the Swiss regional configuration?",
+      "status": "NOT_FROZEN",
+      "blockingPhase15_4AClosure": false,
+      "reason": "Earlier Phase 15 architecture explicitly left regional profile shape unfrozen.",
+      "resolutionOwner": "Phase 15.4B / Phase 17 generalization"
+    },
+    {
+      "id": "CH-OPEN-003",
+      "question": "What public API shape exposes regional configuration?",
+      "status": "NOT_FROZEN",
+      "blockingPhase15_4AClosure": false,
+      "reason": "Source/binding audit determines semantics, not the final SDK/API representation.",
+      "resolutionOwner": "Phase 15.5 / 15.6"
+    }
+  ],
+  "closureMetrics": {
+    "sourceStatements": 2,
+    "sourceStatementsBound": 2,
+    "bindingDecisions": 2,
+    "formalRuleIdsAssigned": 0,
+    "validationCasesCreated": 0,
+    "closedBaseArtifactsModified": 0,
+    "normativeChangesToClosedBaseArtifacts": 0,
+    "implementationChanges": 0,
+    "blockingSourceIssues": 0,
+    "blockingBindingIssues": 0,
+    "nonBlockingOpenItems": 3
+  },
+  "closureDecision": {
+    "phase15_4AClosed": true,
+    "sourceBoundaryFrozen": true,
+    "statementInventoryFrozen": true,
+    "crossReferenceBindingResolved": true,
+    "crossModeImpactResolved": true,
+    "formalRulePromotionStarted": false,
+    "implementationStarted": false,
+    "readyFor": "Phase 15.4B Formal Swiss/Regional Rule Taxonomy"
+  }
+}

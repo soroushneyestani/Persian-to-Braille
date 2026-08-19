@@ -1,0 +1,268 @@
+{
+  "phase": "15.4D",
+  "title": "BSKDL Swiss/Regional Formal Validation Suite",
+  "status": "FORMAL_VALIDATION_COMPLETE_WITH_ONE_DOCUMENTED_DEFERRED_RUNTIME_BRANCH",
+  "repositoryBaseline": {
+    "branch": "phase15-german-braille",
+    "head": "08aa9d6",
+    "allowedPreExistingUntrackedArtifacts": [
+      "?? docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+      "?? docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.md",
+      "?? docs/architecture/phase-15.4b-bskdl-swiss-regional-rule-taxonomy.json",
+      "?? docs/architecture/phase-15.4b-bskdl-swiss-regional-rule-taxonomy.md",
+      "?? docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.json",
+      "?? docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.md"
+    ]
+  },
+  "normativeSource": {
+    "authority": "BSKDL",
+    "section": "4.10",
+    "canonicalSectionSha256": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65"
+  },
+  "inputContract": {
+    "phase": "15.4C",
+    "artifact": "docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.json",
+    "jsonSha256": "0a07a6d7127dadae9fb1a6fd291093c4b62d7180504ed3b153b5ad6633b8c700",
+    "markdownSha256": "a0abe011a40fbcaf37e23f7c09414691af61167096bab117d01163d32e1b67d3",
+    "canonicalFormalRulesSha256": "652d3bc8d491568f0b07e22f9271b9aac528b715bd2d24f10adf7d21f6fd9bc7"
+  },
+  "validationCases": [
+    {
+      "id": "DE-CH410-VAL-001",
+      "ruleId": "DE-CH410-001",
+      "category": "RULE_STRUCTURE",
+      "assertion": "Rule 001 is normative and classified as the Swiss Eszett orthographic usage constraint.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "kind": "SWISS_ESZETT_ORTHOGRAPHIC_USAGE_CONSTRAINT",
+        "sourceSection": "4.10",
+        "region": "CH"
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-002",
+      "ruleId": "DE-CH410-001",
+      "category": "MODE_APPLICABILITY",
+      "assertion": "Rule 001 applies to all three German text modes and does not create a fourth text mode.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "affectedTextModes": [
+          "BASISSCHRIFT",
+          "VOLLSCHRIFT",
+          "KURZSCHRIFT"
+        ],
+        "swissIsFourthTextMode": false
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-003",
+      "ruleId": "DE-CH410-001",
+      "category": "BASE_MAPPING_PRESERVATION",
+      "assertion": "The existing normative ß mapping remains ß -> ⠮, dots 2346.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "print": "ß",
+        "braille": "⠮",
+        "dots": [
+          "2346"
+        ],
+        "mappingPreserved": true
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-004",
+      "ruleId": "DE-CH410-001",
+      "category": "NO_INVENTED_NORMALIZATION",
+      "assertion": "The formal contract does not invent automatic ß -> ss normalization.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "automaticEszettToDoubleS": "NOT_AUTHORIZED_BY_SOURCE",
+        "automaticPrintNormalization": "NOT_SPECIFIED_BY_SOURCE"
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-005",
+      "ruleId": "DE-CH410-001",
+      "category": "DEFERRED_RUNTIME_POLICY_BOUNDARY",
+      "assertion": "Explicit ß input handling under Swiss regional configuration remains deferred rather than invented.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": true,
+      "evidence": {
+        "openDependency": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+        "runtimeExecutionPolicyComplete": false,
+        "runtimeTranslationExpectedOutput": "NOT_DEFINED"
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-006",
+      "ruleId": "DE-CH410-002",
+      "category": "REGIONAL_POSITIVE_MAPPING",
+      "assertion": "Swiss gross reuses the existing groß contraction.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "regionalForm": "gross",
+        "baseForm": "groß",
+        "braille": "⠛⠮",
+        "dots": [
+          "1245",
+          "2346"
+        ]
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-007",
+      "ruleId": "DE-CH410-002",
+      "category": "REGIONAL_POSITIVE_MAPPING",
+      "assertion": "Swiss schliess reuses the existing schließ contraction.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "regionalForm": "schliess",
+        "baseForm": "schließ",
+        "braille": "⠱⠮",
+        "dots": [
+          "156",
+          "2346"
+        ]
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-008",
+      "ruleId": "DE-CH410-002",
+      "category": "BASE_RULE_NON_MUTATION",
+      "assertion": "Rule 002 extends regional applicability without mutating DE-KURZ-ZWEI-001 or creating new Braille sequences.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "baseRuleId": "DE-KURZ-ZWEI-001",
+        "newBrailleSequences": 0,
+        "baseMappingsMutated": false,
+        "baseRuleMutated": false
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-009",
+      "ruleId": "DE-CH410-002",
+      "category": "REGIONAL_SCOPE_BOUNDARY",
+      "assertion": "Rule 002 is restricted to CH and Kurzschrift; it is not a global mutation of the German contraction inventory.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "region": "CH",
+        "affectedTextModes": [
+          "KURZSCHRIFT"
+        ],
+        "baseRuleMutation": false
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-010",
+      "ruleId": "DE-CH410-002",
+      "category": "RESTRICTION_INHERITANCE",
+      "assertion": "Swiss Doppel-s targets continue to inherit the existing Kurzschrift restriction system.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "inheritExistingKurzschriftRestrictions": true,
+        "caseBehavior": "INHERIT_EXISTING_GERMAN_CASE_RULES"
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-011",
+      "ruleId": "DE-CH410-002",
+      "category": "EXPLICIT_NON_BINDING",
+      "assertion": "DE-KURZ-LG-021 remains the independent SST double-s precedence rule and is not bound to §4.10.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "ruleId": "DE-KURZ-LG-021",
+        "sourceSection": "4.1.2.6",
+        "kind": "SST_DOUBLE_S_PRECEDENCE",
+        "boundToSection410": false
+      }
+    },
+    {
+      "id": "DE-CH410-VAL-012",
+      "ruleId": "RULE_SET",
+      "category": "FORMAL_RULE_SET_INTEGRITY",
+      "assertion": "The Swiss §4.10 formal contract contains exactly two unique normative rules; Rule 002 owns two lexical targets without splitting them into separate rules.",
+      "status": "PASS",
+      "executableRuntimeTest": false,
+      "deferredRuntimeBranch": false,
+      "evidence": {
+        "formalRuleCount": 2,
+        "formalRuleIds": [
+          "DE-CH410-001",
+          "DE-CH410-002"
+        ],
+        "rule002LexicalTargets": 2,
+        "targetsAreSeparateRules": false
+      }
+    }
+  ],
+  "validationMetrics": {
+    "totalCases": 12,
+    "passedCases": 12,
+    "failedCases": 0,
+    "rule001Cases": 5,
+    "rule002Cases": 6,
+    "ruleSetIntegrityCases": 1,
+    "deferredRuntimeBoundaryCases": 1,
+    "runtimeTranslationCasesExecuted": 0,
+    "newBrailleSequences": 0,
+    "closedBaseArtifactsModified": 0,
+    "implementationChanges": 0
+  },
+  "canonicalValidationSuiteSha256": "af529d6f13e1b8dffb0e1ba26b683662801af79465a6fbcabdc21268dda20e7e",
+  "runtimeBoundary": {
+    "openDependency": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "status": "OPEN",
+    "validatedAsDeferred": true,
+    "inventedRuntimeBehavior": false,
+    "blockingFormalValidationClosure": false,
+    "blockingImplementationOfRule001RuntimeBranch": true
+  },
+  "architectureBoundary": {
+    "swissIsFourthTextMode": false,
+    "regionalAxis": "ORTHOGONAL_CONFIGURATION_DIMENSION",
+    "publicProfileIdentifier": "NOT_FROZEN",
+    "deCHIdentifierFrozen": false,
+    "sdkApiShapeFrozen": false
+  },
+  "auditBoundary": {
+    "formalRuleIds": 2,
+    "formalRules": 2,
+    "validationCases": 12,
+    "validationCasesPassed": 12,
+    "validationCasesFailed": 0,
+    "runtimeTranslationCases": 0,
+    "blockingFormalValidationIssues": 0,
+    "openRuntimeDependencies": 1,
+    "implementationChanges": 0,
+    "closedBaseArtifactsModified": 0
+  },
+  "closureDecision": {
+    "phase15_4DClosed": true,
+    "formalValidationComplete": true,
+    "allFormalValidationCasesPass": true,
+    "runtimeDependencyExplicitlyPreserved": true,
+    "implementationStarted": false,
+    "readyFor": "Phase 15.4E Swiss/Regional Audit Final Closure"
+  }
+}

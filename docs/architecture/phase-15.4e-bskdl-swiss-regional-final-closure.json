@@ -1,0 +1,154 @@
+{
+  "phase": "15.4E",
+  "phaseClosed": "15.4",
+  "title": "BSKDL Swiss/Regional Audit Final Closure",
+  "status": "PASS_WITH_ONE_DOCUMENTED_DEFERRED_RUNTIME_POLICY",
+  "repositoryBaseline": {
+    "branch": "phase15-german-braille",
+    "headBeforePhase15_4Commit": "08aa9d6",
+    "expectedPhase15_4ArtifactFilesBeforeE": 8
+  },
+  "normativeSource": {
+    "authority": "BSKDL",
+    "section": "4.10",
+    "sectionTitle": "Abweichungen in der Schweiz",
+    "pdfSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "canonicalSectionSha256": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65"
+  },
+  "auditChain": {
+    "phase15_4AClosed": true,
+    "phase15_4BClosed": true,
+    "phase15_4CClosed": true,
+    "phase15_4DClosed": true
+  },
+  "metrics": {
+    "sourceStatements": 2,
+    "sourceStatementsBound": 2,
+    "bindingDecisions": 2,
+    "taxonomyFamilies": 2,
+    "formalRules": 2,
+    "formalRuleIds": 2,
+    "validationCases": 12,
+    "validationPassed": 12,
+    "validationFailed": 0,
+    "runtimeTranslationCasesExecuted": 0,
+    "newBrailleSequences": 0,
+    "closedBaseArtifactsModified": 0,
+    "implementationChanges": 0,
+    "openRuntimeDependencies": 1,
+    "blockingPhase15_4Issues": 0
+  },
+  "canonicalHashes": {
+    "sourceSpan": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65",
+    "taxonomy": "7cec6fca9bfd48ffd597bac190d27d0b41f48015bc3b4b5ecea6275cf04dfca5",
+    "formalRules": "652d3bc8d491568f0b07e22f9271b9aac528b715bd2d24f10adf7d21f6fd9bc7",
+    "validationSuite": "af529d6f13e1b8dffb0e1ba26b683662801af79465a6fbcabdc21268dda20e7e",
+    "preClosureArtifactManifest": "53884949414fbd68d8dced4bd03fff1e6503eefaf746cfb9d3ae216cc0d8daf9"
+  },
+  "artifactManifest": {
+    "entryCount": 8,
+    "entries": [
+      {
+        "name": "phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+        "relativePath": "docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+        "bytes": 5752,
+        "sha256": "657cb0f6cc755f742d57293f592b21fb8398e13f9deda5a7133a97291eb266f1"
+      },
+      {
+        "name": "phase-15.4a-bskdl-swiss-regional-source-binding-closure.md",
+        "relativePath": "docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.md",
+        "bytes": 3883,
+        "sha256": "cf71574b695cf87c6699de1baaaf34b3b664395737b8904458c7d52f2f46af93"
+      },
+      {
+        "name": "phase-15.4b-bskdl-swiss-regional-rule-taxonomy.json",
+        "relativePath": "docs/architecture/phase-15.4b-bskdl-swiss-regional-rule-taxonomy.json",
+        "bytes": 6733,
+        "sha256": "4d1ff8087f55f14792412c0b0d78e5e0b284f336509188243304118603ed1c39"
+      },
+      {
+        "name": "phase-15.4b-bskdl-swiss-regional-rule-taxonomy.md",
+        "relativePath": "docs/architecture/phase-15.4b-bskdl-swiss-regional-rule-taxonomy.md",
+        "bytes": 3200,
+        "sha256": "bc70c8b6f8e8b234f93893ff045ea0c7cc8432efe3cad404d23de751aaed5e6b"
+      },
+      {
+        "name": "phase-15.4c-bskdl-swiss-regional-formal-rule-contract.json",
+        "relativePath": "docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.json",
+        "bytes": 8390,
+        "sha256": "0a07a6d7127dadae9fb1a6fd291093c4b62d7180504ed3b153b5ad6633b8c700"
+      },
+      {
+        "name": "phase-15.4c-bskdl-swiss-regional-formal-rule-contract.md",
+        "relativePath": "docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.md",
+        "bytes": 3714,
+        "sha256": "a0abe011a40fbcaf37e23f7c09414691af61167096bab117d01163d32e1b67d3"
+      },
+      {
+        "name": "phase-15.4d-bskdl-swiss-regional-formal-validation-suite.json",
+        "relativePath": "docs/architecture/phase-15.4d-bskdl-swiss-regional-formal-validation-suite.json",
+        "bytes": 9153,
+        "sha256": "1ca9c459400a88fd2a744558c3bbe383d7132bce5bea7f8d5add67b324c229fb"
+      },
+      {
+        "name": "phase-15.4d-bskdl-swiss-regional-formal-validation-suite.md",
+        "relativePath": "docs/architecture/phase-15.4d-bskdl-swiss-regional-formal-validation-suite.md",
+        "bytes": 2659,
+        "sha256": "25056ebd4d1d5233f2e068831ea6f1eaf616c12d7630ca9c790cd86789efd98d"
+      }
+    ],
+    "canonicalManifestSha256": "53884949414fbd68d8dced4bd03fff1e6503eefaf746cfb9d3ae216cc0d8daf9"
+  },
+  "runtimeBoundary": {
+    "openDependency": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "status": "OPEN",
+    "formalNormativePolicy": "COMPLETE",
+    "runtimeExecutionPolicy": "DEFERRED",
+    "blockingPhase15_4Closure": false,
+    "blockingRule001ExecutableBranch": true,
+    "inventedRuntimeBehavior": false,
+    "nextResolutionOwner": "Phase 15.5 German Core"
+  },
+  "architectureConclusion": {
+    "swissIsFourthTextMode": false,
+    "textModes": [
+      "BASISSCHRIFT",
+      "VOLLSCHRIFT",
+      "KURZSCHRIFT"
+    ],
+    "regionalDimension": "ORTHOGONAL_CONFIGURATION_DIMENSION",
+    "publicProfileIdentifier": "NOT_FROZEN",
+    "deCHIdentifierFrozen": false,
+    "sdkApiShapeFrozen": false
+  },
+  "formalRuleSummary": [
+    {
+      "id": "DE-CH410-001",
+      "kind": "SWISS_ESZETT_ORTHOGRAPHIC_USAGE_CONSTRAINT",
+      "normative": true,
+      "runtimeExecutionPolicyComplete": false
+    },
+    {
+      "id": "DE-CH410-002",
+      "kind": "SWISS_DOUBLE_S_KURZSCHRIFT_APPLICABILITY_EXTENSION",
+      "normative": true,
+      "runtimeExecutionPolicyComplete": true,
+      "targets": [
+        "gross",
+        "schliess"
+      ]
+    }
+  ],
+  "closureDecision": {
+    "phase15_4Closed": true,
+    "swissRegionalNormativeAuditComplete": true,
+    "sourceAuditComplete": true,
+    "bindingAuditComplete": true,
+    "taxonomyComplete": true,
+    "formalRuleContractComplete": true,
+    "formalValidationComplete": true,
+    "blockingIssues": 0,
+    "implementationStarted": false,
+    "readyFor": "Phase 15.5 German Core"
+  }
+}
