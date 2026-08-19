@@ -1,0 +1,151 @@
+{
+  "phase": "15.3M4",
+  "title": "Liblouis de-g2 Controlled Frozen Runtime Build Preparation",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "sourceRecipe": ".github/workflows/mingw.yml",
+    "recipeSelection": "FROZEN_CI_MINGW_WORKFLOW"
+  },
+  "buildRecipe": {
+    "source": ".github/workflows/mingw.yml",
+    "sourceRole": "FROZEN_CI_BUILD_RECIPE",
+    "targetArchitecture": "x86_64",
+    "targetPlatform": "Windows",
+    "crossCompilerHost": "x86_64-w64-mingw32",
+    "buildEnvironmentClass": "POSIX_LINUX_OR_COMPATIBLE",
+    "nativePowerShellBuildSelected": false,
+    "nativeNMakeBuildSelected": false,
+    "crossCompileSelected": true,
+    "ucsMode": "UCS4",
+    "configureCommandTemplate": "./configure --host x86_64-w64-mingw32 --enable-ucs4 --prefix=<AUDIT_PREFIX> CPPFLAGS=\"-I<AUDIT_PREFIX>/include/\" LDFLAGS=\"-L<AUDIT_PREFIX>/lib/\"",
+    "makeCommandTemplate": "make LDFLAGS=\"-L<AUDIT_PREFIX>/lib/ -avoid-version -Xcompiler -static-libgcc\"",
+    "testCommandTemplate": "make check WINE=wine64",
+    "installCommandTemplate": "make install"
+  },
+  "toolchainRequirements": {
+    "requiredBuildEnvironment": "POSIX_COMPATIBLE",
+    "requiredTargetToolchain": "MINGW_W64_X86_64",
+    "requiredTools": [
+      "autoconf",
+      "automake",
+      "libtool",
+      "make",
+      "x86_64-w64-mingw32-gcc/toolchain",
+      "pkg-config"
+    ],
+    "workflowAlsoInstalls": [
+      "curl",
+      "texinfo",
+      "wine64",
+      "zip",
+      "patch",
+      "jq"
+    ],
+    "runtimeValidationTool": "wine64",
+    "currentHostToolsAvailable": false,
+    "currentRuntimeAvailable": false
+  },
+  "isolationPolicy": {
+    "sourceCheckout": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis",
+    "sourceCheckoutMayBeModified": false,
+    "outOfTreeOrDisposableBuildRequired": true,
+    "auditBuildRoot": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis-runtime-build",
+    "auditInstallPrefix": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis-runtime-prefix",
+    "projectRepositoryMayReceiveBuildOutputs": false,
+    "systemWideInstallAllowed": false,
+    "pathMutationAllowed": false,
+    "registryMutationAllowed": false,
+    "frozenSourceCommitMustRemain": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e"
+  },
+  "runtimeComparatorTarget": {
+    "requiredComparatorTable": "de-g2.ctb",
+    "translationDirection": "FORWARD_ONLY",
+    "reverseTranslationInScope": false,
+    "requiredRuntimeCapability": [
+      "load frozen de-g2.ctb",
+      "forward translate UTF-8 German text",
+      "return Braille output deterministically",
+      "preserve frozen table dependency graph"
+    ],
+    "minimumExecutablePreferenceOrder": [
+      "lou_translate",
+      "equivalent frozen Liblouis CLI",
+      "frozen liblouis library binding"
+    ],
+    "releaseBinarySubstitutionAllowed": false,
+    "differentCommitRuntimeAllowed": false,
+    "normativeRole": "NONE",
+    "comparatorRole": "NON_NORMATIVE"
+  },
+  "buildGates": [
+    {
+      "id": "M4-GATE-01",
+      "requirement": "Execution environment capable of reproducing the frozen MinGW CI recipe",
+      "status": "OPEN"
+    },
+    {
+      "id": "M4-GATE-02",
+      "requirement": "Build occurs only in audit cache / disposable area",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "M4-GATE-03",
+      "requirement": "Frozen Liblouis source checkout remains clean",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "M4-GATE-04",
+      "requirement": "Built runtime identity is tied to frozen commit",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "M4-GATE-05",
+      "requirement": "Runtime smoke test succeeds before differential corpus",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "M4-GATE-06",
+      "requirement": "Liblouis output remains comparator-only",
+      "status": "REQUIRED"
+    }
+  ],
+  "decision": {
+    "status": "PASS",
+    "runtimeAlreadyAvailable": false,
+    "controlledBuildRequired": true,
+    "selectedRecipe": "FROZEN_CI_MINGW_WORKFLOW",
+    "selectedTarget": "x86_64-w64-mingw32",
+    "nativeWindowsPowerShellBuildSelected": false,
+    "systemWideInstallationAllowed": false,
+    "frozenCommitPreserved": true,
+    "buildPerformed": false,
+    "installationPerformed": false,
+    "runtimeTranslationPerformed": false,
+    "nextActionRequiresEnvironmentDiscovery": true
+  },
+  "promotionPolicy": {
+    "buildPreparationComplete": true,
+    "runtimeBuilt": false,
+    "runtimeSmokeTestComplete": false,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M5A",
+    "title": "Local Execution Environment Capability Discovery",
+    "scope": [
+      "WSL availability",
+      "installed Linux distributions",
+      "Git Bash / MSYS environment",
+      "MSYS2 availability",
+      "Docker availability",
+      "required package-manager path"
+    ],
+    "policy": "DISCOVER_ONLY_NO_INSTALL"
+  }
+}

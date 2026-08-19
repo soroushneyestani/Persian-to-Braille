@@ -1,0 +1,1387 @@
+{
+  "phase": "15.3D",
+  "title": "BSKDL Kurzschrift Prefix/Suffix Contractions Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.2",
+    "sectionTitle": "Kürzungen vor und nach Wortstämmen",
+    "sectionExtractionSha256": "4dcd68e8ebd4b2b2b3a4de76641aacc649feb3fd37556e69a8810c23e2527310"
+  },
+  "coverage": {
+    "subsections": 2,
+    "subsectionsAudited": 2,
+    "mappingCount": 11,
+    "prefixMappings": 2,
+    "postStemMappings": 9,
+    "formalRules": 16,
+    "validationCases": 69,
+    "sixDotValidation": true,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "mappings": [
+    {
+      "id": "ENT",
+      "role": "PREFIX_BEFORE_STEM",
+      "print": "ENT-",
+      "braille": "⠮⠤",
+      "sourceSection": "4.2.1",
+      "sigel": {
+        "unicode": "⠮⠤",
+        "codepoints": [
+          "U+282E",
+          "U+2824"
+        ],
+        "dots": [
+          "2346",
+          "36"
+        ],
+        "cellCount": 2
+      }
+    },
+    {
+      "id": "VER",
+      "role": "PREFIX_BEFORE_STEM",
+      "print": "VER-",
+      "braille": "⠤⠤",
+      "sourceSection": "4.2.1",
+      "sigel": {
+        "unicode": "⠤⠤",
+        "codepoints": [
+          "U+2824",
+          "U+2824"
+        ],
+        "dots": [
+          "36",
+          "36"
+        ],
+        "cellCount": 2
+      }
+    },
+    {
+      "id": "FALLS",
+      "role": "AFTER_STEM",
+      "print": "-FALLS",
+      "braille": "⠠⠤⠋",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠋",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+280B"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "124"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "HEIT",
+      "role": "AFTER_STEM",
+      "print": "-HEIT",
+      "braille": "⠠⠤⠓",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠓",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+2813"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "125"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "KEIT",
+      "role": "AFTER_STEM",
+      "print": "-KEIT",
+      "braille": "⠠⠤⠅",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠅",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+2805"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "13"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "MAL",
+      "role": "AFTER_STEM",
+      "print": "-MAL",
+      "braille": "⠠⠤⠍",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠍",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+280D"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "134"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "NIS",
+      "role": "AFTER_STEM",
+      "print": "-NIS",
+      "braille": "⠠⠤⠭",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠭",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+282D"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "1346"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "SAM",
+      "role": "AFTER_STEM",
+      "print": "-SAM",
+      "braille": "⠠⠤⠮",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠮",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+282E"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "2346"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "SCHAFT",
+      "role": "AFTER_STEM",
+      "print": "-SCHAFT",
+      "braille": "⠠⠤⠱",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠱",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+2831"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "156"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "UNG",
+      "role": "AFTER_STEM",
+      "print": "-UNG",
+      "braille": "⠠⠤⠥",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠥",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+2825"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "136"
+        ],
+        "cellCount": 3
+      }
+    },
+    {
+      "id": "WÄRTS",
+      "role": "AFTER_STEM",
+      "print": "-WÄRTS",
+      "braille": "⠠⠤⠺",
+      "sourceSection": "4.2.2",
+      "sigel": {
+        "unicode": "⠠⠤⠺",
+        "codepoints": [
+          "U+2820",
+          "U+2824",
+          "U+283A"
+        ],
+        "dots": [
+          "6",
+          "36",
+          "2456"
+        ],
+        "cellCount": 3
+      }
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-STEM-001",
+      "sourceSection": "4.2.1",
+      "kind": "PREFIX_CONTRACTION_INVENTORY",
+      "summary": "ENT and VER are the two contractions defined before word stems.",
+      "normative": true,
+      "sourceWitnesses": [
+        "⠮⠤ ENT-",
+        "⠤⠤ VER-"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-002",
+      "sourceSection": "4.2.1",
+      "kind": "PREFIX_WORD_INITIAL_ONLY",
+      "summary": "ENT and VER contractions are used only at word start before word stems.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur am Wortanfang vor Wortstämmen verwendet"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-003",
+      "sourceSection": "4.2.1",
+      "kind": "PREFIX_SEMANTIC_REQUIREMENT",
+      "summary": "ENT and VER must actually function as prefixes to use their §4.2.1 forms.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Sie müssen Präfixe sein"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-004",
+      "sourceSection": "4.2.1",
+      "kind": "PREFIX_WORD_INTERIOR_PROHIBITION",
+      "summary": "If ENT or VER is pushed into word interior by preceding material, the letters are written out.",
+      "normative": true,
+      "sourceWitnesses": [
+        "ins Wortinnere, müssen sie ausgeschrieben werden"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-005",
+      "sourceSection": "4.2.1",
+      "kind": "VER_AFTER_HYPHEN_PROHIBITION",
+      "summary": "VER is written out after a hyphen for readability.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Die Kürzung \"ver\" wird nach einem Bindestrich",
+        "ausgeschrieben"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-006",
+      "sourceSection": "4.2.2",
+      "kind": "POST_STEM_CONTRACTION_INVENTORY",
+      "summary": "§4.2.2 defines nine contractions used after word stems.",
+      "normative": true,
+      "sourceWitnesses": [
+        "⠠⠤⠋ -FALLS",
+        "⠠⠤⠓ -HEIT",
+        "⠠⠤⠅ -KEIT",
+        "⠠⠤⠍ -MAL",
+        "⠠⠤⠭ -NIS",
+        "⠠⠤⠮ -SAM",
+        "⠠⠤⠱ -SCHAFT",
+        "⠠⠤⠥ -UNG",
+        "⠠⠤⠺ -WÄRTS"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-007",
+      "sourceSection": "4.2.2",
+      "kind": "POST_STEM_PLACEMENT",
+      "summary": "The nine §4.2.2 contractions are used only following word stems.",
+      "normative": true,
+      "sourceWitnesses": [
+        "nur im Anschluss an Wortstämme verwendet"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-008",
+      "sourceSection": "4.2.2",
+      "kind": "SUFFIX_REQUIREMENT_EXCEPT_MAL",
+      "summary": "Except for MAL, §4.2.2 forms must function as suffixes.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Mit Ausnahme von \"mal\" müssen es Suffixe sein"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-009",
+      "sourceSection": "4.2.2",
+      "kind": "SUFFIX_STACKING",
+      "summary": "Applicable suffix contractions may follow one another.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Als solche dürfen sie aufeinander folgen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-010",
+      "sourceSection": "4.2.2",
+      "kind": "SUFFIX_ENDING_EXTENSION",
+      "summary": "Applicable suffix contractions may take endings.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Endungen annehmen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-011",
+      "sourceSection": "4.2.2",
+      "kind": "COMPOUND_WORD_INTERIOR_POLICY",
+      "summary": "Applicable §4.2.2 suffixes may appear inside compounds except MAL and WÄRTS.",
+      "normative": true,
+      "sourceWitnesses": [
+        "mit Ausnahme von \"mal\" und \"wärts\"",
+        "bei zusammengesetzten Wörtern auch im Wortinneren stehen"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-012",
+      "sourceSection": "4.2.2",
+      "kind": "HEIT_LEXICAL_EXCEPTIONS",
+      "summary": "HEIT is not contracted in Hoheit or Rauheit to avoid ambiguity.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"heit\" darf in \"Hoheit\" nicht gekürzt werden",
+        "\"Rauheit\" nicht gekürzt werden"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-013",
+      "sourceSection": "4.2.2",
+      "kind": "SCHAFT_LEXICAL_EXCEPTIONS",
+      "summary": "SCHAFT is written out in Barschaft and Herrschaft for the source-stated ambiguity/stem reasons.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"schaft\" ist in \"Barschaft\" auszuschreiben",
+        "Auch in \"Herrschaft\" darf \"schaft\" nicht gekürzt werden"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-014",
+      "sourceSection": "4.2.2",
+      "kind": "MAL_LEXICAL_EXCEPTION_SET",
+      "summary": "MAL is written out in dezimal, formal, maximal, minimal, normal and optimal.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"mal\" ist in \"dezimal\", \"formal\", \"maximal\", \"minimal\", \"normal\" und \"optimal\" auszuschreiben"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-STEM-015",
+      "sourceSection": "4.2.2",
+      "kind": "FALLS_VS_FALL_COMPOUND_DISTINCTION",
+      "summary": "The FALLS contraction is not used where Fall is an independent component of a compound, as directly illustrated by Wasserfalls.",
+      "normative": true,
+      "sourceWitnesses": [
+        "\"Fall\" als eigenständiger Wortteil einer Zusammensetzung"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-STEM-016",
+      "sourceSection": "4.2.2",
+      "kind": "WORD_SEAM_RESTRICTION",
+      "summary": "A §4.2.2 contraction must not cross a word seam; Türkeitourismus is the direct source witness.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Türkeitourismus",
+        "wegen Wortfugengrenze"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-STEM-CASE-001",
+      "sourceSection": "4.2.1",
+      "witness": "Verkauf",
+      "target": "VER",
+      "expectedDecision": "USE_PREFIX_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-001",
+        "DE-KURZ-STEM-002",
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-002",
+      "sourceSection": "4.2.1",
+      "witness": "verlieren",
+      "target": "VER",
+      "expectedDecision": "USE_PREFIX_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-001",
+        "DE-KURZ-STEM-002",
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-003",
+      "sourceSection": "4.2.1",
+      "witness": "unverkäuflich",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_WORD_INITIAL",
+      "ruleRefs": [
+        "DE-KURZ-STEM-004"
+      ],
+      "category": "PREFIX_WORD_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-004",
+      "sourceSection": "4.2.1",
+      "witness": "Veranda",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-005",
+      "sourceSection": "4.2.1",
+      "witness": "vertikal",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-006",
+      "sourceSection": "4.2.1",
+      "witness": "Vera",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-007",
+      "sourceSection": "4.2.1",
+      "witness": "Vers",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-008",
+      "sourceSection": "4.2.1",
+      "witness": "Rhein-Ruhr-Verkehrsverbund",
+      "target": "VER",
+      "expectedDecision": "SPELL_OUT_AFTER_HYPHEN",
+      "ruleRefs": [
+        "DE-KURZ-STEM-005"
+      ],
+      "category": "POST_HYPHEN"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-009",
+      "sourceSection": "4.2.1",
+      "witness": "Entgelt",
+      "target": "ENT",
+      "expectedDecision": "USE_PREFIX_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-001",
+        "DE-KURZ-STEM-002",
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-010",
+      "sourceSection": "4.2.1",
+      "witness": "enttäuschen",
+      "target": "ENT",
+      "expectedDecision": "USE_PREFIX_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-001",
+        "DE-KURZ-STEM-002",
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-011",
+      "sourceSection": "4.2.1",
+      "witness": "unentgeltlich",
+      "target": "ENT",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_WORD_INITIAL",
+      "ruleRefs": [
+        "DE-KURZ-STEM-004"
+      ],
+      "category": "PREFIX_WORD_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-012",
+      "sourceSection": "4.2.1",
+      "witness": "Ente",
+      "target": "ENT",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-013",
+      "sourceSection": "4.2.1",
+      "witness": "Entente",
+      "target": "ENT",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-014",
+      "sourceSection": "4.2.1",
+      "witness": "Entertainer",
+      "target": "ENT",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-015",
+      "sourceSection": "4.2.1",
+      "witness": "Entourage",
+      "target": "ENT",
+      "expectedDecision": "SPELL_OUT_BECAUSE_NOT_PREFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-003"
+      ],
+      "category": "PREFIX_SEMANTIC_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-016",
+      "sourceSection": "4.2.2",
+      "witness": "Hoheit",
+      "target": "HEIT",
+      "expectedDecision": "MUST_NOT_USE_HEIT_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-012"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-017",
+      "sourceSection": "4.2.2",
+      "witness": "Rauheit",
+      "target": "HEIT",
+      "expectedDecision": "MUST_NOT_USE_HEIT_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-012"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-018",
+      "sourceSection": "4.2.2",
+      "witness": "Barschaft",
+      "target": "SCHAFT",
+      "expectedDecision": "MUST_NOT_USE_SCHAFT_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-013"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-019",
+      "sourceSection": "4.2.2",
+      "witness": "Herrschaft",
+      "target": "SCHAFT",
+      "expectedDecision": "MUST_NOT_USE_SCHAFT_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-013"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-020",
+      "sourceSection": "4.2.2",
+      "witness": "dezimal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-021",
+      "sourceSection": "4.2.2",
+      "witness": "formal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-022",
+      "sourceSection": "4.2.2",
+      "witness": "maximal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-023",
+      "sourceSection": "4.2.2",
+      "witness": "minimal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-024",
+      "sourceSection": "4.2.2",
+      "witness": "normal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-025",
+      "sourceSection": "4.2.2",
+      "witness": "optimal",
+      "target": "MAL",
+      "expectedDecision": "MUST_NOT_USE_MAL_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-014"
+      ],
+      "category": "LEXICAL_EXCEPTION"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-026",
+      "sourceSection": "4.2.2",
+      "witness": "keinesfalls",
+      "target": "FALLS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-006",
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "FALLS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-027",
+      "sourceSection": "4.2.2",
+      "witness": "jedenfalls",
+      "target": "FALLS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-006",
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "FALLS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-028",
+      "sourceSection": "4.2.2",
+      "witness": "Wasserfalls",
+      "target": "FALLS",
+      "expectedDecision": "DO_NOT_TREAT_FALL_AS_SUFFIX_FALLS",
+      "ruleRefs": [
+        "DE-KURZ-STEM-015"
+      ],
+      "category": "FALLS_COMPOUND_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-029",
+      "sourceSection": "4.2.2",
+      "witness": "Freiheit",
+      "target": "HEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "HEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-030",
+      "sourceSection": "4.2.2",
+      "witness": "Einheiten",
+      "target": "HEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "HEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-031",
+      "sourceSection": "4.2.2",
+      "witness": "Vereinheitlichung",
+      "target": "HEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "HEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-032",
+      "sourceSection": "4.2.2",
+      "witness": "krankheitshalber",
+      "target": "HEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "HEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-033",
+      "sourceSection": "4.2.2",
+      "witness": "erheitern",
+      "target": "HEIT",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "HEIT_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-034",
+      "sourceSection": "4.2.2",
+      "witness": "Ewigkeit",
+      "target": "KEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "KEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-035",
+      "sourceSection": "4.2.2",
+      "witness": "Köstlichkeiten",
+      "target": "KEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "KEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-036",
+      "sourceSection": "4.2.2",
+      "witness": "Höflichkeitsform",
+      "target": "KEIT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "KEIT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-037",
+      "sourceSection": "4.2.2",
+      "witness": "Türkeitourismus",
+      "target": "KEIT",
+      "expectedDecision": "MUST_NOT_CROSS_WORD_SEAM",
+      "ruleRefs": [
+        "DE-KURZ-STEM-016"
+      ],
+      "category": "KEIT_WORD_SEAM"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-038",
+      "sourceSection": "4.2.2",
+      "witness": "einmal",
+      "target": "MAL",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "MAL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-039",
+      "sourceSection": "4.2.2",
+      "witness": "einmalig",
+      "target": "MAL",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "MAL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-040",
+      "sourceSection": "4.2.2",
+      "witness": "einstmals",
+      "target": "MAL",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "MAL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-041",
+      "sourceSection": "4.2.2",
+      "witness": "Etmal",
+      "target": "MAL",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "MAL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-042",
+      "sourceSection": "4.2.2",
+      "witness": "Merkmal",
+      "target": "MAL",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "MAL_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-043",
+      "sourceSection": "4.2.2",
+      "witness": "Einmaleins",
+      "target": "MAL",
+      "expectedDecision": "DO_NOT_USE_IN_COMPOUND_WORD_INTERIOR",
+      "ruleRefs": [
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "MAL_COMPOUND_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-044",
+      "sourceSection": "4.2.2",
+      "witness": "Denkmalpflege",
+      "target": "MAL",
+      "expectedDecision": "DO_NOT_USE_IN_COMPOUND_WORD_INTERIOR",
+      "ruleRefs": [
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "MAL_COMPOUND_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-045",
+      "sourceSection": "4.2.2",
+      "witness": "Neunmalklug",
+      "target": "MAL",
+      "expectedDecision": "DO_NOT_USE_IN_COMPOUND_WORD_INTERIOR",
+      "ruleRefs": [
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "MAL_COMPOUND_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-046",
+      "sourceSection": "4.2.2",
+      "witness": "Hemmnis",
+      "target": "NIS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "NIS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-047",
+      "sourceSection": "4.2.2",
+      "witness": "Ereignisse",
+      "target": "NIS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "NIS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-048",
+      "sourceSection": "4.2.2",
+      "witness": "Geheimniskrämerei",
+      "target": "NIS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "NIS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-049",
+      "sourceSection": "4.2.2",
+      "witness": "Firnis",
+      "target": "NIS",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "NIS_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-050",
+      "sourceSection": "4.2.2",
+      "witness": "Tennis",
+      "target": "NIS",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "NIS_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-051",
+      "sourceSection": "4.2.2",
+      "witness": "einsam",
+      "target": "SAM",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "SAM_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-052",
+      "sourceSection": "4.2.2",
+      "witness": "Einsamkeit",
+      "target": "SAM",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "SAM_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-053",
+      "sourceSection": "4.2.2",
+      "witness": "wirksame",
+      "target": "SAM",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "SAM_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-054",
+      "sourceSection": "4.2.2",
+      "witness": "Zweisamkeiten",
+      "target": "SAM",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-009",
+        "DE-KURZ-STEM-010"
+      ],
+      "category": "SAM_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-055",
+      "sourceSection": "4.2.2",
+      "witness": "Balsam",
+      "target": "SAM",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "SAM_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-056",
+      "sourceSection": "4.2.2",
+      "witness": "Blumensamen",
+      "target": "SAM",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "SAM_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-057",
+      "sourceSection": "4.2.2",
+      "witness": "Sesam",
+      "target": "SAM",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "SAM_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-058",
+      "sourceSection": "4.2.2",
+      "witness": "Landschaft",
+      "target": "SCHAFT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "SCHAFT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-059",
+      "sourceSection": "4.2.2",
+      "witness": "Liebschaften",
+      "target": "SCHAFT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "SCHAFT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-060",
+      "sourceSection": "4.2.2",
+      "witness": "Mannschaftssport",
+      "target": "SCHAFT",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "SCHAFT_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-061",
+      "sourceSection": "4.2.2",
+      "witness": "Stiefelschaft",
+      "target": "SCHAFT",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "SCHAFT_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-062",
+      "sourceSection": "4.2.2",
+      "witness": "Versicherung",
+      "target": "UNG",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "UNG_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-063",
+      "sourceSection": "4.2.2",
+      "witness": "Meldungen",
+      "target": "UNG",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "UNG_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-064",
+      "sourceSection": "4.2.2",
+      "witness": "Zeitungsartikel",
+      "target": "UNG",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008",
+        "DE-KURZ-STEM-010",
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "UNG_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-065",
+      "sourceSection": "4.2.2",
+      "witness": "Kameldung",
+      "target": "UNG",
+      "expectedDecision": "DO_NOT_CONTRACT_NOT_SUFFIX",
+      "ruleRefs": [
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "UNG_NEGATIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-066",
+      "sourceSection": "4.2.2",
+      "witness": "abwärts",
+      "target": "WÄRTS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "WAERTS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-067",
+      "sourceSection": "4.2.2",
+      "witness": "vorwärts",
+      "target": "WÄRTS",
+      "expectedDecision": "USE_POST_STEM_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-STEM-007",
+        "DE-KURZ-STEM-008"
+      ],
+      "category": "WAERTS_POSITIVE"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-068",
+      "sourceSection": "4.2.2",
+      "witness": "Abwärtstrend",
+      "target": "WÄRTS",
+      "expectedDecision": "DO_NOT_USE_IN_COMPOUND_WORD_INTERIOR",
+      "ruleRefs": [
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "WAERTS_COMPOUND_INTERIOR"
+    },
+    {
+      "id": "DE-KURZ-STEM-CASE-069",
+      "sourceSection": "4.2.2",
+      "witness": "Rückwärtsgang",
+      "target": "WÄRTS",
+      "expectedDecision": "DO_NOT_USE_IN_COMPOUND_WORD_INTERIOR",
+      "ruleRefs": [
+        "DE-KURZ-STEM-011"
+      ],
+      "category": "WAERTS_COMPOUND_INTERIOR"
+    }
+  ],
+  "specialPolicies": {
+    "prefixes": {
+      "wordInitialOnly": true,
+      "mustBeMorphologicalPrefix": true,
+      "wordInteriorIfPrecededByMaterial": "SPELL_OUT",
+      "verAfterHyphen": "SPELL_OUT"
+    },
+    "postStem": {
+      "mustFollowStem": true,
+      "suffixRequiredExceptMal": true,
+      "mayStack": true,
+      "mayTakeEndings": true,
+      "compoundInteriorAllowedExcept": [
+        "MAL",
+        "WÄRTS"
+      ]
+    },
+    "lexicalExceptions": {
+      "HEIT": [
+        "Hoheit",
+        "Rauheit"
+      ],
+      "SCHAFT": [
+        "Barschaft",
+        "Herrschaft"
+      ],
+      "MAL": [
+        "dezimal",
+        "formal",
+        "maximal",
+        "minimal",
+        "normal",
+        "optimal"
+      ]
+    }
+  },
+  "openDependencies": [
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "PREFIX_SUFFIX_BOUNDARY_RESOLUTION_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "COMPOUND_WORD_BOUNDARY_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3E",
+    "title": "Kurzschrift Einformige Wort- und Wortstammkürzungen Audit",
+    "sourceSections": [
+      "4.3",
+      "4.3.1",
+      "4.3.2",
+      "4.3.3",
+      "4.3.4",
+      "4.3.5"
+    ]
+  }
+}

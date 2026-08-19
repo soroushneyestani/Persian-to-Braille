@@ -1,0 +1,612 @@
+{
+  "phase": "15.3K3",
+  "title": "BSKDL Kurzschrift §4.9.3 Eigennamen Restriction Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section49ExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "subsection": "4.9.3",
+    "subsectionTitle": "Eigennamen",
+    "subsectionSha256": "970ae93b3838c2aa0ffe89ce5feec011ec75428d702258960425df7c1ed2c2a7"
+  },
+  "coverage": {
+    "formalRules": 5,
+    "semanticSourceCases": 7,
+    "directApplicationExamples": 7,
+    "directResolutionExamples": 6,
+    "directBrailleExamples": 13,
+    "policyCases": 5,
+    "validationCases": 25,
+    "sixDotValidation": true,
+    "subsectionFormalCoverageComplete": true,
+    "section49FormalCoverageComplete": false
+  },
+  "grammar": {
+    "properNameCareRequired": true,
+    "lautgruppePolicy": "PRONUNCIATION_SENSITIVE",
+    "oneFormWordAndKommaPolicy": {
+      "allowedContexts": [
+        "STANDALONE",
+        "COMPOSITION",
+        "UMLAUTED_FORM"
+      ],
+      "requiredCondition": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED"
+    },
+    "twoFormAndSection42Policy": {
+      "default": "FORBIDDEN",
+      "exception": {
+        "entityClass": "POLITICAL_OR_GEOGRAPHIC_TERM",
+        "requiredCondition": "MEANING_UNEQUIVOCALLY_PRESERVED"
+      }
+    },
+    "doubtFallback": "DO_NOT_CONTRACT"
+  },
+  "semanticThresholds": {
+    "oneFormWordAndKomma": {
+      "sourceTerm": "offensichtlich erhalten",
+      "contractState": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED"
+    },
+    "twoFormAndSection42Exception": {
+      "sourceTerm": "eindeutig erhalten",
+      "contractState": "MEANING_UNEQUIVOCALLY_PRESERVED"
+    },
+    "collapsedIntoSingleThreshold": false
+  },
+  "semanticSourceCases": [
+    {
+      "id": "PIERRE_PRONUNCIATION",
+      "family": "LAUTGRUPPENKUERZUNG",
+      "print": "Pierre",
+      "expectedDecision": "CONTRACT_ER_NOT_IE",
+      "evidence": "VOWEL_PRONUNCIATION"
+    },
+    {
+      "id": "VORPOMMERN_ONE_FORM_ALLOWED",
+      "family": "EINFORMIGE_WORTKUERZUNG",
+      "print": "Vorpommern",
+      "form": "vor",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED"
+    },
+    {
+      "id": "WERDOHL_KOMMA_FORBIDDEN",
+      "family": "KOMMA_KUERZUNG",
+      "print": "Werdohl",
+      "form": "werd",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "condition": "ORIGINAL_MEANING_NOT_OBVIOUSLY_PRESERVED"
+    },
+    {
+      "id": "MITTELMEER_EXCEPTION",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Mittelmeer",
+      "form": "Mittel",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "POLITICAL_OR_GEOGRAPHIC_TERM_AND_MEANING_UNEQUIVOCALLY_PRESERVED"
+    },
+    {
+      "id": "GROSSE_ANTILLEN_EXCEPTION",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Große Antillen",
+      "form": "Groß",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "POLITICAL_OR_GEOGRAPHIC_TERM_AND_MEANING_UNEQUIVOCALLY_PRESERVED"
+    },
+    {
+      "id": "VERDUN_PREFIX_FORBIDDEN",
+      "family": "SECTION_4_2_PREFIX_SUFFIX",
+      "print": "Verdun",
+      "form": "ver",
+      "expectedDecision": "CONTRACTION_FORBIDDEN"
+    },
+    {
+      "id": "ERLANGEN_TWO_FORM_FORBIDDEN",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Erlangen",
+      "form": "lang",
+      "expectedDecision": "CONTRACTION_FORBIDDEN"
+    }
+  ],
+  "directApplicationExamples": [
+    {
+      "print": "Ständehausstraße",
+      "braille": "⠐⠾⠑⠓⠡⠎⠾⠗⠁⠠⠮⠑"
+    },
+    {
+      "print": "Pappelweg",
+      "braille": "⠏⠁⠏⠏⠽⠺⠛"
+    },
+    {
+      "print": "Vorarlberg",
+      "braille": "⠂⠢⠴⠇⠃⠻⠛"
+    },
+    {
+      "print": "Untergasse",
+      "braille": "⠂⠲⠛⠁⠮⠑"
+    },
+    {
+      "print": "Friedensplatz",
+      "braille": "⠋⠗⠬⠙⠉⠎⠏⠵"
+    },
+    {
+      "print": "Vereinigte Staaten",
+      "braille": "⠤⠫⠘⠦ ⠾⠞⠉"
+    },
+    {
+      "print": "Großbritannien",
+      "braille": "⠛⠮⠃⠗⠊⠞⠖⠝⠊⠉"
+    }
+  ],
+  "directResolutionExamples": [
+    {
+      "print": "Den Haag",
+      "braille": "⠙⠉ ⠓⠁⠁⠛"
+    },
+    {
+      "print": "Gorleben",
+      "braille": "⠛⠢⠇⠑⠃⠉"
+    },
+    {
+      "print": "Lausitz",
+      "braille": "⠇⠡⠎⠊⠞⠵"
+    },
+    {
+      "print": "Norwegen",
+      "braille": "⠝⠢⠺⠑⠛⠉"
+    },
+    {
+      "print": "Alexander",
+      "braille": "⠒⠑⠠⠭⠖⠙⠻"
+    },
+    {
+      "print": "Hohoff",
+      "braille": "⠓⠕⠓⠕⠋⠋"
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-REST-493-001",
+      "sourceSection": "4.9.3",
+      "kind": "PROPER_NAME_LAUTGRUPPE_PRONUNCIATION_GUARD",
+      "summary": "When Lautgruppenkürzungen are used in proper names, vowel pronunciation must be considered.",
+      "normative": true,
+      "directExample": {
+        "print": "Pierre",
+        "decision": "ER_NOT_IE"
+      },
+      "dependencies": [
+        "PRONUNCIATION_PROVIDER",
+        "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-002",
+      "sourceSection": "4.9.3",
+      "kind": "ONE_FORM_WORD_AND_KOMMA_MEANING_PRESERVATION",
+      "summary": "Einformige Wortkürzungen and Komma-Kürzungen may be used standalone, in compounds, and in umlauted form in proper names only when their original meaning is obviously preserved.",
+      "normative": true,
+      "scope": [
+        "EINFORMIGE_WORTKUERZUNGEN",
+        "KOMMA_KUERZUNGEN"
+      ],
+      "allowedContexts": [
+        "STANDALONE",
+        "COMPOSITION",
+        "UMLAUTED_FORM"
+      ],
+      "condition": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED",
+      "dependencies": [
+        "PROPER_NAME_CONTEXT_PROVIDER",
+        "SEMANTIC_MEANING_PRESERVATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-003",
+      "sourceSection": "4.9.3",
+      "kind": "TWO_FORM_AND_SECTION_4_2_DEFAULT_PROHIBITION",
+      "summary": "Zweiformige Kürzungen and the prefix/suffix contractions from §4.2 are not applied in proper names by default.",
+      "normative": true,
+      "scope": [
+        "ZWEIFORMIGE_KUERZUNGEN",
+        "SECTION_4_2_PREFIX_KUERZUNGEN",
+        "SECTION_4_2_SUFFIX_KUERZUNGEN"
+      ],
+      "defaultDecision": "FORBIDDEN",
+      "dependencies": [
+        "PROPER_NAME_CONTEXT_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-004",
+      "sourceSection": "4.9.3",
+      "kind": "POLITICAL_GEOGRAPHIC_EXCEPTION",
+      "summary": "The §4.9.3 default prohibition for two-form and §4.2 contractions has a narrow exception for political or geographic terms when the meaning of the relevant word or word-part is unequivocally preserved.",
+      "normative": true,
+      "condition": {
+        "entityType": "POLITICAL_OR_GEOGRAPHIC_TERM",
+        "semanticThreshold": "MEANING_UNEQUIVOCALLY_PRESERVED"
+      },
+      "dependencies": [
+        "POLITICAL_GEOGRAPHIC_TERM_CLASSIFICATION",
+        "SEMANTIC_MEANING_PRESERVATION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-005",
+      "sourceSection": "4.9.3",
+      "kind": "DOUBT_FALLBACK_NO_CONTRACTION",
+      "summary": "In doubtful proper-name cases, no contraction is used.",
+      "normative": true,
+      "decision": "DO_NOT_CONTRACT",
+      "dependencies": [
+        "CONTRACTION_DOUBT_POLICY"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "PIERRE_PRONUNCIATION",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "LAUTGRUPPENKUERZUNG",
+      "print": "Pierre",
+      "expectedDecision": "CONTRACT_ER_NOT_IE",
+      "evidence": "VOWEL_PRONUNCIATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001"
+      ]
+    },
+    {
+      "id": "VORPOMMERN_ONE_FORM_ALLOWED",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "EINFORMIGE_WORTKUERZUNG",
+      "print": "Vorpommern",
+      "form": "vor",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "ORIGINAL_MEANING_OBVIOUSLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-002"
+      ]
+    },
+    {
+      "id": "WERDOHL_KOMMA_FORBIDDEN",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "KOMMA_KUERZUNG",
+      "print": "Werdohl",
+      "form": "werd",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "condition": "ORIGINAL_MEANING_NOT_OBVIOUSLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-002"
+      ]
+    },
+    {
+      "id": "MITTELMEER_EXCEPTION",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Mittelmeer",
+      "form": "Mittel",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "POLITICAL_OR_GEOGRAPHIC_TERM_AND_MEANING_UNEQUIVOCALLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "GROSSE_ANTILLEN_EXCEPTION",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Große Antillen",
+      "form": "Groß",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "condition": "POLITICAL_OR_GEOGRAPHIC_TERM_AND_MEANING_UNEQUIVOCALLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "VERDUN_PREFIX_FORBIDDEN",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "SECTION_4_2_PREFIX_SUFFIX",
+      "print": "Verdun",
+      "form": "ver",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-003"
+      ]
+    },
+    {
+      "id": "ERLANGEN_TWO_FORM_FORBIDDEN",
+      "category": "DIRECT_SOURCE_SEMANTIC_CASE",
+      "family": "ZWEIFORMIGE_KUERZUNG",
+      "print": "Erlangen",
+      "form": "lang",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-001",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Ständehausstraße",
+      "expectedBraille": "⠐⠾⠑⠓⠡⠎⠾⠗⠁⠠⠮⠑",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-002",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Pappelweg",
+      "expectedBraille": "⠏⠁⠏⠏⠽⠺⠛",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-003",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Vorarlberg",
+      "expectedBraille": "⠂⠢⠴⠇⠃⠻⠛",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-004",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Untergasse",
+      "expectedBraille": "⠂⠲⠛⠁⠮⠑",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-005",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Friedensplatz",
+      "expectedBraille": "⠋⠗⠬⠙⠉⠎⠏⠵",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-006",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Vereinigte Staaten",
+      "expectedBraille": "⠤⠫⠘⠦ ⠾⠞⠉",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-APPLY-007",
+      "category": "DIRECT_SOURCE_APPLICATION_EXAMPLE",
+      "print": "Großbritannien",
+      "expectedBraille": "⠛⠮⠃⠗⠊⠞⠖⠝⠊⠉",
+      "expectedPolicyClass": "CONTRACTION_APPLICATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-001",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Den Haag",
+      "expectedBraille": "⠙⠉ ⠓⠁⠁⠛",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-002",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Gorleben",
+      "expectedBraille": "⠛⠢⠇⠑⠃⠉",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-003",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Lausitz",
+      "expectedBraille": "⠇⠡⠎⠊⠞⠵",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-004",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Norwegen",
+      "expectedBraille": "⠝⠢⠺⠑⠛⠉",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-005",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Alexander",
+      "expectedBraille": "⠒⠑⠠⠭⠖⠙⠻",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-RESOLVE-006",
+      "category": "DIRECT_SOURCE_RESOLUTION_EXAMPLE",
+      "print": "Hohoff",
+      "expectedBraille": "⠓⠕⠓⠕⠋⠋",
+      "expectedPolicyClass": "CONTRACTION_RESOLUTION",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001",
+        "DE-KURZ-REST-493-002",
+        "DE-KURZ-REST-493-003",
+        "DE-KURZ-REST-493-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-POLICY-001",
+      "category": "PROPER_NAME_PRONUNCIATION",
+      "expectedDecision": "VOWEL_PRONUNCIATION_MUST_BE_RESPECTED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-POLICY-002",
+      "category": "ONE_FORM_KOMMA_SEMANTIC_GUARD",
+      "expectedDecision": "ALLOW_ONLY_IF_ORIGINAL_MEANING_OBVIOUSLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-POLICY-003",
+      "category": "TWO_FORM_SECTION_4_2_DEFAULT",
+      "expectedDecision": "FORBIDDEN_BY_DEFAULT_IN_PROPER_NAMES",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-POLICY-004",
+      "category": "POLITICAL_GEOGRAPHIC_EXCEPTION",
+      "expectedDecision": "ALLOW_ONLY_IF_ENTITY_CLASS_MATCHES_AND_MEANING_UNEQUIVOCALLY_PRESERVED",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-493-POLICY-005",
+      "category": "DOUBT_FALLBACK",
+      "expectedDecision": "DO_NOT_CONTRACT",
+      "ruleRefs": [
+        "DE-KURZ-REST-493-005"
+      ]
+    }
+  ],
+  "dependencyResolution": {
+    "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "component": "PROPER_NAME_RESTRICTIONS",
+    "status": "COMPONENT_FORMALLY_RESOLVED",
+    "resolvedBy": "15.3K3",
+    "sourceSection": "4.9.3",
+    "overallSection49Dependency": "STILL_OPEN",
+    "remainingSubsections": [
+      "4.9.4",
+      "4.9.5"
+    ]
+  },
+  "openDependencies": [
+    {
+      "id": "PROPER_NAME_CONTEXT_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "PRONUNCIATION_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "SEMANTIC_MEANING_PRESERVATION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "POLITICAL_GEOGRAPHIC_TERM_CLASSIFICATION",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "CONTRACTION_DOUBT_POLICY",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true,
+      "status": "PARTIALLY_RESOLVED",
+      "remainingSubsections": [
+        "4.9.4",
+        "4.9.5"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "formalSubsectionAuditComplete": true,
+    "pronunciationPolicyCaptured": true,
+    "oneFormKommaSemanticGuardCaptured": true,
+    "twoFormSection42DefaultProhibitionCaptured": true,
+    "politicalGeographicExceptionCaptured": true,
+    "doubtFallbackCaptured": true,
+    "runtimeProperNameClassificationReady": false,
+    "runtimePronunciationReady": false,
+    "runtimeSemanticResolutionReady": false,
+    "section49OverallResolved": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3K4",
+    "sourceSection": "4.9.4",
+    "title": "Beachtung von Wortstämmen"
+  }
+}

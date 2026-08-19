@@ -1,0 +1,224 @@
+{
+  "phase": "15.3M3",
+  "title": "Liblouis de-g2 Static Lexical Correspondence Audit",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "corePath": "tables/de-g2-core.cti",
+    "coreSha256": "038a71c52785e5625ebb5dd5ddf3f05e142c611929de2815e998e8fa3cf3c75f",
+    "virtualDotACleanupRules": 32,
+    "nobackPass2Rules": 33
+  },
+  "classificationVocabulary": [
+    "EXACT_PHYSICAL_STATIC_MATCH",
+    "VIRTUAL_DOT_MEDIATED_STATIC_MATCH",
+    "CONTEXTUAL_IMPLEMENTATION_REPRESENTATION",
+    "NO_STATIC_EQUIVALENCE"
+  ],
+  "lexicalCorrespondences": [
+    {
+      "term": "LÄSS",
+      "classification": "EXACT_PHYSICAL_STATIC_MATCH",
+      "liblouis": {
+        "line": 363,
+        "rawRule": "nocross always    läss       5-123",
+        "rawDots": "5-123",
+        "physicalProjectionDots": [
+          "5",
+          "123"
+        ],
+        "physicalProjectionUnicode": "⠐⠇",
+        "virtualDotMediation": false
+      },
+      "bskdl": {
+        "phase": "15.3H",
+        "sourceSection": "4.6",
+        "dots": [
+          "5",
+          "123"
+        ],
+        "unicode": "⠐⠇"
+      },
+      "comparison": {
+        "physicalCellsEqual": true,
+        "unicodeEqual": true,
+        "sameLexicalTerm": true,
+        "staticRuleContextEquivalent": false,
+        "reason": "The physical Braille cells match exactly, but Liblouis nocross/always eligibility is implementation machinery and is not promoted to BSKDL semantics."
+      },
+      "runtimeConfirmed": false,
+      "normativePromotion": false
+    },
+    {
+      "term": "ÜBRIG",
+      "classification": "VIRTUAL_DOT_MEDIATED_STATIC_MATCH",
+      "liblouis": {
+        "line": 556,
+        "rawRule": "nocross always    übrig      1256a-45a",
+        "rawDots": "1256a-45a",
+        "virtualCleanup": [
+          {
+            "input": "@1256a",
+            "output": "@1256"
+          },
+          {
+            "input": "@45a",
+            "output": "@45"
+          }
+        ],
+        "physicalProjectionDots": [
+          "1256",
+          "45"
+        ],
+        "physicalProjectionUnicode": "⠳⠘"
+      },
+      "bskdl": {
+        "phase": "15.3F",
+        "sourceSection": "4.4",
+        "dots": [
+          "1256",
+          "45"
+        ],
+        "unicode": "⠳⠘"
+      },
+      "comparison": {
+        "rawOperandEqualsBskdlDots": false,
+        "physicalProjectionEqual": true,
+        "unicodeEqualAfterPhysicalProjection": true,
+        "explicitVirtualCleanupRulesPresent": true,
+        "sameLexicalTerm": true,
+        "reason": "The Liblouis operand contains virtual dot a, but its physical projection and explicit pass2 cleanup converge statically on the BSKDL cells."
+      },
+      "runtimeConfirmed": false,
+      "normativePromotion": false
+    },
+    {
+      "term": "WÄRTS",
+      "classification": "CONTEXTUAL_IMPLEMENTATION_REPRESENTATION",
+      "liblouis": {
+        "line": 530,
+        "rawRule": "endword    wärts      2456",
+        "rawDots": "2456",
+        "physicalProjectionDots": [
+          "2456"
+        ],
+        "physicalProjectionUnicode": "⠺"
+      },
+      "bskdl": {
+        "phase": "15.3D",
+        "sourceSection": "4.2.2",
+        "dots": [
+          "6",
+          "36",
+          "2456"
+        ],
+        "unicode": "⠠⠤⠺"
+      },
+      "comparison": {
+        "physicalCellsEqual": false,
+        "terminalSigelCellEqual": true,
+        "bskdlLeadingControlCells": [
+          "6",
+          "36"
+        ],
+        "liblouisRuleContainsLeadingControlCells": false,
+        "reason": "The Liblouis static rule exposes the terminal WÄRTS sigel cell but does not statically expose the full BSKDL post-stem control sequence."
+      },
+      "runtimeConfirmed": false,
+      "normativePromotion": false
+    },
+    {
+      "term": "SCHAFT",
+      "classification": "NO_STATIC_EQUIVALENCE",
+      "liblouis": {
+        "line": 434,
+        "rawRule": "sufword    schaft     156a-1-124-2345",
+        "rawDots": "156a-1-124-2345",
+        "virtualCleanup": [
+          {
+            "input": "@156a",
+            "output": "@156"
+          }
+        ],
+        "physicalProjectionDots": [
+          "156",
+          "1",
+          "124",
+          "2345"
+        ],
+        "physicalProjectionUnicode": "⠱⠁⠋⠞"
+      },
+      "bskdl": {
+        "phase": "15.3D",
+        "sourceSection": "4.2.2",
+        "dots": [
+          "6",
+          "36",
+          "156"
+        ],
+        "unicode": "⠠⠤⠱"
+      },
+      "comparison": {
+        "physicalCellsEqual": false,
+        "firstProjectedCellEqualsBskdlSigelCell": true,
+        "remainingProjectedCells": [
+          "1",
+          "124",
+          "2345"
+        ],
+        "bskdlLeadingControlCells": [
+          "6",
+          "36"
+        ],
+        "reason": "The single Liblouis static rule does not encode the complete BSKDL SCHAFT contraction. Additional translator behavior would be required before any runtime equivalence claim."
+      },
+      "runtimeConfirmed": false,
+      "normativePromotion": false
+    }
+  ],
+  "classificationCounts": {
+    "EXACT_PHYSICAL_STATIC_MATCH": 1,
+    "VIRTUAL_DOT_MEDIATED_STATIC_MATCH": 1,
+    "CONTEXTUAL_IMPLEMENTATION_REPRESENTATION": 1,
+    "NO_STATIC_EQUIVALENCE": 1
+  },
+  "decision": {
+    "status": "PASS",
+    "candidateTerms": 4,
+    "exactPhysicalStaticMatches": 1,
+    "virtualDotMediatedStaticMatches": 1,
+    "contextualImplementationRepresentations": 1,
+    "noStaticEquivalence": 1,
+    "runtimeDifferentialTestingPerformed": false,
+    "staticMatchImpliesRuntimeConformance": false,
+    "staticMatchImpliesNormativeAuthority": false,
+    "liblouisRulePromoted": false,
+    "readyForRuntimeComparatorPreparation": true
+  },
+  "interpretationPolicy": {
+    "physicalProjectionIsRuntimeOutput": false,
+    "pass2StaticPresenceGuaranteesRuntimePath": false,
+    "rawLiblouisOperandIsNormativeBraille": false,
+    "staticCorrespondenceCreatesNormativeRule": false,
+    "bskdlRemainsNormative": true,
+    "reverseEquivalenceAssumed": false
+  },
+  "promotionPolicy": {
+    "staticLexicalAuditComplete": true,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M4",
+    "title": "Liblouis de-g2 Runtime Comparator Preparation",
+    "plannedScope": [
+      "Discover the frozen Liblouis runtime/CLI availability.",
+      "Build a forward-only differential harness against BSKDL audit fixtures.",
+      "Do not assume reverse equivalence.",
+      "Separate runtime matches, divergences, unsupported cases, and implementation artifacts."
+    ]
+  }
+}

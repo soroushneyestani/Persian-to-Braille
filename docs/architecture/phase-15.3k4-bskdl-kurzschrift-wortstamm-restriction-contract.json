@@ -1,0 +1,920 @@
+{
+  "phase": "15.3K4",
+  "title": "BSKDL Kurzschrift §4.9.4 Wortstamm Restriction Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter4ExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section49ExtractionSha256": "7f466dfa25a0c167766094a27a2f950b824519e9318c18eda4fa84bc64beeca5",
+    "subsection": "4.9.4",
+    "subsectionTitle": "Beachtung von Wortstämmen",
+    "subsectionSha256": "e28c680b6eb92a0306e95c7830c5d7892ca2e4fb908174b4ca34bd449bcdcb35"
+  },
+  "coverage": {
+    "formalRules": 7,
+    "positiveStemCases": 21,
+    "negativeStemCases": 8,
+    "initialPositionNegativeCases": 9,
+    "historicalLetzteExamples": 3,
+    "historicalRationaleCases": 1,
+    "explicitKommPolicyCases": 1,
+    "policyCases": 5,
+    "validationCases": 48,
+    "subsectionFormalCoverageComplete": true,
+    "section49FormalCoverageComplete": false
+  },
+  "grammar": {
+    "scope": {
+      "wordAndWordStemContractions": "SECTIONS_4_3_TO_4_6",
+      "lautgruppenContrast": "NOT_GOVERNED_BY_THIS_STEM_IDENTITY_RULE"
+    },
+    "identityRequirement": "ACTUAL_WORD_OR_WORD_STEM",
+    "meaningVariationAllowed": true,
+    "recognizableStemRequired": true,
+    "positionRequirement": "STEM_RELATIVE_INITIAL_POSITION_AFTER_SOURCE_ALLOWED_SEGMENTATION",
+    "historicalDeviationPolicy": "PRESERVE_SOURCE_ESTABLISHED_EXCEPTIONS",
+    "explicitExceptions": {
+      "KOMM": "ALWAYS_ALLOWED",
+      "LETZT": [
+        "letztes",
+        "zuletzt",
+        "verletzt"
+      ]
+    },
+    "doubtFallback": "SHOULD_NOT_CONTRACT"
+  },
+  "positiveStemCases": [
+    {
+      "form": "wir",
+      "print": "Wirgefühl"
+    },
+    {
+      "form": "sehr",
+      "print": "versehrt"
+    },
+    {
+      "form": "bis",
+      "print": "bisher"
+    },
+    {
+      "form": "mit",
+      "print": "mitteilen"
+    },
+    {
+      "form": "hab",
+      "print": "haben"
+    },
+    {
+      "form": "hab",
+      "print": "erhaben"
+    },
+    {
+      "form": "woll",
+      "print": "wollen"
+    },
+    {
+      "form": "woll",
+      "print": "Baumwolle"
+    },
+    {
+      "form": "stell",
+      "print": "Stellung"
+    },
+    {
+      "form": "stell",
+      "print": "zweistellig"
+    },
+    {
+      "form": "stell",
+      "print": "interstellar"
+    },
+    {
+      "form": "hast",
+      "print": "du hast"
+    },
+    {
+      "form": "hast",
+      "print": "die Hast"
+    },
+    {
+      "form": "würd",
+      "print": "ich würde"
+    },
+    {
+      "form": "würd",
+      "print": "die Würde"
+    },
+    {
+      "form": "würd",
+      "print": "würdevoll"
+    },
+    {
+      "form": "lang",
+      "print": "solange"
+    },
+    {
+      "form": "lang",
+      "print": "langfristig"
+    },
+    {
+      "form": "lang",
+      "print": "langsam"
+    },
+    {
+      "form": "lang",
+      "print": "verlangen"
+    },
+    {
+      "form": "lang",
+      "print": "belanglos"
+    }
+  ],
+  "negativeStemCases": [
+    {
+      "form": "wir",
+      "print": "Wirsing",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM"
+    },
+    {
+      "form": "wir",
+      "print": "Bewirtung",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM"
+    },
+    {
+      "form": "sehr",
+      "print": "Sehrest",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM"
+    },
+    {
+      "form": "bis",
+      "print": "Bissen",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM"
+    },
+    {
+      "form": "mit",
+      "print": "Mitte",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM"
+    },
+    {
+      "form": "hab",
+      "print": "Habilitation",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_HAB"
+    },
+    {
+      "form": "hab",
+      "print": "Habitus",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_HAB"
+    },
+    {
+      "form": "lang",
+      "print": "Languste",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_LANG"
+    }
+  ],
+  "initialPositionNegativeCases": [
+    {
+      "form": "Lang",
+      "print": "Klang"
+    },
+    {
+      "form": "leicht",
+      "print": "schleicht"
+    },
+    {
+      "form": "nur",
+      "print": "Schnur"
+    },
+    {
+      "form": "werd",
+      "print": "Beschwerde"
+    },
+    {
+      "form": "stell",
+      "print": "Kastell"
+    },
+    {
+      "form": "stell",
+      "print": "Pastell"
+    },
+    {
+      "form": "aber",
+      "print": "Araber"
+    },
+    {
+      "form": "Auf",
+      "print": "raufen"
+    },
+    {
+      "form": "unter",
+      "print": "munter"
+    }
+  ],
+  "historicalExamples": [
+    {
+      "form": "letzt",
+      "print": "letztes",
+      "status": "EXPLICITLY_ALLOWED"
+    },
+    {
+      "form": "letzt",
+      "print": "zuletzt",
+      "status": "EXPLICITLY_ALLOWED_HISTORICAL_EXTENSION"
+    },
+    {
+      "form": "letzt",
+      "print": "verletzt",
+      "status": "EXPLICITLY_ALLOWED_HISTORICAL_EXTENSION"
+    }
+  ],
+  "historicalRationale": {
+    "form": "ge",
+    "print": "genau",
+    "status": "HISTORICAL_RATIONALE_WITNESS",
+    "runtimeAllowRuleCreated": false,
+    "note": "The source discusses GE in GENAU while explaining historically divergent practice. This contract does not silently convert that discussion into an unrestricted executable exception."
+  },
+  "formalRules": [
+    {
+      "id": "DE-KURZ-REST-494-001",
+      "sourceSection": "4.9.4",
+      "kind": "WORD_OR_WORD_STEM_IDENTITY_REQUIRED",
+      "summary": "Unlike Lautgruppenkürzungen, word and word-stem contractions from §§4.3-4.6 may only be used when the relevant letter sequence actually constitutes a word or word stem.",
+      "normative": true,
+      "scope": [
+        "SECTION_4_3",
+        "SECTION_4_4",
+        "SECTION_4_5",
+        "SECTION_4_6"
+      ],
+      "explicitContrast": "LAUTGRUPPENKUERZUNGEN",
+      "dependencies": [
+        "WORD_STEM_IDENTITY_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-002",
+      "sourceSection": "4.9.4",
+      "kind": "STEM_MEANING_VARIATION_ALLOWED",
+      "summary": "The represented stem may occur with different meanings, but the contraction must recognizably represent the actual word stem.",
+      "normative": true,
+      "dependencies": [
+        "WORD_STEM_IDENTITY_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-003",
+      "sourceSection": "4.9.4",
+      "kind": "STEM_RELATIVE_INITIAL_POSITION_REQUIRED",
+      "summary": "For most contractions from §§4.3-4.6, the contracted letter sequence must stand at the beginning of the relevant word/stem component, disregarding prefixes and word compounds as the source specifies.",
+      "normative": true,
+      "precision": "This must not be implemented as a naive absolute string-position-zero test; source-positive examples include forms following prefixes or within recognized compounds.",
+      "dependencies": [
+        "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+        "WORD_STEM_IDENTITY_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-004",
+      "sourceSection": "4.9.4",
+      "kind": "HISTORICALLY_ESTABLISHED_DEVIATIONS_POLICY",
+      "summary": "Historically established spellings that deviate from the general stem-oriented rule are not to be categorically abandoned.",
+      "normative": true,
+      "executableGeneralization": false,
+      "reason": "The source establishes a historical exception policy but does not define an exhaustive generic exception set.",
+      "dependencies": [
+        "HISTORICAL_KURZSCHRIFT_EXCEPTION_REGISTRY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-005",
+      "sourceSection": "4.9.4",
+      "kind": "KOMM_ALWAYS_ALLOWED_EXCEPTION",
+      "summary": "The contraction for KOMM is handled generously and may always be applied.",
+      "normative": true,
+      "form": "komm",
+      "decision": "ALWAYS_ALLOWED",
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-REST-494-006",
+      "sourceSection": "4.9.4",
+      "kind": "LETZT_HISTORICAL_EXTENSION_EXCEPTION",
+      "summary": "LETZT remains contracted not only in regular forms such as LETZTES, but also in ZULETZT and VERLETZT.",
+      "normative": true,
+      "form": "letzt",
+      "explicitAllowedPrintForms": [
+        "letztes",
+        "zuletzt",
+        "verletzt"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-REST-494-007",
+      "sourceSection": "4.9.4",
+      "kind": "DOUBT_FALLBACK_SHOULD_NOT_CONTRACT",
+      "summary": "In doubtful cases, the source says the contraction should not be used.",
+      "normative": true,
+      "sourceModality": "SOLLTE_NICHT",
+      "decisionStrength": "SHOULD_NOT_CONTRACT",
+      "precision": "Do not collapse this wording into the stronger §4.9.3 'wird nicht gekürzt' formulation.",
+      "dependencies": [
+        "CONTRACTION_DOUBT_POLICY"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-REST-494-POS-001",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "wir",
+      "print": "Wirgefühl",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-002",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "sehr",
+      "print": "versehrt",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-003",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "bis",
+      "print": "bisher",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-004",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "mit",
+      "print": "mitteilen",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-005",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "hab",
+      "print": "haben",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-006",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "hab",
+      "print": "erhaben",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-007",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "woll",
+      "print": "wollen",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-008",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "woll",
+      "print": "Baumwolle",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-009",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "stell",
+      "print": "Stellung",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-010",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "stell",
+      "print": "zweistellig",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-011",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "stell",
+      "print": "interstellar",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-012",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "hast",
+      "print": "du hast",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-013",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "hast",
+      "print": "die Hast",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-014",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "würd",
+      "print": "ich würde",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-015",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "würd",
+      "print": "die Würde",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-016",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "würd",
+      "print": "würdevoll",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-017",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "lang",
+      "print": "solange",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-018",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "lang",
+      "print": "langfristig",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-019",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "lang",
+      "print": "langsam",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-020",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "lang",
+      "print": "verlangen",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POS-021",
+      "category": "DIRECT_SOURCE_STEM_ALLOWED",
+      "form": "lang",
+      "print": "belanglos",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001",
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-001",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "wir",
+      "print": "Wirsing",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-002",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "wir",
+      "print": "Bewirtung",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-003",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "sehr",
+      "print": "Sehrest",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-004",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "bis",
+      "print": "Bissen",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-005",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "mit",
+      "print": "Mitte",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "LETTER_SEQUENCE_IS_NOT_THE_RELEVANT_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-006",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "hab",
+      "print": "Habilitation",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_HAB",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-007",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "hab",
+      "print": "Habitus",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_HAB",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-STEM-008",
+      "category": "DIRECT_SOURCE_STEM_FORBIDDEN",
+      "form": "lang",
+      "print": "Languste",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "WORD_STEM_EXTENDS_BEYOND_LANG",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-001",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "Lang",
+      "print": "Klang",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-002",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "leicht",
+      "print": "schleicht",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-003",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "nur",
+      "print": "Schnur",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-004",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "werd",
+      "print": "Beschwerde",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-005",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "stell",
+      "print": "Kastell",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-006",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "stell",
+      "print": "Pastell",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-007",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "aber",
+      "print": "Araber",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-008",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "Auf",
+      "print": "raufen",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-NEG-POSITION-009",
+      "category": "DIRECT_SOURCE_STEM_POSITION_FORBIDDEN",
+      "form": "unter",
+      "print": "munter",
+      "expectedDecision": "CONTRACTION_FORBIDDEN",
+      "reason": "NOT_AT_VALID_STEM_RELATIVE_INITIAL_POSITION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-LETZT-001",
+      "category": "DIRECT_SOURCE_HISTORICAL_EXCEPTION",
+      "form": "letzt",
+      "print": "letztes",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "sourceStatus": "EXPLICITLY_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-004",
+        "DE-KURZ-REST-494-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-LETZT-002",
+      "category": "DIRECT_SOURCE_HISTORICAL_EXCEPTION",
+      "form": "letzt",
+      "print": "zuletzt",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "sourceStatus": "EXPLICITLY_ALLOWED_HISTORICAL_EXTENSION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-004",
+        "DE-KURZ-REST-494-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-LETZT-003",
+      "category": "DIRECT_SOURCE_HISTORICAL_EXCEPTION",
+      "form": "letzt",
+      "print": "verletzt",
+      "expectedDecision": "CONTRACTION_ALLOWED",
+      "sourceStatus": "EXPLICITLY_ALLOWED_HISTORICAL_EXTENSION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-004",
+        "DE-KURZ-REST-494-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-HISTORY-001",
+      "category": "HISTORICAL_RATIONALE_WITNESS",
+      "form": "ge",
+      "print": "genau",
+      "expectedDecision": "NO_NEW_GENERIC_ALLOW_RULE_INFERRED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-KOMM-001",
+      "category": "EXPLICIT_HISTORICAL_EXCEPTION_POLICY",
+      "form": "komm",
+      "expectedDecision": "ALWAYS_ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POLICY-001",
+      "category": "WORD_STEM_IDENTITY",
+      "expectedDecision": "SEQUENCE_MUST_REPRESENT_ACTUAL_WORD_OR_WORD_STEM",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POLICY-002",
+      "category": "MEANING_VARIATION",
+      "expectedDecision": "DIFFERENT_MEANINGS_ALLOWED_IF_ACTUAL_STEM_REMAINS_RECOGNIZABLE",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POLICY-003",
+      "category": "STEM_RELATIVE_POSITION",
+      "expectedDecision": "TARGET_MUST_BEGIN_VALID_STEM_COMPONENT_AFTER_SOURCE_ALLOWED_SEGMENTATION",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POLICY-004",
+      "category": "HISTORICAL_DEVIATIONS",
+      "expectedDecision": "DO_NOT_CATEGORICALLY_DISCARD_SOURCE_ESTABLISHED_HISTORICAL_FORMS",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-REST-494-POLICY-005",
+      "category": "DOUBT_MODALITY",
+      "expectedDecision": "SHOULD_NOT_CONTRACT",
+      "expectedSourceModality": "SOLLTE_NICHT",
+      "ruleRefs": [
+        "DE-KURZ-REST-494-007"
+      ]
+    }
+  ],
+  "doubtModalityDistinction": {
+    "status": "FORMALLY_PRESERVED",
+    "section493": {
+      "sourceWording": "In Zweifelsfällen wird nicht gekürzt.",
+      "contractDecision": "DO_NOT_CONTRACT",
+      "strength": "HARDER_FORMULATION"
+    },
+    "section494": {
+      "sourceWording": "In Zweifelsfällen sollte nicht gekürzt werden.",
+      "contractDecision": "SHOULD_NOT_CONTRACT",
+      "strength": "RECOMMENDATORY_FORMULATION"
+    },
+    "collapsed": false
+  },
+  "dependencyResolution": {
+    "dependency": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+    "component": "WORD_STEM_RESTRICTIONS",
+    "status": "COMPONENT_FORMALLY_RESOLVED",
+    "resolvedBy": "15.3K4",
+    "sourceSection": "4.9.4",
+    "overallSection49Dependency": "STILL_OPEN",
+    "remainingSubsections": [
+      "4.9.5"
+    ]
+  },
+  "openDependencies": [
+    {
+      "id": "WORD_STEM_IDENTITY_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "MORPHOLOGICAL_SEGMENTATION_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "HISTORICAL_KURZSCHRIFT_EXCEPTION_REGISTRY",
+      "requiredForExecutableGeneralization": true,
+      "note": "KOMM and LETZT are explicit source-backed exceptions here. Any broader registry must remain evidence-backed."
+    },
+    {
+      "id": "CONTRACTION_DOUBT_POLICY",
+      "requiredForExecutableGeneralization": true,
+      "note": "Runtime must preserve source modality differences across restriction families."
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true,
+      "status": "PARTIALLY_RESOLVED",
+      "remainingSubsections": [
+        "4.9.5"
+      ]
+    }
+  ],
+  "promotionPolicy": {
+    "formalSubsectionAuditComplete": true,
+    "wordStemIdentityRuleCaptured": true,
+    "stemRelativePositionRuleCaptured": true,
+    "historicalExceptionPolicyCaptured": true,
+    "kommExplicitExceptionCaptured": true,
+    "letztExplicitExceptionCaptured": true,
+    "doubtModalityPreserved": true,
+    "runtimeMorphologyReady": false,
+    "historicalExceptionRegistryComplete": false,
+    "section49OverallResolved": false,
+    "executableSpecificationReady": false,
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3K5",
+    "sourceSection": "4.9.5",
+    "title": "Beachtung von Prä- und Suffixen"
+  }
+}

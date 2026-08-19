@@ -1,0 +1,133 @@
+{
+  "phase": "15.3M5B",
+  "title": "WSL Ubuntu 22.04 Distribution Provisioning Plan",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "mode": "PLAN_BEFORE_INSTALL",
+  "frozenComparator": {
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "workflow": ".github/workflows/mingw.yml",
+    "activeRunner": "ubuntu-22.04",
+    "runnerLine": 25
+  },
+  "provisioningPlan": {
+    "distribution": "Ubuntu-22.04",
+    "distributionFriendlyName": "Ubuntu 22.04 LTS",
+    "selectionBasis": "EXACT_FROZEN_CI_RUNNER_MATCH",
+    "frozenCiRunner": "ubuntu-22.04",
+    "wslVersionTarget": 2,
+    "installCommand": "wsl.exe --install -d Ubuntu-22.04 --no-launch",
+    "installCommandExecuted": false,
+    "postInstallVersionCommand": "wsl.exe --set-version Ubuntu-22.04 2",
+    "firstLaunchRequired": true,
+    "packageInstallationDeferred": true,
+    "buildDeferred": true
+  },
+  "identityFreezePlan": {
+    "captureAfterProvisioning": [
+      "wsl.exe --list --verbose",
+      "wsl.exe -d Ubuntu-22.04 -- cat /etc/os-release",
+      "wsl.exe -d Ubuntu-22.04 -- uname -a",
+      "wsl.exe -d Ubuntu-22.04 -- uname -m"
+    ],
+    "expectedOsFamily": "Ubuntu",
+    "expectedRelease": "22.04",
+    "expectedArchitecture": "x86_64",
+    "identityMustBeFrozenBeforePackages": true
+  },
+  "auditPathPolicy": {
+    "windowsAuditCache": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15",
+    "windowsLiblouisCheckout": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis",
+    "wslMountRoot": "/mnt/c",
+    "projectRepositoryReceivesBuildOutputs": false,
+    "frozenCheckoutMayBeModified": false,
+    "runtimeBuildRoot": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis-runtime-build",
+    "runtimePrefix": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15\\liblouis-runtime-prefix",
+    "buildMustUseDisposableCopy": true
+  },
+  "packagePlan": {
+    "source": ".github/workflows/mingw.yml",
+    "packageManager": "apt",
+    "updateCommand": "sudo apt-get update -qq",
+    "installCommandTemplate": "sudo apt-get install -y autoconf automake curl libtool make mingw-w64 pkg-config texinfo wine64 zip patch jq",
+    "packages": [
+      "autoconf",
+      "automake",
+      "curl",
+      "libtool",
+      "make",
+      "mingw-w64",
+      "pkg-config",
+      "texinfo",
+      "wine64",
+      "zip",
+      "patch",
+      "jq"
+    ],
+    "packageCount": 12,
+    "executed": false,
+    "extraPackagesAllowedWithoutAudit": false
+  },
+  "provisioningGates": [
+    {
+      "id": "M5B-GATE-01",
+      "requirement": "Install exactly Ubuntu-22.04 WSL distribution",
+      "status": "PLANNED"
+    },
+    {
+      "id": "M5B-GATE-02",
+      "requirement": "Ensure distribution runs as WSL 2",
+      "status": "PLANNED"
+    },
+    {
+      "id": "M5B-GATE-03",
+      "requirement": "Freeze /etc/os-release and architecture before packages",
+      "status": "PLANNED"
+    },
+    {
+      "id": "M5B-GATE-04",
+      "requirement": "Install only frozen-workflow package set",
+      "status": "DEFERRED_TO_M5C"
+    },
+    {
+      "id": "M5B-GATE-05",
+      "requirement": "Preserve original frozen Liblouis checkout clean",
+      "status": "REQUIRED"
+    }
+  ],
+  "decision": {
+    "status": "PASS",
+    "distributionSelected": "Ubuntu-22.04",
+    "exactFrozenRunnerMatch": true,
+    "currentlyAvailableOnline": true,
+    "currentlyInstalled": false,
+    "wslVersionTarget": 2,
+    "provisioningPlanFrozen": true,
+    "packagePlanFrozen": true,
+    "provisioningPerformed": false,
+    "packageInstallationPerformed": false,
+    "buildPerformed": false,
+    "runtimeTranslationPerformed": false,
+    "readyForControlledProvisioning": true
+  },
+  "promotionPolicy": {
+    "provisioningPlanComplete": true,
+    "distributionProvisioned": false,
+    "toolchainInstalled": false,
+    "runtimeBuilt": false,
+    "runtimeSmokeTestComplete": false,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M5C",
+    "title": "Controlled WSL Ubuntu 22.04 Provisioning and Identity Freeze",
+    "willMutateHost": true,
+    "plannedMutation": "Install one WSL Ubuntu-22.04 distribution only",
+    "packageInstallation": "NOT_YET",
+    "liblouisBuild": "NOT_YET"
+  }
+}

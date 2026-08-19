@@ -1,0 +1,157 @@
+{
+  "phase": "15.3M5",
+  "title": "Liblouis Controlled Execution Environment Selection",
+  "status": "PASS",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "frozenComparator": {
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "buildRecipe": "FROZEN_CI_MINGW_WORKFLOW",
+    "target": "x86_64-w64-mingw32"
+  },
+  "environmentEvaluations": [
+    {
+      "environment": "WSL",
+      "availability": "LAUNCHER_AVAILABLE",
+      "distributionState": "NO_DISTRIBUTION_INSTALLED",
+      "frozenCiCompatibility": "HIGH",
+      "canHostPosixAutotools": true,
+      "canHostMingwW64": true,
+      "canHostWineValidation": true,
+      "currentBuildReady": false,
+      "selection": "SELECTED",
+      "reason": "The frozen CI recipe requires a POSIX environment with Autotools, MinGW-w64, and Wine. WSL provides the closest local execution architecture to that workflow, but a Linux distribution must first be provisioned."
+    },
+    {
+      "environment": "GIT_BASH",
+      "availability": "AVAILABLE",
+      "frozenCiCompatibility": "LOW",
+      "currentBuildReady": false,
+      "selection": "REJECTED_FOR_FROZEN_BUILD",
+      "reason": "Git Bash provides a shell but the required Autotools/MinGW/Wine build toolchain is not present, and it does not reproduce the frozen CI package environment."
+    },
+    {
+      "environment": "MSYS2",
+      "availability": "NOT_DISCOVERED",
+      "frozenCiCompatibility": "MEDIUM",
+      "currentBuildReady": false,
+      "selection": "NOT_SELECTED",
+      "reason": "No existing MSYS2 installation was discovered. Installing it would add another environment while WSL support already exists on the host."
+    },
+    {
+      "environment": "DOCKER",
+      "availability": "NOT_DISCOVERED",
+      "frozenCiCompatibility": "HIGH",
+      "currentBuildReady": false,
+      "selection": "NOT_SELECTED",
+      "reason": "Docker is not installed or available on the current host."
+    },
+    {
+      "environment": "PODMAN",
+      "availability": "NOT_DISCOVERED",
+      "frozenCiCompatibility": "HIGH",
+      "currentBuildReady": false,
+      "selection": "NOT_SELECTED",
+      "reason": "Podman is not installed or available on the current host."
+    }
+  ],
+  "selectedEnvironment": {
+    "environmentFamily": "WSL",
+    "state": "WSL_AVAILABLE_DISTRIBUTION_REQUIRED",
+    "wslLauncher": "C:\\Windows\\system32\\wsl.exe",
+    "distributionInstalled": false,
+    "requiredDistributionClass": "APT_BASED_LINUX",
+    "preferredDistributionCandidate": "Ubuntu",
+    "preferredDistributionCandidateIsFrozenRequirement": false,
+    "whyUbuntuCandidate": "The frozen CI recipe uses an apt-based package installation flow. Ubuntu is a compatible WSL candidate, but the German Braille comparator specification does not normatively depend on Ubuntu itself.",
+    "requiredCapabilitiesAfterProvisioning": [
+      "POSIX shell",
+      "apt-compatible package management",
+      "autoconf",
+      "automake",
+      "libtool",
+      "make",
+      "mingw-w64 x86_64 toolchain",
+      "pkg-config",
+      "wine64"
+    ]
+  },
+  "buildIsolationPolicy": {
+    "distributionProvisioningPerformed": false,
+    "packageInstallationPerformed": false,
+    "buildPerformed": false,
+    "runtimeTranslationPerformed": false,
+    "projectRepositoryMutationFromBuild": false,
+    "frozenLiblouisCheckoutMutationAllowed": false,
+    "systemWideLiblouisInstallAllowed": false,
+    "releaseBinarySubstitutionAllowed": false,
+    "differentLiblouisCommitAllowed": false,
+    "comparatorRole": "NON_NORMATIVE",
+    "frozenCommit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e"
+  },
+  "provisioningGates": [
+    {
+      "id": "M5-GATE-01",
+      "requirement": "Provision one compatible WSL Linux distribution",
+      "status": "OPEN"
+    },
+    {
+      "id": "M5-GATE-02",
+      "requirement": "Verify the selected distribution identity/version",
+      "status": "OPEN"
+    },
+    {
+      "id": "M5-GATE-03",
+      "requirement": "Install only the frozen-recipe build dependencies",
+      "status": "OPEN"
+    },
+    {
+      "id": "M5-GATE-04",
+      "requirement": "Re-run toolchain capability verification",
+      "status": "OPEN"
+    },
+    {
+      "id": "M5-GATE-05",
+      "requirement": "Keep Liblouis source checkout Git-clean",
+      "status": "REQUIRED"
+    }
+  ],
+  "decision": {
+    "status": "PASS",
+    "environmentSelected": true,
+    "selectedEnvironment": "WSL",
+    "selectedState": "WSL_AVAILABLE_DISTRIBUTION_REQUIRED",
+    "gitBashRejectedAsBuildEnvironment": true,
+    "msys2Selected": false,
+    "dockerSelected": false,
+    "podmanSelected": false,
+    "distributionProvisioningRequired": true,
+    "distributionProvisioningPerformed": false,
+    "packageInstallationPerformed": false,
+    "buildPerformed": false,
+    "runtimeTranslationPerformed": false,
+    "readyForProvisioningPlan": true
+  },
+  "promotionPolicy": {
+    "executionEnvironmentSelected": true,
+    "executionEnvironmentProvisioned": false,
+    "runtimeBuilt": false,
+    "runtimeSmokeTestComplete": false,
+    "runtimeDifferentialAuditComplete": false,
+    "liblouisRulePromoted": false,
+    "normativeStatusChanged": false,
+    "implementationStarted": false,
+    "conformancePromoted": false
+  },
+  "next": {
+    "phase": "15.3M5B",
+    "title": "WSL Distribution Provisioning Plan",
+    "mode": "PLAN_BEFORE_INSTALL",
+    "plannedScope": [
+      "select compatible WSL distribution",
+      "freeze distribution identity/version",
+      "define required package set",
+      "define audit-cache mount strategy",
+      "define post-install verification"
+    ]
+  }
+}

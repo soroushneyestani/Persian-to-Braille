@@ -1,0 +1,133 @@
+{
+    "schemaVersion":  1,
+    "phase":  "15.3M7",
+    "title":  "Liblouis Frozen Runtime Build and Verification",
+    "generatedAtUtc":  "2026-08-19T18:28:30Z",
+    "status":  "PASS_WITH_DOCUMENTED_CROSS_HARNESS_ADAPTATION",
+    "comparatorRole":  "NON_NORMATIVE_COMPARATOR",
+    "normativeAuthority":  false,
+    "purpose":  [
+                    "Produce a reproducible executable Liblouis comparator runtime.",
+                    "Verify the frozen Liblouis source identity.",
+                    "Validate the MinGW Windows build under the frozen CI model.",
+                    "Establish runtime evidence required for Phase 15.3M8 differential comparator work."
+                ],
+    "frozenSource":  {
+                         "repository":  "liblouis/liblouis",
+                         "commit":  "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+                         "version":  "3.38.0",
+                         "checkoutMode":  "GIT_BUNDLE_WSL_NATIVE",
+                         "sourceEolAdaptation":  "NONE",
+                         "coreAutocrlf":  false,
+                         "coreEol":  "lf",
+                         "originalWindowsFrozenCheckoutModified":  false,
+                         "autogen":  {
+                                         "blobSha256":  "f7beba3e3369da89dc819301e7e9230e46ec7a7a816a0cbfeb7f758c56550b81",
+                                         "worktreeSha256":  "f7beba3e3369da89dc819301e7e9230e46ec7a7a816a0cbfeb7f758c56550b81",
+                                         "blobWorktreeMatch":  true
+                                     }
+                     },
+    "toolchain":  {
+                      "environment":  "WSL2 Ubuntu-22.04",
+                      "runnerModel":  "ubuntu-22.04",
+                      "host":  "x86_64-w64-mingw32",
+                      "wineRunner":  "wine64",
+                      "perlInterpreter":  "/usr/bin/perl"
+                  },
+    "libyaml":  {
+                    "version":  "0.1.4",
+                    "archiveSha256":  "6406d298a7889ad8e107239d3154c3540dbc0820ff4c5e889c60019fc2bf672b",
+                    "patchCanonicalGitBlobSha256":  "0150e372ea9d017e8f09ddae5725f055d9ddf30c425ccaacb278a38061de80b2",
+                    "build":  "PASS",
+                    "install":  "PASS"
+                },
+    "build":  {
+                  "autogen":  "PASS",
+                  "configure":  "PASS",
+                  "make":  "PASS",
+                  "install":  "PASS"
+              },
+    "upstreamTestSuite":  {
+                              "total":  219,
+                              "pass":  216,
+                              "fail":  3,
+                              "skip":  0,
+                              "xfail":  0,
+                              "xpass":  0,
+                              "error":  0,
+                              "rawMakeCheckExitWasZero":  false,
+                              "failureClass":  "CROSS_HARNESS_EXECUTION",
+                              "harnessBlockedTests":  [
+                                                          "check_all_tables.pl",
+                                                          "check_endless_loop.pl",
+                                                          "multiple_table_path.pl"
+                                                      ],
+                              "rootCause":  [
+                                                "The generated cross-build test harness used LOG_COMPILE=$(WINE).",
+                                                "Wine therefore received the three host-side Perl test scripts directly.",
+                                                "Wine cannot execute those Perl scripts as Windows PE executables."
+                                            ]
+                          },
+    "controlledHarnessRecheck":  {
+                                     "strategy":  [
+                                                      "Execute the three host-side scripts with native Ubuntu Perl.",
+                                                      "Preserve the relevant Automake test environment semantics.",
+                                                      "Use a disposable lou_checktable wrapper.",
+                                                      "Execute the original MinGW-built lou_checktable.exe through wine64.",
+                                                      "Do not modify frozen source files."
+                                                  ],
+                                     "wrapperSmokeGermanDeG2":  "PASS",
+                                     "total":  3,
+                                     "pass":  3,
+                                     "fail":  0,
+                                     "tests":  {
+                                                   "check_all_tables.pl":  "PASS",
+                                                   "check_endless_loop.pl":  "PASS",
+                                                   "multiple_table_path.pl":  "PASS"
+                                               },
+                                     "sourceFilesModified":  false,
+                                     "disposableWrapperRemoved":  true,
+                                     "result":  "PASS"
+                                 },
+    "effectiveValidation":  {
+                                "validated":  219,
+                                "pass":  219,
+                                "fail":  0,
+                                "interpretation":  "All 219 upstream test intents were validated after correcting only the cross-platform execution harness for the three host-side Perl scripts."
+                            },
+    "installedRuntime":  {
+                             "louTranslate":  {
+                                                  "present":  true,
+                                                  "format":  "PE32+ x86-64 Windows console executable",
+                                                  "sha256":  "83395428d632cc286148e1654244ff59197450ffb493697eb0dd66d415ad998c"
+                                              },
+                             "liblouisDllPresent":  true,
+                             "germanDeG2":  {
+                                                "present":  true,
+                                                "sha256":  "eb34cc6bea143ba925912b1f5feff55baf512b19e9d3ba7fed0d9e07ce7cc177"
+                                            },
+                             "versionSmoke":  {
+                                                  "version":  "3.38.0",
+                                                  "exitCode":  0,
+                                                  "result":  "PASS"
+                                              }
+                         },
+    "auditBundle":  {
+                        "file":  "liblouis-w64-m7.zip",
+                        "bytes":  6480584,
+                        "sha256":  "21eab29f00451102295964af3370e5b19188607b810ad4de02e272dce73b8198",
+                        "repositoryVendored":  false
+                    },
+    "constraints":  [
+                        "Liblouis remains a non-normative comparator.",
+                        "No German Braille rule is promoted from comparator behavior.",
+                        "The German Core must not depend on Liblouis, WSL, Wine, or this comparator runtime.",
+                        "Runtime divergences discovered later must be adjudicated against the frozen normative German specification artifacts.",
+                        "This M7 result establishes comparator executability only; it does not establish normative equivalence."
+                    ],
+    "decision":  {
+                     "m7Closed":  true,
+                     "readyFor":  "Phase 15.3M8 runtime smoke and differential comparator audit",
+                     "finalStatus":  "PASS_WITH_DOCUMENTED_CROSS_HARNESS_ADAPTATION"
+                 }
+}

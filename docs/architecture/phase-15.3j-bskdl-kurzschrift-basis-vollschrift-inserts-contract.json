@@ -1,0 +1,427 @@
+{
+  "phase": "15.3J",
+  "title": "BSKDL Kurzschrift Basis-/Vollschrift Insert Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.8",
+    "sectionTitle": "Einschübe in Basis- oder Vollschrift",
+    "sectionExtractionSha256": "1845c29a2f93609281f43cb7d34768401ff8f08f4f32babaa452729a381645ee"
+  },
+  "coverage": {
+    "subsections": 0,
+    "controlSequences": 2,
+    "singleWordAnnouncement": "⠠⠄",
+    "multiWordAnnouncement": "⠤⠄",
+    "multiWordDeannouncement": "⠠⠄",
+    "notationWordPlaceholder": "⠿",
+    "directSourceExamples": 3,
+    "formalRules": 6,
+    "validationCases": 9,
+    "sixDotValidation": true,
+    "phase15_1BSKDL_4_8Resolved": true,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "grammar": {
+    "insertableModes": [
+      "BASISSCHRIFT",
+      "VOLLSCHRIFT"
+    ],
+    "singleWordInsert": {
+      "announcement": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "deannouncement": null
+    },
+    "multiWordInsert": {
+      "announcement": {
+        "unicode": "⠤⠄",
+        "codepoints": [
+          "U+2824",
+          "U+2804"
+        ],
+        "dots": [
+          "36",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "deannouncement": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      }
+    },
+    "notationPlaceholder": {
+      "value": {
+        "unicode": "⠿",
+        "codepoints": [
+          "U+283F"
+        ],
+        "dots": [
+          "123456"
+        ],
+        "cellCount": 1
+      },
+      "meaning": "ONE_WORD_IN_RULE_NOTATION",
+      "partOfControlSequence": false
+    },
+    "optionalAnnouncementPolicy": {
+      "condition": "CONFUSION_EXCLUDED",
+      "announcementMayBeOmitted": true,
+      "deannouncementMayBeOmitted": "NOT_INFERRED_FROM_SOURCE"
+    },
+    "basisInsideVollschrift": {
+      "announcementRequired": false,
+      "deannouncementRequired": false
+    }
+  },
+  "directSourceExamples": [
+    {
+      "id": "BASIS_SINGLE_WORD",
+      "description": "Boccaccio is a one-word Basisschrift insert.",
+      "sourceText": "Giovanni Boccaccio ist vor allem für seine Novellensammlung bekannt.",
+      "requiredBrailleSnippet": "⠛⠊⠕⠧⠖⠝⠊ ⠠⠄⠃⠕⠉⠉⠁⠉⠉⠊⠕",
+      "insertMode": "BASISSCHRIFT",
+      "spanType": "SINGLE_WORD",
+      "announcement": "⠠⠄",
+      "deannouncement": null
+    },
+    {
+      "id": "BASIS_MULTI_WORD",
+      "description": "Au clair de la lune is a multi-word Basisschrift insert.",
+      "sourceText": "Wir sangen \"Au clair de la lune\".",
+      "requiredBrailleStartSnippet": "⠦⠤⠄⠁⠥ ⠉⠇⠁⠊⠗ ⠙⠑ ⠇⠁ ⠇⠥⠝⠑⠠⠄",
+      "insertMode": "BASISSCHRIFT",
+      "spanType": "MULTI_WORD",
+      "announcement": "⠤⠄",
+      "deannouncement": "⠠⠄"
+    },
+    {
+      "id": "VOLL_MULTI_WORD",
+      "description": "Dest war Reinmar dv riuwest mich is a multi-word Vollschrift insert.",
+      "sourceText": "Dest war Reinmar dv riuwest mich.",
+      "requiredBrailleStartSnippet": "⠃⠕⠙⠉⠒ ⠤⠄⠙⠑⠾",
+      "requiredBrailleEndSnippet": "⠍⠊⠹⠠⠄⠄",
+      "insertMode": "VOLLSCHRIFT",
+      "spanType": "MULTI_WORD",
+      "announcement": "⠤⠄",
+      "deannouncement": "⠠⠄"
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-INSERT-001",
+      "sourceSection": "4.8",
+      "kind": "INSERTABLE_CONTENT_SCOPE",
+      "summary": "Within Kurzschrift, individual words or whole passages may be rendered in Basis- or Vollschrift.",
+      "normative": true,
+      "dependencies": [
+        "BASISSCHRIFT_RENDERER",
+        "VOLLSCHRIFT_RENDERER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-002",
+      "sourceSection": "4.8",
+      "kind": "SINGLE_WORD_ANNOUNCEMENT",
+      "summary": "A one-word Basis-/Vollschrift insert is announced by ⠠⠄ immediately before the word.",
+      "normative": true,
+      "controlSequence": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-INSERT-003",
+      "sourceSection": "4.8",
+      "kind": "MULTI_WORD_DELIMITERS",
+      "summary": "A multi-word Basis-/Vollschrift insert is announced by ⠤⠄ and deannounced by ⠠⠄.",
+      "normative": true,
+      "announcement": {
+        "unicode": "⠤⠄",
+        "codepoints": [
+          "U+2824",
+          "U+2804"
+        ],
+        "dots": [
+          "36",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "deannouncement": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-INSERT-004",
+      "sourceSection": "4.8",
+      "kind": "SIX_DOT_WORD_PLACEHOLDER_NOTATION",
+      "summary": "The full six-dot cell ⠿ in the rule notation stands for one word and is not part of the insert control sequences.",
+      "normative": true,
+      "placeholder": {
+        "unicode": "⠿",
+        "codepoints": [
+          "U+283F"
+        ],
+        "dots": [
+          "123456"
+        ],
+        "cellCount": 1
+      },
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-INSERT-005",
+      "sourceSection": "4.8",
+      "kind": "ANNOUNCEMENT_MAY_BE_OMITTED_IF_UNAMBIGUOUS",
+      "summary": "If confusion is excluded, the announcement may be omitted.",
+      "normative": true,
+      "precision": "The source explicitly mentions Ankündigung only. No broader rule about omitting Abkündigung is inferred here.",
+      "dependencies": [
+        "CONFUSION_EXCLUSION_DECISION_POLICY"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-006",
+      "sourceSection": "4.8",
+      "kind": "BASIS_INSIDE_VOLLSCHRIFT_NO_DELIMITERS_REQUIRED",
+      "summary": "When Basisschrift is used inside Vollschrift, the Basisschrift need not be announced or deannounced.",
+      "normative": true,
+      "dependencies": [
+        "BRAILLE_MODE_CONTEXT_TRACKING"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-INSERT-CONTROL-001",
+      "category": "SINGLE_WORD_CONTROL",
+      "expectedAnnouncement": "⠠⠄",
+      "expectedDeannouncement": null,
+      "ruleRefs": [
+        "DE-KURZ-INSERT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-CONTROL-002",
+      "category": "MULTI_WORD_START_CONTROL",
+      "expectedAnnouncement": "⠤⠄",
+      "ruleRefs": [
+        "DE-KURZ-INSERT-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-CONTROL-003",
+      "category": "MULTI_WORD_END_CONTROL",
+      "expectedDeannouncement": "⠠⠄",
+      "ruleRefs": [
+        "DE-KURZ-INSERT-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-NOTATION-001",
+      "category": "WORD_PLACEHOLDER",
+      "placeholder": "⠿",
+      "expectedDots": "123456",
+      "expectedMeaning": "ONE_WORD_IN_RULE_NOTATION",
+      "partOfControlSequence": false,
+      "ruleRefs": [
+        "DE-KURZ-INSERT-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-EXAMPLE-001",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "sourceExampleId": "BASIS_SINGLE_WORD",
+      "insertMode": "BASISSCHRIFT",
+      "spanType": "SINGLE_WORD",
+      "expectedAnnouncement": "⠠⠄",
+      "expectedDeannouncement": null,
+      "ruleRefs": [
+        "DE-KURZ-INSERT-001",
+        "DE-KURZ-INSERT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-EXAMPLE-002",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "sourceExampleId": "BASIS_MULTI_WORD",
+      "insertMode": "BASISSCHRIFT",
+      "spanType": "MULTI_WORD",
+      "expectedAnnouncement": "⠤⠄",
+      "expectedDeannouncement": "⠠⠄",
+      "ruleRefs": [
+        "DE-KURZ-INSERT-001",
+        "DE-KURZ-INSERT-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-EXAMPLE-003",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "sourceExampleId": "VOLL_MULTI_WORD",
+      "insertMode": "VOLLSCHRIFT",
+      "spanType": "MULTI_WORD",
+      "expectedAnnouncement": "⠤⠄",
+      "expectedDeannouncement": "⠠⠄",
+      "ruleRefs": [
+        "DE-KURZ-INSERT-001",
+        "DE-KURZ-INSERT-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-POLICY-001",
+      "category": "OPTIONAL_ANNOUNCEMENT",
+      "condition": "CONFUSION_EXCLUDED",
+      "expectedDecision": "ANNOUNCEMENT_MAY_BE_OMITTED",
+      "deannouncementOmissionInferred": false,
+      "ruleRefs": [
+        "DE-KURZ-INSERT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-INSERT-POLICY-002",
+      "category": "BASIS_INSIDE_VOLLSCHRIFT",
+      "expectedAnnouncementRequired": false,
+      "expectedDeannouncementRequired": false,
+      "ruleRefs": [
+        "DE-KURZ-INSERT-006"
+      ]
+    }
+  ],
+  "sameSequenceDualRole": {
+    "sequence": "⠠⠄",
+    "sourceBackedRoles": [
+      {
+        "context": "BEFORE_SINGLE_INSERT_WORD",
+        "role": "ANNOUNCEMENT"
+      },
+      {
+        "context": "AFTER_MULTI_WORD_INSERT",
+        "role": "DEANNOUNCEMENT"
+      }
+    ],
+    "runtimeRequirement": "ROLE_DISPATCH_BY_INSERT_SPAN_CONTEXT"
+  },
+  "section47ControlSequenceOverlap": {
+    "status": "FORMALLY_CAPTURED_FOR_ARCHITECTURE",
+    "section47": {
+      "sequence": "⠠",
+      "role": "AUFHEBUNGSPUNKT"
+    },
+    "section48": {
+      "sequence": "⠠⠄",
+      "roles": [
+        "SINGLE_WORD_INSERT_ANNOUNCEMENT",
+        "MULTI_WORD_INSERT_DEANNOUNCEMENT"
+      ]
+    },
+    "implementationRequirement": "Recognize the §4.8 two-cell control sequence before interpreting its leading ⠠ as the §4.7 Aufhebungspunkt.",
+    "recommendedTokenizerPolicy": "LONGEST_VALID_CONTROL_SEQUENCE_FIRST",
+    "normativeRuleCreatedFromComparison": false
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "dependency": "BSKDL_4_8",
+      "originPhase": "15.1",
+      "sourceSection": "4.8",
+      "status": "FORMALLY_RESOLVED",
+      "resolvedByPhase": "15.3J",
+      "sourceExtractionSha256": "1845c29a2f93609281f43cb7d34768401ff8f08f4f32babaa452729a381645ee",
+      "historicalArtifactPolicy": "Do not rewrite the Phase 15.1 historical closure artifact; canonicalize the resolved dependency state in the later Phase 15.3 closure.",
+      "runtimeImplementationComplete": false
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "BASISSCHRIFT_RENDERER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "VOLLSCHRIFT_RENDERER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "BRAILLE_MODE_CONTEXT_TRACKING",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "CONFUSION_EXCLUSION_DECISION_POLICY",
+      "requiredForExecutableGeneralization": true,
+      "note": "The source permits omission of the Ankündigung when confusion is excluded, but does not define an executable ambiguity detector."
+    },
+    {
+      "id": "BRAILLE_CONTROL_SEQUENCE_TOKENIZATION",
+      "requiredForExecutableGeneralization": true,
+      "note": "Must distinguish §4.8 ⠠⠄ from §4.7 standalone ⠠."
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "controlGrammarCaptured": true,
+    "notationPlaceholderSemanticsCaptured": true,
+    "optionalAnnouncementRuleCaptured": true,
+    "nestedBasisInsideVollschriftRuleCaptured": true,
+    "phase15_1BSKDL_4_8Resolved": true,
+    "runtimeAmbiguityDecisionReady": false,
+    "runtimeControlTokenizationReady": false,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3K",
+    "title": "Kurzschrift Application Restrictions Audit",
+    "sourceSection": "4.9"
+  }
+}

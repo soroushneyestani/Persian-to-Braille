@@ -1,0 +1,2277 @@
+{
+  "phase": "15.3H",
+  "title": "BSKDL Kurzschrift Umlautungspunkt Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.6",
+    "sectionTitle": "Der Umlautungspunkt",
+    "sectionExtractionSha256": "acb0699ded198df4fea4b380ecc28f918b39d6c4e5176045ed814d47e0c13e80"
+  },
+  "coverage": {
+    "subsections": 0,
+    "umlautMappings": 33,
+    "uniqueMeanings": 33,
+    "uniqueBrailleSequences": 33,
+    "familyCounts": {
+      "TWO_FORM": 26,
+      "KOMMA": 5,
+      "ONE_FORM_SPECIAL": 2
+    },
+    "twoFormDerived": 26,
+    "kommaDerived": 5,
+    "oneFormSpecialDerived": 2,
+    "directExamples": 15,
+    "nonUmlautPoint5Contexts": 5,
+    "formalRules": 7,
+    "mappingValidationCases": 33,
+    "exampleValidationCases": 15,
+    "nonUmlautPoint5ValidationCases": 5,
+    "policyValidationCases": 7,
+    "validationCasesTotal": 60,
+    "closedWhitelist": true,
+    "sixDotValidation": true,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "grammar": {
+    "marker": {
+      "unicode": "⠐",
+      "dots": "5",
+      "name": "Umlautungspunkt"
+    },
+    "prefixTransformationFamilies": [
+      "VOLL",
+      "WAR",
+      "TWO_FORM"
+    ],
+    "kommaTransformation": "REPLACE_POINT2_WITH_POINT5",
+    "whitelistPolicy": "CLOSED",
+    "otherUmlautContractions": "FORBIDDEN"
+  },
+  "mappings": [
+    {
+      "order": 1,
+      "meaning": "ÄNDER",
+      "braille": {
+        "unicode": "⠐⠻",
+        "codepoints": [
+          "U+2810",
+          "U+283B"
+        ],
+        "dots": [
+          "5",
+          "12456"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "KOMMA",
+      "baseMeaning": "ANDER",
+      "baseBraille": {
+        "unicode": "⠂⠻",
+        "codepoints": [
+          "U+2802",
+          "U+283B"
+        ],
+        "dots": [
+          "2",
+          "12456"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 2,
+      "meaning": "BRÄUCH",
+      "braille": {
+        "unicode": "⠐⠌",
+        "codepoints": [
+          "U+2810",
+          "U+280C"
+        ],
+        "dots": [
+          "5",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "KOMMA",
+      "baseMeaning": "BRAUCH",
+      "baseBraille": {
+        "unicode": "⠂⠌",
+        "codepoints": [
+          "U+2802",
+          "U+280C"
+        ],
+        "dots": [
+          "2",
+          "34"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 3,
+      "meaning": "DRÜCK",
+      "braille": {
+        "unicode": "⠐⠙⠨",
+        "codepoints": [
+          "U+2810",
+          "U+2819",
+          "U+2828"
+        ],
+        "dots": [
+          "5",
+          "145",
+          "46"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "DRUCK",
+      "baseBraille": {
+        "unicode": "⠙⠨",
+        "codepoints": [
+          "U+2819",
+          "U+2828"
+        ],
+        "dots": [
+          "145",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 4,
+      "meaning": "FÄHR",
+      "braille": {
+        "unicode": "⠐⠗",
+        "codepoints": [
+          "U+2810",
+          "U+2817"
+        ],
+        "dots": [
+          "5",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "KOMMA",
+      "baseMeaning": "FAHR",
+      "baseBraille": {
+        "unicode": "⠂⠗",
+        "codepoints": [
+          "U+2802",
+          "U+2817"
+        ],
+        "dots": [
+          "2",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 5,
+      "meaning": "FÄLL",
+      "braille": {
+        "unicode": "⠐⠋⠟",
+        "codepoints": [
+          "U+2810",
+          "U+280B",
+          "U+281F"
+        ],
+        "dots": [
+          "5",
+          "124",
+          "12345"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "FALL",
+      "baseBraille": {
+        "unicode": "⠋⠟",
+        "codepoints": [
+          "U+280B",
+          "U+281F"
+        ],
+        "dots": [
+          "124",
+          "12345"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 6,
+      "meaning": "GÄNZ",
+      "braille": {
+        "unicode": "⠐⠛⠵",
+        "codepoints": [
+          "U+2810",
+          "U+281B",
+          "U+2835"
+        ],
+        "dots": [
+          "5",
+          "1245",
+          "1356"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GANZ",
+      "baseBraille": {
+        "unicode": "⠛⠵",
+        "codepoints": [
+          "U+281B",
+          "U+2835"
+        ],
+        "dots": [
+          "1245",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 7,
+      "meaning": "GEGENWÄRT",
+      "braille": {
+        "unicode": "⠐⠛⠺",
+        "codepoints": [
+          "U+2810",
+          "U+281B",
+          "U+283A"
+        ],
+        "dots": [
+          "5",
+          "1245",
+          "2456"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GEGENWART",
+      "baseBraille": {
+        "unicode": "⠛⠺",
+        "codepoints": [
+          "U+281B",
+          "U+283A"
+        ],
+        "dots": [
+          "1245",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 8,
+      "meaning": "GRÖß",
+      "braille": {
+        "unicode": "⠐⠛⠮",
+        "codepoints": [
+          "U+2810",
+          "U+281B",
+          "U+282E"
+        ],
+        "dots": [
+          "5",
+          "1245",
+          "2346"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GROß",
+      "baseBraille": {
+        "unicode": "⠛⠮",
+        "codepoints": [
+          "U+281B",
+          "U+282E"
+        ],
+        "dots": [
+          "1245",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 9,
+      "meaning": "GRÜND",
+      "braille": {
+        "unicode": "⠐⠛⠙",
+        "codepoints": [
+          "U+2810",
+          "U+281B",
+          "U+2819"
+        ],
+        "dots": [
+          "5",
+          "1245",
+          "145"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GRUND",
+      "baseBraille": {
+        "unicode": "⠛⠙",
+        "codepoints": [
+          "U+281B",
+          "U+2819"
+        ],
+        "dots": [
+          "1245",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 10,
+      "meaning": "HÄFT",
+      "braille": {
+        "unicode": "⠐⠓⠋",
+        "codepoints": [
+          "U+2810",
+          "U+2813",
+          "U+280B"
+        ],
+        "dots": [
+          "5",
+          "125",
+          "124"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAFT",
+      "baseBraille": {
+        "unicode": "⠓⠋",
+        "codepoints": [
+          "U+2813",
+          "U+280B"
+        ],
+        "dots": [
+          "125",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 11,
+      "meaning": "HÄND",
+      "braille": {
+        "unicode": "⠐⠓⠙",
+        "codepoints": [
+          "U+2810",
+          "U+2813",
+          "U+2819"
+        ],
+        "dots": [
+          "5",
+          "125",
+          "145"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAND",
+      "baseBraille": {
+        "unicode": "⠓⠙",
+        "codepoints": [
+          "U+2813",
+          "U+2819"
+        ],
+        "dots": [
+          "125",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 12,
+      "meaning": "HÄUPT",
+      "braille": {
+        "unicode": "⠐⠓⠏",
+        "codepoints": [
+          "U+2810",
+          "U+2813",
+          "U+280F"
+        ],
+        "dots": [
+          "5",
+          "125",
+          "1234"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAUPT",
+      "baseBraille": {
+        "unicode": "⠓⠏",
+        "codepoints": [
+          "U+2813",
+          "U+280F"
+        ],
+        "dots": [
+          "125",
+          "1234"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 13,
+      "meaning": "JÄHR",
+      "braille": {
+        "unicode": "⠐⠚⠗",
+        "codepoints": [
+          "U+2810",
+          "U+281A",
+          "U+2817"
+        ],
+        "dots": [
+          "5",
+          "245",
+          "1235"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "JAHR",
+      "baseBraille": {
+        "unicode": "⠚⠗",
+        "codepoints": [
+          "U+281A",
+          "U+2817"
+        ],
+        "dots": [
+          "245",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 14,
+      "meaning": "KÖMM",
+      "braille": {
+        "unicode": "⠐⠅⠭",
+        "codepoints": [
+          "U+2810",
+          "U+2805",
+          "U+282D"
+        ],
+        "dots": [
+          "5",
+          "13",
+          "1346"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KOMM",
+      "baseBraille": {
+        "unicode": "⠅⠭",
+        "codepoints": [
+          "U+2805",
+          "U+282D"
+        ],
+        "dots": [
+          "13",
+          "1346"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 15,
+      "meaning": "KRÄFT",
+      "braille": {
+        "unicode": "⠐⠅⠋",
+        "codepoints": [
+          "U+2810",
+          "U+2805",
+          "U+280B"
+        ],
+        "dots": [
+          "5",
+          "13",
+          "124"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KRAFT",
+      "baseBraille": {
+        "unicode": "⠅⠋",
+        "codepoints": [
+          "U+2805",
+          "U+280B"
+        ],
+        "dots": [
+          "13",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 16,
+      "meaning": "KÜRZ",
+      "braille": {
+        "unicode": "⠐⠅⠵",
+        "codepoints": [
+          "U+2810",
+          "U+2805",
+          "U+2835"
+        ],
+        "dots": [
+          "5",
+          "13",
+          "1356"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KURZ",
+      "baseBraille": {
+        "unicode": "⠅⠵",
+        "codepoints": [
+          "U+2805",
+          "U+2835"
+        ],
+        "dots": [
+          "13",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 17,
+      "meaning": "LÄNG",
+      "braille": {
+        "unicode": "⠐⠇⠛",
+        "codepoints": [
+          "U+2810",
+          "U+2807",
+          "U+281B"
+        ],
+        "dots": [
+          "5",
+          "123",
+          "1245"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "LANG",
+      "baseBraille": {
+        "unicode": "⠇⠛",
+        "codepoints": [
+          "U+2807",
+          "U+281B"
+        ],
+        "dots": [
+          "123",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 18,
+      "meaning": "LÄSS",
+      "braille": {
+        "unicode": "⠐⠇",
+        "codepoints": [
+          "U+2810",
+          "U+2807"
+        ],
+        "dots": [
+          "5",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "KOMMA",
+      "baseMeaning": "LASS",
+      "baseBraille": {
+        "unicode": "⠂⠇",
+        "codepoints": [
+          "U+2802",
+          "U+2807"
+        ],
+        "dots": [
+          "2",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 19,
+      "meaning": "NÄHM",
+      "braille": {
+        "unicode": "⠐⠝⠍",
+        "codepoints": [
+          "U+2810",
+          "U+281D",
+          "U+280D"
+        ],
+        "dots": [
+          "5",
+          "1345",
+          "134"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "NAHM",
+      "baseBraille": {
+        "unicode": "⠝⠍",
+        "codepoints": [
+          "U+281D",
+          "U+280D"
+        ],
+        "dots": [
+          "1345",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 20,
+      "meaning": "NÜTZ",
+      "braille": {
+        "unicode": "⠐⠝⠵",
+        "codepoints": [
+          "U+2810",
+          "U+281D",
+          "U+2835"
+        ],
+        "dots": [
+          "5",
+          "1345",
+          "1356"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "NUTZ",
+      "baseBraille": {
+        "unicode": "⠝⠵",
+        "codepoints": [
+          "U+281D",
+          "U+2835"
+        ],
+        "dots": [
+          "1345",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 21,
+      "meaning": "PERSÖN",
+      "braille": {
+        "unicode": "⠐⠏⠝",
+        "codepoints": [
+          "U+2810",
+          "U+280F",
+          "U+281D"
+        ],
+        "dots": [
+          "5",
+          "1234",
+          "1345"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PERSON",
+      "baseBraille": {
+        "unicode": "⠏⠝",
+        "codepoints": [
+          "U+280F",
+          "U+281D"
+        ],
+        "dots": [
+          "1234",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 22,
+      "meaning": "PLÄTZ",
+      "braille": {
+        "unicode": "⠐⠏⠵",
+        "codepoints": [
+          "U+2810",
+          "U+280F",
+          "U+2835"
+        ],
+        "dots": [
+          "5",
+          "1234",
+          "1356"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PLATZ",
+      "baseBraille": {
+        "unicode": "⠏⠵",
+        "codepoints": [
+          "U+280F",
+          "U+2835"
+        ],
+        "dots": [
+          "1234",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 23,
+      "meaning": "PÜNKT",
+      "braille": {
+        "unicode": "⠐⠏⠞",
+        "codepoints": [
+          "U+2810",
+          "U+280F",
+          "U+281E"
+        ],
+        "dots": [
+          "5",
+          "1234",
+          "2345"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PUNKT",
+      "baseBraille": {
+        "unicode": "⠏⠞",
+        "codepoints": [
+          "U+280F",
+          "U+281E"
+        ],
+        "dots": [
+          "1234",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 24,
+      "meaning": "SÄG",
+      "braille": {
+        "unicode": "⠐⠎⠛",
+        "codepoints": [
+          "U+2810",
+          "U+280E",
+          "U+281B"
+        ],
+        "dots": [
+          "5",
+          "234",
+          "1245"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SAG",
+      "baseBraille": {
+        "unicode": "⠎⠛",
+        "codepoints": [
+          "U+280E",
+          "U+281B"
+        ],
+        "dots": [
+          "234",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 25,
+      "meaning": "SÄTZ",
+      "braille": {
+        "unicode": "⠐⠎⠵",
+        "codepoints": [
+          "U+2810",
+          "U+280E",
+          "U+2835"
+        ],
+        "dots": [
+          "5",
+          "234",
+          "1356"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SATZ",
+      "baseBraille": {
+        "unicode": "⠎⠵",
+        "codepoints": [
+          "U+280E",
+          "U+2835"
+        ],
+        "dots": [
+          "234",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 26,
+      "meaning": "SCHLÄG",
+      "braille": {
+        "unicode": "⠐⠱⠛",
+        "codepoints": [
+          "U+2810",
+          "U+2831",
+          "U+281B"
+        ],
+        "dots": [
+          "5",
+          "156",
+          "1245"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SCHLAG",
+      "baseBraille": {
+        "unicode": "⠱⠛",
+        "codepoints": [
+          "U+2831",
+          "U+281B"
+        ],
+        "dots": [
+          "156",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 27,
+      "meaning": "STÄND",
+      "braille": {
+        "unicode": "⠐⠾",
+        "codepoints": [
+          "U+2810",
+          "U+283E"
+        ],
+        "dots": [
+          "5",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "KOMMA",
+      "baseMeaning": "STAND",
+      "baseBraille": {
+        "unicode": "⠂⠾",
+        "codepoints": [
+          "U+2802",
+          "U+283E"
+        ],
+        "dots": [
+          "2",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 28,
+      "meaning": "TRÄG",
+      "braille": {
+        "unicode": "⠐⠞⠛",
+        "codepoints": [
+          "U+2810",
+          "U+281E",
+          "U+281B"
+        ],
+        "dots": [
+          "5",
+          "2345",
+          "1245"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "TRAG",
+      "baseBraille": {
+        "unicode": "⠞⠛",
+        "codepoints": [
+          "U+281E",
+          "U+281B"
+        ],
+        "dots": [
+          "2345",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 29,
+      "meaning": "VÖLK",
+      "braille": {
+        "unicode": "⠐⠧⠅",
+        "codepoints": [
+          "U+2810",
+          "U+2827",
+          "U+2805"
+        ],
+        "dots": [
+          "5",
+          "1236",
+          "13"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "VOLK",
+      "baseBraille": {
+        "unicode": "⠧⠅",
+        "codepoints": [
+          "U+2827",
+          "U+2805"
+        ],
+        "dots": [
+          "1236",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 30,
+      "meaning": "VÖLL",
+      "braille": {
+        "unicode": "⠐⠟",
+        "codepoints": [
+          "U+2810",
+          "U+281F"
+        ],
+        "dots": [
+          "5",
+          "12345"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "ONE_FORM_SPECIAL",
+      "baseMeaning": "VOLL",
+      "baseBraille": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 31,
+      "meaning": "WÄHR",
+      "braille": {
+        "unicode": "⠐⠺⠓",
+        "codepoints": [
+          "U+2810",
+          "U+283A",
+          "U+2813"
+        ],
+        "dots": [
+          "5",
+          "2456",
+          "125"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "WAHR",
+      "baseBraille": {
+        "unicode": "⠺⠓",
+        "codepoints": [
+          "U+283A",
+          "U+2813"
+        ],
+        "dots": [
+          "2456",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 32,
+      "meaning": "WÄR",
+      "braille": {
+        "unicode": "⠐⠴",
+        "codepoints": [
+          "U+2810",
+          "U+2834"
+        ],
+        "dots": [
+          "5",
+          "356"
+        ],
+        "cellCount": 2
+      },
+      "baseFamily": "ONE_FORM_SPECIAL",
+      "baseMeaning": "WAR",
+      "baseBraille": {
+        "unicode": "⠴",
+        "codepoints": [
+          "U+2834"
+        ],
+        "dots": [
+          "356"
+        ],
+        "cellCount": 1
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    },
+    {
+      "order": 33,
+      "meaning": "ZÄHL",
+      "braille": {
+        "unicode": "⠐⠵⠇",
+        "codepoints": [
+          "U+2810",
+          "U+2835",
+          "U+2807"
+        ],
+        "dots": [
+          "5",
+          "1356",
+          "123"
+        ],
+        "cellCount": 3
+      },
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "ZAHL",
+      "baseBraille": {
+        "unicode": "⠵⠇",
+        "codepoints": [
+          "U+2835",
+          "U+2807"
+        ],
+        "dots": [
+          "1356",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "point5": {
+        "unicode": "⠐",
+        "dots": "5",
+        "role": "UMLAUTUNGSPUNKT"
+      }
+    }
+  ],
+  "directExamples": [
+    {
+      "print": "völlig",
+      "braille": "⠐⠟⠘"
+    },
+    {
+      "print": "ich wäre",
+      "braille": "⠼ ⠐⠴⠑"
+    },
+    {
+      "print": "wir wären",
+      "braille": "⠺⠗ ⠐⠴⠉"
+    },
+    {
+      "print": "erträglich",
+      "braille": "⠻⠐⠞⠛⠸"
+    },
+    {
+      "print": "gründlich",
+      "braille": "⠐⠛⠙⠸"
+    },
+    {
+      "print": "ergänzen",
+      "braille": "⠻⠐⠛⠵⠉"
+    },
+    {
+      "print": "auffällig",
+      "braille": "⠂⠡⠐⠋⠟⠘"
+    },
+    {
+      "print": "größer",
+      "braille": "⠐⠛⠮⠻"
+    },
+    {
+      "print": "ständig",
+      "braille": "⠐⠾⠘"
+    },
+    {
+      "print": "verständlich",
+      "braille": "⠤⠐⠾⠸"
+    },
+    {
+      "print": "unzuständig",
+      "braille": "⠲⠂⠵⠐⠾⠘"
+    },
+    {
+      "print": "Fähre",
+      "braille": "⠐⠗⠑"
+    },
+    {
+      "print": "Gefährte",
+      "braille": "⠯⠐⠗⠦"
+    },
+    {
+      "print": "du fährst",
+      "braille": "⠙⠥ ⠐⠗⠾"
+    },
+    {
+      "print": "lässig",
+      "braille": "⠐⠇⠘"
+    }
+  ],
+  "nonUmlautPoint5Contexts": [
+    "ATION",
+    "ATIV",
+    "ISMUS",
+    "ISTISCH",
+    "ITÄT"
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-UMLAUT-001",
+      "sourceSection": "4.6",
+      "kind": "UMLAUTABLE_CONTRACTION_SCOPE",
+      "summary": "The main vowel may umlaut in VOLL, WAR, numerous §4.4 two-form contractions and §4.5 Komma-Kürzungen.",
+      "normative": true,
+      "dependencies": [
+        "UMLAUTED_STEM_RECOGNITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-002",
+      "sourceSection": "4.6",
+      "kind": "UMLAUTUNGSPUNKT_IDENTITY",
+      "summary": "Punkt 5 ⠐ functions as the Umlautungspunkt in the §4.6 transformation grammar.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-003",
+      "sourceSection": "4.6",
+      "kind": "PREFIX_POINT5_TRANSFORMATION",
+      "summary": "For VOLL, WAR and applicable §4.4 two-form contractions, the umlauted stem uses the same base contraction prefixed by Punkt 5.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-004",
+      "sourceSection": "4.6",
+      "kind": "KOMMA_POINT2_REPLACEMENT",
+      "summary": "For applicable §4.5 Komma-Kürzungen, umlauting replaces integral Punkt 2 with Punkt 5.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-005",
+      "sourceSection": "4.6",
+      "kind": "CLOSED_UMLAUT_WHITELIST",
+      "summary": "§4.6 defines exactly 33 permitted Umlautkürzungen.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-006",
+      "sourceSection": "4.6",
+      "kind": "OTHER_UMLAUT_CONTRACTIONS_FORBIDDEN",
+      "summary": "Umlautkürzungen not present in the §4.6 whitelist are not permitted.",
+      "normative": true,
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-007",
+      "sourceSection": "4.6",
+      "kind": "POINT5_ROLE_DISAMBIGUATION",
+      "summary": "Punkt 5 occurring in the Lautgruppenkürzungen ATION, ATIV, ISMUS, ISTISCH and ITÄT is explicitly not an Umlautungspunkt.",
+      "normative": true,
+      "dependencies": []
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-001",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "ÄNDER",
+      "baseFamily": "KOMMA",
+      "baseMeaning": "ANDER",
+      "baseBraille": "⠂⠻",
+      "expectedBraille": "⠐⠻",
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-004",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-002",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "BRÄUCH",
+      "baseFamily": "KOMMA",
+      "baseMeaning": "BRAUCH",
+      "baseBraille": "⠂⠌",
+      "expectedBraille": "⠐⠌",
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-004",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-003",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "DRÜCK",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "DRUCK",
+      "baseBraille": "⠙⠨",
+      "expectedBraille": "⠐⠙⠨",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-004",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "FÄHR",
+      "baseFamily": "KOMMA",
+      "baseMeaning": "FAHR",
+      "baseBraille": "⠂⠗",
+      "expectedBraille": "⠐⠗",
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-004",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-005",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "FÄLL",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "FALL",
+      "baseBraille": "⠋⠟",
+      "expectedBraille": "⠐⠋⠟",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-006",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "GÄNZ",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GANZ",
+      "baseBraille": "⠛⠵",
+      "expectedBraille": "⠐⠛⠵",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-007",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "GEGENWÄRT",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GEGENWART",
+      "baseBraille": "⠛⠺",
+      "expectedBraille": "⠐⠛⠺",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-008",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "GRÖß",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GROß",
+      "baseBraille": "⠛⠮",
+      "expectedBraille": "⠐⠛⠮",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-009",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "GRÜND",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "GRUND",
+      "baseBraille": "⠛⠙",
+      "expectedBraille": "⠐⠛⠙",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-010",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "HÄFT",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAFT",
+      "baseBraille": "⠓⠋",
+      "expectedBraille": "⠐⠓⠋",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-011",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "HÄND",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAND",
+      "baseBraille": "⠓⠙",
+      "expectedBraille": "⠐⠓⠙",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-012",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "HÄUPT",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "HAUPT",
+      "baseBraille": "⠓⠏",
+      "expectedBraille": "⠐⠓⠏",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-013",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "JÄHR",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "JAHR",
+      "baseBraille": "⠚⠗",
+      "expectedBraille": "⠐⠚⠗",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-014",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "KÖMM",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KOMM",
+      "baseBraille": "⠅⠭",
+      "expectedBraille": "⠐⠅⠭",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-015",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "KRÄFT",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KRAFT",
+      "baseBraille": "⠅⠋",
+      "expectedBraille": "⠐⠅⠋",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-016",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "KÜRZ",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "KURZ",
+      "baseBraille": "⠅⠵",
+      "expectedBraille": "⠐⠅⠵",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-017",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "LÄNG",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "LANG",
+      "baseBraille": "⠇⠛",
+      "expectedBraille": "⠐⠇⠛",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-018",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "LÄSS",
+      "baseFamily": "KOMMA",
+      "baseMeaning": "LASS",
+      "baseBraille": "⠂⠇",
+      "expectedBraille": "⠐⠇",
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-004",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-019",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "NÄHM",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "NAHM",
+      "baseBraille": "⠝⠍",
+      "expectedBraille": "⠐⠝⠍",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-020",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "NÜTZ",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "NUTZ",
+      "baseBraille": "⠝⠵",
+      "expectedBraille": "⠐⠝⠵",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-021",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "PERSÖN",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PERSON",
+      "baseBraille": "⠏⠝",
+      "expectedBraille": "⠐⠏⠝",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-022",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "PLÄTZ",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PLATZ",
+      "baseBraille": "⠏⠵",
+      "expectedBraille": "⠐⠏⠵",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-023",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "PÜNKT",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "PUNKT",
+      "baseBraille": "⠏⠞",
+      "expectedBraille": "⠐⠏⠞",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-024",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "SÄG",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SAG",
+      "baseBraille": "⠎⠛",
+      "expectedBraille": "⠐⠎⠛",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-025",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "SÄTZ",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SATZ",
+      "baseBraille": "⠎⠵",
+      "expectedBraille": "⠐⠎⠵",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-026",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "SCHLÄG",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "SCHLAG",
+      "baseBraille": "⠱⠛",
+      "expectedBraille": "⠐⠱⠛",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-027",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "STÄND",
+      "baseFamily": "KOMMA",
+      "baseMeaning": "STAND",
+      "baseBraille": "⠂⠾",
+      "expectedBraille": "⠐⠾",
+      "transformation": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-004",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-028",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "TRÄG",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "TRAG",
+      "baseBraille": "⠞⠛",
+      "expectedBraille": "⠐⠞⠛",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-029",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "VÖLK",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "VOLK",
+      "baseBraille": "⠧⠅",
+      "expectedBraille": "⠐⠧⠅",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-030",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "VÖLL",
+      "baseFamily": "ONE_FORM_SPECIAL",
+      "baseMeaning": "VOLL",
+      "baseBraille": "⠟",
+      "expectedBraille": "⠐⠟",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-031",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "WÄHR",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "WAHR",
+      "baseBraille": "⠺⠓",
+      "expectedBraille": "⠐⠺⠓",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-032",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "WÄR",
+      "baseFamily": "ONE_FORM_SPECIAL",
+      "baseMeaning": "WAR",
+      "baseBraille": "⠴",
+      "expectedBraille": "⠐⠴",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-MAP-033",
+      "category": "EXACT_UMLAUT_MAPPING",
+      "meaning": "ZÄHL",
+      "baseFamily": "TWO_FORM",
+      "baseMeaning": "ZAHL",
+      "baseBraille": "⠵⠇",
+      "expectedBraille": "⠐⠵⠇",
+      "transformation": "PREFIX_POINT5_TO_BASE_CONTRACTION",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002",
+        "DE-KURZ-UMLAUT-003",
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-001",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "völlig",
+      "expectedBraille": "⠐⠟⠘",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-002",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "ich wäre",
+      "expectedBraille": "⠼ ⠐⠴⠑",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-003",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "wir wären",
+      "expectedBraille": "⠺⠗ ⠐⠴⠉",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-004",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "erträglich",
+      "expectedBraille": "⠻⠐⠞⠛⠸",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-005",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "gründlich",
+      "expectedBraille": "⠐⠛⠙⠸",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-006",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "ergänzen",
+      "expectedBraille": "⠻⠐⠛⠵⠉",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-007",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "auffällig",
+      "expectedBraille": "⠂⠡⠐⠋⠟⠘",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-008",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "größer",
+      "expectedBraille": "⠐⠛⠮⠻",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-009",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "ständig",
+      "expectedBraille": "⠐⠾⠘",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-010",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "verständlich",
+      "expectedBraille": "⠤⠐⠾⠸",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-011",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "unzuständig",
+      "expectedBraille": "⠲⠂⠵⠐⠾⠘",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-012",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "Fähre",
+      "expectedBraille": "⠐⠗⠑",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-013",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "Gefährte",
+      "expectedBraille": "⠯⠐⠗⠦",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-014",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "du fährst",
+      "expectedBraille": "⠙⠥ ⠐⠗⠾",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-EXAMPLE-015",
+      "category": "DIRECT_SOURCE_EXAMPLE",
+      "print": "lässig",
+      "expectedBraille": "⠐⠇⠘",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001",
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-NONROLE-001",
+      "category": "POINT5_NOT_UMLAUTUNGSPUNKT",
+      "meaning": "ATION",
+      "expectedDecision": "POINT5_IS_NOT_UMLAUTUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-NONROLE-002",
+      "category": "POINT5_NOT_UMLAUTUNGSPUNKT",
+      "meaning": "ATIV",
+      "expectedDecision": "POINT5_IS_NOT_UMLAUTUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-NONROLE-003",
+      "category": "POINT5_NOT_UMLAUTUNGSPUNKT",
+      "meaning": "ISMUS",
+      "expectedDecision": "POINT5_IS_NOT_UMLAUTUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-NONROLE-004",
+      "category": "POINT5_NOT_UMLAUTUNGSPUNKT",
+      "meaning": "ISTISCH",
+      "expectedDecision": "POINT5_IS_NOT_UMLAUTUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-NONROLE-005",
+      "category": "POINT5_NOT_UMLAUTUNGSPUNKT",
+      "meaning": "ITÄT",
+      "expectedDecision": "POINT5_IS_NOT_UMLAUTUNGSPUNKT",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-001",
+      "category": "SCOPE",
+      "expectedDecision": "LIMITED_TO_SOURCE_SUPPORTED_UMLAUTABLE_STEMS",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-002",
+      "category": "POINT5_ROLE",
+      "expectedDecision": "POINT5_IS_UMLAUTUNGSPUNKT_IN_SECTION_4_6_GRAMMAR",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-003",
+      "category": "PREFIX_TRANSFORMATION",
+      "expectedDecision": "PREFIX_POINT5_FOR_VOLL_WAR_AND_TWO_FORM",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-003"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-004",
+      "category": "KOMMA_TRANSFORMATION",
+      "expectedDecision": "REPLACE_POINT2_WITH_POINT5",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-004"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-005",
+      "category": "WHITELIST",
+      "expectedDecision": "EXACTLY_33_SOURCE_ALLOWED_UMLAUT_CONTRACTIONS",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-006",
+      "category": "CLOSED_WORLD",
+      "expectedDecision": "OTHER_UMLAUT_CONTRACTIONS_FORBIDDEN",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-006"
+      ]
+    },
+    {
+      "id": "DE-KURZ-UMLAUT-POLICY-007",
+      "category": "POINT5_ROLE_COLLISION",
+      "expectedDecision": "CONTEXT_DISPATCH_REQUIRED",
+      "ruleRefs": [
+        "DE-KURZ-UMLAUT-007"
+      ]
+    }
+  ],
+  "lassLaessResolution": {
+    "originPhases": [
+      "15.3E",
+      "15.3G"
+    ],
+    "base": {
+      "meaning": "LASS",
+      "braille": "⠂⠇"
+    },
+    "umlautedStem": {
+      "meaning": "LÄSS",
+      "braille": "⠐⠇"
+    },
+    "transformation": "REPLACE_POINT2_WITH_POINT5",
+    "umlautTransformationStatus": "FORMALLY_RESOLVED",
+    "fullDerivedWordRuntimeStatus": "PENDING_MORPHOLOGICAL_EXTENSION_LOGIC",
+    "note": "Section 4.6 does not list the complete word LÄSST; it normatively defines the LÄSS umlauted contraction stem."
+  },
+  "point5SemanticDistinction": {
+    "status": "FORMALLY_CAPTURED",
+    "umlautungspunkt": {
+      "cell": "⠐",
+      "dots": "5",
+      "sourceSection": "4.6",
+      "role": "UMLAUT_TRANSFORMATION_MARKER"
+    },
+    "nonUmlautLautgruppen": [
+      "ATION",
+      "ATIV",
+      "ISMUS",
+      "ISTISCH",
+      "ITÄT"
+    ],
+    "implementationRequirement": "POINT5_ROLE_MUST_BE_CONTEXT_DISPATCHED"
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "dependency": "LAESST_ALTERNATIVE_CONTRACTION_PATH",
+      "originPhases": [
+        "15.3E",
+        "15.3G"
+      ],
+      "resolvedComponent": "LASS_TO_LAESS_UMLAUT_STEM_TRANSFORMATION",
+      "status": "UMLAUT_TRANSFORMATION_FORMALLY_RESOLVED",
+      "remainingRuntimeDependency": "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+    },
+    {
+      "dependency": "KOMMA_UMLAUT_TRANSFORMATION",
+      "originPhase": "15.3G",
+      "status": "FORMALLY_RESOLVED",
+      "rule": "REPLACE_POINT2_WITH_POINT5"
+    },
+    {
+      "dependency": "VOLL_WAR_UMLAUT_TRANSFORMATION",
+      "originPhase": "15.3E",
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "dependency": "TWO_FORM_UMLAUT_TRANSFORMATION",
+      "originPhase": "15.3F",
+      "status": "FORMALLY_RESOLVED_FOR_26_WHITELISTED_BASES"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "UMLAUTED_STEM_RECOGNITION_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.5"
+    },
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true,
+      "plannedPhase": "15.3K"
+    },
+    {
+      "id": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION",
+      "requiredForExecutableGeneralization": false,
+      "requiredForTerminologyPrecision": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "closedWhitelistCaptured": true,
+    "umlautTransformationGrammarCaptured": true,
+    "runtimeMorphologyReady": false,
+    "section4_9RestrictionsAudited": false,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3I",
+    "title": "Kurzschrift Aufhebungspunkt Audit",
+    "sourceSection": "4.7"
+  }
+}

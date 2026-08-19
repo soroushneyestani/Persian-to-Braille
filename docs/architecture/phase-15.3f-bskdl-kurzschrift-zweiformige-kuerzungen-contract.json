@@ -1,0 +1,5374 @@
+{
+  "phase": "15.3F",
+  "title": "BSKDL Kurzschrift Zweiformige Kürzungen Contract",
+  "status": "FORMAL_AUDIT_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.4",
+    "sectionTitle": "Zweiformige Kürzungen",
+    "sectionExtractionSha256": "881f39f3cb3390c9a1d0899b506cbd739cae90d604cada73918e272227b23c42"
+  },
+  "coverage": {
+    "subsections": 0,
+    "mappingCount": 165,
+    "uniqueMeanings": 165,
+    "uniqueBrailleSequences": 165,
+    "allMappingsTwoCell": true,
+    "sixDotValidation": true,
+    "formalRules": 5,
+    "mappingValidationCases": 165,
+    "policyValidationCases": 4,
+    "validationCasesTotal": 169,
+    "sectionFormalCoverageComplete": true,
+    "chapter4FormalCoverageComplete": false
+  },
+  "mappings": [
+    {
+      "order": 1,
+      "meaning": "ÄHNLICH",
+      "braille": {
+        "unicode": "⠜⠸",
+        "codepoints": [
+          "U+281C",
+          "U+2838"
+        ],
+        "dots": [
+          "345",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 7
+    },
+    {
+      "order": 2,
+      "meaning": "ALSO",
+      "braille": {
+        "unicode": "⠁⠕",
+        "codepoints": [
+          "U+2801",
+          "U+2815"
+        ],
+        "dots": [
+          "1",
+          "135"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 8
+    },
+    {
+      "order": 3,
+      "meaning": "ARBEIT",
+      "braille": {
+        "unicode": "⠴⠃",
+        "codepoints": [
+          "U+2834",
+          "U+2803"
+        ],
+        "dots": [
+          "356",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 9
+    },
+    {
+      "order": 4,
+      "meaning": "BEID",
+      "braille": {
+        "unicode": "⠃⠙",
+        "codepoints": [
+          "U+2803",
+          "U+2819"
+        ],
+        "dots": [
+          "12",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 10
+    },
+    {
+      "order": 5,
+      "meaning": "BEIM",
+      "braille": {
+        "unicode": "⠃⠍",
+        "codepoints": [
+          "U+2803",
+          "U+280D"
+        ],
+        "dots": [
+          "12",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 11
+    },
+    {
+      "order": 6,
+      "meaning": "BESSER",
+      "braille": {
+        "unicode": "⠎⠎",
+        "codepoints": [
+          "U+280E",
+          "U+280E"
+        ],
+        "dots": [
+          "234",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 12
+    },
+    {
+      "order": 7,
+      "meaning": "BIS",
+      "braille": {
+        "unicode": "⠃⠎",
+        "codepoints": [
+          "U+2803",
+          "U+280E"
+        ],
+        "dots": [
+          "12",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 13
+    },
+    {
+      "order": 8,
+      "meaning": "BIST",
+      "braille": {
+        "unicode": "⠃⠾",
+        "codepoints": [
+          "U+2803",
+          "U+283E"
+        ],
+        "dots": [
+          "12",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 14
+    },
+    {
+      "order": 9,
+      "meaning": "BLEIB",
+      "braille": {
+        "unicode": "⠃⠃",
+        "codepoints": [
+          "U+2803",
+          "U+2803"
+        ],
+        "dots": [
+          "12",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 15
+    },
+    {
+      "order": 10,
+      "meaning": "BRIEF",
+      "braille": {
+        "unicode": "⠃⠋",
+        "codepoints": [
+          "U+2803",
+          "U+280B"
+        ],
+        "dots": [
+          "12",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 16
+    },
+    {
+      "order": 11,
+      "meaning": "BRING",
+      "braille": {
+        "unicode": "⠃⠛",
+        "codepoints": [
+          "U+2803",
+          "U+281B"
+        ],
+        "dots": [
+          "12",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 17
+    },
+    {
+      "order": 12,
+      "meaning": "CHARAKTER",
+      "braille": {
+        "unicode": "⠹⠅",
+        "codepoints": [
+          "U+2839",
+          "U+2805"
+        ],
+        "dots": [
+          "1456",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 18
+    },
+    {
+      "order": 13,
+      "meaning": "DABEI",
+      "braille": {
+        "unicode": "⠙⠃",
+        "codepoints": [
+          "U+2819",
+          "U+2803"
+        ],
+        "dots": [
+          "145",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 19
+    },
+    {
+      "order": 14,
+      "meaning": "DADURCH",
+      "braille": {
+        "unicode": "⠙⠙",
+        "codepoints": [
+          "U+2819",
+          "U+2819"
+        ],
+        "dots": [
+          "145",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 20
+    },
+    {
+      "order": 15,
+      "meaning": "DAFÜR",
+      "braille": {
+        "unicode": "⠙⠋",
+        "codepoints": [
+          "U+2819",
+          "U+280B"
+        ],
+        "dots": [
+          "145",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 21
+    },
+    {
+      "order": 16,
+      "meaning": "DAGEGEN",
+      "braille": {
+        "unicode": "⠙⠛",
+        "codepoints": [
+          "U+2819",
+          "U+281B"
+        ],
+        "dots": [
+          "145",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 22
+    },
+    {
+      "order": 17,
+      "meaning": "DAHER",
+      "braille": {
+        "unicode": "⠙⠓",
+        "codepoints": [
+          "U+2819",
+          "U+2813"
+        ],
+        "dots": [
+          "145",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 23
+    },
+    {
+      "order": 18,
+      "meaning": "DAMIT",
+      "braille": {
+        "unicode": "⠙⠍",
+        "codepoints": [
+          "U+2819",
+          "U+280D"
+        ],
+        "dots": [
+          "145",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 24
+    },
+    {
+      "order": 19,
+      "meaning": "DANK",
+      "braille": {
+        "unicode": "⠙⠅",
+        "codepoints": [
+          "U+2819",
+          "U+2805"
+        ],
+        "dots": [
+          "145",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 25
+    },
+    {
+      "order": 20,
+      "meaning": "DARAUF",
+      "braille": {
+        "unicode": "⠙⠡",
+        "codepoints": [
+          "U+2819",
+          "U+2821"
+        ],
+        "dots": [
+          "145",
+          "16"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 26
+    },
+    {
+      "order": 21,
+      "meaning": "DARÜBER",
+      "braille": {
+        "unicode": "⠙⠳",
+        "codepoints": [
+          "U+2819",
+          "U+2833"
+        ],
+        "dots": [
+          "145",
+          "1256"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 27
+    },
+    {
+      "order": 22,
+      "meaning": "DAVON",
+      "braille": {
+        "unicode": "⠙⠧",
+        "codepoints": [
+          "U+2819",
+          "U+2827"
+        ],
+        "dots": [
+          "145",
+          "1236"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 28
+    },
+    {
+      "order": 23,
+      "meaning": "DAZU",
+      "braille": {
+        "unicode": "⠙⠵",
+        "codepoints": [
+          "U+2819",
+          "U+2835"
+        ],
+        "dots": [
+          "145",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 29
+    },
+    {
+      "order": 24,
+      "meaning": "DEMOKRAT",
+      "braille": {
+        "unicode": "⠙⠞",
+        "codepoints": [
+          "U+2819",
+          "U+281E"
+        ],
+        "dots": [
+          "145",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 30
+    },
+    {
+      "order": 25,
+      "meaning": "DENEN",
+      "braille": {
+        "unicode": "⠑⠉",
+        "codepoints": [
+          "U+2811",
+          "U+2809"
+        ],
+        "dots": [
+          "15",
+          "14"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 31
+    },
+    {
+      "order": 26,
+      "meaning": "DENN",
+      "braille": {
+        "unicode": "⠙⠝",
+        "codepoints": [
+          "U+2819",
+          "U+281D"
+        ],
+        "dots": [
+          "145",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 32
+    },
+    {
+      "order": 27,
+      "meaning": "DESSEN",
+      "braille": {
+        "unicode": "⠙⠮",
+        "codepoints": [
+          "U+2819",
+          "U+282E"
+        ],
+        "dots": [
+          "145",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 33
+    },
+    {
+      "order": 28,
+      "meaning": "DEUTSCH",
+      "braille": {
+        "unicode": "⠙⠱",
+        "codepoints": [
+          "U+2819",
+          "U+2831"
+        ],
+        "dots": [
+          "145",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 34
+    },
+    {
+      "order": 29,
+      "meaning": "DIR",
+      "braille": {
+        "unicode": "⠙⠗",
+        "codepoints": [
+          "U+2819",
+          "U+2817"
+        ],
+        "dots": [
+          "145",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 35
+    },
+    {
+      "order": 30,
+      "meaning": "DOCH",
+      "braille": {
+        "unicode": "⠙⠹",
+        "codepoints": [
+          "U+2819",
+          "U+2839"
+        ],
+        "dots": [
+          "145",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 36
+    },
+    {
+      "order": 31,
+      "meaning": "DRUCK",
+      "braille": {
+        "unicode": "⠙⠨",
+        "codepoints": [
+          "U+2819",
+          "U+2828"
+        ],
+        "dots": [
+          "145",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 37
+    },
+    {
+      "order": 32,
+      "meaning": "EBENSO",
+      "braille": {
+        "unicode": "⠑⠕",
+        "codepoints": [
+          "U+2811",
+          "U+2815"
+        ],
+        "dots": [
+          "15",
+          "135"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 38
+    },
+    {
+      "order": 33,
+      "meaning": "ETWA",
+      "braille": {
+        "unicode": "⠑⠁",
+        "codepoints": [
+          "U+2811",
+          "U+2801"
+        ],
+        "dots": [
+          "15",
+          "1"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 39
+    },
+    {
+      "order": 34,
+      "meaning": "ETWAS",
+      "braille": {
+        "unicode": "⠞⠺",
+        "codepoints": [
+          "U+281E",
+          "U+283A"
+        ],
+        "dots": [
+          "2345",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 40
+    },
+    {
+      "order": 35,
+      "meaning": "FALL",
+      "braille": {
+        "unicode": "⠋⠟",
+        "codepoints": [
+          "U+280B",
+          "U+281F"
+        ],
+        "dots": [
+          "124",
+          "12345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 41
+    },
+    {
+      "order": 36,
+      "meaning": "FERTIG",
+      "braille": {
+        "unicode": "⠋⠘",
+        "codepoints": [
+          "U+280B",
+          "U+2818"
+        ],
+        "dots": [
+          "124",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 42
+    },
+    {
+      "order": 37,
+      "meaning": "FOLG",
+      "braille": {
+        "unicode": "⠋⠛",
+        "codepoints": [
+          "U+280B",
+          "U+281B"
+        ],
+        "dots": [
+          "124",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 43
+    },
+    {
+      "order": 38,
+      "meaning": "FREUND",
+      "braille": {
+        "unicode": "⠋⠙",
+        "codepoints": [
+          "U+280B",
+          "U+2819"
+        ],
+        "dots": [
+          "124",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 44
+    },
+    {
+      "order": 39,
+      "meaning": "FÜHR",
+      "braille": {
+        "unicode": "⠋⠓",
+        "codepoints": [
+          "U+280B",
+          "U+2813"
+        ],
+        "dots": [
+          "124",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 46
+    },
+    {
+      "order": 40,
+      "meaning": "GANZ",
+      "braille": {
+        "unicode": "⠛⠵",
+        "codepoints": [
+          "U+281B",
+          "U+2835"
+        ],
+        "dots": [
+          "1245",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 48
+    },
+    {
+      "order": 41,
+      "meaning": "GEGENÜBER",
+      "braille": {
+        "unicode": "⠛⠳",
+        "codepoints": [
+          "U+281B",
+          "U+2833"
+        ],
+        "dots": [
+          "1245",
+          "1256"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 49
+    },
+    {
+      "order": 42,
+      "meaning": "GEGENWART",
+      "braille": {
+        "unicode": "⠛⠺",
+        "codepoints": [
+          "U+281B",
+          "U+283A"
+        ],
+        "dots": [
+          "1245",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 50
+    },
+    {
+      "order": 43,
+      "meaning": "GELEGEN",
+      "braille": {
+        "unicode": "⠛⠛",
+        "codepoints": [
+          "U+281B",
+          "U+281B"
+        ],
+        "dots": [
+          "1245",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 51
+    },
+    {
+      "order": 44,
+      "meaning": "GESCHÄFT",
+      "braille": {
+        "unicode": "⠛⠋",
+        "codepoints": [
+          "U+281B",
+          "U+280B"
+        ],
+        "dots": [
+          "1245",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 52
+    },
+    {
+      "order": 45,
+      "meaning": "GESELLSCHAFT",
+      "braille": {
+        "unicode": "⠛⠱",
+        "codepoints": [
+          "U+281B",
+          "U+2831"
+        ],
+        "dots": [
+          "1245",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 53
+    },
+    {
+      "order": 46,
+      "meaning": "GEWORDEN",
+      "braille": {
+        "unicode": "⠯⠺",
+        "codepoints": [
+          "U+282F",
+          "U+283A"
+        ],
+        "dots": [
+          "12346",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 54
+    },
+    {
+      "order": 47,
+      "meaning": "GIBT",
+      "braille": {
+        "unicode": "⠛⠃",
+        "codepoints": [
+          "U+281B",
+          "U+2803"
+        ],
+        "dots": [
+          "1245",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 55
+    },
+    {
+      "order": 48,
+      "meaning": "GLEICH",
+      "braille": {
+        "unicode": "⠛⠹",
+        "codepoints": [
+          "U+281B",
+          "U+2839"
+        ],
+        "dots": [
+          "1245",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 56
+    },
+    {
+      "order": 49,
+      "meaning": "GLÜCK",
+      "braille": {
+        "unicode": "⠛⠨",
+        "codepoints": [
+          "U+281B",
+          "U+2828"
+        ],
+        "dots": [
+          "1245",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 57
+    },
+    {
+      "order": 50,
+      "meaning": "GROß",
+      "braille": {
+        "unicode": "⠛⠮",
+        "codepoints": [
+          "U+281B",
+          "U+282E"
+        ],
+        "dots": [
+          "1245",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 58
+    },
+    {
+      "order": 51,
+      "meaning": "GRUND",
+      "braille": {
+        "unicode": "⠛⠙",
+        "codepoints": [
+          "U+281B",
+          "U+2819"
+        ],
+        "dots": [
+          "1245",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 59
+    },
+    {
+      "order": 52,
+      "meaning": "HAFT",
+      "braille": {
+        "unicode": "⠓⠋",
+        "codepoints": [
+          "U+2813",
+          "U+280B"
+        ],
+        "dots": [
+          "125",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 60
+    },
+    {
+      "order": 53,
+      "meaning": "HAND",
+      "braille": {
+        "unicode": "⠓⠙",
+        "codepoints": [
+          "U+2813",
+          "U+2819"
+        ],
+        "dots": [
+          "125",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 61
+    },
+    {
+      "order": 54,
+      "meaning": "HAST",
+      "braille": {
+        "unicode": "⠓⠾",
+        "codepoints": [
+          "U+2813",
+          "U+283E"
+        ],
+        "dots": [
+          "125",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 62
+    },
+    {
+      "order": 55,
+      "meaning": "HAT",
+      "braille": {
+        "unicode": "⠓⠞",
+        "codepoints": [
+          "U+2813",
+          "U+281E"
+        ],
+        "dots": [
+          "125",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 63
+    },
+    {
+      "order": 56,
+      "meaning": "HAUPT",
+      "braille": {
+        "unicode": "⠓⠏",
+        "codepoints": [
+          "U+2813",
+          "U+280F"
+        ],
+        "dots": [
+          "125",
+          "1234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 64
+    },
+    {
+      "order": 57,
+      "meaning": "HERR",
+      "braille": {
+        "unicode": "⠗⠗",
+        "codepoints": [
+          "U+2817",
+          "U+2817"
+        ],
+        "dots": [
+          "1235",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 65
+    },
+    {
+      "order": 58,
+      "meaning": "HIER",
+      "braille": {
+        "unicode": "⠓⠗",
+        "codepoints": [
+          "U+2813",
+          "U+2817"
+        ],
+        "dots": [
+          "125",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 66
+    },
+    {
+      "order": 59,
+      "meaning": "HOFF",
+      "braille": {
+        "unicode": "⠋⠋",
+        "codepoints": [
+          "U+280B",
+          "U+280B"
+        ],
+        "dots": [
+          "124",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 67
+    },
+    {
+      "order": 60,
+      "meaning": "IHN",
+      "braille": {
+        "unicode": "⠊⠓",
+        "codepoints": [
+          "U+280A",
+          "U+2813"
+        ],
+        "dots": [
+          "24",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 68
+    },
+    {
+      "order": 61,
+      "meaning": "IRGEND",
+      "braille": {
+        "unicode": "⠊⠛",
+        "codepoints": [
+          "U+280A",
+          "U+281B"
+        ],
+        "dots": [
+          "24",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 69
+    },
+    {
+      "order": 62,
+      "meaning": "JAHR",
+      "braille": {
+        "unicode": "⠚⠗",
+        "codepoints": [
+          "U+281A",
+          "U+2817"
+        ],
+        "dots": [
+          "245",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 70
+    },
+    {
+      "order": 63,
+      "meaning": "JAHRHUNDERT",
+      "braille": {
+        "unicode": "⠚⠓",
+        "codepoints": [
+          "U+281A",
+          "U+2813"
+        ],
+        "dots": [
+          "245",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 71
+    },
+    {
+      "order": 64,
+      "meaning": "JAHRTAUSEND",
+      "braille": {
+        "unicode": "⠚⠞",
+        "codepoints": [
+          "U+281A",
+          "U+281E"
+        ],
+        "dots": [
+          "245",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 72
+    },
+    {
+      "order": 65,
+      "meaning": "JAHRZEHNT",
+      "braille": {
+        "unicode": "⠚⠵",
+        "codepoints": [
+          "U+281A",
+          "U+2835"
+        ],
+        "dots": [
+          "245",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 73
+    },
+    {
+      "order": 66,
+      "meaning": "JED",
+      "braille": {
+        "unicode": "⠚⠙",
+        "codepoints": [
+          "U+281A",
+          "U+2819"
+        ],
+        "dots": [
+          "245",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 74
+    },
+    {
+      "order": 67,
+      "meaning": "JEDOCH",
+      "braille": {
+        "unicode": "⠚⠹",
+        "codepoints": [
+          "U+281A",
+          "U+2839"
+        ],
+        "dots": [
+          "245",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 75
+    },
+    {
+      "order": 68,
+      "meaning": "JETZIG",
+      "braille": {
+        "unicode": "⠚⠘",
+        "codepoints": [
+          "U+281A",
+          "U+2818"
+        ],
+        "dots": [
+          "245",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 76
+    },
+    {
+      "order": 69,
+      "meaning": "KANNST",
+      "braille": {
+        "unicode": "⠅⠾",
+        "codepoints": [
+          "U+2805",
+          "U+283E"
+        ],
+        "dots": [
+          "13",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 77
+    },
+    {
+      "order": 70,
+      "meaning": "KAPITAL",
+      "braille": {
+        "unicode": "⠅⠏",
+        "codepoints": [
+          "U+2805",
+          "U+280F"
+        ],
+        "dots": [
+          "13",
+          "1234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 78
+    },
+    {
+      "order": 71,
+      "meaning": "KOMM",
+      "braille": {
+        "unicode": "⠅⠭",
+        "codepoints": [
+          "U+2805",
+          "U+282D"
+        ],
+        "dots": [
+          "13",
+          "1346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 79
+    },
+    {
+      "order": 72,
+      "meaning": "KONNT",
+      "braille": {
+        "unicode": "⠅⠞",
+        "codepoints": [
+          "U+2805",
+          "U+281E"
+        ],
+        "dots": [
+          "13",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 80
+    },
+    {
+      "order": 73,
+      "meaning": "KRAFT",
+      "braille": {
+        "unicode": "⠅⠋",
+        "codepoints": [
+          "U+2805",
+          "U+280B"
+        ],
+        "dots": [
+          "13",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 81
+    },
+    {
+      "order": 74,
+      "meaning": "KURZ",
+      "braille": {
+        "unicode": "⠅⠵",
+        "codepoints": [
+          "U+2805",
+          "U+2835"
+        ],
+        "dots": [
+          "13",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 82
+    },
+    {
+      "order": 75,
+      "meaning": "LANG",
+      "braille": {
+        "unicode": "⠇⠛",
+        "codepoints": [
+          "U+2807",
+          "U+281B"
+        ],
+        "dots": [
+          "123",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 83
+    },
+    {
+      "order": 76,
+      "meaning": "LEB",
+      "braille": {
+        "unicode": "⠇⠃",
+        "codepoints": [
+          "U+2807",
+          "U+2803"
+        ],
+        "dots": [
+          "123",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 84
+    },
+    {
+      "order": 77,
+      "meaning": "LEICHT",
+      "braille": {
+        "unicode": "⠇⠹",
+        "codepoints": [
+          "U+2807",
+          "U+2839"
+        ],
+        "dots": [
+          "123",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 85
+    },
+    {
+      "order": 78,
+      "meaning": "LETZT",
+      "braille": {
+        "unicode": "⠇⠞",
+        "codepoints": [
+          "U+2807",
+          "U+281E"
+        ],
+        "dots": [
+          "123",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 86
+    },
+    {
+      "order": 79,
+      "meaning": "MASCHIN",
+      "braille": {
+        "unicode": "⠍⠱",
+        "codepoints": [
+          "U+280D",
+          "U+2831"
+        ],
+        "dots": [
+          "134",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 87
+    },
+    {
+      "order": 80,
+      "meaning": "MATERIAL",
+      "braille": {
+        "unicode": "⠍⠇",
+        "codepoints": [
+          "U+280D",
+          "U+2807"
+        ],
+        "dots": [
+          "134",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 88
+    },
+    {
+      "order": 81,
+      "meaning": "MATERIELL",
+      "braille": {
+        "unicode": "⠍⠟",
+        "codepoints": [
+          "U+280D",
+          "U+281F"
+        ],
+        "dots": [
+          "134",
+          "12345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 89
+    },
+    {
+      "order": 82,
+      "meaning": "MIR",
+      "braille": {
+        "unicode": "⠍⠗",
+        "codepoints": [
+          "U+280D",
+          "U+2817"
+        ],
+        "dots": [
+          "134",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 90
+    },
+    {
+      "order": 83,
+      "meaning": "MITTEL",
+      "braille": {
+        "unicode": "⠍⠞",
+        "codepoints": [
+          "U+280D",
+          "U+281E"
+        ],
+        "dots": [
+          "134",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 91
+    },
+    {
+      "order": 84,
+      "meaning": "MÖGLICH",
+      "braille": {
+        "unicode": "⠍⠸",
+        "codepoints": [
+          "U+280D",
+          "U+2838"
+        ],
+        "dots": [
+          "134",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 92
+    },
+    {
+      "order": 85,
+      "meaning": "MUSIK",
+      "braille": {
+        "unicode": "⠍⠅",
+        "codepoints": [
+          "U+280D",
+          "U+2805"
+        ],
+        "dots": [
+          "134",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 93
+    },
+    {
+      "order": 86,
+      "meaning": "MUSS",
+      "braille": {
+        "unicode": "⠍⠮",
+        "codepoints": [
+          "U+280D",
+          "U+282E"
+        ],
+        "dots": [
+          "134",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 94
+    },
+    {
+      "order": 87,
+      "meaning": "NACHDEM",
+      "braille": {
+        "unicode": "⠝⠙",
+        "codepoints": [
+          "U+281D",
+          "U+2819"
+        ],
+        "dots": [
+          "1345",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 96
+    },
+    {
+      "order": 88,
+      "meaning": "NÄCHST",
+      "braille": {
+        "unicode": "⠝⠾",
+        "codepoints": [
+          "U+281D",
+          "U+283E"
+        ],
+        "dots": [
+          "1345",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 98
+    },
+    {
+      "order": 89,
+      "meaning": "NAHM",
+      "braille": {
+        "unicode": "⠝⠍",
+        "codepoints": [
+          "U+281D",
+          "U+280D"
+        ],
+        "dots": [
+          "1345",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 99
+    },
+    {
+      "order": 90,
+      "meaning": "NATUR",
+      "braille": {
+        "unicode": "⠝⠞",
+        "codepoints": [
+          "U+281D",
+          "U+281E"
+        ],
+        "dots": [
+          "1345",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 100
+    },
+    {
+      "order": 91,
+      "meaning": "NATÜRLICH",
+      "braille": {
+        "unicode": "⠝⠸",
+        "codepoints": [
+          "U+281D",
+          "U+2838"
+        ],
+        "dots": [
+          "1345",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 101
+    },
+    {
+      "order": 92,
+      "meaning": "NEBEN",
+      "braille": {
+        "unicode": "⠝⠃",
+        "codepoints": [
+          "U+281D",
+          "U+2803"
+        ],
+        "dots": [
+          "1345",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 102
+    },
+    {
+      "order": 93,
+      "meaning": "NEHM",
+      "braille": {
+        "unicode": "⠝⠓",
+        "codepoints": [
+          "U+281D",
+          "U+2813"
+        ],
+        "dots": [
+          "1345",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 103
+    },
+    {
+      "order": 94,
+      "meaning": "NICHTS",
+      "braille": {
+        "unicode": "⠝⠎",
+        "codepoints": [
+          "U+281D",
+          "U+280E"
+        ],
+        "dots": [
+          "1345",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 104
+    },
+    {
+      "order": 95,
+      "meaning": "NOCH",
+      "braille": {
+        "unicode": "⠝⠹",
+        "codepoints": [
+          "U+281D",
+          "U+2839"
+        ],
+        "dots": [
+          "1345",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 105
+    },
+    {
+      "order": 96,
+      "meaning": "NOMMEN",
+      "braille": {
+        "unicode": "⠝⠭",
+        "codepoints": [
+          "U+281D",
+          "U+282D"
+        ],
+        "dots": [
+          "1345",
+          "1346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 106
+    },
+    {
+      "order": 97,
+      "meaning": "NOTWENDIG",
+      "braille": {
+        "unicode": "⠝⠺",
+        "codepoints": [
+          "U+281D",
+          "U+283A"
+        ],
+        "dots": [
+          "1345",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 107
+    },
+    {
+      "order": 98,
+      "meaning": "NUR",
+      "braille": {
+        "unicode": "⠝⠗",
+        "codepoints": [
+          "U+281D",
+          "U+2817"
+        ],
+        "dots": [
+          "1345",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 108
+    },
+    {
+      "order": 99,
+      "meaning": "NUTZ",
+      "braille": {
+        "unicode": "⠝⠵",
+        "codepoints": [
+          "U+281D",
+          "U+2835"
+        ],
+        "dots": [
+          "1345",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 109
+    },
+    {
+      "order": 100,
+      "meaning": "ÖFFENTLICH",
+      "braille": {
+        "unicode": "⠪⠸",
+        "codepoints": [
+          "U+282A",
+          "U+2838"
+        ],
+        "dots": [
+          "246",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 110
+    },
+    {
+      "order": 101,
+      "meaning": "OHNE",
+      "braille": {
+        "unicode": "⠕⠑",
+        "codepoints": [
+          "U+2815",
+          "U+2811"
+        ],
+        "dots": [
+          "135",
+          "15"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 111
+    },
+    {
+      "order": 102,
+      "meaning": "PARAGRAF",
+      "braille": {
+        "unicode": "⠏⠛",
+        "codepoints": [
+          "U+280F",
+          "U+281B"
+        ],
+        "dots": [
+          "1234",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 112
+    },
+    {
+      "order": 103,
+      "meaning": "PERSON",
+      "braille": {
+        "unicode": "⠏⠝",
+        "codepoints": [
+          "U+280F",
+          "U+281D"
+        ],
+        "dots": [
+          "1234",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 113
+    },
+    {
+      "order": 104,
+      "meaning": "PLATZ",
+      "braille": {
+        "unicode": "⠏⠵",
+        "codepoints": [
+          "U+280F",
+          "U+2835"
+        ],
+        "dots": [
+          "1234",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 114
+    },
+    {
+      "order": 105,
+      "meaning": "PLÖTZLICH",
+      "braille": {
+        "unicode": "⠏⠸",
+        "codepoints": [
+          "U+280F",
+          "U+2838"
+        ],
+        "dots": [
+          "1234",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 115
+    },
+    {
+      "order": 106,
+      "meaning": "POLITIK",
+      "braille": {
+        "unicode": "⠏⠅",
+        "codepoints": [
+          "U+280F",
+          "U+2805"
+        ],
+        "dots": [
+          "1234",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 116
+    },
+    {
+      "order": 107,
+      "meaning": "POLITISCH",
+      "braille": {
+        "unicode": "⠏⠱",
+        "codepoints": [
+          "U+280F",
+          "U+2831"
+        ],
+        "dots": [
+          "1234",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 117
+    },
+    {
+      "order": 108,
+      "meaning": "PUNKT",
+      "braille": {
+        "unicode": "⠏⠞",
+        "codepoints": [
+          "U+280F",
+          "U+281E"
+        ],
+        "dots": [
+          "1234",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 118
+    },
+    {
+      "order": 109,
+      "meaning": "RECHT",
+      "braille": {
+        "unicode": "⠗⠞",
+        "codepoints": [
+          "U+2817",
+          "U+281E"
+        ],
+        "dots": [
+          "1235",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 119
+    },
+    {
+      "order": 110,
+      "meaning": "REGIER",
+      "braille": {
+        "unicode": "⠗⠛",
+        "codepoints": [
+          "U+2817",
+          "U+281B"
+        ],
+        "dots": [
+          "1235",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 120
+    },
+    {
+      "order": 111,
+      "meaning": "REHABILIT",
+      "braille": {
+        "unicode": "⠗⠃",
+        "codepoints": [
+          "U+2817",
+          "U+2803"
+        ],
+        "dots": [
+          "1235",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 121
+    },
+    {
+      "order": 112,
+      "meaning": "REPUBLIK",
+      "braille": {
+        "unicode": "⠗⠅",
+        "codepoints": [
+          "U+2817",
+          "U+2805"
+        ],
+        "dots": [
+          "1235",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 122
+    },
+    {
+      "order": 113,
+      "meaning": "RÜCK",
+      "braille": {
+        "unicode": "⠗⠨",
+        "codepoints": [
+          "U+2817",
+          "U+2828"
+        ],
+        "dots": [
+          "1235",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 123
+    },
+    {
+      "order": 114,
+      "meaning": "SAG",
+      "braille": {
+        "unicode": "⠎⠛",
+        "codepoints": [
+          "U+280E",
+          "U+281B"
+        ],
+        "dots": [
+          "234",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 124
+    },
+    {
+      "order": 115,
+      "meaning": "SATZ",
+      "braille": {
+        "unicode": "⠎⠵",
+        "codepoints": [
+          "U+280E",
+          "U+2835"
+        ],
+        "dots": [
+          "234",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 125
+    },
+    {
+      "order": 116,
+      "meaning": "SCHLAG",
+      "braille": {
+        "unicode": "⠱⠛",
+        "codepoints": [
+          "U+2831",
+          "U+281B"
+        ],
+        "dots": [
+          "156",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 126
+    },
+    {
+      "order": 117,
+      "meaning": "SCHLIEß",
+      "braille": {
+        "unicode": "⠱⠮",
+        "codepoints": [
+          "U+2831",
+          "U+282E"
+        ],
+        "dots": [
+          "156",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 127
+    },
+    {
+      "order": 118,
+      "meaning": "SCHREIB",
+      "braille": {
+        "unicode": "⠱⠃",
+        "codepoints": [
+          "U+2831",
+          "U+2803"
+        ],
+        "dots": [
+          "156",
+          "12"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 128
+    },
+    {
+      "order": 119,
+      "meaning": "SCHRIFT",
+      "braille": {
+        "unicode": "⠱⠞",
+        "codepoints": [
+          "U+2831",
+          "U+281E"
+        ],
+        "dots": [
+          "156",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 129
+    },
+    {
+      "order": 120,
+      "meaning": "SCHWIERIG",
+      "braille": {
+        "unicode": "⠱⠘",
+        "codepoints": [
+          "U+2831",
+          "U+2818"
+        ],
+        "dots": [
+          "156",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 130
+    },
+    {
+      "order": 121,
+      "meaning": "SEHR",
+      "braille": {
+        "unicode": "⠎⠗",
+        "codepoints": [
+          "U+280E",
+          "U+2817"
+        ],
+        "dots": [
+          "234",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 131
+    },
+    {
+      "order": 122,
+      "meaning": "SELBST",
+      "braille": {
+        "unicode": "⠎⠾",
+        "codepoints": [
+          "U+280E",
+          "U+283E"
+        ],
+        "dots": [
+          "234",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 132
+    },
+    {
+      "order": 123,
+      "meaning": "SIND",
+      "braille": {
+        "unicode": "⠎⠙",
+        "codepoints": [
+          "U+280E",
+          "U+2819"
+        ],
+        "dots": [
+          "234",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 133
+    },
+    {
+      "order": 124,
+      "meaning": "SOLCH",
+      "braille": {
+        "unicode": "⠎⠹",
+        "codepoints": [
+          "U+280E",
+          "U+2839"
+        ],
+        "dots": [
+          "234",
+          "1456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 134
+    },
+    {
+      "order": 125,
+      "meaning": "SONDERN",
+      "braille": {
+        "unicode": "⠎⠝",
+        "codepoints": [
+          "U+280E",
+          "U+281D"
+        ],
+        "dots": [
+          "234",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 135
+    },
+    {
+      "order": 126,
+      "meaning": "SOZIAL",
+      "braille": {
+        "unicode": "⠎⠇",
+        "codepoints": [
+          "U+280E",
+          "U+2807"
+        ],
+        "dots": [
+          "234",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 136
+    },
+    {
+      "order": 127,
+      "meaning": "STAAT",
+      "braille": {
+        "unicode": "⠾⠞",
+        "codepoints": [
+          "U+283E",
+          "U+281E"
+        ],
+        "dots": [
+          "23456",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 137
+    },
+    {
+      "order": 128,
+      "meaning": "STETS",
+      "braille": {
+        "unicode": "⠾⠎",
+        "codepoints": [
+          "U+283E",
+          "U+280E"
+        ],
+        "dots": [
+          "23456",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 138
+    },
+    {
+      "order": 129,
+      "meaning": "TECHNIK",
+      "braille": {
+        "unicode": "⠞⠅",
+        "codepoints": [
+          "U+281E",
+          "U+2805"
+        ],
+        "dots": [
+          "2345",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 139
+    },
+    {
+      "order": 130,
+      "meaning": "TECHNISCH",
+      "braille": {
+        "unicode": "⠞⠱",
+        "codepoints": [
+          "U+281E",
+          "U+2831"
+        ],
+        "dots": [
+          "2345",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 140
+    },
+    {
+      "order": 131,
+      "meaning": "TRAG",
+      "braille": {
+        "unicode": "⠞⠛",
+        "codepoints": [
+          "U+281E",
+          "U+281B"
+        ],
+        "dots": [
+          "2345",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 141
+    },
+    {
+      "order": 132,
+      "meaning": "TREFF",
+      "braille": {
+        "unicode": "⠞⠋",
+        "codepoints": [
+          "U+281E",
+          "U+280B"
+        ],
+        "dots": [
+          "2345",
+          "124"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 142
+    },
+    {
+      "order": 133,
+      "meaning": "TROTZ",
+      "braille": {
+        "unicode": "⠞⠵",
+        "codepoints": [
+          "U+281E",
+          "U+2835"
+        ],
+        "dots": [
+          "2345",
+          "1356"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 143
+    },
+    {
+      "order": 134,
+      "meaning": "ÜBERHAUPT",
+      "braille": {
+        "unicode": "⠳⠓",
+        "codepoints": [
+          "U+2833",
+          "U+2813"
+        ],
+        "dots": [
+          "1256",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 144
+    },
+    {
+      "order": 135,
+      "meaning": "ÜBRIG",
+      "braille": {
+        "unicode": "⠳⠘",
+        "codepoints": [
+          "U+2833",
+          "U+2818"
+        ],
+        "dots": [
+          "1256",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 146
+    },
+    {
+      "order": 136,
+      "meaning": "VERHÄLTNIS",
+      "braille": {
+        "unicode": "⠧⠓",
+        "codepoints": [
+          "U+2827",
+          "U+2813"
+        ],
+        "dots": [
+          "1236",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 148
+    },
+    {
+      "order": 137,
+      "meaning": "VIEL",
+      "braille": {
+        "unicode": "⠧⠇",
+        "codepoints": [
+          "U+2827",
+          "U+2807"
+        ],
+        "dots": [
+          "1236",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 149
+    },
+    {
+      "order": 138,
+      "meaning": "VIELLEICHT",
+      "braille": {
+        "unicode": "⠧⠞",
+        "codepoints": [
+          "U+2827",
+          "U+281E"
+        ],
+        "dots": [
+          "1236",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 150
+    },
+    {
+      "order": 139,
+      "meaning": "VOLK",
+      "braille": {
+        "unicode": "⠧⠅",
+        "codepoints": [
+          "U+2827",
+          "U+2805"
+        ],
+        "dots": [
+          "1236",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 151
+    },
+    {
+      "order": 140,
+      "meaning": "VOM",
+      "braille": {
+        "unicode": "⠧⠍",
+        "codepoints": [
+          "U+2827",
+          "U+280D"
+        ],
+        "dots": [
+          "1236",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 152
+    },
+    {
+      "order": 141,
+      "meaning": "WAHR",
+      "braille": {
+        "unicode": "⠺⠓",
+        "codepoints": [
+          "U+283A",
+          "U+2813"
+        ],
+        "dots": [
+          "2456",
+          "125"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 153
+    },
+    {
+      "order": 142,
+      "meaning": "WÄHREND",
+      "braille": {
+        "unicode": "⠜⠙",
+        "codepoints": [
+          "U+281C",
+          "U+2819"
+        ],
+        "dots": [
+          "345",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 154
+    },
+    {
+      "order": 143,
+      "meaning": "WEG",
+      "braille": {
+        "unicode": "⠺⠛",
+        "codepoints": [
+          "U+283A",
+          "U+281B"
+        ],
+        "dots": [
+          "2456",
+          "1245"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 155
+    },
+    {
+      "order": 144,
+      "meaning": "WEIT",
+      "braille": {
+        "unicode": "⠺⠞",
+        "codepoints": [
+          "U+283A",
+          "U+281E"
+        ],
+        "dots": [
+          "2456",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 156
+    },
+    {
+      "order": 145,
+      "meaning": "WENIG",
+      "braille": {
+        "unicode": "⠺⠘",
+        "codepoints": [
+          "U+283A",
+          "U+2818"
+        ],
+        "dots": [
+          "2456",
+          "45"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 157
+    },
+    {
+      "order": 146,
+      "meaning": "WENN",
+      "braille": {
+        "unicode": "⠺⠝",
+        "codepoints": [
+          "U+283A",
+          "U+281D"
+        ],
+        "dots": [
+          "2456",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 158
+    },
+    {
+      "order": 147,
+      "meaning": "WESENTLICH",
+      "braille": {
+        "unicode": "⠺⠸",
+        "codepoints": [
+          "U+283A",
+          "U+2838"
+        ],
+        "dots": [
+          "2456",
+          "456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 159
+    },
+    {
+      "order": 148,
+      "meaning": "WIEDER",
+      "braille": {
+        "unicode": "⠬⠙",
+        "codepoints": [
+          "U+282C",
+          "U+2819"
+        ],
+        "dots": [
+          "346",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 160
+    },
+    {
+      "order": 149,
+      "meaning": "WILL",
+      "braille": {
+        "unicode": "⠺⠟",
+        "codepoints": [
+          "U+283A",
+          "U+281F"
+        ],
+        "dots": [
+          "2456",
+          "12345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 161
+    },
+    {
+      "order": 150,
+      "meaning": "WIR",
+      "braille": {
+        "unicode": "⠺⠗",
+        "codepoints": [
+          "U+283A",
+          "U+2817"
+        ],
+        "dots": [
+          "2456",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 162
+    },
+    {
+      "order": 151,
+      "meaning": "WIRD",
+      "braille": {
+        "unicode": "⠺⠙",
+        "codepoints": [
+          "U+283A",
+          "U+2819"
+        ],
+        "dots": [
+          "2456",
+          "145"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 163
+    },
+    {
+      "order": 152,
+      "meaning": "WIRK",
+      "braille": {
+        "unicode": "⠺⠅",
+        "codepoints": [
+          "U+283A",
+          "U+2805"
+        ],
+        "dots": [
+          "2456",
+          "13"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 164
+    },
+    {
+      "order": 153,
+      "meaning": "WIRST",
+      "braille": {
+        "unicode": "⠺⠾",
+        "codepoints": [
+          "U+283A",
+          "U+283E"
+        ],
+        "dots": [
+          "2456",
+          "23456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 165
+    },
+    {
+      "order": 154,
+      "meaning": "WIRTSCHAFT",
+      "braille": {
+        "unicode": "⠺⠱",
+        "codepoints": [
+          "U+283A",
+          "U+2831"
+        ],
+        "dots": [
+          "2456",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 166
+    },
+    {
+      "order": 155,
+      "meaning": "WISS",
+      "braille": {
+        "unicode": "⠺⠮",
+        "codepoints": [
+          "U+283A",
+          "U+282E"
+        ],
+        "dots": [
+          "2456",
+          "2346"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 167
+    },
+    {
+      "order": 156,
+      "meaning": "WOHL",
+      "braille": {
+        "unicode": "⠺⠇",
+        "codepoints": [
+          "U+283A",
+          "U+2807"
+        ],
+        "dots": [
+          "2456",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 168
+    },
+    {
+      "order": 157,
+      "meaning": "WORDEN",
+      "braille": {
+        "unicode": "⠕⠉",
+        "codepoints": [
+          "U+2815",
+          "U+2809"
+        ],
+        "dots": [
+          "135",
+          "14"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 169
+    },
+    {
+      "order": 158,
+      "meaning": "ZAHL",
+      "braille": {
+        "unicode": "⠵⠇",
+        "codepoints": [
+          "U+2835",
+          "U+2807"
+        ],
+        "dots": [
+          "1356",
+          "123"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 170
+    },
+    {
+      "order": 159,
+      "meaning": "ZEIT",
+      "braille": {
+        "unicode": "⠵⠞",
+        "codepoints": [
+          "U+2835",
+          "U+281E"
+        ],
+        "dots": [
+          "1356",
+          "2345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 171
+    },
+    {
+      "order": 160,
+      "meaning": "ZUM",
+      "braille": {
+        "unicode": "⠵⠍",
+        "codepoints": [
+          "U+2835",
+          "U+280D"
+        ],
+        "dots": [
+          "1356",
+          "134"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 172
+    },
+    {
+      "order": 161,
+      "meaning": "ZUNÄCHST",
+      "braille": {
+        "unicode": "⠵⠝",
+        "codepoints": [
+          "U+2835",
+          "U+281D"
+        ],
+        "dots": [
+          "1356",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 173
+    },
+    {
+      "order": 162,
+      "meaning": "ZUR",
+      "braille": {
+        "unicode": "⠵⠗",
+        "codepoints": [
+          "U+2835",
+          "U+2817"
+        ],
+        "dots": [
+          "1356",
+          "1235"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 174
+    },
+    {
+      "order": 163,
+      "meaning": "ZURÜCK",
+      "braille": {
+        "unicode": "⠵⠨",
+        "codepoints": [
+          "U+2835",
+          "U+2828"
+        ],
+        "dots": [
+          "1356",
+          "46"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 175
+    },
+    {
+      "order": 164,
+      "meaning": "ZUSAMMEN",
+      "braille": {
+        "unicode": "⠵⠎",
+        "codepoints": [
+          "U+2835",
+          "U+280E"
+        ],
+        "dots": [
+          "1356",
+          "234"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 176
+    },
+    {
+      "order": 165,
+      "meaning": "ZWISCHEN",
+      "braille": {
+        "unicode": "⠵⠺",
+        "codepoints": [
+          "U+2835",
+          "U+283A"
+        ],
+        "dots": [
+          "1356",
+          "2456"
+        ],
+        "cellCount": 2
+      },
+      "sourceLine": 177
+    }
+  ],
+  "formalRules": [
+    {
+      "id": "DE-KURZ-ZWEI-001",
+      "sourceSection": "4.4",
+      "kind": "TWO_CELL_CONTRACTION_INVENTORY",
+      "summary": "§4.4 defines 165 unique two-cell contraction mappings.",
+      "normative": true,
+      "sourceWitnesses": [
+        "4.4 Zweiformige Kürzungen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-ZWEI-002",
+      "sourceSection": "4.4",
+      "kind": "STANDALONE_ALLOWED",
+      "summary": "The §4.4 contractions may be used as standalone forms.",
+      "normative": true,
+      "sourceWitnesses": [
+        "können allein stehen"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "DE-KURZ-ZWEI-003",
+      "sourceSection": "4.4",
+      "kind": "PREFIX_SUFFIX_EXTENSION_ALLOWED",
+      "summary": "The §4.4 contractions may be extended by word particles, including prefixes and suffixes.",
+      "normative": true,
+      "sourceWitnesses": [
+        "durch Wortpartikel (Prä- und Suffixe) ergänzt"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-004",
+      "sourceSection": "4.4",
+      "kind": "WORD_COMPOSITION_ALLOWED",
+      "summary": "The §4.4 contractions may be combined with other words.",
+      "normative": true,
+      "sourceWitnesses": [
+        "mit anderen Wörtern zusammengesetzt werden"
+      ],
+      "dependencies": [
+        "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-005",
+      "sourceSection": "4.4",
+      "kind": "APPLICATION_RESTRICTIONS_DEFERRED_TO_4_9",
+      "summary": "Application restrictions for the §4.4 contraction inventory are governed by Chapter 4.9.",
+      "normative": true,
+      "sourceWitnesses": [
+        "Einschränkungen bei der Anwendung dieser Kürzungen siehe Kap. 4.9"
+      ],
+      "dependencies": [
+        "SECTION_4_9_APPLICATION_RESTRICTIONS"
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-KURZ-ZWEI-MAP-001",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ÄHNLICH",
+      "expectedBraille": "⠜⠸",
+      "expectedDots": [
+        "345",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-002",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ALSO",
+      "expectedBraille": "⠁⠕",
+      "expectedDots": [
+        "1",
+        "135"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-003",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ARBEIT",
+      "expectedBraille": "⠴⠃",
+      "expectedDots": [
+        "356",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-004",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BEID",
+      "expectedBraille": "⠃⠙",
+      "expectedDots": [
+        "12",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-005",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BEIM",
+      "expectedBraille": "⠃⠍",
+      "expectedDots": [
+        "12",
+        "134"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-006",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BESSER",
+      "expectedBraille": "⠎⠎",
+      "expectedDots": [
+        "234",
+        "234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-007",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BIS",
+      "expectedBraille": "⠃⠎",
+      "expectedDots": [
+        "12",
+        "234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-008",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BIST",
+      "expectedBraille": "⠃⠾",
+      "expectedDots": [
+        "12",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-009",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BLEIB",
+      "expectedBraille": "⠃⠃",
+      "expectedDots": [
+        "12",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-010",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BRIEF",
+      "expectedBraille": "⠃⠋",
+      "expectedDots": [
+        "12",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-011",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "BRING",
+      "expectedBraille": "⠃⠛",
+      "expectedDots": [
+        "12",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-012",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "CHARAKTER",
+      "expectedBraille": "⠹⠅",
+      "expectedDots": [
+        "1456",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-013",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DABEI",
+      "expectedBraille": "⠙⠃",
+      "expectedDots": [
+        "145",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-014",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DADURCH",
+      "expectedBraille": "⠙⠙",
+      "expectedDots": [
+        "145",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-015",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAFÜR",
+      "expectedBraille": "⠙⠋",
+      "expectedDots": [
+        "145",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-016",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAGEGEN",
+      "expectedBraille": "⠙⠛",
+      "expectedDots": [
+        "145",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-017",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAHER",
+      "expectedBraille": "⠙⠓",
+      "expectedDots": [
+        "145",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-018",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAMIT",
+      "expectedBraille": "⠙⠍",
+      "expectedDots": [
+        "145",
+        "134"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-019",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DANK",
+      "expectedBraille": "⠙⠅",
+      "expectedDots": [
+        "145",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-020",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DARAUF",
+      "expectedBraille": "⠙⠡",
+      "expectedDots": [
+        "145",
+        "16"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-021",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DARÜBER",
+      "expectedBraille": "⠙⠳",
+      "expectedDots": [
+        "145",
+        "1256"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-022",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAVON",
+      "expectedBraille": "⠙⠧",
+      "expectedDots": [
+        "145",
+        "1236"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-023",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DAZU",
+      "expectedBraille": "⠙⠵",
+      "expectedDots": [
+        "145",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-024",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DEMOKRAT",
+      "expectedBraille": "⠙⠞",
+      "expectedDots": [
+        "145",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-025",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DENEN",
+      "expectedBraille": "⠑⠉",
+      "expectedDots": [
+        "15",
+        "14"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-026",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DENN",
+      "expectedBraille": "⠙⠝",
+      "expectedDots": [
+        "145",
+        "1345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-027",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DESSEN",
+      "expectedBraille": "⠙⠮",
+      "expectedDots": [
+        "145",
+        "2346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-028",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DEUTSCH",
+      "expectedBraille": "⠙⠱",
+      "expectedDots": [
+        "145",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-029",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DIR",
+      "expectedBraille": "⠙⠗",
+      "expectedDots": [
+        "145",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-030",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DOCH",
+      "expectedBraille": "⠙⠹",
+      "expectedDots": [
+        "145",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-031",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "DRUCK",
+      "expectedBraille": "⠙⠨",
+      "expectedDots": [
+        "145",
+        "46"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-032",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "EBENSO",
+      "expectedBraille": "⠑⠕",
+      "expectedDots": [
+        "15",
+        "135"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-033",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ETWA",
+      "expectedBraille": "⠑⠁",
+      "expectedDots": [
+        "15",
+        "1"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-034",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ETWAS",
+      "expectedBraille": "⠞⠺",
+      "expectedDots": [
+        "2345",
+        "2456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-035",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "FALL",
+      "expectedBraille": "⠋⠟",
+      "expectedDots": [
+        "124",
+        "12345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-036",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "FERTIG",
+      "expectedBraille": "⠋⠘",
+      "expectedDots": [
+        "124",
+        "45"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-037",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "FOLG",
+      "expectedBraille": "⠋⠛",
+      "expectedDots": [
+        "124",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-038",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "FREUND",
+      "expectedBraille": "⠋⠙",
+      "expectedDots": [
+        "124",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-039",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "FÜHR",
+      "expectedBraille": "⠋⠓",
+      "expectedDots": [
+        "124",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-040",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GANZ",
+      "expectedBraille": "⠛⠵",
+      "expectedDots": [
+        "1245",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-041",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GEGENÜBER",
+      "expectedBraille": "⠛⠳",
+      "expectedDots": [
+        "1245",
+        "1256"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-042",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GEGENWART",
+      "expectedBraille": "⠛⠺",
+      "expectedDots": [
+        "1245",
+        "2456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-043",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GELEGEN",
+      "expectedBraille": "⠛⠛",
+      "expectedDots": [
+        "1245",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-044",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GESCHÄFT",
+      "expectedBraille": "⠛⠋",
+      "expectedDots": [
+        "1245",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-045",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GESELLSCHAFT",
+      "expectedBraille": "⠛⠱",
+      "expectedDots": [
+        "1245",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-046",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GEWORDEN",
+      "expectedBraille": "⠯⠺",
+      "expectedDots": [
+        "12346",
+        "2456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-047",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GIBT",
+      "expectedBraille": "⠛⠃",
+      "expectedDots": [
+        "1245",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-048",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GLEICH",
+      "expectedBraille": "⠛⠹",
+      "expectedDots": [
+        "1245",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-049",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GLÜCK",
+      "expectedBraille": "⠛⠨",
+      "expectedDots": [
+        "1245",
+        "46"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-050",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GROß",
+      "expectedBraille": "⠛⠮",
+      "expectedDots": [
+        "1245",
+        "2346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-051",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "GRUND",
+      "expectedBraille": "⠛⠙",
+      "expectedDots": [
+        "1245",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-052",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAFT",
+      "expectedBraille": "⠓⠋",
+      "expectedDots": [
+        "125",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-053",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAND",
+      "expectedBraille": "⠓⠙",
+      "expectedDots": [
+        "125",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-054",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAST",
+      "expectedBraille": "⠓⠾",
+      "expectedDots": [
+        "125",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-055",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAT",
+      "expectedBraille": "⠓⠞",
+      "expectedDots": [
+        "125",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-056",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HAUPT",
+      "expectedBraille": "⠓⠏",
+      "expectedDots": [
+        "125",
+        "1234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-057",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HERR",
+      "expectedBraille": "⠗⠗",
+      "expectedDots": [
+        "1235",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-058",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HIER",
+      "expectedBraille": "⠓⠗",
+      "expectedDots": [
+        "125",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-059",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "HOFF",
+      "expectedBraille": "⠋⠋",
+      "expectedDots": [
+        "124",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-060",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "IHN",
+      "expectedBraille": "⠊⠓",
+      "expectedDots": [
+        "24",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-061",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "IRGEND",
+      "expectedBraille": "⠊⠛",
+      "expectedDots": [
+        "24",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-062",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JAHR",
+      "expectedBraille": "⠚⠗",
+      "expectedDots": [
+        "245",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-063",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JAHRHUNDERT",
+      "expectedBraille": "⠚⠓",
+      "expectedDots": [
+        "245",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-064",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JAHRTAUSEND",
+      "expectedBraille": "⠚⠞",
+      "expectedDots": [
+        "245",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-065",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JAHRZEHNT",
+      "expectedBraille": "⠚⠵",
+      "expectedDots": [
+        "245",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-066",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JED",
+      "expectedBraille": "⠚⠙",
+      "expectedDots": [
+        "245",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-067",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JEDOCH",
+      "expectedBraille": "⠚⠹",
+      "expectedDots": [
+        "245",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-068",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "JETZIG",
+      "expectedBraille": "⠚⠘",
+      "expectedDots": [
+        "245",
+        "45"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-069",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KANNST",
+      "expectedBraille": "⠅⠾",
+      "expectedDots": [
+        "13",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-070",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KAPITAL",
+      "expectedBraille": "⠅⠏",
+      "expectedDots": [
+        "13",
+        "1234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-071",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KOMM",
+      "expectedBraille": "⠅⠭",
+      "expectedDots": [
+        "13",
+        "1346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-072",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KONNT",
+      "expectedBraille": "⠅⠞",
+      "expectedDots": [
+        "13",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-073",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KRAFT",
+      "expectedBraille": "⠅⠋",
+      "expectedDots": [
+        "13",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-074",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "KURZ",
+      "expectedBraille": "⠅⠵",
+      "expectedDots": [
+        "13",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-075",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "LANG",
+      "expectedBraille": "⠇⠛",
+      "expectedDots": [
+        "123",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-076",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "LEB",
+      "expectedBraille": "⠇⠃",
+      "expectedDots": [
+        "123",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-077",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "LEICHT",
+      "expectedBraille": "⠇⠹",
+      "expectedDots": [
+        "123",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-078",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "LETZT",
+      "expectedBraille": "⠇⠞",
+      "expectedDots": [
+        "123",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-079",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MASCHIN",
+      "expectedBraille": "⠍⠱",
+      "expectedDots": [
+        "134",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-080",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MATERIAL",
+      "expectedBraille": "⠍⠇",
+      "expectedDots": [
+        "134",
+        "123"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-081",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MATERIELL",
+      "expectedBraille": "⠍⠟",
+      "expectedDots": [
+        "134",
+        "12345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-082",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MIR",
+      "expectedBraille": "⠍⠗",
+      "expectedDots": [
+        "134",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-083",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MITTEL",
+      "expectedBraille": "⠍⠞",
+      "expectedDots": [
+        "134",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-084",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MÖGLICH",
+      "expectedBraille": "⠍⠸",
+      "expectedDots": [
+        "134",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-085",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MUSIK",
+      "expectedBraille": "⠍⠅",
+      "expectedDots": [
+        "134",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-086",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "MUSS",
+      "expectedBraille": "⠍⠮",
+      "expectedDots": [
+        "134",
+        "2346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-087",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NACHDEM",
+      "expectedBraille": "⠝⠙",
+      "expectedDots": [
+        "1345",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-088",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NÄCHST",
+      "expectedBraille": "⠝⠾",
+      "expectedDots": [
+        "1345",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-089",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NAHM",
+      "expectedBraille": "⠝⠍",
+      "expectedDots": [
+        "1345",
+        "134"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-090",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NATUR",
+      "expectedBraille": "⠝⠞",
+      "expectedDots": [
+        "1345",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-091",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NATÜRLICH",
+      "expectedBraille": "⠝⠸",
+      "expectedDots": [
+        "1345",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-092",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NEBEN",
+      "expectedBraille": "⠝⠃",
+      "expectedDots": [
+        "1345",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-093",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NEHM",
+      "expectedBraille": "⠝⠓",
+      "expectedDots": [
+        "1345",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-094",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NICHTS",
+      "expectedBraille": "⠝⠎",
+      "expectedDots": [
+        "1345",
+        "234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-095",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NOCH",
+      "expectedBraille": "⠝⠹",
+      "expectedDots": [
+        "1345",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-096",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NOMMEN",
+      "expectedBraille": "⠝⠭",
+      "expectedDots": [
+        "1345",
+        "1346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-097",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NOTWENDIG",
+      "expectedBraille": "⠝⠺",
+      "expectedDots": [
+        "1345",
+        "2456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-098",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NUR",
+      "expectedBraille": "⠝⠗",
+      "expectedDots": [
+        "1345",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-099",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "NUTZ",
+      "expectedBraille": "⠝⠵",
+      "expectedDots": [
+        "1345",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-100",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ÖFFENTLICH",
+      "expectedBraille": "⠪⠸",
+      "expectedDots": [
+        "246",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-101",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "OHNE",
+      "expectedBraille": "⠕⠑",
+      "expectedDots": [
+        "135",
+        "15"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-102",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "PARAGRAF",
+      "expectedBraille": "⠏⠛",
+      "expectedDots": [
+        "1234",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-103",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "PERSON",
+      "expectedBraille": "⠏⠝",
+      "expectedDots": [
+        "1234",
+        "1345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-104",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "PLATZ",
+      "expectedBraille": "⠏⠵",
+      "expectedDots": [
+        "1234",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-105",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "PLÖTZLICH",
+      "expectedBraille": "⠏⠸",
+      "expectedDots": [
+        "1234",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-106",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "POLITIK",
+      "expectedBraille": "⠏⠅",
+      "expectedDots": [
+        "1234",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-107",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "POLITISCH",
+      "expectedBraille": "⠏⠱",
+      "expectedDots": [
+        "1234",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-108",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "PUNKT",
+      "expectedBraille": "⠏⠞",
+      "expectedDots": [
+        "1234",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-109",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "RECHT",
+      "expectedBraille": "⠗⠞",
+      "expectedDots": [
+        "1235",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-110",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "REGIER",
+      "expectedBraille": "⠗⠛",
+      "expectedDots": [
+        "1235",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-111",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "REHABILIT",
+      "expectedBraille": "⠗⠃",
+      "expectedDots": [
+        "1235",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-112",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "REPUBLIK",
+      "expectedBraille": "⠗⠅",
+      "expectedDots": [
+        "1235",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-113",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "RÜCK",
+      "expectedBraille": "⠗⠨",
+      "expectedDots": [
+        "1235",
+        "46"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-114",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SAG",
+      "expectedBraille": "⠎⠛",
+      "expectedDots": [
+        "234",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-115",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SATZ",
+      "expectedBraille": "⠎⠵",
+      "expectedDots": [
+        "234",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-116",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHLAG",
+      "expectedBraille": "⠱⠛",
+      "expectedDots": [
+        "156",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-117",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHLIEß",
+      "expectedBraille": "⠱⠮",
+      "expectedDots": [
+        "156",
+        "2346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-118",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHREIB",
+      "expectedBraille": "⠱⠃",
+      "expectedDots": [
+        "156",
+        "12"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-119",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHRIFT",
+      "expectedBraille": "⠱⠞",
+      "expectedDots": [
+        "156",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-120",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SCHWIERIG",
+      "expectedBraille": "⠱⠘",
+      "expectedDots": [
+        "156",
+        "45"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-121",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SEHR",
+      "expectedBraille": "⠎⠗",
+      "expectedDots": [
+        "234",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-122",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SELBST",
+      "expectedBraille": "⠎⠾",
+      "expectedDots": [
+        "234",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-123",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SIND",
+      "expectedBraille": "⠎⠙",
+      "expectedDots": [
+        "234",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-124",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SOLCH",
+      "expectedBraille": "⠎⠹",
+      "expectedDots": [
+        "234",
+        "1456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-125",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SONDERN",
+      "expectedBraille": "⠎⠝",
+      "expectedDots": [
+        "234",
+        "1345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-126",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "SOZIAL",
+      "expectedBraille": "⠎⠇",
+      "expectedDots": [
+        "234",
+        "123"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-127",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "STAAT",
+      "expectedBraille": "⠾⠞",
+      "expectedDots": [
+        "23456",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-128",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "STETS",
+      "expectedBraille": "⠾⠎",
+      "expectedDots": [
+        "23456",
+        "234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-129",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "TECHNIK",
+      "expectedBraille": "⠞⠅",
+      "expectedDots": [
+        "2345",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-130",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "TECHNISCH",
+      "expectedBraille": "⠞⠱",
+      "expectedDots": [
+        "2345",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-131",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "TRAG",
+      "expectedBraille": "⠞⠛",
+      "expectedDots": [
+        "2345",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-132",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "TREFF",
+      "expectedBraille": "⠞⠋",
+      "expectedDots": [
+        "2345",
+        "124"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-133",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "TROTZ",
+      "expectedBraille": "⠞⠵",
+      "expectedDots": [
+        "2345",
+        "1356"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-134",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ÜBERHAUPT",
+      "expectedBraille": "⠳⠓",
+      "expectedDots": [
+        "1256",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-135",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ÜBRIG",
+      "expectedBraille": "⠳⠘",
+      "expectedDots": [
+        "1256",
+        "45"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-136",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "VERHÄLTNIS",
+      "expectedBraille": "⠧⠓",
+      "expectedDots": [
+        "1236",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-137",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "VIEL",
+      "expectedBraille": "⠧⠇",
+      "expectedDots": [
+        "1236",
+        "123"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-138",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "VIELLEICHT",
+      "expectedBraille": "⠧⠞",
+      "expectedDots": [
+        "1236",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-139",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "VOLK",
+      "expectedBraille": "⠧⠅",
+      "expectedDots": [
+        "1236",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-140",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "VOM",
+      "expectedBraille": "⠧⠍",
+      "expectedDots": [
+        "1236",
+        "134"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-141",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WAHR",
+      "expectedBraille": "⠺⠓",
+      "expectedDots": [
+        "2456",
+        "125"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-142",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WÄHREND",
+      "expectedBraille": "⠜⠙",
+      "expectedDots": [
+        "345",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-143",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WEG",
+      "expectedBraille": "⠺⠛",
+      "expectedDots": [
+        "2456",
+        "1245"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-144",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WEIT",
+      "expectedBraille": "⠺⠞",
+      "expectedDots": [
+        "2456",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-145",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WENIG",
+      "expectedBraille": "⠺⠘",
+      "expectedDots": [
+        "2456",
+        "45"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-146",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WENN",
+      "expectedBraille": "⠺⠝",
+      "expectedDots": [
+        "2456",
+        "1345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-147",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WESENTLICH",
+      "expectedBraille": "⠺⠸",
+      "expectedDots": [
+        "2456",
+        "456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-148",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIEDER",
+      "expectedBraille": "⠬⠙",
+      "expectedDots": [
+        "346",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-149",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WILL",
+      "expectedBraille": "⠺⠟",
+      "expectedDots": [
+        "2456",
+        "12345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-150",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIR",
+      "expectedBraille": "⠺⠗",
+      "expectedDots": [
+        "2456",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-151",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIRD",
+      "expectedBraille": "⠺⠙",
+      "expectedDots": [
+        "2456",
+        "145"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-152",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIRK",
+      "expectedBraille": "⠺⠅",
+      "expectedDots": [
+        "2456",
+        "13"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-153",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIRST",
+      "expectedBraille": "⠺⠾",
+      "expectedDots": [
+        "2456",
+        "23456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-154",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WIRTSCHAFT",
+      "expectedBraille": "⠺⠱",
+      "expectedDots": [
+        "2456",
+        "156"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-155",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WISS",
+      "expectedBraille": "⠺⠮",
+      "expectedDots": [
+        "2456",
+        "2346"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-156",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WOHL",
+      "expectedBraille": "⠺⠇",
+      "expectedDots": [
+        "2456",
+        "123"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-157",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "WORDEN",
+      "expectedBraille": "⠕⠉",
+      "expectedDots": [
+        "135",
+        "14"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-158",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZAHL",
+      "expectedBraille": "⠵⠇",
+      "expectedDots": [
+        "1356",
+        "123"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-159",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZEIT",
+      "expectedBraille": "⠵⠞",
+      "expectedDots": [
+        "1356",
+        "2345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-160",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZUM",
+      "expectedBraille": "⠵⠍",
+      "expectedDots": [
+        "1356",
+        "134"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-161",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZUNÄCHST",
+      "expectedBraille": "⠵⠝",
+      "expectedDots": [
+        "1356",
+        "1345"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-162",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZUR",
+      "expectedBraille": "⠵⠗",
+      "expectedDots": [
+        "1356",
+        "1235"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-163",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZURÜCK",
+      "expectedBraille": "⠵⠨",
+      "expectedDots": [
+        "1356",
+        "46"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-164",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZUSAMMEN",
+      "expectedBraille": "⠵⠎",
+      "expectedDots": [
+        "1356",
+        "234"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-MAP-165",
+      "sourceSection": "4.4",
+      "category": "EXACT_MAPPING",
+      "meaning": "ZWISCHEN",
+      "expectedBraille": "⠵⠺",
+      "expectedDots": [
+        "1356",
+        "2456"
+      ],
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-001"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-POLICY-001",
+      "sourceSection": "4.4",
+      "category": "STANDALONE",
+      "expectedDecision": "ALLOWED",
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-002"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-POLICY-002",
+      "sourceSection": "4.4",
+      "category": "PREFIX_SUFFIX_EXTENSION",
+      "expectedDecision": "ALLOWED_SUBJECT_TO_APPLICATION_RULES",
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-003",
+        "DE-KURZ-ZWEI-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-POLICY-003",
+      "sourceSection": "4.4",
+      "category": "WORD_COMPOSITION",
+      "expectedDecision": "ALLOWED_SUBJECT_TO_APPLICATION_RULES",
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-004",
+        "DE-KURZ-ZWEI-005"
+      ]
+    },
+    {
+      "id": "DE-KURZ-ZWEI-POLICY-004",
+      "sourceSection": "4.4",
+      "category": "APPLICATION_RESTRICTIONS",
+      "expectedDecision": "DEFER_TO_SECTION_4_9",
+      "ruleRefs": [
+        "DE-KURZ-ZWEI-005"
+      ]
+    }
+  ],
+  "taxonomyFinding": {
+    "status": "DISTINCTION_REQUIRED",
+    "classificationRole": "ARCHITECTURAL_SOURCE_RECONCILIATION",
+    "sourceA": {
+      "section": "4.3",
+      "term": "zweiformige Lautgruppenkürzungen",
+      "standalonePolicy": "FORBIDDEN"
+    },
+    "sourceB": {
+      "section": "4.4",
+      "term": "Zweiformige Kürzungen",
+      "standalonePolicy": "ALLOWED"
+    },
+    "conclusion": "DO_NOT_CONFLATE_THE_TWO_SOURCE_CATEGORIES",
+    "normativeRuleCreated": false,
+    "runtimeDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+  },
+  "crossPhaseDependencyResolution": [
+    {
+      "originPhase": "15.3E",
+      "dependency": "RELATED_TWO_FORM_FORMS",
+      "meanings": [
+        "BEIM",
+        "NICHTS",
+        "VOM",
+        "ZUM",
+        "ZUR"
+      ],
+      "mappingEvidence": [
+        {
+          "meaning": "BEIM",
+          "braille": "⠃⠍",
+          "dots": [
+            "12",
+            "134"
+          ]
+        },
+        {
+          "meaning": "NICHTS",
+          "braille": "⠝⠎",
+          "dots": [
+            "1345",
+            "234"
+          ]
+        },
+        {
+          "meaning": "VOM",
+          "braille": "⠧⠍",
+          "dots": [
+            "1236",
+            "134"
+          ]
+        },
+        {
+          "meaning": "ZUM",
+          "braille": "⠵⠍",
+          "dots": [
+            "1356",
+            "134"
+          ]
+        },
+        {
+          "meaning": "ZUR",
+          "braille": "⠵⠗",
+          "dots": [
+            "1356",
+            "1235"
+          ]
+        }
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "originPhase": "15.3E",
+      "dependency": "WUERD_VS_UEBRIG_COLLISION",
+      "meaning": "ÜBRIG",
+      "braille": "⠳⠘",
+      "dots": [
+        "1256",
+        "45"
+      ],
+      "status": "FORMALLY_RESOLVED"
+    },
+    {
+      "originPhase": "15.3E",
+      "dependency": "TWO_FORM_LAUTGRUPPE_STANDALONE_PROHIBITION",
+      "status": "NOT_RESOLVED_BY_SECTION_4_4",
+      "reason": "Section 4.4 explicitly allows its listed Zweiformige Kürzungen to stand alone; therefore the source term 'zweiformige Lautgruppenkürzungen' must remain taxonomically distinct until separately resolved.",
+      "replacementDependency": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION"
+    }
+  ],
+  "openDependencies": [
+    {
+      "id": "SECTION_4_9_APPLICATION_RESTRICTIONS",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "MORPHOLOGICAL_EXTENSION_AND_COMPOSITION_PROVIDER",
+      "requiredForExecutableGeneralization": true
+    },
+    {
+      "id": "TWO_FORM_LAUTGRUPPE_TAXONOMY_RESOLUTION",
+      "requiredForExecutableGeneralization": false,
+      "requiredForTerminologyPrecision": true
+    }
+  ],
+  "promotionPolicy": {
+    "formalSectionAuditComplete": true,
+    "sectionInventoryComplete": true,
+    "section4_9RestrictionsAudited": false,
+    "executableSpecificationReady": false,
+    "runtimeGeneralizationReady": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3G",
+    "title": "Kurzschrift Komma-Kürzungen Audit",
+    "sourceSection": "4.5"
+  }
+}

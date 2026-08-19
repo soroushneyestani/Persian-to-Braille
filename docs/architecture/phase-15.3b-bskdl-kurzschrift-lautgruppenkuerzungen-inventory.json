@@ -1,0 +1,1337 @@
+{
+  "phase": "15.3B",
+  "title": "BSKDL Kurzschrift Lautgruppenkürzungen Inventory",
+  "status": "INVENTORY_COMPLETE_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "BSKDL",
+    "title": "Das System der deutschen Brailleschrift",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "4",
+    "chapterTitle": "Die Kurzschrift",
+    "chapterExtractionSha256": "73a98857438638cc4f2e77de0b4adc59490084e9c30406ae513786d5532c9669",
+    "section": "4.1.1",
+    "sectionTitle": "Liste der Lautgruppenkürzungen",
+    "sectionExtractionSha256": "5ba52efbcc766d7c4a1a3e47c1a201c57ffea783553da10b2144c998df1c79d0"
+  },
+  "tableSemantics": {
+    "columns": [
+      "Sigel",
+      "Lautgruppe",
+      "Anlaut",
+      "Inlaut",
+      "Auslaut"
+    ],
+    "omissionDashMeaning": "CONTRACTION_FORBIDDEN_AT_POSITION",
+    "sourceDerived": true
+  },
+  "coverage": {
+    "sourceRowsParsed": 39,
+    "lautgruppenTotal": 39,
+    "inheritedFromVollschrift": 8,
+    "kurzschriftAdditions": 31,
+    "singleCellSigels": 34,
+    "multiCellSigels": 5,
+    "uniqueSigelSequences": 37,
+    "sigelReuseGroups": 2,
+    "positionallyDisjointReuseGroups": 2,
+    "samePositionSigelCollisions": 0,
+    "sixDotValidation": true,
+    "positionAvailabilityCounts": {
+      "anlaut": 23,
+      "inlaut": 37,
+      "auslaut": 31
+    },
+    "availableInAllThreePositions": 16
+  },
+  "mappings": [
+    {
+      "order": 1,
+      "lautgruppe": "ACH",
+      "sigel": {
+        "unicode": "⠰",
+        "codepoints": [
+          "U+2830"
+        ],
+        "dots": [
+          "56"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Rache",
+        "auslaut": "Dach"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 9,
+        "sourceHeader": "⠰ ACH  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 2,
+      "lautgruppe": "AL",
+      "sigel": {
+        "unicode": "⠒",
+        "codepoints": [
+          "U+2812"
+        ],
+        "dots": [
+          "25"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Altar",
+        "inlaut": "Balsam",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 14,
+        "sourceHeader": "⠒ AL  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 3,
+      "lautgruppe": "AN",
+      "sigel": {
+        "unicode": "⠖",
+        "codepoints": [
+          "U+2816"
+        ],
+        "dots": [
+          "235"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Angabe",
+        "inlaut": "Land",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 19,
+        "sourceHeader": "⠖ AN  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 4,
+      "lautgruppe": "AR",
+      "sigel": {
+        "unicode": "⠴",
+        "codepoints": [
+          "U+2834"
+        ],
+        "dots": [
+          "356"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Arzt",
+        "inlaut": "Marmor",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 27,
+        "sourceHeader": "⠴ AR  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 5,
+      "lautgruppe": "ATION",
+      "sigel": {
+        "unicode": "⠐⠝",
+        "codepoints": [
+          "U+2810",
+          "U+281D"
+        ],
+        "dots": [
+          "5",
+          "1345"
+        ],
+        "cellCount": 2
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "national",
+        "auslaut": "Station"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 32,
+        "sourceHeader": "⠐⠝ ATION  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 6,
+      "lautgruppe": "ATIV",
+      "sigel": {
+        "unicode": "⠐⠧",
+        "codepoints": [
+          "U+2810",
+          "U+2827"
+        ],
+        "dots": [
+          "5",
+          "1236"
+        ],
+        "cellCount": 2
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Stative",
+        "auslaut": "Dativ"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 37,
+        "sourceHeader": "⠐⠧ ATIV  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 7,
+      "lautgruppe": "AU",
+      "sigel": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Aula",
+        "inlaut": "Baum",
+        "auslaut": "Grau"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 42,
+        "sourceHeader": "⠡ AU  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 8,
+      "lautgruppe": "ÄU",
+      "sigel": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "äugt",
+        "inlaut": "Mäuse",
+        "auslaut": "Gebräu"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 49,
+        "sourceHeader": "⠌⠀ ÄU  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 9,
+      "lautgruppe": "BE",
+      "sigel": {
+        "unicode": "⠆",
+        "codepoints": [
+          "U+2806"
+        ],
+        "dots": [
+          "23"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Bett",
+        "inlaut": "Rebekka",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 56,
+        "sourceHeader": "⠆ BE  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 10,
+      "lautgruppe": "CH",
+      "sigel": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Chor",
+        "inlaut": "Acht",
+        "auslaut": "Dolch"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 61,
+        "sourceHeader": "⠹ CH  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 11,
+      "lautgruppe": "CK",
+      "sigel": {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Jacke",
+        "auslaut": "Rock"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 68,
+        "sourceHeader": "⠨ CK  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 12,
+      "lautgruppe": "EH",
+      "sigel": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Lehm",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 2,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 73,
+        "sourceHeader": "⠶ EH  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 13,
+      "lautgruppe": "EI",
+      "sigel": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Eile",
+        "inlaut": "reif",
+        "auslaut": "Brei"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 76,
+        "sourceHeader": "⠩ EI  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 14,
+      "lautgruppe": "EIN",
+      "sigel": {
+        "unicode": "⠫",
+        "codepoints": [
+          "U+282B"
+        ],
+        "dots": [
+          "1246"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "eins",
+        "inlaut": "Leine",
+        "auslaut": "klein"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 83,
+        "sourceHeader": "⠫ EIN  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 15,
+      "lautgruppe": "EL",
+      "sigel": {
+        "unicode": "⠽",
+        "codepoints": [
+          "U+283D"
+        ],
+        "dots": [
+          "13456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Elbe",
+        "inlaut": "Welt",
+        "auslaut": "Igel"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 90,
+        "sourceHeader": "⠽ EL  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 16,
+      "lautgruppe": "EM",
+      "sigel": {
+        "unicode": "⠷",
+        "codepoints": [
+          "U+2837"
+        ],
+        "dots": [
+          "12356"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "empor",
+        "inlaut": "Bremse",
+        "auslaut": "Atem"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 100,
+        "sourceHeader": "⠷ EM  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 17,
+      "lautgruppe": "EN",
+      "sigel": {
+        "unicode": "⠉",
+        "codepoints": [
+          "U+2809"
+        ],
+        "dots": [
+          "14"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Ende",
+        "inlaut": "Ebene",
+        "auslaut": "Regen"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 107,
+        "sourceHeader": "⠉ EN  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 18,
+      "lautgruppe": "ER",
+      "sigel": {
+        "unicode": "⠻",
+        "codepoints": [
+          "U+283B"
+        ],
+        "dots": [
+          "12456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Erbe",
+        "inlaut": "Vers",
+        "auslaut": "Acker"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 114,
+        "sourceHeader": "⠻ ER  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 19,
+      "lautgruppe": "ES",
+      "sigel": {
+        "unicode": "⠿",
+        "codepoints": [
+          "U+283F"
+        ],
+        "dots": [
+          "123456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Eskimo",
+        "inlaut": "Wespe",
+        "auslaut": "indes"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 121,
+        "sourceHeader": "⠿ ES  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 20,
+      "lautgruppe": "EU",
+      "sigel": {
+        "unicode": "⠣",
+        "codepoints": [
+          "U+2823"
+        ],
+        "dots": [
+          "126"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Eule",
+        "inlaut": "Freude",
+        "auslaut": "Heu"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 128,
+        "sourceHeader": "⠣ EU  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 21,
+      "lautgruppe": "EX",
+      "sigel": {
+        "unicode": "⠭",
+        "codepoints": [
+          "U+282D"
+        ],
+        "dots": [
+          "1346"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": false,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Examen",
+        "inlaut": null,
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 2,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 135,
+        "sourceHeader": "⠭ EX  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 22,
+      "lautgruppe": "GE",
+      "sigel": {
+        "unicode": "⠯",
+        "codepoints": [
+          "U+282F"
+        ],
+        "dots": [
+          "12346"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Gesang",
+        "inlaut": "Angebot",
+        "auslaut": "Frage"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 138,
+        "sourceHeader": "⠯ GE  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 23,
+      "lautgruppe": "ICH",
+      "sigel": {
+        "unicode": "⠼",
+        "codepoints": [
+          "U+283C"
+        ],
+        "dots": [
+          "3456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Licht",
+        "auslaut": "Teppich"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 145,
+        "sourceHeader": "⠼ ICH  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 24,
+      "lautgruppe": "IE",
+      "sigel": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Lied",
+        "auslaut": "nie"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 150,
+        "sourceHeader": "⠬ IE  — "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 25,
+      "lautgruppe": "IG",
+      "sigel": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Tiger",
+        "auslaut": "Käfig"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 155,
+        "sourceHeader": "⠘ IG  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 26,
+      "lautgruppe": "IN",
+      "sigel": {
+        "unicode": "⠔",
+        "codepoints": [
+          "U+2814"
+        ],
+        "dots": [
+          "35"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "innig",
+        "inlaut": "Ding",
+        "auslaut": "Kamin"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 160,
+        "sourceHeader": "⠔ IN  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 27,
+      "lautgruppe": "ISMUS",
+      "sigel": {
+        "unicode": "⠐⠊",
+        "codepoints": [
+          "U+2810",
+          "U+280A"
+        ],
+        "dots": [
+          "5",
+          "24"
+        ],
+        "cellCount": 2
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Kapitalismusfreund",
+        "auslaut": "Egoismus"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 167,
+        "sourceHeader": "⠐⠊ ISMUS  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 28,
+      "lautgruppe": "ISTISCH",
+      "sigel": {
+        "unicode": "⠐⠱",
+        "codepoints": [
+          "U+2810",
+          "U+2831"
+        ],
+        "dots": [
+          "5",
+          "156"
+        ],
+        "cellCount": 2
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "juristische",
+        "auslaut": "feministisch"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 176,
+        "sourceHeader": "⠐⠱ ISTISCH  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 29,
+      "lautgruppe": "ITÄT",
+      "sigel": {
+        "unicode": "⠐⠜",
+        "codepoints": [
+          "U+2810",
+          "U+281C"
+        ],
+        "dots": [
+          "5",
+          "345"
+        ],
+        "cellCount": 2
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Sanitäter",
+        "auslaut": "Identität"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 181,
+        "sourceHeader": "⠐⠜ ITÄT  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 30,
+      "lautgruppe": "LICH",
+      "sigel": {
+        "unicode": "⠸",
+        "codepoints": [
+          "U+2838"
+        ],
+        "dots": [
+          "456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Pflicht",
+        "auslaut": "örtlich"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 186,
+        "sourceHeader": "⠸ LICH  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 31,
+      "lautgruppe": "LL",
+      "sigel": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Dollar",
+        "auslaut": "Atoll"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 191,
+        "sourceHeader": "⠟ LL  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 32,
+      "lautgruppe": "MM",
+      "sigel": {
+        "unicode": "⠭",
+        "codepoints": [
+          "U+282D"
+        ],
+        "dots": [
+          "1346"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Flamme",
+        "auslaut": "Kamm"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 196,
+        "sourceHeader": "⠭ MM  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 33,
+      "lautgruppe": "OR",
+      "sigel": {
+        "unicode": "⠢",
+        "codepoints": [
+          "U+2822"
+        ],
+        "dots": [
+          "26"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Orkan",
+        "inlaut": "Bord",
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 201,
+        "sourceHeader": "⠢ OR  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 34,
+      "lautgruppe": "PRO",
+      "sigel": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": false,
+        "auslaut": false
+      },
+      "examples": {
+        "anlaut": "Problem",
+        "inlaut": null,
+        "auslaut": null
+      },
+      "forbiddenPositionCount": 2,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 206,
+        "sourceHeader": "⠟ PRO  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 35,
+      "lautgruppe": "SCH",
+      "sigel": {
+        "unicode": "⠱",
+        "codepoints": [
+          "U+2831"
+        ],
+        "dots": [
+          "156"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Schirm",
+        "inlaut": "Tasche",
+        "auslaut": "Fisch"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 209,
+        "sourceHeader": "⠱ SCH  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 36,
+      "lautgruppe": "SS",
+      "sigel": {
+        "unicode": "⠮",
+        "codepoints": [
+          "U+282E"
+        ],
+        "dots": [
+          "2346"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Messe",
+        "auslaut": "Fass"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 216,
+        "sourceHeader": "⠮ SS  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 37,
+      "lautgruppe": "ST",
+      "sigel": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Sturz",
+        "inlaut": "Paste",
+        "auslaut": "Wurst"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 221,
+        "sourceHeader": "⠾ ST  "
+      },
+      "inheritance": "INHERITED_FROM_VOLLSCHRIFT"
+    },
+    {
+      "order": 38,
+      "lautgruppe": "TE",
+      "sigel": {
+        "unicode": "⠦",
+        "codepoints": [
+          "U+2826"
+        ],
+        "dots": [
+          "236"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": false,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": null,
+        "inlaut": "Azteke",
+        "auslaut": "Kälte"
+      },
+      "forbiddenPositionCount": 1,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 228,
+        "sourceHeader": "⠦ TE  — "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    },
+    {
+      "order": 39,
+      "lautgruppe": "UN",
+      "sigel": {
+        "unicode": "⠲",
+        "codepoints": [
+          "U+2832"
+        ],
+        "dots": [
+          "256"
+        ],
+        "cellCount": 1
+      },
+      "positions": {
+        "anlaut": true,
+        "inlaut": true,
+        "auslaut": true
+      },
+      "examples": {
+        "anlaut": "Unikum",
+        "inlaut": "Tundra",
+        "auslaut": "Monsun"
+      },
+      "forbiddenPositionCount": 0,
+      "source": {
+        "section": "4.1.1",
+        "sourceLine": 233,
+        "sourceHeader": "⠲ UN  "
+      },
+      "inheritance": "KURZSCHRIFT_ADDITION"
+    }
+  ],
+  "sigelReuseAudit": [
+    {
+      "sigel": {
+        "unicode": "⠭",
+        "codepoints": [
+          "U+282D"
+        ],
+        "dots": [
+          "1346"
+        ],
+        "cellCount": 1
+      },
+      "lautgruppen": [
+        "EX",
+        "MM"
+      ],
+      "positionOverlap": [],
+      "classification": "POSITIONALLY_DISJOINT_REUSE"
+    },
+    {
+      "sigel": {
+        "unicode": "⠟",
+        "codepoints": [
+          "U+281F"
+        ],
+        "dots": [
+          "12345"
+        ],
+        "cellCount": 1
+      },
+      "lautgruppen": [
+        "LL",
+        "PRO"
+      ],
+      "positionOverlap": [],
+      "classification": "POSITIONALLY_DISJOINT_REUSE"
+    }
+  ],
+  "inheritance": {
+    "sourcePhase": "15.2A",
+    "vollschriftMappings": 8,
+    "cellMappingsExact": true,
+    "additionalKurzschriftMappings": 31
+  },
+  "promotionPolicy": {
+    "inventoryComplete": true,
+    "formalApplicationRulesPromoted": false,
+    "precedenceModelPromoted": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false,
+    "profileIdsFrozen": false
+  },
+  "next": {
+    "phase": "15.3C",
+    "title": "Kurzschrift Lautgruppenkürzungen Application Rules Audit",
+    "sourceSections": [
+      "4.1.2.1",
+      "4.1.2.2",
+      "4.1.2.3",
+      "4.1.2.4",
+      "4.1.2.5",
+      "4.1.2.6",
+      "4.1.2.7",
+      "4.1.2.8"
+    ]
+  }
+}

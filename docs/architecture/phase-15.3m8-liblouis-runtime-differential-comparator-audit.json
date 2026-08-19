@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.3M8",
+  "title": "Liblouis German Kurzschrift Runtime Differential Comparator Audit",
+  "generatedAtUtc": "2026-08-19T19:07:34Z",
+  "status": "PASS_WITH_DOCUMENTED_SOURCE_BACKED_COMPARATOR_DIVERGENCE",
+  "comparatorRole": "NON_NORMATIVE_COMPARATOR",
+  "normativeAuthority": false,
+  "normativeDecision": "NONE",
+  "purpose": "Execute the frozen Liblouis German Grade-2 comparator against source-derived Kurzschrift runtime probes, classify apparent differences, and preserve comparator divergences without promoting comparator behavior into the normative German Braille specification.",
+  "scope": {
+    "formalValidationCases": 645,
+    "directComparatorExecutableCases": 258,
+    "nonDirectRuntimeCases": 387
+  },
+  "runtime": {
+    "liblouisVersion": "3.38.0",
+    "translationTable": "de-g2.ctb",
+    "displayTable": "unicode.dis",
+    "mode": "FORWARD",
+    "exitCode": 0,
+    "comparatorRole": "NON_NORMATIVE_COMPARATOR"
+  },
+  "rawDifferential": {
+    "inputCases": 258,
+    "outputCases": 258,
+    "exactMatch": 246,
+    "runtimeDivergence": 12,
+    "outputCountMatch": true
+  },
+  "triage": {
+    "rawDivergences": 12,
+    "brailleSpaceSerializationDifference": 6,
+    "sourceAnnotationScopeDifference": 2,
+    "initiallyUnresolvedRuntimeDivergence": 4
+  },
+  "finalAdjudication": {
+    "finalAccounting": {
+      "EXACT_MATCH": 246,
+      "BRAILLE_SPACE_SERIALIZATION_DIFFERENCE": 6,
+      "SOURCE_ANNOTATION_SCOPE_DIFFERENCE": 2,
+      "SOURCE_BACKED_CONTEXT_MATCH": 1,
+      "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE": 2,
+      "CONFIRMED_SOURCE_BACKED_COMPARATOR_DIVERGENCE": 1
+    },
+    "total": 258,
+    "lexicalLabelFindings": {
+      "JED": "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE",
+      "INTERESS": "NON_ADJUDICABLE_LEXICAL_LABEL_PROBE",
+      "LÄSS": "SOURCE_BACKED_CONTEXT_MATCH"
+    },
+    "laessSourceBackedWitness": {
+      "print": "lässig",
+      "expectedBraille": "⠐⠇⠘",
+      "actualBraille": "⠐⠇⠘",
+      "exactMatch": true
+    },
+    "confirmedSourceBackedComparatorDivergences": [
+      {
+        "validationId": "DE-KURZ-REST-493-RESOLVE-001",
+        "print": "Den Haag",
+        "expectedBraille": "⠙⠉ ⠓⠁⠁⠛",
+        "comparatorBraille": "⠑⠀⠓⠁⠁⠛",
+        "classification": "CONFIRMED_SOURCE_BACKED_COMPARATOR_DIVERGENCE",
+        "normativeImpact": "NONE"
+      }
+    ]
+  },
+  "materializationFinding": {
+    "mappingBackedDoesNotNecessarilyImplyRuntimeInputValidity": true,
+    "finding": "A lexical mapping label may be valid normative mapping evidence without itself constituting a source-backed print string suitable for direct runtime differential adjudication.",
+    "affectedObservedLabels": [
+      "JED",
+      "INTERESS",
+      "LÄSS"
+    ],
+    "resolution": "Require source-backed print context before confirming semantic comparator divergence."
+  },
+  "interpretationPolicy": {
+    "exactComparatorMatchCreatesNormativeRule": false,
+    "comparatorDivergenceInvalidatesBskdl": false,
+    "comparatorOutputIsNormative": false,
+    "nonAdjudicableLexicalLabelChangesNormativeMapping": false,
+    "sourceBackedComparatorDivergenceChangesNormativeRule": false,
+    "normativeAuthorityRemainsBskdlFormalArtifacts": true
+  },
+  "evidence": {
+    "files": {
+      "m8b1-comparator-eligibility.json": "44f480f1bfaf6239cba9b3d7ee1f4a8da6bf52352f954e4f04695888ba0dc220",
+      "m8b2-executable-corpus.json": "ba24835b6f3de4cadf0d3767bfa2c872a1905051c10eedeac8abd84feaa98abd",
+      "m8b3-differential-results.json": "34d86148da8a7d226827c0187bf51dad7190d6ce1e4a20f58c7c416997829233",
+      "m8b4a-divergence-triage.json": "c2312bf50b38a6bdde6323c15ba85ac038dd710d3ab11baedf82ae34c8d5a7d8",
+      "m8b4b-unresolved-evidence.json": "66019aa1a0c9969b1939dbaa5a405d348d62f56bebcdfa413cabb8a6b1eed560",
+      "m8b4c-source-backed-context-discovery.json": "eabea2715fe46c95059ee55fbf46821ba0560f05a8b236b334b312c806d4586c",
+      "m8b4d-final-adjudication.json": "3a5499206bb382d74d88eeb35b76f5115dab0fc3f69e4b31f93945741618b318"
+    }
+  },
+  "decision": {
+    "m8Closed": true,
+    "finalStatus": "PASS_WITH_DOCUMENTED_SOURCE_BACKED_COMPARATOR_DIVERGENCE",
+    "confirmedSourceBackedComparatorDivergences": 1,
+    "normativeChanges": 0,
+    "readyFor": "Phase 15.3M9 runtime divergence and comparator closure"
+  }
+}
