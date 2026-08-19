@@ -123,7 +123,7 @@ test(
 
     assert.equal(
       result.unicodeBraille,
-      "â ¼â ™â ²â €â â ¹â ±â ",
+      "⠼⠙⠲⠀⠐⠹⠱⠏",
     );
     assert.equal(
       result.profile.sourceCode,
