@@ -1,0 +1,773 @@
+{
+  "phase": "15.2G",
+  "title": "Liblouis Vollschrift Static Differential Audit",
+  "status": "STATIC_DIFFERENTIAL_COMPLETE_RUNTIME_NOT_EXECUTED",
+  "retrievedAt": "2026-08-19",
+  "role": "NON_NORMATIVE_COMPARATOR",
+  "normativeAuthority": {
+    "organization": "BSKDL",
+    "sourceSha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a"
+  },
+  "liblouis": {
+    "commit": "fefb3a218cead90cf5e6df6a5fc8d6a69f4dbf2e",
+    "table": "de-g1.ctb",
+    "verifiedFiles": {
+      "de-g1.ctb": {
+        "sha256": "e19b87ed623a5d41270783414023f38810001f4cbc0894548908159d5c01eeba",
+        "bytes": 1842
+      },
+      "de-g1-core.cti": {
+        "sha256": "0b163a8e8c6c0848f339bec9c7e6978ab2f0485496b3363fac8e83945461c9da",
+        "bytes": 2814
+      },
+      "de-g1-core-patterns.dic": {
+        "sha256": "1cffedf7b487caf31dd5cafa442a329461496adb7f6db29a27a90b8310ae8578",
+        "bytes": 40958
+      }
+    },
+    "runtimeCapability": "UNAVAILABLE_IN_AUDIT_ENVIRONMENT",
+    "comparisonMode": "STATIC_TABLE_DIFFERENTIAL_ONLY"
+  },
+  "sourceTopology": {
+    "deG1Includes": [
+      "de-g0.utb",
+      "de-g1-core.cti"
+    ],
+    "deG1CoreIncludes": [
+      "de-g1-core-patterns.dic"
+    ],
+    "coreActiveLines": 34,
+    "patternActiveLines": 4863,
+    "coreOperationCounts": {
+      "include": 1,
+      "letter": 8,
+      "noback": 16,
+      "nofor": 9
+    }
+  },
+  "mappingFindings": [
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-AU",
+      "subject": "au",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "16",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 49,
+          "text": "noback nocross always   au         16a                           # 1 #"
+        },
+        "noforRule": {
+          "line": 58,
+          "text": "nofor partword    au         16                           # 1 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-EU",
+      "subject": "eu",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "126",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 50,
+          "text": "noback nocross always   eu         126a                          # 2 #"
+        },
+        "noforRule": {
+          "line": 59,
+          "text": "nofor partword    eu         126                          # 2 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-EI",
+      "subject": "ei",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "146",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 51,
+          "text": "noback nocross always   ei         146a                          # 3 #"
+        },
+        "noforRule": {
+          "line": 60,
+          "text": "nofor partword    ei         146                          # 3 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-CH",
+      "subject": "ch",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "1456",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 52,
+          "text": "noback nocross always   ch         1456a                         # 4 #"
+        },
+        "noforRule": {
+          "line": 61,
+          "text": "nofor partword    ch         1456                         # 4 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-SCH",
+      "subject": "sch",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "156",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 53,
+          "text": "noback nocross always   sch        156a                          # 5 #"
+        },
+        "noforRule": {
+          "line": 62,
+          "text": "nofor partword    sch        156                          # 5 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-ST",
+      "subject": "st",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "23456",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 54,
+          "text": "noback nocross always   st         23456a                        # ] #"
+        },
+        "noforRule": {
+          "line": 63,
+          "text": "nofor partword    st         23456                        # ] #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-AEU",
+      "subject": "äu",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "34",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 55,
+          "text": "noback nocross always   äu         34a                           # \\ #"
+        },
+        "noforRule": {
+          "line": 64,
+          "text": "nofor partword    äu         34                           # \\ #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-MAP-IE",
+      "subject": "ie",
+      "classification": "STATIC_EXPLICIT_MATCH",
+      "bskdlDots": "346",
+      "liblouisEvidence": {
+        "nobackRule": {
+          "line": 56,
+          "text": "noback nocross always   ie         346a                          # 0 #"
+        },
+        "noforRule": {
+          "line": 66,
+          "text": "nofor partword    ie         346                          # 0 #"
+        }
+      },
+      "behaviorExecuted": false,
+      "normativeAuthority": "BSKDL"
+    }
+  ],
+  "familyFindings": [
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-001",
+      "subject": "BASISSCHRIFT_INHERITANCE",
+      "classification": "STATIC_STRUCTURAL_MATCH",
+      "bskdlEvidence": "Vollschrift inherits Basisschrift",
+      "liblouisEvidence": {
+        "topLevelInclude": "include de-g0.utb"
+      },
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-002",
+      "subject": "PATTERN_INFRASTRUCTURE",
+      "classification": "STATIC_STRUCTURAL_MATCH",
+      "liblouisEvidence": {
+        "include": "include de-g1-core-patterns.dic",
+        "activePatternLines": 4863
+      },
+      "interpretation": "A dedicated static pattern layer exists. This finding does not claim equivalence between its pattern semantics and any specific BSKDL restriction.",
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-003",
+      "subject": "BOUNDARY_RESTRICTIONS",
+      "classification": "STATIC_PARTIAL_MATCH",
+      "bskdlScope": [
+        "compound-word seams",
+        "derivational seams",
+        "spoken-syllable seams except st"
+      ],
+      "liblouisEvidence": {
+        "allEightStaticRulesContainNocross": true,
+        "patternDictionaryPresent": true
+      },
+      "limitation": "Static source demonstrates nocross and pattern infrastructure, but does not by itself prove behavioral equivalence for Wortfugen, Ableitungssilben or Sprechsilbenfugen.",
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-004",
+      "subject": "VOWEL_PRONUNCIATION_ELIGIBILITY",
+      "classification": "NOT_DETERMINABLE_WITHOUT_RUNTIME",
+      "bskdlScope": [
+        "au",
+        "eu",
+        "ei",
+        "äu",
+        "ie"
+      ],
+      "reason": "Static contraction and pattern rules are visible, but Chapter 3 pronunciation eligibility cannot be behaviorally established without executing or fully formalizing Liblouis pattern semantics.",
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-005",
+      "subject": "SCH_SINGLE_SOUND_POLICY",
+      "classification": "NOT_DETERMINABLE_WITHOUT_RUNTIME",
+      "reason": "The generic sch mapping is explicit, but the Chapter 3 single-sound restriction cannot be proven equivalent from the observed static core lines alone.",
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-006",
+      "subject": "ST_SPECIAL_POLICY",
+      "classification": "NOT_DETERMINABLE_WITHOUT_RUNTIME",
+      "bskdlScope": [
+        "sth when th is one sound",
+        "sst double-s priority",
+        "St. when meaning Sankt"
+      ],
+      "reason": "The generic st mapping is explicit, but the three Chapter 3 special exclusions are not established as equivalent by the static core inspection.",
+      "behaviorExecuted": false
+    },
+    {
+      "id": "DE-VOLL-LIBLOUIS-FAMILY-007",
+      "subject": "STANDALONE_WORD_ELIGIBILITY",
+      "classification": "NOT_DETERMINABLE_WITHOUT_RUNTIME",
+      "bskdlExamples": [
+        "Au",
+        "Ei"
+      ],
+      "reason": "Static source contains mapping and partword rules, but no behavioral translation was executed for the standalone source examples.",
+      "behaviorExecuted": false
+    }
+  ],
+  "patternObservation": {
+    "candidateHitCounts": {
+      "au": 155,
+      "eu": 69,
+      "ei": 147,
+      "ch": 208,
+      "sch": 10,
+      "st": 130,
+      "äu": 23,
+      "ie": 88
+    },
+    "literalChapter3ExampleHits": {
+      "Pierre": [
+        {
+          "line": 3340,
+          "text": "pierre1ih"
+        }
+      ]
+    },
+    "literalExampleSearchInterpretation": "The pattern dictionary is not an example inventory. Absence of a literal Chapter 3 word is not evidence that the behavior is unsupported."
+  },
+  "fixtureComparison": [
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-001",
+      "input": "Baum",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "au",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-002",
+      "input": "heute",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "eu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-003",
+      "input": "Eisen",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-004",
+      "input": "Docht",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-005",
+      "input": "Asche",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-006",
+      "input": "Stammgäste",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-007",
+      "input": "Bäume",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "äu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-008",
+      "input": "Liebe",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-009",
+      "input": "dienen",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-010",
+      "input": "Konnie",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-011",
+      "input": "apple pie",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-012",
+      "input": "Beige",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-013",
+      "input": "Marseille",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-014",
+      "input": "Rio de Janeiro",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-015",
+      "input": "Au",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "au",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-016",
+      "input": "Ei",
+      "fixtureClass": "MUST_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-017",
+      "input": "Wolgaufer",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "au",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-018",
+      "input": "Wegeunfall",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "eu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-019",
+      "input": "Nordseeinsel",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-020",
+      "input": "Comicheft",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-021",
+      "input": "Regierungschefin",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-022",
+      "input": "Dienstag",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-023",
+      "input": "beurteilen",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "eu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-024",
+      "input": "geimpft",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-025",
+      "input": "eingeigelt",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-026",
+      "input": "Reimport",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-027",
+      "input": "Vietnam",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-028",
+      "input": "Premierminister",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-029",
+      "input": "Interview",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-030",
+      "input": "Pierre",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-031",
+      "input": "Kapernaum",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "au",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-032",
+      "input": "Museum",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "eu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-033",
+      "input": "Koffein",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ei",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-034",
+      "input": "Jubiläum",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "äu",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-035",
+      "input": "Familie",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "ie",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-036",
+      "input": "Scherzo",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-037",
+      "input": "Ästhet",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-038",
+      "input": "Asthma",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-039",
+      "input": "Esther",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-040",
+      "input": "St. Gallen",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-041",
+      "input": "St. Pölten",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-042",
+      "input": "St. Pauli",
+      "fixtureClass": "MUST_NOT_CONTRACT",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-043",
+      "input": "Gässchen",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-044",
+      "input": "Häschen",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-045",
+      "input": "Häuschen",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-046",
+      "input": "Bruschetta",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-047",
+      "input": "Eschatologie",
+      "fixtureClass": "PARTIAL_CANDIDATE_FALLBACK",
+      "candidate": "sch",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    },
+    {
+      "fixtureId": "DE-VOLL-NORM-CASE-048",
+      "input": "bewusst",
+      "fixtureClass": "DEFERRED_DEPENDENCY",
+      "candidate": "st",
+      "comparisonStatus": "NOT_EXECUTED_RUNTIME_UNAVAILABLE",
+      "liblouisOutput": null,
+      "behavioralParity": "NOT_DETERMINED"
+    }
+  ],
+  "coverage": {
+    "normativeFixtures": 48,
+    "behavioralFixturesExecuted": 0,
+    "behavioralFixturesNotExecuted": 48,
+    "staticContractionMappings": 8,
+    "staticContractionMappingsMatched": 8,
+    "staticFindings": 15,
+    "classificationCounts": {
+      "STATIC_EXPLICIT_MATCH": 8,
+      "STATIC_STRUCTURAL_MATCH": 2,
+      "STATIC_PARTIAL_MATCH": 1,
+      "NOT_DETERMINABLE_WITHOUT_RUNTIME": 4
+    },
+    "staticDivergencesEstablished": 0,
+    "behavioralParityEstablished": false
+  },
+  "limitations": [
+    "No lou_translate executable was available.",
+    "No importable Python louis binding was available.",
+    "Liblouis pattern semantics were not reimplemented by the audit.",
+    "No runtime translation was performed.",
+    "Static agreement is not treated as behavioral conformance."
+  ],
+  "policy": {
+    "liblouisIsNormative": false,
+    "bskdlIsNormative": true,
+    "runtimeEquivalenceClaimed": false,
+    "behavioralConformanceClaimed": false,
+    "staticDifferentialComplete": true,
+    "implementationRulesPromotedFromLiblouis": false
+  },
+  "promotionPolicy": {
+    "vollschriftLiblouisStaticAuditComplete": true,
+    "vollschriftLiblouisRuntimeAuditComplete": false,
+    "runtimeAuditRequiredForPhase15_2Closure": false,
+    "reasonRuntimeAuditNotBlocking": "Liblouis is a non-normative comparator. The normative Chapter 3 audit and source fixture suite remain authoritative.",
+    "coreImplementationStarted": false,
+    "conformancePromoted": false
+  }
+}

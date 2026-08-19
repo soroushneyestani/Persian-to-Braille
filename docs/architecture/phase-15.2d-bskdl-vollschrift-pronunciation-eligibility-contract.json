@@ -1,0 +1,387 @@
+{
+  "phase": "15.2D",
+  "title": "BSKDL Vollschrift Pronunciation Eligibility Contract",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "inherits": {
+    "inventory": "15.2A",
+    "eligibilityContract": "15.2B",
+    "morphologicalContract": "15.2C"
+  },
+  "pronunciationModel": {
+    "vowelGroups": [
+      "au",
+      "eu",
+      "ei",
+      "äu",
+      "ie"
+    ],
+    "schRequiresSingleSound": true,
+    "stExcludedFromGeneralSyllableSeamRule": true,
+    "foreignPronunciationMayQualify": true,
+    "orthographicMatchAloneSufficient": false,
+    "resolutionStates": [
+      "ELIGIBLE",
+      "INELIGIBLE",
+      "UNRESOLVED_PRONUNCIATION"
+    ]
+  },
+  "rules": [
+    {
+      "id": "DE-VOLL-PRON-001",
+      "kind": "SPOKEN_SYLLABLE_BOUNDARY",
+      "summary": "Except for st, Vollschrift contractions must not cross spoken-syllable boundaries.",
+      "exception": "st",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-002",
+      "kind": "VOWEL_GROUP_SCOPE",
+      "summary": "Pronunciation-sensitive vowel-group contractions include au, eu, ei, äu and ie.",
+      "contractions": [
+        "au",
+        "eu",
+        "ei",
+        "äu",
+        "ie"
+      ],
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-003",
+      "kind": "VOWEL_SINGLE_SOUND_REQUIREMENT",
+      "summary": "A vowel-group contraction may be used only when the relevant letter sequence is pronounced as one sound or diphthong.",
+      "decisionWhenSatisfied": "ELIGIBLE_SUBJECT_TO_OTHER_RULES",
+      "decisionWhenNotSatisfied": "INELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-004",
+      "kind": "MULTI_VOWEL_CONTEXT",
+      "summary": "The pronunciation rule also applies in orthographic contexts containing up to three vowels, as explicitly illustrated by the source.",
+      "sourceExample": "Bordeaux",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-005",
+      "kind": "NON_GERMAN_PRONUNCIATION_ALLOWED",
+      "summary": "A vowel-group contraction may remain eligible even when its pronunciation differs from ordinary German pronunciation.",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-006",
+      "kind": "IE_POSITIVE_EXAMPLES",
+      "examples": [
+        "dienen",
+        "Konnie",
+        "apple pie"
+      ],
+      "decision": "ELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-007",
+      "kind": "IE_NEGATIVE_EXAMPLES",
+      "examples": [
+        "Vietnam",
+        "Premierminister",
+        "Interview",
+        "Pierre"
+      ],
+      "decision": "INELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-008",
+      "kind": "EI_FOREIGN_POSITIVE_EXAMPLES",
+      "examples": [
+        "Beige",
+        "Marseille",
+        "Rio de Janeiro"
+      ],
+      "decision": "ELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-009",
+      "kind": "SOURCE_NEGATIVE_PRONUNCIATION_SET",
+      "summary": "Chapter 3 supplies further examples where the relevant letter groups must remain uncontracted.",
+      "examples": [
+        "Kapernaum",
+        "Museum",
+        "Koffein",
+        "Bruschetta",
+        "Jubiläum",
+        "Familie"
+      ],
+      "decision": "INELIGIBLE_FOR_RELEVANT_CANDIDATE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-010",
+      "kind": "SCH_SINGLE_SOUND_REQUIREMENT",
+      "summary": "The sch contraction is permitted only when sch is pronounced as one sound.",
+      "decisionWhenSatisfied": "ELIGIBLE_SUBJECT_TO_OTHER_RULES",
+      "decisionWhenNotSatisfied": "INELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-011",
+      "kind": "SCH_NEGATIVE_EXAMPLE",
+      "examples": [
+        "Scherzo"
+      ],
+      "decision": "INELIGIBLE",
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-012",
+      "kind": "ESCHATOLOGIE_SCH_CH_DISTINCTION",
+      "summary": "The source rendering of Eschatologie does not use sch as one contraction, while ch remains available.",
+      "input": "Eschatologie",
+      "rejectedCandidate": "sch",
+      "remainingCandidate": "ch",
+      "evidenceRole": "NORMATIVE_SOURCE_RENDERING_DERIVATION",
+      "directProseRule": false,
+      "normative": true,
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-013",
+      "kind": "SOFTWARE_PRONUNCIATION_PROVIDER",
+      "summary": "BSKDL makes pronunciation relevant but does not define the software mechanism used to obtain pronunciation.",
+      "architecturalInference": true,
+      "normative": false,
+      "resolutionStatus": "PRONUNCIATION_PROVIDER_NOT_YET_FROZEN",
+      "executable": false
+    },
+    {
+      "id": "DE-VOLL-PRON-014",
+      "kind": "TRISTATE_RESOLUTION_MODEL",
+      "summary": "Before an implementation policy is frozen, software reasoning should distinguish eligible, ineligible and unresolved pronunciation states rather than invent a normative fallback.",
+      "states": [
+        "ELIGIBLE",
+        "INELIGIBLE",
+        "UNRESOLVED_PRONUNCIATION"
+      ],
+      "architecturalInference": true,
+      "normative": false,
+      "executable": false
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "DE-VOLL-PRON-CASE-001",
+      "input": "dienen",
+      "candidate": "ie",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-002",
+      "input": "Konnie",
+      "candidate": "ie",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-003",
+      "input": "apple pie",
+      "candidate": "ie",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-006"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-004",
+      "input": "Beige",
+      "candidate": "ei",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-005",
+      "input": "Marseille",
+      "candidate": "ei",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-006",
+      "input": "Rio de Janeiro",
+      "candidate": "ei",
+      "expectedState": "ELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-003",
+        "DE-VOLL-PRON-005",
+        "DE-VOLL-PRON-008"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-007",
+      "input": "Vietnam",
+      "candidate": "ie",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-007"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-008",
+      "input": "Premierminister",
+      "candidate": "ie",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-007"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-009",
+      "input": "Interview",
+      "candidate": "ie",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-007"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-010",
+      "input": "Pierre",
+      "candidate": "ie",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-007"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-011",
+      "input": "Kapernaum",
+      "candidate": "au",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-009"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-012",
+      "input": "Museum",
+      "candidate": "eu",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-009"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-013",
+      "input": "Koffein",
+      "candidate": "ei",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-009"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-014",
+      "input": "Jubiläum",
+      "candidate": "äu",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-009"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-015",
+      "input": "Familie",
+      "candidate": "ie",
+      "expectedState": "INELIGIBLE",
+      "rule": "DE-VOLL-PRON-009"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-016",
+      "input": "Scherzo",
+      "candidate": "sch",
+      "expectedState": "INELIGIBLE",
+      "rules": [
+        "DE-VOLL-PRON-010",
+        "DE-VOLL-PRON-011"
+      ]
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-017",
+      "input": "Eschatologie",
+      "candidate": "sch",
+      "expectedState": "INELIGIBLE",
+      "remainingCandidate": "ch",
+      "remainingCandidateState": "NOT_REJECTED_BY_SCH_RULE",
+      "rule": "DE-VOLL-PRON-012"
+    },
+    {
+      "id": "DE-VOLL-PRON-CASE-018",
+      "input": "UNSEEN_WORD_WITH_UNKNOWN_PRONUNCIATION",
+      "candidate": "ie",
+      "expectedState": "UNRESOLVED_PRONUNCIATION",
+      "rule": "DE-VOLL-PRON-014",
+      "normativeExample": false
+    }
+  ],
+  "architecturalFinding": {
+    "pronunciationIsNormativeInput": true,
+    "pronunciationProviderSpecifiedByBSKDL": false,
+    "dictionaryLookupMayBeImplementationStrategy": true,
+    "dictionaryLookupNormative": false,
+    "guessingUnknownPronunciationForbiddenDuringAudit": true,
+    "unresolvedStateMustRemainRepresentable": true
+  },
+  "openDependencies": [
+    {
+      "id": "PRONUNCIATION_PROVIDER",
+      "status": "NOT_YET_FROZEN"
+    },
+    {
+      "id": "LEXICAL_PRONUNCIATION_EVIDENCE_POLICY",
+      "status": "NOT_YET_FROZEN"
+    },
+    {
+      "id": "KURZSCHRIFT_PRONUNCIATION_INTERACTIONS",
+      "status": "CHAPTER_4_NOT_YET_AUDITED"
+    }
+  ],
+  "coverage": {
+    "formalRules": 14,
+    "validationCases": 18,
+    "eligibleSourceCases": 6,
+    "ineligibleSourceCases": 10,
+    "derivedSourceCases": 1,
+    "architecturalUnknownCase": 1,
+    "vowelGroups": 5,
+    "schPolicy": true
+  },
+  "promotionPolicy": {
+    "pronunciationContractComplete": true,
+    "pronunciationProviderResolved": false,
+    "unknownPronunciationFallbackResolved": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}

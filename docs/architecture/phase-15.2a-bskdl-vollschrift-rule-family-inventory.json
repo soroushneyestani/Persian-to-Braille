@@ -1,0 +1,495 @@
+{
+  "phase": "15.2A",
+  "title": "BSKDL Vollschrift Rule-Family Inventory",
+  "status": "EXTRACTED_NOT_PROMOTED",
+  "retrievedAt": "2026-08-19",
+  "normativeSource": {
+    "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+    "chapter": "3 Die Vollschrift",
+    "chapterExtractionSha256": "a852e5acdf41910feb3cb1e91dceb9a7fbb9cecbb0a6db2766eed4d4c0df9e2a",
+    "pdfStartPage": 99,
+    "pdfEndBoundaryPage": 103
+  },
+  "profileModel": {
+    "baseProfile": "BASISSCHRIFT_NOT_YET_FINAL_PROFILE_ID",
+    "extensionType": "INHERITS_BASISSCHRIFT_AND_ADDS_CONTRACTIONS",
+    "independentTranslator": false,
+    "finalProfileIdFrozen": false
+  },
+  "coverage": {
+    "ruleFamilies": 8,
+    "lautgruppenkuerzungen": 8,
+    "sourceExamples": 16
+  },
+  "lautgruppenkuerzungen": [
+    {
+      "id": "DE-VOLL-LG-AU",
+      "print": "au",
+      "braille": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-EU",
+      "print": "eu",
+      "braille": {
+        "unicode": "⠣",
+        "codepoints": [
+          "U+2823"
+        ],
+        "dots": [
+          "126"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-EI",
+      "print": "ei",
+      "braille": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-CH",
+      "print": "ch",
+      "braille": {
+        "unicode": "⠹",
+        "codepoints": [
+          "U+2839"
+        ],
+        "dots": [
+          "1456"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-SCH",
+      "print": "sch",
+      "braille": {
+        "unicode": "⠱",
+        "codepoints": [
+          "U+2831"
+        ],
+        "dots": [
+          "156"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-ST",
+      "print": "st",
+      "braille": {
+        "unicode": "⠾",
+        "codepoints": [
+          "U+283E"
+        ],
+        "dots": [
+          "23456"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-AEU",
+      "print": "äu",
+      "braille": {
+        "unicode": "⠌",
+        "codepoints": [
+          "U+280C"
+        ],
+        "dots": [
+          "34"
+        ],
+        "cellCount": 1
+      }
+    },
+    {
+      "id": "DE-VOLL-LG-IE",
+      "print": "ie",
+      "braille": {
+        "unicode": "⠬",
+        "codepoints": [
+          "U+282C"
+        ],
+        "dots": [
+          "346"
+        ],
+        "cellCount": 1
+      }
+    }
+  ],
+  "ruleFamilies": [
+    {
+      "id": "DE-VOLL-FAMILY-001",
+      "name": "BASISSCHRIFT_INHERITANCE",
+      "source": "Chapter 3 opening",
+      "summary": "Vollschrift inherits all signs and rules of Basisschrift.",
+      "architecturalRole": "PROFILE_EXTENSION",
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-002",
+      "name": "LAUTGRUPPENKUERZUNGEN",
+      "source": "Chapter 3 opening table",
+      "summary": "Eight additional sound-group contractions are introduced.",
+      "recordCount": 8,
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-003",
+      "name": "COMPOUND_WORD_SEAM_RESTRICTION",
+      "source": "Chapter 3",
+      "summary": "Contractions must not cross compound-word seams (Wortfugen).",
+      "appliesTo": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-004",
+      "name": "DERIVATIONAL_SEAM_RESTRICTION",
+      "source": "Chapter 3",
+      "summary": "Clearly recognizable prefixes and suffixes must not be joined to the word stem through a contraction.",
+      "appliesTo": [
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-005",
+      "name": "SPOKEN_SYLLABLE_BOUNDARY",
+      "source": "Chapter 3",
+      "summary": "Except for the st contraction, Vollschrift contractions must not cross spoken-syllable boundaries.",
+      "exception": "ST",
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-006",
+      "name": "PRONUNCIATION_SENSITIVE_ELIGIBILITY",
+      "source": "Chapter 3",
+      "summary": "Vowel-group contractions and sch depend on actual pronunciation rather than on orthographic substring matching alone.",
+      "vowelGroups": [
+        "au",
+        "eu",
+        "ei",
+        "äu",
+        "ie"
+      ],
+      "schRequiresSingleSound": true,
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-007",
+      "name": "ST_EXCEPTION_POLICY",
+      "source": "Chapter 3",
+      "summary": "The st contraction has specific exclusions derived from pronunciation and established Kurzschrift/application tradition.",
+      "excludedContexts": [
+        "STH_WHEN_TH_IS_ONE_SOUND",
+        "SST_DOUBLE_S_PRIORITY",
+        "ABBREVIATION_ST_FOR_SANKT"
+      ],
+      "normative": true
+    },
+    {
+      "id": "DE-VOLL-FAMILY-008",
+      "name": "STANDALONE_WORD_ELIGIBILITY",
+      "source": "Chapter 3",
+      "summary": "Vollschrift Lautgruppenkürzungen may also represent independent words when the letter group itself forms that word.",
+      "sourceExamples": [
+        "Au",
+        "Ei"
+      ],
+      "normative": true
+    }
+  ],
+  "sourceExamples": [
+    {
+      "print": "Baum",
+      "focus": "au",
+      "expected": {
+        "unicode": "⠃⠡⠍",
+        "codepoints": [
+          "U+2803",
+          "U+2821",
+          "U+280D"
+        ],
+        "dots": [
+          "12",
+          "16",
+          "134"
+        ],
+        "cellCount": 3
+      },
+      "eligible": true
+    },
+    {
+      "print": "heute",
+      "focus": "eu",
+      "expected": {
+        "unicode": "⠓⠣⠞⠑",
+        "codepoints": [
+          "U+2813",
+          "U+2823",
+          "U+281E",
+          "U+2811"
+        ],
+        "dots": [
+          "125",
+          "126",
+          "2345",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "eligible": true
+    },
+    {
+      "print": "Eisen",
+      "focus": "ei",
+      "expected": {
+        "unicode": "⠩⠎⠑⠝",
+        "codepoints": [
+          "U+2829",
+          "U+280E",
+          "U+2811",
+          "U+281D"
+        ],
+        "dots": [
+          "146",
+          "234",
+          "15",
+          "1345"
+        ],
+        "cellCount": 4
+      },
+      "eligible": true
+    },
+    {
+      "print": "Docht",
+      "focus": "ch",
+      "expected": {
+        "unicode": "⠙⠕⠹⠞",
+        "codepoints": [
+          "U+2819",
+          "U+2815",
+          "U+2839",
+          "U+281E"
+        ],
+        "dots": [
+          "145",
+          "135",
+          "1456",
+          "2345"
+        ],
+        "cellCount": 4
+      },
+      "eligible": true
+    },
+    {
+      "print": "Asche",
+      "focus": "sch",
+      "expected": {
+        "unicode": "⠁⠱⠑",
+        "codepoints": [
+          "U+2801",
+          "U+2831",
+          "U+2811"
+        ],
+        "dots": [
+          "1",
+          "156",
+          "15"
+        ],
+        "cellCount": 3
+      },
+      "eligible": true
+    },
+    {
+      "print": "Stammgäste",
+      "focus": "st",
+      "expected": {
+        "unicode": "⠾⠁⠍⠍⠛⠜⠾⠑",
+        "codepoints": [
+          "U+283E",
+          "U+2801",
+          "U+280D",
+          "U+280D",
+          "U+281B",
+          "U+281C",
+          "U+283E",
+          "U+2811"
+        ],
+        "dots": [
+          "23456",
+          "1",
+          "134",
+          "134",
+          "1245",
+          "345",
+          "23456",
+          "15"
+        ],
+        "cellCount": 8
+      },
+      "eligible": true
+    },
+    {
+      "print": "Bäume",
+      "focus": "äu",
+      "expected": {
+        "unicode": "⠃⠌⠍⠑",
+        "codepoints": [
+          "U+2803",
+          "U+280C",
+          "U+280D",
+          "U+2811"
+        ],
+        "dots": [
+          "12",
+          "34",
+          "134",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "eligible": true
+    },
+    {
+      "print": "Liebe",
+      "focus": "ie",
+      "expected": {
+        "unicode": "⠇⠬⠃⠑",
+        "codepoints": [
+          "U+2807",
+          "U+282C",
+          "U+2803",
+          "U+2811"
+        ],
+        "dots": [
+          "123",
+          "346",
+          "12",
+          "15"
+        ],
+        "cellCount": 4
+      },
+      "eligible": true
+    },
+    {
+      "print": "Vietnam",
+      "focus": "ie",
+      "eligible": false,
+      "reason": "NOT_A_DIPHTHONG_OR_SINGLE_SOUND"
+    },
+    {
+      "print": "Pierre",
+      "focus": "ie",
+      "eligible": false,
+      "reason": "NOT_A_DIPHTHONG_OR_SINGLE_SOUND"
+    },
+    {
+      "print": "Scherzo",
+      "focus": "sch",
+      "eligible": false,
+      "reason": "SCH_NOT_PRONOUNCED_AS_SINGLE_SOUND"
+    },
+    {
+      "print": "Ästhet",
+      "focus": "st",
+      "eligible": false,
+      "reason": "STH_WITH_TH_AS_SINGLE_SOUND"
+    },
+    {
+      "print": "bewusst",
+      "focus": "st",
+      "eligible": false,
+      "reason": "SST_DOUBLE_S_PRIORITY"
+    },
+    {
+      "print": "St. Gallen",
+      "focus": "st",
+      "eligible": false,
+      "reason": "ABBREVIATION_ST_FOR_SANKT"
+    },
+    {
+      "print": "Au",
+      "focus": "au",
+      "expected": {
+        "unicode": "⠡",
+        "codepoints": [
+          "U+2821"
+        ],
+        "dots": [
+          "16"
+        ],
+        "cellCount": 1
+      },
+      "eligible": true,
+      "standaloneWord": true
+    },
+    {
+      "print": "Ei",
+      "focus": "ei",
+      "expected": {
+        "unicode": "⠩",
+        "codepoints": [
+          "U+2829"
+        ],
+        "dots": [
+          "146"
+        ],
+        "cellCount": 1
+      },
+      "eligible": true,
+      "standaloneWord": true
+    }
+  ],
+  "architecturalFinding": {
+    "vollschriftExtendsBasisschrift": true,
+    "substringReplacementInsufficient": true,
+    "compoundMorphologyRelevant": true,
+    "derivationalMorphologyRelevant": true,
+    "spokenSyllableStructureRelevant": true,
+    "pronunciationRelevant": true,
+    "stRequiresDedicatedPolicy": true,
+    "standaloneContractionsAllowed": true,
+    "lexicalAnalyzerRequired": true,
+    "pronunciationPolicyRequired": true
+  },
+  "crossDependencies": {
+    "basisschriftClosure": "15.1O",
+    "kurzschriftTradition": "CHAPTER_4_NOT_YET_AUDITED",
+    "pronunciationSource": "TRANSCRIPTION_POLICY_NOT_YET_FROZEN",
+    "compoundSegmentation": "LEXICAL_ANALYSIS_REQUIRED"
+  },
+  "promotionPolicy": {
+    "vollschriftAuditStarted": true,
+    "vollschriftAuditComplete": false,
+    "coreImplementationStarted": false,
+    "sdkImplementationStarted": false,
+    "officeIntegrationStarted": false,
+    "conformancePromoted": false
+  }
+}
