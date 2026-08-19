@@ -36,3 +36,26 @@ export type {
   PersianBrailleReverseTranslator,
   PersianBrailleReverseUnicodeLocation,
 } from "./reverse-public-api.js";
+
+export {
+  MusicBrailleMidiTranslationError,
+  createMusicBrailleMidiTranslator,
+} from "./music-translator.js";
+
+export type {
+  CreateMusicBrailleMidiTranslator,
+  MusicBrailleMidiDiagnostic,
+  MusicBrailleMidiPart,
+  MusicBrailleMidiProfileInfo,
+  MusicBrailleMidiSourceLine,
+  MusicBrailleMidiSourceLineInspectionFailure,
+  MusicBrailleMidiSourceLineInspectionResult,
+  MusicBrailleMidiSourceLineInspectionSuccess,
+  MusicBrailleMidiSourceLineSelection,
+  MusicBrailleMidiTranslationFailure,
+  MusicBrailleMidiTranslationFailureCode,
+  MusicBrailleMidiTranslationFailureStage,
+  MusicBrailleMidiTranslationResult,
+  MusicBrailleMidiTranslationSuccess,
+  MusicBrailleMidiTranslator,
+} from "./music-public-api.js";

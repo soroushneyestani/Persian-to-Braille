@@ -1,0 +1,153 @@
+{
+  "id": "music-braille-midi-profile-v1",
+  "phase": "14.5c",
+  "status": "frozen-contract",
+  "scope": {
+    "input": "Standard MIDI File-derived NotationScore",
+    "output": "Music Braille semantic emission plan; BRF-to-Unicode cell conversion remains Phase 14.6",
+    "musicXml": "OUT_OF_SCOPE_RESERVED_FOR_PHASE_19"
+  },
+  "normativeBoundary": {
+    "authoritativeMusicRules": "BANA Music Braille Code 2015 seed materialized in Phase 14.5b",
+    "midiSpecificPolicies": "Project profile decisions required because MIDI does not preserve print notation semantics",
+    "sourceReconstructionClaim": false,
+    "statement": "The MIDI profile produces a deterministic transcription from sounding/structural MIDI data; it does not claim recovery of the original printed spelling, clef, hand, or engraving choices."
+  },
+  "enharmonicSpelling": {
+    "policyId": "KEY_SIGNATURE_DISTANCE_V1",
+    "explicitSpellingPrecedence": "PRESERVE_EXPLICIT_SPELLING_IF_A_FUTURE_INPUT_ADAPTER_SUPPLIES_IT",
+    "midiBehavior": "DERIVE_DETERMINISTIC_SPELLING",
+    "missingKeySignature": {
+      "assumeSharpsFlats": 0,
+      "mode": "major-neutral"
+    },
+    "midiKeySignatureRange": {
+      "minSharpsFlats": -7,
+      "maxSharpsFlats": 7
+    },
+    "keySignatureOrders": {
+      "sharps": [
+        "F",
+        "C",
+        "G",
+        "D",
+        "A",
+        "E",
+        "B"
+      ],
+      "flats": [
+        "B",
+        "E",
+        "A",
+        "D",
+        "G",
+        "C",
+        "F"
+      ]
+    },
+    "candidateAccidentalRange": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "candidateSelection": [
+      "Generate every letter/accidental candidate whose sounding pitch class equals the MIDI pitch class.",
+      "For each letter, compute its default accidental under the active MIDI key signature.",
+      "Minimize absolute distance from that key-signature accidental first; this preserves diatonic spellings such as E-sharp in seven-sharp signatures and F-flat in six-flat signatures.",
+      "Then prefer the active key polarity: sharps for positive sf, flats for negative sf, sharps as the deterministic tie-break when sf is zero or absent.",
+      "Then minimize accidental magnitude.",
+      "Use stable letter order C,D,E,F,G,A,B as the final tie-break."
+    ],
+    "octaveRule": "After spelling is chosen, derive the written octave from the spelled letter plus accidental while preserving the original MIDI sounding pitch. Do not derive the Braille octave solely from pitch-class arithmetic because spellings such as B-sharp/C-flat can cross a C boundary.",
+    "diagnostics": [
+      "INVALID_MIDI_KEY_SIGNATURE",
+      "UNREPRESENTABLE_PITCH_SPELLING"
+    ],
+    "tieBreakCorrection": {
+      "id": "POLARITY_BEFORE_MAGNITUDE_14_5C1",
+      "reason": "Makes KEY_SIGNATURE_DISTANCE_V1 executable semantics agree with the already-frozen F-flat/G-flat-major profile fixture.",
+      "policyIdChanged": false
+    }
+  },
+  "chordProfile": {
+    "policyId": "MIDI_GENERIC_UPPER_NOTE_DOWNWARD_INTERVALS_V1",
+    "reason": "MBC 2015 normally derives written-note choice and interval direction from print clef/part context; MIDI does not carry that context.",
+    "defaultWrittenNote": "HIGHEST_SOUNDING_NOTE",
+    "intervalDirection": "DOWNWARD",
+    "ordering": "Sort chord members by sounding pitch descending; emit the highest note as the written note and encode remaining members as descending diatonic intervals relative to it.",
+    "profileDisclosureRequired": true,
+    "futureAdapterOverride": "A future adapter with explicit print semantics (for example MusicXML in Phase 19) may supply a documented clef/part-directed policy without changing the Music Braille engine boundary.",
+    "samePitchDuplicate": "FAIL_CLOSED",
+    "compoundIntervals": {
+      "initialPhase14_6Support": "WITHIN_OCTAVE_2_TO_8",
+      "largerThanOctave": "FAIL_CLOSED_UNTIL_AUTHORITATIVE_9_1_1_AND_9_3_4_RULES_ARE_MATERIALIZED",
+      "diagnostic": "UNSUPPORTED_COMPOUND_CHORD_INTERVAL"
+    },
+    "tiePolicy": "Use the chord-tie rule when more than one chord member is tied; use single ties for individual tied notes/intervals where required by the authoritative tie rules."
+  },
+  "numericSerialization": {
+    "policyId": "MBC_SIMPLE_NUMERIC_SIGNATURES_V1",
+    "brailleDigitCellMapping": "DEFERRED_TO_PHASE_14_6_EXPLICIT_VALIDATED_TABLE",
+    "keySignature": {
+      "input": "MIDI sf integer in [-7,7]",
+      "zero": "EMIT_NO_KEY_SIGNATURE",
+      "oneToThree": "Repeat the authoritative sharp or flat sign abs(sf) times.",
+      "fourToSeven": "Emit the numeric count including numeric indicator, followed immediately by one authoritative sharp or flat sign.",
+      "firstFollowingNote": "REQUIRES_OCTAVE_MARK"
+    },
+    "meterSignature": {
+      "input": "Simple numerator/denominator derived from MIDI time-signature metadata",
+      "numerator": {
+        "min": 1,
+        "max": 99
+      },
+      "denominatorAllowed": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "serialization": "Numeric indicator + upper-cell numerator numeral(s), followed unspaced by lower-cell denominator numeral(s), according to MBC 2015 meter-signature procedure.",
+      "commonAndCutTime": "DO_NOT_INFER_FROM_MIDI; serialize MIDI 4/4 and 2/2 numerically because MIDI does not preserve whether print used common/cut-time symbols.",
+      "combinedMeters": "DEFERRED",
+      "firstFollowingNote": "REQUIRES_OCTAVE_MARK",
+      "diagnostics": [
+        "UNSUPPORTED_METER_DENOMINATOR",
+        "UNSUPPORTED_COMBINED_METER"
+      ]
+    }
+  },
+  "encoderStateAndPrecedence": {
+    "measureBoundary": "Reset measure-scoped accidental state; emit the authoritative normal measure separator.",
+    "signatureOrder": "If present at the same score position, emit key signature before meter signature; no blank is inserted between an immediately adjacent key and meter signature.",
+    "nextNoteAfterSignature": "Force octave mark after key or meter signature.",
+    "singleNoteEmissionOrder": [
+      "accidental-if-required",
+      "octave-if-required",
+      "note-cell",
+      "augmentation-dots",
+      "tie-if-required"
+    ],
+    "restEmissionOrder": [
+      "rest-cell",
+      "augmentation-dots"
+    ],
+    "chordEmissionOrder": [
+      "written-note-cluster",
+      "interval-members",
+      "chord-tie-or-member-ties-if-required"
+    ],
+    "failClosed": true
+  },
+  "phase14_6EntryCriteria": [
+    "Phase 14.5b authoritative seed validator remains PASS.",
+    "This Phase 14.5c profile validator remains PASS.",
+    "BRF/Braille-ASCII to Unicode Braille conversion is implemented from an explicit validated table, not memory.",
+    "Encoder rejects unsupported compound chord intervals and combined meters rather than guessing."
+  ]
+}

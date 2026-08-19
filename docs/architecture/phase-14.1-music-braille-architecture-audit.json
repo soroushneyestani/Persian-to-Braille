@@ -1,0 +1,398 @@
+{
+  "phase": "14.1",
+  "name": "Braille Music Architecture and Host Boundary Audit",
+  "mode": "READ_ONLY",
+  "git": {
+    "branch": "main",
+    "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "upstream": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "clean": true
+  },
+  "scopeFrozenFromUser": {
+    "wordDesktopWindowsOnly": true,
+    "midiOnly": true,
+    "musicXmlDeferred": true,
+    "existingAddinExtended": true,
+    "previewAndInsertIntoWord": true,
+    "otherOfficeHostsExcluded": true
+  },
+  "repositoryEvidence": {
+    "taskPaneCandidates": [
+      "docs/architecture/phase-10.3b-shared-taskpane-excel-dispatch.md",
+      "docs/architecture/phase-10.4b-shared-taskpane-powerpoint-dispatch.md",
+      "docs/architecture/phase-9.4-word-taskpane-ribbon.md",
+      "integrations/microsoft365/addin-dist/app/taskpane/controller.d.ts",
+      "integrations/microsoft365/addin-dist/app/taskpane/controller.js",
+      "integrations/microsoft365/addin-dist/app/taskpane/dom-view.d.ts",
+      "integrations/microsoft365/addin-dist/app/taskpane/dom-view.js",
+      "integrations/microsoft365/addin-dist/app/taskpane/host-config.d.ts",
+      "integrations/microsoft365/addin-dist/app/taskpane/host-config.js",
+      "integrations/microsoft365/addin-dist/app/taskpane/main.d.ts",
+      "integrations/microsoft365/addin-dist/app/taskpane/main.js",
+      "integrations/microsoft365/addin-dist/app/taskpane/readiness.d.ts",
+      "integrations/microsoft365/addin-dist/app/taskpane/readiness.js",
+      "integrations/microsoft365/addin-dist/taskpane.html",
+      "integrations/microsoft365/dist/taskpane/controller.d.ts",
+      "integrations/microsoft365/dist/taskpane/controller.js",
+      "integrations/microsoft365/dist/taskpane/dom-view.d.ts",
+      "integrations/microsoft365/dist/taskpane/dom-view.js",
+      "integrations/microsoft365/dist/taskpane/host-config.d.ts",
+      "integrations/microsoft365/dist/taskpane/host-config.js",
+      "integrations/microsoft365/dist/taskpane/main.d.ts",
+      "integrations/microsoft365/dist/taskpane/main.js",
+      "integrations/microsoft365/dist/taskpane/readiness.d.ts",
+      "integrations/microsoft365/dist/taskpane/readiness.js",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.js",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/dom-view.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/dom-view.js",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/host-config.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/host-config.js",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/main.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/main.js",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/readiness.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/taskpane/readiness.js",
+      "integrations/microsoft365/marketplace-dist/site/taskpane.html",
+      "integrations/microsoft365/public/taskpane.html",
+      "integrations/microsoft365/src/taskpane/controller.ts",
+      "integrations/microsoft365/src/taskpane/dom-view.ts",
+      "integrations/microsoft365/src/taskpane/host-config.ts",
+      "integrations/microsoft365/src/taskpane/main.ts",
+      "integrations/microsoft365/src/taskpane/readiness.ts",
+      "integrations/microsoft365/test/taskpane.test.mjs"
+    ],
+    "wordCandidates": [
+      "docs/architecture/phase-9.1-word-office-baseline-audit.md",
+      "docs/architecture/phase-9.2-word-host-adapter-contract.json",
+      "docs/architecture/phase-9.2-word-host-adapter-contract.md",
+      "docs/architecture/phase-9.3-word-selection-translation.md",
+      "docs/architecture/phase-9.4-word-taskpane-ribbon.md",
+      "docs/architecture/phase-9.5-word-sideload-regression.json",
+      "docs/architecture/phase-9.5-word-sideload-regression.md",
+      "integrations/microsoft365/addin-dist/app/word/adapter.d.ts",
+      "integrations/microsoft365/addin-dist/app/word/adapter.js",
+      "integrations/microsoft365/addin-dist/app/word/runtime.d.ts",
+      "integrations/microsoft365/addin-dist/app/word/runtime.js",
+      "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+      "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+      "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+      "integrations/microsoft365/addin-dist/app/word/types.js",
+      "integrations/microsoft365/dist/word/adapter.d.ts",
+      "integrations/microsoft365/dist/word/adapter.js",
+      "integrations/microsoft365/dist/word/runtime.d.ts",
+      "integrations/microsoft365/dist/word/runtime.js",
+      "integrations/microsoft365/dist/word/selection-service.d.ts",
+      "integrations/microsoft365/dist/word/selection-service.js",
+      "integrations/microsoft365/dist/word/types.d.ts",
+      "integrations/microsoft365/dist/word/types.js",
+      "integrations/microsoft365/marketplace-dist/site/app/word/adapter.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/word/adapter.js",
+      "integrations/microsoft365/marketplace-dist/site/app/word/runtime.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/word/runtime.js",
+      "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.js",
+      "integrations/microsoft365/marketplace-dist/site/app/word/types.d.ts",
+      "integrations/microsoft365/marketplace-dist/site/app/word/types.js",
+      "integrations/microsoft365/src/word/adapter.ts",
+      "integrations/microsoft365/src/word/runtime.ts",
+      "integrations/microsoft365/src/word/selection-service.ts",
+      "integrations/microsoft365/src/word/types.ts",
+      "integrations/microsoft365/test/word-selection.test.mjs"
+    ],
+    "manifestCandidates": [
+      "docs/architecture/phase-10.5a-three-host-manifest.md",
+      "docs/architecture/phase-11.2a-production-manifest-architecture.md",
+      "integrations/microsoft365/addin-dist/manifest.xml",
+      "integrations/microsoft365/manifest.xml",
+      "integrations/microsoft365/marketplace-dist/manifest.xml",
+      "integrations/microsoft365/marketplace-dist/site/install/manifest.xml",
+      "integrations/microsoft365/marketplace-dist/windows-desktop-release/manifest.xml",
+      "integrations/microsoft365/marketplace-dist/windows-desktop-release/package-manifest.json",
+      "integrations/microsoft365/marketplace/listing/assets/screenshots/manifest.json",
+      "integrations/microsoft365/marketplace/production-manifest.mjs",
+      "spec/fa-ir/adjudications/candidate-admission-manifest.json",
+      "spec/fa-ir/adjudications/manifest.json",
+      "spec/fa-ir/manifests/fa-ir-g1-materialization.json",
+      "spec/fa-ir/reverse/conformance/manifest.json",
+      "spec/fa-ir/review/evidence-packets/manifest.json"
+    ],
+    "musicSearch": {
+      "braille music": [
+        "docs/architecture/phase-12.2-developer-sdk-contract.md",
+        "docs/architecture/phase-12.6-developer-ecosystem-closure.md",
+        "docs/architecture/phase-13.2-reverse-translation-architecture.md",
+        "docs/architecture/phase-13.4a-reverse-core-parser-baseline-audit.json",
+        "docs/architecture/phase-13.5a-reverse-core-coverage-public-boundary-audit.json",
+        "docs/architecture/phase-13.6c-sdk-documentation-closure-audit.json",
+        "docs/architecture/phase-3-closure.md",
+        "docs/architecture/phase-8.2-consumer-application-contract.json",
+        "docs/architecture/phase-8.2-consumer-application-contract.md",
+        "docs/architecture/phase-9-closure.md",
+        "docs/architecture/phase-9.1-word-office-baseline-audit.md",
+        "docs/conformance/phase-6-closure.md",
+        "docs/conformance/phase-6.1-baseline-audit.md",
+        "docs/conformance/phase-6.5-reporting-ci.md",
+        "docs/legacy/legacy-audit.md",
+        "docs/normalization/phase-4-closure.md",
+        "docs/sdk/phase-7-closure.md",
+        "docs/sdk/phase-7.1-baseline-audit.md",
+        "docs/translation/phase-5-closure.md",
+        "docs/translation/phase-5.4-forward-pipeline.md",
+        "spec/fa-ir/reverse/README.md"
+      ],
+      "music braille": [],
+      "midi": [
+        "docs/legacy/legacy-audit.md"
+      ],
+      ".mid": [],
+      ".midi": [],
+      "MusicXML": [
+        "docs/legacy/legacy-audit.md"
+      ],
+      "musicxml": [
+        "docs/legacy/legacy-audit.md"
+      ]
+    },
+    "officeSearch": {
+      "Office.onReady": [
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.md",
+        "docs/architecture/phase-10.3b-shared-taskpane-excel-dispatch.md",
+        "docs/architecture/phase-10.4b-shared-taskpane-powerpoint-dispatch.md",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.json",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.md",
+        "docs/architecture/phase-9-closure.md",
+        "docs/architecture/phase-9.4-word-taskpane-ribbon.md",
+        "integrations/microsoft365/addin-dist/app/taskpane/main.js",
+        "integrations/microsoft365/dist/taskpane/main.js",
+        "integrations/microsoft365/marketplace-dist/site/app/taskpane/main.js",
+        "integrations/microsoft365/src/taskpane/main.ts",
+        "integrations/microsoft365/test/taskpane.test.mjs"
+      ],
+      "Word.run": [
+        "docs/architecture/phase-10.1-excel-powerpoint-baseline-audit.md",
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.md",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.json",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.md",
+        "docs/architecture/phase-9-closure.md",
+        "docs/architecture/phase-9.2-word-host-adapter-contract.json",
+        "docs/architecture/phase-9.2-word-host-adapter-contract.md",
+        "docs/architecture/phase-9.3-word-selection-translation.md",
+        "integrations/microsoft365/README.md",
+        "integrations/microsoft365/addin-dist/app/word/runtime.js",
+        "integrations/microsoft365/dist/word/runtime.js",
+        "integrations/microsoft365/marketplace-dist/site/app/word/runtime.js",
+        "integrations/microsoft365/src/word/runtime.ts",
+        "integrations/microsoft365/test/word-selection.test.mjs"
+      ],
+      "getSelection": [
+        "docs/architecture/phase-9-closure.md",
+        "docs/architecture/phase-9.2-word-host-adapter-contract.md",
+        "docs/architecture/phase-9.3-word-selection-translation.md",
+        "integrations/microsoft365/README.md",
+        "integrations/microsoft365/addin-dist/app/word/runtime.d.ts",
+        "integrations/microsoft365/addin-dist/app/word/runtime.js",
+        "integrations/microsoft365/dist/word/runtime.d.ts",
+        "integrations/microsoft365/dist/word/runtime.js",
+        "integrations/microsoft365/marketplace-dist/site/app/word/runtime.d.ts",
+        "integrations/microsoft365/marketplace-dist/site/app/word/runtime.js",
+        "integrations/microsoft365/src/word/runtime.ts",
+        "integrations/microsoft365/test/word-selection.test.mjs"
+      ],
+      "insertText": [
+        "docs/architecture/phase-10.1-excel-powerpoint-baseline-audit.json",
+        "docs/architecture/phase-10.1-excel-powerpoint-baseline-audit.md",
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.json",
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.md",
+        "docs/architecture/phase-10.3a-excel-host-layer.md",
+        "docs/architecture/phase-10.4a-powerpoint-host-layer.md",
+        "docs/architecture/phase-9-closure.md",
+        "docs/architecture/phase-9.2-word-host-adapter-contract.md",
+        "docs/architecture/phase-9.3-word-selection-translation.md",
+        "integrations/microsoft365/README.md",
+        "integrations/microsoft365/addin-dist/app/word/runtime.d.ts",
+        "integrations/microsoft365/addin-dist/app/word/runtime.js",
+        "integrations/microsoft365/dist/word/runtime.d.ts",
+        "integrations/microsoft365/dist/word/runtime.js",
+        "integrations/microsoft365/marketplace-dist/site/app/word/runtime.d.ts",
+        "integrations/microsoft365/marketplace-dist/site/app/word/runtime.js",
+        "integrations/microsoft365/src/word/runtime.ts",
+        "integrations/microsoft365/test/word-selection.test.mjs"
+      ],
+      "Excel.run": [
+        "docs/architecture/phase-10.1-excel-powerpoint-baseline-audit.md",
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.md",
+        "docs/architecture/phase-10.3a-excel-host-layer.md",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.json",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.md",
+        "integrations/microsoft365/addin-dist/app/excel/runtime.js",
+        "integrations/microsoft365/dist/excel/runtime.js",
+        "integrations/microsoft365/marketplace-dist/site/app/excel/runtime.js",
+        "integrations/microsoft365/src/excel/runtime.ts",
+        "integrations/microsoft365/test/excel-selection.test.mjs"
+      ],
+      "PowerPoint.run": [
+        "docs/architecture/phase-10.1-excel-powerpoint-baseline-audit.md",
+        "docs/architecture/phase-10.2-shared-microsoft365-host-architecture.md",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.json",
+        "docs/architecture/phase-11.5-windows-desktop-certification-matrix.md",
+        "integrations/microsoft365/addin-dist/app/powerpoint/runtime.js",
+        "integrations/microsoft365/dist/powerpoint/runtime.js",
+        "integrations/microsoft365/marketplace-dist/site/app/powerpoint/runtime.js",
+        "integrations/microsoft365/src/powerpoint/runtime.ts",
+        "integrations/microsoft365/test/powerpoint-selection.test.mjs"
+      ]
+    },
+    "fileApiSearch": {
+      "type=\"file\"": [],
+      "FileReader": [],
+      "arrayBuffer": [],
+      "accept=": []
+    },
+    "packageInventory": [
+      {
+        "path": "integrations/microsoft365/package.json",
+        "name": "@persian-braille/microsoft365",
+        "midiDependencies": [],
+        "scripts": [
+          "build",
+          "build:marketplace",
+          "clean",
+          "preview",
+          "test",
+          "test:marketplace",
+          "test:marketplace-compliance",
+          "test:marketplace-support-url",
+          "typecheck"
+        ]
+      }
+    ],
+    "otherOfficeHostsPresentButOutOfPhase14Scope": {
+      "excel": true,
+      "powerpoint": true
+    }
+  },
+  "proposedArchitecture": {
+    "scope": {
+      "host": "Microsoft Word Desktop on Windows only",
+      "input": [
+        ".mid",
+        ".midi"
+      ],
+      "excludedInputs": [
+        "MusicXML",
+        "PDF",
+        "audio",
+        "Sibelius",
+        "Finale",
+        "MuseScore"
+      ],
+      "excludedHosts": [
+        "Excel",
+        "PowerPoint",
+        "Word on the web",
+        "Word on Mac"
+      ],
+      "output": "Unicode Braille Music inserted at the current Word selection/cursor"
+    },
+    "pipeline": [
+      "Task-pane local MIDI file selection",
+      "Read file bytes as ArrayBuffer",
+      "Standard MIDI File parser",
+      "Neutral semantic music model",
+      "Music Braille rule engine",
+      "Canonical Unicode Braille rendering",
+      "Preview",
+      "Word selection insertion adapter"
+    ],
+    "hardBoundary": "Do not encode MIDI events directly to Braille cells. The MIDI parser must terminate at a neutral semantic music model so future input adapters can reuse the Music Braille engine without changing the public rule layer.",
+    "ui": {
+      "section": "Braille Music inside the existing Word task pane",
+      "actions": [
+        "Choose MIDI File",
+        "Generate Braille",
+        "Insert into Word"
+      ],
+      "mode": [
+        "Full notation",
+        "Custom"
+      ],
+      "candidateOptions": [
+        "notes",
+        "durations",
+        "octaves",
+        "accidentals",
+        "rests",
+        "chords",
+        "voices/tracks",
+        "key signature",
+        "time signature",
+        "tempo"
+      ],
+      "sourceCapabilityRule": "Only expose or enable notation features that the MIDI semantic model can support without inventing information."
+    },
+    "standardsPolicy": {
+      "primaryMusicCode": "Music Braille Code 2015",
+      "internationalCompanion": "New International Manual of Braille Music Notation (1996)",
+      "inputFormat": "Standard MIDI Files (SMF)",
+      "officeInsertion": "Word.Range.insertText / WordApi 1.1"
+    },
+    "phase14NonGoals": [
+      "No MusicXML adapter",
+      "No Excel or PowerPoint music UI",
+      "No Office Web or Mac music support",
+      "No audio-to-score transcription",
+      "No OCR/PDF score recognition",
+      "No heuristic invention of notation absent from MIDI",
+      "No Marketplace publication work"
+    ]
+  },
+  "sourceReferences": {
+    "musicBraille": [
+      {
+        "authority": "International Council on English Braille (ICEB)",
+        "title": "Braille Music",
+        "url": "https://iceb.org/music-html/",
+        "role": "Primary standards-position reference. ICEB endorses Music Braille Code 2015 as the most up-to-date resource and the New International Manual of Braille Music Notation (1996) as a complementary international reference."
+      },
+      {
+        "authority": "Braille Authority of North America (BANA)",
+        "title": "Music Braille Code, 2015",
+        "url": "https://brailleauthority.org/music-braille-code",
+        "role": "Primary codebook candidate for Phase 14 rule extraction and conformance. PDF/BRF publication is publicly available."
+      }
+    ],
+    "midi": [
+      {
+        "authority": "The MIDI Association",
+        "title": "Standard MIDI Files",
+        "url": "https://midi.org/standard-midi-files",
+        "role": "Primary input-format authority for Standard MIDI Files. Phase 14 is limited to SMF-style .mid/.midi input."
+      }
+    ],
+    "microsoft": [
+      {
+        "authority": "Microsoft Learn",
+        "title": "Browsers and webview controls used by Office Add-ins",
+        "url": "https://learn.microsoft.com/en-us/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins",
+        "role": "Windows Office Add-ins use the Chromium-based Microsoft Edge WebView2 control on supported Office versions."
+      },
+      {
+        "authority": "Microsoft Learn",
+        "title": "Word add-in tutorial",
+        "url": "https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial",
+        "role": "Primary Word insertion reference. Word.Range.insertText supports insertion at the current selection."
+      }
+    ]
+  },
+  "readiness": {
+    "phase13MainBaseline": true,
+    "wordIntegrationPatternFound": true,
+    "taskPaneSourceFound": true,
+    "phase13ClosureValidatorPresent": true,
+    "musicImplementationAlreadyPresent": true,
+    "musicXmlCurrentlyReferenced": true
+  },
+  "blockers": [],
+  "decision": "READY_FOR_PHASE14_2_MUSIC_BRAILLE_CONTRACT_AND_SOURCE_AUDIT",
+  "next": "Phase 14.2 should freeze the exact Music Braille source policy, MIDI semantic model, supported notation subset, failure/diagnostic contract, and Word-only UI/insert behavior before any parser or encoder implementation."
+}

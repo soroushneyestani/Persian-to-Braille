@@ -1,0 +1,121 @@
+{
+  "phase": "14.9c-global-piano-roll-reduction",
+  "status": "frozen",
+  "profileId": "GENERIC_MIDI_GLOBAL_PIANO_ROLL_REDUCTION_V1",
+  "purpose": "Deterministically flatten every parsed MIDI note event onto one piano-key timeline before notation reconstruction.",
+  "semanticBoundary": {
+    "input": "raw parsed MIDI note events",
+    "output": "one synthetic global piano-roll source part",
+    "outputPartCount": 1,
+    "instrumentInterpretation": "none",
+    "trackInterpretation": "none for musical output",
+    "channelInterpretation": "none for musical output",
+    "programInterpretation": "none for musical output",
+    "percussionInterpretation": "none",
+    "channel10SpecialCase": false,
+    "gmEffectProgramSpecialCase": false
+  },
+  "retentionPolicy": {
+    "allMidiNoteEventsParticipate": true,
+    "automaticInstrumentRemoval": false,
+    "automaticPercussionRemoval": false,
+    "automaticSoundEffectRemoval": false,
+    "userResponsibleForInputCleaning": true,
+    "differentOnsetSamePitch": "retain as distinct re-attack",
+    "zeroDuration": "preserve through reduction unless merged into a positive-duration duplicate; existing downstream zero-duration policy remains authoritative"
+  },
+  "duplicatePolicy": {
+    "key": "canonical onset unit + MIDI note number",
+    "canonicalOnsetGrid": "existing 96 units per quarter",
+    "sameKey": "collapse to one piano attack",
+    "release": "maximum source end",
+    "velocity": "maximum contributor velocity for deterministic compatibility",
+    "contributors": "retain as provenance/diagnostic metadata where representable",
+    "samePitchDifferentCanonicalOnset": "never deduplicate",
+    "purpose": "remove duplicate key attacks only; do not perform arrangement, simplification, melody extraction, or instrument prioritization"
+  },
+  "nonNoteMidiPolicy": {
+    "programChange": "metadata only; does not remove notes",
+    "trackName": "metadata only; does not remove notes",
+    "channel": "provenance only; does not remove notes",
+    "velocity": "not used to remove notes",
+    "pitchBend": "underlying note event is retained at its discrete MIDI note number; pitch-bend metadata must not reject or remove the note in this piano-roll profile",
+    "controllers": "do not create or remove piano-key attacks unless a separately frozen semantic rule is introduced"
+  },
+  "ordering": {
+    "stage": "after raw MIDI parse and canonical onset projection, before instrument-based classification and before notation/polyphony/rhythm reconstruction",
+    "oldH1NonPitchedFiltering": "superseded for this production MIDI-to-Braille profile; H1 parser fact capture remains valid",
+    "tripletProvenance": "must be re-audited after reduction implementation"
+  },
+  "scalability": {
+    "requirement": "the production implementation must not build one unbounded whole-song combinatorial rhythm/polyphony solve merely because all notes share one output part",
+    "processingBoundary": "notation/rhythm solving must remain bounded by musical measure and/or small connected constraint component",
+    "reason": "the first whole-source simulation became CPU-bound on Oxygene after flattening; the lightweight reduction itself completed quickly"
+  },
+  "userGuidance": {
+    "shortWarning": "All MIDI tracks and channels are merged into one piano roll. Nothing is removed automatically. Remove any unwanted material before importing.",
+    "fullGuide": "The MIDI converter performs a deterministic piano-roll reduction. All MIDI tracks, channels, and instruments are placed onto one shared musical timeline and treated as keys of a single piano. The converter does not classify or remove percussion, sound effects, or other instruments. If the source MIDI contains material that should not appear in the piano reduction, remove it before conversion. No musical material is removed for arrangement or simplification. Only duplicate attacks with the same canonical onset and MIDI pitch are collapsed; the longest contributor release is retained."
+  },
+  "realWorldEvidence": {
+    "test.mid": {
+      "rawNotes": 41,
+      "sourceParts": 2,
+      "pianoAttacks": 41,
+      "duplicatesCollapsed": 0,
+      "maximumChordSize": 3
+    },
+    "oxygene4.mid": {
+      "rawNotes": 4409,
+      "oldClassifierRemoved": 1745,
+      "pianoAttacks": 4022,
+      "duplicateGroups": 262,
+      "duplicatesCollapsed": 387,
+      "maximumChordSize": 8,
+      "maximumConcurrency": 16
+    },
+    "Jean_Michel_Jarre_OXYGENE4.mid": {
+      "rawNotes": 4713,
+      "oldClassifierRemoved": 1744,
+      "pianoAttacks": 4000,
+      "duplicateGroups": 559,
+      "duplicatesCollapsed": 713,
+      "maximumChordSize": 9,
+      "maximumConcurrency": 15
+    },
+    "d_HO0606.mid": {
+      "rawNotes": 706,
+      "oldClassifierRemoved": 295,
+      "pianoAttacks": 694,
+      "duplicateGroups": 12,
+      "duplicatesCollapsed": 12,
+      "maximumChordSize": 7,
+      "maximumConcurrency": 9
+    }
+  },
+  "nonGoals": [
+    "instrument/staff/hand/voice reconstruction",
+    "automatic percussion detection or removal",
+    "automatic accompaniment removal",
+    "melody extraction",
+    "AI arrangement",
+    "voice-leading simplification",
+    "dropping notes because of program/channel classification",
+    "cross-onset deduplication",
+    "MusicXML changes"
+  ],
+  "implementationSequence": [
+    "introduce explicit global piano-roll reducer after raw parse",
+    "route production MIDI translation through reducer before old classification",
+    "retain all note events irrespective of channel/program",
+    "collapse duplicate canonical-onset+pitch attacks with max-end policy",
+    "emit one synthetic musical part",
+    "make pitch bend non-destructive for this reduction profile",
+    "preserve H4C/H4D/H5/rhythm semantics downstream",
+    "keep notation solving bounded by measure/component",
+    "run real-world smoke on all four SHA-pinned MIDI files",
+    "re-run triplet provenance audit on the reduced representation",
+    "only then design the triplet fix"
+  ],
+  "decision": "READY_FOR_PHASE14_9C_GLOBAL_PIANO_ROLL_REDUCTION_IMPLEMENTATION",
+  "commit": "DO_NOT_COMMIT_YET"
+}

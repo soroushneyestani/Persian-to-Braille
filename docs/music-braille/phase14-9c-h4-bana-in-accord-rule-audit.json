@@ -1,0 +1,143 @@
+{
+  "phase": "14.9c-H4",
+  "kind": "bana-in-accord-rule-audit-and-trailing-data-policy-freeze",
+  "status": "frozen",
+  "source": {
+    "title": "Music Braille Code 2015",
+    "publisherContext": "Braille Authority of North America (BANA)",
+    "locators": [
+      {
+        "pdfPage": 32,
+        "printPage": 8,
+        "section": "Table 11 — In-Accord and Measure-Division Signs"
+      },
+      {
+        "pdfPage": 111,
+        "printPage": 87,
+        "section": "11.1 In-Accord Procedures / 11.1.1 Full-Measure In-Accords"
+      },
+      {
+        "pdfPage": 112,
+        "printPage": 88,
+        "section": "11.1.2 Part-Measure In-Accords"
+      },
+      {
+        "pdfPage": 113,
+        "printPage": 89,
+        "section": "11.1.2 continued / 11.1.3 Nested In-Accords / 11.1.4 Crossed Voices"
+      }
+    ]
+  },
+  "signs": {
+    "fullMeasureInAccord": {
+      "brf": "<>"
+    },
+    "partMeasureInAccord": {
+      "brf": "\"1"
+    },
+    "measureDivision": {
+      "brf": ".k"
+    }
+  },
+  "authoritativeRules": {
+    "simultaneousIndependentActions": {
+      "rule": "When simultaneous parts cannot be represented as chords, write the parts successively and join them without spaces using an in-accord sign."
+    },
+    "ordering": {
+      "treble": "highest-to-lowest",
+      "bass": "lowest-to-highest",
+      "midiCaveat": "Standard MIDI track/channel identity does not preserve print staff/hand identity; H4 does not invent a treble/bass assignment."
+    },
+    "octaveAfterSign": {
+      "rule": "The first note after an in-accord or measure-division sign requires an octave mark; a measure following one that ends with an in-accord also starts with an octave mark."
+    },
+    "fullMeasure": {
+      "equalValueRequirement": "each side must contain exactly one full measure of note values",
+      "transcriberAddedRest": "permitted when an implied rest is needed; each such added rest must be preceded by dot 5"
+    },
+    "partMeasure": {
+      "sectionIsolation": true,
+      "measureDivisionBetweenSections": true,
+      "noSpacesAroundSigns": true,
+      "equalValueRequirement": "each side of the part-measure in-accord must contain exactly the same total note value",
+      "incompleteMeasureRestriction": "only a part-measure in-accord may be used for an incomplete measure"
+    },
+    "nested": {
+      "partMeasureInsideFullMeasure": true,
+      "partMeasureFurtherSubdivision": false
+    },
+    "crossedVoices": {
+      "printStemDirectionMayDetermineOrder": true,
+      "midiCaveat": "MIDI does not preserve print stem direction, so H4 cannot claim original crossed-voice ordering from source MIDI alone."
+    }
+  },
+  "midiReconstructionPolicy": {
+    "representationTarget": "Music Braille in-accord",
+    "sameOnset": "remain chord",
+    "independentOnsetOverlap": "derive simultaneous actions only after a deterministic voice-partition profile is separately frozen",
+    "preferredFirstImplementation": "full-measure in-accord for complete derived measures",
+    "addedRestRequirement": "derived rests inserted only to equalize full-measure sides must be explicitly marked as transcriber-added with dot 5",
+    "incompleteMeasure": "do not use full-measure in-accord; part-measure semantics are required",
+    "staffDirectionProblem": "UNRESOLVED_PROFILE_DECISION",
+    "prohibited": [
+      "silently trimming overlaps",
+      "inventing original hand assignment",
+      "inventing original voice numbering",
+      "using newline-separated source parts as a substitute for in-accord",
+      "omitting the dot-5 marker on transcriber-added in-accord rests"
+    ]
+  },
+  "jeanMichelTrailingDataPolicy": {
+    "evidence": {
+      "declaredChunkEnd": 35228,
+      "fileByteLength": 35230,
+      "trailingBytesHex": "0a 0a",
+      "interpretation": "two terminal ASCII LF bytes outside all declared SMF chunks"
+    },
+    "compatibilityPolicy": {
+      "accept": "terminal ASCII whitespace only after all declared track chunks",
+      "allowedByteValuesHex": [
+        "09",
+        "0a",
+        "0d",
+        "20"
+      ],
+      "maximumBytes": 64,
+      "diagnostic": "TRAILING_ASCII_WHITESPACE_IGNORED",
+      "semanticEffect": "none; bytes are outside declared MIDI chunks and are not parsed as MIDI events",
+      "allOtherUnexpectedTrailingData": "INVALID_MIDI_FILE",
+      "extraMTrkBeyondHeaderCount": "INVALID_MIDI_FILE until a separately frozen compatibility rule exists"
+    }
+  },
+  "h3Evidence": {
+    "oxygene4IndependentOverlaps": 896,
+    "jeanMichelIndependentOverlaps": 1120,
+    "dHo0606IndependentOverlaps": 9,
+    "dHo0606MeterChange": {
+      "from": "4/4",
+      "to": "12/8",
+      "tick": 3072,
+      "alignedToMeasureBoundary": true
+    }
+  },
+  "implementationGates": [
+    {
+      "id": "H4A",
+      "name": "terminal ASCII whitespace parser compatibility",
+      "ready": true
+    },
+    {
+      "id": "H4B",
+      "name": "generic MIDI in-accord reconstruction profile",
+      "ready": false,
+      "missingDecision": "deterministic treble/bass-direction policy for MIDI parts that lack print staff/hand semantics"
+    },
+    {
+      "id": "H5",
+      "name": "measure-boundary meter-change serialization",
+      "ready": true,
+      "after": "polyphony reconstruction gate"
+    }
+  ],
+  "decision": "READY_FOR_PHASE14_9C_H4A_TRAILING_ASCII_WHITESPACE_COMPATIBILITY_AND_H4B_MIDI_IN_ACCORD_PROFILE_DECISION"
+}

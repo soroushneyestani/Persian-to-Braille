@@ -1,0 +1,96 @@
+{
+  "phase": "14.4b",
+  "status": "frozen",
+  "name": "Deterministic Notation Model and Quantization Contract",
+  "inherits": [
+    "phase-14.2b-music-braille-contract",
+    "phase-14.3-midi-parser-foundation"
+  ],
+  "timing": {
+    "representation": "integer-notation-units",
+    "unitsPerQuarter": 96,
+    "floatingPointTiming": false,
+    "sourceMidiTicksPreservedSeparately": true,
+    "rounding": "nearest; exact half ties round forward",
+    "maxSnapErrorQuarter": "1/16",
+    "maxSnapErrorUnits": 6
+  },
+  "durations": {
+    "baseValues": [
+      "whole",
+      "half",
+      "quarter",
+      "eighth",
+      "sixteenth",
+      "thirty-second",
+      "sixty-fourth"
+    ],
+    "singleDotted": true,
+    "tripletValues": [
+      "half-triplet",
+      "quarter-triplet",
+      "eighth-triplet",
+      "sixteenth-triplet",
+      "thirty-second-triplet"
+    ],
+    "sixtyFourthTriplet": "deferred",
+    "otherTuplets": "unsupported-initially",
+    "equalDistanceTieBreak": "longer-value",
+    "nonZeroSnapDiagnostic": "RHYTHM_QUANTIZED",
+    "outsideToleranceFailure": "UNQUANTIZABLE_RHYTHM"
+  },
+  "notationModel": {
+    "types": [
+      "NotationDiagnostic",
+      "NotationDuration",
+      "NotationPitchSource",
+      "NotationNote",
+      "NotationChord",
+      "NotationRest",
+      "NotationMeasure",
+      "NotationPart",
+      "NotationScore",
+      "NotationBuildFailure",
+      "NotationBuildResult"
+    ],
+    "parts": "preserve-source-part-track-channel",
+    "engravedVoicesInferred": false,
+    "handAssignmentInferred": false,
+    "sameQuantizedOnset": "chord-or-simultaneous-group",
+    "independentOverlapFailure": "UNSUPPORTED_POLYPHONY"
+  },
+  "rests": {
+    "source": "derived-from-quantized-gaps",
+    "decomposition": "greedy-longest-value-with-measure-boundary-constraint",
+    "inventUnrepresentableRest": false,
+    "failure": "UNQUANTIZABLE_RHYTHM"
+  },
+  "measures": {
+    "sourceTimeSignaturePreferred": true,
+    "missingTimeSignatureInternalFallback": "4/4",
+    "missingTimeSignatureDiagnostic": "TIME_SIGNATURE_ABSENT",
+    "fallbackClaimedAsSourceMetadata": false,
+    "timeSignatureChangePolicy": "must-land-on-quantized-measure-boundary",
+    "timeSignatureChangeFailure": "UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT"
+  },
+  "measureCrossingNotes": {
+    "policy": "split-at-measure-boundaries",
+    "derivedTieMetadata": true,
+    "brailleTieRendering": "deferred-to-music-braille-rule-phase"
+  },
+  "truthfulness": {
+    "sourceAndDerivedSeparated": true,
+    "sourceTicksRetained": true,
+    "quantizationDiagnosticsRequired": true
+  },
+  "nonGoals": [
+    "Music Braille cell encoding",
+    "Word UI",
+    "SDK public Music Braille API",
+    "MusicXML",
+    "64th-note triplets",
+    "irregular tuplets",
+    "voice inference",
+    "hand inference"
+  ]
+}

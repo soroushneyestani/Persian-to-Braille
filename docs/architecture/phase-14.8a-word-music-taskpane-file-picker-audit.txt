@@ -1,0 +1,43 @@
+======================================================================================================================
+PHASE 14.8a — WORD MUSIC TASK PANE / MIDI FILE PICKER BASELINE AUDIT
+======================================================================================================================
+Branch                         : phase14-braille-music
+HEAD                           : d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976
+Staged paths                   : 0
+Phase 14.7b regression         : PASS
+Public SDK music facade        : PRESENT
+SDK engine-internal leakage    : NONE
+Microsoft365 direct music      : NONE
+Shared host markers            : WORD + EXCEL + POWERPOINT
+Current MIDI file input        : ABSENT
+Task pane consumes music SDK   : NO
+Import map resolves music      : NO
+Static build vendors music     : NO
+Boundary report wording        : STALE
+
+[EXPECTED PHASE 14.8 IMPLEMENTATION GAPS]
+  - No MIDI file input exists in the current task pane.
+  - The Microsoft 365 task pane does not yet consume the public Music Braille MIDI SDK facade.
+  - The browser import map does not yet resolve the SDK transitive @persian-braille/music dependency.
+  - build-addin.mjs does not yet materialize the SDK transitive music package into addin-dist.
+  - validate-package-boundaries.mjs enforces the new music graph but still prints the historical `sdk -> core` summary; update report wording during Phase 14.8b.
+
+[BLOCKERS]
+  NONE
+
+[PHASE 14.8b CONTRACT]
+  Word-only Braille Music UI inside the existing shared Microsoft 365 task pane.
+  Choose .mid/.midi -> browser bytes -> public SDK -> Unicode Music Braille preview.
+  No Microsoft365 source import from @persian-braille/music.
+  Static browser build may vendor music only as the SDK transitive dependency.
+  No MIDI persistence or upload.
+  Excel/PowerPoint music: excluded.
+  Word insertion: Phase 14.9.
+  MusicXML: Phase 19.
+
+Decision: READY_FOR_PHASE14_8B_WORD_MUSIC_TASKPANE_FILE_PICKER_PREVIEW_MATERIALIZATION
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage14-8a-word-music-taskpane-file-picker-audit.txt
+JSON : stage14-8a-word-music-taskpane-file-picker-audit.json
+======================================================================================================================

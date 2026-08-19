@@ -1,0 +1,580 @@
+{
+  "id": "music-braille-code-2015-conformance-seed",
+  "phase": "14.5b",
+  "purpose": "Atomic authoritative BRF fixtures. These are not yet Unicode encoder tests.",
+  "caseCount": 68,
+  "cases": [
+    {
+      "id": "note-wholeOr16th-c",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "C",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "y"
+    },
+    {
+      "id": "note-wholeOr16th-d",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "D",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "z"
+    },
+    {
+      "id": "note-wholeOr16th-e",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "E",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "&"
+    },
+    {
+      "id": "note-wholeOr16th-f",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "F",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "="
+    },
+    {
+      "id": "note-wholeOr16th-g",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "G",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "("
+    },
+    {
+      "id": "note-wholeOr16th-a",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "A",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "!"
+    },
+    {
+      "id": "note-wholeOr16th-b",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "B",
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": ")"
+    },
+    {
+      "id": "note-halfOr32nd-c",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "C",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "n"
+    },
+    {
+      "id": "note-halfOr32nd-d",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "D",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "o"
+    },
+    {
+      "id": "note-halfOr32nd-e",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "E",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "p"
+    },
+    {
+      "id": "note-halfOr32nd-f",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "F",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "q"
+    },
+    {
+      "id": "note-halfOr32nd-g",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "G",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "r"
+    },
+    {
+      "id": "note-halfOr32nd-a",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "A",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "s"
+    },
+    {
+      "id": "note-halfOr32nd-b",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "B",
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "t"
+    },
+    {
+      "id": "note-quarterOr64th-c",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "C",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "?"
+    },
+    {
+      "id": "note-quarterOr64th-d",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "D",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": ":"
+    },
+    {
+      "id": "note-quarterOr64th-e",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "E",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "$"
+    },
+    {
+      "id": "note-quarterOr64th-f",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "F",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "]"
+    },
+    {
+      "id": "note-quarterOr64th-g",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "G",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "\\"
+    },
+    {
+      "id": "note-quarterOr64th-a",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "A",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "["
+    },
+    {
+      "id": "note-quarterOr64th-b",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "B",
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "w"
+    },
+    {
+      "id": "note-eighthOr128th-c",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "C",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "d"
+    },
+    {
+      "id": "note-eighthOr128th-d",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "D",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "e"
+    },
+    {
+      "id": "note-eighthOr128th-e",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "E",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "f"
+    },
+    {
+      "id": "note-eighthOr128th-f",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "F",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "g"
+    },
+    {
+      "id": "note-eighthOr128th-g",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "G",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "h"
+    },
+    {
+      "id": "note-eighthOr128th-a",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "A",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "i"
+    },
+    {
+      "id": "note-eighthOr128th-b",
+      "family": "MBR-NOTE-DURATION",
+      "input": {
+        "pitchName": "B",
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "j"
+    },
+    {
+      "id": "rest-wholeOr16th",
+      "family": "MBR-REST",
+      "input": {
+        "valueClass": "wholeOr16th"
+      },
+      "expectedBrf": "m"
+    },
+    {
+      "id": "rest-halfOr32nd",
+      "family": "MBR-REST",
+      "input": {
+        "valueClass": "halfOr32nd"
+      },
+      "expectedBrf": "u"
+    },
+    {
+      "id": "rest-quarterOr64th",
+      "family": "MBR-REST",
+      "input": {
+        "valueClass": "quarterOr64th"
+      },
+      "expectedBrf": "v"
+    },
+    {
+      "id": "rest-eighthOr128th",
+      "family": "MBR-REST",
+      "input": {
+        "valueClass": "eighthOr128th"
+      },
+      "expectedBrf": "x"
+    },
+    {
+      "id": "octave-sub",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "sub"
+      },
+      "expectedBrf": "@@"
+    },
+    {
+      "id": "octave-1",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "1"
+      },
+      "expectedBrf": "@"
+    },
+    {
+      "id": "octave-2",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "2"
+      },
+      "expectedBrf": "^"
+    },
+    {
+      "id": "octave-3",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "3"
+      },
+      "expectedBrf": "_"
+    },
+    {
+      "id": "octave-4",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "4"
+      },
+      "expectedBrf": "\""
+    },
+    {
+      "id": "octave-5",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "5"
+      },
+      "expectedBrf": "."
+    },
+    {
+      "id": "octave-6",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "6"
+      },
+      "expectedBrf": ";"
+    },
+    {
+      "id": "octave-7",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "7"
+      },
+      "expectedBrf": ","
+    },
+    {
+      "id": "octave-super",
+      "family": "MBR-OCTAVE",
+      "input": {
+        "octaveClass": "super"
+      },
+      "expectedBrf": ",,"
+    },
+    {
+      "id": "accidental-sharp",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "sharp"
+      },
+      "expectedBrf": "%"
+    },
+    {
+      "id": "accidental-doubleSharp",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "doubleSharp"
+      },
+      "expectedBrf": "%%"
+    },
+    {
+      "id": "accidental-flat",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "flat"
+      },
+      "expectedBrf": "<"
+    },
+    {
+      "id": "accidental-doubleFlat",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "doubleFlat"
+      },
+      "expectedBrf": "<<"
+    },
+    {
+      "id": "accidental-natural",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "natural"
+      },
+      "expectedBrf": "*"
+    },
+    {
+      "id": "accidental-quarterSharp",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "quarterSharp"
+      },
+      "expectedBrf": "@%"
+    },
+    {
+      "id": "accidental-quarterFlat",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "quarterFlat"
+      },
+      "expectedBrf": "@<"
+    },
+    {
+      "id": "accidental-threeQuarterSharp",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "threeQuarterSharp"
+      },
+      "expectedBrf": "_%"
+    },
+    {
+      "id": "accidental-threeQuarterFlat",
+      "family": "MBR-ACCIDENTAL",
+      "input": {
+        "accidental": "threeQuarterFlat"
+      },
+      "expectedBrf": "_<"
+    },
+    {
+      "id": "meter-4-4",
+      "family": "MBR-TIME-SIGNATURE",
+      "input": {
+        "meter": "4/4"
+      },
+      "expectedBrf": "#d4"
+    },
+    {
+      "id": "meter-6-8",
+      "family": "MBR-TIME-SIGNATURE",
+      "input": {
+        "meter": "6/8"
+      },
+      "expectedBrf": "#f8"
+    },
+    {
+      "id": "meter-common",
+      "family": "MBR-TIME-SIGNATURE",
+      "input": {
+        "meter": "common"
+      },
+      "expectedBrf": ".c"
+    },
+    {
+      "id": "meter-cut",
+      "family": "MBR-TIME-SIGNATURE",
+      "input": {
+        "meter": "cut"
+      },
+      "expectedBrf": "_c"
+    },
+    {
+      "id": "grouping-tripletSingleCell",
+      "family": "MBR-NOTE-GROUPING",
+      "input": {
+        "grouping": "tripletSingleCell"
+      },
+      "expectedBrf": "2"
+    },
+    {
+      "id": "grouping-tripletThreeCell",
+      "family": "MBR-NOTE-GROUPING",
+      "input": {
+        "grouping": "tripletThreeCell"
+      },
+      "expectedBrf": "_3'"
+    },
+    {
+      "id": "grouping-groupTwo",
+      "family": "MBR-NOTE-GROUPING",
+      "input": {
+        "grouping": "groupTwo"
+      },
+      "expectedBrf": "_2'"
+    },
+    {
+      "id": "grouping-groupTen",
+      "family": "MBR-NOTE-GROUPING",
+      "input": {
+        "grouping": "groupTen"
+      },
+      "expectedBrf": "_10'"
+    },
+    {
+      "id": "interval-2",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 2
+      },
+      "expectedBrf": "/"
+    },
+    {
+      "id": "interval-3",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 3
+      },
+      "expectedBrf": "+"
+    },
+    {
+      "id": "interval-4",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 4
+      },
+      "expectedBrf": "#"
+    },
+    {
+      "id": "interval-5",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 5
+      },
+      "expectedBrf": "9"
+    },
+    {
+      "id": "interval-6",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 6
+      },
+      "expectedBrf": "0"
+    },
+    {
+      "id": "interval-7",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 7
+      },
+      "expectedBrf": "3"
+    },
+    {
+      "id": "interval-8",
+      "family": "MBR-CHORD-INTERVAL",
+      "input": {
+        "diatonicInterval": 8
+      },
+      "expectedBrf": "-"
+    },
+    {
+      "id": "tie-single",
+      "family": "MBR-TIE",
+      "input": {
+        "tieKind": "single"
+      },
+      "expectedBrf": "@c"
+    },
+    {
+      "id": "tie-chord",
+      "family": "MBR-TIE",
+      "input": {
+        "tieKind": "chord"
+      },
+      "expectedBrf": ".c"
+    },
+    {
+      "id": "measure-normal-separator",
+      "family": "MBR-MEASURE",
+      "input": {
+        "boundary": "measure"
+      },
+      "expectedBrf": " "
+    }
+  ]
+}

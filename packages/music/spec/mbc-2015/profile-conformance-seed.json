@@ -1,0 +1,169 @@
+{
+  "id": "music-braille-midi-profile-conformance-seed-v1",
+  "phase": "14.5c",
+  "purpose": "Semantic profile fixtures. Exact Unicode Braille output remains Phase 14.6.",
+  "caseCount": 12,
+  "cases": [
+    {
+      "id": "spell-c-major-black-key-default-sharp",
+      "kind": "enharmonic-spelling",
+      "input": {
+        "midiPitch": 61,
+        "keySharpsFlats": 0
+      },
+      "expected": {
+        "step": "C",
+        "accidental": 1,
+        "display": "C#"
+      },
+      "rationale": "Neutral-key deterministic tie-break prefers sharps."
+    },
+    {
+      "id": "spell-g-major-diatonic-f-sharp",
+      "kind": "enharmonic-spelling",
+      "input": {
+        "midiPitch": 66,
+        "keySharpsFlats": 1
+      },
+      "expected": {
+        "step": "F",
+        "accidental": 1,
+        "display": "F#"
+      }
+    },
+    {
+      "id": "spell-f-major-chromatic-g-flat",
+      "kind": "enharmonic-spelling",
+      "input": {
+        "midiPitch": 66,
+        "keySharpsFlats": -1
+      },
+      "expected": {
+        "step": "G",
+        "accidental": -1,
+        "display": "Gb"
+      },
+      "rationale": "Equal-distance chromatic candidate follows flat-key polarity."
+    },
+    {
+      "id": "spell-c-sharp-major-e-sharp",
+      "kind": "enharmonic-spelling",
+      "input": {
+        "midiPitch": 65,
+        "keySharpsFlats": 7
+      },
+      "expected": {
+        "step": "E",
+        "accidental": 1,
+        "display": "E#"
+      },
+      "rationale": "Key-signature-distance must preserve the diatonic E-sharp spelling."
+    },
+    {
+      "id": "spell-g-flat-major-f-flat",
+      "kind": "enharmonic-spelling",
+      "input": {
+        "midiPitch": 64,
+        "keySharpsFlats": -6
+      },
+      "expected": {
+        "step": "F",
+        "accidental": -1,
+        "display": "Fb"
+      },
+      "rationale": "Key-signature-distance must preserve the diatonic F-flat spelling."
+    },
+    {
+      "id": "spell-c-sharp-major-b-sharp-crosses-c-boundary",
+      "kind": "enharmonic-octave-boundary",
+      "input": {
+        "midiPitch": 60,
+        "keySharpsFlats": 7
+      },
+      "expected": {
+        "step": "B",
+        "accidental": 1,
+        "display": "B#",
+        "scientificWrittenOctave": 3
+      }
+    },
+    {
+      "id": "chord-c-major-triad-upper-down",
+      "kind": "chord-profile",
+      "input": {
+        "midiPitches": [
+          60,
+          64,
+          67
+        ]
+      },
+      "expected": {
+        "writtenMidiPitch": 67,
+        "direction": "down",
+        "diatonicIntervals": [
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "id": "key-three-sharps-repeated-signs",
+      "kind": "key-signature-serialization",
+      "input": {
+        "keySharpsFlats": 3
+      },
+      "expected": {
+        "strategy": "repeat-accidental",
+        "count": 3,
+        "accidental": "sharp"
+      }
+    },
+    {
+      "id": "key-four-flats-numeric-count",
+      "kind": "key-signature-serialization",
+      "input": {
+        "keySharpsFlats": -4
+      },
+      "expected": {
+        "strategy": "numeric-count-plus-accidental",
+        "count": 4,
+        "accidental": "flat"
+      }
+    },
+    {
+      "id": "meter-four-four-numeric-not-common-time",
+      "kind": "meter-serialization",
+      "input": {
+        "numerator": 4,
+        "denominator": 4
+      },
+      "expected": {
+        "strategy": "numeric-simple-meter",
+        "inferCommonTime": false
+      }
+    },
+    {
+      "id": "meter-two-two-numeric-not-cut-time",
+      "kind": "meter-serialization",
+      "input": {
+        "numerator": 2,
+        "denominator": 2
+      },
+      "expected": {
+        "strategy": "numeric-simple-meter",
+        "inferCutTime": false
+      }
+    },
+    {
+      "id": "meter-three-four-supported",
+      "kind": "meter-serialization",
+      "input": {
+        "numerator": 3,
+        "denominator": 4
+      },
+      "expected": {
+        "strategy": "numeric-simple-meter"
+      }
+    }
+  ]
+}

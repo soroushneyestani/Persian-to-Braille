@@ -1,0 +1,58 @@
+======================================================================================================================
+PHASE 14.9a — WORD MUSIC INSERTION + WINDOWS LIVE VALIDATION BASELINE AUDIT
+======================================================================================================================
+Branch                         : phase14-braille-music
+HEAD                           : d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976
+Phase 14.8b regression         : PASS
+Microsoft365 typecheck        : PASS
+Word.run                       : PRESENT
+document.getSelection()        : PRESENT
+Range.insertText()             : PRESENT
+Replace insertion mode         : PRESENT
+Existing text stale guard      : PRESENT
+Music preview is Word-only     : YES
+Music preview holds Unicode    : YES
+Music insertion already exists : NO
+Prior Windows evidence files   : 3
+
+[ARCHITECTURE OBSERVATION]
+  Music preview has no source-selection snapshot, so the existing Persian-text stale-selection mutation contract must not be reused as if the MIDI file came from a Word selection.
+
+[RECOMMENDED PHASE 14.9b INSERTION CONTRACT]
+  Button      : Insert Music Braille
+  Source      : exact successful SDK unicodeBraille preview
+  Destination : current Word selection/caret at click time
+  Office.js   : Word.run -> getSelection -> insertText(..., 'Replace') -> sync
+  Selection   : selected text replaced; collapsed caret receives inserted Braille
+  Recompute   : NONE
+  Music engine import from Microsoft365 : NONE
+  Excel/PowerPoint Music                : EXCLUDED
+
+[PHASE 14.9c WINDOWS LIVE ACCEPTANCE]
+  - Word desktop Windows task pane opens
+  - Braille Music section visible only in Word
+  - .mid/.midi picker works
+  - canonical MIDI preview equals Phase 14.7 Unicode fixture
+  - Insert Music Braille writes exact preview at current Word selection/caret
+  - selected text is replaced by exact preview
+  - collapsed caret inserts exact preview
+  - invalid MIDI remains preview failure and insertion stays unavailable
+  - Excel/PowerPoint retain existing text-only behavior
+
+[PHASE 14.9a1 MANIFEST AUDIT CORRECTION]
+  Shared base hosts             : Document + Workbook + Presentation
+  Shared permission             : ReadWriteDocument
+  Base app-specific API sets    : intentionally NONE
+  WordApi 1.1                   : enforced by runtime readiness
+  Manifest mutation required    : NO
+  Original manifest blocker     : FALSE POSITIVE
+
+[BLOCKERS]
+  NONE
+
+Decision: READY_FOR_PHASE14_9B_WORD_MUSIC_INSERTION_MATERIALIZATION
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage14-9a-word-music-insertion-windows-live-audit.txt
+JSON : stage14-9a-word-music-insertion-windows-live-audit.json
+======================================================================================================================

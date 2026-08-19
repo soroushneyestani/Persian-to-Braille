@@ -1,0 +1,254 @@
+{
+  "phase": "14.9c1",
+  "title": "Real-world MIDI hardening contract",
+  "status": "frozen",
+  "basis": {
+    "audit": "stage14-9c-real-world-midi-compatibility-audit.json",
+    "auditDecision": "READY_FOR_PHASE14_9C_REAL_WORLD_MIDI_HARDENING_DESIGN",
+    "realWorldEvidence": [
+      {
+        "name": "test.mid",
+        "sha256": "18d6d21ac5cebe86fb84599e2135790c7e535dad25f47f30e70596cf8e959ca3",
+        "byteLength": 449,
+        "format": 1,
+        "trackCount": 3,
+        "ppqn": 96,
+        "noteCount": 41,
+        "nonCenterPitchBends": 0,
+        "independentOverlapOnsets": 0,
+        "pitchedOverlapOnsetsAbove18Units": 0,
+        "currentExpectedFirstBlocker": null
+      },
+      {
+        "name": "oxygene4.mid",
+        "sha256": "cbb3c148115a05389c672a8e7109196ecdb6c9349d7f3e4a856c5198a92a79d1",
+        "byteLength": 51181,
+        "format": 1,
+        "trackCount": 25,
+        "ppqn": 480,
+        "noteCount": 4409,
+        "nonCenterPitchBends": 1518,
+        "independentOverlapOnsets": 1040,
+        "pitchedOverlapOnsetsAbove18Units": 126,
+        "currentExpectedFirstBlocker": {
+          "stage": "parser",
+          "code": "UNSUPPORTED_PITCH_BEND",
+          "trackIndex": 11,
+          "channelZeroBased": 11,
+          "tick": 8970,
+          "program": 119,
+          "programName": "Reverse Cymbal"
+        }
+      },
+      {
+        "name": "Jean_Michel_Jarre_OXYGENE4.mid",
+        "sha256": "f910e60a6c195f727f828252116a115a84bb3b4947fbe67f63e7d30c7973cf3e",
+        "byteLength": 35230,
+        "format": 1,
+        "trackCount": 14,
+        "ppqn": 192,
+        "noteCount": 4713,
+        "nonCenterPitchBends": 0,
+        "independentOverlapOnsets": 1288,
+        "pitchedOverlapOnsetsAbove18Units": 134,
+        "currentExpectedFirstBlocker": {
+          "stage": "notation",
+          "code": "UNSUPPORTED_POLYPHONY",
+          "trackIndex": 1,
+          "channelZeroBased": 1,
+          "trackName": "FretlessBass"
+        }
+      },
+      {
+        "name": "d_HO0606.mid",
+        "sha256": "7f44d8b54ab5c46dac8b8708d8a97d7ab1e076a47d41d3cefb450b9809268fbd",
+        "byteLength": 6762,
+        "format": 0,
+        "trackCount": 1,
+        "ppqn": 384,
+        "noteCount": 705,
+        "nonCenterPitchBends": 0,
+        "independentOverlapOnsets": 67,
+        "pitchedOverlapOnsetsAbove18Units": 7,
+        "currentExpectedFirstBlocker": {
+          "stage": "notation",
+          "code": "UNSUPPORTED_POLYPHONY",
+          "trackIndex": 0,
+          "channelZeroBased": 2,
+          "trackName": null
+        }
+      }
+    ],
+    "copyrightedMidiPolicy": "record SHA-256/evidence only; do not commit third-party MIDI files"
+  },
+  "architecture": {
+    "pipeline": [
+      "SMF binary parser",
+      "neutral MIDI semantic source",
+      "source-event classification",
+      "performance-safe normalization",
+      "notation reconstruction",
+      "Music Braille bridge",
+      "stateful Music Braille encoder",
+      "public SDK",
+      "Microsoft 365 Word adapter"
+    ],
+    "officeBoundary": "Microsoft365 -> public SDK only",
+    "musicXml": "out-of-phase-14-reserved-for-phase-19"
+  },
+  "parser": {
+    "role": "binary/semantic fact capture, not notation policy",
+    "programChanges": {
+      "capture": true,
+      "effectiveProgram": "resolve per channel at event/note onset"
+    },
+    "pitchBends": {
+      "capture": true,
+      "globalParserRejection": false,
+      "centerValue": 8192,
+      "preserveTrackChannelTickValueAndEffectiveProgram": true
+    },
+    "malformedInput": "still fail closed",
+    "smfSubset": "format-0/1 + PPQN unchanged"
+  },
+  "classification": {
+    "unit": "note/event using track + channel + effective program",
+    "pitchedCandidateDefault": true,
+    "nonPitched": {
+      "percussionChannelZeroBased": 9,
+      "generalMidiProgramZeroBasedRange": [
+        119,
+        127
+      ],
+      "includes": [
+        "Reverse Cymbal",
+        "Guitar Fret Noise",
+        "Breath Noise",
+        "Seashore",
+        "Bird Tweet",
+        "Telephone Ring",
+        "Helicopter",
+        "Applause",
+        "Gunshot"
+      ],
+      "fxPrograms96To103RemainPitchedCandidates": true
+    },
+    "mixedProgramChannel": "classify each note by effective program; do not discard retained pitched notes merely because the same channel also carried non-pitched events",
+    "skippedDiagnostic": "NON_PITCHED_SOURCE_EVENT_SKIPPED",
+    "silentSkippingForbidden": true
+  },
+  "pitchBendPolicy": {
+    "nonCenterOnSkippedNonPitchedMaterial": "does-not-block-pitched-transcription",
+    "diagnostic": "NON_PITCHED_PITCH_BEND_SKIPPED",
+    "nonCenterOnRetainedPitchedMaterial": "UNSUPPORTED_PITCH_BEND",
+    "reason": "Phase 14 must not silently flatten a real pitched bend into a fixed MIDI note number"
+  },
+  "rhythm": {
+    "notationGridUnitsPerQuarter": 96,
+    "maxSnapErrorUnits": 6,
+    "boundaryQuantization": "quantize source onset/end boundaries deterministically to the integer notation grid",
+    "intervalPolicy": "measure-bounded positive interval -> exact supported-duration decomposition",
+    "compositeDurations": "supported using existing decomposition + derived ties",
+    "singleAtomicDurationPrerequisite": false,
+    "nearestRepresentableFallback": {
+      "enabled": true,
+      "maximumAbsoluteCorrectionUnits": 6,
+      "tieBreak": [
+        "minimum absolute correction",
+        "shorter representable interval"
+      ],
+      "diagnostic": "RHYTHM_QUANTIZED"
+    },
+    "tripletGrouping": "existing fail-closed grouping semantics preserved"
+  },
+  "overlap": {
+    "sameQuantizedOnset": "chord",
+    "performanceTailNormalization": {
+      "enabledInFirstHardeningImplementation": false,
+      "reason": "MIDI duration alone does not prove legato vs independent voice; do not trim musical data before a separately frozen evidence rule"
+    },
+    "genuineIndependentOverlap": "must remain fail-closed until standards-backed in-accord support is added",
+    "failureCode": "UNSUPPORTED_POLYPHONY",
+    "doNotFakeAsNewlineParts": true
+  },
+  "polyphony": {
+    "targetRepresentation": "Music Braille in-accord",
+    "implementationGate": "authoritative BANA in-accord rule-source/conformance extension required before implementation",
+    "voiceNumberingClaimed": false,
+    "handAssignmentClaimed": false,
+    "derivedVoiceSeparation": "may be deterministic only after the in-accord rule surface is frozen",
+    "transcriberAddedRests": "must follow authoritative in-accord/rest rules; no unmarked invented rests"
+  },
+  "meter": {
+    "notationBuilderBoundaryChanges": "already accepted when aligned to a measure boundary",
+    "bridgeAfterTick0": "currently unsupported",
+    "target": "serialize measure-boundary meter changes only",
+    "midMeasureChanges": "remain rejected",
+    "implementationGate": "extend stateful bridge/encoder input without weakening the existing mid-measure rejection"
+  },
+  "keySignature": {
+    "afterTick0": "remain fail-closed in this hardening tranche",
+    "reason": "none of the four real-world acceptance files requires a key-change fix; do not enlarge scope without evidence"
+  },
+  "implementationOrder": [
+    {
+      "id": "H1",
+      "name": "parser metadata + non-pitched classification + scoped pitch-bend policy",
+      "expectedEffect": "oxygene4.mid must progress past its current parser pitch-bend blocker"
+    },
+    {
+      "id": "H2",
+      "name": "composite rhythm quantization + tied decomposition",
+      "expectedEffect": "representable performance durations stop failing merely because they are not one atomic duration"
+    },
+    {
+      "id": "H3",
+      "name": "re-audit remaining real-world blockers",
+      "expectedEffect": "measure exact remaining genuine polyphony/meter blockers after H1/H2; no guessing"
+    },
+    {
+      "id": "H4",
+      "name": "BANA in-accord rule-source/conformance extension, then genuine polyphony implementation",
+      "expectedEffect": "support independent actions without fabricating source parts or voice numbering"
+    },
+    {
+      "id": "H5",
+      "name": "measure-boundary meter-change serialization",
+      "expectedEffect": "d_HO0606.mid may progress through its 4/4 -> 12/8 source change once prior blockers are resolved"
+    },
+    {
+      "id": "H6",
+      "name": "Word/Windows live acceptance against canonical + Iranian + real-world Oxygene fixtures",
+      "expectedEffect": "Phase 14.9c closure evidence"
+    }
+  ],
+  "acceptance": {
+    "mustRemainPassing": [
+      "canonical deterministic MIDI fixture",
+      "test.mid Iranian real-world fixture",
+      "Phase 14.7b bridge regressions",
+      "Phase 14.8b Word MIDI preview regressions",
+      "Phase 14.9b Word Music insertion regressions",
+      "Phase 14.9c feature-tab regressions"
+    ],
+    "realWorldTargetFiles": [
+      "oxygene4.mid",
+      "Jean_Michel_Jarre_OXYGENE4.mid",
+      "d_HO0606.mid"
+    ],
+    "successMustDiscloseLoss": true,
+    "noSilentNoteDropping": true,
+    "noSilentPitchBendFlattening": true
+  },
+  "outOfScope": [
+    "MusicXML implementation",
+    "percussion Braille transcription",
+    "pitch-bend-to-notation transcription",
+    "dynamics inferred from velocity",
+    "slurs inferred from note overlap",
+    "original hand assignment",
+    "original voice numbering",
+    "original enharmonic spelling recovery"
+  ],
+  "next": "H1 materialization: parser metadata + classification + scoped pitch-bend policy"
+}

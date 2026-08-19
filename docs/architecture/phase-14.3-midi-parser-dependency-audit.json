@@ -1,0 +1,549 @@
+{
+  "phase": "14.3",
+  "name": "MIDI Parser Dependency and Packaging Audit",
+  "mode": "READ_ONLY",
+  "git": {
+    "branch": "phase14-braille-music",
+    "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "allowedUntracked": [
+      "docs/architecture/phase-14.1-music-braille-architecture-audit.json",
+      "docs/architecture/phase-14.1-music-braille-architecture-audit.txt",
+      "docs/architecture/phase-14.2-music-braille-contract-source-audit.json",
+      "docs/architecture/phase-14.2-music-braille-contract-source-audit.txt",
+      "docs/architecture/phase-14.2b-music-braille-contract.json",
+      "docs/architecture/phase-14.2b-music-braille-contract.md",
+      "docs/architecture/phase-14.2b-music-braille-source-policy.md",
+      "tools/architecture/validate-phase14-2b-music-braille-contract.mjs"
+    ]
+  },
+  "frozenContract": {
+    "phase": "14.2b",
+    "status": "frozen",
+    "midi": {
+      "standard": "MIDI 1.0 Standard MIDI File",
+      "formats": [
+        0,
+        1
+      ],
+      "timeDivision": "PPQN",
+      "rejectFormats": [
+        2
+      ],
+      "rejectSmpteDivision": true,
+      "validateContentNotOnlyExtension": true
+    },
+    "architecture": {
+      "pipeline": [
+        "local-midi-file",
+        "smf-parser",
+        "normalized-midi-events",
+        "neutral-music-model",
+        "notation-policy",
+        "music-braille-engine",
+        "unicode-braille",
+        "public-sdk",
+        "word-taskpane",
+        "word-selection-insert"
+      ],
+      "directMidiToBrailleMapping": false,
+      "officePrivateMusicEngineDependency": false,
+      "futureInputAdaptersReuseSemanticModel": true
+    }
+  },
+  "workspacePackages": [
+    {
+      "path": "packages/core/package.json",
+      "name": "@persian-braille/core",
+      "type": "module",
+      "main": null,
+      "module": null,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
+        "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
+        "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs test/reverse-translator-foundation.test.mjs test/reverse-translator-coverage.test.mjs test/reverse-translator-stateful-numeric.test.mjs test/reverse-translator-numeric-collisions.test.mjs test/reverse-translator-language-collisions.test.mjs test/reverse-translator-punctuation-collision.test.mjs test/reverse-translator-public-boundary.test.mjs"
+      },
+      "dependencies": {},
+      "devDependencies": {}
+    },
+    {
+      "path": "packages/sdk/package.json",
+      "name": "@persian-braille/sdk",
+      "type": "module",
+      "main": null,
+      "module": null,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs"
+      },
+      "dependencies": {
+        "@persian-braille/core": "workspace:*"
+      },
+      "devDependencies": {}
+    }
+  ],
+  "buildTooling": {},
+  "importMaps": [
+    "apps/web/public/index.html",
+    "integrations/microsoft365/addin-dist/taskpane.html",
+    "integrations/microsoft365/marketplace-dist/site/taskpane.html",
+    "integrations/microsoft365/public/taskpane.html"
+  ],
+  "vendorBuildEvidence": {
+    "integrations/microsoft365/package.json": [
+      {
+        "line": 21,
+        "text": "    \"build\": \"tsc -p tsconfig.json && node build-addin.mjs\","
+      },
+      {
+        "line": 22,
+        "text": "    \"typecheck\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit\","
+      },
+      {
+        "line": 23,
+        "text": "    \"clean\": \"node -e \\\"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\\\"\","
+      },
+      {
+        "line": 24,
+        "text": "    \"test\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs\","
+      },
+      {
+        "line": 25,
+        "text": "    \"preview\": \"pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs\","
+      },
+      {
+        "line": 26,
+        "text": "    \"build:marketplace\": \"pnpm run build && node build-marketplace.mjs\","
+      },
+      {
+        "line": 27,
+        "text": "    \"test:marketplace\": \"node --test test/marketplace-build.test.mjs\","
+      },
+      {
+        "line": 28,
+        "text": "    \"test:marketplace-compliance\": \"pnpm run build && node --test test/marketplace-compliance-pages.test.mjs\","
+      },
+      {
+        "line": 32,
+        "text": "    \"@persian-braille/sdk\": \"workspace:*\""
+      },
+      {
+        "line": 34,
+        "text": "  \"description\": \"Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk.\""
+      }
+    ],
+    "package.json": [
+      {
+        "line": 19,
+        "text": "    \"build\": \"pnpm -r --if-present run build\","
+      },
+      {
+        "line": 21,
+        "text": "    \"typecheck\": \"pnpm run build && pnpm -r --if-present run typecheck\","
+      },
+      {
+        "line": 23,
+        "text": "    \"spec:bundle\": \"node tools/architecture/build-runtime-spec-bundle.mjs\","
+      },
+      {
+        "line": 30,
+        "text": "    \"conformance:write-report\": \"pnpm --filter @persian-braille/core run build && node tools/conformance/profile-conformance-report.mjs --write\","
+      },
+      {
+        "line": 31,
+        "text": "    \"test:conformance\": \"pnpm --filter @persian-braille/core run build && node --test tools/conformance/profile-scenario-harness.test.mjs tools/conformance/profile-scenario-suite.test.mjs tools/conformance/profile-conformance-report.test.mjs\","
+      },
+      {
+        "line": 33,
+        "text": "    \"validate:sdk-package\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node tools/sdk/validate-sdk-package.mjs\","
+      },
+      {
+        "line": 35,
+        "text": "    \"validate:phase8-consumers\": \"pnpm run build && node --test tools/consumers/phase8-consumer-integration.test.mjs\","
+      },
+      {
+        "line": 78,
+        "text": "    \"build:manual-preview\": \"node integrations/microsoft365/build-manual-preview.mjs\","
+      },
+      {
+        "line": 79,
+        "text": "    \"build:marketplace-preview\": \"pnpm --filter @persian-braille/microsoft365 run build:marketplace && pnpm run build:manual-preview\","
+      },
+      {
+        "line": 82,
+        "text": "    \"validate:phase11-4c\": \"pnpm run validate:phase11-4b && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4c-manual-preview\","
+      },
+      {
+        "line": 87,
+        "text": "    \"validate:phase11-4e\": \"pnpm run validate:phase11-4d && pnpm run build:marketplace-preview && pnpm run test:manual-preview && pnpm run validate:phase11-4e-windows-preview-installer\","
+      },
+      {
+        "line": 92,
+        "text": "    \"build:windows-desktop-release\": \"node integrations/microsoft365/build-windows-desktop-release.mjs\","
+      },
+      {
+        "line": 95,
+        "text": "    \"validate:phase11-6\": \"pnpm run validate:phase11-4e && pnpm run validate:phase11-windows-desktop-scope && pnpm run validate:phase11-5-windows-certification && pnpm run validate:phase11-public-trust-wording && pnpm run build:marketplace-preview && pnpm run build:windows-desktop-release && pnpm run test:windows-desktop-release && pnpm run validate:phase11-6-windows-release\","
+      },
+      {
+        "line": 103,
+        "text": "    \"validate:phase12-3\": \"pnpm run validate:phase12-2 && pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm --filter @persian-braille/examples run test && node tools/architecture/validate-phase12-3-runnable-examples.mjs\","
+      },
+      {
+        "line": 106,
+        "text": "    \"validate:phase12-6\": \"pnpm run validate:phase12-3 && pnpm run validate:phase12-5 && pnpm run validate:boundaries && pnpm run validate:hygiene && pnpm --filter @persian-braille/core run test && pnpm --filter @persian-braille/sdk run test && node tools/architecture/validate-phase12-6-developer-ecosystem-closure.mjs\","
+      },
+      {
+        "line": 110,
+        "text": "    \"validate:phase13-4\": \"pnpm run validate:phase13-3 && pnpm --filter @persian-braille/core run test && node tools/architecture/validate-phase13-4-reverse-core-parser.mjs\","
+      },
+      {
+        "line": 117,
+        "text": "    \"validate:phase13-6b\": \"pnpm run validate:phase13-5c3c2 && pnpm --filter @persian-braille/sdk run test && node tools/architecture/validate-phase13-6b-sdk-reverse-api.mjs\","
+      },
+      {
+        "line": 119,
+        "text": "    \"test:u0622-release-regression\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && node --test tools/consumers/u0622-release-regression.test.mjs\","
+      }
+    ],
+    "integrations/microsoft365/build-addin.mjs": [
+      {
+        "line": 35,
+        "text": "    \"addin-dist\","
+      },
+      {
+        "line": 132,
+        "text": "    \"vendor/sdk\","
+      },
+      {
+        "line": 143,
+        "text": "    \"vendor/core\","
+      },
+      {
+        "line": 172,
+        "text": "  \"Task pane: addin-dist/taskpane.html\","
+      }
+    ],
+    "integrations/microsoft365/build-manual-preview.mjs": [
+      {
+        "line": 14,
+        "text": "  path.join(repoRoot, \"marketplace-dist\"),"
+      },
+      {
+        "line": 15,
+        "text": "  path.join(here, \"marketplace-dist\"),"
+      },
+      {
+        "line": 38,
+        "text": "    \"Unable to locate generated marketplace-dist. Expected either \""
+      },
+      {
+        "line": 39,
+        "text": "      + `${path.join(repoRoot, \"marketplace-dist\")} or `"
+      },
+      {
+        "line": 40,
+        "text": "      + `${path.join(here, \"marketplace-dist\")}.`,"
+      }
+    ],
+    "integrations/microsoft365/build-marketplace.mjs": [
+      {
+        "line": 33,
+        "text": "    \"addin-dist\","
+      },
+      {
+        "line": 39,
+        "text": "    \"marketplace-dist\","
+      },
+      {
+        "line": 128,
+        "text": "  \"Hosted site payload: marketplace-dist/site\","
+      },
+      {
+        "line": 131,
+        "text": "  \"Submission manifest: marketplace-dist/manifest.xml\","
+      }
+    ],
+    "integrations/microsoft365/build-windows-desktop-release.mjs": [
+      {
+        "line": 18,
+        "text": "  path.join(repoRoot, \"marketplace-dist\"),"
+      },
+      {
+        "line": 19,
+        "text": "  path.join(here, \"marketplace-dist\"),"
+      },
+      {
+        "line": 40,
+        "text": "  throw new Error(\"Unable to locate generated marketplace-dist.\");"
+      }
+    ],
+    "integrations/microsoft365/preview-addin.mjs": [
+      {
+        "line": 45,
+        "text": "    \"addin-dist\","
+      }
+    ],
+    "integrations/microsoft365/test/manual-preview-distribution.test.mjs": [
+      {
+        "line": 33,
+        "text": "    path.join(repoRoot, \"marketplace-dist\"),"
+      },
+      {
+        "line": 34,
+        "text": "    path.join(microsoft365Root, \"marketplace-dist\"),"
+      },
+      {
+        "line": 46,
+        "text": "  throw new Error(\"Unable to locate generated marketplace-dist.\");"
+      }
+    ],
+    "integrations/microsoft365/test/marketplace-compliance-pages.test.mjs": [
+      {
+        "line": 14,
+        "text": "    new URL(`../addin-dist/${name}`, import.meta.url),"
+      },
+      {
+        "line": 104,
+        "text": "    assert.ok(value.length > 0, `${file} should be present in addin-dist`);"
+      }
+    ],
+    "integrations/microsoft365/test/taskpane.test.mjs": [
+      {
+        "line": 621,
+        "text": "      /\"@persian-braille\\/sdk\": \"\\.\\/vendor\\/sdk\\/index\\.js\"/,"
+      },
+      {
+        "line": 671,
+        "text": "        \"../addin-dist/taskpane.html\","
+      },
+      {
+        "line": 672,
+        "text": "        \"../addin-dist/app/taskpane/main.js\","
+      },
+      {
+        "line": 673,
+        "text": "        \"../addin-dist/vendor/sdk/index.js\","
+      },
+      {
+        "line": 674,
+        "text": "        \"../addin-dist/vendor/core/index.js\","
+      },
+      {
+        "line": 675,
+        "text": "        \"../addin-dist/assets/icon-16.png\","
+      },
+      {
+        "line": 676,
+        "text": "        \"../addin-dist/assets/icon-32.png\","
+      },
+      {
+        "line": 677,
+        "text": "        \"../addin-dist/assets/icon-80.png\","
+      }
+    ],
+    "integrations/microsoft365/test/windows-desktop-release-package.test.mjs": [
+      {
+        "line": 25,
+        "text": "      \"marketplace-dist\","
+      },
+      {
+        "line": 30,
+        "text": "      \"marketplace-dist\","
+      }
+    ],
+    "tools/architecture/validate-phase11-4c-public-manual-preview.mjs": [
+      {
+        "line": 56,
+        "text": "  \"marketplace-dist\","
+      },
+      {
+        "line": 115,
+        "text": "  \"marketplace-dist\","
+      },
+      {
+        "line": 116,
+        "text": "  \"integrations/microsoft365/marketplace-dist\","
+      },
+      {
+        "line": 133,
+        "text": "  fail(\"unable to locate generated marketplace-dist\");"
+      }
+    ],
+    "tools/architecture/validate-phase11-4e-windows-preview-installer.mjs": [
+      {
+        "line": 154,
+        "text": "  \"marketplace-dist\","
+      }
+    ],
+    "tools/architecture/validate-phase11-6-windows-desktop-release-package.mjs": [
+      {
+        "line": 32,
+        "text": "      \"marketplace-dist\","
+      },
+      {
+        "line": 37,
+        "text": "      \"marketplace-dist\","
+      },
+      {
+        "line": 118,
+        "text": "assert.match(workflow, /marketplace-dist\\/windows-desktop-release/);"
+      }
+    ],
+    "tools/architecture/validate-phase11-github-pages-deployment.mjs": [
+      {
+        "line": 81,
+        "text": "    \"integrations/microsoft365/marketplace-dist/site\","
+      }
+    ],
+    "tools/architecture/validate-phase11-production-manifest-architecture.mjs": [
+      {
+        "line": 161,
+        "text": "    \"marketplace-dist\","
+      }
+    ],
+    "tools/architecture/validate-phase9-closure.mjs": [
+      {
+        "line": 121,
+        "text": "  \"integrations/microsoft365/addin-dist/\","
+      }
+    ],
+    "tools/architecture/validate-phase9-word-addin.mjs": [
+      {
+        "line": 97,
+        "text": "  '\"@persian-braille/sdk\": \"./vendor/sdk/index.js\"',"
+      },
+      {
+        "line": 103,
+        "text": "  '\"@persian-braille/core\": \"./vendor/core/index.js\"',"
+      }
+    ]
+  },
+  "sdkBoundary": {
+    "package": {
+      "name": "@persian-braille/sdk",
+      "type": "module",
+      "dependencies": {
+        "@persian-braille/core": "workspace:*"
+      },
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs"
+      }
+    },
+    "rootExports": [
+      "export {",
+      "export type {",
+      "export {",
+      "export type {"
+    ]
+  },
+  "existingMidiDependencyHits": [],
+  "musicPackageAlreadyExists": false,
+  "parserCandidates": [
+    {
+      "id": "midi-file",
+      "package": "midi-file",
+      "observedVersion": "1.2.4",
+      "license": "MIT",
+      "runtimeDependencies": 0,
+      "typesIncluded": true,
+      "mainKind": "CommonJS",
+      "rawParser": true,
+      "browserBundlePublished": false,
+      "notes": "Low-level SMF parser/writer. Best semantic fit because it exposes raw MIDI structure without adding DAW/playback notation policy. Its published main entry is CommonJS, so an ESM/import-map-only browser pipeline needs a bundling/interoperability step.",
+      "primarySources": [
+        "https://github.com/carter-thaxton/midi-file",
+        "https://www.npmjs.com/package/midi-file"
+      ]
+    },
+    {
+      "id": "tonejs-midi",
+      "package": "@tonejs/midi",
+      "observedVersion": "2.0.28",
+      "license": "MIT",
+      "runtimeDependencies": 2,
+      "typesIncluded": true,
+      "mainKind": "CommonJS + browser/module distribution",
+      "rawParser": false,
+      "browserBundlePublished": true,
+      "notes": "Browser-friendly and higher-level, but already normalizes MIDI into Tone.js-oriented notes/times/instruments and itself depends on midi-file. This is more semantic opinion than Phase 14 needs.",
+      "primarySources": [
+        "https://github.com/Tonejs/Midi",
+        "https://www.npmjs.com/package/@tonejs/midi"
+      ]
+    },
+    {
+      "id": "internal-smf-parser",
+      "package": null,
+      "observedVersion": null,
+      "license": "repository-license",
+      "runtimeDependencies": 0,
+      "typesIncluded": true,
+      "mainKind": "native project ESM/TypeScript",
+      "rawParser": true,
+      "browserBundlePublished": true,
+      "notes": "A narrow in-repo parser can exactly implement the frozen SMF type-0/1 + PPQN subset and avoid CommonJS/browser packaging. Tradeoff: the project owns binary-parser correctness, malformed input handling, running status, VLQ, meta/SysEx/channel events, and security hardening.",
+      "primarySources": [
+        "Phase 14.2b frozen contract",
+        "The MIDI Association Standard MIDI Files reference"
+      ]
+    }
+  ],
+  "recommendation": {
+    "preferredParser": "internal-smf-parser",
+    "reason": "The current browser delivery is import-map/ESM oriented and no existing bundler was detected. midi-file is semantically attractive but publishes a CommonJS main entry; adding a bundler solely for one dependency would enlarge Phase 14. A narrow internal parser for the frozen SMF 0/1 + PPQN subset keeps the runtime ESM-native and deterministic.",
+    "fallback": "midi-file only if a dedicated bundle step is intentionally introduced and validated",
+    "toneJsMidi": "NOT_PREFERRED"
+  },
+  "candidateModuleShape": {
+    "newPackageCandidate": "@persian-braille/music",
+    "packagePathCandidate": "packages/music",
+    "officeDependencyRule": "integrations/microsoft365 must not depend directly on @persian-braille/music",
+    "sdkDependencyRule": "@persian-braille/sdk may depend on @persian-braille/music and expose the public Music Braille facade",
+    "parserLocationRule": "MIDI parser is private to @persian-braille/music",
+    "semanticModelLocationRule": "neutral music model is private/internal initially; freeze public SDK types separately before publication",
+    "futureMusicXmlRule": "future MusicXML parser is another private input adapter feeding the same semantic model"
+  },
+  "requiredInternalParserCapabilities": [
+    "MThd validation and exact header-length handling",
+    "SMF format 0/1 acceptance and format 2 rejection",
+    "PPQN division acceptance and SMPTE rejection",
+    "MTrk chunk length bounds",
+    "variable-length quantity decoding with overflow/bounds checks",
+    "running status",
+    "note-on and note-off including note-on velocity 0",
+    "channel-event length handling",
+    "meta events including tempo/time signature/key signature/end-of-track",
+    "SysEx event length skipping",
+    "unknown meta-event length skipping",
+    "absolute tick accumulation per track",
+    "truncated/malformed input failure without partial success"
+  ],
+  "blockers": [],
+  "decision": "READY_FOR_PHASE14_3B_MIDI_PARSER_FOUNDATION",
+  "next": "Phase 14.3b should materialize only the new music package foundation, raw SMF parser boundary, semantic types, and parser conformance tests according to the selected parser strategy. Do not implement Music Braille notation rules or Word UI yet."
+}

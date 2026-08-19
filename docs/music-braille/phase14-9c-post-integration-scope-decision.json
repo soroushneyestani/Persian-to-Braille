@@ -1,0 +1,56 @@
+{
+  "phase": "14.9c-post-integration-scope-decision",
+  "status": "accepted-for-phase14",
+  "profile": "GENERIC_MIDI_GLOBAL_PIANO_ROLL_BOUNDED_INTEGRATION_V1",
+  "production": {
+    "route": "PARSE -> REDUCE -> NOTATION -> BRAILLE",
+    "outputPartPolicy": "one synthetic piano part",
+    "instrumentPercussionFiltering": "none",
+    "complexityPolicy": "exact deterministic solving below a hard guard; explicit fail-closed complexity error above the guard",
+    "rhythmTolerance": "<= 6 units unchanged"
+  },
+  "realWorldEvidence": {
+    "test.mid": {
+      "status": "success",
+      "parts": 1,
+      "tripletRuns": 1,
+      "tripletEvents": 3,
+      "invalidTripletRuns": 0
+    },
+    "oxygene4.mid": {
+      "status": "accepted-phase14-fail-closed-limit",
+      "code": "RHYTHM_COMPLEXITY_LIMIT_EXCEEDED",
+      "stage": "notation",
+      "measure": 6
+    },
+    "Jean_Michel_Jarre_OXYGENE4.mid": {
+      "status": "accepted-phase14-fail-closed-limit",
+      "code": "RHYTHM_COMPLEXITY_LIMIT_EXCEEDED",
+      "stage": "notation",
+      "measure": 5
+    },
+    "d_HO0606.mid": {
+      "status": "accepted-phase14-fail-closed-limit",
+      "code": "UNQUANTIZABLE_RHYTHM",
+      "stage": "notation",
+      "measure": 10
+    }
+  },
+  "triplet": {
+    "implementationInPhase14": "not added",
+    "reason": "The only SHA-pinned real-world score that reaches notation completion has one complete three-event triplet run and zero invalid runs. The remaining three files stop at pre-triplet notation blockers, so adding triplet provenance now would be speculative and would not fix their actual production failures.",
+    "futureRule": "Re-open triplet provenance only if a reachable score demonstrates ambiguous or invalid triplet grouping after the pre-triplet limitation."
+  },
+  "scopeDecision": {
+    "phase14": "Accept the two bounded-complexity failures and the one <=6-unit rhythm-representability failure as explicit fail-closed limitations for the initial Phase 14 MIDI profile.",
+    "notPermanentProductClaim": true,
+    "futureHardeningAllowed": true,
+    "noFilteringWorkaround": true,
+    "noToleranceWidening": true
+  },
+  "nextGate": "PHASE14_9C_WINDOWS_WORD_LIVE_ACCEPTANCE",
+  "decision": "READY_FOR_PHASE14_9C_WINDOWS_WORD_LIVE_ACCEPTANCE",
+  "productionSourceChanged": false,
+  "thirdPartyMidiCommitted": false,
+  "commit": "DO_NOT_COMMIT_YET"
+}

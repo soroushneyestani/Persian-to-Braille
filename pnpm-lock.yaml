@@ -41,11 +41,16 @@ importers:
 
   packages/core: {}
 
+  packages/music: {}
+
   packages/sdk:
     dependencies:
       '@persian-braille/core':
         specifier: workspace:*
         version: link:../core
+      '@persian-braille/music':
+        specifier: workspace:*
+        version: link:../music
 
 packages:
 

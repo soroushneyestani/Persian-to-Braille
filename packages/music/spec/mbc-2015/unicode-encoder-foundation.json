@@ -1,0 +1,48 @@
+{
+  "id": "music-braille-unicode-atomic-encoder-foundation-v1",
+  "phase": "14.6a",
+  "status": "implemented-foundation",
+  "scope": {
+    "input": "Pre-resolved atomic Music Braille semantics",
+    "output": "BRF/Braille-ASCII token plus Unicode Braille Patterns",
+    "notationScoreBridge": "DEFERRED_TO_PHASE_14_7",
+    "statefulMeasureComposition": "NEXT_WITHIN_PHASE_14_6",
+    "wordUi": "OUT_OF_SCOPE",
+    "musicXml": "OUT_OF_PHASE_14_RESERVED_FOR_PHASE_19"
+  },
+  "unicodeCellLayer": {
+    "tableId": "north-american-six-dot-braille-ascii-to-unicode-v1",
+    "canonicalEntryCount": 64,
+    "canonicalRange": "ASCII 32..95",
+    "lowercaseAlias": "a-z -> A-Z for six-dot BRF token compatibility",
+    "unicodeRange": "U+2800..U+283F",
+    "status": "IMPLEMENTED_AND_VALIDATED"
+  },
+  "atomicEncoder": {
+    "notes": "SUPPORTED: C..B, whole/half/quarter/eighth/16th/32nd/64th/128th value classes",
+    "augmentationDots": "SUPPORTED",
+    "explicitAccidentals": "SUPPORTED",
+    "explicitOctaveMarks": "SUPPORTED for sub/1..7/super via scientific octave 0..8",
+    "rests": "SUPPORTED",
+    "simpleKeySignatures": "SUPPORTED for sf -7..7",
+    "simpleMeters": "SUPPORTED under Phase 14.5c denominator contract",
+    "tripletIndicator": "SUPPORTED",
+    "intervalSigns": "SUPPORTED for diatonic intervals 2..8",
+    "singleTie": "SUPPORTED",
+    "chordTie": "SUPPORTED",
+    "measureSeparator": "SUPPORTED",
+    "contextualAccidentalState": "DEFERRED_TO_STATEFUL_ENCODER",
+    "contextualOctaveSuppression": "DEFERRED_TO_STATEFUL_ENCODER",
+    "automaticChordWrittenNoteSelection": "DEFERRED_TO_STATEFUL_ENCODER"
+  },
+  "failClosed": [
+    "Reject characters outside canonical six-dot Braille ASCII plus documented lowercase aliases/newline/form-feed.",
+    "Reject unsupported value classes, octaves, meter denominators, key signatures, intervals, and accidental names.",
+    "Do not infer MusicXML, Word, or NotationScore behavior in this foundation."
+  ],
+  "regression": {
+    "phase14_5bAtomicBrfFixtures": 68,
+    "phase14_5cProfileFixtures": 12
+  },
+  "nextGate": "READY_FOR_PHASE14_6B_STATEFUL_MUSIC_BRAILLE_ENCODER"
+}

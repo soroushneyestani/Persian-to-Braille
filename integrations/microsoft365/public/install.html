@@ -6,7 +6,7 @@
   <title>Install Persian-to-Braille — Manual Preview</title>
   <meta
     name="description"
-    content="Manual preview installation options for the Persian-to-Braille Microsoft 365 add-in."
+    content="Manual preview installation for Persian Braille and Braille Music from MIDI in the Persian-to-Braille Microsoft 365 add-in."
   >
   <link rel="stylesheet" href="./compliance.css">
 </head>
@@ -163,6 +163,85 @@
           <figcaption>
             Translate a selected PowerPoint text range and replace it after
             previewing the Braille output.
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <section aria-labelledby="phase14-current-features">
+        <h2 id="phase14-current-features">What is available in this preview</h2>
+        <ul>
+          <li>
+            <strong>Persian / English text Braille</strong> translation through
+            the Microsoft 365 add-in.
+          </li>
+          <li>
+            <strong>Braille Music from MIDI</strong> in Microsoft Word Desktop
+            on Windows.
+          </li>
+        </ul>
+
+        <p>
+          The <strong>Persian / English</strong> text tab supports Persian plus
+          ordinary uncontracted six-dot English/Latin text through the current
+          <code>fa-ir-g1</code> Latin-span rules. This is not a claim of
+          contracted UEB / English Grade-2 support.
+        </p>
+
+        <h3>Braille Music from MIDI — Word Desktop / Windows</h3>
+        <p>
+          Braille Music has been live verified in Microsoft Word Desktop on
+          Windows. Standard MIDI files with a <code>.mid</code> or
+          <code>.midi</code> extension are read locally by the add-in.
+        </p>
+        <ol>
+          <li>Open the add-in in Microsoft Word Desktop on Windows.</li>
+          <li>Select the <strong>Music / MIDI</strong> tab.</li>
+          <li>Choose a Standard MIDI file.</li>
+          <li>
+            Choose exactly one MIDI line. A line is one
+            <strong>Track + Channel</strong> pair.
+          </li>
+          <li>
+            Select <strong>Preview Music Braille</strong> to generate
+            <strong>Unicode Music Braille</strong> and
+            <strong>BRF / Braille ASCII</strong>.
+          </li>
+          <li>
+            Select <strong>Insert Music Braille</strong> to insert the exact
+            successful preview at the current Word caret or selection.
+          </li>
+        </ol>
+        <p>
+          No notes inside the selected line are automatically removed based on
+          instrument, percussion, program, or channel classification.
+        </p>
+        <p>
+          Some complex MIDI lines may not yet be representable by the current
+          notation bridge. Those lines fail explicitly instead of silently
+          deleting or simplifying musical material. Choose another source line
+          when appropriate.
+        </p>
+        <p>
+          Whole-song multi-line / <strong>All Lines</strong> conversion is not
+          exposed in this preview.
+        </p>
+      </section>
+
+
+      <section aria-labelledby="phase14-braille-music-preview">
+        <h2 id="phase14-braille-music-preview">Braille Music in Word — live preview</h2>
+        <figure>
+          <img
+            src="./install/screenshots/phase14-braille-music-word-mozart.png"
+            alt="Microsoft Word Desktop showing the Persian / English and Music / MIDI tabs, MIDI source-line selection, Unicode Music Braille preview, and multiple inserted Mozart Braille lines."
+            loading="lazy"
+            style="max-width: 100%; height: auto; border: 1px solid #d1d5db; border-radius: 8px;"
+          >
+          <figcaption>
+            Live Windows Word presentation: a multi-line Mozart MIDI is exposed
+            as independent Track + Channel source lines, previewed as Unicode
+            Music Braille, and inserted into the Word document.
           </figcaption>
         </figure>
       </section>

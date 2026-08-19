@@ -250,3 +250,122 @@ test("manual preview build publishes exact Phase 11.4d screenshot assets", async
     );
   }
 });
+
+test(
+  "install page documents Phase 14 Braille Music selected-line workflow",
+  async () => {
+    const page =
+      await text(
+        path.join(
+          microsoft365Root,
+          "public",
+          "install.html",
+        ),
+      );
+
+    for (const expected of [
+      "Braille Music from MIDI",
+      "Microsoft Word Desktop",
+      ".mid",
+      ".midi",
+      "Music / MIDI",
+      "Track + Channel",
+      "Preview Music Braille",
+      "Unicode Music Braille",
+      "BRF / Braille ASCII",
+      "Insert Music Braille",
+      "current Word caret or selection",
+      "All Lines",
+    ]) {
+      assert.ok(
+        page.includes(
+          expected,
+        ),
+        `missing Phase 14 public install-page marker: ${expected}`,
+      );
+    }
+
+    assert.match(
+      page,
+      /Choose exactly one MIDI line\./,
+    );
+
+    assert.match(
+      page,
+      /No notes inside the selected line are automatically removed/,
+    );
+
+    assert.match(
+      page,
+      /fail explicitly instead of silently\s+deleting or simplifying musical material/s,
+    );
+  },
+);
+
+test(
+  "install page publishes the final Phase 14 Braille Music Word presentation screenshot",
+  async () => {
+    const page =
+      await text(
+        path.join(
+          microsoft365Root,
+          "public",
+          "install.html",
+        ),
+      );
+
+    assert.match(
+      page,
+      /phase14-braille-music-word-mozart\.png/,
+    );
+
+    assert.match(
+      page,
+      /Braille Music in Word — live preview/,
+    );
+
+    const sourceImage =
+      path.join(
+        microsoft365Root,
+        "public",
+        "install",
+        "screenshots",
+        "phase14-braille-music-word-mozart.png",
+      );
+
+    assert.equal(
+      await exists(
+        sourceImage,
+      ),
+      true,
+    );
+
+    const dist =
+      await resolveMarketplaceDist();
+
+    const generatedImage =
+      path.join(
+        dist,
+        "site",
+        "install",
+        "screenshots",
+        "phase14-braille-music-word-mozart.png",
+      );
+
+    assert.equal(
+      await exists(
+        generatedImage,
+      ),
+      true,
+    );
+
+    assert.deepEqual(
+      await readFile(
+        generatedImage,
+      ),
+      await readFile(
+        sourceImage,
+      ),
+    );
+  },
+);

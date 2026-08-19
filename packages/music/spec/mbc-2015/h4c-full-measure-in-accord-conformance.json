@@ -1,0 +1,54 @@
+{
+  "id": "phase14-9c-h4c-full-measure-in-accord-conformance-v1",
+  "status": "frozen",
+  "source": {
+    "code": "BANA-MBC-2015",
+    "table": 11,
+    "sections": [
+      "11.1",
+      "11.1.1"
+    ]
+  },
+  "profileId": "GENERIC_MIDI_HIGH_TO_LOW_IN_ACCORD_V1",
+  "signs": {
+    "fullMeasureInAccordBrf": "<>",
+    "transcriberAddedRestPrefixBrf": "\""
+  },
+  "syntheticCase": {
+    "meter": "4/4",
+    "ppqn": 96,
+    "notes": [
+      {
+        "midiPitch": 60,
+        "startTick": 0,
+        "endTick": 384
+      },
+      {
+        "midiPitch": 64,
+        "startTick": 96,
+        "endTick": 192
+      }
+    ],
+    "expectedActionAnchors": [
+      64,
+      60
+    ],
+    "expectedBrf": "#d4 \"v\"$\"u<>\"y",
+    "expectedDiagnostics": [
+      "INFERRED_MIDI_VOICE_PARTITION",
+      "IN_ACCORD_ORDER_CANONICALIZED_NO_STAFF",
+      "TRANSCRIBER_ADDED_IN_ACCORD_REST"
+    ]
+  },
+  "claims": {
+    "originalHandAssignment": false,
+    "originalVoiceNumbering": false,
+    "silentOverlapTrimming": false,
+    "fakeSourcePartSplitting": false
+  },
+  "deferred": {
+    "partMeasureInAccord": true,
+    "nestedInAccord": true,
+    "measureBoundaryMeterSerialization": true
+  }
+}

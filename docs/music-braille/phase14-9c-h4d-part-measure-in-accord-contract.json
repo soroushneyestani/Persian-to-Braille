@@ -1,0 +1,135 @@
+{
+  "phase": "14.9c-H4D",
+  "kind": "generic-midi-part-measure-in-accord-contract",
+  "status": "frozen",
+  "profileId": "GENERIC_MIDI_INCOMPLETE_MEASURE_PART_IN_ACCORD_V1",
+  "authoritativeSource": {
+    "title": "Music Braille Code 2015",
+    "locators": [
+      {
+        "section": "11.1 In-Accord Procedures",
+        "pdfPage": 111,
+        "printPage": 87
+      },
+      {
+        "section": "11.1.2 Part-Measure In-Accords",
+        "pdfPage": 112,
+        "printPage": 88
+      },
+      {
+        "section": "11.1.3 Nested In-Accords",
+        "pdfPage": 113,
+        "printPage": 89
+      },
+      {
+        "section": "11.2 Restating Accidentals in In-Accords",
+        "pdfPage": 113,
+        "printPage": 89
+      }
+    ]
+  },
+  "signs": {
+    "partMeasureInAccordBrf": "\"1",
+    "measureDivisionBrf": ".k",
+    "fullMeasureInAccordBrf": "<>"
+  },
+  "authoritativeRules": {
+    "isolatedSections": true,
+    "measureDivisionBetweenSections": true,
+    "noSpacesAroundMeasureDivision": true,
+    "equalTotalNoteValueOnEachSide": true,
+    "incompleteMeasureRequiresPartMeasureForm": true,
+    "partMeasureMayOccurInsideFullMeasure": true,
+    "partMeasureMayNotBeFurtherSubdivided": true,
+    "firstNoteAfterInAccordOrMeasureDivisionRequiresOctave": true,
+    "accidentalsDoNotCarryAcrossInAccordOrMeasureDivision": true
+  },
+  "genericMidiScope": {
+    "initialImplementation": "terminal incomplete source-part measure only",
+    "singleSection": true,
+    "sectionStart": "derived measure start",
+    "sectionEnd": "maximum corrected end unit of retained source-derived content in the incomplete final measure",
+    "requiresSectionEndBeforeFullMeasureEnd": true,
+    "requiresPolyphony": true,
+    "completePolyphonicMeasure": "continue using H4C full-measure in-accord",
+    "completeMeasureArbitrarySubdivision": "deferred",
+    "multiplePartMeasureSections": "deferred",
+    "nestedPartMeasureInsideFullMeasure": "deferred"
+  },
+  "actionPolicy": {
+    "partition": {
+      "scope": "per source track/channel and per derived measure",
+      "eventOrder": [
+        "startUnit ascending",
+        "highest MIDI pitch descending",
+        "endUnit descending"
+      ],
+      "reuseRule": "assign an onset-group to an already available action whose prior event ends no later than the new onset",
+      "reusePreference": [
+        "minimum absolute anchor-pitch distance from the action's previous sounding event",
+        "most recent prior endUnit",
+        "lowest stable derived action index"
+      ],
+      "newAction": "create a new derived action only when no existing action is available",
+      "minimumConcurrencyIntent": true,
+      "diagnostic": "INFERRED_MIDI_VOICE_PARTITION"
+    },
+    "ordering": {
+      "sourceStaffUnknown": true,
+      "canonicalDirection": "highest-to-lowest",
+      "actionAnchor": "first sounding event's highest MIDI pitch within the measure",
+      "tieBreak": [
+        "highest pitch encountered in the measure descending",
+        "lowest stable derived action index"
+      ],
+      "rationale": "Use one deterministic generic-MIDI branch without claiming recovered treble/bass identity; it also aligns with the existing generic MIDI chord profile's highest-written/downward orientation.",
+      "diagnostic": "IN_ACCORD_ORDER_CANONICALIZED_NO_STAFF"
+    },
+    "sameOnset": "remain chord",
+    "eachActionSpan": "exact section duration",
+    "gapFill": "rests",
+    "transcriberAddedRestPrefix": "dot-5",
+    "transcriberAddedRestDiagnostic": "TRANSCRIBER_ADDED_IN_ACCORD_REST",
+    "rhythmProfile": "GENERIC_MIDI_SHARED_BOUNDARY_RHYTHM_V1",
+    "exactDecompositionBaseline": "EXACT_DURATION_DECOMPOSITION_COMPLETENESS_V1"
+  },
+  "accidentalState": {
+    "isolateAcrossPartMeasureInAccordSign": true,
+    "isolateAcrossMeasureDivisionSign": true,
+    "genericMidiPrintPresenceClaim": false,
+    "policy": "Restart generated accidental state from the active key signature after each in-accord/measure-division boundary. Do not claim knowledge of whether a print accidental was present in the unavailable source score.",
+    "futureExplicitPrintAdapter": "A future adapter carrying explicit print accidental presence may additionally apply BANA dot-5 transcriber-added accidental restatement semantics."
+  },
+  "serialization": {
+    "singleSection": "action1 + part-measure-in-accord + action2 [+ ...]; no measure-division sign when only one section exists",
+    "futureMultipleSections": "section + measure-division + section, with no spaces around the measure-division sign",
+    "forceOctaveAfterPartMeasureSign": true,
+    "forceOctaveAfterMeasureDivisionSign": true,
+    "measureSeparatorAfterIncompleteFinalMeasure": "normal enclosing transport/score behavior; no invented extra section"
+  },
+  "failurePolicy": {
+    "sectionNotExactlyRepresentable": "UNQUANTIZABLE_RHYTHM",
+    "actionCannotEqualSectionValue": "UNSUPPORTED_POLYPHONY",
+    "wouldRequireNestedPartMeasureSubdivision": "UNSUPPORTED_POLYPHONY",
+    "wouldRequireMultipleArbitrarySections": "UNSUPPORTED_POLYPHONY",
+    "silentOverlapTrim": false,
+    "fakeNewlineParts": false,
+    "inventOriginalVoiceOrHand": false
+  },
+  "syntheticImplementationGates": [
+    "incomplete 4/4 final measure with two actions emits one part-measure in-accord",
+    "each side totals exactly the incomplete section duration",
+    "first note after part-measure sign has forced octave",
+    "dot-5 marks reconstruction-added rests",
+    "complete measure still uses full-measure in-accord",
+    "default builder profile remains fail-closed",
+    "single-section H4D emits no measure-division sign",
+    "unsupported multi-section/nested case remains fail-closed"
+  ],
+  "realWorldAcceptance": {
+    "oxygene4.mid": "must progress beyond the current incomplete-final-measure part-measure blocker",
+    "Jean_Michel_Jarre_OXYGENE4.mid": "must progress beyond the current incomplete-final-measure part-measure blocker",
+    "copyrightedMidiCommitted": false
+  },
+  "decision": "READY_FOR_PHASE14_9C_H4D_PART_MEASURE_IN_ACCORD_IMPLEMENTATION"
+}

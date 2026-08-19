@@ -82,3 +82,10 @@ A successful architecture validation therefore demonstrates:
 - successful build and typecheck;
 - successful compiled-Core specification consumption;
 - no generated repository pollution.
+
+## Phase 14 Music Domain Extension
+
+Phase 14 adds `packages/music` as a zero-internal-dependency platform-agnostic
+engine and extends the allowed graph to `sdk -> core + music`. Microsoft 365
+continues to depend on the SDK only; direct Office-to-music imports remain
+forbidden.

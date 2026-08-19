@@ -1,0 +1,738 @@
+{
+  "id": "north-american-six-dot-braille-ascii-to-unicode-v1",
+  "phase": "14.6a",
+  "canonicalAsciiRange": {
+    "min": 32,
+    "max": 95,
+    "count": 64
+  },
+  "lowercaseAliasPolicy": "ASCII a-z are accepted by the runtime converter as aliases for A-Z because six-dot Braille ASCII collapses corresponding 96..127 values onto 64..95. Canonical serialized tokens remain ASCII 32..95.",
+  "unicodeRange": "U+2800..U+283F",
+  "derivation": "Unicode pattern = U+2800 + sum(1 << (dot-1)) for raised dots 1..6.",
+  "sources": [
+    {
+      "authority": "Braille Authority of North America",
+      "title": "BANA Positions on Computer Braille Code and Braille ASCII",
+      "adopted": "2020-05",
+      "url": "https://www.brailleauthority.org/cbc/positionpaper/Position%20Paper%20on%20CBC%20and%20Braille%20ASCII%20Approved%20May%202020%20File%20for%20Posting%209-22-20.pdf",
+      "use": "Six-dot Braille ASCII scope and 64-pattern representation."
+    },
+    {
+      "authority": "Braille Authority of North America",
+      "title": "Eight-dot Braille",
+      "url": "https://www.brailleauthority.org/eightdot/eightdot.html",
+      "use": "Historical six-dot 96..127 to 64..95 correspondence."
+    },
+    {
+      "authority": "American Printing House for the Blind",
+      "title": "Orbit Reader 20 User Guide — Appendix A: Computer Braille Table",
+      "url": "https://tech.aph.org/or20/",
+      "use": "Explicit dot-combination cross-checks for ASCII characters."
+    }
+  ],
+  "entries": [
+    {
+      "ascii": " ",
+      "asciiCode": 32,
+      "dots": [],
+      "unicode": "⠀",
+      "unicodeCodePoint": "U+2800"
+    },
+    {
+      "ascii": "!",
+      "asciiCode": 33,
+      "dots": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "unicode": "⠮",
+      "unicodeCodePoint": "U+282E"
+    },
+    {
+      "ascii": "\"",
+      "asciiCode": 34,
+      "dots": [
+        5
+      ],
+      "unicode": "⠐",
+      "unicodeCodePoint": "U+2810"
+    },
+    {
+      "ascii": "#",
+      "asciiCode": 35,
+      "dots": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠼",
+      "unicodeCodePoint": "U+283C"
+    },
+    {
+      "ascii": "$",
+      "asciiCode": 36,
+      "dots": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "unicode": "⠫",
+      "unicodeCodePoint": "U+282B"
+    },
+    {
+      "ascii": "%",
+      "asciiCode": 37,
+      "dots": [
+        1,
+        4,
+        6
+      ],
+      "unicode": "⠩",
+      "unicodeCodePoint": "U+2829"
+    },
+    {
+      "ascii": "&",
+      "asciiCode": 38,
+      "dots": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "unicode": "⠯",
+      "unicodeCodePoint": "U+282F"
+    },
+    {
+      "ascii": "'",
+      "asciiCode": 39,
+      "dots": [
+        3
+      ],
+      "unicode": "⠄",
+      "unicodeCodePoint": "U+2804"
+    },
+    {
+      "ascii": "(",
+      "asciiCode": 40,
+      "dots": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "unicode": "⠷",
+      "unicodeCodePoint": "U+2837"
+    },
+    {
+      "ascii": ")",
+      "asciiCode": 41,
+      "dots": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠾",
+      "unicodeCodePoint": "U+283E"
+    },
+    {
+      "ascii": "*",
+      "asciiCode": 42,
+      "dots": [
+        1,
+        6
+      ],
+      "unicode": "⠡",
+      "unicodeCodePoint": "U+2821"
+    },
+    {
+      "ascii": "+",
+      "asciiCode": 43,
+      "dots": [
+        3,
+        4,
+        6
+      ],
+      "unicode": "⠬",
+      "unicodeCodePoint": "U+282C"
+    },
+    {
+      "ascii": ",",
+      "asciiCode": 44,
+      "dots": [
+        6
+      ],
+      "unicode": "⠠",
+      "unicodeCodePoint": "U+2820"
+    },
+    {
+      "ascii": "-",
+      "asciiCode": 45,
+      "dots": [
+        3,
+        6
+      ],
+      "unicode": "⠤",
+      "unicodeCodePoint": "U+2824"
+    },
+    {
+      "ascii": ".",
+      "asciiCode": 46,
+      "dots": [
+        4,
+        6
+      ],
+      "unicode": "⠨",
+      "unicodeCodePoint": "U+2828"
+    },
+    {
+      "ascii": "/",
+      "asciiCode": 47,
+      "dots": [
+        3,
+        4
+      ],
+      "unicode": "⠌",
+      "unicodeCodePoint": "U+280C"
+    },
+    {
+      "ascii": "0",
+      "asciiCode": 48,
+      "dots": [
+        3,
+        5,
+        6
+      ],
+      "unicode": "⠴",
+      "unicodeCodePoint": "U+2834"
+    },
+    {
+      "ascii": "1",
+      "asciiCode": 49,
+      "dots": [
+        2
+      ],
+      "unicode": "⠂",
+      "unicodeCodePoint": "U+2802"
+    },
+    {
+      "ascii": "2",
+      "asciiCode": 50,
+      "dots": [
+        2,
+        3
+      ],
+      "unicode": "⠆",
+      "unicodeCodePoint": "U+2806"
+    },
+    {
+      "ascii": "3",
+      "asciiCode": 51,
+      "dots": [
+        2,
+        5
+      ],
+      "unicode": "⠒",
+      "unicodeCodePoint": "U+2812"
+    },
+    {
+      "ascii": "4",
+      "asciiCode": 52,
+      "dots": [
+        2,
+        5,
+        6
+      ],
+      "unicode": "⠲",
+      "unicodeCodePoint": "U+2832"
+    },
+    {
+      "ascii": "5",
+      "asciiCode": 53,
+      "dots": [
+        2,
+        6
+      ],
+      "unicode": "⠢",
+      "unicodeCodePoint": "U+2822"
+    },
+    {
+      "ascii": "6",
+      "asciiCode": 54,
+      "dots": [
+        2,
+        3,
+        5
+      ],
+      "unicode": "⠖",
+      "unicodeCodePoint": "U+2816"
+    },
+    {
+      "ascii": "7",
+      "asciiCode": 55,
+      "dots": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "unicode": "⠶",
+      "unicodeCodePoint": "U+2836"
+    },
+    {
+      "ascii": "8",
+      "asciiCode": 56,
+      "dots": [
+        2,
+        3,
+        6
+      ],
+      "unicode": "⠦",
+      "unicodeCodePoint": "U+2826"
+    },
+    {
+      "ascii": "9",
+      "asciiCode": 57,
+      "dots": [
+        3,
+        5
+      ],
+      "unicode": "⠔",
+      "unicodeCodePoint": "U+2814"
+    },
+    {
+      "ascii": ":",
+      "asciiCode": 58,
+      "dots": [
+        1,
+        5,
+        6
+      ],
+      "unicode": "⠱",
+      "unicodeCodePoint": "U+2831"
+    },
+    {
+      "ascii": ";",
+      "asciiCode": 59,
+      "dots": [
+        5,
+        6
+      ],
+      "unicode": "⠰",
+      "unicodeCodePoint": "U+2830"
+    },
+    {
+      "ascii": "<",
+      "asciiCode": 60,
+      "dots": [
+        1,
+        2,
+        6
+      ],
+      "unicode": "⠣",
+      "unicodeCodePoint": "U+2823"
+    },
+    {
+      "ascii": "=",
+      "asciiCode": 61,
+      "dots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠿",
+      "unicodeCodePoint": "U+283F"
+    },
+    {
+      "ascii": ">",
+      "asciiCode": 62,
+      "dots": [
+        3,
+        4,
+        5
+      ],
+      "unicode": "⠜",
+      "unicodeCodePoint": "U+281C"
+    },
+    {
+      "ascii": "?",
+      "asciiCode": 63,
+      "dots": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠹",
+      "unicodeCodePoint": "U+2839"
+    },
+    {
+      "ascii": "@",
+      "asciiCode": 64,
+      "dots": [
+        4
+      ],
+      "unicode": "⠈",
+      "unicodeCodePoint": "U+2808"
+    },
+    {
+      "ascii": "A",
+      "asciiCode": 65,
+      "dots": [
+        1
+      ],
+      "unicode": "⠁",
+      "unicodeCodePoint": "U+2801"
+    },
+    {
+      "ascii": "B",
+      "asciiCode": 66,
+      "dots": [
+        1,
+        2
+      ],
+      "unicode": "⠃",
+      "unicodeCodePoint": "U+2803"
+    },
+    {
+      "ascii": "C",
+      "asciiCode": 67,
+      "dots": [
+        1,
+        4
+      ],
+      "unicode": "⠉",
+      "unicodeCodePoint": "U+2809"
+    },
+    {
+      "ascii": "D",
+      "asciiCode": 68,
+      "dots": [
+        1,
+        4,
+        5
+      ],
+      "unicode": "⠙",
+      "unicodeCodePoint": "U+2819"
+    },
+    {
+      "ascii": "E",
+      "asciiCode": 69,
+      "dots": [
+        1,
+        5
+      ],
+      "unicode": "⠑",
+      "unicodeCodePoint": "U+2811"
+    },
+    {
+      "ascii": "F",
+      "asciiCode": 70,
+      "dots": [
+        1,
+        2,
+        4
+      ],
+      "unicode": "⠋",
+      "unicodeCodePoint": "U+280B"
+    },
+    {
+      "ascii": "G",
+      "asciiCode": 71,
+      "dots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "unicode": "⠛",
+      "unicodeCodePoint": "U+281B"
+    },
+    {
+      "ascii": "H",
+      "asciiCode": 72,
+      "dots": [
+        1,
+        2,
+        5
+      ],
+      "unicode": "⠓",
+      "unicodeCodePoint": "U+2813"
+    },
+    {
+      "ascii": "I",
+      "asciiCode": 73,
+      "dots": [
+        2,
+        4
+      ],
+      "unicode": "⠊",
+      "unicodeCodePoint": "U+280A"
+    },
+    {
+      "ascii": "J",
+      "asciiCode": 74,
+      "dots": [
+        2,
+        4,
+        5
+      ],
+      "unicode": "⠚",
+      "unicodeCodePoint": "U+281A"
+    },
+    {
+      "ascii": "K",
+      "asciiCode": 75,
+      "dots": [
+        1,
+        3
+      ],
+      "unicode": "⠅",
+      "unicodeCodePoint": "U+2805"
+    },
+    {
+      "ascii": "L",
+      "asciiCode": 76,
+      "dots": [
+        1,
+        2,
+        3
+      ],
+      "unicode": "⠇",
+      "unicodeCodePoint": "U+2807"
+    },
+    {
+      "ascii": "M",
+      "asciiCode": 77,
+      "dots": [
+        1,
+        3,
+        4
+      ],
+      "unicode": "⠍",
+      "unicodeCodePoint": "U+280D"
+    },
+    {
+      "ascii": "N",
+      "asciiCode": 78,
+      "dots": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "unicode": "⠝",
+      "unicodeCodePoint": "U+281D"
+    },
+    {
+      "ascii": "O",
+      "asciiCode": 79,
+      "dots": [
+        1,
+        3,
+        5
+      ],
+      "unicode": "⠕",
+      "unicodeCodePoint": "U+2815"
+    },
+    {
+      "ascii": "P",
+      "asciiCode": 80,
+      "dots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "unicode": "⠏",
+      "unicodeCodePoint": "U+280F"
+    },
+    {
+      "ascii": "Q",
+      "asciiCode": 81,
+      "dots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unicode": "⠟",
+      "unicodeCodePoint": "U+281F"
+    },
+    {
+      "ascii": "R",
+      "asciiCode": 82,
+      "dots": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "unicode": "⠗",
+      "unicodeCodePoint": "U+2817"
+    },
+    {
+      "ascii": "S",
+      "asciiCode": 83,
+      "dots": [
+        2,
+        3,
+        4
+      ],
+      "unicode": "⠎",
+      "unicodeCodePoint": "U+280E"
+    },
+    {
+      "ascii": "T",
+      "asciiCode": 84,
+      "dots": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "unicode": "⠞",
+      "unicodeCodePoint": "U+281E"
+    },
+    {
+      "ascii": "U",
+      "asciiCode": 85,
+      "dots": [
+        1,
+        3,
+        6
+      ],
+      "unicode": "⠥",
+      "unicodeCodePoint": "U+2825"
+    },
+    {
+      "ascii": "V",
+      "asciiCode": 86,
+      "dots": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "unicode": "⠧",
+      "unicodeCodePoint": "U+2827"
+    },
+    {
+      "ascii": "W",
+      "asciiCode": 87,
+      "dots": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠺",
+      "unicodeCodePoint": "U+283A"
+    },
+    {
+      "ascii": "X",
+      "asciiCode": 88,
+      "dots": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "unicode": "⠭",
+      "unicodeCodePoint": "U+282D"
+    },
+    {
+      "ascii": "Y",
+      "asciiCode": 89,
+      "dots": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠽",
+      "unicodeCodePoint": "U+283D"
+    },
+    {
+      "ascii": "Z",
+      "asciiCode": 90,
+      "dots": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "unicode": "⠵",
+      "unicodeCodePoint": "U+2835"
+    },
+    {
+      "ascii": "[",
+      "asciiCode": 91,
+      "dots": [
+        2,
+        4,
+        6
+      ],
+      "unicode": "⠪",
+      "unicodeCodePoint": "U+282A"
+    },
+    {
+      "ascii": "\\",
+      "asciiCode": 92,
+      "dots": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "unicode": "⠳",
+      "unicodeCodePoint": "U+2833"
+    },
+    {
+      "ascii": "]",
+      "asciiCode": 93,
+      "dots": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠻",
+      "unicodeCodePoint": "U+283B"
+    },
+    {
+      "ascii": "^",
+      "asciiCode": 94,
+      "dots": [
+        4,
+        5
+      ],
+      "unicode": "⠘",
+      "unicodeCodePoint": "U+2818"
+    },
+    {
+      "ascii": "_",
+      "asciiCode": 95,
+      "dots": [
+        4,
+        5,
+        6
+      ],
+      "unicode": "⠸",
+      "unicodeCodePoint": "U+2838"
+    }
+  ]
+}

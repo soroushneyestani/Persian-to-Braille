@@ -1,0 +1,356 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "music-braille-code-2015-authoritative-rule-seed",
+  "phase": "14.5b",
+  "authority": "Braille Authority of North America — Music Braille Code, 2015",
+  "encoding": {
+    "sourceCellEncoding": "BRF/Braille-ASCII tokens exactly as present in the authoritative BRF files",
+    "unicodeBraille": "DEFERRED_TO_PHASE_14_6",
+    "policy": "Do not infer Unicode cells from memory in Phase 14.5b. Encoder work must use an explicit, separately validated BRF-cell conversion table."
+  },
+  "families": [
+    {
+      "id": "MBR-NOTE-DURATION",
+      "status": "authoritative-seed",
+      "symbols": {
+        "wholeOr16th": {
+          "C": "y",
+          "D": "z",
+          "E": "&",
+          "F": "=",
+          "G": "(",
+          "A": "!",
+          "B": ")"
+        },
+        "halfOr32nd": {
+          "C": "n",
+          "D": "o",
+          "E": "p",
+          "F": "q",
+          "G": "r",
+          "A": "s",
+          "B": "t"
+        },
+        "quarterOr64th": {
+          "C": "?",
+          "D": ":",
+          "E": "$",
+          "F": "]",
+          "G": "\\",
+          "A": "[",
+          "B": "w"
+        },
+        "eighthOr128th": {
+          "C": "d",
+          "D": "e",
+          "E": "f",
+          "F": "g",
+          "G": "h",
+          "A": "i",
+          "B": "j"
+        }
+      },
+      "addedValueDot": "'",
+      "valueSigns": {
+        "eighthAndLarger": "^<1",
+        "sixteenthAndSmaller": ",<1",
+        "twoHundredFiftySixth": ";<1"
+      },
+      "semanticRules": [
+        "A note cell carries pitch name plus one of two rhythmic values; duration context must disambiguate the value.",
+        "A printed augmentation dot is emitted immediately after the note; multiple printed dots repeat the same dot cell."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 27,
+          "printedPage": "3",
+          "section": "2.1-2.4",
+          "table": "Table 2"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1275-1339; 3069-3110"
+        }
+      }
+    },
+    {
+      "id": "MBR-REST",
+      "status": "authoritative-seed",
+      "symbols": {
+        "wholeOr16th": "m",
+        "halfOr32nd": "u",
+        "quarterOr64th": "v",
+        "eighthOr128th": "x"
+      },
+      "addedValueDot": "'",
+      "semanticRules": [
+        "Printed rests use the Table 5 rest signs.",
+        "A dotted rest repeats the augmentation-dot cell immediately after the rest."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 29,
+          "printedPage": "5",
+          "section": "5.1-5.4",
+          "table": "Table 5"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1405-1416; 3466-3525"
+        }
+      }
+    },
+    {
+      "id": "MBR-OCTAVE",
+      "status": "authoritative-seed",
+      "prefixes": {
+        "sub": "@@",
+        "1": "@",
+        "2": "^",
+        "3": "_",
+        "4": "\"",
+        "5": ".",
+        "6": ";",
+        "7": ",",
+        "super": ",,"
+      },
+      "semanticRules": [
+        "The octave prefix immediately precedes the note when required.",
+        "The first note of a braille line and the first note after a numeric indicator or word sign require an octave mark.",
+        "For consecutive melodic notes: omit for intervals smaller than a fourth; require for skips larger than a fifth; for a fourth or fifth require only when the second note is in a different octave."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 28,
+          "printedPage": "4",
+          "section": "3.1-3.2.2",
+          "table": "Table 3"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1353-1364; 3251-3298"
+        }
+      }
+    },
+    {
+      "id": "MBR-ACCIDENTAL",
+      "status": "authoritative-seed",
+      "symbols": {
+        "sharp": "%",
+        "doubleSharp": "%%",
+        "flat": "<",
+        "doubleFlat": "<<",
+        "natural": "*",
+        "quarterSharp": "@%",
+        "quarterFlat": "@<",
+        "threeQuarterSharp": "_%",
+        "threeQuarterFlat": "_<"
+      },
+      "semanticRules": [
+        "An accidental immediately precedes the note or interval; only an octave mark may intervene.",
+        "An accidental remains in force until countermanded or measure end, for the same note at the same pitch."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 29,
+          "printedPage": "5",
+          "section": "6.1-6.3",
+          "table": "Table 6"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1431-1447; 3528-3559"
+        }
+      }
+    },
+    {
+      "id": "MBR-KEY-SIGNATURE",
+      "status": "authoritative-seed",
+      "examples": {
+        "threeSharps": "%%%",
+        "threeFlats": "<<<",
+        "fourSharps": "#d%",
+        "fourFlats": "#d<"
+      },
+      "semanticRules": [
+        "One through three accidentals are represented by the corresponding number of sharp or flat signs in succession.",
+        "Four or more accidentals use a numeric count followed by a single sharp or flat sign.",
+        "The first note after a key signature requires an octave mark."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 29,
+          "printedPage": "5",
+          "section": "6.5",
+          "table": "Table 6"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1431-1447; 3603-3623"
+        }
+      }
+    },
+    {
+      "id": "MBR-TIME-SIGNATURE",
+      "status": "authoritative-seed",
+      "examples": {
+        "4/4": "#d4",
+        "6/8": "#f8",
+        "common": ".c",
+        "cut": "_c"
+      },
+      "semanticRules": [
+        "A meter signature is space-delimited unless it immediately follows a key signature.",
+        "The first note after a meter signature requires an octave mark."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 30,
+          "printedPage": "6",
+          "section": "7.1",
+          "table": "Table 7"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1457-1475; 3656-3672"
+        }
+      }
+    },
+    {
+      "id": "MBR-NOTE-GROUPING",
+      "status": "authoritative-seed",
+      "symbols": {
+        "tripletSingleCell": "2",
+        "tripletThreeCell": "_3'",
+        "groupTwo": "_2'",
+        "groupTen": "_10'"
+      },
+      "semanticRules": [
+        "The single-cell triplet sign is generally used for a triplet of any value.",
+        "Irregular groups other than three use the multi-cell grouping form."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 30,
+          "printedPage": "6",
+          "section": "8.4-8.5",
+          "table": "Table 8"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "1483-1491"
+        }
+      },
+      "scopeNote": "Added during 14.5b because Phase 14.4 already admits triplets; encoding them requires Table 8."
+    },
+    {
+      "id": "MBR-CHORD-INTERVAL",
+      "status": "authoritative-seed",
+      "intervals": {
+        "2": "/",
+        "3": "+",
+        "4": "#",
+        "5": "9",
+        "6": "0",
+        "7": "3",
+        "8": "-"
+      },
+      "semanticRules": [
+        "For a chord of equal-valued notes, one note is written and the remaining notes are represented by interval signs relative to it.",
+        "Treble/alto-oriented transcription generally writes the uppermost note and reads intervals downward; bass/tenor-oriented transcription generally writes the lowermost note and reads intervals upward."
+      ],
+      "profileDecisionRequired": "MIDI does not carry print clef/hand semantics. The MIDI profile must freeze a deterministic written-note/interval-direction policy before the encoder emits chords.",
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 31,
+          "printedPage": "7",
+          "section": "9.1-9.2",
+          "table": "Table 9"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 2,
+          "lineWindow": "266-306"
+        }
+      }
+    },
+    {
+      "id": "MBR-TIE",
+      "status": "authoritative-seed",
+      "symbols": {
+        "single": "@c",
+        "chord": ".c"
+      },
+      "semanticRules": [
+        "A single-note tie is placed after the first tied note, after any augmentation dot and other specified post-note signs.",
+        "The chord-tie sign is used when more than one note is tied between two chords."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 31,
+          "printedPage": "7",
+          "section": "10.1-10.2",
+          "table": "Table 10"
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 2,
+          "lineWindow": "583-638"
+        }
+      }
+    },
+    {
+      "id": "MBR-MEASURE",
+      "status": "authoritative-seed",
+      "normalMeasureSeparator": " ",
+      "semanticRules": [
+        "A blank space is always left between measures in braille music."
+      ],
+      "source": {
+        "authority": "BANA Music Braille Code 2015",
+        "pdf": {
+          "file": "bana-mbc-2015-pdf.pdf",
+          "pdfPage": 67,
+          "printedPage": "43",
+          "section": "1.10",
+          "table": null
+        },
+        "brf": {
+          "archive": "bana-mbc-2015-brf.zip",
+          "volume": 1,
+          "lineWindow": "2809-2829"
+        }
+      }
+    }
+  ],
+  "knownProfileDecisionsBeforeEncoder": [
+    "MIDI enharmonic spelling policy must be represented explicitly in NotationScore or a deterministic profile layer.",
+    "MIDI chord written-note / interval-direction policy must be frozen because MBC 2015 normally depends on print clef/part context.",
+    "Generic numeric key/meter serialization must be implemented from an explicit numeric-cell contract rather than inferred from examples."
+  ]
+}

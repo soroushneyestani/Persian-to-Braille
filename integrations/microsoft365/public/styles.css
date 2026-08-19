@@ -183,3 +183,124 @@ footer p {
   font-size: 0.72rem;
   font-weight: 700;
 }
+
+/* Phase 14.8 — Word-only Braille Music preview */
+.music-panel {
+  margin-top: 18px;
+}
+
+.music-panel[hidden],
+.music-result[hidden],
+.music-error[hidden] {
+  display: none;
+}
+
+.music-help,
+.music-phase-note,
+.music-file-name {
+  color: var(--muted, #5f6368);
+}
+
+.music-file-row {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.music-file-row input[type="file"] {
+  max-width: 100%;
+}
+
+.music-file-name {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.music-actions {
+  margin-bottom: 14px;
+}
+
+.music-result {
+  display: grid;
+  gap: 8px;
+}
+
+.music-output {
+  min-height: 3.5rem;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.music-phase-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
+
+/* Phase 14.9c - scalable task-pane feature tabs */
+.feature-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 14px 0 10px;
+  padding: 0;
+  border-bottom: 1px solid #d8d8d8;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.feature-tab {
+  flex: 0 0 auto;
+  margin: 0 0 -1px;
+  padding: 9px 12px 8px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 4px 4px 0 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.feature-tab:hover {
+  background: rgba(0, 0, 0, 0.045);
+}
+
+.feature-tab[aria-selected="true"] {
+  border-bottom-color: #0f6cbd;
+  color: #0f548c;
+  background: rgba(15, 108, 189, 0.08);
+}
+
+.feature-tab:focus-visible {
+  outline: 2px solid #0f6cbd;
+  outline-offset: -2px;
+}
+
+.feature-tab[hidden],
+.feature-tab-hidden {
+  display: none !important;
+}
+
+/* Phase 14.9c — single-source-line MIDI selector */
+.music-line-selection {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 14px;
+}
+
+.music-line-selection[hidden] {
+  display: none;
+}
+
+.music-line-selection select {
+  width: 100%;
+  min-height: 36px;
+}
+
+.music-line-help {
+  margin: 0;
+  color: var(--muted, #5f6368);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
