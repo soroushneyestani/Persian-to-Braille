@@ -21,10 +21,11 @@
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
-    "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs"
+    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/music run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs test/music-public-api.test.mjs"
   },
   "dependencies": {
-    "@persian-braille/core": "workspace:*"
+    "@persian-braille/core": "workspace:*",
+    "@persian-braille/music": "workspace:*"
   },
   "description": "Public TypeScript SDK for Persian Braille translation backed by @persian-braille/core.",
   "license": "MIT",

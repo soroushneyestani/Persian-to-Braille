@@ -1,0 +1,164 @@
+{
+  "phase": "14.4",
+  "name": "Deterministic Notation Model and Quantization Audit",
+  "mode": "READ_ONLY",
+  "git": {
+    "branch": "phase14-braille-music",
+    "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "modified": [
+      "package.json",
+      "pnpm-lock.yaml"
+    ],
+    "untrackedCount": 17
+  },
+  "phase14_3bValidation": [
+    {
+      "command": [
+        "pnpm",
+        "--filter",
+        "@persian-braille/music",
+        "run",
+        "test"
+      ],
+      "exitCode": 0,
+      "output": "$ pnpm run build && node --test test/smf-parser.test.mjs\n$ tsc -p tsconfig.json\n✔ parses one note into the neutral semantic source model (2.149ms)\n✔ treats note-on velocity zero as note-off (0.1728ms)\n✔ supports running status (0.1993ms)\n✔ captures tempo, time signature, and key signature metadata (0.2138ms)\n✔ supports format 1 and derives parts from track plus channel (0.2074ms)\n✔ skips SysEx and unknown meta events by declared length (0.1269ms)\n✔ rejects format 2 (0.1205ms)\n✔ rejects SMPTE time division (0.0914ms)\n✔ fails closed on truncated track data (0.1694ms)\n✔ returns NO_MUSICAL_NOTES for a valid empty track (0.1838ms)\n✔ returns immutable success structures (0.1185ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.7489"
+    },
+    {
+      "command": [
+        "node",
+        "tools/architecture/validate-phase14-3b-midi-parser-foundation.mjs"
+      ],
+      "exitCode": 0,
+      "output": "Phase 14.3b MIDI Parser Foundation: PASS\nParser: internal ESM-native SMF parser\nAccepted: SMF type 0/1 + PPQN\nRejected: type 2 + SMPTE\nExternal MIDI runtime dependencies: 0\nNeutral semantic source model: PRESENT\nMicrosoft365 direct music dependency: NONE\nSDK music publication: DEFERRED\nNext: Phase 14.4 notation model + quantization foundation"
+    }
+  ],
+  "parserEvidence": {
+    "hasSemanticSource": true,
+    "hasSourceParts": true,
+    "hasTempo": true,
+    "hasTimeSignature": true,
+    "hasKeySignature": true,
+    "hasTickTiming": true,
+    "hasRunningStatus": true
+  },
+  "frozenQuantization": {
+    "supportedBaseValues": [
+      "whole",
+      "half",
+      "quarter",
+      "eighth",
+      "sixteenth",
+      "thirty-second",
+      "sixty-fourth"
+    ],
+    "singleDotted": true,
+    "simpleTriplet": true,
+    "otherTuplets": "unsupported-initially",
+    "maxSnapErrorQuarterUnits": "1/16",
+    "equalDistanceTieBreak": "longer-value",
+    "failure": "UNQUANTIZABLE_RHYTHM",
+    "nonZeroSnapDiagnostic": "RHYTHM_QUANTIZED"
+  },
+  "candidateNotationModel": {
+    "timingRepresentation": {
+      "kind": "integer notation units",
+      "unitsPerQuarter": 48,
+      "reason": "Use exact integer arithmetic for ordinary binary values and simple triplets; do not use floating-point timing."
+    },
+    "sourceEvidence": {
+      "rule": "Keep original MIDI ticks and all source meta events separate from derived notation."
+    },
+    "types": [
+      "NotationDiagnostic",
+      "NotationDuration",
+      "NotationPitchSource",
+      "NotationNote",
+      "NotationChord",
+      "NotationRest",
+      "NotationMeasure",
+      "NotationPart",
+      "NotationScore",
+      "NotationBuildFailure",
+      "NotationBuildResult"
+    ],
+    "eventModel": {
+      "noteOrChord": "Notes in the same source part with the same quantized onset form one simultaneous group.",
+      "rest": "Rests are derived from quantized gaps and decomposed deterministically into supported duration values.",
+      "measure": "Measures are constructed from the active time signature. If no time signature is present, 4/4 is an internal fallback with a diagnostic and is not claimed as source metadata.",
+      "parts": "Preserve parser sourcePart=(trackIndex,channel); do not infer engraved voices or hand assignment."
+    }
+  },
+  "candidateQuantizationPolicy": {
+    "onsetGrid": {
+      "unitsPerQuarter": 48,
+      "conversion": "nearest integer notation unit to tick*48/PPQN, using integer arithmetic and deterministic half-up tie handling",
+      "maxErrorQuarter": "1/16",
+      "maxErrorUnits": 3
+    },
+    "duration": {
+      "selection": "Choose the nearest explicitly supported duration candidate; equal-distance ties choose the longer value.",
+      "nonZeroAdjustmentDiagnostic": "RHYTHM_QUANTIZED",
+      "outsideToleranceFailure": "UNQUANTIZABLE_RHYTHM"
+    },
+    "restDecomposition": {
+      "algorithm": "Greedy longest-value decomposition constrained by measure boundaries, with deterministic fallback; if exact decomposition is impossible, fail rather than invent duration."
+    },
+    "polyphony": {
+      "sameOnset": "chord/simultaneous group",
+      "independentOverlap": "UNSUPPORTED_POLYPHONY"
+    }
+  },
+  "gridAnalysis": {
+    "trialUnitsPerQuarter": 48,
+    "gridIncompatibleDurations": [
+      {
+        "name": "dotted-sixty-fourth",
+        "units": 4.5,
+        "quarters": "3/32"
+      }
+    ],
+    "issueDetected": true,
+    "recommendedUnitsPerQuarter": 96
+  },
+  "recommendedFreeze": {
+    "unitsPerQuarter": 96,
+    "reason": "96 is the least simple binary-multiple grid that exactly represents the frozen base values, dotted 64th (9 units), and simple triplets through 32nd (4 units) without floating-point timing.",
+    "maxSnapErrorUnits": 6,
+    "maxSnapErrorQuarter": "1/16",
+    "durationTieBreak": "longer-value",
+    "onsetRounding": "nearest; exact half ties round forward"
+  },
+  "openDecisions": [
+    {
+      "id": "P14-4-GRID-DOTTED-64TH",
+      "status": "MUST_RESOLVE",
+      "question": "The frozen Phase 14.2b contract says single-dotted forms through 64th are supported, but a dotted 64th equals 3/32 quarter and cannot be represented on the otherwise natural 48-units-per-quarter integer grid.",
+      "safeChoices": [
+        "Use 96 notation units per quarter.",
+        "Narrow initial dotted support to dotted 32nd and longer."
+      ],
+      "recommendation": "Use 96 units per quarter. It exactly represents dotted 64ths and all currently frozen simple triplet values while retaining integer arithmetic."
+    },
+    {
+      "id": "P14-4-TRIPLET-FLOOR",
+      "status": "FREEZE_NEXT",
+      "question": "Freeze the smallest triplet value supported initially. The Phase 14.2b wording says simple triplet subdivision when representable but does not define a floor.",
+      "recommendation": "Support triplet half/quarter/eighth/sixteenth/thirty-second values initially; defer 64th-note triplets."
+    },
+    {
+      "id": "P14-4-MEASURE-CROSSING",
+      "status": "FREEZE_NEXT",
+      "question": "Freeze handling of a note that crosses a derived measure boundary before Music Braille tie encoding exists.",
+      "recommendation": "Split it into measure-bounded notation segments carrying a derived tie flag; actual Braille tie rendering remains deferred."
+    },
+    {
+      "id": "P14-4-TIME-SIGNATURE-CHANGE",
+      "status": "FREEZE_NEXT",
+      "question": "Freeze time-signature changes occurring away from an already derived measure boundary.",
+      "recommendation": "Require changes at a quantized measure boundary initially; otherwise return UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT."
+    }
+  ],
+  "blockers": [],
+  "decision": "READY_TO_FREEZE_PHASE14_4B_NOTATION_QUANTIZATION_CONTRACT",
+  "next": "Phase 14.4b should freeze 96 units/quarter, exact integer quantization, notation score/part/measure/event types, rest decomposition, chord grouping, overlap rejection, measure crossing split/tie metadata, and time-signature-change policy. Do not implement Music Braille cell rules or Word UI yet."
+}

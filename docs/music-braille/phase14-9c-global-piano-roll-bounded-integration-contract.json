@@ -1,0 +1,75 @@
+{
+  "phase": "14.9c-global-piano-roll-bounded-production-integration",
+  "status": "frozen",
+  "profileId": "GENERIC_MIDI_GLOBAL_PIANO_ROLL_BOUNDED_INTEGRATION_V1",
+  "productionRoute": {
+    "pipeline": "SMF parser -> global piano-roll reducer -> notation/rhythm/polyphony -> Braille",
+    "classifierMayRemoveNotes": false,
+    "reducerDiagnosticsSurfaced": true,
+    "outputMusicalParts": 1
+  },
+  "simultaneity": {
+    "chordIdentity": "corrected canonical onset + corrected release",
+    "sameOnsetSameReleaseDifferentPitch": "one chord",
+    "sameOnsetDifferentRelease": "distinct simultaneous actions in the same piano part",
+    "serialization": "existing H4C/H4D in-accord machinery where required",
+    "noteDroppingToHomogenizeChord": false,
+    "trackChannelPartitionRestored": false,
+    "staffHandVoiceClaim": false
+  },
+  "topology": {
+    "baseline": "shared-boundary rhythm baseline",
+    "olderH2LocalIntervalBaselineForRendering": false,
+    "postSolveRecheck": true,
+    "topologyChangingSolution": "fail closed"
+  },
+  "solver": {
+    "wholeSongUnboundedSearch": false,
+    "forestSolver": "existing exact tree dynamic programming",
+    "cyclicSolver": "exact deterministic bounded solver",
+    "allowedAlgorithm": "variable elimination or equivalent exact bounded method",
+    "exactBelowComplexityGuard": true,
+    "hardComplexityGuardRequired": true,
+    "complexityGuardExceeded": "explicit fail-closed complexity error",
+    "unboundedRecursiveFallback": false,
+    "objectiveOrder": [
+      "minimum maximum absolute boundary correction",
+      "minimum total absolute boundary correction",
+      "minimum corrected boundary count",
+      "minimum total represented note duration",
+      "lexicographically lowest boundary vector"
+    ]
+  },
+  "denseShortDuration": {
+    "allReducerNotesRemainEligible": true,
+    "reintroduceInstrumentFiltering": false,
+    "reintroduceChannel10Filtering": false,
+    "reintroduceProgramFiltering": false,
+    "widenCorrectionTolerance": false,
+    "widenDurationVocabulary": false,
+    "currentCorrectionTolerance": "<= 6 units",
+    "unrepresentableMaterial": "fail closed and audit separately"
+  },
+  "triplet": {
+    "status": "paused until post-integration re-audit",
+    "durationTripletAsProvenance": "not accepted as sufficient evidence"
+  },
+  "realWorld": {
+    "testMid": "one-part success target; same-onset different-release must not form an invalid mixed-duration chord",
+    "oxygeneFiles": "must complete bounded notation processing and expose the next genuine downstream blocker without CPU-bound whole-song search",
+    "dHO0606": "do not filter retained notes; explicit rhythm-representability failure is acceptable evidence",
+    "freezeExactRealWorldBrf": false,
+    "thirdPartyMidiCommitted": false
+  },
+  "preserved": {
+    "H4C": true,
+    "H4D": true,
+    "H5": true,
+    "sharedBoundaryTolerance": "<= 6 units",
+    "durationVocabulary": "unchanged",
+    "microsoft365DirectMusicImport": false,
+    "musicXml": "Phase 19"
+  },
+  "decision": "READY_FOR_PHASE14_9C_GLOBAL_PIANO_ROLL_BOUNDED_PRODUCTION_INTEGRATION_IMPLEMENTATION",
+  "commit": "DO_NOT_COMMIT_YET"
+}

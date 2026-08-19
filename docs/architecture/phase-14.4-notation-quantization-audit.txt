@@ -1,0 +1,49 @@
+======================================================================================================================
+PHASE 14.4 — DETERMINISTIC NOTATION MODEL + QUANTIZATION AUDIT
+======================================================================================================================
+
+Branch : phase14-braille-music
+HEAD   : d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976
+
+[PHASE 14.3b REGRESSION]
+  Music package tests : PASS
+  Parser validator    : PASS
+
+[PARSER EVIDENCE]
+  hasSemanticSource: YES
+  hasSourceParts: YES
+  hasTempo: YES
+  hasTimeSignature: YES
+  hasKeySignature: YES
+  hasTickTiming: YES
+  hasRunningStatus: YES
+
+[GRID ANALYSIS]
+  Trial grid                         : 48 units / quarter
+  Frozen dotted 64th                 : 3/32 quarter
+  Dotted 64th on 48-unit grid        : 4.5 units -> NOT INTEGER
+  Recommended grid                   : 96 units / quarter
+  Max snap error at 96-unit grid     : 6 units (= 1/16 quarter)
+  Floating-point notation timing     : DISALLOWED
+
+[NOTATION FOUNDATION]
+  Source MIDI ticks remain preserved separately.
+  Derived notation uses exact integer units.
+  Same onset within source part -> chord/simultaneous group.
+  Independent overlap -> UNSUPPORTED_POLYPHONY.
+  Rests -> deterministic gap decomposition.
+  Measures -> explicit time signature; internal 4/4 fallback if absent.
+
+[OPEN DECISIONS FOR 14.4b]
+  - P14-4-GRID-DOTTED-64TH: Use 96 units per quarter. It exactly represents dotted 64ths and all currently frozen simple triplet values while retaining integer arithmetic.
+  - P14-4-TRIPLET-FLOOR: Support triplet half/quarter/eighth/sixteenth/thirty-second values initially; defer 64th-note triplets.
+  - P14-4-MEASURE-CROSSING: Split it into measure-bounded notation segments carrying a derived tie flag; actual Braille tie rendering remains deferred.
+  - P14-4-TIME-SIGNATURE-CHANGE: Require changes at a quantized measure boundary initially; otherwise return UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT.
+
+Blockers: NONE
+Decision: READY_TO_FREEZE_PHASE14_4B_NOTATION_QUANTIZATION_CONTRACT
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage14-4-notation-quantization-audit.txt
+JSON : stage14-4-notation-quantization-audit.json
+======================================================================================================================

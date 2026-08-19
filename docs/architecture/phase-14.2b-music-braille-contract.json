@@ -1,0 +1,158 @@
+{
+  "phase": "14.2b",
+  "status": "frozen",
+  "name": "Braille Music MIDI-to-Word Contract",
+  "scope": {
+    "host": "word-desktop-windows",
+    "input": [
+      "mid",
+      "midi"
+    ],
+    "musicXml": "deferred",
+    "otherOfficeHosts": "excluded",
+    "web": "excluded",
+    "mac": "excluded"
+  },
+  "architecture": {
+    "pipeline": [
+      "local-midi-file",
+      "smf-parser",
+      "normalized-midi-events",
+      "neutral-music-model",
+      "notation-policy",
+      "music-braille-engine",
+      "unicode-braille",
+      "public-sdk",
+      "word-taskpane",
+      "word-selection-insert"
+    ],
+    "directMidiToBrailleMapping": false,
+    "officePrivateMusicEngineDependency": false,
+    "futureInputAdaptersReuseSemanticModel": true
+  },
+  "midi": {
+    "standard": "MIDI 1.0 Standard MIDI File",
+    "formats": [
+      0,
+      1
+    ],
+    "timeDivision": "PPQN",
+    "rejectFormats": [
+      2
+    ],
+    "rejectSmpteDivision": true,
+    "validateContentNotOnlyExtension": true
+  },
+  "quantization": {
+    "supportedBaseValues": [
+      "whole",
+      "half",
+      "quarter",
+      "eighth",
+      "sixteenth",
+      "thirty-second",
+      "sixty-fourth"
+    ],
+    "singleDotted": true,
+    "simpleTriplet": true,
+    "otherTuplets": "unsupported-initially",
+    "maxSnapErrorQuarterUnits": "1/16",
+    "equalDistanceTieBreak": "longer-value",
+    "failure": "UNQUANTIZABLE_RHYTHM",
+    "nonZeroSnapDiagnostic": "RHYTHM_QUANTIZED"
+  },
+  "pitchSpelling": {
+    "explicitKey": "key-consistent-minimum-accidentals",
+    "keyTieBreak": "key-accidental-family",
+    "missingKeyContext": "C-major/A-minor",
+    "missingKeyChromaticPreference": "sharps",
+    "missingKeyDiagnostic": "KEY_SIGNATURE_ABSENT",
+    "canonicalizationDiagnostic": "PITCH_SPELLING_CANONICALIZED",
+    "originalEnharmonicRecoveryClaimed": false,
+    "activePitchBend": "UNSUPPORTED_PITCH_BEND"
+  },
+  "partsAndPolyphony": {
+    "sourcePartIdentity": [
+      "trackIndex",
+      "channel"
+    ],
+    "tracksEqualNotationVoices": false,
+    "sameQuantizedOnsetFormsChord": true,
+    "inferVoiceNumbers": false,
+    "inferHandAssignment": false,
+    "independentOverlapFailure": "UNSUPPORTED_POLYPHONY"
+  },
+  "missingMetadata": {
+    "tempo": {
+      "renderIfAbsent": false,
+      "diagnostic": "TEMPO_METADATA_ABSENT"
+    },
+    "timeSignature": {
+      "internalFallback": "4/4",
+      "renderAsSourceIfAbsent": false,
+      "diagnostic": "TIME_SIGNATURE_ABSENT"
+    },
+    "keySignature": {
+      "renderAsSourceIfAbsent": false,
+      "diagnostic": "KEY_SIGNATURE_ABSENT"
+    }
+  },
+  "truthfulness": {
+    "doNotInfer": [
+      "original-enharmonic-spelling",
+      "dynamics-from-velocity",
+      "articulation-from-note-length",
+      "slurs",
+      "fingering",
+      "hand-assignment",
+      "engraved-voice-numbers",
+      "print-layout",
+      "editorial-notation"
+    ]
+  },
+  "ui": {
+    "existingTaskPane": true,
+    "wordOnly": true,
+    "defaultMode": "full-supported-notation",
+    "customMode": true,
+    "requiredFeaturesCannotBeDisabledIfNeededForValidOutput": true,
+    "actions": [
+      "choose-midi-file",
+      "generate-braille",
+      "preview",
+      "insert-into-word"
+    ],
+    "filePickerAcceptanceTestRequired": true
+  },
+  "failures": [
+    "INVALID_MIDI_FILE",
+    "UNSUPPORTED_MIDI_FORMAT",
+    "UNSUPPORTED_MIDI_TIME_DIVISION",
+    "NO_MUSICAL_NOTES",
+    "UNQUANTIZABLE_RHYTHM",
+    "UNSUPPORTED_POLYPHONY",
+    "UNSUPPORTED_PITCH_BEND",
+    "UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT"
+  ],
+  "diagnostics": [
+    "RHYTHM_QUANTIZED",
+    "PITCH_SPELLING_CANONICALIZED",
+    "TEMPO_METADATA_ABSENT",
+    "TIME_SIGNATURE_ABSENT",
+    "KEY_SIGNATURE_ABSENT",
+    "SOURCE_PART_DERIVED_FROM_TRACK_CHANNEL",
+    "NON_NOTATIONAL_MIDI_EVENT_OMITTED",
+    "LOSSY_MIDI_TO_NOTATION_RECONSTRUCTION"
+  ],
+  "nonGoals": [
+    "MusicXML",
+    "PDF/OCR",
+    "audio-transcription",
+    "native-score-editor-formats",
+    "Excel-music",
+    "PowerPoint-music",
+    "Word-web",
+    "Word-mac",
+    "Marketplace"
+  ]
+}

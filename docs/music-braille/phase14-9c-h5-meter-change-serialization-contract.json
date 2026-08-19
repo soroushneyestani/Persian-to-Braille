@@ -1,0 +1,83 @@
+{
+  "phase": "14.9c-H5",
+  "kind": "measure-boundary-meter-change-serialization-contract",
+  "status": "frozen",
+  "profileId": "MBC_MEASURE_BOUNDARY_METER_CHANGE_V1",
+  "authoritativeSource": {
+    "title": "Music Braille Code 2015",
+    "locator": {
+      "section": "7.1 Meter Signatures",
+      "pdfPage": 87,
+      "printPage": 63
+    },
+    "facts": [
+      "A meter signature is separated by blanks except when it immediately follows a key signature.",
+      "A change of meter is placed where it occurs and preferably with the following note.",
+      "The first note following a meter signature requires an octave mark."
+    ]
+  },
+  "inputBoundary": {
+    "source": "NotationMeasure numerator/denominator/timeSignatureFromSource",
+    "builderInvariant": "time-signature changes must already land on derived measure boundaries",
+    "midMeasureChange": "remain fail-closed"
+  },
+  "genericMidiSerialization": {
+    "strategy": "numeric-simple-meter",
+    "commonTimeInference": false,
+    "cutTimeInference": false,
+    "supportedDenominators": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "initialMeter": "existing behavior preserved",
+    "afterTickZero": "emit at the start of the first measure using the new effective numerator/denominator when the effective meter differs from the previous measure",
+    "redundantIdenticalSourceEvent": "do not emit an additional signature when effective meter is unchanged",
+    "firstFollowingNote": "force octave mark",
+    "measureAccidentalReset": "preserved",
+    "keyAndMeterAtSameBoundary": "key precedes meter with no intervening blank; Phase 14 still keeps key changes after tick 0 fail-closed"
+  },
+  "statefulEncoderExtension": {
+    "measureMayCarryMeterChange": true,
+    "meterChangeEmittedBeforeFirstMeasureEvent": true,
+    "forceOctaveContextAfterMeter": true,
+    "existingNumericMeterEmitterReused": true,
+    "noNewMeterCellMapping": true
+  },
+  "diagnostics": {
+    "serializedMeterChange": "METER_CHANGE_SERIALIZED",
+    "lossDisclosure": "MIDI does not preserve whether print used common/cut-time symbols; numeric serialization remains the frozen profile."
+  },
+  "failurePolicy": {
+    "midMeasure": "UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT",
+    "unsupportedDenominator": "UNSUPPORTED_METER_DENOMINATOR",
+    "combinedMeter": "UNSUPPORTED_COMBINED_METER",
+    "keyChangeAfterTickZero": "remain fail-closed"
+  },
+  "realWorldAcceptance": {
+    "file": "d_HO0606.mid",
+    "sourceChange": {
+      "tick": 3072,
+      "notationUnit": 768,
+      "from": "4/4",
+      "to": "12/8",
+      "measureBoundary": true
+    },
+    "expectedAfterImplementation": "notation and bridge progress past the current meter-change blocker; 12/8 is emitted numerically and the next note has an octave mark",
+    "copyrightedMidiCommitted": false
+  },
+  "syntheticImplementationGates": [
+    "4/4 to 12/8 change at a measure boundary serializes numerically",
+    "first note after changed meter receives an octave mark",
+    "unchanged meter on the next measure is not redundantly emitted",
+    "mid-measure meter change remains fail-closed",
+    "4/4 is not converted to common time",
+    "2/2 is not converted to cut time",
+    "existing initial-meter output remains exact"
+  ],
+  "decision": "READY_FOR_PHASE14_9C_H5_METER_CHANGE_SERIALIZATION_IMPLEMENTATION"
+}

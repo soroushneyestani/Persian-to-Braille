@@ -1,0 +1,644 @@
+{
+  "phase": "14.9a",
+  "name": "Word Music Insertion + Windows Live Validation Baseline Audit",
+  "mode": "READ-ONLY SOURCE AUDIT + REGRESSION EXECUTION",
+  "git": {
+    "branch": "phase14-braille-music",
+    "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "stagedPaths": []
+  },
+  "records": {
+    "musicPane": {
+      "path": "integrations/microsoft365/src/taskpane/music-pane.ts",
+      "exists": true,
+      "sha256": "ca13e32887a8053d6fcd03a1e667da30d7982873d1690f2c7ecbb92a025b7a91",
+      "lineCount": 230,
+      "hits": [
+        {
+          "line": 77,
+          "text": "export function createWordMusicTaskPane(",
+          "pattern": "createWordMusicTaskPane"
+        },
+        {
+          "line": 23,
+          "text": "previewSelectedMidi(): Promise<void>;",
+          "pattern": "previewSelectedMidi"
+        },
+        {
+          "line": 146,
+          "text": "async previewSelectedMidi() {",
+          "pattern": "previewSelectedMidi"
+        },
+        {
+          "line": 223,
+          "text": "void controller.previewSelectedMidi();",
+          "pattern": "previewSelectedMidi"
+        },
+        {
+          "line": 192,
+          "text": "ui.unicodeOutput.textContent = result.unicodeBraille;",
+          "pattern": "unicodeBraille"
+        },
+        {
+          "line": 21,
+          "text": "setHost(hostKind: WordMusicHostKind): void;",
+          "pattern": "setHost"
+        },
+        {
+          "line": 112,
+          "text": "setHost(hostKind) {",
+          "pattern": "setHost"
+        },
+        {
+          "line": 17,
+          "text": "arrayBuffer(): Promise<ArrayBuffer>;",
+          "pattern": "arrayBuffer"
+        },
+        {
+          "line": 168,
+          "text": "let bytes: ArrayBuffer;",
+          "pattern": "arrayBuffer"
+        },
+        {
+          "line": 170,
+          "text": "bytes = await file.arrayBuffer();",
+          "pattern": "arrayBuffer"
+        }
+      ]
+    },
+    "taskpaneMain": {
+      "path": "integrations/microsoft365/src/taskpane/main.ts",
+      "exists": true,
+      "sha256": "d7c1a21df54981a3628a5d2e55e77475ab4902228494b9f53e52be0134d39be0",
+      "lineCount": 222,
+      "hits": []
+    },
+    "taskpaneHtml": {
+      "path": "integrations/microsoft365/public/taskpane.html",
+      "exists": true,
+      "sha256": "960d316d25eed8fb6b058045de432d3b923e906162ba8c2dd00d94ab03df7083",
+      "lineCount": 245,
+      "hits": [
+        {
+          "line": 65,
+          "text": "id=\"music-braille-section\"",
+          "pattern": "music-braille-section"
+        },
+        {
+          "line": 90,
+          "text": "<button id=\"music-preview-midi\" type=\"button\" disabled>",
+          "pattern": "music-preview-midi"
+        },
+        {
+          "line": 198,
+          "text": "id=\"replace-selection\"",
+          "pattern": "replace-selection"
+        },
+        {
+          "line": 205,
+          "text": "id=\"insert-after-selection\"",
+          "pattern": "insert-after-selection"
+        }
+      ]
+    },
+    "wordRuntime": {
+      "path": "integrations/microsoft365/src/word/runtime.ts",
+      "exists": true,
+      "sha256": "4a65e575ddf481e9800f37199aa897713d6a2d4853077d7d92a2ec24b1be48fc",
+      "lineCount": 231,
+      "hits": [
+        {
+          "line": 17,
+          "text": "mutateSelection(",
+          "pattern": "mutateSelection"
+        },
+        {
+          "line": 178,
+          "text": "async mutateSelection(",
+          "pattern": "mutateSelection"
+        },
+        {
+          "line": 61,
+          "text": "getSelection():",
+          "pattern": "getSelection"
+        },
+        {
+          "line": 168,
+          "text": ".getSelection();",
+          "pattern": "getSelection"
+        },
+        {
+          "line": 196,
+          "text": ".getSelection();",
+          "pattern": "getSelection"
+        },
+        {
+          "line": 53,
+          "text": "insertText(",
+          "pattern": "insertText"
+        },
+        {
+          "line": 208,
+          "text": "range.insertText(",
+          "pattern": "insertText"
+        },
+        {
+          "line": 14,
+          "text": "readSelectionText():",
+          "pattern": "readSelectionText"
+        },
+        {
+          "line": 154,
+          "text": "async readSelectionText() {",
+          "pattern": "readSelectionText"
+        },
+        {
+          "line": 164,
+          "text": "return currentWord.run(",
+          "pattern": "Word\\.run"
+        },
+        {
+          "line": 192,
+          "text": "return currentWord.run(",
+          "pattern": "Word\\.run"
+        },
+        {
+          "line": 7,
+          "text": "| \"selection-changed\";",
+          "pattern": "selection-changed"
+        },
+        {
+          "line": 205,
+          "text": "return \"selection-changed\";",
+          "pattern": "selection-changed"
+        },
+        {
+          "line": 2,
+          "text": "| \"Replace\"",
+          "pattern": "Replace"
+        },
+        {
+          "line": 3,
+          "text": "| \"After\";",
+          "pattern": "After"
+        }
+      ]
+    },
+    "wordAdapter": {
+      "path": "integrations/microsoft365/src/word/adapter.ts",
+      "exists": true,
+      "sha256": "45028189023e1ae8cc5bc7ff99e8e18aa27cee0c98cf963b1f16bf1aaf2be397",
+      "lineCount": 167,
+      "hits": [
+        {
+          "line": 143,
+          "text": "async replaceSelection(",
+          "pattern": "replaceSelection"
+        },
+        {
+          "line": 155,
+          "text": "async insertAfterSelection(",
+          "pattern": "insertAfterSelection"
+        },
+        {
+          "line": 82,
+          "text": ".mutateSelection(",
+          "pattern": "mutateSelection"
+        },
+        {
+          "line": 94,
+          "text": ".selectionChanged,",
+          "pattern": "selectionChanged"
+        }
+      ]
+    },
+    "wordService": {
+      "path": "integrations/microsoft365/src/word/selection-service.ts",
+      "exists": true,
+      "sha256": "2d25f542f92a69f087c6a7fe177e91e0e1c1a9d2fc77ebe271718cc7ab700e11",
+      "lineCount": 100,
+      "hits": [
+        {
+          "line": 76,
+          "text": "async replaceWithBraille(",
+          "pattern": "replaceWithBraille"
+        },
+        {
+          "line": 88,
+          "text": "async insertBrailleAfter(",
+          "pattern": "insertBrailleAfter"
+        },
+        {
+          "line": 25,
+          "text": "async translateSelection():",
+          "pattern": "translateSelection"
+        },
+        {
+          "line": 11,
+          "text": "PersianBrailleWordSelectionService,",
+          "pattern": "selection"
+        },
+        {
+          "line": 12,
+          "text": "WordSelectionTranslationResult,",
+          "pattern": "selection"
+        },
+        {
+          "line": 15,
+          "text": "export function createWordSelectionService(",
+          "pattern": "selection"
+        },
+        {
+          "line": 21,
+          "text": "): PersianBrailleWordSelectionService {",
+          "pattern": "selection"
+        },
+        {
+          "line": 25,
+          "text": "async translateSelection():",
+          "pattern": "selection"
+        },
+        {
+          "line": 26,
+          "text": "Promise<WordSelectionTranslationResult> {",
+          "pattern": "selection"
+        },
+        {
+          "line": 27,
+          "text": "const selection =",
+          "pattern": "selection"
+        },
+        {
+          "line": 28,
+          "text": "await host.readSelection();",
+          "pattern": "selection"
+        },
+        {
+          "line": 30,
+          "text": "if (!selection.ok) {",
+          "pattern": "selection"
+        },
+        {
+          "line": 35,
+          "text": "selection,",
+          "pattern": "selection"
+        },
+        {
+          "line": 40,
+          "text": "selection.text.length ===",
+          "pattern": "selection"
+        },
+        {
+          "line": 46,
+          "text": "code: \"EMPTY_SELECTION\",",
+          "pattern": "selection"
+        },
+        {
+          "line": 54,
+          "text": "selection.text,",
+          "pattern": "selection"
+        },
+        {
+          "line": 63,
+          "text": "selection.text,",
+          "pattern": "selection"
+        },
+        {
+          "line": 71,
+          "text": "selection.text,",
+          "pattern": "selection"
+        },
+        {
+          "line": 78,
+          "text": "import(\"./types.js\").WordSelectionTranslationSuccess,",
+          "pattern": "selection"
+        },
+        {
+          "line": 81,
+          "text": ".replaceSelection(",
+          "pattern": "selection"
+        },
+        {
+          "line": 90,
+          "text": "import(\"./types.js\").WordSelectionTranslationSuccess,",
+          "pattern": "selection"
+        },
+        {
+          "line": 93,
+          "text": ".insertAfterSelection(",
+          "pattern": "selection"
+        }
+      ]
+    },
+    "wordTypes": {
+      "path": "integrations/microsoft365/src/word/types.ts",
+      "exists": true,
+      "sha256": "92304bc6b80909b470b4eb66b7a16d155954d03983b2638fc9bc387e38d5c2d0",
+      "lineCount": 127,
+      "hits": [
+        {
+          "line": 31,
+          "text": "export interface WordSelectionReadSuccess {",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 36,
+          "text": "export type WordSelectionReadResult =",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 37,
+          "text": "| WordSelectionReadSuccess",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 50,
+          "text": "Promise<WordSelectionReadResult>;",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 75,
+          "text": "export interface WordSelectionTranslationSuccess {",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 105,
+          "text": "export type WordSelectionTranslationResult =",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 106,
+          "text": "| WordSelectionTranslationSuccess",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 111,
+          "text": "export interface PersianBrailleWordSelectionService {",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 116,
+          "text": "Promise<WordSelectionTranslationResult>;",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 120,
+          "text": "WordSelectionTranslationSuccess,",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 125,
+          "text": "WordSelectionTranslationSuccess,",
+          "pattern": "WordSelection"
+        },
+        {
+          "line": 52,
+          "text": "replaceSelection(",
+          "pattern": "replace"
+        },
+        {
+          "line": 54,
+          "text": "replacementText: string,",
+          "pattern": "replace"
+        },
+        {
+          "line": 118,
+          "text": "replaceWithBraille(",
+          "pattern": "replace"
+        },
+        {
+          "line": 57,
+          "text": "insertAfterSelection(",
+          "pattern": "insert"
+        },
+        {
+          "line": 59,
+          "text": "insertedText: string,",
+          "pattern": "insert"
+        },
+        {
+          "line": 123,
+          "text": "insertBrailleAfter(",
+          "pattern": "insert"
+        },
+        {
+          "line": 14,
+          "text": "\"SELECTION_CHANGED\",",
+          "pattern": "SELECTION_CHANGED"
+        },
+        {
+          "line": 16,
+          "text": "\"DOCUMENT_WRITE_FAILED\",",
+          "pattern": "DOCUMENT_WRITE_FAILED"
+        }
+      ]
+    },
+    "wordTests": {
+      "path": "integrations/microsoft365/test/word-selection.test.mjs",
+      "exists": true,
+      "sha256": "78111910ca639d2b3debab7ab4c583deadc8fbaaac16d15209f7f903ce4d928e",
+      "lineCount": 730,
+      "hits": [
+        {
+          "line": 86,
+          "text": "location === \"Replace\"",
+          "pattern": "replace"
+        },
+        {
+          "line": 409,
+          "text": "\"replace writes the exact successful SDK Unicode Braille result\",",
+          "pattern": "replace"
+        },
+        {
+          "line": 435,
+          "text": ".replaceWithBraille(",
+          "pattern": "replace"
+        },
+        {
+          "line": 449,
+          "text": "\"Replace\",",
+          "pattern": "replace"
+        },
+        {
+          "line": 536,
+          "text": ".replaceWithBraille(",
+          "pattern": "replace"
+        },
+        {
+          "line": 572,
+          "text": ".replaceSelection(",
+          "pattern": "replace"
+        },
+        {
+          "line": 640,
+          "text": "\"Replace\"",
+          "pattern": "replace"
+        },
+        {
+          "line": 699,
+          "text": "\"Replace\",",
+          "pattern": "replace"
+        },
+        {
+          "line": 716,
+          "text": "\"Replace\",",
+          "pattern": "replace"
+        },
+        {
+          "line": 725,
+          "text": "\"insert:Replace:never-written\",",
+          "pattern": "replace"
+        },
+        {
+          "line": 460,
+          "text": "\"insert-after writes the exact successful SDK Unicode Braille result\",",
+          "pattern": "insert-after"
+        },
+        {
+          "line": 507,
+          "text": "\"selection change blocks stale preview mutation\",",
+          "pattern": "selection change"
+        },
+        {
+          "line": 589,
+          "text": "\"Office runtime port uses Word.run, load/sync, and exact stale-selection guard\",",
+          "pattern": "Word\\.run"
+        },
+        {
+          "line": 507,
+          "text": "\"selection change blocks stale preview mutation\",",
+          "pattern": "stale"
+        },
+        {
+          "line": 589,
+          "text": "\"Office runtime port uses Word.run, load/sync, and exact stale-selection guard\",",
+          "pattern": "stale"
+        }
+      ]
+    },
+    "musicTaskpaneTests": {
+      "path": "integrations/microsoft365/test/music-taskpane.test.mjs",
+      "exists": true,
+      "sha256": "4ae025fe08179db2be8f54b46d05d4c83bf13f826f91f328968cc70bc62a8668",
+      "lineCount": 232,
+      "hits": []
+    },
+    "manifest": {
+      "path": "integrations/microsoft365/manifest.xml",
+      "exists": true,
+      "sha256": "af93b3f11c123cf63e4432f256cebdbcaa207b625f9d5d054091325ee3b94441",
+      "lineCount": 182,
+      "hits": [
+        {
+          "line": 37,
+          "text": "<Permissions>ReadWriteDocument</Permissions>",
+          "pattern": "ReadWriteDocument"
+        },
+        {
+          "line": 28,
+          "text": "<Host Name=\"Document\"/>",
+          "pattern": "Host Name=.Document"
+        }
+      ]
+    }
+  },
+  "wordRuntime": {
+    "hasWordRun": true,
+    "hasGetSelection": true,
+    "hasInsertText": true,
+    "hasMutateSelection": true,
+    "supportsReplace": true,
+    "supportsAfter": true,
+    "requiresExpectedTextForMutation": true
+  },
+  "existingWordMutation": {
+    "adapterReplace": true,
+    "adapterInsertAfter": true,
+    "serviceReplace": true,
+    "serviceInsertAfter": true,
+    "staleSelectionGuard": true
+  },
+  "musicPreview": {
+    "wordOnly": true,
+    "holdsUnicodePreview": true,
+    "currentInsertionControl": false,
+    "sourceSelectionSnapshot": false
+  },
+  "manifest": {
+    "wordApi11": false,
+    "readWriteDocument": true,
+    "wordHost": true,
+    "baseWordApiRequirement": false,
+    "baseApplicationSpecificRequirementSets": false,
+    "sharedReadWriteDocumentPermission": true,
+    "wordApi11RuntimeGuard": true,
+    "excelApi11RuntimeGuard": true,
+    "powerPointApi15RuntimeGuard": true,
+    "writePermissionSufficientForPhase14_9": true,
+    "architecture": "MULTI_HOST_BASE_PLUS_RUNTIME_API_GUARDS"
+  },
+  "priorWindowsEvidence": {
+    "files": [
+      {
+        "path": "docs/architecture/phase-10.5b-windows-live-sideload-evidence.md",
+        "sha256": "2ad711501956edbb858ccaaeb4395c979fdccfe4f3fea73eb055e9c18a8072c8",
+        "lineCount": 186
+      },
+      {
+        "path": "tools/architecture/validate-phase10-windows-live-evidence.mjs",
+        "sha256": "383df305192d773065e2ae11a6ef18c45989d36ede00cac146d312a73bbbd3de",
+        "lineCount": 269
+      },
+      {
+        "path": "tools/architecture/validate-phase9-word-sideload-evidence.mjs",
+        "sha256": "9ed3dcc6600008d4135fa06bcf65a49266795d306d3018fd7a6ce4c492ecd333",
+        "lineCount": 153
+      }
+    ],
+    "pattern": {
+      "priorWordWindowsPass": true,
+      "priorReplacePass": true,
+      "priorInsertAfterPass": true,
+      "manualWindowsVerification": true,
+      "webMacNotReusable": true
+    }
+  },
+  "architectureObservation": "Music preview has no source-selection snapshot, so the existing Persian-text stale-selection mutation contract must not be reused as if the MIDI file came from a Word selection.",
+  "recommendedInsertionContract": {
+    "scope": "Word only",
+    "button": "Insert Music Braille",
+    "source": "the exact successful SDK unicodeBraille preview already held by the music pane",
+    "destination": "current Word selection/caret at click time",
+    "wordApiOperation": "Word.run -> document.getSelection() -> range.insertText(unicodeBraille, 'Replace') -> context.sync()",
+    "selectedTextBehavior": "replace the current selection; at a collapsed caret this inserts at the caret",
+    "staleGuard": "not applicable: MIDI source is a local file, not a Word selection snapshot",
+    "failureDomain": "host",
+    "failureCode": "DOCUMENT_WRITE_FAILED",
+    "musicRecomputationOnInsert": false,
+    "directMusicEngineImportFromMicrosoft365": false,
+    "excelMusic": "excluded",
+    "powerPointMusic": "excluded",
+    "liveAcceptance": [
+      "Word desktop Windows task pane opens",
+      "Braille Music section visible only in Word",
+      ".mid/.midi picker works",
+      "canonical MIDI preview equals Phase 14.7 Unicode fixture",
+      "Insert Music Braille writes exact preview at current Word selection/caret",
+      "selected text is replaced by exact preview",
+      "collapsed caret inserts exact preview",
+      "invalid MIDI remains preview failure and insertion stays unavailable",
+      "Excel/PowerPoint retain existing text-only behavior"
+    ],
+    "musicXml": "reserved-for-phase-19"
+  },
+  "blockers": [],
+  "decision": "READY_FOR_PHASE14_9B_WORD_MUSIC_INSERTION_MATERIALIZATION",
+  "next": "Phase 14.9b materializes a dedicated Word Music insertion port that writes the exact successful Unicode Music Braille preview at the current selection/caret without recomputing translation. Phase 14.9c then records real Windows Word live evidence.",
+  "auditCorrection": {
+    "id": "PHASE14_9A1_MULTIHOST_MANIFEST_FALSE_POSITIVE",
+    "reason": "The original audit incorrectly required a base-manifest WordApi 1.1 requirement. The current shared multi-host architecture intentionally contains no application-specific API requirement sets in the base manifest; WordApi 1.1 is enforced by runtime readiness. ReadWriteDocument and the Document host are present.",
+    "semanticsChanged": false,
+    "manifestChanged": false,
+    "insertionContractChanged": false
+  }
+}

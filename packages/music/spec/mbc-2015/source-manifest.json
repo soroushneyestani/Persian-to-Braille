@@ -1,0 +1,52 @@
+{
+  "id": "music-braille-code-2015-source-manifest",
+  "phase": "14.5b",
+  "sources": {
+    "pdf": {
+      "name": "bana-mbc-2015-pdf.pdf",
+      "sha256": "34d769731f69ed7586f96b221ca4e22d3e009d36e8024008dfe0fc935348595c",
+      "vendored": false
+    },
+    "brfZip": {
+      "name": "bana-mbc-2015-brf.zip",
+      "sha256": "b936fd42d257eefaa0a7f90975588e60e97c4e0371f7a04f0e108441075401e3",
+      "vendored": false,
+      "members": [
+        {
+          "name": "5-09651-01 Music Braille Code 2015 Vol 1.brf",
+          "uncompressedBytes": 101381,
+          "sha256": "515babea1d0c5843383e6c350f7c55ce2e416195b38f1f6a75b0397aa22e7cbe"
+        },
+        {
+          "name": "5-09651-01 Music Braille Code 2015 Vol 2.brf",
+          "uncompressedBytes": 110018,
+          "sha256": "8b6a4c15a3d6c47a8ec8ed5765bcad6aa0e16e652ee24b1ad2f57a448310eefc"
+        },
+        {
+          "name": "5-09651-01 Music Braille Code 2015 Vol 3.brf",
+          "uncompressedBytes": 105476,
+          "sha256": "0cc0fcce7292f9b7d6a4f70a9c33a4cac56b27131ea8464675f3dfeafc5d06b0"
+        },
+        {
+          "name": "5-09651-01 Music Braille Code 2015 Vol 4.brf",
+          "uncompressedBytes": 88605,
+          "sha256": "196232bad3374c4b415a902ca22e0627a483aee60acee0a5b88b7ce526d84a68"
+        },
+        {
+          "name": "5-09651-01 Music Braille Code 2015 Vol 5.brf",
+          "uncompressedBytes": 110020,
+          "sha256": "ae849285947024336e3255716d8d231a524a0aaff44e3b61b523db2acc179891"
+        }
+      ]
+    }
+  },
+  "crossCheckPolicy": "Rule facts in the seed were selected from MBC 2015 PDF tables/paragraphs and checked against the official BRF representation. Full source files remain external.",
+  "modelCompatibilityObservation": {
+    "hasAccidentalOrSpellingSurface": true,
+    "hasClefOrHandSurface": false,
+    "hasChordSurface": true,
+    "hasTieSurface": true,
+    "hasTimeSignatureSurface": true,
+    "hasKeySignatureSurface": true
+  }
+}

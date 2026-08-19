@@ -1,0 +1,51 @@
+====================================================================================================================
+PHASE 14.3 — MIDI PARSER DEPENDENCY + PACKAGING AUDIT
+====================================================================================================================
+
+Branch : phase14-braille-music
+HEAD   : d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976
+
+[CURRENT DELIVERY ARCHITECTURE]
+  Workspace packages        : 2
+  Existing MIDI deps        : 0
+  packages/music exists     : NO
+  Import-map HTML surfaces  : 4
+  Existing bundler families : NONE
+
+[CANDIDATE COMPARISON]
+  midi-file      : raw parser / MIT / 0 runtime deps / CommonJS main
+  @tonejs/midi   : browser-friendly / higher-level / depends on midi-file
+  internal parser: ESM-native / exact frozen subset / project owns parser risk
+
+[RECOMMENDATION]
+  Preferred: internal-smf-parser
+  Reason   : The current browser delivery is import-map/ESM oriented and no existing bundler was detected. midi-file is semantically attractive but publishes a CommonJS main entry; adding a bundler solely for one dependency would enlarge Phase 14. A narrow internal parser for the frozen SMF 0/1 + PPQN subset keeps the runtime ESM-native and deterministic.
+  Tone.js  : NOT PREFERRED
+
+[MODULE BOUNDARY]
+  packages/music -> platform-agnostic engine/parser foundation
+  packages/sdk   -> public Music Braille facade
+  microsoft365   -> SDK only; direct packages/music import DISALLOWED
+
+[IF INTERNAL PARSER IS SELECTED]
+  - MThd validation and exact header-length handling
+  - SMF format 0/1 acceptance and format 2 rejection
+  - PPQN division acceptance and SMPTE rejection
+  - MTrk chunk length bounds
+  - variable-length quantity decoding with overflow/bounds checks
+  - running status
+  - note-on and note-off including note-on velocity 0
+  - channel-event length handling
+  - meta events including tempo/time signature/key signature/end-of-track
+  - SysEx event length skipping
+  - unknown meta-event length skipping
+  - absolute tick accumulation per track
+  - truncated/malformed input failure without partial success
+
+Blockers: NONE
+Decision: READY_FOR_PHASE14_3B_MIDI_PARSER_FOUNDATION
+
+READ-ONLY AUDIT COMPLETE — DO NOT COMMIT OUTPUTS YET.
+Text : stage14-3-midi-parser-dependency-audit.txt
+JSON : stage14-3-midi-parser-dependency-audit.json
+====================================================================================================================

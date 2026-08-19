@@ -1,0 +1,21 @@
+{
+  "name": "@persian-braille/music",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Internal platform-agnostic MIDI and Music Braille engine for Persian-to-Braille.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+    "test": "pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs test/midi-to-braille.test.mjs test/rhythm-coherence.test.mjs test/part-measure-in-accord.test.mjs test/meter-change-serialization.test.mjs test/midi-piano-roll-reducer.test.mjs test/midi-source-line.test.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -174,15 +174,22 @@ const sdkRoot =
     ).href,
   );
 
-assert.deepEqual(
-  Object.keys(sdkRoot).sort(),
-  [
-    "PersianBrailleReverseTranslationError",
-    "PersianBrailleTranslationError",
-    "createPersianBrailleReverseTranslator",
-    "createPersianBrailleTranslator",
-  ],
-);
+for (const historicalRuntime of [
+  "PersianBrailleReverseTranslationError",
+  "PersianBrailleTranslationError",
+  "createPersianBrailleReverseTranslator",
+  "createPersianBrailleTranslator",
+]) {
+  assert.equal(
+    typeof sdkRoot[historicalRuntime],
+    "function",
+    `Historical Phase 13 SDK runtime export missing: ${historicalRuntime}`,
+  );
+}
+
+// Later public SDK milestones may add package-root runtime exports without
+// invalidating the Phase 13 reverse-translation surface.
+
 
 const reverse =
   sdkRoot.createPersianBrailleReverseTranslator();

@@ -11,12 +11,24 @@ import {
 } from "../index.js";
 
 import {
+  createWordMusicInsertionService,
+} from "../word/music-insertion.js";
+
+import {
   createOfficeTaskPaneController,
 } from "./controller.js";
 
 import {
   createOfficeTaskPaneDomView,
 } from "./dom-view.js";
+
+import {
+  createWordMusicTaskPane,
+} from "./music-pane.js";
+
+import {
+  createFeatureTabController,
+} from "./feature-tabs.js";
 
 import {
   evaluateOfficeTaskPaneReadiness,
@@ -52,8 +64,27 @@ const view =
     document,
   );
 
+const musicPane =
+  createWordMusicTaskPane(
+    document,
+  );
+
+const featureTabs =
+  createFeatureTabController(
+    document,
+  );
+
 const wordRuntime =
   createGlobalOfficeWordRuntime();
+
+const wordMusicInsertionService =
+  createWordMusicInsertionService(
+    wordRuntime,
+  );
+
+musicPane.setInsertionService(
+  wordMusicInsertionService,
+);
 
 const excelRuntime =
   createGlobalOfficeExcelRuntime();
@@ -132,6 +163,14 @@ if (!office) {
             });
             return;
           }
+
+          musicPane.setHost(
+            readiness.hostKind,
+          );
+
+          featureTabs.setHost(
+            readiness.hostKind,
+          );
 
           let controller;
 

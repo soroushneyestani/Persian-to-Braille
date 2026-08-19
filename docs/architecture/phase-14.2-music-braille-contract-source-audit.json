@@ -1,0 +1,5156 @@
+{
+  "phase": "14.2",
+  "name": "Music Braille Contract and Source Audit",
+  "mode": "READ_ONLY",
+  "git": {
+    "branch": "phase14-braille-music",
+    "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+    "allowedExistingUntracked": [
+      "stage14-1-music-braille-architecture-audit.json",
+      "stage14-1-music-braille-architecture-audit.txt"
+    ]
+  },
+  "phase14_1Interpretation": {
+    "existingMicrosoft365MidiDependencyCount": 0,
+    "existingMicrosoft365MidiDependencies": [],
+    "currentSourceMusicMidiHits": [],
+    "legacyMusicMidiEvidencePresent": true,
+    "legacyMusicXmlEvidencePresent": true,
+    "interpretation": "Phase 14.1's musicImplementationAlreadyPresent=true and musicXmlCurrentlyReferenced=true are lexical-history signals, not evidence of a current MIDI implementation. The current Microsoft365 package has no MIDI dependency."
+  },
+  "currentOfficeSourceEvidence": {
+    "integrations/microsoft365/public/taskpane.html": {
+      "exportedNames": [],
+      "snippets": {
+        "<button": [
+          {
+            "line": 47,
+            "snippet": [
+              {
+                "line": 44,
+                "text": "    </header>"
+              },
+              {
+                "line": 45,
+                "text": ""
+              },
+              {
+                "line": 46,
+                "text": "    <section class=\"actions\" aria-label=\"Translation actions\">"
+              },
+              {
+                "line": 47,
+                "text": "      <button"
+              },
+              {
+                "line": 48,
+                "text": "        id=\"translate-selection\""
+              },
+              {
+                "line": 49,
+                "text": "        type=\"button\""
+              },
+              {
+                "line": 50,
+                "text": "        disabled"
+              }
+            ]
+          },
+          {
+            "line": 54,
+            "snippet": [
+              {
+                "line": 51,
+                "text": "      >"
+              },
+              {
+                "line": 52,
+                "text": "        Translate Selection"
+              },
+              {
+                "line": 53,
+                "text": "      </button>"
+              },
+              {
+                "line": 54,
+                "text": "      <button"
+              },
+              {
+                "line": 55,
+                "text": "        id=\"clear-output\""
+              },
+              {
+                "line": 56,
+                "text": "        type=\"button\""
+              },
+              {
+                "line": 57,
+                "text": "      >"
+              }
+            ]
+          },
+          {
+            "line": 119,
+            "snippet": [
+              {
+                "line": 116,
+                "text": "        class=\"document-actions\""
+              },
+              {
+                "line": 117,
+                "text": "        aria-label=\"Braille result actions\""
+              },
+              {
+                "line": 118,
+                "text": "      >"
+              },
+              {
+                "line": 119,
+                "text": "        <button"
+              },
+              {
+                "line": 120,
+                "text": "          id=\"copy-braille\""
+              },
+              {
+                "line": 121,
+                "text": "          type=\"button\""
+              },
+              {
+                "line": 122,
+                "text": "          disabled"
+              }
+            ]
+          },
+          {
+            "line": 126,
+            "snippet": [
+              {
+                "line": 123,
+                "text": "        >"
+              },
+              {
+                "line": 124,
+                "text": "          Copy Braille"
+              },
+              {
+                "line": 125,
+                "text": "        </button>"
+              },
+              {
+                "line": 126,
+                "text": "        <button"
+              },
+              {
+                "line": 127,
+                "text": "          id=\"replace-selection\""
+              },
+              {
+                "line": 128,
+                "text": "          type=\"button\""
+              },
+              {
+                "line": 129,
+                "text": "          disabled"
+              }
+            ]
+          }
+        ],
+        "Braille": [
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "    name=\"viewport\""
+              },
+              {
+                "line": 7,
+                "text": "    content=\"width=device-width, initial-scale=1\""
+              },
+              {
+                "line": 8,
+                "text": "  >"
+              },
+              {
+                "line": 9,
+                "text": "  <title>Persian-to-Braille for Microsoft 365</title>"
+              },
+              {
+                "line": 10,
+                "text": "  <link rel=\"stylesheet\" href=\"./styles.css\">"
+              },
+              {
+                "line": 11,
+                "text": "  <script"
+              },
+              {
+                "line": 12,
+                "text": "    src=\"https://appsforoffice.microsoft.com/lib/1/hosted/office.js\""
+              }
+            ]
+          },
+          {
+            "line": 18,
+            "snippet": [
+              {
+                "line": 15,
+                "text": "  <script type=\"importmap\">"
+              },
+              {
+                "line": 16,
+                "text": "  {"
+              },
+              {
+                "line": 17,
+                "text": "    \"imports\": {"
+              },
+              {
+                "line": 18,
+                "text": "      \"@persian-braille/sdk\": \"./vendor/sdk/index.js\","
+              },
+              {
+                "line": 19,
+                "text": "      \"@persian-braille/core\": \"./vendor/core/index.js\""
+              },
+              {
+                "line": 20,
+                "text": "    }"
+              },
+              {
+                "line": 21,
+                "text": "  }"
+              }
+            ]
+          },
+          {
+            "line": 19,
+            "snippet": [
+              {
+                "line": 16,
+                "text": "  {"
+              },
+              {
+                "line": 17,
+                "text": "    \"imports\": {"
+              },
+              {
+                "line": 18,
+                "text": "      \"@persian-braille/sdk\": \"./vendor/sdk/index.js\","
+              },
+              {
+                "line": 19,
+                "text": "      \"@persian-braille/core\": \"./vendor/core/index.js\""
+              },
+              {
+                "line": 20,
+                "text": "    }"
+              },
+              {
+                "line": 21,
+                "text": "  }"
+              },
+              {
+                "line": 22,
+                "text": "  </script>"
+              }
+            ]
+          },
+          {
+            "line": 32,
+            "snippet": [
+              {
+                "line": 29,
+                "text": "  <main class=\"app-shell\">"
+              },
+              {
+                "line": 30,
+                "text": "    <header class=\"app-header\">"
+              },
+              {
+                "line": 31,
+                "text": "      <p class=\"eyebrow\">Microsoft 365 Add-in</p>"
+              },
+              {
+                "line": 32,
+                "text": "      <h1>Persian-to-Braille</h1>"
+              },
+              {
+                "line": 33,
+                "text": "      <p class=\"intro\">"
+              },
+              {
+                "line": 34,
+                "text": "        Translate the current supported Office selection with the shared"
+              },
+              {
+                "line": 35,
+                "text": "        Persian Braille SDK."
+              }
+            ]
+          }
+        ],
+        "script": [
+          {
+            "line": 11,
+            "snippet": [
+              {
+                "line": 8,
+                "text": "  >"
+              },
+              {
+                "line": 9,
+                "text": "  <title>Persian-to-Braille for Microsoft 365</title>"
+              },
+              {
+                "line": 10,
+                "text": "  <link rel=\"stylesheet\" href=\"./styles.css\">"
+              },
+              {
+                "line": 11,
+                "text": "  <script"
+              },
+              {
+                "line": 12,
+                "text": "    src=\"https://appsforoffice.microsoft.com/lib/1/hosted/office.js\""
+              },
+              {
+                "line": 13,
+                "text": "    type=\"text/javascript\""
+              },
+              {
+                "line": 14,
+                "text": "  ></script>"
+              }
+            ]
+          },
+          {
+            "line": 13,
+            "snippet": [
+              {
+                "line": 10,
+                "text": "  <link rel=\"stylesheet\" href=\"./styles.css\">"
+              },
+              {
+                "line": 11,
+                "text": "  <script"
+              },
+              {
+                "line": 12,
+                "text": "    src=\"https://appsforoffice.microsoft.com/lib/1/hosted/office.js\""
+              },
+              {
+                "line": 13,
+                "text": "    type=\"text/javascript\""
+              },
+              {
+                "line": 14,
+                "text": "  ></script>"
+              },
+              {
+                "line": 15,
+                "text": "  <script type=\"importmap\">"
+              },
+              {
+                "line": 16,
+                "text": "  {"
+              }
+            ]
+          },
+          {
+            "line": 14,
+            "snippet": [
+              {
+                "line": 11,
+                "text": "  <script"
+              },
+              {
+                "line": 12,
+                "text": "    src=\"https://appsforoffice.microsoft.com/lib/1/hosted/office.js\""
+              },
+              {
+                "line": 13,
+                "text": "    type=\"text/javascript\""
+              },
+              {
+                "line": 14,
+                "text": "  ></script>"
+              },
+              {
+                "line": 15,
+                "text": "  <script type=\"importmap\">"
+              },
+              {
+                "line": 16,
+                "text": "  {"
+              },
+              {
+                "line": 17,
+                "text": "    \"imports\": {"
+              }
+            ]
+          },
+          {
+            "line": 15,
+            "snippet": [
+              {
+                "line": 12,
+                "text": "    src=\"https://appsforoffice.microsoft.com/lib/1/hosted/office.js\""
+              },
+              {
+                "line": 13,
+                "text": "    type=\"text/javascript\""
+              },
+              {
+                "line": 14,
+                "text": "  ></script>"
+              },
+              {
+                "line": 15,
+                "text": "  <script type=\"importmap\">"
+              },
+              {
+                "line": 16,
+                "text": "  {"
+              },
+              {
+                "line": 17,
+                "text": "    \"imports\": {"
+              },
+              {
+                "line": 18,
+                "text": "      \"@persian-braille/sdk\": \"./vendor/sdk/index.js\","
+              }
+            ]
+          }
+        ],
+        "input": [],
+        "preview": [
+          {
+            "line": 68,
+            "snippet": [
+              {
+                "line": 65,
+                "text": "      hidden"
+              },
+              {
+                "line": 66,
+                "text": "      aria-labelledby=\"result-title\""
+              },
+              {
+                "line": 67,
+                "text": "    >"
+              },
+              {
+                "line": 68,
+                "text": "      <h2 id=\"result-title\">Braille preview</h2>"
+              },
+              {
+                "line": 69,
+                "text": ""
+              },
+              {
+                "line": 70,
+                "text": "      <dl class=\"result-grid\">"
+              },
+              {
+                "line": 71,
+                "text": "        <div>"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/taskpane/controller.ts": {
+      "exportedNames": [
+        "ClipboardPort",
+        "OfficeTaskPaneController",
+        "OfficeTaskPaneFailurePresentation",
+        "OfficeTaskPaneSelectionService",
+        "OfficeTaskPaneSuccessPresentation",
+        "OfficeTaskPaneView",
+        "TaskPaneTranslationSuccess",
+        "WordTaskPaneController",
+        "WordTaskPaneFailurePresentation",
+        "WordTaskPaneSuccessPresentation",
+        "WordTaskPaneView",
+        "createOfficeTaskPaneController",
+        "createWordTaskPaneController"
+      ],
+      "snippets": {
+        "translate": [
+          {
+            "line": 76,
+            "snippet": [
+              {
+                "line": 73,
+                "text": "export interface OfficeTaskPaneController {"
+              },
+              {
+                "line": 74,
+                "text": "  initialize(): void;"
+              },
+              {
+                "line": 75,
+                "text": ""
+              },
+              {
+                "line": 76,
+                "text": "  translateSelection():"
+              },
+              {
+                "line": 77,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 78,
+                "text": ""
+              },
+              {
+                "line": 79,
+                "text": "  copyBraille():"
+              }
+            ]
+          },
+          {
+            "line": 131,
+            "snippet": [
+              {
+                "line": 128,
+                "text": "  TPreview extends"
+              },
+              {
+                "line": 129,
+                "text": "    TaskPaneTranslationSuccess,"
+              },
+              {
+                "line": 130,
+                "text": "> {"
+              },
+              {
+                "line": 131,
+                "text": "  translateSelection():"
+              },
+              {
+                "line": 132,
+                "text": "    Promise<"
+              },
+              {
+                "line": 133,
+                "text": "      TaskPaneTranslationResult<"
+              },
+              {
+                "line": 134,
+                "text": "        TPreview"
+              }
+            ]
+          },
+          {
+            "line": 170,
+            "snippet": [
+              {
+                "line": 167,
+                "text": "  const message ="
+              },
+              {
+                "line": 168,
+                "text": "    shape.message ??"
+              },
+              {
+                "line": 169,
+                "text": "    shape.error?.message ??"
+              },
+              {
+                "line": 170,
+                "text": "    \"The selected text could not be translated by the current Persian Braille profile.\";"
+              },
+              {
+                "line": 171,
+                "text": ""
+              },
+              {
+                "line": 172,
+                "text": "  return {"
+              },
+              {
+                "line": 173,
+                "text": "    domain: \"translation\","
+              }
+            ]
+          },
+          {
+            "line": 222,
+            "snippet": [
+              {
+                "line": 219,
+                "text": "    capabilities.hostKind ==="
+              },
+              {
+                "line": 220,
+                "text": "      \"excel\""
+              },
+              {
+                "line": 221,
+                "text": "  ) {"
+              },
+              {
+                "line": 222,
+                "text": "    return \"Select one non-empty plain-text cell in Excel, then choose Translate Selection.\";"
+              },
+              {
+                "line": 223,
+                "text": "  }"
+              },
+              {
+                "line": 224,
+                "text": ""
+              },
+              {
+                "line": 225,
+                "text": "  return `Select Persian text in ${capabilities.hostLabel}, then choose Translate Selection.`;"
+              }
+            ]
+          }
+        ],
+        "host": [
+          {
+            "line": 2,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "import type {"
+              },
+              {
+                "line": 2,
+                "text": "  OfficeHostCapabilities,"
+              },
+              {
+                "line": 3,
+                "text": "  OfficeHostFailure,"
+              },
+              {
+                "line": 4,
+                "text": "  OfficeMutationResult,"
+              },
+              {
+                "line": 5,
+                "text": "  OfficeSdkTranslationSuccess,"
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "import type {"
+              },
+              {
+                "line": 2,
+                "text": "  OfficeHostCapabilities,"
+              },
+              {
+                "line": 3,
+                "text": "  OfficeHostFailure,"
+              },
+              {
+                "line": 4,
+                "text": "  OfficeMutationResult,"
+              },
+              {
+                "line": 5,
+                "text": "  OfficeSdkTranslationSuccess,"
+              },
+              {
+                "line": 6,
+                "text": "} from \"../shared/types.js\";"
+              }
+            ]
+          },
+          {
+            "line": 14,
+            "snippet": [
+              {
+                "line": 11,
+                "text": ""
+              },
+              {
+                "line": 12,
+                "text": "import {"
+              },
+              {
+                "line": 13,
+                "text": "  WORD_TASK_PANE_CAPABILITIES,"
+              },
+              {
+                "line": 14,
+                "text": "} from \"./host-config.js\";"
+              },
+              {
+                "line": 15,
+                "text": ""
+              },
+              {
+                "line": 16,
+                "text": "export interface OfficeTaskPaneSuccessPresentation {"
+              },
+              {
+                "line": 17,
+                "text": "  readonly sourceText: string;"
+              }
+            ]
+          },
+          {
+            "line": 26,
+            "snippet": [
+              {
+                "line": 23,
+                "text": ""
+              },
+              {
+                "line": 24,
+                "text": "export interface OfficeTaskPaneFailurePresentation {"
+              },
+              {
+                "line": 25,
+                "text": "  readonly domain:"
+              },
+              {
+                "line": 26,
+                "text": "    | \"host\""
+              },
+              {
+                "line": 27,
+                "text": "    | \"application\""
+              },
+              {
+                "line": 28,
+                "text": "    | \"translation\""
+              },
+              {
+                "line": 29,
+                "text": "    | \"clipboard\";"
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "} from \"../shared/types.js\";"
+              },
+              {
+                "line": 7,
+                "text": ""
+              },
+              {
+                "line": 8,
+                "text": "import type {"
+              },
+              {
+                "line": 9,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 10,
+                "text": "} from \"../word/types.js\";"
+              },
+              {
+                "line": 11,
+                "text": ""
+              },
+              {
+                "line": 12,
+                "text": "import {"
+              }
+            ]
+          },
+          {
+            "line": 10,
+            "snippet": [
+              {
+                "line": 7,
+                "text": ""
+              },
+              {
+                "line": 8,
+                "text": "import type {"
+              },
+              {
+                "line": 9,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 10,
+                "text": "} from \"../word/types.js\";"
+              },
+              {
+                "line": 11,
+                "text": ""
+              },
+              {
+                "line": 12,
+                "text": "import {"
+              },
+              {
+                "line": 13,
+                "text": "  WORD_TASK_PANE_CAPABILITIES,"
+              }
+            ]
+          },
+          {
+            "line": 13,
+            "snippet": [
+              {
+                "line": 10,
+                "text": "} from \"../word/types.js\";"
+              },
+              {
+                "line": 11,
+                "text": ""
+              },
+              {
+                "line": 12,
+                "text": "import {"
+              },
+              {
+                "line": 13,
+                "text": "  WORD_TASK_PANE_CAPABILITIES,"
+              },
+              {
+                "line": 14,
+                "text": "} from \"./host-config.js\";"
+              },
+              {
+                "line": 15,
+                "text": ""
+              },
+              {
+                "line": 16,
+                "text": "export interface OfficeTaskPaneSuccessPresentation {"
+              }
+            ]
+          },
+          {
+            "line": 464,
+            "snippet": [
+              {
+                "line": 461,
+                "text": "  });"
+              },
+              {
+                "line": 462,
+                "text": "}"
+              },
+              {
+                "line": 463,
+                "text": ""
+              },
+              {
+                "line": 464,
+                "text": "export type WordTaskPaneSuccessPresentation ="
+              },
+              {
+                "line": 465,
+                "text": "  OfficeTaskPaneSuccessPresentation;"
+              },
+              {
+                "line": 466,
+                "text": ""
+              },
+              {
+                "line": 467,
+                "text": "export type WordTaskPaneFailurePresentation ="
+              }
+            ]
+          }
+        ],
+        "selection": [
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "} from \"../shared/types.js\";"
+              },
+              {
+                "line": 7,
+                "text": ""
+              },
+              {
+                "line": 8,
+                "text": "import type {"
+              },
+              {
+                "line": 9,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 10,
+                "text": "} from \"../word/types.js\";"
+              },
+              {
+                "line": 11,
+                "text": ""
+              },
+              {
+                "line": 12,
+                "text": "import {"
+              }
+            ]
+          },
+          {
+            "line": 76,
+            "snippet": [
+              {
+                "line": 73,
+                "text": "export interface OfficeTaskPaneController {"
+              },
+              {
+                "line": 74,
+                "text": "  initialize(): void;"
+              },
+              {
+                "line": 75,
+                "text": ""
+              },
+              {
+                "line": 76,
+                "text": "  translateSelection():"
+              },
+              {
+                "line": 77,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 78,
+                "text": ""
+              },
+              {
+                "line": 79,
+                "text": "  copyBraille():"
+              }
+            ]
+          },
+          {
+            "line": 82,
+            "snippet": [
+              {
+                "line": 79,
+                "text": "  copyBraille():"
+              },
+              {
+                "line": 80,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 81,
+                "text": ""
+              },
+              {
+                "line": 82,
+                "text": "  replaceSelection():"
+              },
+              {
+                "line": 83,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 84,
+                "text": ""
+              },
+              {
+                "line": 85,
+                "text": "  insertAfterSelection():"
+              }
+            ]
+          },
+          {
+            "line": 85,
+            "snippet": [
+              {
+                "line": 82,
+                "text": "  replaceSelection():"
+              },
+              {
+                "line": 83,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 84,
+                "text": ""
+              },
+              {
+                "line": 85,
+                "text": "  insertAfterSelection():"
+              },
+              {
+                "line": 86,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 87,
+                "text": "}"
+              },
+              {
+                "line": 88,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "insert": [
+          {
+            "line": 85,
+            "snippet": [
+              {
+                "line": 82,
+                "text": "  replaceSelection():"
+              },
+              {
+                "line": 83,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 84,
+                "text": ""
+              },
+              {
+                "line": 85,
+                "text": "  insertAfterSelection():"
+              },
+              {
+                "line": 86,
+                "text": "    Promise<void>;"
+              },
+              {
+                "line": 87,
+                "text": "}"
+              },
+              {
+                "line": 88,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 142,
+            "snippet": [
+              {
+                "line": 139,
+                "text": "    preview: TPreview,"
+              },
+              {
+                "line": 140,
+                "text": "  ): Promise<OfficeMutationResult>;"
+              },
+              {
+                "line": 141,
+                "text": ""
+              },
+              {
+                "line": 142,
+                "text": "  insertBrailleAfter?("
+              },
+              {
+                "line": 143,
+                "text": "    preview: TPreview,"
+              },
+              {
+                "line": 144,
+                "text": "  ): Promise<OfficeMutationResult>;"
+              },
+              {
+                "line": 145,
+                "text": "}"
+              }
+            ]
+          },
+          {
+            "line": 436,
+            "snippet": [
+              {
+                "line": 433,
+                "text": "      );"
+              },
+              {
+                "line": 434,
+                "text": "    },"
+              },
+              {
+                "line": 435,
+                "text": ""
+              },
+              {
+                "line": 436,
+                "text": "    async insertAfterSelection() {"
+              },
+              {
+                "line": 437,
+                "text": "      if ("
+              },
+              {
+                "line": 438,
+                "text": "        !capabilities"
+              },
+              {
+                "line": 439,
+                "text": "          .canInsertAfter ||"
+              }
+            ]
+          },
+          {
+            "line": 439,
+            "snippet": [
+              {
+                "line": 436,
+                "text": "    async insertAfterSelection() {"
+              },
+              {
+                "line": 437,
+                "text": "      if ("
+              },
+              {
+                "line": 438,
+                "text": "        !capabilities"
+              },
+              {
+                "line": 439,
+                "text": "          .canInsertAfter ||"
+              },
+              {
+                "line": 440,
+                "text": "        !service"
+              },
+              {
+                "line": 441,
+                "text": "          .insertBrailleAfter"
+              },
+              {
+                "line": 442,
+                "text": "      ) {"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/taskpane/dom-view.ts": {
+      "exportedNames": [
+        "OfficeTaskPaneDomView",
+        "WordTaskPaneDomView",
+        "createOfficeTaskPaneDomView",
+        "createWordTaskPaneDomView"
+      ],
+      "snippets": {
+        "getElementById": [
+          {
+            "line": 53,
+            "snippet": [
+              {
+                "line": 50,
+                "text": "  id: string,"
+              },
+              {
+                "line": 51,
+                "text": "): T {"
+              },
+              {
+                "line": 52,
+                "text": "  const element ="
+              },
+              {
+                "line": 53,
+                "text": "    document.getElementById("
+              },
+              {
+                "line": 54,
+                "text": "      id,"
+              },
+              {
+                "line": 55,
+                "text": "    );"
+              },
+              {
+                "line": 56,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "addEventListener": [
+          {
+            "line": 226,
+            "snippet": [
+              {
+                "line": 223,
+                "text": "        OfficeTaskPaneController,"
+              },
+              {
+                "line": 224,
+                "text": "    ) {"
+              },
+              {
+                "line": 225,
+                "text": "      ui.translateButton"
+              },
+              {
+                "line": 226,
+                "text": "        .addEventListener("
+              },
+              {
+                "line": 227,
+                "text": "          \"click\","
+              },
+              {
+                "line": 228,
+                "text": "          () => {"
+              },
+              {
+                "line": 229,
+                "text": "            void controller"
+              }
+            ]
+          },
+          {
+            "line": 235,
+            "snippet": [
+              {
+                "line": 232,
+                "text": "        );"
+              },
+              {
+                "line": 233,
+                "text": ""
+              },
+              {
+                "line": 234,
+                "text": "      ui.copyButton"
+              },
+              {
+                "line": 235,
+                "text": "        .addEventListener("
+              },
+              {
+                "line": 236,
+                "text": "          \"click\","
+              },
+              {
+                "line": 237,
+                "text": "          () => {"
+              },
+              {
+                "line": 238,
+                "text": "            void controller"
+              }
+            ]
+          },
+          {
+            "line": 244,
+            "snippet": [
+              {
+                "line": 241,
+                "text": "        );"
+              },
+              {
+                "line": 242,
+                "text": ""
+              },
+              {
+                "line": 243,
+                "text": "      ui.replaceButton"
+              },
+              {
+                "line": 244,
+                "text": "        .addEventListener("
+              },
+              {
+                "line": 245,
+                "text": "          \"click\","
+              },
+              {
+                "line": 246,
+                "text": "          () => {"
+              },
+              {
+                "line": 247,
+                "text": "            void controller"
+              }
+            ]
+          },
+          {
+            "line": 253,
+            "snippet": [
+              {
+                "line": 250,
+                "text": "        );"
+              },
+              {
+                "line": 251,
+                "text": ""
+              },
+              {
+                "line": 252,
+                "text": "      ui.insertButton"
+              },
+              {
+                "line": 253,
+                "text": "        .addEventListener("
+              },
+              {
+                "line": 254,
+                "text": "          \"click\","
+              },
+              {
+                "line": 255,
+                "text": "          () => {"
+              },
+              {
+                "line": 256,
+                "text": "            void controller"
+              }
+            ]
+          }
+        ],
+        "button": [
+          {
+            "line": 15,
+            "snippet": [
+              {
+                "line": 12,
+                "text": "interface TaskPaneElements {"
+              },
+              {
+                "line": 13,
+                "text": "  readonly readyState:"
+              },
+              {
+                "line": 14,
+                "text": "    HTMLElement;"
+              },
+              {
+                "line": 15,
+                "text": "  readonly translateButton:"
+              },
+              {
+                "line": 16,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 17,
+                "text": "  readonly clearButton:"
+              },
+              {
+                "line": 18,
+                "text": "    HTMLButtonElement;"
+              }
+            ]
+          },
+          {
+            "line": 16,
+            "snippet": [
+              {
+                "line": 13,
+                "text": "  readonly readyState:"
+              },
+              {
+                "line": 14,
+                "text": "    HTMLElement;"
+              },
+              {
+                "line": 15,
+                "text": "  readonly translateButton:"
+              },
+              {
+                "line": 16,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 17,
+                "text": "  readonly clearButton:"
+              },
+              {
+                "line": 18,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 19,
+                "text": "  readonly copyButton:"
+              }
+            ]
+          },
+          {
+            "line": 17,
+            "snippet": [
+              {
+                "line": 14,
+                "text": "    HTMLElement;"
+              },
+              {
+                "line": 15,
+                "text": "  readonly translateButton:"
+              },
+              {
+                "line": 16,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 17,
+                "text": "  readonly clearButton:"
+              },
+              {
+                "line": 18,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 19,
+                "text": "  readonly copyButton:"
+              },
+              {
+                "line": 20,
+                "text": "    HTMLButtonElement;"
+              }
+            ]
+          },
+          {
+            "line": 18,
+            "snippet": [
+              {
+                "line": 15,
+                "text": "  readonly translateButton:"
+              },
+              {
+                "line": 16,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 17,
+                "text": "  readonly clearButton:"
+              },
+              {
+                "line": 18,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 19,
+                "text": "  readonly copyButton:"
+              },
+              {
+                "line": 20,
+                "text": "    HTMLButtonElement;"
+              },
+              {
+                "line": 21,
+                "text": "  readonly replaceButton:"
+              }
+            ]
+          }
+        ],
+        "preview": [
+          {
+            "line": 173,
+            "snippet": [
+              {
+                "line": 170,
+                "text": ""
+              },
+              {
+                "line": 171,
+                "text": "  let ready = false;"
+              },
+              {
+                "line": 172,
+                "text": "  let busy = false;"
+              },
+              {
+                "line": 173,
+                "text": "  let hasPreview = false;"
+              },
+              {
+                "line": 174,
+                "text": "  let capabilities:"
+              },
+              {
+                "line": 175,
+                "text": "    OfficeHostCapabilities |"
+              },
+              {
+                "line": 176,
+                "text": "    null ="
+              }
+            ]
+          },
+          {
+            "line": 189,
+            "snippet": [
+              {
+                "line": 186,
+                "text": ""
+              },
+              {
+                "line": 187,
+                "text": "    ui.copyButton.disabled ="
+              },
+              {
+                "line": 188,
+                "text": "      busy ||"
+              },
+              {
+                "line": 189,
+                "text": "      !hasPreview;"
+              },
+              {
+                "line": 190,
+                "text": ""
+              },
+              {
+                "line": 191,
+                "text": "    ui.replaceButton.disabled ="
+              },
+              {
+                "line": 192,
+                "text": "      busy ||"
+              }
+            ]
+          },
+          {
+            "line": 193,
+            "snippet": [
+              {
+                "line": 190,
+                "text": ""
+              },
+              {
+                "line": 191,
+                "text": "    ui.replaceButton.disabled ="
+              },
+              {
+                "line": 192,
+                "text": "      busy ||"
+              },
+              {
+                "line": 193,
+                "text": "      !hasPreview ||"
+              },
+              {
+                "line": 194,
+                "text": "      !capabilities?.canReplace;"
+              },
+              {
+                "line": 195,
+                "text": ""
+              },
+              {
+                "line": 196,
+                "text": "    ui.insertButton.disabled ="
+              }
+            ]
+          },
+          {
+            "line": 198,
+            "snippet": [
+              {
+                "line": 195,
+                "text": ""
+              },
+              {
+                "line": 196,
+                "text": "    ui.insertButton.disabled ="
+              },
+              {
+                "line": 197,
+                "text": "      busy ||"
+              },
+              {
+                "line": 198,
+                "text": "      !hasPreview ||"
+              },
+              {
+                "line": 199,
+                "text": "      !capabilities"
+              },
+              {
+                "line": 200,
+                "text": "        ?.canInsertAfter;"
+              },
+              {
+                "line": 201,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "host": [
+          {
+            "line": 2,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "import type {"
+              },
+              {
+                "line": 2,
+                "text": "  OfficeHostCapabilities,"
+              },
+              {
+                "line": 3,
+                "text": "} from \"../shared/types.js\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "import type {"
+              }
+            ]
+          },
+          {
+            "line": 175,
+            "snippet": [
+              {
+                "line": 172,
+                "text": "  let busy = false;"
+              },
+              {
+                "line": 173,
+                "text": "  let hasPreview = false;"
+              },
+              {
+                "line": 174,
+                "text": "  let capabilities:"
+              },
+              {
+                "line": 175,
+                "text": "    OfficeHostCapabilities |"
+              },
+              {
+                "line": 176,
+                "text": "    null ="
+              },
+              {
+                "line": 177,
+                "text": "      null;"
+              },
+              {
+                "line": 178,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 282,
+            "snippet": [
+              {
+                "line": 279,
+                "text": ""
+              },
+              {
+                "line": 280,
+                "text": "    setCapabilities("
+              },
+              {
+                "line": 281,
+                "text": "      value:"
+              },
+              {
+                "line": 282,
+                "text": "        OfficeHostCapabilities,"
+              },
+              {
+                "line": 283,
+                "text": "    ) {"
+              },
+              {
+                "line": 284,
+                "text": "      capabilities ="
+              },
+              {
+                "line": 285,
+                "text": "        value;"
+              }
+            ]
+          },
+          {
+            "line": 294,
+            "snippet": [
+              {
+                "line": 291,
+                "text": "    ) {"
+              },
+              {
+                "line": 292,
+                "text": "      ready = value;"
+              },
+              {
+                "line": 293,
+                "text": ""
+              },
+              {
+                "line": 294,
+                "text": "      const hostLabel ="
+              },
+              {
+                "line": 295,
+                "text": "        capabilities?.hostLabel ??"
+              },
+              {
+                "line": 296,
+                "text": "        \"Microsoft 365\";"
+              },
+              {
+                "line": 297,
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/taskpane/host-config.ts": {
+      "exportedNames": [
+        "EXCEL_TASK_PANE_CAPABILITIES",
+        "POWERPOINT_TASK_PANE_CAPABILITIES",
+        "WORD_TASK_PANE_CAPABILITIES"
+      ],
+      "snippets": {
+        "Word": [
+          {
+            "line": 5,
+            "snippet": [
+              {
+                "line": 2,
+                "text": "  OfficeHostCapabilities,"
+              },
+              {
+                "line": 3,
+                "text": "} from \"../shared/types.js\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export const WORD_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 6,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 7,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 8,
+                "text": "    hostKind: \"word\","
+              }
+            ]
+          },
+          {
+            "line": 8,
+            "snippet": [
+              {
+                "line": 5,
+                "text": "export const WORD_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 6,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 7,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 8,
+                "text": "    hostKind: \"word\","
+              },
+              {
+                "line": 9,
+                "text": "    hostLabel: \"Word\","
+              },
+              {
+                "line": 10,
+                "text": "    requirementSet: \"WordApi\","
+              },
+              {
+                "line": 11,
+                "text": "    minimumVersion: \"1.1\","
+              }
+            ]
+          },
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 7,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 8,
+                "text": "    hostKind: \"word\","
+              },
+              {
+                "line": 9,
+                "text": "    hostLabel: \"Word\","
+              },
+              {
+                "line": 10,
+                "text": "    requirementSet: \"WordApi\","
+              },
+              {
+                "line": 11,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 12,
+                "text": "    canReplace: true,"
+              }
+            ]
+          },
+          {
+            "line": 10,
+            "snippet": [
+              {
+                "line": 7,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 8,
+                "text": "    hostKind: \"word\","
+              },
+              {
+                "line": 9,
+                "text": "    hostLabel: \"Word\","
+              },
+              {
+                "line": 10,
+                "text": "    requirementSet: \"WordApi\","
+              },
+              {
+                "line": 11,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 12,
+                "text": "    canReplace: true,"
+              },
+              {
+                "line": 13,
+                "text": "    canInsertAfter: true,"
+              }
+            ]
+          }
+        ],
+        "Excel": [
+          {
+            "line": 16,
+            "snippet": [
+              {
+                "line": 13,
+                "text": "    canInsertAfter: true,"
+              },
+              {
+                "line": 14,
+                "text": "  });"
+              },
+              {
+                "line": 15,
+                "text": ""
+              },
+              {
+                "line": 16,
+                "text": "export const EXCEL_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 17,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 18,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 19,
+                "text": "    hostKind: \"excel\","
+              }
+            ]
+          },
+          {
+            "line": 19,
+            "snippet": [
+              {
+                "line": 16,
+                "text": "export const EXCEL_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 17,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 18,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 19,
+                "text": "    hostKind: \"excel\","
+              },
+              {
+                "line": 20,
+                "text": "    hostLabel: \"Excel\","
+              },
+              {
+                "line": 21,
+                "text": "    requirementSet: \"ExcelApi\","
+              },
+              {
+                "line": 22,
+                "text": "    minimumVersion: \"1.1\","
+              }
+            ]
+          },
+          {
+            "line": 20,
+            "snippet": [
+              {
+                "line": 17,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 18,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 19,
+                "text": "    hostKind: \"excel\","
+              },
+              {
+                "line": 20,
+                "text": "    hostLabel: \"Excel\","
+              },
+              {
+                "line": 21,
+                "text": "    requirementSet: \"ExcelApi\","
+              },
+              {
+                "line": 22,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 23,
+                "text": "    canReplace: true,"
+              }
+            ]
+          },
+          {
+            "line": 21,
+            "snippet": [
+              {
+                "line": 18,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 19,
+                "text": "    hostKind: \"excel\","
+              },
+              {
+                "line": 20,
+                "text": "    hostLabel: \"Excel\","
+              },
+              {
+                "line": 21,
+                "text": "    requirementSet: \"ExcelApi\","
+              },
+              {
+                "line": 22,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 23,
+                "text": "    canReplace: true,"
+              },
+              {
+                "line": 24,
+                "text": "    canInsertAfter: false,"
+              }
+            ]
+          }
+        ],
+        "PowerPoint": [
+          {
+            "line": 27,
+            "snippet": [
+              {
+                "line": 24,
+                "text": "    canInsertAfter: false,"
+              },
+              {
+                "line": 25,
+                "text": "  });"
+              },
+              {
+                "line": 26,
+                "text": ""
+              },
+              {
+                "line": 27,
+                "text": "export const POWERPOINT_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 28,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 29,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 30,
+                "text": "    hostKind: \"powerpoint\","
+              }
+            ]
+          },
+          {
+            "line": 30,
+            "snippet": [
+              {
+                "line": 27,
+                "text": "export const POWERPOINT_TASK_PANE_CAPABILITIES:"
+              },
+              {
+                "line": 28,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 29,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 30,
+                "text": "    hostKind: \"powerpoint\","
+              },
+              {
+                "line": 31,
+                "text": "    hostLabel: \"PowerPoint\","
+              },
+              {
+                "line": 32,
+                "text": "    requirementSet:"
+              },
+              {
+                "line": 33,
+                "text": "      \"PowerPointApi\","
+              }
+            ]
+          },
+          {
+            "line": 31,
+            "snippet": [
+              {
+                "line": 28,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 29,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 30,
+                "text": "    hostKind: \"powerpoint\","
+              },
+              {
+                "line": 31,
+                "text": "    hostLabel: \"PowerPoint\","
+              },
+              {
+                "line": 32,
+                "text": "    requirementSet:"
+              },
+              {
+                "line": 33,
+                "text": "      \"PowerPointApi\","
+              },
+              {
+                "line": 34,
+                "text": "    minimumVersion: \"1.5\","
+              }
+            ]
+          },
+          {
+            "line": 33,
+            "snippet": [
+              {
+                "line": 30,
+                "text": "    hostKind: \"powerpoint\","
+              },
+              {
+                "line": 31,
+                "text": "    hostLabel: \"PowerPoint\","
+              },
+              {
+                "line": 32,
+                "text": "    requirementSet:"
+              },
+              {
+                "line": 33,
+                "text": "      \"PowerPointApi\","
+              },
+              {
+                "line": 34,
+                "text": "    minimumVersion: \"1.5\","
+              },
+              {
+                "line": 35,
+                "text": "    canReplace: true,"
+              },
+              {
+                "line": 36,
+                "text": "    canInsertAfter: false,"
+              }
+            ]
+          }
+        ],
+        "button": [],
+        "label": [
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 7,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 8,
+                "text": "    hostKind: \"word\","
+              },
+              {
+                "line": 9,
+                "text": "    hostLabel: \"Word\","
+              },
+              {
+                "line": 10,
+                "text": "    requirementSet: \"WordApi\","
+              },
+              {
+                "line": 11,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 12,
+                "text": "    canReplace: true,"
+              }
+            ]
+          },
+          {
+            "line": 20,
+            "snippet": [
+              {
+                "line": 17,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 18,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 19,
+                "text": "    hostKind: \"excel\","
+              },
+              {
+                "line": 20,
+                "text": "    hostLabel: \"Excel\","
+              },
+              {
+                "line": 21,
+                "text": "    requirementSet: \"ExcelApi\","
+              },
+              {
+                "line": 22,
+                "text": "    minimumVersion: \"1.1\","
+              },
+              {
+                "line": 23,
+                "text": "    canReplace: true,"
+              }
+            ]
+          },
+          {
+            "line": 31,
+            "snippet": [
+              {
+                "line": 28,
+                "text": "  OfficeHostCapabilities ="
+              },
+              {
+                "line": 29,
+                "text": "  Object.freeze({"
+              },
+              {
+                "line": 30,
+                "text": "    hostKind: \"powerpoint\","
+              },
+              {
+                "line": 31,
+                "text": "    hostLabel: \"PowerPoint\","
+              },
+              {
+                "line": 32,
+                "text": "    requirementSet:"
+              },
+              {
+                "line": 33,
+                "text": "      \"PowerPointApi\","
+              },
+              {
+                "line": 34,
+                "text": "    minimumVersion: \"1.5\","
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/taskpane/main.ts": {
+      "exportedNames": [],
+      "snippets": {
+        "Office.onReady": [
+          {
+            "line": 114,
+            "snippet": [
+              {
+                "line": 111,
+                "text": "} else {"
+              },
+              {
+                "line": 112,
+                "text": "  try {"
+              },
+              {
+                "line": 113,
+                "text": "    const ready ="
+              },
+              {
+                "line": 114,
+                "text": "      office.onReady("
+              },
+              {
+                "line": 115,
+                "text": "        (info) => {"
+              },
+              {
+                "line": 116,
+                "text": "          const readiness ="
+              },
+              {
+                "line": 117,
+                "text": "            evaluateOfficeTaskPaneReadiness("
+              }
+            ]
+          }
+        ],
+        "host": [
+          {
+            "line": 2,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "import {"
+              },
+              {
+                "line": 2,
+                "text": "  createExcelHostAdapter,"
+              },
+              {
+                "line": 3,
+                "text": "  createExcelSelectionService,"
+              },
+              {
+                "line": 4,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              },
+              {
+                "line": 5,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              }
+            ]
+          },
+          {
+            "line": 7,
+            "snippet": [
+              {
+                "line": 4,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              },
+              {
+                "line": 5,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              },
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createPowerPointHostAdapter,"
+              },
+              {
+                "line": 8,
+                "text": "  createPowerPointSelectionService,"
+              },
+              {
+                "line": 9,
+                "text": "  createWordHostAdapter,"
+              },
+              {
+                "line": 10,
+                "text": "  createWordSelectionService,"
+              }
+            ]
+          },
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createPowerPointHostAdapter,"
+              },
+              {
+                "line": 8,
+                "text": "  createPowerPointSelectionService,"
+              },
+              {
+                "line": 9,
+                "text": "  createWordHostAdapter,"
+              },
+              {
+                "line": 10,
+                "text": "  createWordSelectionService,"
+              },
+              {
+                "line": 11,
+                "text": "} from \"../index.js\";"
+              },
+              {
+                "line": 12,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 66,
+            "snippet": [
+              {
+                "line": 63,
+                "text": ""
+              },
+              {
+                "line": 64,
+                "text": "const wordService ="
+              },
+              {
+                "line": 65,
+                "text": "  createWordSelectionService("
+              },
+              {
+                "line": 66,
+                "text": "    createWordHostAdapter("
+              },
+              {
+                "line": 67,
+                "text": "      wordRuntime,"
+              },
+              {
+                "line": 68,
+                "text": "    ),"
+              },
+              {
+                "line": 69,
+                "text": "  );"
+              }
+            ]
+          }
+        ],
+        "controller": [
+          {
+            "line": 14,
+            "snippet": [
+              {
+                "line": 11,
+                "text": "} from \"../index.js\";"
+              },
+              {
+                "line": 12,
+                "text": ""
+              },
+              {
+                "line": 13,
+                "text": "import {"
+              },
+              {
+                "line": 14,
+                "text": "  createOfficeTaskPaneController,"
+              },
+              {
+                "line": 15,
+                "text": "} from \"./controller.js\";"
+              },
+              {
+                "line": 16,
+                "text": ""
+              },
+              {
+                "line": 17,
+                "text": "import {"
+              }
+            ]
+          },
+          {
+            "line": 15,
+            "snippet": [
+              {
+                "line": 12,
+                "text": ""
+              },
+              {
+                "line": 13,
+                "text": "import {"
+              },
+              {
+                "line": 14,
+                "text": "  createOfficeTaskPaneController,"
+              },
+              {
+                "line": 15,
+                "text": "} from \"./controller.js\";"
+              },
+              {
+                "line": 16,
+                "text": ""
+              },
+              {
+                "line": 17,
+                "text": "import {"
+              },
+              {
+                "line": 18,
+                "text": "  createOfficeTaskPaneDomView,"
+              }
+            ]
+          },
+          {
+            "line": 136,
+            "snippet": [
+              {
+                "line": 133,
+                "text": "            return;"
+              },
+              {
+                "line": 134,
+                "text": "          }"
+              },
+              {
+                "line": 135,
+                "text": ""
+              },
+              {
+                "line": 136,
+                "text": "          let controller;"
+              },
+              {
+                "line": 137,
+                "text": ""
+              },
+              {
+                "line": 138,
+                "text": "          if ("
+              },
+              {
+                "line": 139,
+                "text": "            readiness.hostKind ==="
+              }
+            ]
+          },
+          {
+            "line": 142,
+            "snippet": [
+              {
+                "line": 139,
+                "text": "            readiness.hostKind ==="
+              },
+              {
+                "line": 140,
+                "text": "              \"word\""
+              },
+              {
+                "line": 141,
+                "text": "          ) {"
+              },
+              {
+                "line": 142,
+                "text": "            controller ="
+              },
+              {
+                "line": 143,
+                "text": "              createOfficeTaskPaneController("
+              },
+              {
+                "line": 144,
+                "text": "                wordService,"
+              },
+              {
+                "line": 145,
+                "text": "                view,"
+              }
+            ]
+          }
+        ],
+        "Word": [
+          {
+            "line": 6,
+            "snippet": [
+              {
+                "line": 3,
+                "text": "  createExcelSelectionService,"
+              },
+              {
+                "line": 4,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              },
+              {
+                "line": 5,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              },
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createPowerPointHostAdapter,"
+              },
+              {
+                "line": 8,
+                "text": "  createPowerPointSelectionService,"
+              },
+              {
+                "line": 9,
+                "text": "  createWordHostAdapter,"
+              }
+            ]
+          },
+          {
+            "line": 9,
+            "snippet": [
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createPowerPointHostAdapter,"
+              },
+              {
+                "line": 8,
+                "text": "  createPowerPointSelectionService,"
+              },
+              {
+                "line": 9,
+                "text": "  createWordHostAdapter,"
+              },
+              {
+                "line": 10,
+                "text": "  createWordSelectionService,"
+              },
+              {
+                "line": 11,
+                "text": "} from \"../index.js\";"
+              },
+              {
+                "line": 12,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 10,
+            "snippet": [
+              {
+                "line": 7,
+                "text": "  createPowerPointHostAdapter,"
+              },
+              {
+                "line": 8,
+                "text": "  createPowerPointSelectionService,"
+              },
+              {
+                "line": 9,
+                "text": "  createWordHostAdapter,"
+              },
+              {
+                "line": 10,
+                "text": "  createWordSelectionService,"
+              },
+              {
+                "line": 11,
+                "text": "} from \"../index.js\";"
+              },
+              {
+                "line": 12,
+                "text": ""
+              },
+              {
+                "line": 13,
+                "text": "import {"
+              }
+            ]
+          },
+          {
+            "line": 55,
+            "snippet": [
+              {
+                "line": 52,
+                "text": "    document,"
+              },
+              {
+                "line": 53,
+                "text": "  );"
+              },
+              {
+                "line": 54,
+                "text": ""
+              },
+              {
+                "line": 55,
+                "text": "const wordRuntime ="
+              },
+              {
+                "line": 56,
+                "text": "  createGlobalOfficeWordRuntime();"
+              },
+              {
+                "line": 57,
+                "text": ""
+              },
+              {
+                "line": 58,
+                "text": "const excelRuntime ="
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/word/adapter.ts": {
+      "exportedNames": [
+        "createWordHostAdapter"
+      ]
+    },
+    "integrations/microsoft365/src/word/runtime.ts": {
+      "exportedNames": [
+        "OfficeWordGlobals",
+        "WordMutationLocation",
+        "WordRuntimeMutationOutcome",
+        "WordRuntimePort",
+        "createGlobalOfficeWordRuntime",
+        "createOfficeWordRuntime"
+      ],
+      "snippets": {
+        "Word.run": [
+          {
+            "line": 164,
+            "snippet": [
+              {
+                "line": 161,
+                "text": "        );"
+              },
+              {
+                "line": 162,
+                "text": "      }"
+              },
+              {
+                "line": 163,
+                "text": ""
+              },
+              {
+                "line": 164,
+                "text": "      return currentWord.run("
+              },
+              {
+                "line": 165,
+                "text": "        async (context) => {"
+              },
+              {
+                "line": 166,
+                "text": "          const range ="
+              },
+              {
+                "line": 167,
+                "text": "            context.document"
+              }
+            ]
+          },
+          {
+            "line": 192,
+            "snippet": [
+              {
+                "line": 189,
+                "text": "        );"
+              },
+              {
+                "line": 190,
+                "text": "      }"
+              },
+              {
+                "line": 191,
+                "text": ""
+              },
+              {
+                "line": 192,
+                "text": "      return currentWord.run("
+              },
+              {
+                "line": 193,
+                "text": "        async (context) => {"
+              },
+              {
+                "line": 194,
+                "text": "          const range ="
+              },
+              {
+                "line": 195,
+                "text": "            context.document"
+              }
+            ]
+          }
+        ],
+        "getSelection": [
+          {
+            "line": 61,
+            "snippet": [
+              {
+                "line": 58,
+                "text": "}"
+              },
+              {
+                "line": 59,
+                "text": ""
+              },
+              {
+                "line": 60,
+                "text": "interface WordDocumentPort {"
+              },
+              {
+                "line": 61,
+                "text": "  getSelection():"
+              },
+              {
+                "line": 62,
+                "text": "    WordRangePort;"
+              },
+              {
+                "line": 63,
+                "text": "}"
+              },
+              {
+                "line": 64,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 168,
+            "snippet": [
+              {
+                "line": 165,
+                "text": "        async (context) => {"
+              },
+              {
+                "line": 166,
+                "text": "          const range ="
+              },
+              {
+                "line": 167,
+                "text": "            context.document"
+              },
+              {
+                "line": 168,
+                "text": "              .getSelection();"
+              },
+              {
+                "line": 169,
+                "text": ""
+              },
+              {
+                "line": 170,
+                "text": "          range.load(\"text\");"
+              },
+              {
+                "line": 171,
+                "text": "          await context.sync();"
+              }
+            ]
+          },
+          {
+            "line": 196,
+            "snippet": [
+              {
+                "line": 193,
+                "text": "        async (context) => {"
+              },
+              {
+                "line": 194,
+                "text": "          const range ="
+              },
+              {
+                "line": 195,
+                "text": "            context.document"
+              },
+              {
+                "line": 196,
+                "text": "              .getSelection();"
+              },
+              {
+                "line": 197,
+                "text": ""
+              },
+              {
+                "line": 198,
+                "text": "          range.load(\"text\");"
+              },
+              {
+                "line": 199,
+                "text": "          await context.sync();"
+              }
+            ]
+          }
+        ],
+        "insertText": [
+          {
+            "line": 53,
+            "snippet": [
+              {
+                "line": 50,
+                "text": "    property: \"text\","
+              },
+              {
+                "line": 51,
+                "text": "  ): void;"
+              },
+              {
+                "line": 52,
+                "text": ""
+              },
+              {
+                "line": 53,
+                "text": "  insertText("
+              },
+              {
+                "line": 54,
+                "text": "    text: string,"
+              },
+              {
+                "line": 55,
+                "text": "    location:"
+              },
+              {
+                "line": 56,
+                "text": "      WordMutationLocation,"
+              }
+            ]
+          },
+          {
+            "line": 208,
+            "snippet": [
+              {
+                "line": 205,
+                "text": "            return \"selection-changed\";"
+              },
+              {
+                "line": 206,
+                "text": "          }"
+              },
+              {
+                "line": 207,
+                "text": ""
+              },
+              {
+                "line": 208,
+                "text": "          range.insertText("
+              },
+              {
+                "line": 209,
+                "text": "            text,"
+              },
+              {
+                "line": 210,
+                "text": "            location,"
+              },
+              {
+                "line": 211,
+                "text": "          );"
+              }
+            ]
+          }
+        ],
+        "Replace": [
+          {
+            "line": 2,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "export type WordMutationLocation ="
+              },
+              {
+                "line": 2,
+                "text": "  | \"Replace\""
+              },
+              {
+                "line": 3,
+                "text": "  | \"After\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export type WordRuntimeMutationOutcome ="
+              }
+            ]
+          }
+        ],
+        "End": []
+      }
+    },
+    "integrations/microsoft365/src/word/selection-service.ts": {
+      "exportedNames": [
+        "createWordSelectionService"
+      ],
+      "snippets": {
+        "replace": [
+          {
+            "line": 76,
+            "snippet": [
+              {
+                "line": 73,
+                "text": "      });"
+              },
+              {
+                "line": 74,
+                "text": "    },"
+              },
+              {
+                "line": 75,
+                "text": ""
+              },
+              {
+                "line": 76,
+                "text": "    async replaceWithBraille("
+              },
+              {
+                "line": 77,
+                "text": "      preview:"
+              },
+              {
+                "line": 78,
+                "text": "        import(\"./types.js\").WordSelectionTranslationSuccess,"
+              },
+              {
+                "line": 79,
+                "text": "    ) {"
+              }
+            ]
+          },
+          {
+            "line": 81,
+            "snippet": [
+              {
+                "line": 78,
+                "text": "        import(\"./types.js\").WordSelectionTranslationSuccess,"
+              },
+              {
+                "line": 79,
+                "text": "    ) {"
+              },
+              {
+                "line": 80,
+                "text": "      return host"
+              },
+              {
+                "line": 81,
+                "text": "        .replaceSelection("
+              },
+              {
+                "line": 82,
+                "text": "          preview.sourceText,"
+              },
+              {
+                "line": 83,
+                "text": "          preview.translation"
+              },
+              {
+                "line": 84,
+                "text": "            .unicodeBraille,"
+              }
+            ]
+          }
+        ],
+        "insert": [
+          {
+            "line": 88,
+            "snippet": [
+              {
+                "line": 85,
+                "text": "        );"
+              },
+              {
+                "line": 86,
+                "text": "    },"
+              },
+              {
+                "line": 87,
+                "text": ""
+              },
+              {
+                "line": 88,
+                "text": "    async insertBrailleAfter("
+              },
+              {
+                "line": 89,
+                "text": "      preview:"
+              },
+              {
+                "line": 90,
+                "text": "        import(\"./types.js\").WordSelectionTranslationSuccess,"
+              },
+              {
+                "line": 91,
+                "text": "    ) {"
+              }
+            ]
+          },
+          {
+            "line": 93,
+            "snippet": [
+              {
+                "line": 90,
+                "text": "        import(\"./types.js\").WordSelectionTranslationSuccess,"
+              },
+              {
+                "line": 91,
+                "text": "    ) {"
+              },
+              {
+                "line": 92,
+                "text": "      return host"
+              },
+              {
+                "line": 93,
+                "text": "        .insertAfterSelection("
+              },
+              {
+                "line": 94,
+                "text": "          preview.sourceText,"
+              },
+              {
+                "line": 95,
+                "text": "          preview.translation"
+              },
+              {
+                "line": 96,
+                "text": "            .unicodeBraille,"
+              }
+            ]
+          }
+        ],
+        "selection": [
+          {
+            "line": 11,
+            "snippet": [
+              {
+                "line": 8,
+                "text": ""
+              },
+              {
+                "line": 9,
+                "text": "import type {"
+              },
+              {
+                "line": 10,
+                "text": "  PersianBrailleWordHostAdapter,"
+              },
+              {
+                "line": 11,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 12,
+                "text": "  WordSelectionTranslationResult,"
+              },
+              {
+                "line": 13,
+                "text": "} from \"./types.js\";"
+              },
+              {
+                "line": 14,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 12,
+            "snippet": [
+              {
+                "line": 9,
+                "text": "import type {"
+              },
+              {
+                "line": 10,
+                "text": "  PersianBrailleWordHostAdapter,"
+              },
+              {
+                "line": 11,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 12,
+                "text": "  WordSelectionTranslationResult,"
+              },
+              {
+                "line": 13,
+                "text": "} from \"./types.js\";"
+              },
+              {
+                "line": 14,
+                "text": ""
+              },
+              {
+                "line": 15,
+                "text": "export function createWordSelectionService("
+              }
+            ]
+          },
+          {
+            "line": 15,
+            "snippet": [
+              {
+                "line": 12,
+                "text": "  WordSelectionTranslationResult,"
+              },
+              {
+                "line": 13,
+                "text": "} from \"./types.js\";"
+              },
+              {
+                "line": 14,
+                "text": ""
+              },
+              {
+                "line": 15,
+                "text": "export function createWordSelectionService("
+              },
+              {
+                "line": 16,
+                "text": "  host:"
+              },
+              {
+                "line": 17,
+                "text": "    PersianBrailleWordHostAdapter,"
+              },
+              {
+                "line": 18,
+                "text": "  translator:"
+              }
+            ]
+          },
+          {
+            "line": 21,
+            "snippet": [
+              {
+                "line": 18,
+                "text": "  translator:"
+              },
+              {
+                "line": 19,
+                "text": "    PersianBrailleTranslator ="
+              },
+              {
+                "line": 20,
+                "text": "      createPersianBrailleTranslator(),"
+              },
+              {
+                "line": 21,
+                "text": "): PersianBrailleWordSelectionService {"
+              },
+              {
+                "line": 22,
+                "text": "  return Object.freeze({"
+              },
+              {
+                "line": 23,
+                "text": "    translator,"
+              },
+              {
+                "line": 24,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "translate": [
+          {
+            "line": 25,
+            "snippet": [
+              {
+                "line": 22,
+                "text": "  return Object.freeze({"
+              },
+              {
+                "line": 23,
+                "text": "    translator,"
+              },
+              {
+                "line": 24,
+                "text": ""
+              },
+              {
+                "line": 25,
+                "text": "    async translateSelection():"
+              },
+              {
+                "line": 26,
+                "text": "      Promise<WordSelectionTranslationResult> {"
+              },
+              {
+                "line": 27,
+                "text": "      const selection ="
+              },
+              {
+                "line": 28,
+                "text": "        await host.readSelection();"
+              }
+            ]
+          },
+          {
+            "line": 53,
+            "snippet": [
+              {
+                "line": 50,
+                "text": "      }"
+              },
+              {
+                "line": 51,
+                "text": ""
+              },
+              {
+                "line": 52,
+                "text": "      const translation ="
+              },
+              {
+                "line": 53,
+                "text": "        translator.translate("
+              },
+              {
+                "line": 54,
+                "text": "          selection.text,"
+              },
+              {
+                "line": 55,
+                "text": "        );"
+              },
+              {
+                "line": 56,
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/src/word/types.ts": {
+      "exportedNames": [
+        "EmptySelectionFailure",
+        "HostSelectionTranslationFailure",
+        "PersianBrailleWordHostAdapter",
+        "PersianBrailleWordSelectionService",
+        "SdkSelectionTranslationFailure",
+        "SdkTranslationFailure",
+        "SdkTranslationSuccess",
+        "WORD_HOST_FAILURE_CODES",
+        "WordHostFailure",
+        "WordHostFailureCode",
+        "WordMutationResult",
+        "WordMutationSuccess",
+        "WordSelectionReadResult",
+        "WordSelectionReadSuccess",
+        "WordSelectionTranslationResult",
+        "WordSelectionTranslationSuccess"
+      ]
+    },
+    "integrations/microsoft365/src/index.ts": {
+      "exportedNames": [],
+      "snippets": {
+        "taskpane": [],
+        "word": [
+          {
+            "line": 2,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "export {"
+              },
+              {
+                "line": 2,
+                "text": "  WORD_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 3,
+                "text": "} from \"./word/types.js\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export {"
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "snippet": [
+              {
+                "line": 1,
+                "text": "export {"
+              },
+              {
+                "line": 2,
+                "text": "  WORD_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 3,
+                "text": "} from \"./word/types.js\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export {"
+              },
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              }
+            ]
+          },
+          {
+            "line": 6,
+            "snippet": [
+              {
+                "line": 3,
+                "text": "} from \"./word/types.js\";"
+              },
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export {"
+              },
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createOfficeWordRuntime,"
+              },
+              {
+                "line": 8,
+                "text": "} from \"./word/runtime.js\";"
+              },
+              {
+                "line": 9,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 7,
+            "snippet": [
+              {
+                "line": 4,
+                "text": ""
+              },
+              {
+                "line": 5,
+                "text": "export {"
+              },
+              {
+                "line": 6,
+                "text": "  createGlobalOfficeWordRuntime,"
+              },
+              {
+                "line": 7,
+                "text": "  createOfficeWordRuntime,"
+              },
+              {
+                "line": 8,
+                "text": "} from \"./word/runtime.js\";"
+              },
+              {
+                "line": 9,
+                "text": ""
+              },
+              {
+                "line": 10,
+                "text": "export {"
+              }
+            ]
+          }
+        ],
+        "excel": [
+          {
+            "line": 41,
+            "snippet": [
+              {
+                "line": 38,
+                "text": "  WordRuntimePort,"
+              },
+              {
+                "line": 39,
+                "text": "} from \"./word/runtime.js\";"
+              },
+              {
+                "line": 40,
+                "text": "export {"
+              },
+              {
+                "line": 41,
+                "text": "  EXCEL_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 42,
+                "text": "} from \"./excel/types.js\";"
+              },
+              {
+                "line": 43,
+                "text": ""
+              },
+              {
+                "line": 44,
+                "text": "export {"
+              }
+            ]
+          },
+          {
+            "line": 42,
+            "snippet": [
+              {
+                "line": 39,
+                "text": "} from \"./word/runtime.js\";"
+              },
+              {
+                "line": 40,
+                "text": "export {"
+              },
+              {
+                "line": 41,
+                "text": "  EXCEL_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 42,
+                "text": "} from \"./excel/types.js\";"
+              },
+              {
+                "line": 43,
+                "text": ""
+              },
+              {
+                "line": 44,
+                "text": "export {"
+              },
+              {
+                "line": 45,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              }
+            ]
+          },
+          {
+            "line": 45,
+            "snippet": [
+              {
+                "line": 42,
+                "text": "} from \"./excel/types.js\";"
+              },
+              {
+                "line": 43,
+                "text": ""
+              },
+              {
+                "line": 44,
+                "text": "export {"
+              },
+              {
+                "line": 45,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              },
+              {
+                "line": 46,
+                "text": "  createOfficeExcelRuntime,"
+              },
+              {
+                "line": 47,
+                "text": "} from \"./excel/runtime.js\";"
+              },
+              {
+                "line": 48,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 46,
+            "snippet": [
+              {
+                "line": 43,
+                "text": ""
+              },
+              {
+                "line": 44,
+                "text": "export {"
+              },
+              {
+                "line": 45,
+                "text": "  createGlobalOfficeExcelRuntime,"
+              },
+              {
+                "line": 46,
+                "text": "  createOfficeExcelRuntime,"
+              },
+              {
+                "line": 47,
+                "text": "} from \"./excel/runtime.js\";"
+              },
+              {
+                "line": 48,
+                "text": ""
+              },
+              {
+                "line": 49,
+                "text": "export {"
+              }
+            ]
+          }
+        ],
+        "powerpoint": [
+          {
+            "line": 79,
+            "snippet": [
+              {
+                "line": 76,
+                "text": "} from \"./excel/runtime.js\";"
+              },
+              {
+                "line": 77,
+                "text": ""
+              },
+              {
+                "line": 78,
+                "text": "export {"
+              },
+              {
+                "line": 79,
+                "text": "  POWERPOINT_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 80,
+                "text": "} from \"./powerpoint/types.js\";"
+              },
+              {
+                "line": 81,
+                "text": ""
+              },
+              {
+                "line": 82,
+                "text": "export {"
+              }
+            ]
+          },
+          {
+            "line": 80,
+            "snippet": [
+              {
+                "line": 77,
+                "text": ""
+              },
+              {
+                "line": 78,
+                "text": "export {"
+              },
+              {
+                "line": 79,
+                "text": "  POWERPOINT_HOST_FAILURE_CODES,"
+              },
+              {
+                "line": 80,
+                "text": "} from \"./powerpoint/types.js\";"
+              },
+              {
+                "line": 81,
+                "text": ""
+              },
+              {
+                "line": 82,
+                "text": "export {"
+              },
+              {
+                "line": 83,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              }
+            ]
+          },
+          {
+            "line": 83,
+            "snippet": [
+              {
+                "line": 80,
+                "text": "} from \"./powerpoint/types.js\";"
+              },
+              {
+                "line": 81,
+                "text": ""
+              },
+              {
+                "line": 82,
+                "text": "export {"
+              },
+              {
+                "line": 83,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              },
+              {
+                "line": 84,
+                "text": "  createOfficePowerPointRuntime,"
+              },
+              {
+                "line": 85,
+                "text": "} from \"./powerpoint/runtime.js\";"
+              },
+              {
+                "line": 86,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 84,
+            "snippet": [
+              {
+                "line": 81,
+                "text": ""
+              },
+              {
+                "line": 82,
+                "text": "export {"
+              },
+              {
+                "line": 83,
+                "text": "  createGlobalOfficePowerPointRuntime,"
+              },
+              {
+                "line": 84,
+                "text": "  createOfficePowerPointRuntime,"
+              },
+              {
+                "line": 85,
+                "text": "} from \"./powerpoint/runtime.js\";"
+              },
+              {
+                "line": 86,
+                "text": ""
+              },
+              {
+                "line": 87,
+                "text": "export {"
+              }
+            ]
+          }
+        ],
+        "sdk": [
+          {
+            "line": 23,
+            "snippet": [
+              {
+                "line": 20,
+                "text": "  HostSelectionTranslationFailure,"
+              },
+              {
+                "line": 21,
+                "text": "  PersianBrailleWordHostAdapter,"
+              },
+              {
+                "line": 22,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 23,
+                "text": "  SdkSelectionTranslationFailure,"
+              },
+              {
+                "line": 24,
+                "text": "  SdkTranslationFailure,"
+              },
+              {
+                "line": 25,
+                "text": "  SdkTranslationSuccess,"
+              },
+              {
+                "line": 26,
+                "text": "  WordHostFailure,"
+              }
+            ]
+          },
+          {
+            "line": 24,
+            "snippet": [
+              {
+                "line": 21,
+                "text": "  PersianBrailleWordHostAdapter,"
+              },
+              {
+                "line": 22,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 23,
+                "text": "  SdkSelectionTranslationFailure,"
+              },
+              {
+                "line": 24,
+                "text": "  SdkTranslationFailure,"
+              },
+              {
+                "line": 25,
+                "text": "  SdkTranslationSuccess,"
+              },
+              {
+                "line": 26,
+                "text": "  WordHostFailure,"
+              },
+              {
+                "line": 27,
+                "text": "  WordHostFailureCode,"
+              }
+            ]
+          },
+          {
+            "line": 25,
+            "snippet": [
+              {
+                "line": 22,
+                "text": "  PersianBrailleWordSelectionService,"
+              },
+              {
+                "line": 23,
+                "text": "  SdkSelectionTranslationFailure,"
+              },
+              {
+                "line": 24,
+                "text": "  SdkTranslationFailure,"
+              },
+              {
+                "line": 25,
+                "text": "  SdkTranslationSuccess,"
+              },
+              {
+                "line": 26,
+                "text": "  WordHostFailure,"
+              },
+              {
+                "line": 27,
+                "text": "  WordHostFailureCode,"
+              },
+              {
+                "line": 28,
+                "text": "  WordMutationResult,"
+              }
+            ]
+          },
+          {
+            "line": 63,
+            "snippet": [
+              {
+                "line": 60,
+                "text": "  ExcelHostFailureCode,"
+              },
+              {
+                "line": 61,
+                "text": "  ExcelHostSelectionTranslationFailure,"
+              },
+              {
+                "line": 62,
+                "text": "  ExcelMutationResult,"
+              },
+              {
+                "line": 63,
+                "text": "  ExcelSdkSelectionTranslationFailure,"
+              },
+              {
+                "line": 64,
+                "text": "  ExcelSelectionReadResult,"
+              },
+              {
+                "line": 65,
+                "text": "  ExcelSelectionSnapshot,"
+              },
+              {
+                "line": 66,
+                "text": "  ExcelSelectionTranslationResult,"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "integrations/microsoft365/package.json": {
+      "exportedNames": []
+    },
+    "integrations/microsoft365/test/taskpane.test.mjs": {
+      "exportedNames": []
+    },
+    "integrations/microsoft365/test/word-selection.test.mjs": {
+      "exportedNames": []
+    },
+    "docs/legacy/legacy-audit.md": {
+      "exportedNames": [],
+      "snippets": {
+        "MIDI": [
+          {
+            "line": 218,
+            "snippet": [
+              {
+                "line": 213,
+                "text": "keyboard music"
+              },
+              {
+                "line": 214,
+                "text": "vocal music"
+              },
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              },
+              {
+                "line": 220,
+                "text": "That material will be audited separately before any portion is incorporated into a future Braille Music module."
+              },
+              {
+                "line": 221,
+                "text": ""
+              },
+              {
+                "line": 222,
+                "text": "## 10. Legacy Preservation Rules"
+              },
+              {
+                "line": 223,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "MusicXML": [
+          {
+            "line": 218,
+            "snippet": [
+              {
+                "line": 213,
+                "text": "keyboard music"
+              },
+              {
+                "line": 214,
+                "text": "vocal music"
+              },
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              },
+              {
+                "line": 220,
+                "text": "That material will be audited separately before any portion is incorporated into a future Braille Music module."
+              },
+              {
+                "line": 221,
+                "text": ""
+              },
+              {
+                "line": 222,
+                "text": "## 10. Legacy Preservation Rules"
+              },
+              {
+                "line": 223,
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "Braille Music": [
+          {
+            "line": 31,
+            "snippet": [
+              {
+                "line": 26,
+                "text": ""
+              },
+              {
+                "line": 27,
+                "text": "### External / Non-Redistributed Assets"
+              },
+              {
+                "line": 28,
+                "text": ""
+              },
+              {
+                "line": 29,
+                "text": "- `BRAILLE.ttf`"
+              },
+              {
+                "line": 30,
+                "text": "- `BRAILLE1.ttf`"
+              },
+              {
+                "line": 31,
+                "text": "- historical research document containing extensive Braille Music material"
+              },
+              {
+                "line": 32,
+                "text": ""
+              },
+              {
+                "line": 33,
+                "text": "The external assets are not included in the public repository pending copyright/provenance review."
+              },
+              {
+                "line": 34,
+                "text": ""
+              },
+              {
+                "line": 35,
+                "text": "---"
+              },
+              {
+                "line": 36,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 199,
+            "snippet": [
+              {
+                "line": 194,
+                "text": ""
+              },
+              {
+                "line": 195,
+                "text": "## 9. Historical Documentation"
+              },
+              {
+                "line": 196,
+                "text": ""
+              },
+              {
+                "line": 197,
+                "text": "The recovered Persian project description identifies the software as version 1.0.0 and states that the initial implementation was written in Mehr 1395."
+              },
+              {
+                "line": 198,
+                "text": ""
+              },
+              {
+                "line": 199,
+                "text": "It describes the original product as Office-based VBA development for converting Persian and English text, with Braille Music and potential mobile development considered as later directions."
+              },
+              {
+                "line": 200,
+                "text": ""
+              },
+              {
+                "line": 201,
+                "text": "A larger recovered research document also contains extensive Braille Music material covering areas such as:"
+              },
+              {
+                "line": 202,
+                "text": ""
+              },
+              {
+                "line": 203,
+                "text": "notes and rests"
+              },
+              {
+                "line": 204,
+                "text": "clefs"
+              }
+            ]
+          },
+          {
+            "line": 201,
+            "snippet": [
+              {
+                "line": 196,
+                "text": ""
+              },
+              {
+                "line": 197,
+                "text": "The recovered Persian project description identifies the software as version 1.0.0 and states that the initial implementation was written in Mehr 1395."
+              },
+              {
+                "line": 198,
+                "text": ""
+              },
+              {
+                "line": 199,
+                "text": "It describes the original product as Office-based VBA development for converting Persian and English text, with Braille Music and potential mobile development considered as later directions."
+              },
+              {
+                "line": 200,
+                "text": ""
+              },
+              {
+                "line": 201,
+                "text": "A larger recovered research document also contains extensive Braille Music material covering areas such as:"
+              },
+              {
+                "line": 202,
+                "text": ""
+              },
+              {
+                "line": 203,
+                "text": "notes and rests"
+              },
+              {
+                "line": 204,
+                "text": "clefs"
+              },
+              {
+                "line": 205,
+                "text": "accidentals"
+              },
+              {
+                "line": 206,
+                "text": "rhythmic groups"
+              }
+            ]
+          },
+          {
+            "line": 220,
+            "snippet": [
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              },
+              {
+                "line": 220,
+                "text": "That material will be audited separately before any portion is incorporated into a future Braille Music module."
+              },
+              {
+                "line": 221,
+                "text": ""
+              },
+              {
+                "line": 222,
+                "text": "## 10. Legacy Preservation Rules"
+              },
+              {
+                "line": 223,
+                "text": ""
+              },
+              {
+                "line": 224,
+                "text": "The following rules apply to legacy/v1:"
+              },
+              {
+                "line": 225,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 304,
+            "snippet": [
+              {
+                "line": 299,
+                "text": ""
+              },
+              {
+                "line": 300,
+                "text": "The following items remain documented historical uncertainties but do not block closure of the legacy reconstruction phase:"
+              },
+              {
+                "line": 301,
+                "text": ""
+              },
+              {
+                "line": 302,
+                "text": "- the `Swell Braille` font referenced by the Excel macro has not been recovered"
+              },
+              {
+                "line": 303,
+                "text": "- redistribution rights for recovered third-party Braille fonts have not been established"
+              },
+              {
+                "line": 304,
+                "text": "- provenance and licensing of the larger historical Braille Music research document require a separate audit"
+              },
+              {
+                "line": 305,
+                "text": "- additional original 2016 project artifacts may exist outside the currently recovered material"
+              },
+              {
+                "line": 306,
+                "text": ""
+              },
+              {
+                "line": 307,
+                "text": "These items must not be silently inferred or reconstructed."
+              },
+              {
+                "line": 308,
+                "text": ""
+              },
+              {
+                "line": 309,
+                "text": "---"
+              }
+            ]
+          }
+        ],
+        "music": [
+          {
+            "line": 31,
+            "snippet": [
+              {
+                "line": 26,
+                "text": ""
+              },
+              {
+                "line": 27,
+                "text": "### External / Non-Redistributed Assets"
+              },
+              {
+                "line": 28,
+                "text": ""
+              },
+              {
+                "line": 29,
+                "text": "- `BRAILLE.ttf`"
+              },
+              {
+                "line": 30,
+                "text": "- `BRAILLE1.ttf`"
+              },
+              {
+                "line": 31,
+                "text": "- historical research document containing extensive Braille Music material"
+              },
+              {
+                "line": 32,
+                "text": ""
+              },
+              {
+                "line": 33,
+                "text": "The external assets are not included in the public repository pending copyright/provenance review."
+              },
+              {
+                "line": 34,
+                "text": ""
+              },
+              {
+                "line": 35,
+                "text": "---"
+              },
+              {
+                "line": 36,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 199,
+            "snippet": [
+              {
+                "line": 194,
+                "text": ""
+              },
+              {
+                "line": 195,
+                "text": "## 9. Historical Documentation"
+              },
+              {
+                "line": 196,
+                "text": ""
+              },
+              {
+                "line": 197,
+                "text": "The recovered Persian project description identifies the software as version 1.0.0 and states that the initial implementation was written in Mehr 1395."
+              },
+              {
+                "line": 198,
+                "text": ""
+              },
+              {
+                "line": 199,
+                "text": "It describes the original product as Office-based VBA development for converting Persian and English text, with Braille Music and potential mobile development considered as later directions."
+              },
+              {
+                "line": 200,
+                "text": ""
+              },
+              {
+                "line": 201,
+                "text": "A larger recovered research document also contains extensive Braille Music material covering areas such as:"
+              },
+              {
+                "line": 202,
+                "text": ""
+              },
+              {
+                "line": 203,
+                "text": "notes and rests"
+              },
+              {
+                "line": 204,
+                "text": "clefs"
+              }
+            ]
+          },
+          {
+            "line": 201,
+            "snippet": [
+              {
+                "line": 196,
+                "text": ""
+              },
+              {
+                "line": 197,
+                "text": "The recovered Persian project description identifies the software as version 1.0.0 and states that the initial implementation was written in Mehr 1395."
+              },
+              {
+                "line": 198,
+                "text": ""
+              },
+              {
+                "line": 199,
+                "text": "It describes the original product as Office-based VBA development for converting Persian and English text, with Braille Music and potential mobile development considered as later directions."
+              },
+              {
+                "line": 200,
+                "text": ""
+              },
+              {
+                "line": 201,
+                "text": "A larger recovered research document also contains extensive Braille Music material covering areas such as:"
+              },
+              {
+                "line": 202,
+                "text": ""
+              },
+              {
+                "line": 203,
+                "text": "notes and rests"
+              },
+              {
+                "line": 204,
+                "text": "clefs"
+              },
+              {
+                "line": 205,
+                "text": "accidentals"
+              },
+              {
+                "line": 206,
+                "text": "rhythmic groups"
+              }
+            ]
+          },
+          {
+            "line": 213,
+            "snippet": [
+              {
+                "line": 208,
+                "text": "slurs and ties"
+              },
+              {
+                "line": 209,
+                "text": "tremolos"
+              },
+              {
+                "line": 210,
+                "text": "fingering"
+              },
+              {
+                "line": 211,
+                "text": "repeats"
+              },
+              {
+                "line": 212,
+                "text": "ornaments"
+              },
+              {
+                "line": 213,
+                "text": "keyboard music"
+              },
+              {
+                "line": 214,
+                "text": "vocal music"
+              },
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              }
+            ]
+          },
+          {
+            "line": 214,
+            "snippet": [
+              {
+                "line": 209,
+                "text": "tremolos"
+              },
+              {
+                "line": 210,
+                "text": "fingering"
+              },
+              {
+                "line": 211,
+                "text": "repeats"
+              },
+              {
+                "line": 212,
+                "text": "ornaments"
+              },
+              {
+                "line": 213,
+                "text": "keyboard music"
+              },
+              {
+                "line": 214,
+                "text": "vocal music"
+              },
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 218,
+            "snippet": [
+              {
+                "line": 213,
+                "text": "keyboard music"
+              },
+              {
+                "line": 214,
+                "text": "vocal music"
+              },
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              },
+              {
+                "line": 220,
+                "text": "That material will be audited separately before any portion is incorporated into a future Braille Music module."
+              },
+              {
+                "line": 221,
+                "text": ""
+              },
+              {
+                "line": 222,
+                "text": "## 10. Legacy Preservation Rules"
+              },
+              {
+                "line": 223,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 220,
+            "snippet": [
+              {
+                "line": 215,
+                "text": "string instruments"
+              },
+              {
+                "line": 216,
+                "text": "winds and percussion"
+              },
+              {
+                "line": 217,
+                "text": "accordion notation"
+              },
+              {
+                "line": 218,
+                "text": "MusicXML / MIDI-related workflow concepts"
+              },
+              {
+                "line": 219,
+                "text": ""
+              },
+              {
+                "line": 220,
+                "text": "That material will be audited separately before any portion is incorporated into a future Braille Music module."
+              },
+              {
+                "line": 221,
+                "text": ""
+              },
+              {
+                "line": 222,
+                "text": "## 10. Legacy Preservation Rules"
+              },
+              {
+                "line": 223,
+                "text": ""
+              },
+              {
+                "line": 224,
+                "text": "The following rules apply to legacy/v1:"
+              },
+              {
+                "line": 225,
+                "text": ""
+              }
+            ]
+          },
+          {
+            "line": 304,
+            "snippet": [
+              {
+                "line": 299,
+                "text": ""
+              },
+              {
+                "line": 300,
+                "text": "The following items remain documented historical uncertainties but do not block closure of the legacy reconstruction phase:"
+              },
+              {
+                "line": 301,
+                "text": ""
+              },
+              {
+                "line": 302,
+                "text": "- the `Swell Braille` font referenced by the Excel macro has not been recovered"
+              },
+              {
+                "line": 303,
+                "text": "- redistribution rights for recovered third-party Braille fonts have not been established"
+              },
+              {
+                "line": 304,
+                "text": "- provenance and licensing of the larger historical Braille Music research document require a separate audit"
+              },
+              {
+                "line": 305,
+                "text": "- additional original 2016 project artifacts may exist outside the currently recovered material"
+              },
+              {
+                "line": 306,
+                "text": ""
+              },
+              {
+                "line": 307,
+                "text": "These items must not be silently inferred or reconstructed."
+              },
+              {
+                "line": 308,
+                "text": ""
+              },
+              {
+                "line": 309,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "docs/architecture/phase-12.2-developer-sdk-contract.md": {
+      "exportedNames": [],
+      "snippets": {
+        "Braille Music": [
+          {
+            "line": 130,
+            "snippet": [
+              {
+                "line": 126,
+                "text": ""
+              },
+              {
+                "line": 127,
+                "text": "Not part of Phase 12:"
+              },
+              {
+                "line": 128,
+                "text": ""
+              },
+              {
+                "line": 129,
+                "text": "- reverse translation → Phase 13;"
+              },
+              {
+                "line": 130,
+                "text": "- Braille Music → Phase 14;"
+              },
+              {
+                "line": 131,
+                "text": "- general multi-language framework → Phase 15;"
+              },
+              {
+                "line": 132,
+                "text": "- Office on the Web → Phase 16;"
+              },
+              {
+                "line": 133,
+                "text": "- Office for Mac → Phase 17;"
+              },
+              {
+                "line": 134,
+                "text": "- Microsoft Marketplace / Partner Center publication → Phase 18."
+              }
+            ]
+          }
+        ],
+        "Phase 14": [
+          {
+            "line": 130,
+            "snippet": [
+              {
+                "line": 126,
+                "text": ""
+              },
+              {
+                "line": 127,
+                "text": "Not part of Phase 12:"
+              },
+              {
+                "line": 128,
+                "text": ""
+              },
+              {
+                "line": 129,
+                "text": "- reverse translation → Phase 13;"
+              },
+              {
+                "line": 130,
+                "text": "- Braille Music → Phase 14;"
+              },
+              {
+                "line": 131,
+                "text": "- general multi-language framework → Phase 15;"
+              },
+              {
+                "line": 132,
+                "text": "- Office on the Web → Phase 16;"
+              },
+              {
+                "line": 133,
+                "text": "- Office for Mac → Phase 17;"
+              },
+              {
+                "line": 134,
+                "text": "- Microsoft Marketplace / Partner Center publication → Phase 18."
+              }
+            ]
+          }
+        ],
+        "deferred": []
+      }
+    },
+    "docs/architecture/phase-12.6-developer-ecosystem-closure.md": {
+      "exportedNames": [],
+      "snippets": {
+        "Braille Music": [
+          {
+            "line": 108,
+            "snippet": [
+              {
+                "line": 104,
+                "text": ""
+              },
+              {
+                "line": 105,
+                "text": "Phase 12 does not introduce:"
+              },
+              {
+                "line": 106,
+                "text": ""
+              },
+              {
+                "line": 107,
+                "text": "- Braille-to-Persian reverse translation;"
+              },
+              {
+                "line": 108,
+                "text": "- Braille Music;"
+              },
+              {
+                "line": 109,
+                "text": "- a language-independent general Braille framework;"
+              },
+              {
+                "line": 110,
+                "text": "- Office on the Web support;"
+              },
+              {
+                "line": 111,
+                "text": "- Microsoft 365 Mac support;"
+              },
+              {
+                "line": 112,
+                "text": "- Marketplace publication."
+              }
+            ]
+          },
+          {
+            "line": 118,
+            "snippet": [
+              {
+                "line": 114,
+                "text": "Those remain assigned to later roadmap phases:"
+              },
+              {
+                "line": 115,
+                "text": ""
+              },
+              {
+                "line": 116,
+                "text": "```text"
+              },
+              {
+                "line": 117,
+                "text": "Phase 13 — Reverse Translation"
+              },
+              {
+                "line": 118,
+                "text": "Phase 14 — Braille Music"
+              },
+              {
+                "line": 119,
+                "text": "Phase 15 — Multi-language / General Braille Framework"
+              },
+              {
+                "line": 120,
+                "text": "Phase 16 — Office on the Web"
+              },
+              {
+                "line": 121,
+                "text": "Phase 17 — Microsoft 365 Mac"
+              },
+              {
+                "line": 122,
+                "text": "Phase 18 — Microsoft Marketplace / Partner Center"
+              }
+            ]
+          }
+        ],
+        "Phase 14": [
+          {
+            "line": 118,
+            "snippet": [
+              {
+                "line": 114,
+                "text": "Those remain assigned to later roadmap phases:"
+              },
+              {
+                "line": 115,
+                "text": ""
+              },
+              {
+                "line": 116,
+                "text": "```text"
+              },
+              {
+                "line": 117,
+                "text": "Phase 13 — Reverse Translation"
+              },
+              {
+                "line": 118,
+                "text": "Phase 14 — Braille Music"
+              },
+              {
+                "line": 119,
+                "text": "Phase 15 — Multi-language / General Braille Framework"
+              },
+              {
+                "line": 120,
+                "text": "Phase 16 — Office on the Web"
+              },
+              {
+                "line": 121,
+                "text": "Phase 17 — Microsoft 365 Mac"
+              },
+              {
+                "line": 122,
+                "text": "Phase 18 — Microsoft Marketplace / Partner Center"
+              }
+            ]
+          }
+        ],
+        "deferred": []
+      }
+    },
+    "docs/architecture/phase-13.2-reverse-translation-architecture.md": {
+      "exportedNames": [],
+      "snippets": {
+        "Braille Music": [
+          {
+            "line": 318,
+            "snippet": [
+              {
+                "line": 314,
+                "text": ""
+              },
+              {
+                "line": 315,
+                "text": "Phase 13 does not include:"
+              },
+              {
+                "line": 316,
+                "text": ""
+              },
+              {
+                "line": 317,
+                "text": "```text"
+              },
+              {
+                "line": 318,
+                "text": "Phase 14 — Braille Music"
+              },
+              {
+                "line": 319,
+                "text": "Phase 15 — Multi-language / General Braille Framework"
+              },
+              {
+                "line": 320,
+                "text": "Phase 16 — Office on the Web"
+              },
+              {
+                "line": 321,
+                "text": "Phase 17 — Microsoft 365 Mac"
+              },
+              {
+                "line": 322,
+                "text": "Phase 18 — Marketplace"
+              }
+            ]
+          }
+        ],
+        "Phase 14": [
+          {
+            "line": 318,
+            "snippet": [
+              {
+                "line": 314,
+                "text": ""
+              },
+              {
+                "line": 315,
+                "text": "Phase 13 does not include:"
+              },
+              {
+                "line": 316,
+                "text": ""
+              },
+              {
+                "line": 317,
+                "text": "```text"
+              },
+              {
+                "line": 318,
+                "text": "Phase 14 — Braille Music"
+              },
+              {
+                "line": 319,
+                "text": "Phase 15 — Multi-language / General Braille Framework"
+              },
+              {
+                "line": 320,
+                "text": "Phase 16 — Office on the Web"
+              },
+              {
+                "line": 321,
+                "text": "Phase 17 — Microsoft 365 Mac"
+              },
+              {
+                "line": 322,
+                "text": "Phase 18 — Marketplace"
+              }
+            ]
+          }
+        ],
+        "deferred": []
+      }
+    }
+  },
+  "officialSourcePolicyCandidate": [
+    {
+      "id": "ICEB-MUSIC-POSITION",
+      "authority": "International Council on English Braille (ICEB)",
+      "title": "Braille Music — Music Committee position statement",
+      "url": "https://iceb.org/music-html/",
+      "policy": "Use ICEB's current position statement as the authority for international source precedence. ICEB identifies Music Braille Code 2015 as the most up-to-date resource and the 1996 New International Manual as a complementary international reference."
+    },
+    {
+      "id": "BANA-MBC-2015",
+      "authority": "Braille Authority of North America (BANA)",
+      "title": "Music Braille Code, 2015",
+      "url": "https://brailleauthority.org/music-braille-code",
+      "policy": "Primary rule/codebook source for Phase 14. Store normalized rule facts and provenance in the repository; do not vendor or alter the full copyrighted codebook. BANA states the publication may be duplicated but not altered."
+    },
+    {
+      "id": "MIDI-SMF-RP001",
+      "authority": "The MIDI Association",
+      "title": "Standard MIDI Files",
+      "url": "https://midi.org/standard-midi-files",
+      "policy": "Primary source for the MIDI input container/event model. The official page confirms time-stamped MIDI streams, track/sequence structure, tempo and time-signature information."
+    },
+    {
+      "id": "MS-OFFICE-WEBVIEW2",
+      "authority": "Microsoft Learn",
+      "title": "Browsers and webview controls used by Office Add-ins",
+      "url": "https://learn.microsoft.com/en-us/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins",
+      "policy": "Windows Office Add-ins run in Microsoft Edge WebView2 on supported Office versions. Local file-picker behavior must still be acceptance-tested in the actual Word Desktop preview."
+    },
+    {
+      "id": "MS-WORD-INSERT",
+      "authority": "Microsoft Learn",
+      "title": "Word add-in tutorial / Word.Range.insertText",
+      "url": "https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial",
+      "policy": "Use the existing WordApi 1.1 selection insertion path. Phase 14 must not add an Excel or PowerPoint music execution path."
+    }
+  ],
+  "midiSemanticClassification": {
+    "directOrStructurallyAvailable": [
+      {
+        "feature": "note pitch number",
+        "basis": "MIDI note events",
+        "phase14Use": "YES"
+      },
+      {
+        "feature": "note onset/off timing",
+        "basis": "time-stamped MIDI events",
+        "phase14Use": "YES"
+      },
+      {
+        "feature": "simultaneous-note groups",
+        "basis": "coincident/overlapping note timing",
+        "phase14Use": "YES, after deterministic grouping policy"
+      },
+      {
+        "feature": "tracks/channels",
+        "basis": "SMF/MIDI structure",
+        "phase14Use": "YES as source structure, NOT automatically notation voices"
+      },
+      {
+        "feature": "tempo",
+        "basis": "SMF tempo meta information when present",
+        "phase14Use": "YES when explicitly present"
+      },
+      {
+        "feature": "time signature",
+        "basis": "SMF time-signature meta information when present",
+        "phase14Use": "YES when explicitly present"
+      },
+      {
+        "feature": "key signature",
+        "basis": "SMF key-signature meta event when present",
+        "phase14Use": "CANDIDATE; verify parser/library support"
+      }
+    ],
+    "requiresDeterministicNotationPolicy": [
+      {
+        "feature": "printed rhythmic duration",
+        "reason": "Performed MIDI timing can contain expressive offsets and does not itself guarantee exact engraved note values.",
+        "requiredPolicy": "quantization"
+      },
+      {
+        "feature": "rests",
+        "reason": "Rests are derived from gaps in a notation timeline rather than explicit note events.",
+        "requiredPolicy": "quantized gap segmentation"
+      },
+      {
+        "feature": "octave marks",
+        "reason": "Pitch octave is available, but Music Braille octave signs are context-sensitive rather than a direct per-note dump.",
+        "requiredPolicy": "Music Braille contextual octave rule"
+      },
+      {
+        "feature": "accidental spelling",
+        "reason": "MIDI note number preserves chromatic pitch but not original enharmonic spelling such as C-sharp versus D-flat.",
+        "requiredPolicy": "key-aware canonical pitch spelling + diagnostic"
+      },
+      {
+        "feature": "notation voices",
+        "reason": "MIDI tracks/channels are not equivalent to engraved voices.",
+        "requiredPolicy": "explicit conservative voice policy"
+      },
+      {
+        "feature": "measure segmentation",
+        "reason": "Requires time-signature/timeline interpretation and a defined fallback when source metadata is absent.",
+        "requiredPolicy": "measure construction policy"
+      }
+    ],
+    "notFaithfullyRecoverableByDefault": [
+      "original enharmonic spelling",
+      "explicit print dynamics markings from velocity alone",
+      "explicit articulation marks from duration alone",
+      "slurs and phrase marks",
+      "fingering",
+      "original left/right hand assignment",
+      "original engraved voice numbers",
+      "print layout and staff geometry",
+      "editorial markings not encoded in MIDI"
+    ]
+  },
+  "candidateModuleBoundary": {
+    "preferred": {
+      "musicEngine": "new platform-agnostic music package/module, independent of Office",
+      "sdkFacade": "expose Music Braille through the existing public SDK boundary so Microsoft365 continues to depend on public SDK rather than a private Core/music implementation",
+      "officeLayer": "Word-only task-pane/file/preview/insert orchestration under integrations/microsoft365"
+    },
+    "invariant": "Office -> public SDK -> music engine; never Office -> private music engine internals.",
+    "futureProofing": "A future MusicXML adapter must terminate at the same neutral semantic music model and must not require a rewrite of the Braille encoder."
+  },
+  "candidateContract": {
+    "input": {
+      "extensions": [
+        ".mid",
+        ".midi"
+      ],
+      "transport": "local file bytes",
+      "preferredBrowserRepresentation": "ArrayBuffer / Uint8Array",
+      "musicXml": "OUT_OF_SCOPE"
+    },
+    "pipeline": [
+      "validate selected local file",
+      "parse Standard MIDI File",
+      "normalize raw MIDI events",
+      "construct neutral semantic music model",
+      "quantize notation timeline under explicit policy",
+      "resolve pitch spelling under explicit policy",
+      "construct measures/chords/rests/parts conservatively",
+      "encode supported Music Braille rules",
+      "render Unicode Braille",
+      "return immutable preview/result",
+      "insert successful output at current Word selection"
+    ],
+    "ui": {
+      "host": "Word Desktop Windows only",
+      "existingTaskPane": true,
+      "controls": [
+        "Choose MIDI File",
+        "selected filename/metadata",
+        "Full supported notation / Custom",
+        "supported feature toggles only",
+        "Generate Braille",
+        "Braille Music preview",
+        "Insert into Word"
+      ],
+      "insertRule": "Insert only a successful generated preview at the current Word selection/cursor; no Excel/PowerPoint music action."
+    },
+    "initialFeaturePolicy": {
+      "enable": [
+        "notes",
+        "quantized durations",
+        "contextual octaves",
+        "derived rests",
+        "simultaneous-note/chord groups",
+        "track/part separation where source structure is explicit",
+        "tempo when explicitly present",
+        "time signature when explicitly present",
+        "key signature when explicitly present and parser support is verified"
+      ],
+      "doNotClaimYet": [
+        "dynamics from velocity",
+        "articulation from note length",
+        "slurs",
+        "fingering",
+        "hand assignment",
+        "original voice numbering",
+        "original enharmonic spelling"
+      ]
+    },
+    "failureFamiliesToFreezeNext": [
+      "file selection/read failures",
+      "invalid or unsupported MIDI container",
+      "unsupported timing division/format if narrowed",
+      "empty/no-note MIDI",
+      "unquantizable rhythm",
+      "ambiguous pitch spelling",
+      "unsupported polyphony/voice structure",
+      "unsupported Music Braille construct",
+      "Word insertion failure (host layer only)"
+    ],
+    "diagnosticFamiliesToFreezeNext": [
+      "rhythm quantized",
+      "pitch spelling canonicalized",
+      "source metadata absent",
+      "track/channel treated as source part rather than notation voice",
+      "notation detail omitted because MIDI does not preserve it",
+      "lossy reconstruction"
+    ]
+  },
+  "openContractDecisions": [
+    {
+      "id": "P14-MIDI-FORMAT-SUBSET",
+      "question": "Freeze the exact Standard MIDI File subset accepted by the first implementation (for example SMF types/time division).",
+      "reason": "The parser contract must fail explicitly on unsupported containers/timing models rather than silently misread them."
+    },
+    {
+      "id": "P14-RHYTHM-QUANTIZATION",
+      "question": "Freeze deterministic duration/rest quantization tolerances and supported rhythmic values.",
+      "reason": "Performance timing is not identical to engraved notation."
+    },
+    {
+      "id": "P14-PITCH-SPELLING",
+      "question": "Freeze canonical enharmonic spelling policy and its use of an explicit MIDI key-signature event when available.",
+      "reason": "MIDI note number does not preserve original spelling."
+    },
+    {
+      "id": "P14-POLYPHONY",
+      "question": "Freeze chord/polyphony/part handling and explicitly avoid equating MIDI tracks/channels with notation voices.",
+      "reason": "Braille Music representation depends on musical structure, not merely event ordering."
+    },
+    {
+      "id": "P14-MISSING-METADATA",
+      "question": "Freeze behavior when tempo, time signature, or key signature metadata is absent.",
+      "reason": "Phase 14 must distinguish defaults required for timeline calculation from claims that the source explicitly encoded a notation marking."
+    },
+    {
+      "id": "P14-OFFICE-FILE-PICKER",
+      "question": "Acceptance-test local .mid/.midi selection in the actual Windows Word Desktop WebView2 task pane.",
+      "reason": "The architecture permits a browser file input, but Phase 14 must prove the UX in the exact supported host before closure."
+    }
+  ],
+  "blockers": [],
+  "decision": "READY_TO_FREEZE_PHASE14_2B_MUSIC_BRAILLE_CONTRACT",
+  "next": "Materialize Phase 14.2b architecture/source-policy/semantic/UI contract only after reviewing this audit. Do not implement a MIDI parser or Music Braille encoder before the contract is frozen."
+}

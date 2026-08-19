@@ -1,0 +1,3441 @@
+{
+  "phase": "14.7a",
+  "branch": "phase14-braille-music",
+  "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+  "decision": "READY_FOR_PHASE14_7B_END_TO_END_MIDI_BRAILLE_BRIDGE_AND_SDK_FACADE",
+  "blockers": [],
+  "workingTree": [
+    " M package.json",
+    " M pnpm-lock.yaml",
+    "?? docs/architecture/phase-14.1-music-braille-architecture-audit.json",
+    "?? docs/architecture/phase-14.1-music-braille-architecture-audit.txt",
+    "?? docs/architecture/phase-14.2-music-braille-contract-source-audit.json",
+    "?? docs/architecture/phase-14.2-music-braille-contract-source-audit.txt",
+    "?? docs/architecture/phase-14.2b-music-braille-contract.json",
+    "?? docs/architecture/phase-14.2b-music-braille-contract.md",
+    "?? docs/architecture/phase-14.2b-music-braille-source-policy.md",
+    "?? docs/architecture/phase-14.3-midi-parser-dependency-audit.json",
+    "?? docs/architecture/phase-14.3-midi-parser-dependency-audit.txt",
+    "?? docs/architecture/phase-14.4-notation-quantization-audit.json",
+    "?? docs/architecture/phase-14.4-notation-quantization-audit.txt",
+    "?? docs/architecture/phase-14.4b-notation-quantization-contract.json",
+    "?? docs/architecture/phase-14.4b-notation-quantization-contract.md",
+    "?? docs/architecture/phase-14.4c-notation-quantization-foundation.md",
+    "?? docs/music-braille/",
+    "?? packages/music/",
+    "?? scripts/",
+    "?? stage14-5-music-braille-rule-source-audit.json",
+    "?? stage14-5-music-braille-rule-source-audit.txt",
+    "?? tools/architecture/validate-phase14-2b-music-braille-contract.mjs",
+    "?? tools/architecture/validate-phase14-3b-midi-parser-foundation.mjs",
+    "?? tools/architecture/validate-phase14-4b-notation-quantization-contract.mjs",
+    "?? tools/architecture/validate-phase14-4c-notation-quantization-foundation.mjs"
+  ],
+  "music": {
+    "files": [
+      {
+        "path": "packages/music/src/smf-parser.ts",
+        "sha256": "451edf6830c4401028ff30094c6f2755c44dcbe6a0115f510c41f5b9af4f7002",
+        "lineCount": 1151,
+        "imports": [
+          "./types.js"
+        ],
+        "exports": [
+          {
+            "kind": "function",
+            "name": "parseStandardMidiFile",
+            "declaration": "export function parseStandardMidiFile(\n  input:\n    | Uint8Array\n    | ArrayBuffer,\n): MidiParserResult {\n  const bytes =\n    input instanceof Uint8Array\n      ? input\n      : new Uint8Array(\n          input,\n        );\n\n  try {\n    if (\n      bytes.length < 14\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"MIDI data is too short to contain a Standard MIDI File header.\",\n        0,\n      );\n    }\n\n    if (\n      readAscii(\n        bytes,\n        0,\n        4,\n      ) !== \"MThd\"\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"MIDI file does not begin with an MThd header chunk.\",\n        0,\n      );\n    }\n\n    const headerLength =\n      readUint32(\n        bytes,\n        4,\n      );\n\n    if (\n      headerLength !== 6\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"Phase 14 requires the SMF header length to be exactly 6 bytes.\",\n        4,"
+          }
+        ]
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "sha256": "82d6a6a607a518c78a50166b1d8f1f45eb622aceaa3697ec763d1abf9b19f6d7",
+        "lineCount": 1283,
+        "imports": [
+          "./notation-types.js",
+          "./quantization.js",
+          "./types.js"
+        ],
+        "exports": [
+          {
+            "kind": "function",
+            "name": "buildNotationScore",
+            "declaration": "export function buildNotationScore(\n  source:\n    MidiSemanticSource,\n): NotationBuildResult {\n  const diagnostics:\n    NotationDiagnostic[] = [];\n\n  const temporaryQuantized:\n    QuantizedSourceNote[] = [];\n\n  for (\n    const part\n    of source.parts\n  ) {\n    const result =\n      quantizePartNotes(\n        part,\n        source,\n        [],\n      );\n\n    if (\n      isNotationBuildFailure(\n        result,\n      )\n    ) {\n      return result;\n    }\n\n    temporaryQuantized.push(\n      ...result,\n    );\n  }\n\n  const maxEndUnit =\n    Math.max(\n      ...temporaryQuantized.map(\n        (item) =>\n          item.endUnit,\n      ),\n    );\n\n  const boundaries =\n    buildMeasureBoundaries(\n      source,\n      maxEndUnit,\n      diagnostics,\n    );\n\n  if ("
+          }
+        ]
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "sha256": "88c1eb8f5d47c3616a7bdc52f9f66646e6728752c426f8a46f12db303054bb28",
+        "lineCount": 312,
+        "imports": [
+          "./braille-ascii.js"
+        ],
+        "exports": [
+          {
+            "kind": "const",
+            "name": "ACCIDENTAL_SYMBOLS",
+            "declaration": "export const ACCIDENTAL_SYMBOLS = {\n  \"sharp\": \"%\",\n  \"doubleSharp\": \"%%\",\n  \"flat\": \"<\",\n  \"doubleFlat\": \"<<\",\n  \"natural\": \"*\",\n  \"quarterSharp\": \"@%\",\n  \"quarterFlat\": \"@<\",\n  \"threeQuarterSharp\": \"_%\",\n  \"threeQuarterFlat\": \"_<\"\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "GROUPING_SYMBOLS",
+            "declaration": "export const GROUPING_SYMBOLS = {\n  \"tripletSingleCell\": \"2\",\n  \"tripletThreeCell\": \"_3'\",\n  \"groupTwo\": \"_2'\",\n  \"groupTen\": \"_10'\"\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "INTERVAL_SYMBOLS",
+            "declaration": "export const INTERVAL_SYMBOLS = {\n  \"2\": \"/\",\n  \"3\": \"+\",\n  \"4\": \"#\",\n  \"5\": \"9\",\n  \"6\": \"0\",\n  \"7\": \"3\",\n  \"8\": \"-\"\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "METER_DENOMINATORS",
+            "declaration": "export const METER_DENOMINATORS = [\n  1,\n  2,\n  4,\n  8,\n  16,\n  32,\n  64\n] as const;"
+          },
+          {
+            "kind": "const",
+            "name": "NORMAL_MEASURE_SEPARATOR",
+            "declaration": "export const NORMAL_MEASURE_SEPARATOR = \" \" as const;"
+          },
+          {
+            "kind": "const",
+            "name": "NOTE_SYMBOLS_BY_FAMILY",
+            "declaration": "export const NOTE_SYMBOLS_BY_FAMILY = {\n  \"wholeOr16th\": {\n    \"C\": \"y\",\n    \"D\": \"z\",\n    \"E\": \"&\",\n    \"F\": \"=\",\n    \"G\": \"(\",\n    \"A\": \"!\",\n    \"B\": \")\"\n  },\n  \"halfOr32nd\": {\n    \"C\": \"n\",\n    \"D\": \"o\",\n    \"E\": \"p\",\n    \"F\": \"q\",\n    \"G\": \"r\",\n    \"A\": \"s\",\n    \"B\": \"t\"\n  },\n  \"quarterOr64th\": {\n    \"C\": \"?\",\n    \"D\": \":\",\n    \"E\": \"$\",\n    \"F\": \"]\",\n    \"G\": \"\\\\\",\n    \"A\": \"[\",\n    \"B\": \"w\"\n  },\n  \"eighthOr128th\": {\n    \"C\": \"d\",\n    \"D\": \"e\",\n    \"E\": \"f\",\n    \"F\": \"g\",\n    \"G\": \"h\",\n    \"A\": \"i\",\n    \"B\": \"j\"\n  }\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "OCTAVE_PREFIXES",
+            "declaration": "export const OCTAVE_PREFIXES = {\n  \"sub\": \"@@\",\n  \"1\": \"@\",\n  \"2\": \"^\",\n  \"3\": \"_\",\n  \"4\": \"\\\"\",\n  \"5\": \".\",\n  \"6\": \";\",\n  \"7\": \",\",\n  \"super\": \",,\"\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "REST_SYMBOLS_BY_FAMILY",
+            "declaration": "export const REST_SYMBOLS_BY_FAMILY = {\n  \"wholeOr16th\": \"m\",\n  \"halfOr32nd\": \"u\",\n  \"quarterOr64th\": \"v\",\n  \"eighthOr128th\": \"x\"\n} as const;"
+          },
+          {
+            "kind": "const",
+            "name": "TIE_SYMBOLS",
+            "declaration": "export const TIE_SYMBOLS = {\n  \"single\": \"@c\",\n  \"chord\": \".c\"\n} as const;"
+          },
+          {
+            "kind": "function",
+            "name": "accidentalBrf",
+            "declaration": "export function accidentalBrf(accidental: ExplicitAccidental): string {\n  const token = ACCIDENTAL_SYMBOLS[accidental];\n  if (typeof token !== \"string\") fail(`unsupported accidental ${accidental}`);\n  return token;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeAtomicChord",
+            "declaration": "export function encodeAtomicChord(input: AtomicChordInput): BrailleEmission {\n  if (input.intervals.length === 0) fail(\"atomic chord requires at least one interval member\");\n  const written = encodeAtomicNote({ ...input.writtenNote, tie: false }).brf;\n  let brf = written;\n  for (const member of input.intervals) {\n    if (member.accidental) brf += accidentalBrf(member.accidental);\n    brf += intervalBrf(member.diatonicInterval);\n  }\n  if (input.tieAll) brf += tieBrf(\"chord\");\n  return emission(brf);\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeAtomicNote",
+            "declaration": "export function encodeAtomicNote(input: AtomicNoteInput): BrailleEmission {\n  const dots = input.augmentationDots ?? 0;\n  assertAugmentationDots(dots);\n  let brf = \"\";\n  if (input.tripletStart) brf += tripletIndicatorBrf();\n  if (input.accidental) brf += accidentalBrf(input.accidental);\n  if (input.includeOctave !== false) brf += octavePrefixBrf(input.scientificOctave);\n  brf += noteCellBrf(input.step, input.value);\n  brf += \"'\".repeat(dots);\n  if (input.tie) brf += tieBrf(\"single\");\n  return emission(brf);\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeAtomicRest",
+            "declaration": "export function encodeAtomicRest(input: AtomicRestInput): BrailleEmission {\n  const dots = input.augmentationDots ?? 0;\n  assertAugmentationDots(dots);\n  let brf = \"\";\n  if (input.tripletStart) brf += tripletIndicatorBrf();\n  brf += restCellBrf(input.value);\n  brf += \"'\".repeat(dots);\n  return emission(brf);\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeInterval",
+            "declaration": "export function encodeInterval(interval: 2 | 3 | 4 | 5 | 6 | 7 | 8): BrailleEmission { return emission(intervalBrf(interval)); }"
+          },
+          {
+            "kind": "function",
+            "name": "encodeKeySignature",
+            "declaration": "export function encodeKeySignature(sharpsFlats: number): BrailleEmission {\n  return emission(keySignatureBrf(sharpsFlats));\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeMeasureSeparator",
+            "declaration": "export function encodeMeasureSeparator(): BrailleEmission { return emission(NORMAL_MEASURE_SEPARATOR); }"
+          },
+          {
+            "kind": "function",
+            "name": "encodeSimpleMeter",
+            "declaration": "export function encodeSimpleMeter(numerator: number, denominator: number): BrailleEmission {\n  return emission(simpleMeterBrf(numerator, denominator));\n}"
+          },
+          {
+            "kind": "function",
+            "name": "encodeTie",
+            "declaration": "export function encodeTie(kind: TieKind): BrailleEmission { return emission(tieBrf(kind)); }"
+          },
+          {
+            "kind": "function",
+            "name": "encodeTripletIndicator",
+            "declaration": "export function encodeTripletIndicator(): BrailleEmission { return emission(tripletIndicatorBrf()); }"
+          },
+          {
+            "kind": "function",
+            "name": "intervalBrf",
+            "declaration": "export function intervalBrf(interval: 2 | 3 | 4 | 5 | 6 | 7 | 8): string {\n  const token = INTERVAL_SYMBOLS[String(interval) as keyof typeof INTERVAL_SYMBOLS];\n  if (typeof token !== \"string\") fail(`unsupported diatonic interval ${interval}`);\n  return token;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "keySignatureBrf",
+            "declaration": "export function keySignatureBrf(sharpsFlats: number): string {\n  if (!Number.isInteger(sharpsFlats) || sharpsFlats < -7 || sharpsFlats > 7) {\n    fail(`key signature sf must be an integer in -7..7, got ${sharpsFlats}`);\n  }\n  if (sharpsFlats === 0) return \"\";\n  const count = Math.abs(sharpsFlats);\n  const sign = sharpsFlats > 0 ? ACCIDENTAL_SYMBOLS.sharp : ACCIDENTAL_SYMBOLS.flat;\n  if (count <= 3) return sign.repeat(count);\n  return `#${upperCellNumberBrf(count)}${sign}`;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "noteCellBrf",
+            "declaration": "export function noteCellBrf(step: MusicNoteName, value: MusicValue): string {\n  const family = VALUE_TO_FAMILY[value];\n  const mapping = NOTE_SYMBOLS_BY_FAMILY[family];\n  const token = mapping[step];\n  if (typeof token !== \"string\") fail(`unsupported note ${step} ${value}`);\n  return token;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "octavePrefixBrf",
+            "declaration": "export function octavePrefixBrf(scientificOctave: number): string {\n  if (!Number.isInteger(scientificOctave) || scientificOctave < 0 || scientificOctave > 8) {\n    fail(`scientificOctave must be an integer in 0..8, got ${scientificOctave}`);\n  }\n  if (scientificOctave === 0) return OCTAVE_PREFIXES.sub;\n  if (scientificOctave === 8) return OCTAVE_PREFIXES.super;\n  const token = OCTAVE_PREFIXES[String(scientificOctave) as keyof typeof OCTAVE_PREFIXES];\n  if (typeof token !== \"string\") fail(`missing octave token for scientific octave ${scientificOctave}`);\n  return token;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "restCellBrf",
+            "declaration": "export function restCellBrf(value: MusicValue): string {\n  const family = VALUE_TO_FAMILY[value];\n  const token = REST_SYMBOLS_BY_FAMILY[family];\n  if (typeof token !== \"string\") fail(`unsupported rest ${value}`);\n  return token;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "simpleMeterBrf",
+            "declaration": "export function simpleMeterBrf(numerator: number, denominator: number): string {\n  if (!Number.isInteger(numerator) || numerator < 1 || numerator > 99) {\n    fail(`meter numerator must be an integer in 1..99, got ${numerator}`);\n  }\n  if (!(METER_DENOMINATORS as readonly number[]).includes(denominator)) {\n    fail(`unsupported simple meter denominator ${denominator}`);\n  }\n  return `#${upperCellNumberBrf(numerator)}${String(denominator)}`;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "tieBrf",
+            "declaration": "export function tieBrf(kind: TieKind): string {\n  if (kind === \"single\") return TIE_SYMBOLS.single;\n  if (kind === \"chord\") return TIE_SYMBOLS.chord;\n  fail(`unsupported tie kind ${String(kind)}`);\n}"
+          },
+          {
+            "kind": "function",
+            "name": "tripletIndicatorBrf",
+            "declaration": "export function tripletIndicatorBrf(): string {\n  return GROUPING_SYMBOLS.tripletSingleCell;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "upperCellNumberBrf",
+            "declaration": "export function upperCellNumberBrf(value: number): string {\n  if (!Number.isInteger(value) || value < 0) {\n    fail(`upper-cell number must be a non-negative integer, got ${value}`);\n  }\n  return String(value).split(\"\").map((digit) => {\n    const token = UPPER_DIGIT[digit as keyof typeof UPPER_DIGIT];\n    if (!token) fail(`unsupported decimal digit ${digit}`);\n    return token;\n  }).join(\"\");\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "AtomicChordInput",
+            "declaration": "export interface AtomicChordInput {\n  readonly writtenNote: AtomicNoteInput;\n  readonly intervals: readonly AtomicChordIntervalInput[];\n  readonly tieAll?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "AtomicChordIntervalInput",
+            "declaration": "export interface AtomicChordIntervalInput {\n  readonly diatonicInterval: 2 | 3 | 4 | 5 | 6 | 7 | 8;\n  readonly accidental?: ExplicitAccidental;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "AtomicNoteInput",
+            "declaration": "export interface AtomicNoteInput {\n  readonly step: MusicNoteName;\n  readonly scientificOctave: number;\n  readonly value: MusicValue;\n  readonly accidental?: ExplicitAccidental;\n  readonly augmentationDots?: number;\n  readonly tie?: boolean;\n  readonly includeOctave?: boolean;\n  readonly tripletStart?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "AtomicRestInput",
+            "declaration": "export interface AtomicRestInput {\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tripletStart?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "BrailleEmission",
+            "declaration": "export interface BrailleEmission {\n  readonly brf: string;\n  readonly unicode: string;\n}"
+          },
+          {
+            "kind": "type",
+            "name": "ExplicitAccidental",
+            "declaration": "export type ExplicitAccidental =\n  | \"sharp\"\n  | \"doubleSharp\"\n  | \"flat\"\n  | \"doubleFlat\"\n  | \"natural\"\n  | \"quarterSharp\"\n  | \"quarterFlat\"\n  | \"threeQuarterSharp\"\n  | \"threeQuarterFlat\";"
+          },
+          {
+            "kind": "type",
+            "name": "MusicNoteName",
+            "declaration": "export type MusicNoteName = \"C\" | \"D\" | \"E\" | \"F\" | \"G\" | \"A\" | \"B\";"
+          },
+          {
+            "kind": "type",
+            "name": "MusicValue",
+            "declaration": "export type MusicValue = \"whole\" | \"half\" | \"quarter\" | \"eighth\" | \"16th\" | \"32nd\" | \"64th\" | \"128th\";"
+          },
+          {
+            "kind": "type",
+            "name": "TieKind",
+            "declaration": "export type TieKind = \"single\" | \"chord\";"
+          }
+        ]
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "sha256": "87a9fbb209d84638ddd5b80f0d26fb130eb0cb1d182a6e5725c7fd772950ab90",
+        "lineCount": 351,
+        "imports": [
+          "./braille-ascii.js",
+          "./music-braille-atomic-encoder.js"
+        ],
+        "exports": [
+          {
+            "kind": "const",
+            "name": "KEY_SIGNATURE_FLAT_ORDER",
+            "declaration": "export const KEY_SIGNATURE_FLAT_ORDER = [\"B\", \"E\", \"A\", \"D\", \"G\", \"C\", \"F\"] as const;"
+          },
+          {
+            "kind": "const",
+            "name": "KEY_SIGNATURE_SHARP_ORDER",
+            "declaration": "export const KEY_SIGNATURE_SHARP_ORDER = [\"F\", \"C\", \"G\", \"D\", \"A\", \"E\", \"B\"] as const;"
+          },
+          {
+            "kind": "const",
+            "name": "MIDI_CHORD_PROFILE_ID",
+            "declaration": "export const MIDI_CHORD_PROFILE_ID = \"MIDI_GENERIC_UPPER_NOTE_DOWNWARD_INTERVALS_V1\" as const;"
+          },
+          {
+            "kind": "const",
+            "name": "MIDI_STATEFUL_PROFILE_ID",
+            "declaration": "export const MIDI_STATEFUL_PROFILE_ID = \"MIDI_STATEFUL_MBC2015_V1\" as const;"
+          },
+          {
+            "kind": "const",
+            "name": "SPELLING_ACCIDENTAL_CANDIDATES",
+            "declaration": "export const SPELLING_ACCIDENTAL_CANDIDATES = [-2, -1, 0, 1, 2] as const;"
+          },
+          {
+            "kind": "function",
+            "name": "encodeStatefulScore",
+            "declaration": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {\n  if (input.measures.length === 0) {\n    fail(\"score requires at least one measure\");\n  }\n\n  const sf = input.keySharpsFlats ?? 0;\n  validateKey(sf);\n\n  let brf = \"\";\n  if (sf !== 0) brf += keySignatureBrf(sf);\n  if (input.meter) brf += simpleMeterBrf(input.meter.numerator, input.meter.denominator);\n  if (sf !== 0 || input.meter) brf += \" \";\n\n  const accidentalState = new AccidentalState(sf);\n  const trace: StatefulTraceEntry[] = [];\n  let previousWritten: SpelledPitch | null = null;\n  let forceNextOctave = true;\n\n  for (const [measureIndex, measure] of input.measures.entries()) {\n    accidentalState.reset();\n\n    for (const [eventIndex, event] of measure.events.entries()) {\n      let emitted = \"\";\n\n      if (event.kind === \"rest\") {\n        emitted = encodeAtomicRest({\n          value: event.value,\n          ...(event.augmentationDots !== undefined ? { augmentationDots: event.augmentationDots } : {}),\n          ...(event.tripletStart !== undefined ? { tripletStart: event.tripletStart } : {}),\n        }).brf;\n      } else if (event.kind === \"note\") {\n        const written = spellMidiPitch(event."
+          },
+          {
+            "kind": "function",
+            "name": "melodicDiatonicInterval",
+            "declaration": "export function melodicDiatonicInterval(a: SpelledPitch, b: SpelledPitch): number {\n  return Math.abs(staffPosition(b) - staffPosition(a)) + 1;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "octaveMarkRequired",
+            "declaration": "export function octaveMarkRequired(previous: SpelledPitch | null, current: SpelledPitch, force = false): boolean {\n  if (force || previous === null) return true;\n  const interval = melodicDiatonicInterval(previous, current);\n  if (interval < 4) return false;\n  if (interval > 5) return true;\n  return previous.scientificOctave !== current.scientificOctave;\n}"
+          },
+          {
+            "kind": "function",
+            "name": "spellMidiPitch",
+            "declaration": "export function spellMidiPitch(midiPitch: number, keySharpsFlats = 0): SpelledPitch {\n  if (!Number.isInteger(midiPitch) || midiPitch < 0 || midiPitch > 127) {\n    fail(`MIDI pitch must be an integer in 0..127, got ${midiPitch}`);\n  }\n  if (!Number.isInteger(keySharpsFlats) || keySharpsFlats < -7 || keySharpsFlats > 7) {\n    fail(`keySharpsFlats must be an integer in -7..7, got ${keySharpsFlats}`);\n  }\n\n  const pitchClass = midiPitch % 12;\n  const candidates: Array<{ score: readonly number[]; pitch: SpelledPitch }> = [];\n\n  for (let stepIndex = 0; stepIndex < STEPS.length; stepIndex += 1) {\n    const step = STEPS[stepIndex];\n    if (step === undefined) continue;\n    for (const accidental of SPELLING_ACCIDENTAL_CANDIDATES) {\n      if ((STEP_PC[step] + accidental + 24) % 12 !== pitchClass) continue;\n      const octaveRaw = (midiPitch - accidental - STEP_PC[step]) / 12 - 1;\n      if (!Number.isInteger(octaveRaw)) continue;\n      const scientificOctave = octaveRaw;\n      if (scientificOctave < 0 || scientificOctave > 8) continue;\n\n      const keyDefault = keyDefaultAccidental(step, keySharpsFlats);\n      const score = [\n        Math.abs(accidental - keyDefault),\n        polarityScore(a"
+          },
+          {
+            "kind": "interface",
+            "name": "SpelledPitch",
+            "declaration": "export interface SpelledPitch {\n  readonly midiPitch: number;\n  readonly step: MusicNoteName;\n  readonly accidental: -2 | -1 | 0 | 1 | 2;\n  readonly scientificOctave: number;\n  readonly display: string;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulChordEvent",
+            "declaration": "export interface StatefulChordEvent {\n  readonly kind: \"chord\";\n  readonly midiPitches: readonly number[];\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tieAll?: boolean;\n  readonly tripletStart?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulMeasureInput",
+            "declaration": "export interface StatefulMeasureInput {\n  readonly events: readonly StatefulMusicEvent[];\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulNoteEvent",
+            "declaration": "export interface StatefulNoteEvent {\n  readonly kind: \"note\";\n  readonly midiPitch: number;\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tie?: boolean;\n  readonly tripletStart?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulRestEvent",
+            "declaration": "export interface StatefulRestEvent {\n  readonly kind: \"rest\";\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tripletStart?: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulScoreEmission",
+            "declaration": "export interface StatefulScoreEmission extends BrailleEmission {\n  readonly profileId: typeof MIDI_STATEFUL_PROFILE_ID;\n  readonly chordProfileId: typeof MIDI_CHORD_PROFILE_ID;\n  readonly profileDisclosureRequired: true;\n  readonly trace: readonly StatefulTraceEntry[];\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulScoreInput",
+            "declaration": "export interface StatefulScoreInput {\n  readonly keySharpsFlats?: number;\n  readonly meter?: Readonly<{ numerator: number; denominator: number }>;\n  readonly measures: readonly StatefulMeasureInput[];\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "StatefulTraceEntry",
+            "declaration": "export interface StatefulTraceEntry {\n  readonly measureIndex: number;\n  readonly eventIndex: number;\n  readonly kind: StatefulMusicEvent[\"kind\"];\n  readonly written?: SpelledPitch;\n  readonly members?: readonly SpelledPitch[];\n  readonly emittedBrf: string;\n}"
+          },
+          {
+            "kind": "type",
+            "name": "StatefulMusicEvent",
+            "declaration": "export type StatefulMusicEvent = StatefulNoteEvent | StatefulRestEvent | StatefulChordEvent;"
+          }
+        ]
+      },
+      {
+        "path": "packages/music/src/index.ts",
+        "sha256": "1cbcb79b9d81497179292635bb82b5d56fc1087756fe51c966138846c14642d3",
+        "lineCount": 52,
+        "imports": [
+          "./notation-builder.js",
+          "./notation-types.js",
+          "./quantization.js",
+          "./smf-parser.js",
+          "./types.js"
+        ],
+        "exports": []
+      }
+    ],
+    "parserCandidates": [
+      {
+        "path": "packages/music/src/smf-parser.ts",
+        "kind": "function",
+        "name": "parseStandardMidiFile",
+        "declaration": "export function parseStandardMidiFile(\n  input:\n    | Uint8Array\n    | ArrayBuffer,\n): MidiParserResult {\n  const bytes =\n    input instanceof Uint8Array\n      ? input\n      : new Uint8Array(\n          input,\n        );\n\n  try {\n    if (\n      bytes.length < 14\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"MIDI data is too short to contain a Standard MIDI File header.\",\n        0,\n      );\n    }\n\n    if (\n      readAscii(\n        bytes,\n        0,\n        4,\n      ) !== \"MThd\"\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"MIDI file does not begin with an MThd header chunk.\",\n        0,\n      );\n    }\n\n    const headerLength =\n      readUint32(\n        bytes,\n        4,\n      );\n\n    if (\n      headerLength !== 6\n    ) {\n      return failure(\n        \"INVALID_MIDI_FILE\",\n        \"Phase 14 requires the SMF header length to be exactly 6 bytes.\",\n        4,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "kind": "function",
+        "name": "buildNotationScore",
+        "declaration": "export function buildNotationScore(\n  source:\n    MidiSemanticSource,\n): NotationBuildResult {\n  const diagnostics:\n    NotationDiagnostic[] = [];\n\n  const temporaryQuantized:\n    QuantizedSourceNote[] = [];\n\n  for (\n    const part\n    of source.parts\n  ) {\n    const result =\n      quantizePartNotes(\n        part,\n        source,\n        [],\n      );\n\n    if (\n      isNotationBuildFailure(\n        result,\n      )\n    ) {\n      return result;\n    }\n\n    temporaryQuantized.push(\n      ...result,\n    );\n  }\n\n  const maxEndUnit =\n    Math.max(\n      ...temporaryQuantized.map(\n        (item) =>\n          item.endUnit,\n      ),\n    );\n\n  const boundaries =\n    buildMeasureBoundaries(\n      source,\n      maxEndUnit,\n      diagnostics,\n    );\n\n  if ("
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "const",
+        "name": "MIDI_CHORD_PROFILE_ID",
+        "declaration": "export const MIDI_CHORD_PROFILE_ID = \"MIDI_GENERIC_UPPER_NOTE_DOWNWARD_INTERVALS_V1\" as const;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "const",
+        "name": "MIDI_STATEFUL_PROFILE_ID",
+        "declaration": "export const MIDI_STATEFUL_PROFILE_ID = \"MIDI_STATEFUL_MBC2015_V1\" as const;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "encodeStatefulScore",
+        "declaration": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {\n  if (input.measures.length === 0) {\n    fail(\"score requires at least one measure\");\n  }\n\n  const sf = input.keySharpsFlats ?? 0;\n  validateKey(sf);\n\n  let brf = \"\";\n  if (sf !== 0) brf += keySignatureBrf(sf);\n  if (input.meter) brf += simpleMeterBrf(input.meter.numerator, input.meter.denominator);\n  if (sf !== 0 || input.meter) brf += \" \";\n\n  const accidentalState = new AccidentalState(sf);\n  const trace: StatefulTraceEntry[] = [];\n  let previousWritten: SpelledPitch | null = null;\n  let forceNextOctave = true;\n\n  for (const [measureIndex, measure] of input.measures.entries()) {\n    accidentalState.reset();\n\n    for (const [eventIndex, event] of measure.events.entries()) {\n      let emitted = \"\";\n\n      if (event.kind === \"rest\") {\n        emitted = encodeAtomicRest({\n          value: event.value,\n          ...(event.augmentationDots !== undefined ? { augmentationDots: event.augmentationDots } : {}),\n          ...(event.tripletStart !== undefined ? { tripletStart: event.tripletStart } : {}),\n        }).brf;\n      } else if (event.kind === \"note\") {\n        const written = spellMidiPitch(event."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "spellMidiPitch",
+        "declaration": "export function spellMidiPitch(midiPitch: number, keySharpsFlats = 0): SpelledPitch {\n  if (!Number.isInteger(midiPitch) || midiPitch < 0 || midiPitch > 127) {\n    fail(`MIDI pitch must be an integer in 0..127, got ${midiPitch}`);\n  }\n  if (!Number.isInteger(keySharpsFlats) || keySharpsFlats < -7 || keySharpsFlats > 7) {\n    fail(`keySharpsFlats must be an integer in -7..7, got ${keySharpsFlats}`);\n  }\n\n  const pitchClass = midiPitch % 12;\n  const candidates: Array<{ score: readonly number[]; pitch: SpelledPitch }> = [];\n\n  for (let stepIndex = 0; stepIndex < STEPS.length; stepIndex += 1) {\n    const step = STEPS[stepIndex];\n    if (step === undefined) continue;\n    for (const accidental of SPELLING_ACCIDENTAL_CANDIDATES) {\n      if ((STEP_PC[step] + accidental + 24) % 12 !== pitchClass) continue;\n      const octaveRaw = (midiPitch - accidental - STEP_PC[step]) / 12 - 1;\n      if (!Number.isInteger(octaveRaw)) continue;\n      const scientificOctave = octaveRaw;\n      if (scientificOctave < 0 || scientificOctave > 8) continue;\n\n      const keyDefault = keyDefaultAccidental(step, keySharpsFlats);\n      const score = [\n        Math.abs(accidental - keyDefault),\n        polarityScore(a"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "SpelledPitch",
+        "declaration": "export interface SpelledPitch {\n  readonly midiPitch: number;\n  readonly step: MusicNoteName;\n  readonly accidental: -2 | -1 | 0 | 1 | 2;\n  readonly scientificOctave: number;\n  readonly display: string;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulChordEvent",
+        "declaration": "export interface StatefulChordEvent {\n  readonly kind: \"chord\";\n  readonly midiPitches: readonly number[];\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tieAll?: boolean;\n  readonly tripletStart?: boolean;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulNoteEvent",
+        "declaration": "export interface StatefulNoteEvent {\n  readonly kind: \"note\";\n  readonly midiPitch: number;\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tie?: boolean;\n  readonly tripletStart?: boolean;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulScoreEmission",
+        "declaration": "export interface StatefulScoreEmission extends BrailleEmission {\n  readonly profileId: typeof MIDI_STATEFUL_PROFILE_ID;\n  readonly chordProfileId: typeof MIDI_CHORD_PROFILE_ID;\n  readonly profileDisclosureRequired: true;\n  readonly trace: readonly StatefulTraceEntry[];\n}"
+      }
+    ],
+    "notationCandidates": [
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "kind": "function",
+        "name": "buildNotationScore",
+        "declaration": "export function buildNotationScore(\n  source:\n    MidiSemanticSource,\n): NotationBuildResult {\n  const diagnostics:\n    NotationDiagnostic[] = [];\n\n  const temporaryQuantized:\n    QuantizedSourceNote[] = [];\n\n  for (\n    const part\n    of source.parts\n  ) {\n    const result =\n      quantizePartNotes(\n        part,\n        source,\n        [],\n      );\n\n    if (\n      isNotationBuildFailure(\n        result,\n      )\n    ) {\n      return result;\n    }\n\n    temporaryQuantized.push(\n      ...result,\n    );\n  }\n\n  const maxEndUnit =\n    Math.max(\n      ...temporaryQuantized.map(\n        (item) =>\n          item.endUnit,\n      ),\n    );\n\n  const boundaries =\n    buildMeasureBoundaries(\n      source,\n      maxEndUnit,\n      diagnostics,\n    );\n\n  if ("
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "encodeStatefulScore",
+        "declaration": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {\n  if (input.measures.length === 0) {\n    fail(\"score requires at least one measure\");\n  }\n\n  const sf = input.keySharpsFlats ?? 0;\n  validateKey(sf);\n\n  let brf = \"\";\n  if (sf !== 0) brf += keySignatureBrf(sf);\n  if (input.meter) brf += simpleMeterBrf(input.meter.numerator, input.meter.denominator);\n  if (sf !== 0 || input.meter) brf += \" \";\n\n  const accidentalState = new AccidentalState(sf);\n  const trace: StatefulTraceEntry[] = [];\n  let previousWritten: SpelledPitch | null = null;\n  let forceNextOctave = true;\n\n  for (const [measureIndex, measure] of input.measures.entries()) {\n    accidentalState.reset();\n\n    for (const [eventIndex, event] of measure.events.entries()) {\n      let emitted = \"\";\n\n      if (event.kind === \"rest\") {\n        emitted = encodeAtomicRest({\n          value: event.value,\n          ...(event.augmentationDots !== undefined ? { augmentationDots: event.augmentationDots } : {}),\n          ...(event.tripletStart !== undefined ? { tripletStart: event.tripletStart } : {}),\n        }).brf;\n      } else if (event.kind === \"note\") {\n        const written = spellMidiPitch(event."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "spellMidiPitch",
+        "declaration": "export function spellMidiPitch(midiPitch: number, keySharpsFlats = 0): SpelledPitch {\n  if (!Number.isInteger(midiPitch) || midiPitch < 0 || midiPitch > 127) {\n    fail(`MIDI pitch must be an integer in 0..127, got ${midiPitch}`);\n  }\n  if (!Number.isInteger(keySharpsFlats) || keySharpsFlats < -7 || keySharpsFlats > 7) {\n    fail(`keySharpsFlats must be an integer in -7..7, got ${keySharpsFlats}`);\n  }\n\n  const pitchClass = midiPitch % 12;\n  const candidates: Array<{ score: readonly number[]; pitch: SpelledPitch }> = [];\n\n  for (let stepIndex = 0; stepIndex < STEPS.length; stepIndex += 1) {\n    const step = STEPS[stepIndex];\n    if (step === undefined) continue;\n    for (const accidental of SPELLING_ACCIDENTAL_CANDIDATES) {\n      if ((STEP_PC[step] + accidental + 24) % 12 !== pitchClass) continue;\n      const octaveRaw = (midiPitch - accidental - STEP_PC[step]) / 12 - 1;\n      if (!Number.isInteger(octaveRaw)) continue;\n      const scientificOctave = octaveRaw;\n      if (scientificOctave < 0 || scientificOctave > 8) continue;\n\n      const keyDefault = keyDefaultAccidental(step, keySharpsFlats);\n      const score = [\n        Math.abs(accidental - keyDefault),\n        polarityScore(a"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulScoreEmission",
+        "declaration": "export interface StatefulScoreEmission extends BrailleEmission {\n  readonly profileId: typeof MIDI_STATEFUL_PROFILE_ID;\n  readonly chordProfileId: typeof MIDI_CHORD_PROFILE_ID;\n  readonly profileDisclosureRequired: true;\n  readonly trace: readonly StatefulTraceEntry[];\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulScoreInput",
+        "declaration": "export interface StatefulScoreInput {\n  readonly keySharpsFlats?: number;\n  readonly meter?: Readonly<{ numerator: number; denominator: number }>;\n  readonly measures: readonly StatefulMeasureInput[];\n}"
+      }
+    ],
+    "encoderCandidates": [
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "kind": "function",
+        "name": "buildNotationScore",
+        "declaration": "export function buildNotationScore(\n  source:\n    MidiSemanticSource,\n): NotationBuildResult {\n  const diagnostics:\n    NotationDiagnostic[] = [];\n\n  const temporaryQuantized:\n    QuantizedSourceNote[] = [];\n\n  for (\n    const part\n    of source.parts\n  ) {\n    const result =\n      quantizePartNotes(\n        part,\n        source,\n        [],\n      );\n\n    if (\n      isNotationBuildFailure(\n        result,\n      )\n    ) {\n      return result;\n    }\n\n    temporaryQuantized.push(\n      ...result,\n    );\n  }\n\n  const maxEndUnit =\n    Math.max(\n      ...temporaryQuantized.map(\n        (item) =>\n          item.endUnit,\n      ),\n    );\n\n  const boundaries =\n    buildMeasureBoundaries(\n      source,\n      maxEndUnit,\n      diagnostics,\n    );\n\n  if ("
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeAtomicChord",
+        "declaration": "export function encodeAtomicChord(input: AtomicChordInput): BrailleEmission {\n  if (input.intervals.length === 0) fail(\"atomic chord requires at least one interval member\");\n  const written = encodeAtomicNote({ ...input.writtenNote, tie: false }).brf;\n  let brf = written;\n  for (const member of input.intervals) {\n    if (member.accidental) brf += accidentalBrf(member.accidental);\n    brf += intervalBrf(member.diatonicInterval);\n  }\n  if (input.tieAll) brf += tieBrf(\"chord\");\n  return emission(brf);\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeAtomicNote",
+        "declaration": "export function encodeAtomicNote(input: AtomicNoteInput): BrailleEmission {\n  const dots = input.augmentationDots ?? 0;\n  assertAugmentationDots(dots);\n  let brf = \"\";\n  if (input.tripletStart) brf += tripletIndicatorBrf();\n  if (input.accidental) brf += accidentalBrf(input.accidental);\n  if (input.includeOctave !== false) brf += octavePrefixBrf(input.scientificOctave);\n  brf += noteCellBrf(input.step, input.value);\n  brf += \"'\".repeat(dots);\n  if (input.tie) brf += tieBrf(\"single\");\n  return emission(brf);\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeAtomicRest",
+        "declaration": "export function encodeAtomicRest(input: AtomicRestInput): BrailleEmission {\n  const dots = input.augmentationDots ?? 0;\n  assertAugmentationDots(dots);\n  let brf = \"\";\n  if (input.tripletStart) brf += tripletIndicatorBrf();\n  brf += restCellBrf(input.value);\n  brf += \"'\".repeat(dots);\n  return emission(brf);\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeInterval",
+        "declaration": "export function encodeInterval(interval: 2 | 3 | 4 | 5 | 6 | 7 | 8): BrailleEmission { return emission(intervalBrf(interval)); }"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeKeySignature",
+        "declaration": "export function encodeKeySignature(sharpsFlats: number): BrailleEmission {\n  return emission(keySignatureBrf(sharpsFlats));\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeMeasureSeparator",
+        "declaration": "export function encodeMeasureSeparator(): BrailleEmission { return emission(NORMAL_MEASURE_SEPARATOR); }"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeSimpleMeter",
+        "declaration": "export function encodeSimpleMeter(numerator: number, denominator: number): BrailleEmission {\n  return emission(simpleMeterBrf(numerator, denominator));\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeTie",
+        "declaration": "export function encodeTie(kind: TieKind): BrailleEmission { return emission(tieBrf(kind)); }"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "function",
+        "name": "encodeTripletIndicator",
+        "declaration": "export function encodeTripletIndicator(): BrailleEmission { return emission(tripletIndicatorBrf()); }"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "kind": "interface",
+        "name": "BrailleEmission",
+        "declaration": "export interface BrailleEmission {\n  readonly brf: string;\n  readonly unicode: string;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "const",
+        "name": "MIDI_STATEFUL_PROFILE_ID",
+        "declaration": "export const MIDI_STATEFUL_PROFILE_ID = \"MIDI_STATEFUL_MBC2015_V1\" as const;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "encodeStatefulScore",
+        "declaration": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {\n  if (input.measures.length === 0) {\n    fail(\"score requires at least one measure\");\n  }\n\n  const sf = input.keySharpsFlats ?? 0;\n  validateKey(sf);\n\n  let brf = \"\";\n  if (sf !== 0) brf += keySignatureBrf(sf);\n  if (input.meter) brf += simpleMeterBrf(input.meter.numerator, input.meter.denominator);\n  if (sf !== 0 || input.meter) brf += \" \";\n\n  const accidentalState = new AccidentalState(sf);\n  const trace: StatefulTraceEntry[] = [];\n  let previousWritten: SpelledPitch | null = null;\n  let forceNextOctave = true;\n\n  for (const [measureIndex, measure] of input.measures.entries()) {\n    accidentalState.reset();\n\n    for (const [eventIndex, event] of measure.events.entries()) {\n      let emitted = \"\";\n\n      if (event.kind === \"rest\") {\n        emitted = encodeAtomicRest({\n          value: event.value,\n          ...(event.augmentationDots !== undefined ? { augmentationDots: event.augmentationDots } : {}),\n          ...(event.tripletStart !== undefined ? { tripletStart: event.tripletStart } : {}),\n        }).brf;\n      } else if (event.kind === \"note\") {\n        const written = spellMidiPitch(event."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "function",
+        "name": "spellMidiPitch",
+        "declaration": "export function spellMidiPitch(midiPitch: number, keySharpsFlats = 0): SpelledPitch {\n  if (!Number.isInteger(midiPitch) || midiPitch < 0 || midiPitch > 127) {\n    fail(`MIDI pitch must be an integer in 0..127, got ${midiPitch}`);\n  }\n  if (!Number.isInteger(keySharpsFlats) || keySharpsFlats < -7 || keySharpsFlats > 7) {\n    fail(`keySharpsFlats must be an integer in -7..7, got ${keySharpsFlats}`);\n  }\n\n  const pitchClass = midiPitch % 12;\n  const candidates: Array<{ score: readonly number[]; pitch: SpelledPitch }> = [];\n\n  for (let stepIndex = 0; stepIndex < STEPS.length; stepIndex += 1) {\n    const step = STEPS[stepIndex];\n    if (step === undefined) continue;\n    for (const accidental of SPELLING_ACCIDENTAL_CANDIDATES) {\n      if ((STEP_PC[step] + accidental + 24) % 12 !== pitchClass) continue;\n      const octaveRaw = (midiPitch - accidental - STEP_PC[step]) / 12 - 1;\n      if (!Number.isInteger(octaveRaw)) continue;\n      const scientificOctave = octaveRaw;\n      if (scientificOctave < 0 || scientificOctave > 8) continue;\n\n      const keyDefault = keyDefaultAccidental(step, keySharpsFlats);\n      const score = [\n        Math.abs(accidental - keyDefault),\n        polarityScore(a"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulChordEvent",
+        "declaration": "export interface StatefulChordEvent {\n  readonly kind: \"chord\";\n  readonly midiPitches: readonly number[];\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tieAll?: boolean;\n  readonly tripletStart?: boolean;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulMeasureInput",
+        "declaration": "export interface StatefulMeasureInput {\n  readonly events: readonly StatefulMusicEvent[];\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulNoteEvent",
+        "declaration": "export interface StatefulNoteEvent {\n  readonly kind: \"note\";\n  readonly midiPitch: number;\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tie?: boolean;\n  readonly tripletStart?: boolean;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulRestEvent",
+        "declaration": "export interface StatefulRestEvent {\n  readonly kind: \"rest\";\n  readonly value: MusicValue;\n  readonly augmentationDots?: number;\n  readonly tripletStart?: boolean;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulScoreEmission",
+        "declaration": "export interface StatefulScoreEmission extends BrailleEmission {\n  readonly profileId: typeof MIDI_STATEFUL_PROFILE_ID;\n  readonly chordProfileId: typeof MIDI_CHORD_PROFILE_ID;\n  readonly profileDisclosureRequired: true;\n  readonly trace: readonly StatefulTraceEntry[];\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulScoreInput",
+        "declaration": "export interface StatefulScoreInput {\n  readonly keySharpsFlats?: number;\n  readonly meter?: Readonly<{ numerator: number; denominator: number }>;\n  readonly measures: readonly StatefulMeasureInput[];\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "interface",
+        "name": "StatefulTraceEntry",
+        "declaration": "export interface StatefulTraceEntry {\n  readonly measureIndex: number;\n  readonly eventIndex: number;\n  readonly kind: StatefulMusicEvent[\"kind\"];\n  readonly written?: SpelledPitch;\n  readonly members?: readonly SpelledPitch[];\n  readonly emittedBrf: string;\n}"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "kind": "type",
+        "name": "StatefulMusicEvent",
+        "declaration": "export type StatefulMusicEvent = StatefulNoteEvent | StatefulRestEvent | StatefulChordEvent;"
+      }
+    ]
+  },
+  "workspacePackages": [
+    {
+      "dir": "packages/core",
+      "name": "@persian-braille/core",
+      "version": "2.0.0-dev",
+      "private": false,
+      "type": "module",
+      "main": null,
+      "module": null,
+      "types": "./dist/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "pnpm run spec:prepare && tsc -p tsconfig.json",
+        "typecheck": "pnpm run spec:prepare && tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('src/generated',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "spec:prepare": "node ../../tools/architecture/build-runtime-spec-bundle.mjs",
+        "test": "pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs test/reverse-translator-foundation.test.mjs test/reverse-translator-coverage.test.mjs test/reverse-translator-stateful-numeric.test.mjs test/reverse-translator-numeric-collisions.test.mjs test/reverse-translator-language-collisions.test.mjs test/reverse-translator-punctuation-collision.test.mjs test/reverse-translator-public-boundary.test.mjs"
+      },
+      "dependencies": {},
+      "devDependencies": {}
+    },
+    {
+      "dir": "integrations/microsoft365",
+      "name": "@persian-braille/microsoft365",
+      "version": "2.0.0-dev",
+      "private": true,
+      "type": "module",
+      "main": null,
+      "module": null,
+      "types": "./dist/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "tsc -p tsconfig.json && node build-addin.mjs",
+        "typecheck": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs",
+        "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
+        "build:marketplace": "pnpm run build && node build-marketplace.mjs",
+        "test:marketplace": "node --test test/marketplace-build.test.mjs",
+        "test:marketplace-compliance": "pnpm run build && node --test test/marketplace-compliance-pages.test.mjs",
+        "test:marketplace-support-url": "node --test test/marketplace-support-url.test.mjs"
+      },
+      "dependencies": {
+        "@persian-braille/sdk": "workspace:*"
+      },
+      "devDependencies": {}
+    },
+    {
+      "dir": "packages/music",
+      "name": "@persian-braille/music",
+      "version": "0.0.0",
+      "private": true,
+      "type": "module",
+      "main": null,
+      "module": null,
+      "types": null,
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "test": "pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs"
+      },
+      "dependencies": {},
+      "devDependencies": {}
+    },
+    {
+      "dir": "packages/sdk",
+      "name": "@persian-braille/sdk",
+      "version": "2.0.0-dev",
+      "private": false,
+      "type": "module",
+      "main": null,
+      "module": null,
+      "types": "./dist/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.js"
+        }
+      },
+      "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+        "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs"
+      },
+      "dependencies": {
+        "@persian-braille/core": "workspace:*"
+      },
+      "devDependencies": {}
+    }
+  ],
+  "sdk": {
+    "packageCandidates": [
+      {
+        "dir": "packages/sdk",
+        "name": "@persian-braille/sdk",
+        "version": "2.0.0-dev",
+        "private": false,
+        "type": "module",
+        "main": null,
+        "module": null,
+        "types": "./dist/index.d.ts",
+        "exports": {
+          ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+          }
+        },
+        "scripts": {
+          "build": "tsc -p tsconfig.json",
+          "typecheck": "tsc -p tsconfig.json --noEmit",
+          "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
+          "test": "pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs"
+        },
+        "dependencies": {
+          "@persian-braille/core": "workspace:*"
+        },
+        "devDependencies": {}
+      }
+    ],
+    "sourceFiles": [
+      {
+        "path": "packages/sdk/src/index.ts",
+        "sha256": "97fcca5e192c90a17a16dfc2fc5b9004e9b445347430c83923b3610fa3118f0e",
+        "lineCount": 38,
+        "imports": [
+          "./public-api.js",
+          "./reverse-public-api.js",
+          "./reverse-translator.js",
+          "./translator.js"
+        ],
+        "exports": []
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "sha256": "38bf45ef3e1c95f365a3a0085a307c2abbca95bef50cb14dabab96b478f4fcf0",
+        "lineCount": 89,
+        "imports": [],
+        "exports": [
+          {
+            "kind": "interface",
+            "name": "PersianBrailleProfileInfo",
+            "declaration": "export interface PersianBrailleProfileInfo {\n  readonly id: string;\n  readonly version: string;\n  readonly status: string;\n  readonly direction: \"print-to-braille\";\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleTranslationErrorData",
+            "declaration": "export interface PersianBrailleTranslationErrorData {\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly result: PersianBrailleTranslationFailure;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleTranslationFailure",
+            "declaration": "export interface PersianBrailleTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly message: string;\n  readonly location?: PersianBrailleUnicodeLocation;\n  readonly character?: string;\n  readonly codePoint?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly causeCode?: string;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleTranslationSuccess",
+            "declaration": "export interface PersianBrailleTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly normalizedText: string;\n  readonly cells: readonly string[];\n  readonly unicodeBraille: string;\n  readonly structuralTokens: readonly string[];\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleTranslator",
+            "declaration": "export interface PersianBrailleTranslator {\n  /**\n   * Immutable metadata for the bundled profile used by this translator.\n   */\n  readonly profile: PersianBrailleProfileInfo;\n\n  /**\n   * Translate print text to Persian Braille without throwing for expected\n   * translation failures.\n   */\n  translate(\n    input: string,\n  ): PersianBrailleTranslationResult;\n\n  /**\n   * Translate print text to Persian Braille and throw the SDK translation\n   * error for an expected translation failure.\n   */\n  translateOrThrow(\n    input: string,\n  ): PersianBrailleTranslationSuccess;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleUnicodeLocation",
+            "declaration": "export interface PersianBrailleUnicodeLocation {\n  readonly codePointIndex: number;\n  readonly utf16Index: number;\n}"
+          },
+          {
+            "kind": "type",
+            "name": "CreatePersianBrailleTranslator",
+            "declaration": "export type CreatePersianBrailleTranslator = (\n) => PersianBrailleTranslator;"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleTranslationFailureCode",
+            "declaration": "export type PersianBrailleTranslationFailureCode =\n  | \"PREPROCESSING_FAILED\"\n  | \"UNKNOWN_CHARACTER\"\n  | \"UNKNOWN_SEQUENCE\"\n  | \"AMBIGUOUS_MATCH\"\n  | \"UNSUPPORTED_ENGINE_STATE\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleTranslationResult",
+            "declaration": "export type PersianBrailleTranslationResult =\n  | PersianBrailleTranslationSuccess\n  | PersianBrailleTranslationFailure;"
+          }
+        ]
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "sha256": "731d6a22bca160315b782a82bf8ea651906bcb64ec19cf6d1cd58f3af51878b7",
+        "lineCount": 111,
+        "imports": [],
+        "exports": [
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseDiagnostic",
+            "declaration": "export interface PersianBrailleReverseDiagnostic {\n  readonly code:\n    | \"CANONICALIZED_DIGIT_FAMILY\"\n    | \"CANONICALIZED_PUNCTUATION\"\n    | \"CANONICALIZED_ELLIPSIS\"\n    | \"AMBIGUITY_CANONICALIZED\"\n    | \"LOSSY_LAYOUT_RECONSTRUCTION\"\n    | \"LOSSY_NORMALIZATION_RECONSTRUCTION\";\n  readonly message: string;\n  readonly ruleIds: readonly string[];\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseProfileInfo",
+            "declaration": "export interface PersianBrailleReverseProfileInfo {\n  readonly id: string;\n  readonly version: string;\n  readonly status: string;\n  readonly direction: \"braille-to-print\";\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseTranslationFailure",
+            "declaration": "export interface PersianBrailleReverseTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: PersianBrailleReverseProfileInfo;\n  readonly code: PersianBrailleReverseTranslationFailureCode;\n  readonly message: string;\n  readonly location?: PersianBrailleReverseUnicodeLocation;\n  readonly brailleCharacter?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly candidateTexts?: readonly string[];\n  readonly causeCode?: string;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseTranslationOptions",
+            "declaration": "export interface PersianBrailleReverseTranslationOptions {\n  readonly digitFamily?: PersianBrailleReverseDigitFamily;\n  readonly punctuationStyle?: PersianBrailleReversePunctuationStyle;\n  readonly ellipsisStyle?: PersianBrailleReverseEllipsisStyle;\n  readonly ambiguityPolicy?: PersianBrailleReverseAmbiguityPolicy;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseTranslationSuccess",
+            "declaration": "export interface PersianBrailleReverseTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: PersianBrailleReverseProfileInfo;\n  readonly text: string;\n  readonly cells: readonly string[];\n  readonly diagnostics: readonly PersianBrailleReverseDiagnostic[];\n  readonly lossy: boolean;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseTranslator",
+            "declaration": "export interface PersianBrailleReverseTranslator {\n  readonly profile: PersianBrailleReverseProfileInfo;\n\n  translateFromBraille(\n    input: string,\n    options?: PersianBrailleReverseTranslationOptions,\n  ): PersianBrailleReverseTranslationResult;\n\n  translateFromBrailleOrThrow(\n    input: string,\n    options?: PersianBrailleReverseTranslationOptions,\n  ): PersianBrailleReverseTranslationSuccess;\n}"
+          },
+          {
+            "kind": "interface",
+            "name": "PersianBrailleReverseUnicodeLocation",
+            "declaration": "export interface PersianBrailleReverseUnicodeLocation {\n  readonly utf16Offset: number;\n  readonly codePointIndex: number;\n  readonly codePoint: string;\n}"
+          },
+          {
+            "kind": "type",
+            "name": "CreatePersianBrailleReverseTranslator",
+            "declaration": "export type CreatePersianBrailleReverseTranslator = (\n  defaultOptions?: PersianBrailleReverseTranslationOptions,\n) => PersianBrailleReverseTranslator;"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReverseAmbiguityPolicy",
+            "declaration": "export type PersianBrailleReverseAmbiguityPolicy =\n  | \"canonicalize\"\n  | \"error\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReverseDigitFamily",
+            "declaration": "export type PersianBrailleReverseDigitFamily =\n  | \"persian\"\n  | \"ascii\"\n  | \"arabic-indic\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReverseEllipsisStyle",
+            "declaration": "export type PersianBrailleReverseEllipsisStyle =\n  | \"unicode\"\n  | \"three-dots\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReversePunctuationStyle",
+            "declaration": "export type PersianBrailleReversePunctuationStyle =\n  | \"persian\"\n  | \"ascii\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReverseTranslationFailureCode",
+            "declaration": "export type PersianBrailleReverseTranslationFailureCode =\n  | \"INVALID_BRAILLE_INPUT\"\n  | \"UNKNOWN_BRAILLE_CELL\"\n  | \"UNKNOWN_BRAILLE_SEQUENCE\"\n  | \"AMBIGUOUS_REVERSE_MATCH\"\n  | \"MALFORMED_MODE_SEQUENCE\"\n  | \"UNTERMINATED_LATIN_SPAN\"\n  | \"DANGLING_CAPITAL_INDICATOR\"\n  | \"UNSUPPORTED_REVERSE_STATE\";"
+          },
+          {
+            "kind": "type",
+            "name": "PersianBrailleReverseTranslationResult",
+            "declaration": "export type PersianBrailleReverseTranslationResult =\n  | PersianBrailleReverseTranslationSuccess\n  | PersianBrailleReverseTranslationFailure;"
+          }
+        ]
+      },
+      {
+        "path": "packages/sdk/src/reverse-translator.ts",
+        "sha256": "adb35b5b70c1c0a6dc92fea0112f5bbcb86547db859441c8f81d1c22affaaf43",
+        "lineCount": 300,
+        "imports": [
+          "./reverse-public-api.js",
+          "@persian-braille/core"
+        ],
+        "exports": [
+          {
+            "kind": "class",
+            "name": "PersianBrailleReverseTranslationError",
+            "declaration": "export class PersianBrailleReverseTranslationError\n  extends Error {\n  readonly code:\n    PersianBrailleReverseTranslationFailure[\"code\"];\n\n  readonly result:\n    PersianBrailleReverseTranslationFailure;\n\n  constructor(\n    result:\n      PersianBrailleReverseTranslationFailure,\n  ) {\n    super(result.message);\n\n    this.name =\n      \"PersianBrailleReverseTranslationError\";\n    this.code = result.code;\n    this.result = result;\n\n    Object.freeze(this);\n  }\n}"
+          },
+          {
+            "kind": "function",
+            "name": "createPersianBrailleReverseTranslator",
+            "declaration": "export function createPersianBrailleReverseTranslator(\n  defaultOptions:\n    PersianBrailleReverseTranslationOptions = {},"
+          }
+        ]
+      },
+      {
+        "path": "packages/sdk/src/translator.ts",
+        "sha256": "e98f9f878143a0d97a9d97834bfb5511251ad078197dbf101657caef5ffd9980",
+        "lineCount": 381,
+        "imports": [
+          "./public-api.js",
+          "@persian-braille/core"
+        ],
+        "exports": [
+          {
+            "kind": "class",
+            "name": "PersianBrailleTranslationError",
+            "declaration": "export class PersianBrailleTranslationError\n  extends Error\n  implements PersianBrailleTranslationErrorData {\n  readonly code:\n    PersianBrailleTranslationFailureCode;\n\n  readonly result:\n    PersianBrailleTranslationFailure;\n\n  constructor(\n    result:\n      PersianBrailleTranslationFailure,\n  ) {\n    super(result.message);\n\n    this.name =\n      \"PersianBrailleTranslationError\";\n    this.code = result.code;\n    this.result = result;\n\n    Object.freeze(this);\n  }\n}"
+          },
+          {
+            "kind": "function",
+            "name": "createPersianBrailleTranslator",
+            "declaration": "export function createPersianBrailleTranslator(\n): PersianBrailleTranslator {\n  return new CoreBackedPersianBrailleTranslator();\n}"
+          }
+        ]
+      }
+    ],
+    "publicApiCandidates": [
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleProfileInfo",
+        "declaration": "export interface PersianBrailleProfileInfo {\n  readonly id: string;\n  readonly version: string;\n  readonly status: string;\n  readonly direction: \"print-to-braille\";\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleTranslationErrorData",
+        "declaration": "export interface PersianBrailleTranslationErrorData {\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly result: PersianBrailleTranslationFailure;\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleTranslationFailure",
+        "declaration": "export interface PersianBrailleTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly code: PersianBrailleTranslationFailureCode;\n  readonly message: string;\n  readonly location?: PersianBrailleUnicodeLocation;\n  readonly character?: string;\n  readonly codePoint?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly causeCode?: string;\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleTranslationSuccess",
+        "declaration": "export interface PersianBrailleTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: PersianBrailleProfileInfo;\n  readonly normalizedText: string;\n  readonly cells: readonly string[];\n  readonly unicodeBraille: string;\n  readonly structuralTokens: readonly string[];\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleTranslator",
+        "declaration": "export interface PersianBrailleTranslator {\n  /**\n   * Immutable metadata for the bundled profile used by this translator.\n   */\n  readonly profile: PersianBrailleProfileInfo;\n\n  /**\n   * Translate print text to Persian Braille without throwing for expected\n   * translation failures.\n   */\n  translate(\n    input: string,\n  ): PersianBrailleTranslationResult;\n\n  /**\n   * Translate print text to Persian Braille and throw the SDK translation\n   * error for an expected translation failure.\n   */\n  translateOrThrow(\n    input: string,\n  ): PersianBrailleTranslationSuccess;\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleUnicodeLocation",
+        "declaration": "export interface PersianBrailleUnicodeLocation {\n  readonly codePointIndex: number;\n  readonly utf16Index: number;\n}"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "type",
+        "name": "CreatePersianBrailleTranslator",
+        "declaration": "export type CreatePersianBrailleTranslator = (\n) => PersianBrailleTranslator;"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleTranslationFailureCode",
+        "declaration": "export type PersianBrailleTranslationFailureCode =\n  | \"PREPROCESSING_FAILED\"\n  | \"UNKNOWN_CHARACTER\"\n  | \"UNKNOWN_SEQUENCE\"\n  | \"AMBIGUOUS_MATCH\"\n  | \"UNSUPPORTED_ENGINE_STATE\";"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleTranslationResult",
+        "declaration": "export type PersianBrailleTranslationResult =\n  | PersianBrailleTranslationSuccess\n  | PersianBrailleTranslationFailure;"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseDiagnostic",
+        "declaration": "export interface PersianBrailleReverseDiagnostic {\n  readonly code:\n    | \"CANONICALIZED_DIGIT_FAMILY\"\n    | \"CANONICALIZED_PUNCTUATION\"\n    | \"CANONICALIZED_ELLIPSIS\"\n    | \"AMBIGUITY_CANONICALIZED\"\n    | \"LOSSY_LAYOUT_RECONSTRUCTION\"\n    | \"LOSSY_NORMALIZATION_RECONSTRUCTION\";\n  readonly message: string;\n  readonly ruleIds: readonly string[];\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseProfileInfo",
+        "declaration": "export interface PersianBrailleReverseProfileInfo {\n  readonly id: string;\n  readonly version: string;\n  readonly status: string;\n  readonly direction: \"braille-to-print\";\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseTranslationFailure",
+        "declaration": "export interface PersianBrailleReverseTranslationFailure {\n  readonly ok: false;\n  readonly input: string;\n  readonly profile: PersianBrailleReverseProfileInfo;\n  readonly code: PersianBrailleReverseTranslationFailureCode;\n  readonly message: string;\n  readonly location?: PersianBrailleReverseUnicodeLocation;\n  readonly brailleCharacter?: string;\n  readonly candidateRuleIds?: readonly string[];\n  readonly candidateTexts?: readonly string[];\n  readonly causeCode?: string;\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseTranslationOptions",
+        "declaration": "export interface PersianBrailleReverseTranslationOptions {\n  readonly digitFamily?: PersianBrailleReverseDigitFamily;\n  readonly punctuationStyle?: PersianBrailleReversePunctuationStyle;\n  readonly ellipsisStyle?: PersianBrailleReverseEllipsisStyle;\n  readonly ambiguityPolicy?: PersianBrailleReverseAmbiguityPolicy;\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseTranslationSuccess",
+        "declaration": "export interface PersianBrailleReverseTranslationSuccess {\n  readonly ok: true;\n  readonly input: string;\n  readonly profile: PersianBrailleReverseProfileInfo;\n  readonly text: string;\n  readonly cells: readonly string[];\n  readonly diagnostics: readonly PersianBrailleReverseDiagnostic[];\n  readonly lossy: boolean;\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseTranslator",
+        "declaration": "export interface PersianBrailleReverseTranslator {\n  readonly profile: PersianBrailleReverseProfileInfo;\n\n  translateFromBraille(\n    input: string,\n    options?: PersianBrailleReverseTranslationOptions,\n  ): PersianBrailleReverseTranslationResult;\n\n  translateFromBrailleOrThrow(\n    input: string,\n    options?: PersianBrailleReverseTranslationOptions,\n  ): PersianBrailleReverseTranslationSuccess;\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "interface",
+        "name": "PersianBrailleReverseUnicodeLocation",
+        "declaration": "export interface PersianBrailleReverseUnicodeLocation {\n  readonly utf16Offset: number;\n  readonly codePointIndex: number;\n  readonly codePoint: string;\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "CreatePersianBrailleReverseTranslator",
+        "declaration": "export type CreatePersianBrailleReverseTranslator = (\n  defaultOptions?: PersianBrailleReverseTranslationOptions,\n) => PersianBrailleReverseTranslator;"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReverseAmbiguityPolicy",
+        "declaration": "export type PersianBrailleReverseAmbiguityPolicy =\n  | \"canonicalize\"\n  | \"error\";"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReverseDigitFamily",
+        "declaration": "export type PersianBrailleReverseDigitFamily =\n  | \"persian\"\n  | \"ascii\"\n  | \"arabic-indic\";"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReverseEllipsisStyle",
+        "declaration": "export type PersianBrailleReverseEllipsisStyle =\n  | \"unicode\"\n  | \"three-dots\";"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReversePunctuationStyle",
+        "declaration": "export type PersianBrailleReversePunctuationStyle =\n  | \"persian\"\n  | \"ascii\";"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReverseTranslationFailureCode",
+        "declaration": "export type PersianBrailleReverseTranslationFailureCode =\n  | \"INVALID_BRAILLE_INPUT\"\n  | \"UNKNOWN_BRAILLE_CELL\"\n  | \"UNKNOWN_BRAILLE_SEQUENCE\"\n  | \"AMBIGUOUS_REVERSE_MATCH\"\n  | \"MALFORMED_MODE_SEQUENCE\"\n  | \"UNTERMINATED_LATIN_SPAN\"\n  | \"DANGLING_CAPITAL_INDICATOR\"\n  | \"UNSUPPORTED_REVERSE_STATE\";"
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "kind": "type",
+        "name": "PersianBrailleReverseTranslationResult",
+        "declaration": "export type PersianBrailleReverseTranslationResult =\n  | PersianBrailleReverseTranslationSuccess\n  | PersianBrailleReverseTranslationFailure;"
+      },
+      {
+        "path": "packages/sdk/src/reverse-translator.ts",
+        "kind": "class",
+        "name": "PersianBrailleReverseTranslationError",
+        "declaration": "export class PersianBrailleReverseTranslationError\n  extends Error {\n  readonly code:\n    PersianBrailleReverseTranslationFailure[\"code\"];\n\n  readonly result:\n    PersianBrailleReverseTranslationFailure;\n\n  constructor(\n    result:\n      PersianBrailleReverseTranslationFailure,\n  ) {\n    super(result.message);\n\n    this.name =\n      \"PersianBrailleReverseTranslationError\";\n    this.code = result.code;\n    this.result = result;\n\n    Object.freeze(this);\n  }\n}"
+      },
+      {
+        "path": "packages/sdk/src/reverse-translator.ts",
+        "kind": "function",
+        "name": "createPersianBrailleReverseTranslator",
+        "declaration": "export function createPersianBrailleReverseTranslator(\n  defaultOptions:\n    PersianBrailleReverseTranslationOptions = {},"
+      },
+      {
+        "path": "packages/sdk/src/translator.ts",
+        "kind": "class",
+        "name": "PersianBrailleTranslationError",
+        "declaration": "export class PersianBrailleTranslationError\n  extends Error\n  implements PersianBrailleTranslationErrorData {\n  readonly code:\n    PersianBrailleTranslationFailureCode;\n\n  readonly result:\n    PersianBrailleTranslationFailure;\n\n  constructor(\n    result:\n      PersianBrailleTranslationFailure,\n  ) {\n    super(result.message);\n\n    this.name =\n      \"PersianBrailleTranslationError\";\n    this.code = result.code;\n    this.result = result;\n\n    Object.freeze(this);\n  }\n}"
+      },
+      {
+        "path": "packages/sdk/src/translator.ts",
+        "kind": "function",
+        "name": "createPersianBrailleTranslator",
+        "declaration": "export function createPersianBrailleTranslator(\n): PersianBrailleTranslator {\n  return new CoreBackedPersianBrailleTranslator();\n}"
+      }
+    ]
+  },
+  "microsoft365": {
+    "exists": true,
+    "directMusicInternalReferences": [],
+    "sdkReferences": [
+      {
+        "path": "integrations/microsoft365/package.json",
+        "line": 22,
+        "text": "\"typecheck\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit\","
+      },
+      {
+        "path": "integrations/microsoft365/package.json",
+        "line": 24,
+        "text": "\"test\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs\","
+      },
+      {
+        "path": "integrations/microsoft365/package.json",
+        "line": 32,
+        "text": "\"@persian-braille/sdk\": \"workspace:*\""
+      },
+      {
+        "path": "integrations/microsoft365/package.json",
+        "line": 34,
+        "text": "\"description\": \"Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk.\""
+      },
+      {
+        "path": "integrations/microsoft365/README.md",
+        "line": 23,
+        "text": "The integration may depend on `@persian-braille/sdk`."
+      },
+      {
+        "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/test/word-selection.test.mjs",
+        "line": 6,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/types.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/shared/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 3,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 7,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/types.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      }
+    ],
+    "hits": {
+      "@persian-braille/music": [],
+      "@persian-braille/sdk": [
+        {
+          "path": "integrations/microsoft365/package.json",
+          "line": 22,
+          "text": "\"typecheck\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit\","
+        },
+        {
+          "path": "integrations/microsoft365/package.json",
+          "line": 24,
+          "text": "\"test\": \"pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs\","
+        },
+        {
+          "path": "integrations/microsoft365/package.json",
+          "line": 32,
+          "text": "\"@persian-braille/sdk\": \"workspace:*\""
+        },
+        {
+          "path": "integrations/microsoft365/package.json",
+          "line": 34,
+          "text": "\"description\": \"Microsoft 365 host integration for Persian Braille translation through @persian-braille/sdk.\""
+        },
+        {
+          "path": "integrations/microsoft365/README.md",
+          "line": 23,
+          "text": "The integration may depend on `@persian-braille/sdk`."
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 6,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 6,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 6,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/selection-service.ts",
+          "line": 3,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/selection-service.ts",
+          "line": 7,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/types.ts",
+          "line": 3,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+          "line": 3,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+          "line": 7,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/types.ts",
+          "line": 3,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/shared/types.ts",
+          "line": 4,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/word/selection-service.ts",
+          "line": 3,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/word/selection-service.ts",
+          "line": 7,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/word/types.ts",
+          "line": 4,
+          "text": "} from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/excel/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/shared/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/word/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+          "line": 1,
+          "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+          "line": 1,
+          "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+        }
+      ],
+      "packages/music": [],
+      "translate": [
+        {
+          "path": "integrations/microsoft365/README.md",
+          "line": 105,
+          "text": "`Translate Selection` command, and a browser task pane."
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 217,
+          "text": "\"Excel selection service translates through the public SDK\","
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 231,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 237,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 286,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 330,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+          "line": 370,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/manual-preview-distribution.test.mjs",
+          "line": 96,
+          "text": "\"Translate Selection\","
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 161,
+          "text": "\"PowerPoint selection service translates through the public SDK\","
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 175,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 181,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 223,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 261,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 302,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 347,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+          "line": 389,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 94,
+          "text": "translateResult,"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 105,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 106,
+          "text": "return translateResult;"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 188,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 244,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 291,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 344,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 394,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 437,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 486,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 528,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 581,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 652,
+          "text": "/Translate Selection/,"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 660,
+          "text": "/id=\"PersianBraille\\.TranslateSelectionButton\"/,"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 937,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1030,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1064,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1107,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1308,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1416,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1454,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/test/taskpane.test.mjs",
+          "line": 1503,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 248,
+          "text": "\"selection service translates through the public SDK\","
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 257,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 271,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 304,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 331,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 341,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 370,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 380,
+          "text": ").translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 426,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 477,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/test/word-selection.test.mjs",
+          "line": 524,
+          "text": ".translateSelection();"
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/selection-service.ts",
+          "line": 26,
+          "text": "async translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/selection-service.ts",
+          "line": 56,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/src/excel/types.ts",
+          "line": 135,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+          "line": 26,
+          "text": "async translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+          "line": 57,
+          "text": "translator.translate("
+        },
+        {
+          "path": "integrations/microsoft365/src/powerpoint/types.ts",
+          "line": 129,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/shared/types.ts",
+          "line": 100,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/taskpane/controller.ts",
+          "line": 76,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/taskpane/controller.ts",
+          "line": 131,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/taskpane/controller.ts",
+          "line": 170,
+          "text": "\"The selected text could not be translated by the current Persian Braille profile.\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/taskpane/controller.ts",
+          "line": 222,
+          "text": "return \"Select one non-empty plain-text cell in Excel, then choose Translate Selection.\";"
+        },
+        {
+          "path": "integrations/microsoft365/src/taskpane/dom-view.ts",
+          "line": 15,
+          "text": "readonly translateButton:"
+        },
+        {
+          "path": "integrations/microsoft365/src/word/selection-service.ts",
+          "line": 25,
+          "text": "async translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/src/word/types.ts",
+          "line": 115,
+          "text": "translateSelection():"
+        },
+        {
+          "path": "integrations/microsoft365/release/windows-desktop/README.md",
+          "line": 25,
+          "text": "7. Select Persian text and use `Translate Selection`."
+        },
+        {
+          "path": "integrations/microsoft365/release/windows-desktop/RELEASE-NOTES.md",
+          "line": 61,
+          "text": "- Translate Selection: PASS"
+        },
+        {
+          "path": "integrations/microsoft365/release/windows-desktop/TEST-NOTES.md",
+          "line": 26,
+          "text": "9. Confirm `Translate Selection` appears."
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/README.md",
+          "line": 25,
+          "text": "7. Select Persian text and use `Translate Selection`."
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/RELEASE-NOTES.md",
+          "line": 61,
+          "text": "- Translate Selection: PASS"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/TEST-NOTES.md",
+          "line": 26,
+          "text": "9. Confirm `Translate Selection` appears."
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/excel/types.d.ts",
+          "line": 65,
+          "text": "translateSelection(): Promise<ExcelSelectionTranslationResult>;"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/types.d.ts",
+          "line": 62,
+          "text": "translateSelection(): Promise<PowerPointSelectionTranslationResult>;"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/shared/types.d.ts",
+          "line": 53,
+          "text": "translateSelection(): Promise<OfficeSelectionTranslationResult<TMutationContext>>;"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.d.ts",
+          "line": 29,
+          "text": "translateSelection(): Promise<void>;"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.js",
+          "line": 9,
+          "text": "\"The selected text could not be translated by the current Persian Braille profile.\";"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/dom-view.js",
+          "line": 11,
+          "text": "translateButton: requiredElement(document, \"translate-selection\"),"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace-dist/site/app/word/types.d.ts",
+          "line": 62,
+          "text": "translateSelection(): Promise<WordSelectionTranslationResult>;"
+        },
+        {
+          "path": "integrations/microsoft365/marketplace/listing/en-US.json",
+          "line": 6,
+          "text": "\"summary\": \"Translate selected Persian text to Unicode Braille in Word, Excel, and PowerPoint.\","
+        },
+        {
+          "path": "integrations/microsoft365/marketplace/listing/assets/screenshots/manifest.json",
+          "line": 24,
+          "text": "\"Translate Selection\","
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+          "line": 65,
+          "text": "translateSelection(): Promise<ExcelSelectionTranslationResult>;"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+          "line": 62,
+          "text": "translateSelection(): Promise<PowerPointSelectionTranslationResult>;"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+          "line": 53,
+          "text": "translateSelection(): Promise<OfficeSelectionTranslationResult<TMutationContext>>;"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/taskpane/controller.d.ts",
+          "line": 29,
+          "text": "translateSelection(): Promise<void>;"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/taskpane/controller.js",
+          "line": 9,
+          "text": "\"The selected text could not be translated by the current Persian Braille profile.\";"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/taskpane/dom-view.js",
+          "line": 11,
+          "text": "translateButton: requiredElement(document, \"translate-selection\"),"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+          "line": 5,
+          "text": "async translateSelection() {"
+        },
+        {
+          "path": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+          "line": 62,
+          "text": "translateSelection(): Promise<WordSelectionTranslationResult>;"
+        }
+      ],
+      "music": [],
+      "midi": []
+    }
+  },
+  "symbolSearch": {
+    "MidiSemanticSource": [
+      {
+        "path": "packages/music/src/index.ts",
+        "line": 13,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 3,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 146,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 248,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 465,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 947,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 1179,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/smf-parser.ts",
+        "line": 7,
+        "text": "MidiSemanticSource,"
+      },
+      {
+        "path": "packages/music/src/smf-parser.ts",
+        "line": 1099,
+        "text": "MidiSemanticSource ="
+      },
+      {
+        "path": "packages/music/src/types.ts",
+        "line": 62,
+        "text": "export interface MidiSemanticSource {"
+      },
+      {
+        "path": "packages/music/src/types.ts",
+        "line": 75,
+        "text": "readonly source: MidiSemanticSource;"
+      }
+    ],
+    "NotationScore": [
+      {
+        "path": "packages/music/src/index.ts",
+        "line": 21,
+        "text": "buildNotationScore,"
+      },
+      {
+        "path": "packages/music/src/index.ts",
+        "line": 51,
+        "text": "NotationScore,"
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "line": 3,
+        "text": "// NotationScore integration remains Phase 14.7."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 3,
+        "text": "// NotationScore integration remains Phase 14.7."
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 1177,
+        "text": "export function buildNotationScore("
+      },
+      {
+        "path": "packages/music/src/notation-types.ts",
+        "line": 116,
+        "text": "export interface NotationScore {"
+      },
+      {
+        "path": "packages/music/src/notation-types.ts",
+        "line": 149,
+        "text": "NotationScore;"
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 5,
+        "text": "buildNotationScore,"
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 142,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 192,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 243,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 289,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 324,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 356,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 420,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 457,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 508,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 587,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 639,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/authoritative-rule-seed.json",
+        "line": 352,
+        "text": "\"MIDI enharmonic spelling policy must be represented explicitly in NotationScore or a deterministic profile layer.\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/midi-profile-contract.json",
+        "line": 6,
+        "text": "\"input\": \"Standard MIDI File-derived NotationScore\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 5,
+        "text": "\"inputBoundary\": \"Pre-NotationScore-bridge stateful MIDI-profile events expressed as MIDI pitches plus musical values\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 32,
+        "text": "\"notationScoreBridge\": \"PHASE_14_7\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 8,
+        "text": "\"notationScoreBridge\": \"DEFERRED_TO_PHASE_14_7\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 41,
+        "text": "\"Do not infer MusicXML, Word, or NotationScore behavior in this foundation.\""
+      }
+    ],
+    "buildNotation": [
+      {
+        "path": "packages/music/src/index.ts",
+        "line": 21,
+        "text": "buildNotationScore,"
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 1177,
+        "text": "export function buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 5,
+        "text": "buildNotationScore,"
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 142,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 192,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 243,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 289,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 324,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 356,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 420,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 457,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 508,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 587,
+        "text": "buildNotationScore("
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 639,
+        "text": "buildNotationScore("
+      }
+    ],
+    "parseSmf": [],
+    "parseMidi": [],
+    "Stateful": [
+      {
+        "path": "packages/core/package.json",
+        "line": 25,
+        "text": "\"test\": \"pnpm run build && node --test test/unicode-preprocessor.test.mjs test/rule-selector.test.mjs test/forward-translator.test.mjs test/canonical-execution-bridge.test.mjs test/reverse-translator-foundation.test.mjs test/reverse-translator-coverage.test.mjs test/reverse-translator-stateful-numeric.test.mjs test/reverse-translator-numeric-collisions.test.mjs test/reverse-translator-language-col"
+      },
+      {
+        "path": "packages/music/package.json",
+        "line": 17,
+        "text": "\"test\": \"pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs\""
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 2,
+        "text": "// Stateful MIDI-profile Music Braille encoder."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 23,
+        "text": "export const MIDI_STATEFUL_PROFILE_ID = \"MIDI_STATEFUL_MBC2015_V1\" as const;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 34,
+        "text": "export interface StatefulNoteEvent {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 43,
+        "text": "export interface StatefulRestEvent {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 50,
+        "text": "export interface StatefulChordEvent {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 59,
+        "text": "export type StatefulMusicEvent = StatefulNoteEvent | StatefulRestEvent | StatefulChordEvent;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 61,
+        "text": "export interface StatefulMeasureInput {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 62,
+        "text": "readonly events: readonly StatefulMusicEvent[];"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 65,
+        "text": "export interface StatefulScoreInput {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 68,
+        "text": "readonly measures: readonly StatefulMeasureInput[];"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 71,
+        "text": "export interface StatefulTraceEntry {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 74,
+        "text": "readonly kind: StatefulMusicEvent[\"kind\"];"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 80,
+        "text": "export interface StatefulScoreEmission extends BrailleEmission {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 81,
+        "text": "readonly profileId: typeof MIDI_STATEFUL_PROFILE_ID;"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 84,
+        "text": "readonly trace: readonly StatefulTraceEntry[];"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 93,
+        "text": "throw new Error(`MUSIC_BRAILLE_STATEFUL_ERROR: ${message}`);"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 231,
+        "text": "function freezeTrace(entry: StatefulTraceEntry): StatefulTraceEntry {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 241,
+        "text": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 255,
+        "text": "const trace: StatefulTraceEntry[] = [];"
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 346,
+        "text": "profileId: MIDI_STATEFUL_PROFILE_ID,"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 7,
+        "text": "encodeStatefulScore,"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 11,
+        "text": "} from \"../dist/music-braille-stateful-encoder.js\";"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 46,
+        "text": "test(\"stateful melody suppresses and reinstates octave marks contextually\", () => {"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 47,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 61,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 76,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 86,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 96,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 103,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 114,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 125,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 136,
+        "text": "assert.throws(() => encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 139,
+        "text": "assert.throws(() => encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 145,
+        "text": "assert.throws(() => encodeStatefulScore({ measures: [] }), /requires at least one measure/);"
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-stateful-midi-profile-encoder-v1\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 5,
+        "text": "\"inputBoundary\": \"Pre-NotationScore-bridge stateful MIDI-profile events expressed as MIDI pitches plus musical values\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 21,
+        "text": "\"stateful single notes\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 22,
+        "text": "\"stateful rests\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 23,
+        "text": "\"stateful simple chords within one octave\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 9,
+        "text": "\"statefulMeasureComposition\": \"NEXT_WITHIN_PHASE_14_6\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 34,
+        "text": "\"contextualAccidentalState\": \"DEFERRED_TO_STATEFUL_ENCODER\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 35,
+        "text": "\"contextualOctaveSuppression\": \"DEFERRED_TO_STATEFUL_ENCODER\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 36,
+        "text": "\"automaticChordWrittenNoteSelection\": \"DEFERRED_TO_STATEFUL_ENCODER\""
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 47,
+        "text": "\"nextGate\": \"READY_FOR_PHASE14_6B_STATEFUL_MUSIC_BRAILLE_ENCODER\""
+      }
+    ],
+    "encodeStateful": [
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 241,
+        "text": "export function encodeStatefulScore(input: StatefulScoreInput): StatefulScoreEmission {"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 7,
+        "text": "encodeStatefulScore,"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 47,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 61,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 76,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 86,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 96,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 103,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 114,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 125,
+        "text": "const result = encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 136,
+        "text": "assert.throws(() => encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 139,
+        "text": "assert.throws(() => encodeStatefulScore({"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 145,
+        "text": "assert.throws(() => encodeStatefulScore({ measures: [] }), /requires at least one measure/);"
+      }
+    ],
+    "translateMusic": [],
+    "Braille": [
+      {
+        "path": "packages/core/package.json",
+        "line": 2,
+        "text": "\"name\": \"@persian-braille/core\","
+      },
+      {
+        "path": "packages/core/package.json",
+        "line": 27,
+        "text": "\"description\": \"Specification-driven Persian Braille translation engine for the fa-ir-g1 profile.\","
+      },
+      {
+        "path": "packages/core/package.json",
+        "line": 30,
+        "text": "\"homepage\": \"https://github.com/soroushneyestani/Persian-to-Braille#readme\","
+      },
+      {
+        "path": "packages/core/package.json",
+        "line": 33,
+        "text": "\"url\": \"git+https://github.com/soroushneyestani/Persian-to-Braille.git\","
+      },
+      {
+        "path": "packages/core/package.json",
+        "line": 37,
+        "text": "\"url\": \"https://github.com/soroushneyestani/Persian-to-Braille/issues\""
+      },
+      {
+        "path": "packages/core/package.json",
+        "line": 41,
+        "text": "\"braille\","
+      },
+      {
+        "path": "packages/core/README.md",
+        "line": 1,
+        "text": "# @persian-braille/core"
+      },
+      {
+        "path": "packages/core/README.md",
+        "line": 17,
+        "text": "`@persian-braille/core` is the specification-driven forward translation engine"
+      },
+      {
+        "path": "packages/core/README.md",
+        "line": 18,
+        "text": "used by `@persian-braille/sdk`."
+      },
+      {
+        "path": "packages/core/README.md",
+        "line": 20,
+        "text": "The package owns execution of the bundled Persian Braille specification and is"
+      },
+      {
+        "path": "packages/core/README.md",
+        "line": 27,
+        "text": "Application code should normally consume `@persian-braille/sdk`. Direct Core"
+      },
+      {
+        "path": "packages/music/package.json",
+        "line": 2,
+        "text": "\"name\": \"@persian-braille/music\","
+      },
+      {
+        "path": "packages/music/package.json",
+        "line": 6,
+        "text": "\"description\": \"Internal platform-agnostic MIDI and Music Braille engine for Persian-to-Braille.\","
+      },
+      {
+        "path": "packages/music/package.json",
+        "line": 17,
+        "text": "\"test\": \"pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs\""
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 2,
+        "text": "\"name\": \"@persian-braille/sdk\","
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 24,
+        "text": "\"test\": \"pnpm --filter @persian-braille/core run build && pnpm run build && node --test test/public-api.test.mjs test/reverse-public-api.test.mjs\""
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 27,
+        "text": "\"@persian-braille/core\": \"workspace:*\""
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 29,
+        "text": "\"description\": \"Public TypeScript SDK for Persian Braille translation backed by @persian-braille/core.\","
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 32,
+        "text": "\"homepage\": \"https://github.com/soroushneyestani/Persian-to-Braille#readme\","
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 35,
+        "text": "\"url\": \"git+https://github.com/soroushneyestani/Persian-to-Braille.git\","
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 39,
+        "text": "\"url\": \"https://github.com/soroushneyestani/Persian-to-Braille/issues\""
+      },
+      {
+        "path": "packages/sdk/package.json",
+        "line": 43,
+        "text": "\"braille\","
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 1,
+        "text": "# @persian-braille/sdk"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 17,
+        "text": "The public package surface is `@persian-braille/sdk`, backed by"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 18,
+        "text": "`@persian-braille/core`."
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 25,
+        "text": "pnpm add @persian-braille/sdk"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 34,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 35,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 38,
+        "text": "createPersianBrailleTranslator();"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 44,
+        "text": "console.log(result.unicodeBraille);"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 53,
+        "text": "The public result exposes the final cells, Unicode Braille, normalized text,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 61,
+        "text": "PersianBrailleTranslationError,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 62,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 63,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 66,
+        "text": "createPersianBrailleTranslator();"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 72,
+        "text": "console.log(result.unicodeBraille);"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 76,
+        "text": "PersianBrailleTranslationError"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 91,
+        "text": "The SDK delegates translation semantics to `@persian-braille/core`."
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 124,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 125,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 131,
+        "text": "@persian-braille/sdk/dist/index.js"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 145,
+        "text": "@persian-braille/sdk"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 148,
+        "text": "@persian-braille/core"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 170,
+        "text": "pnpm --filter @persian-braille/examples test"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 180,
+        "text": "- `PersianBrailleTranslationError`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 181,
+        "text": "- `createPersianBrailleTranslator`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 185,
+        "text": "- `CreatePersianBrailleTranslator`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 186,
+        "text": "- `PersianBrailleProfileInfo`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 187,
+        "text": "- `PersianBrailleTranslationErrorData`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 188,
+        "text": "- `PersianBrailleTranslationFailure`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 189,
+        "text": "- `PersianBrailleTranslationFailureCode`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 190,
+        "text": "- `PersianBrailleTranslationResult`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 191,
+        "text": "- `PersianBrailleTranslationSuccess`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 192,
+        "text": "- `PersianBrailleTranslator`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 193,
+        "text": "- `PersianBrailleUnicodeLocation`"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 201,
+        "text": "Phase 13 adds the public Braille-to-Persian SDK facade. Import it from the"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 206,
+        "text": "PersianBrailleReverseTranslationError,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 207,
+        "text": "createPersianBrailleReverseTranslator,"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 208,
+        "text": "} from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "packages/sdk/README.md",
+        "line": 211,
+        "text": "createPersianBrailleReverseTranslator();"
+      },
+      {
+        "path": "packages/sdk/src/index.ts",
+        "line": 2,
+        "text": "PersianBrailleTranslationError,"
+      },
+      {
+        "path": "packages/sdk/src/public-api.ts",
+        "line": 2,
+        "text": "* Stable consumer-facing contract for @persian-braille/sdk."
+      },
+      {
+        "path": "packages/sdk/src/reverse-public-api.ts",
+        "line": 3,
+        "text": "* @persian-braille/sdk."
+      },
+      {
+        "path": "packages/sdk/src/reverse-translator.ts",
+        "line": 8,
+        "text": "} from \"@persian-braille/core\";"
+      },
+      {
+        "path": "packages/sdk/src/translator.ts",
+        "line": 4,
+        "text": "} from \"@persian-braille/core\";"
+      },
+      {
+        "path": "packages/sdk/test/public-api.test.mjs",
+        "line": 5,
+        "text": "\"@persian-braille/sdk\""
+      },
+      {
+        "path": "packages/sdk/test/reverse-public-api.test.mjs",
+        "line": 5,
+        "text": "PersianBrailleReverseTranslationError,"
+      },
+      {
+        "path": "packages/music/src/braille-ascii.ts",
+        "line": 2,
+        "text": "// Six-dot Braille ASCII -> Unicode Braille Patterns."
+      },
+      {
+        "path": "packages/music/src/music-braille-atomic-encoder.ts",
+        "line": 2,
+        "text": "// Atomic Music Braille encoder foundation."
+      },
+      {
+        "path": "packages/music/src/music-braille-stateful-encoder.ts",
+        "line": 2,
+        "text": "// Stateful MIDI-profile Music Braille encoder."
+      },
+      {
+        "path": "packages/music/src/notation-builder.ts",
+        "line": 195,
+        "text": "\"UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT\","
+      },
+      {
+        "path": "packages/music/src/notation-types.ts",
+        "line": 134,
+        "text": "| \"UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT\";"
+      },
+      {
+        "path": "packages/music/test/music-braille-atomic-encoder.test.mjs",
+        "line": 7,
+        "text": "BRAILLE_ASCII_6DOT_DOTS,"
+      },
+      {
+        "path": "packages/music/test/music-braille-stateful-encoder.test.mjs",
+        "line": 11,
+        "text": "} from \"../dist/music-braille-stateful-encoder.js\";"
+      },
+      {
+        "path": "packages/music/test/notation-builder.test.mjs",
+        "line": 682,
+        "text": "\"UNSUPPORTED_MUSIC_BRAILLE_CONSTRUCT\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/authoritative-rule-seed.json",
+        "line": 3,
+        "text": "\"id\": \"music-braille-code-2015-authoritative-rule-seed\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/braille-ascii-unicode-table.json",
+        "line": 2,
+        "text": "\"id\": \"north-american-six-dot-braille-ascii-to-unicode-v1\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/conformance-seed.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-code-2015-conformance-seed\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/midi-profile-contract.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-midi-profile-v1\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/profile-conformance-seed.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-midi-profile-conformance-seed-v1\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/source-manifest.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-code-2015-source-manifest\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/stateful-encoder-foundation.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-stateful-midi-profile-encoder-v1\","
+      },
+      {
+        "path": "packages/music/spec/mbc-2015/unicode-encoder-foundation.json",
+        "line": 2,
+        "text": "\"id\": \"music-braille-unicode-atomic-encoder-foundation-v1\","
+      },
+      {
+        "path": "packages/core/src/engine-token-producer.ts",
+        "line": 234,
+        "text": "* The producer never defines Braille cell values; structural mode rules in"
+      },
+      {
+        "path": "packages/core/src/forward-translator.ts",
+        "line": 106,
+        "text": "braille: string[],"
+      },
+      {
+        "path": "packages/core/src/mode-rule-executor.ts",
+        "line": 140,
+        "text": "const unicodeBrailleValue ="
+      },
+      {
+        "path": "packages/core/src/normalization.ts",
+        "line": 5,
+        "text": "* normalization, Braille translation, or rule execution."
+      },
+      {
+        "path": "packages/core/src/reverse-translation.ts",
+        "line": 5,
+        "text": "* these types from @persian-braille/core."
+      },
+      {
+        "path": "packages/core/src/reverse-translator.ts",
+        "line": 67,
+        "text": "direction: \"braille-to-print\","
+      },
+      {
+        "path": "packages/core/src/rule-selector.ts",
+        "line": 269,
+        "text": "const unicodeBrailleValue = output[\"unicodeBraille\"];"
+      },
+      {
+        "path": "packages/core/src/specification.ts",
+        "line": 44,
+        "text": "* Persian Braille specification."
+      },
+      {
+        "path": "packages/core/src/translation.ts",
+        "line": 74,
+        "text": "readonly unicodeBraille: string | null;"
+      },
+      {
+        "path": "packages/core/src/unicode-preprocessor.ts",
+        "line": 261,
+        "text": "* Creates the default Persian Braille Unicode preprocessor from the canonical"
+      },
+      {
+        "path": "packages/core/test/canonical-execution-bridge.test.mjs",
+        "line": 193,
+        "text": "match.output.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/forward-translator.test.mjs",
+        "line": 27,
+        "text": "result.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-coverage.test.mjs",
+        "line": 100,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-foundation.test.mjs",
+        "line": 122,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-language-collisions.test.mjs",
+        "line": 47,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-numeric-collisions.test.mjs",
+        "line": 91,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-punctuation-collision.test.mjs",
+        "line": 86,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/test/reverse-translator-stateful-numeric.test.mjs",
+        "line": 91,
+        "text": "vector.input.unicodeBraille,"
+      },
+      {
+        "path": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+        "line": 40,
+        "text": "\"direction\": \"print-to-braille\","
+      },
+      {
+        "path": "integrations/microsoft365/build-addin.mjs",
+        "line": 169,
+        "text": "\"Persian-to-Braille Microsoft 365 Add-in static build: PASS\","
+      },
+      {
+        "path": "integrations/microsoft365/build-manual-preview.mjs",
+        "line": 65,
+        "text": "\"Persian-to-Braille-Windows-Preview-Installer.cmd\","
+      },
+      {
+        "path": "integrations/microsoft365/build-marketplace.mjs",
+        "line": 110,
+        "text": "\"Persian-to-Braille Marketplace bundle: PASS\","
+      },
+      {
+        "path": "integrations/microsoft365/build-windows-desktop-release.mjs",
+        "line": 78,
+        "text": "\"Persian-to-Braille-Windows-Preview-Installer.cmd\","
+      },
+      {
+        "path": "integrations/microsoft365/package.json",
+        "line": 2,
+        "text": "\"name\": \"@persian-braille/microsoft365\","
+      },
+      {
+        "path": "integrations/microsoft365/preview-addin.mjs",
+        "line": 208,
+        "text": "`Persian-to-Braille Microsoft 365 Add-in: https://localhost:${port}`,"
+      },
+      {
+        "path": "integrations/microsoft365/README.md",
+        "line": 23,
+        "text": "The integration may depend on `@persian-braille/sdk`."
+      },
+      {
+        "path": "integrations/microsoft365/marketplace/production-manifest.mjs",
+        "line": 3,
+        "text": "\"https://github.com/soroushneyestani/Persian-to-Braille\";"
+      },
+      {
+        "path": "integrations/microsoft365/src/index.ts",
+        "line": 21,
+        "text": "PersianBrailleWordHostAdapter,"
+      },
+      {
+        "path": "integrations/microsoft365/test/excel-selection.test.mjs",
+        "line": 5,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/test/manual-preview-distribution.test.mjs",
+        "line": 79,
+        "text": "/https:\\/\\/soroushneyestani\\.github\\.io\\/Persian-to-Braille\\/install\\/manifest\\.xml/,"
+      },
+      {
+        "path": "integrations/microsoft365/test/marketplace-build.test.mjs",
+        "line": 38,
+        "text": "\"https://example.com/persian-to-braille/\","
+      },
+      {
+        "path": "integrations/microsoft365/test/marketplace-compliance-pages.test.mjs",
+        "line": 29,
+        "text": "assert.match(value, /Persian-to-Braille/);"
+      },
+      {
+        "path": "integrations/microsoft365/test/marketplace-support-url.test.mjs",
+        "line": 12,
+        "text": "\"https://soroushneyestani.github.io/Persian-to-Braille\";"
+      },
+      {
+        "path": "integrations/microsoft365/test/powerpoint-selection.test.mjs",
+        "line": 5,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/test/taskpane.test.mjs",
+        "line": 22,
+        "text": "unicodeBraille:"
+      },
+      {
+        "path": "integrations/microsoft365/test/windows-desktop-release-package.test.mjs",
+        "line": 49,
+        "text": "\"Persian-to-Braille-Windows-Preview-Installer.cmd\","
+      },
+      {
+        "path": "integrations/microsoft365/test/word-selection.test.mjs",
+        "line": 5,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/adapter.ts",
+        "line": 10,
+        "text": "PersianBrailleExcelHostAdapter,"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/selection-service.ts",
+        "line": 2,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/excel/types.ts",
+        "line": 2,
+        "text": "PersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/adapter.ts",
+        "line": 6,
+        "text": "PersianBraillePowerPointHostAdapter,"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/selection-service.ts",
+        "line": 2,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/powerpoint/types.ts",
+        "line": 2,
+        "text": "PersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/shared/types.ts",
+        "line": 2,
+        "text": "PersianBrailleTranslationResult,"
+      },
+      {
+        "path": "integrations/microsoft365/src/taskpane/controller.ts",
+        "line": 9,
+        "text": "PersianBrailleWordSelectionService,"
+      },
+      {
+        "path": "integrations/microsoft365/src/taskpane/dom-view.ts",
+        "line": 29,
+        "text": "readonly brailleOutput:"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/adapter.ts",
+        "line": 6,
+        "text": "PersianBrailleWordHostAdapter,"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/selection-service.ts",
+        "line": 2,
+        "text": "createPersianBrailleTranslator,"
+      },
+      {
+        "path": "integrations/microsoft365/src/word/types.ts",
+        "line": 2,
+        "text": "PersianBrailleTranslationResult,"
+      },
+      {
+        "path": "integrations/microsoft365/release/windows-desktop/README.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Release Package"
+      },
+      {
+        "path": "integrations/microsoft365/release/windows-desktop/RELEASE-NOTES.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Release Notes"
+      },
+      {
+        "path": "integrations/microsoft365/release/windows-desktop/TEST-NOTES.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Test Notes"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/package-manifest.json",
+        "line": 4,
+        "text": "\"title\": \"Persian-to-Braille Windows Desktop Release Package\","
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/provenance.json",
+        "line": 13,
+        "text": "\"publicInstallUrl\": \"https://soroushneyestani.github.io/Persian-to-Braille/install.html\","
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/README.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Release Package"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/RELEASE-NOTES.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Release Notes"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/windows-desktop-release/TEST-NOTES.md",
+        "line": 1,
+        "text": "# Persian-to-Braille — Windows Desktop Test Notes"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/index.d.ts",
+        "line": 5,
+        "text": "export type { EmptySelectionFailure, HostSelectionTranslationFailure, PersianBrailleWordHostAdapter, PersianBrailleWordSelectionService, SdkSelectionTranslationFailure, SdkTranslationFailure, SdkTranslationSuccess, WordHostFailure, WordHostFailureCode, WordMutationResult, WordSelectionReadResult, WordSelectionTranslationResult, WordSelectionTranslationSuccess, } from \"./word/types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleExcelHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/adapter.js",
+        "line": 88,
+        "text": ".selectionChanged, \"The current Excel cell no longer matches the cell used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBraillePowerPointHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/adapter.js",
+        "line": 63,
+        "text": ".selectionChanged, \"The current PowerPoint text selection no longer matches the selection used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.d.ts",
+        "line": 2,
+        "text": "import type { PersianBrailleWordSelectionService } from \"../word/types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/controller.js",
+        "line": 9,
+        "text": "\"The selected text could not be translated by the current Persian Braille profile.\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/taskpane/dom-view.js",
+        "line": 13,
+        "text": "copyButton: requiredElement(document, \"copy-braille\"),"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleWordHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/adapter.js",
+        "line": 37,
+        "text": ".selectionChanged, \"The current Word selection no longer matches the text used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace-dist/site/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/marketplace/listing/en-US.json",
+        "line": 5,
+        "text": "\"name\": \"Persian-to-Braille\","
+      },
+      {
+        "path": "integrations/microsoft365/marketplace/listing/assets/screenshots/manifest.json",
+        "line": 7,
+        "text": "\"listingName\": \"Persian-to-Braille\","
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/index.d.ts",
+        "line": 5,
+        "text": "export type { EmptySelectionFailure, HostSelectionTranslationFailure, PersianBrailleWordHostAdapter, PersianBrailleWordSelectionService, SdkSelectionTranslationFailure, SdkTranslationFailure, SdkTranslationSuccess, WordHostFailure, WordHostFailureCode, WordMutationResult, WordSelectionReadResult, WordSelectionTranslationResult, WordSelectionTranslationSuccess, } from \"./word/types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleExcelHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/adapter.js",
+        "line": 88,
+        "text": ".selectionChanged, \"The current Excel cell no longer matches the cell used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/excel/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBraillePowerPointHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/adapter.js",
+        "line": 63,
+        "text": ".selectionChanged, \"The current PowerPoint text selection no longer matches the selection used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/powerpoint/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/shared/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/taskpane/controller.d.ts",
+        "line": 2,
+        "text": "import type { PersianBrailleWordSelectionService } from \"../word/types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/taskpane/controller.js",
+        "line": 9,
+        "text": "\"The selected text could not be translated by the current Persian Braille profile.\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/taskpane/dom-view.js",
+        "line": 13,
+        "text": "copyButton: requiredElement(document, \"copy-braille\"),"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/adapter.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleWordHostAdapter } from \"./types.js\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/adapter.js",
+        "line": 37,
+        "text": ".selectionChanged, \"The current Word selection no longer matches the text used to create the Braille preview.\");"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/selection-service.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/selection-service.js",
+        "line": 1,
+        "text": "import { createPersianBrailleTranslator, } from \"@persian-braille/sdk\";"
+      },
+      {
+        "path": "integrations/microsoft365/addin-dist/app/word/types.d.ts",
+        "line": 1,
+        "text": "import type { PersianBrailleTranslationResult, PersianBrailleTranslator } from \"@persian-braille/sdk\";"
+      }
+    ]
+  },
+  "architecture": {
+    "requiredEndToEndBoundary": [
+      "Uint8Array / ArrayBuffer MIDI bytes",
+      "SMF parser",
+      "MidiSemanticSource",
+      "NotationScore",
+      "Phase 14.6b stateful MIDI-profile encoder",
+      "BRF + Unicode Braille result",
+      "Public SDK facade"
+    ],
+    "officeBoundary": "Microsoft365 must consume public SDK, not packages/music internals.",
+    "musicXml": "OUT_OF_PHASE_14_RESERVED_FOR_PHASE_19"
+  },
+  "nextImplementationMust": [
+    "Reuse existing SMF parser and NotationScore builder; do not create a second parser/model.",
+    "Build one deterministic adapter from NotationScore to Phase 14.6b stateful encoder input.",
+    "Preserve diagnostics/fail-closed behavior from parser, quantizer, and stateful encoder.",
+    "Expose the end-to-end translation only through the existing public SDK package boundary.",
+    "Add an in-memory MIDI fixture test that reaches Unicode Braille without Word UI.",
+    "Keep Microsoft365 free of direct @persian-braille/music imports.",
+    "Keep MusicXML reserved for Phase 19."
+  ]
+}

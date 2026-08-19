@@ -14,6 +14,10 @@ export interface WordRuntimePort {
   readSelectionText():
     Promise<string>;
 
+  replaceCurrentSelection(
+    text: string,
+  ): Promise<"written">;
+
   mutateSelection(
     expectedSourceText: string,
     text: string,
@@ -171,6 +175,36 @@ export function createOfficeWordRuntime(
           await context.sync();
 
           return range.text;
+        },
+      );
+    },
+
+    async replaceCurrentSelection(
+      text: string,
+    ) {
+      const currentWord =
+        word();
+
+      if (!currentWord) {
+        throw new Error(
+          "Word runtime unavailable.",
+        );
+      }
+
+      return currentWord.run(
+        async (context) => {
+          const range =
+            context.document
+              .getSelection();
+
+          range.insertText(
+            text,
+            "Replace",
+          );
+
+          await context.sync();
+
+          return "written" as const;
         },
       );
     },

@@ -59,6 +59,12 @@ const coreDist =
     "packages/core/dist",
   );
 
+const musicDist =
+  resolve(
+    repoRoot,
+    "packages/music/dist",
+  );
+
 async function requirePath(
   path,
   label,
@@ -88,6 +94,10 @@ await Promise.all([
   requirePath(
     coreDist,
     "Core compiled output",
+  ),
+  requirePath(
+    musicDist,
+    "Music compiled output",
   ),
 ]);
 
@@ -147,6 +157,17 @@ await cp(
   },
 );
 
+await cp(
+  musicDist,
+  resolve(
+    output,
+    "vendor/music",
+  ),
+  {
+    recursive: true,
+  },
+);
+
 const manifest =
   await readFile(
     resolve(
@@ -173,6 +194,9 @@ console.log(
 );
 console.log(
   "Runtime boundary: Microsoft365 -> SDK -> Core",
+);
+console.log(
+  "Browser transitive closure: SDK -> Music",
 );
 console.log(
   "Office.js: Microsoft CDN",

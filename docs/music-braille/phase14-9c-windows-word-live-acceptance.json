@@ -1,0 +1,44 @@
+{
+  "phase": "14.9c-windows-word-live-acceptance",
+  "branch": "phase14-braille-music",
+  "head": "d79e6cc92e4bac79e440d9327ce5ba8ceb3d1976",
+  "host": {
+    "application": "Microsoft Word Desktop",
+    "platform": "Windows",
+    "officeAddin": "Persian-to-Braille"
+  },
+  "manualEvidence": {
+    "featureTabsVisible": true,
+    "musicTabAvailableInWord": true,
+    "midiFileChooserWorks": true,
+    "sourceLineSelectorVisible": true,
+    "sourceLineIdentity": "track+channel",
+    "exactlyOneSourceLineSelectable": true,
+    "unicodeMusicBraillePreviewVisible": true,
+    "brfPreviewVisible": true,
+    "oxygeneRealWorldSelectedLineSuccessObserved": true,
+    "jeanMichelJarreRealWorldSelectedLineSuccessObserved": true,
+    "mozartMultiLineRealWorldSuccessObserved": true,
+    "wordInsertionObserved": true,
+    "samePreviewInsertedAtTwoDifferentCaretLocations": true,
+    "taskPaneRemainedResponsive": true
+  },
+  "productContract": {
+    "phase14MusicInput": "MIDI .mid/.midi",
+    "phase14Selection": "exactly one source line",
+    "sourceLineDefinition": "track+channel",
+    "allLinesUi": "not exposed",
+    "multiSelectUi": "not exposed",
+    "automaticNoteFilteringInsideSelectedLine": false,
+    "wordInsertionSource": "exact successful Unicode Music Braille preview",
+    "wordInsertionDestination": "current Word selection/caret",
+    "musicXml": "Phase 19"
+  },
+  "knownFailClosedLimits": [
+    "Some electronic-MIDI source lines remain unsupported because current triplet grouping cannot always be recovered from the MIDI notation model.",
+    "Some source lines remain unsupported because partial chord ties are not yet representable by the Phase 14.6b whole-chord tie surface.",
+    "Some source lines may remain unquantizable under the frozen rhythm constraints."
+  ],
+  "decision": "READY_FOR_PHASE14_10_REGRESSION_DOCS_AND_PHASE14_CLOSURE",
+  "commit": "DO_NOT_COMMIT_YET"
+}

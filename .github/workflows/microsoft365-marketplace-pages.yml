@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - phase11-marketplace
+      - phase14-braille-music
       - main
     paths:
       - ".github/workflows/microsoft365-marketplace-pages.yml"
       - "integrations/microsoft365/**"
       - "packages/core/**"
+      - "packages/music/**"
       - "packages/sdk/**"
       - "spec/**"
       - "tools/architecture/**"

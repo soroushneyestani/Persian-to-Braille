@@ -1,0 +1,282 @@
+{
+  "phase": "14.9c-post-H4C-rhythm-coherence",
+  "kind": "generic-midi-shared-boundary-rhythm-coherence-contract",
+  "status": "frozen",
+  "profileId": "GENERIC_MIDI_SHARED_BOUNDARY_RHYTHM_V1",
+  "basis": {
+    "auditDecision": "READY_FOR_PHASE14_9C_POST_H4C_RHYTHM_COHERENCE_POLICY_DESIGN",
+    "h4bProfile": "GENERIC_MIDI_HIGH_TO_LOW_IN_ACCORD_V1",
+    "realWorldEvidence": [
+      {
+        "name": "test.mid",
+        "production": {
+          "ok": true,
+          "code": null,
+          "stage": null,
+          "message": null,
+          "trackIndex": null,
+          "channel": null,
+          "sourceTick": null,
+          "partCount": 2,
+          "brfLength": 72,
+          "diagnostics": [
+            "SOURCE_PART_DERIVED_FROM_TRACK_CHANNEL",
+            "SOURCE_PART_DERIVED_FROM_TRACK_CHANNEL",
+            "PITCH_SPELLING_CANONICALIZED",
+            "LOSSY_MIDI_TO_NOTATION_RECONSTRUCTION"
+          ]
+        },
+        "noteFailures": 0,
+        "derivedRestFailures": 0,
+        "noteSegmentFailures": 0,
+        "incompletePolyphonicMeasures": 0,
+        "firstNoteFailure": null,
+        "maxRestCorrection": 0,
+        "maxSegmentCorrection": 0
+      },
+      {
+        "name": "oxygene4.mid",
+        "production": {
+          "ok": false,
+          "code": "UNQUANTIZABLE_RHYTHM",
+          "stage": "notation",
+          "message": "A derived rest cannot be decomposed exactly into supported rhythmic values.",
+          "byteOffset": null,
+          "trackIndex": null,
+          "channel": null,
+          "sourceTick": null,
+          "partCount": null,
+          "brfLength": null,
+          "diagnostics": []
+        },
+        "noteFailures": 0,
+        "derivedRestFailures": 265,
+        "noteSegmentFailures": 50,
+        "incompletePolyphonicMeasures": 5,
+        "firstNoteFailure": null,
+        "maxRestCorrection": 5,
+        "maxSegmentCorrection": 5
+      },
+      {
+        "name": "Jean_Michel_Jarre_OXYGENE4.mid",
+        "production": {
+          "ok": false,
+          "code": "UNQUANTIZABLE_RHYTHM",
+          "stage": "notation",
+          "message": "A derived rest cannot be decomposed exactly into supported rhythmic values.",
+          "byteOffset": null,
+          "trackIndex": null,
+          "channel": null,
+          "sourceTick": null,
+          "partCount": null,
+          "brfLength": null,
+          "diagnostics": []
+        },
+        "noteFailures": 0,
+        "derivedRestFailures": 235,
+        "noteSegmentFailures": 73,
+        "incompletePolyphonicMeasures": 6,
+        "firstNoteFailure": null,
+        "maxRestCorrection": 5,
+        "maxSegmentCorrection": 5
+      },
+      {
+        "name": "d_HO0606.mid",
+        "production": {
+          "ok": false,
+          "code": "UNQUANTIZABLE_RHYTHM",
+          "stage": "notation",
+          "message": "A MIDI note duration cannot be represented inside the frozen quantization tolerance.",
+          "byteOffset": null,
+          "trackIndex": 0,
+          "channel": 5,
+          "sourceTick": 61378,
+          "partCount": null,
+          "brfLength": null,
+          "diagnostics": []
+        },
+        "noteFailures": 1,
+        "derivedRestFailures": 114,
+        "noteSegmentFailures": 13,
+        "incompletePolyphonicMeasures": 0,
+        "firstNoteFailure": {
+          "kind": "NOTE_INTERVAL_OUTSIDE_H2_REPRESENTABILITY",
+          "note": {
+            "trackIndex": 0,
+            "channelZeroBased": 5,
+            "channelOneBased": 6,
+            "midiNote": 77,
+            "velocity": 91,
+            "effectiveProgramZeroBased": 49,
+            "effectiveProgramOneBased": 50,
+            "sourceStartTick": 61378,
+            "sourceEndTick": 61378,
+            "sourceDurationTicks": 0
+          },
+          "quantizedStartBoundary": {
+            "unit": 15345,
+            "changed": true
+          },
+          "quantizedEndBoundary": {
+            "unit": 15345,
+            "changed": true
+          },
+          "targetUnits": 0,
+          "nearestRepresentable": null
+        },
+        "maxRestCorrection": 5,
+        "maxSegmentCorrection": 5
+      }
+    ],
+    "totals": {
+      "derivedRestFailures": 614,
+      "measureBoundedNoteSegmentFailures": 136,
+      "incompletePolyphonicMeasures": 11,
+      "rawNoteIntervalFailures": 1
+    },
+    "observedMaximumCorrectionUnits": {
+      "derivedRest": 5,
+      "measureBoundedNoteSegment": 5
+    },
+    "keyInference": "Complete exact decomposition removes the greedy false negatives. Hundreds of genuine derived-rest and measure-bounded segment failures remain with nearest corrections inside the frozen six-unit window, so shared-boundary rhythm coherence remains required.",
+    "decompositionCompletenessCorrection": {
+      "profileId": "EXACT_DURATION_DECOMPOSITION_COMPLETE_V1",
+      "previousAlgorithm": "GREEDY_LONGEST_VALUE_WITHOUT_BACKTRACKING",
+      "correctedAlgorithm": "COMPLETE_EXACT_SEARCH_WITH_MEMOIZATION",
+      "canonicalObjective": [
+        "minimum-triplet-fragment-count",
+        "minimum-fragment-count",
+        "longest-duration-lexicographic"
+      ],
+      "falseNegativeExamples": {
+        "51": [
+          36,
+          9,
+          6
+        ],
+        "132": [
+          96,
+          36
+        ],
+        "95": [
+          72,
+          9,
+          8,
+          6
+        ]
+      },
+      "globalToleranceChanged": false,
+      "notationVocabularyChanged": false
+    }
+  },
+  "grid": {
+    "notationUnitsPerQuarter": 96,
+    "maximumSourceBoundaryCorrectionUnits": 6,
+    "observedRequiredMaximumUnits": 5,
+    "widenTolerance": false,
+    "measureBoundariesImmutable": true
+  },
+  "scope": {
+    "midiBridgeOptIn": true,
+    "defaultNotationBuilderBehaviorUnchanged": true,
+    "h4bDerivedActionPartitionPreserved": true,
+    "h4bSameOnsetChordMembershipPreserved": true,
+    "originalHandAssignmentClaimed": false,
+    "originalVoiceNumberingClaimed": false
+  },
+  "zeroDurationSourceNotePolicy": {
+    "condition": "sourceStartTick == sourceEndTick",
+    "action": "omit-before-notation-quantization",
+    "diagnostic": "ZERO_DURATION_MIDI_NOTE_OMITTED",
+    "silentOmission": false,
+    "positiveSourceDurationCollapsingToZero": "fail-closed",
+    "evidence": {
+      "file": "d_HO0606.mid",
+      "trackIndex": 0,
+      "channelZeroBased": 5,
+      "midiNote": 77,
+      "sourceTick": 61378,
+      "count": 1
+    }
+  },
+  "sharedBoundarySolver": {
+    "activation": "after source classification and zero-duration disclosure, for the generic MIDI bridge rhythm profile",
+    "baselineTargets": "quantizeMidiTick(sourceTick) on the frozen 96-unit grid",
+    "candidateWindow": "baselineUnit +/- 6, bounded by containing measure",
+    "fixedNodes": [
+      "measure-start",
+      "measure-end",
+      "boundary-aligned-time-signature-change"
+    ],
+    "sharedNodes": [
+      "all members of one H4C same-onset chord/group share one corrected onset",
+      "a source boundary reused by multiple constraints is corrected once, not independently per note/rest"
+    ],
+    "topologyConstraints": [
+      "do-not-change-H4C-derived-action-membership",
+      "do-not-turn-independent-overlap-into-legato-trim",
+      "do-not-split-a-same-onset-chord",
+      "positive-note-duration-after-correction",
+      "source-order-preserved"
+    ],
+    "representabilityConstraints": [
+      "every-emitted-note-segment-exactly-decomposable",
+      "every-emitted-linear-rest-exactly-decomposable",
+      "every-transcriber-added-in-accord-rest-exactly-decomposable",
+      "every-full-measure-in-accord-action-totals-exact-measure-length",
+      "existing-derived-tie-semantics-preserved",
+      "triplet-run-fail-closed-validation-preserved"
+    ],
+    "importantRule": "Never repair an invalid rest by substituting only the rest duration. Move the shared adjacent boundary within tolerance so the action/measure timeline remains arithmetically exact.",
+    "objectiveLexicographic": [
+      "minimum-maximum-absolute-boundary-correction",
+      "minimum-total-absolute-boundary-correction",
+      "minimum-number-of-corrected-boundaries",
+      "minimum-total-represented-note-duration",
+      "lexicographically-lowest-corrected-boundary-vector"
+    ],
+    "failure": "UNQUANTIZABLE_RHYTHM",
+    "failureWhenNoSolutionWithinSixUnits": true
+  },
+  "diagnostics": {
+    "sharedBoundaryCorrection": "RHYTHM_BOUNDARY_COHERENCE_QUANTIZED",
+    "retainExistingRhythmQuantized": true,
+    "zeroDurationOmission": "ZERO_DURATION_MIDI_NOTE_OMITTED",
+    "successMustDiscloseLoss": true
+  },
+  "noOpRegression": {
+    "requireExactUnchangedOutputWhenNoCorrectionNeeded": true,
+    "fixture": "test.mid",
+    "currentPartCount": 2,
+    "currentBrfLength": 72
+  },
+  "explicitNonSolutions": [
+    "do-not-widen-global-six-unit-tolerance",
+    "do-not-silently-trim-overlaps",
+    "do-not-independently-round-rest-durations",
+    "do-not-fabricate-source-parts",
+    "do-not-change-H4C-staff-or-voice-claims",
+    "do-not-implement-MusicXML"
+  ],
+  "deferredAfterRhythm": {
+    "partMeasureInAccord": {
+      "stillFailClosed": true,
+      "evidence": "5 in oxygene4.mid and 6 in Jean_Michel_Jarre_OXYGENE4.mid",
+      "nextOnlyAfterRhythmReaudit": true
+    },
+    "meterSerialization": {
+      "stillDeferredToH5": true,
+      "evidence": "d_HO0606.mid has boundary-aligned 4/4@0u -> 12/8@768u"
+    },
+    "keyChangeAfterTick0": "remain-fail-closed",
+    "musicXML": "Phase 19"
+  },
+  "implementationGate": {
+    "next": "materialize GENERIC_MIDI_SHARED_BOUNDARY_RHYTHM_V1 on the EXACT_DURATION_DECOMPOSITION_COMPLETE_V1 baseline",
+    "mustReauditSameFourFiles": true,
+    "mustNotCommitBeforeReaudit": true,
+    "requiresCompleteExactDecomposition": true
+  },
+  "decision": "READY_FOR_PHASE14_9C_RHYTHM_COHERENCE_IMPLEMENTATION",
+  "evidenceRevision": "EXACT_DURATION_DECOMPOSITION_COMPLETENESS_V1"
+}

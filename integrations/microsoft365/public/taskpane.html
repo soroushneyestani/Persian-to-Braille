@@ -16,7 +16,8 @@
   {
     "imports": {
       "@persian-braille/sdk": "./vendor/sdk/index.js",
-      "@persian-braille/core": "./vendor/core/index.js"
+      "@persian-braille/core": "./vendor/core/index.js",
+      "@persian-braille/music": "./vendor/music/index.js"
     }
   }
   </script>
@@ -30,7 +31,31 @@
     <header class="app-header">
       <p class="eyebrow">Microsoft 365 Add-in</p>
       <h1>Persian-to-Braille</h1>
-      <p class="intro">
+
+      <nav class="feature-tabs" role="tablist" aria-label="Braille features">
+        <button
+          id="feature-tab-persian"
+          class="feature-tab"
+          type="button"
+          role="tab"
+          aria-selected="true"
+        >
+          Persian / English
+        </button>
+        <button
+          id="feature-tab-music"
+          class="feature-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+          hidden
+        >
+          Music / MIDI
+        </button>
+      </nav>
+
+      <p id="feature-context-text" class="intro">
         Translate the current supported Office selection with the shared
         Persian Braille SDK.
       </p>
@@ -57,6 +82,97 @@
       >
         Clear
       </button>
+    </section>
+
+
+    <section
+      id="music-braille-section"
+      class="panel music-panel"
+      hidden
+      aria-labelledby="music-braille-title"
+    >
+      <h2 id="music-braille-title">Braille Music from MIDI</h2>
+      <p class="music-help">
+        Choose a Standard MIDI file, then choose exactly one MIDI line. The file is read locally in this task pane
+        and translated through the public Persian-to-Braille SDK.
+      </p>
+
+      <div class="music-file-row">
+        <label for="music-midi-file">MIDI file (.mid or .midi)</label>
+        <input
+          id="music-midi-file"
+          type="file"
+          accept=".mid,.midi"
+          disabled
+        >
+        <span id="music-midi-filename" class="music-file-name">
+          No MIDI file selected.
+        </span>
+      </div>
+
+      <div
+        id="music-source-line-section"
+        class="music-line-selection"
+        hidden
+      >
+        <label for="music-source-line">
+          <strong>Choose one MIDI line</strong>
+        </label>
+        <p class="music-line-help">
+          Phase 14 converts one source line at a time. A line is one MIDI
+          track/channel pair. No notes inside the selected line are removed
+          automatically.
+        </p>
+        <select id="music-source-line" disabled>
+          <option value="">Choose one MIDI line…</option>
+        </select>
+      </div>
+
+      <div class="actions music-actions" aria-label="Braille Music preview and insertion actions">
+        <button id="music-preview-midi" type="button" disabled>
+          Preview Music Braille
+        </button>
+        <button id="music-insert-word" type="button" disabled>
+          Insert Music Braille
+        </button>
+        <button id="music-clear" type="button">
+          Clear MIDI
+        </button>
+      </div>
+
+      <section
+        id="music-translation-result"
+        class="music-result"
+        hidden
+        aria-label="Music Braille preview"
+      >
+        <h3>Unicode Music Braille</h3>
+        <pre id="music-unicode-output" class="output braille music-output"></pre>
+
+        <h3>BRF / Braille ASCII</h3>
+        <pre id="music-brf-output" class="output code-output music-output"></pre>
+
+        <h3>Diagnostics</h3>
+        <pre id="music-diagnostic-output" class="output code-output music-output"></pre>
+      </section>
+
+      <section
+        id="music-translation-error"
+        class="error-panel music-error"
+        role="alert"
+        hidden
+      >
+        <h3>Music Braille action unavailable</h3>
+        <p><strong id="music-error-code"></strong></p>
+        <p id="music-error-message"></p>
+      </section>
+
+      <p id="music-taskpane-status" class="status" aria-live="polite"></p>
+
+      <p class="music-phase-note">
+        Phase 14.9 inserts the exact successful preview into the current Word
+        selection or caret. Windows live validation is performed separately.
+      </p>
     </section>
 
     <section

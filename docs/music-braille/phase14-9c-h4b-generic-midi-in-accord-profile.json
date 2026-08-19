@@ -1,0 +1,71 @@
+{
+  "phase": "14.9c-H4B",
+  "kind": "generic-midi-in-accord-reconstruction-profile",
+  "status": "frozen",
+  "profileId": "GENERIC_MIDI_HIGH_TO_LOW_IN_ACCORD_V1",
+  "basis": {
+    "bana": "MBC 2015 Table 11 and §§11.1–11.1.4",
+    "sourceLimitation": "Standard MIDI does not preserve print staff/hand identity or print stem direction."
+  },
+  "claims": {
+    "originalHandAssignment": false,
+    "originalVoiceNumbering": false,
+    "originalStaffDirection": false,
+    "canonicalizationDisclosed": true
+  },
+  "chordPolicy": {
+    "equalQuantizedOnset": "one chord event; do not split equal-onset chord tones into inferred voices"
+  },
+  "voicePartition": {
+    "scope": "per source track/channel and per derived measure",
+    "eventOrder": [
+      "startUnit ascending",
+      "highest MIDI pitch descending",
+      "endUnit descending"
+    ],
+    "reuseRule": "assign an onset-group to an already available action whose prior event ends no later than the new onset",
+    "reusePreference": [
+      "minimum absolute anchor-pitch distance from the action's previous sounding event",
+      "most recent prior endUnit",
+      "lowest stable derived action index"
+    ],
+    "newAction": "create a new derived action only when no existing action is available",
+    "minimumConcurrencyIntent": true,
+    "diagnostic": "INFERRED_MIDI_VOICE_PARTITION"
+  },
+  "inAccordOrdering": {
+    "sourceStaffUnknown": true,
+    "canonicalDirection": "highest-to-lowest",
+    "actionAnchor": "first sounding event's highest MIDI pitch within the measure",
+    "tieBreak": [
+      "highest pitch encountered in the measure descending",
+      "lowest stable derived action index"
+    ],
+    "rationale": "Use one deterministic generic-MIDI branch without claiming recovered treble/bass identity; it also aligns with the existing generic MIDI chord profile's highest-written/downward orientation.",
+    "diagnostic": "IN_ACCORD_ORDER_CANONICALIZED_NO_STAFF"
+  },
+  "firstImplementation": {
+    "construct": "full-measure in-accord",
+    "brfSign": "<>",
+    "completeMeasureOnly": true,
+    "eachActionMustTotalFullMeasure": true,
+    "gapPolicy": "fill missing time with rests",
+    "transcriberAddedRestPrefix": "dot-5",
+    "transcriberAddedRestDiagnostic": "TRANSCRIBER_ADDED_IN_ACCORD_REST",
+    "octaveAfterInAccordSign": "required",
+    "measureFollowingInAccord": "first note requires octave mark"
+  },
+  "deferred": {
+    "partMeasureInAccord": "later H4D if required by incomplete/sectional measures",
+    "nestedInAccord": "later only with explicit need and conformance tests",
+    "crossedVoiceOriginalOrdering": "not recoverable from MIDI without print semantics",
+    "userStaffOverride": "future optional SDK extension; not required for H4C"
+  },
+  "failurePolicy": {
+    "incompleteMeasureNeedingPolyphony": "fail closed until part-measure in-accord support exists",
+    "unrepresentableDerivedAction": "fail closed",
+    "silentOverlapTrim": false,
+    "fakeNewlineParts": false
+  },
+  "next": "H4C materialize full-measure in-accord reconstruction with deterministic generic-MIDI voice partition and explicit diagnostics"
+}

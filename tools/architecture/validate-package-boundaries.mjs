@@ -7,7 +7,8 @@ const repoRoot = resolve(scriptDir, "../..");
 
 const packageContracts = new Map([
   ["@persian-braille/core", { path: "packages/core", allowedInternalDependencies: new Set() }],
-  ["@persian-braille/sdk", { path: "packages/sdk", allowedInternalDependencies: new Set(["@persian-braille/core"]) }],
+  ["@persian-braille/music", { path: "packages/music", allowedInternalDependencies: new Set() }],
+  ["@persian-braille/sdk", { path: "packages/sdk", allowedInternalDependencies: new Set(["@persian-braille/core", "@persian-braille/music"]) }],
   ["@persian-braille/cli", { path: "apps/cli", allowedInternalDependencies: new Set(["@persian-braille/sdk"]) }],
   ["@persian-braille/web", { path: "apps/web", allowedInternalDependencies: new Set(["@persian-braille/sdk"]) }],
   ["@persian-braille/microsoft365", { path: "integrations/microsoft365", allowedInternalDependencies: new Set(["@persian-braille/sdk"]) }],
@@ -135,7 +136,8 @@ if (process.exitCode) {
 console.log("Package-boundary validation: PASS");
 console.log("Validated internal dependency graph:");
 console.log("  core -> none");
-console.log("  sdk -> core");
+console.log("  music -> none");
+console.log("  sdk -> core + music");
 console.log("  cli -> sdk");
 console.log("  web -> sdk");
 console.log("  microsoft365 -> sdk");

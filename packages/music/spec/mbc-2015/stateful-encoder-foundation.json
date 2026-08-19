@@ -1,0 +1,48 @@
+{
+  "id": "music-braille-stateful-midi-profile-encoder-v1",
+  "phase": "14.6b",
+  "status": "implemented-foundation",
+  "inputBoundary": "Pre-NotationScore-bridge stateful MIDI-profile events expressed as MIDI pitches plus musical values",
+  "outputBoundary": "BRF/Braille-ASCII plus Unicode Braille Patterns and an auditable spelling trace",
+  "state": {
+    "enharmonicSpelling": "KEY_SIGNATURE_DISTANCE_V1 with Phase 14.5c1 POLARITY_BEFORE_MAGNITUDE correction",
+    "accidentals": "Measure-scoped; reset to active key-signature defaults at each measure boundary; state is keyed by spelled note and written octave.",
+    "octaves": "First musical note is marked; thereafter apply MBC 2015 melodic interval rules for fourth/fifth/greater-than-fifth skips.",
+    "signatureEffect": "Initial key/meter serialization forces an octave mark on the first following note.",
+    "chords": "Highest sounding note written; remaining members encoded as downward intervals; duplicates and >octave compound intervals fail closed.",
+    "measures": "Single Braille blank separates measures; accidental state resets at each boundary."
+  },
+  "midiProfileDecisions": {
+    "generatedAccidentals": "Generated-score accidentals are emitted as notation required by the deterministic MIDI profile; they are not prefixed as corrections to an existing print source.",
+    "chordDisclosure": "Structured output carries the MIDI_GENERIC_UPPER_NOTE_DOWNWARD_INTERVALS_V1 profile id so UI/docs can disclose interval direction.",
+    "sourceReconstructionClaim": false
+  },
+  "supported": [
+    "stateful single notes",
+    "stateful rests",
+    "stateful simple chords within one octave",
+    "measure-scoped accidental carry/countermand/reset",
+    "contextual octave suppression/reinstatement",
+    "initial simple key signature",
+    "initial simple numeric meter",
+    "triplet indicator pass-through",
+    "single-note ties and whole-chord ties"
+  ],
+  "deferred": {
+    "notationScoreBridge": "PHASE_14_7",
+    "sdkFacade": "PHASE_14_7",
+    "wordTaskPane": "PHASE_14_8",
+    "wordInsertion": "PHASE_14_9",
+    "midScoreKeyMeterChanges": "DEFERRED_FAIL_CLOSED",
+    "compoundChordIntervals": "DEFERRED_FAIL_CLOSED",
+    "individualMemberChordTies": "DEFERRED_FAIL_CLOSED",
+    "musicXml": "PHASE_19"
+  },
+  "authoritativeRules": {
+    "octaveMelodicInterval": "MBC 2015 §3.2.2",
+    "accidentalState": "MBC 2015 §6.2",
+    "chordIntervals": "MBC 2015 §9.1",
+    "intervalDirection": "MBC 2015 §9.2 plus frozen MIDI profile"
+  },
+  "nextGate": "READY_FOR_PHASE14_7_MIDI_TO_BRAILLE_END_TO_END_AND_SDK_FACADE"
+}
