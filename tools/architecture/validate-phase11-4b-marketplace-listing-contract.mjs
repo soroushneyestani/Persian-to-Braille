@@ -54,7 +54,7 @@ if (listing.locale !== "en-US") {
   fail("listing locale must remain en-US");
 }
 
-if (listing.name !== "Persian-to-Braille") {
+if (listing.name !== "Braille Hub") {
   fail("listing name must match the manifest DisplayName");
 }
 
@@ -134,7 +134,7 @@ if (
 
 requireText(
   manifest,
-  '<DisplayName DefaultValue="Persian-to-Braille"/>',
+  '<DisplayName DefaultValue="Braille Hub"/>',
   "development manifest",
 );
 

@@ -1,9 +1,9 @@
 @echo off
 setlocal
-title Persian-to-Braille Windows Desktop Preview Installer
+title Braille Hub Windows Desktop Preview Installer
 
 echo ================================================================
-echo Persian-to-Braille - Windows Desktop Preview Installer
+echo Braille Hub - Windows Desktop Preview Installer
 echo ================================================================
 echo.
 echo This installer configures a Windows Office sideload/testing catalog.
@@ -33,7 +33,7 @@ echo.
 if "%RESULT%"=="0" (
   echo Setup completed.
   echo In Office: Add-ins ^> Get Add-ins/Advanced ^> SHARED FOLDER
-  echo Select Persian-to-Braille and choose Add.
+  echo Select Braille Hub and choose Add.
 ) else (
   echo Setup did not complete successfully. Exit code: %RESULT%
 )

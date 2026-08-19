@@ -1,6 +1,14 @@
-# Persian-to-Braille
+# Braille Hub
 
-**Persian-to-Braille** is an open-source Braille translation platform focused on Persian text, extensible Braille tooling, Microsoft 365 integration, and Braille Music.
+<p align="center">
+  <img
+    src="branding/braille-hub-logo.png"
+    alt="Braille Hub — Text & Music Accessibility"
+    width="420"
+  >
+</p>
+
+**Braille Hub** is an open-source accessibility platform for text and music, providing specification-driven Braille translation, Microsoft 365 integration, reusable SDK tooling, and Braille Music workflows.
 
 The project originally started as a Persian Braille converter and has since been redesigned as a modular v2 platform with formal specifications, a reusable translation core, a public SDK, Microsoft Office integrations, reverse-translation foundations, and MIDI-to-Music-Braille support.
 
@@ -13,7 +21,7 @@ The project originally started as a Persian Braille converter and has since been
 
 Persian Braille software has historically been fragmented across application-specific implementations, scripts, macros, and private conversion tables.
 
-Persian-to-Braille v2 separates the problem into explicit layers:
+Braille Hub separates the platform into explicit layers:
 
 * formal Braille specifications
 * deterministic normalization
@@ -50,7 +58,7 @@ The objective is not merely to provide a converter UI, but to build a reusable a
 
 ## Architecture
 
-Persian-to-Braille v2 is designed around strict dependency boundaries.
+Braille Hub is designed around strict dependency boundaries.
 
 ```text
                 ┌─────────────────────┐
@@ -374,7 +382,7 @@ Real-world MIDI files used during testing are **not committed** to the repositor
 
 # Design principles
 
-Persian-to-Braille v2 follows several architectural rules:
+Braille Hub follows several architectural rules:
 
 **Specification before implementation**
 Translation behavior should be derived from explicit specifications and contracts.
@@ -462,7 +470,7 @@ The v2 implementation is a clean architectural redesign rather than a direct con
 
 # فارسی
 
-**Persian-to-Braille** در نسخهٔ جدید فقط یک مبدل سادهٔ متن فارسی به بریل نیست.
+**Braille Hub** فقط یک مبدل سادهٔ متن فارسی به بریل نیست.
 
 نسخهٔ v2 به‌صورت یک پلتفرم ماژولار طراحی شده و شامل موتور مستقل بریل فارسی، specification رسمی، SDK عمومی، ابزارهای validation، یکپارچه‌سازی با Microsoft 365، زیرساخت ترجمهٔ معکوس و موتور Braille Music است.
 
@@ -484,7 +492,7 @@ Please avoid introducing application-specific translation rules into consumer la
 
 # License
 
-Persian-to-Braille v2 is released under the **MIT License**.
+Braille Hub is currently released under the **MIT License**.
 
 See [LICENSE](LICENSE) for details.
 

@@ -60,7 +60,7 @@ if (
   || manifest.phase !== "11.4d"
   || manifest.status !== "captured-and-validated"
   || manifest.locale !== "en-US"
-  || manifest.listingName !== "Persian-to-Braille"
+  || manifest.listingName !== "Braille Hub"
 ) {
   fail("manifest identity mismatch");
 }

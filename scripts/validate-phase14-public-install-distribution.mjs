@@ -137,7 +137,7 @@ assert.match(
 
 assert.equal(
   await exists(
-    "integrations/microsoft365/marketplace-dist/site/install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "integrations/microsoft365/marketplace-dist/site/install/windows/Braille-Hub-Windows-Preview-Installer.cmd",
   ),
   true,
   "Windows public preview installer must remain in the generated Pages site",

@@ -187,7 +187,7 @@ await writeFile(
 );
 
 console.log(
-  "Persian-to-Braille Microsoft 365 Add-in static build: PASS",
+  "Braille Hub Microsoft 365 Add-in static build: PASS",
 );
 console.log(
   "Task pane: addin-dist/taskpane.html",

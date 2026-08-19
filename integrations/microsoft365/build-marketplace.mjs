@@ -107,7 +107,7 @@ await writeFile(
 );
 
 console.log(
-  "Persian-to-Braille Marketplace bundle: PASS",
+  "Braille Hub Marketplace bundle: PASS",
 );
 console.log(
   `Production base URL: ${production.baseUrl}`,

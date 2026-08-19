@@ -46,7 +46,7 @@ function sha256(buffer) {
 test("Windows release package contains the required delivery files", async () => {
   const releaseDir = await resolveReleaseDir();
   for (const relativePath of [
-    "Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "Braille-Hub-Windows-Preview-Installer.cmd",
     "windows-preview-setup.ps1",
     "manifest.xml",
     "README.md",
@@ -111,7 +111,7 @@ test("checksums file covers the package manifest and payload", async () => {
     "utf8",
   );
   for (const relativePath of [
-    "Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "Braille-Hub-Windows-Preview-Installer.cmd",
     "windows-preview-setup.ps1",
     "manifest.xml",
     "README.md",

@@ -75,9 +75,9 @@ const copies = [
       "public",
       "install",
       "windows",
-      "Persian-to-Braille-Windows-Preview-Installer.cmd",
+      "Braille-Hub-Windows-Preview-Installer.cmd",
     ),
-    "Persian-to-Braille-Windows-Preview-Installer.cmd",
+    "Braille-Hub-Windows-Preview-Installer.cmd",
   ],
   [
     path.join(
@@ -184,7 +184,7 @@ await writeFile(
 );
 
 const payloadFiles = [
-  "Persian-to-Braille-Windows-Preview-Installer.cmd",
+  "Braille-Hub-Windows-Preview-Installer.cmd",
   "windows-preview-setup.ps1",
   "manifest.xml",
   "README.md",
@@ -212,7 +212,7 @@ fileRecords.sort((a, b) => a.path.localeCompare(b.path));
 const packageManifest = {
   schemaVersion: 1,
   phase: "11.6",
-  title: "Persian-to-Braille Windows Desktop Release Package",
+  title: "Braille Hub Windows Desktop Release Package",
   packageType: "windows-desktop-release-candidate",
   releaseScope: "Microsoft 365 Desktop on Windows",
   architectureBoundary: "Microsoft365 -> SDK -> Core",
@@ -250,13 +250,13 @@ await writeFile(
   "utf8",
 );
 
-console.log("Persian-to-Braille Windows Desktop release package: PASS");
+console.log("Braille Hub Windows Desktop release package: PASS");
 console.log(`Release package: ${releaseDir}`);
 console.log(`Payload files: ${payloadFiles.length}`);
 console.log("Production manifest: HTTPS / NO LOCALHOST / PASS");
 console.log("Checksums: SHA-256 / PASS");
 console.log("Scope: Microsoft 365 Desktop on Windows");
 console.log("Classification: INTERNAL WINDOWS RELEASE CANDIDATE");
-console.log("Web: DEFERRED TO PHASE 16");
-console.log("Mac: DEFERRED TO PHASE 17");
-console.log("Marketplace / Partner Center: DEFERRED TO PHASE 18");
+console.log("Web: DEFERRED TO PHASE 18");
+console.log("Mac: DEFERRED TO PHASE 19");
+console.log("Marketplace / Partner Center: DEFERRED TO PHASE 20");

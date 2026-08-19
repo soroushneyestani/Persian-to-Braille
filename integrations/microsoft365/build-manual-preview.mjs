@@ -62,7 +62,7 @@ const screenshotSourceDir = path.join(
 const hostedScreenshotDir = path.join(hostedManifestDir, "screenshots");
 
 const windowsFiles = [
-  "Persian-to-Braille-Windows-Preview-Installer.cmd",
+  "Braille-Hub-Windows-Preview-Installer.cmd",
   "windows-preview-setup.ps1",
 ];
 
@@ -94,7 +94,7 @@ for (const required of [
 const page = await readFile(installPage, "utf8");
 
 for (const required of [
-  "./install/windows/Persian-to-Braille-Windows-Preview-Installer.cmd",
+  "./install/windows/Braille-Hub-Windows-Preview-Installer.cmd",
   "./install/screenshots/word-selection.png",
   "./install/screenshots/excel-text-cell.png",
   "./install/screenshots/powerpoint-text-range.png",
@@ -147,7 +147,7 @@ for (const [label, content] of [
   }
 }
 
-console.log("Persian-to-Braille public manual preview build: PASS");
+console.log("Braille Hub public manual preview build: PASS");
 console.log(`Marketplace dist: ${marketplaceDist}`);
 console.log(`Install page: ${installPage}`);
 console.log(`Hosted manifest: ${hostedManifest}`);

@@ -10,7 +10,7 @@ const installer = await readFile(
   path.join(
     root,
     "integrations/microsoft365/public/install/windows/"
-      + "Persian-to-Braille-Windows-Preview-Installer.cmd",
+      + "Braille-Hub-Windows-Preview-Installer.cmd",
   ),
   "utf8",
 );

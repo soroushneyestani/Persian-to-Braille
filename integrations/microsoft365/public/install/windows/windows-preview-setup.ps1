@@ -8,7 +8,7 @@ $ManifestUrl = "https://soroushneyestani.github.io/Persian-to-Braille/install/ma
 $ExpectedProductionBase = "https://soroushneyestani.github.io/Persian-to-Braille/"
 $ExpectedAddinId = "33ec7928-1204-5bb3-88e6-d778413e9234"
 
-$CatalogRoot = Join-Path $env:LOCALAPPDATA "Persian-to-Braille"
+$CatalogRoot = Join-Path $env:LOCALAPPDATA "Braille-Hub"
 $CatalogDirectory = Join-Path $CatalogRoot "OfficeAddinCatalog"
 $ManifestPath = Join-Path $CatalogDirectory "manifest.xml"
 
@@ -67,7 +67,7 @@ if (-not (Test-IsAdministrator)) {
 }
 
 Write-Host ""
-Write-Host "Persian-to-Braille Windows Desktop Preview Setup"
+Write-Host "Braille Hub Windows Desktop Preview Setup"
 Write-Host "------------------------------------------------"
 Write-Host "Classification: Windows sideload/testing preview"
 Write-Host "Marketplace publication: NO"
@@ -201,7 +201,7 @@ Write-Host "  1. Open Word, Excel, or PowerPoint."
 Write-Host "  2. Choose Home > Add-ins."
 Write-Host "  3. Choose Get Add-ins or Advanced."
 Write-Host "  4. Open SHARED FOLDER."
-Write-Host "  5. Select Persian-to-Braille."
+Write-Host "  5. Select Braille Hub."
 Write-Host "  6. Choose Add."
 Write-Host ""
 Write-Host "This remains a Windows sideload/testing preview."
