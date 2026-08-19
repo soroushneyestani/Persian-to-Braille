@@ -1,0 +1,193 @@
+{
+  "phase": "15.4B",
+  "title": "BSKDL Swiss/Regional Formal Rule Taxonomy",
+  "status": "TAXONOMY_FROZEN_FORMAL_RULE_PROMOTION_PENDING",
+  "repositoryBaseline": {
+    "branch": "phase15-german-braille",
+    "head": "08aa9d6",
+    "allowedPreExistingUntrackedArtifacts": [
+      "?? docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+      "?? docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.md"
+    ]
+  },
+  "normativeSource": {
+    "section": "4.10",
+    "sectionTitle": "Abweichungen in der Schweiz",
+    "canonicalSectionSha256": "eafea077270a7a6caec77daec20f7a366a159b68301fbf483e19c31a17057e65",
+    "authority": "BSKDL"
+  },
+  "inputClosure": {
+    "artifact": "docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+    "jsonSha256": "657cb0f6cc755f742d57293f592b21fb8398e13f9deda5a7133a97291eb266f1",
+    "markdownSha256": "cf71574b695cf87c6699de1baaaf34b3b664395737b8904458c7d52f2f46af93",
+    "phase15_4AClosed": true
+  },
+  "taxonomy": {
+    "familyCount": 2,
+    "taxonomyIdsUnique": true,
+    "canonicalTaxonomySha256": "7cec6fca9bfd48ffd597bac190d27d0b41f48015bc3b4b5ecea6275cf04dfca5",
+    "families": [
+      {
+        "taxonomyId": "DE-CH410-TAX-001",
+        "sourceStatementId": "DE-CH410-STMT-001",
+        "sourceSection": "4.10",
+        "name": "Swiss Eszett Orthographic Usage Constraint",
+        "family": "REGIONAL_ORTHOGRAPHIC_USAGE_CONSTRAINT",
+        "semanticAxis": "REGIONAL_PRINT_ORTHOGRAPHY",
+        "region": "CH",
+        "affectedTextModes": [
+          "BASISSCHRIFT",
+          "VOLLSCHRIFT",
+          "KURZSCHRIFT"
+        ],
+        "subject": {
+          "print": "ß",
+          "existingBraille": "⠮",
+          "existingDots": [
+            "2346"
+          ],
+          "existingMappingSource": "2.1"
+        },
+        "effectClass": "REGIONAL_USAGE_CONSTRAINT",
+        "baseMappingDisposition": "PRESERVE",
+        "mappingMutation": false,
+        "automaticNormalization": "NOT_AUTHORIZED_BY_SOURCE",
+        "explicitInputRuntimePolicy": "UNRESOLVED",
+        "formalizationShape": {
+          "plannedFormalRuleCount": 1,
+          "ruleCardinality": "ONE_RULE",
+          "formalRuleIdAssignment": "DEFER_TO_PHASE_15_4C",
+          "runtimeExecutableImmediately": false,
+          "reason": "The normative statement defines Swiss orthographic usage but does not define runtime handling for explicitly supplied ß."
+        }
+      },
+      {
+        "taxonomyId": "DE-CH410-TAX-002",
+        "sourceStatementId": "DE-CH410-STMT-002",
+        "sourceSection": "4.10",
+        "name": "Swiss Doppel-s Kurzschrift Applicability Extension",
+        "family": "REGIONAL_KURZSCHRIFT_APPLICABILITY_EXTENSION",
+        "semanticAxis": "REGIONAL_CONTRACTION_APPLICABILITY",
+        "region": "CH",
+        "affectedTextModes": [
+          "KURZSCHRIFT"
+        ],
+        "baseContractionFamily": {
+          "section": "4.4",
+          "ruleId": "DE-KURZ-ZWEI-001",
+          "family": "ZWEIFORMIGE_KUERZUNGEN"
+        },
+        "effectClass": "REUSE_EXISTING_CONTRACTION_FOR_REGIONAL_SPELLING",
+        "targets": [
+          {
+            "baseForm": "groß",
+            "regionalForm": "gross",
+            "baseValidationCase": "DE-KURZ-ZWEI-MAP-050",
+            "braille": "⠛⠮",
+            "dots": [
+              "1245",
+              "2346"
+            ]
+          },
+          {
+            "baseForm": "schließ",
+            "regionalForm": "schliess",
+            "baseValidationCase": "DE-KURZ-ZWEI-MAP-117",
+            "braille": "⠱⠮",
+            "dots": [
+              "156",
+              "2346"
+            ]
+          }
+        ],
+        "newBrailleSequences": 0,
+        "baseMappingMutation": false,
+        "regionalApplicabilityExtension": true,
+        "formalizationShape": {
+          "plannedFormalRuleCount": 1,
+          "ruleCardinality": "ONE_RULE_WITH_TWO_LEXICAL_TARGETS",
+          "splitIntoOneRulePerTarget": false,
+          "formalRuleIdAssignment": "DEFER_TO_PHASE_15_4C",
+          "reason": "BSKDL §4.10 expresses one shared normative operation over two named contraction targets. The two lexical forms are validation targets, not independent rule families."
+        }
+      }
+    ]
+  },
+  "formalizationPlan": {
+    "plannedFormalRuleCount": 2,
+    "formalRuleIdsAssigned": 0,
+    "ruleIdAssignmentPhase": "15.4C",
+    "family1RuleShape": "ONE_POLICY_RULE",
+    "family2RuleShape": "ONE_RULE_WITH_TWO_LEXICAL_TARGETS",
+    "family2TargetsDoNotCreateSeparateRules": true
+  },
+  "explicitNonBindings": [
+    {
+      "ruleId": "DE-KURZ-LG-021",
+      "sourceSection": "4.1.2.6",
+      "kind": "SST_DOUBLE_S_PRECEDENCE",
+      "relationshipToSection410": "NONE",
+      "reason": "Doppel-s in §4.1.2.6 concerns precedence inside SST, not Swiss regional orthography."
+    }
+  ],
+  "architectureConclusion": {
+    "swissIsTextMode": false,
+    "swissIsFourthGermanTextMode": false,
+    "textModeAxis": [
+      "BASISSCHRIFT",
+      "VOLLSCHRIFT",
+      "KURZSCHRIFT"
+    ],
+    "regionalAxis": "ORTHOGONAL_CONFIGURATION_DIMENSION",
+    "regionalVariantFamily": "SWISS_REGIONAL_OVERLAY",
+    "publicIdentifier": "NOT_FROZEN",
+    "deCHIdentifier": "NOT_FROZEN",
+    "sdkApiRepresentation": "NOT_FROZEN",
+    "coreImplementationStarted": false
+  },
+  "validationPlanning": {
+    "phase": "15.4D",
+    "taxonomyOnly": true,
+    "casesCreatedNow": 0,
+    "futureRequirements": [
+      {
+        "taxonomyId": "DE-CH410-TAX-001",
+        "requiredCaseClasses": [
+          "POLICY_STRUCTURE_VALIDATION",
+          "MODE_APPLICABILITY_VALIDATION"
+        ],
+        "runtimeTranslationCaseBlocked": true,
+        "blockedBy": "EXPLICIT_SWISS_ESZETT_INPUT_RUNTIME_POLICY_UNRESOLVED"
+      },
+      {
+        "taxonomyId": "DE-CH410-TAX-002",
+        "requiredCaseClasses": [
+          "REGIONAL_POSITIVE_MAPPING_GROSS",
+          "REGIONAL_POSITIVE_MAPPING_SCHLIESS",
+          "BASE_MAPPING_NON_MUTATION",
+          "NON_SWISS_APPLICABILITY_BOUNDARY"
+        ],
+        "runtimeTranslationCaseBlocked": false
+      }
+    ]
+  },
+  "auditBoundary": {
+    "formalRuleIdsAssigned": 0,
+    "formalRulesMaterialized": 0,
+    "validationCasesCreated": 0,
+    "implementationChanges": 0,
+    "closedBaseArtifactsModified": 0,
+    "normativeChangesToClosedBaseArtifacts": 0,
+    "profileIdentifierFrozen": false
+  },
+  "closureDecision": {
+    "phase15_4BClosed": true,
+    "taxonomyFrozen": true,
+    "ruleFamilyCount": 2,
+    "plannedFormalRuleCount": 2,
+    "sourceStatement1TaxonomyResolved": true,
+    "sourceStatement2TaxonomyResolved": true,
+    "formalRulePromotionStarted": false,
+    "readyFor": "Phase 15.4C Formal Swiss/Regional Rule Contract"
+  }
+}
