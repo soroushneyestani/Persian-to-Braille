@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.5",
+  "status": "CLASSIFICATION_VALIDATION_AND_DETERMINISM_PASS",
+  "title": "German Basisschrift B2 Classification Validation and Determinism",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "7b883592c3c97f9c165a114f88a92c424cf5084e"
+  },
+  "symbolFoundationValidation": {
+    "physicalRecords": 95,
+    "printIndexEntries": 42,
+    "semanticIndexEntries": 65,
+    "sourceRoundTrip": "95/95",
+    "duplicatePhysicalRecords": 0,
+    "printIndexTargetIntegrity": "PASS",
+    "semanticIndexTargetIntegrity": "PASS",
+    "catalogSha256": "D1D36A099C4BC4D20F1B4F33483BA121549B123950350BE19EFC47D089D507F5",
+    "payloadCanonicalJsonSha256": "3D25D9A570F7D5194101C3AA601B36910EFEE8CC1080E0DF4DD11C23016D93ED"
+  },
+  "behavioralClassificationValidation": {
+    "ruleCount": 43,
+    "punctuationRules": 28,
+    "numericRules": 15,
+    "classificationSourceBijection": "43/43",
+    "sourceShaBindings": "43/43",
+    "overlapBetweenClassificationSets": 0,
+    "dispositionCounts": {
+      "CONTEXTUAL": 22,
+      "STATEFUL": 8,
+      "DELEGATED": 5,
+      "STRUCTURAL": 5,
+      "DIRECT_MAPPING": 1,
+      "DEFERRED": 1,
+      "ARCHITECTURAL_ONLY": 1
+    },
+    "bindingCanonicalJsonSha256": "0ADF3B6607C68EE01E0729192FFBF1E2A466A976C3FC3E53CAEB7E75C3D9D607"
+  },
+  "determinism": {
+    "symbolPayloadCanonicalJsonSha256": "3D25D9A570F7D5194101C3AA601B36910EFEE8CC1080E0DF4DD11C23016D93ED",
+    "punctuationPayloadCanonicalJsonSha256": "1B55016286D178876E735A6D24F6CEFB9BBA4E98C0AE6F4A33644FBD68CBB13F",
+    "numericPayloadCanonicalJsonSha256": "98C2142EDD3DA5534F9FF8110AF9B95FB3850D8722D7550A8699718789AC9AC1",
+    "combinedBindingCanonicalJsonSha256": "0ADF3B6607C68EE01E0729192FFBF1E2A466A976C3FC3E53CAEB7E75C3D9D607",
+    "integratedB2CanonicalJsonSha256": "1AB33D2DDB18FF476D9EA7BED828300AB4647FF0A8BEB24A22F2C1777FD76B99"
+  },
+  "canonicalBoundary": {
+    "canonicalRules": 150,
+    "b2BehavioralScope": 43,
+    "outsideB2Scope": 107,
+    "runtimeDispositionNotClassified": "150/150",
+    "canonicalRulesModified": false,
+    "canonicalAggregateSha256": "EEC320FB02554D838F5C7A1A31CFF04D75419718379F08EDA18577A5973790CB"
+  },
+  "runtimeBoundary": {
+    "symbolCatalogMaterialized": true,
+    "punctuationClassificationMaterialized": true,
+    "numericClassificationMaterialized": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "runtimeManifestModified": false,
+    "persianRuntimeUnchanged": true
+  },
+  "result": {
+    "validation": "PASS",
+    "determinism": "PASS",
+    "semanticLoss": 0,
+    "classificationGapsWithinB2Scope": 0,
+    "unexpectedClassificationOverlap": 0
+  },
+  "nextStep": "15.5B2.6 B2 closure"
+}
