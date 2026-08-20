@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.1",
+  "status": "RUNTIME_CLASSIFICATION_TAXONOMY_FROZEN",
+  "title": "German Basisschrift Runtime Classification Taxonomy",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "b3504a7eb9825a9a104b176a8da9c23e09d9ad23"
+  },
+  "canonicalImmutability": {
+    "b1CanonicalRuleRecordsImmutable": true,
+    "canonicalRulesModified": false,
+    "canonicalRulesetAggregateSha256": "EEC320FB02554D838F5C7A1A31CFF04D75419718379F08EDA18577A5973790CB",
+    "classificationStoredSeparately": true,
+    "reason": "Runtime classification is a derived layer and must not mutate the closed lossless canonical specification."
+  },
+  "symbolFoundation": {
+    "sourcePath": "docs/architecture/phase-15.1d-bskdl-basisschrift-normative-symbol-foundation.json",
+    "sourceSha256": "D6A7AA450A9EDDC9DC7EE170C85622A24F85363D084753F23C546A8CA35FBB25",
+    "sourceStatus": "EXTRACTED_NOT_PROMOTED",
+    "records": 95,
+    "containers": {
+      "alphabet": 30,
+      "singleFormSigns": 12,
+      "multiFormSigns": 32,
+      "technicalSigns": 21
+    },
+    "cellCountDistribution": {
+      "1": 49,
+      "2": 35,
+      "3": 7,
+      "4": 4
+    },
+    "directPrintSymbols": 42,
+    "semanticSymbols": 53,
+    "repeatedDirectPrintForms": 0
+  },
+  "symbolDispositionTaxonomy": {
+    "DIRECT_PRINT_SYMBOL": {
+      "definition": "Source symbol record has one explicit unique print key and a deterministic Braille sequence.",
+      "sourceContainers": [
+        "alphabet",
+        "singleFormSigns"
+      ],
+      "recordCount": 42,
+      "multiCellOutputAllowed": true,
+      "contextFreeInputLookup": true
+    },
+    "SEMANTIC_SYMBOL": {
+      "definition": "Source symbol record has semantic identity but no direct print key; selection requires an owning rule, context, state, or structural layer.",
+      "sourceContainers": [
+        "multiFormSigns",
+        "technicalSigns"
+      ],
+      "recordCount": 53,
+      "contextFreeInputLookup": false
+    }
+  },
+  "ruleDispositionTaxonomy": {
+    "transitionalValue": "NOT_CLASSIFIED",
+    "finalPrimaryValues": [
+      "DIRECT_MAPPING",
+      "CONTEXTUAL",
+      "STATEFUL",
+      "STRUCTURAL",
+      "DELEGATED",
+      "DEFERRED",
+      "ARCHITECTURAL_ONLY"
+    ],
+    "precedence": [
+      "ARCHITECTURAL_ONLY",
+      "DEFERRED",
+      "DELEGATED",
+      "STRUCTURAL",
+      "STATEFUL",
+      "CONTEXTUAL",
+      "DIRECT_MAPPING"
+    ],
+    "definitions": {
+      "DIRECT_MAPPING": "Already-resolved input or semantic identity deterministically emits Braille without state, contextual selection, structural ownership, or unresolved dependency.",
+      "CONTEXTUAL": "Selection, emission, or interpretation depends on surrounding text, semantic role, ambiguity, lexical context, spacing, or boundary conditions.",
+      "STATEFUL": "Rule reads, enters, continues, exits, or otherwise depends on explicit translation state.",
+      "STRUCTURAL": "Rule belongs to layout, document structure, or serialization structure rather than ordinary scalar mapping.",
+      "DELEGATED": "Execution is owned by another explicit profile, subsystem, resolver, or later processing layer.",
+      "DEFERRED": "Normative or implementation dependency is intentionally unresolved and the rule must not be executed yet.",
+      "ARCHITECTURAL_ONLY": "Record captures non-executable architectural classification or inference rather than a normative translation operation."
+    },
+    "brailleDataDoesNotImplyDirectMapping": true,
+    "singlePrimaryDisposition": true
+  },
+  "classificationPrecedencePolicy": {
+    "order": [
+      "ARCHITECTURAL_ONLY",
+      "DEFERRED",
+      "DELEGATED",
+      "STRUCTURAL",
+      "STATEFUL",
+      "CONTEXTUAL",
+      "DIRECT_MAPPING"
+    ],
+    "meaning": "When a rule satisfies more than one classification characteristic, the highest applicable disposition in this ordered list owns the primary runtime classification.",
+    "examples": {
+      "braillePlusNumericState": "STATEFUL",
+      "braillePlusSemanticSelection": "CONTEXTUAL",
+      "architecturalInference": "ARCHITECTURAL_ONLY"
+    }
+  },
+  "b2Scope": {
+    "symbolRecords": 95,
+    "behavioralRules": 43,
+    "numericRules": 15,
+    "punctuationBehaviorRules": 28,
+    "canonicalRulesOutsideB2": 107,
+    "ownedRuleFamilies": [
+      "NUM",
+      "STROKE",
+      "INWORD"
+    ],
+    "outsideScopeFamilies": [
+      "ACCENT",
+      "CASE",
+      "CB",
+      "EMPH",
+      "FLANG",
+      "MATH",
+      "SPECIAL",
+      "TABLE"
+    ]
+  },
+  "phaseBoundary": {
+    "B2_2": "Symbol foundation runtime admission",
+    "B2_3": "Punctuation behavior classification",
+    "B2_4": "Numeric behavior and state partition",
+    "B2_5": "Classification validation and determinism",
+    "B2_6": "B2 closure",
+    "runtimeExecutionStarts": "15.5B4",
+    "indicatorAndStructuralMaterializationOwner": "15.5B3"
+  },
+  "runtimeBoundary": {
+    "runtimeExecutionStarted": false,
+    "runtimeLoweringStarted": false,
+    "germanRuntimeBundles": 0,
+    "runtimeManifestChanged": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B2.2 Symbol foundation runtime admission"
+}
