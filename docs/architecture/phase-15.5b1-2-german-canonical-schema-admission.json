@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B1.2",
+  "status": "SCHEMA_ADMITTED",
+  "title": "German Canonical Specification Schema Admission",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "d5bc73028e5935c376ec4b39726b8680456bb006"
+  },
+  "strategy": {
+    "schemaStrategy": "GERMAN_SPECIALIZATION",
+    "canonicalRuntimeSeparation": "TWO_LAYER_CANONICAL_AND_RUNTIME_MODEL",
+    "canonicalRuleModel": "LOSSLESS_PROMOTION_ENVELOPE",
+    "persianSchemasUsedAs": "STRUCTURAL_REFERENCE_ONLY",
+    "sharedGenericSchemaExtraction": "DEFERRED_TO_PHASE_17",
+    "persianSchemaMutation": false
+  },
+  "runtimeCompatibility": {
+    "runtimeSpecificationBundleContainer": "REUSE_UNCHANGED",
+    "runtimeBundleBuilderChanged": false,
+    "runtimeBundleManifestChanged": false,
+    "germanRuntimeBundleAdmitted": false,
+    "runtimeLoweringStarted": false,
+    "canonicalSchemaIsExecutableRuntimeSchema": false
+  },
+  "profileContract": {
+    "language": "de",
+    "textModeRequired": true,
+    "textModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "cellSize": 6,
+    "regionField": "OMITTED",
+    "gradeField": "OMITTED",
+    "regionalConfigurationEncodedInProfile": false,
+    "internalProfileIdentityFrozen": false,
+    "internalProfileIdentityOwner": "15.5B1.3",
+    "publicProfileIdentifierFrozen": false
+  },
+  "canonicalRuleContract": {
+    "ownershipField": "introducedInMode",
+    "effectiveRuntimeProfileOwnershipField": "NONE",
+    "runtimeProfileFieldAllowed": false,
+    "forcedRuntimeInputOutputShape": false,
+    "sourceBindingRequired": true,
+    "losslessSemanticPayloadRequired": true,
+    "runtimeDispositionRequired": true,
+    "stateSemanticsPreserved": true,
+    "stateRuntimeTypeAdmitted": false,
+    "persianModeRuleTypeReusedForGermanTextMode": false
+  },
+  "stateAndScopeDecision": {
+    "numericStateExists": true,
+    "caseStateExists": true,
+    "boundedEmphasisScopeExists": true,
+    "foreignLanguageSpanStateExists": true,
+    "stateCanBeDiscardedDuringCanonicalization": false,
+    "singlePersianStyleRuntimeRuleShapeSufficient": false,
+    "runtimeStateExecutionFrozenHere": false,
+    "typedRuntimeLoweringOwners": [
+      "15.5B2",
+      "15.5B3",
+      "15.5B4"
+    ]
+  },
+  "inheritanceCompatibility": {
+    "basisschriftLayers": [
+      "basisschrift"
+    ],
+    "vollschriftLayers": [
+      "basisschrift",
+      "vollschrift"
+    ],
+    "kurzschriftLayers": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "resolution": "SPECIFICATION_MATERIALIZATION",
+    "runtimeTranslatorChaining": false
+  },
+  "sourceBaseline": {
+    "standard": "BSKDL Brailleschriftkommission deutschsprachiger Länder",
+    "edition": "2., korrigierte Auflage 2021",
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "basisschriftClosure": "docs/architecture/phase-15.1o-basisschrift-closure-audit.json",
+    "chapter2RuleIds": 150,
+    "chapter2ValidationCaseIds": 88
+  },
+  "admissionState": {
+    "schemaFiles": 2,
+    "profileRecords": 0,
+    "canonicalRuleRecords": 0,
+    "runtimeRuleRecords": 0,
+    "runtimeBundles": 0
+  },
+  "publicBoundary": {
+    "germanPublicProfileIdentifier": "NOT_FROZEN",
+    "swissPublicIdentifier": "NOT_FROZEN",
+    "publicSdkApi": "NOT_FROZEN"
+  },
+  "nextStep": "15.5B1.3 Basisschrift internal canonical profile materialization"
+}

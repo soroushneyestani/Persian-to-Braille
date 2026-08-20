@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/de/schema/rule.schema.json",
+  "title": "German Braille Canonical Rule",
+  "description": "Schema for one lossless canonical German Braille rule promoted from the Phase 15 normative audit. This schema models canonical normative semantics, not the executable runtime-rule representation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "introducedInMode",
+    "status",
+    "version",
+    "direction",
+    "source",
+    "semantics",
+    "promotion",
+    "conformance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^DE-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+    },
+    "introducedInMode": {
+      "type": "string",
+      "enum": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "description": "The German text-mode layer in which the canonical rule is introduced. This is not a runtime profile identifier."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "normative",
+        "candidate",
+        "architectural",
+        "deferred",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "direction": {
+      "type": "string",
+      "const": "forward"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractPath",
+        "sourceRuleId",
+        "section",
+        "kind",
+        "normative",
+        "executableAtAudit"
+      ],
+      "properties": {
+        "contractPath": {
+          "type": "string",
+          "pattern": "^docs/architecture/phase-15\\.1[a-n]-.*\\.json$"
+        },
+        "sourceRuleId": {
+          "type": "string",
+          "pattern": "^DE-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+        },
+        "section": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normative": {
+          "type": "boolean"
+        },
+        "executableAtAudit": {
+          "type": "boolean"
+        }
+      }
+    },
+    "semantics": {
+      "type": "object",
+      "description": "Lossless source-contract semantic payload remaining after canonical envelope fields are extracted. Heterogeneous Chapter 2 semantics are deliberately preserved here until typed runtime lowering is performed.",
+      "additionalProperties": true
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalized",
+        "runtimeDisposition",
+        "lossless"
+      ],
+      "properties": {
+        "canonicalized": {
+          "type": "boolean",
+          "const": true
+        },
+        "runtimeDisposition": {
+          "type": "string",
+          "enum": [
+            "NOT_CLASSIFIED",
+            "DIRECT_MAPPING",
+            "CONTEXTUAL",
+            "STATEFUL",
+            "STRUCTURAL",
+            "DELEGATED",
+            "DEFERRED",
+            "ARCHITECTURAL_ONLY"
+          ]
+        },
+        "lossless": {
+          "type": "boolean",
+          "const": true
+        },
+        "runtimeOwner": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "15.5B2",
+            "15.5B3",
+            "15.5B4",
+            "15.5C",
+            "15.5D",
+            "15.5F",
+            null
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "conformance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validationCaseIds"
+      ],
+      "properties": {
+        "validationCaseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^DE-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}
