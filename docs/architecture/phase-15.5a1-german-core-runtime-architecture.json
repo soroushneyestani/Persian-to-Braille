@@ -1,0 +1,53 @@
+{
+    "phase":  "15.5A1",
+    "title":  "German Core Runtime Architecture and Implementation Boundary",
+    "status":  "CLOSED",
+    "baseline":  {
+                     "branch":  "phase15-german-braille",
+                     "commit":  "0d6356b8b2a9c34b1543c41fab4084658e52c62a"
+                 },
+    "decision":  "EXISTING_RUNTIME_SCHEMA_REQUIRES_EXTENSION",
+    "runtimeBundleContainerReusable":  true,
+    "currentPersianExecutionModelReusableAsIs":  false,
+    "currentBundleGeneratorReusableAsIs":  false,
+    "newGermanCorePackage":  false,
+    "renameExistingPackagesNow":  false,
+    "preservePersianPublicApi":  true,
+    "germanReverseTranslationInPhase155":  false,
+    "architecture":  {
+                         "package":  "@persian-braille/core",
+                         "shared":  [
+                                        "RuntimeSpecificationBundle",
+                                        "common translation result and trace contracts",
+                                        "common Unicode and Braille primitives"
+                                    ],
+                         "persianExecution":  [
+                                                  "fa-ir-g1",
+                                                  "existing rule selector",
+                                                  "existing mode-rule executor",
+                                                  "existing forward translator"
+                                              ],
+                         "germanExecution":  [
+                                                 "German runtime specification",
+                                                 "Basisschrift",
+                                                 "Vollschrift",
+                                                 "Kurzschrift",
+                                                 "Swiss regional overlay"
+                                             ]
+                     },
+    "evidence":  {
+                     "specificationSelection":  "fa-ir-g1 is currently hard-wired through getBundledSpecification",
+                     "semanticContextBoundary":  "current SemanticContextClass supports digit only",
+                     "modeExecutorBoundary":  "current mode executor requires exactly five mode rules",
+                     "generatorBoundary":  "runtime bundle generator is hard-wired to fa-ir paths and fa-ir-g1 output"
+                 },
+    "constraints":  {
+                        "germanIsNotFourthTextMode":  true,
+                        "regionalDimensionIsOrthogonal":  true,
+                        "publicGermanProfileIdentifier":  "NOT_FROZEN",
+                        "swissExplicitEszettRuntimePolicy":  "OPEN",
+                        "swissExplicitEszettRuntimePolicyOwner":  "Phase 15.5",
+                        "phase17OwnsGeneralMultilanguageFramework":  true
+                    },
+    "next":  "Phase 15.5A2 German Core Execution Boundary"
+}
