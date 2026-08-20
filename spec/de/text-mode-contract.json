@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A4.2",
+  "status": "IDENTITY_CONTRACT",
+  "language": "de",
+  "contract": {
+    "internalTypeName": "GermanTextMode",
+    "semanticRole": "TRANSLATION_CONFIGURATION_DIMENSION",
+    "visibility": "INTERNAL_CORE_CONTRACT"
+  },
+  "values": [
+    {
+      "key": "basisschrift",
+      "label": "Basisschrift"
+    },
+    {
+      "key": "vollschrift",
+      "label": "Vollschrift"
+    },
+    {
+      "key": "kurzschrift",
+      "label": "Kurzschrift"
+    }
+  ],
+  "selection": {
+    "cardinality": "EXACTLY_ONE_PER_TRANSLATION_REQUEST",
+    "explicitSelectionRequired": true,
+    "implicitDefaultAllowed": false,
+    "multipleModesAllowed": false,
+    "caseSensitiveKeys": true
+  },
+  "semanticSeparation": {
+    "existingRuleTypeMode": "STRUCTURAL_ENGINE_RULE",
+    "existingExecutor": "ModeRuleExecutor",
+    "existingExecutorMaySelectGermanTextMode": false,
+    "sameConcept": false
+  },
+  "regionalSeparation": {
+    "swissIsGermanTextMode": false,
+    "swissDimension": "ORTHOGONAL_REGIONAL_CONFIGURATION",
+    "swissExplicitEszettInputPolicy": "OPEN"
+  },
+  "identifierPolicy": {
+    "internalModeKeysFrozenByThisContract": true,
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN",
+    "publicSdkModeApi": "NOT_FROZEN"
+  },
+  "deferred": {
+    "inheritanceAndMaterialization": "15.5A4.3",
+    "coreModeSelectionBoundary": "15.5A4.4",
+    "regionalConfigurationContract": "15.5A5",
+    "swissExplicitEszettDecision": "15.5A6",
+    "publicSdk": "15.6"
+  },
+  "admissionState": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0
+  },
+  "nextStep": "15.5A4.3 Mode Inheritance and Materialization Contract"
+}
