@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-state-scope",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "STATE_SCOPE",
+  "recordCount": 12,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Twelve German Basisschrift State Scope contracts materialized from immutable canonical rules. The contracts preserve scope and lifecycle semantics but remain non-executable until B4 lowering.",
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-005",
+      "sourceRulePath": "spec/de/rules/records/de-accent-005.json",
+      "sourceRuleSha256": "57AF1AA0E2C117DEE96C43E26961F4E453D1F76070AA3BC5844CD236C4FF2D44",
+      "family": "ACCENT",
+      "kind": "SHORT_FOREIGN_SPAN_SCOPE",
+      "section": "2.8.1",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SHORT_FOREIGN_ACCENT_TECHNIQUE_SCOPE_IS_PRIMARY_DEPENDENCY_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The accent technique is intended for isolated foreign words or short passages within German text.",
+        "longerForeignSpanDependency": "2.9"
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "sourceRulePath": "spec/de/rules/records/de-case-012.json",
+      "sourceRuleSha256": "8A327D0721283C12F1A5975885AE27FA18A0F3146E27B7A5C74DB35F1F4B47C4",
+      "family": "CASE",
+      "kind": "GREEK_LETTER_SCOPE",
+      "section": "2.6.5",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "GREEK_LETTER_TERMINATION_AND_SCOPE_DOMINATE_MARKER_FORM",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-007"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Greek letters in mathematical or technical contexts are announced by the Greek/foreign letter marker.",
+        "termination": [
+          "BRAILLE_BLANK",
+          "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "termination",
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "sourceRulePath": "spec/de/rules/records/de-cb-013.json",
+      "sourceRuleSha256": "AE6F8D41DE47B6F5A54390AB347C875C27DAAECEC63E6C5791A27B81E4D84A6B",
+      "family": "CB",
+      "kind": "INSERT_TERMINATION",
+      "section": "2.11",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "INSERT_TERMINATION_BOUNDARY_DOMINATES_TERMINATOR_FORM",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-012"
+      ],
+      "semanticPayload": {
+        "summary": "The Computerbraille terminator is placed immediately after the final encoded sign, including after an encoding blank that forms part of a two-cell representation.",
+        "marker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        }
+      },
+      "semanticEvidenceRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "sourceRulePath": "spec/de/rules/records/de-emph-003.json",
+      "sourceRuleSha256": "1125B0FDC394BA42ACF1540C7D5997747E35C79AF19973E5095F82B555007840",
+      "family": "EMPH",
+      "kind": "PRIMARY_WORD_BOUNDARY",
+      "section": "2.7.1",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "WORD_BOUNDARIES_DEFINE_FIRST_EMPHASIS_SCOPE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Blank, hyphen and slash all act as word boundaries for first-emphasis scope.",
+        "boundaries": [
+          "BRAILLE_BLANK",
+          "HYPHEN",
+          "SLASH"
+        ],
+        "dependencies": [
+          "DE-STROKE-002",
+          "DE-STROKE-012"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "boundaries",
+        "dependencies"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "sourceRulePath": "spec/de/rules/records/de-emph-004.json",
+      "sourceRuleSha256": "192C30F84511C1405304A471EEE87D94E51AB9AAFFF317C88ED6A49D16F59BC8",
+      "family": "EMPH",
+      "kind": "PRIMARY_MULTIWORD",
+      "section": "2.7.1",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "PRIMARY_MULTIWORD_SPAN_LIFECYCLE_DOMINATES_MARKER_FORMS",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-002"
+      ],
+      "semanticPayload": {
+        "startMarker": {
+          "unicode": "⠸⠸",
+          "codepoints": [
+            "U+2838",
+            "U+2838"
+          ],
+          "dots": [
+            "456",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "An emphasis spanning more than one word may use a multiword start marker and explicit termination after the final word."
+      },
+      "semanticEvidenceRoots": [
+        "startMarker",
+        "endMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "sourceRulePath": "spec/de/rules/records/de-emph-006.json",
+      "sourceRuleSha256": "D5A5C36BAFB08B99DBB289456096634AB3336D3CF270725212DAF8DF6145C8C4",
+      "family": "EMPH",
+      "kind": "PRIMARY_WORD_PART",
+      "section": "2.7.1",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "WORD_PART_START_END_AND_WORD_TERMINATION_DEFINE_SCOPE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-003",
+        "DE-EMPH-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "A first-emphasis word part uses the primary marker at word start and dot-6 plus the primary marker when emphasis begins inside a word.",
+        "startAtWordBeginning": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "startInsideWord": {
+          "unicode": "⠠⠸",
+          "codepoints": [
+            "U+2820",
+            "U+2838"
+          ],
+          "dots": [
+            "6",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "explicitEndBeforeRemainder": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "wordEndAlsoTerminates": true
+      },
+      "semanticEvidenceRoots": [
+        "wordEndAlsoTerminates",
+        "explicitEndBeforeRemainder"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "sourceRulePath": "spec/de/rules/records/de-emph-008.json",
+      "sourceRuleSha256": "327A038FF68F024A9EC7D99CA200F60C59E5AC4F88771959BED969052A836815",
+      "family": "EMPH",
+      "kind": "SECONDARY_MULTIWORD",
+      "section": "2.7.2",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SECONDARY_MULTIWORD_SPAN_LIFECYCLE_DOMINATES_MARKER_FORMS",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-006"
+      ],
+      "semanticPayload": {
+        "startMarker": {
+          "unicode": "⠐⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "5",
+            "456"
+          ],
+          "cellCount": 3
+        },
+        "endMarker": {
+          "unicode": "⠐⠄",
+          "codepoints": [
+            "U+2810",
+            "U+2804"
+          ],
+          "dots": [
+            "5",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword span using the second emphasis type has a dedicated start and end sequence."
+      },
+      "semanticEvidenceRoots": [
+        "startMarker",
+        "endMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "sourceRulePath": "spec/de/rules/records/de-emph-009.json",
+      "sourceRuleSha256": "BE792AA0DB513F233FE6836F5E13C0EFDAF69AC8A01CE6BF64854BD441FCA877",
+      "family": "EMPH",
+      "kind": "SECONDARY_WORD_PART_END",
+      "section": "2.7.2",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SECONDARY_WORD_PART_TERMINATION_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-007"
+      ],
+      "semanticPayload": {
+        "endMarker": {
+          "unicode": "⠐⠄",
+          "codepoints": [
+            "U+2810",
+            "U+2804"
+          ],
+          "dots": [
+            "5",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The secondary emphasis terminator may occur inside a word when only a word part is marked."
+      },
+      "semanticEvidenceRoots": [
+        "endMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "sourceRulePath": "spec/de/rules/records/de-flang-007.json",
+      "sourceRuleSha256": "A066449F50AC519B7FF3E59FC21C436FB91F77F8912416CAB5788B360031DC3C",
+      "family": "FLANG",
+      "kind": "FOREIGN_SINGLE_WORD",
+      "section": "2.9",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "FOREIGN_SYSTEM_ONE_WORD_SCOPE_DOMINATES_START_MARKER_FORM",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-001"
+      ],
+      "semanticPayload": {
+        "startMarker": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "summary": "One word in a foreign Braille system is introduced by the single foreign-system marker.",
+        "scope": "ONE_WORD"
+      },
+      "semanticEvidenceRoots": [
+        "scope",
+        "startMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "sourceRulePath": "spec/de/rules/records/de-flang-008.json",
+      "sourceRuleSha256": "040BB679A92E3B551263B8066C34D3CECAF5BB27395B0256DAAB05DE261195CD",
+      "family": "FLANG",
+      "kind": "FOREIGN_MULTIWORD",
+      "section": "2.9",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "FOREIGN_MULTIWORD_SCOPE_AND_TERMINATION_DOMINATE_MARKER_FORMS",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-002"
+      ],
+      "semanticPayload": {
+        "startMarker": {
+          "unicode": "⠰⠰",
+          "codepoints": [
+            "U+2830",
+            "U+2830"
+          ],
+          "dots": [
+            "56",
+            "56"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword foreign-system span uses a double foreign marker and explicit terminator.",
+        "scope": "MULTIWORD"
+      },
+      "semanticEvidenceRoots": [
+        "scope",
+        "startMarker",
+        "endMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "sourceRulePath": "spec/de/rules/records/de-flang-012.json",
+      "sourceRuleSha256": "D89952C39FA056519784F53BC50365A679F0ACA634876433B1831ABD3AFF763F",
+      "family": "FLANG",
+      "kind": "ACCENT_POLICY_BOUNDARY",
+      "section": "2.9",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "FOREIGN_SPAN_BOUNDARY_CONTROLS_ACCENT_TECHNIQUE_APPLICABILITY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-005"
+      ],
+      "semanticPayload": {
+        "summary": "A full foreign-system span permits the foreign system's own accented-letter signs without German point-4 accent announcement.",
+        "dependency": "DE-ACCENT-003",
+        "distinction": {
+          "germanAccentTechnique": "POINT4_REQUIRED",
+          "foreignSystemSpan": "TARGET_SYSTEM_RULES_APPLY"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "dependency"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "sourceRulePath": "spec/de/rules/records/de-math-003.json",
+      "sourceRuleSha256": "16B972D67D47E0E7D4B8F8A6A2699F29A828DEF8ED0DF676E868286C92FAC7EF",
+      "family": "MATH",
+      "kind": "INLINE_MATH_SCOPE",
+      "section": "2.10",
+      "primaryRole": "STATE_SCOPE",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "INLINE_MATH_ANNOUNCEMENT_SCOPE_AND_TERMINATORS_ARE_PRIMARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-002"
+      ],
+      "semanticPayload": {
+        "summary": "When several mathematical signs occur in one expression, announcement of the first may remain effective through the expression.",
+        "terminators": [
+          "BRAILLE_BLANK",
+          "HYPHEN",
+          "SLASH",
+          "LETTER_CASE_ANNOUNCEMENT",
+          "CANCELLATION_POINT"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "terminators"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}
