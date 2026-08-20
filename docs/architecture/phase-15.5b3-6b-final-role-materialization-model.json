@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.6b",
+  "status": "FINAL_ROLE_MATERIALIZATION_MODEL_FROZEN",
+  "title": "German Basisschrift Final B3 Role Materialization Model",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "bfcc42605a5cec3580ee68b8da8053c366c3f9b9"
+  },
+  "upstream": {
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "roleNeutralSchemaSha256": "FBF7F9BDA476DA7E9864C8600F1274622F2DD00B526D4F7A0730436FB9903997",
+    "roleNeutralSchemaCanonicalJsonSha256": "8C624D3D60CEB29BF9CABA0A46087F9C889AB6A1016E99BF323453E525CB21B4",
+    "existingMaterializedAssignments": 87,
+    "remainingBeforeB36": 20
+  },
+  "adjudication": {
+    "b3Scope": 107,
+    "existingMaterializedAssignments": 87,
+    "remainingBeforeB36": 20,
+    "roleCounts": {
+      "DELEGATED_REFERENCE": 8,
+      "REFERENCE_ONLY": 5,
+      "CROSS_MODE_DEFERRED": 3,
+      "ARCHITECTURAL_ONLY": 4
+    },
+    "newRoleCount": 20,
+    "assignedAfterFutureMaterialization": 107,
+    "remainingAfterFutureMaterialization": 0,
+    "ruleIds": {
+      "DELEGATED_REFERENCE": [
+        "DE-ACCENT-001",
+        "DE-FLANG-005",
+        "DE-FLANG-009",
+        "DE-FLANG-013",
+        "DE-FLANG-014",
+        "DE-MATH-013",
+        "DE-MATH-019",
+        "DE-TABLE-005"
+      ],
+      "REFERENCE_ONLY": [
+        "DE-ACCENT-006",
+        "DE-ACCENT-007",
+        "DE-CB-001",
+        "DE-CB-002",
+        "DE-CB-017"
+      ],
+      "CROSS_MODE_DEFERRED": [
+        "DE-CASE-016",
+        "DE-CASE-019",
+        "DE-CASE-020"
+      ],
+      "ARCHITECTURAL_ONLY": [
+        "DE-ACCENT-008",
+        "DE-EMPH-001",
+        "DE-TABLE-007",
+        "DE-TABLE-008"
+      ]
+    },
+    "decisions": {
+      "DELEGATED_REFERENCE": {
+        "DE-ACCENT-001": "LANGUAGE_SPECIFIC_ACCENT_CELL_RESPONSIBILITY_BELONGS_TO_TARGET_LANGUAGE_BRAILLE_MAPPING",
+        "DE-FLANG-005": "EXPLICIT_GERMAN_INSERT_MARKER_DEFINITION_IS_OWNED_BY_SECTION_4_8",
+        "DE-FLANG-009": "FULL_FOREIGN_SYSTEM_SEMANTICS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "DE-FLANG-013": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT_SIGNS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "DE-FLANG-014": "FOREIGN_CONTRACTION_SYSTEM_IS_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "DE-MATH-013": "EXTENDED_SYMBOL_SEMANTICS_ARE_OWNED_BY_EXTERNAL_GERMAN_MATHEMATIKSCHRIFT",
+        "DE-MATH-019": "FULL_MATH_INTERNAL_SEMANTICS_ARE_OWNED_BY_GERMAN_MATH_BRAILLE_PROFILE",
+        "DE-TABLE-005": "COLUMN_NUMBER_ENCODING_FORM_IS_OWNED_BY_ORDINARY_GERMAN_NUMERIC_NOTATION"
+      },
+      "REFERENCE_ONLY": {
+        "DE-ACCENT-006": "FRENCH_EXACT_ACCENT_TABLE_IS_NORMATIVE_REFERENCE_DATA_NOT_A_BASISSCHRIFT_EXECUTION_CONTRACT",
+        "DE-ACCENT-007": "ITALIAN_EXACT_ACCENT_TABLE_IS_NORMATIVE_REFERENCE_DATA_NOT_A_BASISSCHRIFT_EXECUTION_CONTRACT",
+        "DE-CB-001": "COMPUTERBRAILLE_USE_CASE_IS_REFERENCE_CONTEXT_FOR_THE_SIX_DOT_TRANSPORT_CONTRACT",
+        "DE-CB-002": "PRIMARY_EIGHT_DOT_COMPUTERBRAILLE_SYSTEM_IS_OUTSIDE_SIX_DOT_BASISSCHRIFT_EXECUTION",
+        "DE-CB-017": "COMMON_SIX_DOT_COMPUTERBRAILLE_TABLE_IS_EXPLICITLY_INCOMPLETE_REFERENCE_DATA"
+      },
+      "CROSS_MODE_DEFERRED": {
+        "DE-CASE-016": "AVAILABLE_PROFILES_EXCLUDE_BASISSCHRIFT_AND_LIMIT_RULE_TO_VOLL_KURZ",
+        "DE-CASE-019": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY",
+        "DE-CASE-020": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY"
+      },
+      "ARCHITECTURAL_ONLY": {
+        "DE-ACCENT-008": "NONNORMATIVE_LIGATURE_TABLE_STRUCTURE_INFERENCE_IS_ARCHITECTURAL",
+        "DE-EMPH-001": "NONNORMATIVE_EMPHASIS_ABSTRACTION_SYNTHESIS_IS_ARCHITECTURAL",
+        "DE-TABLE-007": "NONNORMATIVE_INFERENCE_PROHIBITION_FOR_UNSPECIFIED_EMPTY_CELL_POLICY_IS_ARCHITECTURAL",
+        "DE-TABLE-008": "DOCUMENT_STRUCTURE_LAYER_OWNERSHIP_IS_ARCHITECTURAL"
+      }
+    },
+    "familyCounts": {
+      "DELEGATED_REFERENCE": {
+        "ACCENT": 1,
+        "FLANG": 4,
+        "MATH": 2,
+        "TABLE": 1
+      },
+      "REFERENCE_ONLY": {
+        "ACCENT": 2,
+        "CB": 3
+      },
+      "CROSS_MODE_DEFERRED": {
+        "CASE": 3
+      },
+      "ARCHITECTURAL_ONLY": {
+        "ACCENT": 1,
+        "EMPH": 1,
+        "TABLE": 2
+      }
+    }
+  },
+  "materializationModel": {
+    "schemaStrategy": {
+      "roleNeutralSchemaPath": "spec/de/schema/contract-role-materialization-set.schema.json",
+      "roleNeutralSchemaAlreadyExists": true,
+      "roleNeutralSchemaReused": true,
+      "roleNeutralSchemaMayBeMutated": false,
+      "newSchemaRequired": false
+    },
+    "topology": {
+      "DELEGATED_REFERENCE": "spec/de/contracts/de-basisschrift-delegated-reference.json",
+      "REFERENCE_ONLY": "spec/de/contracts/de-basisschrift-reference-only.json",
+      "CROSS_MODE_DEFERRED": "spec/de/contracts/de-basisschrift-cross-mode-deferred.json",
+      "ARCHITECTURAL_ONLY": "spec/de/contracts/de-basisschrift-architectural-only.json",
+      "contractSetCreationDeferredUntilMaterialization": true
+    },
+    "recordShape": {
+      "schemaPath": "spec/de/schema/contract-role-materialization-set.schema.json",
+      "schemaStrategy": "REUSE_FROZEN_ROLE_NEUTRAL_SCHEMA",
+      "requiredSemanticPayloadPolicy": "LOSSLESS_EXACT_COPY_OF_CANONICAL_SEMANTICS",
+      "semanticEvidenceRootsPolicy": "SORTED_TOP_LEVEL_SOURCE_SEMANTIC_ROOTS_EXCLUDING_SUMMARY_METADATA_ONLY",
+      "semanticEvidenceRootsMayBeEmpty": true,
+      "sourceBindingRequired": true,
+      "sourceShaRequired": true,
+      "canonicalMutationAllowed": false,
+      "executionShape": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    "setModels": {
+      "DELEGATED_REFERENCE": {
+        "id": "de-basisschrift-delegated-reference",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "materializationOwner": "15.5B3.6",
+        "recordCount": 8
+      },
+      "REFERENCE_ONLY": {
+        "id": "de-basisschrift-reference-only",
+        "primaryRole": "REFERENCE_ONLY",
+        "materializationOwner": "15.5B3.6",
+        "recordCount": 5
+      },
+      "CROSS_MODE_DEFERRED": {
+        "id": "de-basisschrift-cross-mode-deferred",
+        "primaryRole": "CROSS_MODE_DEFERRED",
+        "materializationOwner": "15.5B3.6",
+        "recordCount": 3
+      },
+      "ARCHITECTURAL_ONLY": {
+        "id": "de-basisschrift-architectural-only",
+        "primaryRole": "ARCHITECTURAL_ONLY",
+        "materializationOwner": "15.5B3.6",
+        "recordCount": 4
+      }
+    },
+    "materializationRules": {
+      "derivedLayerSeparateFromCanonical": true,
+      "derivedLayerSeparateFromB2RuntimeClassification": true,
+      "existingFiveMaterializedRoleSetsRemainFrozen": true,
+      "contractMaterializationIsNotBehavioralLowering": true,
+      "contractMaterializationIsNotRuntimeExecution": true,
+      "contractMaterializationDoesNotRegisterRuntimeBundle": true,
+      "exactlyOnePrimaryRolePerB3Rule": true,
+      "finalRoleSetsAreMutuallyDisjoint": true,
+      "onlyAdjudicatedB36RoleSetsMayBeMaterialized": true,
+      "allB3RulesWillBeRoleMaterializedAfterB36": true,
+      "crossModeDeferredDoesNotExecuteInBasisschrift": true,
+      "referenceOnlyDoesNotImplyRuntimeExecution": true,
+      "architecturalOnlyDoesNotImplyRuntimeExecution": true,
+      "delegatedReferenceDoesNotDuplicateDelegatedSubsystemSemantics": true
+    }
+  },
+  "sourceBindings": {
+    "DELEGATED_REFERENCE": [
+      {
+        "ruleId": "DE-ACCENT-001",
+        "sourceRulePath": "spec/de/rules/records/de-accent-001.json",
+        "sourceRuleSha256": "4560BEB445D5F0393B810777A52D7EE887FA67259E2829435F6F54E6536157A2",
+        "family": "ACCENT",
+        "kind": "LANGUAGE_DEPENDENT_ACCENT_CELL",
+        "section": "2.8.1",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "LANGUAGE_SPECIFIC_ACCENT_CELL_RESPONSIBILITY_BELONGS_TO_TARGET_LANGUAGE_BRAILLE_MAPPING",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": []
+      },
+      {
+        "ruleId": "DE-FLANG-005",
+        "sourceRulePath": "spec/de/rules/records/de-flang-005.json",
+        "sourceRuleSha256": "7A1722705E54D2624508289B38B33E94B91F9E7C0180D5A715500E64326BF7DC",
+        "family": "FLANG",
+        "kind": "UNAMBIGUOUS_GERMAN_INSERT_MODE",
+        "section": "2.9",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "EXPLICIT_GERMAN_INSERT_MARKER_DEFINITION_IS_OWNED_BY_SECTION_4_8",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "markerDefinitionDependency",
+          "markerStatus",
+          "observedExample"
+        ]
+      },
+      {
+        "ruleId": "DE-FLANG-009",
+        "sourceRulePath": "spec/de/rules/records/de-flang-009.json",
+        "sourceRuleSha256": "F1B975381376FDC7E5E7A3CD3EF78969EFD5979F8469845E93B100E7B2E7A32B",
+        "family": "FLANG",
+        "kind": "FOREIGN_SYSTEM_FULL_SEMANTICS",
+        "section": "2.9",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "FULL_FOREIGN_SYSTEM_SEMANTICS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [
+          "DE-FLANG-CASE-005"
+        ],
+        "semanticEvidenceRoots": [
+          "delegation",
+          "includes"
+        ]
+      },
+      {
+        "ruleId": "DE-FLANG-013",
+        "sourceRulePath": "spec/de/rules/records/de-flang-013.json",
+        "sourceRuleSha256": "9683E1B049678FAC57FF57D0ACC44ECF3345113672C150113C30935FCA6B2EA0",
+        "family": "FLANG",
+        "kind": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT",
+        "section": "2.9",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT_SIGNS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "delegation"
+        ]
+      },
+      {
+        "ruleId": "DE-FLANG-014",
+        "sourceRulePath": "spec/de/rules/records/de-flang-014.json",
+        "sourceRuleSha256": "1DA4C64AB61D7B8CE9F6F563B8C447FD1E205F010EAA265BA81CFE0093C72B51",
+        "family": "FLANG",
+        "kind": "FOREIGN_CONTRACTION_SYSTEM",
+        "section": "2.9",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "FOREIGN_CONTRACTION_SYSTEM_IS_OWNED_BY_TARGET_BRAILLE_PROFILE",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "delegation"
+        ]
+      },
+      {
+        "ruleId": "DE-MATH-013",
+        "sourceRulePath": "spec/de/rules/records/de-math-013.json",
+        "sourceRuleSha256": "3A67E2BB9DE2D30FFD579F6BA2EFC8AA23CEE15A076A8996D6B625331B58B78E",
+        "family": "MATH",
+        "kind": "EXTENDED_MATH_SYMBOLS",
+        "section": "2.10",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "EXTENDED_SYMBOL_SEMANTICS_ARE_OWNED_BY_EXTERNAL_GERMAN_MATHEMATIKSCHRIFT",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "externalNormativeDependency",
+          "nonMathTextExplanationRecommended"
+        ]
+      },
+      {
+        "ruleId": "DE-MATH-019",
+        "sourceRulePath": "spec/de/rules/records/de-math-019.json",
+        "sourceRuleSha256": "8B5826598E168CADA4BD3D0E2D9DF257433CFC9F67D0A3DC74A05D35E069F2CE",
+        "family": "MATH",
+        "kind": "FULL_MATH_INTERNAL_POLICY",
+        "section": "2.10",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "FULL_MATH_INTERNAL_SEMANTICS_ARE_OWNED_BY_GERMAN_MATH_BRAILLE_PROFILE",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [
+          "DE-MATH-CASE-010"
+        ],
+        "semanticEvidenceRoots": [
+          "delegation",
+          "inlinePoint4AnnouncementActive"
+        ]
+      },
+      {
+        "ruleId": "DE-TABLE-005",
+        "sourceRulePath": "spec/de/rules/records/de-table-005.json",
+        "sourceRuleSha256": "360582CD64FF777F7337077ABA529431C7DFC9CF46E925F1DB215EB5BA1E6539",
+        "family": "TABLE",
+        "kind": "COLUMN_NUMBER_NUMERIC_FORM",
+        "section": "2.12",
+        "primaryRole": "DELEGATED_REFERENCE",
+        "decisionRationale": "COLUMN_NUMBER_ENCODING_FORM_IS_OWNED_BY_ORDINARY_GERMAN_NUMERIC_NOTATION",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [
+          "DE-TABLE-CASE-002"
+        ],
+        "semanticEvidenceRoots": [
+          "example",
+          "numericDependency"
+        ]
+      }
+    ],
+    "REFERENCE_ONLY": [
+      {
+        "ruleId": "DE-ACCENT-006",
+        "sourceRulePath": "spec/de/rules/records/de-accent-006.json",
+        "sourceRuleSha256": "DED1DC68D74950A38BC55DD699ECB05EDDD34C6322607998F8D05CF017633D9E",
+        "family": "ACCENT",
+        "kind": "FRENCH_EXACT_TABLE",
+        "section": "2.8.1",
+        "primaryRole": "REFERENCE_ONLY",
+        "decisionRationale": "FRENCH_EXACT_ACCENT_TABLE_IS_NORMATIVE_REFERENCE_DATA_NOT_A_BASISSCHRIFT_EXECUTION_CONTRACT",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "recordCount"
+        ]
+      },
+      {
+        "ruleId": "DE-ACCENT-007",
+        "sourceRulePath": "spec/de/rules/records/de-accent-007.json",
+        "sourceRuleSha256": "A5A76AC287CEB4CB7597523B40D152A0FD86C1E6C509621F948EBEEAF49605E7",
+        "family": "ACCENT",
+        "kind": "ITALIAN_EXACT_TABLE",
+        "section": "2.8.1",
+        "primaryRole": "REFERENCE_ONLY",
+        "decisionRationale": "ITALIAN_EXACT_ACCENT_TABLE_IS_NORMATIVE_REFERENCE_DATA_NOT_A_BASISSCHRIFT_EXECUTION_CONTRACT",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "recordCount"
+        ]
+      },
+      {
+        "ruleId": "DE-CB-001",
+        "sourceRulePath": "spec/de/rules/records/de-cb-001.json",
+        "sourceRuleSha256": "5D374E20C57274957759DA2E11C18441AC533740CFB06B42861A10363C31B510",
+        "family": "CB",
+        "kind": "COMPUTERBRAILLE_USE_CASE",
+        "section": "2.11",
+        "primaryRole": "REFERENCE_ONLY",
+        "decisionRationale": "COMPUTERBRAILLE_USE_CASE_IS_REFERENCE_CONTEXT_FOR_THE_SIX_DOT_TRANSPORT_CONTRACT",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": []
+      },
+      {
+        "ruleId": "DE-CB-002",
+        "sourceRulePath": "spec/de/rules/records/de-cb-002.json",
+        "sourceRuleSha256": "84E61C2C1F744DDCB854C6C83ABDF889F47FBDBECAE701D488863713BE0FAA24",
+        "family": "CB",
+        "kind": "PRIMARY_EIGHT_DOT_SYSTEM",
+        "section": "2.11",
+        "primaryRole": "REFERENCE_ONLY",
+        "decisionRationale": "PRIMARY_EIGHT_DOT_COMPUTERBRAILLE_SYSTEM_IS_OUTSIDE_SIX_DOT_BASISSCHRIFT_EXECUTION",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "dot7Position",
+          "dot8Position",
+          "dots"
+        ]
+      },
+      {
+        "ruleId": "DE-CB-017",
+        "sourceRulePath": "spec/de/rules/records/de-cb-017.json",
+        "sourceRuleSha256": "A27A539D397688059357397FA5D1336523A0924389B7A04AB659140065AA668B",
+        "family": "CB",
+        "kind": "COMMON_MAPPING_TABLE_SCOPE",
+        "section": "2.11",
+        "primaryRole": "REFERENCE_ONLY",
+        "decisionRationale": "COMMON_SIX_DOT_COMPUTERBRAILLE_TABLE_IS_EXPLICITLY_INCOMPLETE_REFERENCE_DATA",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "expandedRecordCount",
+          "isCompleteCharset"
+        ]
+      }
+    ],
+    "CROSS_MODE_DEFERRED": [
+      {
+        "ruleId": "DE-CASE-016",
+        "sourceRulePath": "spec/de/rules/records/de-case-016.json",
+        "sourceRuleSha256": "75E63DBC5563D075DA9A9362837E8E83810533844E071E33237056F21F4421BD",
+        "family": "CASE",
+        "kind": "INTERNAL_CAPITAL_COMPACT_METHOD",
+        "section": "2.6.7",
+        "primaryRole": "CROSS_MODE_DEFERRED",
+        "decisionRationale": "AVAILABLE_PROFILES_EXCLUDE_BASISSCHRIFT_AND_LIMIT_RULE_TO_VOLL_KURZ",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [
+          "DE-CASE-CASE-010"
+        ],
+        "semanticEvidenceRoots": [
+          "availableProfiles",
+          "marker",
+          "useOnlyWhenSpaceSaving"
+        ]
+      },
+      {
+        "ruleId": "DE-CASE-019",
+        "sourceRulePath": "spec/de/rules/records/de-case-019.json",
+        "sourceRuleSha256": "CA8B67AE71E6EA19F0F3613CFB9AA9ADF1C322BFD3AE8AEBF91642AE2B249B24",
+        "family": "CASE",
+        "kind": "KURZSCHRIFT_INITIAL_CQXY",
+        "section": "2.6.1",
+        "primaryRole": "CROSS_MODE_DEFERRED",
+        "decisionRationale": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [
+          "DE-CASE-CASE-012"
+        ],
+        "semanticEvidenceRoots": [
+          "appliesToProfiles",
+          "letters",
+          "sequenceOrder"
+        ]
+      },
+      {
+        "ruleId": "DE-CASE-020",
+        "sourceRulePath": "spec/de/rules/records/de-case-020.json",
+        "sourceRuleSha256": "097F4BCA854E57CE9B85D07FD83E2901132DEA849BBE1FA875F2102316662425",
+        "family": "CASE",
+        "kind": "KURZSCHRIFT_LOWERCASE_SEQUENCE_DISAMBIGUATION",
+        "section": "2.6.3",
+        "primaryRole": "CROSS_MODE_DEFERRED",
+        "decisionRationale": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY",
+        "sourceNormative": true,
+        "sourceStatus": "normative",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "additionalDot6MayBeUsed",
+          "appliesToProfiles",
+          "condition",
+          "letters"
+        ]
+      }
+    ],
+    "ARCHITECTURAL_ONLY": [
+      {
+        "ruleId": "DE-ACCENT-008",
+        "sourceRulePath": "spec/de/rules/records/de-accent-008.json",
+        "sourceRuleSha256": "B35DF32A2D213BBA36AC32429FD43E2C10B9ACE53C327E63903ED30E935AE6FC",
+        "family": "ACCENT",
+        "kind": "LIGATURE_DISTINCTION",
+        "section": "2.8.1",
+        "primaryRole": "ARCHITECTURAL_ONLY",
+        "decisionRationale": "NONNORMATIVE_LIGATURE_TABLE_STRUCTURE_INFERENCE_IS_ARCHITECTURAL",
+        "sourceNormative": false,
+        "sourceStatus": "architectural",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "architecturalInference",
+          "evidenceRole"
+        ]
+      },
+      {
+        "ruleId": "DE-EMPH-001",
+        "sourceRulePath": "spec/de/rules/records/de-emph-001.json",
+        "sourceRuleSha256": "54537A164C3ACF34A9C2A57AE9251F7B3F6AA30D94AB321D950A00F424CB4D8C",
+        "family": "EMPH",
+        "kind": "EMPHASIS_ABSTRACTION",
+        "section": "2.7",
+        "primaryRole": "ARCHITECTURAL_ONLY",
+        "decisionRationale": "NONNORMATIVE_EMPHASIS_ABSTRACTION_SYNTHESIS_IS_ARCHITECTURAL",
+        "sourceNormative": false,
+        "sourceStatus": "architectural",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "architecturalInference",
+          "evidenceRole",
+          "hostFormattingMapping"
+        ]
+      },
+      {
+        "ruleId": "DE-TABLE-007",
+        "sourceRulePath": "spec/de/rules/records/de-table-007.json",
+        "sourceRuleSha256": "A2BC1B99C33A4AE623D4C43FD96C02B94720C46638189EAB1D2BD8378106FA42",
+        "family": "TABLE",
+        "kind": "UNNUMBERED_EMPTY_CELL_POLICY",
+        "section": "2.12",
+        "primaryRole": "ARCHITECTURAL_ONLY",
+        "decisionRationale": "NONNORMATIVE_INFERENCE_PROHIBITION_FOR_UNSPECIFIED_EMPTY_CELL_POLICY_IS_ARCHITECTURAL",
+        "sourceNormative": false,
+        "sourceStatus": "candidate",
+        "validationCaseIds": [
+          "DE-TABLE-CASE-005"
+        ],
+        "semanticEvidenceRoots": [
+          "inferenceProhibited",
+          "policy"
+        ]
+      },
+      {
+        "ruleId": "DE-TABLE-008",
+        "sourceRulePath": "spec/de/rules/records/de-table-008.json",
+        "sourceRuleSha256": "9BCAF614F11E33DE967292D54E490180E89FF4AA1FE8C37F1C894D33E6A898DC",
+        "family": "TABLE",
+        "kind": "STRUCTURAL_LAYER_OWNERSHIP",
+        "section": "2.12",
+        "primaryRole": "ARCHITECTURAL_ONLY",
+        "decisionRationale": "DOCUMENT_STRUCTURE_LAYER_OWNERSHIP_IS_ARCHITECTURAL",
+        "sourceNormative": false,
+        "sourceStatus": "architectural",
+        "validationCaseIds": [],
+        "semanticEvidenceRoots": [
+          "architecturalClassification",
+          "architecturalInference",
+          "futureOwner"
+        ]
+      }
+    ]
+  },
+  "determinism": {
+    "finalRoleAdjudicationCanonicalJsonSha256": "F0C2DB498E31C22B24C65543A731A2A623E130A560AED51498DC96D8386610C7",
+    "finalRoleMaterializationModelCanonicalJsonSha256": "AA9F307F767F108B1CE04B7C2F42847CE88E09FF66608C47E1B35D7C17A623D5"
+  },
+  "executionBoundary": {
+    "roleNeutralSchemaCreatedDuringB36b": false,
+    "roleNeutralSchemaMutated": false,
+    "delegatedReferenceContractSetCreated": false,
+    "referenceOnlyContractSetCreated": false,
+    "crossModeDeferredContractSetCreated": false,
+    "architecturalOnlyContractSetCreated": false,
+    "existingMaterializedAssignments": 87,
+    "formalB36Assignments": 0,
+    "formalAssignmentsTotal": 87,
+    "remainingNotAssigned": 20,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.6c Materialize Final B3 Role Contracts"
+}
