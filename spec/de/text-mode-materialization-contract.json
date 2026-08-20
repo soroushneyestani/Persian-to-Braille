@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A4.3",
+  "status": "MATERIALIZATION_CONTRACT",
+  "language": "de",
+  "semanticModel": {
+    "inheritanceMeaning": "SPECIFICATION_MATERIALIZATION",
+    "runtimeExecutionModel": "ONE_EFFECTIVE_BUNDLE_PER_SELECTED_MODE",
+    "runtimeParentFallbackChainAllowed": false,
+    "translatorChainingAllowed": false
+  },
+  "modes": [
+    {
+      "mode": "basisschrift",
+      "directParents": [],
+      "effectiveLayers": [
+        "basisschrift"
+      ]
+    },
+    {
+      "mode": "vollschrift",
+      "directParents": [
+        "basisschrift"
+      ],
+      "effectiveLayers": [
+        "basisschrift",
+        "vollschrift"
+      ]
+    },
+    {
+      "mode": "kurzschrift",
+      "directParents": [
+        "vollschrift"
+      ],
+      "effectiveLayers": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ]
+    }
+  ],
+  "materialization": {
+    "layerOrder": "BASE_TO_MOST_SPECIFIC",
+    "outputCardinality": "ONE_EFFECTIVE_SPECIFICATION",
+    "selfContainedEffectiveSpecificationRequired": true,
+    "runtimeDependencyOnParentBundle": false,
+    "canonicalRuleIdPolicy": {
+      "duplicateRuleIdAcrossLayersAllowed": false,
+      "implicitReplacementByRuleIdAllowed": false
+    },
+    "semanticOverlapPolicy": {
+      "inheritanceOrderDefinesRuntimePrecedence": false,
+      "lastWriteWinsAllowed": false,
+      "implicitChildOverrideAllowed": false,
+      "resolutionMechanism": [
+        "EXPLICIT_CANONICAL_RULE_PRIORITY",
+        "EXPLICIT_RULE_APPLICABILITY",
+        "SEMANTIC_VALIDATION"
+      ],
+      "unresolvedEqualPrecedenceOverlap": "REJECT"
+    },
+    "missingMatchPolicy": {
+      "dynamicParentBundleFallbackAllowed": false,
+      "behavior": "FAIL_CLOSED_ACCORDING_TO_EFFECTIVE_PROFILE"
+    }
+  },
+  "topologyRelationship": {
+    "runtimeModel": "THREE_INTERNAL_EXECUTABLE_BUNDLES",
+    "selectedModeProducesExactlyOneInternalBundle": true,
+    "generatedRuntimeFilenamesFrozenHere": false,
+    "publicProfileIdentifiersFrozenHere": false
+  },
+  "regionalSeparation": {
+    "swissParticipatesInModeInheritance": false,
+    "swissDimension": "ORTHOGONAL_REGIONAL_CONFIGURATION",
+    "regionalOverlayApplicationStage": "AFTER_TEXT_MODE_MATERIALIZATION_CONTRACTUALLY_DISTINCT",
+    "swissExplicitEszettInputPolicy": "OPEN"
+  },
+  "admissionState": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "germanExecutableMaterializations": 0
+  },
+  "deferred": {
+    "coreModeSelectionBoundary": "15.5A4.4",
+    "regionalConfigurationContract": "15.5A5",
+    "swissExplicitEszettDecision": "15.5A6",
+    "actualBasisschriftMaterialization": "15.5B",
+    "actualVollschriftMaterialization": "15.5C",
+    "actualKurzschriftMaterialization": "15.5D",
+    "publicSdk": "15.6"
+  },
+  "nextStep": "15.5A4.4 Internal Core Mode-Selection Boundary"
+}
