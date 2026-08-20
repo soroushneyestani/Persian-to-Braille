@@ -1,0 +1,742 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-policy-selection",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "POLICY_SELECTION",
+  "recordCount": 22,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Twenty-two German Basisschrift Policy Selection contracts materialized from immutable canonical rules. The contracts preserve policy-selection semantics but remain non-executable until B4 lowering.",
+  "records": [
+    {
+      "ruleId": "DE-CASE-001",
+      "sourceRulePath": "spec/de/rules/records/de-case-001.json",
+      "sourceRuleSha256": "BC0A06F207D842CF9D899A7BC7A0544E74244BC19224CB58E21D2A071985B5E0",
+      "family": "CASE",
+      "kind": "DEFAULT_CASE_POLICY",
+      "section": "2.6",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "DEFAULT_SELECTIVE_CASE_MARKING_MODE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "German Braille normally does not distinguish uppercase and lowercase in ordinary running text.",
+        "mode": "SELECTIVE_CASE_MARKING"
+      },
+      "semanticEvidenceRoots": [
+        "mode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "sourceRulePath": "spec/de/rules/records/de-case-003.json",
+      "sourceRuleSha256": "2A4E1C8001D53D7877CBA5860350E08EDF1B8E78BF7AAFAF5603546B1B914965",
+      "family": "CASE",
+      "kind": "SYSTEMATIC_CAPITAL_MODE",
+      "section": "2.6",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "OPTIONAL_SYSTEMATIC_CAPITAL_MARKING_MODE_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A document may explicitly mark all uppercase letters; in that mode unannounced letters are lowercase.",
+        "mode": "SYSTEMATIC_CAPITAL_MARKING"
+      },
+      "semanticEvidenceRoots": [
+        "mode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "sourceRulePath": "spec/de/rules/records/de-case-011.json",
+      "sourceRuleSha256": "AFC0610C09E83D90437B4E4ED7E6273E6F145505CB6DF00973D5E59A1FE081CE",
+      "family": "CASE",
+      "kind": "CASE_GROUPING_PRIORITY",
+      "section": "2.6.4",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "VALID_CASE_SEGMENTATION_PRIORITY_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When more than one valid case segmentation exists, semantic grouping has priority and the number of announcement signs should then be minimized.",
+        "priority": [
+          "SEMANTIC_GROUPING",
+          "MINIMIZE_ANNOUNCEMENT_SIGNS"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "priority"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "sourceRulePath": "spec/de/rules/records/de-case-015.json",
+      "sourceRuleSha256": "6B731DD9255B8B3C513A83338F39D8CDBADD28131EFC1543388513AD0A770F17",
+      "family": "CASE",
+      "kind": "INTERNAL_CAPITAL_BASIS_METHOD",
+      "section": "2.6.7",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "INTERNAL_CAPITAL_BASISSCHRIFT_METHOD_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-009"
+      ],
+      "semanticPayload": {
+        "summary": "Internal capitalization may be represented using the mixed-case Basisschrift method of section 2.6.4.",
+        "availableProfiles": [
+          "basisschrift",
+          "vollschrift",
+          "kurzschrift"
+        ],
+        "requiresBasisschriftSpan": true,
+        "pureBasisschriftPassagePolicy": {
+          "context": "PURE_BASISSCHRIFT_PASSAGE",
+          "leadingCapitalMarkerMayBeOmitted": true
+        }
+      },
+      "semanticEvidenceRoots": [
+        "availableProfiles"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "sourceRulePath": "spec/de/rules/records/de-case-021.json",
+      "sourceRuleSha256": "704DE7BC5C656E7129C9F9FB79585066D679AFC5E3A956609D88BA6B932484A7",
+      "family": "CASE",
+      "kind": "POLITE_PRONOUN_CAPITALIZATION",
+      "section": "2.6",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "OPTIONAL_POLITE_PRONOUN_CAPITALIZATION_POLICY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Customary capitalization of polite forms may optionally be carried into Braille.",
+        "required": false,
+        "customary": true
+      },
+      "semanticEvidenceRoots": [
+        "required",
+        "customary"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "sourceRulePath": "spec/de/rules/records/de-cb-003.json",
+      "sourceRuleSha256": "3278A5140EF3EB63D29D04592CD5DBAD8BF00F3E98054C7E75ABDE856B215992",
+      "family": "CB",
+      "kind": "SIX_DOT_FALLBACK_TRIGGER",
+      "section": "2.11",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SIX_DOT_TRANSPORT_FALLBACK_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When eight-dot Computerbraille inserts are not possible, Computerbraille characters are serialized through the section 2.11 six-dot transport technique.",
+        "mode": "SIX_DOT_COMPUTERBRAILLE_TRANSPORT"
+      },
+      "semanticEvidenceRoots": [
+        "mode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "sourceRulePath": "spec/de/rules/records/de-cb-009.json",
+      "sourceRuleSha256": "79472F54A318259DA30E61AE92613BAB1CB8E247D91A20234767EFACDBFFF967",
+      "family": "CB",
+      "kind": "NO_BLANK_INSERT_START",
+      "section": "2.11",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "NO_BLANK_START_FORM_SELECTED_BY_SERIALIZED_BLANK_STATE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-009"
+      ],
+      "semanticPayload": {
+        "summary": "A Computerbraille insert whose serialized form contains no Braille blank uses the no-blank announcement marker.",
+        "marker": {
+          "unicode": "⠠⠨",
+          "codepoints": [
+            "U+2820",
+            "U+2828"
+          ],
+          "dots": [
+            "6",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "selectionKey": "SERIALIZED_BRAILLE_CONTAINS_BLANK",
+        "selectionValue": false
+      },
+      "semanticEvidenceRoots": [
+        "selectionKey",
+        "selectionValue",
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "sourceRulePath": "spec/de/rules/records/de-cb-010.json",
+      "sourceRuleSha256": "35B01CE509087706E07DD4636A816D8A0A16A51CB4066FBB293BB26266AF7938",
+      "family": "CB",
+      "kind": "BLANK_CONTAINING_INSERT_START",
+      "section": "2.11",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "BLANK_CONTAINING_START_FORM_SELECTED_BY_SERIALIZED_BLANK_STATE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-010",
+        "DE-CB-CASE-011"
+      ],
+      "semanticPayload": {
+        "summary": "A Computerbraille insert whose serialized form contains at least one Braille blank uses the blank-containing announcement marker.",
+        "marker": {
+          "unicode": "⠨⠨",
+          "codepoints": [
+            "U+2828",
+            "U+2828"
+          ],
+          "dots": [
+            "46",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "selectionKey": "SERIALIZED_BRAILLE_CONTAINS_BLANK",
+        "selectionValue": true
+      },
+      "semanticEvidenceRoots": [
+        "selectionKey",
+        "selectionValue",
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "sourceRulePath": "spec/de/rules/records/de-emph-005.json",
+      "sourceRuleSha256": "7121294053A45A73B4656608416ABDA0F9368C7426F531964DD6E869B8BDDB87",
+      "family": "EMPH",
+      "kind": "PRIMARY_SHORT_SPAN_OPTIMIZATION",
+      "section": "2.7.1",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "PRIMARY_SHORT_SPAN_INDIVIDUAL_MARKING_OPTIMIZATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "For emphasis spanning one to three words, each word may instead be individually marked to save Braille space.",
+        "maximumWords": 3,
+        "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED"
+      },
+      "semanticEvidenceRoots": [
+        "strategy"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "sourceRulePath": "spec/de/rules/records/de-emph-010.json",
+      "sourceRuleSha256": "DE05F21DF36FE5095C0CC72EE31CB0A14A3E63BD1FAEC5797A1E42BA2D3C4FFC",
+      "family": "EMPH",
+      "kind": "SECONDARY_TWO_WORD_OPTIMIZATION",
+      "section": "2.7.2",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SECONDARY_TWO_WORD_INDIVIDUAL_MARKING_OPTIMIZATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When the second emphasis spans exactly two words, each word may be marked individually to save space.",
+        "wordCount": 2,
+        "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED"
+      },
+      "semanticEvidenceRoots": [
+        "strategy"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "sourceRulePath": "spec/de/rules/records/de-emph-012.json",
+      "sourceRuleSha256": "039C0F03A1FD1D52ABCA2A3E184C7D7ADF6CDF6EA11460353D43205C48C7ED17",
+      "family": "EMPH",
+      "kind": "VERSALIEN_EXPLICIT_MODE",
+      "section": "2.7.3",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "EXPLICIT_VERSALIEN_BASISSCHRIFT_METHOD_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-008"
+      ],
+      "semanticPayload": {
+        "summary": "When all-capitals styling must remain recognizable as such, the span is represented in Basisschrift.",
+        "requiresBasisschrift": true,
+        "contractionsAllowed": false,
+        "dependency": "DE-CASE-006"
+      },
+      "semanticEvidenceRoots": [
+        "contractionsAllowed",
+        "dependency"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "sourceRulePath": "spec/de/rules/records/de-emph-014.json",
+      "sourceRuleSha256": "169FDD5ECAE5D8C78929EBE0ABAEB894740D2C2CA07A0E29EE4A76F1E0740C2A",
+      "family": "EMPH",
+      "kind": "VERSALIEN_MULTIWORD",
+      "section": "2.7.3",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "VERSALIEN_MULTIWORD_STRATEGY_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-009"
+      ],
+      "semanticPayload": {
+        "startMarker": {
+          "unicode": "⠘⠘",
+          "codepoints": [
+            "U+2818",
+            "U+2818"
+          ],
+          "dots": [
+            "45",
+            "45"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword all-capitals passage may use the double capital marker and explicit terminator.",
+        "strategy": {
+          "twoOrMoreWords": "MULTIWORD_FORM_ALLOWED",
+          "upToThreeWords": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+          "fourOrMoreWords": "MULTIWORD_FORM_SHOULD_BE_USED"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "strategy",
+        "startMarker",
+        "endMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "sourceRulePath": "spec/de/rules/records/de-emph-015.json",
+      "sourceRuleSha256": "D263E300770C27F9781D0AA264505FA4A9D07D36046A93B4184F52FEF0F37FD0",
+      "family": "EMPH",
+      "kind": "VERSALIEN_ALTERNATIVE_EMPHASIS",
+      "section": "2.7.3",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "ALTERNATIVE_EMPHASIS_VERSUS_EXPLICIT_VERSALIEN_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "An alternative emphasis technique may be used instead of explicit Versalien encoding, for example when remaining in Kurzschrift.",
+        "semanticTradeoff": "VISUAL_ALL_CAPS_MAY_BE_REPRESENTED_AS_EMPHASIS",
+        "profileRelevant": true
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "sourceRulePath": "spec/de/rules/records/de-flang-001.json",
+      "sourceRuleSha256": "2565740C8DFDE4FC5F2759D8FCA1F424029052563F394247AAEFC09C02DEB154",
+      "family": "FLANG",
+      "kind": "GERMAN_SYSTEM_FOREIGN_CONTENT",
+      "section": "2.9",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "GERMAN_BRAILLE_MODE_FOR_FOREIGN_CONTENT_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ],
+      "semanticPayload": {
+        "summary": "Foreign-language inserts may be rendered under German Basis-, Voll- or Kurzschrift.",
+        "mode": "GERMAN_BRAILLE_FOREIGN_CONTENT"
+      },
+      "semanticEvidenceRoots": [
+        "mode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "sourceRulePath": "spec/de/rules/records/de-flang-003.json",
+      "sourceRuleSha256": "77EE2749A9F8B77854788991D41AE0C906AAD3FEFDE8F47A3EF424987127EBF0",
+      "family": "FLANG",
+      "kind": "PRONUNCIATION_SENSITIVE_CONTRACTION",
+      "section": "2.9",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "PRONUNCIATION_AWARE_CONTRACTION_SELECTION_POLICY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When pronunciation is known it should be considered when selecting German Lautgruppenkürzungen for foreign text.",
+        "pronunciationAware": true
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "sourceRulePath": "spec/de/rules/records/de-flang-006.json",
+      "sourceRuleSha256": "209073BC94034D4ACF7948B5B827C50E0FD0A5B58FA8FE787CA97EB0D996739A",
+      "family": "FLANG",
+      "kind": "FOREIGN_SYSTEM_SWITCH",
+      "section": "2.9",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "FOREIGN_SYSTEM_VERSUS_GERMAN_SYSTEM_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A foreign Braille system may be used instead of German Braille for an embedded span.",
+        "mode": "FOREIGN_BRAILLE_SYSTEM_SPAN"
+      },
+      "semanticEvidenceRoots": [
+        "mode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "sourceRulePath": "spec/de/rules/records/de-flang-010.json",
+      "sourceRuleSha256": "70327B49C04DE2E53471A3EA4CCD6842571BF56DCED2986B0A211B1598A9FDAA",
+      "family": "FLANG",
+      "kind": "FOREIGN_PROFILE_IDENTITY",
+      "section": "2.9",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "FOREIGN_PROFILE_IDENTITY_RESOLUTION_ORDER",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-006"
+      ],
+      "semanticPayload": {
+        "summary": "The foreign alphabet or Braille system must be identified by annotation when it is not clear from context.",
+        "resolutionOrder": [
+          "CONTEXT",
+          "EXPLICIT_ANNOTATION"
+        ]
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "sourceRulePath": "spec/de/rules/records/de-flang-011.json",
+      "sourceRuleSha256": "C76B62FF37BDB86A56ECF31075E44BD6CAD0DCE27D47BF491A648FB802C76D07",
+      "family": "FLANG",
+      "kind": "SHORT_SPAN_OPTIMIZATION",
+      "section": "2.9",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "SHORT_FOREIGN_SPAN_INDIVIDUAL_MARKING_OPTIMIZATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-003",
+        "DE-FLANG-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "For foreign-system spans of one to three words, each word may be individually marked to save space.",
+        "minimumWords": 1,
+        "maximumWords": 3,
+        "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS_ALLOWED"
+      },
+      "semanticEvidenceRoots": [
+        "strategy"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "sourceRulePath": "spec/de/rules/records/de-math-007.json",
+      "sourceRuleSha256": "EBCDD2846BF412B384885AD6C3253F7A5D99B0E9AA4883FC58CFA02E0833AE5F",
+      "family": "MATH",
+      "kind": "MULTIPLICATION_ALTERNATIVES",
+      "section": "2.10",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "MULTIPLICATION_REPRESENTATION_ALTERNATIVE_SELECTION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A print letter x used as multiplication may be retained instead of replacing it with the mathematical multiplication-cross sign. The multiplication star also has an alternate text representation.",
+        "printXMayBePreserved": true,
+        "starAlternative": {
+          "unicode": "⠠⠔",
+          "codepoints": [
+            "U+2820",
+            "U+2814"
+          ],
+          "dots": [
+            "6",
+            "35"
+          ],
+          "cellCount": 2
+        }
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "sourceRulePath": "spec/de/rules/records/de-math-014.json",
+      "sourceRuleSha256": "33AE29B3248517455AB071551C2F7ED2BB4B9E17F7F2CD0032DA02326E7BDCCF",
+      "family": "MATH",
+      "kind": "AMBIGUITY_FALLBACK",
+      "section": "2.10",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "AMBIGUITY_FALLBACK_TO_FULL_MATHEMATIKSCHRIFT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When point-4 inline notation is ambiguous, the full Mathematikschrift rules and delimiters may be used to eliminate ambiguity.",
+        "fallbackMode": "FULL_MATHEMATIKSCHRIFT_SPAN"
+      },
+      "semanticEvidenceRoots": [
+        "fallbackMode"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "sourceRulePath": "spec/de/rules/records/de-math-015.json",
+      "sourceRuleSha256": "0DDC8235382902D6B6B953F9335CDC1B8DBDC866378889E0F9E1D3C7309FE25D",
+      "family": "MATH",
+      "kind": "MEASUREMENT_UNIT_POLICY",
+      "section": "2.10",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "TEXTSCHRIFT_MEASUREMENT_UNIT_DEFAULT_POLICY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The special Mathematikschrift unit indicator is normally not used in German Textschrift.",
+        "matheschriftUnitMarker": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "textschriftDefaultUse": false
+      },
+      "semanticEvidenceRoots": [
+        "textschriftDefaultUse"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "sourceRulePath": "spec/de/rules/records/de-math-016.json",
+      "sourceRuleSha256": "B6E6ED69FA07BB82B2A148D59686A9066F31842242356AFF383E81E8DCD70F51",
+      "family": "MATH",
+      "kind": "FULL_MATH_PROFILE_SWITCH",
+      "section": "2.10",
+      "primaryRole": "POLICY_SELECTION",
+      "materializationOwner": "15.5B3.4",
+      "decisionRationale": "COMPLEX_MATH_PROFILE_SWITCH_POLICY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-008"
+      ],
+      "semanticPayload": {
+        "summary": "Complex mathematical expressions should switch from the inline Textschrift technique to the German Mathematikschrift system.",
+        "profileSwitch": true,
+        "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED"
+      },
+      "semanticEvidenceRoots": [
+        "profileSwitch",
+        "targetProfile"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}

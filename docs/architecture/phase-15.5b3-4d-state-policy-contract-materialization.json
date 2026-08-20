@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.4d",
+  "status": "STATE_POLICY_CONTRACTS_MATERIALIZED_NON_EXECUTABLE",
+  "title": "German Basisschrift State Scope and Policy Selection Contract Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "16e3eeb24226546bb93d93fc8d8b8233d0353ffe"
+  },
+  "upstream": {
+    "phase15_5B3_4cStatus": "STATE_POLICY_MATERIALIZATION_MODEL_FROZEN",
+    "statePolicyAdjudicationCanonicalJsonSha256": "E867AF4B2F273F97C0BE787BE8DBC102E3EB77906079126137F3F854E3AF4589",
+    "statePolicyMaterializationModelCanonicalJsonSha256": "B358212E7F08B26AFE1D4C5EAC1080FCD025B693E2AD2BF83F665F2AC409F475",
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "existingIndicatorAssignments": 20
+  },
+  "outputs": {
+    "roleNeutralSchema": {
+      "path": "spec/de/schema/contract-role-materialization-set.schema.json",
+      "sha256": "FBF7F9BDA476DA7E9864C8600F1274622F2DD00B526D4F7A0730436FB9903997",
+      "canonicalJsonSha256": "8C624D3D60CEB29BF9CABA0A46087F9C889AB6A1016E99BF323453E525CB21B4"
+    },
+    "stateScopeContractSet": {
+      "path": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "sha256": "7FEBC08B80E61E0CE56A4520A224CDBAF799E139D11BDF4E69CBB829A6592F63",
+      "canonicalJsonSha256": "1D884E101F292409C7117C8AC3F7901DDBDA65FA3B066AB08036D0D53A698073",
+      "recordsCanonicalJsonSha256": "476F2FCF3C355FBF5708C2AC1F329B84FB86715944AA547E45C0C5771025F9F7"
+    },
+    "policySelectionContractSet": {
+      "path": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "sha256": "FD44F4B1F3998DC2931FDC76093B086E619217061D10446B8BAAB0D46BD125B2",
+      "canonicalJsonSha256": "131BA96E6CAD63738BAF160A79757E5B662D80EEDAC01EC49BEA586CD668037D",
+      "recordsCanonicalJsonSha256": "84F865BF2DCD0CACCD104C40670E2F0B8EC2085E65545E8D17523D8080AE5D92"
+    }
+  },
+  "materialization": {
+    "b3Scope": 107,
+    "existingIndicatorAssignments": 20,
+    "stateScopeAssignments": 12,
+    "policySelectionAssignments": 22,
+    "newAssignments": 34,
+    "materializedAssignmentsTotal": 54,
+    "remainingNotAssigned": 53,
+    "stateSourceBindingsVerified": "12/12",
+    "policySourceBindingsVerified": "22/22",
+    "stateSemanticPayloadExactCopies": "12/12",
+    "policySemanticPayloadExactCopies": "22/22",
+    "stateValidationBindingsVerified": "12/12",
+    "policyValidationBindingsVerified": "22/22",
+    "stateRationaleBindingsVerified": "12/12",
+    "policyRationaleBindingsVerified": "22/22",
+    "stateEvidenceMetadataVerified": "12/12",
+    "policyEvidenceMetadataVerified": "22/22",
+    "statePolicyDisjoint": true,
+    "indicatorStatePolicyDisjoint": true,
+    "canonicalRecordsRemainUnmodified": true
+  },
+  "familyCounts": {
+    "STATE_SCOPE": {
+      "ACCENT": 1,
+      "CASE": 1,
+      "CB": 1,
+      "EMPH": 5,
+      "FLANG": 3,
+      "MATH": 1
+    },
+    "POLICY_SELECTION": {
+      "CASE": 5,
+      "CB": 3,
+      "EMPH": 5,
+      "FLANG": 5,
+      "MATH": 4
+    }
+  },
+  "schemaBoundary": {
+    "existingIndicatorSchemaRemainsFrozen": true,
+    "existingIndicatorSchemaReused": false,
+    "roleNeutralSchemaCreated": true,
+    "semanticPayloadPolicy": "LOSSLESS_EXACT_COPY_OF_CANONICAL_SEMANTICS",
+    "semanticEvidenceRootsPolicy": "TOP_LEVEL_SOURCE_SEMANTIC_ROOTS_METADATA_ONLY"
+  },
+  "executionBoundary": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.4d Independent Validation and Repository Closure"
+}
