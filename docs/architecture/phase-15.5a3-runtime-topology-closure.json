@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A3",
+  "subphase": "15.5A3.5",
+  "title": "German Runtime Specification Topology Closure",
+  "status": "CLOSED",
+  "branch": "phase15-german-braille",
+  "baselineHead": "ca22fadb2087ea56697f034d047ce3d6c38b3127",
+  "milestones": {
+    "manifestDrivenBundleGenerator": {
+      "status": "CLOSED",
+      "commit": "c380315611252226770546436f2c1b6674fb0532"
+    },
+    "persianRuntimeCompatibilityProof": {
+      "status": "CLOSED",
+      "commit": "973d830017568d8e15be284f865b6bc6979d8990"
+    },
+    "germanEmptyCanonicalTopologyAdmission": {
+      "status": "CLOSED",
+      "commit": "ca22fadb2087ea56697f034d047ce3d6c38b3127"
+    }
+  },
+  "runtimeTopologyDecision": {
+    "model": "THREE_INTERNAL_EXECUTABLE_BUNDLES",
+    "modes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "swissRegionalModel": "ORTHOGONAL_OVERLAY",
+    "swissFourthMode": false
+  },
+  "admissionState": {
+    "runtimeManifestBundles": [
+      "fa-ir-g1"
+    ],
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0
+  },
+  "identifierState": {
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN",
+    "swissExplicitEszettInputPolicy": "OPEN"
+  },
+  "persianCompatibility": {
+    "generatedRuntimePath": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+    "generatedRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "byteCompatibleWithPreA3Baseline": true
+  },
+  "verificationGates": {
+    "germanEmptyTopology": {
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "specDeterminism": {
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "runtimeConsumption": {
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "coreRegression": {
+      "status": "PASS",
+      "exitCode": 0
+    }
+  },
+  "artifactHashes": {
+    "runtimeBundleBuilderSha256": "047F1698D52C0D02AF85C666D2385172A08326F486426FCDB0C31DDDB2DC50DD",
+    "runtimeBundleManifestSha256": "BFF316433F37F6C24669CC03D61F14C62033D27C5C801CA56AECE89A270D81BB",
+    "germanRuntimeTopologySha256": "38C32B62CA49B1A0297CE83257DE0782671DEE785731121AB326F4A0CF805FAF",
+    "germanEmptyTopologyValidatorSha256": "7EFA8A0D74DF79EFF1195D8B7DCE63F02C1FBFE90F295092A7AE1FFB716B525A",
+    "persianCompatibilityProofJsonSha256": "430917AAB9E5450E64A6E4FC78AF300C54CF3B03D41C2DF5198BE03F33FE130C",
+    "persianCompatibilityProofMdSha256": "9A65AFE54A4371A36B6EAB0529F7EA7DD0E2F8DFEEEAD5B203E6DA1276E31F86"
+  },
+  "scopeDecisions": {
+    "germanModeExecutionContract": "PHASE_15_5A4",
+    "regionalRuntimeContract": "PHASE_15_5A5",
+    "swissExplicitEszettDecision": "PHASE_15_5A6",
+    "germanMappings": "NOT_IMPLEMENTED_IN_A3",
+    "publicGermanSdk": "PHASE_15_6",
+    "officeGermanRuntimeIntegration": "PHASE_15_7",
+    "generalMultiLanguageFramework": "PHASE_17"
+  },
+  "nextStep": "15.5A4 German Mode Contract"
+}
