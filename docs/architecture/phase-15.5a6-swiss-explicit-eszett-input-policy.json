@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A6",
+  "status": "POLICY_FROZEN",
+  "title": "Swiss Explicit Eszett Input Runtime Policy",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "2e2f30c3a26195c108fb21fa69c7d87e2c3b33c8"
+  },
+  "dependency": {
+    "id": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "historicalStatus": "OPEN",
+    "resolvedBy": "15.5A6",
+    "resolvedStatus": "RESOLVED"
+  },
+  "normativeEvidence": {
+    "sourceSection": "4.10",
+    "sourceAssertion": "ESZETT_NOT_USED_IN_SWISS_ORTHOGRAPHY",
+    "affectedModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "baseEszettMapping": {
+      "print": "ß",
+      "braille": "⠮",
+      "dots": [
+        "2346"
+      ],
+      "disposition": "PRESERVE"
+    },
+    "automaticEszettToDoubleSNormalization": "NOT_AUTHORIZED_BY_SOURCE"
+  },
+  "decision": {
+    "policy": "REJECT",
+    "internalCause": "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+    "condition": {
+      "regionalOverlay": "swiss",
+      "inputContainsExplicitEszett": true
+    },
+    "behavior": {
+      "translationSucceeds": false,
+      "inputMutation": false,
+      "automaticNormalization": false,
+      "automaticEszettToDoubleS": false,
+      "baseMappingDeleted": false,
+      "baseMappingMutated": false,
+      "partialTranslationAuthorized": false,
+      "failureMode": "DETERMINISTIC_FAIL_CLOSED"
+    }
+  },
+  "nonSwissBehavior": {
+    "regionalOverlay": null,
+    "explicitEszettAdmissible": true,
+    "baseMappingAvailable": true,
+    "mapping": "ß -> ⠮"
+  },
+  "rationale": {
+    "preserveRejectedBecause": "Accepting explicit ß under the Swiss regional configuration would fail to operationalize the normative Swiss orthographic usage constraint.",
+    "normalizeRejectedBecause": "BSKDL §4.10 does not authorize automatic print normalization, and silent ß -> ss rewriting would mutate user input.",
+    "rejectSelectedBecause": [
+      "It operationalizes the Swiss orthographic usage constraint.",
+      "It preserves the canonical German ß mapping outside the Swiss overlay.",
+      "It introduces no automatic print normalization.",
+      "It does not mutate source input.",
+      "It is deterministic and fail-closed.",
+      "It keeps the regional policy orthogonal to GermanTextMode."
+    ]
+  },
+  "ruleImpact": {
+    "DE-CH410-001": {
+      "runtimeExecutionPolicyComplete": true,
+      "explicitEszettSwissBehavior": "REJECT",
+      "baseMappingPreserved": true
+    },
+    "DE-CH410-002": {
+      "changed": false,
+      "grossTargetPreserved": true,
+      "schliessTargetPreserved": true,
+      "relationship": "INDEPENDENT_OF_EXPLICIT_ESZETT_REJECTION"
+    }
+  },
+  "modeImpact": {
+    "basisschrift": "REJECT_EXPLICIT_ESZETT_WHEN_SWISS",
+    "vollschrift": "REJECT_EXPLICIT_ESZETT_WHEN_SWISS",
+    "kurzschrift": "REJECT_EXPLICIT_ESZETT_WHEN_SWISS"
+  },
+  "publicApiBoundary": {
+    "publicErrorNameFrozen": false,
+    "publicSdkBehaviorShapeFrozen": false,
+    "publicLocaleIdentifierFrozen": false,
+    "internalSemanticCauseFrozen": true,
+    "sdkOwner": "15.6"
+  },
+  "implementationBoundary": {
+    "runtimeImplementationStarted": false,
+    "swissRulesMaterialized": false,
+    "germanRuntimeBundlesAdded": false,
+    "implementationOwner": "15.5F"
+  },
+  "nextStep": "15.5A6 validation and foundation closure"
+}
