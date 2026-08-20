@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/de/schema/profile.schema.json",
+  "title": "German Braille Canonical Profile",
+  "description": "Schema for an internal canonical German Braille text-mode profile. The profile identifier is an internal specification identity and does not freeze a public SDK, locale, or product profile identifier.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "textMode",
+    "cellSize",
+    "direction",
+    "version",
+    "ruleIds",
+    "normalizationPolicy",
+    "fallbackPolicy",
+    "evidenceBaseline"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^de-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "candidate",
+        "normative",
+        "deprecated"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "const": "de"
+    },
+    "textMode": {
+      "type": "string",
+      "enum": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ],
+      "description": "Internal German text-mode identity. Regional configuration is orthogonal and is not represented here."
+    },
+    "cellSize": {
+      "type": "integer",
+      "const": 6
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "print-to-braille"
+      ]
+    },
+    "ruleIds": {
+      "type": "array",
+      "description": "Stable rule identifiers selected by this profile. Filesystem layout is deliberately non-normative.",
+      "items": {
+        "type": "string",
+        "pattern": "^DE-[A-Z0-9]+(?:-[A-Z0-9]+)*-\\d{3,}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "normalizationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unicodeForm",
+        "unknownFormatControls"
+      ],
+      "properties": {
+        "unicodeForm": {
+          "type": "string",
+          "enum": [
+            "none",
+            "NFC",
+            "NFKC"
+          ]
+        },
+        "unknownFormatControls": {
+          "type": "string",
+          "enum": [
+            "preserve",
+            "ignore",
+            "error"
+          ]
+        }
+      }
+    },
+    "fallbackPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unknownCharacter",
+        "unknownSequence"
+      ],
+      "properties": {
+        "unknownCharacter": {
+          "type": "string",
+          "enum": [
+            "preserve",
+            "replace",
+            "error"
+          ]
+        },
+        "unknownSequence": {
+          "type": "string",
+          "enum": [
+            "scalar-fallback",
+            "preserve",
+            "error"
+          ]
+        }
+      }
+    },
+    "evidenceBaseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normativeSourceSha256",
+        "basisschriftClosureAudit"
+      ],
+      "properties": {
+        "normativeSourceSha256": {
+          "type": "string",
+          "const": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce"
+        },
+        "basisschriftClosureAudit": {
+          "type": "string",
+          "const": "docs/architecture/phase-15.1o-basisschrift-closure-audit.json"
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+      "description": "Semantic version of this profile artifact."
+    }
+  }
+}
