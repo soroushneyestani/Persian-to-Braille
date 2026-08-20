@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-delegated-reference",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "DELEGATED_REFERENCE",
+  "recordCount": 8,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Eight German Basisschrift delegated-reference contracts preserving normative ownership boundaries without duplicating the delegated subsystem semantics.",
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-001",
+      "sourceRulePath": "spec/de/rules/records/de-accent-001.json",
+      "sourceRuleSha256": "4560BEB445D5F0393B810777A52D7EE887FA67259E2829435F6F54E6536157A2",
+      "family": "ACCENT",
+      "kind": "LANGUAGE_DEPENDENT_ACCENT_CELL",
+      "section": "2.8.1",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "LANGUAGE_SPECIFIC_ACCENT_CELL_RESPONSIBILITY_BELONGS_TO_TARGET_LANGUAGE_BRAILLE_MAPPING",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The same accented print letter may use different Braille cells in different language-specific Braille systems."
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-005",
+      "sourceRulePath": "spec/de/rules/records/de-flang-005.json",
+      "sourceRuleSha256": "7A1722705E54D2624508289B38B33E94B91F9E7C0180D5A715500E64326BF7DC",
+      "family": "FLANG",
+      "kind": "UNAMBIGUOUS_GERMAN_INSERT_MODE",
+      "section": "2.9",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "EXPLICIT_GERMAN_INSERT_MARKER_DEFINITION_IS_OWNED_BY_SECTION_4_8",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "BSKDL recommends an unambiguous explicit Basis/Voll representation where appropriate.",
+        "markerDefinitionDependency": "4.8",
+        "observedExample": {
+          "start": {
+            "unicode": "⠤⠄",
+            "codepoints": [
+              "U+2824",
+              "U+2804"
+            ],
+            "dots": [
+              "36",
+              "3"
+            ],
+            "cellCount": 2
+          },
+          "end": {
+            "unicode": "⠠⠄",
+            "codepoints": [
+              "U+2820",
+              "U+2804"
+            ],
+            "dots": [
+              "6",
+              "3"
+            ],
+            "cellCount": 2
+          }
+        },
+        "markerStatus": "OBSERVED_IN_2_9_EXAMPLE_NOT_FROZEN_UNTIL_4_8_AUDIT"
+      },
+      "semanticEvidenceRoots": [
+        "markerDefinitionDependency",
+        "markerStatus",
+        "observedExample"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-009",
+      "sourceRulePath": "spec/de/rules/records/de-flang-009.json",
+      "sourceRuleSha256": "F1B975381376FDC7E5E7A3CD3EF78969EFD5979F8469845E93B100E7B2E7A32B",
+      "family": "FLANG",
+      "kind": "FOREIGN_SYSTEM_FULL_SEMANTICS",
+      "section": "2.9",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "FULL_FOREIGN_SYSTEM_SEMANTICS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-005"
+      ],
+      "semanticPayload": {
+        "summary": "Once a foreign Braille system is active, all Braille signs and rules of that system apply.",
+        "delegation": "TARGET_BRAILLE_PROFILE",
+        "includes": [
+          "ALPHABET",
+          "ACCENTS",
+          "PUNCTUATION",
+          "ANNOUNCEMENT_SIGNS",
+          "CONTRACTIONS"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "delegation",
+        "includes"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-013",
+      "sourceRulePath": "spec/de/rules/records/de-flang-013.json",
+      "sourceRuleSha256": "9683E1B049678FAC57FF57D0ACC44ECF3345113672C150113C30935FCA6B2EA0",
+      "family": "FLANG",
+      "kind": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT",
+      "section": "2.9",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT_SIGNS_ARE_OWNED_BY_TARGET_BRAILLE_PROFILE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Foreign-system punctuation and announcement signs may replace the German equivalents inside the switched span.",
+        "delegation": "TARGET_BRAILLE_PROFILE"
+      },
+      "semanticEvidenceRoots": [
+        "delegation"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-014",
+      "sourceRulePath": "spec/de/rules/records/de-flang-014.json",
+      "sourceRuleSha256": "1DA4C64AB61D7B8CE9F6F563B8C447FD1E205F010EAA265BA81CFE0093C72B51",
+      "family": "FLANG",
+      "kind": "FOREIGN_CONTRACTION_SYSTEM",
+      "section": "2.9",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "FOREIGN_CONTRACTION_SYSTEM_IS_OWNED_BY_TARGET_BRAILLE_PROFILE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The contraction system of the foreign Braille profile may be used inside a foreign-system span.",
+        "delegation": "TARGET_BRAILLE_PROFILE"
+      },
+      "semanticEvidenceRoots": [
+        "delegation"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-013",
+      "sourceRulePath": "spec/de/rules/records/de-math-013.json",
+      "sourceRuleSha256": "3A67E2BB9DE2D30FFD579F6BA2EFC8AA23CEE15A076A8996D6B625331B58B78E",
+      "family": "MATH",
+      "kind": "EXTENDED_MATH_SYMBOLS",
+      "section": "2.10",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "EXTENDED_SYMBOL_SEMANTICS_ARE_OWNED_BY_EXTERNAL_GERMAN_MATHEMATIKSCHRIFT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Additional symbols may be taken from the German Mathematikschrift rulebook and, when used through the text technique, are also announced with point 4.",
+        "externalNormativeDependency": "DAS_SYSTEM_DER_MATHEMATIKSCHRIFT_IN_DER_DEUTSCHEN_BRAILLESCHRIFT",
+        "nonMathTextExplanationRecommended": true
+      },
+      "semanticEvidenceRoots": [
+        "externalNormativeDependency",
+        "nonMathTextExplanationRecommended"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-019",
+      "sourceRulePath": "spec/de/rules/records/de-math-019.json",
+      "sourceRuleSha256": "8B5826598E168CADA4BD3D0E2D9DF257433CFC9F67D0A3DC74A05D35E069F2CE",
+      "family": "MATH",
+      "kind": "FULL_MATH_INTERNAL_POLICY",
+      "section": "2.10",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "FULL_MATH_INTERNAL_SEMANTICS_ARE_OWNED_BY_GERMAN_MATH_BRAILLE_PROFILE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-010"
+      ],
+      "semanticPayload": {
+        "summary": "Inside a full Mathematikschrift span, the inline Textschrift point-4 announcement technique for mathematical signs no longer applies.",
+        "inlinePoint4AnnouncementActive": false,
+        "delegation": "GERMAN_MATH_BRAILLE_PROFILE"
+      },
+      "semanticEvidenceRoots": [
+        "delegation",
+        "inlinePoint4AnnouncementActive"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-005",
+      "sourceRulePath": "spec/de/rules/records/de-table-005.json",
+      "sourceRuleSha256": "360582CD64FF777F7337077ABA529431C7DFC9CF46E925F1DB215EB5BA1E6539",
+      "family": "TABLE",
+      "kind": "COLUMN_NUMBER_NUMERIC_FORM",
+      "section": "2.12",
+      "primaryRole": "DELEGATED_REFERENCE",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "COLUMN_NUMBER_ENCODING_FORM_IS_OWNED_BY_ORDINARY_GERMAN_NUMERIC_NOTATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-002"
+      ],
+      "semanticPayload": {
+        "summary": "The normative example for transition to column 7 uses the ordinary German number indicator and digit form after the separator.",
+        "example": {
+          "targetColumn": 7,
+          "separator": {
+            "unicode": "⠒⠒",
+            "codepoints": [
+              "U+2812",
+              "U+2812"
+            ],
+            "dots": [
+              "25",
+              "25"
+            ],
+            "cellCount": 2
+          },
+          "numberIndicator": {
+            "unicode": "⠼",
+            "codepoints": [
+              "U+283C"
+            ],
+            "dots": [
+              "3456"
+            ],
+            "cellCount": 1
+          },
+          "digit": {
+            "unicode": "⠛",
+            "codepoints": [
+              "U+281B"
+            ],
+            "dots": [
+              "1245"
+            ],
+            "cellCount": 1
+          },
+          "combined": {
+            "unicode": "⠒⠒⠼⠛",
+            "codepoints": [
+              "U+2812",
+              "U+2812",
+              "U+283C",
+              "U+281B"
+            ],
+            "dots": [
+              "25",
+              "25",
+              "3456",
+              "1245"
+            ],
+            "cellCount": 4
+          }
+        },
+        "numericDependency": "DE-NUM-001"
+      },
+      "semanticEvidenceRoots": [
+        "example",
+        "numericDependency"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}

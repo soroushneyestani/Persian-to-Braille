@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-cross-mode-deferred",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "CROSS_MODE_DEFERRED",
+  "recordCount": 3,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Three German rules whose explicit profile applicability excludes current Basisschrift execution and is preserved for later German text-mode integration.",
+  "records": [
+    {
+      "ruleId": "DE-CASE-016",
+      "sourceRulePath": "spec/de/rules/records/de-case-016.json",
+      "sourceRuleSha256": "75E63DBC5563D075DA9A9362837E8E83810533844E071E33237056F21F4421BD",
+      "family": "CASE",
+      "kind": "INTERNAL_CAPITAL_COMPACT_METHOD",
+      "section": "2.6.7",
+      "primaryRole": "CROSS_MODE_DEFERRED",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "AVAILABLE_PROFILES_EXCLUDE_BASISSCHRIFT_AND_LIMIT_RULE_TO_VOLL_KURZ",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-010"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠐⠨",
+          "codepoints": [
+            "U+2810",
+            "U+2828"
+          ],
+          "dots": [
+            "5",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "summary": "In Voll- and Kurzschrift, one internal uppercase letter may be announced without switching the whole word to Basisschrift when this saves space.",
+        "availableProfiles": [
+          "vollschrift",
+          "kurzschrift"
+        ],
+        "useOnlyWhenSpaceSaving": true
+      },
+      "semanticEvidenceRoots": [
+        "availableProfiles",
+        "marker",
+        "useOnlyWhenSpaceSaving"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-019",
+      "sourceRulePath": "spec/de/rules/records/de-case-019.json",
+      "sourceRuleSha256": "CA8B67AE71E6EA19F0F3613CFB9AA9ADF1C322BFD3AE8AEBF91642AE2B249B24",
+      "family": "CASE",
+      "kind": "KURZSCHRIFT_INITIAL_CQXY",
+      "section": "2.6.1",
+      "primaryRole": "CROSS_MODE_DEFERRED",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-012"
+      ],
+      "semanticPayload": {
+        "summary": "In Kurzschrift, initial uppercase C, Q, X and Y place the uppercase announcement before the dot-6 cancellation point that belongs to the letter form.",
+        "appliesToProfiles": [
+          "kurzschrift"
+        ],
+        "letters": [
+          "C",
+          "Q",
+          "X",
+          "Y"
+        ],
+        "sequenceOrder": [
+          "UPPERCASE_ANNOUNCEMENT",
+          "DOT6_CANCELLATION_POINT",
+          "LETTER"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "appliesToProfiles",
+        "letters",
+        "sequenceOrder"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-020",
+      "sourceRulePath": "spec/de/rules/records/de-case-020.json",
+      "sourceRuleSha256": "097F4BCA854E57CE9B85D07FD83E2901132DEA849BBE1FA875F2102316662425",
+      "family": "CASE",
+      "kind": "KURZSCHRIFT_LOWERCASE_SEQUENCE_DISAMBIGUATION",
+      "section": "2.6.3",
+      "primaryRole": "CROSS_MODE_DEFERRED",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "EXPLICIT_APPLICABILITY_IS_KURZSCHRIFT_ONLY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "In a dot-6-announced lowercase sequence in Kurzschrift, c, q, x, y and sharp-s may need an additional dot 6 when the initial lowercase marker does not unambiguously introduce the sequence.",
+        "appliesToProfiles": [
+          "kurzschrift"
+        ],
+        "letters": [
+          "c",
+          "q",
+          "x",
+          "y",
+          "ß"
+        ],
+        "additionalDot6MayBeUsed": true,
+        "condition": "INITIAL_LOWERCASE_MARKER_NOT_UNAMBIGUOUS_FOR_SEQUENCE"
+      },
+      "semanticEvidenceRoots": [
+        "additionalDot6MayBeUsed",
+        "appliesToProfiles",
+        "condition",
+        "letters"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}
