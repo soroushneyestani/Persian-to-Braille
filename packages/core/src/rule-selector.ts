@@ -718,8 +718,9 @@ class SpecificationDrivenRuleSelector
  * The selector intentionally excludes Phase 4 normalization rules and Phase
  * 5.4 structural/mode-state execution.
  */
-export function createRuleSelector(): RuleSelector {
-  const specification = getBundledSpecification();
+export function createRuleSelectorForSpecification(
+  specification: RuntimeSpecificationBundle,
+): RuleSelector {
   const classifier =
     new SpecificationDrivenContextClassifier(
       specification,
@@ -728,5 +729,11 @@ export function createRuleSelector(): RuleSelector {
   return new SpecificationDrivenRuleSelector(
     specification,
     classifier,
+  );
+}
+
+export function createRuleSelector(): RuleSelector {
+  return createRuleSelectorForSpecification(
+    getBundledSpecification(),
   );
 }
