@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:braille-hub:schema:de-contract-materialization-set:1",
+  "title": "German Braille Contract Materialization Set",
+  "description": "Schema for derived, source-bound, non-executable German Braille contract materialization sets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "textMode",
+    "contractLayer",
+    "primaryRole",
+    "recordCount",
+    "taxonomyBindingSha256",
+    "scopeBindingSha256",
+    "canonicalRecordsRemainUnmodified",
+    "behavioralLoweringStarted",
+    "translatorStarted",
+    "execution",
+    "summary",
+    "records"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "MATERIALIZED_NON_EXECUTABLE"
+    },
+    "language": {
+      "const": "de"
+    },
+    "textMode": {
+      "enum": [
+        "basisschrift",
+        "vollschrift",
+        "kurzschrift"
+      ]
+    },
+    "contractLayer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primaryRole": {
+      "enum": [
+        "INDICATOR",
+        "STATE_SCOPE",
+        "STRUCTURAL",
+        "POLICY_SELECTION",
+        "BEHAVIORAL_CONSTRAINT",
+        "DELEGATED_REFERENCE",
+        "REFERENCE_ONLY",
+        "CROSS_MODE_DEFERRED",
+        "ARCHITECTURAL_ONLY"
+      ]
+    },
+    "recordCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "taxonomyBindingSha256": {
+      "type": "string",
+      "pattern": "^[A-F0-9]{64}$"
+    },
+    "scopeBindingSha256": {
+      "type": "string",
+      "pattern": "^[A-F0-9]{64}$"
+    },
+    "canonicalRecordsRemainUnmodified": {
+      "const": true
+    },
+    "behavioralLoweringStarted": {
+      "const": false
+    },
+    "translatorStarted": {
+      "const": false
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractMaterializationStarted",
+        "contractMaterializationCompleted",
+        "behavioralLoweringStarted",
+        "numericStateMachineStarted",
+        "translatorStarted",
+        "executable",
+        "runtimeRegistered"
+      ],
+      "properties": {
+        "contractMaterializationStarted": {
+          "const": true
+        },
+        "contractMaterializationCompleted": {
+          "const": true
+        },
+        "behavioralLoweringStarted": {
+          "const": false
+        },
+        "numericStateMachineStarted": {
+          "const": false
+        },
+        "translatorStarted": {
+          "const": false
+        },
+        "executable": {
+          "const": false
+        },
+        "runtimeRegistered": {
+          "const": false
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contractRecord"
+      }
+    }
+  },
+  "$defs": {
+    "contractRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "sourceRulePath",
+        "sourceRuleSha256",
+        "family",
+        "kind",
+        "section",
+        "primaryRole",
+        "materializationOwner",
+        "decisionRationale",
+        "sourceNormative",
+        "sourceStatus",
+        "validationCaseIds",
+        "semanticPayload",
+        "explicitIndicatorFormRoots",
+        "execution"
+      ],
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "pattern": "^DE-[A-Z]+-[0-9]{3}$"
+        },
+        "sourceRulePath": {
+          "type": "string",
+          "pattern": "^spec/de/rules/records/.+\\.json$"
+        },
+        "sourceRuleSha256": {
+          "type": "string",
+          "pattern": "^[A-F0-9]{64}$"
+        },
+        "family": {
+          "enum": [
+            "ACCENT",
+            "CASE",
+            "CB",
+            "EMPH",
+            "FLANG",
+            "MATH",
+            "SPECIAL",
+            "TABLE"
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primaryRole": {
+          "enum": [
+            "INDICATOR",
+            "STATE_SCOPE",
+            "STRUCTURAL",
+            "POLICY_SELECTION",
+            "BEHAVIORAL_CONSTRAINT",
+            "DELEGATED_REFERENCE",
+            "REFERENCE_ONLY",
+            "CROSS_MODE_DEFERRED",
+            "ARCHITECTURAL_ONLY"
+          ]
+        },
+        "materializationOwner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisionRationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceNormative": {
+          "type": "boolean"
+        },
+        "sourceStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validationCaseIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "semanticPayload": {
+          "type": "object"
+        },
+        "explicitIndicatorFormRoots": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "marker",
+              "markers",
+              "startMarker",
+              "endMarker",
+              "prefix",
+              "caseMarkers",
+              "lowercaseWordMarker",
+              "negationPrefix"
+            ]
+          }
+        },
+        "execution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "contractMaterialized",
+            "behaviorLowered",
+            "executable",
+            "runtimeRegistered"
+          ],
+          "properties": {
+            "contractMaterialized": {
+              "const": true
+            },
+            "behaviorLowered": {
+              "const": false
+            },
+            "executable": {
+              "const": false
+            },
+            "runtimeRegistered": {
+              "const": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

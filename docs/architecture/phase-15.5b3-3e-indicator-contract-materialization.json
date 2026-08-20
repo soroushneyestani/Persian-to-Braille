@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.3e",
+  "status": "INDICATOR_CONTRACTS_MATERIALIZED_NON_EXECUTABLE",
+  "title": "German Basisschrift Indicator Contract Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "1c8fa2b1d6992a77c0fb49b6457caeb728cd65fb"
+  },
+  "upstream": {
+    "phase15_5B3_3dStatus": "INDICATOR_MATERIALIZATION_MODEL_FROZEN",
+    "indicatorAdjudicationCanonicalJsonSha256": "89FE527A937DFA115ADE87156F0237C8162FD6EF0104373AB95F44110AA73742",
+    "indicatorMaterializationModelCanonicalJsonSha256": "EAABC57C7D715B5EC4B5AD186C84E5FB7618EAC2F3BB47D207D1108C9F48177B",
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54"
+  },
+  "outputs": {
+    "contractSchema": {
+      "path": "spec/de/schema/contract-materialization-set.schema.json",
+      "sha256": "FC03761F1B4E53D19B904293A7936BACAFFF73C98DBB76167BBF379D54E531BF",
+      "canonicalJsonSha256": "F13EE262611569F3F6E20F6D0580213130A64377962805C7E3AF6357E0FB20A8"
+    },
+    "indicatorContractSet": {
+      "path": "spec/de/contracts/de-basisschrift-indicators.json",
+      "sha256": "878C7361AD7DAC215DE57ECCB18ABD34398E6CFE0FB1D6CEE29C3BCFEA9C0C9F",
+      "canonicalJsonSha256": "CEA7CA6E7FEC1800BAE1C94510219FA79374DA5C6FEC66C91FBA2208F4E8AFE5",
+      "recordsCanonicalJsonSha256": "72348ABA0E6B7907F176463A76B07C3B68DA70C9C5CB5F7F87CB4002E399C151"
+    }
+  },
+  "materialization": {
+    "b3Scope": 107,
+    "primaryRole": "INDICATOR",
+    "materializedAssignments": 20,
+    "remainingNotAssigned": 87,
+    "uniqueMaterializedRuleIds": 20,
+    "sourceBindingsVerified": "20/20",
+    "sourceShaBindingsVerified": "20/20",
+    "semanticPayloadExactCopies": "20/20",
+    "validationBindingsVerified": "20/20",
+    "explicitFormRootBindingsVerified": "20/20",
+    "policyLevelNoExplicitFormRules": [
+      "DE-ACCENT-004",
+      "DE-MATH-010"
+    ],
+    "multiFormRootRules": [
+      "DE-CASE-013"
+    ],
+    "canonicalRecordsRemainUnmodified": true
+  },
+  "familyCounts": {
+    "ACCENT": 3,
+    "CASE": 6,
+    "CB": 3,
+    "EMPH": 3,
+    "MATH": 4,
+    "SPECIAL": 1
+  },
+  "executionBoundary": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.3e Independent Validation and Repository Closure"
+}
