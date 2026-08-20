@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.6",
+  "status": "CLOSED",
+  "title": "German Basisschrift B2 Alphabet Punctuation Numbers Closure",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "dcefd4b4c88afe624925e5eee45ab773a55306be"
+  },
+  "substeps": {
+    "15.5B2.0": {
+      "status": "CLOSED",
+      "role": "Discovery"
+    },
+    "15.5B2.1": {
+      "status": "CLOSED",
+      "commit": "f043a9b105c371d0e6f7c012b45cd1d2cd31b879",
+      "artifactSha256": {
+        "json": "F46CB52B6C65620B56290E3BE3538281BF226839008474ED44EED576BC465CB4",
+        "md": "AD539D3FDCB13E755E646108480030F2910922D7147E8C35F3F3023EE07DF0C3"
+      }
+    },
+    "15.5B2.2": {
+      "status": "CLOSED",
+      "commit": "67320be38dc858b706659711ac83b2a9e0d431c0",
+      "symbolSchemaSha256": "44273337E41152547AB92C5A7DAE1D562C3C5E5F62B96BD918B4753B0214FE57",
+      "symbolCatalogSha256": "D1D36A099C4BC4D20F1B4F33483BA121549B123950350BE19EFC47D089D507F5",
+      "architectureSha256": {
+        "json": "887F8286069E31074E83021C284874B85CDCDF52AF5732E76AA8AACE35527387",
+        "md": "107346C6F9B1966AEE5AAECDA3960ECD47A2AF638557CF2673996E52051574EC"
+      }
+    },
+    "15.5B2.3": {
+      "status": "CLOSED",
+      "commit": "aef7671402dce9a2c6e9ce148e798558584de845",
+      "classificationSchemaSha256": "6796CEB062CE838F663892AB841E08F695F49A786BC9AABC1A6DD9F88155FE37",
+      "punctuationClassificationSha256": "49C3ED83B95FD38882C1F935955BD35B2C7855C723B385A1C994D7846AE6DA52",
+      "architectureSha256": {
+        "json": "CE4C1E4D3BE7BBC27866CBE58CD2BCF691EF6CBF8D6D5F08ECE55E17BB5D7912",
+        "md": "FFCB47D36C7BA02A1CD06C1BF0929AAC8CC7873D7A816CE1C5EF03C77FFE574F"
+      }
+    },
+    "15.5B2.4": {
+      "status": "CLOSED",
+      "commit": "7b883592c3c97f9c165a114f88a92c424cf5084e",
+      "numericClassificationSha256": "9CE60AC9475A5774E9ED10D6A07716ED8163D862005212F45500900B02DA00A9",
+      "architectureSha256": {
+        "json": "D76C09BADD1E69B18B05B526961FAB01003C6F3D5757F41D80857E17E36246F2",
+        "md": "B3573B1079038444B64E2A39FEF10434B39C65E0CBC5D533480B069DC4B57315"
+      }
+    },
+    "15.5B2.5": {
+      "status": "CLOSED",
+      "commit": "dcefd4b4c88afe624925e5eee45ab773a55306be",
+      "architectureSha256": {
+        "json": "DA8996006FB8F5B1D167103B1A1D0696ADD393B8666242A9E217E2A11E4C7E9D",
+        "md": "C05C237A4B79897CB37FC480E946498196E8437E5E10E1A8257D52C30A18C9FD"
+      },
+      "validation": "PASS",
+      "determinism": "PASS"
+    }
+  },
+  "symbolFoundation": {
+    "physicalRecords": 95,
+    "printIndexEntries": 42,
+    "semanticIndexEntries": 65,
+    "sourceRoundTrip": "95/95",
+    "semanticLoss": 0,
+    "payloadCanonicalJsonSha256": "3D25D9A570F7D5194101C3AA601B36910EFEE8CC1080E0DF4DD11C23016D93ED"
+  },
+  "behavioralClassification": {
+    "punctuationRules": 28,
+    "numericRules": 15,
+    "totalRules": 43,
+    "classificationSourceBijection": "43/43",
+    "sourceShaBindings": "43/43",
+    "classificationGaps": 0,
+    "classificationOverlap": 0,
+    "dispositionCounts": {
+      "CONTEXTUAL": 22,
+      "STATEFUL": 8,
+      "DELEGATED": 5,
+      "STRUCTURAL": 5,
+      "DIRECT_MAPPING": 1,
+      "DEFERRED": 1,
+      "ARCHITECTURAL_ONLY": 1
+    },
+    "punctuationPayloadCanonicalJsonSha256": "1B55016286D178876E735A6D24F6CEFB9BBA4E98C0AE6F4A33644FBD68CBB13F",
+    "numericPayloadCanonicalJsonSha256": "98C2142EDD3DA5534F9FF8110AF9B95FB3850D8722D7550A8699718789AC9AC1",
+    "combinedBindingCanonicalJsonSha256": "0ADF3B6607C68EE01E0729192FFBF1E2A466A976C3FC3E53CAEB7E75C3D9D607"
+  },
+  "determinism": {
+    "integratedB2CanonicalJsonSha256": "1AB33D2DDB18FF476D9EA7BED828300AB4647FF0A8BEB24A22F2C1777FD76B99",
+    "status": "PASS"
+  },
+  "canonicalBoundary": {
+    "canonicalRules": 150,
+    "b2BehavioralScope": 43,
+    "outsideB2Scope": 107,
+    "runtimeDispositionNotClassified": "150/150",
+    "canonicalRulesModified": false,
+    "canonicalAggregateSha256": "EEC320FB02554D838F5C7A1A31CFF04D75419718379F08EDA18577A5973790CB"
+  },
+  "executionBoundary": {
+    "symbolCatalogMaterialized": true,
+    "behavioralClassificationMaterialized": true,
+    "behavioralLoweringStarted": false,
+    "indicatorAndStructuralMaterializationStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "deferredToB3": {
+    "indicatorMaterialization": true,
+    "structuralMaterialization": true,
+    "stateContractMaterialization": true
+  },
+  "deferredToB4": {
+    "runtimeExecution": true,
+    "translatorExecution": true,
+    "numericStateMachineExecution": true
+  },
+  "result": {
+    "phase15_5B2Status": "CLOSED",
+    "validation": "PASS",
+    "determinism": "PASS",
+    "semanticLoss": 0,
+    "blockingIssues": 0
+  },
+  "nextStep": "15.5B3 Indicators and Structure"
+}
