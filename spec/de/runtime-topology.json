@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A3.4",
+  "status": "TOPOLOGY_ONLY",
+  "language": "de",
+  "runtimeModel": "THREE_INTERNAL_EXECUTABLE_BUNDLES",
+  "productModel": {
+    "surface": "German",
+    "modes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "inheritanceModel": [
+    {
+      "mode": "basisschrift",
+      "inherits": []
+    },
+    {
+      "mode": "vollschrift",
+      "inherits": [
+        "basisschrift"
+      ]
+    },
+    {
+      "mode": "kurzschrift",
+      "inherits": [
+        "basisschrift",
+        "vollschrift"
+      ]
+    }
+  ],
+  "regionalModel": {
+    "dimension": "ORTHOGONAL_OVERLAY",
+    "swiss": {
+      "internalNormativeNamespace": "DE-CH410",
+      "publicIdentifier": "NOT_FROZEN",
+      "explicitEszettInputPolicy": "OPEN",
+      "isFourthGermanMode": false
+    }
+  },
+  "identifiers": {
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN"
+  },
+  "reservedCanonicalPaths": [
+    "spec/de/schema",
+    "spec/de/profiles",
+    "spec/de/rules/records",
+    "spec/de/regional/ch/overlay",
+    "spec/de/regional/ch/rules/records"
+  ],
+  "admissionState": {
+    "profiles": 0,
+    "rules": 0,
+    "regionalRules": 0,
+    "generatedRuntimeBundles": 0,
+    "mappings": 0
+  },
+  "runtimeBundleManifestAdmission": {
+    "germanBundleRegistered": false,
+    "requiredCurrentBundle": "fa-ir-g1"
+  },
+  "scope": {
+    "reverseTranslation": "OUT_OF_PHASE_15_5",
+    "publicSdk": "PHASE_15_6",
+    "officeRuntimeIntegration": "PHASE_15_7",
+    "generalMultiLanguageFramework": "PHASE_17"
+  },
+  "nextStep": "15.5A3.5 Runtime Topology Closure"
+}
