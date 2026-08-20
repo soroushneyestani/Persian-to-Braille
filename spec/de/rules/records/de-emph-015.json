@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-015",
+    "section": "2.7.3",
+    "kind": "VERSALIEN_ALTERNATIVE_EMPHASIS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "An alternative emphasis technique may be used instead of explicit Versalien encoding, for example when remaining in Kurzschrift.",
+    "semanticTradeoff": "VISUAL_ALL_CAPS_MAY_BE_REPRESENTED_AS_EMPHASIS",
+    "profileRelevant": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

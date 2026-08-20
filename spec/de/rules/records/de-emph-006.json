@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-006",
+    "section": "2.7.1",
+    "kind": "PRIMARY_WORD_PART",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A first-emphasis word part uses the primary marker at word start and dot-6 plus the primary marker when emphasis begins inside a word.",
+    "startAtWordBeginning": {
+      "unicode": "⠸",
+      "codepoints": [
+        "U+2838"
+      ],
+      "dots": [
+        "456"
+      ],
+      "cellCount": 1
+    },
+    "startInsideWord": {
+      "unicode": "⠠⠸",
+      "codepoints": [
+        "U+2820",
+        "U+2838"
+      ],
+      "dots": [
+        "6",
+        "456"
+      ],
+      "cellCount": 2
+    },
+    "explicitEndBeforeRemainder": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "wordEndAlsoTerminates": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-EMPH-CASE-003",
+      "DE-EMPH-CASE-004"
+    ]
+  },
+  "notes": []
+}

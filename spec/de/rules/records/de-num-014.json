@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-014",
+    "section": "2.4.1",
+    "kind": "NUMBER_WORD_BOUNDARY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A word or word-part may directly follow a number unless its first Braille sign could be interpreted as a cardinal digit or denominator; ambiguous cases require dot 6 or another appropriate announcement.",
+    "ambiguityBreaker": {
+      "unicode": "⠠",
+      "codepoint": "U+2820",
+      "dots": "6"
+    },
+    "vollKurzContractionPolicy": "Apply contractions where they do not create ambiguity."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

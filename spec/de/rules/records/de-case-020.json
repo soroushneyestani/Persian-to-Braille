@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-020",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-020",
+    "section": "2.6.3",
+    "kind": "KURZSCHRIFT_LOWERCASE_SEQUENCE_DISAMBIGUATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "In a dot-6-announced lowercase sequence in Kurzschrift, c, q, x, y and sharp-s may need an additional dot 6 when the initial lowercase marker does not unambiguously introduce the sequence.",
+    "appliesToProfiles": [
+      "kurzschrift"
+    ],
+    "letters": [
+      "c",
+      "q",
+      "x",
+      "y",
+      "ß"
+    ],
+    "additionalDot6MayBeUsed": true,
+    "condition": "INITIAL_LOWERCASE_MARKER_NOT_UNAMBIGUOUS_FOR_SEQUENCE"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

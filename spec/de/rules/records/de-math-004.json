@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-004",
+    "section": "2.10",
+    "kind": "UNANNOUNCED_LETTER_CASE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Letters inside the inline mathematical context that are not explicitly case-announced are interpreted as lowercase.",
+    "defaultCase": "LOWERCASE",
+    "dependency": "15.1G"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

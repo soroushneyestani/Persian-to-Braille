@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B1.4",
+  "status": "CANONICAL_RULES_MATERIALIZED",
+  "title": "Basisschrift Canonical Rule Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "3dde0083df3feb0464f0fcd3d066a480a46d2e6a"
+  },
+  "materialization": {
+    "sourceContracts": 10,
+    "sourceRules": 150,
+    "canonicalRuleRecords": 150,
+    "filenameConvention": "LOWERCASE_RULE_ID_DOT_JSON",
+    "introducedInMode": "basisschrift",
+    "canonicalVersion": "0.1.0",
+    "direction": "forward",
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "runtimeClassificationStarted": false
+  },
+  "losslessness": {
+    "roundTripChecked": true,
+    "roundTripPass": true,
+    "roundTripRecords": 150,
+    "roundTripFailures": 0,
+    "semanticLoss": 0,
+    "sourceSemanticFieldsPreserved": 431
+  },
+  "statusClassification": {
+    "policy": "normative when source normative=true; architectural only for explicit audit architectural inference/classification; otherwise candidate",
+    "counts": {
+      "architectural": 4,
+      "candidate": 1,
+      "normative": 145
+    },
+    "normativeBooleanPreservedSeparately": true
+  },
+  "validationLinkage": {
+    "validationCases": 88,
+    "singleRuleCases": 63,
+    "multiRuleCases": 25,
+    "unlinkedCases": 0,
+    "linkEdges": 117,
+    "rulesWithLinkedValidation": 85,
+    "rulesWithoutLinkedValidation": 65,
+    "inventedLinks": 0,
+    "linkSource": "EXPLICIT_RULE_OR_RULES_FIELDS_ONLY"
+  },
+  "sourceIntegrity": {
+    "sourceContractHashes": {
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+      "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json": "4D5871B65883AA40D49DE44144B2C1D8B2C0E9BFC4800257AAC09ECE8CAF1ABC",
+      "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json": "D9DAE9379A135E48F3AE5393B4953BF7E5EFD50E3AF418F3F2A377B6A42E4607",
+      "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json": "9D7892A9DE60F26BC98C048EC303CAEC36D09923CE9F180CF39DDCD2F71D973C",
+      "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json": "62E821941FF618FBD03CE4DC82045C273629F7CE78454B686C720D18EB330375",
+      "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+      "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+      "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+      "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json": "5184BD3D1B4316FB632FAF318E675DF10B9B70184B04C2C99CBE768D39708BA7"
+    },
+    "basisschriftProfileSha256": "CCAB502FD6BC1AF75BF0824AE352D7BAE26517C59B63FF380EE8236877718068",
+    "canonicalRuleSchemaSha256": "1C05FB2EFE7CEE91EBD2F773B1269A7F90950658B7533B1D13C8CF6576BDB035",
+    "persianRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094"
+  },
+  "runtimeBoundary": {
+    "runtimeLoweringStarted": false,
+    "runtimeClassificationStarted": false,
+    "runtimeManifestChanged": false,
+    "runtimeBuilderChanged": false,
+    "germanRuntimeBundles": 0
+  },
+  "regionalBoundary": {
+    "swissApplied": false,
+    "regionalRuleRecordsChanged": false,
+    "regionalRuntimeOwner": "15.5F"
+  },
+  "nextStep": "15.5B1.5 deterministic canonical materialization validation"
+}

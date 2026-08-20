@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-007",
+    "section": "2.3.1.3",
+    "kind": "DATE_AND_TIME",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Dates and times preserve relevant print structure. A hyphen requires a new number indicator; an ambiguous textual colon is announced before the next numeric component.",
+    "dependencies": [
+      "DE-NUM-012",
+      "2.5.1.2"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-NUM-CASE-005",
+      "DE-NUM-CASE-006"
+    ]
+  },
+  "notes": []
+}

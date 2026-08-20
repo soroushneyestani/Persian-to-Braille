@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-003",
+    "section": "2.11",
+    "kind": "SIX_DOT_FALLBACK_TRIGGER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When eight-dot Computerbraille inserts are not possible, Computerbraille characters are serialized through the section 2.11 six-dot transport technique.",
+    "mode": "SIX_DOT_COMPUTERBRAILLE_TRANSPORT"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

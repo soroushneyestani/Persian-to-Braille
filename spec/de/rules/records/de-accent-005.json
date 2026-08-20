@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-005",
+    "section": "2.8.1",
+    "kind": "SHORT_FOREIGN_SPAN_SCOPE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The accent technique is intended for isolated foreign words or short passages within German text.",
+    "longerForeignSpanDependency": "2.9"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

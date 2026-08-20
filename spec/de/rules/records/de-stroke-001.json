@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-001",
+    "section": "2.5.1.1",
+    "kind": "LINE_BREAK_HYPHEN",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "printRole": "TRENNUNGSSTRICH",
+    "braille": {
+      "unicode": "⠤",
+      "codepoints": [
+        "U+2824"
+      ],
+      "dots": [
+        "36"
+      ],
+      "cellCount": 1
+    },
+    "summary": "The line-break hyphen normally occurs at the end of a Braille line and follows German syllabification rules.",
+    "lineBreak": {
+      "purpose": "WORD_HYPHENATION",
+      "allowedAfter": true
+    },
+    "contractionInteraction": {
+      "basisschrift": "NONE",
+      "vollschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE",
+      "kurzschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

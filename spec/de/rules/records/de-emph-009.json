@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-009",
+    "section": "2.7.2",
+    "kind": "SECONDARY_WORD_PART_END",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "endMarker": {
+      "unicode": "⠐⠄",
+      "codepoints": [
+        "U+2810",
+        "U+2804"
+      ],
+      "dots": [
+        "5",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The secondary emphasis terminator may occur inside a word when only a word part is marked."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-EMPH-CASE-007"
+    ]
+  },
+  "notes": []
+}

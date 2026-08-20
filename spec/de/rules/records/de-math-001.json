@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-001",
+    "section": "2.10",
+    "kind": "INLINE_MATH_ANNOUNCEMENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Mathematical signs from the section 2.10 table are normally announced with point 4 when embedded in German text.",
+    "marker": {
+      "unicode": "⠈",
+      "codepoints": [
+        "U+2808"
+      ],
+      "dots": [
+        "4"
+      ],
+      "cellCount": 1
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-001",
+      "DE-MATH-CASE-003"
+    ]
+  },
+  "notes": []
+}

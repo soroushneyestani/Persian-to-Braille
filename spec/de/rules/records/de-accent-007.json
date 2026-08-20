@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-007",
+    "section": "2.8.1",
+    "kind": "ITALIAN_EXACT_TABLE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "recordCount": 6,
+    "summary": "BSKDL publishes an explicit Italian accented-letter Braille table."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

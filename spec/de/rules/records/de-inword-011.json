@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-011",
+  "introducedInMode": "basisschrift",
+  "status": "architectural",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-011",
+    "section": "2.13",
+    "kind": "LEXICAL_AND_SERIALIZATION_LAYERING",
+    "normative": false,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A future implementation should separate contraction analysis from punctuation serialization so in-word signs can remain visible while being transparent to lexical matching.",
+    "architecturalInference": true,
+    "futureOwner": [
+      "LEXICAL_CONTRACTION_ENGINE",
+      "TEXT_SERIALIZATION_LAYER"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

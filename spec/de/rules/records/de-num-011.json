@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-011",
+    "section": "2.3.1.7",
+    "kind": "SECTION_SIGN",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The section sign is restricted to direct use before Arabic or Roman numbers; repeated print section signs remain repeated and the separating space is omitted."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

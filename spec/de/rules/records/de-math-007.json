@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-007",
+    "section": "2.10",
+    "kind": "MULTIPLICATION_ALTERNATIVES",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A print letter x used as multiplication may be retained instead of replacing it with the mathematical multiplication-cross sign. The multiplication star also has an alternate text representation.",
+    "printXMayBePreserved": true,
+    "starAlternative": {
+      "unicode": "⠠⠔",
+      "codepoints": [
+        "U+2820",
+        "U+2814"
+      ],
+      "dots": [
+        "6",
+        "35"
+      ],
+      "cellCount": 2
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

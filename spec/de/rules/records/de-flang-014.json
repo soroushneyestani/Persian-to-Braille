@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-014",
+    "section": "2.9",
+    "kind": "FOREIGN_CONTRACTION_SYSTEM",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The contraction system of the foreign Braille profile may be used inside a foreign-system span.",
+    "delegation": "TARGET_BRAILLE_PROFILE"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-009",
+    "section": "2.3.1.5",
+    "kind": "FRACTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "For simple natural-number fractions, the numerator uses cardinal digits and the denominator is appended using lowered digits without its own number indicator.",
+    "mixedFractionPolicy": "A mixed-number fractional component is attached without a space but begins with its own number indicator."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-NUM-CASE-004"
+    ]
+  },
+  "notes": []
+}

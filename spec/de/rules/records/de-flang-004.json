@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-004",
+    "section": "2.9",
+    "kind": "NO_CROSS_WORD_SEAM_CONTRACTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A contraction must not cross a word seam inside a foreign-language insert.",
+    "crossWordSeamAllowed": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-007"
+    ]
+  },
+  "notes": []
+}

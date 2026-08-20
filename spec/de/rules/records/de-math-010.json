@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-010",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-010",
+    "section": "2.10",
+    "kind": "FRONT_REAR_INDEX_ANNOUNCEMENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Rear upper/lower index markers are preferably used without preceding point 4; front upper/lower index markers require point 4.",
+    "rear": "POINT4_PREFERABLY_OMITTED",
+    "front": "POINT4_REQUIRED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-005",
+      "DE-MATH-CASE-006"
+    ]
+  },
+  "notes": []
+}

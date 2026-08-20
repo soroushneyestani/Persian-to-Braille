@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-015",
+    "section": "2.4.2",
+    "kind": "NUMBER_UNIT_BOUNDARY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Spacing between number and unit follows the print source, while half-spaces may be omitted for compact Braille. A line break between the number and its unit is prohibited.",
+    "lineBreakAllowed": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

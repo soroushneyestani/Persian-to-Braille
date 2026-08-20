@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-008",
+    "section": "2.13",
+    "kind": "HALF_QUOTE_INWORD_FORMS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Single or half quotation marks inside words use the three-cell forms specified by section 2.13.",
+    "opening": {
+      "unicode": "⠠⠠⠦",
+      "codepoints": [
+        "U+2820",
+        "U+2820",
+        "U+2826"
+      ],
+      "dots": [
+        "6",
+        "6",
+        "236"
+      ],
+      "cellCount": 3
+    },
+    "closing": {
+      "unicode": "⠠⠠⠴",
+      "codepoints": [
+        "U+2820",
+        "U+2820",
+        "U+2834"
+      ],
+      "dots": [
+        "6",
+        "6",
+        "356"
+      ],
+      "cellCount": 3
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-005"
+    ]
+  },
+  "notes": []
+}

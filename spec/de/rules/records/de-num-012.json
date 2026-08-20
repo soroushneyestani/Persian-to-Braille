@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-012",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-012",
+    "section": "2.3.1.8",
+    "kind": "AMBIGUOUS_PUNCTUATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Punctuation that could be confused with lowered digits requires announcement after an Arabic number or between digits. Text punctuation uses dot 6; mathematical operation usage follows math announcement.",
+    "textAnnouncement": {
+      "unicode": "⠠",
+      "codepoint": "U+2820",
+      "dots": "6"
+    },
+    "mathAnnouncement": {
+      "unicode": "⠈",
+      "codepoint": "U+2808",
+      "dots": "4"
+    },
+    "ambiguousTextPunctuation": [
+      "SEMICOLON",
+      "COLON",
+      "QUESTION_MARK",
+      "EXCLAMATION_MARK",
+      "BRACKET",
+      "QUOTATION_MARK"
+    ],
+    "flowingTextClosingException": {
+      "appliesTo": [
+        "CLOSING_ROUND_BRACKET",
+        "CLOSING_QUOTATION_MARK"
+      ],
+      "cancellationPointMayUsuallyBeOmitted": true
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-NUM-CASE-006"
+    ]
+  },
+  "notes": []
+}

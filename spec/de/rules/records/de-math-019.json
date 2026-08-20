@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-019",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-019",
+    "section": "2.10",
+    "kind": "FULL_MATH_INTERNAL_POLICY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Inside a full Mathematikschrift span, the inline Textschrift point-4 announcement technique for mathematical signs no longer applies.",
+    "inlinePoint4AnnouncementActive": false,
+    "delegation": "GERMAN_MATH_BRAILLE_PROFILE"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-010"
+    ]
+  },
+  "notes": []
+}

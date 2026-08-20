@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-SPECIAL-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-SPECIAL-004",
+    "section": "2.8.2",
+    "kind": "NUMERIC_INTERACTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A number adjacent to a special-form currency sign retains normal German numeric notation.",
+    "dependency": "DE-NUM-001"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

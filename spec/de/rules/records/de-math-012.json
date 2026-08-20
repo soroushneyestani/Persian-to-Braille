@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-012",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-012",
+    "section": "2.10",
+    "kind": "RELATION_NEGATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A relation is negated by prefixing dots 3-5.",
+    "negationPrefix": {
+      "unicode": "⠔",
+      "codepoints": [
+        "U+2814"
+      ],
+      "dots": [
+        "35"
+      ],
+      "cellCount": 1
+    },
+    "example": {
+      "equal": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      },
+      "notEqual": {
+        "unicode": "⠔⠶",
+        "codepoints": [
+          "U+2814",
+          "U+2836"
+        ],
+        "dots": [
+          "35",
+          "2356"
+        ],
+        "cellCount": 2
+      }
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-007"
+    ]
+  },
+  "notes": []
+}

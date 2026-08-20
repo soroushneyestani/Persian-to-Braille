@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-013",
+    "section": "2.3.2",
+    "kind": "ROMAN_NUMERAL",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Roman numerals use the corresponding letter cells and must preserve upper/lower-case semantics through the German case-announcement rules.",
+    "dependencies": [
+      "2.6",
+      "2.6.2",
+      "2.6.3"
+    ],
+    "caseStateImplementation": "DEFERRED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-003"
+    ]
+  },
+  "notes": []
+}

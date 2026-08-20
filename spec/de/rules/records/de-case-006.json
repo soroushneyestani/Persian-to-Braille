@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-006",
+    "section": "2.6.2",
+    "kind": "CAPITAL_SEQUENCE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠘",
+      "codepoints": [
+        "U+2818"
+      ],
+      "dots": [
+        "45"
+      ],
+      "cellCount": 1
+    },
+    "summary": "A single uppercase letter or an uninterrupted uppercase sequence uses the capital-sequence marker.",
+    "requiresBasisschrift": true,
+    "contractionsAllowed": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-002",
+      "DE-CASE-CASE-003"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-010",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-010",
+    "section": "2.13",
+    "kind": "PUNCTUATION_EMISSION_PRESERVED",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Contraction transparency affects lexical analysis only; the punctuation itself remains present in the Braille output.",
+    "lexicalAnalysis": "IGNORE_COVERED_INWORD_PUNCTUATION",
+    "outputSerialization": "PRESERVE_PUNCTUATION_WITH_INWORD_FORM",
+    "evidenceRole": "NORMATIVE_PROSE_PLUS_SOURCE_EXAMPLES"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-008"
+    ]
+  },
+  "notes": []
+}

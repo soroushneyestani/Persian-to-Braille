@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-015",
+    "section": "2.5.2",
+    "kind": "MATHEMATICAL_FRACTION_BAR_OPTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "braille": {
+      "unicode": "⠈⠳",
+      "codepoints": [
+        "U+2808",
+        "U+2833"
+      ],
+      "dots": [
+        "4",
+        "1256"
+      ],
+      "cellCount": 2
+    },
+    "summary": "When slash semantics are unambiguously a mathematical fraction bar, the mathematical fraction-bar sign may be used with dot-4 announcement.",
+    "dependency": "2.10",
+    "optionalAlternative": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

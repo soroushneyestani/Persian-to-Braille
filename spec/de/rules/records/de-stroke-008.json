@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-008",
+    "section": "2.5.1.4",
+    "kind": "PRIMARY_LIST_MARKER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "braille": {
+      "unicode": "⠠⠤",
+      "codepoints": [
+        "U+2820",
+        "U+2824"
+      ],
+      "dots": [
+        "6",
+        "36"
+      ],
+      "cellCount": 2
+    },
+    "summary": "A non-ordinal list marker is normalized to the primary Braille list marker regardless of the visual print bullet shape.",
+    "layout": {
+      "mustBeginLine": true,
+      "blankAfter": true
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

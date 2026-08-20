@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-006",
+    "section": "2.13",
+    "kind": "SQUARE_BRACKET_SPECIAL_FORM",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A square bracket occurring inside a word uses the three-cell in-word form shown by section 2.13.",
+    "inWordForm": {
+      "unicode": "⠠⠠⠶",
+      "codepoints": [
+        "U+2820",
+        "U+2820",
+        "U+2836"
+      ],
+      "dots": [
+        "6",
+        "6",
+        "2356"
+      ],
+      "cellCount": 3
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-003"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-012",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-012",
+    "section": "2.6.5",
+    "kind": "GREEK_LETTER_SCOPE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠰",
+      "codepoints": [
+        "U+2830"
+      ],
+      "dots": [
+        "56"
+      ],
+      "cellCount": 1
+    },
+    "summary": "Greek letters in mathematical or technical contexts are announced by the Greek/foreign letter marker.",
+    "termination": [
+      "BRAILLE_BLANK",
+      "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-007"
+    ]
+  },
+  "notes": []
+}

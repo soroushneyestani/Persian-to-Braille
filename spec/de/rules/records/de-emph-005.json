@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-005",
+    "section": "2.7.1",
+    "kind": "PRIMARY_SHORT_SPAN_OPTIMIZATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "For emphasis spanning one to three words, each word may instead be individually marked to save Braille space.",
+    "maximumWords": 3,
+    "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

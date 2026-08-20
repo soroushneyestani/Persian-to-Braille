@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-001",
+  "introducedInMode": "basisschrift",
+  "status": "architectural",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-001",
+    "section": "2.7",
+    "kind": "EMPHASIS_ABSTRACTION",
+    "normative": false,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "German Braille provides a bounded emphasis mechanism rather than preserving every visual print-formatting distinction directly.",
+    "hostFormattingMapping": "SEPARATE_POLICY_REQUIRED",
+    "architecturalInference": true,
+    "evidenceRole": "ARCHITECTURAL_SYNTHESIS_FROM_SECTION_2_7"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

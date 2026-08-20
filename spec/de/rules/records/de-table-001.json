@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-001",
+    "section": "2.12",
+    "kind": "LINEARIZED_TABLE_ROW",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When table columns cannot be represented side by side and cells of a row are rendered sequentially, a structural cell separator is used between adjacent cells.",
+    "representation": "ROW_CELLS_SEQUENTIAL"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-007",
+    "section": "2.11",
+    "kind": "DOTS_7_8_TRANSPORT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Dots 7 and 8 together are replaced by a preceding dots-4-6 cell.",
+    "prefix": {
+      "unicode": "⠨",
+      "codepoints": [
+        "U+2828"
+      ],
+      "dots": [
+        "46"
+      ],
+      "cellCount": 1
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-004"
+    ]
+  },
+  "notes": []
+}

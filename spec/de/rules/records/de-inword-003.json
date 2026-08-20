@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-003",
+    "section": "2.13",
+    "kind": "SENTENCE_PERIOD_EXCEPTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The sentence period is explicitly excluded from the general in-word cancellation-point rule.",
+    "excludedClass": "SENTENCE_PERIOD"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-009"
+    ]
+  },
+  "notes": []
+}

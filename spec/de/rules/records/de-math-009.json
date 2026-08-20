@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-009",
+    "section": "2.10",
+    "kind": "LOWER_INDEX",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠡",
+      "codepoints": [
+        "U+2821"
+      ],
+      "dots": [
+        "16"
+      ],
+      "cellCount": 1
+    },
+    "summary": "Subscripts are introduced by the lower-index sign. When both lower and upper rear indices occur, the lower index normally precedes the upper index.",
+    "rearOrder": [
+      "LOWER_INDEX",
+      "UPPER_INDEX"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

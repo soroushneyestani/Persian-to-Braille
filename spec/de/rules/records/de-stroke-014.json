@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-014",
+    "section": "2.5.2",
+    "kind": "NUMERIC_SLASH",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "braille": {
+      "unicode": "⠐⠂",
+      "codepoints": [
+        "U+2810",
+        "U+2802"
+      ],
+      "dots": [
+        "5",
+        "2"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The text slash may occur between numeric components; the following numeric component re-enters numeric state.",
+    "numericState": {
+      "reenterNumericAfterSlash": true
+    },
+    "dependencies": [
+      "DE-NUM-001",
+      "DE-NUM-002"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-STROKE-CASE-005"
+    ]
+  },
+  "notes": []
+}

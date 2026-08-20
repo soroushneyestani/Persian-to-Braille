@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-005",
+    "section": "2.12",
+    "kind": "COLUMN_NUMBER_NUMERIC_FORM",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The normative example for transition to column 7 uses the ordinary German number indicator and digit form after the separator.",
+    "example": {
+      "targetColumn": 7,
+      "separator": {
+        "unicode": "⠒⠒",
+        "codepoints": [
+          "U+2812",
+          "U+2812"
+        ],
+        "dots": [
+          "25",
+          "25"
+        ],
+        "cellCount": 2
+      },
+      "numberIndicator": {
+        "unicode": "⠼",
+        "codepoints": [
+          "U+283C"
+        ],
+        "dots": [
+          "3456"
+        ],
+        "cellCount": 1
+      },
+      "digit": {
+        "unicode": "⠛",
+        "codepoints": [
+          "U+281B"
+        ],
+        "dots": [
+          "1245"
+        ],
+        "cellCount": 1
+      },
+      "combined": {
+        "unicode": "⠒⠒⠼⠛",
+        "codepoints": [
+          "U+2812",
+          "U+2812",
+          "U+283C",
+          "U+281B"
+        ],
+        "dots": [
+          "25",
+          "25",
+          "3456",
+          "1245"
+        ],
+        "cellCount": 4
+      }
+    },
+    "numericDependency": "DE-NUM-001"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-TABLE-CASE-002"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-002",
+    "section": "2.7.1",
+    "kind": "PRIMARY_SINGLE_WORD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠸",
+      "codepoints": [
+        "U+2838"
+      ],
+      "dots": [
+        "456"
+      ],
+      "cellCount": 1
+    },
+    "summary": "A single word using the first emphasis type is prefixed by the primary emphasis marker."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-EMPH-CASE-001"
+    ]
+  },
+  "notes": []
+}

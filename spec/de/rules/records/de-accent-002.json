@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-002",
+    "section": "2.8.1",
+    "kind": "GENERIC_DIACRITIC_METHOD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠈",
+      "codepoints": [
+        "U+2808"
+      ],
+      "dots": [
+        "4"
+      ],
+      "cellCount": 1
+    },
+    "summary": "When knowledge of the foreign Braille system cannot be assumed, point 4 is placed before the German Braille cell of the base letter.",
+    "precision": "DIACRITIC_PRESENT_BUT_UNSPECIFIED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-ACCENT-CASE-001",
+      "DE-ACCENT-CASE-003",
+      "DE-ACCENT-CASE-005"
+    ]
+  },
+  "notes": []
+}

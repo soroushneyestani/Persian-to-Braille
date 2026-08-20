@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-009",
+    "section": "2.9",
+    "kind": "FOREIGN_SYSTEM_FULL_SEMANTICS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Once a foreign Braille system is active, all Braille signs and rules of that system apply.",
+    "delegation": "TARGET_BRAILLE_PROFILE",
+    "includes": [
+      "ALPHABET",
+      "ACCENTS",
+      "PUNCTUATION",
+      "ANNOUNCEMENT_SIGNS",
+      "CONTRACTIONS"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-005"
+    ]
+  },
+  "notes": []
+}

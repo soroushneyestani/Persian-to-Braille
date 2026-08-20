@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-008",
+    "section": "2.10",
+    "kind": "EXPONENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠌",
+      "codepoints": [
+        "U+280C"
+      ],
+      "dots": [
+        "34"
+      ],
+      "cellCount": 1
+    },
+    "summary": "Superscripts and exponents are introduced by the exponent sign.",
+    "integerPolicy": "Positive or negative whole-number exponents use lowered digits without a number indicator.",
+    "lettersAndFractionsFollowImmediately": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

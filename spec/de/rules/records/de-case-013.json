@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-013",
+    "section": "2.6.5",
+    "kind": "GREEK_UPPERCASE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "An uppercase Greek letter uses the Greek marker followed by the appropriate German uppercase announcement marker.",
+    "prefix": {
+      "unicode": "⠰",
+      "codepoints": [
+        "U+2830"
+      ],
+      "dots": [
+        "56"
+      ],
+      "cellCount": 1
+    },
+    "caseMarkers": [
+      {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      }
+    ],
+    "foreignSpanTerminationRequiredForUnits": false,
+    "dependency": "2.9"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-007"
+    ]
+  },
+  "notes": []
+}

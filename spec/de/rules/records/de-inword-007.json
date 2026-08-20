@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-007",
+    "section": "2.13",
+    "kind": "DOUBLE_QUOTE_INWORD_FORMS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Ordinary quotation marks inside a word are represented with the cancellation point preceding the ordinary opening or closing quotation sign.",
+    "opening": {
+      "unicode": "⠠⠦",
+      "codepoints": [
+        "U+2820",
+        "U+2826"
+      ],
+      "dots": [
+        "6",
+        "236"
+      ],
+      "cellCount": 2
+    },
+    "closing": {
+      "unicode": "⠠⠴",
+      "codepoints": [
+        "U+2820",
+        "U+2834"
+      ],
+      "dots": [
+        "6",
+        "356"
+      ],
+      "cellCount": 2
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-004"
+    ]
+  },
+  "notes": []
+}

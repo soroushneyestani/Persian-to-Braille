@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-001",
+    "section": "2.3.1.1",
+    "kind": "CARDINAL_NUMBER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Arabic digits use the a-j Braille cells under one leading number indicator.",
+    "state": "ARABIC_NUMERIC"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-001",
+      "DE-MATH-CASE-003",
+      "DE-NUM-CASE-001",
+      "DE-NUM-CASE-002",
+      "DE-SPECIAL-CASE-001",
+      "DE-SPECIAL-CASE-002",
+      "DE-SPECIAL-CASE-003"
+    ]
+  },
+  "notes": []
+}

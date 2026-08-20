@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-005",
+    "section": "2.6.1",
+    "kind": "INITIAL_CAPITAL_ABBREVIATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠨",
+      "codepoints": [
+        "U+2828"
+      ],
+      "dots": [
+        "46"
+      ],
+      "cellCount": 1
+    },
+    "summary": "An abbreviation or letter sequence beginning with one uppercase letter followed by lowercase letters uses the initial-capital marker and does not permit contractions.",
+    "contractionsAllowed": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

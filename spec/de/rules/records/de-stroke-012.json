@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-012",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-012",
+    "section": "2.5.2",
+    "kind": "SLASH",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "braille": {
+      "unicode": "⠐⠂",
+      "codepoints": [
+        "U+2810",
+        "U+2802"
+      ],
+      "dots": [
+        "5",
+        "2"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The slash connects independent words or abbreviations and acts as a German Braille word boundary.",
+    "boundarySemantics": {
+      "isWordBoundary": true
+    },
+    "lineBreak": {
+      "allowedAfter": true
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-STROKE-CASE-004"
+    ]
+  },
+  "notes": []
+}

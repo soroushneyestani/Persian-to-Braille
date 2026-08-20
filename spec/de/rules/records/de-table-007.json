@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-007",
+  "introducedInMode": "basisschrift",
+  "status": "candidate",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-007",
+    "section": "2.12",
+    "kind": "UNNUMBERED_EMPTY_CELL_POLICY",
+    "normative": false,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Section 2.12 does not explicitly establish a complete empty-cell serialization policy for the case where target-column numbers are not used.",
+    "policy": "NOT_FULLY_SPECIFIED_BY_SECTION_2_12",
+    "inferenceProhibited": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-TABLE-CASE-005"
+    ]
+  },
+  "notes": []
+}

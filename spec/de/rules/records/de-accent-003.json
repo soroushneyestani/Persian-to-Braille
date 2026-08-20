@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-003",
+    "section": "2.8.1",
+    "kind": "EXACT_LANGUAGE_SPECIFIC_METHOD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠈",
+      "codepoints": [
+        "U+2808"
+      ],
+      "dots": [
+        "4"
+      ],
+      "cellCount": 1
+    },
+    "summary": "For exact written representation, point 4 may precede the language-specific accented Braille cell.",
+    "requiresLanguageSpecificMapping": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-ACCENT-CASE-002",
+      "DE-ACCENT-CASE-004",
+      "DE-ACCENT-CASE-006",
+      "DE-ACCENT-CASE-007"
+    ]
+  },
+  "notes": []
+}

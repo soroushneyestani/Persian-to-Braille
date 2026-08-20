@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-002",
+    "section": "2.11",
+    "kind": "PRIMARY_EIGHT_DOT_SYSTEM",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Computerbraille is primarily an eight-dot Braille system in which one character is represented by one Braille cell.",
+    "dots": 8,
+    "dot7Position": "BELOW_DOT_3",
+    "dot8Position": "BELOW_DOT_6"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

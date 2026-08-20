@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-004",
+    "section": "2.11",
+    "kind": "NO_7_OR_8",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A Computerbraille cell containing neither dot 7 nor dot 8 normally retains its dots 1 through 6 unchanged.",
+    "exception": "COLLISION_ONLY_4_6_46"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-001"
+    ]
+  },
+  "notes": []
+}

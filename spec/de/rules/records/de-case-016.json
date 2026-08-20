@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-016",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-016",
+    "section": "2.6.7",
+    "kind": "INTERNAL_CAPITAL_COMPACT_METHOD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠐⠨",
+      "codepoints": [
+        "U+2810",
+        "U+2828"
+      ],
+      "dots": [
+        "5",
+        "46"
+      ],
+      "cellCount": 2
+    },
+    "summary": "In Voll- and Kurzschrift, one internal uppercase letter may be announced without switching the whole word to Basisschrift when this saves space.",
+    "availableProfiles": [
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "useOnlyWhenSpaceSaving": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-010"
+    ]
+  },
+  "notes": []
+}

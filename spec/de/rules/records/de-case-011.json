@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-011",
+    "section": "2.6.4",
+    "kind": "CASE_GROUPING_PRIORITY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When more than one valid case segmentation exists, semantic grouping has priority and the number of announcement signs should then be minimized.",
+    "priority": [
+      "SEMANTIC_GROUPING",
+      "MINIMIZE_ANNOUNCEMENT_SIGNS"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

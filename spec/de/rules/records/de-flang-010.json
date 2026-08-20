@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-010",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-010",
+    "section": "2.9",
+    "kind": "FOREIGN_PROFILE_IDENTITY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The foreign alphabet or Braille system must be identified by annotation when it is not clear from context.",
+    "resolutionOrder": [
+      "CONTEXT",
+      "EXPLICIT_ANNOTATION"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-006"
+    ]
+  },
+  "notes": []
+}

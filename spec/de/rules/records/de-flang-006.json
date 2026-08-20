@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-006",
+    "section": "2.9",
+    "kind": "FOREIGN_SYSTEM_SWITCH",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A foreign Braille system may be used instead of German Braille for an embedded span.",
+    "mode": "FOREIGN_BRAILLE_SYSTEM_SPAN"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

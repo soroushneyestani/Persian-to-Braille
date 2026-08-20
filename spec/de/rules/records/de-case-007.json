@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-007",
+    "section": "2.6.2",
+    "kind": "ADJACENT_ABBREVIATIONS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When several case-announced abbreviations occur successively, each abbreviation is announced independently."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

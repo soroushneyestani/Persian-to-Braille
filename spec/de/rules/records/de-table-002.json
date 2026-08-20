@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-002",
+    "section": "2.12",
+    "kind": "TABLE_CELL_SEPARATOR",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠒⠒",
+      "codepoints": [
+        "U+2812",
+        "U+2812"
+      ],
+      "dots": [
+        "25",
+        "25"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The structural table-cell separator is the two-cell Braille sequence dots 2-5, dots 2-5.",
+    "structural": true,
+    "ordinaryTextPunctuation": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-TABLE-CASE-001"
+    ]
+  },
+  "notes": []
+}

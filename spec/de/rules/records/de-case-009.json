@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-009",
+    "section": "2.6.3",
+    "kind": "STRUCTURING_LOWERCASE_LETTER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A lowercase structuring letter is marked in Kurzschrift; in Basis- and Vollschrift a standalone lowercase letter is normally unmarked.",
+    "profileBehavior": {
+      "basisschrift": "UNMARKED_BY_DEFAULT",
+      "vollschrift": "UNMARKED_BY_DEFAULT",
+      "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

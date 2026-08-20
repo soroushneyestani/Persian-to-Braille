@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-015",
+    "section": "2.6.7",
+    "kind": "INTERNAL_CAPITAL_BASIS_METHOD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Internal capitalization may be represented using the mixed-case Basisschrift method of section 2.6.4.",
+    "availableProfiles": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "requiresBasisschriftSpan": true,
+    "pureBasisschriftPassagePolicy": {
+      "context": "PURE_BASISSCHRIFT_PASSAGE",
+      "leadingCapitalMarkerMayBeOmitted": true
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-009"
+    ]
+  },
+  "notes": []
+}

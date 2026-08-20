@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-008",
+  "introducedInMode": "basisschrift",
+  "status": "architectural",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-008",
+    "section": "2.12",
+    "kind": "STRUCTURAL_LAYER_OWNERSHIP",
+    "normative": false,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Table-cell separation represents document structure and must not be modeled as an ordinary character-substitution rule.",
+    "architecturalClassification": "STRUCTURAL_SERIALIZATION",
+    "futureOwner": "DOCUMENT_STRUCTURE_AND_LAYOUT_LAYER",
+    "architecturalInference": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}
