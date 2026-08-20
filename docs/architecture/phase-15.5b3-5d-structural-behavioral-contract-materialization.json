@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.5d",
+  "status": "STRUCTURAL_BEHAVIORAL_CONTRACTS_MATERIALIZED_NON_EXECUTABLE",
+  "title": "German Basisschrift Structural and Behavioral Constraint Contract Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "5881b9b99330d0a213533dbeef1537233ed0cdd2"
+  },
+  "upstream": {
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "structuralBehavioralAdjudicationCanonicalJsonSha256": "C0E70546692EB0999E2B2C50BD0C8425CF0D197A5AD5794ACE17C3503B5F2C2B",
+    "structuralBehavioralMaterializationModelCanonicalJsonSha256": "8C227150AAF441DFB8B3808DA474411448F74B3ED1A1CFBEAE6D2D4257E52E20",
+    "roleNeutralSchemaSha256": "FBF7F9BDA476DA7E9864C8600F1274622F2DD00B526D4F7A0730436FB9903997",
+    "roleNeutralSchemaCanonicalJsonSha256": "8C624D3D60CEB29BF9CABA0A46087F9C889AB6A1016E99BF323453E525CB21B4"
+  },
+  "outputs": {
+    "structuralContractSet": {
+      "path": "spec/de/contracts/de-basisschrift-structural.json",
+      "sha256": "2E46C9D74FBC01797A8E64FFFCF621F7C695C0E147D88A5FBB6A996257FAE4AC",
+      "canonicalJsonSha256": "8A5DC08F277B23D12FAB6400C9108068A0668FE8A951100912E1FD7D94A3E5AF",
+      "recordsCanonicalJsonSha256": "1493C753D66AFA3F0A783240A141B21D363EEE39AF43AE206D8FD612BD392BC2"
+    },
+    "behavioralConstraintContractSet": {
+      "path": "spec/de/contracts/de-basisschrift-behavioral-constraint.json",
+      "sha256": "14FA11CB29408FDC50DCD35A78320001DDF55D7050EEB9A381BFD6F0D8740960",
+      "canonicalJsonSha256": "B03FD5D7AF0FB12B89EE15D3736820BEFFF559D8F594AE562AEAA367FB91E2B4",
+      "recordsCanonicalJsonSha256": "062EF5727F77C34C1674CD2F2F31A4DE10E5D91B25B82D7F5B333C44CB867C91"
+    }
+  },
+  "materialization": {
+    "b3Scope": 107,
+    "existingAssignmentsBeforeB35": 54,
+    "structuralAssignments": 19,
+    "behavioralConstraintAssignments": 14,
+    "newAssignments": 33,
+    "materializedAssignmentsTotal": 87,
+    "remainingNotAssigned": 20,
+    "remainingRuleIds": [
+      "DE-ACCENT-001",
+      "DE-ACCENT-006",
+      "DE-ACCENT-007",
+      "DE-ACCENT-008",
+      "DE-CASE-016",
+      "DE-CASE-019",
+      "DE-CASE-020",
+      "DE-CB-001",
+      "DE-CB-002",
+      "DE-CB-017",
+      "DE-EMPH-001",
+      "DE-FLANG-005",
+      "DE-FLANG-009",
+      "DE-FLANG-013",
+      "DE-FLANG-014",
+      "DE-MATH-013",
+      "DE-MATH-019",
+      "DE-TABLE-005",
+      "DE-TABLE-007",
+      "DE-TABLE-008"
+    ],
+    "structuralSemanticPayloadExactCopies": "19/19",
+    "behavioralSemanticPayloadExactCopies": "14/14",
+    "structuralSourceBindingsVerified": "19/19",
+    "behavioralSourceBindingsVerified": "14/14",
+    "structuralValidationBindingsVerified": "19/19",
+    "behavioralValidationBindingsVerified": "14/14",
+    "allMaterializedSetsDisjoint": true,
+    "canonicalRecordsRemainUnmodified": true
+  },
+  "familyCounts": {
+    "STRUCTURAL": {
+      "CASE": 1,
+      "CB": 4,
+      "MATH": 7,
+      "SPECIAL": 2,
+      "TABLE": 5
+    },
+    "BEHAVIORAL_CONSTRAINT": {
+      "CASE": 5,
+      "CB": 3,
+      "EMPH": 1,
+      "FLANG": 2,
+      "MATH": 2,
+      "SPECIAL": 1
+    }
+  },
+  "schemaBoundary": {
+    "roleNeutralSchemaReused": true,
+    "roleNeutralSchemaMutated": false,
+    "newSchemaCreated": false,
+    "semanticPayloadPolicy": "LOSSLESS_EXACT_COPY_OF_CANONICAL_SEMANTICS",
+    "semanticEvidenceRootsPolicy": "SORTED_TOP_LEVEL_SOURCE_SEMANTIC_ROOTS_EXCLUDING_SUMMARY_METADATA_ONLY"
+  },
+  "executionBoundary": {
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.5d Independent Validation and Repository Closure"
+}
