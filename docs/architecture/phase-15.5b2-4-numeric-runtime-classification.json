@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.4",
+  "status": "NUMERIC_RUNTIME_CLASSIFICATION_MATERIALIZED",
+  "title": "German Basisschrift Numeric Runtime Classification",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "aef7671402dce9a2c6e9ce148e798558584de845"
+  },
+  "schemaReuse": {
+    "path": "spec/de/schema/rule-classification-set.schema.json",
+    "sha256": "6796CEB062CE838F663892AB841E08F695F49A786BC9AABC1A6DD9F88155FE37",
+    "newSchemaCreated": false,
+    "reusedFrom": "15.5B2.3"
+  },
+  "classification": {
+    "path": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+    "records": 15,
+    "family": "NUM",
+    "dispositionCounts": {
+      "STATEFUL": 6,
+      "CONTEXTUAL": 6,
+      "DIRECT_MAPPING": 1,
+      "STRUCTURAL": 1,
+      "DEFERRED": 1,
+      "DELEGATED": 0,
+      "ARCHITECTURAL_ONLY": 0
+    },
+    "partitionCounts": {
+      "mapping": 1,
+      "state": 6,
+      "context": 6,
+      "structure": 1,
+      "deferred": 1
+    },
+    "payloadCanonicalJsonSha256": "98C2142EDD3DA5534F9FF8110AF9B95FB3850D8722D7550A8699718789AC9AC1"
+  },
+  "decisionPolicy": {
+    "brailleDataImpliesDirectMapping": false,
+    "directMappingRuleIds": [
+      "DE-NUM-003"
+    ],
+    "statefulRuleIds": [
+      "DE-NUM-001",
+      "DE-NUM-002",
+      "DE-NUM-004",
+      "DE-NUM-005",
+      "DE-NUM-007",
+      "DE-NUM-009"
+    ],
+    "contextualRuleIds": [
+      "DE-NUM-006",
+      "DE-NUM-008",
+      "DE-NUM-010",
+      "DE-NUM-011",
+      "DE-NUM-012",
+      "DE-NUM-014"
+    ],
+    "structuralRuleIds": [
+      "DE-NUM-015"
+    ],
+    "deferredRuleIds": [
+      "DE-NUM-013"
+    ],
+    "delegatedRuleIds": [],
+    "architecturalOnlyRuleIds": []
+  },
+  "crossClassificationBoundary": {
+    "punctuationClassificationPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+    "punctuationClassificationSha256": "49C3ED83B95FD38882C1F935955BD35B2C7855C723B385A1C994D7846AE6DA52",
+    "numericRulesMayReferencePunctuationBehavior": true,
+    "punctuationClassificationModified": false
+  },
+  "boundaries": {
+    "b1CanonicalRulesModified": false,
+    "symbolCatalogModified": false,
+    "punctuationClassificationModified": false,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "runtimeManifestModified": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B2.5 Classification validation and determinism"
+}

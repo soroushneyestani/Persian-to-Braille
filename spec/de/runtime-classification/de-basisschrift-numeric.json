@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-numeric-runtime-classification",
+  "status": "CLASSIFIED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "scope": {
+    "families": [
+      "NUM"
+    ],
+    "ruleCount": 15,
+    "phase": "15.5B2.4"
+  },
+  "taxonomy": {
+    "source": "docs/architecture/phase-15.5b2-1-runtime-classification-taxonomy.json",
+    "singlePrimaryDisposition": true,
+    "canonicalRulesRemainNotClassified": true
+  },
+  "execution": {
+    "classificationOnly": true,
+    "loweringStarted": false,
+    "translatorStarted": false,
+    "stateMachineStarted": false,
+    "runtimeBundleGenerated": false
+  },
+  "summary": {
+    "records": 15,
+    "dispositionCounts": {
+      "STATEFUL": 6,
+      "CONTEXTUAL": 6,
+      "DIRECT_MAPPING": 1,
+      "STRUCTURAL": 1,
+      "DEFERRED": 1,
+      "DELEGATED": 0,
+      "ARCHITECTURAL_ONLY": 0
+    },
+    "partitionCounts": {
+      "mapping": 1,
+      "state": 6,
+      "context": 6,
+      "structure": 1,
+      "deferred": 1
+    },
+    "classificationPayloadCanonicalJsonSha256": "98C2142EDD3DA5534F9FF8110AF9B95FB3850D8722D7550A8699718789AC9AC1",
+    "classificationSchemaSha256": "6796CEB062CE838F663892AB841E08F695F49A786BC9AABC1A6DD9F88155FE37"
+  },
+  "records": [
+    {
+      "ruleId": "DE-NUM-001",
+      "sourceRulePath": "spec/de/rules/records/de-num-001.json",
+      "sourceRuleSha256": "AC4238A408AB9CB8C5720DC05632AA05A7B2932744C67979D06C3B519B8B7C5E",
+      "family": "NUM",
+      "kind": "CARDINAL_NUMBER",
+      "section": "2.3.1.1",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "Cardinal-number behavior explicitly enters the ARABIC_NUMERIC state.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-MATH-CASE-001",
+        "DE-MATH-CASE-003",
+        "DE-NUM-CASE-001",
+        "DE-NUM-CASE-002",
+        "DE-SPECIAL-CASE-001",
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "sourceRulePath": "spec/de/rules/records/de-num-002.json",
+      "sourceRuleSha256": "38496BD418D0FEA8CCBAB6D0731CF55CB959FC5CEFE0C5ED2CC7AFF0FBD320AD",
+      "family": "NUM",
+      "kind": "NUMERIC_SCOPE",
+      "section": "2.3.1.1",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "The rule defines continuation and termination of ARABIC_NUMERIC scope.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-003",
+      "sourceRulePath": "spec/de/rules/records/de-num-003.json",
+      "sourceRuleSha256": "EC414A7C018EC53E8DBDCE7249AAA4BC1EC281EABFE2B2A777EF5318001C9272",
+      "family": "NUM",
+      "kind": "DECIMAL_AND_GROUPING",
+      "section": "2.3.1.1",
+      "primaryDisposition": "DIRECT_MAPPING",
+      "runtimeOwner": "GERMAN_NUMERIC_SYMBOL_MAPPING",
+      "decisionRationale": "The rule contains deterministic Braille mappings for decimal comma and decimal/grouping point once their numeric semantic role is known.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-NUM-CASE-002"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "sourceRulePath": "spec/de/rules/records/de-num-004.json",
+      "sourceRuleSha256": "EAD7EDD74CB04E0E06586D774BA32D0DF4DBAE06BEC741B214CEA4D791D75547",
+      "family": "NUM",
+      "kind": "DIGIT_GROUPING",
+      "section": "2.3.1.1",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "Grouping alternatives can preserve spaces only by repeating the number indicator for subsequent numeric groups, so numeric-state continuity is part of the rule.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "sourceRulePath": "spec/de/rules/records/de-num-005.json",
+      "sourceRuleSha256": "DA0E10D221CCCAB6D42E348B68A83C5C149B652B336CB7AEBF1A5B6A20DF4848",
+      "family": "NUM",
+      "kind": "LEADING_NUMERIC_SPECIALS",
+      "section": "2.3.1.1",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "Leading apostrophe, decimal point, or zero-replacement dash occurs after the number indicator and remains inside numeric form.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-006",
+      "sourceRulePath": "spec/de/rules/records/de-num-006.json",
+      "sourceRuleSha256": "CFFE9FD66AD2BF32C979970D4F47751B8B4286AE83664828A00559B61630D7AD",
+      "family": "NUM",
+      "kind": "ORDINAL",
+      "section": "2.3.1.2",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_ORDINAL_NOTATION_RESOLVER",
+      "decisionRationale": "Ordinal serialization permits ordinary digits plus dot 3 or compact lowered-digit notation; the rule therefore requires representation selection rather than one unconditional mapping.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-NUM-CASE-003"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "sourceRulePath": "spec/de/rules/records/de-num-007.json",
+      "sourceRuleSha256": "F7D0AF5536E9B3E9CC4E4D10E02263CD9532C827A9EDA379881839B6B9EF94A8",
+      "family": "NUM",
+      "kind": "DATE_AND_TIME",
+      "section": "2.3.1.3",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "Date/time punctuation can terminate a numeric component and require a fresh number indicator; ambiguous colon handling is delegated through DE-NUM-012.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-NUM-CASE-005",
+        "DE-NUM-CASE-006"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-008",
+      "sourceRulePath": "spec/de/rules/records/de-num-008.json",
+      "sourceRuleSha256": "6F0EE719C71C39F9672823D4897B32268F92E6AFA47F55E928AAC8291F3927AA",
+      "family": "NUM",
+      "kind": "DECIMAL_CLASSIFIER",
+      "section": "2.3.1.4",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_DECIMAL_CLASSIFIER_RESOLVER",
+      "decisionRationale": "Decimal classifiers support both print-like notation and compact alternating lowered/normal numeric notation.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "sourceRulePath": "spec/de/rules/records/de-num-009.json",
+      "sourceRuleSha256": "0E1DE2DD2B0AD6A39CB91207FA3694F1CD2E05A7D35D95D2D7895E61E3793A3C",
+      "family": "NUM",
+      "kind": "FRACTION",
+      "section": "2.3.1.5",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "Fraction serialization controls number-indicator scope: a simple denominator has no new indicator while a mixed fractional component starts one.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-NUM-CASE-004"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-010",
+      "sourceRulePath": "spec/de/rules/records/de-num-010.json",
+      "sourceRuleSha256": "FD96A28BE2D1F2E18C79F473ABE9045C7444FA63959F066D4E5167C9F9A953B8",
+      "family": "NUM",
+      "kind": "PERCENT_PROMILLE_ANGLE",
+      "section": "2.3.1.6",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_ADJACENT_SIGN_RESOLVER",
+      "decisionRationale": "Percent, promille, degree, minute, and second sign behavior is defined relative to a preceding number and its attachment context.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-011",
+      "sourceRulePath": "spec/de/rules/records/de-num-011.json",
+      "sourceRuleSha256": "2C0EE209E73AE078604A723218E363889133CBBE06AD727AE1A866ACCEF9421C",
+      "family": "NUM",
+      "kind": "SECTION_SIGN",
+      "section": "2.3.1.7",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_CONTEXT_RESOLVER",
+      "decisionRationale": "Section-sign behavior is restricted to direct use before Arabic or Roman numbers and includes context-specific repetition and spacing.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-012",
+      "sourceRulePath": "spec/de/rules/records/de-num-012.json",
+      "sourceRuleSha256": "4545BA358BCB9C2A042AC21109A4803F1EC1E3C3E7F482CA3C9D923797912232",
+      "family": "NUM",
+      "kind": "AMBIGUOUS_PUNCTUATION",
+      "section": "2.3.1.8",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_AMBIGUITY_RESOLVER",
+      "decisionRationale": "Announcement depends on whether ambiguous punctuation is textual or mathematical and includes closing-punctuation exceptions.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-NUM-CASE-006"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-013",
+      "sourceRulePath": "spec/de/rules/records/de-num-013.json",
+      "sourceRuleSha256": "04BADC6CD4F782669BF4F214AAACB4E9567943AAD6DE0763366025560D2F2D16",
+      "family": "NUM",
+      "kind": "ROMAN_NUMERAL",
+      "section": "2.3.2",
+      "primaryDisposition": "DEFERRED",
+      "runtimeOwner": "GERMAN_CASE_STATE_RUNTIME",
+      "decisionRationale": "The source explicitly marks case-state implementation as DEFERRED and depends on German case-announcement sections 2.6, 2.6.2, and 2.6.3.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-CASE-CASE-003"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-014",
+      "sourceRulePath": "spec/de/rules/records/de-num-014.json",
+      "sourceRuleSha256": "31ADD251811ACEA86FA7D77F994283021CF3BB3D5E141471E038778B1BE096E7",
+      "family": "NUM",
+      "kind": "NUMBER_WORD_BOUNDARY",
+      "section": "2.4.1",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMBER_WORD_BOUNDARY_RESOLVER",
+      "decisionRationale": "The number-word boundary requires ambiguity analysis of the following Braille sign before deciding whether an announcement is required.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-015",
+      "sourceRulePath": "spec/de/rules/records/de-num-015.json",
+      "sourceRuleSha256": "650F015F14652039A3AAB9780B4B9A482E34C202F0C9DE9D0E1426D56F06A740",
+      "family": "NUM",
+      "kind": "NUMBER_UNIT_BOUNDARY",
+      "section": "2.4.2",
+      "primaryDisposition": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_NUMBER_UNIT_LAYOUT_LAYER",
+      "decisionRationale": "The rule constrains number-unit layout and explicitly prohibits a line break between the number and its unit.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    }
+  ]
+}
