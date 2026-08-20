@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A",
+  "status": "CLOSED",
+  "title": "German Core Architecture and Runtime Foundation Closure",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "preClosureHead": "2e2f30c3a26195c108fb21fa69c7d87e2c3b33c8"
+  },
+  "substeps": {
+    "15.5A0": "CLOSED",
+    "15.5A1": "CLOSED",
+    "15.5A2": "CLOSED",
+    "15.5A3": "CLOSED",
+    "15.5A4": "CLOSED",
+    "15.5A5": "CLOSED",
+    "15.5A6": "CLOSED"
+  },
+  "foundationDecisions": {
+    "runtimeModel": "THREE_INTERNAL_EXECUTABLE_BUNDLES",
+    "germanTextModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "modeSelection": "EXACTLY_ONE_EXPLICIT",
+    "modeInheritance": "SPECIFICATION_MATERIALIZATION",
+    "regionalConfiguration": "ORTHOGONAL_TO_GERMAN_TEXT_MODE",
+    "swissOverlayKey": "swiss",
+    "swissIsFourthMode": false,
+    "swissExplicitEszettPolicy": "REJECT",
+    "swissExplicitEszettCause": "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+    "automaticEszettToDoubleS": false,
+    "baseEszettMappingPreserved": true
+  },
+  "publicBoundary": {
+    "germanProfileIdentifier": "NOT_FROZEN",
+    "swissPublicIdentifier": "NOT_FROZEN",
+    "publicGermanSdkApi": "NOT_FROZEN",
+    "publicRegionalSdkApi": "NOT_FROZEN",
+    "sdkOwner": "15.6"
+  },
+  "implementationBoundary": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanRuntimeBundles": 0,
+    "basisschriftRuntimeImplemented": false,
+    "vollschriftRuntimeImplemented": false,
+    "kurzschriftRuntimeImplemented": false,
+    "swissRuntimeImplemented": false
+  },
+  "compatibility": {
+    "persianRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "persianRuntimeUnchanged": true,
+    "existingPersianPublicApiPreserved": true
+  },
+  "a6PolicyArtifacts": {
+    "jsonSha256": "811442411BD10FA229A97665C0869D480B8FCE080BBCEA071C407958C795D5E6",
+    "markdownSha256": "E9B6C7B7B4832B8B5148323E8586359EE544F8C86EF37B90E02A4CF65421F75D"
+  },
+  "phaseStatus": "PHASE_15_5A_STATUS=CLOSED",
+  "nextStep": "15.5B1 Basisschrift canonical specification materialization"
+}
