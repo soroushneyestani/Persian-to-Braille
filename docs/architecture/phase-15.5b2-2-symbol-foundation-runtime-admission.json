@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.2",
+  "status": "SYMBOL_FOUNDATION_RUNTIME_CATALOG_ADMITTED",
+  "title": "German Basisschrift Symbol Foundation Runtime Admission",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "f043a9b105c371d0e6f7c012b45cd1d2cd31b879"
+  },
+  "topologyAdmission": {
+    "historicalTopologyPath": "spec/de/runtime-topology.json",
+    "historicalTopologyPhase": "15.5A3.4",
+    "historicalTopologyStatus": "TOPOLOGY_ONLY",
+    "historicalMappingsAdmissionState": 0,
+    "historicalTopologySha256": "38C32B62CA49B1A0297CE83257DE0782671DEE785731121AB326F4A0CF805FAF",
+    "newCanonicalPath": "spec/de/mappings",
+    "admissionType": "EXPLICIT_PHASE_15_5B2_2_MAPPING_NAMESPACE_ADMISSION",
+    "historicalTopologyArtifactModified": false,
+    "historicalTopologyReopened": false,
+    "reason": "A3 already models a mappings admission dimension but did not reserve a concrete mapping path. B2.2 explicitly admits spec/de/mappings without mutating the historical topology snapshot."
+  },
+  "schemaAdmission": {
+    "path": "spec/de/schema/symbol-catalog.schema.json",
+    "title": "German Braille Runtime Symbol Catalog",
+    "sha256": "44273337E41152547AB92C5A7DAE1D562C3C5E5F62B96BD918B4753B0214FE57",
+    "germanSpecific": true,
+    "genericFrameworkExtractionDeferredTo": "PHASE_17"
+  },
+  "catalog": {
+    "path": "spec/de/mappings/de-basisschrift-symbol-catalog.json",
+    "id": "de-basisschrift-symbol-catalog",
+    "status": "ADMITTED_NON_EXECUTABLE",
+    "records": 95,
+    "sourceRoundTrip": "95/95",
+    "semanticLoss": 0,
+    "payloadCanonicalJsonSha256": "3D25D9A570F7D5194101C3AA601B36910EFEE8CC1080E0DF4DD11C23016D93ED"
+  },
+  "identityModel": {
+    "physicalRecords": 95,
+    "printOnlyRecords": 30,
+    "printAndSemanticRecords": 12,
+    "semanticOnlyRecords": 53,
+    "printIndexEntries": 42,
+    "semanticIndexEntries": 65,
+    "duplicatePhysicalRecords": 0,
+    "duplicatePrintKeys": 0,
+    "duplicateSemanticKeys": 0,
+    "recordKeyNormative": false,
+    "publicIdentifierFrozen": false
+  },
+  "sourceIntegrity": {
+    "path": "docs/architecture/phase-15.1d-bskdl-basisschrift-normative-symbol-foundation.json",
+    "phase": "15.1D",
+    "status": "EXTRACTED_NOT_PROMOTED",
+    "sha256": "D6A7AA450A9EDDC9DC7EE170C85622A24F85363D084753F23C546A8CA35FBB25",
+    "records": 95,
+    "normativeRecords": 95,
+    "executableAtAudit": 0
+  },
+  "semanticPolicy": {
+    "unicodeBrailleIsNormativeSerialization": false,
+    "dotsAreDerivedFromUnicodeBraille": true,
+    "contextualRulesPreservedSeparately": true,
+    "caseRulesDeferredToSection": "2.6"
+  },
+  "canonicalBoundary": {
+    "b1CanonicalRuleRecords": 150,
+    "b1CanonicalRulesModified": false,
+    "b1CanonicalAggregateSha256": "EEC320FB02554D838F5C7A1A31CFF04D75419718379F08EDA18577A5973790CB"
+  },
+  "runtimeBoundary": {
+    "symbolCatalogMaterialized": true,
+    "behavioralRuleClassificationMaterialized": false,
+    "behavioralRuleLoweringStarted": false,
+    "translatorStarted": false,
+    "stateMachineStarted": false,
+    "executableRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "runtimeManifestModified": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B2.3 Punctuation behavior classification"
+}

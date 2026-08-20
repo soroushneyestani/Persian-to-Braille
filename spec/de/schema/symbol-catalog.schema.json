@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "German Braille Runtime Symbol Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "textMode",
+    "cellSize",
+    "direction",
+    "source",
+    "identityPolicy",
+    "execution",
+    "summary",
+    "records",
+    "indexes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "const": "de-basisschrift-symbol-catalog"
+    },
+    "status": {
+      "const": "ADMITTED_NON_EXECUTABLE"
+    },
+    "language": {
+      "const": "de"
+    },
+    "textMode": {
+      "const": "basisschrift"
+    },
+    "cellSize": {
+      "const": 6
+    },
+    "direction": {
+      "const": "print-to-braille"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "phase",
+        "status",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "phase": {
+          "const": "15.1D"
+        },
+        "status": {
+          "const": "EXTRACTED_NOT_PROMOTED"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-F0-9]{64}$"
+        }
+      }
+    },
+    "identityPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordKey",
+        "recordKeyNormative",
+        "publicIdentifierFrozen"
+      ],
+      "properties": {
+        "recordKey": {
+          "const": "SOURCE_CONTAINER_PLUS_ONE_BASED_INDEX"
+        },
+        "recordKeyNormative": {
+          "const": false
+        },
+        "publicIdentifierFrozen": {
+          "const": false
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executable",
+        "translatorStarted",
+        "stateMachineStarted",
+        "behavioralRuleLoweringStarted"
+      ],
+      "properties": {
+        "executable": {
+          "const": false
+        },
+        "translatorStarted": {
+          "const": false
+        },
+        "stateMachineStarted": {
+          "const": false
+        },
+        "behavioralRuleLoweringStarted": {
+          "const": false
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 95,
+      "maxItems": 95,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "recordKey",
+          "sourceContainer",
+          "sourceIndex",
+          "disposition",
+          "lookupCapabilities",
+          "sourceRecord"
+        ],
+        "properties": {
+          "recordKey": {
+            "type": "string",
+            "pattern": "^(alphabet|singleFormSigns|multiFormSigns|technicalSigns):[0-9]{3}$"
+          },
+          "sourceContainer": {
+            "enum": [
+              "alphabet",
+              "singleFormSigns",
+              "multiFormSigns",
+              "technicalSigns"
+            ]
+          },
+          "sourceIndex": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "disposition": {
+            "enum": [
+              "DIRECT_PRINT_SYMBOL",
+              "SEMANTIC_SYMBOL"
+            ]
+          },
+          "lookupCapabilities": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "PRINT",
+                "SEMANTIC"
+              ]
+            }
+          },
+          "sourceRecord": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "indexes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "print",
+        "semantic"
+      ],
+      "properties": {
+        "print": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "semantic": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

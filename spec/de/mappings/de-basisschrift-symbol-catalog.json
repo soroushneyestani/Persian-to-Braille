@@ -1,0 +1,2708 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-symbol-catalog",
+  "status": "ADMITTED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "cellSize": 6,
+  "direction": "print-to-braille",
+  "source": {
+    "path": "docs/architecture/phase-15.1d-bskdl-basisschrift-normative-symbol-foundation.json",
+    "phase": "15.1D",
+    "status": "EXTRACTED_NOT_PROMOTED",
+    "sha256": "D6A7AA450A9EDDC9DC7EE170C85622A24F85363D084753F23C546A8CA35FBB25"
+  },
+  "identityPolicy": {
+    "recordKey": "SOURCE_CONTAINER_PLUS_ONE_BASED_INDEX",
+    "recordKeyNormative": false,
+    "publicIdentifierFrozen": false
+  },
+  "execution": {
+    "executable": false,
+    "translatorStarted": false,
+    "stateMachineStarted": false,
+    "behavioralRuleLoweringStarted": false
+  },
+  "summary": {
+    "records": 95,
+    "directPrintRecords": 42,
+    "semanticOnlyRecords": 53,
+    "printOnlyRecords": 30,
+    "printAndSemanticRecords": 12,
+    "printIndexEntries": 42,
+    "semanticIndexEntries": 65,
+    "duplicatePrintKeys": 0,
+    "duplicateSemanticKeys": 0,
+    "roundTripRecords": 95,
+    "roundTripFailures": 0,
+    "semanticLoss": 0,
+    "catalogPayloadCanonicalJsonSha256": "3D25D9A570F7D5194101C3AA601B36910EFEE8CC1080E0DF4DD11C23016D93ED",
+    "symbolCatalogSchemaSha256": "44273337E41152547AB92C5A7DAE1D562C3C5E5F62B96BD918B4753B0214FE57"
+  },
+  "records": [
+    {
+      "recordKey": "alphabet:001",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 1,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "a",
+        "braille": {
+          "unicode": "⠁",
+          "codepoints": [
+            "U+2801"
+          ],
+          "dots": [
+            "1"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:002",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 2,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "b",
+        "braille": {
+          "unicode": "⠃",
+          "codepoints": [
+            "U+2803"
+          ],
+          "dots": [
+            "12"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:003",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 3,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "c",
+        "braille": {
+          "unicode": "⠉",
+          "codepoints": [
+            "U+2809"
+          ],
+          "dots": [
+            "14"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:004",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 4,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "d",
+        "braille": {
+          "unicode": "⠙",
+          "codepoints": [
+            "U+2819"
+          ],
+          "dots": [
+            "145"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:005",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 5,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "e",
+        "braille": {
+          "unicode": "⠑",
+          "codepoints": [
+            "U+2811"
+          ],
+          "dots": [
+            "15"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:006",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 6,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "f",
+        "braille": {
+          "unicode": "⠋",
+          "codepoints": [
+            "U+280B"
+          ],
+          "dots": [
+            "124"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:007",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 7,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "g",
+        "braille": {
+          "unicode": "⠛",
+          "codepoints": [
+            "U+281B"
+          ],
+          "dots": [
+            "1245"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:008",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 8,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "h",
+        "braille": {
+          "unicode": "⠓",
+          "codepoints": [
+            "U+2813"
+          ],
+          "dots": [
+            "125"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:009",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 9,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "i",
+        "braille": {
+          "unicode": "⠊",
+          "codepoints": [
+            "U+280A"
+          ],
+          "dots": [
+            "24"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:010",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 10,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "j",
+        "braille": {
+          "unicode": "⠚",
+          "codepoints": [
+            "U+281A"
+          ],
+          "dots": [
+            "245"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:011",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 11,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "k",
+        "braille": {
+          "unicode": "⠅",
+          "codepoints": [
+            "U+2805"
+          ],
+          "dots": [
+            "13"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:012",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 12,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "l",
+        "braille": {
+          "unicode": "⠇",
+          "codepoints": [
+            "U+2807"
+          ],
+          "dots": [
+            "123"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:013",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 13,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "m",
+        "braille": {
+          "unicode": "⠍",
+          "codepoints": [
+            "U+280D"
+          ],
+          "dots": [
+            "134"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:014",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 14,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "n",
+        "braille": {
+          "unicode": "⠝",
+          "codepoints": [
+            "U+281D"
+          ],
+          "dots": [
+            "1345"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:015",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 15,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "o",
+        "braille": {
+          "unicode": "⠕",
+          "codepoints": [
+            "U+2815"
+          ],
+          "dots": [
+            "135"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:016",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 16,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "p",
+        "braille": {
+          "unicode": "⠏",
+          "codepoints": [
+            "U+280F"
+          ],
+          "dots": [
+            "1234"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:017",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 17,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "q",
+        "braille": {
+          "unicode": "⠟",
+          "codepoints": [
+            "U+281F"
+          ],
+          "dots": [
+            "12345"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:018",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 18,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "r",
+        "braille": {
+          "unicode": "⠗",
+          "codepoints": [
+            "U+2817"
+          ],
+          "dots": [
+            "1235"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:019",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 19,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "s",
+        "braille": {
+          "unicode": "⠎",
+          "codepoints": [
+            "U+280E"
+          ],
+          "dots": [
+            "234"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:020",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 20,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "t",
+        "braille": {
+          "unicode": "⠞",
+          "codepoints": [
+            "U+281E"
+          ],
+          "dots": [
+            "2345"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:021",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 21,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "u",
+        "braille": {
+          "unicode": "⠥",
+          "codepoints": [
+            "U+2825"
+          ],
+          "dots": [
+            "136"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:022",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 22,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "v",
+        "braille": {
+          "unicode": "⠧",
+          "codepoints": [
+            "U+2827"
+          ],
+          "dots": [
+            "1236"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:023",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 23,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "w",
+        "braille": {
+          "unicode": "⠺",
+          "codepoints": [
+            "U+283A"
+          ],
+          "dots": [
+            "2456"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:024",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 24,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "x",
+        "braille": {
+          "unicode": "⠭",
+          "codepoints": [
+            "U+282D"
+          ],
+          "dots": [
+            "1346"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:025",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 25,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "y",
+        "braille": {
+          "unicode": "⠽",
+          "codepoints": [
+            "U+283D"
+          ],
+          "dots": [
+            "13456"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:026",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 26,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "z",
+        "braille": {
+          "unicode": "⠵",
+          "codepoints": [
+            "U+2835"
+          ],
+          "dots": [
+            "1356"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:027",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 27,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "ä",
+        "braille": {
+          "unicode": "⠜",
+          "codepoints": [
+            "U+281C"
+          ],
+          "dots": [
+            "345"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:028",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 28,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "ö",
+        "braille": {
+          "unicode": "⠪",
+          "codepoints": [
+            "U+282A"
+          ],
+          "dots": [
+            "246"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:029",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 29,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "ü",
+        "braille": {
+          "unicode": "⠳",
+          "codepoints": [
+            "U+2833"
+          ],
+          "dots": [
+            "1256"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "alphabet:030",
+      "sourceContainer": "alphabet",
+      "sourceIndex": 30,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT"
+      ],
+      "sourceRecord": {
+        "print": "ß",
+        "braille": {
+          "unicode": "⠮",
+          "codepoints": [
+            "U+282E"
+          ],
+          "dots": [
+            "2346"
+          ],
+          "cellCount": 1
+        },
+        "caseSemantics": "UNDIFFERENTIATED_WITHOUT_CASE_MARKER",
+        "sourceSection": "2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:001",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 1,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": ",",
+        "semantic": "COMMA",
+        "braille": {
+          "unicode": "⠂",
+          "codepoints": [
+            "U+2802"
+          ],
+          "dots": [
+            "2"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:002",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 2,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": ";",
+        "semantic": "SEMICOLON",
+        "braille": {
+          "unicode": "⠆",
+          "codepoints": [
+            "U+2806"
+          ],
+          "dots": [
+            "23"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:003",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 3,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": ":",
+        "semantic": "COLON",
+        "braille": {
+          "unicode": "⠒",
+          "codepoints": [
+            "U+2812"
+          ],
+          "dots": [
+            "25"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:004",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 4,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "?",
+        "semantic": "QUESTION_MARK",
+        "braille": {
+          "unicode": "⠢",
+          "codepoints": [
+            "U+2822"
+          ],
+          "dots": [
+            "26"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:005",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 5,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "!",
+        "semantic": "EXCLAMATION_MARK",
+        "braille": {
+          "unicode": "⠖",
+          "codepoints": [
+            "U+2816"
+          ],
+          "dots": [
+            "235"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:006",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 6,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "()",
+        "semantic": "ROUND_BRACKET_OPEN_OR_CLOSE",
+        "braille": {
+          "unicode": "⠶",
+          "codepoints": [
+            "U+2836"
+          ],
+          "dots": [
+            "2356"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:007",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 7,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "„",
+        "semantic": "OPENING_QUOTATION_MARK",
+        "braille": {
+          "unicode": "⠦",
+          "codepoints": [
+            "U+2826"
+          ],
+          "dots": [
+            "236"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:008",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 8,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "“",
+        "semantic": "CLOSING_QUOTATION_MARK",
+        "braille": {
+          "unicode": "⠴",
+          "codepoints": [
+            "U+2834"
+          ],
+          "dots": [
+            "356"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:009",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 9,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "§",
+        "semantic": "SECTION_SIGN",
+        "braille": {
+          "unicode": "⠬",
+          "codepoints": [
+            "U+282C"
+          ],
+          "dots": [
+            "346"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:010",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 10,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": ".",
+        "semantic": "FULL_STOP",
+        "braille": {
+          "unicode": "⠄",
+          "codepoints": [
+            "U+2804"
+          ],
+          "dots": [
+            "3"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:011",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 11,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "–",
+        "semantic": "HORIZONTAL_DASH_BASE_SIGN",
+        "braille": {
+          "unicode": "⠤",
+          "codepoints": [
+            "U+2824"
+          ],
+          "dots": [
+            "36"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "singleFormSigns:012",
+      "sourceContainer": "singleFormSigns",
+      "sourceIndex": 12,
+      "disposition": "DIRECT_PRINT_SYMBOL",
+      "lookupCapabilities": [
+        "PRINT",
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "print": "‚",
+        "semantic": "APOSTROPHE",
+        "braille": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.1",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:001",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 1,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "DASH_EXTENSION_OR_PRIMARY_LIST_MARKER",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:002",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 2,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SEPARATOR_OR_SECONDARY_LIST_MARKER",
+        "braille": {
+          "unicode": "⠐⠤",
+          "codepoints": [
+            "U+2810",
+            "U+2824"
+          ],
+          "dots": [
+            "5",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:003",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 3,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SQUARE_BRACKET_OPEN_OR_CLOSE",
+        "braille": {
+          "unicode": "⠠⠶",
+          "codepoints": [
+            "U+2820",
+            "U+2836"
+          ],
+          "dots": [
+            "6",
+            "2356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:004",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 4,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "ANGLE_BRACKET_OPEN_OR_CLOSE",
+        "braille": {
+          "unicode": "⠐⠶",
+          "codepoints": [
+            "U+2810",
+            "U+2836"
+          ],
+          "dots": [
+            "5",
+            "2356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:005",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 5,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "CURLY_BRACKET_OPEN_OR_CLOSE",
+        "braille": {
+          "unicode": "⠐⠷",
+          "codepoints": [
+            "U+2810",
+            "U+2837"
+          ],
+          "dots": [
+            "5",
+            "12356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:006",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 6,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PHONETIC_BRACKET_OPEN",
+        "braille": {
+          "unicode": "⠘⠷",
+          "codepoints": [
+            "U+2818",
+            "U+2837"
+          ],
+          "dots": [
+            "45",
+            "12356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:007",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 7,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PHONETIC_BRACKET_CLOSE",
+        "braille": {
+          "unicode": "⠘⠾",
+          "codepoints": [
+            "U+2818",
+            "U+283E"
+          ],
+          "dots": [
+            "45",
+            "23456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:008",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 8,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PHONEMIC_BRACKET_OPEN_OR_CLOSE",
+        "braille": {
+          "unicode": "⠘⠌",
+          "codepoints": [
+            "U+2818",
+            "U+280C"
+          ],
+          "dots": [
+            "45",
+            "34"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:009",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 9,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SINGLE_QUOTATION_OPEN",
+        "braille": {
+          "unicode": "⠠⠦",
+          "codepoints": [
+            "U+2820",
+            "U+2826"
+          ],
+          "dots": [
+            "6",
+            "236"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:010",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 10,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SINGLE_QUOTATION_CLOSE",
+        "braille": {
+          "unicode": "⠠⠴",
+          "codepoints": [
+            "U+2820",
+            "U+2834"
+          ],
+          "dots": [
+            "6",
+            "356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:011",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 11,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "FORWARD_SLASH",
+        "braille": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:012",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 12,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "ELLIPSIS_OR_CONTINUATION",
+        "braille": {
+          "unicode": "⠄⠄⠄",
+          "codepoints": [
+            "U+2804",
+            "U+2804",
+            "U+2804"
+          ],
+          "dots": [
+            "3",
+            "3",
+            "3"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:013",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 13,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "AMPERSAND",
+        "braille": {
+          "unicode": "⠐⠥",
+          "codepoints": [
+            "U+2810",
+            "U+2825"
+          ],
+          "dots": [
+            "5",
+            "136"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:014",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 14,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "ASTERISK",
+        "braille": {
+          "unicode": "⠠⠔",
+          "codepoints": [
+            "U+2820",
+            "U+2814"
+          ],
+          "dots": [
+            "6",
+            "35"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:015",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 15,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "RIGHT_ARROW",
+        "braille": {
+          "unicode": "⠒⠒⠕",
+          "codepoints": [
+            "U+2812",
+            "U+2812",
+            "U+2815"
+          ],
+          "dots": [
+            "25",
+            "25",
+            "135"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:016",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 16,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "LEFT_ARROW",
+        "braille": {
+          "unicode": "⠪⠒⠒",
+          "codepoints": [
+            "U+282A",
+            "U+2812",
+            "U+2812"
+          ],
+          "dots": [
+            "246",
+            "25",
+            "25"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:017",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 17,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "DOUBLE_ARROW",
+        "braille": {
+          "unicode": "⠪⠒⠒⠕",
+          "codepoints": [
+            "U+282A",
+            "U+2812",
+            "U+2812",
+            "U+2815"
+          ],
+          "dots": [
+            "246",
+            "25",
+            "25",
+            "135"
+          ],
+          "cellCount": 4
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:018",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 18,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PERCENT",
+        "braille": {
+          "unicode": "⠼⠚⠴",
+          "codepoints": [
+            "U+283C",
+            "U+281A",
+            "U+2834"
+          ],
+          "dots": [
+            "3456",
+            "245",
+            "356"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:019",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 19,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PER_MILLE",
+        "braille": {
+          "unicode": "⠼⠚⠴⠴",
+          "codepoints": [
+            "U+283C",
+            "U+281A",
+            "U+2834",
+            "U+2834"
+          ],
+          "dots": [
+            "3456",
+            "245",
+            "356",
+            "356"
+          ],
+          "cellCount": 4
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:020",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 20,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "DEGREE",
+        "braille": {
+          "unicode": "⠈⠴",
+          "codepoints": [
+            "U+2808",
+            "U+2834"
+          ],
+          "dots": [
+            "4",
+            "356"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:021",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 21,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "MINUTE",
+        "braille": {
+          "unicode": "⠈⠔",
+          "codepoints": [
+            "U+2808",
+            "U+2814"
+          ],
+          "dots": [
+            "4",
+            "35"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:022",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 22,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SECOND",
+        "braille": {
+          "unicode": "⠈⠔⠔",
+          "codepoints": [
+            "U+2808",
+            "U+2814",
+            "U+2814"
+          ],
+          "dots": [
+            "4",
+            "35",
+            "35"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:023",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 23,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "BACKSLASH",
+        "braille": {
+          "unicode": "⠈⠌",
+          "codepoints": [
+            "U+2808",
+            "U+280C"
+          ],
+          "dots": [
+            "4",
+            "34"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:024",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 24,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "AT_SIGN",
+        "braille": {
+          "unicode": "⠈⠜",
+          "codepoints": [
+            "U+2808",
+            "U+281C"
+          ],
+          "dots": [
+            "4",
+            "345"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:025",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 25,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "UNDERSCORE",
+        "braille": {
+          "unicode": "⠈⠸",
+          "codepoints": [
+            "U+2808",
+            "U+2838"
+          ],
+          "dots": [
+            "4",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:026",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 26,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "NUMBER_OR_HASH_SIGN",
+        "braille": {
+          "unicode": "⠈⠼",
+          "codepoints": [
+            "U+2808",
+            "U+283C"
+          ],
+          "dots": [
+            "4",
+            "3456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:027",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 27,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "EURO_SIGN",
+        "braille": {
+          "unicode": "⠈⠑",
+          "codepoints": [
+            "U+2808",
+            "U+2811"
+          ],
+          "dots": [
+            "4",
+            "15"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:028",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 28,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "DOLLAR_SIGN",
+        "braille": {
+          "unicode": "⠈⠎",
+          "codepoints": [
+            "U+2808",
+            "U+280E"
+          ],
+          "dots": [
+            "4",
+            "234"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:029",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 29,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "CENT_SIGN",
+        "braille": {
+          "unicode": "⠈⠉",
+          "codepoints": [
+            "U+2808",
+            "U+2809"
+          ],
+          "dots": [
+            "4",
+            "14"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:030",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 30,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "POUND_OR_LIRA_SIGN",
+        "braille": {
+          "unicode": "⠈⠇",
+          "codepoints": [
+            "U+2808",
+            "U+2807"
+          ],
+          "dots": [
+            "4",
+            "123"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:031",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 31,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "COPYRIGHT_SIGN",
+        "braille": {
+          "unicode": "⠶⠘⠉⠶",
+          "codepoints": [
+            "U+2836",
+            "U+2818",
+            "U+2809",
+            "U+2836"
+          ],
+          "dots": [
+            "2356",
+            "45",
+            "14",
+            "2356"
+          ],
+          "cellCount": 4
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "multiFormSigns:032",
+      "sourceContainer": "multiFormSigns",
+      "sourceIndex": 32,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "REGISTERED_TRADEMARK_SIGN",
+        "braille": {
+          "unicode": "⠶⠘⠗⠶",
+          "codepoints": [
+            "U+2836",
+            "U+2818",
+            "U+2817",
+            "U+2836"
+          ],
+          "dots": [
+            "2356",
+            "45",
+            "1235",
+            "2356"
+          ],
+          "cellCount": 4
+        },
+        "sourceSection": "2.2.2",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:001",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 1,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "BRAILLE_TRANSCRIBER_BRACKET",
+        "braille": {
+          "unicode": "⠠⠰⠶",
+          "codepoints": [
+            "U+2820",
+            "U+2830",
+            "U+2836"
+          ],
+          "dots": [
+            "6",
+            "56",
+            "2356"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:002",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 2,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "NUMBER_INDICATOR",
+        "braille": {
+          "unicode": "⠼",
+          "codepoints": [
+            "U+283C"
+          ],
+          "dots": [
+            "3456"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:003",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 3,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "INITIAL_CAPITAL_INDICATOR",
+        "braille": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:004",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 4,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "INTERNAL_CAPITAL_INDICATOR_VOLL_KURZ",
+        "braille": {
+          "unicode": "⠐⠨",
+          "codepoints": [
+            "U+2810",
+            "U+2828"
+          ],
+          "dots": [
+            "5",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:005",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 5,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "CAPITAL_SEQUENCE_INDICATOR",
+        "braille": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:006",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 6,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "MULTIWORD_CAPITAL_INDICATOR",
+        "braille": {
+          "unicode": "⠘⠘",
+          "codepoints": [
+            "U+2818",
+            "U+2818"
+          ],
+          "dots": [
+            "45",
+            "45"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:007",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 7,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "LOWERCASE_INDICATOR_OR_CANCELLATION_POINT",
+        "braille": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:008",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 8,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "MULTIPURPOSE_ANNOUNCEMENT_INDICATOR",
+        "braille": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:009",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 9,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PRIMARY_EMPHASIS_WORD",
+        "braille": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:010",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 10,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "PRIMARY_EMPHASIS_MULTIWORD",
+        "braille": {
+          "unicode": "⠸⠸",
+          "codepoints": [
+            "U+2838",
+            "U+2838"
+          ],
+          "dots": [
+            "456",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:011",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 11,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SECONDARY_EMPHASIS_WORD_OR_PART",
+        "braille": {
+          "unicode": "⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:012",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 12,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SECONDARY_EMPHASIS_MULTIWORD",
+        "braille": {
+          "unicode": "⠐⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "5",
+            "456"
+          ],
+          "cellCount": 3
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:013",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 13,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "SECONDARY_EMPHASIS_TERMINATOR",
+        "braille": {
+          "unicode": "⠐⠄",
+          "codepoints": [
+            "U+2810",
+            "U+2804"
+          ],
+          "dots": [
+            "5",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:014",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 14,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "TABLE_CELL_SEPARATOR",
+        "braille": {
+          "unicode": "⠒⠒",
+          "codepoints": [
+            "U+2812",
+            "U+2812"
+          ],
+          "dots": [
+            "25",
+            "25"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:015",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 15,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "BASIS_VOLL_WORD_INDICATOR_OR_INSERT_TERMINATOR",
+        "braille": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:016",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 16,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "BASIS_VOLL_MULTIWORD_INDICATOR",
+        "braille": {
+          "unicode": "⠤⠄",
+          "codepoints": [
+            "U+2824",
+            "U+2804"
+          ],
+          "dots": [
+            "36",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:017",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 17,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "MATHEMATICAL_INSERT_INDICATOR",
+        "braille": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:018",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 18,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "FOREIGN_BRAILLE_SINGLE_INDICATOR",
+        "braille": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:019",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 19,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "FOREIGN_BRAILLE_MULTIWORD_INDICATOR",
+        "braille": {
+          "unicode": "⠰⠰",
+          "codepoints": [
+            "U+2830",
+            "U+2830"
+          ],
+          "dots": [
+            "56",
+            "56"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:020",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 20,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "COMPUTER_BRAILLE_SINGLE_WORD_INDICATOR",
+        "braille": {
+          "unicode": "⠠⠨",
+          "codepoints": [
+            "U+2820",
+            "U+2828"
+          ],
+          "dots": [
+            "6",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    },
+    {
+      "recordKey": "technicalSigns:021",
+      "sourceContainer": "technicalSigns",
+      "sourceIndex": 21,
+      "disposition": "SEMANTIC_SYMBOL",
+      "lookupCapabilities": [
+        "SEMANTIC"
+      ],
+      "sourceRecord": {
+        "semantic": "COMPUTER_BRAILLE_MULTIWORD_INDICATOR",
+        "braille": {
+          "unicode": "⠨⠨",
+          "codepoints": [
+            "U+2828",
+            "U+2828"
+          ],
+          "dots": [
+            "46",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "sourceSection": "2.2.3",
+        "normative": true,
+        "executable": false
+      }
+    }
+  ],
+  "indexes": {
+    "print": {
+      "!": "singleFormSigns:005",
+      "()": "singleFormSigns:006",
+      ",": "singleFormSigns:001",
+      ".": "singleFormSigns:010",
+      ":": "singleFormSigns:003",
+      ";": "singleFormSigns:002",
+      "?": "singleFormSigns:004",
+      "a": "alphabet:001",
+      "b": "alphabet:002",
+      "c": "alphabet:003",
+      "d": "alphabet:004",
+      "e": "alphabet:005",
+      "f": "alphabet:006",
+      "g": "alphabet:007",
+      "h": "alphabet:008",
+      "i": "alphabet:009",
+      "j": "alphabet:010",
+      "k": "alphabet:011",
+      "l": "alphabet:012",
+      "m": "alphabet:013",
+      "n": "alphabet:014",
+      "o": "alphabet:015",
+      "p": "alphabet:016",
+      "q": "alphabet:017",
+      "r": "alphabet:018",
+      "s": "alphabet:019",
+      "t": "alphabet:020",
+      "u": "alphabet:021",
+      "v": "alphabet:022",
+      "w": "alphabet:023",
+      "x": "alphabet:024",
+      "y": "alphabet:025",
+      "z": "alphabet:026",
+      "§": "singleFormSigns:009",
+      "ß": "alphabet:030",
+      "ä": "alphabet:027",
+      "ö": "alphabet:028",
+      "ü": "alphabet:029",
+      "–": "singleFormSigns:011",
+      "‚": "singleFormSigns:012",
+      "“": "singleFormSigns:008",
+      "„": "singleFormSigns:007"
+    },
+    "semantic": {
+      "AMPERSAND": "multiFormSigns:013",
+      "ANGLE_BRACKET_OPEN_OR_CLOSE": "multiFormSigns:004",
+      "APOSTROPHE": "singleFormSigns:012",
+      "ASTERISK": "multiFormSigns:014",
+      "AT_SIGN": "multiFormSigns:024",
+      "BACKSLASH": "multiFormSigns:023",
+      "BASIS_VOLL_MULTIWORD_INDICATOR": "technicalSigns:016",
+      "BASIS_VOLL_WORD_INDICATOR_OR_INSERT_TERMINATOR": "technicalSigns:015",
+      "BRAILLE_TRANSCRIBER_BRACKET": "technicalSigns:001",
+      "CAPITAL_SEQUENCE_INDICATOR": "technicalSigns:005",
+      "CENT_SIGN": "multiFormSigns:029",
+      "CLOSING_QUOTATION_MARK": "singleFormSigns:008",
+      "COLON": "singleFormSigns:003",
+      "COMMA": "singleFormSigns:001",
+      "COMPUTER_BRAILLE_MULTIWORD_INDICATOR": "technicalSigns:021",
+      "COMPUTER_BRAILLE_SINGLE_WORD_INDICATOR": "technicalSigns:020",
+      "COPYRIGHT_SIGN": "multiFormSigns:031",
+      "CURLY_BRACKET_OPEN_OR_CLOSE": "multiFormSigns:005",
+      "DASH_EXTENSION_OR_PRIMARY_LIST_MARKER": "multiFormSigns:001",
+      "DEGREE": "multiFormSigns:020",
+      "DOLLAR_SIGN": "multiFormSigns:028",
+      "DOUBLE_ARROW": "multiFormSigns:017",
+      "ELLIPSIS_OR_CONTINUATION": "multiFormSigns:012",
+      "EURO_SIGN": "multiFormSigns:027",
+      "EXCLAMATION_MARK": "singleFormSigns:005",
+      "FOREIGN_BRAILLE_MULTIWORD_INDICATOR": "technicalSigns:019",
+      "FOREIGN_BRAILLE_SINGLE_INDICATOR": "technicalSigns:018",
+      "FORWARD_SLASH": "multiFormSigns:011",
+      "FULL_STOP": "singleFormSigns:010",
+      "HORIZONTAL_DASH_BASE_SIGN": "singleFormSigns:011",
+      "INITIAL_CAPITAL_INDICATOR": "technicalSigns:003",
+      "INTERNAL_CAPITAL_INDICATOR_VOLL_KURZ": "technicalSigns:004",
+      "LEFT_ARROW": "multiFormSigns:016",
+      "LOWERCASE_INDICATOR_OR_CANCELLATION_POINT": "technicalSigns:007",
+      "MATHEMATICAL_INSERT_INDICATOR": "technicalSigns:017",
+      "MINUTE": "multiFormSigns:021",
+      "MULTIPURPOSE_ANNOUNCEMENT_INDICATOR": "technicalSigns:008",
+      "MULTIWORD_CAPITAL_INDICATOR": "technicalSigns:006",
+      "NUMBER_INDICATOR": "technicalSigns:002",
+      "NUMBER_OR_HASH_SIGN": "multiFormSigns:026",
+      "OPENING_QUOTATION_MARK": "singleFormSigns:007",
+      "PERCENT": "multiFormSigns:018",
+      "PER_MILLE": "multiFormSigns:019",
+      "PHONEMIC_BRACKET_OPEN_OR_CLOSE": "multiFormSigns:008",
+      "PHONETIC_BRACKET_CLOSE": "multiFormSigns:007",
+      "PHONETIC_BRACKET_OPEN": "multiFormSigns:006",
+      "POUND_OR_LIRA_SIGN": "multiFormSigns:030",
+      "PRIMARY_EMPHASIS_MULTIWORD": "technicalSigns:010",
+      "PRIMARY_EMPHASIS_WORD": "technicalSigns:009",
+      "QUESTION_MARK": "singleFormSigns:004",
+      "REGISTERED_TRADEMARK_SIGN": "multiFormSigns:032",
+      "RIGHT_ARROW": "multiFormSigns:015",
+      "ROUND_BRACKET_OPEN_OR_CLOSE": "singleFormSigns:006",
+      "SECOND": "multiFormSigns:022",
+      "SECONDARY_EMPHASIS_MULTIWORD": "technicalSigns:012",
+      "SECONDARY_EMPHASIS_TERMINATOR": "technicalSigns:013",
+      "SECONDARY_EMPHASIS_WORD_OR_PART": "technicalSigns:011",
+      "SECTION_SIGN": "singleFormSigns:009",
+      "SEMICOLON": "singleFormSigns:002",
+      "SEPARATOR_OR_SECONDARY_LIST_MARKER": "multiFormSigns:002",
+      "SINGLE_QUOTATION_CLOSE": "multiFormSigns:010",
+      "SINGLE_QUOTATION_OPEN": "multiFormSigns:009",
+      "SQUARE_BRACKET_OPEN_OR_CLOSE": "multiFormSigns:003",
+      "TABLE_CELL_SEPARATOR": "technicalSigns:014",
+      "UNDERSCORE": "multiFormSigns:025"
+    }
+  }
+}
