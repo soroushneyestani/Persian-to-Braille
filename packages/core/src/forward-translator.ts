@@ -4,10 +4,18 @@ import type {
   RuntimeSpecificationBundle,
 } from "./specification.js";
 import { getBundledSpecification } from "./specification.js";
-import { createUnicodePreprocessor } from "./unicode-preprocessor.js";
-import { createRuleSelector } from "./rule-selector.js";
-import { createEngineTokenProducer } from "./engine-token-producer.js";
-import { createModeRuleExecutor } from "./mode-rule-executor.js";
+import {
+  createUnicodePreprocessorForSpecification,
+} from "./unicode-preprocessor.js";
+import {
+  createRuleSelectorForSpecification,
+} from "./rule-selector.js";
+import {
+  createEngineTokenProducerForSpecification,
+} from "./engine-token-producer.js";
+import {
+  createModeRuleExecutorForSpecification,
+} from "./mode-rule-executor.js";
 import type {
   EngineToken,
   ForwardTranslator,
@@ -180,13 +188,25 @@ function tokenStartIndex(
 class SpecificationDrivenForwardTranslator
   implements ForwardTranslator
 {
+  readonly #specification:
+    RuntimeSpecificationBundle;
+
+  constructor(
+    specification: RuntimeSpecificationBundle,
+  ) {
+    this.#specification =
+      specification;
+  }
+
   translate(
     inputText: string,
   ): TranslationOutcome {
     const specification =
-      getBundledSpecification();
+      this.#specification;
     const preprocessor =
-      createUnicodePreprocessor();
+      createUnicodePreprocessorForSpecification(
+        specification,
+      );
     const preprocessing =
       preprocessor.normalize(inputText);
 
@@ -210,11 +230,17 @@ class SpecificationDrivenForwardTranslator
     const characters =
       Array.from(normalizedText);
     const selector =
-      createRuleSelector();
+      createRuleSelectorForSpecification(
+        specification,
+      );
     const tokenProducer =
-      createEngineTokenProducer();
+      createEngineTokenProducerForSpecification(
+        specification,
+      );
     const modeExecutor =
-      createModeRuleExecutor();
+      createModeRuleExecutorForSpecification(
+        specification,
+      );
 
     const producedTokens =
       tokenProducer.produce({
@@ -424,6 +450,23 @@ class SpecificationDrivenForwardTranslator
   }
 }
 
+/**
+ * Creates the current forward execution pipeline from an explicit runtime
+ * specification bundle.
+ *
+ * This is a dependency-injection boundary, not a claim that every Braille
+ * specification is executable by the current Persian-oriented mechanics.
+ */
+export function createForwardTranslatorForSpecification(
+  specification: RuntimeSpecificationBundle,
+): ForwardTranslator {
+  return new SpecificationDrivenForwardTranslator(
+    specification,
+  );
+}
+
 export function createForwardTranslator(): ForwardTranslator {
-  return new SpecificationDrivenForwardTranslator();
+  return createForwardTranslatorForSpecification(
+    getBundledSpecification(),
+  );
 }

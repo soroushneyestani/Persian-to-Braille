@@ -1,4 +1,6 @@
-import { createRuleSelector } from "./rule-selector.js";
+import type { RuntimeSpecificationBundle } from "./specification.js";
+import { getBundledSpecification } from "./specification.js";
+import { createRuleSelectorForSpecification } from "./rule-selector.js";
 import type {
   EngineToken,
   EngineTokenProducer,
@@ -60,20 +62,6 @@ function characterSpan(
   return { start, end };
 }
 
-function textualMatchAt(
-  text: string,
-  codePointIndex: number,
-): RuleMatch | null {
-  const outcome =
-    createRuleSelector().select(
-      text,
-      codePointIndex,
-    );
-
-  return outcome.kind === "match"
-    ? outcome.match
-    : null;
-}
 
 function isLatinCharacterMatch(
   match: RuleMatch | null,
@@ -129,13 +117,26 @@ function continuesNumericRun(
 class SpecificationDrivenEngineTokenProducer
   implements EngineTokenProducer
 {
+  readonly #specification:
+    RuntimeSpecificationBundle;
+
+  constructor(
+    specification: RuntimeSpecificationBundle,
+  ) {
+    this.#specification =
+      specification;
+  }
+
   produce(
     request: EngineTokenProductionRequest,
   ): readonly EngineToken[] {
     const text = request.text;
     const characters = Array.from(text);
     const locations = toLocations(text);
-    const selector = createRuleSelector();
+    const selector =
+      createRuleSelectorForSpecification(
+        this.#specification,
+      );
     const matches = characters.map(
       (_, codePointIndex) => {
         const outcome = selector.select(
@@ -234,6 +235,16 @@ class SpecificationDrivenEngineTokenProducer
  * The producer never defines Braille cell values; structural mode rules in
  * the canonical specification own those outputs.
  */
+export function createEngineTokenProducerForSpecification(
+  specification: RuntimeSpecificationBundle,
+): EngineTokenProducer {
+  return new SpecificationDrivenEngineTokenProducer(
+    specification,
+  );
+}
+
 export function createEngineTokenProducer(): EngineTokenProducer {
-  return new SpecificationDrivenEngineTokenProducer();
+  return createEngineTokenProducerForSpecification(
+    getBundledSpecification(),
+  );
 }

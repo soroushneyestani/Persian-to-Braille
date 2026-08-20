@@ -264,8 +264,16 @@ class SpecificationDrivenUnicodePreprocessor
  * This factory intentionally fails closed if the canonical profile begins to
  * request a Unicode-normalization policy that Phase 4 has not implemented.
  */
-export function createUnicodePreprocessor(): UnicodePreprocessor {
+export function createUnicodePreprocessorForSpecification(
+  specification: RuntimeSpecificationBundle,
+): UnicodePreprocessor {
   return new SpecificationDrivenUnicodePreprocessor(
+    specification,
+  );
+}
+
+export function createUnicodePreprocessor(): UnicodePreprocessor {
+  return createUnicodePreprocessorForSpecification(
     getBundledSpecification(),
   );
 }

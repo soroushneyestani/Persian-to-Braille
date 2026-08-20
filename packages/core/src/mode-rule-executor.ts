@@ -304,8 +304,16 @@ class SpecificationDrivenModeRuleExecutor
   }
 }
 
-export function createModeRuleExecutor(): ModeRuleExecutor {
+export function createModeRuleExecutorForSpecification(
+  specification: RuntimeSpecificationBundle,
+): ModeRuleExecutor {
   return new SpecificationDrivenModeRuleExecutor(
+    specification,
+  );
+}
+
+export function createModeRuleExecutor(): ModeRuleExecutor {
+  return createModeRuleExecutorForSpecification(
     getBundledSpecification(),
   );
 }
