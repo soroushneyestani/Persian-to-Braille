@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B2.3",
+  "status": "PUNCTUATION_RUNTIME_CLASSIFICATION_MATERIALIZED",
+  "title": "German Basisschrift Punctuation Runtime Classification",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "67320be38dc858b706659711ac83b2a9e0d431c0"
+  },
+  "classificationNamespaceAdmission": {
+    "path": "spec/de/runtime-classification",
+    "admissionType": "EXPLICIT_DERIVED_RUNTIME_CLASSIFICATION_LAYER",
+    "historicalTopologyModified": false,
+    "canonicalRulesModified": false
+  },
+  "schema": {
+    "path": "spec/de/schema/rule-classification-set.schema.json",
+    "title": "German Braille Runtime Rule Classification Set",
+    "sha256": "6796CEB062CE838F663892AB841E08F695F49A786BC9AABC1A6DD9F88155FE37",
+    "reusableByNumericClassification": true
+  },
+  "classification": {
+    "path": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+    "records": 28,
+    "families": [
+      "INWORD",
+      "STROKE"
+    ],
+    "dispositionCounts": {
+      "CONTEXTUAL": 16,
+      "DELEGATED": 5,
+      "STRUCTURAL": 4,
+      "STATEFUL": 2,
+      "ARCHITECTURAL_ONLY": 1,
+      "DIRECT_MAPPING": 0,
+      "DEFERRED": 0
+    },
+    "payloadCanonicalJsonSha256": "1B55016286D178876E735A6D24F6CEFB9BBA4E98C0AE6F4A33644FBD68CBB13F"
+  },
+  "decisionPolicy": {
+    "brailleDataImpliesDirectMapping": false,
+    "precedenceSource": "docs/architecture/phase-15.5b2-1-runtime-classification-taxonomy.json",
+    "directMappingCount": 0,
+    "deferredCount": 0
+  },
+  "boundaries": {
+    "b1CanonicalRulesModified": false,
+    "symbolCatalogModified": false,
+    "behavioralLoweringStarted": false,
+    "translatorStarted": false,
+    "stateMachineStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "runtimeManifestModified": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B2.4 Numeric behavior classification"
+}
