@@ -92,12 +92,14 @@ class FakeElement {
 function fixture() {
   const ids = [
     "feature-tab-persian",
+    "feature-tab-german",
     "feature-tab-music",
     "feature-context-text",
     "translate-selection",
     "translation-result",
     "translation-error",
     "taskpane-status",
+    "german-braille-section",
     "music-braille-section",
   ];
 
@@ -305,6 +307,194 @@ test(
         "aria-selected",
       ),
       "true",
+    );
+  },
+);
+
+test(
+  "Deutsch is available in every Office host and owns an isolated shell",
+  () => {
+    const {
+      document,
+      elements,
+      actions,
+    } =
+      fixture();
+
+    const controller =
+      createFeatureTabController(
+        document,
+      );
+
+    controller.setHost(
+      "excel",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-german"
+      ].hidden,
+      false,
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-music"
+      ].hidden,
+      true,
+    );
+
+    elements[
+      "feature-tab-german"
+    ].click();
+
+    assert.equal(
+      controller.activeTab(),
+      "german",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-german"
+      ].getAttribute(
+        "aria-selected",
+      ),
+      "true",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-persian"
+      ].getAttribute(
+        "aria-selected",
+      ),
+      "false",
+    );
+
+    assert.equal(
+      actions.classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
+    assert.equal(
+      elements[
+        "german-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      false,
+    );
+
+    assert.equal(
+      elements[
+        "music-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
+    assert.match(
+      elements[
+        "feature-context-text"
+      ].textContent,
+      /German Braille/,
+    );
+
+    controller.setHost(
+      "powerpoint",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "german",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-music"
+      ].hidden,
+      true,
+    );
+  },
+);
+
+test(
+  "keyboard navigation places Deutsch between Persian and Music",
+  () => {
+    const {
+      document,
+      elements,
+    } =
+      fixture();
+
+    const controller =
+      createFeatureTabController(
+        document,
+      );
+
+    controller.setHost(
+      "word",
+    );
+
+    elements[
+      "feature-tab-persian"
+    ].keydown(
+      "ArrowRight",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "german",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-german"
+      ].focused,
+      true,
+    );
+
+    elements[
+      "feature-tab-german"
+    ].keydown(
+      "ArrowRight",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "music",
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-music"
+      ].focused,
+      true,
+    );
+
+    elements[
+      "feature-tab-music"
+    ].keydown(
+      "ArrowLeft",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "german",
+    );
+
+    elements[
+      "feature-tab-german"
+    ].keydown(
+      "Home",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "persian",
     );
   },
 );

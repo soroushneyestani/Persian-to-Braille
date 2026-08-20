@@ -1,5 +1,6 @@
 export type FeatureTabId =
   | "persian"
+  | "german"
   | "music";
 
 export interface FeatureTabController {
@@ -17,10 +18,13 @@ export interface FeatureTabController {
 
 interface FeatureTabDom {
   readonly persianTab: HTMLElement;
+  readonly germanTab: HTMLElement;
   readonly musicTab: HTMLElement;
   readonly intro: HTMLElement;
   readonly persianSurfaces:
     readonly HTMLElement[];
+  readonly germanSurface:
+    HTMLElement;
   readonly musicSurface:
     HTMLElement;
 }
@@ -67,32 +71,51 @@ function featureDom(
         document,
         "feature-tab-persian",
       ),
+
+    germanTab:
+      requiredElement(
+        document,
+        "feature-tab-german",
+      ),
+
     musicTab:
       requiredElement(
         document,
         "feature-tab-music",
       ),
+
     intro:
       requiredElement(
         document,
         "feature-context-text",
       ),
+
     persianSurfaces:
       Object.freeze([
         translationActions,
+
         requiredElement(
           document,
           "translation-result",
         ),
+
         requiredElement(
           document,
           "translation-error",
         ),
+
         requiredElement(
           document,
           "taskpane-status",
         ),
       ]),
+
+    germanSurface:
+      requiredElement(
+        document,
+        "german-braille-section",
+      ),
+
     musicSurface:
       requiredElement(
         document,
@@ -155,14 +178,27 @@ export function createFeatureTabController(
       current ===
       "persian";
 
+    const german =
+      current ===
+      "german";
+
+    const music =
+      current ===
+      "music";
+
     setTabSelected(
       ui.persianTab,
       persian,
     );
 
     setTabSelected(
+      ui.germanTab,
+      german,
+    );
+
+    setTabSelected(
       ui.musicTab,
-      !persian,
+      music,
     );
 
     for (
@@ -176,15 +212,26 @@ export function createFeatureTabController(
     }
 
     setSurfaceVisible(
+      ui.germanSurface,
+      german,
+    );
+
+    setSurfaceVisible(
       ui.musicSurface,
-      !persian
+      music
       && wordHost,
     );
 
-    ui.intro.textContent =
-      persian
-        ? "Translate the current supported Office selection through the shared Persian Braille SDK."
-        : "Convert a Standard MIDI file to Music Braille through the shared public SDK, preview it, and insert it into Word.";
+    if (persian) {
+      ui.intro.textContent =
+        "Translate the current supported Office selection through the shared Persian Braille SDK.";
+    } else if (german) {
+      ui.intro.textContent =
+        "German Braille workspace. Translation controls will be enabled through the shared German Core.";
+    } else {
+      ui.intro.textContent =
+        "Convert a Standard MIDI file to Music Braille through the shared public SDK, preview it, and insert it into Word.";
+    }
   };
 
   const select = (
@@ -212,6 +259,15 @@ export function createFeatureTabController(
     },
   );
 
+  ui.germanTab.addEventListener(
+    "click",
+    () => {
+      select(
+        "german",
+      );
+    },
+  );
+
   ui.musicTab.addEventListener(
     "click",
     () => {
@@ -225,6 +281,58 @@ export function createFeatureTabController(
     "keydown",
     (event) => {
       if (
+        event.key === "ArrowRight"
+      ) {
+        event.preventDefault();
+
+        select(
+          "german",
+        );
+
+        ui.germanTab.focus();
+        return;
+      }
+
+      if (
+        event.key === "End"
+      ) {
+        event.preventDefault();
+
+        if (wordHost) {
+          select(
+            "music",
+          );
+
+          ui.musicTab.focus();
+        } else {
+          select(
+            "german",
+          );
+
+          ui.germanTab.focus();
+        }
+      }
+    },
+  );
+
+  ui.germanTab.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "ArrowLeft"
+        || event.key === "Home"
+      ) {
+        event.preventDefault();
+
+        select(
+          "persian",
+        );
+
+        ui.persianTab.focus();
+        return;
+      }
+
+      if (
         wordHost
         && (
           event.key === "ArrowRight"
@@ -232,9 +340,11 @@ export function createFeatureTabController(
         )
       ) {
         event.preventDefault();
+
         select(
           "music",
         );
+
         ui.musicTab.focus();
       }
     },
@@ -245,12 +355,26 @@ export function createFeatureTabController(
     (event) => {
       if (
         event.key === "ArrowLeft"
-        || event.key === "Home"
       ) {
         event.preventDefault();
+
+        select(
+          "german",
+        );
+
+        ui.germanTab.focus();
+        return;
+      }
+
+      if (
+        event.key === "Home"
+      ) {
+        event.preventDefault();
+
         select(
           "persian",
         );
+
         ui.persianTab.focus();
       }
     },
