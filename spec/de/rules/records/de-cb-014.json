@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-014",
+    "section": "2.11",
+    "kind": "PREFERRED_LINE_BREAK",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When a Computerbraille passage does not fit on a line, breaking at a real content blank is preferred where possible.",
+    "preferredBoundary": "REAL_CONTENT_BLANK"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

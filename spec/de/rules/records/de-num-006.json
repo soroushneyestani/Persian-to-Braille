@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-006",
+    "section": "2.3.1.2",
+    "kind": "ORDINAL",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Ordinals may be represented with ordinary digits followed by dot 3 or with the compact lowered-digit notation.",
+    "loweredDigitAlphabet": {
+      "1": {
+        "unicode": "⠂",
+        "codepoint": "U+2802",
+        "dots": "2"
+      },
+      "2": {
+        "unicode": "⠆",
+        "codepoint": "U+2806",
+        "dots": "23"
+      },
+      "3": {
+        "unicode": "⠒",
+        "codepoint": "U+2812",
+        "dots": "25"
+      },
+      "4": {
+        "unicode": "⠲",
+        "codepoint": "U+2832",
+        "dots": "256"
+      },
+      "5": {
+        "unicode": "⠢",
+        "codepoint": "U+2822",
+        "dots": "26"
+      },
+      "6": {
+        "unicode": "⠖",
+        "codepoint": "U+2816",
+        "dots": "235"
+      },
+      "7": {
+        "unicode": "⠶",
+        "codepoint": "U+2836",
+        "dots": "2356"
+      },
+      "8": {
+        "unicode": "⠦",
+        "codepoint": "U+2826",
+        "dots": "236"
+      },
+      "9": {
+        "unicode": "⠔",
+        "codepoint": "U+2814",
+        "dots": "35"
+      },
+      "0": {
+        "unicode": "⠴",
+        "codepoint": "U+2834",
+        "dots": "356"
+      }
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-NUM-CASE-003"
+    ]
+  },
+  "notes": []
+}

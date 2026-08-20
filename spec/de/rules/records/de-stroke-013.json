@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-013",
+    "section": "2.5.2",
+    "kind": "SLASH_SPACING",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A slash normally has no surrounding blanks when each side contains one word or one number; multiword sides normally use surrounding blanks.",
+    "spacingPolicy": {
+      "singleWordOrNumberEachSide": "NO_BLANKS",
+      "multiwordEitherSide": "SURROUND_WITH_BLANKS",
+      "sourceLayoutMayBePreserved": true
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

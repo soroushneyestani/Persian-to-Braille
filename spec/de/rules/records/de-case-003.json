@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-003",
+    "section": "2.6",
+    "kind": "SYSTEMATIC_CAPITAL_MODE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A document may explicitly mark all uppercase letters; in that mode unannounced letters are lowercase.",
+    "mode": "SYSTEMATIC_CAPITAL_MARKING"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

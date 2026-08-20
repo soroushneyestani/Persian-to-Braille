@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-SPECIAL-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-SPECIAL-001",
+    "section": "2.8.2",
+    "kind": "SPECIAL_FORM_LETTER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Specially formed letter-like symbols use point 4 before the corresponding letter cell.",
+    "marker": {
+      "unicode": "⠈",
+      "codepoints": [
+        "U+2808"
+      ],
+      "dots": [
+        "4"
+      ],
+      "cellCount": 1
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-SPECIAL-CASE-001"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-015",
+    "section": "2.10",
+    "kind": "MEASUREMENT_UNIT_POLICY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The special Mathematikschrift unit indicator is normally not used in German Textschrift.",
+    "matheschriftUnitMarker": {
+      "unicode": "⠸",
+      "codepoints": [
+        "U+2838"
+      ],
+      "dots": [
+        "456"
+      ],
+      "cellCount": 1
+    },
+    "textschriftDefaultUse": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

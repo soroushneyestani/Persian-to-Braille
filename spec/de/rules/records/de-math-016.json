@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-016",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-016",
+    "section": "2.10",
+    "kind": "FULL_MATH_PROFILE_SWITCH",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Complex mathematical expressions should switch from the inline Textschrift technique to the German Mathematikschrift system.",
+    "profileSwitch": true,
+    "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-008"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-006",
+    "section": "2.10",
+    "kind": "MULTIPLICATION_DOT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A blank before the multiplication dot may be omitted. A number following the multiplication dot must carry a number indicator.",
+    "blankBeforeOptional": true,
+    "followingNumberRequiresNumberIndicator": true,
+    "dependency": "DE-NUM-001"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-004"
+    ]
+  },
+  "notes": []
+}

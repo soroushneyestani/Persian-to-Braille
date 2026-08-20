@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-015",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-015",
+    "section": "2.11",
+    "kind": "COMPUTERBRAILLE_LINE_BREAK_MARKER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When a suitable real blank is unavailable, a line may end with dot 4 as the Computerbraille continuation separator.",
+    "marker": {
+      "unicode": "⠈",
+      "codepoints": [
+        "U+2808"
+      ],
+      "dots": [
+        "4"
+      ],
+      "cellCount": 1
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-013"
+    ]
+  },
+  "notes": []
+}

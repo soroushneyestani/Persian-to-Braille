@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-011",
+    "section": "2.9",
+    "kind": "SHORT_SPAN_OPTIMIZATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "For foreign-system spans of one to three words, each word may be individually marked to save space.",
+    "minimumWords": 1,
+    "maximumWords": 3,
+    "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS_ALLOWED"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-003",
+      "DE-FLANG-CASE-004"
+    ]
+  },
+  "notes": []
+}

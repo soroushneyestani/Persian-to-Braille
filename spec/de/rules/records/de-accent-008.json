@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-008",
+  "introducedInMode": "basisschrift",
+  "status": "architectural",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-008",
+    "section": "2.8.1",
+    "kind": "LIGATURE_DISTINCTION",
+    "normative": false,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The French oe ligature has an explicit language-specific Braille cell; section 2.8.1 does not define it as a generic base-letter plus diacritic case.",
+    "architecturalInference": true,
+    "evidenceRole": "TABLE_STRUCTURE_INFERENCE"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

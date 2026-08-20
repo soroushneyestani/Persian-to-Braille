@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B1.6",
+  "phaseGroup": "15.5B1",
+  "status": "CLOSED",
+  "title": "Basisschrift Canonical Specification Materialization Closure",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "preClosureHead": "3dde0083df3feb0464f0fcd3d066a480a46d2e6a"
+  },
+  "substeps": {
+    "B1.1": "CLOSED",
+    "B1.2": "CLOSED",
+    "B1.3": "CLOSED",
+    "B1.4": "CANONICAL_RULES_MATERIALIZED",
+    "B1.5": "DETERMINISTIC_VALIDATION_PASS",
+    "B1.6": "CLOSED"
+  },
+  "schema": {
+    "strategy": "GERMAN_SPECIALIZATION",
+    "canonicalRuntimeModel": "TWO_LAYER_CANONICAL_AND_RUNTIME_MODEL",
+    "profileSchemaSha256": "64D778D74EB8F65D7375F25F99755BCCC2727A0495A036FCFE308FC00DE8F082",
+    "ruleSchemaSha256": "1C05FB2EFE7CEE91EBD2F773B1269A7F90950658B7533B1D13C8CF6576BDB035"
+  },
+  "profile": {
+    "id": "de-basisschrift",
+    "identityScope": "INTERNAL_CANONICAL_SPECIFICATION",
+    "publicIdentifierFrozen": false,
+    "status": "candidate",
+    "version": "0.1.0",
+    "language": "de",
+    "textMode": "basisschrift",
+    "cellSize": 6,
+    "direction": "print-to-braille",
+    "sha256": "CCAB502FD6BC1AF75BF0824AE352D7BAE26517C59B63FF380EE8236877718068"
+  },
+  "materialization": {
+    "sourceContracts": 10,
+    "sourceRules": 150,
+    "profileRuleIds": 150,
+    "canonicalRuleRecords": 150,
+    "profileRecordBijection": "PASS",
+    "filenameBijection": "PASS",
+    "filenameConvention": "LOWERCASE_RULE_ID_DOT_JSON",
+    "canonicalRulesetAggregateSha256": "EEC320FB02554D838F5C7A1A31CFF04D75419718379F08EDA18577A5973790CB",
+    "sourceContractHashManifestSha256": "32CA453003605E6CB6BEC204ED4193F2B8EA3C1BC044D33B21DEB61B735A9F9D"
+  },
+  "validation": {
+    "validationCases": 88,
+    "singleRuleCases": 63,
+    "multiRuleCases": 25,
+    "validationLinkEdges": 117,
+    "rulesWithValidation": 85,
+    "rulesWithoutValidation": 65,
+    "unlinkedValidationCases": 0,
+    "inventedValidationLinks": 0
+  },
+  "determinism": {
+    "semanticRegeneration": "150/150",
+    "byteDeterministicRegeneration": "150/150",
+    "sourceRoundTrip": "150/150",
+    "semanticLoss": 0,
+    "deterministicValidationStatus": "PASS"
+  },
+  "runtimeBoundary": {
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "runtimeClassificationStarted": false,
+    "runtimeLoweringStarted": false,
+    "runtimeManifestChanged": false,
+    "runtimeBuilderChanged": false,
+    "germanRuntimeBundles": 0,
+    "persianRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "persianRuntimeUnchanged": true
+  },
+  "regionalBoundary": {
+    "swissApplied": false,
+    "swissFourthMode": false,
+    "regionalRuntimeOwner": "15.5F"
+  },
+  "deferredDependencies": {
+    "count": 7,
+    "preserved": true,
+    "inventedResolution": false
+  },
+  "frozenEvidence": {
+    "b14ArchitectureJsonSha256": "3F312F2CC76AF102C2FC753CD6B719B95DAB28F0BB5EA0DB9D77B5C38ED6442F",
+    "b14ArchitectureMarkdownSha256": "0AC9791F23FB7918A8F6AC30D73301F04283E00A0FD4803951C4DA142C29F8BA"
+  },
+  "closureDecision": {
+    "phase15_5B1Status": "CLOSED",
+    "canonicalBasisschriftSpecificationMaterialized": true,
+    "runtimeImplementationStarted": false,
+    "readyForB2": true
+  },
+  "nextStep": "15.5B2 Alphabet / punctuation / numbers runtime classification"
+}

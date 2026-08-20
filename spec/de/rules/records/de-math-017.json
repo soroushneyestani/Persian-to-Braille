@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-017",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-017",
+    "section": "2.10",
+    "kind": "TEXT_TO_MATH_DELIMITER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠐⠂",
+      "codepoints": [
+        "U+2810",
+        "U+2802"
+      ],
+      "dots": [
+        "5",
+        "2"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The Text-to-Math delimiter is placed immediately before the Mathematikschrift span without an intervening blank.",
+    "blankBeforeSpan": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-008"
+    ]
+  },
+  "notes": []
+}

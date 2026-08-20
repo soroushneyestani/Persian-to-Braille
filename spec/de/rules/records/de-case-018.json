@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-018",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-018",
+    "section": "2.6.8",
+    "kind": "SENTENCE_PERIOD_SINGLE_LETTER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A standalone letter before a sentence-ending period remains subject to normal letter-case rules; the sentence period must not be mistaken for an abbreviation point.",
+    "profileBehavior": {
+      "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+      "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+      "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

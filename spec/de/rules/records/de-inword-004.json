@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-004",
+    "section": "2.13",
+    "kind": "CANCELLATION_POINT_PREFIX",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A covered punctuation sign or arrow that occurs inside a word receives a preceding cancellation point.",
+    "marker": {
+      "unicode": "⠠",
+      "codepoints": [
+        "U+2820"
+      ],
+      "dots": [
+        "6"
+      ],
+      "cellCount": 1
+    },
+    "condition": "SIGN_OCCURS_INSIDE_WORD"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

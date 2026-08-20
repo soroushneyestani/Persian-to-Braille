@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-005",
+    "section": "2.9",
+    "kind": "UNAMBIGUOUS_GERMAN_INSERT_MODE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "BSKDL recommends an unambiguous explicit Basis/Voll representation where appropriate.",
+    "markerDefinitionDependency": "4.8",
+    "observedExample": {
+      "start": {
+        "unicode": "⠤⠄",
+        "codepoints": [
+          "U+2824",
+          "U+2804"
+        ],
+        "dots": [
+          "36",
+          "3"
+        ],
+        "cellCount": 2
+      },
+      "end": {
+        "unicode": "⠠⠄",
+        "codepoints": [
+          "U+2820",
+          "U+2804"
+        ],
+        "dots": [
+          "6",
+          "3"
+        ],
+        "cellCount": 2
+      }
+    },
+    "markerStatus": "OBSERVED_IN_2_9_EXAMPLE_NOT_FROZEN_UNTIL_4_8_AUDIT"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

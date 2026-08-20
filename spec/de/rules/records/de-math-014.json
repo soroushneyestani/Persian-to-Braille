@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-014",
+    "section": "2.10",
+    "kind": "AMBIGUITY_FALLBACK",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When point-4 inline notation is ambiguous, the full Mathematikschrift rules and delimiters may be used to eliminate ambiguity.",
+    "fallbackMode": "FULL_MATHEMATIKSCHRIFT_SPAN"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

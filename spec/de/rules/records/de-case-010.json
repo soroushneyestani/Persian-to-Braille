@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-010",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-010",
+    "section": "2.6.4",
+    "kind": "MIXED_CASE_SEQUENCE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Non-word letter sequences containing internal case changes are written in Basisschrift and partitioned into case-homogeneous semantic groups.",
+    "requiresBasisschrift": true,
+    "markers": {
+      "uppercaseSequence": {
+        "unicode": "⠘",
+        "codepoints": [
+          "U+2818"
+        ],
+        "dots": [
+          "45"
+        ],
+        "cellCount": 1
+      },
+      "lowercaseSequence": {
+        "unicode": "⠠",
+        "codepoints": [
+          "U+2820"
+        ],
+        "dots": [
+          "6"
+        ],
+        "cellCount": 1
+      },
+      "capitalThenLowercase": {
+        "unicode": "⠨",
+        "codepoints": [
+          "U+2828"
+        ],
+        "dots": [
+          "46"
+        ],
+        "cellCount": 1
+      }
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-005",
+      "DE-CASE-CASE-006"
+    ]
+  },
+  "notes": []
+}

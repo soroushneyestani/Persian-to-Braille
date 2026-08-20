@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-008",
+    "section": "2.6.3",
+    "kind": "LOWERCASE_ANNOUNCEMENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠠",
+      "codepoints": [
+        "U+2820"
+      ],
+      "dots": [
+        "6"
+      ],
+      "cellCount": 1
+    },
+    "summary": "Lowercase abbreviations and units without an abbreviation point, and lowercase Roman numerals, require the lowercase marker.",
+    "contractionsAllowed": false,
+    "contractionSuppressionEquivalentToBasisschrift": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-004",
+      "DE-CASE-CASE-007"
+    ]
+  },
+  "notes": []
+}

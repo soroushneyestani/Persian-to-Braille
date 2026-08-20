@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-005",
+    "section": "2.13",
+    "kind": "WORD_INTERNAL_POSITION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The additional cancellation point applies to punctuation that is internal to lexical word material; source examples distinguish such signs from closing punctuation at the word edge.",
+    "internalCondition": {
+      "lexicalMaterialBefore": true,
+      "lexicalMaterialAfter": true
+    },
+    "evidence": [
+      "Hundert(e)",
+      "Student(inn)en",
+      "Hundert[e]",
+      "Student[inn]en"
+    ],
+    "evidenceRole": "NORMATIVE_EXAMPLE_DERIVATION",
+    "directProseRule": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-001",
+      "DE-INWORD-CASE-002"
+    ]
+  },
+  "notes": []
+}

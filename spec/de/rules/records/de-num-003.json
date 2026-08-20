@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-003",
+    "section": "2.3.1.1",
+    "kind": "DECIMAL_AND_GROUPING",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Decimal comma uses dot 2. Decimal point and digit-grouping point use dot 3.",
+    "symbols": {
+      "decimalComma": {
+        "unicode": "⠂",
+        "codepoint": "U+2802",
+        "dots": "2"
+      },
+      "decimalOrGroupingPoint": {
+        "unicode": "⠄",
+        "codepoint": "U+2804",
+        "dots": "3"
+      }
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-NUM-CASE-002"
+    ]
+  },
+  "notes": []
+}

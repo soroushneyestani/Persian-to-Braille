@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-010",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-010",
+    "section": "2.3.1.6",
+    "kind": "PERCENT_PROMILLE_ANGLE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Percent, promille, degree, minute, and second follow dedicated sign sequences and usually attach to the preceding number without an intervening space."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

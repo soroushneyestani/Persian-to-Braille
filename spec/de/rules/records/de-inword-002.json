@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-002",
+    "section": "2.13",
+    "kind": "COVERED_PUNCTUATION_CLASSES",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Comma, semicolon, colon, question mark, exclamation mark, brackets, quotation marks and arrows are covered when they occur inside words.",
+    "classes": [
+      "COMMA",
+      "SEMICOLON",
+      "COLON",
+      "QUESTION_MARK",
+      "EXCLAMATION_MARK",
+      "BRACKETS",
+      "QUOTATION_MARKS",
+      "ARROWS"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

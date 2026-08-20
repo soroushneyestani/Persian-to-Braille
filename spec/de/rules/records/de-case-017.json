@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-017",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-017",
+    "section": "2.6.8",
+    "kind": "ABBREVIATION_WITH_POINT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Case is normally not represented in abbreviations that use an abbreviation point.",
+    "profileBehavior": {
+      "basisschrift": "CASE_NORMALLY_OMITTED",
+      "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+      "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-011"
+    ]
+  },
+  "notes": []
+}

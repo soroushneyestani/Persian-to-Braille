@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-008",
+    "section": "2.9",
+    "kind": "FOREIGN_MULTIWORD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "startMarker": {
+      "unicode": "⠰⠰",
+      "codepoints": [
+        "U+2830",
+        "U+2830"
+      ],
+      "dots": [
+        "56",
+        "56"
+      ],
+      "cellCount": 2
+    },
+    "endMarker": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "summary": "A multiword foreign-system span uses a double foreign marker and explicit terminator.",
+    "scope": "MULTIWORD"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-002"
+    ]
+  },
+  "notes": []
+}

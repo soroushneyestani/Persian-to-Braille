@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-004",
+    "section": "2.6.1",
+    "kind": "INITIAL_CAPITAL",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠨",
+      "codepoints": [
+        "U+2828"
+      ],
+      "dots": [
+        "46"
+      ],
+      "cellCount": 1
+    },
+    "summary": "A capital letter followed by one or more lowercase letters uses the dots-4-6 marker.",
+    "followingLowercaseRequiresMarker": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-001",
+      "DE-CASE-CASE-008"
+    ]
+  },
+  "notes": []
+}

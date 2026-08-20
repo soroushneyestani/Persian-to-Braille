@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "sourceRuleId": "DE-NUM-002",
+    "section": "2.3.1.1",
+    "kind": "NUMERIC_SCOPE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The number indicator remains effective through digits and defined decimal/grouping continuation signs; other boundaries terminate numeric scope.",
+    "state": "ARABIC_NUMERIC"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

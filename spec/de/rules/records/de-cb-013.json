@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-013",
+    "section": "2.11",
+    "kind": "INSERT_TERMINATION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The Computerbraille terminator is placed immediately after the final encoded sign, including after an encoding blank that forms part of a two-cell representation.",
+    "marker": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-012"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-003",
+    "section": "2.9",
+    "kind": "PRONUNCIATION_SENSITIVE_CONTRACTION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When pronunciation is known it should be considered when selecting German Lautgruppenkürzungen for foreign text.",
+    "pronunciationAware": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

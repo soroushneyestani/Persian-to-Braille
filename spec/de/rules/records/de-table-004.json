@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+    "sourceRuleId": "DE-TABLE-004",
+    "section": "2.12",
+    "kind": "OPTIONAL_TARGET_COLUMN_NUMBER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The number of the following table column may be written immediately after the table-cell separator.",
+    "optional": true,
+    "placement": "IMMEDIATELY_AFTER_SEPARATOR",
+    "numericDependency": "15.1E"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-TABLE-CASE-002",
+      "DE-TABLE-CASE-003"
+    ]
+  },
+  "notes": []
+}

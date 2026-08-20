@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-019",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-019",
+    "section": "2.6.1",
+    "kind": "KURZSCHRIFT_INITIAL_CQXY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "In Kurzschrift, initial uppercase C, Q, X and Y place the uppercase announcement before the dot-6 cancellation point that belongs to the letter form.",
+    "appliesToProfiles": [
+      "kurzschrift"
+    ],
+    "letters": [
+      "C",
+      "Q",
+      "X",
+      "Y"
+    ],
+    "sequenceOrder": [
+      "UPPERCASE_ANNOUNCEMENT",
+      "DOT6_CANCELLATION_POINT",
+      "LETTER"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-012"
+    ]
+  },
+  "notes": []
+}

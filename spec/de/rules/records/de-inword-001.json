@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+    "sourceRuleId": "DE-INWORD-001",
+    "section": "2.13",
+    "kind": "PROFILE_SCOPE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "The in-word punctuation rules of section 2.13 apply uniformly to Basisschrift, Vollschrift and Kurzschrift.",
+    "profiles": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-INWORD-CASE-006",
+      "DE-INWORD-CASE-007"
+    ]
+  },
+  "notes": []
+}

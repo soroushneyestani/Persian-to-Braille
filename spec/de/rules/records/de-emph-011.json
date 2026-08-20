@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-011",
+    "section": "2.7.2",
+    "kind": "DISTINCT_EMPHASIS_CHANNELS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Primary and secondary emphasis may coexist to distinguish two different highlighted classes in the same source.",
+    "channels": [
+      "PRIMARY",
+      "SECONDARY"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-018",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-018",
+    "section": "2.10",
+    "kind": "MATH_TO_TEXT_DELIMITER",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "summary": "The Math-to-Text delimiter follows the end of the Mathematikschrift span immediately.",
+    "blankBeforeMarker": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-008"
+    ]
+  },
+  "notes": []
+}

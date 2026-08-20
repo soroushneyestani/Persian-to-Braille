@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-017",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-017",
+    "section": "2.11",
+    "kind": "COMMON_MAPPING_TABLE_SCOPE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Section 2.11 provides a list of frequently used Computerbraille signs in six-dot form; the list must not be interpreted as a complete Computerbraille character-set specification.",
+    "expandedRecordCount": 102,
+    "isCompleteCharset": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

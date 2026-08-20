@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-004",
+    "section": "2.8.1",
+    "kind": "POINT4_REQUIRED",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Point-4 announcement is required for this German-text technique in Basis-, Voll- and Kurzschrift.",
+    "profiles": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

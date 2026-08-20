@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-002",
+    "section": "2.5.1.2",
+    "kind": "HYPHEN",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "printRole": "BINDESTRICH",
+    "braille": {
+      "unicode": "⠤",
+      "codepoints": [
+        "U+2824"
+      ],
+      "dots": [
+        "36"
+      ],
+      "cellCount": 1
+    },
+    "summary": "The hyphen connects independent words or abbreviations and acts as a word boundary for German Braille rules.",
+    "boundarySemantics": {
+      "isWordBoundary": true,
+      "equivalentToSpaceForRuleBoundaries": true,
+      "affects": [
+        "contraction",
+        "capitalization",
+        "emphasis",
+        "embedded-spans"
+      ]
+    },
+    "lineBreak": {
+      "allowedAfter": true,
+      "atLineEndAlsoActsAsTrennungsstrich": true
+    },
+    "exceptions": [
+      {
+        "context": "COMPUTER_BRAILLE_INSERT",
+        "isWordBoundary": false,
+        "sourceDependency": "2.11"
+      }
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-STROKE-CASE-001"
+    ]
+  },
+  "notes": []
+}

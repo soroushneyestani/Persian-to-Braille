@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-005",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-005",
+    "section": "2.10",
+    "kind": "MATH_SPACING_IN_TEXT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Mathematical signs between words have a blank on both sides; a blank between a mathematical sign and a following number or variable is omitted.",
+    "spacing": {
+      "betweenWords": "BLANK_BOTH_SIDES",
+      "beforeNumber": "NO_INTERVENING_BLANK",
+      "beforeVariable": "NO_INTERVENING_BLANK"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-001"
+    ]
+  },
+  "notes": []
+}

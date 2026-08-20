@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-016",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-016",
+    "section": "2.11",
+    "kind": "TWO_FORM_ATOMICITY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Two-cell Computerbraille transport forms must not be split across lines.",
+    "lineBreakInsideFormAllowed": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-014"
+    ]
+  },
+  "notes": []
+}

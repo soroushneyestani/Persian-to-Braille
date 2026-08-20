@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-013",
+    "section": "2.9",
+    "kind": "FOREIGN_PUNCTUATION_AND_ANNOUNCEMENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Foreign-system punctuation and announcement signs may replace the German equivalents inside the switched span.",
+    "delegation": "TARGET_BRAILLE_PROFILE"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

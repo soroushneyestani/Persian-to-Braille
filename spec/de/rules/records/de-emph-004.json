@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-004",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-004",
+    "section": "2.7.1",
+    "kind": "PRIMARY_MULTIWORD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "startMarker": {
+      "unicode": "⠸⠸",
+      "codepoints": [
+        "U+2838",
+        "U+2838"
+      ],
+      "dots": [
+        "456",
+        "456"
+      ],
+      "cellCount": 2
+    },
+    "endMarker": {
+      "unicode": "⠠⠄",
+      "codepoints": [
+        "U+2820",
+        "U+2804"
+      ],
+      "dots": [
+        "6",
+        "3"
+      ],
+      "cellCount": 2
+    },
+    "summary": "An emphasis spanning more than one word may use a multiword start marker and explicit termination after the final word."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-EMPH-CASE-002"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-013",
+    "section": "2.10",
+    "kind": "EXTENDED_MATH_SYMBOLS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Additional symbols may be taken from the German Mathematikschrift rulebook and, when used through the text technique, are also announced with point 4.",
+    "externalNormativeDependency": "DAS_SYSTEM_DER_MATHEMATIKSCHRIFT_IN_DER_DEUTSCHEN_BRAILLESCHRIFT",
+    "nonMathTextExplanationRecommended": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

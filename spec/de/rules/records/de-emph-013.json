@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-013",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-013",
+    "section": "2.7.3",
+    "kind": "VERSALIEN_SINGLE_WORD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "marker": {
+      "unicode": "⠘",
+      "codepoints": [
+        "U+2818"
+      ],
+      "dots": [
+        "45"
+      ],
+      "cellCount": 1
+    },
+    "summary": "One all-capitals word is introduced by the capital-sequence marker."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-EMPH-CASE-008"
+    ]
+  },
+  "notes": []
+}

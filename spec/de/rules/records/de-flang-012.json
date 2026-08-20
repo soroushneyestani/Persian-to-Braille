@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-012",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-012",
+    "section": "2.9",
+    "kind": "ACCENT_POLICY_BOUNDARY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A full foreign-system span permits the foreign system's own accented-letter signs without German point-4 accent announcement.",
+    "dependency": "DE-ACCENT-003",
+    "distinction": {
+      "germanAccentTechnique": "POINT4_REQUIRED",
+      "foreignSystemSpan": "TARGET_SYSTEM_RULES_APPLY"
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-005"
+    ]
+  },
+  "notes": []
+}

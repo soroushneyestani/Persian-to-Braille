@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-009",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-009",
+    "section": "2.11",
+    "kind": "NO_BLANK_INSERT_START",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A Computerbraille insert whose serialized form contains no Braille blank uses the no-blank announcement marker.",
+    "marker": {
+      "unicode": "⠠⠨",
+      "codepoints": [
+        "U+2820",
+        "U+2828"
+      ],
+      "dots": [
+        "6",
+        "46"
+      ],
+      "cellCount": 2
+    },
+    "selectionKey": "SERIALIZED_BRAILLE_CONTAINS_BLANK",
+    "selectionValue": false
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-009"
+    ]
+  },
+  "notes": []
+}

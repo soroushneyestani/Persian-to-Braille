@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-SPECIAL-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-SPECIAL-003",
+    "section": "2.8.2",
+    "kind": "CURRENCY_SPACING",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "When a special-form sign follows a number, the source may place it with or without a blank.",
+    "afterNumberSpacing": [
+      "NO_BLANK",
+      "ONE_BLANK"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-SPECIAL-CASE-002",
+      "DE-SPECIAL-CASE-003"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-008",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-008",
+    "section": "2.11",
+    "kind": "CONTROL_COLLISION_DOUBLING",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Computerbraille characters consisting only of dot 4, dot 6, or dots 4-6 are doubled to prevent confusion with transport prefixes.",
+    "forms": {
+      "dot4": {
+        "unicode": "⠈⠈",
+        "codepoints": [
+          "U+2808",
+          "U+2808"
+        ],
+        "dots": [
+          "4",
+          "4"
+        ],
+        "cellCount": 2
+      },
+      "dot6": {
+        "unicode": "⠠⠠",
+        "codepoints": [
+          "U+2820",
+          "U+2820"
+        ],
+        "dots": [
+          "6",
+          "6"
+        ],
+        "cellCount": 2
+      },
+      "dots46": {
+        "unicode": "⠨⠨",
+        "codepoints": [
+          "U+2828",
+          "U+2828"
+        ],
+        "dots": [
+          "46",
+          "46"
+        ],
+        "cellCount": 2
+      }
+    }
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-006",
+      "DE-CB-CASE-007",
+      "DE-CB-CASE-008"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-014",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "sourceRuleId": "DE-CASE-014",
+    "section": "2.6.6",
+    "kind": "NON_DERIVABLE_CASE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Case that differs from normal orthographic expectation may be explicitly represented.",
+    "lowercaseWordMarker": {
+      "unicode": "⠠",
+      "codepoints": [
+        "U+2820"
+      ],
+      "dots": [
+        "6"
+      ],
+      "cellCount": 1
+    },
+    "markedLowercaseWordRequiresBasisschrift": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CASE-CASE-008"
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-007",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-007",
+    "section": "2.9",
+    "kind": "FOREIGN_SINGLE_WORD",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "startMarker": {
+      "unicode": "⠰",
+      "codepoints": [
+        "U+2830"
+      ],
+      "dots": [
+        "56"
+      ],
+      "cellCount": 1
+    },
+    "summary": "One word in a foreign Braille system is introduced by the single foreign-system marker.",
+    "scope": "ONE_WORD"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-001"
+    ]
+  },
+  "notes": []
+}

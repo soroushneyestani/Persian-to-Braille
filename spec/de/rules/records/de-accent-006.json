@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-006",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-ACCENT-006",
+    "section": "2.8.1",
+    "kind": "FRENCH_EXACT_TABLE",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "recordCount": 14,
+    "summary": "BSKDL publishes an explicit French accented-letter and oe-ligature Braille table."
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

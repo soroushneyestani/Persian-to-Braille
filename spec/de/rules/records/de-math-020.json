@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-020",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "sourceRuleId": "DE-MATH-020",
+    "section": "2.10",
+    "kind": "SHORT_MATH_WHITESPACE_BOUNDARY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A short Mathematikschrift expression may be separated from Textschrift by two blanks before and after instead of explicit announcement/termination delimiters.",
+    "blankCountBefore": 2,
+    "blankCountAfter": 2,
+    "explicitMarkersMayBeOmitted": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-MATH-CASE-009"
+    ]
+  },
+  "notes": []
+}

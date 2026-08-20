@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-001",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+    "sourceRuleId": "DE-FLANG-001",
+    "section": "2.9",
+    "kind": "GERMAN_SYSTEM_FOREIGN_CONTENT",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Foreign-language inserts may be rendered under German Basis-, Voll- or Kurzschrift.",
+    "mode": "GERMAN_BRAILLE_FOREIGN_CONTENT"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-FLANG-CASE-007"
+    ]
+  },
+  "notes": []
+}

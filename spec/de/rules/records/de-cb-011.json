@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+    "sourceRuleId": "DE-CB-011",
+    "section": "2.11",
+    "kind": "ENCODING_BLANK_COUNTS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "A blank created while serializing a source cell consisting only of dot 7, dot 8, or dots 7-8 counts when selecting the insert announcement marker.",
+    "semanticBlank": false,
+    "transportBlank": true,
+    "affectsStartMarker": true
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-CB-CASE-005",
+      "DE-CB-CASE-011"
+    ]
+  },
+  "notes": []
+}

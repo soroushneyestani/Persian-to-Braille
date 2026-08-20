@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-SPECIAL-002",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "sourceRuleId": "DE-SPECIAL-002",
+    "section": "2.8.2",
+    "kind": "CURRENCY_POSITION",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Currency-style special-form signs may precede a number or follow it according to the source.",
+    "positions": [
+      "BEFORE_NUMBER",
+      "AFTER_NUMBER"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-SPECIAL-CASE-001",
+      "DE-SPECIAL-CASE-002",
+      "DE-SPECIAL-CASE-003"
+    ]
+  },
+  "notes": []
+}

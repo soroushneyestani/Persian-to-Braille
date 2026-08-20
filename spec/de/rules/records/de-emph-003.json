@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-003",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+    "sourceRuleId": "DE-EMPH-003",
+    "section": "2.7.1",
+    "kind": "PRIMARY_WORD_BOUNDARY",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "summary": "Blank, hyphen and slash all act as word boundaries for first-emphasis scope.",
+    "boundaries": [
+      "BRAILLE_BLANK",
+      "HYPHEN",
+      "SLASH"
+    ],
+    "dependencies": [
+      "DE-STROKE-002",
+      "DE-STROKE-012"
+    ]
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": []
+  },
+  "notes": []
+}

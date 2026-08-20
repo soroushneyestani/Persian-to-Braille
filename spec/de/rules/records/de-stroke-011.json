@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-011",
+  "introducedInMode": "basisschrift",
+  "status": "normative",
+  "version": "0.1.0",
+  "direction": "forward",
+  "source": {
+    "contractPath": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "sourceRuleId": "DE-STROKE-011",
+    "section": "2.5.1.6",
+    "kind": "MINUS",
+    "normative": true,
+    "executableAtAudit": false
+  },
+  "semantics": {
+    "braille": {
+      "unicode": "⠈⠤",
+      "codepoints": [
+        "U+2808",
+        "U+2824"
+      ],
+      "dots": [
+        "4",
+        "36"
+      ],
+      "cellCount": 2
+    },
+    "summary": "A horizontal stroke with mathematical minus semantics is announced as a mathematical sign.",
+    "semanticSelectionRequired": true,
+    "dependency": "2.10"
+  },
+  "promotion": {
+    "canonicalized": true,
+    "runtimeDisposition": "NOT_CLASSIFIED",
+    "lossless": true,
+    "runtimeOwner": null,
+    "notes": []
+  },
+  "conformance": {
+    "validationCaseIds": [
+      "DE-STROKE-CASE-003"
+    ]
+  },
+  "notes": []
+}
