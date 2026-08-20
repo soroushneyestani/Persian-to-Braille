@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A5.3",
+  "status": "OVERLAY_APPLICATION_CONTRACT",
+  "language": "de",
+  "compositionModel": {
+    "textModeMaterializationFirst": true,
+    "regionalConfigurationAppliedAfterTextModeMaterialization": true,
+    "applicationStage": "AFTER_TEXT_MODE_MATERIALIZATION_BEFORE_FINAL_EXECUTABLE_SPECIFICATION",
+    "output": "ONE_EFFECTIVE_EXECUTABLE_SPECIFICATION",
+    "translatorChainingAllowed": false,
+    "regionalSecondRuntimeBundleAllowed": false,
+    "regionalBundleFamilyAllowed": false
+  },
+  "baseConfiguration": {
+    "configuration": {
+      "overlay": null
+    },
+    "behavior": "IDENTITY",
+    "mustPreserveModeMaterializationExactly": true,
+    "regionalRulesActivated": false
+  },
+  "swissOverlay": {
+    "configuration": {
+      "overlay": "swiss"
+    },
+    "role": "SCOPED_REGIONAL_APPLICABILITY_AND_CONSTRAINT_LAYER",
+    "isFourthGermanTextMode": false,
+    "participatesInTextModeInheritance": false,
+    "createsIndependentTranslator": false,
+    "createsIndependentRuntimeBundle": false,
+    "mayActivateOnlyExplicitlyAdmittedRegionalRules": true,
+    "implicitRegionalBehaviorAllowed": false
+  },
+  "ruleComposition": {
+    "canonicalBaseRuleMutationAllowed": false,
+    "implicitRuleReplacementAllowed": false,
+    "lastWriteWinsAllowed": false,
+    "duplicateCanonicalRuleIdAcrossBaseAndRegionalLayersAllowed": false,
+    "regionalRuleMustHaveUniqueCanonicalRuleId": true,
+    "inheritanceOrderDefinesRuntimePrecedence": false,
+    "regionalPresenceDefinesAutomaticPrecedence": false,
+    "resolutionMechanism": [
+      "EXPLICIT_CANONICAL_RULE_PRIORITY",
+      "EXPLICIT_RULE_APPLICABILITY",
+      "SEMANTIC_VALIDATION"
+    ],
+    "unresolvedEqualPrecedenceConflict": "REJECT"
+  },
+  "regionalApplicabilityExtension": {
+    "mayExtendExistingBaseRuleApplicability": true,
+    "mustReferenceUnderlyingCanonicalSemantics": true,
+    "mayBypassUnderlyingRestrictions": false,
+    "inheritsUnderlyingBoundaryRules": true,
+    "inheritsUnderlyingMorphologyRules": true,
+    "inheritsUnderlyingProperNameRules": true,
+    "inheritsUnderlyingPrecedenceRules": true,
+    "inheritsUnderlyingCancellationRules": true,
+    "mayCreateNewBrailleSequenceImplicitly": false
+  },
+  "modeScope": {
+    "regionalRuleMustDeclareOrInheritApplicableTextModeScope": true,
+    "regionalRuleMayActivateOutsideApplicableTextMode": false,
+    "swissOverlayDoesNotMakeKurzschriftRulesAvailableInOtherModes": true
+  },
+  "orthographicPolicyBoundary": {
+    "automaticEszettToDoubleSNormalizationAuthorized": false,
+    "explicitEszettInputRuntimeBehavior": "OPEN",
+    "openDependency": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "decisionOwner": "15.5A6",
+    "a5MayResolve": false
+  },
+  "identifierBoundary": {
+    "regionalOverlayKey": "swiss",
+    "deCh410Role": "INTERNAL_NORMATIVE_RULE_NAMESPACE",
+    "deCh410IsRuntimeOverlayKey": false,
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN",
+    "publicLocaleIdentifier": "NOT_FROZEN",
+    "publicSdkRegionalApi": "NOT_FROZEN"
+  },
+  "runtimeTopologyCompatibility": {
+    "runtimeModel": "THREE_INTERNAL_EXECUTABLE_BUNDLES",
+    "selectedTextModeStillOwnsExactlyOneInternalBundle": true,
+    "swissCreatesFourthBundle": false,
+    "swissCreatesThreeAdditionalBundleVariants": false,
+    "regionalBehaviorMustRemainOrthogonalToBundleIdentity": true
+  },
+  "admissionState": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "swissExecutableRuntimeBehavior": 0
+  },
+  "deferred": {
+    "coreRegionalSelectionBoundary": "15.5A5.4",
+    "regionalContractClosure": "15.5A5.5",
+    "swissExplicitEszettDecision": "15.5A6",
+    "actualSwissRuntimeImplementation": "15.5F",
+    "publicSdk": "15.6"
+  },
+  "nextStep": "15.5A5.4 Internal Core Regional-Selection Boundary"
+}
