@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A3.3",
+  "title": "Persian Runtime Compatibility Proof",
+  "status": "PASS",
+  "branch": "phase15-german-braille",
+  "baseline": {
+    "preManifestBuilderCommit": "3db6701e9718b40c22d1c987d90e8a08db543c2b",
+    "manifestDrivenBuilderCommit": "c380315611252226770546436f2c1b6674fb0532"
+  },
+  "runtime": {
+    "profileId": "fa-ir-g1",
+    "profileVersion": "0.1.0",
+    "profileStatus": "draft",
+    "generatedPath": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+    "generatedSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "canonicalSourceSha256": "82fa5523b90c3b422542ba1f43ccbcdadc94bd9c38cf224672d60ee3621a13d9",
+    "ruleCount": 176,
+    "statusCounts": {
+      "candidate": 139,
+      "normative": 37
+    },
+    "typeCounts": {
+      "character": 133,
+      "context": 7,
+      "layout": 27,
+      "mode": 5,
+      "normalization": 1,
+      "sequence": 3
+    }
+  },
+  "verifiedGates": {
+    "manifestDrivenBuilder": "PASS",
+    "generatedByteCompatibility": "PASS",
+    "generatedGitDiff": "NONE",
+    "runtimeSpecificationDeterminism": "PASS",
+    "compiledCoreSpecificationConsumption": "PASS",
+    "coreRegression": {
+      "status": "PASS",
+      "tests": 223,
+      "passed": 223,
+      "failed": 0
+    }
+  },
+  "compatibilityDecision": {
+    "persianCanonicalSpecificationChanged": false,
+    "persianGeneratedRuntimeChanged": false,
+    "persianExecutionSemanticsChanged": false,
+    "existingPersianPublicApiCompatibility": "PRESERVED"
+  },
+  "scopeExclusions": {
+    "germanProfileAdded": false,
+    "germanRulesAdded": false,
+    "germanGeneratedRuntimeAdded": false,
+    "swissRuntimeAdded": false,
+    "germanMappingsImplemented": false
+  },
+  "nextStep": "15.5A3.4 German Empty Canonical Topology Admission"
+}
