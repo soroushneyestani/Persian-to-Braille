@@ -1,0 +1,1832 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-execution-admission",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "profileId": "de-basisschrift",
+  "sourceModel": {
+    "path": "docs/architecture/phase-15.5b4-1a-execution-admission-model.json",
+    "canonicalJsonSha256": "C18697901842855250C9A245779C382695397A106F70E5E283F966F00BF05BAD"
+  },
+  "summary": {
+    "recordCount": 150,
+    "counts": {
+      "DELEGATED_DEPENDENCY": 13,
+      "LOWERING_CANDIDATE": 123,
+      "REFERENCE_ONLY": 5,
+      "ARCHITECTURAL_ONLY": 5,
+      "CROSS_MODE_DEFERRED": 3,
+      "DEFERRED_DEPENDENCY": 1
+    }
+  },
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "REFERENCE_ONLY",
+      "runtimeOwner": null,
+      "admission": "REFERENCE_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "REFERENCE_ONLY",
+      "runtimeOwner": null,
+      "admission": "REFERENCE_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": null,
+      "admission": "ARCHITECTURAL_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "CROSS_MODE_DEFERRED",
+      "runtimeOwner": null,
+      "admission": "CROSS_MODE_DEFERRED",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-017",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-018",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-019",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "CROSS_MODE_DEFERRED",
+      "runtimeOwner": null,
+      "admission": "CROSS_MODE_DEFERRED",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-020",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "CROSS_MODE_DEFERRED",
+      "runtimeOwner": null,
+      "admission": "CROSS_MODE_DEFERRED",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "REFERENCE_ONLY",
+      "runtimeOwner": null,
+      "admission": "REFERENCE_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "REFERENCE_ONLY",
+      "runtimeOwner": null,
+      "admission": "REFERENCE_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-017",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "REFERENCE_ONLY",
+      "runtimeOwner": null,
+      "admission": "REFERENCE_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": null,
+      "admission": "ARCHITECTURAL_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DELEGATED",
+      "runtimeOwner": "GERMAN_TEXT_MODE_MATERIALIZATION",
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-002",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-003",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-005",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-006",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-007",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-008",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DELEGATED",
+      "runtimeOwner": "VOLLSCHRIFT_AND_KURZSCHRIFT_CONTRACTION_ENGINES",
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-010",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DELEGATED",
+      "runtimeOwner": "CONTRACTION_AND_PUNCTUATION_SERIALIZATION_LAYERS",
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-011",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": "NONE_ARCHITECTURAL_ONLY",
+      "admission": "ARCHITECTURAL_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-017",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-018",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-019",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-020",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-003",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DIRECT_MAPPING",
+      "runtimeOwner": "GERMAN_NUMERIC_SYMBOL_MAPPING",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-006",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_ORDINAL_NOTATION_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-008",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_DECIMAL_CLASSIFIER_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-010",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_ADJACENT_SIGN_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-011",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-012",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_AMBIGUITY_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-013",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DEFERRED",
+      "runtimeOwner": "GERMAN_CASE_STATE_RUNTIME",
+      "admission": "DEFERRED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-014",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMBER_WORD_BOUNDARY_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-015",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_NUMBER_UNIT_LAYOUT_LAYER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LINE_LAYOUT_LAYER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-002",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-003",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_TABLE_STRUCTURE_LAYER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-005",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-006",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-007",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-008",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-011",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DELEGATED",
+      "runtimeOwner": "GERMAN_MATHEMATICAL_SIGN_RESOLVER",
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-012",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-013",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-015",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DELEGATED",
+      "runtimeOwner": "GERMAN_MATHEMATICAL_SIGN_RESOLVER",
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-016",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-017",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "DELEGATED_REFERENCE",
+      "runtimeOwner": null,
+      "admission": "DELEGATED_DEPENDENCY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "admission": "LOWERING_CANDIDATE",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": null,
+      "admission": "ARCHITECTURAL_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": null,
+      "admission": "ARCHITECTURAL_ONLY",
+      "execution": {
+        "lowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ],
+  "executionBoundary": {
+    "materializationOnly": true,
+    "loweringStarted": false,
+    "translatorModified": false,
+    "germanRuntimeGenerated": false,
+    "germanRuntimeRegistered": false
+  }
+}

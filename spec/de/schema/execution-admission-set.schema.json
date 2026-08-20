@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/de/schema/execution-admission-set.schema.json",
+  "title": "German Braille Execution Admission Set",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "language",
+    "textMode",
+    "profileId",
+    "sourceModel",
+    "summary",
+    "records",
+    "executionBoundary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "MATERIALIZED_NON_EXECUTABLE"
+    },
+    "language": {
+      "const": "de"
+    },
+    "textMode": {
+      "const": "basisschrift"
+    },
+    "profileId": {
+      "const": "de-basisschrift"
+    },
+    "sourceModel": {
+      "type": "object",
+      "required": [
+        "path",
+        "canonicalJsonSha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalJsonSha256": {
+          "type": "string",
+          "pattern": "^[A-F0-9]{64}$"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "recordCount",
+        "counts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "recordCount": {
+          "const": 150
+        },
+        "counts": {
+          "type": "object",
+          "required": [
+            "ARCHITECTURAL_ONLY",
+            "CROSS_MODE_DEFERRED",
+            "DEFERRED_DEPENDENCY",
+            "DELEGATED_DEPENDENCY",
+            "LOWERING_CANDIDATE",
+            "REFERENCE_ONLY"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "LOWERING_CANDIDATE": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "DELEGATED_DEPENDENCY": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "DEFERRED_DEPENDENCY": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "CROSS_MODE_DEFERRED": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "REFERENCE_ONLY": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ARCHITECTURAL_ONLY": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 150,
+      "maxItems": 150,
+      "items": {
+        "type": "object",
+        "required": [
+          "ruleId",
+          "sourceLayer",
+          "sourceClassification",
+          "runtimeOwner",
+          "admission",
+          "execution"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "pattern": "^DE-[A-Z]+-[0-9]{3}$"
+          },
+          "sourceLayer": {
+            "enum": [
+              "B2_RUNTIME_CLASSIFICATION",
+              "B3_CONTRACT_ROLE"
+            ]
+          },
+          "sourceClassification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runtimeOwner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "admission": {
+            "enum": [
+              "ARCHITECTURAL_ONLY",
+              "CROSS_MODE_DEFERRED",
+              "DEFERRED_DEPENDENCY",
+              "DELEGATED_DEPENDENCY",
+              "LOWERING_CANDIDATE",
+              "REFERENCE_ONLY"
+            ]
+          },
+          "execution": {
+            "type": "object",
+            "required": [
+              "lowered",
+              "executable",
+              "runtimeRegistered"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "lowered": {
+                "const": false
+              },
+              "executable": {
+                "const": false
+              },
+              "runtimeRegistered": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "executionBoundary": {
+      "type": "object",
+      "required": [
+        "materializationOnly",
+        "loweringStarted",
+        "translatorModified",
+        "germanRuntimeGenerated",
+        "germanRuntimeRegistered"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "materializationOnly": {
+          "const": true
+        },
+        "loweringStarted": {
+          "const": false
+        },
+        "translatorModified": {
+          "const": false
+        },
+        "germanRuntimeGenerated": {
+          "const": false
+        },
+        "germanRuntimeRegistered": {
+          "const": false
+        }
+      }
+    }
+  }
+}
