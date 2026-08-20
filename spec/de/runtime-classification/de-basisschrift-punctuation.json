@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-punctuation-runtime-classification",
+  "status": "CLASSIFIED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "scope": {
+    "families": [
+      "INWORD",
+      "STROKE"
+    ],
+    "ruleCount": 28,
+    "phase": "15.5B2.3"
+  },
+  "taxonomy": {
+    "source": "docs/architecture/phase-15.5b2-1-runtime-classification-taxonomy.json",
+    "singlePrimaryDisposition": true,
+    "canonicalRulesRemainNotClassified": true
+  },
+  "execution": {
+    "classificationOnly": true,
+    "loweringStarted": false,
+    "translatorStarted": false,
+    "stateMachineStarted": false,
+    "runtimeBundleGenerated": false
+  },
+  "summary": {
+    "records": 28,
+    "dispositionCounts": {
+      "CONTEXTUAL": 16,
+      "DELEGATED": 5,
+      "STRUCTURAL": 4,
+      "STATEFUL": 2,
+      "ARCHITECTURAL_ONLY": 1,
+      "DIRECT_MAPPING": 0,
+      "DEFERRED": 0
+    },
+    "classificationPayloadCanonicalJsonSha256": "1B55016286D178876E735A6D24F6CEFB9BBA4E98C0AE6F4A33644FBD68CBB13F",
+    "classificationSchemaSha256": "6796CEB062CE838F663892AB841E08F695F49A786BC9AABC1A6DD9F88155FE37"
+  },
+  "records": [
+    {
+      "ruleId": "DE-INWORD-001",
+      "sourceRulePath": "spec/de/rules/records/de-inword-001.json",
+      "sourceRuleSha256": "DDEAECECD1A89F03A6FAE549BB151B5B6D34183DCA97609014394185DA8F6BE5",
+      "family": "INWORD",
+      "kind": "PROFILE_SCOPE",
+      "section": "2.13",
+      "primaryDisposition": "DELEGATED",
+      "runtimeOwner": "GERMAN_TEXT_MODE_MATERIALIZATION",
+      "decisionRationale": "The rule declares cross-mode applicability rather than an emission operation.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-006",
+        "DE-INWORD-CASE-007"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-002",
+      "sourceRulePath": "spec/de/rules/records/de-inword-002.json",
+      "sourceRuleSha256": "F5F5C352AC745F8F6A0CAFCE2E1681D9BB9A9641141C0F0BEA328C446D9D04C9",
+      "family": "INWORD",
+      "kind": "COVERED_PUNCTUATION_CLASSES",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Covered punctuation classes become relevant only in the in-word context.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-003",
+      "sourceRulePath": "spec/de/rules/records/de-inword-003.json",
+      "sourceRuleSha256": "DED20D410C1F57FB2F97922514EFFB5C9C290A400570193C9C15673DF8BD5C8B",
+      "family": "INWORD",
+      "kind": "SENTENCE_PERIOD_EXCEPTION",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Sentence period is a context-specific exclusion from the in-word rule.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-009"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-004",
+      "sourceRulePath": "spec/de/rules/records/de-inword-004.json",
+      "sourceRuleSha256": "6E111680150E429421017C64DA63A3476CD8FCDA8CE48CD187DE1C81A78B8688",
+      "family": "INWORD",
+      "kind": "CANCELLATION_POINT_PREFIX",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Cancellation-point emission requires SIGN_OCCURS_INSIDE_WORD.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-005",
+      "sourceRulePath": "spec/de/rules/records/de-inword-005.json",
+      "sourceRuleSha256": "9671D640177A02DDB717E9A760E3771452B02FCD661F85A0267C24EB9A0E10A4",
+      "family": "INWORD",
+      "kind": "WORD_INTERNAL_POSITION",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Word-internal position requires lexical material on both sides.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-001",
+        "DE-INWORD-CASE-002"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-006",
+      "sourceRulePath": "spec/de/rules/records/de-inword-006.json",
+      "sourceRuleSha256": "C3483CDAE9347573BC9BF44F8049F964A0DB7500043CF83B8F50B0E822378D08",
+      "family": "INWORD",
+      "kind": "SQUARE_BRACKET_SPECIAL_FORM",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "The square-bracket form is selected specifically for in-word occurrence.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-003"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-007",
+      "sourceRulePath": "spec/de/rules/records/de-inword-007.json",
+      "sourceRuleSha256": "31D4B6AA002295B460F45C78E264532D33F30F6CF4A785E49FC99FE418368684",
+      "family": "INWORD",
+      "kind": "DOUBLE_QUOTE_INWORD_FORMS",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Quotation emission depends on in-word position and opening/closing role.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-004"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-008",
+      "sourceRulePath": "spec/de/rules/records/de-inword-008.json",
+      "sourceRuleSha256": "CFD196E35D657EE2C64EB4FA5AD44FAFF4D82E42A4999FBE48D85E911B16C2A5",
+      "family": "INWORD",
+      "kind": "HALF_QUOTE_INWORD_FORMS",
+      "section": "2.13",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Half-quotation emission depends on in-word position and opening/closing role.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-005"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-009",
+      "sourceRulePath": "spec/de/rules/records/de-inword-009.json",
+      "sourceRuleSha256": "D69E7EF4C0988422EC275835B8BBED6B9A08D9FE86A13568DC00FA25A5198DAD",
+      "family": "INWORD",
+      "kind": "CONTRACTION_TRANSPARENCY",
+      "section": "2.13",
+      "primaryDisposition": "DELEGATED",
+      "runtimeOwner": "VOLLSCHRIFT_AND_KURZSCHRIFT_CONTRACTION_ENGINES",
+      "decisionRationale": "The rule governs contraction matching and has no Basisschrift contraction execution.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-006",
+        "DE-INWORD-CASE-007",
+        "DE-INWORD-CASE-008"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-010",
+      "sourceRulePath": "spec/de/rules/records/de-inword-010.json",
+      "sourceRuleSha256": "5CBBAF8634444AFC50C2EA2E59DC7339009C2F6B5416BE8812A75E40C1063B4B",
+      "family": "INWORD",
+      "kind": "PUNCTUATION_EMISSION_PRESERVED",
+      "section": "2.13",
+      "primaryDisposition": "DELEGATED",
+      "runtimeOwner": "CONTRACTION_AND_PUNCTUATION_SERIALIZATION_LAYERS",
+      "decisionRationale": "The rule specifies a cross-layer contract between lexical analysis and preserved punctuation serialization.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-INWORD-CASE-008"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-011",
+      "sourceRulePath": "spec/de/rules/records/de-inword-011.json",
+      "sourceRuleSha256": "7E4A3BEC0137DBC0DED1F3ED399AD65852272DF75226132CCD20BE3F9B5F391E",
+      "family": "INWORD",
+      "kind": "LEXICAL_AND_SERIALIZATION_LAYERING",
+      "section": "2.13",
+      "primaryDisposition": "ARCHITECTURAL_ONLY",
+      "runtimeOwner": "NONE_ARCHITECTURAL_ONLY",
+      "decisionRationale": "The source record is non-normative architectural inference describing future layer ownership.",
+      "sourceNormative": false,
+      "sourceStatus": "architectural",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-001",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-001.json",
+      "sourceRuleSha256": "566113FE00EA59C0B5558EC5119A03355C20BD5A2E64DDEED83D544744783CF0",
+      "family": "STROKE",
+      "kind": "LINE_BREAK_HYPHEN",
+      "section": "2.5.1.1",
+      "primaryDisposition": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LINE_LAYOUT_LAYER",
+      "decisionRationale": "Line-break hyphen behavior belongs to line layout and word hyphenation structure.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-002",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-002.json",
+      "sourceRuleSha256": "F5CA31F7FD93EE3355DF62C8D0FBAEBCDE2524923F69115E7BE1DBFE31C693A9",
+      "family": "STROKE",
+      "kind": "HYPHEN",
+      "section": "2.5.1.2",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Hyphen behavior includes word-boundary semantics and a computer-Braille context exception.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-001"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-003",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-003.json",
+      "sourceRuleSha256": "FC8EF81F2038CD3445031EB0F191DA10A188F0861203C967D01341429A234EAB",
+      "family": "STROKE",
+      "kind": "EM_DASH",
+      "section": "2.5.1.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Gedankenstrich serialization includes context-sensitive spacing after the sign.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-004",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-004.json",
+      "sourceRuleSha256": "714E34DB0239D1DA4027A489FFC32610BEAC977DCF34E686A0AFD16CB9232454",
+      "family": "STROKE",
+      "kind": "OMISSION_DASH",
+      "section": "2.5.1.3",
+      "primaryDisposition": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_TABLE_STRUCTURE_LAYER",
+      "decisionRationale": "The omission dash is selected specifically for a missing table entry.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-005",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-005.json",
+      "sourceRuleSha256": "E3840B67C5787AEA8412F449166D466DE0C846187850191750A03580A77A5ED9",
+      "family": "STROKE",
+      "kind": "SUPPLEMENTARY_DASH",
+      "section": "2.5.1.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Supplementary-dash form depends on before/after-word position and non-boundary semantics.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-006",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-006.json",
+      "sourceRuleSha256": "07AC268BEFA1B8A3FF84D63ECAD548A705A9F0B9E802ABE79F331D0AAD66475E",
+      "family": "STROKE",
+      "kind": "RANGE_DASH",
+      "section": "2.5.1.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "The source explicitly requires semantic selection for the range dash.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-007",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-007.json",
+      "sourceRuleSha256": "6A54C2329AA5869BE90DFEC23B6E4431BA3FE501BFBF7D547ECF7677FF35104B",
+      "family": "STROKE",
+      "kind": "COMPARISON_DASH",
+      "section": "2.5.1.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Comparison-dash serialization permits context-dependent spacing variants.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-008",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-008.json",
+      "sourceRuleSha256": "408F9A0B2C047A5D183D5DA57FC03CAEAE0A120C0C3024CF19C79CC9A388A2A9",
+      "family": "STROKE",
+      "kind": "PRIMARY_LIST_MARKER",
+      "section": "2.5.1.4",
+      "primaryDisposition": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "decisionRationale": "Primary list-marker behavior requires line-start layout structure.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-009",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-009.json",
+      "sourceRuleSha256": "13F40ABF2A8E09CBA56E261176E580672568574B358C7E5296F64BCAAB1028C2",
+      "family": "STROKE",
+      "kind": "SECONDARY_LIST_MARKER",
+      "section": "2.5.1.4",
+      "primaryDisposition": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "decisionRationale": "Secondary list-marker behavior belongs to list-level and line-start layout structure.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-010.json",
+      "sourceRuleSha256": "997BF0D6A397E1BBE0E230EBDD2B7323634BF4DB8AA983D60F13997A4E2EFFCF",
+      "family": "STROKE",
+      "kind": "DASH_BETWEEN_NUMBERS",
+      "section": "2.5.1.5",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "The dash terminates one numeric component and requires numeric-state re-entry afterward.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-002"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-011",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-011.json",
+      "sourceRuleSha256": "3E820491AC05EAB938A91DA8B34DB8E2CDB3E1E6A0D13FAF029A01A1CD43DF4C",
+      "family": "STROKE",
+      "kind": "MINUS",
+      "section": "2.5.1.6",
+      "primaryDisposition": "DELEGATED",
+      "runtimeOwner": "GERMAN_MATHEMATICAL_SIGN_RESOLVER",
+      "decisionRationale": "Minus selection requires mathematical semantics and depends on section 2.10.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-003"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-012",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-012.json",
+      "sourceRuleSha256": "B7987583C24009E124308CE44EC68F74C4DD2B23B082474879D9C227E3B23C81",
+      "family": "STROKE",
+      "kind": "SLASH",
+      "section": "2.5.2",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Slash behavior includes German word-boundary semantics in addition to emission.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-004"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-013",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-013.json",
+      "sourceRuleSha256": "48B8661A217567D0C751A211A76B15F36BB44E912D103664BEDB4DF07DDFE8F1",
+      "family": "STROKE",
+      "kind": "SLASH_SPACING",
+      "section": "2.5.2",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Slash spacing depends on whether each side is a single word/number or contains multiple words.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-014.json",
+      "sourceRuleSha256": "030F4FB8DD495C3CDCEB5D780F2EF63B6E2728DAEF466A571F7F20693506F517",
+      "family": "STROKE",
+      "kind": "NUMERIC_SLASH",
+      "section": "2.5.2",
+      "primaryDisposition": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "decisionRationale": "A numeric slash requires numeric-state re-entry for the following component.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-005"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-015",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-015.json",
+      "sourceRuleSha256": "37301E92BBB9667AED173DB2F8B85EC4738EC326DF5D859F6629FC82ABA16758",
+      "family": "STROKE",
+      "kind": "MATHEMATICAL_FRACTION_BAR_OPTION",
+      "section": "2.5.2",
+      "primaryDisposition": "DELEGATED",
+      "runtimeOwner": "GERMAN_MATHEMATICAL_SIGN_RESOLVER",
+      "decisionRationale": "The optional fraction-bar representation depends on mathematical semantics and section 2.10.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-016",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-016.json",
+      "sourceRuleSha256": "40FB0E517406A0CDCEC2CFB933BB58B9E3CD805AD731B425990573B034CACF4D",
+      "family": "STROKE",
+      "kind": "VERTICAL_SEPARATOR",
+      "section": "2.5.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "Vertical-separator spacing depends on concept-separator versus word-split semantic role.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [
+        "DE-STROKE-CASE-006"
+      ],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-017",
+      "sourceRulePath": "spec/de/rules/records/de-stroke-017.json",
+      "sourceRuleSha256": "45430EC939E6ACD1C2F0F58AA1F2A988C5218A3537A1059900BC126D3C6F3338",
+      "family": "STROKE",
+      "kind": "MIDDLE_DOT",
+      "section": "2.5.3",
+      "primaryDisposition": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "decisionRationale": "The source explicitly requires semantic selection for middle-dot usage.",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "executableAtAudit": false,
+      "validationCaseIds": [],
+      "execution": {
+        "lowered": false,
+        "executable": false
+      }
+    }
+  ]
+}
