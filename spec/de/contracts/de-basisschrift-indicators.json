@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-indicators",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "INDICATOR",
+  "recordCount": 20,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Twenty German Basisschrift Indicator contracts materialized from immutable canonical rules. Contracts remain non-executable until B4 lowering.",
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-002",
+      "sourceRulePath": "spec/de/rules/records/de-accent-002.json",
+      "sourceRuleSha256": "96C91532EA41F8E36F30CF2D6DECFF45326DEF62C305209B573A2703984362C3",
+      "family": "ACCENT",
+      "kind": "GENERIC_DIACRITIC_METHOD",
+      "section": "2.8.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "POINT4_DIACRITIC_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-ACCENT-CASE-001",
+        "DE-ACCENT-CASE-003",
+        "DE-ACCENT-CASE-005"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        },
+        "summary": "When knowledge of the foreign Braille system cannot be assumed, point 4 is placed before the German Braille cell of the base letter.",
+        "precision": "DIACRITIC_PRESENT_BUT_UNSPECIFIED"
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "sourceRulePath": "spec/de/rules/records/de-accent-003.json",
+      "sourceRuleSha256": "2AC1E292E411D36A15E3BDD4ED77DB1C852183C21EF57287644944855EB8DD7C",
+      "family": "ACCENT",
+      "kind": "EXACT_LANGUAGE_SPECIFIC_METHOD",
+      "section": "2.8.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "POINT4_PREFIX_IS_PRIMARY_EFFECT_LANGUAGE_MAPPING_DEPENDENCY_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-ACCENT-CASE-002",
+        "DE-ACCENT-CASE-004",
+        "DE-ACCENT-CASE-006",
+        "DE-ACCENT-CASE-007"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        },
+        "summary": "For exact written representation, point 4 may precede the language-specific accented Braille cell.",
+        "requiresLanguageSpecificMapping": true
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "sourceRulePath": "spec/de/rules/records/de-accent-004.json",
+      "sourceRuleSha256": "E092016A8D12D6CE551CB56DF49B11A1580AB22ACECB2D91D2EB94F0935CC7CA",
+      "family": "ACCENT",
+      "kind": "POINT4_REQUIRED",
+      "section": "2.8.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "POINT4_ANNOUNCEMENT_REQUIREMENT_IS_PRIMARY_PROFILE_LIST_IS_APPLICABILITY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Point-4 announcement is required for this German-text technique in Basis-, Voll- and Kurzschrift.",
+        "profiles": [
+          "basisschrift",
+          "vollschrift",
+          "kurzschrift"
+        ]
+      },
+      "explicitIndicatorFormRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "sourceRulePath": "spec/de/rules/records/de-case-004.json",
+      "sourceRuleSha256": "D797309FCDC928DD0D32FA18B3E58520A29971F31DEABD54B37F4407804A798F",
+      "family": "CASE",
+      "kind": "INITIAL_CAPITAL",
+      "section": "2.6.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-001",
+        "DE-CASE-CASE-008"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A capital letter followed by one or more lowercase letters uses the dots-4-6 marker.",
+        "followingLowercaseRequiresMarker": false
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "sourceRulePath": "spec/de/rules/records/de-case-005.json",
+      "sourceRuleSha256": "DE30ED67ABF7B8ACD5AC4A9ACE5D1FDFD74AB3AFBAC5BB7CD8157B46A352F8D1",
+      "family": "CASE",
+      "kind": "INITIAL_CAPITAL_ABBREVIATION",
+      "section": "2.6.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        },
+        "summary": "An abbreviation or letter sequence beginning with one uppercase letter followed by lowercase letters uses the initial-capital marker and does not permit contractions.",
+        "contractionsAllowed": false
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "sourceRulePath": "spec/de/rules/records/de-case-006.json",
+      "sourceRuleSha256": "8440A4C7FF4E5A21E5892EB571ABEC5DD50CCF0A2829540AF9E404885483B213",
+      "family": "CASE",
+      "kind": "CAPITAL_SEQUENCE",
+      "section": "2.6.2",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "CAPITAL_SEQUENCE_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-002",
+        "DE-CASE-CASE-003"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A single uppercase letter or an uninterrupted uppercase sequence uses the capital-sequence marker.",
+        "requiresBasisschrift": true,
+        "contractionsAllowed": false
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "sourceRulePath": "spec/de/rules/records/de-case-008.json",
+      "sourceRuleSha256": "95BCD5A2FFA49A3CE7911CF786EA341D7805D9BD688CEFC5E6E7E5E864BFAD84",
+      "family": "CASE",
+      "kind": "LOWERCASE_ANNOUNCEMENT",
+      "section": "2.6.3",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "LOWERCASE_ANNOUNCEMENT_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-004",
+        "DE-CASE-CASE-007"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Lowercase abbreviations and units without an abbreviation point, and lowercase Roman numerals, require the lowercase marker.",
+        "contractionsAllowed": false,
+        "contractionSuppressionEquivalentToBasisschrift": true
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "sourceRulePath": "spec/de/rules/records/de-case-013.json",
+      "sourceRuleSha256": "5D1AB3894AF6FFFDBD3114119EB655975C812CC1AE4A5B0E574FCAB125646E6C",
+      "family": "CASE",
+      "kind": "GREEK_UPPERCASE",
+      "section": "2.6.5",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "GREEK_UPPERCASE_MARKER_COMPOSITION_IS_PRIMARY_DEPENDENCY_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-007"
+      ],
+      "semanticPayload": {
+        "summary": "An uppercase Greek letter uses the Greek marker followed by the appropriate German uppercase announcement marker.",
+        "prefix": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "caseMarkers": [
+          {
+            "unicode": "⠘",
+            "codepoints": [
+              "U+2818"
+            ],
+            "dots": [
+              "45"
+            ],
+            "cellCount": 1
+          },
+          {
+            "unicode": "⠨",
+            "codepoints": [
+              "U+2828"
+            ],
+            "dots": [
+              "46"
+            ],
+            "cellCount": 1
+          }
+        ],
+        "foreignSpanTerminationRequiredForUnits": false,
+        "dependency": "2.9"
+      },
+      "explicitIndicatorFormRoots": [
+        "prefix",
+        "caseMarkers"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "sourceRulePath": "spec/de/rules/records/de-case-014.json",
+      "sourceRuleSha256": "0059B3963147E23EEEFE4AF3BFF4097AD4337EE16E94F4100EB0E9B35E4486DE",
+      "family": "CASE",
+      "kind": "NON_DERIVABLE_CASE",
+      "section": "2.6.6",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "EXPLICIT_LOWERCASE_WORD_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-008"
+      ],
+      "semanticPayload": {
+        "summary": "Case that differs from normal orthographic expectation may be explicitly represented.",
+        "lowercaseWordMarker": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "markedLowercaseWordRequiresBasisschrift": true
+      },
+      "explicitIndicatorFormRoots": [
+        "lowercaseWordMarker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "sourceRulePath": "spec/de/rules/records/de-cb-005.json",
+      "sourceRuleSha256": "0A2DB73C85C5F9CB16BA4E92E33557924354D1935F3733B162A0AF9A79A17D19",
+      "family": "CB",
+      "kind": "DOT_7_TRANSPORT",
+      "section": "2.11",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "DOT7_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-002"
+      ],
+      "semanticPayload": {
+        "summary": "Dot 7 is replaced by a preceding dot-4 cell while dots 1 through 6 remain in the following six-dot cell.",
+        "prefix": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "sourceRulePath": "spec/de/rules/records/de-cb-006.json",
+      "sourceRuleSha256": "1CD753493F159267642327D4CBBD0FB451F0C4703834FA6341CCBB721FEDCBD5",
+      "family": "CB",
+      "kind": "DOT_8_TRANSPORT",
+      "section": "2.11",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "Dot 8 is replaced by a preceding dot-6 cell while dots 1 through 6 remain in the following six-dot cell.",
+        "prefix": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "sourceRulePath": "spec/de/rules/records/de-cb-007.json",
+      "sourceRuleSha256": "1ED93AF0C2C8EF0316CA44B0BFC1CBED2D8C524EDAF21C4660403298F507C963",
+      "family": "CB",
+      "kind": "DOTS_7_8_TRANSPORT",
+      "section": "2.11",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "DOT7_DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "Dots 7 and 8 together are replaced by a preceding dots-4-6 cell.",
+        "prefix": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "sourceRulePath": "spec/de/rules/records/de-emph-002.json",
+      "sourceRuleSha256": "4C667147B3AA07F93F122B2DD235D71D62FB1A9E0FC8BC05CF671A1753CA7EA0",
+      "family": "EMPH",
+      "kind": "PRIMARY_SINGLE_WORD",
+      "section": "2.7.1",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "PRIMARY_SINGLE_WORD_EMPHASIS_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-001"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A single word using the first emphasis type is prefixed by the primary emphasis marker."
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "sourceRulePath": "spec/de/rules/records/de-emph-007.json",
+      "sourceRuleSha256": "2FB902EF51FD63B14871A6D2719FC3963C3C6F402ED4A471925FD0A0D7951547",
+      "family": "EMPH",
+      "kind": "SECONDARY_SINGLE_WORD_OR_PART",
+      "section": "2.7.2",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "SECONDARY_SINGLE_WORD_OR_PART_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-005"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The second emphasis type uses its alternate marker for one word and for the start of a highlighted word part."
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "sourceRulePath": "spec/de/rules/records/de-emph-013.json",
+      "sourceRuleSha256": "DDCF91EF333D72182A49E0FC1A13394A40C45CBADE5F86FE5B96664DCC70DA18",
+      "family": "EMPH",
+      "kind": "VERSALIEN_SINGLE_WORD",
+      "section": "2.7.3",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "VERSALIEN_SINGLE_WORD_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-008"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "summary": "One all-capitals word is introduced by the capital-sequence marker."
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "sourceRulePath": "spec/de/rules/records/de-math-001.json",
+      "sourceRuleSha256": "65EFFCDD74A265F8D4F8AA5FA26037BA04A32C33728FB4B2BBC74B842DC926E8",
+      "family": "MATH",
+      "kind": "INLINE_MATH_ANNOUNCEMENT",
+      "section": "2.10",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "INLINE_MATH_POINT4_ANNOUNCEMENT_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-001",
+        "DE-MATH-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "Mathematical signs from the section 2.10 table are normally announced with point 4 when embedded in German text.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "sourceRulePath": "spec/de/rules/records/de-math-008.json",
+      "sourceRuleSha256": "E16AF7B2952C2ADB95A9FAE6858B20B36A49988DB8FB4263791568D5AFA1802C",
+      "family": "MATH",
+      "kind": "EXPONENT",
+      "section": "2.10",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "EXPONENT_SIGN_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠌",
+          "codepoints": [
+            "U+280C"
+          ],
+          "dots": [
+            "34"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Superscripts and exponents are introduced by the exponent sign.",
+        "integerPolicy": "Positive or negative whole-number exponents use lowered digits without a number indicator.",
+        "lettersAndFractionsFollowImmediately": true
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "sourceRulePath": "spec/de/rules/records/de-math-010.json",
+      "sourceRuleSha256": "12B4EE1EABC481D8A149CA9B03D3721C8EC5A61903FB8C7703966459633C0A29",
+      "family": "MATH",
+      "kind": "FRONT_REAR_INDEX_ANNOUNCEMENT",
+      "section": "2.10",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "POINT4_INDEX_ANNOUNCEMENT_REQUIREMENT_OR_OMISSION_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-005",
+        "DE-MATH-CASE-006"
+      ],
+      "semanticPayload": {
+        "summary": "Rear upper/lower index markers are preferably used without preceding point 4; front upper/lower index markers require point 4.",
+        "rear": "POINT4_PREFERABLY_OMITTED",
+        "front": "POINT4_REQUIRED"
+      },
+      "explicitIndicatorFormRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "sourceRulePath": "spec/de/rules/records/de-math-012.json",
+      "sourceRuleSha256": "DFA89AA9DEB0552CFCE8D64D992D278D6BAFF22A0363CB06C15617564B0C7FF5",
+      "family": "MATH",
+      "kind": "RELATION_NEGATION",
+      "section": "2.10",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "RELATION_NEGATION_PREFIX_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-007"
+      ],
+      "semanticPayload": {
+        "summary": "A relation is negated by prefixing dots 3-5.",
+        "negationPrefix": {
+          "unicode": "⠔",
+          "codepoints": [
+            "U+2814"
+          ],
+          "dots": [
+            "35"
+          ],
+          "cellCount": 1
+        },
+        "example": {
+          "equal": {
+            "unicode": "⠶",
+            "codepoints": [
+              "U+2836"
+            ],
+            "dots": [
+              "2356"
+            ],
+            "cellCount": 1
+          },
+          "notEqual": {
+            "unicode": "⠔⠶",
+            "codepoints": [
+              "U+2814",
+              "U+2836"
+            ],
+            "dots": [
+              "35",
+              "2356"
+            ],
+            "cellCount": 2
+          }
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "negationPrefix"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "sourceRulePath": "spec/de/rules/records/de-special-001.json",
+      "sourceRuleSha256": "6155631C8C6B34AB3BEDF5BA15A180DA91FDC856888BB1F0DACFD35618A90722",
+      "family": "SPECIAL",
+      "kind": "SPECIAL_FORM_LETTER",
+      "section": "2.8.2",
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "decisionRationale": "SPECIAL_FORM_POINT4_MARKER_IS_PRIMARY_EFFECT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-SPECIAL-CASE-001"
+      ],
+      "semanticPayload": {
+        "summary": "Specially formed letter-like symbols use point 4 before the corresponding letter cell.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}
