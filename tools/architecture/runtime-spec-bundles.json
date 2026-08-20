@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "bundles": [
+    {
+      "key": "fa-ir-g1",
+      "profilePath": "spec/fa-ir/profiles/fa-ir-g1.json",
+      "rulesDirectory": "spec/fa-ir/rules/records",
+      "outputPath": "packages/core/src/generated/fa-ir-g1.runtime.ts",
+      "exportName": "faIrG1RuntimeSpecification",
+      "sourceOfTruth": "spec/fa-ir profile and rule artifacts.",
+      "generatedMessage": "Persian Braille runtime specification bundle generated."
+    }
+  ]
+}
