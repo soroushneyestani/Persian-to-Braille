@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A4",
+  "closureStep": "15.5A4.5",
+  "status": "CLOSED",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "6b537ccb7755855ad185b83b2cfbaa439e9b6dba"
+  },
+  "subphases": {
+    "15.5A4.1": "CLOSED",
+    "15.5A4.2": "CLOSED",
+    "15.5A4.3": "CLOSED",
+    "15.5A4.4": "CLOSED",
+    "15.5A4.5": "CLOSED"
+  },
+  "germanTextMode": {
+    "internalTypeName": "GermanTextMode",
+    "values": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "semanticRole": "TRANSLATION_CONFIGURATION_DIMENSION",
+    "selectionCardinality": "EXACTLY_ONE_PER_TRANSLATION_REQUEST",
+    "explicitSelectionRequired": true,
+    "implicitDefaultAllowed": false
+  },
+  "semanticSeparation": {
+    "existingRuleTypeMode": "STRUCTURAL_ENGINE_RULE",
+    "germanTextMode": "TRANSLATION_CONFIGURATION_DIMENSION",
+    "sameConcept": false,
+    "modeRuleExecutorCoupled": false
+  },
+  "materialization": {
+    "inheritanceMeaning": "SPECIFICATION_MATERIALIZATION",
+    "basisschriftLayers": [
+      "basisschrift"
+    ],
+    "vollschriftLayers": [
+      "basisschrift",
+      "vollschrift"
+    ],
+    "kurzschriftLayers": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "runtimeExecutionModel": "ONE_EFFECTIVE_BUNDLE_PER_SELECTED_MODE",
+    "runtimeParentFallbackChainAllowed": false,
+    "translatorChainingAllowed": false,
+    "lastWriteWinsAllowed": false,
+    "implicitChildOverrideAllowed": false,
+    "duplicateCanonicalRuleIdsAcrossLayersAllowed": false
+  },
+  "regional": {
+    "swissIsFourthGermanMode": false,
+    "swissParticipatesInModeInheritance": false,
+    "dimension": "ORTHOGONAL_REGIONAL_CONFIGURATION",
+    "explicitEszettInputPolicy": "OPEN"
+  },
+  "publicBoundary": {
+    "coreRootGermanApi": false,
+    "sdkGermanApi": false,
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN",
+    "publicSdkModeApi": "NOT_FROZEN"
+  },
+  "runtimeAdmission": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "activeManifestBundles": [
+      "fa-ir-g1"
+    ]
+  },
+  "regression": {
+    "identityValidator": "PASS",
+    "materializationValidator": "PASS",
+    "focusedGermanTextModeTest": "PASS",
+    "coreRegression": "PASS",
+    "sdkRegression": "PASS",
+    "persianRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "persianRuntimeUnchanged": true
+  },
+  "frozenArtifactHashes": {
+    "a4_1_json": "6369487F2B101A81E1E2F1571823E92ADCF9D404CF0F5BAD75FADC59EBF7967A",
+    "a4_1_md": "4B5BD4E94E9BA67D2129B376439C8D2DD45EF0208AA80AA8F87331DE74D46970",
+    "a4_2_contract": "C32CAA4170B42BC05CDA796FF69E057EA20C43A34053BE49FF11DDF391A56CC6",
+    "a4_2_validator": "952AFDF61B600F85CF409AA326C9D9F95B5FFAD8720ED2EAD9B7918C4B25F2B9",
+    "a4_3_contract": "0962F9D594C7DEA8FF24BC0F9194377EEE01197B2B98930A842E97D57C9D4BE7",
+    "a4_3_validator": "77DE0EADD846FCB3EB40BAFBA7047886D14131659A98C0871A78DC925CFB4635",
+    "a4_4_module": "D194E892A88D9124630B3639AEF2DD460A4D26CA2195ADEE88164DE7CE679AB6",
+    "a4_4_test": "6017589BDEDC30115D27907B967FB1257412E7786AAEBD3296AD2A0FE59DE088",
+    "core_package": "AA3A377BD261716C24B3AF602F2B8167DA55CE856C5EF4B21C93FC0FC7718124"
+  },
+  "nextStep": "15.5A5 Regional Configuration Contract"
+}
