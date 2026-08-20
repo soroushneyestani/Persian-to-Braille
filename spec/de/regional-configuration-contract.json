@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A5.2",
+  "status": "IDENTITY_CONTRACT",
+  "language": "de",
+  "contract": {
+    "internalTypeName": "GermanRegionalConfiguration",
+    "overlayTypeName": "GermanRegionalOverlay",
+    "semanticRole": "ORTHOGONAL_REGIONAL_CONFIGURATION_DIMENSION",
+    "visibility": "INTERNAL_CORE_CONTRACT"
+  },
+  "representation": {
+    "configurationShape": {
+      "overlay": "GermanRegionalOverlay | null"
+    },
+    "baseConfiguration": {
+      "overlay": null,
+      "meaning": "NO_REGIONAL_OVERLAY"
+    },
+    "supportedOverlays": [
+      {
+        "key": "swiss",
+        "meaning": "SWISS_REGIONAL_OVERLAY"
+      }
+    ]
+  },
+  "selection": {
+    "configurationCardinality": "EXACTLY_ONE_PER_GERMAN_TRANSLATION_REQUEST",
+    "explicitConfigurationRequired": true,
+    "implicitDefaultAllowed": false,
+    "overlayCardinality": "ZERO_OR_ONE",
+    "multipleOverlaysAllowed": false
+  },
+  "semanticSeparation": {
+    "independentFromGermanTextMode": true,
+    "swissIsGermanTextMode": false,
+    "swissIsFourthGermanMode": false,
+    "persianProfileRegionMetadataReusableAsSelector": false,
+    "deCh410IsConfigurationKey": false,
+    "deCh410Meaning": "INTERNAL_NORMATIVE_RULE_NAMESPACE"
+  },
+  "identifierPolicy": {
+    "internalOverlayKeyFrozenByThisContract": true,
+    "publicGermanProfileIdentifier": "NOT_FROZEN",
+    "publicSwissProfileIdentifier": "NOT_FROZEN",
+    "publicLocaleIdentifier": "NOT_FROZEN",
+    "publicSdkRegionalApi": "NOT_FROZEN"
+  },
+  "runtimePolicy": {
+    "regionalOverlayExecution": "DEFERRED",
+    "actualOverlayApplication": "15.5F",
+    "swissExplicitEszettInputPolicy": "OPEN",
+    "swissExplicitEszettDecisionOwner": "15.5A6"
+  },
+  "forbiddenAliases": [
+    "de-ch",
+    "DE-CH410",
+    "ch",
+    "base",
+    "standard",
+    "default"
+  ],
+  "admissionState": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "swissExecutableRuntimeBehavior": 0
+  },
+  "deferred": {
+    "overlayApplicationContract": "15.5A5.3",
+    "coreRegionalSelectionBoundary": "15.5A5.4",
+    "regionalContractClosure": "15.5A5.5",
+    "swissExplicitEszettDecision": "15.5A6",
+    "publicSdk": "15.6"
+  },
+  "nextStep": "15.5A5.3 Regional Overlay Application Contract"
+}
