@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.6c",
+  "status": "FINAL_B3_ROLE_CONTRACTS_MATERIALIZED_NON_EXECUTABLE",
+  "title": "German Basisschrift Final B3 Role Contract Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "5ac5d020cea090b92a7626ae4d2d8efb9286044e"
+  },
+  "upstream": {
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "finalRoleAdjudicationCanonicalJsonSha256": "F0C2DB498E31C22B24C65543A731A2A623E130A560AED51498DC96D8386610C7",
+    "finalRoleMaterializationModelCanonicalJsonSha256": "AA9F307F767F108B1CE04B7C2F42847CE88E09FF66608C47E1B35D7C17A623D5",
+    "roleNeutralSchemaSha256": "FBF7F9BDA476DA7E9864C8600F1274622F2DD00B526D4F7A0730436FB9903997",
+    "roleNeutralSchemaCanonicalJsonSha256": "8C624D3D60CEB29BF9CABA0A46087F9C889AB6A1016E99BF323453E525CB21B4"
+  },
+  "outputs": {
+    "DELEGATED_REFERENCE": {
+      "path": "spec/de/contracts/de-basisschrift-delegated-reference.json",
+      "sha256": "11D8BAEC10346F378004529EBF942C3BF1C9611CA71E121CB66FBFB9AD8FAA77",
+      "canonicalJsonSha256": "2323FA13AD052A3363EF3641AA5F7C3D80E562328049282B6F477A1EBD7E5782",
+      "recordsCanonicalJsonSha256": "4920462C515E784328B1EF314A26FD6F7A8ACAD549E7E5230E210F6AEA28A6BA"
+    },
+    "REFERENCE_ONLY": {
+      "path": "spec/de/contracts/de-basisschrift-reference-only.json",
+      "sha256": "D8AED449F866A9685DA2B158659759C2F8C7AE5FE5A0A37983A71AE0E6A425AF",
+      "canonicalJsonSha256": "69F338B21C2A8A6316B6DA8452DFB4D6B2CE5A92C24A699A6513FCEEB6F425E4",
+      "recordsCanonicalJsonSha256": "255F5C6B08110F1C89158AFC386F0412916CDBBD291731B59F2E1AE07BDB179C"
+    },
+    "CROSS_MODE_DEFERRED": {
+      "path": "spec/de/contracts/de-basisschrift-cross-mode-deferred.json",
+      "sha256": "86882AC34327350A4271F74508D3088D1BEB026EF70DCD0E5D1D6E2C39333A06",
+      "canonicalJsonSha256": "35C5229CAC973D163926C049ABCDE4BDFE9C76385AEDB1666CD8C96A88D74422",
+      "recordsCanonicalJsonSha256": "9B69442160DCFB98554F5EB69992084817D3193CBED387DD9C78C569F335F9F3"
+    },
+    "ARCHITECTURAL_ONLY": {
+      "path": "spec/de/contracts/de-basisschrift-architectural-only.json",
+      "sha256": "5A18E13D7F9D1F34CFF22FA594801655E0AA83D31D8E537A187FC7DE9071DEC9",
+      "canonicalJsonSha256": "0290CE84EDF71FD48406F601DAD1AA2D61EA37D7EA47BFDD1D024155FF425435",
+      "recordsCanonicalJsonSha256": "5F1C752B226EC45423772298F08257B30B7B9CB7B99B030B2A47ABD68B22DCC1"
+    }
+  },
+  "materialization": {
+    "b3Scope": 107,
+    "existingAssignmentsBeforeB36": 87,
+    "delegatedReferenceAssignments": 8,
+    "referenceOnlyAssignments": 5,
+    "crossModeDeferredAssignments": 3,
+    "architecturalOnlyAssignments": 4,
+    "newAssignments": 20,
+    "materializedAssignmentsTotal": 107,
+    "remainingNotAssigned": 0,
+    "allB3RulesRoleMaterialized": true,
+    "allNinePrimaryRoleSetsDisjoint": true,
+    "canonicalRecordsRemainUnmodified": true,
+    "semanticPayloadExactCopies": {
+      "DELEGATED_REFERENCE": "8/8",
+      "REFERENCE_ONLY": "5/5",
+      "CROSS_MODE_DEFERRED": "3/3",
+      "ARCHITECTURAL_ONLY": "4/4"
+    },
+    "sourceBindingsVerified": {
+      "DELEGATED_REFERENCE": "8/8",
+      "REFERENCE_ONLY": "5/5",
+      "CROSS_MODE_DEFERRED": "3/3",
+      "ARCHITECTURAL_ONLY": "4/4"
+    },
+    "validationBindingsVerified": {
+      "DELEGATED_REFERENCE": "8/8",
+      "REFERENCE_ONLY": "5/5",
+      "CROSS_MODE_DEFERRED": "3/3",
+      "ARCHITECTURAL_ONLY": "4/4"
+    }
+  },
+  "finalRoleCounts": {
+    "INDICATOR": 20,
+    "STATE_SCOPE": 12,
+    "POLICY_SELECTION": 22,
+    "STRUCTURAL": 19,
+    "BEHAVIORAL_CONSTRAINT": 14,
+    "DELEGATED_REFERENCE": 8,
+    "REFERENCE_ONLY": 5,
+    "CROSS_MODE_DEFERRED": 3,
+    "ARCHITECTURAL_ONLY": 4
+  },
+  "newRoleFamilyCounts": {
+    "DELEGATED_REFERENCE": {
+      "ACCENT": 1,
+      "FLANG": 4,
+      "MATH": 2,
+      "TABLE": 1
+    },
+    "REFERENCE_ONLY": {
+      "ACCENT": 2,
+      "CB": 3
+    },
+    "CROSS_MODE_DEFERRED": {
+      "CASE": 3
+    },
+    "ARCHITECTURAL_ONLY": {
+      "ACCENT": 1,
+      "EMPH": 1,
+      "TABLE": 2
+    }
+  },
+  "schemaBoundary": {
+    "roleNeutralSchemaReused": true,
+    "roleNeutralSchemaMutated": false,
+    "newSchemaCreated": false,
+    "semanticPayloadPolicy": "LOSSLESS_EXACT_COPY_OF_CANONICAL_SEMANTICS",
+    "semanticEvidenceRootsPolicy": "SORTED_TOP_LEVEL_SOURCE_SEMANTIC_ROOTS_EXCLUDING_SUMMARY_METADATA_ONLY"
+  },
+  "roleBoundaries": {
+    "delegatedReferenceDuplicatesDelegatedSemantics": false,
+    "referenceOnlyImpliesBasisschriftExecution": false,
+    "crossModeDeferredExecutesInBasisschrift": false,
+    "architecturalOnlyImpliesRuntimeExecution": false
+  },
+  "executionBoundary": {
+    "contractMaterializationCompleted": true,
+    "allB3RulesRoleMaterialized": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.6c Independent Validation and Repository Closure"
+}

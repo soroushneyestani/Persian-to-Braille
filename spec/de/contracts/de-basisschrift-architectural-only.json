@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-architectural-only",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "ARCHITECTURAL_ONLY",
+  "recordCount": 4,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Four German architectural-only contracts preserving non-executable architecture, ownership, and inference boundaries.",
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-008",
+      "sourceRulePath": "spec/de/rules/records/de-accent-008.json",
+      "sourceRuleSha256": "B35DF32A2D213BBA36AC32429FD43E2C10B9ACE53C327E63903ED30E935AE6FC",
+      "family": "ACCENT",
+      "kind": "LIGATURE_DISTINCTION",
+      "section": "2.8.1",
+      "primaryRole": "ARCHITECTURAL_ONLY",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "NONNORMATIVE_LIGATURE_TABLE_STRUCTURE_INFERENCE_IS_ARCHITECTURAL",
+      "sourceNormative": false,
+      "sourceStatus": "architectural",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The French oe ligature has an explicit language-specific Braille cell; section 2.8.1 does not define it as a generic base-letter plus diacritic case.",
+        "architecturalInference": true,
+        "evidenceRole": "TABLE_STRUCTURE_INFERENCE"
+      },
+      "semanticEvidenceRoots": [
+        "architecturalInference",
+        "evidenceRole"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-001",
+      "sourceRulePath": "spec/de/rules/records/de-emph-001.json",
+      "sourceRuleSha256": "54537A164C3ACF34A9C2A57AE9251F7B3F6AA30D94AB321D950A00F424CB4D8C",
+      "family": "EMPH",
+      "kind": "EMPHASIS_ABSTRACTION",
+      "section": "2.7",
+      "primaryRole": "ARCHITECTURAL_ONLY",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "NONNORMATIVE_EMPHASIS_ABSTRACTION_SYNTHESIS_IS_ARCHITECTURAL",
+      "sourceNormative": false,
+      "sourceStatus": "architectural",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "German Braille provides a bounded emphasis mechanism rather than preserving every visual print-formatting distinction directly.",
+        "hostFormattingMapping": "SEPARATE_POLICY_REQUIRED",
+        "architecturalInference": true,
+        "evidenceRole": "ARCHITECTURAL_SYNTHESIS_FROM_SECTION_2_7"
+      },
+      "semanticEvidenceRoots": [
+        "architecturalInference",
+        "evidenceRole",
+        "hostFormattingMapping"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-007",
+      "sourceRulePath": "spec/de/rules/records/de-table-007.json",
+      "sourceRuleSha256": "A2BC1B99C33A4AE623D4C43FD96C02B94720C46638189EAB1D2BD8378106FA42",
+      "family": "TABLE",
+      "kind": "UNNUMBERED_EMPTY_CELL_POLICY",
+      "section": "2.12",
+      "primaryRole": "ARCHITECTURAL_ONLY",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "NONNORMATIVE_INFERENCE_PROHIBITION_FOR_UNSPECIFIED_EMPTY_CELL_POLICY_IS_ARCHITECTURAL",
+      "sourceNormative": false,
+      "sourceStatus": "candidate",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-005"
+      ],
+      "semanticPayload": {
+        "summary": "Section 2.12 does not explicitly establish a complete empty-cell serialization policy for the case where target-column numbers are not used.",
+        "policy": "NOT_FULLY_SPECIFIED_BY_SECTION_2_12",
+        "inferenceProhibited": true
+      },
+      "semanticEvidenceRoots": [
+        "inferenceProhibited",
+        "policy"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-008",
+      "sourceRulePath": "spec/de/rules/records/de-table-008.json",
+      "sourceRuleSha256": "9BCAF614F11E33DE967292D54E490180E89FF4AA1FE8C37F1C894D33E6A898DC",
+      "family": "TABLE",
+      "kind": "STRUCTURAL_LAYER_OWNERSHIP",
+      "section": "2.12",
+      "primaryRole": "ARCHITECTURAL_ONLY",
+      "materializationOwner": "15.5B3.6",
+      "decisionRationale": "DOCUMENT_STRUCTURE_LAYER_OWNERSHIP_IS_ARCHITECTURAL",
+      "sourceNormative": false,
+      "sourceStatus": "architectural",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Table-cell separation represents document structure and must not be modeled as an ordinary character-substitution rule.",
+        "architecturalClassification": "STRUCTURAL_SERIALIZATION",
+        "futureOwner": "DOCUMENT_STRUCTURE_AND_LAYOUT_LAYER",
+        "architecturalInference": true
+      },
+      "semanticEvidenceRoots": [
+        "architecturalClassification",
+        "architecturalInference",
+        "futureOwner"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}
