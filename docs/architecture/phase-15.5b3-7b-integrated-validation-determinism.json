@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.7b",
+  "status": "INTEGRATED_VALIDATION_DETERMINISM_FROZEN",
+  "title": "German Basisschrift B3 Integrated Validation and Determinism",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "c3301c5a508a3ebb6791c3068e511dec411a1c43"
+  },
+  "upstream": {
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "roleNeutralSchemaSha256": "FBF7F9BDA476DA7E9864C8600F1274622F2DD00B526D4F7A0730436FB9903997",
+    "roleNeutralSchemaCanonicalJsonSha256": "8C624D3D60CEB29BF9CABA0A46087F9C889AB6A1016E99BF323453E525CB21B4",
+    "b36bArchitectureJsonSha256": "D6B1A83B7570E120BE10474E0E19DF9F9BF487C00BD500009A231418F669CB4E",
+    "b36cArchitectureJsonSha256": "80309E0E81CDFD7FA4414F68F78C90B07E3A73B5151AC7D8E22996B01A8C8D81"
+  },
+  "validation": {
+    "phase": "15.5B3.7",
+    "validationKind": "INTEGRATED_ROLE_CONTRACT_DETERMINISM",
+    "canonicalGermanRuleCount": 150,
+    "b3ScopeCount": 107,
+    "primaryRoleSetCount": 9,
+    "roleCounts": {
+      "ARCHITECTURAL_ONLY": 4,
+      "BEHAVIORAL_CONSTRAINT": 14,
+      "CROSS_MODE_DEFERRED": 3,
+      "DELEGATED_REFERENCE": 8,
+      "INDICATOR": 20,
+      "POLICY_SELECTION": 22,
+      "REFERENCE_ONLY": 5,
+      "STATE_SCOPE": 12,
+      "STRUCTURAL": 19
+    },
+    "coverage": {
+      "materialized": 107,
+      "remaining": 0,
+      "allRoleSetsDisjoint": true,
+      "contractTopology": "9/9"
+    },
+    "integrity": {
+      "sourceBindingsExact": "107/107",
+      "semanticPayloadExact": "107/107",
+      "validationBindingsExact": "107/107",
+      "primaryRoleBindingsExact": "107/107",
+      "recordExecutionBoundarySafe": "107/107",
+      "canonicalRuntimeDispositionNotClassified": "150/150"
+    },
+    "deterministicIdentities": {
+      "roleAssignmentCanonicalJsonSha256": "C61C9982399E185DF0CD1C9E4AA42EA7D9A721777B1586A7F02F8888F5BF182F",
+      "contractInventoryCanonicalJsonSha256": "973EA480B5D19416CDCB277556DD206E29A0BA5CC40EC8D05F3B816B2CD681B6",
+      "sourceBindingCanonicalJsonSha256": "7018EC5AB189BFCE39342755F21A7CFD8AF4DD78A0F2E340529406B8FFA97756",
+      "integratedDeterminismCanonicalJsonSha256": "BE7799565DD63FE3C9F5CC5A7C0FC2AFAC66F7AB427F10A3ED5DA3286C646F30"
+    },
+    "executionBoundary": {
+      "behavioralLoweringStarted": false,
+      "numericStateMachineStarted": false,
+      "translatorStarted": false,
+      "germanRuntimeBundleGenerated": false,
+      "germanRuntimeBundleRegistered": false,
+      "persianRuntimeUnchanged": true
+    }
+  },
+  "contractInventory": [
+    {
+      "role": "ARCHITECTURAL_ONLY",
+      "path": "spec/de/contracts/de-basisschrift-architectural-only.json",
+      "recordCount": 4,
+      "fileSha256": "5A18E13D7F9D1F34CFF22FA594801655E0AA83D31D8E537A187FC7DE9071DEC9",
+      "canonicalJsonSha256": "0290CE84EDF71FD48406F601DAD1AA2D61EA37D7EA47BFDD1D024155FF425435",
+      "recordsCanonicalJsonSha256": "5F1C752B226EC45423772298F08257B30B7B9CB7B99B030B2A47ABD68B22DCC1"
+    },
+    {
+      "role": "BEHAVIORAL_CONSTRAINT",
+      "path": "spec/de/contracts/de-basisschrift-behavioral-constraint.json",
+      "recordCount": 14,
+      "fileSha256": "14FA11CB29408FDC50DCD35A78320001DDF55D7050EEB9A381BFD6F0D8740960",
+      "canonicalJsonSha256": "B03FD5D7AF0FB12B89EE15D3736820BEFFF559D8F594AE562AEAA367FB91E2B4",
+      "recordsCanonicalJsonSha256": "062EF5727F77C34C1674CD2F2F31A4DE10E5D91B25B82D7F5B333C44CB867C91"
+    },
+    {
+      "role": "CROSS_MODE_DEFERRED",
+      "path": "spec/de/contracts/de-basisschrift-cross-mode-deferred.json",
+      "recordCount": 3,
+      "fileSha256": "86882AC34327350A4271F74508D3088D1BEB026EF70DCD0E5D1D6E2C39333A06",
+      "canonicalJsonSha256": "35C5229CAC973D163926C049ABCDE4BDFE9C76385AEDB1666CD8C96A88D74422",
+      "recordsCanonicalJsonSha256": "9B69442160DCFB98554F5EB69992084817D3193CBED387DD9C78C569F335F9F3"
+    },
+    {
+      "role": "DELEGATED_REFERENCE",
+      "path": "spec/de/contracts/de-basisschrift-delegated-reference.json",
+      "recordCount": 8,
+      "fileSha256": "11D8BAEC10346F378004529EBF942C3BF1C9611CA71E121CB66FBFB9AD8FAA77",
+      "canonicalJsonSha256": "2323FA13AD052A3363EF3641AA5F7C3D80E562328049282B6F477A1EBD7E5782",
+      "recordsCanonicalJsonSha256": "4920462C515E784328B1EF314A26FD6F7A8ACAD549E7E5230E210F6AEA28A6BA"
+    },
+    {
+      "role": "INDICATOR",
+      "path": "spec/de/contracts/de-basisschrift-indicators.json",
+      "recordCount": 20,
+      "fileSha256": "878C7361AD7DAC215DE57ECCB18ABD34398E6CFE0FB1D6CEE29C3BCFEA9C0C9F",
+      "canonicalJsonSha256": "CEA7CA6E7FEC1800BAE1C94510219FA79374DA5C6FEC66C91FBA2208F4E8AFE5",
+      "recordsCanonicalJsonSha256": "72348ABA0E6B7907F176463A76B07C3B68DA70C9C5CB5F7F87CB4002E399C151"
+    },
+    {
+      "role": "POLICY_SELECTION",
+      "path": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "recordCount": 22,
+      "fileSha256": "FD44F4B1F3998DC2931FDC76093B086E619217061D10446B8BAAB0D46BD125B2",
+      "canonicalJsonSha256": "131BA96E6CAD63738BAF160A79757E5B662D80EEDAC01EC49BEA586CD668037D",
+      "recordsCanonicalJsonSha256": "84F865BF2DCD0CACCD104C40670E2F0B8EC2085E65545E8D17523D8080AE5D92"
+    },
+    {
+      "role": "REFERENCE_ONLY",
+      "path": "spec/de/contracts/de-basisschrift-reference-only.json",
+      "recordCount": 5,
+      "fileSha256": "D8AED449F866A9685DA2B158659759C2F8C7AE5FE5A0A37983A71AE0E6A425AF",
+      "canonicalJsonSha256": "69F338B21C2A8A6316B6DA8452DFB4D6B2CE5A92C24A699A6513FCEEB6F425E4",
+      "recordsCanonicalJsonSha256": "255F5C6B08110F1C89158AFC386F0412916CDBBD291731B59F2E1AE07BDB179C"
+    },
+    {
+      "role": "STATE_SCOPE",
+      "path": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "recordCount": 12,
+      "fileSha256": "7FEBC08B80E61E0CE56A4520A224CDBAF799E139D11BDF4E69CBB829A6592F63",
+      "canonicalJsonSha256": "1D884E101F292409C7117C8AC3F7901DDBDA65FA3B066AB08036D0D53A698073",
+      "recordsCanonicalJsonSha256": "476F2FCF3C355FBF5708C2AC1F329B84FB86715944AA547E45C0C5771025F9F7"
+    },
+    {
+      "role": "STRUCTURAL",
+      "path": "spec/de/contracts/de-basisschrift-structural.json",
+      "recordCount": 19,
+      "fileSha256": "2E46C9D74FBC01797A8E64FFFCF621F7C695C0E147D88A5FBB6A996257FAE4AC",
+      "canonicalJsonSha256": "8A5DC08F277B23D12FAB6400C9108068A0668FE8A951100912E1FD7D94A3E5AF",
+      "recordsCanonicalJsonSha256": "1493C753D66AFA3F0A783240A141B21D363EEE39AF43AE206D8FD612BD392BC2"
+    }
+  ],
+  "determinism": {
+    "roleAssignmentCanonicalJsonSha256": "C61C9982399E185DF0CD1C9E4AA42EA7D9A721777B1586A7F02F8888F5BF182F",
+    "contractInventoryCanonicalJsonSha256": "973EA480B5D19416CDCB277556DD206E29A0BA5CC40EC8D05F3B816B2CD681B6",
+    "sourceBindingCanonicalJsonSha256": "7018EC5AB189BFCE39342755F21A7CFD8AF4DD78A0F2E340529406B8FFA97756",
+    "integratedDeterminismCanonicalJsonSha256": "BE7799565DD63FE3C9F5CC5A7C0FC2AFAC66F7AB427F10A3ED5DA3286C646F30",
+    "integratedValidationRecordPayloadCanonicalJsonSha256": "BE42C9D8C1FC737829C6FD991C538CA12D6F76B89CCDA0ABD7D460FC3AC78C3B"
+  },
+  "immutability": {
+    "canonicalRulesUnmodified": true,
+    "b3ScopeUnmodified": true,
+    "b3TaxonomyUnmodified": true,
+    "roleNeutralSchemaUnmodified": true,
+    "nineContractSetsUnmodified": true
+  },
+  "executionBoundary": {
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "nextStep": "15.5B3.7b Independent Validation and Repository Closure"
+}
