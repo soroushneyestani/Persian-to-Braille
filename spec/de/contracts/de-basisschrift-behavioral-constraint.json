@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-behavioral-constraint",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "BEHAVIORAL_CONSTRAINT",
+  "recordCount": 14,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Fourteen German Basisschrift Behavioral Constraint contracts materialized from immutable canonical rules. They preserve normative conditions, restrictions and behavioral requirements but remain non-executable until B4.",
+  "records": [
+    {
+      "ruleId": "DE-CASE-002",
+      "sourceRulePath": "spec/de/rules/records/de-case-002.json",
+      "sourceRuleSha256": "7718FCA8709E79CC7F0B149FEA885001DF4E5D87CC368941B95788C125012FCC",
+      "family": "CASE",
+      "kind": "MANDATORY_CASE_CONTEXTS",
+      "section": "2.6",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "MANDATORY_CASE_CONTEXT_REQUIREMENT_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "Case must be represented for abbreviations and units without abbreviation points, Roman numerals, and profile-dependent structuring letters.",
+        "dependencies": [
+          "DE-NUM-013",
+          "2.6.2",
+          "2.6.3"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "dependencies"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-007",
+      "sourceRulePath": "spec/de/rules/records/de-case-007.json",
+      "sourceRuleSha256": "21AA329B81062895103B8E286F594D8787C4D665E39CA30066257216A44378C6",
+      "family": "CASE",
+      "kind": "ADJACENT_ABBREVIATIONS",
+      "section": "2.6.2",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "ADJACENT_ABBREVIATIONS_REQUIRE_INDEPENDENT_ANNOUNCEMENT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When several case-announced abbreviations occur successively, each abbreviation is announced independently."
+      },
+      "semanticEvidenceRoots": [],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-009",
+      "sourceRulePath": "spec/de/rules/records/de-case-009.json",
+      "sourceRuleSha256": "DA34B8145FE5BFCE0B8EAA06C59C757278377562F512D6A7ECEEC2D846D173E4",
+      "family": "CASE",
+      "kind": "STRUCTURING_LOWERCASE_LETTER",
+      "section": "2.6.3",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "BASISSCHRIFT_STRUCTURING_LOWERCASE_DEFAULT_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A lowercase structuring letter is marked in Kurzschrift; in Basis- and Vollschrift a standalone lowercase letter is normally unmarked.",
+        "profileBehavior": {
+          "basisschrift": "UNMARKED_BY_DEFAULT",
+          "vollschrift": "UNMARKED_BY_DEFAULT",
+          "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "profileBehavior"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-017",
+      "sourceRulePath": "spec/de/rules/records/de-case-017.json",
+      "sourceRuleSha256": "0E54F32E5E44CB0DF5A2D15CDBF0978DE262C4127417322B141FB7827D2358BB",
+      "family": "CASE",
+      "kind": "ABBREVIATION_WITH_POINT",
+      "section": "2.6.8",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "ABBREVIATION_POINT_CASE_OMISSION_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-011"
+      ],
+      "semanticPayload": {
+        "summary": "Case is normally not represented in abbreviations that use an abbreviation point.",
+        "profileBehavior": {
+          "basisschrift": "CASE_NORMALLY_OMITTED",
+          "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+          "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "profileBehavior"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-018",
+      "sourceRulePath": "spec/de/rules/records/de-case-018.json",
+      "sourceRuleSha256": "B3DD1F41D771DF4911F1C86D99AE3A36F7BADC714ECA71B65EFE41806E94F91E",
+      "family": "CASE",
+      "kind": "SENTENCE_PERIOD_SINGLE_LETTER",
+      "section": "2.6.8",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "SENTENCE_PERIOD_CASE_DISAMBIGUATION_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A standalone letter before a sentence-ending period remains subject to normal letter-case rules; the sentence period must not be mistaken for an abbreviation point.",
+        "profileBehavior": {
+          "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+          "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+          "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "profileBehavior"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-004",
+      "sourceRulePath": "spec/de/rules/records/de-cb-004.json",
+      "sourceRuleSha256": "5BA61520C62AF105E068617A50402D0610F684173B54BD0C43785A8A43A29692",
+      "family": "CB",
+      "kind": "NO_7_OR_8",
+      "section": "2.11",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "SIX_DOT_RETENTION_WITH_COLLISION_EXCEPTION_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-001"
+      ],
+      "semanticPayload": {
+        "summary": "A Computerbraille cell containing neither dot 7 nor dot 8 normally retains its dots 1 through 6 unchanged.",
+        "exception": "COLLISION_ONLY_4_6_46"
+      },
+      "semanticEvidenceRoots": [
+        "exception"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-008",
+      "sourceRulePath": "spec/de/rules/records/de-cb-008.json",
+      "sourceRuleSha256": "1425676E3800600F4D15C86AE67A2E9532D47F61B3CA2ED3EAE2A27AB335F01B",
+      "family": "CB",
+      "kind": "CONTROL_COLLISION_DOUBLING",
+      "section": "2.11",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "CONTROL_COLLISION_DOUBLING_IS_BEHAVIORAL_TRANSFORMATION_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-006",
+        "DE-CB-CASE-007",
+        "DE-CB-CASE-008"
+      ],
+      "semanticPayload": {
+        "summary": "Computerbraille characters consisting only of dot 4, dot 6, or dots 4-6 are doubled to prevent confusion with transport prefixes.",
+        "forms": {
+          "dot4": {
+            "unicode": "⠈⠈",
+            "codepoints": [
+              "U+2808",
+              "U+2808"
+            ],
+            "dots": [
+              "4",
+              "4"
+            ],
+            "cellCount": 2
+          },
+          "dot6": {
+            "unicode": "⠠⠠",
+            "codepoints": [
+              "U+2820",
+              "U+2820"
+            ],
+            "dots": [
+              "6",
+              "6"
+            ],
+            "cellCount": 2
+          },
+          "dots46": {
+            "unicode": "⠨⠨",
+            "codepoints": [
+              "U+2828",
+              "U+2828"
+            ],
+            "dots": [
+              "46",
+              "46"
+            ],
+            "cellCount": 2
+          }
+        }
+      },
+      "semanticEvidenceRoots": [
+        "forms"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-011",
+      "sourceRulePath": "spec/de/rules/records/de-cb-011.json",
+      "sourceRuleSha256": "C3E30DEDA6ACF652284BDB9EA494284C680A71499DE96B1E6FA4685CD298F1D5",
+      "family": "CB",
+      "kind": "ENCODING_BLANK_COUNTS",
+      "section": "2.11",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "TRANSPORT_BLANK_COUNTS_AS_START_MARKER_SELECTION_INPUT_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-005",
+        "DE-CB-CASE-011"
+      ],
+      "semanticPayload": {
+        "summary": "A blank created while serializing a source cell consisting only of dot 7, dot 8, or dots 7-8 counts when selecting the insert announcement marker.",
+        "semanticBlank": false,
+        "transportBlank": true,
+        "affectsStartMarker": true
+      },
+      "semanticEvidenceRoots": [
+        "affectsStartMarker",
+        "semanticBlank",
+        "transportBlank"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-011",
+      "sourceRulePath": "spec/de/rules/records/de-emph-011.json",
+      "sourceRuleSha256": "E7ECC765FBEC417A5D1E5564D2E674CB67D48C6FD5A0A98AD363F13BBA09043D",
+      "family": "EMPH",
+      "kind": "DISTINCT_EMPHASIS_CHANNELS",
+      "section": "2.7.2",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "PRIMARY_SECONDARY_EMPHASIS_CHANNEL_COEXISTENCE_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Primary and secondary emphasis may coexist to distinguish two different highlighted classes in the same source.",
+        "channels": [
+          "PRIMARY",
+          "SECONDARY"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "channels"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-002",
+      "sourceRulePath": "spec/de/rules/records/de-flang-002.json",
+      "sourceRuleSha256": "3FA06F01205EA0D2370AF49B5C3191113D25B10019274C965EFC1CC2FC4BAF19",
+      "family": "FLANG",
+      "kind": "GERMAN_SYSTEM_CONTRACTION_LIMIT",
+      "section": "2.9",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "FOREIGN_CONTENT_GERMAN_CONTRACTION_CLASS_LIMIT_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ],
+      "semanticPayload": {
+        "summary": "Within foreign-language content rendered under German Braille, only Lautgruppenkürzungen may be used.",
+        "allowedContractionClass": "LAUTGRUPPENKUERZUNGEN_ONLY"
+      },
+      "semanticEvidenceRoots": [
+        "allowedContractionClass"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-004",
+      "sourceRulePath": "spec/de/rules/records/de-flang-004.json",
+      "sourceRuleSha256": "A5ED3F6606C7B2734348806642E5ED16D07259E8F5103FC92626EDCF1874A260",
+      "family": "FLANG",
+      "kind": "NO_CROSS_WORD_SEAM_CONTRACTION",
+      "section": "2.9",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "CROSS_WORD_SEAM_CONTRACTION_PROHIBITION_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ],
+      "semanticPayload": {
+        "summary": "A contraction must not cross a word seam inside a foreign-language insert.",
+        "crossWordSeamAllowed": false
+      },
+      "semanticEvidenceRoots": [
+        "crossWordSeamAllowed"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-002",
+      "sourceRulePath": "spec/de/rules/records/de-math-002.json",
+      "sourceRuleSha256": "60742B467528B3046D0D283698D6ACECC8E13388E06413235145108093334EBB",
+      "family": "MATH",
+      "kind": "INLINE_ANNOUNCEMENT_EXCEPTIONS",
+      "section": "2.10",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "INLINE_MATH_ANNOUNCEMENT_EXCEPTION_SET_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "The multiplication dot, exponents and rear indices normally omit the point-4 announcement.",
+        "exceptions": [
+          "MULTIPLICATION_DOT",
+          "REAR_UPPER_INDEX",
+          "REAR_LOWER_INDEX"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "exceptions"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-004",
+      "sourceRulePath": "spec/de/rules/records/de-math-004.json",
+      "sourceRuleSha256": "4C3EA8BA8F36FA88CAB804B0D9D230BE32A2EFDA150FB49A9582AAA9364727BB",
+      "family": "MATH",
+      "kind": "UNANNOUNCED_LETTER_CASE",
+      "section": "2.10",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "UNANNOUNCED_MATH_LETTER_DEFAULT_LOWERCASE_IS_BEHAVIORAL_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "Letters inside the inline mathematical context that are not explicitly case-announced are interpreted as lowercase.",
+        "defaultCase": "LOWERCASE",
+        "dependency": "15.1G"
+      },
+      "semanticEvidenceRoots": [
+        "defaultCase",
+        "dependency"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-004",
+      "sourceRulePath": "spec/de/rules/records/de-special-004.json",
+      "sourceRuleSha256": "7DDB99F727323C8021E2FA73CC0F22A3817FEAA834251CDCF359F0A7357CB26E",
+      "family": "SPECIAL",
+      "kind": "NUMERIC_INTERACTION",
+      "section": "2.8.2",
+      "primaryRole": "BEHAVIORAL_CONSTRAINT",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "CURRENCY_ADJACENT_NUMBER_RETAINS_NORMAL_NUMERIC_NOTATION_CONSTRAINT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A number adjacent to a special-form currency sign retains normal German numeric notation.",
+        "dependency": "DE-NUM-001"
+      },
+      "semanticEvidenceRoots": [
+        "dependency"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}

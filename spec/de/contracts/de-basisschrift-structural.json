@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-structural",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "textMode": "basisschrift",
+  "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+  "primaryRole": "STRUCTURAL",
+  "recordCount": 19,
+  "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+  "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+  "canonicalRecordsRemainUnmodified": true,
+  "behavioralLoweringStarted": false,
+  "translatorStarted": false,
+  "execution": {
+    "contractMaterializationStarted": true,
+    "contractMaterializationCompleted": true,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "executable": false,
+    "runtimeRegistered": false
+  },
+  "summary": "Nineteen German Basisschrift Structural contracts materialized from immutable canonical rules. They preserve layout, ordering, spacing and serialization semantics but remain non-executable until B4 lowering.",
+  "records": [
+    {
+      "ruleId": "DE-CASE-010",
+      "sourceRulePath": "spec/de/rules/records/de-case-010.json",
+      "sourceRuleSha256": "85074869E44E940252DE85547AA76CFDB8919F28B6D801790013A32069169FDE",
+      "family": "CASE",
+      "kind": "MIXED_CASE_SEQUENCE",
+      "section": "2.6.4",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "MIXED_CASE_GROUPING_AND_PARTITIONING_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-005",
+        "DE-CASE-CASE-006"
+      ],
+      "semanticPayload": {
+        "summary": "Non-word letter sequences containing internal case changes are written in Basisschrift and partitioned into case-homogeneous semantic groups.",
+        "requiresBasisschrift": true,
+        "markers": {
+          "uppercaseSequence": {
+            "unicode": "⠘",
+            "codepoints": [
+              "U+2818"
+            ],
+            "dots": [
+              "45"
+            ],
+            "cellCount": 1
+          },
+          "lowercaseSequence": {
+            "unicode": "⠠",
+            "codepoints": [
+              "U+2820"
+            ],
+            "dots": [
+              "6"
+            ],
+            "cellCount": 1
+          },
+          "capitalThenLowercase": {
+            "unicode": "⠨",
+            "codepoints": [
+              "U+2828"
+            ],
+            "dots": [
+              "46"
+            ],
+            "cellCount": 1
+          }
+        }
+      },
+      "semanticEvidenceRoots": [
+        "markers",
+        "requiresBasisschrift"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-012",
+      "sourceRulePath": "spec/de/rules/records/de-cb-012.json",
+      "sourceRuleSha256": "0CEB954195B529CEB33E4A2C2382FC9B79B7767E41AC81CE1152E8259C4FB720",
+      "family": "CB",
+      "kind": "START_MARKER_PLACEMENT",
+      "section": "2.11",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "START_MARKER_IMMEDIATE_PLACEMENT_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "The Computerbraille announcement marker is placed immediately before the first encoded Computerbraille sign.",
+        "interveningBlankAllowed": false
+      },
+      "semanticEvidenceRoots": [
+        "interveningBlankAllowed"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-014",
+      "sourceRulePath": "spec/de/rules/records/de-cb-014.json",
+      "sourceRuleSha256": "433F81D85C10F58AE495EEDEE71A975D28B1CDE91AA466B5CB13DA24E6DC7C65",
+      "family": "CB",
+      "kind": "PREFERRED_LINE_BREAK",
+      "section": "2.11",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "LINE_BREAK_BOUNDARY_PREFERENCE_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When a Computerbraille passage does not fit on a line, breaking at a real content blank is preferred where possible.",
+        "preferredBoundary": "REAL_CONTENT_BLANK"
+      },
+      "semanticEvidenceRoots": [
+        "preferredBoundary"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-015",
+      "sourceRulePath": "spec/de/rules/records/de-cb-015.json",
+      "sourceRuleSha256": "4B101C0DE162672DB6305BBFA831B30BB7A053775956766005DA8AE126FF0F61",
+      "family": "CB",
+      "kind": "COMPUTERBRAILLE_LINE_BREAK_MARKER",
+      "section": "2.11",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "LINE_BREAK_CONTINUATION_SEPARATOR_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-013"
+      ],
+      "semanticPayload": {
+        "summary": "When a suitable real blank is unavailable, a line may end with dot 4 as the Computerbraille continuation separator.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "semanticEvidenceRoots": [
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-016",
+      "sourceRulePath": "spec/de/rules/records/de-cb-016.json",
+      "sourceRuleSha256": "9D8B1F0C31AD1F9265AE87BE022F722F79072DECEF841E2E05A0B14C0FC1A083",
+      "family": "CB",
+      "kind": "TWO_FORM_ATOMICITY",
+      "section": "2.11",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "TWO_CELL_TRANSPORT_FORM_ATOMICITY_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-014"
+      ],
+      "semanticPayload": {
+        "summary": "Two-cell Computerbraille transport forms must not be split across lines.",
+        "lineBreakInsideFormAllowed": false
+      },
+      "semanticEvidenceRoots": [
+        "lineBreakInsideFormAllowed"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-005",
+      "sourceRulePath": "spec/de/rules/records/de-math-005.json",
+      "sourceRuleSha256": "557938B0ABC7D9604A1DA2608D2497882F1F1E0658C3420D6EB1DA617E07BFE4",
+      "family": "MATH",
+      "kind": "MATH_SPACING_IN_TEXT",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "INLINE_MATH_SPACING_RULES_ARE_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-001"
+      ],
+      "semanticPayload": {
+        "summary": "Mathematical signs between words have a blank on both sides; a blank between a mathematical sign and a following number or variable is omitted.",
+        "spacing": {
+          "betweenWords": "BLANK_BOTH_SIDES",
+          "beforeNumber": "NO_INTERVENING_BLANK",
+          "beforeVariable": "NO_INTERVENING_BLANK"
+        }
+      },
+      "semanticEvidenceRoots": [
+        "spacing"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-006",
+      "sourceRulePath": "spec/de/rules/records/de-math-006.json",
+      "sourceRuleSha256": "1A3C2812C1DBD7E4BAFF3FA2EA1FCC56E47B2D8EDA4333A5FBC51414972FDE6A",
+      "family": "MATH",
+      "kind": "MULTIPLICATION_DOT",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "MULTIPLICATION_DOT_SPACING_EFFECT_GIVES_STRUCTURAL_PRECEDENCE_OVER_AUXILIARY_NUMERIC_REQUIREMENT",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "A blank before the multiplication dot may be omitted. A number following the multiplication dot must carry a number indicator.",
+        "blankBeforeOptional": true,
+        "followingNumberRequiresNumberIndicator": true,
+        "dependency": "DE-NUM-001"
+      },
+      "semanticEvidenceRoots": [
+        "blankBeforeOptional",
+        "dependency",
+        "followingNumberRequiresNumberIndicator"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-009",
+      "sourceRulePath": "spec/de/rules/records/de-math-009.json",
+      "sourceRuleSha256": "479D1D346DA885E153A72B9AD9AAB00B7E60804FB92CEB51CAEED0748305F881",
+      "family": "MATH",
+      "kind": "LOWER_INDEX",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "LOWER_UPPER_REAR_INDEX_ORDER_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠡",
+          "codepoints": [
+            "U+2821"
+          ],
+          "dots": [
+            "16"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Subscripts are introduced by the lower-index sign. When both lower and upper rear indices occur, the lower index normally precedes the upper index.",
+        "rearOrder": [
+          "LOWER_INDEX",
+          "UPPER_INDEX"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "marker",
+        "rearOrder"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-011",
+      "sourceRulePath": "spec/de/rules/records/de-math-011.json",
+      "sourceRuleSha256": "BDE096E0B8953DD1DE67FF864EBC2B220BFC9AFA741CAB2107B6E9E1AE27A2FD",
+      "family": "MATH",
+      "kind": "INDEX_INTERNAL_SPACE",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "INDEX_INTERNAL_BLANK_REPLACEMENT_PRESERVES_INDEX_STRUCTURE",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "A blank occurring inside an exponent or index is replaced by point 4 so that the exponent/index scope is not terminated.",
+        "replacement": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "semanticEvidenceRoots": [
+        "replacement"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-017",
+      "sourceRulePath": "spec/de/rules/records/de-math-017.json",
+      "sourceRuleSha256": "8EF0996542A799998AFC02974AC65A09B35849064BD8CC835A0E5C8A26179F7A",
+      "family": "MATH",
+      "kind": "TEXT_TO_MATH_DELIMITER",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "TEXT_TO_MATH_DELIMITER_PLACEMENT_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-008"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The Text-to-Math delimiter is placed immediately before the Mathematikschrift span without an intervening blank.",
+        "blankBeforeSpan": false
+      },
+      "semanticEvidenceRoots": [
+        "blankBeforeSpan",
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-018",
+      "sourceRulePath": "spec/de/rules/records/de-math-018.json",
+      "sourceRuleSha256": "5BF00C5C13960777D93491A5C6C9F7CCA163581D3FE16A33AAE8755E5D300B1A",
+      "family": "MATH",
+      "kind": "MATH_TO_TEXT_DELIMITER",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "MATH_TO_TEXT_DELIMITER_PLACEMENT_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-008"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The Math-to-Text delimiter follows the end of the Mathematikschrift span immediately.",
+        "blankBeforeMarker": false
+      },
+      "semanticEvidenceRoots": [
+        "blankBeforeMarker",
+        "marker"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-020",
+      "sourceRulePath": "spec/de/rules/records/de-math-020.json",
+      "sourceRuleSha256": "9D664CD1672CD7F42A9A2A897C5BB5C9C9C750F83C355345D931F9990091AB9A",
+      "family": "MATH",
+      "kind": "SHORT_MATH_WHITESPACE_BOUNDARY",
+      "section": "2.10",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "SHORT_MATH_TWO_BLANK_BOUNDARY_SERIALIZATION_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-009"
+      ],
+      "semanticPayload": {
+        "summary": "A short Mathematikschrift expression may be separated from Textschrift by two blanks before and after instead of explicit announcement/termination delimiters.",
+        "blankCountBefore": 2,
+        "blankCountAfter": 2,
+        "explicitMarkersMayBeOmitted": true
+      },
+      "semanticEvidenceRoots": [
+        "blankCountAfter",
+        "blankCountBefore",
+        "explicitMarkersMayBeOmitted"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-002",
+      "sourceRulePath": "spec/de/rules/records/de-special-002.json",
+      "sourceRuleSha256": "FC5F048AE2CE43CED5A1F88A93B253C9BFD8179450127B71A04CAE07356ABE89",
+      "family": "SPECIAL",
+      "kind": "CURRENCY_POSITION",
+      "section": "2.8.2",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "CURRENCY_SIGN_POSITION_ORDERING_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-SPECIAL-CASE-001",
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "Currency-style special-form signs may precede a number or follow it according to the source.",
+        "positions": [
+          "BEFORE_NUMBER",
+          "AFTER_NUMBER"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "positions"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-003",
+      "sourceRulePath": "spec/de/rules/records/de-special-003.json",
+      "sourceRuleSha256": "1924CD919164EEDAB4D0963498B4EBD430DD485A176DDAC630B11E898A30C036",
+      "family": "SPECIAL",
+      "kind": "CURRENCY_SPACING",
+      "section": "2.8.2",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "CURRENCY_SIGN_SPACING_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "When a special-form sign follows a number, the source may place it with or without a blank.",
+        "afterNumberSpacing": [
+          "NO_BLANK",
+          "ONE_BLANK"
+        ]
+      },
+      "semanticEvidenceRoots": [
+        "afterNumberSpacing"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-001",
+      "sourceRulePath": "spec/de/rules/records/de-table-001.json",
+      "sourceRuleSha256": "885698382A0D260196DB1E3778C768B35D54FFA51523EEE453577D2CC0487264",
+      "family": "TABLE",
+      "kind": "LINEARIZED_TABLE_ROW",
+      "section": "2.12",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "LINEARIZED_TABLE_ROW_REPRESENTATION_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "semanticPayload": {
+        "summary": "When table columns cannot be represented side by side and cells of a row are rendered sequentially, a structural cell separator is used between adjacent cells.",
+        "representation": "ROW_CELLS_SEQUENTIAL"
+      },
+      "semanticEvidenceRoots": [
+        "representation"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-002",
+      "sourceRulePath": "spec/de/rules/records/de-table-002.json",
+      "sourceRuleSha256": "697939D0DE6383589543E032CF2E15EBD171C944D332A9D465ED99B4509E1645",
+      "family": "TABLE",
+      "kind": "TABLE_CELL_SEPARATOR",
+      "section": "2.12",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "TABLE_CELL_SEPARATOR_IS_STRUCTURAL_DOCUMENT_SERIALIZATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-001"
+      ],
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠒⠒",
+          "codepoints": [
+            "U+2812",
+            "U+2812"
+          ],
+          "dots": [
+            "25",
+            "25"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The structural table-cell separator is the two-cell Braille sequence dots 2-5, dots 2-5.",
+        "structural": true,
+        "ordinaryTextPunctuation": false
+      },
+      "semanticEvidenceRoots": [
+        "marker",
+        "ordinaryTextPunctuation",
+        "structural"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-003",
+      "sourceRulePath": "spec/de/rules/records/de-table-003.json",
+      "sourceRuleSha256": "2E0928185119315C2150F374B56D6ED46BF832DF8F97EC779776903066E39B78",
+      "family": "TABLE",
+      "kind": "SEPARATOR_SPACING",
+      "section": "2.12",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "TABLE_CELL_SEPARATOR_SPACING_IS_STRUCTURAL",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-001"
+      ],
+      "semanticPayload": {
+        "summary": "The table-cell separator stands between Braille blanks.",
+        "before": "BRAILLE_BLANK_REQUIRED",
+        "after": "BRAILLE_BLANK_REQUIRED_UNLESS_COLUMN_NUMBER_FOLLOWS_IMMEDIATELY"
+      },
+      "semanticEvidenceRoots": [
+        "after",
+        "before"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-004",
+      "sourceRulePath": "spec/de/rules/records/de-table-004.json",
+      "sourceRuleSha256": "3DC04384EE60C389EAC4193DA2347C10576B390D95FA939EE1193F5A41883F7B",
+      "family": "TABLE",
+      "kind": "OPTIONAL_TARGET_COLUMN_NUMBER",
+      "section": "2.12",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "OPTIONAL_TARGET_COLUMN_NUMBER_PLACEMENT_IS_STRUCTURAL_NUMERIC_DEPENDENCY_IS_AUXILIARY",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-002",
+        "DE-TABLE-CASE-003"
+      ],
+      "semanticPayload": {
+        "summary": "The number of the following table column may be written immediately after the table-cell separator.",
+        "optional": true,
+        "placement": "IMMEDIATELY_AFTER_SEPARATOR",
+        "numericDependency": "15.1E"
+      },
+      "semanticEvidenceRoots": [
+        "numericDependency",
+        "optional",
+        "placement"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-006",
+      "sourceRulePath": "spec/de/rules/records/de-table-006.json",
+      "sourceRuleSha256": "115221AE213212EE632BF63E888CF180BA525D957F8A826CACCAD162D7D54765",
+      "family": "TABLE",
+      "kind": "EMPTY_CELL_OMISSION_WITH_COLUMN_NUMBER",
+      "section": "2.12",
+      "primaryRole": "STRUCTURAL",
+      "materializationOwner": "15.5B3.5",
+      "decisionRationale": "EMPTY_CELL_OMISSION_WITH_COLUMN_NUMBER_IS_STRUCTURAL_SERIALIZATION",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-TABLE-CASE-004"
+      ],
+      "semanticPayload": {
+        "summary": "When the target-column-number technique is used, empty table cells need not be represented by repeated table-cell separators.",
+        "columnNumberTechniqueActive": true,
+        "repeatedSeparatorForEmptyCellsRequired": false
+      },
+      "semanticEvidenceRoots": [
+        "columnNumberTechniqueActive",
+        "repeatedSeparatorForEmptyCellsRequired"
+      ],
+      "execution": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ]
+}
