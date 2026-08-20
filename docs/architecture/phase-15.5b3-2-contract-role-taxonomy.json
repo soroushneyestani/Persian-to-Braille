@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.2",
+  "status": "CONTRACT_ROLE_TAXONOMY_FROZEN",
+  "title": "German Basisschrift B3 Contract Role Taxonomy",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "442f7975bc99dc73432d398775b22b4045c8c442"
+  },
+  "upstream": {
+    "phase15_5B3_1Status": "CONTRACT_SCOPE_PARTITION_FROZEN",
+    "b3Scope": 107,
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83"
+  },
+  "evidence": {
+    "rawSignalCounts": {
+      "ARCHITECTURAL_SIGNAL": 4,
+      "DELEGATED_REFERENCE": 18,
+      "INDICATOR": 35,
+      "POLICY_SELECTION": 29,
+      "STATE_SCOPE": 7,
+      "STRUCTURAL": 14
+    },
+    "multiSignalRules": 19,
+    "zeroSignalRules": 21,
+    "profileSensitiveRules": 9,
+    "nonNormativeRules": 4,
+    "sourceStatusArchitectural": 3,
+    "nonNormativeCandidate": 1,
+    "conclusion": "RAW_SIGNAL_PRESENCE_IS_NOT_A_PRIMARY_ROLE_CLASSIFIER"
+  },
+  "taxonomy": {
+    "finalPrimaryRoles": [
+      "INDICATOR",
+      "STATE_SCOPE",
+      "STRUCTURAL",
+      "POLICY_SELECTION",
+      "BEHAVIORAL_CONSTRAINT",
+      "DELEGATED_REFERENCE",
+      "REFERENCE_ONLY",
+      "CROSS_MODE_DEFERRED",
+      "ARCHITECTURAL_ONLY"
+    ],
+    "transitionalRole": "NOT_ASSIGNED",
+    "adjudicationOrder": [
+      "ARCHITECTURAL_ONLY",
+      "CROSS_MODE_DEFERRED",
+      "REFERENCE_ONLY",
+      "DELEGATED_REFERENCE",
+      "STRUCTURAL",
+      "STATE_SCOPE",
+      "POLICY_SELECTION",
+      "INDICATOR",
+      "BEHAVIORAL_CONSTRAINT"
+    ],
+    "materializationOwners": {
+      "INDICATOR": "15.5B3.3",
+      "STATE_SCOPE": "15.5B3.4",
+      "POLICY_SELECTION": "15.5B3.4",
+      "STRUCTURAL": "15.5B3.5",
+      "BEHAVIORAL_CONSTRAINT": "15.5B3.5",
+      "DELEGATED_REFERENCE": "15.5B3.6",
+      "REFERENCE_ONLY": "15.5B3.6",
+      "CROSS_MODE_DEFERRED": "15.5B3.6",
+      "ARCHITECTURAL_ONLY": "15.5B3.6"
+    },
+    "roleDefinitions": {
+      "INDICATOR": {
+        "definition": "The primary normative effect is deterministic insertion or declaration of a Braille marker, prefix, announcement, or delimiter.",
+        "executionOwnedByB3": false
+      },
+      "STATE_SCOPE": {
+        "definition": "The primary normative effect is lifecycle, span scope, termination, continuation, or state-boundary semantics.",
+        "executionOwnedByB3": false
+      },
+      "STRUCTURAL": {
+        "definition": "The primary normative effect is layout, ordering, spacing, serialization structure, index arrangement, line-boundary behavior, or table structure.",
+        "executionOwnedByB3": false
+      },
+      "POLICY_SELECTION": {
+        "definition": "The primary normative effect is selection between permitted methods, profiles, forms, optimizations, or representation strategies.",
+        "executionOwnedByB3": false
+      },
+      "BEHAVIORAL_CONSTRAINT": {
+        "definition": "The rule imposes a normative or admitted behavioral condition, prohibition, exception, requirement, or transformation constraint not dominated by another contract role.",
+        "executionOwnedByB3": false
+      },
+      "DELEGATED_REFERENCE": {
+        "definition": "The primary semantic responsibility is delegated to another normative subsystem or runtime owner; a dependency field alone is insufficient.",
+        "executionOwnedByB3": false
+      },
+      "REFERENCE_ONLY": {
+        "definition": "The rule must remain available for normative interpretation or fallback reasoning but is not an executable contract of the six-dot Basisschrift runtime.",
+        "executionOwnedByB3": false
+      },
+      "CROSS_MODE_DEFERRED": {
+        "definition": "The rule is valid canonical evidence but its explicit applicability excludes the current Basisschrift runtime and belongs to a later German text mode.",
+        "executionOwnedByB3": false
+      },
+      "ARCHITECTURAL_ONLY": {
+        "definition": "The rule records architectural inference, ownership, or abstraction rather than normative executable behavior.",
+        "executionOwnedByB3": false
+      }
+    },
+    "classificationPolicy": {
+      "exactlyOnePrimaryRole": true,
+      "secondaryEvidenceSignalsAllowed": true,
+      "rawSignalsDoNotAssignPrimaryRole": true,
+      "primaryNormativeEffectControlsRole": true,
+      "markerPresenceDoesNotImplyIndicator": true,
+      "dependencyPresenceDoesNotImplyDelegatedReference": true,
+      "profilePresenceDoesNotImplyCrossModeDeferred": true,
+      "nonNormativeDoesNotImplyArchitecturalOnly": true,
+      "b3RolesDoNotStartExecution": true
+    }
+  },
+  "adjudicationSemantics": {
+    "orderIsSemanticGateOrderNotJsonKeyPrecedence": true,
+    "architecturalOnlyGate": "Requires architectural semantics/status or equivalent explicit architectural evidence; normative=false alone is insufficient.",
+    "crossModeDeferredGate": "Requires explicit applicability that excludes the current Basisschrift mode.",
+    "referenceOnlyGate": "Requires source semantics necessary for interpretation but outside the executable six-dot Basisschrift contract.",
+    "delegatedReferenceGate": "Requires delegation to be the primary semantic responsibility; a dependency field alone is insufficient.",
+    "structuralGate": "Primary effect is serialization, layout, ordering, spacing, table/index structure, or line-boundary behavior.",
+    "stateScopeGate": "Primary effect is state/span lifecycle, scope, termination, or continuation.",
+    "policySelectionGate": "Primary effect is choosing among source-authorized forms, methods, profiles, or optimizations.",
+    "indicatorGate": "Primary effect is deterministic marker/prefix/announcement insertion or declaration.",
+    "behavioralConstraintGate": "Residual admitted behavior that imposes a condition, prohibition, exception, requirement, or transformation constraint."
+  },
+  "knownBoundaryExpectations": {
+    "DE-CB-002": "REFERENCE_ONLY_CANDIDATE",
+    "DE-CB-003": "SIX_DOT_CONTRACT_CANDIDATE",
+    "DE-CASE-019": "CROSS_MODE_DEFERRED_CANDIDATE",
+    "DE-CASE-020": "CROSS_MODE_DEFERRED_CANDIDATE",
+    "candidateLabelsAreNotRoleAssignments": true
+  },
+  "assignmentBoundary": {
+    "primaryRoleAssignments": 0,
+    "all107RemainUnassigned": true,
+    "materializationStarted": false,
+    "executionStarted": false
+  },
+  "determinism": {
+    "taxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54"
+  },
+  "executionBoundary": {
+    "indicatorMaterializationStarted": false,
+    "stateScopeMaterializationStarted": false,
+    "structuralMaterializationStarted": false,
+    "delegationBoundaryMaterializationStarted": false,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false
+  },
+  "nextStep": "15.5B3.3 Indicator Contract Materialization"
+}
