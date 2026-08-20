@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A5.1",
+  "status": "CLOSED",
+  "title": "Existing German Regional Machinery Audit",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "3f51ce949b37b7896eb55feb00a3973569749ab4"
+  },
+  "existingCoreState": {
+    "genericRegionalSelector": "NONE",
+    "germanRegionalSelector": "NONE",
+    "germanRegionalRuntimeModule": "NONE",
+    "persianProfileRegionField": {
+      "exists": true,
+      "exampleValue": "IR",
+      "semanticRole": "PROFILE_METADATA",
+      "reusableAsGermanRegionalSelector": false
+    },
+    "germanTextModeBoundary": {
+      "exists": true,
+      "regionalSelectionResponsibility": false
+    }
+  },
+  "frozenSwissModel": {
+    "regionalDimension": "ORTHOGONAL_REGIONAL_CONFIGURATION",
+    "topologyTerm": "ORTHOGONAL_OVERLAY",
+    "swissIsFourthGermanMode": false,
+    "swissParticipatesInModeInheritance": false,
+    "regionalConfigurationRequired": true
+  },
+  "namespaceSemantics": {
+    "DE-CH410": {
+      "meaning": "INTERNAL_NORMATIVE_RULE_NAMESPACE_FOR_BSKDL_SWISS_SECTION_4_10",
+      "publicLocaleIdentifier": false,
+      "publicProfileIdentifier": false,
+      "mayBeRepurposedAsRegionalConfigurationKey": false
+    }
+  },
+  "unresolvedIdentityQuestions": {
+    "internalRegionalTypeName": "NOT_FROZEN",
+    "baseOrNonSwissConfigurationValue": "NOT_FROZEN",
+    "swissConfigurationValue": "NOT_FROZEN",
+    "publicSwissIdentifier": "NOT_FROZEN",
+    "publicSdkRegionalApi": "NOT_FROZEN"
+  },
+  "openRuntimeDependency": {
+    "id": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "status": "OPEN",
+    "owner": "15.5A6",
+    "mayBeResolvedInA5": false
+  },
+  "reuseDecisions": {
+    "reusePersianProfileRegionMetadataAsSelector": "FORBIDDEN",
+    "reuseGermanTextModeAsRegionalSelector": "FORBIDDEN",
+    "reuseDE_CH410AsConfigurationKey": "FORBIDDEN",
+    "separateRegionalContractRequired": true
+  },
+  "admissionState": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "swissExecutableRuntimeBehavior": 0
+  },
+  "sourceArtifactHashes": {
+    "runtimeTopology": "38C32B62CA49B1A0297CE83257DE0782671DEE785731121AB326F4A0CF805FAF",
+    "textModeContract": "C32CAA4170B42BC05CDA796FF69E057EA20C43A34053BE49FF11DDF391A56CC6",
+    "textModeMaterializationContract": "0962F9D594C7DEA8FF24BC0F9194377EEE01197B2B98930A842E97D57C9D4BE7",
+    "a4Closure": "E76B087211D8B2E1DA34C9C559BAD369684E05762B57F03EFDE3A44C81241E81",
+    "swissFormalRuleContract": "0A07A6D7127DADAE9FB1A6FD291093C4B62D7180504ED3B153B5AD6633B8C700",
+    "swissFinalClosure": "EFD049CBA69B3A4A63F15CE4BC534C8629F1B27AF84BBCB9E5AA4593234611B1",
+    "germanTextModeCoreBoundary": "D194E892A88D9124630B3639AEF2DD460A4D26CA2195ADEE88164DE7CE679AB6"
+  },
+  "nextStep": "15.5A5.2 Regional Configuration Identity Contract"
+}
