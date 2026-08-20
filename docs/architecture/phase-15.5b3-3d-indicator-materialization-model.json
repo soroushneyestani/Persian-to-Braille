@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B3.3d",
+  "status": "INDICATOR_MATERIALIZATION_MODEL_FROZEN",
+  "title": "German Basisschrift Indicator Contract Materialization Model",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "338f04585be63ca1476eb87de6d032a79bba1005"
+  },
+  "upstream": {
+    "b3Scope": 107,
+    "b3ScopeCanonicalJsonSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+    "contractRoleTaxonomyCanonicalJsonSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+    "primaryRoleAssignmentsBeforeB33": 0
+  },
+  "adjudication": {
+    "broadCandidateCount": 49,
+    "indicatorCount": 20,
+    "excludedCount": 29,
+    "indicatorRuleIds": [
+      "DE-ACCENT-002",
+      "DE-ACCENT-003",
+      "DE-ACCENT-004",
+      "DE-CASE-004",
+      "DE-CASE-005",
+      "DE-CASE-006",
+      "DE-CASE-008",
+      "DE-CASE-013",
+      "DE-CASE-014",
+      "DE-CB-005",
+      "DE-CB-006",
+      "DE-CB-007",
+      "DE-EMPH-002",
+      "DE-EMPH-007",
+      "DE-EMPH-013",
+      "DE-MATH-001",
+      "DE-MATH-008",
+      "DE-MATH-010",
+      "DE-MATH-012",
+      "DE-SPECIAL-001"
+    ],
+    "excludedRuleIds": [
+      "DE-CASE-010",
+      "DE-CASE-011",
+      "DE-CASE-012",
+      "DE-CASE-016",
+      "DE-CASE-019",
+      "DE-CASE-020",
+      "DE-CB-009",
+      "DE-CB-010",
+      "DE-CB-011",
+      "DE-CB-012",
+      "DE-CB-013",
+      "DE-CB-015",
+      "DE-EMPH-004",
+      "DE-EMPH-006",
+      "DE-EMPH-008",
+      "DE-EMPH-009",
+      "DE-EMPH-014",
+      "DE-FLANG-007",
+      "DE-FLANG-008",
+      "DE-FLANG-012",
+      "DE-FLANG-013",
+      "DE-MATH-002",
+      "DE-MATH-003",
+      "DE-MATH-009",
+      "DE-MATH-017",
+      "DE-MATH-018",
+      "DE-MATH-019",
+      "DE-MATH-020",
+      "DE-TABLE-002"
+    ],
+    "decisions": {
+      "DE-ACCENT-002": {
+        "primaryIndicator": true,
+        "reason": "POINT4_DIACRITIC_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-ACCENT-003": {
+        "primaryIndicator": true,
+        "reason": "POINT4_PREFIX_IS_PRIMARY_EFFECT_LANGUAGE_MAPPING_DEPENDENCY_IS_AUXILIARY"
+      },
+      "DE-ACCENT-004": {
+        "primaryIndicator": true,
+        "reason": "POINT4_ANNOUNCEMENT_REQUIREMENT_IS_PRIMARY_PROFILE_LIST_IS_APPLICABILITY"
+      },
+      "DE-CASE-004": {
+        "primaryIndicator": true,
+        "reason": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-CASE-005": {
+        "primaryIndicator": true,
+        "reason": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY"
+      },
+      "DE-CASE-006": {
+        "primaryIndicator": true,
+        "reason": "CAPITAL_SEQUENCE_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-CASE-008": {
+        "primaryIndicator": true,
+        "reason": "LOWERCASE_ANNOUNCEMENT_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY"
+      },
+      "DE-CASE-010": {
+        "primaryIndicator": false,
+        "reason": "MIXED_CASE_GROUPING_AND_PARTITIONING_DOMINATES_MARKER_TABLE"
+      },
+      "DE-CASE-011": {
+        "primaryIndicator": false,
+        "reason": "CASE_GROUPING_SELECTION_POLICY_DOMINATES_ANNOUNCEMENT_REFERENCE"
+      },
+      "DE-CASE-012": {
+        "primaryIndicator": false,
+        "reason": "GREEK_LETTER_SCOPE_AND_TERMINATION_DOMINATE_MARKER_DECLARATION"
+      },
+      "DE-CASE-013": {
+        "primaryIndicator": true,
+        "reason": "GREEK_UPPERCASE_MARKER_COMPOSITION_IS_PRIMARY_DEPENDENCY_IS_AUXILIARY"
+      },
+      "DE-CASE-014": {
+        "primaryIndicator": true,
+        "reason": "EXPLICIT_LOWERCASE_WORD_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-CASE-016": {
+        "primaryIndicator": false,
+        "reason": "CURRENT_BASISSCHRIFT_EXCLUDED_BY_AVAILABLE_PROFILES"
+      },
+      "DE-CASE-019": {
+        "primaryIndicator": false,
+        "reason": "EXPLICIT_KURZSCHRIFT_APPLICABILITY_DOMINATES_ANNOUNCEMENT_REFERENCE"
+      },
+      "DE-CASE-020": {
+        "primaryIndicator": false,
+        "reason": "EXPLICIT_KURZSCHRIFT_APPLICABILITY_DOMINATES_MARKER_REFERENCE"
+      },
+      "DE-CB-005": {
+        "primaryIndicator": true,
+        "reason": "DOT7_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+      },
+      "DE-CB-006": {
+        "primaryIndicator": true,
+        "reason": "DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+      },
+      "DE-CB-007": {
+        "primaryIndicator": true,
+        "reason": "DOT7_DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+      },
+      "DE-CB-009": {
+        "primaryIndicator": false,
+        "reason": "START_MARKER_SELECTION_BY_SERIALIZED_BLANK_CONDITION_DOMINATES"
+      },
+      "DE-CB-010": {
+        "primaryIndicator": false,
+        "reason": "START_MARKER_SELECTION_BY_SERIALIZED_BLANK_CONDITION_DOMINATES"
+      },
+      "DE-CB-011": {
+        "primaryIndicator": false,
+        "reason": "TRANSPORT_BLANK_SELECTION_INPUT_CONSTRAINT_DOMINATES_MARKER_REFERENCE"
+      },
+      "DE-CB-012": {
+        "primaryIndicator": false,
+        "reason": "START_MARKER_PLACEMENT_STRUCTURE_DOMINATES"
+      },
+      "DE-CB-013": {
+        "primaryIndicator": false,
+        "reason": "COMPUTERBRAILLE_INSERT_TERMINATION_BOUNDARY_DOMINATES_MARKER_FORM"
+      },
+      "DE-CB-015": {
+        "primaryIndicator": false,
+        "reason": "LINE_BREAK_CONTINUATION_STRUCTURE_DOMINATES_MARKER_FORM"
+      },
+      "DE-EMPH-002": {
+        "primaryIndicator": true,
+        "reason": "PRIMARY_SINGLE_WORD_EMPHASIS_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-EMPH-004": {
+        "primaryIndicator": false,
+        "reason": "PRIMARY_MULTIWORD_SPAN_START_END_LIFECYCLE_DOMINATES_MARKER_FORMS"
+      },
+      "DE-EMPH-006": {
+        "primaryIndicator": false,
+        "reason": "WORD_PART_SCOPE_AND_TERMINATION_DOMINATE_MARKER_FORMS"
+      },
+      "DE-EMPH-007": {
+        "primaryIndicator": true,
+        "reason": "SECONDARY_SINGLE_WORD_OR_PART_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-EMPH-008": {
+        "primaryIndicator": false,
+        "reason": "SECONDARY_MULTIWORD_SPAN_LIFECYCLE_DOMINATES_MARKER_FORMS"
+      },
+      "DE-EMPH-009": {
+        "primaryIndicator": false,
+        "reason": "SECONDARY_WORD_PART_TERMINATION_BOUNDARY_DOMINATES_END_MARKER_FORM"
+      },
+      "DE-EMPH-013": {
+        "primaryIndicator": true,
+        "reason": "VERSALIEN_SINGLE_WORD_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-EMPH-014": {
+        "primaryIndicator": false,
+        "reason": "MULTIWORD_FORM_SELECTION_POLICY_DOMINATES_MARKER_FORMS"
+      },
+      "DE-FLANG-007": {
+        "primaryIndicator": false,
+        "reason": "ONE_WORD_FOREIGN_SPAN_SCOPE_DOMINATES_START_MARKER_FORM"
+      },
+      "DE-FLANG-008": {
+        "primaryIndicator": false,
+        "reason": "MULTIWORD_FOREIGN_SPAN_SCOPE_AND_TERMINATION_DOMINATE_MARKER_FORMS"
+      },
+      "DE-FLANG-012": {
+        "primaryIndicator": false,
+        "reason": "FOREIGN_ACCENT_POLICY_BOUNDARY_DOMINATES_ANNOUNCEMENT_REFERENCE"
+      },
+      "DE-FLANG-013": {
+        "primaryIndicator": false,
+        "reason": "TARGET_BRAILLE_PROFILE_DELEGATION_DOMINATES_ANNOUNCEMENT_REFERENCE"
+      },
+      "DE-MATH-001": {
+        "primaryIndicator": true,
+        "reason": "INLINE_MATH_POINT4_ANNOUNCEMENT_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-MATH-002": {
+        "primaryIndicator": false,
+        "reason": "INLINE_ANNOUNCEMENT_EXCEPTION_CONSTRAINT_DOMINATES"
+      },
+      "DE-MATH-003": {
+        "primaryIndicator": false,
+        "reason": "INLINE_MATH_ANNOUNCEMENT_SCOPE_AND_TERMINATION_DOMINATE"
+      },
+      "DE-MATH-008": {
+        "primaryIndicator": true,
+        "reason": "EXPONENT_SIGN_IS_PRIMARY_EFFECT"
+      },
+      "DE-MATH-009": {
+        "primaryIndicator": false,
+        "reason": "LOWER_UPPER_REAR_INDEX_ORDER_STRUCTURE_DOMINATES_MARKER_FORM"
+      },
+      "DE-MATH-010": {
+        "primaryIndicator": true,
+        "reason": "POINT4_INDEX_ANNOUNCEMENT_REQUIREMENT_OR_OMISSION_IS_PRIMARY_EFFECT"
+      },
+      "DE-MATH-012": {
+        "primaryIndicator": true,
+        "reason": "RELATION_NEGATION_PREFIX_IS_PRIMARY_EFFECT"
+      },
+      "DE-MATH-017": {
+        "primaryIndicator": false,
+        "reason": "TEXT_TO_MATH_SPAN_BOUNDARY_AND_PLACEMENT_DOMINATE_DELIMITER_FORM"
+      },
+      "DE-MATH-018": {
+        "primaryIndicator": false,
+        "reason": "MATH_TO_TEXT_SPAN_BOUNDARY_AND_PLACEMENT_DOMINATE_DELIMITER_FORM"
+      },
+      "DE-MATH-019": {
+        "primaryIndicator": false,
+        "reason": "FULL_MATH_PROFILE_DELEGATION_DOMINATES_ANNOUNCEMENT_REFERENCE"
+      },
+      "DE-MATH-020": {
+        "primaryIndicator": false,
+        "reason": "WHITESPACE_BOUNDARY_ALTERNATIVE_DOMINATES_EXPLICIT_DELIMITER_REFERENCE"
+      },
+      "DE-SPECIAL-001": {
+        "primaryIndicator": true,
+        "reason": "SPECIAL_FORM_POINT4_MARKER_IS_PRIMARY_EFFECT"
+      },
+      "DE-TABLE-002": {
+        "primaryIndicator": false,
+        "reason": "TABLE_CELL_SEPARATOR_IS_STRUCTURAL_NOT_TEXT_INDICATOR"
+      }
+    }
+  },
+  "materializationModel": {
+    "topology": {
+      "schema": "spec/de/schema/contract-materialization-set.schema.json",
+      "contractDirectory": "spec/de/contracts",
+      "indicatorContractSet": "spec/de/contracts/de-basisschrift-indicators.json",
+      "directoryCreationDeferredUntilMaterialization": true
+    },
+    "setShape": {
+      "schemaVersion": 1,
+      "id": "de-basisschrift-indicators",
+      "status": "MATERIALIZED_NON_EXECUTABLE",
+      "language": "de",
+      "textMode": "basisschrift",
+      "contractLayer": "GERMAN_BASISSCHRIFT_DERIVED_CONTRACT_LAYER",
+      "primaryRole": "INDICATOR",
+      "recordCount": 20,
+      "taxonomyBindingSha256": "8BC70F04793425FD9BE792B55F81D89F212ECB2CE43DE47AA9CCAAF977588C54",
+      "scopeBindingSha256": "30C38D2910165AFC7068633493DD4660E5647EBFF6299E902F24294A318D5E83",
+      "canonicalRecordsRemainUnmodified": true,
+      "behavioralLoweringStarted": false,
+      "translatorStarted": false
+    },
+    "recordShape": {
+      "requiredFields": [
+        "ruleId",
+        "sourceRulePath",
+        "sourceRuleSha256",
+        "family",
+        "kind",
+        "section",
+        "primaryRole",
+        "materializationOwner",
+        "decisionRationale",
+        "sourceNormative",
+        "sourceStatus",
+        "validationCaseIds",
+        "semanticPayload",
+        "explicitIndicatorFormRoots",
+        "execution"
+      ],
+      "primaryRole": "INDICATOR",
+      "materializationOwner": "15.5B3.3",
+      "semanticPayloadPolicy": "LOSSLESS_EXACT_COPY_OF_CANONICAL_SEMANTICS",
+      "explicitIndicatorFormRootsPolicy": "TOP_LEVEL_SOURCE_SEMANTIC_ROOTS_ONLY",
+      "explicitIndicatorFormRequired": false,
+      "multipleExplicitIndicatorFormRootsAllowed": true,
+      "sourceBindingRequired": true,
+      "sourceShaRequired": true,
+      "canonicalMutationAllowed": false,
+      "executionShape": {
+        "contractMaterialized": true,
+        "behaviorLowered": false,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    "indicatorFormRoots": [
+      "marker",
+      "markers",
+      "startMarker",
+      "endMarker",
+      "prefix",
+      "caseMarkers",
+      "lowercaseWordMarker",
+      "negationPrefix"
+    ],
+    "materializationRules": {
+      "derivedLayerSeparateFromCanonical": true,
+      "derivedLayerSeparateFromB2RuntimeClassification": true,
+      "contractMaterializationIsNotBehavioralLowering": true,
+      "contractMaterializationIsNotRuntimeExecution": true,
+      "contractMaterializationDoesNotRegisterRuntimeBundle": true,
+      "exactlyOnePrimaryRolePerMaterializedRecord": true,
+      "onlyAdjudicatedIndicatorSetMayEnterB33": true,
+      "remaining87StayNotAssigned": true
+    }
+  },
+  "explicitFormEvidence": {
+    "indicatorRules": 20,
+    "withExplicitFormRoots": 18,
+    "withoutExplicitFormRoots": [
+      "DE-ACCENT-004",
+      "DE-MATH-010"
+    ],
+    "multiRootRules": [
+      "DE-CASE-013"
+    ],
+    "explicitFormIsRequired": false
+  },
+  "sourceBindings": [
+    {
+      "ruleId": "DE-ACCENT-002",
+      "sourceRulePath": "spec/de/rules/records/de-accent-002.json",
+      "sourceRuleSha256": "96C91532EA41F8E36F30CF2D6DECFF45326DEF62C305209B573A2703984362C3",
+      "family": "ACCENT",
+      "kind": "GENERIC_DIACRITIC_METHOD",
+      "section": "2.8.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-ACCENT-CASE-001",
+        "DE-ACCENT-CASE-003",
+        "DE-ACCENT-CASE-005"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "POINT4_DIACRITIC_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "sourceRulePath": "spec/de/rules/records/de-accent-003.json",
+      "sourceRuleSha256": "2AC1E292E411D36A15E3BDD4ED77DB1C852183C21EF57287644944855EB8DD7C",
+      "family": "ACCENT",
+      "kind": "EXACT_LANGUAGE_SPECIFIC_METHOD",
+      "section": "2.8.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-ACCENT-CASE-002",
+        "DE-ACCENT-CASE-004",
+        "DE-ACCENT-CASE-006",
+        "DE-ACCENT-CASE-007"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "POINT4_PREFIX_IS_PRIMARY_EFFECT_LANGUAGE_MAPPING_DEPENDENCY_IS_AUXILIARY"
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "sourceRulePath": "spec/de/rules/records/de-accent-004.json",
+      "sourceRuleSha256": "E092016A8D12D6CE551CB56DF49B11A1580AB22ACECB2D91D2EB94F0935CC7CA",
+      "family": "ACCENT",
+      "kind": "POINT4_REQUIRED",
+      "section": "2.8.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "explicitIndicatorFormRoots": [],
+      "decisionRationale": "POINT4_ANNOUNCEMENT_REQUIREMENT_IS_PRIMARY_PROFILE_LIST_IS_APPLICABILITY"
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "sourceRulePath": "spec/de/rules/records/de-case-004.json",
+      "sourceRuleSha256": "D797309FCDC928DD0D32FA18B3E58520A29971F31DEABD54B37F4407804A798F",
+      "family": "CASE",
+      "kind": "INITIAL_CAPITAL",
+      "section": "2.6.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-001",
+        "DE-CASE-CASE-008"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "sourceRulePath": "spec/de/rules/records/de-case-005.json",
+      "sourceRuleSha256": "DE30ED67ABF7B8ACD5AC4A9ACE5D1FDFD74AB3AFBAC5BB7CD8157B46A352F8D1",
+      "family": "CASE",
+      "kind": "INITIAL_CAPITAL_ABBREVIATION",
+      "section": "2.6.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "INITIAL_CAPITAL_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY"
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "sourceRulePath": "spec/de/rules/records/de-case-006.json",
+      "sourceRuleSha256": "8440A4C7FF4E5A21E5892EB571ABEC5DD50CCF0A2829540AF9E404885483B213",
+      "family": "CASE",
+      "kind": "CAPITAL_SEQUENCE",
+      "section": "2.6.2",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-002",
+        "DE-CASE-CASE-003"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "CAPITAL_SEQUENCE_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "sourceRulePath": "spec/de/rules/records/de-case-008.json",
+      "sourceRuleSha256": "95BCD5A2FFA49A3CE7911CF786EA341D7805D9BD688CEFC5E6E7E5E864BFAD84",
+      "family": "CASE",
+      "kind": "LOWERCASE_ANNOUNCEMENT",
+      "section": "2.6.3",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-004",
+        "DE-CASE-CASE-007"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "LOWERCASE_ANNOUNCEMENT_MARKER_IS_PRIMARY_CONTRACTION_RESTRICTION_IS_AUXILIARY"
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "sourceRulePath": "spec/de/rules/records/de-case-013.json",
+      "sourceRuleSha256": "5D1AB3894AF6FFFDBD3114119EB655975C812CC1AE4A5B0E574FCAB125646E6C",
+      "family": "CASE",
+      "kind": "GREEK_UPPERCASE",
+      "section": "2.6.5",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-007"
+      ],
+      "explicitIndicatorFormRoots": [
+        "prefix",
+        "caseMarkers"
+      ],
+      "decisionRationale": "GREEK_UPPERCASE_MARKER_COMPOSITION_IS_PRIMARY_DEPENDENCY_IS_AUXILIARY"
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "sourceRulePath": "spec/de/rules/records/de-case-014.json",
+      "sourceRuleSha256": "0059B3963147E23EEEFE4AF3BFF4097AD4337EE16E94F4100EB0E9B35E4486DE",
+      "family": "CASE",
+      "kind": "NON_DERIVABLE_CASE",
+      "section": "2.6.6",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CASE-CASE-008"
+      ],
+      "explicitIndicatorFormRoots": [
+        "lowercaseWordMarker"
+      ],
+      "decisionRationale": "EXPLICIT_LOWERCASE_WORD_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "sourceRulePath": "spec/de/rules/records/de-cb-005.json",
+      "sourceRuleSha256": "0A2DB73C85C5F9CB16BA4E92E33557924354D1935F3733B162A0AF9A79A17D19",
+      "family": "CB",
+      "kind": "DOT_7_TRANSPORT",
+      "section": "2.11",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-002"
+      ],
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "decisionRationale": "DOT7_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "sourceRulePath": "spec/de/rules/records/de-cb-006.json",
+      "sourceRuleSha256": "1CD753493F159267642327D4CBBD0FB451F0C4703834FA6341CCBB721FEDCBD5",
+      "family": "CB",
+      "kind": "DOT_8_TRANSPORT",
+      "section": "2.11",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-003"
+      ],
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "decisionRationale": "DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "sourceRulePath": "spec/de/rules/records/de-cb-007.json",
+      "sourceRuleSha256": "1ED93AF0C2C8EF0316CA44B0BFC1CBED2D8C524EDAF21C4660403298F507C963",
+      "family": "CB",
+      "kind": "DOTS_7_8_TRANSPORT",
+      "section": "2.11",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-CB-CASE-004"
+      ],
+      "explicitIndicatorFormRoots": [
+        "prefix"
+      ],
+      "decisionRationale": "DOT7_DOT8_TRANSPORT_PREFIX_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "sourceRulePath": "spec/de/rules/records/de-emph-002.json",
+      "sourceRuleSha256": "4C667147B3AA07F93F122B2DD235D71D62FB1A9E0FC8BC05CF671A1753CA7EA0",
+      "family": "EMPH",
+      "kind": "PRIMARY_SINGLE_WORD",
+      "section": "2.7.1",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-001"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "PRIMARY_SINGLE_WORD_EMPHASIS_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "sourceRulePath": "spec/de/rules/records/de-emph-007.json",
+      "sourceRuleSha256": "2FB902EF51FD63B14871A6D2719FC3963C3C6F402ED4A471925FD0A0D7951547",
+      "family": "EMPH",
+      "kind": "SECONDARY_SINGLE_WORD_OR_PART",
+      "section": "2.7.2",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-005"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "SECONDARY_SINGLE_WORD_OR_PART_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "sourceRulePath": "spec/de/rules/records/de-emph-013.json",
+      "sourceRuleSha256": "DDCF91EF333D72182A49E0FC1A13394A40C45CBADE5F86FE5B96664DCC70DA18",
+      "family": "EMPH",
+      "kind": "VERSALIEN_SINGLE_WORD",
+      "section": "2.7.3",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-EMPH-CASE-008"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "VERSALIEN_SINGLE_WORD_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "sourceRulePath": "spec/de/rules/records/de-math-001.json",
+      "sourceRuleSha256": "65EFFCDD74A265F8D4F8AA5FA26037BA04A32C33728FB4B2BBC74B842DC926E8",
+      "family": "MATH",
+      "kind": "INLINE_MATH_ANNOUNCEMENT",
+      "section": "2.10",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-001",
+        "DE-MATH-CASE-003"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "INLINE_MATH_POINT4_ANNOUNCEMENT_MARKER_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "sourceRulePath": "spec/de/rules/records/de-math-008.json",
+      "sourceRuleSha256": "E16AF7B2952C2ADB95A9FAE6858B20B36A49988DB8FB4263791568D5AFA1802C",
+      "family": "MATH",
+      "kind": "EXPONENT",
+      "section": "2.10",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "EXPONENT_SIGN_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "sourceRulePath": "spec/de/rules/records/de-math-010.json",
+      "sourceRuleSha256": "12B4EE1EABC481D8A149CA9B03D3721C8EC5A61903FB8C7703966459633C0A29",
+      "family": "MATH",
+      "kind": "FRONT_REAR_INDEX_ANNOUNCEMENT",
+      "section": "2.10",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-005",
+        "DE-MATH-CASE-006"
+      ],
+      "explicitIndicatorFormRoots": [],
+      "decisionRationale": "POINT4_INDEX_ANNOUNCEMENT_REQUIREMENT_OR_OMISSION_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "sourceRulePath": "spec/de/rules/records/de-math-012.json",
+      "sourceRuleSha256": "DFA89AA9DEB0552CFCE8D64D992D278D6BAFF22A0363CB06C15617564B0C7FF5",
+      "family": "MATH",
+      "kind": "RELATION_NEGATION",
+      "section": "2.10",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-MATH-CASE-007"
+      ],
+      "explicitIndicatorFormRoots": [
+        "negationPrefix"
+      ],
+      "decisionRationale": "RELATION_NEGATION_PREFIX_IS_PRIMARY_EFFECT"
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "sourceRulePath": "spec/de/rules/records/de-special-001.json",
+      "sourceRuleSha256": "6155631C8C6B34AB3BEDF5BA15A180DA91FDC856888BB1F0DACFD35618A90722",
+      "family": "SPECIAL",
+      "kind": "SPECIAL_FORM_LETTER",
+      "section": "2.8.2",
+      "sourceNormative": true,
+      "sourceStatus": "normative",
+      "validationCaseIds": [
+        "DE-SPECIAL-CASE-001"
+      ],
+      "explicitIndicatorFormRoots": [
+        "marker"
+      ],
+      "decisionRationale": "SPECIAL_FORM_POINT4_MARKER_IS_PRIMARY_EFFECT"
+    }
+  ],
+  "determinism": {
+    "indicatorAdjudicationCanonicalJsonSha256": "89FE527A937DFA115ADE87156F0237C8162FD6EF0104373AB95F44110AA73742",
+    "indicatorMaterializationModelCanonicalJsonSha256": "EAABC57C7D715B5EC4B5AD186C84E5FB7618EAC2F3BB47D207D1108C9F48177B"
+  },
+  "executionBoundary": {
+    "contractSchemaCreated": false,
+    "contractDirectoryCreated": false,
+    "indicatorContractSetCreated": false,
+    "formalPrimaryRoleAssignmentsMaterialized": 0,
+    "remainingNotAssigned": 107,
+    "behavioralLoweringStarted": false,
+    "numericStateMachineStarted": false,
+    "translatorStarted": false,
+    "germanRuntimeBundleGenerated": false,
+    "germanRuntimeBundleRegistered": false
+  },
+  "nextStep": "15.5B3.3e Materialize 20 Indicator Contracts"
+}
