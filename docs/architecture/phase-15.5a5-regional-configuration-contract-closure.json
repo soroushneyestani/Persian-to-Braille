@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A5.5",
+  "status": "CLOSED",
+  "title": "German Regional Configuration Contract Closure",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "d1b396d1aedc15e492accb1345a82a7d2add24e4"
+  },
+  "substeps": {
+    "15.5A5.1": "CLOSED",
+    "15.5A5.2": "CLOSED",
+    "15.5A5.3": "CLOSED",
+    "15.5A5.4": "CLOSED"
+  },
+  "regionalIdentity": {
+    "configurationType": "GermanRegionalConfiguration",
+    "overlayType": "GermanRegionalOverlay",
+    "baseConfiguration": {
+      "overlay": null
+    },
+    "swissConfiguration": {
+      "overlay": "swiss"
+    },
+    "explicitConfigurationRequired": true,
+    "implicitDefaultAllowed": false,
+    "multipleOverlaysAllowed": false
+  },
+  "orthogonality": {
+    "independentFromGermanTextMode": true,
+    "swissIsFourthGermanMode": false,
+    "swissParticipatesInModeInheritance": false,
+    "deCh410IsRuntimeConfigurationKey": false,
+    "persianProfileRegionMetadataIsSelector": false
+  },
+  "applicationContract": {
+    "textModeMaterializationFirst": true,
+    "regionalApplicationStage": "AFTER_TEXT_MODE_MATERIALIZATION_BEFORE_FINAL_EXECUTABLE_SPECIFICATION",
+    "output": "ONE_EFFECTIVE_EXECUTABLE_SPECIFICATION",
+    "baseOverlayBehavior": "IDENTITY",
+    "swissOverlayRole": "SCOPED_REGIONAL_APPLICABILITY_AND_CONSTRAINT_LAYER",
+    "translatorChainingAllowed": false,
+    "regionalSecondRuntimeBundleAllowed": false,
+    "baseRuleMutationAllowed": false,
+    "implicitRuleReplacementAllowed": false,
+    "lastWriteWinsAllowed": false,
+    "crossModeRegionalActivationAllowed": false
+  },
+  "coreBoundary": {
+    "implemented": true,
+    "visibility": "INTERNAL_ONLY",
+    "coreRootExported": false,
+    "sdkExported": false,
+    "forwardTranslatorCoupled": false,
+    "modeRuleExecutorCoupled": false,
+    "swissRuntimeExecutionImplemented": false
+  },
+  "swissExplicitEszett": {
+    "dependency": "SWISS_EXPLICIT_ESZETT_INPUT_POLICY",
+    "status": "OPEN",
+    "decisionOwner": "15.5A6",
+    "resolvedByA5": false
+  },
+  "historicalValidatorPolicy": {
+    "a52ValidatorArtifactPreserved": true,
+    "a52ValidatorReexecutedAfterA54": false,
+    "reason": "A5.2 validator intentionally contains a phase-local pre-A5.4 no-Core-implementation invariant; A5.5 validates the frozen A5.2 contract directly instead of producing a false failure."
+  },
+  "runtimeAdmission": {
+    "germanProfiles": 0,
+    "germanRules": 0,
+    "germanRegionalRules": 0,
+    "germanMappings": 0,
+    "germanGeneratedRuntimeBundles": 0,
+    "swissExecutableRuntimeBehavior": 0
+  },
+  "validationGates": {
+    "A55_A53_VALIDATOR_EXIT": 0,
+    "A55_BUILD_EXIT": 0,
+    "A55_FOCUSED_EXIT": 0,
+    "A55_CORE_EXIT": 0,
+    "A55_SDK_EXIT": 0
+  },
+  "persianRuntime": {
+    "sha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+    "unchanged": true
+  },
+  "publicIdentifiers": {
+    "germanProfileIdentifier": "NOT_FROZEN",
+    "swissProfileIdentifier": "NOT_FROZEN",
+    "publicLocaleIdentifier": "NOT_FROZEN",
+    "publicSdkRegionalApi": "NOT_FROZEN"
+  },
+  "filesAddedByClosure": 2,
+  "phaseStatus": "PHASE_15_5A5_STATUS=CLOSED",
+  "nextStep": "15.5A6 SWISS_EXPLICIT_ESZETT_INPUT_POLICY"
+}
