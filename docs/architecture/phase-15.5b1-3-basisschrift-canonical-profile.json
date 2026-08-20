@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B1.3",
+  "status": "PROFILE_MATERIALIZED_RULE_RECORDS_PENDING",
+  "title": "Basisschrift Internal Canonical Profile Materialization",
+  "repository": {
+    "branch": "phase15-german-braille",
+    "baselineHead": "b921d93aae253ad6cc1bcd8489edf272c5064271"
+  },
+  "profile": {
+    "path": "spec/de/profiles/de-basisschrift.json",
+    "id": "de-basisschrift",
+    "identityScope": "INTERNAL_CANONICAL_SPECIFICATION",
+    "publicIdentifierFrozen": false,
+    "status": "candidate",
+    "version": "0.1.0",
+    "language": "de",
+    "textMode": "basisschrift",
+    "cellSize": 6,
+    "direction": "print-to-braille"
+  },
+  "ruleInventory": {
+    "expectedRuleIds": 150,
+    "materializedRuleIds": 150,
+    "canonicalRuleRecordFiles": 0,
+    "sourceOccurrenceCount": 150,
+    "uniqueRuleIdCount": 150,
+    "duplicateRuleIds": 0,
+    "invalidRuleIds": 0,
+    "ordering": "LEXICAL_IDENTIFIER_ORDER",
+    "orderingSemantic": false,
+    "canonicalRuleMaterializationOwner": "15.5B1.4"
+  },
+  "policy": {
+    "normalization": {
+      "unicodeForm": "none",
+      "unknownFormatControls": "error",
+      "classification": "INTERNAL_FAIL_CLOSED_POLICY",
+      "normativeSourceClaim": false
+    },
+    "fallback": {
+      "unknownCharacter": "error",
+      "unknownSequence": "error",
+      "classification": "INTERNAL_FAIL_CLOSED_POLICY",
+      "normativeSourceClaim": false
+    }
+  },
+  "sourceBaseline": {
+    "sha256": "35f6cd3a8ef07ad33229398e6310dc778046df23fc13a61f0b7871e288c5d8ce",
+    "closureArtifact": "docs/architecture/phase-15.1o-basisschrift-closure-audit.json",
+    "closureStatus": "CLOSURE_AUDIT_PASS_WITH_DEFERRED_DEPENDENCIES",
+    "uniqueRuleIds": 150,
+    "uniqueValidationCaseIds": 88,
+    "deferredDependencies": 7,
+    "sourceContractCount": 10
+  },
+  "runtimeBoundary": {
+    "canonicalRulesExecutable": false,
+    "runtimeLoweringStarted": false,
+    "germanRuntimeBundleAdmitted": false,
+    "runtimeManifestChanged": false,
+    "runtimeBuilderChanged": false
+  },
+  "regionalBoundary": {
+    "regionalConfigurationEncodedInProfile": false,
+    "swissOverlayApplied": false,
+    "swissFourthMode": false,
+    "regionalRuntimeOwner": "15.5F"
+  },
+  "deferredDependencies": {
+    "preserved": true,
+    "count": 7,
+    "inventedResolution": false
+  },
+  "nextStep": "15.5B1.4 Canonical Basisschrift rule materialization"
+}
