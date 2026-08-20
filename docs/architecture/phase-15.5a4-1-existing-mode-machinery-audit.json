@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5A4.1",
+  "title": "Existing Mode Machinery Audit",
+  "status": "CLOSED",
+  "branch": "phase15-german-braille",
+  "baselineHead": "b7e7e28cea6cabd0ee39e3a8c7d08cf7af1a18e0",
+  "germanTopology": {
+    "textModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "selectionCardinality": "EXACTLY_ONE_PER_TRANSLATION_REQUEST",
+    "swissIsFourthMode": false,
+    "swissDimension": "ORTHOGONAL_REGIONAL_CONFIGURATION"
+  },
+  "existingCoreModeMachinery": {
+    "semanticRole": "STRUCTURAL_RULE_EXECUTION",
+    "executor": "ModeRuleExecutor",
+    "keyType": "EngineTokenClass",
+    "currentPersianModeRuleCount": 5,
+    "currentPersianModeRules": [
+      {
+        "file": "fa-g1-latin-mode-001.json",
+        "id": "FA-G1-LATIN-MODE-001",
+        "profile": "fa-ir-g1",
+        "inputKind": "structural",
+        "tokenClass": "latin-character-class"
+      },
+      {
+        "file": "fa-g1-latin-mode-002.json",
+        "id": "FA-G1-LATIN-MODE-002",
+        "profile": "fa-ir-g1",
+        "inputKind": "structural",
+        "tokenClass": "latin-span-begin"
+      },
+      {
+        "file": "fa-g1-latin-mode-003.json",
+        "id": "FA-G1-LATIN-MODE-003",
+        "profile": "fa-ir-g1",
+        "inputKind": "structural",
+        "tokenClass": "latin-span-end"
+      },
+      {
+        "file": "fa-g1-latin-mode-004.json",
+        "id": "FA-G1-LATIN-MODE-004",
+        "profile": "fa-ir-g1",
+        "inputKind": "structural",
+        "tokenClass": "latin-capital-indicator"
+      },
+      {
+        "file": "fa-g1-numrule-001.json",
+        "id": "FA-G1-NUMRULE-001",
+        "profile": "fa-ir-g1",
+        "inputKind": "structural",
+        "tokenClass": "numeric-indicator"
+      }
+    ],
+    "hardInventoryExpectation": 5
+  },
+  "semanticSeparationDecision": {
+    "existingRuleTypeMode": "STRUCTURAL_ENGINE_RULE",
+    "germanTextMode": "TRANSLATION_CONFIGURATION_DIMENSION",
+    "sameConcept": false,
+    "reuseModeRuleExecutorAsGermanTextModeSelector": "FORBIDDEN",
+    "preferredInternalGermanTerm": "GermanTextMode"
+  },
+  "forwardBoundary": {
+    "currentTranslateSignature": "translate(inputText: string)",
+    "germanTextModeArgumentPresent": false,
+    "modeSelectionBoundaryRequiredLater": true,
+    "plannedOwner": "15.5A4.4"
+  },
+  "schemaAudit": {
+    "persianProfileSchemaReusableAsGermanSchema": false,
+    "reasons": [
+      "language is const fa",
+      "region is const IR",
+      "rule identifiers are FA-namespaced"
+    ],
+    "persianRuleSchemaReusableAsGermanSchema": false,
+    "ruleTypeModeMeaning": "structural rule category"
+  },
+  "scopeDecisions": {
+    "modifyPersianModeRuleExecutorInA4_1": false,
+    "modifyPersianModeRuleExecutorInA4_2": false,
+    "addGermanMappings": false,
+    "addGermanExecutableRules": false,
+    "addGermanGeneratedRuntimeBundle": false,
+    "resolveSwissEszettPolicy": false,
+    "freezePublicGermanProfileIdentifier": false,
+    "addPublicSdkApi": false,
+    "germanReverseTranslation": "OUT_OF_SCOPE"
+  },
+  "sourceHashes": {
+    "runtimeTopologySha256": "38C32B62CA49B1A0297CE83257DE0782671DEE785731121AB326F4A0CF805FAF",
+    "modeRuleExecutorSha256": "83E481BA4D8E800105DCD23FE0413ECBFBFFB1FCB54F8B658760DC7B0B37F34A",
+    "specificationSha256": "E80FD8A4995B10FF1A74CC6A68E9D8A55E7C69C68213FD24487150CA0BDE9E9A",
+    "forwardTranslatorSha256": "5071BDAB8F590996C7A9C35618D4EC8815E9FAB65D0EA4443AF3F19B6D2C8EA7",
+    "translationTypesSha256": "103AB5115210595B6F43DD32EE42BBD219973CC473FAD92E160D453F5A7A1CC0",
+    "persianProfileSchemaSha256": "89D5FB9217ACDECBA84214DB8801175F76366B8ADF27475AAAB3D6F6C6E37B5C",
+    "persianRuleSchemaSha256": "EDF4AC70F4ACCA6E9D384EA85161B56D0B9D288B8B8488369F0BF9C02D67FA52"
+  },
+  "nextStep": "15.5A4.2 German Mode Identity Contract"
+}
