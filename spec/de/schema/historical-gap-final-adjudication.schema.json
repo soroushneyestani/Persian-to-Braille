@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "German Basisschrift Historical Gap Final Adjudication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "artifactType",
+    "phase",
+    "profile",
+    "sourceAudit",
+    "baseline",
+    "loweringTraceabilityUniverse",
+    "historicalGapFinalAdjudication",
+    "completeVectorFinalProof",
+    "adjudication",
+    "semanticBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "artifactType": {
+      "const": "GERMAN_BASISSCHRIFT_HISTORICAL_GAP_FINAL_ADJUDICATION"
+    },
+    "phase": {
+      "const": "15.5B5.3"
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "sourceAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "auditorScriptSha256",
+        "modelCanonicalSha256",
+        "jsonByteSha256"
+      ],
+      "properties": {
+        "phase": {
+          "const": "15.5B5.3J"
+        },
+        "auditorScriptSha256": {
+          "const": "57B5C5F5A33E2E659A49A9628E700BF3F8FA5BA2049C2259E7FAF3BD5FF57DC6"
+        },
+        "modelCanonicalSha256": {
+          "const": "4244BDB66160A6D158C539AD037E0CD8F22C7900FA9751EB1B51ADC13F021224"
+        },
+        "jsonByteSha256": {
+          "const": "E615B500C93CE033E6C1182B1550D881E597670A739C80C58D0AFFB5B2FEE94C"
+        }
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repositoryCommit"
+      ],
+      "properties": {
+        "repositoryCommit": {
+          "const": "19455e5f55985a5d135ec0809606b859625aff2c"
+        }
+      }
+    },
+    "loweringTraceabilityUniverse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "historicalFixtureGradeCovered",
+        "historicalEvidenceGap",
+        "newEvidenceRequired"
+      ],
+      "properties": {
+        "total": {
+          "const": 123
+        },
+        "historicalFixtureGradeCovered": {
+          "const": 22
+        },
+        "historicalEvidenceGap": {
+          "const": 52
+        },
+        "newEvidenceRequired": {
+          "const": 49
+        }
+      }
+    },
+    "historicalGapFinalAdjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rules",
+        "counts",
+        "fixturePromotions",
+        "records"
+      ],
+      "properties": {
+        "rules": {
+          "const": 52
+        },
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "RULE_SOURCE_PROVEN_COMPLETE_VECTOR_DERIVED_HISTORICAL_CASE_CANONICAL_SOURCE_UNRESOLVED",
+            "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+            "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED"
+          ],
+          "properties": {
+            "RULE_SOURCE_PROVEN_COMPLETE_VECTOR_DERIVED_HISTORICAL_CASE_CANONICAL_SOURCE_UNRESOLVED": {
+              "const": 1
+            },
+            "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED": {
+              "const": 6
+            },
+            "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED": {
+              "const": 45
+            }
+          }
+        },
+        "fixturePromotions": {
+          "const": 0
+        },
+        "records": {
+          "type": "array",
+          "minItems": 52,
+          "maxItems": 52,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ruleId",
+              "historicalValidationCaseIds",
+              "sourceIdentityClass",
+              "priorPromotionFeasibility",
+              "finalHistoricalGapClass",
+              "requiredNewEvidence",
+              "fixtureGradeProven",
+              "automaticPromotionEligible",
+              "runtimeConformanceProven"
+            ],
+            "properties": {
+              "ruleId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "historicalValidationCaseIds": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "sourceIdentityClass": {
+                "enum": [
+                  "HAS_DERIVED_COMPLETE_VECTOR_CONTAINER_ASSOCIATION",
+                  "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+                  "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE"
+                ]
+              },
+              "priorPromotionFeasibility": {
+                "enum": [
+                  "MANUAL_COMPLETE_VECTOR_PROVENANCE_ADJUDICATION_REQUIRED",
+                  "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+                  "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED"
+                ]
+              },
+              "finalHistoricalGapClass": {
+                "enum": [
+                  "RULE_SOURCE_PROVEN_COMPLETE_VECTOR_DERIVED_HISTORICAL_CASE_CANONICAL_SOURCE_UNRESOLVED",
+                  "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+                  "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED"
+                ]
+              },
+              "requiredNewEvidence": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY",
+                    "EXPECTED_BRAILLE_OUTPUT",
+                    "INPUT_PAYLOAD"
+                  ]
+                }
+              },
+              "fixtureGradeProven": {
+                "const": false
+              },
+              "automaticPromotionEligible": {
+                "const": false
+              },
+              "runtimeConformanceProven": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "completeVectorFinalProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId",
+        "ruleId",
+        "exactRuleCaseCarrierConsensusProven",
+        "canonicalRuleSourceIdentityProven",
+        "canonicalRuleSourceIntegrityProven",
+        "derivedCompleteVectorIntegrityProven",
+        "provenanceMentionsLinkedRule",
+        "canonicalHistoricalCaseSourceResolved",
+        "fixtureGradePromotionReady"
+      ],
+      "properties": {
+        "caseId": {
+          "const": "DE-CASE-CASE-003"
+        },
+        "ruleId": {
+          "const": "DE-CASE-002"
+        },
+        "exactRuleCaseCarrierConsensusProven": {
+          "const": true
+        },
+        "canonicalRuleSourceIdentityProven": {
+          "const": true
+        },
+        "canonicalRuleSourceIntegrityProven": {
+          "const": true
+        },
+        "derivedCompleteVectorIntegrityProven": {
+          "const": true
+        },
+        "provenanceMentionsLinkedRule": {
+          "const": true
+        },
+        "canonicalHistoricalCaseSourceResolved": {
+          "const": false
+        },
+        "fixtureGradePromotionReady": {
+          "const": false
+        }
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historicalGapFullyAdjudicated",
+        "historicalGapFixturePromotions",
+        "newNormativeEvidenceAuthored",
+        "all52HistoricalGapRulesFixtureGradeProven",
+        "all123LoweringRulesDedicatedFixtureCovered",
+        "disposition"
+      ],
+      "properties": {
+        "historicalGapFullyAdjudicated": {
+          "const": true
+        },
+        "historicalGapFixturePromotions": {
+          "const": 0
+        },
+        "newNormativeEvidenceAuthored": {
+          "const": false
+        },
+        "all52HistoricalGapRulesFixtureGradeProven": {
+          "const": false
+        },
+        "all123LoweringRulesDedicatedFixtureCovered": {
+          "const": false
+        },
+        "disposition": {
+          "const": "HISTORICAL_GAP_FULLY_ADJUDICATED_WITH_ZERO_FIXTURE_PROMOTIONS_UNDER_CURRENT_REPOSITORY_EVIDENCE"
+        }
+      }
+    },
+    "semanticBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historicalGapDurablyAdjudicated",
+        "newNormativeEvidenceAuthored",
+        "historicalEvidenceSemanticAdequacyProvenForAll52",
+        "fixtureGradePromotionReady",
+        "germanRuntimeExecutable",
+        "runtimeConformanceProven",
+        "runtimeExecutionClaimed",
+        "wholeB5Closed",
+        "phase15_5Closed"
+      ],
+      "properties": {
+        "historicalGapDurablyAdjudicated": {
+          "const": true
+        },
+        "newNormativeEvidenceAuthored": {
+          "const": false
+        },
+        "historicalEvidenceSemanticAdequacyProvenForAll52": {
+          "const": false
+        },
+        "fixtureGradePromotionReady": {
+          "const": false
+        },
+        "germanRuntimeExecutable": {
+          "const": false
+        },
+        "runtimeConformanceProven": {
+          "const": false
+        },
+        "runtimeExecutionClaimed": {
+          "const": false
+        },
+        "wholeB5Closed": {
+          "const": false
+        },
+        "phase15_5Closed": {
+          "const": false
+        }
+      }
+    }
+  }
+}

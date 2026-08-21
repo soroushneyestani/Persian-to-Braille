@@ -1,0 +1,948 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GERMAN_BASISSCHRIFT_HISTORICAL_GAP_FINAL_ADJUDICATION",
+  "phase": "15.5B5.3",
+  "profile": "de-basisschrift",
+  "sourceAudit": {
+    "phase": "15.5B5.3J",
+    "auditorScriptSha256": "57B5C5F5A33E2E659A49A9628E700BF3F8FA5BA2049C2259E7FAF3BD5FF57DC6",
+    "modelCanonicalSha256": "4244BDB66160A6D158C539AD037E0CD8F22C7900FA9751EB1B51ADC13F021224",
+    "jsonByteSha256": "E615B500C93CE033E6C1182B1550D881E597670A739C80C58D0AFFB5B2FEE94C"
+  },
+  "baseline": {
+    "repositoryCommit": "19455e5f55985a5d135ec0809606b859625aff2c"
+  },
+  "loweringTraceabilityUniverse": {
+    "total": 123,
+    "historicalFixtureGradeCovered": 22,
+    "historicalEvidenceGap": 52,
+    "newEvidenceRequired": 49
+  },
+  "historicalGapFinalAdjudication": {
+    "rules": 52,
+    "counts": {
+      "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED": 6,
+      "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED": 45,
+      "RULE_SOURCE_PROVEN_COMPLETE_VECTOR_DERIVED_HISTORICAL_CASE_CANONICAL_SOURCE_UNRESOLVED": 1
+    },
+    "fixturePromotions": 0,
+    "records": [
+      {
+        "ruleId": "DE-CASE-002",
+        "historicalValidationCaseIds": [
+          "DE-CASE-CASE-003"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_COMPLETE_VECTOR_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "MANUAL_COMPLETE_VECTOR_PROVENANCE_ADJUDICATION_REQUIRED",
+        "finalHistoricalGapClass": "RULE_SOURCE_PROVEN_COMPLETE_VECTOR_DERIVED_HISTORICAL_CASE_CANONICAL_SOURCE_UNRESOLVED",
+        "requiredNewEvidence": [
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-004",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-001"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-005",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-002"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-006",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-003"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-007",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-008",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-006",
+          "DE-CB-CASE-007",
+          "DE-CB-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-009",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-009"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-010",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-010",
+          "DE-CB-CASE-011"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-011",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-005",
+          "DE-CB-CASE-011"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-013",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-012"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-015",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-013"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-CB-016",
+        "historicalValidationCaseIds": [
+          "DE-CB-CASE-014"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-002",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-001"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-004",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-002"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-006",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-003",
+          "DE-EMPH-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-007",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-005"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-008",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-006"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-009",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-007"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-012",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-013",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-EMPH-014",
+        "historicalValidationCaseIds": [
+          "DE-EMPH-CASE-009"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-001",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-007"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-002",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-007"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-004",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-007"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-007",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-001"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-008",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-002"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-010",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-006"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-011",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-003",
+          "DE-FLANG-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-FLANG-012",
+        "historicalValidationCaseIds": [
+          "DE-FLANG-CASE-005"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-INWORD-003",
+        "historicalValidationCaseIds": [
+          "DE-INWORD-CASE-009"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-INWORD-005",
+        "historicalValidationCaseIds": [
+          "DE-INWORD-CASE-001",
+          "DE-INWORD-CASE-002"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-INWORD-006",
+        "historicalValidationCaseIds": [
+          "DE-INWORD-CASE-003"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-INWORD-007",
+        "historicalValidationCaseIds": [
+          "DE-INWORD-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-INWORD-008",
+        "historicalValidationCaseIds": [
+          "DE-INWORD-CASE-005"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-001",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-001",
+          "DE-MATH-CASE-003"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-002",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-005",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-001"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-006",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-010",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-005",
+          "DE-MATH-CASE-006"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-012",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-007"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-016",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-017",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-018",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-008"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-MATH-020",
+        "historicalValidationCaseIds": [
+          "DE-MATH-CASE-009"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-STROKE-010",
+        "historicalValidationCaseIds": [
+          "DE-STROKE-CASE-002"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-STROKE-012",
+        "historicalValidationCaseIds": [
+          "DE-STROKE-CASE-004"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-STROKE-014",
+        "historicalValidationCaseIds": [
+          "DE-STROKE-CASE-005"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-STROKE-016",
+        "historicalValidationCaseIds": [
+          "DE-STROKE-CASE-006"
+        ],
+        "sourceIdentityClass": "HAS_DERIVED_INPUT_ONLY_CONTAINER_ASSOCIATION",
+        "priorPromotionFeasibility": "EXPECTED_OUTPUT_EVIDENCE_REQUIRED",
+        "finalHistoricalGapClass": "EXPECTED_BRAILLE_OUTPUT_EVIDENCE_REQUIRED",
+        "requiredNewEvidence": [
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-TABLE-002",
+        "historicalValidationCaseIds": [
+          "DE-TABLE-CASE-001"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-TABLE-003",
+        "historicalValidationCaseIds": [
+          "DE-TABLE-CASE-001"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-TABLE-004",
+        "historicalValidationCaseIds": [
+          "DE-TABLE-CASE-002",
+          "DE-TABLE-CASE-003"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      },
+      {
+        "ruleId": "DE-TABLE-006",
+        "historicalValidationCaseIds": [
+          "DE-TABLE-CASE-004"
+        ],
+        "sourceIdentityClass": "REFERENCE_LABELS_WITHOUT_RECOVERED_PAYLOAD_SOURCE",
+        "priorPromotionFeasibility": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "finalHistoricalGapClass": "HISTORICAL_CASE_PAYLOAD_RECONSTRUCTION_REQUIRED",
+        "requiredNewEvidence": [
+          "INPUT_PAYLOAD",
+          "EXPECTED_BRAILLE_OUTPUT",
+          "CANONICAL_HISTORICAL_CASE_SOURCE_IDENTITY"
+        ],
+        "fixtureGradeProven": false,
+        "automaticPromotionEligible": false,
+        "runtimeConformanceProven": false
+      }
+    ]
+  },
+  "completeVectorFinalProof": {
+    "caseId": "DE-CASE-CASE-003",
+    "ruleId": "DE-CASE-002",
+    "exactRuleCaseCarrierConsensusProven": true,
+    "canonicalRuleSourceIdentityProven": true,
+    "canonicalRuleSourceIntegrityProven": true,
+    "derivedCompleteVectorIntegrityProven": true,
+    "provenanceMentionsLinkedRule": true,
+    "canonicalHistoricalCaseSourceResolved": false,
+    "fixtureGradePromotionReady": false
+  },
+  "adjudication": {
+    "historicalGapFullyAdjudicated": true,
+    "historicalGapFixturePromotions": 0,
+    "newNormativeEvidenceAuthored": false,
+    "all52HistoricalGapRulesFixtureGradeProven": false,
+    "all123LoweringRulesDedicatedFixtureCovered": false,
+    "disposition": "HISTORICAL_GAP_FULLY_ADJUDICATED_WITH_ZERO_FIXTURE_PROMOTIONS_UNDER_CURRENT_REPOSITORY_EVIDENCE"
+  },
+  "semanticBoundary": {
+    "historicalGapDurablyAdjudicated": true,
+    "newNormativeEvidenceAuthored": false,
+    "historicalEvidenceSemanticAdequacyProvenForAll52": false,
+    "fixtureGradePromotionReady": false,
+    "germanRuntimeExecutable": false,
+    "runtimeConformanceProven": false,
+    "runtimeExecutionClaimed": false,
+    "wholeB5Closed": false,
+    "phase15_5Closed": false
+  }
+}
