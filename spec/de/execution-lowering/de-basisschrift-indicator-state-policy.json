@@ -1,0 +1,3464 @@
+{
+  "$schema": "../schema/indicator-state-policy-lowering-set.schema.json",
+  "schemaVersion": 1,
+  "phase": "15.5B4.3c2",
+  "id": "de-basisschrift-indicator-state-policy-lowering",
+  "profile": "de-basisschrift",
+  "target": "GERMAN_EXECUTION_IR",
+  "status": "LOWERED_IR_NON_EXECUTABLE",
+  "source": {
+    "adjudicationPath": "docs/architecture/phase-15.5b4-3c1-exact-semantic-adjudication.json",
+    "adjudicationByteSha256": "549810BDF48DF0F815C60A34DF631372011D653FF312FDB87C592B4A1A21A2CD",
+    "adjudicationModelCanonicalSha256": "4639FC860B2A7745822A4CC1E695E662C7F4C49A4DAC14FFC24A351ED5391F7F",
+    "executionAdmissionPath": "spec/de/execution-admission/de-basisschrift.json",
+    "executionAdmissionSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+    "priorDirectStructuralIrPath": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+    "priorDirectStructuralIrSha256": "5BD7D0C5561E490DD3031505312309E0747A1B1B543575E8A3BAE5FF15193D9B"
+  },
+  "summary": {
+    "records": 62,
+    "loweredRecords": 62,
+    "executableRecords": 0,
+    "runtimeRegisteredRecords": 0,
+    "primaryPrimitiveCounts": {
+      "STATE_MACHINE_TRANSITION": 8,
+      "INDICATOR_EMISSION": 20,
+      "STATE_SCOPE_CONTROL": 12,
+      "POLICY_SELECTION": 22
+    },
+    "auxiliaryFamilyRuleCounts": {
+      "INDICATOR_FORM": 30,
+      "STATE_TRANSITION": 0,
+      "STATE_TERMINATION": 9,
+      "STATE_SCOPE_BOUNDARY": 11,
+      "POLICY_BRANCH": 4,
+      "DEPENDENCY_EDGE": 8,
+      "PROFILE_OR_MODE_SELECTION": 12
+    },
+    "indicatorFormObjects": 38,
+    "dependencyEdges": 12,
+    "rulesWithNoAuxiliaryPrimitive": 14
+  },
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-002.json",
+      "canonicalRuleSha256": "96C91532EA41F8E36F30CF2D6DECFF45326DEF62C305209B573A2703984362C3",
+      "canonicalSemanticsSha256": "7278EB3185674D7B6A5A2BB01349B5835C65BB80A67EE5DF84640B2DD2F8645A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        },
+        "summary": "When knowledge of the foreign Braille system cannot be assumed, point 4 is placed before the German Braille cell of the base letter.",
+        "precision": "DIACRITIC_PRESENT_BUT_UNSPECIFIED"
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-003.json",
+      "canonicalRuleSha256": "2AC1E292E411D36A15E3BDD4ED77DB1C852183C21EF57287644944855EB8DD7C",
+      "canonicalSemanticsSha256": "8989F34456720A30EE27D1175A5B8EB4FAF627883D775EE24BD9BDDF44EFC7FA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        },
+        "summary": "For exact written representation, point 4 may precede the language-specific accented Braille cell.",
+        "requiresLanguageSpecificMapping": true
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-004.json",
+      "canonicalRuleSha256": "E092016A8D12D6CE551CB56DF49B11A1580AB22ACECB2D91D2EB94F0935CC7CA",
+      "canonicalSemanticsSha256": "9A33ADFA06F11F17527F6759ED549ED98FC539C11D41DA87DB7B1597181BB7EE",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Point-4 announcement is required for this German-text technique in Basis-, Voll- and Kurzschrift.",
+        "profiles": [
+          "basisschrift",
+          "vollschrift",
+          "kurzschrift"
+        ]
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profiles",
+              "value": [
+                "basisschrift",
+                "vollschrift",
+                "kurzschrift"
+              ]
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-005.json",
+      "canonicalRuleSha256": "57AF1AA0E2C117DEE96C43E26961F4E453D1F76070AA3BC5844CD236C4FF2D44",
+      "canonicalSemanticsSha256": "BCA5415BE5650BD6D10B3946DACA87E3848703EE082F785E2C160AF001436825",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "The accent technique is intended for isolated foreign words or short passages within German text.",
+        "longerForeignSpanDependency": "2.9"
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "longerForeignSpanDependency",
+              "targetType": "SECTION_REFERENCE",
+              "target": "2.9",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-001.json",
+      "canonicalRuleSha256": "BC0A06F207D842CF9D899A7BC7A0544E74244BC19224CB58E21D2A071985B5E0",
+      "canonicalSemanticsSha256": "4649147067A0BD6AE1A04B7CD574AA612F04EA3AA5F08A0400914F506B0354F8",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "German Braille normally does not distinguish uppercase and lowercase in ordinary running text.",
+        "mode": "SELECTIVE_CASE_MARKING"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "mode",
+              "value": "SELECTIVE_CASE_MARKING"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-003.json",
+      "canonicalRuleSha256": "2A4E1C8001D53D7877CBA5860350E08EDF1B8E78BF7AAFAF5603546B1B914965",
+      "canonicalSemanticsSha256": "40986BCC12B1EA4F4103D2ECDA89D83E4347129141BAE3861D66204B1480D10C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A document may explicitly mark all uppercase letters; in that mode unannounced letters are lowercase.",
+        "mode": "SYSTEMATIC_CAPITAL_MARKING"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "mode",
+              "value": "SYSTEMATIC_CAPITAL_MARKING"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-004.json",
+      "canonicalRuleSha256": "D797309FCDC928DD0D32FA18B3E58520A29971F31DEABD54B37F4407804A798F",
+      "canonicalSemanticsSha256": "2935A93DD73118474AEC0CDA0DDE4FE55E9B5EAFF8847DBC4E554AE0EFE754BA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A capital letter followed by one or more lowercase letters uses the dots-4-6 marker.",
+        "followingLowercaseRequiresMarker": false
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828"
+                ],
+                "unicode": "⠨"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-005.json",
+      "canonicalRuleSha256": "DE30ED67ABF7B8ACD5AC4A9ACE5D1FDFD74AB3AFBAC5BB7CD8157B46A352F8D1",
+      "canonicalSemanticsSha256": "68FC37F68CEFFCBB30E7408F1630BCBCADCEB0F04BDFF90603108207A456A92E",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        },
+        "summary": "An abbreviation or letter sequence beginning with one uppercase letter followed by lowercase letters uses the initial-capital marker and does not permit contractions.",
+        "contractionsAllowed": false
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828"
+                ],
+                "unicode": "⠨"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-006.json",
+      "canonicalRuleSha256": "8440A4C7FF4E5A21E5892EB571ABEC5DD50CCF0A2829540AF9E404885483B213",
+      "canonicalSemanticsSha256": "BA4715A316CAB695237325BBF787583535E469908380146E8AFB4C9F15A3539B",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A single uppercase letter or an uninterrupted uppercase sequence uses the capital-sequence marker.",
+        "requiresBasisschrift": true,
+        "contractionsAllowed": false
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "45"
+                ],
+                "codepoints": [
+                  "U+2818"
+                ],
+                "unicode": "⠘"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "requiresBasisschrift",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-008.json",
+      "canonicalRuleSha256": "95BCD5A2FFA49A3CE7911CF786EA341D7805D9BD688CEFC5E6E7E5E864BFAD84",
+      "canonicalSemanticsSha256": "774B77C0F27D337C0FE95E65EEE533F5BA56ADD99866631E727F5EB4B2A4096D",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Lowercase abbreviations and units without an abbreviation point, and lowercase Roman numerals, require the lowercase marker.",
+        "contractionsAllowed": false,
+        "contractionSuppressionEquivalentToBasisschrift": true
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-011.json",
+      "canonicalRuleSha256": "AFC0610C09E83D90437B4E4ED7E6273E6F145505CB6DF00973D5E59A1FE081CE",
+      "canonicalSemanticsSha256": "941DF023D0B981761EAF8F8E997C3DB57884F097E433A1567201EBFD6860C152",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When more than one valid case segmentation exists, semantic grouping has priority and the number of announcement signs should then be minimized.",
+        "priority": [
+          "SEMANTIC_GROUPING",
+          "MINIMIZE_ANNOUNCEMENT_SIGNS"
+        ]
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-012.json",
+      "canonicalRuleSha256": "8A327D0721283C12F1A5975885AE27FA18A0F3146E27B7A5C74DB35F1F4B47C4",
+      "canonicalSemanticsSha256": "153554CA91A1A8BE63B673F94BA656C8543B8242FEFAF7F396BAF5CF66EA9EDD",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Greek letters in mathematical or technical contexts are announced by the Greek/foreign letter marker.",
+        "termination": [
+          "BRAILLE_BLANK",
+          "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+        ]
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "56"
+                ],
+                "codepoints": [
+                  "U+2830"
+                ],
+                "unicode": "⠰"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "termination",
+              "value": [
+                "BRAILLE_BLANK",
+                "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "termination",
+              "value": [
+                "BRAILLE_BLANK",
+                "NEXT_NONALPHABETIC_BRAILLE_SIGN"
+              ]
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-013.json",
+      "canonicalRuleSha256": "5D1AB3894AF6FFFDBD3114119EB655975C812CC1AE4A5B0E574FCAB125646E6C",
+      "canonicalSemanticsSha256": "F5BE5C05D7D83EC694E6F135169427D2418A4EE0679A22D4D797A9B4F8D4C7E9",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "An uppercase Greek letter uses the Greek marker followed by the appropriate German uppercase announcement marker.",
+        "prefix": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "caseMarkers": [
+          {
+            "unicode": "⠘",
+            "codepoints": [
+              "U+2818"
+            ],
+            "dots": [
+              "45"
+            ],
+            "cellCount": 1
+          },
+          {
+            "unicode": "⠨",
+            "codepoints": [
+              "U+2828"
+            ],
+            "dots": [
+              "46"
+            ],
+            "cellCount": 1
+          }
+        ],
+        "foreignSpanTerminationRequiredForUnits": false,
+        "dependency": "2.9"
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "caseMarkers[0]",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "45"
+                ],
+                "codepoints": [
+                  "U+2818"
+                ],
+                "unicode": "⠘"
+              }
+            },
+            {
+              "sourcePath": "caseMarkers[1]",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828"
+                ],
+                "unicode": "⠨"
+              }
+            },
+            {
+              "sourcePath": "prefix",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "56"
+                ],
+                "codepoints": [
+                  "U+2830"
+                ],
+                "unicode": "⠰"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependency",
+              "targetType": "SECTION_REFERENCE",
+              "target": "2.9",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-014.json",
+      "canonicalRuleSha256": "0059B3963147E23EEEFE4AF3BFF4097AD4337EE16E94F4100EB0E9B35E4486DE",
+      "canonicalSemanticsSha256": "20259B46DA42E6AD02475B065D0407022141521D45ACB42C4A28AC95A3C7DE17",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Case that differs from normal orthographic expectation may be explicitly represented.",
+        "lowercaseWordMarker": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "markedLowercaseWordRequiresBasisschrift": true
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "lowercaseWordMarker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-015.json",
+      "canonicalRuleSha256": "6B731DD9255B8B3C513A83338F39D8CDBADD28131EFC1543388513AD0A770F17",
+      "canonicalSemanticsSha256": "74BEEA28A47AC24189170615ABCA44BA5B27CD5AC024B89910406E0650368127",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Internal capitalization may be represented using the mixed-case Basisschrift method of section 2.6.4.",
+        "availableProfiles": [
+          "basisschrift",
+          "vollschrift",
+          "kurzschrift"
+        ],
+        "requiresBasisschriftSpan": true,
+        "pureBasisschriftPassagePolicy": {
+          "context": "PURE_BASISSCHRIFT_PASSAGE",
+          "leadingCapitalMarkerMayBeOmitted": true
+        }
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "POLICY_BRANCH",
+          "selectedSemantics": [
+            {
+              "sourcePath": "pureBasisschriftPassagePolicy",
+              "value": {
+                "context": "PURE_BASISSCHRIFT_PASSAGE",
+                "leadingCapitalMarkerMayBeOmitted": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "availableProfiles",
+              "value": [
+                "basisschrift",
+                "vollschrift",
+                "kurzschrift"
+              ]
+            },
+            {
+              "sourcePath": "requiresBasisschriftSpan",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-021.json",
+      "canonicalRuleSha256": "704DE7BC5C656E7129C9F9FB79585066D679AFC5E3A956609D88BA6B932484A7",
+      "canonicalSemanticsSha256": "A20B6291971760FCEA02A220DBC4C0FF929D3BA69CB10A3D8568FAA3DC858822",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Customary capitalization of polite forms may optionally be carried into Braille.",
+        "required": false,
+        "customary": true
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-003.json",
+      "canonicalRuleSha256": "3278A5140EF3EB63D29D04592CD5DBAD8BF00F3E98054C7E75ABDE856B215992",
+      "canonicalSemanticsSha256": "C83A59477E78D1091E1F482CE5E47AB4863E6411B4EEBCE6D49E18C9AFCEFD61",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When eight-dot Computerbraille inserts are not possible, Computerbraille characters are serialized through the section 2.11 six-dot transport technique.",
+        "mode": "SIX_DOT_COMPUTERBRAILLE_TRANSPORT"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "mode",
+              "value": "SIX_DOT_COMPUTERBRAILLE_TRANSPORT"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-005.json",
+      "canonicalRuleSha256": "0A2DB73C85C5F9CB16BA4E92E33557924354D1935F3733B162A0AF9A79A17D19",
+      "canonicalSemanticsSha256": "E254AA304461CED0A414E23B264A81C3430CA567F53EF53CC07FA8B38AA17FDD",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Dot 7 is replaced by a preceding dot-4 cell while dots 1 through 6 remain in the following six-dot cell.",
+        "prefix": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "prefix",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-006.json",
+      "canonicalRuleSha256": "1CD753493F159267642327D4CBBD0FB451F0C4703834FA6341CCBB721FEDCBD5",
+      "canonicalSemanticsSha256": "24F02BF5672C35054AA0BB64426F68B5160979AF34900F101421C919D626EF67",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Dot 8 is replaced by a preceding dot-6 cell while dots 1 through 6 remain in the following six-dot cell.",
+        "prefix": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "prefix",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-007.json",
+      "canonicalRuleSha256": "1ED93AF0C2C8EF0316CA44B0BFC1CBED2D8C524EDAF21C4660403298F507C963",
+      "canonicalSemanticsSha256": "F894D1C7A0985AE2EB060ED9B81C0B43861025334376E291B2F6D912AE251FB9",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Dots 7 and 8 together are replaced by a preceding dots-4-6 cell.",
+        "prefix": {
+          "unicode": "⠨",
+          "codepoints": [
+            "U+2828"
+          ],
+          "dots": [
+            "46"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "prefix",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828"
+                ],
+                "unicode": "⠨"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-009.json",
+      "canonicalRuleSha256": "79472F54A318259DA30E61AE92613BAB1CB8E247D91A20234767EFACDBFFF967",
+      "canonicalSemanticsSha256": "75E91341D12EB32F6827B9C4211ACA2894ED69ADA48B7F73869C9076CA8CE9CC",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A Computerbraille insert whose serialized form contains no Braille blank uses the no-blank announcement marker.",
+        "marker": {
+          "unicode": "⠠⠨",
+          "codepoints": [
+            "U+2820",
+            "U+2828"
+          ],
+          "dots": [
+            "6",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "selectionKey": "SERIALIZED_BRAILLE_CONTAINS_BLANK",
+        "selectionValue": false
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2828"
+                ],
+                "unicode": "⠠⠨"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "POLICY_BRANCH",
+          "selectedSemantics": [
+            {
+              "sourcePath": "selectionKey",
+              "value": "SERIALIZED_BRAILLE_CONTAINS_BLANK"
+            },
+            {
+              "sourcePath": "selectionValue",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-010.json",
+      "canonicalRuleSha256": "35B01CE509087706E07DD4636A816D8A0A16A51CB4066FBB293BB26266AF7938",
+      "canonicalSemanticsSha256": "7BF08B70A7CEAF9B2F7ACF6F24A4C1507BA6E28F641720AFAC37FA4708C717B9",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A Computerbraille insert whose serialized form contains at least one Braille blank uses the blank-containing announcement marker.",
+        "marker": {
+          "unicode": "⠨⠨",
+          "codepoints": [
+            "U+2828",
+            "U+2828"
+          ],
+          "dots": [
+            "46",
+            "46"
+          ],
+          "cellCount": 2
+        },
+        "selectionKey": "SERIALIZED_BRAILLE_CONTAINS_BLANK",
+        "selectionValue": true
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "46",
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828",
+                  "U+2828"
+                ],
+                "unicode": "⠨⠨"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "POLICY_BRANCH",
+          "selectedSemantics": [
+            {
+              "sourcePath": "selectionKey",
+              "value": "SERIALIZED_BRAILLE_CONTAINS_BLANK"
+            },
+            {
+              "sourcePath": "selectionValue",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-013.json",
+      "canonicalRuleSha256": "AE6F8D41DE47B6F5A54390AB347C875C27DAAECEC63E6C5791A27B81E4D84A6B",
+      "canonicalSemanticsSha256": "CCB94ED36E3E85BBFA5A3B37D3B2F5DA3C764BFB97C878F48CF9852230452AD5",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "The Computerbraille terminator is placed immediately after the final encoded sign, including after an encoding blank that forms part of a two-cell representation.",
+        "marker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        }
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "marker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "summary",
+              "value": "The Computerbraille terminator is placed immediately after the final encoded sign, including after an encoding blank that forms part of a two-cell representation."
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "marker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "summary",
+              "value": "The Computerbraille terminator is placed immediately after the final encoded sign, including after an encoding blank that forms part of a two-cell representation."
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-002.json",
+      "canonicalRuleSha256": "4C667147B3AA07F93F122B2DD235D71D62FB1A9E0FC8BC05CF671A1753CA7EA0",
+      "canonicalSemanticsSha256": "1E829342D32A60B7B3295889DED354E3D25E049719A46CAAB5F12415631EA328",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A single word using the first emphasis type is prefixed by the primary emphasis marker."
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2838"
+                ],
+                "unicode": "⠸"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-003.json",
+      "canonicalRuleSha256": "1125B0FDC394BA42ACF1540C7D5997747E35C79AF19973E5095F82B555007840",
+      "canonicalSemanticsSha256": "E485DBC8584064D54A1391E5BF442672B5C88BFE8B02CA514B95BFD98D0873D3",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Blank, hyphen and slash all act as word boundaries for first-emphasis scope.",
+        "boundaries": [
+          "BRAILLE_BLANK",
+          "HYPHEN",
+          "SLASH"
+        ],
+        "dependencies": [
+          "DE-STROKE-002",
+          "DE-STROKE-012"
+        ]
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "boundaries",
+              "value": [
+                "BRAILLE_BLANK",
+                "HYPHEN",
+                "SLASH"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependencies[0]",
+              "targetType": "RULE_ID",
+              "target": "DE-STROKE-002",
+              "resolvedInB43c1": false
+            },
+            {
+              "sourcePath": "dependencies[1]",
+              "targetType": "RULE_ID",
+              "target": "DE-STROKE-012",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-004.json",
+      "canonicalRuleSha256": "192C30F84511C1405304A471EEE87D94E51AB9AAFFF317C88ED6A49D16F59BC8",
+      "canonicalSemanticsSha256": "2425397975845A6A9799C65B1D85DE87FD1C5521F71E2E82FDD9B26211CB3B34",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "startMarker": {
+          "unicode": "⠸⠸",
+          "codepoints": [
+            "U+2838",
+            "U+2838"
+          ],
+          "dots": [
+            "456",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "An emphasis spanning more than one word may use a multiword start marker and explicit termination after the final word."
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "endMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            },
+            {
+              "sourcePath": "startMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "456",
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2838",
+                  "U+2838"
+                ],
+                "unicode": "⠸⠸"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "startMarker",
+              "value": {
+                "unicode": "⠸⠸",
+                "codepoints": [
+                  "U+2838",
+                  "U+2838"
+                ],
+                "dots": [
+                  "456",
+                  "456"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-005.json",
+      "canonicalRuleSha256": "7121294053A45A73B4656608416ABDA0F9368C7426F531964DD6E869B8BDDB87",
+      "canonicalSemanticsSha256": "E42A2D0948691DB7A0D5F6AE5F96DD560BF3B2A9F9EEBEC6D6A22B4D3C8927F4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "For emphasis spanning one to three words, each word may instead be individually marked to save Braille space.",
+        "maximumWords": 3,
+        "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-006.json",
+      "canonicalRuleSha256": "D5A5C36BAFB08B99DBB289456096634AB3336D3CF270725212DAF8DF6145C8C4",
+      "canonicalSemanticsSha256": "5102A7A72D2481EB8299E77543CCAFEDBFA5AF18B88EEA3BE2CAFAF18F787B73",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A first-emphasis word part uses the primary marker at word start and dot-6 plus the primary marker when emphasis begins inside a word.",
+        "startAtWordBeginning": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "startInsideWord": {
+          "unicode": "⠠⠸",
+          "codepoints": [
+            "U+2820",
+            "U+2838"
+          ],
+          "dots": [
+            "6",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "explicitEndBeforeRemainder": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "wordEndAlsoTerminates": true
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "explicitEndBeforeRemainder",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            },
+            {
+              "sourcePath": "startAtWordBeginning",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2838"
+                ],
+                "unicode": "⠸"
+              }
+            },
+            {
+              "sourcePath": "startInsideWord",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2838"
+                ],
+                "unicode": "⠠⠸"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "explicitEndBeforeRemainder",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "wordEndAlsoTerminates",
+              "value": true
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "startAtWordBeginning",
+              "value": {
+                "unicode": "⠸",
+                "codepoints": [
+                  "U+2838"
+                ],
+                "dots": [
+                  "456"
+                ],
+                "cellCount": 1
+              }
+            },
+            {
+              "sourcePath": "startInsideWord",
+              "value": {
+                "unicode": "⠠⠸",
+                "codepoints": [
+                  "U+2820",
+                  "U+2838"
+                ],
+                "dots": [
+                  "6",
+                  "456"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "explicitEndBeforeRemainder",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "wordEndAlsoTerminates",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-007.json",
+      "canonicalRuleSha256": "2FB902EF51FD63B14871A6D2719FC3963C3C6F402ED4A471925FD0A0D7951547",
+      "canonicalSemanticsSha256": "4E9D6F26849C8E33D30A0C3F6B79D8A3B24BD801B6E26F8CBA0950E69FDD2230",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "456"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The second emphasis type uses its alternate marker for one word and for the start of a highlighted word part."
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2838"
+                ],
+                "unicode": "⠐⠸"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-008.json",
+      "canonicalRuleSha256": "327A038FF68F024A9EC7D99CA200F60C59E5AC4F88771959BED969052A836815",
+      "canonicalSemanticsSha256": "FEFEE97D9C57F94D2DB07DEBB544FA6AB7558F7B3C89526071E5628C5399243D",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "startMarker": {
+          "unicode": "⠐⠐⠸",
+          "codepoints": [
+            "U+2810",
+            "U+2810",
+            "U+2838"
+          ],
+          "dots": [
+            "5",
+            "5",
+            "456"
+          ],
+          "cellCount": 3
+        },
+        "endMarker": {
+          "unicode": "⠐⠄",
+          "codepoints": [
+            "U+2810",
+            "U+2804"
+          ],
+          "dots": [
+            "5",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword span using the second emphasis type has a dedicated start and end sequence."
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "endMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "unicode": "⠐⠄"
+              }
+            },
+            {
+              "sourcePath": "startMarker",
+              "braille": {
+                "cellCount": 3,
+                "dots": [
+                  "5",
+                  "5",
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2810",
+                  "U+2838"
+                ],
+                "unicode": "⠐⠐⠸"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠐⠄",
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "startMarker",
+              "value": {
+                "unicode": "⠐⠐⠸",
+                "codepoints": [
+                  "U+2810",
+                  "U+2810",
+                  "U+2838"
+                ],
+                "dots": [
+                  "5",
+                  "5",
+                  "456"
+                ],
+                "cellCount": 3
+              }
+            },
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠐⠄",
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-009.json",
+      "canonicalRuleSha256": "BE792AA0DB513F233FE6836F5E13C0EFDAF69AC8A01CE6BF64854BD441FCA877",
+      "canonicalSemanticsSha256": "BE548DBDE82AF3EB4A4A1D8E3A7591AEE8792DA2539536038D7FA2EAC721E975",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "endMarker": {
+          "unicode": "⠐⠄",
+          "codepoints": [
+            "U+2810",
+            "U+2804"
+          ],
+          "dots": [
+            "5",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The secondary emphasis terminator may occur inside a word when only a word part is marked."
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "endMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "unicode": "⠐⠄"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠐⠄",
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠐⠄",
+                "codepoints": [
+                  "U+2810",
+                  "U+2804"
+                ],
+                "dots": [
+                  "5",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-010.json",
+      "canonicalRuleSha256": "DE05F21DF36FE5095C0CC72EE31CB0A14A3E63BD1FAEC5797A1E42BA2D3C4FFC",
+      "canonicalSemanticsSha256": "EB06AB7534293F9DDB481041A6CF19E21ADB086A272E5B7D447A400FC26ECEA3",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When the second emphasis spans exactly two words, each word may be marked individually to save space.",
+        "wordCount": 2,
+        "strategy": "INDIVIDUAL_WORD_MARKING_ALLOWED"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-012.json",
+      "canonicalRuleSha256": "039C0F03A1FD1D52ABCA2A3E184C7D7ADF6CDF6EA11460353D43205C48C7ED17",
+      "canonicalSemanticsSha256": "E75F1D273CED44BFF8B99812D7A405EA3B3530FEED47D6EA252C19E27B2617DC",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When all-capitals styling must remain recognizable as such, the span is represented in Basisschrift.",
+        "requiresBasisschrift": true,
+        "contractionsAllowed": false,
+        "dependency": "DE-CASE-006"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependency",
+              "targetType": "RULE_ID",
+              "target": "DE-CASE-006",
+              "resolvedInB43c1": false
+            }
+          ]
+        },
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "requiresBasisschrift",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-013.json",
+      "canonicalRuleSha256": "DDCF91EF333D72182A49E0FC1A13394A40C45CBADE5F86FE5B96664DCC70DA18",
+      "canonicalSemanticsSha256": "17F8B8F9EFF8710190D1269929594113AD69041ED415EFF80581B022487725DB",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠘",
+          "codepoints": [
+            "U+2818"
+          ],
+          "dots": [
+            "45"
+          ],
+          "cellCount": 1
+        },
+        "summary": "One all-capitals word is introduced by the capital-sequence marker."
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "45"
+                ],
+                "codepoints": [
+                  "U+2818"
+                ],
+                "unicode": "⠘"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-014.json",
+      "canonicalRuleSha256": "169FDD5ECAE5D8C78929EBE0ABAEB894740D2C2CA07A0E29EE4A76F1E0740C2A",
+      "canonicalSemanticsSha256": "A557220402C86DCC0AB70AF2DD5FB86E8420CC534538281D332D65D8D0A2565C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "startMarker": {
+          "unicode": "⠘⠘",
+          "codepoints": [
+            "U+2818",
+            "U+2818"
+          ],
+          "dots": [
+            "45",
+            "45"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword all-capitals passage may use the double capital marker and explicit terminator.",
+        "strategy": {
+          "twoOrMoreWords": "MULTIWORD_FORM_ALLOWED",
+          "upToThreeWords": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+          "fourOrMoreWords": "MULTIWORD_FORM_SHOULD_BE_USED"
+        }
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "endMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            },
+            {
+              "sourcePath": "startMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "45",
+                  "45"
+                ],
+                "codepoints": [
+                  "U+2818",
+                  "U+2818"
+                ],
+                "unicode": "⠘⠘"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "startMarker",
+              "value": {
+                "unicode": "⠘⠘",
+                "codepoints": [
+                  "U+2818",
+                  "U+2818"
+                ],
+                "dots": [
+                  "45",
+                  "45"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "POLICY_BRANCH",
+          "selectedSemantics": [
+            {
+              "sourcePath": "strategy",
+              "value": {
+                "twoOrMoreWords": "MULTIWORD_FORM_ALLOWED",
+                "upToThreeWords": "INDIVIDUAL_WORD_MARKING_ALLOWED",
+                "fourOrMoreWords": "MULTIWORD_FORM_SHOULD_BE_USED"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-015.json",
+      "canonicalRuleSha256": "D263E300770C27F9781D0AA264505FA4A9D07D36046A93B4184F52FEF0F37FD0",
+      "canonicalSemanticsSha256": "120458BEBB57AF4BCCD35765A9D1E1436DCD4AFF8484E4D6D920286D26F646F2",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "An alternative emphasis technique may be used instead of explicit Versalien encoding, for example when remaining in Kurzschrift.",
+        "semanticTradeoff": "VISUAL_ALL_CAPS_MAY_BE_REPRESENTED_AS_EMPHASIS",
+        "profileRelevant": true
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profileRelevant",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-001.json",
+      "canonicalRuleSha256": "2565740C8DFDE4FC5F2759D8FCA1F424029052563F394247AAEFC09C02DEB154",
+      "canonicalSemanticsSha256": "AEF740DF6DFAE1B73880D428590784D5B8466D50EEB7156DBCD709530DFE7CE4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Foreign-language inserts may be rendered under German Basis-, Voll- or Kurzschrift.",
+        "mode": "GERMAN_BRAILLE_FOREIGN_CONTENT"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "mode",
+              "value": "GERMAN_BRAILLE_FOREIGN_CONTENT"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-003.json",
+      "canonicalRuleSha256": "77EE2749A9F8B77854788991D41AE0C906AAD3FEFDE8F47A3EF424987127EBF0",
+      "canonicalSemanticsSha256": "8A1F890FD6DDAAE067A6802F5DA335073361D3A6BBB79AC009827F0D3053BC65",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When pronunciation is known it should be considered when selecting German Lautgruppenkürzungen for foreign text.",
+        "pronunciationAware": true
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-006.json",
+      "canonicalRuleSha256": "209073BC94034D4ACF7948B5B827C50E0FD0A5B58FA8FE787CA97EB0D996739A",
+      "canonicalSemanticsSha256": "BA38A5B7B7A0AC58F84BE6367AC9C741FBF8B2F937E531F3FD936DA4C86874CA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A foreign Braille system may be used instead of German Braille for an embedded span.",
+        "mode": "FOREIGN_BRAILLE_SYSTEM_SPAN"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "mode",
+              "value": "FOREIGN_BRAILLE_SYSTEM_SPAN"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-007.json",
+      "canonicalRuleSha256": "A066449F50AC519B7FF3E59FC21C436FB91F77F8912416CAB5788B360031DC3C",
+      "canonicalSemanticsSha256": "6B0945ACAABCDC9DD20E7DC54B1EDA02CB241EEA89C82A599E88F888813E842B",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "startMarker": {
+          "unicode": "⠰",
+          "codepoints": [
+            "U+2830"
+          ],
+          "dots": [
+            "56"
+          ],
+          "cellCount": 1
+        },
+        "summary": "One word in a foreign Braille system is introduced by the single foreign-system marker.",
+        "scope": "ONE_WORD"
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "startMarker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "56"
+                ],
+                "codepoints": [
+                  "U+2830"
+                ],
+                "unicode": "⠰"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "scope",
+              "value": "ONE_WORD"
+            },
+            {
+              "sourcePath": "startMarker",
+              "value": {
+                "unicode": "⠰",
+                "codepoints": [
+                  "U+2830"
+                ],
+                "dots": [
+                  "56"
+                ],
+                "cellCount": 1
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-008.json",
+      "canonicalRuleSha256": "040BB679A92E3B551263B8066C34D3CECAF5BB27395B0256DAAB05DE261195CD",
+      "canonicalSemanticsSha256": "ED013D3B8D0048AC5D3F3D3E18B4A38A11ECC4C0696EFF9792E9739B5D784FBB",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "startMarker": {
+          "unicode": "⠰⠰",
+          "codepoints": [
+            "U+2830",
+            "U+2830"
+          ],
+          "dots": [
+            "56",
+            "56"
+          ],
+          "cellCount": 2
+        },
+        "endMarker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A multiword foreign-system span uses a double foreign marker and explicit terminator.",
+        "scope": "MULTIWORD"
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "endMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            },
+            {
+              "sourcePath": "startMarker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "56",
+                  "56"
+                ],
+                "codepoints": [
+                  "U+2830",
+                  "U+2830"
+                ],
+                "unicode": "⠰⠰"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "scope",
+              "value": "MULTIWORD"
+            },
+            {
+              "sourcePath": "startMarker",
+              "value": {
+                "unicode": "⠰⠰",
+                "codepoints": [
+                  "U+2830",
+                  "U+2830"
+                ],
+                "dots": [
+                  "56",
+                  "56"
+                ],
+                "cellCount": 2
+              }
+            },
+            {
+              "sourcePath": "endMarker",
+              "value": {
+                "unicode": "⠠⠄",
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "cellCount": 2
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-010.json",
+      "canonicalRuleSha256": "70327B49C04DE2E53471A3EA4CCD6842571BF56DCED2986B0A211B1598A9FDAA",
+      "canonicalSemanticsSha256": "0D9A0832CB72CDB7EF93231ACB8B3557C7549341D87C6D9E419625E8EF46FCB6",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "The foreign alphabet or Braille system must be identified by annotation when it is not clear from context.",
+        "resolutionOrder": [
+          "CONTEXT",
+          "EXPLICIT_ANNOTATION"
+        ]
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-011.json",
+      "canonicalRuleSha256": "C76B62FF37BDB86A56ECF31075E44BD6CAD0DCE27D47BF491A648FB802C76D07",
+      "canonicalSemanticsSha256": "32BE938BE9EFE1F42620A9DF6FCB7AC009E7B3D2E4089CF38928DE0649610696",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "For foreign-system spans of one to three words, each word may be individually marked to save space.",
+        "minimumWords": 1,
+        "maximumWords": 3,
+        "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS_ALLOWED"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-012.json",
+      "canonicalRuleSha256": "D89952C39FA056519784F53BC50365A679F0ACA634876433B1831ABD3AFF763F",
+      "canonicalSemanticsSha256": "517526EE017D28A900695B66E2F72B58E65A31750A374AAC557CFB22D8692E63",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A full foreign-system span permits the foreign system's own accented-letter signs without German point-4 accent announcement.",
+        "dependency": "DE-ACCENT-003",
+        "distinction": {
+          "germanAccentTechnique": "POINT4_REQUIRED",
+          "foreignSystemSpan": "TARGET_SYSTEM_RULES_APPLY"
+        }
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependency",
+              "targetType": "RULE_ID",
+              "target": "DE-ACCENT-003",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-001.json",
+      "canonicalRuleSha256": "65EFFCDD74A265F8D4F8AA5FA26037BA04A32C33728FB4B2BBC74B842DC926E8",
+      "canonicalSemanticsSha256": "F146209B4168BB964DBD916BCF58F3319C15D382C6622C1902B419F1D4B3DA25",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Mathematical signs from the section 2.10 table are normally announced with point 4 when embedded in German text.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-003.json",
+      "canonicalRuleSha256": "16B972D67D47E0E7D4B8F8A6A2699F29A828DEF8ED0DF676E868286C92FAC7EF",
+      "canonicalSemanticsSha256": "F7EFD607E9396CD95102BC15EB358BC6C0E238D93B1C2025AB3E94441479AE2E",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When several mathematical signs occur in one expression, announcement of the first may remain effective through the expression.",
+        "terminators": [
+          "BRAILLE_BLANK",
+          "HYPHEN",
+          "SLASH",
+          "LETTER_CASE_ANNOUNCEMENT",
+          "CANCELLATION_POINT"
+        ]
+      },
+      "primaryPrimitive": "STATE_SCOPE_CONTROL",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "STATE_TERMINATION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "terminators",
+              "value": [
+                "BRAILLE_BLANK",
+                "HYPHEN",
+                "SLASH",
+                "LETTER_CASE_ANNOUNCEMENT",
+                "CANCELLATION_POINT"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "STATE_SCOPE_BOUNDARY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "terminators",
+              "value": [
+                "BRAILLE_BLANK",
+                "HYPHEN",
+                "SLASH",
+                "LETTER_CASE_ANNOUNCEMENT",
+                "CANCELLATION_POINT"
+              ]
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-007.json",
+      "canonicalRuleSha256": "EBCDD2846BF412B384885AD6C3253F7A5D99B0E9AA4883FC58CFA02E0833AE5F",
+      "canonicalSemanticsSha256": "39C63C8189E5CEBE60FC704E3BB00931C039CB16D7E06F8CFC63123D543B13C5",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A print letter x used as multiplication may be retained instead of replacing it with the mathematical multiplication-cross sign. The multiplication star also has an alternate text representation.",
+        "printXMayBePreserved": true,
+        "starAlternative": {
+          "unicode": "⠠⠔",
+          "codepoints": [
+            "U+2820",
+            "U+2814"
+          ],
+          "dots": [
+            "6",
+            "35"
+          ],
+          "cellCount": 2
+        }
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-008.json",
+      "canonicalRuleSha256": "E16AF7B2952C2ADB95A9FAE6858B20B36A49988DB8FB4263791568D5AFA1802C",
+      "canonicalSemanticsSha256": "0217A19A6E8D2F7A10118D1D1BB7A0F3DF1D7B2E05B2AE2074F4CFCDA1D4D369",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "marker": {
+          "unicode": "⠌",
+          "codepoints": [
+            "U+280C"
+          ],
+          "dots": [
+            "34"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Superscripts and exponents are introduced by the exponent sign.",
+        "integerPolicy": "Positive or negative whole-number exponents use lowered digits without a number indicator.",
+        "lettersAndFractionsFollowImmediately": true
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "34"
+                ],
+                "codepoints": [
+                  "U+280C"
+                ],
+                "unicode": "⠌"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-010.json",
+      "canonicalRuleSha256": "12B4EE1EABC481D8A149CA9B03D3721C8EC5A61903FB8C7703966459633C0A29",
+      "canonicalSemanticsSha256": "D8080776E4C1A0CA9C58E7A77C436819F8230116EB96A680832BEA0160E2AFB8",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Rear upper/lower index markers are preferably used without preceding point 4; front upper/lower index markers require point 4.",
+        "rear": "POINT4_PREFERABLY_OMITTED",
+        "front": "POINT4_REQUIRED"
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-012.json",
+      "canonicalRuleSha256": "DFA89AA9DEB0552CFCE8D64D992D278D6BAFF22A0363CB06C15617564B0C7FF5",
+      "canonicalSemanticsSha256": "230D59D8919A151510E42104886DF9007DAD82CDE84C4FA29975F2B99720649D",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "A relation is negated by prefixing dots 3-5.",
+        "negationPrefix": {
+          "unicode": "⠔",
+          "codepoints": [
+            "U+2814"
+          ],
+          "dots": [
+            "35"
+          ],
+          "cellCount": 1
+        },
+        "example": {
+          "equal": {
+            "unicode": "⠶",
+            "codepoints": [
+              "U+2836"
+            ],
+            "dots": [
+              "2356"
+            ],
+            "cellCount": 1
+          },
+          "notEqual": {
+            "unicode": "⠔⠶",
+            "codepoints": [
+              "U+2814",
+              "U+2836"
+            ],
+            "dots": [
+              "35",
+              "2356"
+            ],
+            "cellCount": 2
+          }
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "negationPrefix",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "35"
+                ],
+                "codepoints": [
+                  "U+2814"
+                ],
+                "unicode": "⠔"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-014.json",
+      "canonicalRuleSha256": "33AE29B3248517455AB071551C2F7ED2BB4B9E17F7F2CD0032DA02326E7BDCCF",
+      "canonicalSemanticsSha256": "ABBAB9BFA0C128614E3CD100BB69118E4BD57E20ABEBE2C6CB997B54679A15EE",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "When point-4 inline notation is ambiguous, the full Mathematikschrift rules and delimiters may be used to eliminate ambiguity.",
+        "fallbackMode": "FULL_MATHEMATIKSCHRIFT_SPAN"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "fallbackMode",
+              "value": "FULL_MATHEMATIKSCHRIFT_SPAN"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-015.json",
+      "canonicalRuleSha256": "0DDC8235382902D6B6B953F9335CDC1B8DBDC866378889E0F9E1D3C7309FE25D",
+      "canonicalSemanticsSha256": "5F933411497682DE68AFAB78994B709613DF13565C77709AD68AFDCD81D531F4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "The special Mathematikschrift unit indicator is normally not used in German Textschrift.",
+        "matheschriftUnitMarker": {
+          "unicode": "⠸",
+          "codepoints": [
+            "U+2838"
+          ],
+          "dots": [
+            "456"
+          ],
+          "cellCount": 1
+        },
+        "textschriftDefaultUse": false
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "matheschriftUnitMarker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "456"
+                ],
+                "codepoints": [
+                  "U+2838"
+                ],
+                "unicode": "⠸"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-016.json",
+      "canonicalRuleSha256": "B6E6ED69FA07BB82B2A148D59686A9066F31842242356AFF383E81E8DCD70F51",
+      "canonicalSemanticsSha256": "208A8F297C9F96A9C549976ABDF74C6DA117F55E37C1D73C42E663F139EB72FA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Complex mathematical expressions should switch from the inline Textschrift technique to the German Mathematikschrift system.",
+        "profileSwitch": true,
+        "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED"
+      },
+      "primaryPrimitive": "POLICY_SELECTION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_SELECTION",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profileSwitch",
+              "value": true
+            },
+            {
+              "sourcePath": "targetProfile",
+              "value": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED"
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-001.json",
+      "canonicalRuleSha256": "AC4238A408AB9CB8C5720DC05632AA05A7B2932744C67979D06C3B519B8B7C5E",
+      "canonicalSemanticsSha256": "97A0B37EE3BC759C718C892BF19655BD57348D3EB6BBAA615DE33E04E892C64B",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "Arabic digits use the a-j Braille cells under one leading number indicator.",
+        "state": "ARABIC_NUMERIC"
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-002.json",
+      "canonicalRuleSha256": "38496BD418D0FEA8CCBAB6D0731CF55CB959FC5CEFE0C5ED2CC7AFF0FBD320AD",
+      "canonicalSemanticsSha256": "6BD44FCEC0E627245C7C303F1953DF720FBCF76A6349C44D7440F673389511C2",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "The number indicator remains effective through digits and defined decimal/grouping continuation signs; other boundaries terminate numeric scope.",
+        "state": "ARABIC_NUMERIC"
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-004.json",
+      "canonicalRuleSha256": "EAD7EDD74CB04E0E06586D774BA32D0DF4DBAE06BEC741B214CEA4D791D75547",
+      "canonicalSemanticsSha256": "2A4552C35C6B337F99F7244E5E0FBBD9D4D4F6AE964941FE002077582236EBE4",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "Print-space grouping is normally represented by a grouping point; long identifier-like digit groups may retain spaces if the number indicator is repeated for each new group.",
+        "printApostropheGrouping": {
+          "replacement": {
+            "unicode": "⠄",
+            "codepoint": "U+2804",
+            "dots": "3"
+          },
+          "requiredWhenUsedAsPrintGrouping": true
+        },
+        "ungroupedLongNumbersMayBeGroupedForReadability": true,
+        "groupingRequiredForOriginallyUngroupedNumbers": false
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-005.json",
+      "canonicalRuleSha256": "DA0E10D221CCCAB6D42E348B68A83C5C149B652B336CB7AEBF1A5B6A20DF4848",
+      "canonicalSemanticsSha256": "8016883EED977593B56347810F87729CFB0DE82CABAADD67F4477CFF24EB9D90",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "A leading apostrophe, leading decimal point, or dash replacing a leading zero follows the number indicator and remains part of the numeric form."
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-007.json",
+      "canonicalRuleSha256": "F7D0AF5536E9B3E9CC4E4D10E02263CD9532C827A9EDA379881839B6B9EF94A8",
+      "canonicalSemanticsSha256": "D29CE9339965D237523E039C0C15BFD1F6373E8F0C620DCC609F820EFDA5AD17",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "Dates and times preserve relevant print structure. A hyphen requires a new number indicator; an ambiguous textual colon is announced before the next numeric component.",
+        "dependencies": [
+          "DE-NUM-012",
+          "2.5.1.2"
+        ]
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependencies[0]",
+              "targetType": "RULE_ID",
+              "target": "DE-NUM-012",
+              "resolvedInB43c1": false
+            },
+            {
+              "sourcePath": "dependencies[1]",
+              "targetType": "SECTION_REFERENCE",
+              "target": "2.5.1.2",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-009.json",
+      "canonicalRuleSha256": "0E1DE2DD2B0AD6A39CB91207FA3694F1CD2E05A7D35D95D2D7895E61E3793A3C",
+      "canonicalSemanticsSha256": "01E85E4B88EBE30F7A066EB64B24D622E8FC21A19C4B45369AF05456CC1FF274",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "summary": "For simple natural-number fractions, the numerator uses cardinal digits and the denominator is appended using lowered digits without its own number indicator.",
+        "mixedFractionPolicy": "A mixed-number fractional component is attached without a space but begins with its own number indicator."
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-special-001.json",
+      "canonicalRuleSha256": "6155631C8C6B34AB3BEDF5BA15A180DA91FDC856888BB1F0DACFD35618A90722",
+      "canonicalSemanticsSha256": "4131D33D04FD85B5ACBCAC3F65D7D8FAB2F751984C2568F81190F47065869A93",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "canonicalSemantics": {
+        "summary": "Specially formed letter-like symbols use point 4 before the corresponding letter cell.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primaryPrimitive": "INDICATOR_EMISSION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "INDICATOR_FORM",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-010.json",
+      "canonicalRuleSha256": "997BF0D6A397E1BBE0E230EBDD2B7323634BF4DB8AA983D60F13997A4E2EFFCF",
+      "canonicalSemanticsSha256": "B0780123BD348BD9F5CE618FE348959637344F7659508CC2F07B60473D64CCAD",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠤",
+          "codepoints": [
+            "U+2824"
+          ],
+          "dots": [
+            "36"
+          ],
+          "cellCount": 1
+        },
+        "summary": "A dash between or inside numbers has no surrounding blank and the number indicator must be repeated for the following number.",
+        "spacing": {
+          "before": "NONE",
+          "after": "NONE"
+        },
+        "numericState": {
+          "terminatesPriorNumericComponent": true,
+          "reenterNumericAfterDash": true
+        },
+        "dependencies": [
+          "DE-NUM-001",
+          "DE-NUM-002"
+        ]
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependencies[0]",
+              "targetType": "RULE_ID",
+              "target": "DE-NUM-001",
+              "resolvedInB43c1": false
+            },
+            {
+              "sourcePath": "dependencies[1]",
+              "targetType": "RULE_ID",
+              "target": "DE-NUM-002",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-014.json",
+      "canonicalRuleSha256": "030F4FB8DD495C3CDCEB5D780F2EF63B6E2728DAEF466A571F7F20693506F517",
+      "canonicalSemanticsSha256": "AA7C177BA91DE276D088AA18C2B6BC5C62CC54D88165B786717E88D71E87B8DC",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The text slash may occur between numeric components; the following numeric component re-enters numeric state.",
+        "numericState": {
+          "reenterNumericAfterSlash": true
+        },
+        "dependencies": [
+          "DE-NUM-001",
+          "DE-NUM-002"
+        ]
+      },
+      "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependencies[0]",
+              "targetType": "RULE_ID",
+              "target": "DE-NUM-001",
+              "resolvedInB43c1": false
+            },
+            {
+              "sourcePath": "dependencies[1]",
+              "targetType": "RULE_ID",
+              "target": "DE-NUM-002",
+              "resolvedInB43c1": false
+            }
+          ]
+        }
+      ],
+      "loweringState": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ],
+  "executionBoundary": {
+    "auxiliaryPrimitivesAdjudicated": true,
+    "loweringMaterialized": true,
+    "stateMachineImplemented": false,
+    "indicatorEmissionImplemented": false,
+    "scopeRuntimeImplemented": false,
+    "policyResolverImplemented": false,
+    "coreModified": false,
+    "translatorModified": false,
+    "executableSpecificationGenerated": false,
+    "germanRuntimeGenerated": false,
+    "germanRuntimeRegistered": false,
+    "persianRuntimeUnchanged": true
+  },
+  "determinism": {
+    "schemaCanonicalJsonSha256": "16927D5308B0C5898DB7D1873AA60C188E6979B61F9B22C4B0DC256474820B84",
+    "recordsCanonicalJsonSha256": "512AB0DBC9B48BDCB87B7C89BF536BCC6CEF30B1598EA2A53BEC7EA8C5464E79",
+    "loweringPayloadCanonicalJsonSha256": "DF6D569060FF2062DB840884B859877EB17C8083EF17213EE45FAE6971ACD586"
+  }
+}
