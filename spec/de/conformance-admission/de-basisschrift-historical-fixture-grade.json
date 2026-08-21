@@ -1,0 +1,1059 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-historical-fixture-grade-admission",
+  "phase": "15.5B5.1k",
+  "profile": "de-basisschrift",
+  "layer": "GERMAN_HISTORICAL_FIXTURE_GRADE_ADMISSION",
+  "status": "HISTORICAL_FIXTURE_GRADE_ADMISSION_MATERIALIZED_NON_EXECUTABLE",
+  "baseline": {
+    "repositoryCommit": "6e4572bf399f85ba595ffdfab671bc1b489f0570",
+    "b51jPromotionModelCanonicalSha256": "302F31CB26F9E0D6BE26F2DED2EF7A064780F6EB404A3D334E96AF4969CCFB27",
+    "b51jPromotionJsonByteSha256": "E4CAEB4E04B5D3C0DAF87ED17544163B7BA4BE6D199B7D1219C0D6CB9B3D9D51"
+  },
+  "summary": {
+    "historicalFixtureGradeCases": 27,
+    "uniqueLoweringRulesCovered": 22,
+    "caseRuleLinks": 38
+  },
+  "semanticBoundary": {
+    "dedicatedCorpusPromotionEligible": true,
+    "frozenPdfDirectlyReverified": false,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false,
+    "newEvidenceAuthored": false,
+    "conformanceFixturesMaterialized": false
+  },
+  "records": [
+    {
+      "validationId": "DE-ACCENT-CASE-001",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/0"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-002"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-002"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-002",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/1"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-003",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/2"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-002"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-002"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-004",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/3"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-005",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/4"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-002"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-002"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-006",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/5"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-ACCENT-CASE-007",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/6"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-ACCENT-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-ACCENT-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.8.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-001",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/0"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-004"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-004"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-002",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/1"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-006"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-006"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-004",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/3"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-008"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-008"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.3"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-005",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/4"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-010"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-010"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.4"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-006",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/5"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-010"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-010"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.4"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-007",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/6"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-008",
+        "DE-CASE-012",
+        "DE-CASE-013"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-008",
+          "DE-CASE-012",
+          "DE-CASE-013"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.3",
+          "2.6.5"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "CASE_SECTION_SUBSET_OF_EXPECTED_SECTIONS"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-008",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/7"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-004",
+        "DE-CASE-014"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-004",
+          "DE-CASE-014"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.1",
+          "2.6.6"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "CASE_SECTION_SUBSET_OF_EXPECTED_SECTIONS"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-009",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/8"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-015"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-015"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.7"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-CASE-CASE-011",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "objectPointer": "/validationCases/10"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-CASE-017"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-CASE-017"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+        ],
+        "sections": [
+          "2.6.8"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "EXACT_SECTION_SET_MATCH"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-MATH-CASE-002",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "objectPointer": "/validationCases/1"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-MATH-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-MATH-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+        ],
+        "sections": [
+          "2.10"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-001",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/0"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-001"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-001"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-002",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/1"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-001",
+        "DE-NUM-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-001",
+          "DE-NUM-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.1"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-003",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/2"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-006"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-006"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-004",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/3"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-009"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-009"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.5"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-005",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/4"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-007"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-007"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.3"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-NUM-CASE-006",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "objectPointer": "/syntheticValidationCases/5"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-007",
+        "DE-NUM-012"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-007",
+          "DE-NUM-012"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+        ],
+        "sections": [
+          "2.3.1.3",
+          "2.3.1.8"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-SPECIAL-CASE-001",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/7"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-001",
+        "DE-SPECIAL-001",
+        "DE-SPECIAL-002"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-001",
+          "DE-SPECIAL-001",
+          "DE-SPECIAL-002"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.3.1.1",
+          "2.8.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_MATCHES_ONE_OF_MULTIPLE_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-SPECIAL-CASE-002",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "STANDARD_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/8"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-001",
+        "DE-SPECIAL-002",
+        "DE-SPECIAL-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-001",
+          "DE-SPECIAL-002",
+          "DE-SPECIAL-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.3.1.1",
+          "2.8.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_MATCHES_ONE_OF_MULTIPLE_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-SPECIAL-CASE-003",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "objectPointer": "/validationCases/9"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-NUM-001",
+        "DE-SPECIAL-002",
+        "DE-SPECIAL-003"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-NUM-001",
+          "DE-SPECIAL-002",
+          "DE-SPECIAL-003"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+          "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+        ],
+        "sections": [
+          "2.3.1.1",
+          "2.8.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_MATCHES_ONE_OF_MULTIPLE_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    },
+    {
+      "validationId": "DE-STROKE-CASE-001",
+      "status": "HISTORICAL_FIXTURE_GRADE_PROMOTABLE",
+      "semanticFamily": "CORE_CELL_VECTOR",
+      "expectationIntegrity": "INTERNALLY_CONSISTENT",
+      "historicalSource": {
+        "file": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+        "objectPointer": "/syntheticValidationCases/0"
+      },
+      "linkedLoweringRuleIds": [
+        "DE-STROKE-002"
+      ],
+      "canonicalSourceTrace": {
+        "resolved": true,
+        "sourceRuleIds": [
+          "DE-STROKE-002"
+        ],
+        "contractPaths": [
+          "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json"
+        ],
+        "sections": [
+          "2.5.1.2"
+        ]
+      },
+      "historicalToCanonicalSourceAlignment": {
+        "resolved": true,
+        "ruleReferenceAlignment": "EXACT_SOURCE_RULE_ID_SET_MATCH",
+        "sourceFileAlignment": "CASE_FILE_EQUALS_ALL_LINKED_CONTRACT_PATHS",
+        "sectionAlignment": "NO_CASE_LOCAL_SECTION"
+      },
+      "promotionBoundary": {
+        "dedicatedCorpusPromotionEligible": true,
+        "frozenPdfDirectlyReverified": false,
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false
+      }
+    }
+  ],
+  "next": "15.5B5.1K_HISTORICAL_FIXTURE_GRADE_ADMISSION_VERIFICATION"
+}
