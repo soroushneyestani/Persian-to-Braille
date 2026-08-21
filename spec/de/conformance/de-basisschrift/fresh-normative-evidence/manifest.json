@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-fresh-normative-evidence",
+  "phase": "15.5B5.4",
+  "profile": "de-basisschrift",
+  "status": "DEDICATED_CONFORMANCE_CORPUS_MATERIALIZED_NON_EXECUTABLE",
+  "baseline": {
+    "repositoryCommit": "234e10f0ea1422c183fd1d92fcbe4c937d1311be",
+    "authoringClass": "FRESH_NORMATIVE_EVIDENCE",
+    "historicalCorpusMutated": false
+  },
+  "schemaPath": "spec/de/schema/fresh-normative-conformance-fixture.schema.json",
+  "fixtureDirectory": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures",
+  "fixtures": [
+    {
+      "id": "DE-MATH-005-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-005-fresh-001.json",
+      "byteSha256": "4E5DDE12FA7276A601867FD694E31451BDD033A1C8708B0FE9F3660F6E7AB1F9",
+      "canonicalSha256": "A77781ED23BAEA2566B794606EA1E58DEE7623B99A3363832061A6DF4CC13C85"
+    }
+  ],
+  "summary": {
+    "fixtureCount": 1,
+    "coveredRuleCount": 1,
+    "coveredRuleIds": [
+      "DE-MATH-005"
+    ],
+    "freshNormativeEvidenceCount": 1,
+    "historicalFixturePromotionCount": 0
+  },
+  "semanticBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "historicalFixtureGradeEvidence": false,
+    "historicalCorpusMutated": false,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false,
+    "wholeB5Closed": false,
+    "phase15_5Closed": false
+  },
+  "next": "15.5B5.4H_GENERIC_FRESH_NORMATIVE_EVIDENCE_PIPELINE"
+}
