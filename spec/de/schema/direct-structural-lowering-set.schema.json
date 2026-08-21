@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:braille-hub:schema:de:direct-structural-lowering-set:1",
+  "title": "German Direct/Structural Execution Lowering Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "profile",
+    "phase",
+    "status",
+    "source",
+    "summary",
+    "records",
+    "executionBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "phase": {
+      "const": "15.5B4.2c"
+    },
+    "status": {
+      "const": "LOWERED_IR_NON_EXECUTABLE"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "b42ModelPath",
+        "b42ModelSha256",
+        "b42ModelCanonicalSha256",
+        "executionAdmissionPath",
+        "executionAdmissionSha256",
+        "symbolCatalogPath",
+        "symbolCatalogSha256"
+      ],
+      "properties": {
+        "b42ModelPath": {
+          "type": "string"
+        },
+        "b42ModelSha256": {
+          "type": "string"
+        },
+        "b42ModelCanonicalSha256": {
+          "type": "string"
+        },
+        "executionAdmissionPath": {
+          "type": "string"
+        },
+        "executionAdmissionSha256": {
+          "type": "string"
+        },
+        "symbolCatalogPath": {
+          "type": "string"
+        },
+        "symbolCatalogSha256": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "records",
+        "lowered",
+        "executable",
+        "runtimeRegistered",
+        "b2DirectMapping",
+        "b2Structural",
+        "b3Structural",
+        "primitiveCounts"
+      ],
+      "properties": {
+        "records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lowered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "runtimeRegistered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "b2DirectMapping": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "b2Structural": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "b3Structural": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "primitiveCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "DIRECT_SYMBOL_MAPPING",
+            "STRUCTURAL_MARKER",
+            "STRUCTURAL_MARKER_FORMS",
+            "STRUCTURAL_CONSTRAINT",
+            "DEPENDENCY_EDGE"
+          ],
+          "properties": {
+            "DIRECT_SYMBOL_MAPPING": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "STRUCTURAL_MARKER": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "STRUCTURAL_MARKER_FORMS": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "STRUCTURAL_CONSTRAINT": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "DEPENDENCY_EDGE": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/loweringRecord"
+      }
+    },
+    "executionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "loweringMaterialized",
+        "coreModified",
+        "translatorModified",
+        "executableSpecificationGenerated",
+        "germanRuntimeGenerated",
+        "germanRuntimeRegistered",
+        "persianRuntimeUnchanged"
+      ],
+      "properties": {
+        "loweringMaterialized": {
+          "const": true
+        },
+        "coreModified": {
+          "const": false
+        },
+        "translatorModified": {
+          "const": false
+        },
+        "executableSpecificationGenerated": {
+          "const": false
+        },
+        "germanRuntimeGenerated": {
+          "const": false
+        },
+        "germanRuntimeRegistered": {
+          "const": false
+        },
+        "persianRuntimeUnchanged": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "brailleForm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cellCount",
+        "dots",
+        "codepoints",
+        "unicode"
+      ],
+      "properties": {
+        "cellCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[1-8]+$"
+          }
+        },
+        "codepoints": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^U\\+[0-9A-F]{4,6}$"
+          }
+        },
+        "unicode": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "directSymbolMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "selectionResolved",
+        "mappings"
+      ],
+      "properties": {
+        "kind": {
+          "const": "DIRECT_SYMBOL_MAPPING"
+        },
+        "selectionResolved": {
+          "const": false
+        },
+        "mappings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "semanticRole",
+              "semanticPath",
+              "print",
+              "catalogRecordKey",
+              "catalogSemantic",
+              "braille"
+            ],
+            "properties": {
+              "semanticRole": {
+                "type": "string"
+              },
+              "semanticPath": {
+                "type": "string"
+              },
+              "print": {
+                "type": "string"
+              },
+              "catalogRecordKey": {
+                "type": "string"
+              },
+              "catalogSemantic": {
+                "type": "string"
+              },
+              "braille": {
+                "$ref": "#/$defs/brailleForm"
+              }
+            }
+          }
+        }
+      }
+    },
+    "structuralMarker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "forms"
+      ],
+      "properties": {
+        "kind": {
+          "const": "STRUCTURAL_MARKER"
+        },
+        "forms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourcePath",
+              "braille"
+            ],
+            "properties": {
+              "sourcePath": {
+                "type": "string"
+              },
+              "braille": {
+                "$ref": "#/$defs/brailleForm"
+              }
+            }
+          }
+        }
+      }
+    },
+    "structuralConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "values"
+      ],
+      "properties": {
+        "kind": {
+          "const": "STRUCTURAL_CONSTRAINT"
+        },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourcePath",
+              "value"
+            ],
+            "properties": {
+              "sourcePath": {
+                "type": "string"
+              },
+              "value": {}
+            }
+          }
+        }
+      }
+    },
+    "dependencyEdge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "sourcePath",
+        "targetType",
+        "target",
+        "resolvedInB42"
+      ],
+      "properties": {
+        "kind": {
+          "const": "DEPENDENCY_EDGE"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "targetType": {
+          "enum": [
+            "RULE_ID",
+            "SECTION_REFERENCE"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolvedInB42": {
+          "const": false
+        }
+      }
+    },
+    "loweringRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "sourceLayer",
+        "sourceClassification",
+        "runtimeOwner",
+        "canonicalRulePath",
+        "canonicalRuleSha256",
+        "sourceContainerPath",
+        "semanticSource",
+        "semanticPayload",
+        "primitives",
+        "execution"
+      ],
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "pattern": "^DE-[A-Z0-9-]+$"
+        },
+        "sourceLayer": {
+          "enum": [
+            "B2_RUNTIME_CLASSIFICATION",
+            "B3_CONTRACT_ROLE"
+          ]
+        },
+        "sourceClassification": {
+          "enum": [
+            "DIRECT_MAPPING",
+            "STRUCTURAL"
+          ]
+        },
+        "runtimeOwner": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "canonicalRulePath": {
+          "type": "string"
+        },
+        "canonicalRuleSha256": {
+          "type": "string"
+        },
+        "sourceContainerPath": {
+          "type": "string"
+        },
+        "semanticSource": {
+          "enum": [
+            "CANONICAL_SEMANTICS",
+            "B3_SEMANTIC_PAYLOAD_EXACT"
+          ]
+        },
+        "semanticPayload": {
+          "type": "object"
+        },
+        "primitives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/directSymbolMapping"
+              },
+              {
+                "$ref": "#/$defs/structuralMarker"
+              },
+              {
+                "$ref": "#/$defs/structuralConstraint"
+              },
+              {
+                "$ref": "#/$defs/dependencyEdge"
+              }
+            ]
+          }
+        },
+        "execution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "lowered",
+            "executable",
+            "runtimeRegistered"
+          ],
+          "properties": {
+            "lowered": {
+              "const": true
+            },
+            "executable": {
+              "const": false
+            },
+            "runtimeRegistered": {
+              "const": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

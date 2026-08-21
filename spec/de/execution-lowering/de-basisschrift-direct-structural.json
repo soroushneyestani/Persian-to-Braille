@@ -1,0 +1,1306 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-direct-structural-lowering",
+  "profile": "de-basisschrift",
+  "phase": "15.5B4.2c",
+  "status": "LOWERED_IR_NON_EXECUTABLE",
+  "source": {
+    "b42ModelPath": "docs/architecture/phase-15.5b4-2b-direct-structural-lowering-model.json",
+    "b42ModelSha256": "1BD8DEAFBF710922DF9B825284E55D80795A2E7E966E53CB4BBD026C2E6E203B",
+    "b42ModelCanonicalSha256": "BE6896C6DB8E5C955F78EA143B884E779E4B19515EC6C3A166A7B444B1E56A26",
+    "executionAdmissionPath": "spec/de/execution-admission/de-basisschrift.json",
+    "executionAdmissionSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+    "symbolCatalogPath": "spec/de/mappings/de-basisschrift-symbol-catalog.json",
+    "symbolCatalogSha256": "D1D36A099C4BC4D20F1B4F33483BA121549B123950350BE19EFC47D089D507F5"
+  },
+  "summary": {
+    "records": 25,
+    "lowered": 25,
+    "executable": 0,
+    "runtimeRegistered": 0,
+    "b2DirectMapping": 1,
+    "b2Structural": 5,
+    "b3Structural": 19,
+    "primitiveCounts": {
+      "DIRECT_SYMBOL_MAPPING": 1,
+      "STRUCTURAL_MARKER": 11,
+      "STRUCTURAL_MARKER_FORMS": 13,
+      "STRUCTURAL_CONSTRAINT": 22,
+      "DEPENDENCY_EDGE": 2
+    }
+  },
+  "records": [
+    {
+      "ruleId": "DE-CASE-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-010.json",
+      "canonicalRuleSha256": "85074869E44E940252DE85547AA76CFDB8919F28B6D801790013A32069169FDE",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "Non-word letter sequences containing internal case changes are written in Basisschrift and partitioned into case-homogeneous semantic groups.",
+        "requiresBasisschrift": true,
+        "markers": {
+          "uppercaseSequence": {
+            "unicode": "⠘",
+            "codepoints": [
+              "U+2818"
+            ],
+            "dots": [
+              "45"
+            ],
+            "cellCount": 1
+          },
+          "lowercaseSequence": {
+            "unicode": "⠠",
+            "codepoints": [
+              "U+2820"
+            ],
+            "dots": [
+              "6"
+            ],
+            "cellCount": 1
+          },
+          "capitalThenLowercase": {
+            "unicode": "⠨",
+            "codepoints": [
+              "U+2828"
+            ],
+            "dots": [
+              "46"
+            ],
+            "cellCount": 1
+          }
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "markers.capitalThenLowercase",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828"
+                ],
+                "unicode": "⠨"
+              }
+            },
+            {
+              "sourcePath": "markers.lowercaseSequence",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            },
+            {
+              "sourcePath": "markers.uppercaseSequence",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "45"
+                ],
+                "codepoints": [
+                  "U+2818"
+                ],
+                "unicode": "⠘"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "requiresBasisschrift",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-012.json",
+      "canonicalRuleSha256": "0CEB954195B529CEB33E4A2C2382FC9B79B7767E41AC81CE1152E8259C4FB720",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "The Computerbraille announcement marker is placed immediately before the first encoded Computerbraille sign.",
+        "interveningBlankAllowed": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "interveningBlankAllowed",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-014.json",
+      "canonicalRuleSha256": "433F81D85C10F58AE495EEDEE71A975D28B1CDE91AA466B5CB13DA24E6DC7C65",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "When a Computerbraille passage does not fit on a line, breaking at a real content blank is preferred where possible.",
+        "preferredBoundary": "REAL_CONTENT_BLANK"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "preferredBoundary",
+              "value": "REAL_CONTENT_BLANK"
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-015.json",
+      "canonicalRuleSha256": "4B101C0DE162672DB6305BBFA831B30BB7A053775956766005DA8AE126FF0F61",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "When a suitable real blank is unavailable, a line may end with dot 4 as the Computerbraille continuation separator.",
+        "marker": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-016.json",
+      "canonicalRuleSha256": "9D8B1F0C31AD1F9265AE87BE022F722F79072DECEF841E2E05A0B14C0FC1A083",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "Two-cell Computerbraille transport forms must not be split across lines.",
+        "lineBreakInsideFormAllowed": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "lineBreakInsideFormAllowed",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-005.json",
+      "canonicalRuleSha256": "557938B0ABC7D9604A1DA2608D2497882F1F1E0658C3420D6EB1DA617E07BFE4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "Mathematical signs between words have a blank on both sides; a blank between a mathematical sign and a following number or variable is omitted.",
+        "spacing": {
+          "betweenWords": "BLANK_BOTH_SIDES",
+          "beforeNumber": "NO_INTERVENING_BLANK",
+          "beforeVariable": "NO_INTERVENING_BLANK"
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "spacing",
+              "value": {
+                "betweenWords": "BLANK_BOTH_SIDES",
+                "beforeNumber": "NO_INTERVENING_BLANK",
+                "beforeVariable": "NO_INTERVENING_BLANK"
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-006.json",
+      "canonicalRuleSha256": "1A3C2812C1DBD7E4BAFF3FA2EA1FCC56E47B2D8EDA4333A5FBC51414972FDE6A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "A blank before the multiplication dot may be omitted. A number following the multiplication dot must carry a number indicator.",
+        "blankBeforeOptional": true,
+        "followingNumberRequiresNumberIndicator": true,
+        "dependency": "DE-NUM-001"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "blankBeforeOptional",
+              "value": true
+            },
+            {
+              "sourcePath": "followingNumberRequiresNumberIndicator",
+              "value": true
+            }
+          ]
+        },
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "sourcePath": "dependency",
+          "targetType": "RULE_ID",
+          "target": "DE-NUM-001",
+          "resolvedInB42": false
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-009.json",
+      "canonicalRuleSha256": "479D1D346DA885E153A72B9AD9AAB00B7E60804FB92CEB51CAEED0748305F881",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠡",
+          "codepoints": [
+            "U+2821"
+          ],
+          "dots": [
+            "16"
+          ],
+          "cellCount": 1
+        },
+        "summary": "Subscripts are introduced by the lower-index sign. When both lower and upper rear indices occur, the lower index normally precedes the upper index.",
+        "rearOrder": [
+          "LOWER_INDEX",
+          "UPPER_INDEX"
+        ]
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "16"
+                ],
+                "codepoints": [
+                  "U+2821"
+                ],
+                "unicode": "⠡"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "rearOrder",
+              "value": [
+                "LOWER_INDEX",
+                "UPPER_INDEX"
+              ]
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-011.json",
+      "canonicalRuleSha256": "BDE096E0B8953DD1DE67FF864EBC2B220BFC9AFA741CAB2107B6E9E1AE27A2FD",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "A blank occurring inside an exponent or index is replaced by point 4 so that the exponent/index scope is not terminated.",
+        "replacement": {
+          "unicode": "⠈",
+          "codepoints": [
+            "U+2808"
+          ],
+          "dots": [
+            "4"
+          ],
+          "cellCount": 1
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "replacement",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "replacement",
+              "value": {
+                "unicode": "⠈",
+                "codepoints": [
+                  "U+2808"
+                ],
+                "dots": [
+                  "4"
+                ],
+                "cellCount": 1
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-017",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-017.json",
+      "canonicalRuleSha256": "8EF0996542A799998AFC02974AC65A09B35849064BD8CC835A0E5C8A26179F7A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The Text-to-Math delimiter is placed immediately before the Mathematikschrift span without an intervening blank.",
+        "blankBeforeSpan": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "2"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2802"
+                ],
+                "unicode": "⠐⠂"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "blankBeforeSpan",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-018",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-018.json",
+      "canonicalRuleSha256": "5BF00C5C13960777D93491A5C6C9F7CCA163581D3FE16A33AAE8755E5D300B1A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠠⠄",
+          "codepoints": [
+            "U+2820",
+            "U+2804"
+          ],
+          "dots": [
+            "6",
+            "3"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The Math-to-Text delimiter follows the end of the Mathematikschrift span immediately.",
+        "blankBeforeMarker": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2804"
+                ],
+                "unicode": "⠠⠄"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "blankBeforeMarker",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-020",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-020.json",
+      "canonicalRuleSha256": "9D664CD1672CD7F42A9A2A897C5BB5C9C9C750F83C355345D931F9990091AB9A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "A short Mathematikschrift expression may be separated from Textschrift by two blanks before and after instead of explicit announcement/termination delimiters.",
+        "blankCountBefore": 2,
+        "blankCountAfter": 2,
+        "explicitMarkersMayBeOmitted": true
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "blankCountBefore",
+              "value": 2
+            },
+            {
+              "sourcePath": "blankCountAfter",
+              "value": 2
+            },
+            {
+              "sourcePath": "explicitMarkersMayBeOmitted",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-003",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "DIRECT_MAPPING",
+      "runtimeOwner": "GERMAN_NUMERIC_SYMBOL_MAPPING",
+      "canonicalRulePath": "spec/de/rules/records/de-num-003.json",
+      "canonicalRuleSha256": "EC414A7C018EC53E8DBDCE7249AAA4BC1EC281EABFE2B2A777EF5318001C9272",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "summary": "Decimal comma uses dot 2. Decimal point and digit-grouping point use dot 3.",
+        "symbols": {
+          "decimalComma": {
+            "unicode": "⠂",
+            "codepoint": "U+2802",
+            "dots": "2"
+          },
+          "decimalOrGroupingPoint": {
+            "unicode": "⠄",
+            "codepoint": "U+2804",
+            "dots": "3"
+          }
+        }
+      },
+      "primitives": [
+        {
+          "kind": "DIRECT_SYMBOL_MAPPING",
+          "selectionResolved": false,
+          "mappings": [
+            {
+              "semanticRole": "DECIMAL_COMMA",
+              "semanticPath": "symbols.decimalComma",
+              "print": ",",
+              "catalogRecordKey": "singleFormSigns:001",
+              "catalogSemantic": "COMMA",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "2"
+                ],
+                "codepoints": [
+                  "U+2802"
+                ],
+                "unicode": "⠂"
+              }
+            },
+            {
+              "semanticRole": "DECIMAL_OR_GROUPING_POINT",
+              "semanticPath": "symbols.decimalOrGroupingPoint",
+              "print": ".",
+              "catalogRecordKey": "singleFormSigns:010",
+              "catalogSemantic": "FULL_STOP",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "3"
+                ],
+                "codepoints": [
+                  "U+2804"
+                ],
+                "unicode": "⠄"
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-015",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_NUMBER_UNIT_LAYOUT_LAYER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-015.json",
+      "canonicalRuleSha256": "650F015F14652039A3AAB9780B4B9A482E34C202F0C9DE9D0E1426D56F06A740",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "summary": "Spacing between number and unit follows the print source, while half-spaces may be omitted for compact Braille. A line break between the number and its unit is prohibited.",
+        "lineBreakAllowed": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "lineBreakAllowed",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-special-002.json",
+      "canonicalRuleSha256": "FC5F048AE2CE43CED5A1F88A93B253C9BFD8179450127B71A04CAE07356ABE89",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "Currency-style special-form signs may precede a number or follow it according to the source.",
+        "positions": [
+          "BEFORE_NUMBER",
+          "AFTER_NUMBER"
+        ]
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "positions",
+              "value": [
+                "BEFORE_NUMBER",
+                "AFTER_NUMBER"
+              ]
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-special-003.json",
+      "canonicalRuleSha256": "1924CD919164EEDAB4D0963498B4EBD430DD485A176DDAC630B11E898A30C036",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "When a special-form sign follows a number, the source may place it with or without a blank.",
+        "afterNumberSpacing": [
+          "NO_BLANK",
+          "ONE_BLANK"
+        ]
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "afterNumberSpacing",
+              "value": [
+                "NO_BLANK",
+                "ONE_BLANK"
+              ]
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LINE_LAYOUT_LAYER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-001.json",
+      "canonicalRuleSha256": "566113FE00EA59C0B5558EC5119A03355C20BD5A2E64DDEED83D544744783CF0",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "printRole": "TRENNUNGSSTRICH",
+        "braille": {
+          "unicode": "⠤",
+          "codepoints": [
+            "U+2824"
+          ],
+          "dots": [
+            "36"
+          ],
+          "cellCount": 1
+        },
+        "summary": "The line-break hyphen normally occurs at the end of a Braille line and follows German syllabification rules.",
+        "lineBreak": {
+          "purpose": "WORD_HYPHENATION",
+          "allowedAfter": true
+        },
+        "contractionInteraction": {
+          "basisschrift": "NONE",
+          "vollschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE",
+          "kurzschrift": "CROSSING_CONTRACTIONS_MAY_RESOLVE"
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2824"
+                ],
+                "unicode": "⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "lineBreak",
+              "value": {
+                "purpose": "WORD_HYPHENATION",
+                "allowedAfter": true
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_TABLE_STRUCTURE_LAYER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-004.json",
+      "canonicalRuleSha256": "714E34DB0239D1DA4027A489FFC32610BEAC977DCF34E686A0AFD16CB9232454",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "printRole": "AUSLASSUNGSSTRICH",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The same extended dash sequence represents a missing entry in a table.",
+        "context": "TABLE_MISSING_ENTRY"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "context",
+              "value": "TABLE_MISSING_ENTRY"
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-008",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-008.json",
+      "canonicalRuleSha256": "408F9A0B2C047A5D183D5DA57FC03CAEAE0A120C0C3024CF19C79CC9A388A2A9",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A non-ordinal list marker is normalized to the primary Braille list marker regardless of the visual print bullet shape.",
+        "layout": {
+          "mustBeginLine": true,
+          "blankAfter": true
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "layout",
+              "value": {
+                "mustBeginLine": true,
+                "blankAfter": true
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": "GERMAN_LIST_LAYOUT_LAYER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-009.json",
+      "canonicalRuleSha256": "13F40ABF2A8E09CBA56E261176E580672568574B358C7E5296F64BCAAB1028C2",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json",
+      "semanticSource": "CANONICAL_SEMANTICS",
+      "semanticPayload": {
+        "braille": {
+          "unicode": "⠐⠤",
+          "codepoints": [
+            "U+2810",
+            "U+2824"
+          ],
+          "dots": [
+            "5",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A second distinguishable list-marker level or variant may use the alternate Braille marker.",
+        "layout": {
+          "mustBeginLine": true,
+          "blankAfter": true
+        }
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2824"
+                ],
+                "unicode": "⠐⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "layout",
+              "value": {
+                "mustBeginLine": true,
+                "blankAfter": true
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-table-001.json",
+      "canonicalRuleSha256": "885698382A0D260196DB1E3778C768B35D54FFA51523EEE453577D2CC0487264",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "When table columns cannot be represented side by side and cells of a row are rendered sequentially, a structural cell separator is used between adjacent cells.",
+        "representation": "ROW_CELLS_SEQUENTIAL"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "representation",
+              "value": "ROW_CELLS_SEQUENTIAL"
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-table-002.json",
+      "canonicalRuleSha256": "697939D0DE6383589543E032CF2E15EBD171C944D332A9D465ED99B4509E1645",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "marker": {
+          "unicode": "⠒⠒",
+          "codepoints": [
+            "U+2812",
+            "U+2812"
+          ],
+          "dots": [
+            "25",
+            "25"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The structural table-cell separator is the two-cell Braille sequence dots 2-5, dots 2-5.",
+        "structural": true,
+        "ordinaryTextPunctuation": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_MARKER",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "25",
+                  "25"
+                ],
+                "codepoints": [
+                  "U+2812",
+                  "U+2812"
+                ],
+                "unicode": "⠒⠒"
+              }
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-table-003.json",
+      "canonicalRuleSha256": "2E0928185119315C2150F374B56D6ED46BF832DF8F97EC779776903066E39B78",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "The table-cell separator stands between Braille blanks.",
+        "before": "BRAILLE_BLANK_REQUIRED",
+        "after": "BRAILLE_BLANK_REQUIRED_UNLESS_COLUMN_NUMBER_FOLLOWS_IMMEDIATELY"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "before",
+              "value": "BRAILLE_BLANK_REQUIRED"
+            },
+            {
+              "sourcePath": "after",
+              "value": "BRAILLE_BLANK_REQUIRED_UNLESS_COLUMN_NUMBER_FOLLOWS_IMMEDIATELY"
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-table-004.json",
+      "canonicalRuleSha256": "3DC04384EE60C389EAC4193DA2347C10576B390D95FA939EE1193F5A41883F7B",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "The number of the following table column may be written immediately after the table-cell separator.",
+        "optional": true,
+        "placement": "IMMEDIATELY_AFTER_SEPARATOR",
+        "numericDependency": "15.1E"
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "optional",
+              "value": true
+            },
+            {
+              "sourcePath": "placement",
+              "value": "IMMEDIATELY_AFTER_SEPARATOR"
+            },
+            {
+              "sourcePath": "numericDependency",
+              "value": "15.1E"
+            }
+          ]
+        },
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "sourcePath": "numericDependency",
+          "targetType": "SECTION_REFERENCE",
+          "target": "15.1E",
+          "resolvedInB42": false
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STRUCTURAL",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-table-006.json",
+      "canonicalRuleSha256": "115221AE213212EE632BF63E888CF180BA525D957F8A826CACCAD162D7D54765",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-structural.json",
+      "semanticSource": "B3_SEMANTIC_PAYLOAD_EXACT",
+      "semanticPayload": {
+        "summary": "When the target-column-number technique is used, empty table cells need not be represented by repeated table-cell separators.",
+        "columnNumberTechniqueActive": true,
+        "repeatedSeparatorForEmptyCellsRequired": false
+      },
+      "primitives": [
+        {
+          "kind": "STRUCTURAL_CONSTRAINT",
+          "values": [
+            {
+              "sourcePath": "columnNumberTechniqueActive",
+              "value": true
+            },
+            {
+              "sourcePath": "repeatedSeparatorForEmptyCellsRequired",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "execution": {
+        "lowered": true,
+        "executable": false,
+        "runtimeRegistered": false
+      }
+    }
+  ],
+  "executionBoundary": {
+    "loweringMaterialized": true,
+    "coreModified": false,
+    "translatorModified": false,
+    "executableSpecificationGenerated": false,
+    "germanRuntimeGenerated": false,
+    "germanRuntimeRegistered": false,
+    "persianRuntimeUnchanged": true
+  }
+}
