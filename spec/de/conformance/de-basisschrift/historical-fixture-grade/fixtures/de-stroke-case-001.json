@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-CASE-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "CORE_CELL_VECTOR",
+  "input": {
+    "sourceField": "input",
+    "value": "Hamburg-Altona"
+  },
+  "expectation": {
+    "sourceField": "expectedBrailleCore",
+    "value": {
+      "unicode": "⠤",
+      "codepoints": [
+        "U+2824"
+      ],
+      "dots": [
+        "36"
+      ],
+      "cellCount": 1
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-STROKE-002"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-STROKE-002"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json"
+    ],
+    "canonicalSections": [
+      "2.5.1.2"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+    "objectPointer": "/syntheticValidationCases/0",
+    "sourceObjectCanonicalSha256": "9CCF695FCCDEC22CBCF03C1611CBDEDDDC830BA66B39DB2822117CAC4A4AA6BD"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}

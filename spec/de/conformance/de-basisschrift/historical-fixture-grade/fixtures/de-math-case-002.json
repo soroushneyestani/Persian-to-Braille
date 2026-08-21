@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-CASE-002",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "sourceField": "inputShape",
+    "value": "++"
+  },
+  "expectation": {
+    "sourceField": "expectedBraille",
+    "value": {
+      "unicode": "⠈⠖⠖",
+      "codepoints": [
+        "U+2808",
+        "U+2816",
+        "U+2816"
+      ],
+      "dots": [
+        "4",
+        "235",
+        "235"
+      ],
+      "cellCount": 3
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-MATH-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-MATH-003"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+    ],
+    "canonicalSections": [
+      "2.10"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+    "objectPointer": "/validationCases/1",
+    "sourceObjectCanonicalSha256": "0BB7D1EFDFD78A81F127529D7397D1FC02074E82E02D1ADF00512AC98F15C833"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}

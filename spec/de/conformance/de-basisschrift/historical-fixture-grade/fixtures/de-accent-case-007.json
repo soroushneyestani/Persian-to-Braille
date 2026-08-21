@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-ACCENT-CASE-007",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "sourceField": "input",
+    "value": "Å"
+  },
+  "expectation": {
+    "sourceField": "expectedBraille",
+    "value": {
+      "unicode": "⠈⠡",
+      "codepoints": [
+        "U+2808",
+        "U+2821"
+      ],
+      "dots": [
+        "4",
+        "16"
+      ],
+      "cellCount": 2
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-ACCENT-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-ACCENT-003"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+    ],
+    "canonicalSections": [
+      "2.8.1"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "objectPointer": "/validationCases/6",
+    "sourceObjectCanonicalSha256": "7C4E8853D978D3E11DD02DB25D555BCE205C7B22D830BA592C1311E03B852D80"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}
