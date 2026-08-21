@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B4",
+  "id": "de-basisschrift-execution-lowering-closure-audit",
+  "status": "EXECUTION_LOWERING_CLOSURE_AUDIT_PASS",
+  "profile": "de-basisschrift",
+  "baseline": {
+    "branch": "phase15-german-braille",
+    "head": "1f579f7868a62fd9a9736624866ff93b80a98ea2",
+    "remoteHead": "1f579f7868a62fd9a9736624866ff93b80a98ea2",
+    "localRemoteParity": true,
+    "workingTreeCleanBeforeGeneration": true
+  },
+  "source": {
+    "admission": {
+      "path": "spec/de/execution-admission/de-basisschrift.json",
+      "byteSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+      "commit": "05b377cffc1ca0de4c59d344ecf99c1d0db68009"
+    },
+    "b42": {
+      "path": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "byteSha256": "5BD7D0C5561E490DD3031505312309E0747A1B1B543575E8A3BAE5FF15193D9B",
+      "commit": "202e5f023e0b678a194f32ae9e8715e76b685769"
+    },
+    "b43": {
+      "path": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "byteSha256": "51173D113110D42121DDD5C8C0E8497781AF16815ECFC3B712CD598BB498F672",
+      "commit": "dd95b8867a30b574432cf3c4fcb9b2d6c28e2f21"
+    },
+    "b44": {
+      "path": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "byteSha256": "D7FF6CC6EBA676BFABADB21033B33A85D9D020C167454B74A067BCA6499E1009",
+      "commit": "1f579f7868a62fd9a9736624866ff93b80a98ea2"
+    },
+    "finalClosureDiscoverySha256": "297482465C9D7253EDA28686890B7FAD9291216310340918288743CBA240FC51",
+    "executionMarkerDiscoverySha256": "5135416DFD47D23F5480D2C3F89CFF13B45C0848E5F3B11C59E8F41FF0478D93"
+  },
+  "closureModel": {
+    "profile": "de-basisschrift",
+    "admission": {
+      "totalCanonicalRules": 150,
+      "dispositionCounts": {
+        "LOWERING_CANDIDATE": 123,
+        "DELEGATED_DEPENDENCY": 13,
+        "DEFERRED_DEPENDENCY": 1,
+        "CROSS_MODE_DEFERRED": 3,
+        "REFERENCE_ONLY": 5,
+        "ARCHITECTURAL_ONLY": 5
+      },
+      "loweringCandidates": 123,
+      "nonLoweringCandidates": 27
+    },
+    "loweringCoverage": {
+      "b42DirectStructural": 25,
+      "b43IndicatorStatePolicy": 62,
+      "b44ContextualBehavioral": 36,
+      "totalLowered": 123,
+      "candidateSetSize": 123,
+      "pairwiseDisjoint": true,
+      "unionEqualsCandidateSet": true,
+      "coverage": "123/123"
+    },
+    "executionContracts": {
+      "b42": {
+        "status": "LOWERED_IR_NON_EXECUTABLE",
+        "recordCount": 25,
+        "recordMarkerField": "execution",
+        "recordMarker": {
+          "lowered": true,
+          "executable": false,
+          "runtimeRegistered": false
+        },
+        "executionBoundary": {
+          "loweringMaterialized": true,
+          "coreModified": false,
+          "translatorModified": false,
+          "executableSpecificationGenerated": false,
+          "germanRuntimeGenerated": false,
+          "germanRuntimeRegistered": false,
+          "persianRuntimeUnchanged": true
+        }
+      },
+      "b43": {
+        "status": "LOWERED_IR_NON_EXECUTABLE",
+        "recordCount": 62,
+        "recordMarkerField": "loweringState",
+        "recordMarker": {
+          "lowered": true,
+          "executable": false,
+          "runtimeRegistered": false
+        },
+        "executionBoundary": {
+          "auxiliaryPrimitivesAdjudicated": true,
+          "loweringMaterialized": true,
+          "stateMachineImplemented": false,
+          "indicatorEmissionImplemented": false,
+          "scopeRuntimeImplemented": false,
+          "policyResolverImplemented": false,
+          "coreModified": false,
+          "translatorModified": false,
+          "executableSpecificationGenerated": false,
+          "germanRuntimeGenerated": false,
+          "germanRuntimeRegistered": false,
+          "persianRuntimeUnchanged": true
+        }
+      },
+      "b44": {
+        "status": "LOWERED_IR_NON_EXECUTABLE",
+        "layer": "GERMAN_EXECUTION_IR",
+        "recordCount": 36,
+        "recordMarkerField": "loweringState",
+        "recordMarker": "LOWERED_IR_NON_EXECUTABLE",
+        "topLevelExecutable": false,
+        "topLevelRegistered": false,
+        "recordExecutable": false,
+        "recordRegistered": false,
+        "executionBoundary": {
+          "recordsLowered": 36,
+          "recordsExecutable": 0,
+          "recordsRegistered": 0,
+          "loweringMaterialized": true,
+          "dependencyEdgesResolved": 0,
+          "contextResolverImplemented": false,
+          "behaviorPolicyImplemented": false,
+          "boundaryRuntimeImplemented": false,
+          "spacingRuntimeImplemented": false,
+          "ambiguityResolverImplemented": false,
+          "dependencyResolverImplemented": false,
+          "executableSpecificationGenerated": false,
+          "germanRuntimeGenerated": false,
+          "germanRuntimeRegistered": false,
+          "coreModified": false,
+          "translatorModified": false,
+          "persianRuntimeUnchanged": true
+        }
+      }
+    },
+    "runtimeIsolation": {
+      "runtimeManifestBundleCount": 1,
+      "runtimeManifestKeys": [
+        "fa-ir-g1"
+      ],
+      "germanRuntimeFileCount": 0,
+      "persianRuntimeSha256": "09D350BD40C4E801377A59CEC6D0BEDA56D0CD2B0C80708C38E4753BDBEC4094",
+      "persianRuntimeUnchanged": true
+    },
+    "closureBoundary": {
+      "loweringAdmissionComplete": true,
+      "allLoweringCandidatesRepresented": true,
+      "executionIrCoverageComplete": true,
+      "loweringMaterialized": true,
+      "executableSpecificationGenerated": false,
+      "germanRuntimeGenerated": false,
+      "germanRuntimeRegistered": false,
+      "runtimeExecutionClaimedByThisClosure": false,
+      "coreModifiedForGermanRuntime": false,
+      "translatorModifiedForGermanRuntime": false,
+      "persianRuntimeUnchanged": true,
+      "closureMeaning": "Phase 15.5B4 closes the deterministic admission and lowering representation of all 123 German Basisschrift lowering candidates into non-executable German execution IR. It does not claim that an executable German runtime specification has been generated or registered."
+    },
+    "decision": {
+      "substantiveClosureSatisfied": true,
+      "repoLevelClosureRequiresAuditCommit": true,
+      "auditResult": "PASS",
+      "nextPhase": "15.5B5_CONFORMANCE"
+    }
+  },
+  "determinism": {
+    "closureModelCanonicalJsonSha256": "43279B1F40309636AA15AB42FA00781E97B2B60FDD718FE2F6A4A37BC778DDE3"
+  },
+  "next": "15.5B5_CONFORMANCE"
+}
