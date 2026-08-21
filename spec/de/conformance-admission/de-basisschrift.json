@@ -1,0 +1,1341 @@
+{
+  "schemaVersion": 1,
+  "id": "de-basisschrift-conformance-admission",
+  "phase": "15.5B5.0c",
+  "profile": "de-basisschrift",
+  "layer": "GERMAN_CONFORMANCE_ADMISSION",
+  "status": "CONFORMANCE_ADMISSION_MATERIALIZED_NON_EXECUTABLE",
+  "source": {
+    "baselineCommit": "223d96ac7dc50d8333aa768c3b62d0f5a4380000",
+    "b50aInventoryScriptSha256": "1021E0DBBB66ECD3D0F9CD89D2FF759D18530FD07DB42EFEE1DF791B2E28DDBC",
+    "b50bAdjudicatorScriptSha256": "A1D105D596254C5BDCFEFCEBD94A41866FA58E347CF42895A3C9C72429F10A74",
+    "b50bAdjudicationModelCanonicalSha256": "8E975592B0765D1790F4D3AF71137A1EC2DFC55BF447FB76DCA8F855C6D72E88",
+    "executionAdmissionByteSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+    "b42ByteSha256": "5BD7D0C5561E490DD3031505312309E0747A1B1B543575E8A3BAE5FF15193D9B",
+    "b43ByteSha256": "51173D113110D42121DDD5C8C0E8497781AF16815ECFC3B712CD598BB498F672",
+    "b44ByteSha256": "D7FF6CC6EBA676BFABADB21033B33A85D9D020C167454B74A067BCA6499E1009",
+    "b4ClosureByteSha256": "9936D6815754CFB09A7BF5BAB8D51B303E9960C6E488DB79CB766A75C001703D"
+  },
+  "taxonomy": [
+    "LOWERING_WITH_HISTORICAL_EVIDENCE",
+    "LOWERING_REQUIRES_NEW_EVIDENCE",
+    "DELEGATED_DEPENDENCY_GATED",
+    "DEFERRED_DEPENDENCY_GATED",
+    "CROSS_MODE_GATED",
+    "REFERENCE_ONLY",
+    "ARCHITECTURAL_ONLY"
+  ],
+  "summary": {
+    "canonicalRules": 150,
+    "historicalValidationCases": 88,
+    "validationLinkEdges": 117,
+    "rulesWithHistoricalEvidence": 85,
+    "rulesWithoutHistoricalEvidence": 65,
+    "primaryCounts": {
+      "ARCHITECTURAL_ONLY": 5,
+      "CROSS_MODE_GATED": 3,
+      "DEFERRED_DEPENDENCY_GATED": 1,
+      "DELEGATED_DEPENDENCY_GATED": 13,
+      "LOWERING_REQUIRES_NEW_EVIDENCE": 49,
+      "LOWERING_WITH_HISTORICAL_EVIDENCE": 74,
+      "REFERENCE_ONLY": 5
+    },
+    "loweringCandidates": 123,
+    "loweringWithHistoricalEvidence": 74,
+    "loweringRequiresNewEvidence": 49,
+    "loweringPartitionEvidence": {
+      "B4.2": {
+        "rules": 25,
+        "withHistoricalEvidence": 15,
+        "requiresNewEvidence": 10
+      },
+      "B4.3": {
+        "rules": 62,
+        "withHistoricalEvidence": 41,
+        "requiresNewEvidence": 21
+      },
+      "B4.4": {
+        "rules": 36,
+        "withHistoricalEvidence": 18,
+        "requiresNewEvidence": 18
+      }
+    }
+  },
+  "semanticBoundary": {
+    "historicalValidationEvidenceIsExecutableConformance": false,
+    "historicalValidationEvidenceIsAutomaticallyPromotable": false,
+    "newConformanceEvidenceMayBeAuthoredFromNormativeSources": true,
+    "runtimeExecutionClaimed": false,
+    "conformanceFixturesMaterialized": false,
+    "dedicatedGermanConformanceExistsBeforeThisPhase": false
+  },
+  "runtimeBoundary": {
+    "manifestKeys": [
+      "fa-ir-g1"
+    ],
+    "germanRuntimeGenerated": false,
+    "germanRuntimeRegistered": false,
+    "germanRuntimeFiles": [],
+    "persianRuntimeUnchanged": true
+  },
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-001",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-ACCENT-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-ACCENT-CASE-001",
+        "DE-ACCENT-CASE-003",
+        "DE-ACCENT-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-ACCENT-CASE-002",
+        "DE-ACCENT-CASE-004",
+        "DE-ACCENT-CASE-006",
+        "DE-ACCENT-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-ACCENT-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-ACCENT-006",
+      "executionAdmission": "REFERENCE_ONLY",
+      "conformanceAdmission": "REFERENCE_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-ACCENT-007",
+      "executionAdmission": "REFERENCE_ONLY",
+      "conformanceAdmission": "REFERENCE_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-ACCENT-008",
+      "executionAdmission": "ARCHITECTURAL_ONLY",
+      "conformanceAdmission": "ARCHITECTURAL_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-001",
+        "DE-CASE-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-002",
+        "DE-CASE-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-004",
+        "DE-CASE-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-005",
+        "DE-CASE-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-009"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-016",
+      "executionAdmission": "CROSS_MODE_DEFERRED",
+      "conformanceAdmission": "CROSS_MODE_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-010"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-017",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-011"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-018",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-019",
+      "executionAdmission": "CROSS_MODE_DEFERRED",
+      "conformanceAdmission": "CROSS_MODE_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-012"
+      ]
+    },
+    {
+      "ruleId": "DE-CASE-020",
+      "executionAdmission": "CROSS_MODE_DEFERRED",
+      "conformanceAdmission": "CROSS_MODE_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-001",
+      "executionAdmission": "REFERENCE_ONLY",
+      "conformanceAdmission": "REFERENCE_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-002",
+      "executionAdmission": "REFERENCE_ONLY",
+      "conformanceAdmission": "REFERENCE_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-006",
+        "DE-CB-CASE-007",
+        "DE-CB-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-009"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-010",
+        "DE-CB-CASE-011"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-005",
+        "DE-CB-CASE-011"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-012"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-CB-015",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-013"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-016",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CB-CASE-014"
+      ]
+    },
+    {
+      "ruleId": "DE-CB-017",
+      "executionAdmission": "REFERENCE_ONLY",
+      "conformanceAdmission": "REFERENCE_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-001",
+      "executionAdmission": "ARCHITECTURAL_ONLY",
+      "conformanceAdmission": "ARCHITECTURAL_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-003",
+        "DE-EMPH-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-EMPH-CASE-009"
+      ]
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-FLANG-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-005",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-009",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-003",
+        "DE-FLANG-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-FLANG-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-FLANG-013",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-FLANG-014",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-INWORD-001",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-006",
+        "DE-INWORD-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-INWORD-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-009"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-INWORD-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-001",
+        "DE-INWORD-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-009",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-006",
+        "DE-INWORD-CASE-007",
+        "DE-INWORD-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-010",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-INWORD-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-INWORD-011",
+      "executionAdmission": "ARCHITECTURAL_ONLY",
+      "conformanceAdmission": "ARCHITECTURAL_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-001",
+        "DE-MATH-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-005",
+        "DE-MATH-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-007"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-013",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-017",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-018",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-008"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-019",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-010"
+      ]
+    },
+    {
+      "ruleId": "DE-MATH-020",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-009"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-MATH-CASE-001",
+        "DE-MATH-CASE-003",
+        "DE-NUM-CASE-001",
+        "DE-NUM-CASE-002",
+        "DE-SPECIAL-CASE-001",
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-NUM-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-NUM-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-NUM-CASE-005",
+        "DE-NUM-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-NUM-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-011",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-NUM-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-013",
+      "executionAdmission": "DEFERRED_DEPENDENCY",
+      "conformanceAdmission": "DEFERRED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-CASE-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-NUM-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-NUM-015",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-SPECIAL-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-SPECIAL-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-SPECIAL-CASE-001",
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-SPECIAL-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-SPECIAL-CASE-002",
+        "DE-SPECIAL-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-SPECIAL-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-005",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-007",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-008",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-009",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-011",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-012",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-013",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-015",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-STROKE-016",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-STROKE-CASE-006"
+      ]
+    },
+    {
+      "ruleId": "DE-STROKE-017",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-TABLE-001",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    },
+    {
+      "ruleId": "DE-TABLE-002",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-003",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-001"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-004",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-002",
+        "DE-TABLE-CASE-003"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-005",
+      "executionAdmission": "DELEGATED_DEPENDENCY",
+      "conformanceAdmission": "DELEGATED_DEPENDENCY_GATED",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-002"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-006",
+      "executionAdmission": "LOWERING_CANDIDATE",
+      "conformanceAdmission": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-004"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-007",
+      "executionAdmission": "ARCHITECTURAL_ONLY",
+      "conformanceAdmission": "ARCHITECTURAL_ONLY",
+      "historicalValidationEvidence": true,
+      "historicalValidationCaseIds": [
+        "DE-TABLE-CASE-005"
+      ]
+    },
+    {
+      "ruleId": "DE-TABLE-008",
+      "executionAdmission": "ARCHITECTURAL_ONLY",
+      "conformanceAdmission": "ARCHITECTURAL_ONLY",
+      "historicalValidationEvidence": false,
+      "historicalValidationCaseIds": []
+    }
+  ],
+  "determinism": {
+    "schemaCanonicalJsonSha256": "8CCA6775BF94BF90900C9A8AB6559FE91AC49B348D00328410A793DB70856952",
+    "recordsCanonicalJsonSha256": "F57CE12C85FCC5B4C126E6F9DDCC1CAA806D4882F6ED49212980A14454DF64E0",
+    "artifactPayloadCanonicalJsonSha256": "0BBE4E5911808B356781DE359B1441091B9876C4A8F5B40EEC0B946906E7D598"
+  },
+  "next": "15.5B5.1_CONFORMANCE_CORPUS_ADMISSION"
+}

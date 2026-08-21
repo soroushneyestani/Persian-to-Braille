@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://braille-hub.dev/schema/de/conformance-admission-set.schema.json",
+  "title": "German Braille Conformance Admission Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "phase",
+    "profile",
+    "layer",
+    "status",
+    "source",
+    "taxonomy",
+    "summary",
+    "semanticBoundary",
+    "runtimeBoundary",
+    "records",
+    "determinism",
+    "next"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "const": "de-basisschrift-conformance-admission"
+    },
+    "phase": {
+      "const": "15.5B5.0c"
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "layer": {
+      "const": "GERMAN_CONFORMANCE_ADMISSION"
+    },
+    "status": {
+      "const": "CONFORMANCE_ADMISSION_MATERIALIZED_NON_EXECUTABLE"
+    },
+    "source": {
+      "type": "object"
+    },
+    "taxonomy": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "LOWERING_WITH_HISTORICAL_EVIDENCE",
+          "LOWERING_REQUIRES_NEW_EVIDENCE",
+          "DELEGATED_DEPENDENCY_GATED",
+          "DEFERRED_DEPENDENCY_GATED",
+          "CROSS_MODE_GATED",
+          "REFERENCE_ONLY",
+          "ARCHITECTURAL_ONLY"
+        ]
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "semanticBoundary": {
+      "type": "object"
+    },
+    "runtimeBoundary": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 150,
+      "maxItems": 150,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ruleId",
+          "executionAdmission",
+          "conformanceAdmission",
+          "historicalValidationEvidence",
+          "historicalValidationCaseIds"
+        ],
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "pattern": "^DE-"
+          },
+          "executionAdmission": {
+            "enum": [
+              "LOWERING_CANDIDATE",
+              "DELEGATED_DEPENDENCY",
+              "DEFERRED_DEPENDENCY",
+              "CROSS_MODE_DEFERRED",
+              "REFERENCE_ONLY",
+              "ARCHITECTURAL_ONLY"
+            ]
+          },
+          "conformanceAdmission": {
+            "enum": [
+              "LOWERING_WITH_HISTORICAL_EVIDENCE",
+              "LOWERING_REQUIRES_NEW_EVIDENCE",
+              "DELEGATED_DEPENDENCY_GATED",
+              "DEFERRED_DEPENDENCY_GATED",
+              "CROSS_MODE_GATED",
+              "REFERENCE_ONLY",
+              "ARCHITECTURAL_ONLY"
+            ]
+          },
+          "historicalValidationEvidence": {
+            "type": "boolean"
+          },
+          "historicalValidationCaseIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "determinism": {
+      "type": "object"
+    },
+    "next": {
+      "const": "15.5B5.1_CONFORMANCE_CORPUS_ADMISSION"
+    }
+  }
+}
