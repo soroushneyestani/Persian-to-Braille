@@ -1,0 +1,3297 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B4.4c2",
+  "id": "de-basisschrift-contextual-behavioral-lowering",
+  "status": "LOWERED_IR_NON_EXECUTABLE",
+  "layer": "GERMAN_EXECUTION_IR",
+  "profile": "de-basisschrift",
+  "executable": false,
+  "registered": false,
+  "source": {
+    "adjudicationPath": "docs/architecture/phase-15.5b4-4c1-exact-auxiliary-semantic-adjudication.json",
+    "adjudicationByteSha256": "AA4EF0D084ED1B9B997EE3F4FC3B9C906B8EA9129A3062D88D09358A1D65BE27",
+    "adjudicationModelCanonicalSha256": "E9253C2AFA6E08EE2F65C18F73A7CFB6AFE5F0AABA6494DDA4A7A36D42537B30",
+    "admissionPath": "spec/de/execution-admission/de-basisschrift.json",
+    "admissionByteSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+    "b42LoweringPath": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+    "b42LoweringByteSha256": "5BD7D0C5561E490DD3031505312309E0747A1B1B543575E8A3BAE5FF15193D9B",
+    "b43LoweringPath": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+    "b43LoweringByteSha256": "51173D113110D42121DDD5C8C0E8497781AF16815ECFC3B712CD598BB498F672"
+  },
+  "scope": {
+    "loweringCandidates": 123,
+    "b42AlreadyLowered": 25,
+    "b43AlreadyLowered": 62,
+    "b44Materialized": 36,
+    "totalRepresentedInExecutionIR": 123,
+    "partitionComplete": true,
+    "records": 36,
+    "primaryPrimitiveCounts": {
+      "BEHAVIORAL_POLICY": 11,
+      "CONTEXTUAL_FORM_SELECTION": 8,
+      "CONTEXTUAL_APPLICATION": 5,
+      "SPACING_BEHAVIOR": 5,
+      "BOUNDARY_BEHAVIOR": 4,
+      "AMBIGUITY_RESOLUTION": 3
+    },
+    "branchDispositionCounts": {
+      "AUXILIARY_PRIMITIVE": 47,
+      "PRIMARY_PAYLOAD": 10,
+      "NON_EXECUTION_EVIDENCE": 3,
+      "DESCRIPTIVE_METADATA": 5
+    },
+    "auxiliaryFamilyRuleCounts": {
+      "BRAILLE_FORM_BINDING": 16,
+      "DEPENDENCY_EDGE": 4,
+      "PROFILE_OR_MODE_POLICY": 3,
+      "EXCEPTION_CONSTRAINT": 5,
+      "TRANSPORT_BLANK_SEMANTICS": 1,
+      "CHANNEL_POLICY": 1,
+      "CONTRACTION_CONSTRAINT": 3,
+      "CONTEXT_PREDICATE": 2,
+      "CASE_DEFAULT_POLICY": 1,
+      "LINE_BREAK_CONSTRAINT": 4,
+      "SPACING_CONSTRAINT": 1,
+      "SEMANTIC_SELECTION_REQUIREMENT": 2
+    },
+    "auxiliaryFamilyItemCounts": {
+      "BRAILLE_FORM_BINDING": 31,
+      "DEPENDENCY_EDGE": 6,
+      "PROFILE_OR_MODE_POLICY": 3,
+      "EXCEPTION_CONSTRAINT": 5,
+      "TRANSPORT_BLANK_SEMANTICS": 3,
+      "CHANNEL_POLICY": 1,
+      "CONTRACTION_CONSTRAINT": 3,
+      "CONTEXT_PREDICATE": 2,
+      "CASE_DEFAULT_POLICY": 1,
+      "LINE_BREAK_CONSTRAINT": 4,
+      "SPACING_CONSTRAINT": 1,
+      "SEMANTIC_SELECTION_REQUIREMENT": 2
+    },
+    "rulesWithAuxiliaryPrimitives": 29,
+    "rulesWithNoAuxiliaryPrimitives": 7,
+    "brailleFormBindings": 31,
+    "dependencyEdges": 6
+  },
+  "executionBoundary": {
+    "recordsLowered": 36,
+    "recordsExecutable": 0,
+    "recordsRegistered": 0,
+    "loweringMaterialized": true,
+    "dependencyEdgesResolved": 0,
+    "contextResolverImplemented": false,
+    "behaviorPolicyImplemented": false,
+    "boundaryRuntimeImplemented": false,
+    "spacingRuntimeImplemented": false,
+    "ambiguityResolverImplemented": false,
+    "dependencyResolverImplemented": false,
+    "executableSpecificationGenerated": false,
+    "germanRuntimeGenerated": false,
+    "germanRuntimeRegistered": false,
+    "coreModified": false,
+    "translatorModified": false,
+    "persianRuntimeUnchanged": true
+  },
+  "determinism": {
+    "schemaCanonicalJsonSha256": "8F66D8A6D2927CAC3039BFF943F2D1164022243A1E614386D037E279AF8A045E",
+    "recordsCanonicalJsonSha256": "F4A6226E993DAE98DC6D664E733399A620490A271CF8AF5FD67524310BC08AC7",
+    "loweringModelCanonicalJsonSha256": "74849A69F9EC39CA723A32EFB4013C6AEF851E98FAA888F5BD71D09A19BFEE3F"
+  },
+  "records": [
+    {
+      "ruleId": "DE-CASE-002",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-002.json",
+      "canonicalRuleSha256": "7718FCA8709E79CC7F0B149FEA885001DF4E5D87CC368941B95788C125012FCC",
+      "canonicalSemanticsSha256": "CE7A060FD3903880EB3039522918DF88B0562C0241140D19AED4FD815B468FE9",
+      "canonicalSemantics": {
+        "summary": "Case must be represented for abbreviations and units without abbreviation points, Roman numerals, and profile-dependent structuring letters.",
+        "dependencies": [
+          "DE-NUM-013",
+          "2.6.2",
+          "2.6.3"
+        ]
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Case must be represented for abbreviations and units without abbreviation points, Roman numerals, and profile-dependent structuring letters.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependencies[0]",
+              "target": "DE-NUM-013",
+              "targetType": "RULE_ID",
+              "resolvedInB44c1": false
+            },
+            {
+              "sourcePath": "dependencies[1]",
+              "target": "2.6.2",
+              "targetType": "SECTION_REFERENCE",
+              "resolvedInB44c1": false
+            },
+            {
+              "sourcePath": "dependencies[2]",
+              "target": "2.6.3",
+              "targetType": "SECTION_REFERENCE",
+              "resolvedInB44c1": false
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "dependencies",
+          "value": [
+            "DE-NUM-013",
+            "2.6.2",
+            "2.6.3"
+          ],
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "DEPENDENCY_EDGE"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CASE-007",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-007.json",
+      "canonicalRuleSha256": "21AA329B81062895103B8E286F594D8787C4D665E39CA30066257216A44378C6",
+      "canonicalSemanticsSha256": "53AC9303FE667073663CF625343A4A17DE04EBDAF51C728ACB9F455CD1548E51",
+      "canonicalSemantics": {
+        "summary": "When several case-announced abbreviations occur successively, each abbreviation is announced independently."
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "When several case-announced abbreviations occur successively, each abbreviation is announced independently.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CASE-009",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-009.json",
+      "canonicalRuleSha256": "DA34B8145FE5BFCE0B8EAA06C59C757278377562F512D6A7ECEEC2D846D173E4",
+      "canonicalSemanticsSha256": "4261C80C66B9F144A04349E39A64E1ED449EBCA206ECD3EEB62DC0FED5CD8AE9",
+      "canonicalSemantics": {
+        "summary": "A lowercase structuring letter is marked in Kurzschrift; in Basis- and Vollschrift a standalone lowercase letter is normally unmarked.",
+        "profileBehavior": {
+          "basisschrift": "UNMARKED_BY_DEFAULT",
+          "vollschrift": "UNMARKED_BY_DEFAULT",
+          "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+        }
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "A lowercase structuring letter is marked in Kurzschrift; in Basis- and Vollschrift a standalone lowercase letter is normally unmarked.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_POLICY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profileBehavior",
+              "value": {
+                "basisschrift": "UNMARKED_BY_DEFAULT",
+                "vollschrift": "UNMARKED_BY_DEFAULT",
+                "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "profileBehavior",
+          "value": {
+            "basisschrift": "UNMARKED_BY_DEFAULT",
+            "vollschrift": "UNMARKED_BY_DEFAULT",
+            "kurzschrift": "LOWERCASE_MARKER_REQUIRED"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "PROFILE_OR_MODE_POLICY"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CASE-017",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-017.json",
+      "canonicalRuleSha256": "0E54F32E5E44CB0DF5A2D15CDBF0978DE262C4127417322B141FB7827D2358BB",
+      "canonicalSemanticsSha256": "14F364235C8943247B7D4B7F5660CF9DCF05008D4B1EAF44C9989278A99D2FC0",
+      "canonicalSemantics": {
+        "summary": "Case is normally not represented in abbreviations that use an abbreviation point.",
+        "profileBehavior": {
+          "basisschrift": "CASE_NORMALLY_OMITTED",
+          "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+          "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+        }
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Case is normally not represented in abbreviations that use an abbreviation point.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_POLICY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profileBehavior",
+              "value": {
+                "basisschrift": "CASE_NORMALLY_OMITTED",
+                "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+                "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "profileBehavior",
+          "value": {
+            "basisschrift": "CASE_NORMALLY_OMITTED",
+            "vollschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED",
+            "kurzschrift": "CASE_NORMALLY_OMITTED_CONTRACTIONS_ALLOWED"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "PROFILE_OR_MODE_POLICY"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CASE-018",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-018.json",
+      "canonicalRuleSha256": "B3DD1F41D771DF4911F1C86D99AE3A36F7BADC714ECA71B65EFE41806E94F91E",
+      "canonicalSemanticsSha256": "16DB6BE3369A4F895D814F68729FDAF83C0112FF3C4E77A5E32E42AA7D5AAAA2",
+      "canonicalSemantics": {
+        "summary": "A standalone letter before a sentence-ending period remains subject to normal letter-case rules; the sentence period must not be mistaken for an abbreviation point.",
+        "profileBehavior": {
+          "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+          "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+          "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+        }
+      },
+      "primary": {
+        "kind": "AMBIGUITY_RESOLUTION",
+        "summary": "A standalone letter before a sentence-ending period remains subject to normal letter-case rules; the sentence period must not be mistaken for an abbreviation point.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "PROFILE_OR_MODE_POLICY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "profileBehavior",
+              "value": {
+                "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+                "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+                "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "profileBehavior",
+          "value": {
+            "basisschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+            "vollschrift": "UPPERCASE_MARKED_LOWERCASE_DEFAULT",
+            "kurzschrift": "UPPERCASE_AND_LOWERCASE_MARKED"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "PROFILE_OR_MODE_POLICY"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CB-004",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-004.json",
+      "canonicalRuleSha256": "5BA61520C62AF105E068617A50402D0610F684173B54BD0C43785A8A43A29692",
+      "canonicalSemanticsSha256": "CCE7EC74822B77D26945CC862A6511CC732191539A5B2395AA5BB29010AB0CF2",
+      "canonicalSemantics": {
+        "summary": "A Computerbraille cell containing neither dot 7 nor dot 8 normally retains its dots 1 through 6 unchanged.",
+        "exception": "COLLISION_ONLY_4_6_46"
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_APPLICATION",
+        "summary": "A Computerbraille cell containing neither dot 7 nor dot 8 normally retains its dots 1 through 6 unchanged.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "EXCEPTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "exception",
+              "value": "COLLISION_ONLY_4_6_46"
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "exception",
+          "value": "COLLISION_ONLY_4_6_46",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "EXCEPTION_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CB-008",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-008.json",
+      "canonicalRuleSha256": "1425676E3800600F4D15C86AE67A2E9532D47F61B3CA2ED3EAE2A27AB335F01B",
+      "canonicalSemanticsSha256": "DF43A70000E16E0792ADC70869BCA8598D19CEBB47F2A0CCFFA8298D5EBA2B77",
+      "canonicalSemantics": {
+        "summary": "Computerbraille characters consisting only of dot 4, dot 6, or dots 4-6 are doubled to prevent confusion with transport prefixes.",
+        "forms": {
+          "dot4": {
+            "unicode": "⠈⠈",
+            "codepoints": [
+              "U+2808",
+              "U+2808"
+            ],
+            "dots": [
+              "4",
+              "4"
+            ],
+            "cellCount": 2
+          },
+          "dot6": {
+            "unicode": "⠠⠠",
+            "codepoints": [
+              "U+2820",
+              "U+2820"
+            ],
+            "dots": [
+              "6",
+              "6"
+            ],
+            "cellCount": 2
+          },
+          "dots46": {
+            "unicode": "⠨⠨",
+            "codepoints": [
+              "U+2828",
+              "U+2828"
+            ],
+            "dots": [
+              "46",
+              "46"
+            ],
+            "cellCount": 2
+          }
+        }
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "Computerbraille characters consisting only of dot 4, dot 6, or dots 4-6 are doubled to prevent confusion with transport prefixes.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "forms.dot4",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "4",
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808",
+                  "U+2808"
+                ],
+                "unicode": "⠈⠈"
+              }
+            },
+            {
+              "sourcePath": "forms.dot6",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2820"
+                ],
+                "unicode": "⠠⠠"
+              }
+            },
+            {
+              "sourcePath": "forms.dots46",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "46",
+                  "46"
+                ],
+                "codepoints": [
+                  "U+2828",
+                  "U+2828"
+                ],
+                "unicode": "⠨⠨"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "forms",
+          "value": {
+            "dot4": {
+              "unicode": "⠈⠈",
+              "codepoints": [
+                "U+2808",
+                "U+2808"
+              ],
+              "dots": [
+                "4",
+                "4"
+              ],
+              "cellCount": 2
+            },
+            "dot6": {
+              "unicode": "⠠⠠",
+              "codepoints": [
+                "U+2820",
+                "U+2820"
+              ],
+              "dots": [
+                "6",
+                "6"
+              ],
+              "cellCount": 2
+            },
+            "dots46": {
+              "unicode": "⠨⠨",
+              "codepoints": [
+                "U+2828",
+                "U+2828"
+              ],
+              "dots": [
+                "46",
+                "46"
+              ],
+              "cellCount": 2
+            }
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-CB-011",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-011.json",
+      "canonicalRuleSha256": "C3E30DEDA6ACF652284BDB9EA494284C680A71499DE96B1E6FA4685CD298F1D5",
+      "canonicalSemanticsSha256": "6BF372A39017DD0863A929F79503A348550FFAFDF6933B5D27B545EB8AA57FE9",
+      "canonicalSemantics": {
+        "summary": "A blank created while serializing a source cell consisting only of dot 7, dot 8, or dots 7-8 counts when selecting the insert announcement marker.",
+        "semanticBlank": false,
+        "transportBlank": true,
+        "affectsStartMarker": true
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "A blank created while serializing a source cell consisting only of dot 7, dot 8, or dots 7-8 counts when selecting the insert announcement marker.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "TRANSPORT_BLANK_SEMANTICS",
+          "selectedSemantics": [
+            {
+              "sourcePath": "affectsStartMarker",
+              "value": true
+            },
+            {
+              "sourcePath": "semanticBlank",
+              "value": false
+            },
+            {
+              "sourcePath": "transportBlank",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "affectsStartMarker",
+          "value": true,
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "TRANSPORT_BLANK_SEMANTICS"
+          ]
+        },
+        {
+          "sourcePath": "semanticBlank",
+          "value": false,
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "TRANSPORT_BLANK_SEMANTICS"
+          ]
+        },
+        {
+          "sourcePath": "transportBlank",
+          "value": true,
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "TRANSPORT_BLANK_SEMANTICS"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-EMPH-011",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-011.json",
+      "canonicalRuleSha256": "E7ECC765FBEC417A5D1E5564D2E674CB67D48C6FD5A0A98AD363F13BBA09043D",
+      "canonicalSemanticsSha256": "402D4B567BD3E71BDA97123EEBF58797270BCCD4C0074E00B8AE5CADAAE2A83A",
+      "canonicalSemantics": {
+        "summary": "Primary and secondary emphasis may coexist to distinguish two different highlighted classes in the same source.",
+        "channels": [
+          "PRIMARY",
+          "SECONDARY"
+        ]
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Primary and secondary emphasis may coexist to distinguish two different highlighted classes in the same source.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "CHANNEL_POLICY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "channels",
+              "value": [
+                "PRIMARY",
+                "SECONDARY"
+              ]
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "channels",
+          "value": [
+            "PRIMARY",
+            "SECONDARY"
+          ],
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CHANNEL_POLICY"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-FLANG-002",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-002.json",
+      "canonicalRuleSha256": "3FA06F01205EA0D2370AF49B5C3191113D25B10019274C965EFC1CC2FC4BAF19",
+      "canonicalSemanticsSha256": "1089501260B57539CEA80616813E44E01D887A12BE6D388B0219DC4666753752",
+      "canonicalSemantics": {
+        "summary": "Within foreign-language content rendered under German Braille, only Lautgruppenkürzungen may be used.",
+        "allowedContractionClass": "LAUTGRUPPENKUERZUNGEN_ONLY"
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Within foreign-language content rendered under German Braille, only Lautgruppenkürzungen may be used.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "CONTRACTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "allowedContractionClass",
+              "value": "LAUTGRUPPENKUERZUNGEN_ONLY"
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "allowedContractionClass",
+          "value": "LAUTGRUPPENKUERZUNGEN_ONLY",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CONTRACTION_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-FLANG-004",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-004.json",
+      "canonicalRuleSha256": "A5ED3F6606C7B2734348806642E5ED16D07259E8F5103FC92626EDCF1874A260",
+      "canonicalSemanticsSha256": "630D48A5D349F04889E2DE6A9ED0D9841508A6C046A2908971F08E3627833C59",
+      "canonicalSemantics": {
+        "summary": "A contraction must not cross a word seam inside a foreign-language insert.",
+        "crossWordSeamAllowed": false
+      },
+      "primary": {
+        "kind": "BOUNDARY_BEHAVIOR",
+        "summary": "A contraction must not cross a word seam inside a foreign-language insert.",
+        "payload": {
+          "crossWordSeamAllowed": false
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "crossWordSeamAllowed",
+          "value": false,
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-002",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-002.json",
+      "canonicalRuleSha256": "F5F5C352AC745F8F6A0CAFCE2E1681D9BB9A9641141C0F0BEA328C446D9D04C9",
+      "canonicalSemanticsSha256": "DC8E49AD5A04094230DC34DC78AC84AB494EB6519393456BDFE8D3536F96EDB3",
+      "canonicalSemantics": {
+        "summary": "Comma, semicolon, colon, question mark, exclamation mark, brackets, quotation marks and arrows are covered when they occur inside words.",
+        "classes": [
+          "COMMA",
+          "SEMICOLON",
+          "COLON",
+          "QUESTION_MARK",
+          "EXCLAMATION_MARK",
+          "BRACKETS",
+          "QUOTATION_MARKS",
+          "ARROWS"
+        ]
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_APPLICATION",
+        "summary": "Comma, semicolon, colon, question mark, exclamation mark, brackets, quotation marks and arrows are covered when they occur inside words.",
+        "payload": {
+          "classes": [
+            "COMMA",
+            "SEMICOLON",
+            "COLON",
+            "QUESTION_MARK",
+            "EXCLAMATION_MARK",
+            "BRACKETS",
+            "QUOTATION_MARKS",
+            "ARROWS"
+          ]
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "classes",
+          "value": [
+            "COMMA",
+            "SEMICOLON",
+            "COLON",
+            "QUESTION_MARK",
+            "EXCLAMATION_MARK",
+            "BRACKETS",
+            "QUOTATION_MARKS",
+            "ARROWS"
+          ],
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-003",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-003.json",
+      "canonicalRuleSha256": "DED20D410C1F57FB2F97922514EFFB5C9C290A400570193C9C15673DF8BD5C8B",
+      "canonicalSemanticsSha256": "0329A7602F7EB6728C2C27488D5EE1A8B55070D635239BE9BBFD6AEB879108A0",
+      "canonicalSemantics": {
+        "summary": "The sentence period is explicitly excluded from the general in-word cancellation-point rule.",
+        "excludedClass": "SENTENCE_PERIOD"
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_APPLICATION",
+        "summary": "The sentence period is explicitly excluded from the general in-word cancellation-point rule.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "EXCEPTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "excludedClass",
+              "value": "SENTENCE_PERIOD"
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "excludedClass",
+          "value": "SENTENCE_PERIOD",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "EXCEPTION_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-004",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-004.json",
+      "canonicalRuleSha256": "6E111680150E429421017C64DA63A3476CD8FCDA8CE48CD187DE1C81A78B8688",
+      "canonicalSemanticsSha256": "5EE6B33E457037672576ED33C1187A35432DB9E39B30501A37565BFC5D0DB29D",
+      "canonicalSemantics": {
+        "summary": "A covered punctuation sign or arrow that occurs inside a word receives a preceding cancellation point.",
+        "marker": {
+          "unicode": "⠠",
+          "codepoints": [
+            "U+2820"
+          ],
+          "dots": [
+            "6"
+          ],
+          "cellCount": 1
+        },
+        "condition": "SIGN_OCCURS_INSIDE_WORD"
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "A covered punctuation sign or arrow that occurs inside a word receives a preceding cancellation point.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "marker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "CONTEXT_PREDICATE",
+          "selectedSemantics": [
+            {
+              "sourcePath": "condition",
+              "value": "SIGN_OCCURS_INSIDE_WORD"
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "condition",
+          "value": "SIGN_OCCURS_INSIDE_WORD",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CONTEXT_PREDICATE"
+          ]
+        },
+        {
+          "sourcePath": "marker",
+          "value": {
+            "unicode": "⠠",
+            "codepoints": [
+              "U+2820"
+            ],
+            "dots": [
+              "6"
+            ],
+            "cellCount": 1
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-005",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-005.json",
+      "canonicalRuleSha256": "9671D640177A02DDB717E9A760E3771452B02FCD661F85A0267C24EB9A0E10A4",
+      "canonicalSemanticsSha256": "7B89E3BD0D18025F85D386202D3811F9B2219B8334D163E04BFCDAE12C79E258",
+      "canonicalSemantics": {
+        "summary": "The additional cancellation point applies to punctuation that is internal to lexical word material; source examples distinguish such signs from closing punctuation at the word edge.",
+        "internalCondition": {
+          "lexicalMaterialBefore": true,
+          "lexicalMaterialAfter": true
+        },
+        "evidence": [
+          "Hundert(e)",
+          "Student(inn)en",
+          "Hundert[e]",
+          "Student[inn]en"
+        ],
+        "evidenceRole": "NORMATIVE_EXAMPLE_DERIVATION",
+        "directProseRule": false
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_APPLICATION",
+        "summary": "The additional cancellation point applies to punctuation that is internal to lexical word material; source examples distinguish such signs from closing punctuation at the word edge.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "CONTEXT_PREDICATE",
+          "selectedSemantics": [
+            {
+              "sourcePath": "internalCondition",
+              "value": {
+                "lexicalMaterialBefore": true,
+                "lexicalMaterialAfter": true
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {
+        "directProseRule": false,
+        "evidence": [
+          "Hundert(e)",
+          "Student(inn)en",
+          "Hundert[e]",
+          "Student[inn]en"
+        ],
+        "evidenceRole": "NORMATIVE_EXAMPLE_DERIVATION"
+      },
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "directProseRule",
+          "value": false,
+          "disposition": "NON_EXECUTION_EVIDENCE",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "evidence",
+          "value": [
+            "Hundert(e)",
+            "Student(inn)en",
+            "Hundert[e]",
+            "Student[inn]en"
+          ],
+          "disposition": "NON_EXECUTION_EVIDENCE",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "evidenceRole",
+          "value": "NORMATIVE_EXAMPLE_DERIVATION",
+          "disposition": "NON_EXECUTION_EVIDENCE",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "internalCondition",
+          "value": {
+            "lexicalMaterialBefore": true,
+            "lexicalMaterialAfter": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CONTEXT_PREDICATE"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-006",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-006.json",
+      "canonicalRuleSha256": "C3483CDAE9347573BC9BF44F8049F964A0DB7500043CF83B8F50B0E822378D08",
+      "canonicalSemanticsSha256": "964C1FED33213AC95554466311B5A486324CB9BD50A7FD49E73CF59BA126E394",
+      "canonicalSemantics": {
+        "summary": "A square bracket occurring inside a word uses the three-cell in-word form shown by section 2.13.",
+        "inWordForm": {
+          "unicode": "⠠⠠⠶",
+          "codepoints": [
+            "U+2820",
+            "U+2820",
+            "U+2836"
+          ],
+          "dots": [
+            "6",
+            "6",
+            "2356"
+          ],
+          "cellCount": 3
+        }
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "A square bracket occurring inside a word uses the three-cell in-word form shown by section 2.13.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "inWordForm",
+              "braille": {
+                "cellCount": 3,
+                "dots": [
+                  "6",
+                  "6",
+                  "2356"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2820",
+                  "U+2836"
+                ],
+                "unicode": "⠠⠠⠶"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "inWordForm",
+          "value": {
+            "unicode": "⠠⠠⠶",
+            "codepoints": [
+              "U+2820",
+              "U+2820",
+              "U+2836"
+            ],
+            "dots": [
+              "6",
+              "6",
+              "2356"
+            ],
+            "cellCount": 3
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-007",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-007.json",
+      "canonicalRuleSha256": "31D4B6AA002295B460F45C78E264532D33F30F6CF4A785E49FC99FE418368684",
+      "canonicalSemanticsSha256": "E1906F5299390AEE37C324DCB18CB2153803644961C7B7A219199E0AD5FAF54A",
+      "canonicalSemantics": {
+        "summary": "Ordinary quotation marks inside a word are represented with the cancellation point preceding the ordinary opening or closing quotation sign.",
+        "opening": {
+          "unicode": "⠠⠦",
+          "codepoints": [
+            "U+2820",
+            "U+2826"
+          ],
+          "dots": [
+            "6",
+            "236"
+          ],
+          "cellCount": 2
+        },
+        "closing": {
+          "unicode": "⠠⠴",
+          "codepoints": [
+            "U+2820",
+            "U+2834"
+          ],
+          "dots": [
+            "6",
+            "356"
+          ],
+          "cellCount": 2
+        }
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "Ordinary quotation marks inside a word are represented with the cancellation point preceding the ordinary opening or closing quotation sign.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "closing",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "356"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2834"
+                ],
+                "unicode": "⠠⠴"
+              }
+            },
+            {
+              "sourcePath": "opening",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "236"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2826"
+                ],
+                "unicode": "⠠⠦"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "closing",
+          "value": {
+            "unicode": "⠠⠴",
+            "codepoints": [
+              "U+2820",
+              "U+2834"
+            ],
+            "dots": [
+              "6",
+              "356"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "opening",
+          "value": {
+            "unicode": "⠠⠦",
+            "codepoints": [
+              "U+2820",
+              "U+2826"
+            ],
+            "dots": [
+              "6",
+              "236"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-INWORD-008",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-inword-008.json",
+      "canonicalRuleSha256": "CFD196E35D657EE2C64EB4FA5AD44FAFF4D82E42A4999FBE48D85E911B16C2A5",
+      "canonicalSemanticsSha256": "60E268357B6A7DAB710E82F3ABCE61FB1FB90EEE558EC4E6E72D5C73B87A7B6E",
+      "canonicalSemantics": {
+        "summary": "Single or half quotation marks inside words use the three-cell forms specified by section 2.13.",
+        "opening": {
+          "unicode": "⠠⠠⠦",
+          "codepoints": [
+            "U+2820",
+            "U+2820",
+            "U+2826"
+          ],
+          "dots": [
+            "6",
+            "6",
+            "236"
+          ],
+          "cellCount": 3
+        },
+        "closing": {
+          "unicode": "⠠⠠⠴",
+          "codepoints": [
+            "U+2820",
+            "U+2820",
+            "U+2834"
+          ],
+          "dots": [
+            "6",
+            "6",
+            "356"
+          ],
+          "cellCount": 3
+        }
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "Single or half quotation marks inside words use the three-cell forms specified by section 2.13.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "closing",
+              "braille": {
+                "cellCount": 3,
+                "dots": [
+                  "6",
+                  "6",
+                  "356"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2820",
+                  "U+2834"
+                ],
+                "unicode": "⠠⠠⠴"
+              }
+            },
+            {
+              "sourcePath": "opening",
+              "braille": {
+                "cellCount": 3,
+                "dots": [
+                  "6",
+                  "6",
+                  "236"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2820",
+                  "U+2826"
+                ],
+                "unicode": "⠠⠠⠦"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "closing",
+          "value": {
+            "unicode": "⠠⠠⠴",
+            "codepoints": [
+              "U+2820",
+              "U+2820",
+              "U+2834"
+            ],
+            "dots": [
+              "6",
+              "6",
+              "356"
+            ],
+            "cellCount": 3
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "opening",
+          "value": {
+            "unicode": "⠠⠠⠦",
+            "codepoints": [
+              "U+2820",
+              "U+2820",
+              "U+2826"
+            ],
+            "dots": [
+              "6",
+              "6",
+              "236"
+            ],
+            "cellCount": 3
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-MATH-002",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-002.json",
+      "canonicalRuleSha256": "60742B467528B3046D0D283698D6ACECC8E13388E06413235145108093334EBB",
+      "canonicalSemanticsSha256": "994E9E9E68D599F38D5F8BFEF216B66DBF49B903CA22043C6B106017D334BD1D",
+      "canonicalSemantics": {
+        "summary": "The multiplication dot, exponents and rear indices normally omit the point-4 announcement.",
+        "exceptions": [
+          "MULTIPLICATION_DOT",
+          "REAR_UPPER_INDEX",
+          "REAR_LOWER_INDEX"
+        ]
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_APPLICATION",
+        "summary": "The multiplication dot, exponents and rear indices normally omit the point-4 announcement.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "EXCEPTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "exceptions",
+              "value": [
+                "MULTIPLICATION_DOT",
+                "REAR_UPPER_INDEX",
+                "REAR_LOWER_INDEX"
+              ]
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "exceptions",
+          "value": [
+            "MULTIPLICATION_DOT",
+            "REAR_UPPER_INDEX",
+            "REAR_LOWER_INDEX"
+          ],
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "EXCEPTION_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-MATH-004",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-004.json",
+      "canonicalRuleSha256": "4C3EA8BA8F36FA88CAB804B0D9D230BE32A2EFDA150FB49A9582AAA9364727BB",
+      "canonicalSemanticsSha256": "54A5089136B787335A06EE6B88F39E7F03D2BDB475CC882425CD9A53DB3DA5BF",
+      "canonicalSemantics": {
+        "summary": "Letters inside the inline mathematical context that are not explicitly case-announced are interpreted as lowercase.",
+        "defaultCase": "LOWERCASE",
+        "dependency": "15.1G"
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Letters inside the inline mathematical context that are not explicitly case-announced are interpreted as lowercase.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependency",
+              "target": "15.1G",
+              "targetType": "PHASE_REFERENCE",
+              "resolvedInB44c1": false
+            }
+          ]
+        },
+        {
+          "kind": "CASE_DEFAULT_POLICY",
+          "selectedSemantics": [
+            {
+              "sourcePath": "defaultCase",
+              "value": "LOWERCASE"
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "defaultCase",
+          "value": "LOWERCASE",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CASE_DEFAULT_POLICY"
+          ]
+        },
+        {
+          "sourcePath": "dependency",
+          "value": "15.1G",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "DEPENDENCY_EDGE"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-006",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_ORDINAL_NOTATION_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-006.json",
+      "canonicalRuleSha256": "CFFE9FD66AD2BF32C979970D4F47751B8B4286AE83664828A00559B61630D7AD",
+      "canonicalSemanticsSha256": "1E758E45C5589AF233005590F636FFF4DE128666654129DADEC547EA3C686F24",
+      "canonicalSemantics": {
+        "summary": "Ordinals may be represented with ordinary digits followed by dot 3 or with the compact lowered-digit notation.",
+        "loweredDigitAlphabet": {
+          "1": {
+            "unicode": "⠂",
+            "codepoint": "U+2802",
+            "dots": "2"
+          },
+          "2": {
+            "unicode": "⠆",
+            "codepoint": "U+2806",
+            "dots": "23"
+          },
+          "3": {
+            "unicode": "⠒",
+            "codepoint": "U+2812",
+            "dots": "25"
+          },
+          "4": {
+            "unicode": "⠲",
+            "codepoint": "U+2832",
+            "dots": "256"
+          },
+          "5": {
+            "unicode": "⠢",
+            "codepoint": "U+2822",
+            "dots": "26"
+          },
+          "6": {
+            "unicode": "⠖",
+            "codepoint": "U+2816",
+            "dots": "235"
+          },
+          "7": {
+            "unicode": "⠶",
+            "codepoint": "U+2836",
+            "dots": "2356"
+          },
+          "8": {
+            "unicode": "⠦",
+            "codepoint": "U+2826",
+            "dots": "236"
+          },
+          "9": {
+            "unicode": "⠔",
+            "codepoint": "U+2814",
+            "dots": "35"
+          },
+          "0": {
+            "unicode": "⠴",
+            "codepoint": "U+2834",
+            "dots": "356"
+          }
+        }
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "Ordinals may be represented with ordinary digits followed by dot 3 or with the compact lowered-digit notation.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "loweredDigitAlphabet.0",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "356"
+                ],
+                "codepoints": [
+                  "U+2834"
+                ],
+                "unicode": "⠴"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.1",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "2"
+                ],
+                "codepoints": [
+                  "U+2802"
+                ],
+                "unicode": "⠂"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.2",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "23"
+                ],
+                "codepoints": [
+                  "U+2806"
+                ],
+                "unicode": "⠆"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.3",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "25"
+                ],
+                "codepoints": [
+                  "U+2812"
+                ],
+                "unicode": "⠒"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.4",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "256"
+                ],
+                "codepoints": [
+                  "U+2832"
+                ],
+                "unicode": "⠲"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.5",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "26"
+                ],
+                "codepoints": [
+                  "U+2822"
+                ],
+                "unicode": "⠢"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.6",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "235"
+                ],
+                "codepoints": [
+                  "U+2816"
+                ],
+                "unicode": "⠖"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.7",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "2356"
+                ],
+                "codepoints": [
+                  "U+2836"
+                ],
+                "unicode": "⠶"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.8",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "236"
+                ],
+                "codepoints": [
+                  "U+2826"
+                ],
+                "unicode": "⠦"
+              }
+            },
+            {
+              "sourcePath": "loweredDigitAlphabet.9",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "35"
+                ],
+                "codepoints": [
+                  "U+2814"
+                ],
+                "unicode": "⠔"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "loweredDigitAlphabet",
+          "value": {
+            "1": {
+              "unicode": "⠂",
+              "codepoint": "U+2802",
+              "dots": "2"
+            },
+            "2": {
+              "unicode": "⠆",
+              "codepoint": "U+2806",
+              "dots": "23"
+            },
+            "3": {
+              "unicode": "⠒",
+              "codepoint": "U+2812",
+              "dots": "25"
+            },
+            "4": {
+              "unicode": "⠲",
+              "codepoint": "U+2832",
+              "dots": "256"
+            },
+            "5": {
+              "unicode": "⠢",
+              "codepoint": "U+2822",
+              "dots": "26"
+            },
+            "6": {
+              "unicode": "⠖",
+              "codepoint": "U+2816",
+              "dots": "235"
+            },
+            "7": {
+              "unicode": "⠶",
+              "codepoint": "U+2836",
+              "dots": "2356"
+            },
+            "8": {
+              "unicode": "⠦",
+              "codepoint": "U+2826",
+              "dots": "236"
+            },
+            "9": {
+              "unicode": "⠔",
+              "codepoint": "U+2814",
+              "dots": "35"
+            },
+            "0": {
+              "unicode": "⠴",
+              "codepoint": "U+2834",
+              "dots": "356"
+            }
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-008",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_DECIMAL_CLASSIFIER_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-008.json",
+      "canonicalRuleSha256": "6F0EE719C71C39F9672823D4897B32268F92E6AFA47F55E928AAC8291F3927AA",
+      "canonicalSemanticsSha256": "815E734E6BA63298A5CF3FE1C78F77A249F1A9BE23BEF60CADB369745C1E3B7E",
+      "canonicalSemantics": {
+        "summary": "Decimal classifiers and chapter/verse references support both print-like notation and a compact alternating lowered/normal numeric notation."
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "Decimal classifiers and chapter/verse references support both print-like notation and a compact alternating lowered/normal numeric notation.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-010",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_ADJACENT_SIGN_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-010.json",
+      "canonicalRuleSha256": "FD96A28BE2D1F2E18C79F473ABE9045C7444FA63959F066D4E5167C9F9A953B8",
+      "canonicalSemanticsSha256": "068C0BE2FFD6FEB94774240D3D60D2122DF0D693E7A12C70AB4D0699064CA363",
+      "canonicalSemantics": {
+        "summary": "Percent, promille, degree, minute, and second follow dedicated sign sequences and usually attach to the preceding number without an intervening space."
+      },
+      "primary": {
+        "kind": "SPACING_BEHAVIOR",
+        "summary": "Percent, promille, degree, minute, and second follow dedicated sign sequences and usually attach to the preceding number without an intervening space.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-011",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-011.json",
+      "canonicalRuleSha256": "2C0EE209E73AE078604A723218E363889133CBBE06AD727AE1A866ACCEF9421C",
+      "canonicalSemanticsSha256": "210D39E91853A83B99BC7E49EA112953A7413982A7E4AA6DCBA03EB87EB135FB",
+      "canonicalSemantics": {
+        "summary": "The section sign is restricted to direct use before Arabic or Roman numbers; repeated print section signs remain repeated and the separating space is omitted."
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "The section sign is restricted to direct use before Arabic or Roman numbers; repeated print section signs remain repeated and the separating space is omitted.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-012",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMERIC_AMBIGUITY_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-012.json",
+      "canonicalRuleSha256": "4545BA358BCB9C2A042AC21109A4803F1EC1E3C3E7F482CA3C9D923797912232",
+      "canonicalSemanticsSha256": "B5FCB8398115FE483545097065BF1EEF7C1BF822054BA0109362466BE9EEFBDB",
+      "canonicalSemantics": {
+        "summary": "Punctuation that could be confused with lowered digits requires announcement after an Arabic number or between digits. Text punctuation uses dot 6; mathematical operation usage follows math announcement.",
+        "textAnnouncement": {
+          "unicode": "⠠",
+          "codepoint": "U+2820",
+          "dots": "6"
+        },
+        "mathAnnouncement": {
+          "unicode": "⠈",
+          "codepoint": "U+2808",
+          "dots": "4"
+        },
+        "ambiguousTextPunctuation": [
+          "SEMICOLON",
+          "COLON",
+          "QUESTION_MARK",
+          "EXCLAMATION_MARK",
+          "BRACKET",
+          "QUOTATION_MARK"
+        ],
+        "flowingTextClosingException": {
+          "appliesTo": [
+            "CLOSING_ROUND_BRACKET",
+            "CLOSING_QUOTATION_MARK"
+          ],
+          "cancellationPointMayUsuallyBeOmitted": true
+        }
+      },
+      "primary": {
+        "kind": "AMBIGUITY_RESOLUTION",
+        "summary": "Punctuation that could be confused with lowered digits requires announcement after an Arabic number or between digits. Text punctuation uses dot 6; mathematical operation usage follows math announcement.",
+        "payload": {
+          "ambiguousTextPunctuation": [
+            "SEMICOLON",
+            "COLON",
+            "QUESTION_MARK",
+            "EXCLAMATION_MARK",
+            "BRACKET",
+            "QUOTATION_MARK"
+          ]
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "mathAnnouncement",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "4"
+                ],
+                "codepoints": [
+                  "U+2808"
+                ],
+                "unicode": "⠈"
+              }
+            },
+            {
+              "sourcePath": "textAnnouncement",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "EXCEPTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "flowingTextClosingException",
+              "value": {
+                "appliesTo": [
+                  "CLOSING_ROUND_BRACKET",
+                  "CLOSING_QUOTATION_MARK"
+                ],
+                "cancellationPointMayUsuallyBeOmitted": true
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "ambiguousTextPunctuation",
+          "value": [
+            "SEMICOLON",
+            "COLON",
+            "QUESTION_MARK",
+            "EXCLAMATION_MARK",
+            "BRACKET",
+            "QUOTATION_MARK"
+          ],
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "flowingTextClosingException",
+          "value": {
+            "appliesTo": [
+              "CLOSING_ROUND_BRACKET",
+              "CLOSING_QUOTATION_MARK"
+            ],
+            "cancellationPointMayUsuallyBeOmitted": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "EXCEPTION_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "mathAnnouncement",
+          "value": {
+            "unicode": "⠈",
+            "codepoint": "U+2808",
+            "dots": "4"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "textAnnouncement",
+          "value": {
+            "unicode": "⠠",
+            "codepoint": "U+2820",
+            "dots": "6"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-NUM-014",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_NUMBER_WORD_BOUNDARY_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-num-014.json",
+      "canonicalRuleSha256": "31ADD251811ACEA86FA7D77F994283021CF3BB3D5E141471E038778B1BE096E7",
+      "canonicalSemanticsSha256": "99498E8D58528D04EC4E1395738CB5D62EADC586D1A30E0A5AFF7D1094A6B91F",
+      "canonicalSemantics": {
+        "summary": "A word or word-part may directly follow a number unless its first Braille sign could be interpreted as a cardinal digit or denominator; ambiguous cases require dot 6 or another appropriate announcement.",
+        "ambiguityBreaker": {
+          "unicode": "⠠",
+          "codepoint": "U+2820",
+          "dots": "6"
+        },
+        "vollKurzContractionPolicy": "Apply contractions where they do not create ambiguity."
+      },
+      "primary": {
+        "kind": "AMBIGUITY_RESOLUTION",
+        "summary": "A word or word-part may directly follow a number unless its first Braille sign could be interpreted as a cardinal digit or denominator; ambiguous cases require dot 6 or another appropriate announcement.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "ambiguityBreaker",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "6"
+                ],
+                "codepoints": [
+                  "U+2820"
+                ],
+                "unicode": "⠠"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "CONTRACTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "vollKurzContractionPolicy",
+              "value": "Apply contractions where they do not create ambiguity."
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "ambiguityBreaker",
+          "value": {
+            "unicode": "⠠",
+            "codepoint": "U+2820",
+            "dots": "6"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "vollKurzContractionPolicy",
+          "value": "Apply contractions where they do not create ambiguity.",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CONTRACTION_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-SPECIAL-004",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "BEHAVIORAL_CONSTRAINT",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-special-004.json",
+      "canonicalRuleSha256": "7DDB99F727323C8021E2FA73CC0F22A3817FEAA834251CDCF359F0A7357CB26E",
+      "canonicalSemanticsSha256": "4C3BDD9F8E10B6F1D54FCCED20E9123E140C1EE5842F214755B9CB2314F589BE",
+      "canonicalSemantics": {
+        "summary": "A number adjacent to a special-form currency sign retains normal German numeric notation.",
+        "dependency": "DE-NUM-001"
+      },
+      "primary": {
+        "kind": "BEHAVIORAL_POLICY",
+        "summary": "A number adjacent to a special-form currency sign retains normal German numeric notation.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "dependency",
+              "target": "DE-NUM-001",
+              "targetType": "RULE_ID",
+              "resolvedInB44c1": false
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "dependency",
+          "value": "DE-NUM-001",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "DEPENDENCY_EDGE"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-002",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-002.json",
+      "canonicalRuleSha256": "F5CA31F7FD93EE3355DF62C8D0FBAEBCDE2524923F69115E7BE1DBFE31C693A9",
+      "canonicalSemanticsSha256": "D35CEE1FC096CFDE1CAF9E011975E853BFA79393DD9FE100D20AF09E5F5DC460",
+      "canonicalSemantics": {
+        "printRole": "BINDESTRICH",
+        "braille": {
+          "unicode": "⠤",
+          "codepoints": [
+            "U+2824"
+          ],
+          "dots": [
+            "36"
+          ],
+          "cellCount": 1
+        },
+        "summary": "The hyphen connects independent words or abbreviations and acts as a word boundary for German Braille rules.",
+        "boundarySemantics": {
+          "isWordBoundary": true,
+          "equivalentToSpaceForRuleBoundaries": true,
+          "affects": [
+            "contraction",
+            "capitalization",
+            "emphasis",
+            "embedded-spans"
+          ]
+        },
+        "lineBreak": {
+          "allowedAfter": true,
+          "atLineEndAlsoActsAsTrennungsstrich": true
+        },
+        "exceptions": [
+          {
+            "context": "COMPUTER_BRAILLE_INSERT",
+            "isWordBoundary": false,
+            "sourceDependency": "2.11"
+          }
+        ]
+      },
+      "primary": {
+        "kind": "BOUNDARY_BEHAVIOR",
+        "summary": "The hyphen connects independent words or abbreviations and acts as a word boundary for German Braille rules.",
+        "payload": {
+          "boundarySemantics": {
+            "isWordBoundary": true,
+            "equivalentToSpaceForRuleBoundaries": true,
+            "affects": [
+              "contraction",
+              "capitalization",
+              "emphasis",
+              "embedded-spans"
+            ]
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2824"
+                ],
+                "unicode": "⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "DEPENDENCY_EDGE",
+          "edges": [
+            {
+              "sourcePath": "exceptions[0].sourceDependency",
+              "target": "2.11",
+              "targetType": "SECTION_REFERENCE",
+              "resolvedInB44c1": false
+            }
+          ]
+        },
+        {
+          "kind": "EXCEPTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "exceptions",
+              "value": [
+                {
+                  "context": "COMPUTER_BRAILLE_INSERT",
+                  "isWordBoundary": false,
+                  "sourceDependency": "2.11"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "LINE_BREAK_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "lineBreak",
+              "value": {
+                "allowedAfter": true,
+                "atLineEndAlsoActsAsTrennungsstrich": true
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {
+        "printRole": "BINDESTRICH"
+      },
+      "branchAdjudication": [
+        {
+          "sourcePath": "boundarySemantics",
+          "value": {
+            "isWordBoundary": true,
+            "equivalentToSpaceForRuleBoundaries": true,
+            "affects": [
+              "contraction",
+              "capitalization",
+              "emphasis",
+              "embedded-spans"
+            ]
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠤",
+            "codepoints": [
+              "U+2824"
+            ],
+            "dots": [
+              "36"
+            ],
+            "cellCount": 1
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "exceptions",
+          "value": [
+            {
+              "context": "COMPUTER_BRAILLE_INSERT",
+              "isWordBoundary": false,
+              "sourceDependency": "2.11"
+            }
+          ],
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "DEPENDENCY_EDGE",
+            "EXCEPTION_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "lineBreak",
+          "value": {
+            "allowedAfter": true,
+            "atLineEndAlsoActsAsTrennungsstrich": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "LINE_BREAK_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "printRole",
+          "value": "BINDESTRICH",
+          "disposition": "DESCRIPTIVE_METADATA",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-003",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-003.json",
+      "canonicalRuleSha256": "FC8EF81F2038CD3445031EB0F191DA10A188F0861203C967D01341429A234EAB",
+      "canonicalSemanticsSha256": "72EC0711B498945A233241F576646329C4F6EF526C676BD8DA6F85252D12AFF1",
+      "canonicalSemantics": {
+        "printRole": "GEDANKENSTRICH",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The Gedankenstrich attaches directly to the preceding word; normally one Braille blank follows unless punctuation follows.",
+        "spacing": {
+          "before": "NONE",
+          "after": "ONE_UNLESS_PUNCTUATION"
+        },
+        "lineBreak": {
+          "allowedImmediatelyBefore": true
+        }
+      },
+      "primary": {
+        "kind": "SPACING_BEHAVIOR",
+        "summary": "The Gedankenstrich attaches directly to the preceding word; normally one Braille blank follows unless punctuation follows.",
+        "payload": {
+          "spacing": {
+            "before": "NONE",
+            "after": "ONE_UNLESS_PUNCTUATION"
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "LINE_BREAK_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "lineBreak",
+              "value": {
+                "allowedImmediatelyBefore": true
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {
+        "printRole": "GEDANKENSTRICH"
+      },
+      "branchAdjudication": [
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠠⠤",
+            "codepoints": [
+              "U+2820",
+              "U+2824"
+            ],
+            "dots": [
+              "6",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "lineBreak",
+          "value": {
+            "allowedImmediatelyBefore": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "LINE_BREAK_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "printRole",
+          "value": "GEDANKENSTRICH",
+          "disposition": "DESCRIPTIVE_METADATA",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "spacing",
+          "value": {
+            "before": "NONE",
+            "after": "ONE_UNLESS_PUNCTUATION"
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-005",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-005.json",
+      "canonicalRuleSha256": "E3840B67C5787AEA8412F449166D466DE0C846187850191750A03580A77A5ED9",
+      "canonicalSemanticsSha256": "F9736AAE25425170F8D7643830033D6A997F891B2D460B131D2BF0205803AB1A",
+      "canonicalSemantics": {
+        "printRole": "ERGAENZUNGSSTRICH",
+        "summary": "The supplementary dash represents an omitted part of a word and does not create a word boundary.",
+        "forms": {
+          "beforeWord": {
+            "unicode": "⠠⠤",
+            "codepoints": [
+              "U+2820",
+              "U+2824"
+            ],
+            "dots": [
+              "6",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "afterWord": {
+            "unicode": "⠤",
+            "codepoints": [
+              "U+2824"
+            ],
+            "dots": [
+              "36"
+            ],
+            "cellCount": 1
+          }
+        },
+        "boundarySemantics": {
+          "isWordBoundary": false
+        },
+        "contractionSemantics": "Treat the omitted word part as present when evaluating contraction context."
+      },
+      "primary": {
+        "kind": "BOUNDARY_BEHAVIOR",
+        "summary": "The supplementary dash represents an omitted part of a word and does not create a word boundary.",
+        "payload": {
+          "boundarySemantics": {
+            "isWordBoundary": false
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "forms.afterWord",
+              "braille": {
+                "cellCount": 1,
+                "dots": [
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2824"
+                ],
+                "unicode": "⠤"
+              }
+            },
+            {
+              "sourcePath": "forms.beforeWord",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "CONTRACTION_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "contractionSemantics",
+              "value": "Treat the omitted word part as present when evaluating contraction context."
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {
+        "printRole": "ERGAENZUNGSSTRICH"
+      },
+      "branchAdjudication": [
+        {
+          "sourcePath": "boundarySemantics",
+          "value": {
+            "isWordBoundary": false
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "contractionSemantics",
+          "value": "Treat the omitted word part as present when evaluating contraction context.",
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "CONTRACTION_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "forms",
+          "value": {
+            "beforeWord": {
+              "unicode": "⠠⠤",
+              "codepoints": [
+                "U+2820",
+                "U+2824"
+              ],
+              "dots": [
+                "6",
+                "36"
+              ],
+              "cellCount": 2
+            },
+            "afterWord": {
+              "unicode": "⠤",
+              "codepoints": [
+                "U+2824"
+              ],
+              "dots": [
+                "36"
+              ],
+              "cellCount": 1
+            }
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "printRole",
+          "value": "ERGAENZUNGSSTRICH",
+          "disposition": "DESCRIPTIVE_METADATA",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-006",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-006.json",
+      "canonicalRuleSha256": "07AC268BEFA1B8A3FF84D63ECAD548A705A9F0B9E802ABE79F331D0AAD66475E",
+      "canonicalSemanticsSha256": "6AAA86DC8A5E669B928E3B4E17502A9E20609ED1AC61FE34253592F1886123C2",
+      "canonicalSemantics": {
+        "printRole": "STRECKENSTRICH",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The route/range dash uses the extended dash sequence without surrounding Braille blanks.",
+        "spacing": {
+          "before": "NONE",
+          "after": "NONE"
+        },
+        "lineBreak": {
+          "allowedAfter": true
+        },
+        "semanticSelectionRequired": true
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "The route/range dash uses the extended dash sequence without surrounding Braille blanks.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "LINE_BREAK_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "lineBreak",
+              "value": {
+                "allowedAfter": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "SPACING_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "spacing",
+              "value": {
+                "before": "NONE",
+                "after": "NONE"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "SEMANTIC_SELECTION_REQUIREMENT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "semanticSelectionRequired",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {
+        "printRole": "STRECKENSTRICH"
+      },
+      "branchAdjudication": [
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠠⠤",
+            "codepoints": [
+              "U+2820",
+              "U+2824"
+            ],
+            "dots": [
+              "6",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "lineBreak",
+          "value": {
+            "allowedAfter": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "LINE_BREAK_CONSTRAINT"
+          ]
+        },
+        {
+          "sourcePath": "printRole",
+          "value": "STRECKENSTRICH",
+          "disposition": "DESCRIPTIVE_METADATA",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "semanticSelectionRequired",
+          "value": true,
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "SEMANTIC_SELECTION_REQUIREMENT"
+          ]
+        },
+        {
+          "sourcePath": "spacing",
+          "value": {
+            "before": "NONE",
+            "after": "NONE"
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "SPACING_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-007",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-007.json",
+      "canonicalRuleSha256": "6A54C2329AA5869BE90DFEC23B6E4431BA3FE501BFBF7D547ECF7677FF35104B",
+      "canonicalSemanticsSha256": "51AD1541B6CB68804B580833DEC01326752C54C042C7A7DFB5405C298FBF5B33",
+      "canonicalSemantics": {
+        "printRole": "VERGLEICHSSTRICH",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A comparison dash may use the range-dash spacing or may be placed between blanks.",
+        "spacingVariants": [
+          "NO_SURROUNDING_BLANKS",
+          "SURROUNDED_BY_BLANKS"
+        ]
+      },
+      "primary": {
+        "kind": "SPACING_BEHAVIOR",
+        "summary": "A comparison dash may use the range-dash spacing or may be placed between blanks.",
+        "payload": {
+          "spacingVariants": [
+            "NO_SURROUNDING_BLANKS",
+            "SURROUNDED_BY_BLANKS"
+          ]
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "6",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2820",
+                  "U+2824"
+                ],
+                "unicode": "⠠⠤"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {
+        "printRole": "VERGLEICHSSTRICH"
+      },
+      "branchAdjudication": [
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠠⠤",
+            "codepoints": [
+              "U+2820",
+              "U+2824"
+            ],
+            "dots": [
+              "6",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "printRole",
+          "value": "VERGLEICHSSTRICH",
+          "disposition": "DESCRIPTIVE_METADATA",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "spacingVariants",
+          "value": [
+            "NO_SURROUNDING_BLANKS",
+            "SURROUNDED_BY_BLANKS"
+          ],
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-012",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-012.json",
+      "canonicalRuleSha256": "B7987583C24009E124308CE44EC68F74C4DD2B23B082474879D9C227E3B23C81",
+      "canonicalSemanticsSha256": "164A3C1BDC832629589D5BE4C0828F8D25B5F1823D552D9DDA0413777AA6C46C",
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠐⠂",
+          "codepoints": [
+            "U+2810",
+            "U+2802"
+          ],
+          "dots": [
+            "5",
+            "2"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The slash connects independent words or abbreviations and acts as a German Braille word boundary.",
+        "boundarySemantics": {
+          "isWordBoundary": true
+        },
+        "lineBreak": {
+          "allowedAfter": true
+        }
+      },
+      "primary": {
+        "kind": "BOUNDARY_BEHAVIOR",
+        "summary": "The slash connects independent words or abbreviations and acts as a German Braille word boundary.",
+        "payload": {
+          "boundarySemantics": {
+            "isWordBoundary": true
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "2"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2802"
+                ],
+                "unicode": "⠐⠂"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "LINE_BREAK_CONSTRAINT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "lineBreak",
+              "value": {
+                "allowedAfter": true
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "boundarySemantics",
+          "value": {
+            "isWordBoundary": true
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        },
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠐⠂",
+            "codepoints": [
+              "U+2810",
+              "U+2802"
+            ],
+            "dots": [
+              "5",
+              "2"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "lineBreak",
+          "value": {
+            "allowedAfter": true
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "LINE_BREAK_CONSTRAINT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-013",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-013.json",
+      "canonicalRuleSha256": "48B8661A217567D0C751A211A76B15F36BB44E912D103664BEDB4DF07DDFE8F1",
+      "canonicalSemanticsSha256": "4586C6DBFC7DF0976CB6BE8CAC52D7B613B2FBB5C5E0F6357E91F241A9BE98D6",
+      "canonicalSemantics": {
+        "summary": "A slash normally has no surrounding blanks when each side contains one word or one number; multiword sides normally use surrounding blanks.",
+        "spacingPolicy": {
+          "singleWordOrNumberEachSide": "NO_BLANKS",
+          "multiwordEitherSide": "SURROUND_WITH_BLANKS",
+          "sourceLayoutMayBePreserved": true
+        }
+      },
+      "primary": {
+        "kind": "SPACING_BEHAVIOR",
+        "summary": "A slash normally has no surrounding blanks when each side contains one word or one number; multiword sides normally use surrounding blanks.",
+        "payload": {
+          "spacingPolicy": {
+            "singleWordOrNumberEachSide": "NO_BLANKS",
+            "multiwordEitherSide": "SURROUND_WITH_BLANKS",
+            "sourceLayoutMayBePreserved": true
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "spacingPolicy",
+          "value": {
+            "singleWordOrNumberEachSide": "NO_BLANKS",
+            "multiwordEitherSide": "SURROUND_WITH_BLANKS",
+            "sourceLayoutMayBePreserved": true
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-016",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-016.json",
+      "canonicalRuleSha256": "40FB0E517406A0CDCEC2CFB933BB58B9E3CD805AD731B425990573B034CACF4D",
+      "canonicalSemanticsSha256": "AA0D0C8B753099B6686203698FDCEC57123C692B0E0205EE37129D1286442977",
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠐⠤",
+          "codepoints": [
+            "U+2810",
+            "U+2824"
+          ],
+          "dots": [
+            "5",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A vertical print separator used to distinguish terms or concepts maps to the secondary separator sequence.",
+        "spacing": {
+          "conceptSeparator": "SURROUNDED_BY_BLANKS",
+          "wordSplitMarker": "NO_BLANKS"
+        }
+      },
+      "primary": {
+        "kind": "SPACING_BEHAVIOR",
+        "summary": "A vertical print separator used to distinguish terms or concepts maps to the secondary separator sequence.",
+        "payload": {
+          "spacing": {
+            "conceptSeparator": "SURROUNDED_BY_BLANKS",
+            "wordSplitMarker": "NO_BLANKS"
+          }
+        },
+        "payloadDerivedFromSummaryOnly": false
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2824"
+                ],
+                "unicode": "⠐⠤"
+              }
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠐⠤",
+            "codepoints": [
+              "U+2810",
+              "U+2824"
+            ],
+            "dots": [
+              "5",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "spacing",
+          "value": {
+            "conceptSeparator": "SURROUNDED_BY_BLANKS",
+            "wordSplitMarker": "NO_BLANKS"
+          },
+          "disposition": "PRIMARY_PAYLOAD",
+          "auxiliaryFamilies": []
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    },
+    {
+      "ruleId": "DE-STROKE-017",
+      "profile": "de-basisschrift",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "CONTEXTUAL",
+      "runtimeOwner": "GERMAN_PUNCTUATION_CONTEXT_RESOLVER",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-017.json",
+      "canonicalRuleSha256": "45430EC939E6ACD1C2F0F58AA1F2A988C5218A3537A1059900BC126D3C6F3338",
+      "canonicalSemanticsSha256": "091E4DE1B6AE2D60A379BC53626585D41571A6FB60EEF2658E7B0ECB2FC2CAE8",
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠐⠤",
+          "codepoints": [
+            "U+2810",
+            "U+2824"
+          ],
+          "dots": [
+            "5",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A middle dot in contexts such as publisher information uses the same Braille sequence.",
+        "semanticSelectionRequired": true
+      },
+      "primary": {
+        "kind": "CONTEXTUAL_FORM_SELECTION",
+        "summary": "A middle dot in contexts such as publisher information uses the same Braille sequence.",
+        "payload": {},
+        "payloadDerivedFromSummaryOnly": true
+      },
+      "auxiliaryPrimitives": [
+        {
+          "kind": "BRAILLE_FORM_BINDING",
+          "forms": [
+            {
+              "sourcePath": "braille",
+              "braille": {
+                "cellCount": 2,
+                "dots": [
+                  "5",
+                  "36"
+                ],
+                "codepoints": [
+                  "U+2810",
+                  "U+2824"
+                ],
+                "unicode": "⠐⠤"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "SEMANTIC_SELECTION_REQUIREMENT",
+          "selectedSemantics": [
+            {
+              "sourcePath": "semanticSelectionRequired",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "nonExecutionEvidence": {},
+      "descriptiveMetadata": {},
+      "branchAdjudication": [
+        {
+          "sourcePath": "braille",
+          "value": {
+            "unicode": "⠐⠤",
+            "codepoints": [
+              "U+2810",
+              "U+2824"
+            ],
+            "dots": [
+              "5",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "BRAILLE_FORM_BINDING"
+          ]
+        },
+        {
+          "sourcePath": "semanticSelectionRequired",
+          "value": true,
+          "disposition": "AUXILIARY_PRIMITIVE",
+          "auxiliaryFamilies": [
+            "SEMANTIC_SELECTION_REQUIREMENT"
+          ]
+        }
+      ],
+      "loweringState": "LOWERED_IR_NON_EXECUTABLE",
+      "executable": false,
+      "registered": false
+    }
+  ],
+  "next": "15.5B4.4_CONTEXTUAL_BEHAVIORAL_LOWERING_CLOSURE"
+}

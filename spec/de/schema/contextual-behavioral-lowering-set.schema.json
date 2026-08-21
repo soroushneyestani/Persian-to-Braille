@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://braille-hub.local/schema/de/contextual-behavioral-lowering-set.schema.json",
+  "title": "German Basisschrift Contextual Behavioral Lowering Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "phase",
+    "id",
+    "status",
+    "layer",
+    "profile",
+    "executable",
+    "registered",
+    "source",
+    "scope",
+    "determinism",
+    "records",
+    "next"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "phase": {
+      "const": "15.5B4.4c2"
+    },
+    "id": {
+      "const": "de-basisschrift-contextual-behavioral-lowering"
+    },
+    "status": {
+      "const": "LOWERED_IR_NON_EXECUTABLE"
+    },
+    "layer": {
+      "const": "GERMAN_EXECUTION_IR"
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "executable": {
+      "const": false
+    },
+    "registered": {
+      "const": false
+    },
+    "source": {
+      "type": "object"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "determinism": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 36,
+      "maxItems": 36,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ruleId",
+          "profile",
+          "sourceLayer",
+          "sourceClassification",
+          "runtimeOwner",
+          "canonicalRulePath",
+          "canonicalRuleSha256",
+          "canonicalSemanticsSha256",
+          "canonicalSemantics",
+          "primary",
+          "auxiliaryPrimitives",
+          "nonExecutionEvidence",
+          "descriptiveMetadata",
+          "branchAdjudication",
+          "loweringState",
+          "executable",
+          "registered"
+        ],
+        "properties": {
+          "ruleId": {
+            "type": "string"
+          },
+          "profile": {
+            "const": "de-basisschrift"
+          },
+          "sourceLayer": {
+            "type": "string"
+          },
+          "sourceClassification": {
+            "type": "string"
+          },
+          "runtimeOwner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "canonicalRulePath": {
+            "type": "string"
+          },
+          "canonicalRuleSha256": {
+            "type": "string"
+          },
+          "canonicalSemanticsSha256": {
+            "type": "string"
+          },
+          "canonicalSemantics": {
+            "type": "object"
+          },
+          "primary": {
+            "type": "object",
+            "required": [
+              "kind",
+              "summary",
+              "payload",
+              "payloadDerivedFromSummaryOnly"
+            ]
+          },
+          "auxiliaryPrimitives": {
+            "type": "array"
+          },
+          "nonExecutionEvidence": {
+            "type": "object"
+          },
+          "descriptiveMetadata": {
+            "type": "object"
+          },
+          "branchAdjudication": {
+            "type": "array"
+          },
+          "loweringState": {
+            "const": "LOWERED_IR_NON_EXECUTABLE"
+          },
+          "executable": {
+            "const": false
+          },
+          "registered": {
+            "const": false
+          }
+        }
+      }
+    },
+    "next": {
+      "const": "15.5B4.4_CONTEXTUAL_BEHAVIORAL_LOWERING_CLOSURE"
+    }
+  }
+}
