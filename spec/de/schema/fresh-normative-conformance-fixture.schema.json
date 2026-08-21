@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fresh-normative-conformance-fixture.schema.json",
+  "title": "German Basisschrift Fresh Normative Conformance Fixture",
+  "description": "Schema for dedicated German Basisschrift fresh normative conformance evidence. Input and expectation payloads are provenance-neutral; source identity and derivation are represented exclusively by normativeProvenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "profile",
+    "fixtureClass",
+    "semanticFamily",
+    "input",
+    "expectation",
+    "ruleTrace",
+    "normativeProvenance",
+    "executionBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "fixtureClass": {
+      "type": "string",
+      "const": "FRESH_NORMATIVE_EVIDENCE"
+    },
+    "semanticFamily": {
+      "enum": [
+        "STANDARD_CELL_VECTOR",
+        "CORE_CELL_VECTOR",
+        "BOUNDARY_CONDITIONAL_VECTOR"
+      ]
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "object",
+          "minProperties": 1
+        }
+      }
+    },
+    "ruleTrace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "linkedLoweringRuleIds",
+        "canonicalSourceRuleIds",
+        "canonicalContractPaths",
+        "canonicalSections"
+      ],
+      "properties": {
+        "linkedLoweringRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalSourceRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalContractPaths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalSections": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "normativeProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "bindings",
+        "derivation"
+      ],
+      "properties": {
+        "authority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "organization",
+            "edition",
+            "url",
+            "sha256"
+          ],
+          "properties": {
+            "organization": {
+              "type": "string",
+              "minLength": 1
+            },
+            "edition": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9A-Fa-f]{64}$"
+            }
+          }
+        },
+        "bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "path",
+              "byteSha256"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "byteSha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "canonicalSha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sectionExtractionSha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "jsonPointer": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "derivation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "expectedVectorCanonicalSha256"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expectedVectorCanonicalSha256": {
+              "type": "string",
+              "pattern": "^[0-9A-Fa-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "executionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixtureGradeNormativeEvidence",
+        "runtimeConformanceProven",
+        "runtimeExecutable"
+      ],
+      "properties": {
+        "fixtureGradeNormativeEvidence": {
+          "type": "boolean"
+        },
+        "runtimeConformanceProven": {
+          "type": "boolean"
+        },
+        "runtimeExecutable": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

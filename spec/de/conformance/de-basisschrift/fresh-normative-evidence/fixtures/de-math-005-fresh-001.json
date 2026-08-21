@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-005-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_EVIDENCE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "value": "+5"
+  },
+  "expectation": {
+    "value": {
+      "unicode": "⠈⠖⠼⠑",
+      "codepoints": [
+        "U+2808",
+        "U+2816",
+        "U+283C",
+        "U+2811"
+      ],
+      "dots": [
+        "4",
+        "235",
+        "3456",
+        "15"
+      ],
+      "cellCount": 4
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-MATH-005"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-MATH-005"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+    ],
+    "canonicalSections": [
+      "2.10"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "MATH_TARGET_CASE",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "jsonPointer": "/validationCases/0",
+        "section": "2.10"
+      },
+      {
+        "role": "NUMERIC_STATE_CONTRACT",
+        "path": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "byteSha256": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+        "jsonPointer": "/numericStateContract"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-math-005.json",
+        "byteSha256": "557938B0ABC7D9604A1DA2608D2497882F1F1E0658C3420D6EB1DA617E07BFE4",
+        "section": "2.10"
+      }
+    ],
+    "derivation": {
+      "method": "EXISTING_EXPECTED_PREFIX_PLUS_NUMERIC_STATE_STANDARD_DIGIT_MAPPING",
+      "expectedVectorCanonicalSha256": "938B75B1D8D121E156D66A23778D351878A59901579E6597CB1615E480BD210A"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
