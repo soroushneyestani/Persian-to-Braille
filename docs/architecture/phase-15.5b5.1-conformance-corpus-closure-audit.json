@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B5.1P",
+  "scope": "15.5B5.1",
+  "profile": "de-basisschrift",
+  "status": "B5_1_REPO_LEVEL_CLOSURE_MATERIALIZED_WITH_NON_EXECUTABLE_RUNTIME_BOUNDARY",
+  "baseline": {
+    "repositoryCommitBeforeClosureMaterialization": "14e1e8dab139cbc7f34663bc4f8c99cb16f85606",
+    "remoteCommitBeforeClosureMaterialization": "14e1e8dab139cbc7f34663bc4f8c99cb16f85606",
+    "workingTreeCleanBeforeMaterialization": true
+  },
+  "sourceClosureReadinessAudit": {
+    "phase": "15.5B5.1O",
+    "auditorScriptSha256": "05A99C0FB0FA5A0EDBFA0F7056C3405C418C66EB85EFCD40ED54D2479499D8AB",
+    "closureModelCanonicalSha256": "738DDD2C2017783D417A5C8F00868E766887EE462D720041666A8D15837C61BB",
+    "auditJsonByteSha256": "F1EC43160307BB9955D00F33B6719F048F096DB7084876E32E8690DC364F0059"
+  },
+  "durableAdmission": {
+    "commit": "302b404982c651610cb1f97230354e60483cf10f",
+    "records": 27,
+    "artifactCanonicalSha256": "E26DE4FC1E8B292CC0F4E87823C87960AA18F00780A86F7CC9582F8639D740B8",
+    "artifactByteSha256": "64087040B4E01B15EF9FBE8168FC2C72CF72A8FB5E4DC0C3B5ECC047D6731625",
+    "schemaCanonicalSha256": "9EB43BCD7BFD333BBCE58BCB735EC804BEF45120EF6D6AEB53A7FA022800A17E",
+    "schemaByteSha256": "A074436C97D4EC63E629DC056D631E885C1D1C91137817E956CFAFDB32AA47D5"
+  },
+  "projectionEvidence": {
+    "projectedRecords": 27,
+    "projectionModelCanonicalSha256": "44120AE5E4E7B175EC2D1023066C372BDE59ED3D63BF0D01FE9A7D9B4116595B",
+    "projectionJsonByteSha256": "583DA1475248FC20A2195384F51891676675BA9CBD2B6D9FB9C52CF92F5E1E8E",
+    "projectorScriptSha256": "7200A01A1A55BEA1745DE10FA31C82AD7300449C30A53D7A66F54143F6E97206",
+    "independentValidatorScriptSha256": "812F1A76E78281BD26C7E2B08D00DBDD6EC542277470679B1A8406DF0ACCF04A"
+  },
+  "dedicatedCorpus": {
+    "commit": "14e1e8dab139cbc7f34663bc4f8c99cb16f85606",
+    "fixtureFiles": 27,
+    "uniqueLoweringRulesCovered": 22,
+    "caseRuleLinks": 38,
+    "fixtureSetCanonicalSha256": "A455E8FA4452270C23523B67A16AD65CB1891AB7E0FCE500A41F03050AD120A7",
+    "manifestCanonicalSha256": "2EB059EF084967885FAAC08780B46F9BA926AD66D3C965342BF842BF4C24C66A",
+    "manifestByteSha256": "1C9C91E1DF328BBA11D286D35C878272655C70ADD212D848FFDF0028361BF050",
+    "schemaCanonicalSha256": "340AD7434517945F44FE7F638BA4D3C9BE7773CE6F959A2CAF20102D6F131410",
+    "schemaByteSha256": "415E12B3C4716193C3B2A04980BA0A278AA85B193A47696AF21E250042ECB031",
+    "generatorScriptSha256": "4D9C79B53A9CB83680E5B80184A3958F14D4B89A790BC6E5B59675AD2F39A25E",
+    "artifactVerifierScriptSha256": "25440EADAC9DDC8E8D7CEEA264D928DD93F6236843F95ECCB632E5EBFC1F524E",
+    "independentValidatorScriptSha256": "B6C6DCE0C93A31B09334BA8864E885CAE285D92961A2A9B3FD8C92616D28DEC6"
+  },
+  "semanticBoundary": {
+    "b51DedicatedHistoricalCorpusMaterialized": true,
+    "b51HistoricalEvidencePreservedWithoutBrailleTransformation": true,
+    "b51MeansAllLoweringRulesCovered": false,
+    "germanRuntimeExecutable": false,
+    "runtimeConformanceProven": false,
+    "runtimeExecutionClaimed": false,
+    "wholeB5Closed": false,
+    "phase15_5Closed": false
+  },
+  "closure": {
+    "repoLevelClosureMaterialized": true,
+    "repoLevelClosureEligible": true,
+    "scopeClosed": "15.5B5.1",
+    "disposition": "B5_1_REPO_LEVEL_CLOSED_WITH_NON_EXECUTABLE_RUNTIME_BOUNDARY",
+    "doesNotCloseWholeB5": true,
+    "doesNotClosePhase15_5": true
+  },
+  "next": "15.5B5.1P_DURABLE_CLOSURE_VERIFICATION"
+}
