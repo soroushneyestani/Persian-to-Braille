@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B4.3b",
+  "id": "de-basisschrift-indicator-state-policy-lowering-model",
+  "status": "INDICATOR_STATE_POLICY_LOWERING_MODEL_FROZEN",
+  "baseline": {
+    "branch": "phase15-german-braille",
+    "head": "202e5f023e0b678a194f32ae9e8715e76b685769",
+    "remoteHead": "202e5f023e0b678a194f32ae9e8715e76b685769"
+  },
+  "source": {
+    "b43aDiscoveryPath": "C:\\Users\\Soroush\\AppData\\Local\\Temp\\braille-hub-phase15-5\\phase15-5b4-3a-indicator-state-policy-discovery.py",
+    "b43aDiscoverySha256": "4A2B820151F76046C201051B1C217F29975653B9670731AE55FF3A8CEA80AFC9",
+    "executionAdmissionPath": "spec/de/execution-admission/de-basisschrift.json",
+    "executionAdmissionSha256": "C6075320C12F92B2299535BAD5455EB5DFD270BAF533681B4FE3D4F3637F0EB1",
+    "priorB42cIrPath": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+    "priorB42cIrSha256": "5BD7D0C5561E490DD3031505312309E0747A1B1B543575E8A3BAE5FF15193D9B"
+  },
+  "loweringModel": {
+    "modelKind": "GERMAN_EXECUTION_IR",
+    "profile": "de-basisschrift",
+    "scope": {
+      "loweringCandidates": 123,
+      "b43Rules": 62,
+      "distribution": {
+        "B2_STATEFUL": 8,
+        "B3_INDICATOR": 20,
+        "B3_STATE_SCOPE": 12,
+        "B3_POLICY_SELECTION": 22
+      },
+      "ruleIds": [
+        "DE-ACCENT-002",
+        "DE-ACCENT-003",
+        "DE-ACCENT-004",
+        "DE-ACCENT-005",
+        "DE-CASE-001",
+        "DE-CASE-003",
+        "DE-CASE-004",
+        "DE-CASE-005",
+        "DE-CASE-006",
+        "DE-CASE-008",
+        "DE-CASE-011",
+        "DE-CASE-012",
+        "DE-CASE-013",
+        "DE-CASE-014",
+        "DE-CASE-015",
+        "DE-CASE-021",
+        "DE-CB-003",
+        "DE-CB-005",
+        "DE-CB-006",
+        "DE-CB-007",
+        "DE-CB-009",
+        "DE-CB-010",
+        "DE-CB-013",
+        "DE-EMPH-002",
+        "DE-EMPH-003",
+        "DE-EMPH-004",
+        "DE-EMPH-005",
+        "DE-EMPH-006",
+        "DE-EMPH-007",
+        "DE-EMPH-008",
+        "DE-EMPH-009",
+        "DE-EMPH-010",
+        "DE-EMPH-012",
+        "DE-EMPH-013",
+        "DE-EMPH-014",
+        "DE-EMPH-015",
+        "DE-FLANG-001",
+        "DE-FLANG-003",
+        "DE-FLANG-006",
+        "DE-FLANG-007",
+        "DE-FLANG-008",
+        "DE-FLANG-010",
+        "DE-FLANG-011",
+        "DE-FLANG-012",
+        "DE-MATH-001",
+        "DE-MATH-003",
+        "DE-MATH-007",
+        "DE-MATH-008",
+        "DE-MATH-010",
+        "DE-MATH-012",
+        "DE-MATH-014",
+        "DE-MATH-015",
+        "DE-MATH-016",
+        "DE-NUM-001",
+        "DE-NUM-002",
+        "DE-NUM-004",
+        "DE-NUM-005",
+        "DE-NUM-007",
+        "DE-NUM-009",
+        "DE-SPECIAL-001",
+        "DE-STROKE-010",
+        "DE-STROKE-014"
+      ],
+      "scopeBindingsCanonicalSha256": "188970728D5F8E704823B85E87579E55C46C124959FCE535942BF25C57CF638A"
+    },
+    "primaryPrimitiveCrosswalk": {
+      "B2_RUNTIME_CLASSIFICATION:STATEFUL": {
+        "primaryPrimitive": "STATE_MACHINE_TRANSITION",
+        "count": 8,
+        "runtimeOwnerPolicy": "PRESERVE_EXISTING_RUNTIME_OWNER",
+        "implementationBoundary": "MODEL_ONLY_NO_STATE_MACHINE_IMPLEMENTATION"
+      },
+      "B3_CONTRACT_ROLE:INDICATOR": {
+        "primaryPrimitive": "INDICATOR_EMISSION",
+        "count": 20,
+        "runtimeOwnerPolicy": "DERIVE_DURING_MATERIALIZATION",
+        "implementationBoundary": "MODEL_ONLY_NO_INDICATOR_EMISSION_IMPLEMENTATION"
+      },
+      "B3_CONTRACT_ROLE:STATE_SCOPE": {
+        "primaryPrimitive": "STATE_SCOPE_CONTROL",
+        "count": 12,
+        "runtimeOwnerPolicy": "DERIVE_DURING_MATERIALIZATION",
+        "implementationBoundary": "MODEL_ONLY_NO_SCOPE_RUNTIME_IMPLEMENTATION"
+      },
+      "B3_CONTRACT_ROLE:POLICY_SELECTION": {
+        "primaryPrimitive": "POLICY_SELECTION",
+        "count": 22,
+        "runtimeOwnerPolicy": "DERIVE_DURING_MATERIALIZATION",
+        "implementationBoundary": "MODEL_ONLY_NO_POLICY_RESOLVER_IMPLEMENTATION"
+      }
+    },
+    "principles": [
+      "PRIMARY_PRIMITIVE_FOLLOWS_FROZEN_SOURCE_CLASSIFICATION",
+      "A_PRIMARY_PRIMITIVE_DOES_NOT_EXCLUDE_AUXILIARY_PRIMITIVES",
+      "AUXILIARY_PRIMITIVES_REQUIRE_EXACT_CANONICAL_SEMANTIC_ADJUDICATION",
+      "INDICATOR_FORM_IS_NOT_YET_INDICATOR_EXECUTION",
+      "STATE_DESCRIPTION_IS_NOT_YET_STATE_MACHINE_IMPLEMENTATION",
+      "POLICY_DESCRIPTION_IS_NOT_YET_POLICY_RESOLUTION",
+      "LOWERING_IS_DERIVED_NOT_CANONICAL_MUTATION",
+      "LOWERING_IS_NOT_RUNTIME_REGISTRATION"
+    ],
+    "auxiliaryMaterializationPolicy": {
+      "status": "NOT_YET_ADJUDICATED",
+      "allowedFuturePrimitiveFamilies": [
+        "INDICATOR_FORM",
+        "STATE_TRANSITION",
+        "STATE_TERMINATION",
+        "STATE_SCOPE_BOUNDARY",
+        "POLICY_BRANCH",
+        "DEPENDENCY_EDGE",
+        "PROFILE_OR_MODE_SELECTION"
+      ],
+      "selectionMethod": "EXACT_RULE_BY_RULE_CANONICAL_SEMANTIC_ADJUDICATION",
+      "heuristicSemanticCountsNormative": false
+    },
+    "executionBoundary": {
+      "loweringMaterialized": false,
+      "stateMachineImplemented": false,
+      "indicatorEmissionImplemented": false,
+      "scopeRuntimeImplemented": false,
+      "policyResolverImplemented": false,
+      "coreModified": false,
+      "translatorModified": false,
+      "executableSpecificationGenerated": false,
+      "germanRuntimeGenerated": false,
+      "germanRuntimeRegistered": false,
+      "persianRuntimeUnchanged": true
+    },
+    "nextRequiredLayer": "EXACT_INDICATOR_STATE_POLICY_SEMANTIC_ADJUDICATION"
+  },
+  "scopeBindings": [
+    {
+      "ruleId": "DE-ACCENT-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-002.json",
+      "canonicalRuleSha256": "96C91532EA41F8E36F30CF2D6DECFF45326DEF62C305209B573A2703984362C3",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-003.json",
+      "canonicalRuleSha256": "2AC1E292E411D36A15E3BDD4ED77DB1C852183C21EF57287644944855EB8DD7C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-004.json",
+      "canonicalRuleSha256": "E092016A8D12D6CE551CB56DF49B11A1580AB22ACECB2D91D2EB94F0935CC7CA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-ACCENT-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-accent-005.json",
+      "canonicalRuleSha256": "57AF1AA0E2C117DEE96C43E26961F4E453D1F76070AA3BC5844CD236C4FF2D44",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-CASE-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-001.json",
+      "canonicalRuleSha256": "BC0A06F207D842CF9D899A7BC7A0544E74244BC19224CB58E21D2A071985B5E0",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-003.json",
+      "canonicalRuleSha256": "2A4E1C8001D53D7877CBA5860350E08EDF1B8E78BF7AAFAF5603546B1B914965",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-004.json",
+      "canonicalRuleSha256": "D797309FCDC928DD0D32FA18B3E58520A29971F31DEABD54B37F4407804A798F",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-005.json",
+      "canonicalRuleSha256": "DE30ED67ABF7B8ACD5AC4A9ACE5D1FDFD74AB3AFBAC5BB7CD8157B46A352F8D1",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-006.json",
+      "canonicalRuleSha256": "8440A4C7FF4E5A21E5892EB571ABEC5DD50CCF0A2829540AF9E404885483B213",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-008.json",
+      "canonicalRuleSha256": "95BCD5A2FFA49A3CE7911CF786EA341D7805D9BD688CEFC5E6E7E5E864BFAD84",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-011.json",
+      "canonicalRuleSha256": "AFC0610C09E83D90437B4E4ED7E6273E6F145505CB6DF00973D5E59A1FE081CE",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-012.json",
+      "canonicalRuleSha256": "8A327D0721283C12F1A5975885AE27FA18A0F3146E27B7A5C74DB35F1F4B47C4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-013.json",
+      "canonicalRuleSha256": "5D1AB3894AF6FFFDBD3114119EB655975C812CC1AE4A5B0E574FCAB125646E6C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-014.json",
+      "canonicalRuleSha256": "0059B3963147E23EEEFE4AF3BFF4097AD4337EE16E94F4100EB0E9B35E4486DE",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-015.json",
+      "canonicalRuleSha256": "6B731DD9255B8B3C513A83338F39D8CDBADD28131EFC1543388513AD0A770F17",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-case-021.json",
+      "canonicalRuleSha256": "704DE7BC5C656E7129C9F9FB79585066D679AFC5E3A956609D88BA6B932484A7",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-003.json",
+      "canonicalRuleSha256": "3278A5140EF3EB63D29D04592CD5DBAD8BF00F3E98054C7E75ABDE856B215992",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-005.json",
+      "canonicalRuleSha256": "0A2DB73C85C5F9CB16BA4E92E33557924354D1935F3733B162A0AF9A79A17D19",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-006.json",
+      "canonicalRuleSha256": "1CD753493F159267642327D4CBBD0FB451F0C4703834FA6341CCBB721FEDCBD5",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-007.json",
+      "canonicalRuleSha256": "1ED93AF0C2C8EF0316CA44B0BFC1CBED2D8C524EDAF21C4660403298F507C963",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-009.json",
+      "canonicalRuleSha256": "79472F54A318259DA30E61AE92613BAB1CB8E247D91A20234767EFACDBFFF967",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-010.json",
+      "canonicalRuleSha256": "35B01CE509087706E07DD4636A816D8A0A16A51CB4066FBB293BB26266AF7938",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-cb-013.json",
+      "canonicalRuleSha256": "AE6F8D41DE47B6F5A54390AB347C875C27DAAECEC63E6C5791A27B81E4D84A6B",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-002.json",
+      "canonicalRuleSha256": "4C667147B3AA07F93F122B2DD235D71D62FB1A9E0FC8BC05CF671A1753CA7EA0",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-003.json",
+      "canonicalRuleSha256": "1125B0FDC394BA42ACF1540C7D5997747E35C79AF19973E5095F82B555007840",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-004.json",
+      "canonicalRuleSha256": "192C30F84511C1405304A471EEE87D94E51AB9AAFFF317C88ED6A49D16F59BC8",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-005.json",
+      "canonicalRuleSha256": "7121294053A45A73B4656608416ABDA0F9368C7426F531964DD6E869B8BDDB87",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-006.json",
+      "canonicalRuleSha256": "D5A5C36BAFB08B99DBB289456096634AB3336D3CF270725212DAF8DF6145C8C4",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-007.json",
+      "canonicalRuleSha256": "2FB902EF51FD63B14871A6D2719FC3963C3C6F402ED4A471925FD0A0D7951547",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-008.json",
+      "canonicalRuleSha256": "327A038FF68F024A9EC7D99CA200F60C59E5AC4F88771959BED969052A836815",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-009.json",
+      "canonicalRuleSha256": "BE792AA0DB513F233FE6836F5E13C0EFDAF69AC8A01CE6BF64854BD441FCA877",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-010.json",
+      "canonicalRuleSha256": "DE05F21DF36FE5095C0CC72EE31CB0A14A3E63BD1FAEC5797A1E42BA2D3C4FFC",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-012.json",
+      "canonicalRuleSha256": "039C0F03A1FD1D52ABCA2A3E184C7D7ADF6CDF6EA11460353D43205C48C7ED17",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-013.json",
+      "canonicalRuleSha256": "DDCF91EF333D72182A49E0FC1A13394A40C45CBADE5F86FE5B96664DCC70DA18",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-014.json",
+      "canonicalRuleSha256": "169FDD5ECAE5D8C78929EBE0ABAEB894740D2C2CA07A0E29EE4A76F1E0740C2A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-emph-015.json",
+      "canonicalRuleSha256": "D263E300770C27F9781D0AA264505FA4A9D07D36046A93B4184F52FEF0F37FD0",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-001.json",
+      "canonicalRuleSha256": "2565740C8DFDE4FC5F2759D8FCA1F424029052563F394247AAEFC09C02DEB154",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-003.json",
+      "canonicalRuleSha256": "77EE2749A9F8B77854788991D41AE0C906AAD3FEFDE8F47A3EF424987127EBF0",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-006.json",
+      "canonicalRuleSha256": "209073BC94034D4ACF7948B5B827C50E0FD0A5B58FA8FE787CA97EB0D996739A",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-007.json",
+      "canonicalRuleSha256": "A066449F50AC519B7FF3E59FC21C436FB91F77F8912416CAB5788B360031DC3C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-008.json",
+      "canonicalRuleSha256": "040BB679A92E3B551263B8066C34D3CECAF5BB27395B0256DAAB05DE261195CD",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-010.json",
+      "canonicalRuleSha256": "70327B49C04DE2E53471A3EA4CCD6842571BF56DCED2986B0A211B1598A9FDAA",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-011.json",
+      "canonicalRuleSha256": "C76B62FF37BDB86A56ECF31075E44BD6CAD0DCE27D47BF491A648FB802C76D07",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-flang-012.json",
+      "canonicalRuleSha256": "D89952C39FA056519784F53BC50365A679F0ACA634876433B1831ABD3AFF763F",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-001.json",
+      "canonicalRuleSha256": "65EFFCDD74A265F8D4F8AA5FA26037BA04A32C33728FB4B2BBC74B842DC926E8",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "STATE_SCOPE",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-003.json",
+      "canonicalRuleSha256": "16B972D67D47E0E7D4B8F8A6A2699F29A828DEF8ED0DF676E868286C92FAC7EF",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-state-scope.json"
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-007.json",
+      "canonicalRuleSha256": "EBCDD2846BF412B384885AD6C3253F7A5D99B0E9AA4883FC58CFA02E0833AE5F",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-008.json",
+      "canonicalRuleSha256": "E16AF7B2952C2ADB95A9FAE6858B20B36A49988DB8FB4263791568D5AFA1802C",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-010.json",
+      "canonicalRuleSha256": "12B4EE1EABC481D8A149CA9B03D3721C8EC5A61903FB8C7703966459633C0A29",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-012.json",
+      "canonicalRuleSha256": "DFA89AA9DEB0552CFCE8D64D992D278D6BAFF22A0363CB06C15617564B0C7FF5",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-014.json",
+      "canonicalRuleSha256": "33AE29B3248517455AB071551C2F7ED2BB4B9E17F7F2CD0032DA02326E7BDCCF",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-015.json",
+      "canonicalRuleSha256": "0DDC8235382902D6B6B953F9335CDC1B8DBDC866378889E0F9E1D3C7309FE25D",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "POLICY_SELECTION",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-math-016.json",
+      "canonicalRuleSha256": "B6E6ED69FA07BB82B2A148D59686A9066F31842242356AFF383E81E8DCD70F51",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-policy-selection.json"
+    },
+    {
+      "ruleId": "DE-NUM-001",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-001.json",
+      "canonicalRuleSha256": "AC4238A408AB9CB8C5720DC05632AA05A7B2932744C67979D06C3B519B8B7C5E",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-002.json",
+      "canonicalRuleSha256": "38496BD418D0FEA8CCBAB6D0731CF55CB959FC5CEFE0C5ED2CC7AFF0FBD320AD",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-004.json",
+      "canonicalRuleSha256": "EAD7EDD74CB04E0E06586D774BA32D0DF4DBAE06BEC741B214CEA4D791D75547",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-005.json",
+      "canonicalRuleSha256": "DA0E10D221CCCAB6D42E348B68A83C5C149B652B336CB7AEBF1A5B6A20DF4848",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-007.json",
+      "canonicalRuleSha256": "F7D0AF5536E9B3E9CC4E4D10E02263CD9532C827A9EDA379881839B6B9EF94A8",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-num-009.json",
+      "canonicalRuleSha256": "0E1DE2DD2B0AD6A39CB91207FA3694F1CD2E05A7D35D95D2D7895E61E3793A3C",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-numeric.json"
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "sourceLayer": "B3_CONTRACT_ROLE",
+      "sourceClassification": "INDICATOR",
+      "runtimeOwner": null,
+      "canonicalRulePath": "spec/de/rules/records/de-special-001.json",
+      "canonicalRuleSha256": "6155631C8C6B34AB3BEDF5BA15A180DA91FDC856888BB1F0DACFD35618A90722",
+      "sourceContainerPath": "spec/de/contracts/de-basisschrift-indicators.json"
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-010.json",
+      "canonicalRuleSha256": "997BF0D6A397E1BBE0E230EBDD2B7323634BF4DB8AA983D60F13997A4E2EFFCF",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json"
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "sourceLayer": "B2_RUNTIME_CLASSIFICATION",
+      "sourceClassification": "STATEFUL",
+      "runtimeOwner": "GERMAN_NUMERIC_STATE_MACHINE",
+      "canonicalRulePath": "spec/de/rules/records/de-stroke-014.json",
+      "canonicalRuleSha256": "030F4FB8DD495C3CDCEB5D780F2EF63B6E2728DAEF466A571F7F20693506F517",
+      "sourceContainerPath": "spec/de/runtime-classification/de-basisschrift-punctuation.json"
+    }
+  ],
+  "determinism": {
+    "loweringModelCanonicalJsonSha256": "D2D0911E26EF4652A83CDE5157CBB622861BAAB0EF8FC449783C5AED289B4266",
+    "scopeBindingsCanonicalJsonSha256": "188970728D5F8E704823B85E87579E55C46C124959FCE535942BF25C57CF638A"
+  },
+  "next": "15.5B4.3c_EXACT_SEMANTIC_ADJUDICATION"
+}
