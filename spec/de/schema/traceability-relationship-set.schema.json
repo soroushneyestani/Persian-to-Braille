@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://braille-hub.local/schemas/de/traceability-relationship-set.schema.json",
+  "title": "German Basisschrift Conformance Traceability Relationship Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "phase",
+    "profile",
+    "status",
+    "baseline",
+    "sourceAdjudication",
+    "independentValidation",
+    "summary",
+    "records",
+    "semanticBoundary",
+    "next"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "phase": {
+      "const": "15.5B5.2D"
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "status": {
+      "const": "STRUCTURAL_TRACEABILITY_MATERIALIZED_NON_EXECUTABLE"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repositoryCommitBeforeMaterialization",
+        "remoteCommitBeforeMaterialization",
+        "workingTreeCleanBeforeMaterialization"
+      ],
+      "properties": {
+        "repositoryCommitBeforeMaterialization": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "remoteCommitBeforeMaterialization": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "workingTreeCleanBeforeMaterialization": {
+          "const": true
+        }
+      }
+    },
+    "sourceAdjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "auditorScriptSha256",
+        "modelCanonicalSha256",
+        "jsonByteSha256"
+      ],
+      "properties": {
+        "phase": {
+          "const": "15.5B5.2B"
+        },
+        "auditorScriptSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        },
+        "modelCanonicalSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        },
+        "jsonByteSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        }
+      }
+    },
+    "independentValidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "validatorScriptSha256",
+        "validationModelCanonicalSha256",
+        "validationJsonByteSha256",
+        "ruleByRuleExact",
+        "relationshipPartitionExact",
+        "perLoweringPhaseExact"
+      ],
+      "properties": {
+        "phase": {
+          "const": "15.5B5.2C"
+        },
+        "validatorScriptSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        },
+        "validationModelCanonicalSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        },
+        "validationJsonByteSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        },
+        "ruleByRuleExact": {
+          "const": true
+        },
+        "relationshipPartitionExact": {
+          "const": true
+        },
+        "perLoweringPhaseExact": {
+          "const": true
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "admissionRules",
+        "loweringRules",
+        "historicalEvidenceRules",
+        "fixtureGradeCoveredRules",
+        "historicalEvidenceNotFixtureGradeCovered",
+        "newEvidenceRequired",
+        "nonLoweredAdmissionRules",
+        "caseRuleLinks",
+        "perLoweringPhase"
+      ],
+      "properties": {
+        "admissionRules": {
+          "const": 150
+        },
+        "loweringRules": {
+          "const": 123
+        },
+        "historicalEvidenceRules": {
+          "const": 74
+        },
+        "fixtureGradeCoveredRules": {
+          "const": 22
+        },
+        "historicalEvidenceNotFixtureGradeCovered": {
+          "const": 52
+        },
+        "newEvidenceRequired": {
+          "const": 49
+        },
+        "nonLoweredAdmissionRules": {
+          "const": 27
+        },
+        "caseRuleLinks": {
+          "const": 38
+        },
+        "perLoweringPhase": {
+          "type": "object"
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 123,
+      "maxItems": 123,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ruleId",
+          "loweringPhase",
+          "loweringArtifact",
+          "admissionClass",
+          "canonicalAdmissionIdentity",
+          "corpus",
+          "relationshipClass",
+          "executionBoundary"
+        ],
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "loweringPhase": {
+            "enum": [
+              "B4.2",
+              "B4.3",
+              "B4.4"
+            ]
+          },
+          "loweringArtifact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "admissionClass": {
+            "enum": [
+              "LOWERING_WITH_HISTORICAL_EVIDENCE",
+              "LOWERING_REQUIRES_NEW_EVIDENCE"
+            ]
+          },
+          "canonicalAdmissionIdentity": {
+            "type": "object"
+          },
+          "corpus": {
+            "type": "object"
+          },
+          "relationshipClass": {
+            "enum": [
+              "HISTORICAL_FIXTURE_GRADE_COVERED",
+              "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+              "NEW_EVIDENCE_REQUIRED"
+            ]
+          },
+          "executionBoundary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "runtimeExecutable",
+              "runtimeConformanceProven",
+              "runtimeExecutionClaimed"
+            ],
+            "properties": {
+              "runtimeExecutable": {
+                "const": false
+              },
+              "runtimeConformanceProven": {
+                "const": false
+              },
+              "runtimeExecutionClaimed": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "semanticBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structuralTraceabilityMaterialized",
+        "newNormativeEvidenceAuthored",
+        "absenceFromCorpusMeansInherentlyNonVector",
+        "allLoweringRulesCorpusCovered",
+        "germanRuntimeExecutable",
+        "runtimeConformanceProven",
+        "runtimeExecutionClaimed",
+        "wholeB5Closed",
+        "phase15_5Closed"
+      ],
+      "properties": {
+        "structuralTraceabilityMaterialized": {
+          "const": true
+        },
+        "newNormativeEvidenceAuthored": {
+          "const": false
+        },
+        "absenceFromCorpusMeansInherentlyNonVector": {
+          "const": false
+        },
+        "allLoweringRulesCorpusCovered": {
+          "const": false
+        },
+        "germanRuntimeExecutable": {
+          "const": false
+        },
+        "runtimeConformanceProven": {
+          "const": false
+        },
+        "runtimeExecutionClaimed": {
+          "const": false
+        },
+        "wholeB5Closed": {
+          "const": false
+        },
+        "phase15_5Closed": {
+          "const": false
+        }
+      }
+    },
+    "next": {
+      "const": "15.5B5.2D_DURABLE_TRACEABILITY_VERIFICATION"
+    }
+  }
+}

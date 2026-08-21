@@ -1,0 +1,2833 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5B5.2D",
+  "profile": "de-basisschrift",
+  "status": "STRUCTURAL_TRACEABILITY_MATERIALIZED_NON_EXECUTABLE",
+  "baseline": {
+    "repositoryCommitBeforeMaterialization": "91d2200cb7f348416b59c43e79dfca23562b502e",
+    "remoteCommitBeforeMaterialization": "91d2200cb7f348416b59c43e79dfca23562b502e",
+    "workingTreeCleanBeforeMaterialization": true
+  },
+  "sourceAdjudication": {
+    "phase": "15.5B5.2B",
+    "auditorScriptSha256": "289A4B2AE3CB4C5117087F3931E8EB68F728EAD1664C2CC24EBA5AAD3771A899",
+    "modelCanonicalSha256": "354C0224447653C8A57F4B549BE97A84F336F6F84118484A653B5F28CFF44D3E",
+    "jsonByteSha256": "86EED4D9227E876A23B85D4C25E6F497A0008DBA2473D985C2DB755EFA48C17F"
+  },
+  "independentValidation": {
+    "phase": "15.5B5.2C",
+    "validatorScriptSha256": "8174F813E958B94FF4FD908A09DE24E0A9F558D372A4C4BBF92D1C34FC059E93",
+    "validationModelCanonicalSha256": "CDF3BADAFB710E34D63D6509D255E83A1BAC83CAD2789D37ECB33D9C0E4251A0",
+    "validationJsonByteSha256": "166157996B5E252AA6449CBD08A123E1647BBACB4653062DFB2DFEDFA65E9921",
+    "ruleByRuleExact": true,
+    "relationshipPartitionExact": true,
+    "perLoweringPhaseExact": true
+  },
+  "summary": {
+    "admissionRules": 150,
+    "loweringRules": 123,
+    "historicalEvidenceRules": 74,
+    "fixtureGradeCoveredRules": 22,
+    "historicalEvidenceNotFixtureGradeCovered": 52,
+    "newEvidenceRequired": 49,
+    "nonLoweredAdmissionRules": 27,
+    "caseRuleLinks": 38,
+    "perLoweringPhase": {
+      "B4.2": {
+        "HISTORICAL_FIXTURE_GRADE_COVERED": 4,
+        "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED": 11,
+        "NEW_EVIDENCE_REQUIRED": 10
+      },
+      "B4.3": {
+        "HISTORICAL_FIXTURE_GRADE_COVERED": 14,
+        "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED": 27,
+        "NEW_EVIDENCE_REQUIRED": 21
+      },
+      "B4.4": {
+        "HISTORICAL_FIXTURE_GRADE_COVERED": 4,
+        "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED": 14,
+        "NEW_EVIDENCE_REQUIRED": 18
+      }
+    }
+  },
+  "records": [
+    {
+      "ruleId": "DE-ACCENT-002",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-ACCENT-CASE-001",
+          "DE-ACCENT-CASE-003",
+          "DE-ACCENT-CASE-005"
+        ],
+        "fixtureLinkCount": 3
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-ACCENT-CASE-002",
+          "DE-ACCENT-CASE-004",
+          "DE-ACCENT-CASE-006",
+          "DE-ACCENT-CASE-007"
+        ],
+        "fixtureLinkCount": 4
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-004",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-ACCENT-005",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-001",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-002",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-004",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-001",
+          "DE-CASE-CASE-008"
+        ],
+        "fixtureLinkCount": 2
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-005",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-006",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-002"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-007",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-008",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-004",
+          "DE-CASE-CASE-007"
+        ],
+        "fixtureLinkCount": 2
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-009",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-010",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-005",
+          "DE-CASE-CASE-006"
+        ],
+        "fixtureLinkCount": 2
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-011",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-012",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-007"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-013",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-007"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-014",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-008"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-015",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-009"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-017",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-CASE-CASE-011"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-018",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CASE-021",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-004",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-005",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-006",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-007",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-008",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-009",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-010",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-011",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-012",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-013",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-014",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-015",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-CB-016",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-002",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-004",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-005",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-006",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-007",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-008",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-009",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-010",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-011",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-012",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-013",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-014",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-EMPH-015",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-001",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-002",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-004",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-006",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-007",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-008",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-010",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-011",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-FLANG-012",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-002",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-003",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-004",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-005",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-006",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-007",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-INWORD-008",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-001",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-002",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-003",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-MATH-CASE-002"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-004",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-005",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-006",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-007",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-008",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-009",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-010",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-011",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-012",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-014",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-015",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-016",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-017",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-018",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-MATH-020",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-001",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-001",
+          "DE-NUM-CASE-002",
+          "DE-SPECIAL-CASE-001",
+          "DE-SPECIAL-CASE-002",
+          "DE-SPECIAL-CASE-003"
+        ],
+        "fixtureLinkCount": 5
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-002",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-003",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-002"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-004",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-005",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-006",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-003"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-007",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-005",
+          "DE-NUM-CASE-006"
+        ],
+        "fixtureLinkCount": 2
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-008",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-009",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-004"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-010",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-011",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-012",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-NUM-CASE-006"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-014",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-NUM-015",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-001",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-SPECIAL-CASE-001"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-002",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-SPECIAL-CASE-001",
+          "DE-SPECIAL-CASE-002",
+          "DE-SPECIAL-CASE-003"
+        ],
+        "fixtureLinkCount": 3
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-003",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-SPECIAL-CASE-002",
+          "DE-SPECIAL-CASE-003"
+        ],
+        "fixtureLinkCount": 2
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-SPECIAL-004",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-001",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-002",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": true,
+        "fixtureIds": [
+          "DE-STROKE-CASE-001"
+        ],
+        "fixtureLinkCount": 1
+      },
+      "relationshipClass": "HISTORICAL_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-003",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-004",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-005",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-006",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-007",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-008",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-009",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-010",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-012",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-013",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-014",
+      "loweringPhase": "B4.3",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-indicator-state-policy.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-016",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-STROKE-017",
+      "loweringPhase": "B4.4",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-contextual-behavioral.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-001",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_REQUIRES_NEW_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "NEW_EVIDENCE_REQUIRED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-002",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-003",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-004",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    },
+    {
+      "ruleId": "DE-TABLE-006",
+      "loweringPhase": "B4.2",
+      "loweringArtifact": "spec/de/execution-lowering/de-basisschrift-direct-structural.json",
+      "admissionClass": "LOWERING_WITH_HISTORICAL_EVIDENCE",
+      "canonicalAdmissionIdentity": {
+        "admissionRecordPresent": true,
+        "loweringRecordPresent": true,
+        "sameRuleId": true
+      },
+      "corpus": {
+        "covered": false,
+        "fixtureIds": [],
+        "fixtureLinkCount": 0
+      },
+      "relationshipClass": "HISTORICAL_EVIDENCE_PRESENT_BUT_NOT_DEDICATED_FIXTURE_GRADE_COVERED",
+      "executionBoundary": {
+        "runtimeExecutable": false,
+        "runtimeConformanceProven": false,
+        "runtimeExecutionClaimed": false
+      }
+    }
+  ],
+  "semanticBoundary": {
+    "structuralTraceabilityMaterialized": true,
+    "newNormativeEvidenceAuthored": false,
+    "absenceFromCorpusMeansInherentlyNonVector": false,
+    "allLoweringRulesCorpusCovered": false,
+    "germanRuntimeExecutable": false,
+    "runtimeConformanceProven": false,
+    "runtimeExecutionClaimed": false,
+    "wholeB5Closed": false,
+    "phase15_5Closed": false
+  },
+  "next": "15.5B5.2D_DURABLE_TRACEABILITY_VERIFICATION"
+}
