@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://braille-hub.local/schemas/de/dedicated-conformance-fixture.schema.json",
+  "title": "German Basisschrift Dedicated Historical Conformance Fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "profile",
+    "fixtureClass",
+    "semanticFamily",
+    "input",
+    "expectation",
+    "ruleTrace",
+    "historicalProvenance",
+    "executionBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "const": "de-basisschrift"
+    },
+    "fixtureClass": {
+      "const": "HISTORICAL_FIXTURE_GRADE"
+    },
+    "semanticFamily": {
+      "enum": [
+        "STANDARD_CELL_VECTOR",
+        "CORE_CELL_VECTOR",
+        "BOUNDARY_CONDITIONAL_VECTOR"
+      ]
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceField",
+        "value"
+      ],
+      "properties": {
+        "sourceField": {
+          "enum": [
+            "input",
+            "inputShape"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceField",
+        "value"
+      ],
+      "properties": {
+        "sourceField": {
+          "enum": [
+            "expectedBraille",
+            "expectedBrailleCore"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "minProperties": 1
+        }
+      }
+    },
+    "ruleTrace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "linkedLoweringRuleIds",
+        "canonicalSourceRuleIds",
+        "canonicalContractPaths",
+        "canonicalSections"
+      ],
+      "properties": {
+        "linkedLoweringRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalSourceRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalContractPaths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "canonicalSections": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "historicalProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "objectPointer",
+        "sourceObjectCanonicalSha256"
+      ],
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objectPointer": {
+          "type": "string"
+        },
+        "sourceObjectCanonicalSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-F]{64}$"
+        }
+      }
+    },
+    "executionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixtureGradeHistoricalEvidence",
+        "runtimeExecutable",
+        "runtimeConformanceProven"
+      ],
+      "properties": {
+        "fixtureGradeHistoricalEvidence": {
+          "const": true
+        },
+        "runtimeExecutable": {
+          "const": false
+        },
+        "runtimeConformanceProven": {
+          "const": false
+        }
+      }
+    }
+  }
+}

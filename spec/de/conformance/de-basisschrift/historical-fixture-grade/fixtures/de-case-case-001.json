@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-CASE-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "sourceField": "input",
+    "value": "Haus"
+  },
+  "expectation": {
+    "sourceField": "expectedBraille",
+    "value": {
+      "unicode": "⠨⠓⠁⠥⠎",
+      "codepoints": [
+        "U+2828",
+        "U+2813",
+        "U+2801",
+        "U+2825",
+        "U+280E"
+      ],
+      "dots": [
+        "46",
+        "125",
+        "1",
+        "136",
+        "234"
+      ],
+      "cellCount": 5
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CASE-004"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CASE-004"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json"
+    ],
+    "canonicalSections": [
+      "2.6.1"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+    "objectPointer": "/validationCases/0",
+    "sourceObjectCanonicalSha256": "B11FBE1C2076444E58B8A840B41B17CC86C2890806A19211D34765ECEF92CAF3"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-CASE-003",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "sourceField": "input",
+    "value": "5."
+  },
+  "expectation": {
+    "sourceField": "expectedBraille",
+    "value": {
+      "unicode": "⠼⠢",
+      "codepoints": [
+        "U+283C",
+        "U+2822"
+      ],
+      "dots": [
+        "3456",
+        "26"
+      ],
+      "cellCount": 2
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-NUM-006"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-NUM-006"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+    ],
+    "canonicalSections": [
+      "2.3.1.2"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+    "objectPointer": "/syntheticValidationCases/2",
+    "sourceObjectCanonicalSha256": "CFADD905CEDF157E6AAA2EE69A637F395C9B075878981A898CC29A956CA2FB63"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-SPECIAL-CASE-003",
+  "profile": "de-basisschrift",
+  "fixtureClass": "HISTORICAL_FIXTURE_GRADE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "sourceField": "input",
+    "value": "20 €"
+  },
+  "expectation": {
+    "sourceField": "expectedBraille",
+    "value": {
+      "beforeBlank": {
+        "unicode": "⠼⠃⠚",
+        "codepoints": [
+          "U+283C",
+          "U+2803",
+          "U+281A"
+        ],
+        "dots": [
+          "3456",
+          "12",
+          "245"
+        ],
+        "cellCount": 3
+      },
+      "blank": "U+0020_OR_BRAILLE_BLANK",
+      "afterBlank": {
+        "unicode": "⠈⠑",
+        "codepoints": [
+          "U+2808",
+          "U+2811"
+        ],
+        "dots": [
+          "4",
+          "15"
+        ],
+        "cellCount": 2
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-NUM-001",
+      "DE-SPECIAL-002",
+      "DE-SPECIAL-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-NUM-001",
+      "DE-SPECIAL-002",
+      "DE-SPECIAL-003"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+      "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json"
+    ],
+    "canonicalSections": [
+      "2.3.1.1",
+      "2.8.2"
+    ]
+  },
+  "historicalProvenance": {
+    "file": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+    "objectPointer": "/validationCases/9",
+    "sourceObjectCanonicalSha256": "8EAB42917BFB708ECBA5341DBCCE538240866BDA392130A084C80BD52CD384C6"
+  },
+  "executionBoundary": {
+    "fixtureGradeHistoricalEvidence": true,
+    "runtimeExecutable": false,
+    "runtimeConformanceProven": false
+  }
+}
