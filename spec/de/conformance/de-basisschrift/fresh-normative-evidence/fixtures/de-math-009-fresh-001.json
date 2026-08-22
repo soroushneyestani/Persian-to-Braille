@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "de-math-009-fresh-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "LOWER_INDEX",
+      "rearOrder": [
+        "LOWER_INDEX",
+        "UPPER_INDEX"
+      ]
+    }
+  },
+  "expectation": {
+    "value": {
+      "unicode": "⠡",
+      "codepoints": [
+        "U+2821"
+      ],
+      "dots": [
+        "16"
+      ],
+      "cellCount": 1
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-MATH-009"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-MATH-009"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+    ],
+    "canonicalSections": [
+      "2.10"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "canonicalSha256": "AFE2328AD94FCF53C2429B33199D707F99615D2C45CBB90B2826ACA7AC5DCD75",
+        "jsonPointer": "/rules/8",
+        "section": "2.10"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-math-009.json",
+        "byteSha256": "479D1D346DA885E153A72B9AD9AAB00B7E60804FB92CEB51CAEED0748305F881",
+        "canonicalSha256": "6D9979A2A44B3B310498F4CFEE95A8B0E41CDFED09E35D2B6B198C04CD230AB5",
+        "section": "2.10"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_SOURCE_VECTOR_WITH_STRUCTURED_PREDICATE_SCENARIO",
+      "expectedVectorCanonicalSha256": "78FA875A485254634DCBA4C5828414A40DCD563A281D5FDFB7DAE2C5C5CE26F4"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

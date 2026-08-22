@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "de-num-015-fresh-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "NUMBER_UNIT_BOUNDARY"
+    }
+  },
+  "expectation": {
+    "value": {
+      "lineBreakAllowed": false
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-NUM-015"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-NUM-015"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+    ],
+    "canonicalSections": [
+      "2.4.2"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "byteSha256": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+        "canonicalSha256": "3EE3E6A59EBE71E8F7F665276DD98BF2361C3D63D963B19C5B598FA7F6FC2BA1",
+        "jsonPointer": "/rules/14",
+        "section": "2.4.2"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-num-015.json",
+        "byteSha256": "650F015F14652039A3AAB9780B4B9A482E34C202F0C9DE9D0E1426D56F06A740",
+        "canonicalSha256": "B861D0720A35DC70E6DEB977742418D6565F008BCFC5CF3BCFD456F228D5CE6B",
+        "section": "2.4.2"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_SOURCE_PREDICATE_SCENARIO_EXPECTATION_SPLIT",
+      "expectationCanonicalSha256": "7064FC234E6A2FA3176299737CCF2BDB28DE4B9D4A20A0E922A4C504B3B8A3A9"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

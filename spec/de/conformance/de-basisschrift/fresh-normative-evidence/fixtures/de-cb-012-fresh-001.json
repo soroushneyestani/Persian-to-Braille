@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "de-cb-012-fresh-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "START_MARKER_PLACEMENT"
+    }
+  },
+  "expectation": {
+    "value": {
+      "interveningBlankAllowed": false
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CB-012"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CB-012"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json"
+    ],
+    "canonicalSections": [
+      "2.11"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+        "byteSha256": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+        "canonicalSha256": "C1B50DB16876747D15B3B441364764CC79849217332D94B8EC42CE2217FEADF7",
+        "jsonPointer": "/rules/11",
+        "section": "2.11"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-cb-012.json",
+        "byteSha256": "0CEB954195B529CEB33E4A2C2382FC9B79B7767E41AC81CE1152E8259C4FB720",
+        "canonicalSha256": "031CEEB919D60961DD2DA1326DEB103C2FC76B77724BE144B803703605312115",
+        "section": "2.11"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_SOURCE_PREDICATE_SCENARIO_EXPECTATION_SPLIT",
+      "expectationCanonicalSha256": "280CD7FE4F713551260FD7CBA0403B2898AA7B19CC9185DB922EA33842F3B557"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
