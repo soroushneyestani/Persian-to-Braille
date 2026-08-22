@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-002-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "value": {
+      "structural": true,
+      "ordinaryTextPunctuation": false
+    }
+  },
+  "expectation": {
+    "value": {
+      "unicode": "⠒⠒",
+      "codepoints": [
+        "U+2812",
+        "U+2812"
+      ],
+      "dots": [
+        "25",
+        "25"
+      ],
+      "cellCount": 2
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-TABLE-002"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-TABLE-002"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json"
+    ],
+    "canonicalSections": [
+      "2.12"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+        "byteSha256": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+        "section": "2.12"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE",
+        "path": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+        "byteSha256": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+        "jsonPointer": "/validationCases/0",
+        "section": "2.12"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-table-002.json",
+        "byteSha256": "697939D0DE6383589543E032CF2E15EBD171C944D332A9D465ED99B4509E1645",
+        "section": "2.12"
+      }
+    ],
+    "derivation": {
+      "method": "CANONICAL_MARKER_MATCHES_HISTORICAL_EXPECTED_SEPARATOR",
+      "expectedVectorCanonicalSha256": "14355AD9978B2D05398273B09F3710A633E376DD237A04A0CC6BFC3140BEFA61"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

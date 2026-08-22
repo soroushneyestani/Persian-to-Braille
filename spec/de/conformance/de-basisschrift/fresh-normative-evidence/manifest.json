@@ -17,6 +17,66 @@
       "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-005-fresh-001.json",
       "byteSha256": "4E5DDE12FA7276A601867FD694E31451BDD033A1C8708B0FE9F3660F6E7AB1F9",
       "canonicalSha256": "A77781ED23BAEA2566B794606EA1E58DEE7623B99A3363832061A6DF4CC13C85"
+    },
+    {
+      "byteSha256": "1DB21D70FE8FF533FCB80BAFE6EF5EA56DA08D5B7ADFD58B26A0AF36F24EA8CE",
+      "canonicalSha256": "F9E7D3D31464BA9EDC1CEE9EAB57C24314281B0BE8B65440358607EE822522F6",
+      "id": "DE-CB-015-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-cb-015-fresh-001.json"
+    },
+    {
+      "byteSha256": "C9B87A2EA9B5C06DAEBE858CBFFAFBCCFB20434DD3393AC54603E20D1E54305D",
+      "canonicalSha256": "9C6F7B287EE0A2BECDBFEC43439EF338A5AC3C8429778694F9E2A3E6820D1C0B",
+      "id": "DE-CB-016-BEHAVIOR-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-cb-016-fresh-001.json"
+    },
+    {
+      "byteSha256": "637767AD8D15383FA022C0665CD6C0C4DC7CDDA3AF0D3D594908139C4957FD67",
+      "canonicalSha256": "FC5405CF2FCD3C8FD267A6FC103979010AACD5F699E61ACFC067ABD4CE535C70",
+      "id": "DE-MATH-006-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-006-fresh-001.json"
+    },
+    {
+      "byteSha256": "A7B17D7C42991B7A0710319278784F487A5F24154602876D3626D55597B9CCC7",
+      "canonicalSha256": "36D0119BB380399BFF2E0D9EEE2F0EC4F4DD0AE83B3845980B63EDC7BE7D5921",
+      "id": "DE-MATH-017-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-017-fresh-001.json"
+    },
+    {
+      "byteSha256": "A0D938A419825BB0B509EDEC3392BBDFBB9D36AE2E0DFE0862719419361B4B77",
+      "canonicalSha256": "0A6F1CFA800D3AD643ECB67483693D9CE322CEC8913D85345840D1EBED6B7B7D",
+      "id": "DE-MATH-018-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-018-fresh-001.json"
+    },
+    {
+      "byteSha256": "5C9F6C5A614F778ABA4A76DE7CF7065DF67351F52AE142BE2B9EEAC2CD892FD6",
+      "canonicalSha256": "C093A78CA49256FCD70B6A6C404BEADB66A4E5D39BC7974CC304FBB7861462A3",
+      "id": "DE-MATH-020-BEHAVIOR-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-020-fresh-001.json"
+    },
+    {
+      "byteSha256": "935E26CFD669B483A08AC8B94535FB8F10DD1F00E0E4CFF2B0DA4A9E33CCD3ED",
+      "canonicalSha256": "9F055E3D8152D07C742D601837858B2264EFFD6F4252523B9C5520EC8F557646",
+      "id": "DE-TABLE-002-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-table-002-fresh-001.json"
+    },
+    {
+      "byteSha256": "F288EB6A39AC9B7560396BFDCA6F5F2C78BC7E60C2A5F021DACEB1601852BD1C",
+      "canonicalSha256": "258880B1382203EB2226332839BDF07476DE7C67C3F1F5E197780E3C47CCC0E6",
+      "id": "DE-TABLE-003-BEHAVIOR-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-table-003-fresh-001.json"
+    },
+    {
+      "byteSha256": "79B9F75C196BEAE3BB6770F79968F78FAB55D7F1279DB4DC3E18F67CE3AFD010",
+      "canonicalSha256": "B8E8B1356784A5498180E8E238E4BA830489D323B195F3C6C188727117753875",
+      "id": "DE-TABLE-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-table-004-fresh-001.json"
+    },
+    {
+      "byteSha256": "0C769B54B96D2C9400DC88AC72B1EEADDD7932A6A2EDCF7D66A7D618ED5B0E64",
+      "canonicalSha256": "4F4BE0B24FB7C75CB2C7728DDAC8FAEE935378B1B5126E26867D1ABB77831F80",
+      "id": "DE-TABLE-006-BEHAVIOR-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-table-006-fresh-001.json"
     }
   ],
   "summary": {

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-016-BEHAVIOR-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "TWO_FORM_ATOMICITY"
+    }
+  },
+  "expectation": {
+    "value": {
+      "lineBreakInsideFormAllowed": false
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CB-016"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CB-016"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json"
+    ],
+    "canonicalSections": [
+      "2.11"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+        "byteSha256": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+        "section": "2.11"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE",
+        "path": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+        "byteSha256": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+        "jsonPointer": "/validationCases/13",
+        "section": "2.11"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-cb-016.json",
+        "byteSha256": "9D8B1F0C31AD1F9265AE87BE022F722F79072DECEF841E2E05A0B14C0FC1A083",
+        "section": "2.11"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_RULE_AND_HISTORICAL_BEHAVIOR_ASSERTION",
+      "expectationCanonicalSha256": "F3722093F39358F5DBA9DEE5DEC9963C1F4FCD24CD711627F8653B7E65D45B64"
+    }
+  }
+}
