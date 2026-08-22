@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "de-table-001-fresh-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "LINEARIZED_TABLE_ROW"
+    }
+  },
+  "expectation": {
+    "value": {
+      "representation": "ROW_CELLS_SEQUENTIAL"
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-TABLE-001"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-TABLE-001"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json"
+    ],
+    "canonicalSections": [
+      "2.12"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+        "byteSha256": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+        "canonicalSha256": "AE432D3CFD8B1091210902C35F85CCA4801A516AFC02260190533783E50CA9F5",
+        "jsonPointer": "/rules/0",
+        "section": "2.12"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-table-001.json",
+        "byteSha256": "885698382A0D260196DB1E3778C768B35D54FFA51523EEE453577D2CC0487264",
+        "canonicalSha256": "0CF4A8C9082B0567840FCD9946BBD001ADC54BA2367E15985AE5E4E0342435D8",
+        "section": "2.12"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_SOURCE_PREDICATE_SCENARIO_EXPECTATION_SPLIT",
+      "expectationCanonicalSha256": "412F825BC4D9CA766C5CC725954AE8A46FFA6E5B989FB94A6DF123CE13305718"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

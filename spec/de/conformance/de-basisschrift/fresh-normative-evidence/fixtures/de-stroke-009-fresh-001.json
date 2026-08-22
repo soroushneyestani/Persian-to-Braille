@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "de-stroke-009-fresh-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "SECONDARY_LIST_MARKER"
+    }
+  },
+  "expectation": {
+    "value": {
+      "unicode": "⠐⠤",
+      "codepoints": [
+        "U+2810",
+        "U+2824"
+      ],
+      "dots": [
+        "5",
+        "36"
+      ],
+      "cellCount": 2
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-STROKE-009"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-STROKE-009"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json"
+    ],
+    "canonicalSections": [
+      "2.5.1.4"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+        "byteSha256": "4D5871B65883AA40D49DE44144B2C1D8B2C0E9BFC4800257AAC09ECE8CAF1ABC",
+        "canonicalSha256": "500739BC3388FB14AC1DAA5E9F49813536457986165F2B60EE0CDC3556BB7485",
+        "jsonPointer": "/rules/8",
+        "section": "2.5.1.4"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-stroke-009.json",
+        "byteSha256": "13F40ABF2A8E09CBA56E261176E580672568574B358C7E5296F64BCAAB1028C2",
+        "canonicalSha256": "C52DB25628E324D6CB073DA46710553924968944300980524C4CF6FB89CE1FA4",
+        "section": "2.5.1.4"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_SOURCE_VECTOR_WITH_STRUCTURED_PREDICATE_SCENARIO",
+      "expectedVectorCanonicalSha256": "47ED967B32A4C8F641779D09E3949E835DF9D939AA79B10C8D7C922AC9FAF74D"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
