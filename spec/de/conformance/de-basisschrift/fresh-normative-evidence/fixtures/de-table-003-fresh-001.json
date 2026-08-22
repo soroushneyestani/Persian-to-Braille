@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-TABLE-003-BEHAVIOR-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "SEPARATOR_SPACING",
+      "case": "plain-cell-separator"
+    }
+  },
+  "expectation": {
+    "value": {
+      "expectedBefore": "BRAILLE_BLANK",
+      "expectedAfter": "BRAILLE_BLANK"
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-TABLE-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-TABLE-003"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json"
+    ],
+    "canonicalSections": [
+      "2.12"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+        "byteSha256": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+        "section": "2.12"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE",
+        "path": "docs/architecture/phase-15.1m-bskdl-basisschrift-table-cell-separator-structural-contract.json",
+        "byteSha256": "5E23AD633CD1874C38B358C15E33809C0F9C48756AFAB3DBDAE3C272A47188C9",
+        "jsonPointer": "/validationCases/0",
+        "section": "2.12"
+      },
+      {
+        "role": "CANONICAL_RULE",
+        "path": "spec/de/rules/records/de-table-003.json",
+        "byteSha256": "2E0928185119315C2150F374B56D6ED46BF832DF8F97EC779776903066E39B78",
+        "section": "2.12"
+      }
+    ],
+    "derivation": {
+      "method": "EXACT_CANONICAL_RULE_AND_HISTORICAL_BEHAVIOR_ASSERTION",
+      "expectationCanonicalSha256": "5055849618BD3E9E803169B047A3DF79A086CF2E6960DC203E9460BC07FE58AB"
+    }
+  }
+}
