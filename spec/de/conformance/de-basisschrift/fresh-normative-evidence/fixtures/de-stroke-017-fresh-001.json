@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-017-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "sourceKind": "MIDDLE_DOT",
+      "normativeSection": "2.5.3"
+    }
+  },
+  "expectation": {
+    "value": {
+      "canonicalSemantics": {
+        "braille": {
+          "unicode": "⠐⠤",
+          "codepoints": [
+            "U+2810",
+            "U+2824"
+          ],
+          "dots": [
+            "5",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "A middle dot in contexts such as publisher information uses the same Braille sequence.",
+        "semanticSelectionRequired": true
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-STROKE-017"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-STROKE-017"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json"
+    ],
+    "canonicalSections": [
+      "2.5.3"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+        "byteSha256": "4D5871B65883AA40D49DE44144B2C1D8B2C0E9BFC4800257AAC09ECE8CAF1ABC",
+        "canonicalSha256": "500739BC3388FB14AC1DAA5E9F49813536457986165F2B60EE0CDC3556BB7485",
+        "section": "2.5.3"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-stroke-017.json",
+        "byteSha256": "45430EC939E6ACD1C2F0F58AA1F2A988C5218A3537A1059900BC126D3C6F3338",
+        "canonicalSha256": "FDEDD2CC067760A175D48160F1CFAD34BFE22BC6DE8959C20E6FAD61AF416AEB",
+        "section": "2.5.3"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_BSKDL_SECTION_PLUS_CANONICAL_RULE_SEMANTICS",
+      "expectationCanonicalSha256": "4E8737561A4B095870666C295B47D1143565A60FA997E8EC14300A44651BECED"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

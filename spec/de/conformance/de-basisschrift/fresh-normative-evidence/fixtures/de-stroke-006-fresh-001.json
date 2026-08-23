@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-006-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "sourceKind": "RANGE_DASH",
+      "normativeSection": "2.5.1.3"
+    }
+  },
+  "expectation": {
+    "value": {
+      "canonicalSemantics": {
+        "printRole": "STRECKENSTRICH",
+        "braille": {
+          "unicode": "⠠⠤",
+          "codepoints": [
+            "U+2820",
+            "U+2824"
+          ],
+          "dots": [
+            "6",
+            "36"
+          ],
+          "cellCount": 2
+        },
+        "summary": "The route/range dash uses the extended dash sequence without surrounding Braille blanks.",
+        "spacing": {
+          "before": "NONE",
+          "after": "NONE"
+        },
+        "lineBreak": {
+          "allowedAfter": true
+        },
+        "semanticSelectionRequired": true
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-STROKE-006"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-STROKE-006"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json"
+    ],
+    "canonicalSections": [
+      "2.5.1.3"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1f-bskdl-basisschrift-stroke-slash-boundary-contract.json",
+        "byteSha256": "4D5871B65883AA40D49DE44144B2C1D8B2C0E9BFC4800257AAC09ECE8CAF1ABC",
+        "canonicalSha256": "500739BC3388FB14AC1DAA5E9F49813536457986165F2B60EE0CDC3556BB7485",
+        "section": "2.5.1.3"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-stroke-006.json",
+        "byteSha256": "07AC268BEFA1B8A3FF84D63ECAD548A705A9F0B9E802ABE79F331D0AAD66475E",
+        "canonicalSha256": "59661ECFEBE3D157D9D9B3E43FFCD8E765D1142C52D6FDA931A351D528D9D776",
+        "section": "2.5.1.3"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_BSKDL_SECTION_PLUS_CANONICAL_RULE_SEMANTICS",
+      "expectationCanonicalSha256": "20D4316432085699B73A9036E7662F52731F1794063623B3D35152918C4B688A"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
