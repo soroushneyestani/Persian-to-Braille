@@ -18,3 +18,6 @@ integrations/microsoft365/addin-dist/
 
 # Microsoft 365 Marketplace production build output
 integrations/microsoft365/marketplace-dist/
+/packages/core/src/generated/de-basisschrift.runtime.ts
+/packages/core/src/generated/de-vollschrift.runtime.ts
+/packages/core/src/generated/de-kurzschrift.runtime.ts
