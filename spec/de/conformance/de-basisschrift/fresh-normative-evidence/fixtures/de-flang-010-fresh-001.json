@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-010-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "contextIdentifiesSystem": false
+    }
+  },
+  "expectation": {
+    "value": {
+      "annotationRequired": true
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-FLANG-010"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-FLANG-010"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json"
+    ],
+    "canonicalSections": [
+      "2.9"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/validationCases/5"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/rules/9",
+        "section": "2.9"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-flang-010.json",
+        "byteSha256": "70327B49C04DE2E53471A3EA4CCD6842571BF56DCED2986B0A211B1598A9FDAA",
+        "canonicalSha256": "5E9303CD1BB1A9A84726F8A5BBBE95DF4D09CC84DE793612EC56CD9BDBF6EAAD"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectationCanonicalSha256": "2E36B5E951943DB9A7B9F239035BB8A49D46E4523E0DF25D3AC71E72FFE7F74A"
+    }
+  }
+}

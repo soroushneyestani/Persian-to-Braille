@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-011-FRESH-002",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "spanWords": 3
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "markerPerWord",
+          "role": "NAMED_RULE_VECTOR",
+          "value": {
+            "unicode": "⠰",
+            "codepoints": [
+              "U+2830"
+            ],
+            "dots": [
+              "56"
+            ],
+            "cellCount": 1
+          },
+          "canonicalSha256": "2A1FE5A26F0F6088FE81C32899A0843F4B7CDE2AC5EC9C65697650B2B54DF627"
+        }
+      ],
+      "behaviorSupplement": {
+        "strategy": "INDIVIDUAL_SINGLE_WORD_MARKERS"
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-FLANG-011"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-FLANG-011"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json"
+    ],
+    "canonicalSections": [
+      "2.9"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/validationCases/3"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/rules/10",
+        "section": "2.9"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-flang-011.json",
+        "byteSha256": "C76B62FF37BDB86A56ECF31075E44BD6CAD0DCE27D47BF491A648FB802C76D07",
+        "canonicalSha256": "E4F4ED8A6E81A710666232F9F246991B5035B361C87846AE237AF52E0AFCC2D5"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectedVectorCanonicalSha256": "C23EAE42F0D5EEA5916BA09480AC3EB00985253772152EF158D5D8BCB4C96AAD"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

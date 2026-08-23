@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-009-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "spanShape": "WORD_PART"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedEnd",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠐⠄",
+            "codepoints": [
+              "U+2810",
+              "U+2804"
+            ],
+            "dots": [
+              "5",
+              "3"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "705E9291C90BA57E67CD5B6FD4B7D2E52DEA27F86329DA3C663C6B466009FD26"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-EMPH-009"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-EMPH-009"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json"
+    ],
+    "canonicalSections": [
+      "2.7.2"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+        "byteSha256": "9D7892A9DE60F26BC98C048EC303CAEC36D09923CE9F180CF39DDCD2F71D973C",
+        "canonicalSha256": "2472FBFEE3D7C770E832DD63FC7323056455E2A7B66309001A61F5123284C44D",
+        "jsonPointer": "/validationCases/6"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+        "byteSha256": "9D7892A9DE60F26BC98C048EC303CAEC36D09923CE9F180CF39DDCD2F71D973C",
+        "canonicalSha256": "2472FBFEE3D7C770E832DD63FC7323056455E2A7B66309001A61F5123284C44D",
+        "jsonPointer": "/rules/8",
+        "section": "2.7.2"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-emph-009.json",
+        "byteSha256": "BE792AA0DB513F233FE6836F5E13C0EFDAF69AC8A01CE6BF64854BD441FCA877",
+        "canonicalSha256": "56E33E1FAD8C5B992BFEE57E80440ACF8C4C2F4CE840DAFCC928C6699BD121BD"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectedVectorCanonicalSha256": "A5029FF3594D9CE415928ECBAC83C31ED70E551335281BD3169BAE77EF23DB23"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
