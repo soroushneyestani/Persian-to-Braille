@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8K-MICROSOFT365-REAL-BRAILLE-OUTPUT-VALIDATION",
+  "id": "de-microsoft365-real-braille-output-validation",
+  "status": "PASS_WITH_REAL_BASISSCHRIFT_OUTPUT_AND_DOCUMENTED_MODE_DEPENDENCIES",
+  "source": {
+    "phase15_8J": {
+      "path": "tools/phase15-8/runtime/stage-output/j/three-mode-two-region-regression.json",
+      "byteSha256": "90CD79402EB1F85B7F94639D8B7A74DE0A05728E884B38FA392BB0ABD98D8076",
+      "canonicalSha256": "FB2AC22A57F8FF5C52A1957779D40C0547A0761B2E993F94B1DFAC5E32F37132"
+    }
+  },
+  "publicSdkRegistration": {
+    "basisschrift": {
+      "automaticExecutable": true,
+      "runtimeRegistered": true,
+      "runtimeStatus": "EXECUTABLE_RUNTIME_REGISTERED",
+      "runtimeDependency": "NONE"
+    },
+    "vollschrift": {
+      "automaticExecutable": false,
+      "runtimeRegistered": false,
+      "runtimeStatus": "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED",
+      "runtimeDependency": "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT"
+    },
+    "kurzschrift": {
+      "automaticExecutable": false,
+      "runtimeRegistered": false,
+      "runtimeStatus": "EXPLICIT_RESOLVED_PLAN_REQUIRED",
+      "runtimeDependency": "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN"
+    }
+  },
+  "microsoft365Boundary": {
+    "sharedAddin": true,
+    "hosts": [
+      "Word",
+      "Excel",
+      "PowerPoint"
+    ],
+    "hostAdaptersReused": true,
+    "germanPanePublicSdkOnly": true,
+    "germanPaneDeepImportsCore": false,
+    "persianRuntimeReused": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "germanWriteActionsAdded": false,
+    "realBraillePreviewTarget": {
+      "mode": "basisschrift",
+      "germanyAustria": {
+        "input": "Hallo",
+        "expectedUnicodeBraille": "⠓⠁⠇⠇⠕"
+      },
+      "switzerland": {
+        "input": "Schweiz",
+        "expectedUnicodeBraille": "⠎⠉⠓⠺⠑⠊⠵"
+      }
+    }
+  },
+  "claimBoundary": {
+    "microsoft365TaskPaneRealBasisschriftOutputProven": true,
+    "wordExcelPowerPointDispatchRegressionRequired": true,
+    "windowsDesktopLiveOutputReverifiedIn15_8K": false,
+    "officeWebPassClaimed": false,
+    "officeMacPassClaimed": false,
+    "automaticVollschriftOfficeTranslationClaimed": false,
+    "automaticKurzschriftOfficeTranslationClaimed": false,
+    "fullGermanPublicSdkRuntimeRegistered": false,
+    "globalRuntimeConformanceProven": false
+  },
+  "next": "15.8L-COMMIT-PUSH-PARITY",
+  "validation": {
+    "coreBuild": "PASS",
+    "sdkTypecheck": "PASS",
+    "sdkBuild": "PASS",
+    "sdkTests": "PASS",
+    "microsoft365Typecheck": "PASS",
+    "microsoft365Tests": "PASS",
+    "phase10Regression": "PASS",
+    "germanCoreRegression": "PASS",
+    "publicSdkBasisschriftRealOutput": "Hallo -> ⠓⠁⠇⠇⠕ / PASS",
+    "microsoft365BasisschriftRealOutput": "Hallo -> ⠓⠁⠇⠇⠕ / PASS",
+    "microsoft365SwissBasisschriftRealOutput": "Schweiz -> ⠎⠉⠓⠺⠑⠊⠵ / PASS",
+    "vollschriftNoAutomaticProvider": "PASS",
+    "kurzschriftNoAutomaticProvider": "PASS",
+    "swissExplicitEszettFailClosed": "PASS",
+    "threeHostDispatchPreserved": "PASS",
+    "germanWriteActionsAbsent": "PASS",
+    "stagedDiffCheck": "PASS"
+  }
+}

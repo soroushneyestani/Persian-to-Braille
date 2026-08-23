@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8F-VOLLSCHRIFT-EXECUTABLE-CONFORMANCE",
+  "id": "de-vollschrift-executable-runtime",
+  "status": "EXECUTABLE_WITH_EXPLICIT_RESOLUTION_CONTEXT",
+  "language": "de",
+  "mode": "vollschrift",
+  "direction": "print-to-braille",
+  "cellSize": 6,
+  "runtimeFamily": "GERMAN_DEDICATED_EXECUTABLE_RUNTIME",
+  "inheritance": {
+    "basisschriftCoreExecutableSurface": true,
+    "effectiveLayers": [
+      "basisschrift",
+      "vollschrift"
+    ]
+  },
+  "source": {
+    "eResult": {
+      "path": "tools/phase15-8/runtime/stage-output/e/vollschrift-runtime-materialization.json",
+      "byteSha256": "8CEAA9C7E6E83C29EF9FEC00DE6E4CABDB4453D1D390AF47ADDD0929F92EF9C1",
+      "canonicalSha256": "423FAE868F0B5965855C207452EBE4984BE2FA2EBA81AE18A131C3E164321435"
+    },
+    "executionSemanticsDiscovery": {
+      "path": "tools/phase15-8/runtime/stage-output/f/vollschrift-execution-semantics-discovery.json",
+      "byteSha256": "EA217EA59288A184A9B50AFB2CDEB98D41FBFDB4A2949B600A0D91F856558592",
+      "canonicalSha256": "E4FA2ACD5FDCBDEA79D509149AB40ED9B7A059C8B530CC1405C519E7B8956279"
+    },
+    "symbolCatalog": {
+      "path": "spec/de/mappings/de-basisschrift-symbol-catalog.json",
+      "byteSha256": "D1D36A099C4BC4D20F1B4F33483BA121549B123950350BE19EFC47D089D507F5",
+      "canonicalSha256": "27B5B04CE05F474E5709236E8D93247061A76CEB4D15B04F7E6D12FD5C14FBC0"
+    },
+    "vollschriftInventory": {
+      "path": "docs/architecture/phase-15.2a-bskdl-vollschrift-rule-family-inventory.json",
+      "byteSha256": "FA1CC39C1716B6F53D6565A61EA674D400D6DD67269DBC64578EEAA3E4C6DEBF",
+      "canonicalSha256": "20D097E36AECE4B0B0D7670B9C08AF28A51CB00A8E5BEA1EC84724E30E5AD89F"
+    },
+    "normativeSuite": {
+      "path": "docs/architecture/phase-15.2f-bskdl-vollschrift-positive-negative-normative-suite.json",
+      "byteSha256": "7BBB372208BE1621E372AEC7F0D8322A9E151DD2F778359CBE332D815C97B906",
+      "canonicalSha256": "7B09EEAA4C849725525A6C678684076ECD865493EBCCA1AF9B9FE39870D008A8"
+    }
+  },
+  "conformanceSurface": {
+    "normativeFixtureCount": 48,
+    "directSourceRenderings": 24,
+    "nonDirectDecisionFixtures": 24,
+    "directResolutionPlansDerivedFromNormativeRendering": true,
+    "nonDirectEvidenceProjectedFromClosedNormativeContracts": true,
+    "providerIndependentAutomaticGeneralization": false
+  },
+  "executionBoundary": {
+    "vollschriftRuntimeMaterialized": true,
+    "vollschriftExplicitResolutionCoreExecutableSurface": true,
+    "vollschriftAutomaticProviderResolutionExecutable": false,
+    "pronunciationProviderInvented": false,
+    "morphologicalSegmentationProviderInvented": false,
+    "unknownPronunciationGuessed": false,
+    "unknownMorphologyGuessed": false,
+    "stUnconditionalPermissionClaimed": false,
+    "runtimeRegistered": false,
+    "publicSdkSuccessfulVollschriftTranslationClaimed": false,
+    "globalRuntimeConformanceProven": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "next": "15.8G-KURZSCHRIFT-RUNTIME-MATERIALIZATION"
+}

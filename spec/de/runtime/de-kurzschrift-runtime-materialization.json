@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8G-KURZSCHRIFT-RUNTIME-MATERIALIZATION",
+  "id": "de-kurzschrift-runtime-materialization",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "mode": "kurzschrift",
+  "direction": "print-to-braille",
+  "cellSize": 6,
+  "runtimeFamily": "GERMAN_DEDICATED_EXECUTABLE_RUNTIME",
+  "inheritance": {
+    "effectiveLayers": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "basisschriftCoreExecutableSurfaceProven": true,
+    "vollschriftExplicitResolutionCoreExecutableSurfaceProven": true,
+    "parentRuntimeFallbackChain": false,
+    "oneEffectiveBundlePerSelectedMode": true
+  },
+  "source": {
+    "phase15_3Closure": {
+      "path": "docs/architecture/phase-15.3n-german-kurzschrift-final-closure.json",
+      "byteSha256": "F1E92839ABE03D34436BB90AA87C742F5F408F64E8C987ACC600CE0224A56CA9",
+      "canonicalSha256": "3F589AC8513EF3ADC33E3F7A8BD30C04DF3F09A1BBB3CEBF0BE912834B123D7A",
+      "status": "PASS_WITH_DOCUMENTED_NON_NORMATIVE_COMPARATOR_DIVERGENCE"
+    },
+    "phase15_8FVollschrift": {
+      "path": "tools/phase15-8/runtime/stage-output/f/vollschrift-executable-conformance.json",
+      "byteSha256": "37F2F20F2D944FF6A9720895532B36D4344F889F3864A8662FCD818E84E49F17",
+      "canonicalSha256": "C2C3532DA043CF879DA347CD6B6C98CFCC1568EA5D4CF7B7A338A69723BF4582"
+    },
+    "formalArtifacts": [
+      {
+        "stem": "phase-15.3a-bskdl-kurzschrift-rule-family-inventory",
+        "path": "docs/architecture/phase-15.3a-bskdl-kurzschrift-rule-family-inventory.json",
+        "byteSha256": "F7CFB839C7BACB766DA44997B938FF09CDC1A552779563C2A3536DC27D1053F3",
+        "canonicalSha256": "C2122CF6D20C78CA7336D1FD98DC4107E306F9EDB43D31C243793FACD07AE500"
+      },
+      {
+        "stem": "phase-15.3b-bskdl-kurzschrift-lautgruppenkuerzungen-inventory",
+        "path": "docs/architecture/phase-15.3b-bskdl-kurzschrift-lautgruppenkuerzungen-inventory.json",
+        "byteSha256": "0131F064796C9765403536CB55A737346270D0C89E06617B9D36B63EA48E17E4",
+        "canonicalSha256": "CBBAE4A4C0C731CA3AC07D035BA420ACB0F1E2072C55B81FE8CE791F61221892"
+      },
+      {
+        "stem": "phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract",
+        "path": "docs/architecture/phase-15.3c-bskdl-kurzschrift-lautgruppen-application-rules-contract.json",
+        "byteSha256": "2D2F6AAAE83912272CB24E217491DB08CB7798751E46F1BFB01F5E4E7BE2F45A",
+        "canonicalSha256": "F2612122901234D58F8EDF3C2A4824946C2DA7588E716386808C9A9307DCFDE3"
+      },
+      {
+        "stem": "phase-15.3d-bskdl-kurzschrift-prefix-suffix-contractions-contract",
+        "path": "docs/architecture/phase-15.3d-bskdl-kurzschrift-prefix-suffix-contractions-contract.json",
+        "byteSha256": "21BD871E360143AEF55F3A867E9F0173A865EB318861A47B5F2020B68385073E",
+        "canonicalSha256": "B79072E1D29C8AE34D8A9D5E06A22A1CDF02D027666F79AE0220DB3BA3A0EB73"
+      },
+      {
+        "stem": "phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract",
+        "path": "docs/architecture/phase-15.3e-bskdl-kurzschrift-einformige-word-stem-contractions-contract.json",
+        "byteSha256": "89625536DDFDA699D44C8A641395C634EFF1C64A96D9BCB00441AD6AE90C063F",
+        "canonicalSha256": "0DAC338C3F90D3BE90BB3B2D1FCBF605244E453D18AFBB8E7D2C604CECADEF91"
+      },
+      {
+        "stem": "phase-15.3f-bskdl-kurzschrift-zweiformige-kuerzungen-contract",
+        "path": "docs/architecture/phase-15.3f-bskdl-kurzschrift-zweiformige-kuerzungen-contract.json",
+        "byteSha256": "62D8AD26B5D257A9FCFA2DE88376BAA89695338B9765A3C06E92E2C90335E60F",
+        "canonicalSha256": "8639889B764A41DC3C64A79034066552BF8494518AE510C005C9A54CA285F017"
+      },
+      {
+        "stem": "phase-15.3g-bskdl-kurzschrift-komma-kuerzungen-contract",
+        "path": "docs/architecture/phase-15.3g-bskdl-kurzschrift-komma-kuerzungen-contract.json",
+        "byteSha256": "D0310FB08593B54D92F2575CB4F9F6A26036A9754DB1A2DF0EAAB46C03268F29",
+        "canonicalSha256": "A3FE678F8A1EE9B83FF3565929530C2ADBA7BD25FFEA1A9887B6E7001FCFCE9C"
+      },
+      {
+        "stem": "phase-15.3h-bskdl-kurzschrift-umlautungspunkt-contract",
+        "path": "docs/architecture/phase-15.3h-bskdl-kurzschrift-umlautungspunkt-contract.json",
+        "byteSha256": "97E23177408C182DD7D81CA16F773D80CA87FEAB657DE42AB0EB83C0E2C5220D",
+        "canonicalSha256": "090CC518FCC5492825C27D3C9402865E88276606B2D9B8AFB2966E14512D9F75"
+      },
+      {
+        "stem": "phase-15.3i-bskdl-kurzschrift-aufhebungspunkt-contract",
+        "path": "docs/architecture/phase-15.3i-bskdl-kurzschrift-aufhebungspunkt-contract.json",
+        "byteSha256": "887EC3A59FAD00F27841FAB3D3B7BB32730A7E782BD0875E27829CAD3E7DE9E7",
+        "canonicalSha256": "7E059BE7D352A0C5EB60B26BEA7F1D74E572A07DFB6F312C45BA09C966EFA04A"
+      },
+      {
+        "stem": "phase-15.3j-bskdl-kurzschrift-basis-vollschrift-inserts-contract",
+        "path": "docs/architecture/phase-15.3j-bskdl-kurzschrift-basis-vollschrift-inserts-contract.json",
+        "byteSha256": "7A8A56A48E7FFD4DC2C9F21E6DBBF68D99416BDD665B848FDFB814268B76271E",
+        "canonicalSha256": "9778227D012FA075965E0638C11BE303AA8D9954D844131BFC09B55E8BB7A798"
+      },
+      {
+        "stem": "phase-15.3k1-bskdl-kurzschrift-vollschrift-rule-inheritance-contract",
+        "path": "docs/architecture/phase-15.3k1-bskdl-kurzschrift-vollschrift-rule-inheritance-contract.json",
+        "byteSha256": "4E85F823CF58D02251857973BBBCF508BE69E1299CA0DCDDA02BDDBDB937A819",
+        "canonicalSha256": "F5ED6288D4C9F2C26C52901BAFE7EA6CA50CAB83AE94D8A4137BCF6F08C84C8A"
+      },
+      {
+        "stem": "phase-15.3k2-bskdl-kurzschrift-wortfugen-restriction-contract",
+        "path": "docs/architecture/phase-15.3k2-bskdl-kurzschrift-wortfugen-restriction-contract.json",
+        "byteSha256": "4D102C1EA02C43FD8DAC650CCF9490C51891D68649AE02C8521B6057A0A5B3B5",
+        "canonicalSha256": "A827CFBD1C23CC71796CD799092D5DD5694528397AD07D3D7F720186C375D101"
+      },
+      {
+        "stem": "phase-15.3k3-bskdl-kurzschrift-eigennamen-restriction-contract",
+        "path": "docs/architecture/phase-15.3k3-bskdl-kurzschrift-eigennamen-restriction-contract.json",
+        "byteSha256": "3A0B90E7AB7BA11DA7660D18A6E4312EDDF2669A04B1CCA5C36DC1F807258BDF",
+        "canonicalSha256": "3A4FB1D013C9F4254BC38174C1FB0C06B02FE4331E4B51F8982C5E71DE5D09FC"
+      },
+      {
+        "stem": "phase-15.3k4-bskdl-kurzschrift-wortstamm-restriction-contract",
+        "path": "docs/architecture/phase-15.3k4-bskdl-kurzschrift-wortstamm-restriction-contract.json",
+        "byteSha256": "5A8370B38B7AF8E84D524B91CFF6D9E694914FD24DA88BE42C9E9F72BB17DC3F",
+        "canonicalSha256": "B0A2BCF8D1C27EB169379BF010C8C7490CF95F959B4CB4DF2B74C6335150A324"
+      },
+      {
+        "stem": "phase-15.3k5-bskdl-kurzschrift-prefix-suffix-boundary-restriction-contract",
+        "path": "docs/architecture/phase-15.3k5-bskdl-kurzschrift-prefix-suffix-boundary-restriction-contract.json",
+        "byteSha256": "00E694BE3259A0F25DAEF96ACF561DC137A04FAA7701E8BEC9CF0F92C6920359",
+        "canonicalSha256": "D4A1F75D672A077A529F4499496AA25869330C011FA00226B21A55A2ACB09D53"
+      },
+      {
+        "stem": "phase-15.3k6-bskdl-kurzschrift-application-restrictions-closure",
+        "path": "docs/architecture/phase-15.3k6-bskdl-kurzschrift-application-restrictions-closure.json",
+        "byteSha256": "7C220AF4A2DDC26115C5D31CE0CDB759C44CF300B5112D01F8E95500A53E314F",
+        "canonicalSha256": "4AA7B31F8E7BB3D5EE600F79C4D64DE0520E482E114276B73B8B3CDAAA35C0D7"
+      },
+      {
+        "stem": "phase-15.3l1-kurzschrift-taxonomy-precision-patch",
+        "path": "docs/architecture/phase-15.3l1-kurzschrift-taxonomy-precision-patch.json",
+        "byteSha256": "C4FD75DD5C9E1C4E89060339297A6B6ACAC1260A393D6AEDE9E96400F66068F5",
+        "canonicalSha256": "DAD99CB4B53BAE67421A7D4C980039ED314AF5A5DA2F49459EF1ED97BABE8010"
+      },
+      {
+        "stem": "phase-15.3l2-kurzschrift-cross-artifact-consistency-closure",
+        "path": "docs/architecture/phase-15.3l2-kurzschrift-cross-artifact-consistency-closure.json",
+        "byteSha256": "50E66893B824BCB22C0EDC814E3A4662F27FF13926E9A8DB3EB928EEC6D91E0A",
+        "canonicalSha256": "4909F915EAC8A1C4E413FB35EB43CB79FF371FFB3CA29EB2B65356145FF24BCE"
+      }
+    ],
+    "comparatorArtifactCountExcludedFromNormativeRuntimeBundle": 11
+  },
+  "coverage": {
+    "formalArtifactCount": 18,
+    "formalRuleIds": 119,
+    "uniqueFormalRuleIds": 119,
+    "validationCaseIds": 645,
+    "uniqueValidationCaseIds": 645,
+    "deKurzPrefixedValidationCaseIds": 638,
+    "nonDeKurzValidationCaseIds": 7,
+    "nonDeKurzValidationIds": [
+      "ERLANGEN_TWO_FORM_FORBIDDEN",
+      "GROSSE_ANTILLEN_EXCEPTION",
+      "MITTELMEER_EXCEPTION",
+      "PIERRE_PRONUNCIATION",
+      "VERDUN_PREFIX_FORBIDDEN",
+      "VORPOMMERN_ONE_FORM_ALLOWED",
+      "WERDOHL_KOMMA_FORBIDDEN"
+    ],
+    "topLevelRuleFamilies": 10,
+    "sectionReferences": 32,
+    "twoFormSection44Mappings": 165,
+    "twoFormSection44MappingsExactlyTwoCell": true,
+    "sixDotSerialization": "PASS",
+    "sourceConsistency": "PASS"
+  },
+  "semanticBoundaries": {
+    "section4_3TwoFormLautgruppeStandalone": "FORBIDDEN",
+    "section4_4TwoFormContractionStandalone": "ALLOWED",
+    "categoriesDistinct": true,
+    "liblouisRole": "NON_NORMATIVE_COMPARATOR",
+    "documentedComparatorDivergence": "Den Haag",
+    "documentedComparatorDivergenceNormativeImpact": "NONE"
+  },
+  "executionBoundary": {
+    "materialized": true,
+    "kurzschriftExecutable": false,
+    "runtimeRegistered": false,
+    "kurzschriftRuntimeConformanceProven": false,
+    "globalRuntimeConformanceProven": false,
+    "successfulKurzschriftTranslationClaimed": false,
+    "automaticLexicalResolutionClaimed": false,
+    "automaticMorphologicalResolutionClaimed": false,
+    "automaticPronunciationResolutionClaimed": false,
+    "semanticTaxonomyFlattened": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "nextRequiredProof": "15.8H-KURZSCHRIFT-EXECUTABLE-CONFORMANCE"
+  }
+}

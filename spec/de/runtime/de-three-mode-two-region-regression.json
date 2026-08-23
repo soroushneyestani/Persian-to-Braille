@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8J-THREE-MODE-TWO-REGION-REGRESSION",
+  "id": "de-three-mode-two-region-regression",
+  "status": "PASS_WITH_THREE_MODE_TWO_REGION_REGRESSION",
+  "language": "de",
+  "modeAxis": [
+    "basisschrift",
+    "vollschrift",
+    "kurzschrift"
+  ],
+  "regionProfiles": [
+    {
+      "id": "de-at",
+      "regionalOverlay": null,
+      "meaning": "Germany/Austria base regional profile"
+    },
+    {
+      "id": "ch",
+      "regionalOverlay": "swiss",
+      "meaning": "Swiss orthogonal regional overlay"
+    }
+  ],
+  "matrix": {
+    "modeCount": 3,
+    "regionProfileCount": 2,
+    "matrixCellCount": 6,
+    "unrelatedInputFullMatrixRequired": "6/6 PASS"
+  },
+  "regressionRequirements": {
+    "priorBasisschriftSuite": "PASS_REQUIRED",
+    "priorVollschriftSuite": "PASS_REQUIRED",
+    "priorKurzschriftSuite": "PASS_REQUIRED",
+    "priorSwissSuite": "PASS_REQUIRED",
+    "deAtExplicitEszettPreservation": "3/3 PASS_REQUIRED",
+    "swissExplicitEszettReject": "3/3 PASS_REQUIRED",
+    "automaticEszettToSsNormalization": "FORBIDDEN",
+    "swissGrossKurzschrift": "⠛⠮",
+    "swissSchliessKurzschrift": "⠱⠮",
+    "swissDoubleSActivationOutsideKurzschrift": "FORBIDDEN",
+    "unrelatedSwissRegionalLeakage": "FORBIDDEN"
+  },
+  "runtimeBoundary": {
+    "automaticVollschriftProviderResolutionClaimed": false,
+    "automaticKurzschriftProviderResolutionClaimed": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "swissIsFourthTextMode": false,
+    "germanRuntimeRegistered": false,
+    "publicSdkSuccessfulGermanTranslationClaimed": false,
+    "globalRuntimeConformanceProven": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "source": {
+    "phase15_8I": {
+      "path": "tools/phase15-8/runtime/stage-output/i/swiss-runtime-overlay-execution.json",
+      "byteSha256": "7B6D60790F0E6F130A691CB25D6AF5B1D67F9113B5CC32F96ACA54F8E70554D9",
+      "canonicalSha256": "C01838DBBEC51951E776146BC387B89C12285608E1CC87C06832965440C4EA70"
+    }
+  },
+  "next": "15.8K-MICROSOFT365-REAL-BRAILLE-OUTPUT-VALIDATION",
+  "validation": {
+    "coreBuild": "PASS",
+    "priorGermanRuntimeSuites": "4/4 PASS",
+    "threeModeTwoRegionUnrelatedMatrix": "6/6 PASS",
+    "deAtExplicitEszettPreservation": "3/3 PASS",
+    "swissExplicitEszettReject": "3/3 PASS",
+    "swissGrossKurzschriftParity": "PASS",
+    "swissSchliessKurzschriftParity": "PASS",
+    "swissDoubleSNoCrossModeActivation": "2/2 PASS",
+    "unrelatedSwissRegionalLeakage": "ABSENT / PASS",
+    "automaticEszettToSsNormalization": "ABSENT / PASS",
+    "stagedDiffCheck": "PASS"
+  }
+}

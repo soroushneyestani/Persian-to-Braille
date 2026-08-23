@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8D-BASISSCHRIFT-EXECUTABLE-CONFORMANCE",
+  "id": "de-basisschrift-executable-runtime",
+  "status": "EXECUTABLE_FOR_ADMITTED_SOURCE_BACKED_SURFACE",
+  "language": "de",
+  "mode": "basisschrift",
+  "direction": "print-to-braille",
+  "cellSize": 6,
+  "runtimeFamily": "GERMAN_DEDICATED_EXECUTABLE_RUNTIME",
+  "source": {
+    "cResult": {
+      "path": "tools/phase15-8/runtime/stage-output/c/basisschrift-runtime-materialization.json",
+      "byteSha256": "1F26840C361F2213725225DEC4B2802B84662BE6C1E37EA3E3A6AC3319D5161E",
+      "canonicalSha256": "A133C9A11FFAF754563BBC7953CD59767D419806C28F6C55C8F918D1910964E9"
+    },
+    "discovery": {
+      "path": "tools/phase15-8/runtime/stage-output/d/execution-semantics-discovery.json",
+      "byteSha256": "47D46AC72CE4C7974836CFBC2FF8C32AC626BE907E7782F343C8DA352E0CDCEF",
+      "canonicalSha256": "631DC348554049176714B1A8875C4F9B2606FE56CC1CD18A29201D6241615B25"
+    },
+    "semanticSources": {
+      "symbolCatalog": {
+        "path": "spec/de/mappings/de-basisschrift-symbol-catalog.json",
+        "byteSha256": "D1D36A099C4BC4D20F1B4F33483BA121549B123950350BE19EFC47D089D507F5",
+        "canonicalSha256": "27B5B04CE05F474E5709236E8D93247061A76CEB4D15B04F7E6D12FD5C14FBC0"
+      },
+      "numericContract": {
+        "path": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "byteSha256": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+        "canonicalSha256": "3EE3E6A59EBE71E8F7F665276DD98BF2361C3D63D963B19C5B598FA7F6FC2BA1"
+      },
+      "caseContract": {
+        "path": "docs/architecture/phase-15.1g-bskdl-basisschrift-capitalization-case-state-contract.json",
+        "byteSha256": "D9DAE9379A135E48F3AE5393B4953BF7E5EFD50E3AF418F3F2A377B6A42E4607",
+        "canonicalSha256": "B761DBBAE7C5A8788E91D57C430F523EF2E74B5FDD624027A434CD110FFA4600"
+      },
+      "accentContract": {
+        "path": "docs/architecture/phase-15.1i-bskdl-basisschrift-accent-special-form-letter-contract.json",
+        "byteSha256": "62E821941FF618FBD03CE4DC82045C273629F7CE78454B686C720D18EB330375",
+        "canonicalSha256": "5B43BD0D5992C18925556096C08663BD5BAA3172BA9F745B440FA997031416FE"
+      },
+      "mathContract": {
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "canonicalSha256": "AFE2328AD94FCF53C2429B33199D707F99615D2C45CBB90B2826ACA7AC5DCD75"
+      }
+    }
+  },
+  "historicalFixtureGrade": {
+    "fixtureCount": 27,
+    "fixtureIdentities": [
+      {
+        "id": "DE-ACCENT-CASE-001",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-001.json",
+        "byteSha256": "937FA5632BC19BA19A971F9E7A404194FCE9C8F8C3FE8B40B2DFCBD766F57195",
+        "canonicalSha256": "2AA6FD7C1BCF73A973881CDF7A02B2EE5C714F9068D17E87A1BA33B74474AB33",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-002",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-002.json",
+        "byteSha256": "311549C2D4125006FF135548AC07654B55915723083171ADD24AA433B677F494",
+        "canonicalSha256": "C36A7F7FC084FB597F79E74C2329DDBB3C891C64DB9D4B830717B78D972E1527",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-003",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-003.json",
+        "byteSha256": "D498D9FF9EA88B68BFB3C33845B13E3138F699D61E4F0414D83A2D5A131B5B7F",
+        "canonicalSha256": "A9223B53D019CE3FBE77FC35ED4C82E1F31699E504C8149E41552F28E8BEC904",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-004",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-004.json",
+        "byteSha256": "8C78E5FBC2E23E769D0DD5AE628CB47D77214F9BEB795D3FE56DCF092C618F8E",
+        "canonicalSha256": "3FC19589182AD9B1254BB9A39F2BC13BFC16BB6B91D25655F84B3FCEA7578D88",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-005",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-005.json",
+        "byteSha256": "9C8EADE0C4D087BDC1917EF5F19BBE5E129ACAC3A5D080BECC3B08C45F825C07",
+        "canonicalSha256": "F7A621BA098E511BE5D9594DC6D077E125528C168F986D9AFB58E02612095198",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-006",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-006.json",
+        "byteSha256": "FB02ACA1EB03D058A6BF413971CE0764519053C38D70D4CA67BE8602D3E0929C",
+        "canonicalSha256": "D70FD99F513905660661EE1EDDCC847933D2CD8E615D8FDF546A3633D2A4D74B",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-ACCENT-CASE-007",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-accent-case-007.json",
+        "byteSha256": "363897654DF0D48D7A31E6D95B4BC8B82A643B4B1A50C0002857436FF4BFD7E2",
+        "canonicalSha256": "2A962150894603593559C3EDD59D5C127FA39529A0961C3063345E191C9C5AA4",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-001",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-001.json",
+        "byteSha256": "16FB55EBB99A53FFF3FC0636E9C163700F6987ED77E89ADCC82EEDABDCC383DB",
+        "canonicalSha256": "B2F2354F6468C545AE3E5ADF2A00157F62BF62ED04213F303B6A83147A83A569",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-002",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-002.json",
+        "byteSha256": "EA3A59B6787FD4801AF44F4C4B5E137A0138F3C258BC2D05D110E0DBD9380D97",
+        "canonicalSha256": "D036FF8790CBF915FE0C07E390DD4B64877B5DA286AE59917F016FB9C0BC9036",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-004",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-004.json",
+        "byteSha256": "1C34552D58569A32D168E110E5778ADB8DB746C15DE1DAA93BF51933ADBF1886",
+        "canonicalSha256": "F758A5672E3F0E644A49A72B7FD91D1826451C45101C730E605B27A6AF77E2BC",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-005",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-005.json",
+        "byteSha256": "53544E182EAAF97A804B60B54E4835F2097DC0F8D8F6D8B998AC9C4CC5CEB3D7",
+        "canonicalSha256": "CEFD971D3F7192CDF3AD6087960760FFFC271925930F744518285ED0DDD7E015",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-006",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-006.json",
+        "byteSha256": "341EA9F593B60588CEE2AFD77F81AC446845332EA476E5FD8643A7CB168B4155",
+        "canonicalSha256": "015C49DE8C6095938E3606364EC17280E8754A6B607396912164977AFB806F80",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-007",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-007.json",
+        "byteSha256": "4D989D144C39D9CBF7E812A23866C9B068A41306CC4B0C6360A06FAE8AC268AE",
+        "canonicalSha256": "59302D11CE8C64FCC761BD99AE019D67F07772F7706C206033B781B5541F4AA4",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-008",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-008.json",
+        "byteSha256": "C8CD048AA6AF0ED5B90D4C7A9E5CE83C8D2E26B245808510D18146CE4C4989CE",
+        "canonicalSha256": "43F884442A2AAB241A736639EC9DAB5AEB2F5CBEDDCE9F6A09F4CEB1906A86D7",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-009",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-009.json",
+        "byteSha256": "E15FF835EC8FD203490CD17E0EF02EFE81E6F63FCAE9E9D011CDA3AFF3081B6C",
+        "canonicalSha256": "884EC0F7F1C7C06A7D0EDFD53CDCD835E56936A986BB14043E0D54DD4022D4BF",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-CASE-CASE-011",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-case-case-011.json",
+        "byteSha256": "5994431963BB030452974582B095B247C707AD5DF430B597451CC03458B2FF5D",
+        "canonicalSha256": "86C17C2834CC1B3A03290FF59F0A613360ABE8902569302CF4FDF20185A7DDBE",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-MATH-CASE-002",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-math-case-002.json",
+        "byteSha256": "E936896F637EDE062A37EBE5028A57A2A4F6B2FA4D48900830A12BC5B8ADEA59",
+        "canonicalSha256": "ABB665195D9761FD46C9192E44F502048F932A34D00DF50169ECB4C3A8C6DB02",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-001",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-001.json",
+        "byteSha256": "785566F311DDD1AC938B6D73F833FEE99765CD2210171C85AE5863D1EDC9A503",
+        "canonicalSha256": "2FF5D81B30F20741F3F597F0EF4FF2BFA5447C1C0FC77ED49C060DEC6E56AA6A",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-002",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-002.json",
+        "byteSha256": "9C2D9CF8BC86BAB1B23A1534E15474E3624F4AF1C8C0F258D687D43B57EF4F86",
+        "canonicalSha256": "6B7D3EE32168A6E757E1A2FE18750F765E11FA50F573C380D38004F5466977E7",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-003",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-003.json",
+        "byteSha256": "6EAB801489D87D78C25EAEDED7D954602741C5BB50F422AAC2D8682A02DDD4D5",
+        "canonicalSha256": "438EE907D3BA93D0A5FB763F2DCFF3B8FA2C203FF16410825F61ECF4AACD766F",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-004",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-004.json",
+        "byteSha256": "EB56A5D231E009636FF7FCE6DDA5B2EE409DE94DDDAE0A4FF71C468005BB246D",
+        "canonicalSha256": "AD8DEE96C430F5D1EF5B65A6443AF999643DE77D68CF59C2ECCE070164909E9F",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-005",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-005.json",
+        "byteSha256": "C6CDD567D2D14A339E5C605B8CFAB3AC073622482BE0F8FE83A3203BC32499D7",
+        "canonicalSha256": "28BA84CF5680D498F0F3BB952B78F068F5191F06AA2328645BBC91376D939D08",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-NUM-CASE-006",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-num-case-006.json",
+        "byteSha256": "6DD469BCAEF3F81C4C6D52E03774939C7AF8292128EE5CB6D11C79C05AE85F2E",
+        "canonicalSha256": "1C4438F77B71458E3C5BC8824ACA77EADF78F4301730479E47EF56FEB6D2527A",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-SPECIAL-CASE-001",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-special-case-001.json",
+        "byteSha256": "35CD1703BBB0931088810D6308C241B8F510129571A74386129155CF0582C389",
+        "canonicalSha256": "966A4738401B2D082B0521042471FABFC062313A80C3483D8D70944F0195394B",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-SPECIAL-CASE-002",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-special-case-002.json",
+        "byteSha256": "AC8B925A070CD9B4AC4458721B8AC1A439D99ABB9B13C4EE6837D53AF2A9D2D0",
+        "canonicalSha256": "1DF08D0B5EF7557BD7D68364E79A47C6BA1ACF982237EAB86C416EF8733D104C",
+        "semanticFamily": "STANDARD_CELL_VECTOR"
+      },
+      {
+        "id": "DE-SPECIAL-CASE-003",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-special-case-003.json",
+        "byteSha256": "CF67A06232C5DBE40CC3F0AFB6A09B32D1B5ED3CBDBC664DCE7D197E0D6A8DF2",
+        "canonicalSha256": "9E63EF263074181B64270C2DB49B5005EDAA079ABFE265776DBC7114A34C0472",
+        "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR"
+      },
+      {
+        "id": "DE-STROKE-CASE-001",
+        "path": "spec/de/conformance/de-basisschrift/historical-fixture-grade/fixtures/de-stroke-case-001.json",
+        "byteSha256": "10997D348418CB6ADA83EA12151E0B1BB07BD4F22F902B6C26B04C04F6B843C8",
+        "canonicalSha256": "E962F16CC7511308BE249F33D8C14222A1C818672C973A9E72D1E7EF3478FCF3",
+        "semanticFamily": "CORE_CELL_VECTOR"
+      }
+    ],
+    "requiredRuntimeExecutionPass": "27/27"
+  },
+  "executionBoundary": {
+    "coreBasisschriftExecutorMaterialized": true,
+    "coreBasisschriftExecutableSurface": true,
+    "runtimeRegistered": false,
+    "publicSdkSuccessfulTranslationClaimed": false,
+    "globalRuntimeConformanceProven": false,
+    "all123LoweredRulesClaimedExecutable": false,
+    "deMath016Fabricated": false,
+    "persianRuntimeReused": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "unsupportedOrAmbiguousInputFailsClosed": true
+  },
+  "next": "15.8E-VOLLSCHRIFT-RUNTIME-MATERIALIZATION"
+}

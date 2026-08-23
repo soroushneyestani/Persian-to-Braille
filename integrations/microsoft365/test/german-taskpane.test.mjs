@@ -129,7 +129,7 @@ function successfulSelection(
 }
 
 test(
-  "German regional UI maps Germany/Austria to the baseline and Switzerland to the Swiss overlay",
+  "German regional UI maps Germany/Austria to null and Switzerland to swiss",
   () => {
     assert.equal(
       germanRegionalOverlayForRegion(
@@ -215,7 +215,7 @@ test(
 );
 
 test(
-  "Germany/Austria Basisschrift projects the structured Phase 15.6 runtime dependency",
+  "Germany/Austria Basisschrift renders real Unicode Braille in the shared Office pane",
   async () => {
     const {
       document,
@@ -251,21 +251,21 @@ test(
       elements[
         "german-translation-result"
       ].hidden,
-      true,
+      false,
     );
 
     assert.equal(
       elements[
         "german-translation-error"
       ].hidden,
-      false,
+      true,
     );
 
     assert.equal(
       elements[
-        "german-error-code"
+        "german-unicode-output"
       ].textContent,
-      "RUNTIME_NOT_EXECUTABLE",
+      "⠓⠁⠇⠇⠕",
     );
 
     const profile =
@@ -285,13 +285,13 @@ test(
         regionalOverlay:
           null,
         runtimeStatus:
-          "LOWERING_IR_NON_EXECUTABLE",
+          "EXECUTABLE_RUNTIME_REGISTERED",
         runtimeDependency:
-          "GERMAN_EXECUTABLE_RUNTIME_ADAPTER",
+          "NONE",
         runtimeExecutable:
-          false,
+          true,
         runtimeRegistered:
-          false,
+          true,
         loweringCoverage:
           "123/123",
       },
@@ -301,20 +301,91 @@ test(
       elements[
         "german-taskpane-status"
       ].textContent,
-      /fail-closed/i,
+      /preview ready/i,
+    );
+  },
+);
+
+test(
+  "Switzerland Basisschrift renders real Braille through the same public SDK path",
+  async () => {
+    const {
+      document,
+      elements,
+    } =
+      fixture();
+
+    const controller =
+      createGermanTaskPane(
+        document,
+      );
+
+    controller.setReady(
+      true,
+    );
+
+    controller.setSelectionPort(
+      successfulSelection(
+        "Schweiz",
+      ),
+    );
+
+    selectConfiguration(
+      elements,
+      "switzerland",
+      "basisschrift",
+    );
+
+    await controller
+      .translateCurrentSelection();
+
+    assert.equal(
+      elements[
+        "german-unicode-output"
+      ].textContent,
+      "⠎⠉⠓⠺⠑⠊⠵",
+    );
+
+    const profile =
+      JSON.parse(
+        elements[
+          "german-profile-info"
+        ].textContent,
+      );
+
+    assert.equal(
+      profile.regionalOverlay,
+      "swiss",
+    );
+
+    assert.equal(
+      profile.runtimeRegistered,
+      true,
     );
   },
 );
 
 for (
-  const level
+  const [
+    level,
+    status,
+    dependency,
+  ]
   of [
-    "vollschrift",
-    "kurzschrift",
+    [
+      "vollschrift",
+      "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED",
+      "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT",
+    ],
+    [
+      "kurzschrift",
+      "EXPLICIT_RESOLVED_PLAN_REQUIRED",
+      "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN",
+    ],
   ]
 ) {
   test(
-    `Switzerland ${level} preserves the Swiss overlay and non-materialized mode dependency`,
+    `Office ${level} remains fail-closed without explicit source-backed resolution context`,
     async () => {
       const {
         document,
@@ -333,13 +404,13 @@ for (
 
       controller.setSelectionPort(
         successfulSelection(
-          "Schweiz",
+          "Probe",
         ),
       );
 
       selectConfiguration(
         elements,
-        "switzerland",
+        "germany-austria",
         level,
       );
 
@@ -348,9 +419,16 @@ for (
 
       assert.equal(
         elements[
+          "german-translation-result"
+        ].hidden,
+        true,
+      );
+
+      assert.equal(
+        elements[
           "german-error-code"
         ].textContent,
-        "RUNTIME_NOT_EXECUTABLE",
+        "RUNTIME_CONTEXT_REQUIRED",
       );
 
       const profile =
@@ -361,33 +439,13 @@ for (
         );
 
       assert.equal(
-        profile.language,
-        "de",
-      );
-
-      assert.equal(
-        profile.mode,
-        level,
-      );
-
-      assert.equal(
-        profile.regionalOverlay,
-        "swiss",
-      );
-
-      assert.equal(
         profile.runtimeStatus,
-        "MODE_RUNTIME_NOT_MATERIALIZED",
+        status,
       );
 
       assert.equal(
         profile.runtimeDependency,
-        "GERMAN_MODE_EXECUTABLE_RUNTIME_MATERIALIZATION",
-      );
-
-      assert.equal(
-        profile.loweringCoverage,
-        "NOT_MATERIALIZED",
+        dependency,
       );
 
       assert.equal(
@@ -402,6 +460,55 @@ for (
     },
   );
 }
+
+test(
+  "Swiss explicit Eszett is rejected without automatic normalization",
+  async () => {
+    const {
+      document,
+      elements,
+    } =
+      fixture();
+
+    const controller =
+      createGermanTaskPane(
+        document,
+      );
+
+    controller.setReady(
+      true,
+    );
+
+    controller.setSelectionPort(
+      successfulSelection(
+        "groß",
+      ),
+    );
+
+    selectConfiguration(
+      elements,
+      "switzerland",
+      "basisschrift",
+    );
+
+    await controller
+      .translateCurrentSelection();
+
+    assert.equal(
+      elements[
+        "german-error-code"
+      ].textContent,
+      "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+    );
+
+    assert.equal(
+      elements[
+        "german-translation-result"
+      ].hidden,
+      true,
+    );
+  },
+);
 
 test(
   "German pane rejects empty Office selection before SDK translation",
@@ -515,7 +622,7 @@ test(
 );
 
 test(
-  "built task pane exposes German as the text accessibility tab with two regions and three levels",
+  "built task pane preserves German two-region three-level UI and no write actions",
   async () => {
     const html =
       await readFile(
@@ -585,7 +692,7 @@ test(
 );
 
 test(
-  "three-host dispatch connects German to existing Word, Excel, and PowerPoint adapters without a new host runtime layer",
+  "three-host dispatch still reuses Word Excel PowerPoint host adapters",
   async () => {
     const source =
       await readFile(

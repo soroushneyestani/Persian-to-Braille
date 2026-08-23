@@ -431,7 +431,7 @@ export function createGermanTaskPane(
         );
 
         ui.status.textContent =
-          "German Braille remains fail-closed until its executable runtime dependency is resolved.";
+          "German Braille translation could not be completed for the selected configuration.";
         return;
       }
 
