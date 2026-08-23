@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-005-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "DIRECT_TEXT",
+      "value": "Cl"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedBraille",
+          "value": {
+            "unicode": "⠨⠉⠇",
+            "codepoints": [
+              "U+2828",
+              "U+2809",
+              "U+2807"
+            ],
+            "dots": [
+              "46",
+              "14",
+              "123"
+            ],
+            "cellCount": 3
+          },
+          "canonicalSha256": "5F7267713C94C36CA967DC996796209A4CA5044A75633F1DF3584A303A9724F8"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CASE-005"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CASE-005"
+    ],
+    "canonicalContractPaths": [
+      "spec/de/rules/records/de-case-005.json"
+    ],
+    "canonicalSections": [
+      "2.6.1"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-case-005.json",
+        "byteSha256": "DE30ED67ABF7B8ACD5AC4A9ACE5D1FDFD74AB3AFBAC5BB7CD8157B46A352F8D1",
+        "canonicalSha256": "DB3CB22BC8757D54B7FB6AA09A26B6B947C537D7AEED49349BB24106DB6E002F",
+        "section": "2.6.1"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_CANONICAL_RULE_ADJUDICATION",
+      "expectedVectorCanonicalSha256": "38D2689B19C5AD1A50128F37A8D2C36946207577A44261B567DDFEFD57D1C9F8"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

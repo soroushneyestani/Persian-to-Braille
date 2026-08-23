@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-003-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "DIRECT_TEXT",
+      "value": "This young man likes that machine so much."
+    }
+  },
+  "expectation": {
+    "value": {
+      "pronunciationAware": true,
+      "radicalGermanContractionAllowed": false,
+      "unambiguousRenderingPreferred": true
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-FLANG-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-FLANG-003"
+    ],
+    "canonicalContractPaths": [
+      "spec/de/rules/records/de-flang-003.json"
+    ],
+    "canonicalSections": [
+      "2.9"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-flang-003.json",
+        "byteSha256": "77EE2749A9F8B77854788991D41AE0C906AAD3FEFDE8F47A3EF424987127EBF0",
+        "canonicalSha256": "1308DCC6CA603E7113CB81F00923C48043277669102036C9A8982E581C317A94",
+        "section": "2.9"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_CANONICAL_RULE_ADJUDICATION",
+      "expectationCanonicalSha256": "27649E3FF6DA4330E3D018EE71EE3BB84D0462884503B29AE6B8423882F60946"
+    }
+  }
+}

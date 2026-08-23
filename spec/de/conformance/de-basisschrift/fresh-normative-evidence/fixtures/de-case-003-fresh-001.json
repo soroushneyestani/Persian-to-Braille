@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-003-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "STRUCTURED_NORMATIVE_CONFIGURATION",
+      "value": {
+        "mode": "SYSTEMATIC_CAPITAL_MARKING"
+      }
+    }
+  },
+  "expectation": {
+    "value": {
+      "allUppercaseLettersExplicitlyMarked": true,
+      "unannouncedLettersAreLowercase": true
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CASE-003"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CASE-003"
+    ],
+    "canonicalContractPaths": [
+      "spec/de/rules/records/de-case-003.json"
+    ],
+    "canonicalSections": [
+      "2.6"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-case-003.json",
+        "byteSha256": "2A4E1C8001D53D7877CBA5860350E08EDF1B8E78BF7AAFAF5603546B1B914965",
+        "canonicalSha256": "1E8196ACD20C50A77E55B50174621EC72133E75D75F496C63534E999023891CF",
+        "section": "2.6"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_CANONICAL_RULE_ADJUDICATION",
+      "expectationCanonicalSha256": "C357B8718DB3935336AF9EB2E1B31AA17046008643FBD8DCBAEFA8BA121784B1"
+    }
+  }
+}
