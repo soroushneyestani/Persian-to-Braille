@@ -21,7 +21,7 @@
     "build": "tsc -p tsconfig.json && node build-addin.mjs",
     "typecheck": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/music run build && pnpm --filter @persian-braille/sdk run build && tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('addin-dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
-    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/music run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs test/music-taskpane.test.mjs test/word-music-insertion.test.mjs test/feature-tabs.test.mjs",
+    "test": "pnpm --filter @persian-braille/core run build && pnpm --filter @persian-braille/music run build && pnpm --filter @persian-braille/sdk run build && pnpm run build && node --test test/word-selection.test.mjs test/taskpane.test.mjs test/excel-selection.test.mjs test/powerpoint-selection.test.mjs test/music-taskpane.test.mjs test/word-music-insertion.test.mjs test/feature-tabs.test.mjs test/german-taskpane.test.mjs",
     "preview": "pnpm --filter @persian-braille/microsoft365... run build && node preview-addin.mjs",
     "build:marketplace": "pnpm run build && node build-marketplace.mjs",
     "test:marketplace": "node --test test/marketplace-build.test.mjs",

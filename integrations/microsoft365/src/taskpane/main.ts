@@ -31,6 +31,10 @@ import {
 } from "./feature-tabs.js";
 
 import {
+  createGermanTaskPane,
+} from "./german-pane.js";
+
+import {
   evaluateOfficeTaskPaneReadiness,
 } from "./readiness.js";
 
@@ -74,6 +78,11 @@ const featureTabs =
     document,
   );
 
+const germanPane =
+  createGermanTaskPane(
+    document,
+  );
+
 const wordRuntime =
   createGlobalOfficeWordRuntime();
 
@@ -92,25 +101,34 @@ const excelRuntime =
 const powerPointRuntime =
   createGlobalOfficePowerPointRuntime();
 
+const wordHostAdapter =
+  createWordHostAdapter(
+    wordRuntime,
+  );
+
+const excelHostAdapter =
+  createExcelHostAdapter(
+    excelRuntime,
+  );
+
+const powerPointHostAdapter =
+  createPowerPointHostAdapter(
+    powerPointRuntime,
+  );
+
 const wordService =
   createWordSelectionService(
-    createWordHostAdapter(
-      wordRuntime,
-    ),
+    wordHostAdapter,
   );
 
 const excelService =
   createExcelSelectionService(
-    createExcelHostAdapter(
-      excelRuntime,
-    ),
+    excelHostAdapter,
   );
 
 const powerPointService =
   createPowerPointSelectionService(
-    createPowerPointHostAdapter(
-      powerPointRuntime,
-    ),
+    powerPointHostAdapter,
   );
 
 const clipboard = {
@@ -124,6 +142,11 @@ const clipboard = {
 };
 
 view.setReady(false);
+germanPane.setReady(false);
+germanPane.setSelectionPort(
+  undefined,
+);
+
 view.showIdle(
   "Waiting for Microsoft Office…",
 );
@@ -153,6 +176,13 @@ if (!office) {
             );
 
           if (!readiness.ok) {
+            germanPane.setReady(
+              false,
+            );
+            germanPane.setSelectionPort(
+              undefined,
+            );
+
             view.setReady(false);
             view.showFailure({
               domain: "host",
@@ -170,6 +200,30 @@ if (!office) {
 
           featureTabs.setHost(
             readiness.hostKind,
+          );
+
+          if (
+            readiness.hostKind ===
+              "word"
+          ) {
+            germanPane.setSelectionPort(
+              wordHostAdapter,
+            );
+          } else if (
+            readiness.hostKind ===
+              "excel"
+          ) {
+            germanPane.setSelectionPort(
+              excelHostAdapter,
+            );
+          } else {
+            germanPane.setSelectionPort(
+              powerPointHostAdapter,
+            );
+          }
+
+          germanPane.setReady(
+            true,
           );
 
           let controller;
@@ -224,6 +278,13 @@ if (!office) {
         ready as Promise<unknown>
       ).catch(
         () => {
+          germanPane.setReady(
+            false,
+          );
+          germanPane.setSelectionPort(
+            undefined,
+          );
+
           view.setReady(false);
           view.showFailure({
             domain: "host",
@@ -236,6 +297,13 @@ if (!office) {
       );
     }
   } catch {
+    germanPane.setReady(
+      false,
+    );
+    germanPane.setSelectionPort(
+      undefined,
+    );
+
     view.setReady(false);
     view.showFailure({
       domain: "host",

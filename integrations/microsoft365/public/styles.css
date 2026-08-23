@@ -325,3 +325,54 @@ footer p {
   white-space: nowrap;
   border: 0;
 }
+
+/* Phase 15.7 — German Braille workspace */
+.german-help,
+.german-phase-note {
+  color: var(--muted, #5f6368);
+}
+
+.german-config-grid {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.german-config-field {
+  display: grid;
+  gap: 6px;
+}
+
+.german-config-field select {
+  width: 100%;
+  min-height: 36px;
+}
+
+.german-actions {
+  margin-bottom: 14px;
+}
+
+.german-result,
+.german-error,
+.german-profile {
+  margin-top: 14px;
+}
+
+.german-result[hidden],
+.german-error[hidden],
+.german-profile-output[hidden] {
+  display: none;
+}
+
+.german-output,
+.german-profile-output {
+  min-height: 3.5rem;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.german-phase-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
