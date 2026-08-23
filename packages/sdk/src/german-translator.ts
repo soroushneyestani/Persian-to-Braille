@@ -2,6 +2,8 @@ import {
   applyGermanRegionalOverlay,
   getGermanBrailleRuntimeCapability,
   translateGermanBasisschrift,
+  translateGermanKurzschriftAutomatic,
+  translateGermanVollschriftAutomatic,
 } from "@persian-braille/core";
 
 import type {
@@ -80,16 +82,12 @@ export class GermanBrailleTranslationError
       GermanBrailleTranslationFailure,
   ) {
     super(result.message);
-
     this.name =
       "GermanBrailleTranslationError";
-
     this.code =
       result.code;
-
     this.result =
       result;
-
     Object.freeze(this);
   }
 }
@@ -109,43 +107,101 @@ class CapabilityBackedGermanBrailleTranslator
   translate(
     input: string,
   ): GermanBrailleTranslationResult {
+    let normalizedText: string;
+    let unicodeBraille: string;
+    let structuralTokens:
+      readonly string[];
+
     if (
       this.profile.mode
-      !== "basisschrift"
+      === "basisschrift"
     ) {
-      return failure(
-        input,
-        this.profile,
-        "RUNTIME_CONTEXT_REQUIRED",
-        (
-          `German ${this.profile.mode} has a source-backed executable Core `
-          + "surface, but automatic public translation requires explicit "
-          + `resolution context. Required dependency: ${this.profile.runtimeDependency}.`
-        ),
-      );
-    }
+      const basis =
+        translateGermanBasisschrift(
+          input,
+        );
 
-    const basis =
-      translateGermanBasisschrift(
-        input,
-      );
+      if (!basis.ok) {
+        return failure(
+          input,
+          this.profile,
+          "RUNTIME_EXECUTION_FAILED",
+          basis.message,
+          basis.location,
+        );
+      }
 
-    if (!basis.ok) {
-      return failure(
-        input,
-        this.profile,
-        "RUNTIME_EXECUTION_FAILED",
-        basis.message,
-        basis.location,
-      );
+      normalizedText =
+        basis.normalizedText;
+      unicodeBraille =
+        basis.unicodeBraille;
+      structuralTokens =
+        basis.structuralTokens;
+    } else if (
+      this.profile.mode
+      === "vollschrift"
+    ) {
+      const voll =
+        translateGermanVollschriftAutomatic(
+          input,
+        );
+
+      if (!voll.ok) {
+        return failure(
+          input,
+          this.profile,
+          (
+            voll.code
+            === "SOURCE_CONTEXT_UNRESOLVED"
+              ? "RUNTIME_CONTEXT_REQUIRED"
+              : "RUNTIME_EXECUTION_FAILED"
+          ),
+          voll.message,
+        );
+      }
+
+      normalizedText =
+        voll.normalizedText;
+      unicodeBraille =
+        voll.unicodeBraille;
+      structuralTokens =
+        Object.freeze([]);
+    } else {
+      const kurz =
+        translateGermanKurzschriftAutomatic(
+          input,
+        );
+
+      if (!kurz.ok) {
+        return failure(
+          input,
+          this.profile,
+          (
+            kurz.code
+            === "SOURCE_CONTEXT_UNRESOLVED"
+            || kurz.code
+              === "PARENT_VOLLSCHRIFT_FAILURE"
+              ? "RUNTIME_CONTEXT_REQUIRED"
+              : "RUNTIME_EXECUTION_FAILED"
+          ),
+          kurz.message,
+        );
+      }
+
+      normalizedText =
+        input.normalize("NFC");
+      unicodeBraille =
+        kurz.unicodeBraille;
+      structuralTokens =
+        Object.freeze([]);
     }
 
     const regional =
       applyGermanRegionalOverlay(
         input,
-        "basisschrift",
+        this.profile.mode,
         this.profile.regionalOverlay,
-        basis.unicodeBraille,
+        unicodeBraille,
       );
 
     if (!regional.ok) {
@@ -165,8 +221,7 @@ class CapabilityBackedGermanBrailleTranslator
       input,
       profile:
         this.profile,
-      normalizedText:
-        basis.normalizedText,
+      normalizedText,
       cells:
         Object.freeze(
           Array.from(
@@ -175,8 +230,7 @@ class CapabilityBackedGermanBrailleTranslator
         ),
       unicodeBraille:
         regional.unicodeBraille,
-      structuralTokens:
-        basis.structuralTokens,
+      structuralTokens,
     });
   }
 

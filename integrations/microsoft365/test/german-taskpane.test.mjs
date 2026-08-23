@@ -368,24 +368,27 @@ test(
 for (
   const [
     level,
-    status,
-    dependency,
+    input,
+    expectedBraille,
+    expectedCoverage,
   ]
   of [
     [
       "vollschrift",
-      "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED",
-      "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT",
+      "Baum",
+      "⠃⠡⠍",
+      "SOURCE_FIXTURE_SURFACE",
     ],
     [
       "kurzschrift",
-      "EXPLICIT_RESOLVED_PLAN_REQUIRED",
-      "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN",
+      "Center",
+      "⠠⠉⠉⠞⠻",
+      "SOURCE_FIXTURE_SURFACE",
     ],
   ]
 ) {
   test(
-    `Office ${level} remains fail-closed without explicit source-backed resolution context`,
+    `Office ${level} renders real Unicode Braille through the registered public SDK`,
     async () => {
       const {
         document,
@@ -404,7 +407,7 @@ for (
 
       controller.setSelectionPort(
         successfulSelection(
-          "Probe",
+          input,
         ),
       );
 
@@ -421,14 +424,115 @@ for (
         elements[
           "german-translation-result"
         ].hidden,
+        false,
+      );
+
+      assert.equal(
+        elements[
+          "german-translation-error"
+        ].hidden,
         true,
       );
 
       assert.equal(
         elements[
+          "german-unicode-output"
+        ].textContent,
+        expectedBraille,
+      );
+
+      const profile =
+        JSON.parse(
+          elements[
+            "german-profile-info"
+          ].textContent,
+        );
+
+      assert.deepEqual(
+        profile,
+        {
+          language:
+            "de",
+          mode:
+            level,
+          regionalOverlay:
+            null,
+          runtimeStatus:
+            "EXECUTABLE_RUNTIME_REGISTERED",
+          runtimeDependency:
+            "NONE",
+          runtimeExecutable:
+            true,
+          runtimeRegistered:
+            true,
+          loweringCoverage:
+            expectedCoverage,
+        },
+      );
+
+      assert.match(
+        elements[
+          "german-taskpane-status"
+        ].textContent,
+        /preview ready/i,
+      );
+    },
+  );
+}
+
+for (
+  const level
+  of [
+    "basisschrift",
+    "vollschrift",
+    "kurzschrift",
+  ]
+) {
+  test(
+    `Swiss explicit Eszett is rejected without automatic normalization in ${level}`,
+    async () => {
+      const {
+        document,
+        elements,
+      } =
+        fixture();
+
+      const controller =
+        createGermanTaskPane(
+          document,
+        );
+
+      controller.setReady(
+        true,
+      );
+
+      controller.setSelectionPort(
+        successfulSelection(
+          "ß",
+        ),
+      );
+
+      selectConfiguration(
+        elements,
+        "switzerland",
+        level,
+      );
+
+      await controller
+        .translateCurrentSelection();
+
+      assert.equal(
+        elements[
           "german-error-code"
         ].textContent,
-        "RUNTIME_CONTEXT_REQUIRED",
+        "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+      );
+
+      assert.equal(
+        elements[
+          "german-translation-result"
+        ].hidden,
+        true,
       );
 
       const profile =
@@ -439,76 +543,17 @@ for (
         );
 
       assert.equal(
-        profile.runtimeStatus,
-        status,
-      );
-
-      assert.equal(
-        profile.runtimeDependency,
-        dependency,
-      );
-
-      assert.equal(
         profile.runtimeExecutable,
-        false,
+        true,
       );
 
       assert.equal(
         profile.runtimeRegistered,
-        false,
+        true,
       );
     },
   );
 }
-
-test(
-  "Swiss explicit Eszett is rejected without automatic normalization",
-  async () => {
-    const {
-      document,
-      elements,
-    } =
-      fixture();
-
-    const controller =
-      createGermanTaskPane(
-        document,
-      );
-
-    controller.setReady(
-      true,
-    );
-
-    controller.setSelectionPort(
-      successfulSelection(
-        "groß",
-      ),
-    );
-
-    selectConfiguration(
-      elements,
-      "switzerland",
-      "basisschrift",
-    );
-
-    await controller
-      .translateCurrentSelection();
-
-    assert.equal(
-      elements[
-        "german-error-code"
-      ].textContent,
-      "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
-    );
-
-    assert.equal(
-      elements[
-        "german-translation-result"
-      ].hidden,
-      true,
-    );
-  },
-);
 
 test(
   "German pane rejects empty Office selection before SDK translation",

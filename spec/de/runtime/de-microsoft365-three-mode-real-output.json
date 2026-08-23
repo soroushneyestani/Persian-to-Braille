@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.9E-MICROSOFT365-THREE-MODE-REAL-OUTPUT",
+  "id": "de-microsoft365-three-mode-real-output",
+  "status": "PASS_WITH_THREE_MODE_REAL_UNICODE_OUTPUT_THROUGH_SHARED_OFFICE_PATH",
+  "source": {
+    "phase15_9D": {
+      "path": "tools/phase15-9/runtime/stage-output/d/full-german-runtime-registration.json",
+      "byteSha256": "2B79FD4D4BB8EA1FBDD1426E8377EEC979CE9C861D84E3227AB38E56870772E4",
+      "canonicalSha256": "65AE8D2F2C3090871FF9C63B5B2462D053E3B4E0B7B4E1B919E646E5A5398124"
+    }
+  },
+  "microsoft365Path": {
+    "sharedAddin": true,
+    "hosts": [
+      "Word",
+      "Excel",
+      "PowerPoint"
+    ],
+    "hostAdaptersReused": true,
+    "germanPanePublicSdkOnly": true,
+    "germanPaneDeepImportsCore": false,
+    "textModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "regionalConfigurations": [
+      null,
+      "swiss"
+    ]
+  },
+  "realOutputVectors": {
+    "basisschrift": {
+      "input": "Hallo",
+      "unicodeBraille": "⠓⠁⠇⠇⠕",
+      "officePathValidated": true
+    },
+    "vollschrift": {
+      "input": "Baum",
+      "unicodeBraille": "⠃⠡⠍",
+      "officePathValidated": true
+    },
+    "kurzschrift": {
+      "input": "Center",
+      "unicodeBraille": "⠠⠉⠉⠞⠻",
+      "officePathValidated": true
+    }
+  },
+  "regionalValidation": {
+    "swissBasisschrift": "PASS",
+    "swissExplicitEszettThreeModes": "3/3 REJECT PASS",
+    "automaticEszettToSsNormalization": false
+  },
+  "validation": {
+    "coreBuild": "PASS",
+    "sdkBuild": "PASS",
+    "microsoft365Typecheck": "PASS",
+    "microsoft365Test": "PASS",
+    "phase10Validation": "PASS",
+    "threeModeRealUnicodeOutput": "3/3 PASS",
+    "threeModeRegisteredProfile": "3/3 PASS",
+    "threeModeSwissExplicitEszett": "3/3 REJECT PASS",
+    "sharedHostDispatchRegression": "PASS",
+    "noOfficeWriteActionsRegression": "PASS"
+  },
+  "runtimeBoundary": {
+    "basisschriftOfficeRealOutput": true,
+    "vollschriftOfficeRealOutput": true,
+    "kurzschriftOfficeRealOutput": true,
+    "microsoft365ThreeModeRealOutputValidated": true,
+    "fullGermanRuntimeRegistered": true,
+    "unknownOrAmbiguousContextCanReturnStructuredUnresolved": true,
+    "windowsDesktopLiveOutputReverifiedIn15_9": false,
+    "officeWebPassClaimed": false,
+    "officeMacPassClaimed": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "deMath016Fabricated": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "globalRuntimeConformanceProven": false
+  },
+  "next": "15.9F-GLOBAL-GERMAN-RUNTIME-CONFORMANCE"
+}

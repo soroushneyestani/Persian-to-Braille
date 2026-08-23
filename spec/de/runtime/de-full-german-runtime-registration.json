@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.9D-FULL-GERMAN-RUNTIME-REGISTRATION",
+  "id": "de-full-german-runtime-registration",
+  "status": "PASS_WITH_FULL_THREE_MODE_PUBLIC_RUNTIME_REGISTRATION",
+  "registration": {
+    "basisschrift": {
+      "automaticExecutable": true,
+      "publicSdkRegistered": true
+    },
+    "vollschrift": {
+      "automaticExecutable": true,
+      "publicSdkRegistered": true,
+      "unknownContextPolicy": "STRUCTURED_UNRESOLVED"
+    },
+    "kurzschrift": {
+      "automaticExecutable": true,
+      "publicSdkRegistered": true,
+      "unknownContextPolicy": "STRUCTURED_UNRESOLVED"
+    },
+    "swissOverlay": {
+      "executable": true,
+      "orthogonalToTextMode": true,
+      "explicitEszettPolicy": "REJECT"
+    }
+  },
+  "validation": {
+    "coreBuild": "PASS",
+    "sdkBuild": "PASS",
+    "basisschriftPublicOutput": "Hallo -> ⠓⠁⠇⠇⠕ PASS",
+    "vollschriftPublicOutput": "Baum -> ⠃⠡⠍ PASS",
+    "kurzschriftPublicOutput": "Center -> ⠠⠉⠉⠞⠻ PASS",
+    "candidateFreeVollKurz": "2/2 PASS",
+    "vollschriftUnknownContextFailClosed": "PASS",
+    "swissBasisschriftRegression": "PASS",
+    "swissExplicitEszettThreeModes": "3/3 REJECT PASS"
+  },
+  "runtimeBoundary": {
+    "basisschriftAutomaticExecutable": true,
+    "vollschriftAutomaticExecutable": true,
+    "kurzschriftAutomaticExecutable": true,
+    "basisschriftPublicSdkRegistered": true,
+    "vollschriftPublicSdkRegistered": true,
+    "kurzschriftPublicSdkRegistered": true,
+    "fullGermanRuntimeRegistered": true,
+    "swissOverlayExecutable": true,
+    "unknownOrAmbiguousContextCanReturnStructuredUnresolved": true,
+    "automaticDoesNotMeanEveryInputMustProduceBraille": true,
+    "pronunciationGuessing": false,
+    "morphologyGuessing": false,
+    "lexicalContextGuessing": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "deMath016Fabricated": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "microsoft365ThreeModeRealOutputValidated": false,
+    "globalRuntimeConformanceProven": false
+  },
+  "source": {
+    "phase15_9B": {
+      "path": "tools/phase15-9/runtime/stage-output/b/vollschrift-automatic-resolution.json",
+      "byteSha256": "858DA20C0CB8D117916DB2315D5C9F29E6CD84AA084A6BD77D77DD02CDF2F30A",
+      "canonicalSha256": "BBD87A2BD1CC194CFA0D67AE0065B4822850C889EEC628CC36E0088B9DD49E46"
+    },
+    "phase15_9C": {
+      "path": "tools/phase15-9/runtime/stage-output/c/kurzschrift-automatic-resolution.json",
+      "byteSha256": "4FA620C30671F02157C66DB226035A88E51AEE91DB8297FD37A4118183C6CFD6",
+      "canonicalSha256": "8DF742CEE4F1F5CC5E1E6AABD10C0A7170B145F4779D6A04EFD15489A78ED044"
+    }
+  },
+  "next": "15.9E-MICROSOFT365-THREE-MODE-REAL-OUTPUT"
+}

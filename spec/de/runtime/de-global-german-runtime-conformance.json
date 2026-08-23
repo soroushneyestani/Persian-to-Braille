@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.9F-GLOBAL-GERMAN-RUNTIME-CONFORMANCE",
+  "id": "de-global-german-runtime-conformance",
+  "status": "PASS_WITH_GLOBAL_RUNTIME_CONFORMANCE_WITHIN_CLOSED_SOURCE_BACKED_CONTRACT",
+  "language": "de",
+  "conformanceScope": {
+    "scopeId": "CLOSED_SOURCE_BACKED_RUNTIME_CONTRACT",
+    "textModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ],
+    "regionalDimension": [
+      {
+        "id": "de-at",
+        "regionalOverlay": null
+      },
+      {
+        "id": "ch",
+        "regionalOverlay": "swiss"
+      }
+    ],
+    "publicSdkRegisteredThreeModeMatrix": "3 modes x 2 regional profiles",
+    "microsoft365SharedPath": true,
+    "universalNaturalLanguageCoverageClaimed": false,
+    "everyArbitraryInputGuaranteedBraille": false,
+    "unknownOrAmbiguousContextPolicy": "STRUCTURED_UNRESOLVED"
+  },
+  "evidence": {
+    "vollschriftAutomatic": {
+      "source": "tools/phase15-9/runtime/stage-output/b/vollschrift-automatic-resolution.json",
+      "automaticDirectRenderings": "24/24 EXACT PASS",
+      "automaticTargetDecisions": "48/48 PASS"
+    },
+    "kurzschriftAutomatic": {
+      "source": "tools/phase15-9/runtime/stage-output/c/kurzschrift-automatic-resolution.json",
+      "historicalValidationCoverage": "645/645 PASS",
+      "automaticExactRenderings": "37/37 EXACT PASS",
+      "automaticDecisionPairs": "320/320 PASS"
+    },
+    "publicRegistration": {
+      "source": "tools/phase15-9/runtime/stage-output/d/full-german-runtime-registration.json",
+      "threeModesRegistered": "3/3 PASS"
+    },
+    "microsoft365": {
+      "source": "tools/phase15-9/runtime/stage-output/e/microsoft365-three-mode-real-output.json",
+      "threeModeRealUnicodeOutput": "3/3 PASS",
+      "threeModeSwissEszettReject": "3/3 PASS"
+    }
+  },
+  "validation": {
+    "coreBuild": "PASS",
+    "historicalCoreGermanRuntimeSuites": "PASS",
+    "historicalThreeModeTwoRegionRegression": "PASS",
+    "automaticVollschriftRegression": "PASS",
+    "automaticKurzschriftRegression": "PASS",
+    "sdkBuild": "PASS",
+    "sdkGermanPublicRegression": "PASS",
+    "publicSdkThreeModeTwoRegionMatrix": "6/6 PASS",
+    "publicSdkRealOutputVectors": "3/3 PASS",
+    "deAtExplicitEszettThreeModes": "3/3 PASS",
+    "swissExplicitEszettThreeModes": "3/3 REJECT PASS",
+    "unknownSemanticContextFailClosed": "2/2 PASS",
+    "microsoft365Typecheck": "PASS",
+    "microsoft365Test": "PASS",
+    "phase10Validation": "PASS",
+    "runtimeSafetySourceAudit": "PASS",
+    "stagedDiffCheck": "PASS"
+  },
+  "runtimeBoundary": {
+    "basisschriftAutomaticExecutable": true,
+    "vollschriftAutomaticExecutable": true,
+    "kurzschriftAutomaticExecutable": true,
+    "fullGermanRuntimeRegistered": true,
+    "swissOverlayExecutable": true,
+    "swissIsFourthTextMode": false,
+    "regionalDimensionOrthogonal": true,
+    "microsoft365ThreeModeRealOutputValidated": true,
+    "globalRuntimeConformanceProven": true,
+    "globalRuntimeConformanceScope": "CLOSED_SOURCE_BACKED_RUNTIME_CONTRACT",
+    "universalGermanLanguageCoverageClaimed": false,
+    "everyArbitraryInputGuaranteedBraille": false,
+    "unknownOrAmbiguousContextCanReturnStructuredUnresolved": true,
+    "pronunciationGuessing": false,
+    "morphologyGuessing": false,
+    "lexicalContextGuessing": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "historicalNoGeneralizationGuardPreserved": true,
+    "automaticEszettToSsNormalization": false,
+    "deMath016Fabricated": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "persianRuntimeReusedForGerman": false,
+    "microsoft365CoreDeepImport": false,
+    "windowsDesktopLiveOutputReverifiedIn15_9": false,
+    "officeWebPassClaimed": false,
+    "officeMacPassClaimed": false
+  },
+  "source": {
+    "phase15_9B": {
+      "path": "tools/phase15-9/runtime/stage-output/b/vollschrift-automatic-resolution.json",
+      "byteSha256": "858DA20C0CB8D117916DB2315D5C9F29E6CD84AA084A6BD77D77DD02CDF2F30A",
+      "canonicalSha256": "BBD87A2BD1CC194CFA0D67AE0065B4822850C889EEC628CC36E0088B9DD49E46"
+    },
+    "phase15_9C": {
+      "path": "tools/phase15-9/runtime/stage-output/c/kurzschrift-automatic-resolution.json",
+      "byteSha256": "4FA620C30671F02157C66DB226035A88E51AEE91DB8297FD37A4118183C6CFD6",
+      "canonicalSha256": "8DF742CEE4F1F5CC5E1E6AABD10C0A7170B145F4779D6A04EFD15489A78ED044"
+    },
+    "phase15_9D": {
+      "path": "tools/phase15-9/runtime/stage-output/d/full-german-runtime-registration.json",
+      "byteSha256": "2B79FD4D4BB8EA1FBDD1426E8377EEC979CE9C861D84E3227AB38E56870772E4",
+      "canonicalSha256": "65AE8D2F2C3090871FF9C63B5B2462D053E3B4E0B7B4E1B919E646E5A5398124"
+    },
+    "phase15_9E": {
+      "path": "tools/phase15-9/runtime/stage-output/e/microsoft365-three-mode-real-output.json",
+      "byteSha256": "5A8C1E16F028C852127C14A74A81D64E08F1DADFCF47363D3634D49CB1ED228F",
+      "canonicalSha256": "EAF666BA4BF1299D7462C0E83F373258779EFFF45868FC93229CA05FF46CA4EB"
+    }
+  },
+  "next": "15.9G-COMMIT-PUSH-PARITY"
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.9C-KURZSCHRIFT-AUTOMATIC-RESOLUTION",
+  "id": "de-kurzschrift-automatic-runtime",
+  "status": "PASS_WITH_SOURCE_BACKED_AUTOMATIC_RESOLUTION_PROVIDER",
+  "language": "de",
+  "mode": "kurzschrift",
+  "provider": {
+    "kind": "CLOSED_SOURCE_CONTEXT_RESOLVER",
+    "unknownContextPolicy": "STRUCTURED_UNRESOLVED",
+    "exactSourceRenderingFastPathCount": 37,
+    "mappingRecordCount": 324,
+    "mappingCarrierKeyCount": 324,
+    "mappingCarrierConflictingBrailleKeyCount": 0,
+    "safeStandaloneMappingVectorCount": 212,
+    "decisionCaseCount": 392,
+    "inputTargetDecisionCaseCount": 322,
+    "uniqueInputTargetPairCount": 320,
+    "inputOnlyDecisionCaseCount": 14,
+    "layeredCompatiblePairCount": 2,
+    "unresolvedSourceConflictCount": 0
+  },
+  "validation": {
+    "historicalKurzschrift645Coverage": "645/645 PASS",
+    "historicalExactMappingExecution": "221/221 PASS",
+    "historicalContextualRenderingExecution": "37/37 PASS",
+    "historicalSourceDecisionCases": "392/392 PASS",
+    "automaticExactSourceRenderings": "37/37 EXACT PASS",
+    "automaticDecisionPairResolution": "320/320 PASS",
+    "compatibleLayeredPairResolution": "2/2 PASS",
+    "safeStandaloneMappingExecution": "212/212 PASS",
+    "automaticVollschriftParentFallback": "PASS",
+    "unknownDecisionFailClosed": "PASS",
+    "coreBuild": "PASS",
+    "historicalKurzschriftRuntimeRegression": "PASS",
+    "vollschriftAutomaticRegression": "PASS"
+  },
+  "runtimeBoundary": {
+    "kurzschriftAutomaticProviderResolutionExecutable": true,
+    "automaticAcceptsArbitraryInput": true,
+    "automaticDoesNotMeanEveryInputMustProduceBraille": true,
+    "unknownOrAmbiguousContextCanReturnStructuredUnresolved": true,
+    "exactSourceRenderingFastPath": true,
+    "automaticVollschriftParent": true,
+    "lexicalProviderInvented": false,
+    "unknownLexicalContextGuessed": false,
+    "morphologicalProviderInvented": false,
+    "unknownMorphologyGuessed": false,
+    "pronunciationProviderInvented": false,
+    "unknownPronunciationGuessed": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "historicalNoGeneralizationGuardPreserved": true,
+    "publicSdkKurzschriftRuntimeRegistered": false,
+    "fullGermanRuntimeRegistered": false,
+    "globalRuntimeConformanceProven": false,
+    "deMath016Fabricated": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "source": {
+    "bResult": {
+      "path": "tools/phase15-9/runtime/stage-output/b/vollschrift-automatic-resolution.json",
+      "byteSha256": "858DA20C0CB8D117916DB2315D5C9F29E6CD84AA084A6BD77D77DD02CDF2F30A",
+      "canonicalSha256": "BBD87A2BD1CC194CFA0D67AE0065B4822850C889EEC628CC36E0088B9DD49E46"
+    },
+    "cDiscovery": {
+      "path": "tools/phase15-9/runtime/stage-output/c/kurzschrift-automatic-resolution-discovery.json",
+      "byteSha256": "12301F6869D68FA2FB1EAEF1FE3FE7CB662B7AA1B678E1454F51BDDD6DD446F1",
+      "canonicalSha256": "5C1A2E505D9748822B9A0A5F58C8FDE9BCF59F7E0746F740E15237A017DABD09"
+    },
+    "cRefinement": {
+      "path": "tools/phase15-9/runtime/stage-output/c/kurzschrift-automatic-resolution-carrier-refinement.json",
+      "byteSha256": "FDE0971A00A5379595A4876E8FA272AE844F2D3ACD6E86E6E7F00AFBF26B2243",
+      "canonicalSha256": "276EC10138E3D5C8E7BF43E4A4325E204C3273F2847265D932377437AB4D4516"
+    },
+    "hDiscovery": {
+      "path": "tools/phase15-8/runtime/stage-output/h/kurzschrift-execution-semantics-discovery.json",
+      "byteSha256": "C14A83B994132896B021F36734017A01AF5C109515C08906235143358193D58A",
+      "canonicalSha256": "1750FFF7013D74022EBB08BA35E091778435533154258B2998579DC9805D2ABD"
+    },
+    "hResult": {
+      "path": "tools/phase15-8/runtime/stage-output/h/kurzschrift-executable-conformance.json",
+      "byteSha256": "ACCD57A0753B417B1BAB5BC12F3CE0CAB4F27047EBA62458A1CB8E3A1F96CC41",
+      "canonicalSha256": "28F00F1D4A770B58572CA02D3B69A7964406A9FFD2A66101A1E98FDE6D62EBE6"
+    }
+  },
+  "next": "15.9D-FULL-GERMAN-RUNTIME-REGISTRATION"
+}
