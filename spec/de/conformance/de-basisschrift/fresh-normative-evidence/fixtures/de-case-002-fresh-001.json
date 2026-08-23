@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CASE-002-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "DIRECT_TEXT",
+      "value": "III"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedBraille",
+          "value": {
+            "unicode": "⠘⠊⠊⠊",
+            "codepoints": [
+              "U+2818",
+              "U+280A",
+              "U+280A",
+              "U+280A"
+            ],
+            "dots": [
+              "45",
+              "24",
+              "24",
+              "24"
+            ],
+            "cellCount": 4
+          },
+          "canonicalSha256": "084816F79B51A1F257FBB9430FD1E933AEE7D36D9358AC0A61D96A194A370488"
+        }
+      ],
+      "behaviorSupplement": {
+        "rules": [
+          "DE-CASE-002",
+          "DE-CASE-006",
+          "DE-NUM-013"
+        ],
+        "rule": null
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CASE-002"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CASE-002"
+    ],
+    "canonicalContractPaths": [
+      "spec/de/rules/records/de-case-002.json"
+    ],
+    "canonicalSections": [
+      "2.6.2"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-case-002.json",
+        "byteSha256": "7718FCA8709E79CC7F0B149FEA885001DF4E5D87CC368941B95788C125012FCC",
+        "canonicalSha256": "2C26B36E21AF4DEDB8F7024C8E5987A09A865A53D69E853FC60AB09DDA70BA39",
+        "section": "2.6.2"
+      }
+    ],
+    "derivation": {
+      "method": "HISTORICAL_CARRIER_PLUS_FRESH_NORMATIVE_BSKDL_REPROOF",
+      "expectedVectorCanonicalSha256": "757787EDC7CA5D26CD661D644B4DCB42AB1BFF01FC7E1106471C0955C6F18841"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
