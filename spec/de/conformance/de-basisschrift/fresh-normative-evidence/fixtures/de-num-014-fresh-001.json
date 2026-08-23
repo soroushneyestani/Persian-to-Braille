@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-014-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "sourceKind": "NUMBER_WORD_BOUNDARY",
+      "normativeSection": "2.4.1"
+    }
+  },
+  "expectation": {
+    "value": {
+      "canonicalSemantics": {
+        "summary": "A word or word-part may directly follow a number unless its first Braille sign could be interpreted as a cardinal digit or denominator; ambiguous cases require dot 6 or another appropriate announcement.",
+        "ambiguityBreaker": {
+          "unicode": "⠠",
+          "codepoint": "U+2820",
+          "dots": "6"
+        },
+        "vollKurzContractionPolicy": "Apply contractions where they do not create ambiguity."
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-NUM-014"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-NUM-014"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+    ],
+    "canonicalSections": [
+      "2.4.1"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "byteSha256": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+        "canonicalSha256": "3EE3E6A59EBE71E8F7F665276DD98BF2361C3D63D963B19C5B598FA7F6FC2BA1",
+        "section": "2.4.1"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-num-014.json",
+        "byteSha256": "31ADD251811ACEA86FA7D77F994283021CF3BB3D5E141471E038778B1BE096E7",
+        "canonicalSha256": "A563BAB2C4A897FD1C679231D250057B680776E8050CE6DC01D6221E50B068DE",
+        "section": "2.4.1"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_BSKDL_SECTION_PLUS_CANONICAL_RULE_SEMANTICS",
+      "expectationCanonicalSha256": "8009B4D037345CF7BD2ADD21B8D3D3BD03019237A32D74C0C583E9C77AF14B44"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

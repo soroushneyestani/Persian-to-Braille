@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-NUM-008-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "sourceKind": "DECIMAL_CLASSIFIER",
+      "normativeSection": "2.3.1.4"
+    }
+  },
+  "expectation": {
+    "value": {
+      "canonicalSemantics": {
+        "summary": "Decimal classifiers and chapter/verse references support both print-like notation and a compact alternating lowered/normal numeric notation."
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-NUM-008"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-NUM-008"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json"
+    ],
+    "canonicalSections": [
+      "2.3.1.4"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1e-bskdl-basisschrift-numeric-grammar-state-contract.json",
+        "byteSha256": "8C65BA09B726C5280F138DBD2AC4C2576F1BB385131EE27A86A2439E4A6452DE",
+        "canonicalSha256": "3EE3E6A59EBE71E8F7F665276DD98BF2361C3D63D963B19C5B598FA7F6FC2BA1",
+        "section": "2.3.1.4"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-num-008.json",
+        "byteSha256": "6F0EE719C71C39F9672823D4897B32268F92E6AFA47F55E928AAC8291F3927AA",
+        "canonicalSha256": "371AE5593165D1C63C798ABD93E009C0B7CF583787D5E66C381D056E42FA68C9",
+        "section": "2.3.1.4"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_BSKDL_SECTION_PLUS_CANONICAL_RULE_SEMANTICS",
+      "expectationCanonicalSha256": "AFC7EB0D8956E571CFB2F01599C423F19769FA34188638C76C2ADECFF46BDB40"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

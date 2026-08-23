@@ -527,6 +527,114 @@
       "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-002-fresh-001.json",
       "byteSha256": "9CE07F2DBF3391B2216E828E81D31CCE2DC3D14F552001B366FE28F09FAC44DF",
       "canonicalSha256": "045C2E2AFA93308DADB9771840D7050B5440E25D291E176CEB4517A9AF81934D"
+    },
+    {
+      "id": "DE-CASE-007-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-case-007-fresh-001.json",
+      "byteSha256": "AEBB3E7B8932F437E3CB3E955F3AC8C8E0784A28718CF3B8D044C64E281F044D",
+      "canonicalSha256": "478270EC93ADD61D81E45CB28C3183F34395B2A0D9640D93A7385FB135318447"
+    },
+    {
+      "id": "DE-CASE-009-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-case-009-fresh-001.json",
+      "byteSha256": "DE45B9AB98ABCCBF2DEB12621AE0787790815514CE999244751FCE3ABB7CB954",
+      "canonicalSha256": "C8DE11E6AFA6BF9118703954041F723F0CEFE68C20EFCDC94213183E764B4337"
+    },
+    {
+      "id": "DE-CASE-018-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-case-018-fresh-001.json",
+      "byteSha256": "737ABE12A24000C9033534D47CD0CB5105C416213F571221586CFCBECEFD44B8",
+      "canonicalSha256": "5651770B8D59298A045A6D4C82C942F350C31BC3CF18444624EDFC23537C2846"
+    },
+    {
+      "id": "DE-EMPH-011-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-emph-011-fresh-001.json",
+      "byteSha256": "78A393443D506E056D8D60C40B71F2EE3C93BFAE4A17D05D7CBF2EAD813668E3",
+      "canonicalSha256": "923EC3C1F9E3D379D28030E8C9F43A35D9DFD563E9FA0AD2FFD8590F86836AE8"
+    },
+    {
+      "id": "DE-INWORD-002-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-002-fresh-001.json",
+      "byteSha256": "2BA8D5ED4236CB17DD1DB412DFB2F4A96E6264BAC0D99DCCB56CF99A704643A5",
+      "canonicalSha256": "C0E3A9538B87DC1DD8153A0E933A113D704D38CB62B0FE3E52300609F2C972DA"
+    },
+    {
+      "id": "DE-INWORD-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-004-fresh-001.json",
+      "byteSha256": "EF35E3140514F61AC2FBDDD5E3BCFA73B4BB299CE6CE89EC1EA976B636A4FE31",
+      "canonicalSha256": "468F956D7217EC4280D45855C6E1C786EE9837151C6913E4090D405F4E4DC798"
+    },
+    {
+      "id": "DE-MATH-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-004-fresh-001.json",
+      "byteSha256": "B1404DAFF2A9240A355EA8F19745256453B21D021A00A7F02E649FDD67A7C524",
+      "canonicalSha256": "6BA4A7CE91310C95A57FF472C4B6E041199546CACBFEAAB1ADF0D24493756B5A"
+    },
+    {
+      "id": "DE-NUM-008-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-num-008-fresh-001.json",
+      "byteSha256": "BBCB9AB6AFF4F99576DB28D5ABF265D4CBD01EE9107EFF27BEE6FF0BF1C7E64F",
+      "canonicalSha256": "F1717E6FF5A71F9B639D9474C6458798FB34A2021922F77D6C5845F7EE6D3C7C"
+    },
+    {
+      "id": "DE-NUM-010-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-num-010-fresh-001.json",
+      "byteSha256": "ECE3EC726F464297DEEA68F36CC28E10088A9D6DEE248F407B3623CCA24538CA",
+      "canonicalSha256": "961AC8ADAD70773533B1390C1DF5840817E09F013FAEFF831737C6308D1E6327"
+    },
+    {
+      "id": "DE-NUM-011-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-num-011-fresh-001.json",
+      "byteSha256": "51381A7150A45738B96B895141829F861A7814C10D06FB92F8F64937D958DE34",
+      "canonicalSha256": "5CB580B95FC80EA095AE3E5815348BAEEB48A7CF13E4EEB81674B64E69C6DD79"
+    },
+    {
+      "id": "DE-NUM-014-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-num-014-fresh-001.json",
+      "byteSha256": "3B37E5D7CC55E1E00FF5AAD4DDBA76AA54F11C15178E46539D91B9D80A46A56A",
+      "canonicalSha256": "707E37DB018A08FF1363BC86DD7107A41EAC43CDE1952687C7DC3BAD638FB3F0"
+    },
+    {
+      "id": "DE-SPECIAL-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-special-004-fresh-001.json",
+      "byteSha256": "E5FE6DB4093A208034733AF70A38889A9C0CE1353D41DB1D4B0D18C9E28BC4EF",
+      "canonicalSha256": "11DBD66F9DA5F0479CF529F476277FC3FD882D8A502C79972154BC7B12F9DE69"
+    },
+    {
+      "id": "DE-STROKE-003-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-003-fresh-001.json",
+      "byteSha256": "1852E0DC90A486AE660603D0DEF76E9F461A435671562306EA5233D6EFAB34BA",
+      "canonicalSha256": "51D1C6540DBDFC7A619E6BBD6948C7DEA23E3E9A58F0EEB9477A1D517E67E069"
+    },
+    {
+      "id": "DE-STROKE-005-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-005-fresh-001.json",
+      "byteSha256": "A73320DF6BFA592FF18D767096E12D4CFD092B85F1BE6425293A0063A104C1EB",
+      "canonicalSha256": "70F01EA8DFE84DF7F0361FA7C128FF3AC9A023A88236C8C4CD56D774D28EA552"
+    },
+    {
+      "id": "DE-STROKE-006-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-006-fresh-001.json",
+      "byteSha256": "D1597105DA6FC5151AB4A28C50A9780C5B1AB6C19041CB7A9E9B01C93A67EDBB",
+      "canonicalSha256": "E8016B090485A665615F3C4BBFFD606BE1B522CA8B193DFD28C03810292637A6"
+    },
+    {
+      "id": "DE-STROKE-007-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-007-fresh-001.json",
+      "byteSha256": "05E7A7068668BEA176A9F7124273C4DD8462618B840BDA909C7876AF0780F5C5",
+      "canonicalSha256": "B98D21E35B60C06D4A2BBDB796E4F31E87F42F6039F7D78648C5B3717F0C20F5"
+    },
+    {
+      "id": "DE-STROKE-013-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-013-fresh-001.json",
+      "byteSha256": "DCE1E87DBD12C40CD3AB5C6083ABCD6BF2F3822253EFAEF63E739BFFD13029BC",
+      "canonicalSha256": "2CFCE39CB224CE27BB56AB94E6F936732538B1F84E1F352DAC8F86F8B2CC32BD"
+    },
+    {
+      "id": "DE-STROKE-017-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-017-fresh-001.json",
+      "byteSha256": "9ABA20BE935906516089E12A04FBF2136D37B25F6D5AF2489AA4B4BCA57A1D67",
+      "canonicalSha256": "C0DEB3FA90E689AC75FA877A6E4799439A69E27BA728AFDEBE5DB39E67954328"
     }
   ],
   "summary": {

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-002-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "sourceKind": "COVERED_PUNCTUATION_CLASSES",
+      "normativeSection": "2.13"
+    }
+  },
+  "expectation": {
+    "value": {
+      "canonicalSemantics": {
+        "summary": "Comma, semicolon, colon, question mark, exclamation mark, brackets, quotation marks and arrows are covered when they occur inside words.",
+        "classes": [
+          "COMMA",
+          "SEMICOLON",
+          "COLON",
+          "QUESTION_MARK",
+          "EXCLAMATION_MARK",
+          "BRACKETS",
+          "QUOTATION_MARKS",
+          "ARROWS"
+        ]
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-INWORD-002"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-INWORD-002"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json"
+    ],
+    "canonicalSections": [
+      "2.13"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+        "byteSha256": "5184BD3D1B4316FB632FAF318E675DF10B9B70184B04C2C99CBE768D39708BA7",
+        "canonicalSha256": "5D886B5E010D81D3D6EC5D20F09FC79AC0A7C4CE4538EB99340ED87ECE48BCDB",
+        "section": "2.13"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-inword-002.json",
+        "byteSha256": "F5F5C352AC745F8F6A0CAFCE2E1681D9BB9A9641141C0F0BEA328C446D9D04C9",
+        "canonicalSha256": "92B538DA94A0DC33B590308A13428078EC352B8E2F4EF540D47C4614B17B3DC6",
+        "section": "2.13"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_BSKDL_SECTION_PLUS_CANONICAL_RULE_SEMANTICS",
+      "expectationCanonicalSha256": "F947E11B49E2EF5BBDEA5B6ABFE6052D4956D21E6630910C919E156BCD40F7FA"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
