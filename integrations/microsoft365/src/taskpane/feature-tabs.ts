@@ -227,7 +227,7 @@ export function createFeatureTabController(
         "Translate the current supported Office selection through the shared Persian Braille SDK.";
     } else if (german) {
       ui.intro.textContent =
-        "German Braille workspace. Translation controls will be enabled through the shared German Core.";
+        "Choose a region and Braille level, then translate the current supported Office selection through the public German Braille SDK.";
     } else {
       ui.intro.textContent =
         "Convert a Standard MIDI file to Music Braille through the shared public SDK, preview it, and insert it into Word.";

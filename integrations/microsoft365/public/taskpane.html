@@ -55,7 +55,7 @@
           aria-selected="false"
           tabindex="-1"
         >
-          Deutsch
+          German
         </button>
         <button
           id="feature-tab-music"
@@ -106,13 +106,104 @@
       aria-labelledby="german-braille-title"
     >
       <h2 id="german-braille-title">German Braille</h2>
-      <p>
-        The Deutsch workspace is reserved for the shared German Braille Core.
-        German translation is not connected in this shell yet.
+      <p class="german-help">
+        Choose the regional convention and Braille level explicitly, then
+        translate the current supported Office selection through the shared
+        public German Braille SDK.
       </p>
-      <p>
-        <strong>Text modes:</strong>
-        Basisschrift, Vollschrift, Kurzschrift.
+
+      <div class="german-config-grid">
+        <div class="german-config-field">
+          <label for="german-region">
+            <strong>Region</strong>
+          </label>
+          <select id="german-region">
+            <option value="">Choose region</option>
+            <option value="germany-austria">Germany / Austria</option>
+            <option value="switzerland">Switzerland</option>
+          </select>
+        </div>
+
+        <div class="german-config-field">
+          <label for="german-text-mode">
+            <strong>Braille level</strong>
+          </label>
+          <select id="german-text-mode">
+            <option value="">Choose Braille level</option>
+            <option value="basisschrift">Basisschrift</option>
+            <option value="vollschrift">Vollschrift</option>
+            <option value="kurzschrift">Kurzschrift</option>
+          </select>
+        </div>
+      </div>
+
+      <div
+        class="actions german-actions"
+        aria-label="German Braille translation actions"
+      >
+        <button
+          id="german-translate-selection"
+          type="button"
+          disabled
+        >
+          Translate Selection
+        </button>
+        <button
+          id="german-clear-output"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+
+      <section
+        id="german-translation-result"
+        class="german-result"
+        aria-label="German Braille preview"
+        hidden
+      >
+        <h3>Unicode German Braille</h3>
+        <pre
+          id="german-unicode-output"
+          class="output braille german-output"
+        ></pre>
+      </section>
+
+      <section
+        id="german-translation-error"
+        class="error-panel german-error"
+        role="alert"
+        hidden
+      >
+        <h3>German Braille translation unavailable</h3>
+        <p>
+          <strong id="german-error-code"></strong>
+        </p>
+        <p id="german-error-message"></p>
+      </section>
+
+      <section
+        class="german-profile"
+        aria-label="German Braille runtime profile"
+      >
+        <h3>Runtime profile</h3>
+        <pre
+          id="german-profile-info"
+          class="output code-output german-profile-output"
+          hidden
+        ></pre>
+      </section>
+
+      <p
+        id="german-taskpane-status"
+        class="status"
+        aria-live="polite"
+      ></p>
+
+      <p class="german-phase-note">
+        Germany / Austria use the standard baseline. Switzerland applies the
+        Swiss regional overlay. Regional selection is independent from the
+        three Braille levels.
       </p>
     </section>
 
