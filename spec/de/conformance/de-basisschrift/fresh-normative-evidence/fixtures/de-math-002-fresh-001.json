@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-002-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "CASE_CONTEXT",
+      "purpose": "multiplication-dot-followed-by-number",
+      "linkedRules": [
+        "DE-MATH-002",
+        "DE-MATH-006"
+      ]
+    }
+  },
+  "expectation": {
+    "value": {
+      "expectedBoundary": {
+        "unicode": "⠄⠼",
+        "codepoints": [
+          "U+2804",
+          "U+283C"
+        ],
+        "dots": [
+          "3",
+          "3456"
+        ],
+        "cellCount": 2
+      },
+      "point4BeforeMultiplicationDot": false
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-MATH-002"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-MATH-002"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+    ],
+    "canonicalSections": [
+      "2.10"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "section": "2.10",
+        "canonicalSha256": "AFE2328AD94FCF53C2429B33199D707F99615D2C45CBB90B2826ACA7AC5DCD75"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE_CONTEXT",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "section": "2.10",
+        "jsonPointer": "/validationCases/3"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-math-002.json",
+        "byteSha256": "60742B467528B3046D0D283698D6ACECC8E13388E06413235145108093334EBB",
+        "section": "2.10",
+        "canonicalSha256": "EEA2319275D8699561330ECB460F4056E1F8C0BC42DA2C449EBB2AE25DD98BAE"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_HISTORICAL_CONTEXT_RECONSTRUCTION",
+      "expectationCanonicalSha256": "32198FD79ABAD1AB556C4593F48FA21B2CB1D4295933A4C9B167F0FA169D4F5E"
+    }
+  }
+}

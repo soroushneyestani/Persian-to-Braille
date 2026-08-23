@@ -461,6 +461,72 @@
       "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-stroke-016-fresh-001.json",
       "byteSha256": "7382180131462DA11073804A3A89AA7148EE94C37A97E6102983F0055331352A",
       "canonicalSha256": "88603E259054A3A94E9CE9E178C03D0FF858D2160236F97713BB080721E44A12"
+    },
+    {
+      "id": "DE-CB-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-cb-004-fresh-001.json",
+      "byteSha256": "A1C6A648E3CA741185C308A2D3FD3235654E8FAB041CFEF7F190A5B6D97F6B30",
+      "canonicalSha256": "547F63DEBF65B2013AB4AB92CC19477156D80AA355B52D7118E933848F75B3B2"
+    },
+    {
+      "id": "DE-CB-008-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-cb-008-fresh-001.json",
+      "byteSha256": "1B223C6C72CBFF06BC73C5C3335A899F808640C4BECE279B5C42F252D05C046E",
+      "canonicalSha256": "1E3EEB46E1814D388129CD87D628DD614B4903413BD47A527BC65CB5FEC41BE0"
+    },
+    {
+      "id": "DE-CB-011-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-cb-011-fresh-001.json",
+      "byteSha256": "9C4F224EDF345575550599A16CA116C597A8FDE41814B63D2FC244F98B848EAE",
+      "canonicalSha256": "76C9F1CEDEDE202284D0E13131CDCCB2EDCFDB3D5814B06BE9AC3CFC697C9D39"
+    },
+    {
+      "id": "DE-FLANG-002-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-flang-002-fresh-001.json",
+      "byteSha256": "266CDF7B875170250E3BCA79825BC1DB3048FF115F0317B1C0581327B425CE11",
+      "canonicalSha256": "CD1AD053AD1DDBB6C4486DF8A3326BCB9E001E595723C92AC25C0BD02E05F09D"
+    },
+    {
+      "id": "DE-FLANG-004-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-flang-004-fresh-001.json",
+      "byteSha256": "9B5E14E4153EC2F81547A66A4C5EFAB7138DF6D1D5C18243AB0D3FB366A9FB6D",
+      "canonicalSha256": "975B665B9393CB8EDB588B6A712DD24D9693B7F453F6E8E11053555195A4D514"
+    },
+    {
+      "id": "DE-INWORD-003-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-003-fresh-001.json",
+      "byteSha256": "7E1F0F2FD87064A0D3E510276FDBB7FF50DD6B139B0D9AFBDA157F11FA81435A",
+      "canonicalSha256": "21230FDC42ACDEADFB4967C8E12770FE4FCD2062957883588686E0263D87B5BB"
+    },
+    {
+      "id": "DE-INWORD-005-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-005-fresh-001.json",
+      "byteSha256": "D452B0BADD791C82530DFA30FBA6A9C99C51A000947E4DDE7124EB46D99692DE",
+      "canonicalSha256": "A6542AC8428769B8B54B674BD42993F9795404A152BF430369FF6F2E707AC800"
+    },
+    {
+      "id": "DE-INWORD-006-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-006-fresh-001.json",
+      "byteSha256": "3763C6F2B64968373030FD85C06BE41BBA2B93C6C3E87F90A251E647613CF5C1",
+      "canonicalSha256": "FF95E8D4E6A4218A9252C5E5D0BEA788210426C9DB4650C6A4A993D8C6DC647C"
+    },
+    {
+      "id": "DE-INWORD-007-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-007-fresh-001.json",
+      "byteSha256": "72A97D5EBB5BDC730DB560B6CC6DE55F71E7FDE9504CB3B000B82A2C0A01CAE7",
+      "canonicalSha256": "CAE077AA479FDAB0842789FC465D9184061C1E05F950D2E991CBCAD2E3E0DC1C"
+    },
+    {
+      "id": "DE-INWORD-008-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-inword-008-fresh-001.json",
+      "byteSha256": "4BAFAF67099C233B9A8AD2CD5A248D1CB2675138F9FC4B47E6517E926C5DA4E2",
+      "canonicalSha256": "ECE9FE763BE5B2C2DCB014FEFF9B4B17BC7827DB28F6C1C6A77FEB5AA071ADC3"
+    },
+    {
+      "id": "DE-MATH-002-FRESH-001",
+      "path": "spec/de/conformance/de-basisschrift/fresh-normative-evidence/fixtures/de-math-002-fresh-001.json",
+      "byteSha256": "9CE07F2DBF3391B2216E828E81D31CCE2DC3D14F552001B366FE28F09FAC44DF",
+      "canonicalSha256": "045C2E2AFA93308DADB9771840D7050B5440E25D291E176CEB4517A9AF81934D"
     }
   ],
   "summary": {
