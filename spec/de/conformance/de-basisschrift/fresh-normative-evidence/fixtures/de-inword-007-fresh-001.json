@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-INWORD-007-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_BEHAVIORAL_EVIDENCE",
+  "semanticFamily": "BEHAVIORAL_RULE_ASSERTION",
+  "input": {
+    "value": {
+      "kind": "SOURCE_EXAMPLE_OBJECT",
+      "exampleId": "DE-INWORD-EX-005",
+      "example": {
+        "id": "DE-INWORD-EX-005",
+        "profile": "basisschrift",
+        "print": "Haus\"rats\"versicherung",
+        "braille": {
+          "unicode": "⠓⠁⠥⠎⠠⠦⠗⠁⠞⠎⠠⠴⠧⠑⠗⠎⠊⠉⠓⠑⠗⠥⠝⠛",
+          "codepoints": [
+            "U+2813",
+            "U+2801",
+            "U+2825",
+            "U+280E",
+            "U+2820",
+            "U+2826",
+            "U+2817",
+            "U+2801",
+            "U+281E",
+            "U+280E",
+            "U+2820",
+            "U+2834",
+            "U+2827",
+            "U+2811",
+            "U+2817",
+            "U+280E",
+            "U+280A",
+            "U+2809",
+            "U+2813",
+            "U+2811",
+            "U+2817",
+            "U+2825",
+            "U+281D",
+            "U+281B"
+          ],
+          "dots": [
+            "125",
+            "1",
+            "136",
+            "234",
+            "6",
+            "236",
+            "1235",
+            "1",
+            "2345",
+            "234",
+            "6",
+            "356",
+            "1236",
+            "15",
+            "1235",
+            "234",
+            "24",
+            "14",
+            "125",
+            "15",
+            "1235",
+            "136",
+            "1345",
+            "1245"
+          ],
+          "cellCount": 24
+        },
+        "section": "2.13",
+        "status": "NORMATIVE_SOURCE_EXAMPLE"
+      }
+    }
+  },
+  "expectation": {
+    "value": {
+      "expectedOpen": {
+        "unicode": "⠠⠦",
+        "codepoints": [
+          "U+2820",
+          "U+2826"
+        ],
+        "dots": [
+          "6",
+          "236"
+        ],
+        "cellCount": 2
+      },
+      "expectedClose": {
+        "unicode": "⠠⠴",
+        "codepoints": [
+          "U+2820",
+          "U+2834"
+        ],
+        "dots": [
+          "6",
+          "356"
+        ],
+        "cellCount": 2
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-INWORD-007"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-INWORD-007"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json"
+    ],
+    "canonicalSections": [
+      "2.13"
+    ]
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+        "byteSha256": "5184BD3D1B4316FB632FAF318E675DF10B9B70184B04C2C99CBE768D39708BA7",
+        "section": "2.13",
+        "canonicalSha256": "5D886B5E010D81D3D6EC5D20F09FC79AC0A7C4CE4538EB99340ED87ECE48BCDB"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE_CONTEXT",
+        "path": "docs/architecture/phase-15.1n-bskdl-basisschrift-in-word-punctuation-contraction-transparency-contract.json",
+        "byteSha256": "5184BD3D1B4316FB632FAF318E675DF10B9B70184B04C2C99CBE768D39708BA7",
+        "section": "2.13",
+        "jsonPointer": "/validationCases/3"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-inword-007.json",
+        "byteSha256": "31D4B6AA002295B460F45C78E264532D33F30F6CF4A785E49FC99FE418368684",
+        "section": "2.13",
+        "canonicalSha256": "09FDCEDC8FE01327F28238BE5E468726EE2481014F40BC39BD5C412CFB0A65DB"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_HISTORICAL_CONTEXT_RECONSTRUCTION",
+      "expectationCanonicalSha256": "A6B9106A857246034C45EB1CFA64FF6CAF1121DC89E5B25C1EB4A05BBE2E6629"
+    }
+  }
+}

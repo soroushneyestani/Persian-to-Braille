@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-CB-008-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "BRAILLE_SOURCE_DOTS",
+      "sourceDots": "4"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expected",
+          "value": {
+            "unicode": "⠈⠈",
+            "codepoints": [
+              "U+2808",
+              "U+2808"
+            ],
+            "dots": [
+              "4",
+              "4"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "95B8557F8B59765D047AAA138229EB645D7FBDF1B441ACC15D70E25184864BB0"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-CB-008"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-CB-008"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json"
+    ],
+    "canonicalSections": [
+      "2.11"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_SOURCE_CONTRACT",
+        "path": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+        "byteSha256": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+        "section": "2.11",
+        "canonicalSha256": "C1B50DB16876747D15B3B441364764CC79849217332D94B8EC42CE2217FEADF7"
+      },
+      {
+        "role": "HISTORICAL_VALIDATION_CASE_CONTEXT",
+        "path": "docs/architecture/phase-15.1l-bskdl-basisschrift-computerbraille-insert-six-dot-transport-contract.json",
+        "byteSha256": "F59392260F8DAE433B69B2DC51B83A6CC041E89E6C51E6FAC8F10B9AA0AF50DB",
+        "section": "2.11",
+        "jsonPointer": "/validationCases/5"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-cb-008.json",
+        "byteSha256": "1425676E3800600F4D15C86AE67A2E9532D47F61B3CA2ED3EAE2A27AB335F01B",
+        "section": "2.11",
+        "canonicalSha256": "731E83EFF88981A894FBA7C06748C063501FA2C62CC2EDC4233E137A68EA58E1"
+      }
+    ],
+    "derivation": {
+      "method": "FRESH_NORMATIVE_BSKDL_SECTION_PLUS_HISTORICAL_CONTEXT_RECONSTRUCTION",
+      "expectedVectorCanonicalSha256": "085B46B6FE5E62D909A2BE7E762C702DB758C754BCE4809674E6B72B112FC45C"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
