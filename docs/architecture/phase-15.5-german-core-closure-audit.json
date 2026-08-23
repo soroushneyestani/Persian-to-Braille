@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.5",
+  "phaseName": "German Core",
+  "subphase": "15.5B Basisschrift Core",
+  "closure": "B5 Conformance Closure",
+  "status": "PASS_WITH_DOCUMENTED_DEPENDENCY",
+  "preClosureRepository": {
+    "branch": "phase15-german-braille",
+    "head": "34bd33b6c4233bb8baa70d3d17f942b92ab74182",
+    "tree": "841ecbd48f86e0da1d2e68e6b2260d698890530a",
+    "localTrackingRemoteParity": true
+  },
+  "b5": {
+    "status": "CLOSED_WITH_DOCUMENTED_DEPENDENCY",
+    "fixtureGradeEvidenceCoverage": "122/123",
+    "accountedRuleCoverage": "123/123",
+    "fixtureGradeRuleCount": 122,
+    "documentedDependencyRuleCount": 1,
+    "b4RuleUniverse": 123
+  },
+  "b5_4": {
+    "status": "CLOSED_WITH_DOCUMENTED_DEPENDENCY",
+    "allRulesAccounted": true,
+    "fixtureGradeCoveragePromotedTo123": false
+  },
+  "documentedDependencies": [
+    {
+      "ruleId": "DE-MATH-016",
+      "disposition": "DEPENDENCY_GATED_CONCRETE_CARRIER_UNRESOLVED",
+      "sourceKind": "FULL_MATH_PROFILE_SWITCH",
+      "normativeSection": "2.10",
+      "targetProfile": "GERMAN_MATH_BRAILLE_NOT_YET_PROFILED",
+      "requiredFutureDependency": "GERMAN_MATHEMATIKSCHRIFT_PROFILE_OR_CONCRETE_SWITCH_CASE",
+      "fixtureMaterialized": false,
+      "syntheticInputInvented": false
+    }
+  ],
+  "closureBoundary": {
+    "phase15_5GermanCoreClosed": true,
+    "phase15OverallClosed": false,
+    "runtimeConformanceGloballyProven": false,
+    "germanSdkClosed": false,
+    "microsoft365GermanTabClosed": false,
+    "phase15_8ConformanceRegressionClosed": false,
+    "phase15_9ClosureClosed": false,
+    "nextPhase": "15.6 German SDK"
+  },
+  "architecturalInterpretation": {
+    "canonicalRule": "Lossless promoted source evidence; remains unchanged.",
+    "b4Lowering": "Executable lowering of eligible German Basisschrift semantics.",
+    "b5Closure": "Closes the German Core conformance/evidence accounting layer. It does not claim completion of SDK integration, Microsoft 365 integration, or the later Phase 15.8 regression program.",
+    "documentedDependencyPolicy": "A source-backed fail-closed dependency disposition is accepted without inventing a concrete carrier or falsely promoting fixture-grade coverage to 123/123."
+  },
+  "frozenProofs": {
+    "b54b10DurabilityResultByteSha256": "B79FC3633F2A4C853193225E4A63282EE7861484885B31FA9E93CDB484000306",
+    "b54b10DurabilityResultCanonicalSha256": "D5CAA1A41021612F7E52B316ED9943C2BD076063606FC370155434CB953CD8B9",
+    "math016ClosureByteSha256": "AD09FE049FC8552F96FE72235B1A6142A25048725DF1C2B5E788A237BB9FCA48",
+    "math016ClosureCanonicalSha256": "1F87844A16378C87C01F5E04F7B8E2FC7251F143D2CF47D6B1BB707D8828A5BB",
+    "b5_4ClosureByteSha256": "B2CCD5C72C4FA7552AD11449621FF5886838B3C877BEA90C332F69A70ED4686C",
+    "b5_4ClosureCanonicalSha256": "8B93311A94880F693B41897792FC55AE76D773A266AA74425F01817351B77316"
+  },
+  "commitPolicy": {
+    "subject": "docs: close Phase 15.5 German Core",
+    "exactPath": "docs/architecture/phase-15.5-german-core-closure-audit.json",
+    "broadGitAddAllowed": false
+  },
+  "next": "15.6-GERMAN-SDK"
+}
