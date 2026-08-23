@@ -1,0 +1,98 @@
+{
+  "baseline": {
+    "phase15_5ClosureArtifactByteSha256": "D5F5A1CFBD4C183585639DD335DA85CAD791E1207BF6F29D3B35912B294CAC46",
+    "phase15_5ClosureArtifactPath": "docs/architecture/phase-15.5-german-core-closure-audit.json",
+    "phase15_5ClosureHead": "977f7b7d9693c96706ab745e6b3fb94ee3691916"
+  },
+  "closureBoundary": {
+    "closureCommitSubject": "docs: close Phase 15.6 German SDK",
+    "nextPhase": "15.7 Microsoft 365 German Tab",
+    "phase15OverallClosed": false,
+    "phase15_6GermanSdkClosed": true
+  },
+  "compatibilityBoundary": {
+    "existingMusicApiPreserved": true,
+    "existingPersianForwardApiPreserved": true,
+    "existingPersianReverseApiPreserved": true,
+    "microsoft365GermanTabImplementedIn15_6": false,
+    "packageFamilyRenamed": false,
+    "phase15_5ClosureImmutable": true,
+    "repositoryRenamed": false
+  },
+  "durableImplementation": {
+    "commit": "a73e6caf36b6323a784545ee15e96a70ae1f4691",
+    "commitSubject": "feat: add German Braille SDK public surface",
+    "localTrackingRemoteParity": true,
+    "pathCount": 8,
+    "paths": [
+      "packages/core/src/german-runtime-capability.ts",
+      "packages/core/src/index.ts",
+      "packages/sdk/package.json",
+      "packages/sdk/src/german-public-api.ts",
+      "packages/sdk/src/german-translator.ts",
+      "packages/sdk/src/index.ts",
+      "packages/sdk/test/german-public-api.test.mjs",
+      "packages/sdk/test/public-api.test.mjs"
+    ]
+  },
+  "evidence": {
+    "phase15_6FDurableImplementationCommit": "a73e6caf36b6323a784545ee15e96a70ae1f4691",
+    "phase15_6FResultByteSha256": "CD3034589D3436AF692F74F8C45712BB5BF03555EC33E7BC71E1473BAD38E5CD",
+    "phase15_6FResultCanonicalSha256": "B75D4BCECD98D10B709B5DB0A3F9745A530CE4C376C804C35000183F64A7A48D"
+  },
+  "name": "German SDK",
+  "phase": "15.6",
+  "product": {
+    "name": "Braille Hub",
+    "package": "@persian-braille/sdk",
+    "tagline": "Text & Music Accessibility"
+  },
+  "publicContract": {
+    "deepImportRequired": false,
+    "errorClass": "GermanBrailleTranslationError",
+    "factory": "createGermanBrailleTranslator",
+    "modeExplicitRequired": true,
+    "publicPackageRoot": "@persian-braille/sdk",
+    "regionalOverlayOrthogonal": true,
+    "swissAsFourthMode": false,
+    "textModes": [
+      "basisschrift",
+      "vollschrift",
+      "kurzschrift"
+    ]
+  },
+  "runtimeBoundary": {
+    "basisschriftLoweringCoverage": "123/123",
+    "basisschriftLoweringStatus": "LOWERED_IR_NON_EXECUTABLE",
+    "failClosedCode": "RUNTIME_NOT_EXECUTABLE",
+    "germanRuntimeExecutable": false,
+    "germanRuntimeRegistered": false,
+    "kurzschriftRuntimeMaterialized": false,
+    "liblouisUsedAsNormativeRuntime": false,
+    "persianRuntimeReusedForGerman": false,
+    "resolutionBelongsTo": "15.8 Conformance / Regression",
+    "runtimeConformanceGloballyProven": false,
+    "successfulGermanTranslationClaimed": false,
+    "syntheticGermanExecutionInvented": false,
+    "vollschriftRuntimeMaterialized": false
+  },
+  "schemaVersion": 1,
+  "status": "PASS_WITH_DOCUMENTED_RUNTIME_DEPENDENCY",
+  "validation": {
+    "deepImportRejection": "PASS",
+    "germanDistRuntimeExports": "PASS",
+    "germanDistTypeExports": "PASS",
+    "germanModeTests": "3/3 PASS",
+    "germanPublicRootConsumerProbe": "PASS",
+    "musicRegressionIncluded": true,
+    "packedConsumerValidation": "PASS",
+    "persianForwardRegressionIncluded": true,
+    "persianReverseRegressionIncluded": true,
+    "publicRootEntrypoint": "PASS",
+    "sdkPackageValidation": "PASS",
+    "structuredFailClosedTest": "PASS",
+    "swissOrthogonalOverlayTest": "PASS",
+    "translateOrThrowTest": "PASS",
+    "unsupportedModeRejection": "PASS"
+  }
+}
