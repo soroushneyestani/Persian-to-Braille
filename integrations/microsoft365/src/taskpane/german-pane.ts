@@ -3,7 +3,6 @@ import {
 } from "@persian-braille/sdk";
 
 import type {
-  GermanBrailleProfileInfo,
   GermanBrailleRegionalOverlay,
   GermanBrailleTextMode,
 } from "@persian-braille/sdk";
@@ -28,6 +27,7 @@ export const GERMAN_TASKPANE_LEVELS =
 export interface GermanSelectionReadSuccess {
   readonly ok: true;
   readonly text: string;
+  readonly mutationContext?: unknown;
 }
 
 export interface GermanSelectionReadFailure {
@@ -41,9 +41,43 @@ export type GermanSelectionReadResult =
   | GermanSelectionReadSuccess
   | GermanSelectionReadFailure;
 
+export interface GermanMutationSuccess {
+  readonly ok: true;
+}
+
+export interface GermanMutationFailure {
+  readonly ok: false;
+  readonly domain: "host";
+  readonly code: string;
+  readonly message: string;
+}
+
+export type GermanMutationResult =
+  | GermanMutationSuccess
+  | GermanMutationFailure;
+
 export interface GermanSelectionPort {
+  readonly canReplace?: boolean;
+  readonly canInsertAfter?: boolean;
+
   readSelection():
     Promise<GermanSelectionReadResult>;
+
+  replaceSelection?(
+    expected: unknown,
+    replacementText: string,
+  ): Promise<GermanMutationResult>;
+
+  insertAfterSelection?(
+    expected: unknown,
+    insertedText: string,
+  ): Promise<GermanMutationResult>;
+}
+
+export interface GermanClipboardPort {
+  writeText(
+    text: string,
+  ): Promise<void>;
 }
 
 export interface GermanTaskPaneController {
@@ -74,6 +108,12 @@ interface GermanTaskPaneDom {
     HTMLButtonElement;
   readonly clearButton:
     HTMLButtonElement;
+  readonly copyButton:
+    HTMLButtonElement;
+  readonly replaceButton:
+    HTMLButtonElement;
+  readonly insertAfterButton:
+    HTMLButtonElement;
   readonly result:
     HTMLElement;
   readonly unicode:
@@ -83,8 +123,6 @@ interface GermanTaskPaneDom {
   readonly errorCode:
     HTMLElement;
   readonly errorMessage:
-    HTMLElement;
-  readonly profile:
     HTMLElement;
   readonly status:
     HTMLElement;
@@ -142,6 +180,24 @@ function germanDom(
         "german-clear-output",
       ) as HTMLButtonElement,
 
+    copyButton:
+      requiredElement(
+        document,
+        "german-copy-braille",
+      ) as HTMLButtonElement,
+
+    replaceButton:
+      requiredElement(
+        document,
+        "german-replace-selection",
+      ) as HTMLButtonElement,
+
+    insertAfterButton:
+      requiredElement(
+        document,
+        "german-insert-after-selection",
+      ) as HTMLButtonElement,
+
     result:
       requiredElement(
         document,
@@ -170,12 +226,6 @@ function germanDom(
       requiredElement(
         document,
         "german-error-message",
-      ),
-
-    profile:
-      requiredElement(
-        document,
-        "german-profile-info",
       ),
 
     status:
@@ -231,35 +281,9 @@ export function germanRegionalOverlayForRegion(
     : null;
 }
 
-function profileProjection(
-  profile: GermanBrailleProfileInfo,
-): string {
-  return JSON.stringify(
-    {
-      language:
-        profile.language,
-      mode:
-        profile.mode,
-      regionalOverlay:
-        profile.regionalOverlay,
-      runtimeStatus:
-        profile.runtimeStatus,
-      runtimeDependency:
-        profile.runtimeDependency,
-      runtimeExecutable:
-        profile.runtimeExecutable,
-      runtimeRegistered:
-        profile.runtimeRegistered,
-      loweringCoverage:
-        profile.loweringCoverage,
-    },
-    null,
-    2,
-  );
-}
-
 export function createGermanTaskPane(
   document: Document,
+  clipboard?: GermanClipboardPort,
 ): GermanTaskPaneController {
   const ui =
     germanDom(
@@ -273,12 +297,78 @@ export function createGermanTaskPane(
     GermanSelectionPort
     | undefined;
 
+  let lastBraille:
+    string
+    | undefined;
+
+  let lastMutationContext:
+    unknown;
+
+  let hasMutationContext =
+    false;
+
+  const invalidatePreviewState = () => {
+    lastBraille =
+      undefined;
+    lastMutationContext =
+      undefined;
+    hasMutationContext =
+      false;
+  };
+
+  const updateControls = () => {
+    const configured =
+      selectedRegion(ui)
+      !== undefined
+      && selectedLevel(ui)
+        !== undefined;
+
+    const hasPreview =
+      lastBraille !==
+        undefined;
+
+    ui.translateButton.disabled =
+      !ready
+      || selectionPort ===
+        undefined
+      || !configured;
+
+    ui.copyButton.disabled =
+      !hasPreview
+      || clipboard ===
+        undefined;
+
+    ui.replaceButton.hidden =
+      selectionPort?.canReplace !==
+        true;
+
+    ui.insertAfterButton.hidden =
+      selectionPort?.canInsertAfter !==
+        true;
+
+    ui.replaceButton.disabled =
+      !hasPreview
+      || !hasMutationContext
+      || selectionPort?.canReplace !==
+        true
+      || selectionPort
+        .replaceSelection ===
+          undefined;
+
+    ui.insertAfterButton.disabled =
+      !hasPreview
+      || !hasMutationContext
+      || selectionPort?.canInsertAfter !==
+        true
+      || selectionPort
+        .insertAfterSelection ===
+          undefined;
+  };
+
   const clearFeedback = () => {
     ui.result.hidden =
       true;
     ui.failure.hidden =
-      true;
-    ui.profile.hidden =
       true;
 
     ui.unicode.textContent =
@@ -287,10 +377,11 @@ export function createGermanTaskPane(
       "";
     ui.errorMessage.textContent =
       "";
-    ui.profile.textContent =
-      "";
     ui.status.textContent =
       "";
+
+    invalidatePreviewState();
+    updateControls();
   };
 
   const showFailure = (
@@ -308,20 +399,8 @@ export function createGermanTaskPane(
 
     ui.errorMessage.textContent =
       message;
-  };
 
-  const updateControls = () => {
-    const configured =
-      selectedRegion(ui)
-      !== undefined
-      && selectedLevel(ui)
-        !== undefined;
-
-    ui.translateButton.disabled =
-      !ready
-      || selectionPort ===
-        undefined
-      || !configured;
+    updateControls();
   };
 
   const translateCurrentSelection =
@@ -331,7 +410,7 @@ export function createGermanTaskPane(
       if (!ready) {
         showFailure(
           "OFFICE_NOT_READY",
-          "Microsoft Office is not ready for German Braille translation.",
+          "Microsoft Office ist für die Übersetzung noch nicht bereit.",
         );
         return;
       }
@@ -342,7 +421,7 @@ export function createGermanTaskPane(
       ) {
         showFailure(
           "SELECTION_SERVICE_UNAVAILABLE",
-          "The current Office host is not connected to the German Braille workspace.",
+          "Der aktuelle Office-Host ist nicht mit der deutschen Braille-Ansicht verbunden.",
         );
         return;
       }
@@ -364,13 +443,13 @@ export function createGermanTaskPane(
       ) {
         showFailure(
           "GERMAN_CONFIGURATION_REQUIRED",
-          "Choose both a region and a Braille level before translating.",
+          "Bitte Region und Braillestufe auswählen.",
         );
         return;
       }
 
       ui.status.textContent =
-        "Reading the current Office selection…";
+        "Auswahl wird gelesen…";
 
       const selection =
         await selectionPort
@@ -393,7 +472,7 @@ export function createGermanTaskPane(
       ) {
         showFailure(
           "EMPTY_SELECTION",
-          "Select non-empty text in the current Office document before translating.",
+          "Bitte einen nicht leeren Text im aktuellen Office-Dokument auswählen.",
         );
 
         ui.status.textContent =
@@ -416,14 +495,6 @@ export function createGermanTaskPane(
           selection.text,
         );
 
-      ui.profile.textContent =
-        profileProjection(
-          translation.profile,
-        );
-
-      ui.profile.hidden =
-        false;
-
       if (!translation.ok) {
         showFailure(
           translation.code,
@@ -431,7 +502,7 @@ export function createGermanTaskPane(
         );
 
         ui.status.textContent =
-          "German Braille translation could not be completed for the selected configuration.";
+          "Die deutsche Braille-Übersetzung konnte nicht abgeschlossen werden.";
         return;
       }
 
@@ -444,15 +515,101 @@ export function createGermanTaskPane(
       ui.result.hidden =
         false;
 
+      lastBraille =
+        translation.unicodeBraille;
+      lastMutationContext =
+        selection.mutationContext;
+      hasMutationContext =
+        Object.prototype.hasOwnProperty.call(
+          selection,
+          "mutationContext",
+        );
+
       ui.status.textContent =
-        "German Braille preview ready.";
+        "Braille-Vorschau bereit.";
+
+      updateControls();
+    };
+
+  const copyBraille =
+    async () => {
+      if (
+        lastBraille === undefined
+        || clipboard === undefined
+      ) {
+        return;
+      }
+
+      try {
+        await clipboard.writeText(
+          lastBraille,
+        );
+        ui.status.textContent =
+          "Brailleschrift kopiert.";
+      } catch {
+        showFailure(
+          "CLIPBOARD_WRITE_FAILED",
+          "Die Brailleschrift konnte nicht in die Zwischenablage kopiert werden.",
+        );
+      }
+    };
+
+  const mutateSelection =
+    async (
+      kind:
+        | "replace"
+        | "insert-after",
+    ) => {
+      if (
+        selectionPort === undefined
+        || lastBraille === undefined
+        || !hasMutationContext
+      ) {
+        return;
+      }
+
+      const operation =
+        kind === "replace"
+          ? selectionPort
+            .replaceSelection
+          : selectionPort
+            .insertAfterSelection;
+
+      if (operation === undefined) {
+        return;
+      }
+
+      const outcome =
+        await operation(
+          lastMutationContext,
+          lastBraille,
+        );
+
+      if (!outcome.ok) {
+        showFailure(
+          outcome.code,
+          outcome.message,
+        );
+        return;
+      }
+
+      hasMutationContext =
+        false;
+      lastMutationContext =
+        undefined;
+
+      ui.status.textContent =
+        kind === "replace"
+          ? "Auswahl ersetzt."
+          : "Brailleschrift nach der Auswahl eingefügt.";
+
+      updateControls();
     };
 
   ui.region.addEventListener(
     "change",
     () => {
       clearFeedback();
-      updateControls();
     },
   );
 
@@ -460,7 +617,6 @@ export function createGermanTaskPane(
     "change",
     () => {
       clearFeedback();
-      updateControls();
     },
   );
 
@@ -468,6 +624,31 @@ export function createGermanTaskPane(
     "click",
     () => {
       void translateCurrentSelection();
+    },
+  );
+
+  ui.copyButton.addEventListener(
+    "click",
+    () => {
+      void copyBraille();
+    },
+  );
+
+  ui.replaceButton.addEventListener(
+    "click",
+    () => {
+      void mutateSelection(
+        "replace",
+      );
+    },
+  );
+
+  ui.insertAfterButton.addEventListener(
+    "click",
+    () => {
+      void mutateSelection(
+        "insert-after",
+      );
     },
   );
 
@@ -479,7 +660,6 @@ export function createGermanTaskPane(
       ui.level.value =
         "";
       clearFeedback();
-      updateControls();
     },
   );
 
@@ -487,7 +667,6 @@ export function createGermanTaskPane(
     true;
 
   clearFeedback();
-  updateControls();
 
   return Object.freeze({
     setReady(
@@ -507,7 +686,7 @@ export function createGermanTaskPane(
       selectionPort =
         port;
 
-      updateControls();
+      clearFeedback();
     },
 
     translateCurrentSelection,
@@ -518,7 +697,6 @@ export function createGermanTaskPane(
       ui.level.value =
         "";
       clearFeedback();
-      updateControls();
     },
   });
 }

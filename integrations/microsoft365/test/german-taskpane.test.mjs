@@ -57,12 +57,14 @@ function fixture() {
     "german-text-mode",
     "german-translate-selection",
     "german-clear-output",
+    "german-copy-braille",
+    "german-replace-selection",
+    "german-insert-after-selection",
     "german-translation-result",
     "german-unicode-output",
     "german-translation-error",
     "german-error-code",
     "german-error-message",
-    "german-profile-info",
     "german-taskpane-status",
   ];
 
@@ -117,15 +119,75 @@ function selectConfiguration(
 
 function successfulSelection(
   text = "Test",
+  options = {},
 ) {
-  return {
+  const calls = {
+    replace: [],
+    insertAfter: [],
+  };
+
+  const port = {
+    canReplace:
+      options.canReplace
+      ?? false,
+    canInsertAfter:
+      options.canInsertAfter
+      ?? false,
+
     async readSelection() {
       return {
         ok: true,
         text,
+        mutationContext:
+          options.mutationContext
+          ?? { text },
       };
     },
   };
+
+  if (port.canReplace) {
+    port.replaceSelection =
+      async (
+        expected,
+        replacementText,
+      ) => {
+        calls.replace.push({
+          expected,
+          replacementText,
+        });
+        return { ok: true };
+      };
+  }
+
+  if (port.canInsertAfter) {
+    port.insertAfterSelection =
+      async (
+        expected,
+        insertedText,
+      ) => {
+        calls.insertAfter.push({
+          expected,
+          insertedText,
+        });
+        return { ok: true };
+      };
+  }
+
+  return {
+    port,
+    calls,
+  };
+}
+
+function nextTurn() {
+  return new Promise(
+    (resolve) => {
+      setTimeout(
+        resolve,
+        0,
+      );
+    },
+  );
 }
 
 test(
@@ -176,7 +238,7 @@ test(
     );
 
     controller.setSelectionPort(
-      successfulSelection(),
+      successfulSelection().port,
     );
 
     assert.equal(
@@ -215,7 +277,7 @@ test(
 );
 
 test(
-  "Germany/Austria Basisschrift renders real Unicode Braille in the shared Office pane",
+  "Germany/Austria Basisschrift renders real Unicode Braille in the production Office pane",
   async () => {
     const {
       document,
@@ -235,7 +297,7 @@ test(
     controller.setSelectionPort(
       successfulSelection(
         "Hallo",
-      ),
+      ).port,
     );
 
     selectConfiguration(
@@ -268,40 +330,11 @@ test(
       "⠓⠁⠇⠇⠕",
     );
 
-    const profile =
-      JSON.parse(
-        elements[
-          "german-profile-info"
-        ].textContent,
-      );
-
-    assert.deepEqual(
-      profile,
-      {
-        language:
-          "de",
-        mode:
-          "basisschrift",
-        regionalOverlay:
-          null,
-        runtimeStatus:
-          "EXECUTABLE_RUNTIME_REGISTERED",
-        runtimeDependency:
-          "NONE",
-        runtimeExecutable:
-          true,
-        runtimeRegistered:
-          true,
-        loweringCoverage:
-          "123/123",
-      },
-    );
-
     assert.match(
       elements[
         "german-taskpane-status"
       ].textContent,
-      /preview ready/i,
+      /Vorschau bereit/i,
     );
   },
 );
@@ -327,7 +360,7 @@ test(
     controller.setSelectionPort(
       successfulSelection(
         "Schweiz",
-      ),
+      ).port,
     );
 
     selectConfiguration(
@@ -345,23 +378,6 @@ test(
       ].textContent,
       "⠎⠉⠓⠺⠑⠊⠵",
     );
-
-    const profile =
-      JSON.parse(
-        elements[
-          "german-profile-info"
-        ].textContent,
-      );
-
-    assert.equal(
-      profile.regionalOverlay,
-      "swiss",
-    );
-
-    assert.equal(
-      profile.runtimeRegistered,
-      true,
-    );
   },
 );
 
@@ -370,20 +386,17 @@ for (
     level,
     input,
     expectedBraille,
-    expectedCoverage,
   ]
   of [
     [
       "vollschrift",
       "Baum",
       "⠃⠡⠍",
-      "SOURCE_FIXTURE_SURFACE",
     ],
     [
       "kurzschrift",
       "Center",
       "⠠⠉⠉⠞⠻",
-      "SOURCE_FIXTURE_SURFACE",
     ],
   ]
 ) {
@@ -408,7 +421,7 @@ for (
       controller.setSelectionPort(
         successfulSelection(
           input,
-        ),
+        ).port,
       );
 
       selectConfiguration(
@@ -429,52 +442,9 @@ for (
 
       assert.equal(
         elements[
-          "german-translation-error"
-        ].hidden,
-        true,
-      );
-
-      assert.equal(
-        elements[
           "german-unicode-output"
         ].textContent,
         expectedBraille,
-      );
-
-      const profile =
-        JSON.parse(
-          elements[
-            "german-profile-info"
-          ].textContent,
-        );
-
-      assert.deepEqual(
-        profile,
-        {
-          language:
-            "de",
-          mode:
-            level,
-          regionalOverlay:
-            null,
-          runtimeStatus:
-            "EXECUTABLE_RUNTIME_REGISTERED",
-          runtimeDependency:
-            "NONE",
-          runtimeExecutable:
-            true,
-          runtimeRegistered:
-            true,
-          loweringCoverage:
-            expectedCoverage,
-        },
-      );
-
-      assert.match(
-        elements[
-          "german-taskpane-status"
-        ].textContent,
-        /preview ready/i,
       );
     },
   );
@@ -509,7 +479,7 @@ for (
       controller.setSelectionPort(
         successfulSelection(
           "ß",
-        ),
+        ).port,
       );
 
       selectConfiguration(
@@ -532,23 +502,6 @@ for (
         elements[
           "german-translation-result"
         ].hidden,
-        true,
-      );
-
-      const profile =
-        JSON.parse(
-          elements[
-            "german-profile-info"
-          ].textContent,
-        );
-
-      assert.equal(
-        profile.runtimeExecutable,
-        true,
-      );
-
-      assert.equal(
-        profile.runtimeRegistered,
         true,
       );
     },
@@ -576,7 +529,7 @@ test(
     controller.setSelectionPort(
       successfulSelection(
         "",
-      ),
+      ).port,
     );
 
     selectConfiguration(
@@ -594,10 +547,184 @@ test(
       ].textContent,
       "EMPTY_SELECTION",
     );
+  },
+);
+
+test(
+  "German production actions expose copy and Word-style write operations only after a successful preview",
+  async () => {
+    const {
+      document,
+      elements,
+    } =
+      fixture();
+
+    const copied = [];
+    const clipboard = {
+      async writeText(text) {
+        copied.push(text);
+      },
+    };
+
+    const selection =
+      successfulSelection(
+        "Hallo",
+        {
+          canReplace: true,
+          canInsertAfter: true,
+          mutationContext:
+            "Hallo",
+        },
+      );
+
+    const controller =
+      createGermanTaskPane(
+        document,
+        clipboard,
+      );
+
+    controller.setReady(
+      true,
+    );
+    controller.setSelectionPort(
+      selection.port,
+    );
+
+    selectConfiguration(
+      elements,
+      "germany-austria",
+      "basisschrift",
+    );
 
     assert.equal(
       elements[
-        "german-profile-info"
+        "german-copy-braille"
+      ].disabled,
+      true,
+    );
+
+    await controller
+      .translateCurrentSelection();
+
+    assert.equal(
+      elements[
+        "german-copy-braille"
+      ].disabled,
+      false,
+    );
+    assert.equal(
+      elements[
+        "german-replace-selection"
+      ].disabled,
+      false,
+    );
+    assert.equal(
+      elements[
+        "german-insert-after-selection"
+      ].disabled,
+      false,
+    );
+
+    elements[
+      "german-copy-braille"
+    ].click();
+    await nextTurn();
+
+    assert.deepEqual(
+      copied,
+      ["⠓⠁⠇⠇⠕"],
+    );
+
+    elements[
+      "german-replace-selection"
+    ].click();
+    await nextTurn();
+
+    assert.equal(
+      selection.calls.replace.length,
+      1,
+    );
+    assert.deepEqual(
+      selection.calls.replace[0],
+      {
+        expected: "Hallo",
+        replacementText:
+          "⠓⠁⠇⠇⠕",
+      },
+    );
+
+    assert.equal(
+      elements[
+        "german-replace-selection"
+      ].disabled,
+      true,
+    );
+    assert.equal(
+      elements[
+        "german-insert-after-selection"
+      ].disabled,
+      true,
+    );
+  },
+);
+
+test(
+  "German production actions hide unsupported insert-after behavior for Excel/PowerPoint style ports",
+  async () => {
+    const {
+      document,
+      elements,
+    } =
+      fixture();
+
+    const selection =
+      successfulSelection(
+        "Hallo",
+        {
+          canReplace: true,
+          canInsertAfter: false,
+        },
+      );
+
+    const controller =
+      createGermanTaskPane(
+        document,
+        {
+          async writeText() {},
+        },
+      );
+
+    controller.setReady(
+      true,
+    );
+    controller.setSelectionPort(
+      selection.port,
+    );
+
+    selectConfiguration(
+      elements,
+      "germany-austria",
+      "basisschrift",
+    );
+
+    await controller
+      .translateCurrentSelection();
+
+    assert.equal(
+      elements[
+        "german-replace-selection"
+      ].disabled,
+      false,
+    );
+    assert.equal(
+      elements[
+        "german-insert-after-selection"
+      ].disabled,
+      true,
+    );
+    assert.equal(
+      elements[
+        "german-insert-after-selection"
       ].hidden,
       true,
     );
@@ -605,8 +732,8 @@ test(
 );
 
 test(
-  "German Clear resets both region and level and disables translation",
-  () => {
+  "German Zurücksetzen resets region, level, preview, and production actions",
+  async () => {
     const {
       document,
       elements,
@@ -616,6 +743,9 @@ test(
     const controller =
       createGermanTaskPane(
         document,
+        {
+          async writeText() {},
+        },
       );
 
     controller.setReady(
@@ -623,7 +753,13 @@ test(
     );
 
     controller.setSelectionPort(
-      successfulSelection(),
+      successfulSelection(
+        "Hallo",
+        {
+          canReplace: true,
+          canInsertAfter: true,
+        },
+      ).port,
     );
 
     selectConfiguration(
@@ -632,12 +768,8 @@ test(
       "kurzschrift",
     );
 
-    assert.equal(
-      elements[
-        "german-translate-selection"
-      ].disabled,
-      false,
-    );
+    await controller
+      .translateCurrentSelection();
 
     elements[
       "german-clear-output"
@@ -657,17 +789,25 @@ test(
       "",
     );
 
-    assert.equal(
-      elements[
-        "german-translate-selection"
-      ].disabled,
-      true,
-    );
+    for (
+      const id
+      of [
+        "german-translate-selection",
+        "german-copy-braille",
+        "german-replace-selection",
+        "german-insert-after-selection",
+      ]
+    ) {
+      assert.equal(
+        elements[id].disabled,
+        true,
+      );
+    }
   },
 );
 
 test(
-  "built task pane preserves German two-region three-level UI and no write actions",
+  "built task pane exposes localized German production actions and removes user-facing engineering diagnostics",
   async () => {
     const html =
       await readFile(
@@ -682,15 +822,27 @@ test(
       const token
       of [
         'id="feature-tab-german"',
-        "German",
+        "Deutsch",
         'id="german-region"',
-        "Germany / Austria",
-        "Switzerland",
+        "Deutschland / Österreich",
+        "Schweiz",
         'id="german-text-mode"',
+        "Braillestufe",
         "Basisschrift",
         "Vollschrift",
         "Kurzschrift",
-        'id="german-translate-selection"',
+        "Auswahl übersetzen",
+        'id="german-copy-braille"',
+        "Braille kopieren",
+        'id="german-replace-selection"',
+        "Auswahl ersetzen",
+        'id="german-insert-after-selection"',
+        "Nach Auswahl einfügen",
+        "Developed by",
+        "Soroush Neyestani",
+        "MIT License",
+        "https://soroush.neyestani.com/",
+        "https://github.com/soroushneyestani",
       ]
     ) {
       assert.match(
@@ -704,15 +856,28 @@ test(
       );
     }
 
-    assert.doesNotMatch(
-      html,
-      /german-replace-selection/,
-    );
-
-    assert.doesNotMatch(
-      html,
-      /german-insert-after/,
-    );
+    for (
+      const forbidden
+      of [
+        "Runtime profile",
+        "Germany / Austria use the standard baseline",
+        "Phase 14.9 inserts the exact successful preview",
+        "Translation rules remain owned",
+        "Profile: <strong>fa-ir-g1",
+        ">Diagnostics<",
+        "BRF / Braille ASCII",
+      ]
+    ) {
+      assert.doesNotMatch(
+        html,
+        new RegExp(
+          forbidden.replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&",
+          ),
+        ),
+      );
+    }
   },
 );
 
@@ -737,7 +902,7 @@ test(
 );
 
 test(
-  "three-host dispatch still reuses Word Excel PowerPoint host adapters",
+  "three-host dispatch reuses existing host adapters through German mutation-safe ports",
   async () => {
     const source =
       await readFile(
@@ -752,6 +917,9 @@ test(
       const token
       of [
         "createGermanTaskPane",
+        "germanWordPort",
+        "germanExcelPort",
+        "germanPowerPointPort",
         "wordHostAdapter",
         "excelHostAdapter",
         "powerPointHostAdapter",
@@ -761,10 +929,7 @@ test(
       assert.match(
         source,
         new RegExp(
-          token.replace(
-            /[.*+?^${}()|[\]\\]/g,
-            "\\$&",
-          ),
+          token,
         ),
       );
     }

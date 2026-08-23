@@ -1,4 +1,5 @@
 import {
+  resolveGermanVollschriftCandidate,
   translateGermanVollschriftResolved,
 } from "./german-vollschrift-runtime.js";
 
@@ -168,6 +169,205 @@ function candidateAt(
   return null;
 }
 
+// POST15_GERMAN_SENTENCE_COMPOSITION_FIX
+//
+// Registry decisions are source-backed at word/phrase level. When Office sends
+// a larger selection, first keep the existing full-input decision lookup; if
+// that key is absent, retry against the lexical word containing the candidate.
+function isGermanLexicalCodePoint(
+  value: string,
+): boolean {
+  return /^[\p{L}\p{M}]$/u.test(value);
+}
+
+function lexicalContextAt(
+  chars: readonly string[],
+  startCodePoint: number,
+): string | null {
+  if (
+    startCodePoint < 0
+    || startCodePoint >= chars.length
+    || !isGermanLexicalCodePoint(
+      chars[startCodePoint]!,
+    )
+  ) {
+    return null;
+  }
+
+  let start =
+    startCodePoint;
+
+  while (
+    start > 0
+    && isGermanLexicalCodePoint(
+      chars[start - 1]!,
+    )
+  ) {
+    start -= 1;
+  }
+
+  let end =
+    startCodePoint + 1;
+
+  while (
+    end < chars.length
+    && isGermanLexicalCodePoint(
+      chars[end]!,
+    )
+  ) {
+    end += 1;
+  }
+
+  return chars
+    .slice(start, end)
+    .join("");
+}
+
+// POST15_GENERAL_VOLLSCHRIFT_RESOLVER_PACK
+//
+// Resolution precedence:
+//   1. exact full plans
+//   2. closed source-backed word/candidate decisions
+//   3. general lexical rule fallback
+//
+// The general fallback is algorithmic. It does not add the audited words to a
+// dictionary one by one. Existing closed decisions keep higher priority and
+// therefore preserve known source-backed exceptions.
+function generalRuleDrivenDecisionAt(
+  chars: readonly string[],
+  startCodePoint: number,
+  candidate: string,
+): GermanVollschriftCandidateDecision | null {
+  if (
+    startCodePoint < 0
+    || startCodePoint >= chars.length
+    || !isGermanLexicalCodePoint(
+      chars[startCodePoint]!,
+    )
+  ) {
+    return null;
+  }
+
+  let lexicalStart =
+    startCodePoint;
+
+  while (
+    lexicalStart > 0
+    && isGermanLexicalCodePoint(
+      chars[lexicalStart - 1]!,
+    )
+  ) {
+    lexicalStart -= 1;
+  }
+
+  let lexicalEnd =
+    startCodePoint + 1;
+
+  while (
+    lexicalEnd < chars.length
+    && isGermanLexicalCodePoint(
+      chars[lexicalEnd]!,
+    )
+  ) {
+    lexicalEnd += 1;
+  }
+
+  const lexicalChars =
+    chars.slice(
+      lexicalStart,
+      lexicalEnd,
+    );
+
+  const lexicalWord =
+    lexicalChars
+      .join("")
+      .normalize("NFC")
+      .toLocaleLowerCase("de-DE");
+
+  const relativeStart =
+    startCodePoint
+    - lexicalStart;
+
+  const candidateLength =
+    Array.from(candidate).length;
+
+  const actualCandidate =
+    lexicalChars
+      .slice(
+        relativeStart,
+        relativeStart
+          + candidateLength,
+      )
+      .join("")
+      .normalize("NFC")
+      .toLocaleLowerCase("de-DE");
+
+  const normalizedCandidate =
+    candidate
+      .normalize("NFC")
+      .toLocaleLowerCase("de-DE");
+
+  if (
+    actualCandidate
+    !== normalizedCandidate
+  ) {
+    return null;
+  }
+
+  const previous =
+    relativeStart > 0
+      ? lexicalChars[
+          relativeStart - 1
+        ]!
+          .normalize("NFC")
+          .toLocaleLowerCase("de-DE")
+      : null;
+
+  const sstDoubleSPriority =
+    normalizedCandidate === "st"
+    && previous === "s";
+
+  const sanktAbbreviation =
+    normalizedCandidate === "st"
+    && lexicalWord === "st";
+
+  const resolution =
+    resolveGermanVollschriftCandidate(
+      normalizedCandidate,
+      {
+        boundaryCrosses: false,
+
+        ...(
+          normalizedCandidate === "ch"
+          || normalizedCandidate === "st"
+            ? {}
+            : {
+                pronunciation:
+                  "ELIGIBLE" as const,
+              }
+        ),
+
+        ...(sstDoubleSPriority
+          ? {
+              sstDoubleSPriority:
+                true,
+            }
+          : {}),
+
+        ...(sanktAbbreviation
+          ? {
+              sanktAbbreviation:
+                true,
+            }
+          : {}),
+      },
+    );
+
+  return resolution.ok
+    ? resolution.decision
+    : null;
+}
+
 function wordDecision(
   input: string,
   candidate: string,
@@ -288,20 +488,55 @@ export function resolveGermanVollschriftAutomatically(
       continue;
     }
 
-    const resolved =
+    let resolved =
       resolveGermanVollschriftAutomaticCandidate(
         input,
         candidate,
       );
 
     if (!resolved.ok) {
+      const lexicalContext =
+        lexicalContextAt(
+          chars,
+          index,
+        );
+
+      if (
+        lexicalContext !== null
+        && normalizeKey(
+          lexicalContext,
+        ) !== normalizeKey(
+          input,
+        )
+      ) {
+        resolved =
+          resolveGermanVollschriftAutomaticCandidate(
+            lexicalContext,
+            candidate,
+          );
+      }
+    }
+
+    const generalDecision =
+      resolved.ok
+        ? null
+        : generalRuleDrivenDecisionAt(
+            chars,
+            index,
+            candidate,
+          );
+
+    if (
+      !resolved.ok
+      && generalDecision === null
+    ) {
       return Object.freeze({
         ok: false,
         input,
         code:
           "SOURCE_CONTEXT_UNRESOLVED",
         message:
-          "Automatic Vollschrift reached a candidate whose pronunciation/morphology context is not fixed by the closed source registry; no context was guessed.",
+          "Automatic Vollschrift could not resolve this candidate from either the closed source registry or the general lexical rule fallback.",
         startCodePoint:
           index,
         candidate,
@@ -310,17 +545,22 @@ export function resolveGermanVollschriftAutomatically(
       });
     }
 
+    const decision:
+      GermanVollschriftCandidateDecision =
+        resolved.ok
+          ? resolved.decision
+          : generalDecision!;
+
     plan.push(
       Object.freeze({
         startCodePoint:
           index,
         candidate,
-        decision:
-          resolved.decision,
+        decision,
       }),
     );
 
-    if (resolved.decision === "CONTRACT") {
+    if (decision === "CONTRACT") {
       index +=
         Array.from(candidate).length;
     } else {

@@ -1,0 +1,87 @@
+{
+  "schema": "braille-hub/post15-german-production-functional-closure/v1",
+  "createdAt": "2026-08-23T21:01:01.305169+02:00",
+  "branch": "phase15-german-braille",
+  "headBeforeCommit": "5dc0c81e5d8472d77f3443ebecba1a5634f3d0b0",
+  "phase15Reopened": false,
+  "scope": "post-Phase-15 German production/Office functional closure",
+  "gates": {
+    "gitDiffCheck": true,
+    "coreRegression": true,
+    "sdkRegression": true,
+    "officeRegression": true,
+    "publicFreeTextSixWay": true,
+    "publicUnexpectedFailures": 0,
+    "swissExpectedPolicyRejections": 15,
+    "oldAuditFailuresConfinedToNonPublicEvidenceSurface": true,
+    "repositoryEvidenceValidatedByCoreRegression": true
+  },
+  "publicMatrix": {
+    "DE_AT/basisschrift": {
+      "total": 166,
+      "pass": 166,
+      "expectedPolicy": 0,
+      "unexpectedFail": 0
+    },
+    "DE_AT/vollschrift": {
+      "total": 166,
+      "pass": 166,
+      "expectedPolicy": 0,
+      "unexpectedFail": 0
+    },
+    "DE_AT/kurzschrift": {
+      "total": 166,
+      "pass": 166,
+      "expectedPolicy": 0,
+      "unexpectedFail": 0
+    },
+    "CH/basisschrift": {
+      "total": 166,
+      "pass": 161,
+      "expectedPolicy": 5,
+      "unexpectedFail": 0
+    },
+    "CH/vollschrift": {
+      "total": 166,
+      "pass": 161,
+      "expectedPolicy": 5,
+      "unexpectedFail": 0
+    },
+    "CH/kurzschrift": {
+      "total": 166,
+      "pass": 161,
+      "expectedPolicy": 5,
+      "unexpectedFail": 0
+    }
+  },
+  "priorAudit": {
+    "path": "post15-german-closure-coverage-audit.json",
+    "sha256": "7678A704DA447E1A74FF4DDE58F0C22232E607A631A929E11DCD203D0B0377EC",
+    "fullCorpusCases": 777,
+    "unexpectedFailures": 1182,
+    "generalResolverRequired": false,
+    "adjudication": "The old audit mixed public text with source carriers and policy witnesses."
+  },
+  "runtimePolicy": {
+    "generalVollschriftResolver": true,
+    "sentenceCompositionClosed": true,
+    "kurzschriftSourceBackedMappingsPreserved": true,
+    "ambiguousKurzschriftSpecificPolicy": "fallback to valid Vollschrift parent; no unsupported precedence invented"
+  },
+  "decision": {
+    "post15GermanProductionFunctionalClosed": true,
+    "publicGermanNoErrorClosure": true,
+    "coreSdkOfficeRegressionClosed": true,
+    "phase15ArchitectureRemainsFrozen": true
+  },
+  "limitations": [
+    "Internal source carriers/policy witnesses are not public translation inputs.",
+    "Ambiguous Kurzschrift-specific precedence is not invented; Vollschrift parent is preserved.",
+    "Swiss explicit Eszett remains deliberate fail-closed regional policy."
+  ],
+  "mutation": {
+    "stagedByPack": false,
+    "committedByPack": false,
+    "pushedByPack": false
+  }
+}
