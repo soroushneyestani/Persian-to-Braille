@@ -8,7 +8,7 @@
   >
 </p>
 
-**Braille Hub** is an open-source accessibility platform for text and music, providing specification-driven Braille translation, Microsoft 365 integration, reusable SDK tooling, and Braille Music workflows.
+**Braille Hub** is an open-source accessibility platform for text and music, providing specification-driven Persian and German Braille translation, Microsoft 365 integration, reusable SDK tooling, and Braille Music workflows.
 
 The project originally started as a Persian Braille converter and has since been redesigned as a modular v2 platform with formal specifications, a reusable translation core, a public SDK, Microsoft Office integrations, reverse-translation foundations, and MIDI-to-Music-Braille support.
 
@@ -50,6 +50,7 @@ The objective is not merely to provide a converter UI, but to build a reusable a
 | Microsoft Excel text integration      | ✅ Supported                      | Cell-based translation                                              |
 | Microsoft PowerPoint text integration | ✅ Supported                      | Selection-based translation                                         |
 | Braille Music from MIDI               | ✅ Phase 14 complete              | Dedicated `@persian-braille/music` package                          |
+| German Braille (DE/AT + CH)              | ✅ Production functional closure      | Basisschrift, Vollschrift, Kurzschrift via shared Core/SDK + Office Deutsch tab |
 | Music Braille in Word                 | ✅ Windows live-validated         | MIDI → source line → preview → insertion                            |
 | Microsoft Marketplace publication     | ⏳ Planned separately             | Current public distribution is manual sideload preview              |
 | MusicXML                              | ⏳ Planned                        | Reserved for Phase 19                                               |
@@ -278,6 +279,8 @@ PowerPoint provides Persian / English translation for selected text and similarl
 # Public preview installation
 
 A public manual-sideload preview of the Microsoft 365 integration is available at:
+
+The current Microsoft 365 preview includes Persian/English text workflows, **German Braille for Deutschland/Österreich and Schweiz** with **Basisschrift, Vollschrift, and Kurzschrift**, plus the Word-only Music / MIDI workflow.
 
 **https://soroushneyestani.github.io/Persian-to-Braille/install.html**
 

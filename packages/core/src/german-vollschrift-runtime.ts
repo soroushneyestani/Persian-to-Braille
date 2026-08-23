@@ -361,6 +361,98 @@ function candidateAt(
   return null;
 }
 
+// POST15_GERMAN_SENTENCE_COMPOSITION_FIX
+//
+// Vollschrift candidates operate on lexical code-point positions, while
+// Basisschrift is allowed to emit structural output for spaces/punctuation.
+// Rebuild an index-preserving baseline only when the original one-cell-per-
+// code-point assumption is not available. Lexical runs must still remain
+// exactly aligned; structural runs are preserved as an opaque Braille chunk.
+function isGermanLexicalCodePoint(
+  value: string,
+): boolean {
+  return /^[\p{L}\p{M}]$/u.test(value);
+}
+
+function rebuildBasisschriftAlignment(
+  normalizedText: string,
+): readonly string[] | null {
+  const chars =
+    Array.from(normalizedText);
+
+  const chunks =
+    new Array<string>(
+      chars.length,
+    ).fill("");
+
+  let start = 0;
+
+  while (start < chars.length) {
+    const lexical =
+      isGermanLexicalCodePoint(
+        chars[start]!,
+      );
+
+    let end =
+      start + 1;
+
+    while (
+      end < chars.length
+      && isGermanLexicalCodePoint(
+        chars[end]!,
+      ) === lexical
+    ) {
+      end += 1;
+    }
+
+    const source =
+      chars
+        .slice(start, end)
+        .join("");
+
+    const translated =
+      translateGermanBasisschrift(
+        source,
+      );
+
+    if (!translated.ok) {
+      return null;
+    }
+
+    if (lexical) {
+      const cells =
+        Array.from(
+          translated.unicodeBraille,
+        );
+
+      if (
+        cells.length
+        !== end - start
+      ) {
+        return null;
+      }
+
+      for (
+        let offset = 0;
+        offset < cells.length;
+        offset += 1
+      ) {
+        chunks[start + offset] =
+          cells[offset]!;
+      }
+    } else {
+      chunks[start] =
+        translated.unicodeBraille;
+    }
+
+    start = end;
+  }
+
+  return Object.freeze(
+    chunks.slice(),
+  );
+}
+
 export function translateGermanVollschriftResolved(
   input: string,
   resolvedCandidates:
@@ -385,7 +477,7 @@ export function translateGermanVollschriftResolved(
   const chars =
     Array.from(normalizedText);
 
-  const baselineCells =
+  let baselineCells =
     Array.from(
       baseline.unicodeBraille,
     );
@@ -394,13 +486,23 @@ export function translateGermanVollschriftResolved(
     baselineCells.length
     !== chars.length
   ) {
-    return Object.freeze({
-      ok: false,
-      input,
-      code: "BASELINE_ALIGNMENT_UNAVAILABLE",
-      message:
-        "This Vollschrift executable surface requires one Basisschrift cell per input code point.",
-    });
+    const rebuilt =
+      rebuildBasisschriftAlignment(
+        normalizedText,
+      );
+
+    if (rebuilt === null) {
+      return Object.freeze({
+        ok: false,
+        input,
+        code: "BASELINE_ALIGNMENT_UNAVAILABLE",
+        message:
+          "Vollschrift could not preserve Basisschrift alignment for this lexical/structural composition.",
+      });
+    }
+
+    baselineCells =
+      Array.from(rebuilt);
   }
 
   const resolutionMap =

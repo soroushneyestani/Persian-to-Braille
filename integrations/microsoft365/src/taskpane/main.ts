@@ -34,6 +34,11 @@ import {
   createGermanTaskPane,
 } from "./german-pane.js";
 
+import type {
+  GermanMutationResult,
+  GermanSelectionPort,
+} from "./german-pane.js";
+
 import {
   evaluateOfficeTaskPaneReadiness,
 } from "./readiness.js";
@@ -63,6 +68,18 @@ function officeReadyPort():
   ).Office;
 }
 
+function germanContextFailure(
+  message: string,
+): GermanMutationResult {
+  return Object.freeze({
+    ok: false,
+    domain: "host",
+    code:
+      "SELECTION_CONTEXT_UNAVAILABLE",
+    message,
+  });
+}
+
 const view =
   createOfficeTaskPaneDomView(
     document,
@@ -78,9 +95,20 @@ const featureTabs =
     document,
   );
 
+const clipboard = {
+  async writeText(text: string) {
+    await navigator
+      .clipboard
+      .writeText(
+        text,
+      );
+  },
+};
+
 const germanPane =
   createGermanTaskPane(
     document,
+    clipboard,
   );
 
 const wordRuntime =
@@ -131,15 +159,166 @@ const powerPointService =
     powerPointHostAdapter,
   );
 
-const clipboard = {
-  async writeText(text: string) {
-    await navigator
-      .clipboard
-      .writeText(
-        text,
-      );
-  },
-};
+const germanWordPort:
+  GermanSelectionPort =
+  Object.freeze({
+    canReplace: true,
+    canInsertAfter: true,
+
+    async readSelection() {
+      const result =
+        await wordHostAdapter
+          .readSelection();
+
+      if (!result.ok) {
+        return result;
+      }
+
+      return Object.freeze({
+        ok: true,
+        text:
+          result.text,
+        mutationContext:
+          result.text,
+      });
+    },
+
+    async replaceSelection(
+      expected: unknown,
+      replacementText: string,
+    ) {
+      if (
+        typeof expected !==
+          "string"
+      ) {
+        return germanContextFailure(
+          "Die Word-Auswahl kann nicht sicher ersetzt werden, weil der Auswahlkontext fehlt.",
+        );
+      }
+
+      return wordHostAdapter
+        .replaceSelection(
+          expected,
+          replacementText,
+        );
+    },
+
+    async insertAfterSelection(
+      expected: unknown,
+      insertedText: string,
+    ) {
+      if (
+        typeof expected !==
+          "string"
+      ) {
+        return germanContextFailure(
+          "Die Brailleschrift kann nicht sicher eingefügt werden, weil der Word-Auswahlkontext fehlt.",
+        );
+      }
+
+      return wordHostAdapter
+        .insertAfterSelection(
+          expected,
+          insertedText,
+        );
+    },
+  });
+
+const germanExcelPort:
+  GermanSelectionPort =
+  Object.freeze({
+    canReplace: true,
+    canInsertAfter: false,
+
+    async readSelection() {
+      const result =
+        await excelHostAdapter
+          .readSelection();
+
+      if (!result.ok) {
+        return result;
+      }
+
+      return Object.freeze({
+        ok: true,
+        text:
+          result.text,
+        mutationContext:
+          result.snapshot,
+      });
+    },
+
+    async replaceSelection(
+      expected: unknown,
+      replacementText: string,
+    ) {
+      if (
+        expected === null
+        || typeof expected !==
+          "object"
+      ) {
+        return germanContextFailure(
+          "Die Excel-Auswahl kann nicht sicher ersetzt werden, weil der Zellkontext fehlt.",
+        );
+      }
+
+      return excelHostAdapter
+        .replaceSelection(
+          expected as Parameters<
+            typeof excelHostAdapter.replaceSelection
+          >[0],
+          replacementText,
+        );
+    },
+  });
+
+const germanPowerPointPort:
+  GermanSelectionPort =
+  Object.freeze({
+    canReplace: true,
+    canInsertAfter: false,
+
+    async readSelection() {
+      const result =
+        await powerPointHostAdapter
+          .readSelection();
+
+      if (!result.ok) {
+        return result;
+      }
+
+      return Object.freeze({
+        ok: true,
+        text:
+          result.text,
+        mutationContext:
+          result.snapshot,
+      });
+    },
+
+    async replaceSelection(
+      expected: unknown,
+      replacementText: string,
+    ) {
+      if (
+        expected === null
+        || typeof expected !==
+          "object"
+      ) {
+        return germanContextFailure(
+          "Die PowerPoint-Auswahl kann nicht sicher ersetzt werden, weil der Auswahlkontext fehlt.",
+        );
+      }
+
+      return powerPointHostAdapter
+        .replaceSelection(
+          expected as Parameters<
+            typeof powerPointHostAdapter.replaceSelection
+          >[0],
+          replacementText,
+        );
+    },
+  });
 
 view.setReady(false);
 germanPane.setReady(false);
@@ -207,18 +386,18 @@ if (!office) {
               "word"
           ) {
             germanPane.setSelectionPort(
-              wordHostAdapter,
+              germanWordPort,
             );
           } else if (
             readiness.hostKind ===
               "excel"
           ) {
             germanPane.setSelectionPort(
-              excelHostAdapter,
+              germanExcelPort,
             );
           } else {
             germanPane.setSelectionPort(
-              powerPointHostAdapter,
+              germanPowerPointPort,
             );
           }
 

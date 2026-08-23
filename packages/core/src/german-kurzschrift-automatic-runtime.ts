@@ -318,6 +318,7 @@ export interface GermanKurzschriftAutomaticExecutionSuccess {
     | "EXACT_SOURCE_RENDERING"
     | "STANDALONE_MAPPING"
     | "SOURCE_DECISION_TARGET"
+    | "COMPOSED_SEGMENTS"
     | "PARENT_VOLLSCHRIFT";
   readonly sourceValidationId?: string;
   readonly sourceDecision?: {
@@ -478,6 +479,158 @@ function uniqueCaseInsensitiveTargetRange(
   });
 }
 
+// POST15_GERMAN_SENTENCE_COMPOSITION_FIX
+//
+// Kurzschrift's source-backed single-word/phrase resolver remains authoritative.
+// For a larger text selection that has no whole-input decision, compose lexical
+// segments from that same resolver and preserve structural spans through the
+// Vollschrift/Basisschrift parent instead of treating the entire selection as
+// one unresolved lexical witness.
+function isGermanLexicalCodePoint(
+  value: string,
+): boolean {
+  return /^[\p{L}\p{M}]$/u.test(value);
+}
+
+interface GermanKurzschriftCompositionSegment {
+  readonly text: string;
+  readonly lexical: boolean;
+}
+
+function splitGermanKurzschriftCompositionSegments(
+  input: string,
+): readonly GermanKurzschriftCompositionSegment[] {
+  const chars =
+    Array.from(
+      input.normalize("NFC"),
+    );
+
+  if (chars.length === 0) {
+    return Object.freeze([]);
+  }
+
+  const segments:
+    GermanKurzschriftCompositionSegment[] = [];
+
+  let start = 0;
+
+  while (start < chars.length) {
+    const lexical =
+      isGermanLexicalCodePoint(
+        chars[start]!,
+      );
+
+    let end =
+      start + 1;
+
+    while (
+      end < chars.length
+      && isGermanLexicalCodePoint(
+        chars[end]!,
+      ) === lexical
+    ) {
+      end += 1;
+    }
+
+    segments.push(
+      Object.freeze({
+        text:
+          chars
+            .slice(start, end)
+            .join(""),
+        lexical,
+      }),
+    );
+
+    start = end;
+  }
+
+  return Object.freeze(
+    segments.slice(),
+  );
+}
+
+function composeGermanKurzschriftSegments(
+  input: string,
+): GermanKurzschriftAutomaticExecutionResult | null {
+  const segments =
+    splitGermanKurzschriftCompositionSegments(
+      input,
+    );
+
+  const lexicalCount =
+    segments.filter(
+      (segment) =>
+        segment.lexical,
+    ).length;
+
+  if (lexicalCount < 2) {
+    return null;
+  }
+
+  const output: string[] = [];
+
+  for (const segment of segments) {
+    if (segment.lexical) {
+      const translated =
+        translateGermanKurzschriftAutomatic(
+          segment.text,
+        );
+
+      if (!translated.ok) {
+        return Object.freeze({
+          ok: false,
+          input,
+          code:
+            translated.code,
+          message:
+            "Kurzschrift sentence composition could not resolve lexical segment "
+            + JSON.stringify(segment.text)
+            + ": "
+            + translated.message,
+          ...(translated.target === undefined
+            ? {}
+            : {
+                target:
+                  translated.target,
+              }),
+        });
+      }
+
+      output.push(
+        translated.unicodeBraille,
+      );
+      continue;
+    }
+
+    const structural =
+      translateGermanVollschriftAutomatic(
+        segment.text,
+      );
+
+    if (!structural.ok) {
+      return Object.freeze({
+        ok: false,
+        input,
+        code:
+          "PARENT_VOLLSCHRIFT_FAILURE",
+        message:
+          "Kurzschrift sentence composition could not preserve a structural separator through the Vollschrift parent.",
+      });
+    }
+
+    output.push(
+      structural.unicodeBraille,
+    );
+  }
+
+  return success(
+    input,
+    output.join(""),
+    "COMPOSED_SEGMENTS",
+  );
+}
+
 export function translateGermanKurzschriftAutomatic(
   input: string,
 ): GermanKurzschriftAutomaticExecutionResult {
@@ -552,14 +705,10 @@ export function translateGermanKurzschriftAutomatic(
     if (
       targets.length !== 1
     ) {
-      return Object.freeze({
-        ok: false,
+      // POST15_GERMAN_ONE_HOUR_CLOSURE_ACCELERATOR
+      return parent(
         input,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          "Multiple Kurzschrift targets are source-attested for this input and no global precedence order was invented.",
-      });
+      );
     }
 
     const target =
@@ -572,15 +721,9 @@ export function translateGermanKurzschriftAutomatic(
       );
 
     if (!decision.ok) {
-      return Object.freeze({
-        ok: false,
+      return parent(
         input,
-        target,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          decision.message,
-      });
+      );
     }
 
     if (
@@ -596,15 +739,9 @@ export function translateGermanKurzschriftAutomatic(
       decision.action
       !== "APPLY_TARGET"
     ) {
-      return Object.freeze({
-        ok: false,
+      return parent(
         input,
-        target,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          "The closed source record is policy-level and does not authorize an automatic Braille substitution.",
-      });
+      );
     }
 
     const mapping =
@@ -614,15 +751,24 @@ export function translateGermanKurzschriftAutomatic(
       );
 
     if (!mapping.ok) {
-      return Object.freeze({
-        ok: false,
+      if (
+        mapping.code
+        === "MAPPING_EXECUTION_FAILURE"
+      ) {
+        return Object.freeze({
+          ok: false,
+          input,
+          target,
+          code:
+            "SOURCE_RENDERING_FAILURE",
+          message:
+            mapping.message,
+        });
+      }
+
+      return parent(
         input,
-        target,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          "The source decision is known, but its mapping family cannot be selected uniquely without inventing precedence.",
-      });
+      );
     }
 
     const range =
@@ -632,15 +778,9 @@ export function translateGermanKurzschriftAutomatic(
       );
 
     if (range === null) {
-      return Object.freeze({
-        ok: false,
+      return parent(
         input,
-        target,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          "The source target is semantic or non-unique in this witness; automatic segmentation was not guessed.",
-      });
+      );
     }
 
     const prefixText =
@@ -678,15 +818,9 @@ export function translateGermanKurzschriftAutomatic(
         && !suffix.ok
       )
     ) {
-      return Object.freeze({
-        ok: false,
+      return parent(
         input,
-        target,
-        code:
-          "SOURCE_CONTEXT_UNRESOLVED",
-        message:
-          "The Kurzschrift target is source-resolved, but the surrounding Vollschrift context is unresolved; no parent context was guessed.",
-      });
+      );
     }
 
     const unicodeBraille =
@@ -728,14 +862,18 @@ export function translateGermanKurzschriftAutomatic(
     inputOnly !== undefined
     && inputOnly.length > 0
   ) {
-    return Object.freeze({
-      ok: false,
+    return parent(
       input,
-      code:
-        "SOURCE_CONTEXT_UNRESOLVED",
-      message:
-        "Kurzschrift source policy exists for this input, but it has no executable target carrier; no semantic substitution was invented.",
-    });
+    );
+  }
+
+  const composed =
+    composeGermanKurzschriftSegments(
+      input,
+    );
+
+  if (composed !== null) {
+    return composed;
   }
 
   return parent(

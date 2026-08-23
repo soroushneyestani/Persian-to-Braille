@@ -6,7 +6,7 @@
   <title>Install Braille Hub — Manual Preview</title>
   <meta
     name="description"
-    content="Manual preview installation for Braille Hub, providing text and Braille Music accessibility in Microsoft 365."
+    content="Manual preview installation for Braille Hub, providing Persian, English, German Braille, and Braille Music accessibility in Microsoft 365."
   >
   <link rel="stylesheet" href="./compliance.css">
 </head>
@@ -172,7 +172,7 @@
         <h2 id="phase14-current-features">What is available in this preview</h2>
         <ul>
           <li>
-            <strong>Persian / English text Braille</strong> translation through
+            <strong>Persian / English / German text Braille</strong> translation through
             the Microsoft 365 add-in.
           </li>
           <li>
@@ -186,6 +186,22 @@
           ordinary uncontracted six-dot English/Latin text through the current
           <code>fa-ir-g1</code> Latin-span rules. This is not a claim of
           contracted UEB / English Grade-2 support.
+        </p>
+
+        <h3>German Braille — Word, Excel, and PowerPoint</h3>
+        <p>
+          The <strong>Deutsch</strong> tab supports German Braille for
+          <strong>Deutschland / Österreich</strong> and <strong>Schweiz</strong>.
+          Available German Braille levels are <strong>Basisschrift</strong>,
+          <strong>Vollschrift</strong>, and <strong>Kurzschrift</strong>.
+          Translation runs locally through the same shared Braille Hub SDK/Core
+          architecture used by the Office add-in.
+        </p>
+        <p>
+          In Word, a successful German preview can be copied, replace the current
+          selection, or be inserted after it. Excel and PowerPoint support the
+          host-safe replace workflow after preview. Swiss explicit Eszett remains
+          a deliberate fail-closed regional policy case.
         </p>
 
         <h3>Braille Music from MIDI — Word Desktop / Windows</h3>

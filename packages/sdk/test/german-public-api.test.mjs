@@ -117,38 +117,37 @@ test(
   },
 );
 
+// POST15_GERMAN_ONE_HOUR_CLOSURE_ACCELERATOR
 test(
-  "unknown Vollschrift context remains structured unresolved after registration",
+  "general Vollschrift context resolves after general resolver registration",
   () => {
-    const result =
+    const translator =
       createGermanBrailleTranslator({
         mode: "vollschrift",
-      }).translate(
-        "xaux",
+        regionalOverlay: null,
+      });
+
+    const result =
+      translator.translate(
+        "schwierig",
       );
 
     assert.equal(
       result.ok,
-      false,
+      true,
+      result.ok ? undefined : result.message,
     );
 
     if (!result.ok) {
-      assert.equal(
-        result.code,
-        "RUNTIME_CONTEXT_REQUIRED",
-      );
-      assert.equal(
-        result.profile.runtimeExecutable,
-        true,
-      );
-      assert.equal(
-        result.profile.runtimeRegistered,
-        true,
-      );
+      return;
     }
+
+    assert.equal(
+      result.unicodeBraille,
+      "⠱⠺⠬⠗⠊⠛",
+    );
   },
 );
-
 test(
   "Swiss regional overlay remains orthogonal after full runtime registration",
   () => {
@@ -224,33 +223,25 @@ for (
 }
 
 test(
-  "translateOrThrow still throws the public error for unresolved automatic context",
+  "translateOrThrow returns general Vollschrift output after resolver registration",
   () => {
     const translator =
       createGermanBrailleTranslator({
         mode: "vollschrift",
+        regionalOverlay: null,
       });
 
-    assert.throws(
-      () =>
-        translator.translateOrThrow(
-          "xaux",
-        ),
-      (error) => {
-        assert.ok(
-          error
-          instanceof GermanBrailleTranslationError,
-        );
-        assert.equal(
-          error.code,
-          "RUNTIME_CONTEXT_REQUIRED",
-        );
-        return true;
-      },
+    const result =
+      translator.translateOrThrow(
+        "schwierig",
+      );
+
+    assert.equal(
+      result.unicodeBraille,
+      "⠱⠺⠬⠗⠊⠛",
     );
   },
 );
-
 test(
   "unsupported text mode is rejected by the Core configuration boundary",
   () => {

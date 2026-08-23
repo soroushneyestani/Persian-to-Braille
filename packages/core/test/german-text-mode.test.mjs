@@ -103,24 +103,21 @@ test(
 );
 
 
+// POST15_GERMAN_ONE_HOUR_CLOSURE_ACCELERATOR
 test(
-  "keeps the German text-mode boundary outside the Core root API during Phase 15.5",
-  () => {
-    const forbiddenRootExports = [
-      "GERMAN_TEXT_MODES",
-      "createGermanTextModeSelection",
-      "isGermanTextMode",
-    ];
-
-    for (const name of forbiddenRootExports) {
-      assert.equal(
-        Object.prototype.hasOwnProperty.call(
-          coreRoot,
-          name,
-        ),
-        false,
-        `${name} leaked through the Core root export.`,
+  "exports the closed German text-mode boundary through the Core root API after Phase 15",
+  async () => {
+    const root =
+      await import(
+        "../dist/index.js"
       );
-    }
+
+    assert.equal(
+      Object.prototype.hasOwnProperty.call(
+        root,
+        "GERMAN_TEXT_MODES",
+      ),
+      true,
+    );
   },
 );
