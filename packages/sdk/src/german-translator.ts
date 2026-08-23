@@ -1,11 +1,14 @@
 import {
+  applyGermanRegionalOverlay,
   getGermanBrailleRuntimeCapability,
+  translateGermanBasisschrift,
 } from "@persian-braille/core";
 
 import type {
   GermanBrailleProfileInfo,
   GermanBrailleTranslationErrorData,
   GermanBrailleTranslationFailure,
+  GermanBrailleTranslationFailureCode,
   GermanBrailleTranslationOptions,
   GermanBrailleTranslationResult,
   GermanBrailleTranslationSuccess,
@@ -41,19 +44,25 @@ function createProfileInfo(
   });
 }
 
-function runtimeUnavailableFailure(
+function failure(
   input: string,
   profile: GermanBrailleProfileInfo,
+  code: GermanBrailleTranslationFailureCode,
+  message: string,
+  location?:
+    GermanBrailleTranslationFailure["location"],
 ): GermanBrailleTranslationFailure {
   return Object.freeze({
     ok: false,
     input,
     profile,
-    code: "RUNTIME_NOT_EXECUTABLE",
-    message:
-      "German Braille semantic Core is closed, but executable runtime " +
-      `materialization is not available for mode ${profile.mode}. ` +
-      `Required dependency: ${profile.runtimeDependency}.`,
+    code,
+    message,
+    ...(location === undefined
+      ? {}
+      : {
+          location,
+        }),
   });
 }
 
@@ -61,7 +70,7 @@ export class GermanBrailleTranslationError
   extends Error
   implements GermanBrailleTranslationErrorData {
   readonly code:
-    "RUNTIME_NOT_EXECUTABLE";
+    GermanBrailleTranslationFailureCode;
 
   readonly result:
     GermanBrailleTranslationFailure;
@@ -74,9 +83,12 @@ export class GermanBrailleTranslationError
 
     this.name =
       "GermanBrailleTranslationError";
+
     this.code =
-      "RUNTIME_NOT_EXECUTABLE";
-    this.result = result;
+      result.code;
+
+    this.result =
+      result;
 
     Object.freeze(this);
   }
@@ -97,10 +109,75 @@ class CapabilityBackedGermanBrailleTranslator
   translate(
     input: string,
   ): GermanBrailleTranslationResult {
-    return runtimeUnavailableFailure(
+    if (
+      this.profile.mode
+      !== "basisschrift"
+    ) {
+      return failure(
+        input,
+        this.profile,
+        "RUNTIME_CONTEXT_REQUIRED",
+        (
+          `German ${this.profile.mode} has a source-backed executable Core `
+          + "surface, but automatic public translation requires explicit "
+          + `resolution context. Required dependency: ${this.profile.runtimeDependency}.`
+        ),
+      );
+    }
+
+    const basis =
+      translateGermanBasisschrift(
+        input,
+      );
+
+    if (!basis.ok) {
+      return failure(
+        input,
+        this.profile,
+        "RUNTIME_EXECUTION_FAILED",
+        basis.message,
+        basis.location,
+      );
+    }
+
+    const regional =
+      applyGermanRegionalOverlay(
+        input,
+        "basisschrift",
+        this.profile.regionalOverlay,
+        basis.unicodeBraille,
+      );
+
+    if (!regional.ok) {
+      return failure(
+        input,
+        this.profile,
+        regional.code,
+        (
+          "The selected Swiss regional profile rejects explicit ß input; "
+          + "automatic ß-to-ss normalization is not applied."
+        ),
+      );
+    }
+
+    return Object.freeze({
+      ok: true,
       input,
-      this.profile,
-    );
+      profile:
+        this.profile,
+      normalizedText:
+        basis.normalizedText,
+      cells:
+        Object.freeze(
+          Array.from(
+            regional.unicodeBraille,
+          ),
+        ),
+      unicodeBraille:
+        regional.unicodeBraille,
+      structuralTokens:
+        basis.structuralTokens,
+    });
   }
 
   translateOrThrow(

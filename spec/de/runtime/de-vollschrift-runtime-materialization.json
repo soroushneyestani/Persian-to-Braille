@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8E-VOLLSCHRIFT-RUNTIME-MATERIALIZATION",
+  "id": "de-vollschrift-runtime-materialization",
+  "status": "MATERIALIZED_NON_EXECUTABLE",
+  "language": "de",
+  "mode": "vollschrift",
+  "direction": "print-to-braille",
+  "cellSize": 6,
+  "runtimeFamily": "GERMAN_DEDICATED_EXECUTABLE_RUNTIME",
+  "inheritance": {
+    "effectiveLayers": [
+      "basisschrift",
+      "vollschrift"
+    ],
+    "basisschriftCoreExecutableSurfaceProven": true,
+    "parentRuntimeFallbackChain": false,
+    "oneEffectiveBundlePerSelectedMode": true,
+    "duplicateCanonicalRuleIdOverride": false
+  },
+  "source": {
+    "phase15_2Closure": {
+      "path": "docs/architecture/phase-15.2h-german-vollschrift-standards-audit-closure.json",
+      "byteSha256": "9A6C03429E78128F437F4D6B81CACDAF8F49D771B97C5A9BFE263574F7F322ED",
+      "canonicalSha256": "B4737A198E9930DDD4DCEE279B57CD74D2EAD8930CE90055C623176F5CE1B804"
+    },
+    "phase15_8DBasisschrift": {
+      "path": "tools/phase15-8/runtime/stage-output/d/basisschrift-executable-conformance.json",
+      "byteSha256": "D97E4ADF148E4E87D26995705E548172A00F0D4AD0484DD596C88140D35B5EB7",
+      "canonicalSha256": "42CA06C501196B6580E41E179F0A6C913E3D1B5B82CC4C480B2D7EBE4730FF08"
+    },
+    "normativeArtifacts": {
+      "15.2A": {
+        "path": "docs/architecture/phase-15.2a-bskdl-vollschrift-rule-family-inventory.json",
+        "byteSha256": "FA1CC39C1716B6F53D6565A61EA674D400D6DD67269DBC64578EEAA3E4C6DEBF",
+        "canonicalSha256": "20D097E36AECE4B0B0D7670B9C08AF28A51CB00A8E5BEA1EC84724E30E5AD89F"
+      },
+      "15.2B": {
+        "path": "docs/architecture/phase-15.2b-bskdl-vollschrift-formal-contraction-eligibility-contract.json",
+        "byteSha256": "420210509566E8187DC95C21A24580E54CB2DDC5BF3E3D5F371BC68A0E9C6013",
+        "canonicalSha256": "CF7620A2656375F59CE69E5A2A7BB69CD69B3698317D9A30244C8F8D287DAF1D"
+      },
+      "15.2C": {
+        "path": "docs/architecture/phase-15.2c-bskdl-vollschrift-morphological-boundary-contract.json",
+        "byteSha256": "D3F21A0308FD21F2905F6DFF49A1FB3EDC3EF3940774FFA85194A3353E925D79",
+        "canonicalSha256": "029AE43E143C5AB115996B263D27D67A24B2B013780506AA9F61954D47CB142A"
+      },
+      "15.2D": {
+        "path": "docs/architecture/phase-15.2d-bskdl-vollschrift-pronunciation-eligibility-contract.json",
+        "byteSha256": "4520306E0F2D9BD74B73F8F681EB96C21FFC896E5CCA59D32209827DD4CB7E57",
+        "canonicalSha256": "F56E4D2E7525C486094D41F8AACD033D51942DC490CF7AA0661864551378281A"
+      },
+      "15.2E": {
+        "path": "docs/architecture/phase-15.2e-bskdl-vollschrift-st-special-policy-contract.json",
+        "byteSha256": "1EA45558F66F9B96CFD51E9B16304F145542D46C2048868F21CF872B99C91813",
+        "canonicalSha256": "95572DC0305ACB08414C217CC0A2FC8FFAA2EC81B2A6C77165D1592ED9DF581B"
+      },
+      "15.2F": {
+        "path": "docs/architecture/phase-15.2f-bskdl-vollschrift-positive-negative-normative-suite.json",
+        "byteSha256": "7BBB372208BE1621E372AEC7F0D8322A9E151DD2F778359CBE332D815C97B906",
+        "canonicalSha256": "7B09EEAA4C849725525A6C678684076ECD865493EBCCA1AF9B9FE39870D008A8"
+      }
+    }
+  },
+  "coverage": {
+    "ruleFamilies": 8,
+    "lautgruppenkuerzungen": 8,
+    "formalEligibilityRules": 14,
+    "morphologicalRules": 10,
+    "pronunciationRules": 14,
+    "stPolicyRules": 12,
+    "normativeFixtures": 48,
+    "directSourceRenderings": 24,
+    "effectiveLayerCount": 2,
+    "contractionKeys": [
+      "au",
+      "ch",
+      "ei",
+      "eu",
+      "ie",
+      "sch",
+      "st",
+      "äu"
+    ],
+    "normativeFixtureIds": [
+      "DE-VOLL-NORM-CASE-001",
+      "DE-VOLL-NORM-CASE-002",
+      "DE-VOLL-NORM-CASE-003",
+      "DE-VOLL-NORM-CASE-004",
+      "DE-VOLL-NORM-CASE-005",
+      "DE-VOLL-NORM-CASE-006",
+      "DE-VOLL-NORM-CASE-007",
+      "DE-VOLL-NORM-CASE-008",
+      "DE-VOLL-NORM-CASE-009",
+      "DE-VOLL-NORM-CASE-010",
+      "DE-VOLL-NORM-CASE-011",
+      "DE-VOLL-NORM-CASE-012",
+      "DE-VOLL-NORM-CASE-013",
+      "DE-VOLL-NORM-CASE-014",
+      "DE-VOLL-NORM-CASE-015",
+      "DE-VOLL-NORM-CASE-016",
+      "DE-VOLL-NORM-CASE-017",
+      "DE-VOLL-NORM-CASE-018",
+      "DE-VOLL-NORM-CASE-019",
+      "DE-VOLL-NORM-CASE-020",
+      "DE-VOLL-NORM-CASE-021",
+      "DE-VOLL-NORM-CASE-022",
+      "DE-VOLL-NORM-CASE-023",
+      "DE-VOLL-NORM-CASE-024",
+      "DE-VOLL-NORM-CASE-025",
+      "DE-VOLL-NORM-CASE-026",
+      "DE-VOLL-NORM-CASE-027",
+      "DE-VOLL-NORM-CASE-028",
+      "DE-VOLL-NORM-CASE-029",
+      "DE-VOLL-NORM-CASE-030",
+      "DE-VOLL-NORM-CASE-031",
+      "DE-VOLL-NORM-CASE-032",
+      "DE-VOLL-NORM-CASE-033",
+      "DE-VOLL-NORM-CASE-034",
+      "DE-VOLL-NORM-CASE-035",
+      "DE-VOLL-NORM-CASE-036",
+      "DE-VOLL-NORM-CASE-037",
+      "DE-VOLL-NORM-CASE-038",
+      "DE-VOLL-NORM-CASE-039",
+      "DE-VOLL-NORM-CASE-040",
+      "DE-VOLL-NORM-CASE-041",
+      "DE-VOLL-NORM-CASE-042",
+      "DE-VOLL-NORM-CASE-043",
+      "DE-VOLL-NORM-CASE-044",
+      "DE-VOLL-NORM-CASE-045",
+      "DE-VOLL-NORM-CASE-046",
+      "DE-VOLL-NORM-CASE-047",
+      "DE-VOLL-NORM-CASE-048"
+    ]
+  },
+  "executionBoundary": {
+    "materialized": true,
+    "vollschriftExecutable": false,
+    "runtimeRegistered": false,
+    "vollschriftRuntimeConformanceProven": false,
+    "globalRuntimeConformanceProven": false,
+    "successfulVollschriftTranslationClaimed": false,
+    "pronunciationProviderInvented": false,
+    "morphologicalBoundaryGuessed": false,
+    "stUnconditionalPermissionClaimed": false,
+    "liblouisNormativeRuntimeUsed": false,
+    "nextRequiredProof": "15.8F-VOLLSCHRIFT-EXECUTABLE-CONFORMANCE"
+  }
+}

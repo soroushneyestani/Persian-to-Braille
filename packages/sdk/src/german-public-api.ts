@@ -18,7 +18,9 @@ export interface GermanBrailleTranslationOptions {
 }
 
 export type GermanBrailleTranslationFailureCode =
-  | "RUNTIME_NOT_EXECUTABLE";
+  | "RUNTIME_CONTEXT_REQUIRED"
+  | "RUNTIME_EXECUTION_FAILED"
+  | "SWISS_EXPLICIT_ESZETT_FORBIDDEN";
 
 export interface GermanBrailleProfileInfo {
   readonly language: "de";
@@ -30,10 +32,11 @@ export interface GermanBrailleProfileInfo {
     GermanBrailleRuntimeStatus;
   readonly runtimeDependency:
     GermanBrailleRuntimeDependency;
-  readonly runtimeExecutable: false;
-  readonly runtimeRegistered: false;
+  readonly runtimeExecutable: boolean;
+  readonly runtimeRegistered: boolean;
   readonly loweringCoverage:
-    "123/123" | "NOT_MATERIALIZED";
+    | "123/123"
+    | "SOURCE_FIXTURE_SURFACE";
 }
 
 export interface GermanBrailleUnicodeLocation {

@@ -15,37 +15,39 @@ import type {
 } from "./german-text-mode.js";
 
 /**
- * Public Core capability boundary for German Braille.
+ * Public Core capability boundary for German Braille after Phase 15.8.
  *
- * Phase 15.5 closed the German semantic Core and materialized complete
- * Basisschrift execution IR, but it deliberately did not promote that IR to
- * executable runtime behavior. Phase 15.6 therefore exposes capability state
- * explicitly and fails closed instead of reusing the Persian runtime or
- * inventing German execution semantics.
+ * Basisschrift has an automatic executable Core surface and is registered
+ * for the public SDK. Vollschrift and Kurzschrift are executable only through
+ * their explicit source-backed resolution surfaces; no lexical, morphological,
+ * pronunciation, or precedence provider is invented here.
  */
 export type GermanBrailleRuntimeStatus =
-  | "LOWERING_IR_NON_EXECUTABLE"
-  | "MODE_RUNTIME_NOT_MATERIALIZED";
+  | "EXECUTABLE_RUNTIME_REGISTERED"
+  | "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED"
+  | "EXPLICIT_RESOLVED_PLAN_REQUIRED";
 
 export type GermanBrailleRuntimeDependency =
-  | "GERMAN_EXECUTABLE_RUNTIME_ADAPTER"
-  | "GERMAN_MODE_EXECUTABLE_RUNTIME_MATERIALIZATION";
+  | "NONE"
+  | "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT"
+  | "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN";
 
 export interface GermanBrailleRuntimeCapability {
   readonly language: "de";
   readonly mode: GermanTextMode;
   readonly regionalOverlay:
     GermanRegionalOverlay | null;
-  readonly executable: false;
-  readonly runtimeRegistered: false;
+  readonly executable: boolean;
+  readonly runtimeRegistered: boolean;
   readonly status:
     GermanBrailleRuntimeStatus;
   readonly dependency:
     GermanBrailleRuntimeDependency;
   readonly loweringCoverage:
-    "123/123" | "NOT_MATERIALIZED";
+    | "123/123"
+    | "SOURCE_FIXTURE_SURFACE";
   readonly phase15_5Closed: true;
-  readonly phase15_8Required: true;
+  readonly phase15_8Required: boolean;
 }
 
 export interface GermanBrailleRuntimeCapabilityOptions {
@@ -66,8 +68,47 @@ export function getGermanBrailleRuntimeCapability(
       options.regionalOverlay ?? null,
     );
 
-  const isBasisschrift =
-    modeSelection.mode === "basisschrift";
+  if (
+    modeSelection.mode
+    === "basisschrift"
+  ) {
+    return Object.freeze({
+      language: "de",
+      mode: modeSelection.mode,
+      regionalOverlay:
+        regionalConfiguration.overlay,
+      executable: true,
+      runtimeRegistered: true,
+      status:
+        "EXECUTABLE_RUNTIME_REGISTERED",
+      dependency: "NONE",
+      loweringCoverage: "123/123",
+      phase15_5Closed: true,
+      phase15_8Required: false,
+    });
+  }
+
+  if (
+    modeSelection.mode
+    === "vollschrift"
+  ) {
+    return Object.freeze({
+      language: "de",
+      mode: modeSelection.mode,
+      regionalOverlay:
+        regionalConfiguration.overlay,
+      executable: false,
+      runtimeRegistered: false,
+      status:
+        "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED",
+      dependency:
+        "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT",
+      loweringCoverage:
+        "SOURCE_FIXTURE_SURFACE",
+      phase15_5Closed: true,
+      phase15_8Required: true,
+    });
+  }
 
   return Object.freeze({
     language: "de",
@@ -77,17 +118,11 @@ export function getGermanBrailleRuntimeCapability(
     executable: false,
     runtimeRegistered: false,
     status:
-      isBasisschrift
-        ? "LOWERING_IR_NON_EXECUTABLE"
-        : "MODE_RUNTIME_NOT_MATERIALIZED",
+      "EXPLICIT_RESOLVED_PLAN_REQUIRED",
     dependency:
-      isBasisschrift
-        ? "GERMAN_EXECUTABLE_RUNTIME_ADAPTER"
-        : "GERMAN_MODE_EXECUTABLE_RUNTIME_MATERIALIZATION",
+      "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN",
     loweringCoverage:
-      isBasisschrift
-        ? "123/123"
-        : "NOT_MATERIALIZED",
+      "SOURCE_FIXTURE_SURFACE",
     phase15_5Closed: true,
     phase15_8Required: true,
   });

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8H-KURZSCHRIFT-EXECUTABLE-CONFORMANCE",
+  "id": "de-kurzschrift-executable-runtime",
+  "status": "EXECUTABLE_WITH_EXPLICIT_RESOLVED_PLAN_AND_DOCUMENTED_PROVIDER_DEPENDENCIES",
+  "language": "de",
+  "mode": "kurzschrift",
+  "direction": "print-to-braille",
+  "cellSize": 6,
+  "runtimeFamily": "GERMAN_DEDICATED_EXECUTABLE_RUNTIME",
+  "source": {
+    "gResult": {
+      "path": "tools/phase15-8/runtime/stage-output/g/kurzschrift-runtime-materialization.json",
+      "byteSha256": "D506D1D24DA722C51B1A7B8303AF9A197E2A296E0BBA2998BD03D5279175D1B7",
+      "canonicalSha256": "780FBF25A6AC290FF8156D5C11EEA8CA64309A26356FDDFF2B1FF563C9D9935A"
+    },
+    "executionSemanticsDiscovery": {
+      "path": "tools/phase15-8/runtime/stage-output/h/kurzschrift-execution-semantics-discovery.json",
+      "byteSha256": "C14A83B994132896B021F36734017A01AF5C109515C08906235143358193D58A",
+      "canonicalSha256": "1750FFF7013D74022EBB08BA35E091778435533154258B2998579DC9805D2ABD"
+    }
+  },
+  "mappingRegistry": {
+    "familyCounts": {
+      "lautgruppe": 39,
+      "prefixSuffix": 11,
+      "oneForm": 53,
+      "twoForm": 165,
+      "comma": 23,
+      "umlaut": 33
+    },
+    "totalMappings": 324,
+    "exactMappingValidationExecution": "221/221 PASS_REQUIRED"
+  },
+  "sourceFixtureSurface": {
+    "uniqueValidationIds": 645,
+    "partition": {
+      "exactOnly": 245,
+      "exactAndDecision": 13,
+      "decisionOnly": 379,
+      "controlOnly": 6,
+      "specialOnly": 2
+    },
+    "contextualExactRenderings": 37,
+    "decisionCases": 392,
+    "controlCases": 6,
+    "structuredCases": 2
+  },
+  "executionBoundary": {
+    "kurzschriftRuntimeMaterialized": true,
+    "kurzschriftExplicitResolvedPlanCoreExecutableSurface": true,
+    "kurzschriftSourceFixtureSurfaceConformanceProven": true,
+    "kurzschriftAutomaticProviderResolutionExecutable": false,
+    "providerIndependentGeneralizationReady": false,
+    "automaticLexicalResolutionInvented": false,
+    "automaticMorphologicalResolutionInvented": false,
+    "automaticPronunciationResolutionInvented": false,
+    "runtimePrecedenceTotalOrderInvented": false,
+    "germanRuntimeRegistered": false,
+    "publicSdkSuccessfulKurzschriftTranslationClaimed": false,
+    "globalRuntimeConformanceProven": false,
+    "deMath016Fabricated": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "next": "15.8I-SWISS-RUNTIME-OVERLAY-EXECUTION"
+}

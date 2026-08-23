@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.8I-SWISS-RUNTIME-OVERLAY-EXECUTION",
+  "id": "de-swiss-overlay-executable-runtime",
+  "status": "EXECUTABLE_SCOPED_REGIONAL_OVERLAY",
+  "language": "de",
+  "regionalOverlay": "swiss",
+  "textModes": [
+    "basisschrift",
+    "vollschrift",
+    "kurzschrift"
+  ],
+  "architecture": {
+    "swissIsFourthTextMode": false,
+    "regionalDimension": "ORTHOGONAL_CONFIGURATION_DIMENSION",
+    "applicationStage": "AFTER_TEXT_MODE_MATERIALIZATION_BEFORE_FINAL_EXECUTABLE_SPECIFICATION",
+    "baseOverlayNullBehavior": "IDENTITY",
+    "runtimeParentChaining": false,
+    "canonicalBaseRuleMutation": false
+  },
+  "source": {
+    "hResult": {
+      "path": "tools/phase15-8/runtime/stage-output/h/kurzschrift-executable-conformance.json",
+      "byteSha256": "ACCD57A0753B417B1BAB5BC12F3CE0CAB4F27047EBA62458A1CB8E3A1F96CC41",
+      "canonicalSha256": "28F00F1D4A770B58572CA02D3B69A7964406A9FFD2A66101A1E98FDE6D62EBE6"
+    },
+    "phase15_4Closure": {
+      "path": "docs/architecture/phase-15.4e-bskdl-swiss-regional-final-closure.json",
+      "byteSha256": "EFD049CBA69B3A4A63F15CE4BC534C8629F1B27AF84BBCB9E5AA4593234611B1",
+      "canonicalSha256": "52FEA2EC186435D9BC7C110A83F7A9C22686A4BEC5C491E30A4FBBBED4822455"
+    },
+    "formalRuleContract": {
+      "path": "docs/architecture/phase-15.4c-bskdl-swiss-regional-formal-rule-contract.json",
+      "byteSha256": "0A07A6D7127DADAE9FB1A6FD291093C4B62D7180504ED3B153B5AD6633B8C700",
+      "canonicalSha256": "E789A68BA84A74B82C3A834898D33722421E8408EA945DE1581F1FC86B40B27F"
+    },
+    "formalValidationSuite": {
+      "path": "docs/architecture/phase-15.4d-bskdl-swiss-regional-formal-validation-suite.json",
+      "byteSha256": "1CA9C459400A88FD2A744558C3BBE383D7132BCE5BEA7F8D5ADD67B324C229FB",
+      "canonicalSha256": "745766972A5A2E694CD64217DC29CA24FF55DF34D8ED0B8B60D136A12127C753"
+    },
+    "sourceBinding": {
+      "path": "docs/architecture/phase-15.4a-bskdl-swiss-regional-source-binding-closure.json",
+      "byteSha256": "657CB0F6CC755F742D57293F592B21FB8398E13F9DEDA5A7133A97291EB266F1",
+      "canonicalSha256": "0D970201C4AD1895A023D17B53A1E4B68FC1AF69D7B4071DCB83704DA73A0700"
+    },
+    "explicitEszettPolicy": {
+      "path": "docs/architecture/phase-15.5a6-swiss-explicit-eszett-input-policy.json",
+      "byteSha256": "811442411BD10FA229A97665C0869D480B8FCE080BBCEA071C407958C795D5E6",
+      "canonicalSha256": "C57D89AD1C3A0EC80462D6DA6DADF347A0FFE9D870E9A7757933C3B2F0E07F34"
+    }
+  },
+  "normativeSurface": {
+    "sourceStatements": 2,
+    "bindings": 2,
+    "taxonomyFamilies": 2,
+    "formalRules": 2,
+    "formalValidationCases": 12,
+    "ruleIds": [
+      "DE-CH410-001",
+      "DE-CH410-002"
+    ],
+    "validationIds": [
+      "DE-CH410-VAL-001",
+      "DE-CH410-VAL-002",
+      "DE-CH410-VAL-003",
+      "DE-CH410-VAL-004",
+      "DE-CH410-VAL-005",
+      "DE-CH410-VAL-006",
+      "DE-CH410-VAL-007",
+      "DE-CH410-VAL-008",
+      "DE-CH410-VAL-009",
+      "DE-CH410-VAL-010",
+      "DE-CH410-VAL-011",
+      "DE-CH410-VAL-012"
+    ]
+  },
+  "execution": {
+    "explicitSwissEszettInputPolicy": "REJECT",
+    "explicitSwissEszettFailureCode": "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+    "automaticEszettToSsNormalization": false,
+    "baseGermanEszettMappingPreserved": "ß -> ⠮",
+    "swissKurzschriftTargets": {
+      "gross": "⠛⠮",
+      "schliess": "⠱⠮"
+    },
+    "swissKurzschriftTargetsReuseExistingBaseMappings": true,
+    "newBrailleSequencesCreated": false,
+    "crossModeRegionalActivation": false
+  },
+  "runtimeBoundary": {
+    "swissOverlayExecutable": true,
+    "basisschriftSwissConstraintExecutable": true,
+    "vollschriftSwissConstraintExecutable": true,
+    "kurzschriftSwissConstraintExecutable": true,
+    "kurzschriftSwissDoubleSApplicabilityExecutable": true,
+    "germanRuntimeRegistered": false,
+    "publicSdkSuccessfulGermanTranslationClaimed": false,
+    "globalRuntimeConformanceProven": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "next": "15.8J-THREE-MODE-TWO-REGION-REGRESSION"
+}
