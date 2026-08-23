@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-FLANG-008-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "spanWords": 4
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedStart",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠰⠰",
+            "codepoints": [
+              "U+2830",
+              "U+2830"
+            ],
+            "dots": [
+              "56",
+              "56"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "20F98A178B5965ED2E895E7BDBE6677EE94969595C5E965BEE4977567CBF7B41"
+        },
+        {
+          "field": "expectedEnd",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠠⠄",
+            "codepoints": [
+              "U+2820",
+              "U+2804"
+            ],
+            "dots": [
+              "6",
+              "3"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "BDA15786F358DA58D171B60AB137B8977ED5B9676612DCE09F96E6EC2656252E"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-FLANG-008"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-FLANG-008"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json"
+    ],
+    "canonicalSections": [
+      "2.9"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/validationCases/1"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1j-bskdl-basisschrift-foreign-language-span-contract.json",
+        "byteSha256": "05961C67126B17A8D68384BDCB18AEC6B26859920D370B7093C91A9ED8DE7CC0",
+        "canonicalSha256": "442C3C4EB738DC3EB463BEBB39B8BCE8F0C64AE9B6F5ABD56CAE7FB7D03A9AA1",
+        "jsonPointer": "/rules/7",
+        "section": "2.9"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-flang-008.json",
+        "byteSha256": "040BB679A92E3B551263B8066C34D3CECAF5BB27395B0256DAAB05DE261195CD",
+        "canonicalSha256": "B6DCBB9DB3365883A255246C624E6AE325F7409649493E163F1CFE2EA3C69AC0"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectedVectorCanonicalSha256": "9606B283CE143B7B619B71F98CCDCC75BD8A852CFB807C86E4B55748D35230E5"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-MATH-012-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "STANDARD_CELL_VECTOR",
+  "input": {
+    "value": {
+      "equal": {
+        "unicode": "⠶",
+        "codepoints": [
+          "U+2836"
+        ],
+        "dots": [
+          "2356"
+        ],
+        "cellCount": 1
+      }
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedTableSign",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠔⠶",
+            "codepoints": [
+              "U+2814",
+              "U+2836"
+            ],
+            "dots": [
+              "35",
+              "2356"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "0966654D451D3944865F55ACDD9AB658E833E424EE279F32B78B7585030D2C3A"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-MATH-012"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-MATH-012"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json"
+    ],
+    "canonicalSections": [
+      "2.10"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "canonicalSha256": "AFE2328AD94FCF53C2429B33199D707F99615D2C45CBB90B2826ACA7AC5DCD75",
+        "jsonPointer": "/validationCases/6"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1k-bskdl-basisschrift-mathematical-signs-insert-contract.json",
+        "byteSha256": "F6889176DDB6FC69E4ECAA804D8BAEF32AB486092BB89AF1F7E0B561677D6E74",
+        "canonicalSha256": "AFE2328AD94FCF53C2429B33199D707F99615D2C45CBB90B2826ACA7AC5DCD75",
+        "jsonPointer": "/rules/11",
+        "section": "2.10"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-math-012.json",
+        "byteSha256": "DFA89AA9DEB0552CFCE8D64D992D278D6BAFF22A0363CB06C15617564B0C7FF5",
+        "canonicalSha256": "41FD618292DC6DA4303BD97DDA34768D198DDF34219F555F4668A8975B713EBF"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectedVectorCanonicalSha256": "7E077D78CCB1D4934CB7A8CB20D79FCD9A89E0E304008171D434A185F75010DF"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}

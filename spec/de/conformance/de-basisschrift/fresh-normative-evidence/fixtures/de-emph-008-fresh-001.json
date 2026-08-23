@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-EMPH-008-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "spanShape": "MULTIPLE_WORDS"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedStart",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠐⠐⠸",
+            "codepoints": [
+              "U+2810",
+              "U+2810",
+              "U+2838"
+            ],
+            "dots": [
+              "5",
+              "5",
+              "456"
+            ],
+            "cellCount": 3
+          },
+          "canonicalSha256": "3E26B54F0F5886CE7F104A59C8D466136A4412077A72A32C7B450F8AE2B5024B"
+        },
+        {
+          "field": "expectedEnd",
+          "role": "EXPLICIT_EXPECTATION_VECTOR",
+          "value": {
+            "unicode": "⠐⠄",
+            "codepoints": [
+              "U+2810",
+              "U+2804"
+            ],
+            "dots": [
+              "5",
+              "3"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "705E9291C90BA57E67CD5B6FD4B7D2E52DEA27F86329DA3C663C6B466009FD26"
+        }
+      ],
+      "behaviorSupplement": null
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-EMPH-008"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-EMPH-008"
+    ],
+    "canonicalContractPaths": [
+      "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json"
+    ],
+    "canonicalSections": [
+      "2.7.2"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "HISTORICAL_CASE_SOURCE",
+        "path": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+        "byteSha256": "9D7892A9DE60F26BC98C048EC303CAEC36D09923CE9F180CF39DDCD2F71D973C",
+        "canonicalSha256": "2472FBFEE3D7C770E832DD63FC7323056455E2A7B66309001A61F5123284C44D",
+        "jsonPointer": "/validationCases/5"
+      },
+      {
+        "role": "CANONICAL_ARCHITECTURE_SOURCE",
+        "path": "docs/architecture/phase-15.1h-bskdl-basisschrift-emphasis-versalien-contract.json",
+        "byteSha256": "9D7892A9DE60F26BC98C048EC303CAEC36D09923CE9F180CF39DDCD2F71D973C",
+        "canonicalSha256": "2472FBFEE3D7C770E832DD63FC7323056455E2A7B66309001A61F5123284C44D",
+        "jsonPointer": "/rules/7",
+        "section": "2.7.2"
+      },
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-emph-008.json",
+        "byteSha256": "327A038FF68F024A9EC7D99CA200F60C59E5AC4F88771959BED969052A836815",
+        "canonicalSha256": "A89F8EDE083CE13F16653BBFB6AEEEE794B8AADF30F71DDA7FBEA015ED0A1E69"
+      }
+    ],
+    "derivation": {
+      "method": "LOSSLESS_CARRY_FORWARD_FROM_ADJUDICATED_HISTORICAL_EVIDENCE",
+      "expectedVectorCanonicalSha256": "FD6A46F4CD30DFD4AA2351356894F2B1F7D81243443938A7FB6886C3B54D5DCC"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
