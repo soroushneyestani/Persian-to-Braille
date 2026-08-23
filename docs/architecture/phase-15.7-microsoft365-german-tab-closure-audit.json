@@ -1,0 +1,144 @@
+{
+  "baseline": {
+    "durableImplementationHead": "5d58d7b2b3556db2a218c209632b12253b92f2d3",
+    "durableImplementationSubject": "feat: add German Braille Microsoft 365 tab",
+    "durableImplementationTree": "7f3baeaf9283954479868938e30c52cdd4834f17",
+    "gDurabilityResult": {
+      "byteSha256": "3301F75857E5828EC763F63373C0978B2DE869D509A0AD4F686680C05A931998",
+      "canonicalSha256": "0FCD20DFB136BEA03141E196CE667C69677DE87063179EEB24C457A8404C5F6D",
+      "path": "tools/phase15-7/runtime/stage-output/g/commit-push-parity.json"
+    },
+    "phase15_6Closure": {
+      "byteSha256": "860C6A2086267F9F35C73C64619AD7764ED354CE3A78438176B597F6FC9F39C8",
+      "canonicalSha256": "6BAB3D5375B9DA3EE53DD26E3E1A71500596E5E4890D657C07B205EC3183E226",
+      "path": "docs/architecture/phase-15.6-german-sdk-closure-audit.json"
+    },
+    "phase15_6ClosureHead": "9f8bb2db8e1da91df32404dfdbf34d1abd893917",
+    "phase15_7BaselineHead": "9f8bb2db8e1da91df32404dfdbf34d1abd893917"
+  },
+  "closureBoundary": {
+    "next": "15.8-CONFORMANCE-REGRESSION",
+    "phase15OverallClosed": false,
+    "phase15_6GermanSdkClosed": true,
+    "phase15_7Microsoft365GermanTabClosed": true,
+    "phase15_8ExecutableRuntimeAndConformanceRequired": true
+  },
+  "germanConfiguration": {
+    "brailleLevelSelectionRequired": true,
+    "configurationCount": 6,
+    "levels": [
+      "Basisschrift",
+      "Vollschrift",
+      "Kurzschrift"
+    ],
+    "regionSelectionRequired": true,
+    "regions": [
+      {
+        "label": "Germany / Austria",
+        "regionalOverlay": null
+      },
+      {
+        "label": "Switzerland",
+        "regionalOverlay": "swiss"
+      }
+    ],
+    "swissAsFourthMode": false,
+    "swissOverlayOrthogonalToLevel": true
+  },
+  "integration": {
+    "dedicatedGermanTaskPaneModule": "integrations/microsoft365/src/taskpane/german-pane.ts",
+    "existingExcelAdapterReused": true,
+    "existingPowerPointAdapterReused": true,
+    "existingWordAdapterReused": true,
+    "liblouisNormativeRuntimeUsed": false,
+    "newGermanHostRuntimeLayerCreated": false,
+    "persianTranslatorReusedForGerman": false,
+    "publicSdkFactory": "createGermanBrailleTranslator"
+  },
+  "liveSentinels": {
+    "germanyAustriaBasisschrift": {
+      "failureCode": "RUNTIME_NOT_EXECUTABLE",
+      "hosts": "3/3",
+      "language": "de",
+      "loweringCoverage": "123/123",
+      "mode": "basisschrift",
+      "regionalOverlay": null,
+      "runtimeDependency": "GERMAN_EXECUTABLE_RUNTIME_ADAPTER",
+      "runtimeExecutable": false,
+      "runtimeRegistered": false,
+      "runtimeStatus": "LOWERING_IR_NON_EXECUTABLE"
+    },
+    "switzerlandKurzschrift": {
+      "failureCode": "RUNTIME_NOT_EXECUTABLE",
+      "hosts": "3/3",
+      "language": "de",
+      "loweringCoverage": "NOT_MATERIALIZED",
+      "mode": "kurzschrift",
+      "regionalOverlay": "swiss",
+      "runtimeDependency": "GERMAN_MODE_EXECUTABLE_RUNTIME_MATERIALIZATION",
+      "runtimeExecutable": false,
+      "runtimeRegistered": false,
+      "runtimeStatus": "MODE_RUNTIME_NOT_MATERIALIZED"
+    }
+  },
+  "officeSurface": {
+    "excelTabOrder": [
+      "Persian / English",
+      "German"
+    ],
+    "hosts": [
+      "Word",
+      "Excel",
+      "PowerPoint"
+    ],
+    "manifestModifiedForGerman": false,
+    "officeMacPassClaimed": false,
+    "officeWebPassClaimed": false,
+    "powerPointTabOrder": [
+      "Persian / English",
+      "German"
+    ],
+    "secondAddinCreated": false,
+    "singleSharedAddin": true,
+    "windowsDesktopLiveVerified": "3/3",
+    "wordTabOrder": [
+      "Persian / English",
+      "German",
+      "Music / MIDI"
+    ]
+  },
+  "phase": "15.7 Microsoft 365 German Tab",
+  "runtimeBoundary": {
+    "basisschriftLoweringCoverage": "123/123",
+    "basisschriftRuntimeDependency": "GERMAN_EXECUTABLE_RUNTIME_ADAPTER",
+    "basisschriftRuntimeStatus": "LOWERING_IR_NON_EXECUTABLE",
+    "failClosedCode": "RUNTIME_NOT_EXECUTABLE",
+    "germanRuntimeExecutable": false,
+    "germanRuntimeRegistered": false,
+    "phase15_8Required": true,
+    "runtimeConformanceGloballyProven": false,
+    "successfulGermanTranslationClaimed": false,
+    "vollschriftKurzschriftLoweringCoverage": "NOT_MATERIALIZED",
+    "vollschriftKurzschriftRuntimeDependency": "GERMAN_MODE_EXECUTABLE_RUNTIME_MATERIALIZATION",
+    "vollschriftKurzschriftRuntimeStatus": "MODE_RUNTIME_NOT_MATERIALIZED"
+  },
+  "schemaVersion": 1,
+  "status": "PASS_WITH_DOCUMENTED_RUNTIME_DEPENDENCY",
+  "validation": {
+    "keyboardNavigationLiveScreenshotClaimed": false,
+    "keyboardNavigationStaticRegression": "PASS",
+    "microsoft365FullTestSuite": "PASS",
+    "microsoft365Typecheck": "PASS",
+    "phase10Regression": "PASS",
+    "staticAddinBuild": "PASS",
+    "windowsDesktopExcel": "LIVE SCREENSHOT EVIDENCE / PASS",
+    "windowsDesktopPowerPoint": "LIVE SCREENSHOT EVIDENCE / PASS",
+    "windowsDesktopWord": "LIVE SCREENSHOT EVIDENCE / PASS"
+  },
+  "writeBoundary": {
+    "germanInsertAfterExposed": false,
+    "germanReplaceSelectionExposed": false,
+    "noWriteActionWithoutSuccessfulGermanTranslation": true,
+    "successfulGermanTranslationAvailable": false
+  }
+}
