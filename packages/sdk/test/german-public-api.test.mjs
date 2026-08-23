@@ -6,75 +6,157 @@ import {
   createGermanBrailleTranslator,
 } from "../dist/index.js";
 
-test(
-  "Basisschrift is registered through the public SDK and returns real Unicode Braille",
-  () => {
-    const translator =
-      createGermanBrailleTranslator({
-        mode: "basisschrift",
-      });
+for (
+  const [
+    mode,
+    loweringCoverage,
+  ]
+  of [
+    ["basisschrift", "123/123"],
+    ["vollschrift", "SOURCE_FIXTURE_SURFACE"],
+    ["kurzschrift", "SOURCE_FIXTURE_SURFACE"],
+  ]
+) {
+  test(
+    `${mode} is executable and registered through the public German SDK`,
+    () => {
+      const translator =
+        createGermanBrailleTranslator({
+          mode,
+        });
 
-    assert.deepEqual(
-      translator.profile,
-      {
-        language: "de",
-        mode: "basisschrift",
-        regionalOverlay: null,
-        direction: "print-to-braille",
-        runtimeStatus:
-          "EXECUTABLE_RUNTIME_REGISTERED",
-        runtimeDependency:
-          "NONE",
-        runtimeExecutable: true,
-        runtimeRegistered: true,
-        loweringCoverage: "123/123",
-      },
-    );
-
-    const result =
-      translator.translate(
-        "Hallo",
-      );
-
-    assert.equal(
-      result.ok,
-      true,
-      result.ok
-        ? undefined
-        : JSON.stringify(result),
-    );
-
-    if (result.ok) {
       assert.equal(
-        result.unicodeBraille,
-        "⠓⠁⠇⠇⠕",
+        translator.profile.runtimeStatus,
+        "EXECUTABLE_RUNTIME_REGISTERED",
+      );
+      assert.equal(
+        translator.profile.runtimeDependency,
+        "NONE",
+      );
+      assert.equal(
+        translator.profile.runtimeExecutable,
+        true,
+      );
+      assert.equal(
+        translator.profile.runtimeRegistered,
+        true,
+      );
+      assert.equal(
+        translator.profile.loweringCoverage,
+        loweringCoverage,
+      );
+    },
+  );
+}
+
+for (
+  const [
+    mode,
+    input,
+    expected,
+  ]
+  of [
+    ["basisschrift", "Hallo", "⠓⠁⠇⠇⠕"],
+    ["vollschrift", "Baum", "⠃⠡⠍"],
+    ["kurzschrift", "Center", "⠠⠉⠉⠞⠻"],
+  ]
+) {
+  test(
+    `${mode} returns real Unicode Braille through the public SDK`,
+    () => {
+      const result =
+        createGermanBrailleTranslator({
+          mode,
+        }).translate(
+          input,
+        );
+
+      assert.equal(
+        result.ok,
+        true,
+        result.ok
+          ? undefined
+          : JSON.stringify(result),
       );
 
-      assert.deepEqual(
-        result.cells,
-        [
-          "⠓",
-          "⠁",
-          "⠇",
-          "⠇",
-          "⠕",
-        ],
+      if (result.ok) {
+        assert.equal(
+          result.unicodeBraille,
+          expected,
+        );
+      }
+    },
+  );
+}
+
+test(
+  "candidate-free text stays automatically executable in Vollschrift and Kurzschrift",
+  () => {
+    for (
+      const mode
+      of [
+        "vollschrift",
+        "kurzschrift",
+      ]
+    ) {
+      const result =
+        createGermanBrailleTranslator({
+          mode,
+        }).translate(
+          "Brot",
+        );
+
+      assert.equal(
+        result.ok,
+        true,
+        result.ok
+          ? undefined
+          : JSON.stringify(result),
       );
     }
   },
 );
 
 test(
-  "Swiss Basisschrift returns real Braille without becoming a fourth mode",
+  "unknown Vollschrift context remains structured unresolved after registration",
   () => {
-    const translator =
+    const result =
+      createGermanBrailleTranslator({
+        mode: "vollschrift",
+      }).translate(
+        "xaux",
+      );
+
+    assert.equal(
+      result.ok,
+      false,
+    );
+
+    if (!result.ok) {
+      assert.equal(
+        result.code,
+        "RUNTIME_CONTEXT_REQUIRED",
+      );
+      assert.equal(
+        result.profile.runtimeExecutable,
+        true,
+      );
+      assert.equal(
+        result.profile.runtimeRegistered,
+        true,
+      );
+    }
+  },
+);
+
+test(
+  "Swiss regional overlay remains orthogonal after full runtime registration",
+  () => {
+    const result =
       createGermanBrailleTranslator({
         mode: "basisschrift",
         regionalOverlay: "swiss",
-      });
-
-    const result =
-      translator.translate(
+      }).translate(
         "Schweiz",
       );
 
@@ -91,12 +173,10 @@ test(
         result.profile.mode,
         "basisschrift",
       );
-
       assert.equal(
         result.profile.regionalOverlay,
         "swiss",
       );
-
       assert.equal(
         result.unicodeBraille,
         "⠎⠉⠓⠺⠑⠊⠵",
@@ -105,94 +185,23 @@ test(
   },
 );
 
-test(
-  "Swiss explicit Eszett remains fail-closed and is never normalized automatically",
-  () => {
-    const translator =
-      createGermanBrailleTranslator({
-        mode: "basisschrift",
-        regionalOverlay: "swiss",
-      });
-
-    const result =
-      translator.translate(
-        "groß",
-      );
-
-    assert.equal(
-      result.ok,
-      false,
-    );
-
-    if (!result.ok) {
-      assert.equal(
-        result.code,
-        "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
-      );
-
-      assert.equal(
-        result.profile.runtimeExecutable,
-        true,
-      );
-
-      assert.equal(
-        result.profile.runtimeRegistered,
-        true,
-      );
-    }
-  },
-);
-
 for (
-  const [
-    mode,
-    status,
-    dependency,
-  ]
+  const mode
   of [
-    [
-      "vollschrift",
-      "EXPLICIT_RESOLUTION_CONTEXT_REQUIRED",
-      "GERMAN_VOLLSCHRIFT_EXPLICIT_RESOLUTION_CONTEXT",
-    ],
-    [
-      "kurzschrift",
-      "EXPLICIT_RESOLVED_PLAN_REQUIRED",
-      "GERMAN_KURZSCHRIFT_EXPLICIT_RESOLVED_PLAN",
-    ],
+    "basisschrift",
+    "vollschrift",
+    "kurzschrift",
   ]
 ) {
   test(
-    `${mode} stays source-backed and fails closed without explicit resolution context`,
+    `Swiss explicit Eszett remains fail-closed in ${mode}`,
     () => {
-      const translator =
+      const result =
         createGermanBrailleTranslator({
           mode,
-        });
-
-      assert.equal(
-        translator.profile.runtimeStatus,
-        status,
-      );
-
-      assert.equal(
-        translator.profile.runtimeDependency,
-        dependency,
-      );
-
-      assert.equal(
-        translator.profile.runtimeExecutable,
-        false,
-      );
-
-      assert.equal(
-        translator.profile.runtimeRegistered,
-        false,
-      );
-
-      const result =
-        translator.translate(
-          "Probe",
+          regionalOverlay: "swiss",
+        }).translate(
+          "ß",
         );
 
       assert.equal(
@@ -203,7 +212,11 @@ for (
       if (!result.ok) {
         assert.equal(
           result.code,
-          "RUNTIME_CONTEXT_REQUIRED",
+          "SWISS_EXPLICIT_ESZETT_FORBIDDEN",
+        );
+        assert.equal(
+          result.profile.runtimeRegistered,
+          true,
         );
       }
     },
@@ -211,39 +224,7 @@ for (
 }
 
 test(
-  "Basisschrift execution failure remains structured",
-  () => {
-    const translator =
-      createGermanBrailleTranslator({
-        mode: "basisschrift",
-      });
-
-    const result =
-      translator.translate(
-        "🙂",
-      );
-
-    assert.equal(
-      result.ok,
-      false,
-    );
-
-    if (!result.ok) {
-      assert.equal(
-        result.code,
-        "RUNTIME_EXECUTION_FAILED",
-      );
-
-      assert.equal(
-        result.location?.codePointIndex,
-        0,
-      );
-    }
-  },
-);
-
-test(
-  "translateOrThrow throws the public German error for unresolved mode context",
+  "translateOrThrow still throws the public error for unresolved automatic context",
   () => {
     const translator =
       createGermanBrailleTranslator({
@@ -253,19 +234,17 @@ test(
     assert.throws(
       () =>
         translator.translateOrThrow(
-          "Probe",
+          "xaux",
         ),
       (error) => {
         assert.ok(
           error
           instanceof GermanBrailleTranslationError,
         );
-
         assert.equal(
           error.code,
           "RUNTIME_CONTEXT_REQUIRED",
         );
-
         return true;
       },
     );

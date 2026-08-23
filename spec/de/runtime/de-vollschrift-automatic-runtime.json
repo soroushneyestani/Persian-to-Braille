@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "phase": "15.9B-VOLLSCHRIFT-AUTOMATIC-RESOLUTION",
+  "id": "de-vollschrift-automatic-runtime",
+  "status": "PASS_WITH_SOURCE_BACKED_AUTOMATIC_RESOLUTION_PROVIDER",
+  "provider": {
+    "kind": "CLOSED_NORMATIVE_SOURCE_REGISTRY",
+    "providerSpecifiedByBSKDL": false,
+    "providerImplementationNormative": false,
+    "unknownContextPolicy": "STRUCTURED_UNRESOLVED",
+    "directFullPlanCount": 24,
+    "wordCandidateDecisionCount": 56,
+    "wordLevelNonContractiveAmbiguityPolicy": {
+      "caseId": "DE-VOLL-NORM-CASE-025",
+      "input": "eingeigelt",
+      "candidate": "ei",
+      "sourcePositionSpecified": false,
+      "decisionAppliedToAllMatchingOccurrences": true,
+      "positiveContractionInvented": false
+    }
+  },
+  "validation": {
+    "phase15_8ExplicitSemanticExecution": "48/48 PASS",
+    "phase15_8DirectRenderingExecution": "24/24 EXACT PASS",
+    "automaticDirectRenderingExecution": "24/24 EXACT PASS",
+    "automaticTargetDecisionLookup": "48/48 PASS",
+    "nonDirectPartialFallbackLookup": "3/3 PASS",
+    "eingeigeltDualKeep": "2/2 KEEP PASS",
+    "candidateFreeAutomaticExecution": "PASS",
+    "unknownContextFailClosed": "PASS",
+    "coreBuild": "PASS",
+    "historicalExplicitRuntimeRegression": "PASS"
+  },
+  "runtimeBoundary": {
+    "vollschriftAutomaticProviderResolutionExecutable": true,
+    "automaticAcceptsArbitraryInput": true,
+    "unknownOrAmbiguousContextCanReturnStructuredUnresolved": true,
+    "automaticDoesNotMeanEveryInputMustProduceBraille": true,
+    "pronunciationProviderInvented": false,
+    "unknownPronunciationGuessed": false,
+    "morphologicalSegmentationProviderInvented": false,
+    "unknownMorphologyGuessed": false,
+    "stUnconditionalPermissionClaimed": false,
+    "publicSdkVollschriftRuntimeRegistered": false,
+    "fullGermanRuntimeRegistered": false,
+    "globalRuntimeConformanceProven": false,
+    "liblouisNormativeRuntimeUsed": false
+  },
+  "next": "15.9C-KURZSCHRIFT-AUTOMATIC-RESOLUTION"
+}

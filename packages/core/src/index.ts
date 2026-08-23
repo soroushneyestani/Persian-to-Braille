@@ -34,3 +34,5 @@ export * from "./german-basisschrift-runtime.js";
 export * from "./german-vollschrift-runtime.js";
 export * from "./german-kurzschrift-runtime.js";
 export * from "./german-swiss-runtime.js";
+export * from "./german-vollschrift-automatic-runtime.js";
+export * from "./german-kurzschrift-automatic-runtime.js";
