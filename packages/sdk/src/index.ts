@@ -59,3 +59,23 @@ export type {
   MusicBrailleMidiTranslationSuccess,
   MusicBrailleMidiTranslator,
 } from "./music-public-api.js";
+
+export {
+  GermanBrailleTranslationError,
+  createGermanBrailleTranslator,
+} from "./german-translator.js";
+
+export type {
+  CreateGermanBrailleTranslator,
+  GermanBrailleProfileInfo,
+  GermanBrailleRegionalOverlay,
+  GermanBrailleTextMode,
+  GermanBrailleTranslationErrorData,
+  GermanBrailleTranslationFailure,
+  GermanBrailleTranslationFailureCode,
+  GermanBrailleTranslationOptions,
+  GermanBrailleTranslationResult,
+  GermanBrailleTranslationSuccess,
+  GermanBrailleTranslator,
+  GermanBrailleUnicodeLocation,
+} from "./german-public-api.js";

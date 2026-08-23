@@ -27,3 +27,6 @@ export type {
   ReverseTranslator,
   ReverseUnicodeLocation,
 } from "./reverse-translation.js";
+export * from "./german-text-mode.js";
+export * from "./german-regional-configuration.js";
+export * from "./german-runtime-capability.js";
