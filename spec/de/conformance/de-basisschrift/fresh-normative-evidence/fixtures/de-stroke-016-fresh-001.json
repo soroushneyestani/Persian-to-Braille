@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "DE-STROKE-016-FRESH-001",
+  "profile": "de-basisschrift",
+  "fixtureClass": "FRESH_NORMATIVE_STRUCTURED_VECTOR_EVIDENCE",
+  "semanticFamily": "BOUNDARY_CONDITIONAL_VECTOR",
+  "input": {
+    "value": {
+      "kind": "DIRECT_TEXT",
+      "value": "Ab|satz"
+    }
+  },
+  "expectation": {
+    "value": {
+      "kind": "VECTOR_SET",
+      "vectors": [
+        {
+          "field": "expectedSeparator",
+          "value": {
+            "unicode": "⠐⠤",
+            "codepoints": [
+              "U+2810",
+              "U+2824"
+            ],
+            "dots": [
+              "5",
+              "36"
+            ],
+            "cellCount": 2
+          },
+          "canonicalSha256": "47ED967B32A4C8F641779D09E3949E835DF9D939AA79B10C8D7C922AC9FAF74D"
+        }
+      ],
+      "behaviorSupplement": {
+        "rules": null,
+        "rule": "DE-STROKE-016"
+      }
+    }
+  },
+  "ruleTrace": {
+    "linkedLoweringRuleIds": [
+      "DE-STROKE-016"
+    ],
+    "canonicalSourceRuleIds": [
+      "DE-STROKE-016"
+    ],
+    "canonicalContractPaths": [
+      "spec/de/rules/records/de-stroke-016.json"
+    ],
+    "canonicalSections": [
+      "2.5.3"
+    ]
+  },
+  "normativeProvenance": {
+    "authority": {
+      "organization": "Brailleschriftkomitee der deutschsprachigen Länder",
+      "edition": "2., korrigierte Auflage 2021",
+      "url": "https://www.bskdl.org/download/textschrift/bs-2021-07-17-UBP.pdf",
+      "sha256": "35F6CD3A8EF07AD33229398E6310DC778046DF23FC13A61F0B7871E288C5D8CE"
+    },
+    "bindings": [
+      {
+        "role": "CANONICAL_RULE_RECORD",
+        "path": "spec/de/rules/records/de-stroke-016.json",
+        "byteSha256": "40FB0E517406A0CDCEC2CFB933BB58B9E3CD805AD731B425990573B034CACF4D",
+        "canonicalSha256": "708636201E83C39A06A76CD1E8E186DFE6FB00A3CA71506B9AC0664686F252CD",
+        "section": "2.5.3"
+      }
+    ],
+    "derivation": {
+      "method": "HISTORICAL_CARRIER_PLUS_FRESH_NORMATIVE_BSKDL_REPROOF",
+      "expectedVectorCanonicalSha256": "6071799ADCE4ABBEDAD65D40F0947C20E20D16800C6043BDF57297E130610931"
+    }
+  },
+  "executionBoundary": {
+    "fixtureGradeNormativeEvidence": true,
+    "runtimeConformanceProven": false,
+    "runtimeExecutable": false
+  }
+}
