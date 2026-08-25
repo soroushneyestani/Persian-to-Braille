@@ -3,34 +3,775 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Install Braille Hub — Manual Preview</title>
+  <title>Install Braille Hub — Microsoft 365 Preview</title>
   <meta
     name="description"
-    content="Manual preview installation for Braille Hub, providing Persian, English, German Braille, and Braille Music accessibility in Microsoft 365."
+    content="Install Braille Hub for Microsoft 365 on Windows, macOS, and Office on the Web. Download the Windows preview installer, macOS preview package, or production manifest."
   >
   <link rel="stylesheet" href="./compliance.css">
-</head>
-<body>
-  <main>
-    <article>
-      <header>
-        <p><strong>Braille Hub</strong></p>
-        <h1>Manual Preview Installation</h1>
-        <p>
-          Braille Hub is not currently published through Microsoft
-          Marketplace. This page provides a manual preview distribution
-          channel for users and organizations that want to evaluate the
-          Microsoft 365 add-in before Marketplace publication is available.
-        </p>
-      </header>
+  <style>
+    :root {
+      color-scheme: light;
+      --page-bg: #f4f7fb;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-solid: #ffffff;
+      --text: #172033;
+      --muted: #60708a;
+      --border: #dce5f1;
+      --primary: #3657d6;
+      --primary-strong: #2946bb;
+      --secondary: #7655d9;
+      --success: #267a61;
+      --warning: #9a6414;
+      --shadow: 0 18px 50px rgba(31, 55, 95, 0.11);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 11px;
+      --max: 1120px;
+    }
 
-      <section aria-labelledby="windows-preview">
-        <h2 id="windows-preview">Windows Desktop Preview</h2>
-        <p>
-          For Microsoft 365 Desktop on Windows, the preview installer prepares
-          the same local network-share catalog and trusted Office add-in
-          catalog used by the verified Windows sideload flow.
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(54, 87, 214, 0.12), transparent 34rem),
+        radial-gradient(circle at 92% 8%, rgba(118, 85, 217, 0.12), transparent 30rem),
+        var(--page-bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    code {
+      overflow-wrap: anywhere;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 42px 0 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 54px 28px 42px;
+      border: 1px solid rgba(220, 229, 241, 0.95);
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.97), rgba(247,249,255,0.95));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      opacity: 0.4;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -90px;
+      left: -70px;
+      background: rgba(54, 87, 214, 0.16);
+    }
+
+    .hero::after {
+      right: -70px;
+      bottom: -100px;
+      background: rgba(118, 85, 217, 0.15);
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      grid-template-columns: repeat(2, 10px);
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+
+    .brand-mark span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 3px 8px rgba(54, 87, 214, 0.18);
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .hero .subtitle {
+      max-width: 760px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin: 24px 0 0;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.86);
+      color: #41516a;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .status-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    .status-chip.pending::before {
+      background: #d69a2c;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 34px auto 0;
+      max-width: 930px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .download-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+      padding: 22px;
+      text-align: left;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 9px 24px rgba(31, 55, 95, 0.08);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .download-card:hover,
+    .download-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: #aebde8;
+      box-shadow: 0 14px 30px rgba(31, 55, 95, 0.14);
+      outline: none;
+    }
+
+    .download-card .platform {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .download-card strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 1.17rem;
+    }
+
+    .download-card .download-action {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 20px;
+      padding: 8px 11px;
+      border-radius: 9px;
+      background: #eef2ff;
+      color: var(--primary-strong);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .download-card.mac .download-action {
+      background: #f1edff;
+      color: #6245c4;
+    }
+
+    .download-card.manifest .download-action {
+      background: #eaf7f2;
+      color: #206c55;
+    }
+
+    .release-note {
+      max-width: 880px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-card {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 auto 24px;
+      padding: 6px;
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #f8faff;
+    }
+
+    .tab-button {
+      appearance: none;
+      border: 0;
+      border-radius: 11px;
+      padding: 10px 14px;
+      background: transparent;
+      color: #53627a;
+      font: inherit;
+      font-size: 0.91rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .tab-button:hover {
+      background: #edf2ff;
+      color: var(--primary-strong);
+    }
+
+    .tab-button[aria-selected="true"] {
+      background: var(--surface-solid);
+      color: var(--primary-strong);
+      box-shadow: 0 4px 14px rgba(54, 87, 214, 0.11);
+    }
+
+    .tab-button:focus-visible {
+      outline: 3px solid rgba(54, 87, 214, 0.25);
+      outline-offset: 2px;
+    }
+
+    .tab-panel {
+      max-width: 940px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tab-panel[hidden] {
+      display: none;
+    }
+
+    .tab-panel h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.65rem, 3.3vw, 2.25rem);
+      letter-spacing: -0.025em;
+    }
+
+    .tab-panel h3 {
+      margin: 30px 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      color: var(--muted);
+    }
+
+    .feature-grid,
+    .host-grid,
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+      text-align: left;
+    }
+
+    .feature,
+    .info-box,
+    .shot {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fbfcff;
+      padding: 18px;
+    }
+
+    .feature strong,
+    .info-box strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .feature p,
+    .info-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .steps {
+      max-width: 760px;
+      margin: 18px auto;
+      padding-left: 1.5rem;
+      text-align: left;
+    }
+
+    .steps li {
+      padding: 4px 0;
+    }
+
+    .rtl-guide {
+      max-width: 820px;
+      margin: 22px auto 0;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fbfcff;
+      text-align: right;
+    }
+
+    .rtl-guide h3 {
+      margin-top: 0;
+    }
+
+    .rtl-guide ol {
+      padding-right: 1.45rem;
+      padding-left: 0;
+    }
+
+    .callout {
+      max-width: 820px;
+      margin: 22px auto;
+      padding: 16px 18px;
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      background: #f6f8ff;
+      text-align: left;
+      color: #465570;
+    }
+
+    .callout.warning {
+      border-left-color: #d69a2c;
+      background: #fff9ee;
+    }
+
+    .code-line {
+      display: block;
+      max-width: 820px;
+      margin: 10px auto;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: #f7f9fd;
+      color: #30405b;
+      text-align: left;
+      overflow-wrap: anywhere;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88rem;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 11px;
+      border: 1px solid #d7dfeb;
+      background: #fff;
+    }
+
+    .shot figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 820px) {
+      .download-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .download-card {
+        min-height: 0;
+      }
+
+      .feature-grid,
+      .host-grid,
+      .shot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-shell {
+        width: min(calc(100% - 20px), var(--max));
+        padding-top: 20px;
+      }
+
+      .hero {
+        padding: 38px 16px 28px;
+        border-radius: 22px;
+      }
+
+      .content-card {
+        padding: 15px;
+        border-radius: 20px;
+      }
+
+      .tabs {
+        width: 100%;
+      }
+
+      .tab-button {
+        flex: 1 1 42%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .download-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <p class="eyebrow">Braille Hub for Microsoft 365</p>
+      <h1 id="page-title">Install Braille Hub</h1>
+
+      <p class="subtitle">
+        One shared accessibility engine for Persian, English/Latin, German,
+        MIDI Braille Music, and MusicXML / MXL Braille Music across Microsoft 365.
+      </p>
+
+      <div class="status-row" aria-label="Current platform status">
+        <span class="status-chip">Windows live verified</span>
+        <span class="status-chip">Office on the Web validated</span>
+        <span class="status-chip pending">macOS installer RC</span>
+      </div>
+
+      <div class="download-grid" aria-label="Primary downloads">
+        <a
+          class="download-card windows"
+          href="./install/windows/Braille-Hub-Windows-Preview-Installer.cmd"
+          download
+        >
+          <span>
+            <span class="platform">Windows Desktop</span>
+            <strong>Windows Preview Installer</strong>
+          </span>
+          <span class="download-action">Download .cmd</span>
+        </a>
+
+        <a
+          class="download-card mac"
+          href="https://github.com/soroushneyestani/Persian-to-Braille/releases/download/mac-preview-v18.0.0-rc1/Braille-Hub-Mac-Preview-Installer.pkg"
+        >
+          <span>
+            <span class="platform">macOS</span>
+            <strong>Mac Preview Installer</strong>
+          </span>
+          <span class="download-action">Download .pkg</span>
+        </a>
+
+        <a
+          class="download-card manifest"
+          href="./install/manifest.xml"
+          download
+        >
+          <span>
+            <span class="platform">Microsoft 365</span>
+            <strong>Add-in Manifest</strong>
+          </span>
+          <span class="download-action">Download .xml</span>
+        </a>
+      </div>
+
+      <p class="release-note">
+        Manual Preview Installation — these downloads are sideload / release-candidate
+        distribution paths and are not Microsoft Marketplace publication.
+        Braille Hub is not currently published through Microsoft Marketplace.
+        The software feature set is complete; official Marketplace publication remains pending.
+      </p>
+    </section>
+
+    <article class="content-card">
+      <nav
+        class="tabs"
+        role="tablist"
+        aria-label="Braille Hub installation sections"
+      >
+        <button
+          class="tab-button"
+          id="tab-features"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-features"
+          data-tab="features"
+        >Features</button>
+
+        <button
+          class="tab-button"
+          id="tab-windows"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-windows"
+          tabindex="-1"
+          data-tab="windows"
+        >Windows</button>
+
+        <button
+          class="tab-button"
+          id="tab-mac"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-mac"
+          tabindex="-1"
+          data-tab="mac"
+        >macOS</button>
+
+        <button
+          class="tab-button"
+          id="tab-web"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-web"
+          tabindex="-1"
+          data-tab="web"
+        >Office Web</button>
+
+        <button
+          class="tab-button"
+          id="tab-manifest"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-manifest"
+          tabindex="-1"
+          data-tab="manifest"
+        >Manifest / Admin</button>
+
+        <button
+          class="tab-button"
+          id="tab-screenshots"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-screenshots"
+          tabindex="-1"
+          data-tab="screenshots"
+        >Screenshots</button>
+      </nav>
+
+      <section
+        class="tab-panel"
+        id="panel-features"
+        role="tabpanel"
+        aria-labelledby="tab-features"
+      >
+        <h2 id="phase14-current-features">What is available in this preview</h2>
+        <p class="lead">
+          Braille Hub uses the same public SDK and Core across supported Office hosts.
+          The Office layer handles selection, files, preview, and document insertion;
+          Braille rules remain in the shared engines.
         </p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <strong>Persian → Braille</strong>
+            <p>Forward Persian Braille translation through the shared Core and SDK.</p>
+          </div>
+
+          <div class="feature">
+            <strong>English / Latin → Braille</strong>
+            <p>
+              Ordinary uncontracted six-dot English/Latin through the current
+              Latin-span rules. This is not a claim of contracted UEB / English Grade-2 support.
+            </p>
+          </div>
+
+          <div class="feature">
+            <strong>German → Braille</strong>
+            <p>
+              Deutschland / Österreich and Schweiz with Basisschrift,
+              Vollschrift, and Kurzschrift.
+            </p>
+          </div>
+
+          <div class="feature">
+            <strong>Persian Braille → Persian</strong>
+            <p>
+              Stateful reverse translation with explicit ambiguity handling.
+            </p>
+          </div>
+
+          <div class="feature">
+            <strong>MIDI → Braille Music</strong>
+            <p>
+              Standard MIDI files are processed through the semantic music path
+              and shared Braille Music engine.
+            </p>
+          </div>
+
+          <div class="feature">
+            <strong>MusicXML / MXL → Braille Music</strong>
+            <p>
+              `.musicxml`, `.xml`, and compressed `.mxl` sources use the dedicated
+              MusicXML compatibility pipeline and the same Braille Music engine.
+            </p>
+          </div>
+        </div>
+
+        <h3>Microsoft 365 hosts</h3>
+        <div class="host-grid">
+          <div class="info-box">
+            <strong>Word</strong>
+            <p>
+              Text translation plus the current MIDI and MusicXML file workflows.
+              Successful previews can use Word-safe write operations.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <strong>Excel</strong>
+            <p>
+              Translate one selected plain-text cell and replace it after preview.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <strong>PowerPoint</strong>
+            <p>
+              Translate a selected text range and replace it after preview.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <strong>Shared architecture</strong>
+            <p>
+              Microsoft365 → SDK → Core / Music. No separate browser or Mac Braille engine.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Current verified scope:</strong>
+          Windows Desktop is live verified. Office on the Web has been validated.
+          macOS manifest sideload has been user-reported working; the direct `.pkg`
+          installer remains a release candidate pending final tester confirmation.
+        </div>
+      </section>
+
+      <section
+        class="tab-panel"
+        id="panel-windows"
+        role="tabpanel"
+        aria-labelledby="tab-windows"
+        hidden
+      >
+        <h2 id="windows-preview">Windows Desktop Preview</h2>
+        <p class="lead">
+          For Microsoft 365 Desktop on Windows, the preview installer prepares
+          the same local network-share catalog and trusted Office add-in catalog
+          used by the verified Windows sideload flow.
+        </p>
+
         <p>
           <a
             href="./install/windows/Braille-Hub-Windows-Preview-Installer.cmd"
@@ -39,179 +780,53 @@
             Download Windows Desktop Preview Installer
           </a>
         </p>
-        <p>
-          The installer downloads the production manifest over HTTPS, creates
-          a local add-in catalog, registers that catalog for the current
-          Windows user, and then opens Word. Windows may show a UAC prompt
-          because creating the local SMB share requires elevated permission.
-          The installer never installs a separate Braille engine inside Office:
-          the add-in still uses the hosted Microsoft365 → SDK → Core runtime.
-        </p>
-        <p>
-          This is a Windows sideload/testing convenience. It is not Microsoft Marketplace publication.
-          Microsoft documents network-share
-          deployment as a testing mechanism and states that it is not supported
-          for production add-ins.
-        </p>
 
-        <div lang="fa" dir="rtl">
-          <h3>راهنمای نصب نسخه دسکتاپ ویندوز</h3>
-          <p>
-            ابتدا فایل
-            <strong>Windows Desktop Preview Installer</strong>
-            را دانلود و اجرا کنید. نصب‌کننده فایل Manifest نسخه production پروژه را از آدرس
-            HTTPS پروژه دریافت می‌کند و تنظیمات لازم برای نمایش افزونه در
-            Microsoft Word، Excel و PowerPoint را انجام می‌دهد.
-          </p>
-          <p>
-            اگر Word، Excel یا PowerPoint باز باشد، نصب‌کننده از شما می‌خواهد
-            ابتدا برنامه‌های Office را ببندید تا فایل‌های ذخیره‌نشده به‌صورت
-            ناخواسته بسته نشوند. در صورت نمایش پنجره UAC ویندوز، اجازه ادامه
-            نصب را بدهید.
-          </p>
-          <ol>
-            <li>
-              پس از پایان نصب، Microsoft Word، Excel یا PowerPoint را باز کنید.
-            </li>
-            <li>
-              از نوار بالای Office روی <strong>Add-ins</strong> کلیک کنید.
-            </li>
-            <li>
-              در پنجره کوچک بازشده روی <strong>Get Add-ins</strong> کلیک کنید.
-              در بعضی نسخه‌های Microsoft 365 همین گزینه با عنوان
-              <strong>Advanced</strong> نمایش داده می‌شود.
-            </li>
-            <li>
-              در پنجره <strong>Office Add-ins</strong> وارد تب
-              <strong>SHARED FOLDER</strong> شوید.
-            </li>
-            <li>
-              گزینه <strong>Braille Hub</strong> را انتخاب کنید.
-            </li>
-            <li>
-              روی <strong>Add</strong> کلیک کنید.
-            </li>
-            <li>
-              اکنون دکمه <strong>Translate Selection</strong> در Ribbon
-              برنامه در دسترس است.
-            </li>
-            <li>
-              متن فارسی را انتخاب کنید، روی
-              <strong>Translate Selection</strong> بزنید و نتیجه Braille را
-              در Task Pane مشاهده کنید.
-            </li>
-          </ol>
-          <p>
-            این روش برای نسخه پیش‌نمایش و آزمایش روی Windows Desktop است و
-            به معنی انتشار افزونه در Microsoft Marketplace نیست.
-          </p>
-        </div>
-
-        <h3>Windows setup steps</h3>
-        <ol>
+        <ol class="steps">
           <li>Download and run the Windows Desktop Preview Installer.</li>
           <li>Allow the Windows UAC prompt if it appears.</li>
           <li>Close and reopen Word, Excel, or PowerPoint after setup.</li>
           <li>Select <strong>Home → Add-ins</strong>.</li>
-          <li>
-            Choose <strong>Get Add-ins</strong>, or
-            <strong>Advanced</strong> when that label is shown.
-          </li>
+          <li>Choose <strong>Get Add-ins</strong>, or <strong>Advanced</strong> when that label is shown.</li>
           <li>Open the <strong>SHARED FOLDER</strong> tab.</li>
           <li>Select <strong>Braille Hub</strong>.</li>
           <li>Choose <strong>Add</strong>.</li>
           <li>Use <strong>Translate Selection</strong> from the ribbon.</li>
         </ol>
-      </section>
 
-      <section aria-labelledby="screenshots">
-        <h2 id="screenshots">Windows Desktop preview</h2>
+        <div class="callout">
+          The installer downloads the production manifest over HTTPS, creates a
+          local add-in catalog, and registers it for the current Windows user.
+          It does not install a second Braille engine inside Office.
+        </div>
 
-        <h3>Word</h3>
-        <figure>
-          <img
-            src="./install/screenshots/word-selection.png"
-            alt="Braille Hub translating supported text in Microsoft Word"
-            style="max-width:100%;height:auto"
-          >
-          <figcaption>
-            Translate a selected Persian passage, preview the Unicode Braille
-            result, then replace or insert it.
-          </figcaption>
-        </figure>
-
-        <h3>Excel</h3>
-        <figure>
-          <img
-            src="./install/screenshots/excel-text-cell.png"
-            alt="Braille Hub translating one selected plain-text cell in Microsoft Excel"
-            style="max-width:100%;height:auto"
-          >
-          <figcaption>
-            Translate one selected plain-text Excel cell and replace it with
-            the reviewed Braille result.
-          </figcaption>
-        </figure>
-
-        <h3>PowerPoint</h3>
-        <figure>
-          <img
-            src="./install/screenshots/powerpoint-text-range.png"
-            alt="Braille Hub translating a selected text range in Microsoft PowerPoint"
-            style="max-width:100%;height:auto"
-          >
-          <figcaption>
-            Translate a selected PowerPoint text range and replace it after
-            previewing the Braille output.
-          </figcaption>
-        </figure>
-      </section>
-
-
-      <section aria-labelledby="phase14-current-features">
-        <h2 id="phase14-current-features">What is available in this preview</h2>
-        <ul>
-          <li>
-            <strong>Persian / English / German text Braille</strong> translation through
-            the Microsoft 365 add-in.
-          </li>
-          <li>
-            <strong>Braille Music from MIDI</strong> in Microsoft Word Desktop
-            on Windows.
-          </li>
-        </ul>
-
-        <p>
-          The <strong>Persian / English</strong> text tab supports Persian plus
-          ordinary uncontracted six-dot English/Latin text through the current
-          <code>fa-ir-g1</code> Latin-span rules. This is not a claim of
-          contracted UEB / English Grade-2 support.
-        </p>
-
-        <h3>German Braille — Word, Excel, and PowerPoint</h3>
-        <p>
-          The <strong>Deutsch</strong> tab supports German Braille for
-          <strong>Deutschland / Österreich</strong> and <strong>Schweiz</strong>.
-          Available German Braille levels are <strong>Basisschrift</strong>,
-          <strong>Vollschrift</strong>, and <strong>Kurzschrift</strong>.
-          Translation runs locally through the same shared Braille Hub SDK/Core
-          architecture used by the Office add-in.
-        </p>
-        <p>
-          In Word, a successful German preview can be copied, replace the current
-          selection, or be inserted after it. Excel and PowerPoint support the
-          host-safe replace workflow after preview. Swiss explicit Eszett remains
-          a deliberate fail-closed regional policy case.
-        </p>
+        <div class="rtl-guide" lang="fa" dir="rtl">
+          <h3>راهنمای نصب نسخه دسکتاپ ویندوز</h3>
+          <p>
+            فایل <strong>Windows Desktop Preview Installer</strong> را دانلود و اجرا کنید.
+            نصب‌کننده Manifest نسخه production را از آدرس HTTPS پروژه دریافت می‌کند.
+          </p>
+          <ol>
+            <li>اگر Word، Excel یا PowerPoint باز است، آن‌ها را ببندید.</li>
+            <li>در صورت نمایش UAC، اجازه ادامه نصب را بدهید.</li>
+            <li>پس از نصب، Word، Excel یا PowerPoint را دوباره باز کنید.</li>
+            <li>از نوار Office روی <strong>Add-ins</strong> بزنید.</li>
+            <li>گزینه <strong>Get Add-ins</strong> یا <strong>Advanced</strong> را باز کنید.</li>
+            <li>وارد تب <strong>SHARED FOLDER</strong> شوید.</li>
+            <li>گزینه <strong>Braille Hub</strong> را انتخاب کنید.</li>
+            <li>روی <strong>Add</strong> بزنید.</li>
+            <li>از دکمه <strong>Translate Selection</strong> استفاده کنید.</li>
+          </ol>
+        </div>
 
         <h3>Braille Music from MIDI — Word Desktop / Windows</h3>
         <p>
-          Braille Music has been live verified in Microsoft Word Desktop on
-          Windows. Standard MIDI files with a <code>.mid</code> or
-          <code>.midi</code> extension are read locally by the add-in.
+          Braille Music has been live verified in Microsoft Word Desktop on Windows.
+          Standard MIDI files with a <code>.mid</code> or <code>.midi</code>
+          extension are read locally by the add-in.
         </p>
-        <ol>
-          <li>Open the add-in in Microsoft Word Desktop on Windows.</li>
+
+        <ol class="steps">
+          <li>Open Braille Hub in Microsoft Word Desktop.</li>
           <li>Select the <strong>Music / MIDI</strong> tab.</li>
           <li>Choose a Standard MIDI file.</li>
           <li>
@@ -228,60 +843,113 @@
             successful preview at the current Word caret or selection.
           </li>
         </ol>
+
         <p>
           No notes inside the selected line are automatically removed based on
           instrument, percussion, program, or channel classification.
         </p>
+
         <p>
           Some complex MIDI lines may not yet be representable by the current
           notation bridge. Those lines fail explicitly instead of silently
           deleting or simplifying musical material. Choose another source line
           when appropriate.
         </p>
+
         <p>
           Whole-song multi-line / <strong>All Lines</strong> conversion is not
           exposed in this preview.
         </p>
+
+        <h3>MusicXML / MXL — Word Desktop / Windows</h3>
+        <ol class="steps">
+          <li>Select the separate <strong>MusicXML</strong> tab.</li>
+          <li>Choose `.musicxml`, `.xml`, or `.mxl`.</li>
+          <li>Preview the Braille Music result.</li>
+          <li>Insert the successful preview into Word.</li>
+        </ol>
+
+        <div class="callout warning">
+          This is a Windows sideload/testing convenience and is not Microsoft
+          Marketplace publication. Microsoft documents network-share deployment
+          as a testing mechanism and states that it is not supported for production add-ins. It is used here only for preview/testing, not as the final
+          Marketplace distribution method.
+        </div>
       </section>
 
-
-      <section aria-labelledby="phase14-braille-music-preview">
-        <h2 id="phase14-braille-music-preview">Braille Music in Word — live preview</h2>
-        <figure>
-          <img
-            src="./install/screenshots/phase14-braille-music-word-mozart.png"
-            alt="Microsoft Word Desktop showing the Persian / English and Music / MIDI tabs, MIDI source-line selection, Unicode Music Braille preview, and multiple inserted Mozart Braille lines."
-            loading="lazy"
-            style="max-width: 100%; height: auto; border: 1px solid #d1d5db; border-radius: 8px;"
-          >
-          <figcaption>
-            Live Windows Word presentation: a multi-line Mozart MIDI is exposed
-            as independent Track + Channel source lines, previewed as Unicode
-            Music Braille, and inserted into the Word document.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section aria-labelledby="download">
-        <h2 id="download">Download the manifest</h2>
-        <p>
-          The hosted manifest below points only to the production HTTPS build
-          of Braille Hub.
+      <section
+        class="tab-panel"
+        id="panel-mac"
+        role="tabpanel"
+        aria-labelledby="tab-mac"
+        hidden
+      >
+        <h2>Mac preview</h2>
+        <p class="lead">
+          The direct macOS package installs the same production Braille Hub manifest
+          into the supported Microsoft Office sideload directories. It does not
+          contain a separate native Braille translation engine.
         </p>
+
         <p>
-          <a href="./install/manifest.xml" download>
-            Download the Microsoft 365 add-in manifest
+          <a
+            href="https://github.com/soroushneyestani/Persian-to-Braille/releases/download/mac-preview-v18.0.0-rc1/Braille-Hub-Mac-Preview-Installer.pkg"
+          >
+            Download Braille Hub Mac Preview Installer (.pkg)
           </a>
         </p>
-        <p>
-          Stable manifest URL:
-          <code>https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml</code>
-        </p>
+
+        <ol class="steps">
+          <li>Close Microsoft Word, Excel, and PowerPoint.</li>
+          <li>Download <strong>Braille-Hub-Mac-Preview-Installer.pkg</strong>.</li>
+          <li>Open the package and complete the macOS Installer steps.</li>
+          <li>Reopen Word, Excel, or PowerPoint.</li>
+          <li>Open <strong>Home → Add-ins</strong> and select <strong>Braille Hub</strong>.</li>
+        </ol>
+
+        <h3>Office sideload targets</h3>
+        <code class="code-line">~/Library/Containers/com.microsoft.Word/Data/Documents/wef</code>
+        <code class="code-line">~/Library/Containers/com.microsoft.Excel/Data/Documents/wef</code>
+        <code class="code-line">~/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef</code>
+
+        <div class="callout warning">
+          <strong>Release-candidate note:</strong>
+          The first macOS `.pkg` may be unsigned until Apple Developer ID Installer
+          signing and notarization are configured. Do not disable macOS security features.
+          If macOS blocks a trusted test package, use the normal Privacy &amp; Security
+          flow provided by macOS.
+        </div>
+
+        <div class="rtl-guide" lang="fa" dir="rtl">
+          <h3>راهنمای نسخه macOS</h3>
+          <ol>
+            <li>Word، Excel و PowerPoint را ببندید.</li>
+            <li>فایل <strong>.pkg</strong> را دانلود کنید.</li>
+            <li>Installer سیستم macOS را اجرا و مراحل نصب را کامل کنید.</li>
+            <li>Office را دوباره باز کنید.</li>
+            <li>از بخش <strong>Add-ins</strong>، افزونه <strong>Braille Hub</strong> را باز کنید.</li>
+          </ol>
+          <p>
+            Manifest روی Mac قبلاً به‌صورت sideload آزمایش شده و کارکرد آن گزارش شده است.
+            بسته‌ی مستقیم `.pkg` در حال اعتبارسنجی نهایی توسط تستر است.
+          </p>
+        </div>
       </section>
 
-      <section aria-labelledby="web-preview">
-        <h2 id="web-preview">Individual preview — Office on the web</h2>
-        <ol>
+      <section
+        class="tab-panel"
+        id="panel-web"
+        role="tabpanel"
+        aria-labelledby="tab-web"
+        hidden
+      >
+        <h2>Individual preview — Office on the web</h2>
+        <p class="lead">
+          Office on the Web uses the same hosted Office.js task pane, public SDK,
+          Core, and Music package boundaries as the desktop add-in.
+        </p>
+
+        <ol class="steps">
           <li>Download the manifest from this page.</li>
           <li>Open Word, Excel, or PowerPoint in Office on the web.</li>
           <li>Open a document or presentation.</li>
@@ -289,89 +957,194 @@
           <li>Select <strong>Upload My Add-in</strong>.</li>
           <li>Choose the downloaded manifest XML file and upload it.</li>
         </ol>
-        <p>
-          Microsoft documents this flow as sideloading for development and
-          testing. A web-sideloaded manifest is stored in the browser's local
-          storage, so clearing browser data or switching browsers can require
-          sideloading it again.
-        </p>
+
+        <div class="callout">
+          Office on the Web was closed as a validation phase: no separate Web
+          Braille engine or Web-only language implementation was required.
+        </div>
+
+        <h3>Available through the shared Web path</h3>
+        <div class="feature-grid">
+          <div class="feature"><strong>Persian</strong><p>Text → Braille</p></div>
+          <div class="feature"><strong>English / Latin</strong><p>Text → six-dot Braille</p></div>
+          <div class="feature"><strong>German</strong><p>Basisschrift / Vollschrift / Kurzschrift</p></div>
+          <div class="feature"><strong>Music</strong><p>MIDI and MusicXML / MXL workflows where exposed by the host UI</p></div>
+        </div>
       </section>
 
-      <section aria-labelledby="org-deploy">
-        <h2 id="org-deploy">Organization deployment — Microsoft 365 admin</h2>
-        <p>
-          Microsoft 365 administrators can centrally deploy an add-in-only
-          manifest to supported users and groups through the Microsoft 365
-          admin center.
+      <section
+        class="tab-panel"
+        id="panel-manifest"
+        role="tabpanel"
+        aria-labelledby="tab-manifest"
+        hidden
+      >
+        <h2 id="download-manifest">Download the manifest</h2>
+        <p class="lead">
+          The hosted manifest below points only to the production HTTPS build of Braille Hub.
         </p>
-        <ol>
+
+        <p>
+          <a href="./install/manifest.xml" download>
+            Download the Microsoft 365 add-in manifest
+          </a>
+        </p>
+
+        <code class="code-line">
+          https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml
+        </code>
+
+        <h3>Organization deployment — Microsoft 365 admin</h3>
+        <ol class="steps">
           <li>Open the Microsoft 365 admin center.</li>
           <li>Go to <strong>Settings → Integrated apps</strong>.</li>
           <li>Open the Add-ins deployment flow.</li>
           <li>Choose the custom add-in option.</li>
           <li>
             Upload the downloaded manifest, or provide the stable manifest URL
-            shown above when the tenant UI offers URL-based manifest upload.
+            when the tenant UI offers URL-based manifest upload.
           </li>
           <li>Assign the add-in to the intended users or groups.</li>
         </ol>
+
+        <div class="callout">
+          The production manifest is also the common source used by the Windows
+          and macOS preview distribution paths. Development `localhost` URLs are
+          not used by the hosted manifest.
+        </div>
       </section>
 
-      <section aria-labelledby="mac-preview">
-        <h2 id="mac-preview">Mac preview</h2>
-        <p>
-          Microsoft also documents manual manifest sideloading on Mac for
-          testing. The manifest is copied into the Office application's
-          <code>wef</code> folder and the host application is restarted.
-          Refer to Microsoft's current sideloading documentation for the
-          host-specific folder path.
+      <section
+        class="tab-panel"
+        id="panel-screenshots"
+        role="tabpanel"
+        aria-labelledby="tab-screenshots"
+        hidden
+      >
+        <h2>Windows Desktop preview</h2>
+        <p class="lead">
+          Existing live-preview screenshots from the Microsoft 365 integration.
         </p>
-      </section>
 
-      <section aria-labelledby="windows-note">
-        <h2 id="windows-note">Windows desktop note</h2>
-        <p>
-          The Windows Desktop Preview Installer automates preparation of a
-          local network-share catalog for sideload testing. Microsoft documents
-          network-share deployment as a testing mechanism and states that it is
-          not supported for production add-ins.
-        </p>
-      </section>
+        <div class="shot-grid">
+          <figure class="shot">
+            <img
+              src="./install/screenshots/word-selection.png"
+              alt="Braille Hub translating supported text in Microsoft Word"
+              loading="lazy"
+            >
+            <figcaption>
+              Word — preview Unicode Braille, then use the supported document action.
+            </figcaption>
+          </figure>
 
-      <section aria-labelledby="scope">
-        <h2 id="scope">Current verified scope</h2>
-        <ul>
-          <li>Word on Windows: live verified.</li>
-          <li>Excel on Windows: live verified.</li>
-          <li>PowerPoint on Windows: live verified.</li>
-          <li>Web and Mac: release-gate execution remains pending.</li>
-        </ul>
-        <p>
-          Manual availability does not change those verification claims.
-        </p>
-      </section>
+          <figure class="shot">
+            <img
+              src="./install/screenshots/excel-text-cell.png"
+              alt="Braille Hub translating one selected plain-text cell in Microsoft Excel"
+              loading="lazy"
+            >
+            <figcaption>
+              Excel — translate one selected plain-text cell and replace after preview.
+            </figcaption>
+          </figure>
 
-      <section aria-labelledby="links">
-        <h2 id="links">Project information</h2>
-        <ul>
-          <li><a href="./support.html">Support</a></li>
-          <li><a href="./privacy.html">Privacy</a></li>
-          <li><a href="./eula.html">EULA</a></li>
-          <li>
-            <a href="https://github.com/soroushneyestani/Persian-to-Braille">
-              Source code
-            </a>
-          </li>
-        </ul>
-      </section>
+          <figure class="shot">
+            <img
+              src="./install/screenshots/powerpoint-text-range.png"
+              alt="Braille Hub translating a selected text range in Microsoft PowerPoint"
+              loading="lazy"
+            >
+            <figcaption>
+              PowerPoint — translate a selected text range and replace after preview.
+            </figcaption>
+          </figure>
 
-      <footer>
-        <p>
-          Manual Preview / Sideload Distribution — not Microsoft Marketplace
-          publication.
-        </p>
-      </footer>
+          <figure class="shot">
+            <img
+              src="./install/screenshots/phase14-braille-music-word-mozart.png"
+              alt="Microsoft Word Desktop showing the Persian / English and Music / MIDI tabs, MIDI source-line selection, Unicode Music Braille preview, and multiple inserted Mozart Braille lines."
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Braille Music in Word — live preview.</strong>
+              Live Windows Word presentation: a multi-line Mozart MIDI is exposed
+              as independent Track + Channel source lines, previewed as Unicode
+              Music Braille, and inserted into the Word document.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
     </article>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="./support.html">Support</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./eula.html">EULA</a>
+        <a href="https://github.com/soroushneyestani/Persian-to-Braille">Source code</a>
+      </div>
+      <div>
+        Manual Preview / Sideload Distribution — not Microsoft Marketplace publication.
+      </div>
+    </footer>
   </main>
+
+  <script>
+    (() => {
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const panels = new Map(
+        Array.from(document.querySelectorAll('[role="tabpanel"]'))
+          .map((panel) => [panel.id.replace('panel-', ''), panel])
+      );
+
+      function activate(name, updateHash = true) {
+        if (!panels.has(name)) {
+          name = 'features';
+        }
+
+        tabs.forEach((tab) => {
+          const selected = tab.dataset.tab === name;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+        });
+
+        panels.forEach((panel, key) => {
+          panel.hidden = key !== name;
+        });
+
+        if (updateHash) {
+          history.replaceState(null, '', `#${name}`);
+        }
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activate(tab.dataset.tab));
+
+        tab.addEventListener('keydown', (event) => {
+          let nextIndex = null;
+
+          if (event.key === 'ArrowRight') {
+            nextIndex = (index + 1) % tabs.length;
+          } else if (event.key === 'ArrowLeft') {
+            nextIndex = (index - 1 + tabs.length) % tabs.length;
+          } else if (event.key === 'Home') {
+            nextIndex = 0;
+          } else if (event.key === 'End') {
+            nextIndex = tabs.length - 1;
+          }
+
+          if (nextIndex !== null) {
+            event.preventDefault();
+            tabs[nextIndex].focus();
+            activate(tabs[nextIndex].dataset.tab);
+          }
+        });
+      });
+
+      const initial = window.location.hash.slice(1);
+      activate(panels.has(initial) ? initial : 'features', false);
+    })();
+  </script>
 </body>
 </html>
