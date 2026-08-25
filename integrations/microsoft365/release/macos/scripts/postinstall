@@ -1,0 +1,101 @@
+#!/bin/bash
+set -euo pipefail
+
+PRODUCT_NAME="Braille Hub"
+ADDIN_ID="33ec7928-1204-5bb3-88e6-d778413e9234"
+SYSTEM_MANIFEST="/Library/Application Support/Braille Hub/manifest.xml"
+
+log() {
+  printf '%s\n' "[Braille Hub] $*"
+}
+
+if [[ ! -f "$SYSTEM_MANIFEST" ]]; then
+  log "ERROR: packaged manifest is missing."
+  exit 1
+fi
+
+CONSOLE_USER="$(stat -f '%Su' /dev/console 2>/dev/null || true)"
+
+if [[ -z "$CONSOLE_USER" || "$CONSOLE_USER" == "root" || "$CONSOLE_USER" == "loginwindow" ]]; then
+  log "ERROR: unable to resolve the signed-in macOS user."
+  exit 1
+fi
+
+USER_HOME="$(
+  dscl . -read "/Users/$CONSOLE_USER" NFSHomeDirectory 2>/dev/null |
+    sed 's/^NFSHomeDirectory:[[:space:]]*//'
+)"
+
+if [[ -z "$USER_HOME" || ! -d "$USER_HOME" ]]; then
+  log "ERROR: unable to resolve home directory for $CONSOLE_USER."
+  exit 1
+fi
+
+USER_GROUP="$(id -gn "$CONSOLE_USER")"
+
+install_manifest_for_host() {
+  local app_path="$1"
+  local container_name="$2"
+  local label="$3"
+  local container_root="$USER_HOME/Library/Containers/$container_name"
+  local target="$container_root/Data/Documents/wef"
+  local destination="$target/Braille-Hub.xml"
+  local candidate
+
+  if [[ ! -d "$app_path" && ! -d "$container_root" ]]; then
+    log "SKIP: $label is not installed or has not created its container."
+    return 1
+  fi
+
+  mkdir -p "$target"
+
+  # Replace only previous copies of this exact Braille Hub add-in.
+  # Other Office add-in manifests are never removed.
+  for candidate in "$target"/*.xml; do
+    [[ -f "$candidate" ]] || continue
+
+    if grep -Fq "$ADDIN_ID" "$candidate"; then
+      rm -f "$candidate"
+    fi
+  done
+
+  cp -f "$SYSTEM_MANIFEST" "$destination"
+  chown "$CONSOLE_USER:$USER_GROUP" "$destination"
+  chmod 0644 "$destination"
+
+  log "INSTALLED: $label -> $destination"
+  return 0
+}
+
+installed=0
+
+if install_manifest_for_host \
+  "/Applications/Microsoft Word.app" \
+  "com.microsoft.Word" \
+  "Microsoft Word"; then
+  installed=$((installed + 1))
+fi
+
+if install_manifest_for_host \
+  "/Applications/Microsoft Excel.app" \
+  "com.microsoft.Excel" \
+  "Microsoft Excel"; then
+  installed=$((installed + 1))
+fi
+
+if install_manifest_for_host \
+  "/Applications/Microsoft PowerPoint.app" \
+  "com.microsoft.Powerpoint" \
+  "Microsoft PowerPoint"; then
+  installed=$((installed + 1))
+fi
+
+if [[ "$installed" -eq 0 ]]; then
+  log "ERROR: no supported Microsoft Office host was detected."
+  log "Install or launch Word, Excel, or PowerPoint, then run this installer again."
+  exit 1
+fi
+
+log "Installed Braille Hub into $installed Office host container(s)."
+log "Close and reopen Word, Excel, and PowerPoint before testing the add-in."
+exit 0
