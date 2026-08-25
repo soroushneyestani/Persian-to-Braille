@@ -94,3 +94,9 @@ export type {
 export {
   translateMidiSourceLineToBraille,
 } from "./midi-to-braille.js";
+export * from "./musicxml-types.js";
+export * from "./musicxml-xml.js";
+export * from "./musicxml-parser.js";
+export * from "./musicxml-mxl.js";
+export * from "./musicxml-adapter.js";
+export * from "./musicxml-to-braille.js";

@@ -1,0 +1,26 @@
+{
+  "id": "phase16-r3-continuation-v7",
+  "status": "bounded-real-score-continuation",
+  "prerequisite": "phase16-r3-keyboard-parallel-autopilot",
+  "musicXmlPitchPolicy": {
+    "sourceStandard": "MusicXML alter is chromatic alteration in semitones",
+    "ordinaryIntegerAlter": "preserve written spelling for -2..2",
+    "extremeIntegerAlter": "preserve exact sounding pitch; omit unrepresentable written override; reuse existing deterministic key-aware stateful spelling",
+    "nonIntegerAlter": "fail-closed as microtonal/non-discrete pitch",
+    "silentCorrection": false,
+    "diagnostic": "SOURCE_PRESERVED_NOT_EMITTED"
+  },
+  "features": {
+    "keyboardWordPlacement": "staff-scoped exact onset; unstaffed global only at measure onset",
+    "keyboardShortSlur": "reuse existing contained shortSlurAfter policy per persistent voice",
+    "keyboardRestDynamics": "independent dynamic may prefix an exact-onset rest",
+    "extremeIntegerAlterNormalization": "exact sounding-pitch preservation through existing stateful spelling profile"
+  },
+  "invariants": {
+    "singleBrailleMusicEngine": true,
+    "midiPublicApiChanged": false,
+    "officeSourceChanged": false,
+    "v5KeyboardProfilePreserved": true,
+    "v5Replayed": false
+  }
+}

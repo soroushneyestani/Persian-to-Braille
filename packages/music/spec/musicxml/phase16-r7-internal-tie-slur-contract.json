@@ -1,0 +1,10 @@
+{
+  "id": "PHASE16_R7_INTERNAL_TIE_SLUR_V1",
+  "scope": "cross-measure same-lane slur with tie wholly internal to the phrase",
+  "admitted": "tied event carries no slur marker itself",
+  "deferred": [
+    "same-event tie/slur coincidence",
+    "facsimile slur-before-tie ordering",
+    "cross-staff/cross-voice slur"
+  ]
+}

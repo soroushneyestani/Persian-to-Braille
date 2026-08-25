@@ -1,0 +1,103 @@
+{
+  "phase": "16.5",
+  "name": "Unified Advanced Musical Structures Closure",
+  "status": "CLOSURE_CANDIDATE",
+  "authority": {
+    "name": "Braille Authority of North America \u2014 Music Braille Code, 2015",
+    "pdfUrl": "https://brailleauthority.org/music/Music_Braille_Code_2015.pdf",
+    "pdfSha256": "34d769731f69ed7586f96b221ca4e22d3e009d36e8024008dfe0fc935348595c",
+    "brfZipSha256": "b936fd42d257eefaa0a7f90975588e60e97c4e0371f7a04f0e108441075401e3"
+  },
+  "closureRule": "Phase 16.5 is closed only when every advanced MusicXML structure in scope is either mapped to a source-backed existing Braille Music engine surface or classified as explicit fail-closed/deferred. Silent semantic discard is forbidden.",
+  "executable": {
+    "polyphony": {
+      "h4cFullMeasure": true,
+      "h4dTerminalIncompleteSingleSection": true,
+      "multiStaff": false,
+      "crossedVoices": false,
+      "multiSectionH4d": false
+    },
+    "tuplets": {
+      "threeToTwoTriplet": true,
+      "genericIrregular": false,
+      "knownButNotAutoBridged": [
+        "_3'",
+        "_2'",
+        "_10'"
+      ]
+    },
+    "articulations": {
+      "staccato": "8",
+      "staccatissimo": ",8",
+      "accent": ".8",
+      "tenuto": "_8",
+      "maximumPerEvent": 1
+    },
+    "grace": {
+      "shortAppoggiatura": "5",
+      "longAppoggiatura": "\"5",
+      "successiveRunMax": 3,
+      "rhythmicSumContribution": false,
+      "fourOrMoreDoubling": false,
+      "graceChord": false
+    },
+    "slur": {
+      "simpleShortSlur": "c",
+      "containedEventCountMin": 2,
+      "containedEventCountMax": 4,
+      "restInsidePhraseCountsAsEvent": true,
+      "crossMeasure": false,
+      "longSlur": false,
+      "nestedOrConvergent": false,
+      "tieInteraction": false,
+      "appoggiaturaInteraction": false
+    },
+    "printRepeats": {
+      "initial": "<7",
+      "terminal": "<2",
+      "repeatTimes": [
+        2
+      ],
+      "brailleOptimizationRepeats": false,
+      "daCapoDalSegno": false,
+      "aperiodic": false
+    },
+    "volta": {
+      "first": "#1",
+      "second": "#2",
+      "higherOrCombined": false,
+      "printedBracketEmitted": false
+    },
+    "dynamics": {
+      "supported": {
+        "pp": ">pp",
+        "p": ">p",
+        "mf": ">mf",
+        "f": ">f",
+        "ff": ">ff"
+      },
+      "independentMarkOnly": true,
+      "hairpins": false,
+      "arbitraryWords": false
+    },
+    "keyTransitions": {
+      "measureBoundaryChange": true,
+      "transitionToZeroSignatureCancellation": false,
+      "midMeasureChange": false
+    },
+    "directionTypes": {
+      "tempo": "PRESERVED_BUT_NOT_EMITTED",
+      "arbitraryWords": "FAIL_CLOSED",
+      "unknownDirectionType": "FAIL_CLOSED"
+    }
+  },
+  "invariants": [
+    "No second Braille Music engine.",
+    "Existing MIDI behavior remains unchanged when new optional stateful fields are absent.",
+    "Written MusicXML pitch spelling remains authoritative at the MusicXML boundary.",
+    "Raw MusicXML divisions never leak into the Braille engine.",
+    "Generic tuplets are not inferred from enumerated examples.",
+    "Long-slur doubled-vs-bracket choice is not guessed.",
+    "Unsupported advanced combinations fail explicitly."
+  ]
+}

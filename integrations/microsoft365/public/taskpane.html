@@ -1,410 +1,966 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
+
   <meta
+
     name="viewport"
+
     content="width=device-width, initial-scale=1"
+
   >
+
   <title>Braille Hub for Microsoft 365</title>
+
   <link rel="stylesheet" href="./styles.css">
+
   <script
+
     src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+
     type="text/javascript"
+
   ></script>
+
   <script type="importmap">
+
   {
+
     "imports": {
+
       "@persian-braille/sdk": "./vendor/sdk/index.js",
+
       "@persian-braille/core": "./vendor/core/index.js",
+
       "@persian-braille/music": "./vendor/music/index.js"
+
     }
+
   }
+
   </script>
+
   <script
+
     type="module"
+
     src="./app/taskpane/main.js"
+
   ></script>
+
 </head>
+
 <body>
+
   <main class="app-shell">
+
     <header class="app-header">
+
         <img
+
           class="brand-logo"
+
           src="./assets/braille-hub-logo.png"
+
           alt="Braille Hub — Text & Music Accessibility"
+
         >
+
       <p class="eyebrow">Microsoft 365 Add-in</p>
+
       <h1 class="visually-hidden">Braille Hub</h1>
 
+
+
       <nav class="feature-tabs" role="tablist" aria-label="Braille features">
+
         <button
+
           id="feature-tab-persian"
+
           class="feature-tab"
+
           type="button"
+
           role="tab"
+
           aria-selected="true"
+
         >
+
           Persian / English
+
         </button>
+
         <button
+
           id="feature-tab-german"
+
           class="feature-tab"
+
           type="button"
+
           role="tab"
+
           aria-selected="false"
+
           tabindex="-1"
+
         >
+
           Deutsch
+
         </button>
+
         <button
+
           id="feature-tab-music"
+
           class="feature-tab"
+
           type="button"
+
           role="tab"
+
           aria-selected="false"
+
           tabindex="-1"
+
           hidden
+
         >
+
           Music / MIDI
+
         </button>
+
+        <button
+
+          id="feature-tab-musicxml"
+
+          class="feature-tab"
+
+          type="button"
+
+          role="tab"
+
+          aria-selected="false"
+
+          tabindex="-1"
+
+          hidden
+
+        >
+
+          MusicXML
+
+        </button>
+
       </nav>
 
+
+
       <p id="feature-context-text" class="intro" hidden>
+
         Text &amp; Music Accessibility for Microsoft 365
+
       </p>
+
       <p
+
         id="office-ready-state"
+
         class="ready-state"
+
         data-ready="false"
+
       >
+
         Waiting for Microsoft Office
+
       </p>
+
     </header>
 
+
+
     <section class="actions" aria-label="Translation actions">
+
       <button
+
         id="translate-selection"
+
         type="button"
+
         disabled
+
       >
+
         Translate Selection
+
       </button>
+
       <button
+
         id="clear-output"
+
         type="button"
+
       >
+
         Clear
+
       </button>
+
     </section>
 
+
+
     <section
+
       id="german-braille-section"
+
       class="panel german-panel feature-tab-hidden"
+
       aria-hidden="true"
+
       aria-labelledby="german-braille-title"
+
     >
+
       <h2 id="german-braille-title">Deutsche Brailleschrift</h2>
 
+
+
       <div class="german-config-grid">
-        <div class="german-config-field">
-          <label for="german-region">
-            <strong>Region</strong>
-          </label>
-          <select id="german-region">
-            <option value="">Region auswählen</option>
-            <option value="germany-austria">Deutschland / Österreich</option>
-            <option value="switzerland">Schweiz</option>
-          </select>
-        </div>
 
         <div class="german-config-field">
-          <label for="german-text-mode">
-            <strong>Braillestufe</strong>
+
+          <label for="german-region">
+
+            <strong>Region</strong>
+
           </label>
-          <select id="german-text-mode">
-            <option value="">Braillestufe auswählen</option>
-            <option value="basisschrift">Basisschrift</option>
-            <option value="vollschrift">Vollschrift</option>
-            <option value="kurzschrift">Kurzschrift</option>
+
+          <select id="german-region">
+
+            <option value="">Region auswählen</option>
+
+            <option value="germany-austria">Deutschland / Österreich</option>
+
+            <option value="switzerland">Schweiz</option>
+
           </select>
+
         </div>
+
+
+
+        <div class="german-config-field">
+
+          <label for="german-text-mode">
+
+            <strong>Braillestufe</strong>
+
+          </label>
+
+          <select id="german-text-mode">
+
+            <option value="">Braillestufe auswählen</option>
+
+            <option value="basisschrift">Basisschrift</option>
+
+            <option value="vollschrift">Vollschrift</option>
+
+            <option value="kurzschrift">Kurzschrift</option>
+
+          </select>
+
+        </div>
+
       </div>
+
+
 
       <div
+
         class="actions german-actions"
+
         aria-label="Aktionen für deutsche Brailleschrift"
+
       >
+
         <button
+
           id="german-translate-selection"
+
           type="button"
+
           disabled
+
         >
+
           Auswahl übersetzen
+
         </button>
+
         <button
+
           id="german-clear-output"
+
           type="button"
+
         >
+
           Zurücksetzen
+
         </button>
+
       </div>
 
+
+
       <section
+
         id="german-translation-result"
+
         class="german-result"
+
         aria-label="Braille-Vorschau"
+
         hidden
+
       >
+
         <h3>Braille-Vorschau</h3>
+
         <pre
+
           id="german-unicode-output"
+
           class="output braille german-output"
+
         ></pre>
 
+
+
         <div
+
           class="document-actions german-document-actions"
+
           aria-label="Aktionen für das Braille-Ergebnis"
+
         >
+
           <button
+
             id="german-copy-braille"
+
             type="button"
+
             disabled
+
           >
+
             Braille kopieren
+
           </button>
+
           <button
+
             id="german-replace-selection"
+
             type="button"
+
             disabled
+
           >
+
             Auswahl ersetzen
+
           </button>
+
           <button
+
             id="german-insert-after-selection"
+
             type="button"
+
             disabled
+
           >
+
             Nach Auswahl einfügen
+
           </button>
+
         </div>
+
       </section>
 
+
+
       <section
+
         id="german-translation-error"
+
         class="error-panel german-error"
+
         role="alert"
+
         hidden
+
       >
+
         <h3>Übersetzung nicht verfügbar</h3>
+
         <p>
+
           <strong id="german-error-code"></strong>
+
         </p>
+
         <p id="german-error-message"></p>
+
       </section>
+
+
 
       <p
+
         id="german-taskpane-status"
+
         class="status"
+
         aria-live="polite"
+
       ></p>
+
     </section>
 
+
+
     <section
+
       id="music-braille-section"
+
       class="panel music-panel"
+
       hidden
+
       aria-labelledby="music-braille-title"
+
     >
+
       <h2 id="music-braille-title">Braille Music from MIDI</h2>
+
       <div class="music-file-row">
+
         <label for="music-midi-file">MIDI file (.mid or .midi)</label>
+
         <input
+
           id="music-midi-file"
+
           type="file"
+
           accept=".mid,.midi"
+
           disabled
+
         >
+
         <span id="music-midi-filename" class="music-file-name">
+
           No MIDI file selected.
+
         </span>
+
       </div>
+
+
 
       <div
+
         id="music-source-line-section"
+
         class="music-line-selection"
+
         hidden
+
       >
+
         <label for="music-source-line">
+
           <strong>Choose one MIDI line</strong>
+
         </label>
+
         <select id="music-source-line" disabled>
+
           <option value="">Choose one MIDI line…</option>
+
         </select>
+
       </div>
+
+
 
       <div class="actions music-actions" aria-label="Braille Music preview and insertion actions">
+
         <button id="music-preview-midi" type="button" disabled>
+
           Preview Music Braille
+
         </button>
+
         <button id="music-insert-word" type="button" disabled>
+
           Insert Music Braille
+
         </button>
+
         <button id="music-clear" type="button">
+
           Clear MIDI
+
         </button>
+
       </div>
 
+
+
       <section
+
         id="music-translation-result"
+
         class="music-result"
+
         hidden
+
         aria-label="Music Braille preview"
+
       >
+
         <h3>Unicode Music Braille</h3>
+
         <pre id="music-unicode-output" class="output braille music-output"></pre>
 
+
+
         <div hidden aria-hidden="true">
+
           <pre id="music-brf-output" class="output code-output music-output"></pre>
+
           <pre id="music-diagnostic-output" class="output code-output music-output"></pre>
+
         </div>
+
       </section>
 
+
+
       <section
+
         id="music-translation-error"
+
         class="error-panel music-error"
+
         role="alert"
+
         hidden
+
       >
+
         <h3>Music Braille action unavailable</h3>
+
         <p><strong id="music-error-code"></strong></p>
+
         <p id="music-error-message"></p>
+
       </section>
+
+
 
       <p id="music-taskpane-status" class="status" aria-live="polite"></p>
 
+
+
     </section>
 
+
+
     <section
-      id="translation-result"
-      class="panel"
+
+      id="musicxml-braille-section"
+
+      class="panel music-panel feature-tab-hidden"
+
       hidden
-      aria-labelledby="result-title"
+
+      aria-hidden="true"
+
+      aria-labelledby="musicxml-braille-title"
+
     >
+
+      <h2 id="musicxml-braille-title">Braille Music from MusicXML</h2>
+
+      <div class="music-file-row">
+
+        <label for="musicxml-file">MusicXML score (.musicxml, .xml, or .mxl)</label>
+
+        <input
+
+          id="musicxml-file"
+
+          type="file"
+
+          accept=".musicxml,.xml,.mxl"
+
+          disabled
+
+        >
+
+        <span id="musicxml-filename" class="music-file-name">
+
+          No MusicXML or MXL file selected.
+
+        </span>
+
+      </div>
+
+
+
+      <div class="actions music-actions" aria-label="MusicXML Braille preview and insertion actions">
+
+        <button id="musicxml-preview" type="button" disabled>
+
+          Preview Music Braille
+
+        </button>
+
+        <button id="musicxml-insert-word" type="button" disabled>
+
+          Insert Music Braille
+
+        </button>
+
+        <button id="musicxml-clear" type="button">
+
+          Clear MusicXML
+
+        </button>
+
+      </div>
+
+
+
+      <section
+
+        id="musicxml-translation-result"
+
+        class="music-result"
+
+        hidden
+
+        aria-label="MusicXML Music Braille preview"
+
+      >
+
+        <h3>Unicode Music Braille</h3>
+
+        <pre id="musicxml-unicode-output" class="output braille music-output"></pre>
+
+
+
+        <div hidden aria-hidden="true">
+
+          <pre id="musicxml-brf-output" class="output code-output music-output"></pre>
+
+          <pre id="musicxml-diagnostic-output" class="output code-output music-output"></pre>
+
+        </div>
+
+      </section>
+
+
+
+      <section
+
+        id="musicxml-translation-error"
+
+        class="error-panel music-error"
+
+        role="alert"
+
+        hidden
+
+      >
+
+        <h3>MusicXML Braille action unavailable</h3>
+
+        <p><strong id="musicxml-error-code"></strong></p>
+
+        <p id="musicxml-error-message"></p>
+
+      </section>
+
+
+
+      <p id="musicxml-taskpane-status" class="status" aria-live="polite"></p>
+
+
+
+    </section>
+
+
+    <section
+
+      id="translation-result"
+
+      class="panel"
+
+      hidden
+
+      aria-labelledby="result-title"
+
+    >
+
       <h2 id="result-title">Braille preview</h2>
 
+
+
       <dl class="result-grid">
+
         <div>
+
           <dt>Selected text</dt>
+
           <dd
+
             id="source-output"
+
             class="output source"
+
             dir="rtl"
+
           ></dd>
+
         </div>
 
+
+
         <div>
+
           <dt>Unicode Braille</dt>
+
           <dd
+
             id="braille-output"
+
             class="output braille"
+
             dir="ltr"
+
           ></dd>
+
         </div>
+
+
 
         <div>
+
           <dt>Cells</dt>
+
           <dd
+
             id="cells-output"
+
             class="output code-output"
+
           ></dd>
+
         </div>
 
+
+
         <div hidden aria-hidden="true">
+
           <dt>Normalized text</dt>
+
           <dd
+
             id="normalized-output"
+
             class="output"
+
             dir="rtl"
+
           ></dd>
+
         </div>
 
+
+
         <div hidden aria-hidden="true">
+
           <dt>Structural tokens</dt>
+
           <dd
+
             id="structural-output"
+
             class="output code-output"
+
           ></dd>
+
         </div>
+
       </dl>
 
+
+
       <div
+
         class="document-actions"
+
         aria-label="Braille result actions"
+
       >
+
         <button
+
           id="copy-braille"
+
           type="button"
+
           disabled
+
         >
+
           Copy Braille
+
         </button>
+
         <button
+
           id="replace-selection"
+
           type="button"
+
           disabled
+
         >
+
           Replace Selection
+
         </button>
+
         <button
+
           id="insert-after-selection"
+
           type="button"
+
           disabled
+
         >
+
           Insert After
+
         </button>
+
       </div>
+
     </section>
+
+
 
     <section
+
       id="translation-error"
+
       class="panel error-panel"
+
       role="alert"
+
       hidden
+
     >
+
       <h2>Translation unavailable</h2>
+
       <p>
+
         <strong id="error-code"></strong>
+
       </p>
+
       <p id="error-message"></p>
+
     </section>
 
+
+
     <p
+
       id="taskpane-status"
+
       class="status"
+
       aria-live="polite"
+
     ></p>
 
+
+
     <footer class="app-footer">
+
       <p>
+
         Developed by <strong>Soroush Neyestani</strong>
+
       </p>
+
       <p class="app-footer-links">
+
         <span>MIT License</span>
+
         <span aria-hidden="true">·</span>
+
         <a
+
           href="https://soroush.neyestani.com/"
+
           target="_blank"
+
           rel="noopener noreferrer"
+
         >Website</a>
+
         <span aria-hidden="true">·</span>
+
         <a
+
           href="https://github.com/soroushneyestani"
+
           target="_blank"
+
           rel="noopener noreferrer"
+
         >GitHub</a>
+
       </p>
+
     </footer>
+
   </main>
+
 </body>
+
 </html>

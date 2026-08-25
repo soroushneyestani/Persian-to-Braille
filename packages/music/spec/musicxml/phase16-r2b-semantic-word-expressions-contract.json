@@ -1,0 +1,22 @@
+{
+  "id": "phase16-r2b-semantic-word-expressions",
+  "dependsOn": "phase16-r2a-music-terminology-registry",
+  "engine": "existing-stateful-braille-music-engine",
+  "supportedPolicies": [
+    "word-expression",
+    "canonical-word-expression",
+    "bana-word-expression-fallback"
+  ],
+  "canonicalDynamicWords": {
+    "crescendo": "cr.",
+    "decrescendo": "decr.",
+    "diminuendo": "dim."
+  },
+  "structuralTerminology": "fail-closed",
+  "continuationFragments": "fail-closed",
+  "privateUseGlyphs": "fail-closed",
+  "secondBrailleMusicEngine": false,
+  "midiPublicApiChanged": false,
+  "officeChanged": false,
+  "gitStageCommitPush": false
+}

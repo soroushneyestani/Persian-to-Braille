@@ -1,0 +1,17 @@
+{
+  "id": "PHASE16_R8_PEDAL_BURST_NORMALIZATION",
+  "classification": "MusicXML interoperability normalization, not a new BANA pedal sign",
+  "admittedShape": [
+    "same measure and staff",
+    "two or more pedal start marks",
+    "all marks line=yes and default/number 1",
+    "all starts strictly before the terminal stop",
+    "all stops co-located at measure content end"
+  ],
+  "emission": "reuse existing V18E BANA pedal-down and pedal-up signs as one continuous span",
+  "preservedFailClosed": [
+    "alternating nested pedal",
+    "nonterminal stop burst",
+    "pedal change/continue/discontinue/resume/sostenuto"
+  ]
+}

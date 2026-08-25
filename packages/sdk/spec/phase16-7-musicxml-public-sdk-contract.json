@@ -1,0 +1,49 @@
+{
+  "phase": "16.7",
+  "name": "Public SDK Integration \u2014 Separate MIDI and MusicXML Surfaces",
+  "status": "CLOSURE_CANDIDATE",
+  "architecture": {
+    "midiPublicFactory": "createMusicBrailleMidiTranslator",
+    "musicXmlPublicFactory": "createMusicBrailleMusicXmlTranslator",
+    "unifiedMusicFileFacade": false,
+    "midiApiMustRemainBackwardCompatible": true,
+    "musicXmlApiIndependent": true,
+    "sharedBrailleMusicEngine": true,
+    "secondBrailleMusicEngine": false
+  },
+  "midi": {
+    "extensions": [
+      ".mid",
+      ".midi"
+    ],
+    "sourceLineSelection": true,
+    "publicSurfaceChanged": false
+  },
+  "musicXml": {
+    "extensions": [
+      ".musicxml",
+      ".xml",
+      ".mxl"
+    ],
+    "sourceLineSelection": false,
+    "methods": [
+      "translateMusicXml",
+      "translateMusicXmlOrThrow",
+      "translateMxl",
+      "translateMxlOrThrow"
+    ],
+    "mxlAsync": true,
+    "writtenPitchPreserved": true
+  },
+  "microsoft365Boundary": {
+    "phase": "16.8",
+    "musicMidiTab": "KEEP_SEPARATE",
+    "musicXmlTab": "CREATE_SEPARATE",
+    "mergeTabs": false
+  },
+  "compatibility": {
+    "legacyMidiProfileMusicXmlField": "RETAIN_UNCHANGED_FOR_COMPATIBILITY",
+    "deepImports": "UNSUPPORTED",
+    "packageRootExports": "REQUIRED"
+  }
+}

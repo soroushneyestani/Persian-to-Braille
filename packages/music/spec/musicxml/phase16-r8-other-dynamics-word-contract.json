@@ -1,0 +1,10 @@
+{
+  "id": "PHASE16_R8_OTHER_DYNAMICS_WORD",
+  "admittedText": [
+    "cresc.",
+    "decresc.",
+    "dimin."
+  ],
+  "behavior": "route exact textual dynamic-change aliases into the existing R2B terminology word-expression pipeline",
+  "preservedFailClosed": "all other MusicXML other-dynamics payloads"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "PHASE16_R6_INITIAL_IMPLICIT_PICKUP_V1",
+  "scope": "initial MusicXML implicit incomplete measure compatibility",
+  "authorities": [
+    {
+      "name": "MusicXML 4.0",
+      "contract": "measure implicit=yes is used for measures such as pickup measures; a pickup is typically measure 0"
+    },
+    {
+      "name": "BANA Music Braille Code 2015",
+      "sections": ["2.4.2", "11.1", "11.1.1", "11.1.2", "29.3"],
+      "contract": "incomplete opening measures are recognized; only part-measure in-accord may be used for an incomplete measure; full-measure in-accord sides must each contain a full measure"
+    }
+  ],
+  "adapter": {
+    "preserve": "MusicXmlMeasure.implicit -> MusicXmlAdaptedMeasure.implicit"
+  },
+  "boundedPickupRecognition": {
+    "implicit": true,
+    "measureIndex": 0,
+    "retainedContentShorterThanNominalMeter": true
+  },
+  "extentPolicy": {
+    "initialPickup": "retained source content end",
+    "ordinaryFullMeasure": "nominal active meter length",
+    "terminalIncompleteGenericInAccord": "existing H4D retained content end"
+  },
+  "emissionPolicy": {
+    "genericInAccordPickup": "existing StatefulPartMeasureInAccordEvent",
+    "keyboardPickup": "existing StatefulKeyboardParallelEvent with action length bounded to retained pickup extent",
+    "inventNominalTailSilence": false
+  },
+  "preservedFailClosedBoundaries": [
+    "non-initial implicit incomplete measure",
+    "implicit measure with no retained duration",
+    "retained content exceeding nominal active meter",
+    "unrelated MusicXML implicit semantics such as later mid-measure repeat fragments",
+    "existing grace slur tie pedal wedge and advanced polyphony boundaries"
+  ]
+}

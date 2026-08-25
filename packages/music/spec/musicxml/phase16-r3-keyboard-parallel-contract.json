@@ -1,0 +1,38 @@
+{
+  "id": "phase16-r3-keyboard-parallel-autopilot",
+  "status": "bounded-real-score-compatibility-pack",
+  "basis": [
+    "BANA MBC 2015 keyboard music / bar-over-bar",
+    "BANA right-hand intervals downward",
+    "BANA left-hand intervals upward",
+    "R3B/R3C dominant-voice home-lane evidence",
+    "R3D chord/overlap/all-rest evidence"
+  ],
+  "invariants": {
+    "singleBrailleMusicEngine": true,
+    "midiPublicApiChanged": false,
+    "officeSourceChanged": false,
+    "separateMidiMusicXmlTabs": true,
+    "crossStaffNotesRemainWithPersistentVoice": true,
+    "rightHandIntervalDirection": "down",
+    "leftHandIntervalDirection": "up"
+  },
+  "realDynamicSubset": [
+    "pp",
+    "p",
+    "mp",
+    "mf",
+    "f",
+    "ff",
+    "fff",
+    "sf",
+    "sfz"
+  ],
+  "failClosed": [
+    "ambiguous dominant staff",
+    "missing explicit voice/staff",
+    "equal global voice median inside one derived hand",
+    "unknown dynamic token",
+    "later unsupported wedge/pedal/metronome/slur/navigation semantics"
+  ]
+}

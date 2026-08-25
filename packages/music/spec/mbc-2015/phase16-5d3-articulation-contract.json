@@ -1,0 +1,45 @@
+{
+  "phase": "16.5D3",
+  "name": "BANA Table 22(A) Single-Articulation Contract",
+  "status": "FROZEN_EXECUTABLE_SUBSET",
+  "authority": "Braille Authority of North America \u2014 Music Braille Code, 2015",
+  "source": {
+    "url": "https://brailleauthority.org/music/Music_Braille_Code_2015.pdf",
+    "sha256": "34d769731f69ed7586f96b221ca4e22d3e009d36e8024008dfe0fc935348595c",
+    "table": "Table 22(A)",
+    "pdfPages": [
+      41,
+      184
+    ],
+    "sections": [
+      "22.1",
+      "22.1.1"
+    ]
+  },
+  "musicXmlMappings": {
+    "staccato": "8",
+    "staccatissimo": ",8",
+    "accent": ".8",
+    "tenuto": "_8"
+  },
+  "placement": {
+    "relativeToNote": "BEFORE_NOTE",
+    "relativeToAccidental": "BEFORE_ACCIDENTAL",
+    "relativeToOctaveMark": "BEFORE_OCTAVE_MARK",
+    "forcesSpecialOctaveAfter": false
+  },
+  "initialScope": {
+    "maximumArticulationsPerEvent": 1,
+    "chordArticulationLocation": "BASE_NOTE_ONLY",
+    "restArticulations": "FAIL_CLOSED",
+    "unsupportedMusicXmlArticulations": "FAIL_CLOSED"
+  },
+  "deferred": [
+    "multiple simultaneous articulation signs",
+    "mezzo-staccato / detached-legato semantic mapping",
+    "strong-accent / expressive-accent mapping",
+    "doubling articulation signs across four or more successive notes",
+    "articulation signs not represented by the four frozen mappings"
+  ],
+  "engineInvariant": "Existing stateful Braille Music engine reused; no second engine."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "phase16-r2a-music-terminology-registry",
+  "registryId": "braille-hub-music-terminology-v1",
+  "canonicalEntryCount": 248,
+  "exactPhrase": true,
+  "longestSequence": true,
+  "unknownText": "bana-word-expression-fallback",
+  "navigation": "structural-fail-closed",
+  "registerInstructions": "structural-fail-closed",
+  "bridgeChanged": false,
+  "brailleEmissionChanged": false,
+  "secondBrailleMusicEngine": false,
+  "gitStageCommitPush": false
+}

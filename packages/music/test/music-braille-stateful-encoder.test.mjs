@@ -204,3 +204,69 @@ test("measure after an in-accord starts its first note with an octave mark", () 
   const afterMeasureSeparator = result.brf.split(" ")[1];
   assert.equal(afterMeasureSeparator?.startsWith('"'), true);
 });
+
+test("R2B stateful engine emits a semantic single-word expression before the note", () => {
+  const result = encodeStatefulScore({
+    measures: [{
+      events: [{
+        kind: "note",
+        midiPitch: 60,
+        value: "quarter",
+        wordExpressions: [{
+          sourceText: "Allegro",
+          normalizedText: "allegro",
+          brfText: "allegro",
+          categories: ["tempo"],
+          semanticTags: ["tempo", "fast"],
+          canonicalTerms: ["allegro"],
+          policy: "word-expression",
+        }],
+      }],
+    }],
+  });
+  assert.equal(result.trace[0].emittedBrf.startsWith(">allegro"), true);
+});
+
+test("R2B stateful engine encloses a longer expression and preserves a following blank", () => {
+  const result = encodeStatefulScore({
+    measures: [{
+      events: [{
+        kind: "note",
+        midiPitch: 60,
+        value: "quarter",
+        wordExpressions: [{
+          sourceText: "Adagio sostenuto",
+          normalizedText: "adagio sostenuto",
+          brfText: "adagio sostenuto",
+          categories: ["composite-expression"],
+          semanticTags: ["tempo", "slow", "sustained"],
+          canonicalTerms: ["adagio sostenuto"],
+          policy: "word-expression",
+        }],
+      }],
+    }],
+  });
+  assert.equal(result.trace[0].emittedBrf.startsWith(">adagio sostenuto> "), true);
+});
+
+test("R2B stateful engine emits canonical cr. with Music-Braille dot-3 period", () => {
+  const result = encodeStatefulScore({
+    measures: [{
+      events: [{
+        kind: "note",
+        midiPitch: 60,
+        value: "quarter",
+        wordExpressions: [{
+          sourceText: "cresc.",
+          normalizedText: "cresc.",
+          brfText: "cr.",
+          categories: ["dynamic-text"],
+          semanticTags: ["dynamic-change", "increase"],
+          canonicalTerms: ["crescendo"],
+          policy: "canonical-word-expression",
+        }],
+      }],
+    }],
+  });
+  assert.equal(result.trace[0].emittedBrf.startsWith(">cr'"), true);
+});

@@ -1,0 +1,3086 @@
+{
+  "schemaVersion": 1,
+  "id": "braille-hub-music-terminology-v1",
+  "status": "candidate-runtime-registry",
+  "normalization": {
+    "unicode": "NFKC",
+    "case": "lower",
+    "whitespace": "collapse",
+    "accentAliases": "explicit aliases only"
+  },
+  "policies": [
+    "word-expression",
+    "canonical-word-expression",
+    "structural-fail-closed"
+  ],
+  "entries": [
+    {
+      "term": "larghissimo",
+      "normalized": "larghissimo",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "extremely-slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "grave",
+      "normalized": "grave",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "very-slow",
+        "solemn"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "largo",
+      "normalized": "largo",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "slow",
+        "broad"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "larghetto",
+      "normalized": "larghetto",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "slow",
+        "less-broad"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "lento",
+      "normalized": "lento",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "adagio",
+      "normalized": "adagio",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "adagietto",
+      "normalized": "adagietto",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "moderately-slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andante",
+      "normalized": "andante",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "walking"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andantino",
+      "normalized": "andantino",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "andante-variant"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "moderato",
+      "normalized": "moderato",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "moderate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegretto",
+      "normalized": "allegretto",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "moderately-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro",
+      "normalized": "allegro",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vivace",
+      "normalized": "vivace",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "lively-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vivacissimo",
+      "normalized": "vivacissimo",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "very-lively"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "presto",
+      "normalized": "presto",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "very-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "prestissimo",
+      "normalized": "prestissimo",
+      "language": "it",
+      "category": "tempo",
+      "semanticTags": [
+        "tempo",
+        "extremely-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "a tempo",
+      "normalized": "a tempo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "return-to-tempo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tempo primo",
+      "normalized": "tempo primo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "return-initial-tempo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tempo i",
+      "normalized": "tempo i",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "return-initial-tempo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "l'istesso tempo",
+      "normalized": "l'istesso tempo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "same-tempo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "stesso tempo",
+      "normalized": "stesso tempo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "same-tempo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con moto",
+      "normalized": "con moto",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "with-motion"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza moto",
+      "normalized": "senza moto",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "without-motion"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "piu mosso",
+      "normalized": "piu mosso",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "faster"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "più mosso"
+      ]
+    },
+    {
+      "term": "meno mosso",
+      "normalized": "meno mosso",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "slower"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "accelerando",
+      "normalized": "accelerando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "accelerate"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "accel."
+      ]
+    },
+    {
+      "term": "stringendo",
+      "normalized": "stringendo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "press-forward"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "incalzando",
+      "normalized": "incalzando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "press-forward"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "affrettando",
+      "normalized": "affrettando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "hurrying"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "animando",
+      "normalized": "animando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "becoming-animated"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "rallentando",
+      "normalized": "rallentando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "slow-down"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "rall."
+      ]
+    },
+    {
+      "term": "ritardando",
+      "normalized": "ritardando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "slow-down"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "rit."
+      ]
+    },
+    {
+      "term": "ritenuto",
+      "normalized": "ritenuto",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "held-back"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "riten."
+      ]
+    },
+    {
+      "term": "allargando",
+      "normalized": "allargando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "broaden-and-slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "calando",
+      "normalized": "calando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "decrease"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "morendo",
+      "normalized": "morendo",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "dying-away"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "smorzando",
+      "normalized": "smorzando",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "dying-away"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "perdendosi",
+      "normalized": "perdendosi",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo-change",
+        "dying-away"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "rubato",
+      "normalized": "rubato",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "flexible"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tempo rubato",
+      "normalized": "tempo rubato",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "flexible"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "doppio movimento",
+      "normalized": "doppio movimento",
+      "language": "it",
+      "category": "tempo-modifier",
+      "semanticTags": [
+        "tempo",
+        "double-motion"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "assai",
+      "normalized": "assai",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "very"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "molto",
+      "normalized": "molto",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "very"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "poco",
+      "normalized": "poco",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "a-little"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "poco a poco",
+      "normalized": "poco a poco",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "gradually"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "piu",
+      "normalized": "piu",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "more"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "più"
+      ]
+    },
+    {
+      "term": "meno",
+      "normalized": "meno",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "less"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "non troppo",
+      "normalized": "non troppo",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "not-too-much"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ma non troppo",
+      "normalized": "ma non troppo",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "but-not-too-much"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "quasi",
+      "normalized": "quasi",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "almost"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sempre",
+      "normalized": "sempre",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "always"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "subito",
+      "normalized": "subito",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "suddenly"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ancora",
+      "normalized": "ancora",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "again"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ben",
+      "normalized": "ben",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "modifier",
+        "well"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con",
+      "normalized": "con",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "connector",
+        "with"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza",
+      "normalized": "senza",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "connector",
+        "without"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "e",
+      "normalized": "e",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "connector",
+        "and"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ed",
+      "normalized": "ed",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "connector",
+        "and"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ma",
+      "normalized": "ma",
+      "language": "it",
+      "category": "modifier",
+      "semanticTags": [
+        "connector",
+        "but"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "affettuoso",
+      "normalized": "affettuoso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "affectionate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "agitato",
+      "normalized": "agitato",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "agitated"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "amabile",
+      "normalized": "amabile",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "amiable"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "amoroso",
+      "normalized": "amoroso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "loving"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "appassionato",
+      "normalized": "appassionato",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "passionate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ardito",
+      "normalized": "ardito",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "bold"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "brillante",
+      "normalized": "brillante",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "brilliant"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "brioso",
+      "normalized": "brioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "spirited"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "cantabile",
+      "normalized": "cantabile",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "singing"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "capriccioso",
+      "normalized": "capriccioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "capricious"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "comodo",
+      "normalized": "comodo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "comfortable"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "deciso",
+      "normalized": "deciso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "decisive"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "delicato",
+      "normalized": "delicato",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "delicate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "delicatissimo",
+      "normalized": "delicatissimo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "very-delicate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "dolce",
+      "normalized": "dolce",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "sweet"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "dolcissimo",
+      "normalized": "dolcissimo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "very-sweet"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "energico",
+      "normalized": "energico",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "energetic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "eroico",
+      "normalized": "eroico",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "heroic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "espressivo",
+      "normalized": "espressivo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "expressive"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "espr."
+      ]
+    },
+    {
+      "term": "fantastico",
+      "normalized": "fantastico",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "fantastic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "feroce",
+      "normalized": "feroce",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "fierce"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "fiero",
+      "normalized": "fiero",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "proud"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "furioso",
+      "normalized": "furioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "furious"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "giocoso",
+      "normalized": "giocoso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "playful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "gioioso",
+      "normalized": "gioioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "joyful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "grandioso",
+      "normalized": "grandioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "grand"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "grazioso",
+      "normalized": "grazioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "graceful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "innocente",
+      "normalized": "innocente",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "innocent"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "lacrimoso",
+      "normalized": "lacrimoso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "tearful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "lamentoso",
+      "normalized": "lamentoso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "lamenting"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "languido",
+      "normalized": "languido",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "languid"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "leggero",
+      "normalized": "leggero",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "light"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "leggiero"
+      ]
+    },
+    {
+      "term": "maestoso",
+      "normalized": "maestoso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "majestic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "malinconico",
+      "normalized": "malinconico",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "melancholic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "marcato",
+      "normalized": "marcato",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "marked"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "marziale",
+      "normalized": "marziale",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "martial"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "mesto",
+      "normalized": "mesto",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "sad"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "misterioso",
+      "normalized": "misterioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "mysterious"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "nobile",
+      "normalized": "nobile",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "noble"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "pastorale",
+      "normalized": "pastorale",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "pastoral"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "pesante",
+      "normalized": "pesante",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "heavy"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "piacevole",
+      "normalized": "piacevole",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "pleasant"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "placido",
+      "normalized": "placido",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "calm"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "pomposo",
+      "normalized": "pomposo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "pompous"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "quieto",
+      "normalized": "quieto",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "quiet"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "religioso",
+      "normalized": "religioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "religious"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "risoluto",
+      "normalized": "risoluto",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "resolute"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "scherzando",
+      "normalized": "scherzando",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "playful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "semplice",
+      "normalized": "semplice",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "simple"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "serioso",
+      "normalized": "serioso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "serious"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "solenne",
+      "normalized": "solenne",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "solemn"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sostenuto",
+      "normalized": "sostenuto",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "sustained"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "teneramente",
+      "normalized": "teneramente",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "tenderly"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tenero",
+      "normalized": "tenero",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "tender"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tranquillo",
+      "normalized": "tranquillo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "tranquil"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vigoroso",
+      "normalized": "vigoroso",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "vigorous"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vivo",
+      "normalized": "vivo",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "lively"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "volante",
+      "normalized": "volante",
+      "language": "it",
+      "category": "expression",
+      "semanticTags": [
+        "expression",
+        "flying-light"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro con brio",
+      "normalized": "allegro con brio",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "fast",
+        "spirited"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro con fuoco",
+      "normalized": "allegro con fuoco",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "fast",
+        "fiery"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro ma non troppo",
+      "normalized": "allegro ma non troppo",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "fast",
+        "not-too-much"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro moderato",
+      "normalized": "allegro moderato",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "moderately-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro assai",
+      "normalized": "allegro assai",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "very-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro vivace",
+      "normalized": "allegro vivace",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "fast",
+        "lively"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "allegro molto",
+      "normalized": "allegro molto",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "very-fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "adagio sostenuto",
+      "normalized": "adagio sostenuto",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "slow",
+        "sustained"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "adagio cantabile",
+      "normalized": "adagio cantabile",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "slow",
+        "singing"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andante con moto",
+      "normalized": "andante con moto",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "walking",
+        "with-motion"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andante cantabile",
+      "normalized": "andante cantabile",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "walking",
+        "singing"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andante sostenuto",
+      "normalized": "andante sostenuto",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "walking",
+        "sustained"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "andante moderato",
+      "normalized": "andante moderato",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "moderate-walking"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "moderato cantabile",
+      "normalized": "moderato cantabile",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "moderate",
+        "singing"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "presto agitato",
+      "normalized": "presto agitato",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "very-fast",
+        "agitated"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vivace ma non troppo",
+      "normalized": "vivace ma non troppo",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "tempo",
+        "lively",
+        "not-too-much"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con anima",
+      "normalized": "con anima",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "animated"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con brio",
+      "normalized": "con brio",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "spirited"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con espressione",
+      "normalized": "con espressione",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "expressive"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con fuoco",
+      "normalized": "con fuoco",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "fiery"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con grazia",
+      "normalized": "con grazia",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "graceful"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con spirito",
+      "normalized": "con spirito",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "spirited"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sotto voce",
+      "normalized": "sotto voce",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "subdued"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "mezza voce",
+      "normalized": "mezza voce",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "half-voice"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sempre legato",
+      "normalized": "sempre legato",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "always-legato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sempre staccato",
+      "normalized": "sempre staccato",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "always-staccato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sempre pianissimo",
+      "normalized": "sempre pianissimo",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "dynamic-text",
+        "always-very-soft"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sempre pianissimo e senza sordini",
+      "normalized": "sempre pianissimo e senza sordini",
+      "language": "it",
+      "category": "composite-expression",
+      "semanticTags": [
+        "expression",
+        "very-soft",
+        "mute-off"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "crescendo",
+      "normalized": "crescendo",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic-change",
+        "increase"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "cresc.",
+        "cres."
+      ]
+    },
+    {
+      "term": "decrescendo",
+      "normalized": "decrescendo",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic-change",
+        "decrease"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "decresc.",
+        "decres."
+      ]
+    },
+    {
+      "term": "diminuendo",
+      "normalized": "diminuendo",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic-change",
+        "decrease"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "dim.",
+        "dimin."
+      ]
+    },
+    {
+      "term": "rinforzando",
+      "normalized": "rinforzando",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic-change",
+        "reinforce"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "rinf."
+      ]
+    },
+    {
+      "term": "sforzando",
+      "normalized": "sforzando",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic",
+        "sudden-accent"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "sfz"
+      ]
+    },
+    {
+      "term": "forzando",
+      "normalized": "forzando",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic",
+        "forced"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": [
+        "fz"
+      ]
+    },
+    {
+      "term": "subito piano",
+      "normalized": "subito piano",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic",
+        "suddenly-soft"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": []
+    },
+    {
+      "term": "subito forte",
+      "normalized": "subito forte",
+      "language": "it",
+      "category": "dynamic-text",
+      "semanticTags": [
+        "dynamic",
+        "suddenly-loud"
+      ],
+      "policy": "canonical-word-expression",
+      "aliases": []
+    },
+    {
+      "term": "arco",
+      "normalized": "arco",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "bowed"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "pizzicato",
+      "normalized": "pizzicato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "plucked"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "pizz.",
+        "pizz"
+      ]
+    },
+    {
+      "term": "con sordino",
+      "normalized": "con sordino",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "mute-on"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza sordino",
+      "normalized": "senza sordino",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "mute-off"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza sordini",
+      "normalized": "senza sordini",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "mute-off"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sordino",
+      "normalized": "sordino",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "mute"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "una corda",
+      "normalized": "una corda",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "soft-pedal"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tre corde",
+      "normalized": "tre corde",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "release-soft-pedal"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tutte le corde",
+      "normalized": "tutte le corde",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "all-strings"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "con pedale",
+      "normalized": "con pedale",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "pedal-on"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza pedale",
+      "normalized": "senza pedale",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "pedal-off"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul ponticello",
+      "normalized": "sul ponticello",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "near-bridge"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul tasto",
+      "normalized": "sul tasto",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "over-fingerboard"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul g",
+      "normalized": "sul g",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "on-g-string"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul d",
+      "normalized": "sul d",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "on-d-string"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul a",
+      "normalized": "sul a",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "on-a-string"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sul e",
+      "normalized": "sul e",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "on-e-string"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "col legno",
+      "normalized": "col legno",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "with-wood"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "col legno battuto",
+      "normalized": "col legno battuto",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "wood-struck"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "col legno tratto",
+      "normalized": "col legno tratto",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "wood-drawn"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "flautando",
+      "normalized": "flautando",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "flute-like"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "armonico",
+      "normalized": "armonico",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "harmonic"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "armonici",
+      "normalized": "armonici",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "harmonics"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "naturale",
+      "normalized": "naturale",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "natural"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vibrato",
+      "normalized": "vibrato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "vibrato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "non vibrato",
+      "normalized": "non vibrato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "no-vibrato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "senza vibrato",
+      "normalized": "senza vibrato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "no-vibrato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "molto vibrato",
+      "normalized": "molto vibrato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "strong-vibrato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "glissando",
+      "normalized": "glissando",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "glissando"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "gliss."
+      ]
+    },
+    {
+      "term": "portamento",
+      "normalized": "portamento",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "portamento"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tremolo",
+      "normalized": "tremolo",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "technique",
+        "tremolo"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "trem."
+      ]
+    },
+    {
+      "term": "legato",
+      "normalized": "legato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "legato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "non legato",
+      "normalized": "non legato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "non-legato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "staccato",
+      "normalized": "staccato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "staccato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "staccatissimo",
+      "normalized": "staccatissimo",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "staccatissimo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tenuto",
+      "normalized": "tenuto",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "tenuto"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "portato",
+      "normalized": "portato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "portato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "spiccato",
+      "normalized": "spiccato",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "spiccato"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "saltando",
+      "normalized": "saltando",
+      "language": "it",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "saltando"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ricochet",
+      "normalized": "ricochet",
+      "language": "fr",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "ricochet"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "detache",
+      "normalized": "detache",
+      "language": "fr",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "detache"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "détaché"
+      ]
+    },
+    {
+      "term": "martele",
+      "normalized": "martele",
+      "language": "fr",
+      "category": "technique",
+      "semanticTags": [
+        "articulation-text",
+        "martele"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "martelé"
+      ]
+    },
+    {
+      "term": "ottava",
+      "normalized": "ottava",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "octave"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "ottava alta",
+      "normalized": "ottava alta",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "octave-up"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "ottava bassa",
+      "normalized": "ottava bassa",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "octave-down"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "8va",
+      "normalized": "8va",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "octave-up"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "8vb",
+      "normalized": "8vb",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "octave-down"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "15ma",
+      "normalized": "15ma",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "two-octaves-up"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "15mb",
+      "normalized": "15mb",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "two-octaves-down"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "loco",
+      "normalized": "loco",
+      "language": "it",
+      "category": "register-instruction",
+      "semanticTags": [
+        "register",
+        "return-written-register"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "da capo",
+      "normalized": "da capo",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "da-capo"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.c.",
+        "dc"
+      ]
+    },
+    {
+      "term": "da capo al fine",
+      "normalized": "da capo al fine",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "da-capo",
+        "to-fine"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.c. al fine"
+      ]
+    },
+    {
+      "term": "da capo al coda",
+      "normalized": "da capo al coda",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "da-capo",
+        "to-coda"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.c. al coda"
+      ]
+    },
+    {
+      "term": "dal segno",
+      "normalized": "dal segno",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "dal-segno"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.s.",
+        "ds"
+      ]
+    },
+    {
+      "term": "dal segno al fine",
+      "normalized": "dal segno al fine",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "dal-segno",
+        "to-fine"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.s. al fine"
+      ]
+    },
+    {
+      "term": "dal segno al coda",
+      "normalized": "dal segno al coda",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "dal-segno",
+        "to-coda"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": [
+        "d.s. al coda"
+      ]
+    },
+    {
+      "term": "al coda",
+      "normalized": "al coda",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "to-coda"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "to coda",
+      "normalized": "to coda",
+      "language": "en",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "to-coda"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "coda",
+      "normalized": "coda",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "coda"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "segno",
+      "normalized": "segno",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "segno"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "fine",
+      "normalized": "fine",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "fine"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "attacca",
+      "normalized": "attacca",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "continue-next"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "attacca subito",
+      "normalized": "attacca subito",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "continue-next-immediately"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "attacca subito il seguente",
+      "normalized": "attacca subito il seguente",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "continue-next-immediately"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "segue",
+      "normalized": "segue",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "continue"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "bis",
+      "normalized": "bis",
+      "language": "it",
+      "category": "navigation",
+      "semanticTags": [
+        "navigation",
+        "repeat"
+      ],
+      "policy": "structural-fail-closed",
+      "aliases": []
+    },
+    {
+      "term": "mano destra",
+      "normalized": "mano destra",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "hand",
+        "right"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "mano sinistra",
+      "normalized": "mano sinistra",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "hand",
+        "left"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "m.d.",
+      "normalized": "m.d.",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "hand",
+        "right"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "m.s.",
+      "normalized": "m.s.",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "hand",
+        "left"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "a due",
+      "normalized": "a due",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "two-performers"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "a 2"
+      ]
+    },
+    {
+      "term": "solo",
+      "normalized": "solo",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "solo"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "soli",
+      "normalized": "soli",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "solo-group"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "tutti",
+      "normalized": "tutti",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "all"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "divisi",
+      "normalized": "divisi",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "divided"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "unisono",
+      "normalized": "unisono",
+      "language": "it",
+      "category": "performance-instruction",
+      "semanticTags": [
+        "ensemble",
+        "unison"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "anime",
+      "normalized": "anime",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "animated"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "animé"
+      ]
+    },
+    {
+      "term": "doux",
+      "normalized": "doux",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "soft-sweet"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "expressif",
+      "normalized": "expressif",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "expressive"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "leger",
+      "normalized": "leger",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "light"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "léger"
+      ]
+    },
+    {
+      "term": "retenu",
+      "normalized": "retenu",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo-change",
+        "held-back"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "sans sourdine",
+      "normalized": "sans sourdine",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "technique",
+        "mute-off"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "avec sourdine",
+      "normalized": "avec sourdine",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "technique",
+        "mute-on"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "vite",
+      "normalized": "vite",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo",
+        "fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "lent",
+      "normalized": "lent",
+      "language": "fr",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo",
+        "slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "massig",
+      "normalized": "massig",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo",
+        "moderate"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "mäßig"
+      ]
+    },
+    {
+      "term": "langsam",
+      "normalized": "langsam",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo",
+        "slow"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "schnell",
+      "normalized": "schnell",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "tempo",
+        "fast"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "lebhaft",
+      "normalized": "lebhaft",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "lively"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "ruhig",
+      "normalized": "ruhig",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "calm"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "zart",
+      "normalized": "zart",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "delicate"
+      ],
+      "policy": "word-expression",
+      "aliases": []
+    },
+    {
+      "term": "kraftig",
+      "normalized": "kraftig",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "strong"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "kräftig"
+      ]
+    },
+    {
+      "term": "mit ausdruck",
+      "normalized": "mit ausdruck",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "expression",
+        "expressive"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "mit Ausdruck"
+      ]
+    },
+    {
+      "term": "ohne dampfer",
+      "normalized": "ohne dampfer",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "technique",
+        "mute-off"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "ohne Dämpfer"
+      ]
+    },
+    {
+      "term": "mit dampfer",
+      "normalized": "mit dampfer",
+      "language": "de",
+      "category": "foreign-standard-term",
+      "semanticTags": [
+        "technique",
+        "mute-on"
+      ],
+      "policy": "word-expression",
+      "aliases": [
+        "mit Dämpfer"
+      ]
+    }
+  ]
+}

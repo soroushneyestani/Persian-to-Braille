@@ -1,0 +1,23 @@
+{
+  "id": "PHASE16_R7_OCTAVE_SHIFT_NONFACSIMILE_V1",
+  "authorities": [
+    "BANA Music Braille Code 2015 section 3.3",
+    "MusicXML 4.0 octave-shift semantics"
+  ],
+  "mode": "nonfacsimile",
+  "behavior": "retain performed MusicXML pitch; omit 8va/15ma/loco expression",
+  "admittedTypes": [
+    "up",
+    "down",
+    "stop"
+  ],
+  "admittedSizes": [
+    8,
+    15,
+    22
+  ],
+  "deferred": [
+    "continue",
+    "facsimile octave-shift transcription"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "PHASE16_R6A_MUSICXML_MEASURE_REST_V1",
+  "scope": "MusicXML complete-measure rest preservation and BANA whole-rest projection",
+  "authorities": [
+    {
+      "name": "MusicXML 4.0",
+      "element": "rest",
+      "contract": "rest@measure=yes indicates a complete measure rest"
+    },
+    {
+      "name": "BANA Music Braille Code 2015",
+      "section": "5.1",
+      "contract": "a measure of silence is represented by a whole rest regardless of time signature, except the documented 4/2 double-whole possibility"
+    }
+  ],
+  "parser": {
+    "preserve": "rest@measure=yes -> MusicXmlNote.measureRest=true",
+    "numericDuration": "preserved independently for timing"
+  },
+  "adapter": {
+    "preserve": "MusicXmlNote.measureRest -> MusicXmlAdaptedNote.measureRest"
+  },
+  "bridge": {
+    "measureRestEmissionValue": "whole",
+    "augmentationDots": 0,
+    "timingSource": "unchanged MusicXML durationQuarter",
+    "engine": "existing shared Braille Music stateful rest encoder",
+    "inferDotFromDuration": false
+  },
+  "initialBoundedSubset": {
+    "measureRest": true,
+    "grace": false,
+    "chord": false,
+    "dots": 0,
+    "timeModification": false,
+    "tuplets": false,
+    "sourceType": ["absent", "whole"]
+  },
+  "preservedFailClosedBoundaries": [
+    "ordinary rest with duration 3/2 and no MusicXML measure-rest semantic",
+    "measure-rest carrying a conflicting non-whole source type",
+    "measure-rest combined with augmentation dots",
+    "measure-rest combined with tuplets or time-modification",
+    "4/2 double-whole-rest special case",
+    "unrelated wedge pedal grace slur and advanced polyphony boundaries"
+  ]
+}

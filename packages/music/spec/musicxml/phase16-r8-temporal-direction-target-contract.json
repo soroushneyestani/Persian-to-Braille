@@ -1,0 +1,10 @@
+{
+  "id": "PHASE16_R8_TEMPORAL_DIRECTION_TARGET",
+  "rule": "Direction onset/end time is selected before staff preference; same-staff is only a tie-breaker among events at the same nearest musical time.",
+  "purpose": "Cross-staff keyboard notation must not shift a direction mark into a later measure merely because the nearest sounding event is written on another staff.",
+  "preservedFailClosed": [
+    "no temporal target exists",
+    "unsupported pedal/wedge source types",
+    "ambiguous semantics beyond existing direction-mark contract"
+  ]
+}

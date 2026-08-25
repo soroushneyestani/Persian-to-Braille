@@ -1,0 +1,24 @@
+{
+  "id": "phase16-r1-musicxml-direction-foundation",
+  "status": "implementation-contract",
+  "newBrailleMappings": false,
+  "playbackMetadata": {
+    "sound@tempo": "PRESERVE_DIAGNOSTIC_NON_FATAL",
+    "sound@dynamics": "PRESERVE_DIAGNOSTIC_NON_FATAL"
+  },
+  "notation": {
+    "words": "UNSUPPORTED_DIRECTION_WORDS",
+    "wedge": "UNSUPPORTED_WEDGE",
+    "pedal": "UNSUPPORTED_PEDAL",
+    "metronome": "UNSUPPORTED_METRONOME",
+    "other": "UNSUPPORTED_DIRECTION_TYPE"
+  },
+  "existingDynamicSubset": [
+    "pp",
+    "p",
+    "mf",
+    "f",
+    "ff"
+  ],
+  "engine": "existing-stateful-braille-music-engine"
+}

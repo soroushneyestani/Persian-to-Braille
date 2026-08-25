@@ -1,0 +1,18 @@
+{
+  "id": "PHASE16_R7_CROSS_MEASURE_APPOGGIATURA_SLUR_V1",
+  "authority": "BANA Music Braille Code 2015 13.9",
+  "mode": "nonfacsimile",
+  "reuse": [
+    "existing same-lane cross-measure slur planner",
+    "existing BANA 13.2 / 13.3 slur emission",
+    "existing appoggiatura signs"
+  ],
+  "preservedFailClosed": [
+    "cross-staff slur",
+    "cross-voice slur",
+    "nested/layered/interior slur",
+    "chord-continuation slur metadata",
+    "grace tie/tuplet/time-modification/articulation",
+    "ordinary non-keyboard cursor ambiguity"
+  ]
+}

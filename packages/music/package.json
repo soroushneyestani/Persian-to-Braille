@@ -3,7 +3,7 @@
   "version": "2.0.0-dev",
   "private": false,
   "type": "module",
-  "description": "Platform-agnostic MIDI and Braille Music engine for Persian-to-Braille.",
+  "description": "Platform-agnostic MIDI, MusicXML, MXL, and Braille Music engine for Braille Hub.",
   "files": [
     "dist"
   ],
@@ -19,10 +19,10 @@
     "pnpm": "11.21.0"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "node build-terminology-runtime.mjs && tsc -p tsconfig.json",
+    "typecheck": "node build-terminology-runtime.mjs && tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.rmSync('.tsbuildinfo',{force:true})\"",
-    "test": "pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs test/midi-to-braille.test.mjs test/rhythm-coherence.test.mjs test/part-measure-in-accord.test.mjs test/meter-change-serialization.test.mjs test/midi-piano-roll-reducer.test.mjs test/midi-source-line.test.mjs"
+    "test": "pnpm run build && node --test test/smf-parser.test.mjs test/notation-builder.test.mjs test/music-braille-atomic-encoder.test.mjs test/music-braille-stateful-encoder.test.mjs test/music-terminology.test.mjs test/midi-to-braille.test.mjs test/rhythm-coherence.test.mjs test/part-measure-in-accord.test.mjs test/meter-change-serialization.test.mjs test/midi-piano-roll-reducer.test.mjs test/midi-source-line.test.mjs test/musicxml-foundation.test.mjs test/musicxml-to-braille.test.mjs test/musicxml-h4c-polyphony.test.mjs test/musicxml-h4d-part-measure.test.mjs test/musicxml-enumerated-tuplet-freeze.test.mjs test/musicxml-articulation.test.mjs test/musicxml-grace-phase16-5.test.mjs test/musicxml-short-slur-phase16-5.test.mjs test/musicxml-repeat-ending-phase16-5.test.mjs test/musicxml-dynamics-key-phase16-5.test.mjs test/musicxml-mxl-security.test.mjs"
   },
   "dependencies": {},
   "devDependencies": {},
@@ -43,7 +43,9 @@
     "midi",
     "accessibility",
     "typescript",
-    "unicode"
+    "unicode",
+    "musicxml",
+    "mxl"
   ],
   "publishConfig": {
     "access": "public"
