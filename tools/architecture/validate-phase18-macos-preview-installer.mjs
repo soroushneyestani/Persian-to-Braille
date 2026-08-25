@@ -138,7 +138,6 @@ requireText(
 requireText(
   workflow,
   'version: "10"',
-  "pnpm version",
 );
 
 const pnpmSetupIndex =
