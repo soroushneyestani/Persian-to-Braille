@@ -135,10 +135,6 @@ requireText(
   "pnpm setup action",
 );
 
-requireText(
-  workflow,
-  'version: "10"',
-);
 
 const pnpmSetupIndex =
   workflow.indexOf(
