@@ -1,0 +1,14 @@
+{
+  "id": "PHASE16_R9_ORIENTED_TIE_SLUR",
+  "authority": "BANA Music Braille Code 2015 13.5",
+  "admitted": [
+    "tie-stop + slur-start on the same event",
+    "tie-start + slur-stop on the same event"
+  ],
+  "rationale": "the tie and slur connect opposite sides of the event and are not the same-link redundant pair",
+  "preservedFailClosed": [
+    "tie-start + slur-start",
+    "tie-stop + slur-stop",
+    "facsimile tie/slur ordering"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "PHASE16_R7_APPOGGIATURA_SLUR_V1",
+  "authority": "BANA Music Braille Code 2015 13.9 and 16.2",
+  "mode": "nonfacsimile",
+  "behavior": "admitted appoggiatura slurs reuse existing ordinary slur planner and existing appoggiatura signs; both graceStyles and contained shortSlurAfter retain only the bounded nonfacsimile profile",
+  "stillFailClosed": [
+    "grace ties",
+    "grace tuplets/time-modification",
+    "grace articulations",
+    "4+ successive appoggiaturas",
+    "grace chords"
+  ]
+}

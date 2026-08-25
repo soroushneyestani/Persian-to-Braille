@@ -27,6 +27,10 @@ import {
 } from "./music-pane.js";
 
 import {
+  createWordMusicXmlTaskPane,
+} from "./musicxml-pane.js";
+
+import {
   createFeatureTabController,
 } from "./feature-tabs.js";
 
@@ -90,6 +94,11 @@ const musicPane =
     document,
   );
 
+const musicXmlPane =
+  createWordMusicXmlTaskPane(
+    document,
+  );
+
 const featureTabs =
   createFeatureTabController(
     document,
@@ -120,6 +129,10 @@ const wordMusicInsertionService =
   );
 
 musicPane.setInsertionService(
+  wordMusicInsertionService,
+);
+
+musicXmlPane.setInsertionService(
   wordMusicInsertionService,
 );
 
@@ -374,6 +387,10 @@ if (!office) {
           }
 
           musicPane.setHost(
+            readiness.hostKind,
+          );
+
+          musicXmlPane.setHost(
             readiness.hostKind,
           );
 

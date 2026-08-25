@@ -60,6 +60,27 @@ export type {
   MusicBrailleMidiTranslator,
 } from "./music-public-api.js";
 
+
+
+export {
+  MusicBrailleMusicXmlTranslationError,
+  createMusicBrailleMusicXmlTranslator,
+} from "./musicxml-translator.js";
+
+export type {
+  CreateMusicBrailleMusicXmlTranslator,
+  MusicBrailleMusicXmlDiagnostic,
+  MusicBrailleMusicXmlPart,
+  MusicBrailleMusicXmlProfileInfo,
+  MusicBrailleMusicXmlSourceKind,
+  MusicBrailleMusicXmlTranslationFailure,
+  MusicBrailleMusicXmlTranslationFailureCode,
+  MusicBrailleMusicXmlTranslationFailureStage,
+  MusicBrailleMusicXmlTranslationResult,
+  MusicBrailleMusicXmlTranslationSuccess,
+  MusicBrailleMusicXmlTranslator,
+} from "./musicxml-public-api.js";
+
 export {
   GermanBrailleTranslationError,
   createGermanBrailleTranslator,

@@ -1,0 +1,34 @@
+{
+  "phase": "16.8",
+  "name": "Microsoft 365 Separate MusicXML Tab Contract",
+  "status": "CLOSURE_CANDIDATE",
+  "hostScope": "Microsoft Word",
+  "tabs": [
+    {
+      "id": "music",
+      "label": "Music / MIDI",
+      "extensions": [
+        ".mid",
+        ".midi"
+      ],
+      "publicFactory": "createMusicBrailleMidiTranslator"
+    },
+    {
+      "id": "musicxml",
+      "label": "MusicXML",
+      "extensions": [
+        ".musicxml",
+        ".xml",
+        ".mxl"
+      ],
+      "publicFactory": "createMusicBrailleMusicXmlTranslator"
+    }
+  ],
+  "midiSourceLineSelection": "MIDI_TAB_ONLY",
+  "musicXmlSourceLineSelection": "NOT_PRESENT",
+  "insertionService": "SHARED_EXISTING_WORD_MUSIC_INSERTION_SERVICE",
+  "unifiedMusicPicker": "FORBIDDEN",
+  "unifiedMusicSdkFacade": "NOT_USED",
+  "engineInvariant": "Both tabs reuse the same existing Braille Music engine through separate public SDK surfaces.",
+  "gitPolicy": "NO_STAGE_COMMIT_PUSH_CLEAN"
+}

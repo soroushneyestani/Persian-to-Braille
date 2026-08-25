@@ -1,0 +1,31 @@
+{
+  "id": "PHASE16_R4_SIMPLE_METRONOME_V1",
+  "authority": {
+    "name": "BANA Music Braille Code 2015",
+    "sections": ["1.8", "1.8.1", "Table 1", "Table 2"]
+  },
+  "musicXmlSubset": {
+    "staff": [1, 2],
+    "beatUnit": ["quarter", "eighth"],
+    "beatUnitDots": 0,
+    "perMinute": "positive integer text",
+    "relation": "absent"
+  },
+  "brf": {
+    "musicParenthesis": ",'",
+    "quarterC": "?",
+    "eighthC": "D",
+    "equals": "7",
+    "numericIndicator": "#",
+    "embeddedBetweenSpaces": true
+  },
+  "failClosed": [
+    "unstaffed metronome direction",
+    "beat units other than quarter/eighth",
+    "dotted beat unit",
+    "non-integer or missing per-minute",
+    "metronome relation/equivalency",
+    "complex metronome-note topology"
+  ],
+  "playbackMetadataPolicy": "sound@tempo remains independent metadata and is never substituted for print metronome notation"
+}

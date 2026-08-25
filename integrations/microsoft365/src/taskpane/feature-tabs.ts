@@ -1,7 +1,8 @@
 export type FeatureTabId =
   | "persian"
   | "german"
-  | "music";
+  | "music"
+  | "musicxml";
 
 export interface FeatureTabController {
   readonly activeTab:
@@ -20,12 +21,15 @@ interface FeatureTabDom {
   readonly persianTab: HTMLElement;
   readonly germanTab: HTMLElement;
   readonly musicTab: HTMLElement;
+  readonly musicXmlTab: HTMLElement;
   readonly intro: HTMLElement;
   readonly persianSurfaces:
     readonly HTMLElement[];
   readonly germanSurface:
     HTMLElement;
   readonly musicSurface:
+    HTMLElement;
+  readonly musicXmlSurface:
     HTMLElement;
 }
 
@@ -84,6 +88,12 @@ function featureDom(
         "feature-tab-music",
       ),
 
+    musicXmlTab:
+      requiredElement(
+        document,
+        "feature-tab-musicxml",
+      ),
+
     intro:
       requiredElement(
         document,
@@ -120,6 +130,12 @@ function featureDom(
       requiredElement(
         document,
         "music-braille-section",
+      ),
+
+    musicXmlSurface:
+      requiredElement(
+        document,
+        "musicxml-braille-section",
       ),
   });
 }
@@ -186,6 +202,10 @@ export function createFeatureTabController(
       current ===
       "music";
 
+    const musicXml =
+      current ===
+      "musicxml";
+
     setTabSelected(
       ui.persianTab,
       persian,
@@ -199,6 +219,11 @@ export function createFeatureTabController(
     setTabSelected(
       ui.musicTab,
       music,
+    );
+
+    setTabSelected(
+      ui.musicXmlTab,
+      musicXml,
     );
 
     for (
@@ -222,15 +247,24 @@ export function createFeatureTabController(
       && wordHost,
     );
 
+    setSurfaceVisible(
+      ui.musicXmlSurface,
+      musicXml
+      && wordHost,
+    );
+
     if (persian) {
       ui.intro.textContent =
         "Translate the current supported Office selection through the shared Persian Braille SDK.";
     } else if (german) {
       ui.intro.textContent =
         "Choose a region and Braille level, then translate the current supported Office selection through the public German Braille SDK.";
+    } else if (music) {
+      ui.intro.textContent =
+        "Convert a Standard MIDI file to Music Braille through the dedicated MIDI SDK, preview it, and insert it into Word.";
     } else {
       ui.intro.textContent =
-        "Convert a Standard MIDI file to Music Braille through the shared public SDK, preview it, and insert it into Word.";
+        "Convert a MusicXML or compressed MXL score to Music Braille through the dedicated MusicXML SDK, preview it, and insert it into Word.";
     }
   };
 
@@ -238,7 +272,10 @@ export function createFeatureTabController(
     tab: FeatureTabId,
   ) => {
     if (
-      tab === "music"
+      (
+        tab === "music"
+        || tab === "musicxml"
+      )
       && !wordHost
     ) {
       return;
@@ -277,6 +314,15 @@ export function createFeatureTabController(
     },
   );
 
+  ui.musicXmlTab.addEventListener(
+    "click",
+    () => {
+      select(
+        "musicxml",
+      );
+    },
+  );
+
   ui.persianTab.addEventListener(
     "keydown",
     (event) => {
@@ -300,10 +346,10 @@ export function createFeatureTabController(
 
         if (wordHost) {
           select(
-            "music",
+            "musicxml",
           );
 
-          ui.musicTab.focus();
+          ui.musicXmlTab.focus();
         } else {
           select(
             "german",
@@ -334,10 +380,7 @@ export function createFeatureTabController(
 
       if (
         wordHost
-        && (
-          event.key === "ArrowRight"
-          || event.key === "End"
-        )
+        && event.key === "ArrowRight"
       ) {
         event.preventDefault();
 
@@ -346,6 +389,20 @@ export function createFeatureTabController(
         );
 
         ui.musicTab.focus();
+        return;
+      }
+
+      if (
+        wordHost
+        && event.key === "End"
+      ) {
+        event.preventDefault();
+
+        select(
+          "musicxml",
+        );
+
+        ui.musicXmlTab.focus();
       }
     },
   );
@@ -363,6 +420,50 @@ export function createFeatureTabController(
         );
 
         ui.germanTab.focus();
+        return;
+      }
+
+      if (
+        event.key === "ArrowRight"
+        || event.key === "End"
+      ) {
+        event.preventDefault();
+
+        select(
+          "musicxml",
+        );
+
+        ui.musicXmlTab.focus();
+        return;
+      }
+
+      if (
+        event.key === "Home"
+      ) {
+        event.preventDefault();
+
+        select(
+          "persian",
+        );
+
+        ui.persianTab.focus();
+      }
+    },
+  );
+
+  ui.musicXmlTab.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "ArrowLeft"
+      ) {
+        event.preventDefault();
+
+        select(
+          "music",
+        );
+
+        ui.musicTab.focus();
         return;
       }
 
@@ -399,10 +500,15 @@ export function createFeatureTabController(
       ui.musicTab.hidden =
         !wordHost;
 
+      ui.musicXmlTab.hidden =
+        !wordHost;
+
       if (
         !wordHost
-        && current ===
-          "music"
+        && (
+          current === "music"
+          || current === "musicxml"
+        )
       ) {
         current =
           "persian";

@@ -1,0 +1,41 @@
+{
+  "phase": "16.6",
+  "name": "MXL Container Security and Conformance Closure",
+  "status": "CLOSURE_CANDIDATE",
+  "input": ".mxl ZIP container",
+  "rootDiscovery": "META-INF/container.xml -> first rootfile full-path",
+  "compression": {
+    "supported": [
+      0,
+      8
+    ],
+    "meaning": {
+      "0": "stored",
+      "8": "deflate"
+    },
+    "encryptedEntries": "REJECT"
+  },
+  "limits": {
+    "maxMembers": 256,
+    "maxMemberUncompressedBytes": 33554432,
+    "maxTotalDeclaredUncompressedBytes": 67108864,
+    "maxDeclaredCompressionRatio": 200,
+    "actualInflatedBytesMustEqualDeclared": true,
+    "actualInflatedBytesMayNotExceedMemberLimit": true
+  },
+  "structure": {
+    "singleDiskOnly": true,
+    "zip64": "NOT_SUPPORTED_FAIL_CLOSED",
+    "unsafePaths": "REJECT",
+    "duplicateNormalizedMemberNames": "REJECT",
+    "localCentralHeaderMethodAgreement": "REQUIRED",
+    "localCentralHeaderNameAgreement": "REQUIRED",
+    "localCentralSizeAgreement": "REQUIRED_WHEN_DATA_DESCRIPTOR_FLAG_CLEAR"
+  },
+  "securityInvariant": "No archive extraction to disk.",
+  "externalCorpus": {
+    "beethovenMxl": "test-data/musicxml/downloads-import/Beethoven_Symphony_No._5_1st_movement_Piano_solo.mxl",
+    "gitPolicy": "PRESERVE_UNTRACKED"
+  },
+  "engineInvariant": "No second Braille Music engine."
+}

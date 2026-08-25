@@ -94,6 +94,7 @@ function fixture() {
     "feature-tab-persian",
     "feature-tab-german",
     "feature-tab-music",
+    "feature-tab-musicxml",
     "feature-context-text",
     "translate-selection",
     "translation-result",
@@ -101,6 +102,7 @@ function fixture() {
     "taskpane-status",
     "german-braille-section",
     "music-braille-section",
+    "musicxml-braille-section",
   ];
 
   const elements =
@@ -138,7 +140,7 @@ function fixture() {
 }
 
 test(
-  "feature tabs default to Persian and expose Music only in Word",
+  "feature tabs default to Persian and expose MIDI and MusicXML only in Word",
   () => {
     const {
       document,
@@ -169,6 +171,13 @@ test(
     );
 
     assert.equal(
+      elements[
+        "feature-tab-musicxml"
+      ].hidden,
+      true,
+    );
+
+    assert.equal(
       actions.classList.contains(
         "feature-tab-hidden",
       ),
@@ -182,6 +191,13 @@ test(
     assert.equal(
       elements[
         "feature-tab-music"
+      ].hidden,
+      false,
+    );
+
+    assert.equal(
+      elements[
+        "feature-tab-musicxml"
       ].hidden,
       false,
     );
@@ -253,11 +269,82 @@ test(
       false,
     );
 
+    assert.equal(
+      elements[
+        "musicxml-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
     assert.match(
       elements[
         "feature-context-text"
       ].textContent,
       /Standard MIDI/,
+    );
+  },
+);
+
+test(
+  "MusicXML tab is a separate sibling surface with no MIDI shell leakage",
+  () => {
+    const {
+      document,
+      elements,
+      actions,
+    } =
+      fixture();
+
+    const controller =
+      createFeatureTabController(
+        document,
+      );
+
+    controller.setHost(
+      "word",
+    );
+
+    elements[
+      "feature-tab-musicxml"
+    ].click();
+
+    assert.equal(
+      controller.activeTab(),
+      "musicxml",
+    );
+
+    assert.equal(
+      actions.classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
+    assert.equal(
+      elements[
+        "music-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
+    assert.equal(
+      elements[
+        "musicxml-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      false,
+    );
+
+    assert.match(
+      elements[
+        "feature-context-text"
+      ].textContent,
+      /MusicXML/,
     );
   },
 );
@@ -344,6 +431,13 @@ test(
       true,
     );
 
+    assert.equal(
+      elements[
+        "feature-tab-musicxml"
+      ].hidden,
+      true,
+    );
+
     elements[
       "feature-tab-german"
     ].click();
@@ -396,6 +490,15 @@ test(
       true,
     );
 
+    assert.equal(
+      elements[
+        "musicxml-braille-section"
+      ].classList.contains(
+        "feature-tab-hidden",
+      ),
+      true,
+    );
+
     assert.match(
       elements[
         "feature-context-text"
@@ -422,7 +525,7 @@ test(
 );
 
 test(
-  "keyboard navigation places Deutsch between Persian and Music",
+  "keyboard navigation orders Persian, Deutsch, Music MIDI, then MusicXML",
   () => {
     const {
       document,
@@ -450,13 +553,6 @@ test(
       "german",
     );
 
-    assert.equal(
-      elements[
-        "feature-tab-german"
-      ].focused,
-      true,
-    );
-
     elements[
       "feature-tab-german"
     ].keydown(
@@ -468,11 +564,33 @@ test(
       "music",
     );
 
+    elements[
+      "feature-tab-music"
+    ].keydown(
+      "ArrowRight",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "musicxml",
+    );
+
     assert.equal(
       elements[
-        "feature-tab-music"
+        "feature-tab-musicxml"
       ].focused,
       true,
+    );
+
+    elements[
+      "feature-tab-musicxml"
+    ].keydown(
+      "ArrowLeft",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "music",
     );
 
     elements[
@@ -495,6 +613,17 @@ test(
     assert.equal(
       controller.activeTab(),
       "persian",
+    );
+
+    elements[
+      "feature-tab-persian"
+    ].keydown(
+      "End",
+    );
+
+    assert.equal(
+      controller.activeTab(),
+      "musicxml",
     );
   },
 );

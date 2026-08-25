@@ -1,0 +1,30 @@
+{
+  "phase": "16.5C",
+  "name": "Enumerated Tuplet Contract Freeze",
+  "status": "FROZEN_DEFERRED_GENERIC",
+  "sourceDecision": "FREEZE_ENUMERATED_ONLY_AND_DEFER_GENERIC",
+  "authoritativeEvidence": {
+    "tripletSingleCell": "2",
+    "tripletThreeCell": "_3'",
+    "groupTwo": "_2'",
+    "groupTen": "_10'",
+    "semanticRules": [
+      "The single-cell triplet sign is generally used for a triplet of any value.",
+      "Irregular groups other than three use the multi-cell grouping form."
+    ]
+  },
+  "musicXmlPolicy": {
+    "triplet3to2": "KEEP_EXISTING_SINGLE_CELL_TRIPLET",
+    "alternateTripletThreeCell": "PRESERVED_AS_KNOWN_SIGN_BUT_NOT_AUTO_SELECTED",
+    "groupTwo": "KNOWN_SIGN_NOT_AUTO_BRIDGED",
+    "groupTen": "KNOWN_SIGN_NOT_AUTO_BRIDGED",
+    "genericIrregularTuplet": "FAIL_CLOSED_NOT_PROVEN"
+  },
+  "nonGoals": [
+    "Do not infer _N' from _2' and _10'.",
+    "Do not invent a generic numeric grouping encoder.",
+    "Do not change existing 3:2 MusicXML triplet behavior.",
+    "Do not change H4C or H4D polyphony behavior."
+  ],
+  "engineInvariant": "No second Braille Music engine."
+}

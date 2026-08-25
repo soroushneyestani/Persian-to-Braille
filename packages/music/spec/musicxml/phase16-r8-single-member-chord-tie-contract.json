@@ -1,0 +1,8 @@
+{
+  "id": "PHASE16_R8_SINGLE_MEMBER_CHORD_TIE",
+  "authority": "BANA Music Braille Code 2015 10.1 and 10.2",
+  "admitted": "exactly one tied member in a MusicXML chord",
+  "emission": "single tie on the tied written note or interval, derived through the existing atomic note/chord encoder",
+  "existingWholeChordTie": "unchanged when all members are tied",
+  "preservedFailClosed": "two or more but not all tied members until successor-chord repeated-versus-tied semantics are frozen"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "PHASE16_R9_KEYBOARD_MEASURE_START_TEMPO",
+  "admitted": {
+    "onsetQuarter": "0",
+    "staff": [
+      1,
+      2
+    ],
+    "terminology": "tempo-only or existing music-metronome expression",
+    "sourceHost": "exact non-grace base note on the same staff and onset"
+  },
+  "behavior": "promote to StatefulKeyboardParallelEvent.wordExpressions instead of guessing a later hand action",
+  "preservedFailClosed": [
+    "arbitrary staff-scoped expressive text",
+    "nonzero-onset global promotion",
+    "no exact same-staff source host"
+  ]
+}

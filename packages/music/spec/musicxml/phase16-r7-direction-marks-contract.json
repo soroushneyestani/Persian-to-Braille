@@ -1,0 +1,46 @@
+{
+  "id": "PHASE16_R7_DIRECTION_MARKS_V3",
+  "authorities": [
+    "BANA Music Braille Code 2015 Table 22(C), 22.3.3, Table 25, 29.10",
+    "MusicXML 4.0 direction onset / pedal / wedge semantics"
+  ],
+  "pedal": {
+    "admittedTypes": [
+      "start",
+      "stop"
+    ],
+    "requiresMatchedPair": true,
+    "downBrf": "<c",
+    "upBrf": "*c",
+    "immediateRetake": "omit pedal-up before immediate re-depression"
+  },
+  "wedge": {
+    "admittedTypes": [
+      "crescendo",
+      "diminuendo",
+      "stop"
+    ],
+    "requiresMatchedPair": true,
+    "crescendo": {
+      "startBrf": ">c",
+      "stopBrf": ">3"
+    },
+    "diminuendo": {
+      "startBrf": ">d",
+      "stopBrf": ">4"
+    }
+  },
+  "coLocatedSuffixPolicy": {
+    "order": [
+      "hairpin-terminator",
+      "pedal-up"
+    ],
+    "classification": "Braille Hub deterministic transcriber policy where both admitted post-note signs coincide"
+  },
+  "deferred": [
+    "pedal change/continue/discontinue/resume/sostenuto",
+    "unpaired Ped. word substitution",
+    "niente or dashed wedge",
+    "wedge continue"
+  ]
+}

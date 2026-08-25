@@ -1,0 +1,31 @@
+{
+  "id": "PHASE16_R5A_CROSS_MEASURE_SLUR_V1",
+  "scope": "bounded MusicXML same-voice same-staff cross-measure slurs",
+  "architecture": {
+    "planner": "part-level immutable adapted-note identity WeakMap plan",
+    "engine": "existing shared Braille Music stateful encoder",
+    "secondBrailleEngine": false
+  },
+  "identityRequirements": {
+    "part": "same",
+    "voice": "explicit and unchanged",
+    "staff": "explicit and unchanged",
+    "ordering": "normal start-before-stop document order within the same lane"
+  },
+  "emission": {
+    "twoToFourLaneEvents": "BANA 13.2 existing single-slur suffix on every event except final",
+    "moreThanFourLaneEvents": "V18C1 frozen BANA 13.3 doubled-single-slur device",
+    "singleSlurBrf": "c"
+  },
+  "preservedFailClosedBoundaries": [
+    "cross-staff cross-measure slur",
+    "cross-voice cross-measure slur",
+    "MusicXML slur continue marker",
+    "stop-before-start or ambiguous part ordering",
+    "nested layered convergent or overlapping slurs",
+    "slur metadata on chord continuation members",
+    "grace/appoggiatura interaction",
+    "tie/slur interaction",
+    "ordinary non-keyboard backup/forward polyphony slur semantics"
+  ]
+}

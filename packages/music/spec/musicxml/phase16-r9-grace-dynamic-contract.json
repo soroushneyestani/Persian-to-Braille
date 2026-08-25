@@ -1,0 +1,14 @@
+{
+  "id": "PHASE16_R9_GRACE_DYNAMIC",
+  "authorities": [
+    "BANA Music Braille Code 2015 16.2 appoggiatura placement",
+    "BANA Music Braille Code 2015 22.3 expression/dynamic placement"
+  ],
+  "admitted": "existing supported independent dynamic attached to the first admitted grace/appoggiatura event",
+  "reuse": "existing dynamicPrefixBrf + existing gracePrefixBrf",
+  "preservedFailClosed": [
+    "grace + word expressions",
+    "grace + articulation",
+    "grace + unsupported direction-mark collision"
+  ]
+}

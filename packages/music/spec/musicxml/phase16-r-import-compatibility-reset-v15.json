@@ -1,0 +1,23 @@
+{
+  "id": "phase16-r-import-compatibility-reset-v15",
+  "references": [
+    "https://github.com/SpaceShaman/musicxml",
+    "https://github.com/SpaceShaman/musicxml/blob/master/scripts/generate.py",
+    "https://github.com/magenta/note-seq/blob/main/note_seq/musicxml_parser.py",
+    "https://www.w3.org/2021/06/musicxml40/"
+  ],
+  "importRules": {
+    "voiceIdentity": "structural; includes rests",
+    "staffIdentity": "structural; includes rests",
+    "backupForward": "cursor operations",
+    "rest": "timed event and valid exact-onset direction host",
+    "soundingPitch": "not required for voice existence",
+    "restOnlyVoice": {
+      "soleVoiceInHand": "supported without synthetic pitch",
+      "multipleSameHandVoices": "fail closed if register order is unresolved"
+    },
+    "extremeIntegerAlter": "preserve exact sounding pitch",
+    "microtone": "fail closed in current discrete-pitch profile"
+  },
+  "brailleBoundary": "External parser behavior informs import normalization only. BANA/spec remains authoritative for Braille emission."
+}

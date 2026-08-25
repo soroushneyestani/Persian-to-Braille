@@ -1,0 +1,27 @@
+{
+  "id": "PHASE16_R5_BANA_LONGER_SLUR_V1",
+  "scope": "contained same-measure MusicXML slur phrases",
+  "authority": {
+    "name": "BANA Music Braille Code 2015",
+    "sections": ["13.2", "13.3", "13.3.1"]
+  },
+  "policy": {
+    "twoToFourEvents": "single slur after every event except the final event",
+    "moreThanFourEvents": "doubled-single-slur device: two single-slur cells after the first event and one after the next-to-last event",
+    "instrumentalLongPhraseChoice": "Braille Hub freezes the BANA-permitted doubled-single-slur device for this bounded contained-import subset; bracket-slur planning remains deferred"
+  },
+  "statefulEngine": {
+    "singleSlurBrf": "c",
+    "slurAfterTrue": 1,
+    "slurAfter2": 2
+  },
+  "preservedFailClosedBoundaries": [
+    "cross-measure slur",
+    "cross-staff part-level slur planning",
+    "MusicXML slur continue marker",
+    "nested, layered, convergent or overlapping slurs",
+    "slur metadata on chord continuation members",
+    "grace/appoggiatura interaction",
+    "tie/slur interaction"
+  ]
+}

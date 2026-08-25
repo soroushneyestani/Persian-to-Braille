@@ -1,0 +1,116 @@
+{
+  "phase": "16",
+  "subphase": "16.9",
+  "name": "MusicXML Final Conformance and Closure",
+  "status": "CLOSURE_CANDIDATE",
+  "architecture": {
+    "inputPaths": {
+      "midi": "MIDI -> Neutral Music Model -> existing Braille Music Engine",
+      "musicxml": "MusicXML -> MusicXML Parser -> Semantic Adapter -> Neutral Music Model -> existing Braille Music Engine",
+      "mxl": "MXL -> Hardened ZIP Container -> MusicXML -> existing MusicXML path"
+    },
+    "publicSdk": {
+      "midiFactory": "createMusicBrailleMidiTranslator",
+      "musicXmlFactory": "createMusicBrailleMusicXmlTranslator",
+      "unifiedMusicFileFacade": false
+    },
+    "microsoft365": {
+      "midiTab": "Music / MIDI",
+      "musicXmlTab": "MusicXML",
+      "tabsSeparate": true,
+      "midiSourceLineSelectionOnly": true,
+      "musicXmlExtensions": [
+        ".musicxml",
+        ".xml",
+        ".mxl"
+      ]
+    },
+    "secondBrailleMusicEngine": false
+  },
+  "supported": {
+    "musicXmlRoot": [
+      "score-partwise"
+    ],
+    "coreEvents": [
+      "parts",
+      "measures",
+      "attributes",
+      "divisions-aware timing",
+      "pitch",
+      "rests",
+      "chords",
+      "duration",
+      "voice",
+      "staff",
+      "written pitch",
+      "ties",
+      "dots"
+    ],
+    "advanced": [
+      "single-staff H4C full-measure polyphony",
+      "terminal single-section H4D part-measure polyphony",
+      "explicit complete 3:2 triplets",
+      "staccato",
+      "staccatissimo",
+      "accent",
+      "tenuto",
+      "bounded short/long appoggiatura subset",
+      "contained simple short slur subset",
+      "forward/backward print repeats",
+      "first/second volta endings",
+      "independent pp/p/mf/f/ff dynamics",
+      "measure-boundary key replacement"
+    ],
+    "mxl": [
+      "stored members",
+      "deflate members",
+      "META-INF/container.xml rootfile resolution",
+      "bounded streamed inflate",
+      "member/size/ratio limits",
+      "unsafe path rejection",
+      "duplicate normalized member rejection",
+      "encrypted member rejection",
+      "ZIP64 fail-closed"
+    ]
+  },
+  "deferredFailClosed": [
+    "generic arbitrary tuplets without a frozen selection contract",
+    "4+ appoggiatura doubling and grace chords",
+    "grace plus articulation ordering",
+    "long/nested/convergent/cross-measure/part-to-part slur topologies",
+    "third and higher volta endings",
+    "nonstandard repeat counts and advanced repeat devices",
+    "arbitrary direction words and unsupported direction-types/hairpins",
+    "nonzero-to-zero key cancellation",
+    "mid-measure key changes",
+    "multi-staff cursor polyphony",
+    "crossed/register-overlapping explicit voices",
+    "incomplete nonterminal H4D polyphony",
+    "multi-section H4D",
+    "microtonal accidental semantics outside the frozen subset"
+  ],
+  "security": {
+    "explicitEntityDeclarationsRejected": true,
+    "mxlArchiveExtractionToDisk": false,
+    "mxlMaxMembers": 256,
+    "mxlMaxMemberBytes": 33554432,
+    "mxlMaxTotalDeclaredBytes": 67108864,
+    "mxlMaxDeclaredCompressionRatio": 200
+  },
+  "conformance": {
+    "musicPackageDefaultTestMustIncludeAllPhase16Tests": true,
+    "sdkRegressionRequired": true,
+    "microsoft365RegressionRequired": true,
+    "beethovenExternalMxlCorpusRequired": true,
+    "packageBoundaryValidationRequired": true,
+    "gitDiffCheckRequired": true,
+    "zeroStagedChangesRequired": true,
+    "externalCorpusTestPathMustBeCwdIndependent": true,
+    "externalCorpusMaySkipInCleanCheckout": true,
+    "finalClosureRequiresExternalCorpusPresentAndZeroSkips": true
+  },
+  "provenance": {
+    "bana": "Music Braille Code 2015 direct source audit",
+    "externalBeethovenCorpus": "preserved untracked; never auto-committed"
+  }
+}

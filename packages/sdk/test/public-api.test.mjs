@@ -15,10 +15,12 @@ test("exports only the selected runtime SDK surface", () => {
     [
       "GermanBrailleTranslationError",
     "MusicBrailleMidiTranslationError",
+    "MusicBrailleMusicXmlTranslationError",
       "PersianBrailleReverseTranslationError",
       "PersianBrailleTranslationError",
       "createGermanBrailleTranslator",
     "createMusicBrailleMidiTranslator",
+    "createMusicBrailleMusicXmlTranslator",
       "createPersianBrailleReverseTranslator",
       "createPersianBrailleTranslator",
     ],

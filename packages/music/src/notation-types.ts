@@ -64,6 +64,55 @@ export interface NotationPitchSource {
   readonly midiOctave: number;
 }
 
+/* PHASE16_PACK_A_MUSICXML — optional source metadata; existing MIDI callers remain valid. */
+export type MusicXmlWrittenStep =
+  | "A" | "B" | "C" | "D" | "E" | "F" | "G";
+
+export interface MusicXmlWrittenPitchMetadata {
+  readonly step: MusicXmlWrittenStep;
+  readonly alter: number;
+  readonly octave: number;
+}
+
+export interface MusicXmlSlurMetadata {
+  readonly type: "start" | "stop" | "continue";
+  readonly number?: number;
+  readonly placement?: string;
+}
+
+export interface MusicXmlNoteMetadata {
+  readonly voice?: string;
+  readonly staff?: number;
+  readonly writtenPitch?: MusicXmlWrittenPitchMetadata;
+  readonly slurs?: readonly MusicXmlSlurMetadata[];
+  readonly articulations?: readonly string[];
+}
+
+export interface MusicXmlClefMetadata {
+  readonly number?: number;
+  readonly sign: string;
+  readonly line?: number;
+  readonly octaveChange?: number;
+}
+
+export interface MusicXmlMeasureMetadata {
+  readonly measureNumber: string;
+  readonly key?: Readonly<{
+    readonly fifths: number;
+    readonly mode?: string;
+  }>;
+  readonly time?: Readonly<{
+    readonly beats: number;
+    readonly beatType: number;
+  }>;
+  readonly clefs?: readonly MusicXmlClefMetadata[];
+}
+
+export interface MusicXmlPartMetadata {
+  readonly id: string;
+  readonly name?: string;
+}
+
 export interface NotationNote {
   readonly kind: "note";
   readonly startUnit: number;
@@ -77,6 +126,7 @@ export interface NotationNote {
   readonly sourceEndTick: number;
   readonly tieFromPrevious: boolean;
   readonly tieToNext: boolean;
+  readonly musicXml?: MusicXmlNoteMetadata;
 }
 
 export interface NotationChord {
@@ -94,6 +144,7 @@ export interface NotationRest {
   readonly duration:
     NotationDuration;
   readonly transcriberAdded?: true;
+  readonly musicXml?: MusicXmlNoteMetadata;
 }
 
 export type NotationLinearMeasureEvent =
@@ -142,6 +193,7 @@ export interface NotationMeasure {
     boolean;
   readonly events:
     readonly NotationMeasureEvent[];
+  readonly musicXml?: MusicXmlMeasureMetadata;
 }
 
 export interface NotationPart {
@@ -149,6 +201,7 @@ export interface NotationPart {
   readonly channel: number;
   readonly measures:
     readonly NotationMeasure[];
+  readonly musicXml?: MusicXmlPartMetadata;
 }
 
 export interface NotationScore {
@@ -164,6 +217,7 @@ export interface NotationScore {
     readonly MidiTimeSignatureEvent[];
   readonly sourceKeySignatureEvents:
     readonly MidiKeySignatureEvent[];
+  readonly sourceFormat?: "midi" | "musicxml";
 }
 
 export type NotationBuildFailureCode =

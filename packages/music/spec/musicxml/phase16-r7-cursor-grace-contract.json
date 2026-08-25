@@ -1,0 +1,15 @@
+{
+  "id": "PHASE16_R7_CURSOR_GRACE_V1",
+  "scope": "existing bounded grace semantics inside explicit keyboard backup/forward lanes",
+  "reuse": [
+    "existing graceStyles()",
+    "existing StatefulGrace",
+    "existing shared stateful encoder"
+  ],
+  "preservedBoundaries": [
+    "ordinary non-keyboard backup/forward grace",
+    "4+ successive appoggiaturas",
+    "grace chords",
+    "grace combined with deferred dynamics/word/articulation combinations"
+  ]
+}
