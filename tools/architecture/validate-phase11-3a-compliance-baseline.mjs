@@ -51,13 +51,13 @@ requireText(
 );
 requireText(
   manifest,
-  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>',
+  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"/>',
   "manifest SupportUrl baseline",
 );
 
 for (const token of [
   "[PASS] Phase 11.2 aggregate regression: exit=0",
-  "[GAP] Marketplace SupportUrl: https://github.com/soroushneyestani/Persian-to-Braille",
+  "[GAP] Marketplace SupportUrl: https://github.com/soroushneyestani/Braille-Hub",
   "[GAP] Public support page: not present",
   "[GAP] Public privacy page: not present",
   "[GAP] Public eula page: not present",

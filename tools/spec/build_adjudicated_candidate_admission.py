@@ -122,7 +122,7 @@ def build_schema() -> dict:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": (
-            "https://soroushneyestani.github.io/Persian-to-Braille/"
+            "https://soroushneyestani.github.io/Braille-Hub/"
             "spec/fa-ir/schema/candidate-admission.schema.json"
         ),
         "title": "Persian Braille Adjudicated Candidate Admission Manifest",

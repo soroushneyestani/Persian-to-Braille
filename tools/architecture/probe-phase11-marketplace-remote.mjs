@@ -1,5 +1,5 @@
 const DEFAULT_BASE_URL =
-  "https://soroushneyestani.github.io/Persian-to-Braille";
+  "https://soroushneyestani.github.io/Braille-Hub";
 
 const input =
   process.argv[2] ??

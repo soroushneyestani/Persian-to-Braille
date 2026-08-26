@@ -1,6 +1,6 @@
 # @persian-braille/music
 
-Platform-agnostic MIDI and Braille Music engine used by Persian-to-Braille v2.
+Platform-agnostic MIDI and Braille Music engine used by Braille Hub.
 
 ## Scope
 

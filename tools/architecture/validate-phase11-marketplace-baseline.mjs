@@ -60,7 +60,7 @@ for (const host of ["Document", "Workbook", "Presentation"]) {
 
 requireText(
   manifest,
-  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>',
+  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"/>',
   "development SupportUrl baseline",
 );
 requireText(

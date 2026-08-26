@@ -4,8 +4,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$ManifestUrl = "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml"
-$ExpectedProductionBase = "https://soroushneyestani.github.io/Persian-to-Braille/"
+$ManifestUrl = "https://soroushneyestani.github.io/Braille-Hub/install/manifest.xml"
+$ExpectedProductionBase = "https://soroushneyestani.github.io/Braille-Hub/"
 $ExpectedAddinId = "33ec7928-1204-5bb3-88e6-d778413e9234"
 
 $CatalogRoot = Join-Path $env:LOCALAPPDATA "Braille-Hub"

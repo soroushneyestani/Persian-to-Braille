@@ -1,5 +1,5 @@
 {
-  "name": "persian-to-braille",
+  "name": "braille-hub",
   "version": "2.0.0-dev",
   "private": true,
   "type": "module",
@@ -156,12 +156,12 @@
   "description": "Specification-driven Persian Braille translation workspace.",
   "license": "MIT",
   "author": "Soroush Neyestani",
-  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "homepage": "https://github.com/soroushneyestani/Braille-Hub#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git"
+    "url": "git+https://github.com/soroushneyestani/Braille-Hub.git"
   },
   "bugs": {
-    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+    "url": "https://github.com/soroushneyestani/Braille-Hub/issues"
   }
 }

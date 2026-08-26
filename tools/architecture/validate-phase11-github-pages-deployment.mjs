@@ -77,7 +77,7 @@ for (
     "artifact_name: github-pages-${{ github.run_attempt }}",
     "pages: write",
     "id-token: write",
-    "OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Persian-to-Braille",
+    "OFFICE_ADDIN_PRODUCTION_BASE_URL: https://soroushneyestani.github.io/Braille-Hub",
     "integrations/microsoft365/marketplace-dist/site",
     "microsoft365-marketplace-manifest",
   ]
@@ -130,7 +130,7 @@ console.log(
   "Phase 11.2b GitHub Pages deployment candidate validation: PASS",
 );
 console.log(
-  "Expected origin: https://soroushneyestani.github.io/Persian-to-Braille",
+  "Expected origin: https://soroushneyestani.github.io/Braille-Hub",
 );
 console.log(
   "Development localhost manifest: PRESERVED",

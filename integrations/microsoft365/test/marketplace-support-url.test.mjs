@@ -9,7 +9,7 @@ import {
 } from "../marketplace/production-manifest.mjs";
 
 const productionBaseUrl =
-  "https://soroushneyestani.github.io/Persian-to-Braille";
+  "https://soroushneyestani.github.io/Braille-Hub";
 
 test(
   "Marketplace compliance URLs are derived from the normalized production base",
@@ -63,13 +63,13 @@ test(
 
     assert.ok(
       !result.manifest.includes(
-        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"',
+        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"',
       ),
     );
 
     assert.ok(
       developmentManifest.includes(
-        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"',
+        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"',
       ),
     );
   },
@@ -139,7 +139,7 @@ test(
 
     assert.ok(
       developmentManifest.includes(
-        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"',
+        'SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"',
       ),
     );
 
@@ -151,7 +151,7 @@ test(
 
     assert.ok(
       result.manifest.includes(
-        '<SupportUrl DefaultValue="https://soroushneyestani.github.io/Persian-to-Braille/support.html"/>',
+        '<SupportUrl DefaultValue="https://soroushneyestani.github.io/Braille-Hub/support.html"/>',
       ),
     );
 

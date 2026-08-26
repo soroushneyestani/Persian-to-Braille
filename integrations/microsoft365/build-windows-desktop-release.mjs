@@ -147,7 +147,7 @@ if (/localhost|127\.0\.0\.1/i.test(manifestText)) {
 }
 
 for (const required of [
-  "https://soroushneyestani.github.io/Persian-to-Braille/",
+  "https://soroushneyestani.github.io/Braille-Hub/",
   "33ec7928-1204-5bb3-88e6-d778413e9234",
 ]) {
   if (!manifestText.includes(required)) {
@@ -169,7 +169,7 @@ const provenance = {
   architectureBoundary: "Microsoft365 -> SDK -> Core",
   distribution: "manual Windows sideload/testing preview",
   publicInstallUrl:
-    "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+    "https://soroushneyestani.github.io/Braille-Hub/install.html",
   deferred: {
     web: "Phase 16",
     mac: "Phase 17",

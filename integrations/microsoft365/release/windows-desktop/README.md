@@ -47,7 +47,7 @@ publication.
 
 ## Public installation guide
 
-`https://soroushneyestani.github.io/Persian-to-Braille/install.html`
+`https://soroushneyestani.github.io/Braille-Hub/install.html`
 
 ## Deferred platforms
 

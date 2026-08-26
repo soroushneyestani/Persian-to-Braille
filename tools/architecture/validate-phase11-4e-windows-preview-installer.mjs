@@ -84,14 +84,14 @@ const setupText = setupHelper.toString("utf8");
 for (const token of [
   "windows-preview-setup.ps1",
   "ExecutionPolicy Bypass",
-  "https://soroushneyestani.github.io/Persian-to-Braille/",
+  "https://soroushneyestani.github.io/Braille-Hub/",
   "NOT a Microsoft Marketplace installer",
 ]) {
   requireText(bootstrapperText, token, "Windows bootstrapper");
 }
 
 for (const token of [
-  "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+  "https://soroushneyestani.github.io/Braille-Hub/install/manifest.xml",
   "33ec7928-1204-5bb3-88e6-d778413e9234",
   "New-SmbShare",
   "HKCU:\\Software\\Microsoft\\Office\\16.0\\WEF\\TrustedCatalogs",

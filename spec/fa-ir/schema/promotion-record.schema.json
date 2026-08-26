@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/promotion-record.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/promotion-record.schema.json",
   "title": "Persian Braille Normative Promotion Record",
   "description": "Machine-readable decision record for explicit candidate-to-normative promotion inside the Persian-to-Braille project specification.",
   "type": "object",

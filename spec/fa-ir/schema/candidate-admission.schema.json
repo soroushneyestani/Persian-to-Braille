@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/candidate-admission.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/candidate-admission.schema.json",
   "title": "Persian Braille Adjudicated Candidate Admission Manifest",
   "description": "Machine-readable bridge from explicitly approved Phase 2.14 adjudications to future candidate specification materialization. Admission is not normative promotion.",
   "type": "object",

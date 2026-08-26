@@ -81,8 +81,8 @@ if (manifest.includes("localhost")) {
 }
 
 for (const required of [
-  "https://soroushneyestani.github.io/Persian-to-Braille/",
-  "https://soroushneyestani.github.io/Persian-to-Braille/support.html",
+  "https://soroushneyestani.github.io/Braille-Hub/",
+  "https://soroushneyestani.github.io/Braille-Hub/support.html",
 ]) {
   if (!manifest.includes(required)) {
     throw new Error(

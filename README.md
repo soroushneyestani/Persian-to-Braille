@@ -6,11 +6,11 @@
 > **Current stage:** Release candidate / distribution validation.
 > **Microsoft Marketplace:** Not published yet; Marketplace submission/publication is an external release step and is not required for the completed feature set.
 
-[Install Braille Hub](https://soroushneyestani.github.io/Persian-to-Braille/install.html) ·
-[Download Manifest](https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml) ·
-[Support](https://soroushneyestani.github.io/Persian-to-Braille/support.html) ·
-[Privacy](https://soroushneyestani.github.io/Persian-to-Braille/privacy.html) ·
-[EULA](https://soroushneyestani.github.io/Persian-to-Braille/eula.html)
+[Install Braille Hub](https://soroushneyestani.github.io/Braille-Hub/install.html) ·
+[Download Manifest](https://soroushneyestani.github.io/Braille-Hub/install/manifest.xml) ·
+[Support](https://soroushneyestani.github.io/Braille-Hub/support.html) ·
+[Privacy](https://soroushneyestani.github.io/Braille-Hub/privacy.html) ·
+[EULA](https://soroushneyestani.github.io/Braille-Hub/eula.html)
 
 ---
 
@@ -18,7 +18,7 @@
 
 **Braille Hub** is the completed evolution of the original **Persian-to-Braille** project.
 
-The repository keeps its historical `Persian-to-Braille` name and public URLs, while the product itself is now **Braille Hub**: a platform-independent text and music accessibility system with a shared Core, public SDK, CLI/Web consumers, and a Microsoft 365 add-in.
+The repository and public distribution now use the **Braille Hub** identity, while the original **Persian-to-Braille** name is preserved only where it represents historical project evidence: a platform-independent text and music accessibility system with a shared Core, public SDK, CLI/Web consumers, and a Microsoft 365 add-in.
 
 The project is designed around one rule:
 
@@ -203,7 +203,7 @@ The public installation page contains the current preview distribution options:
 
 ### Installation page
 
-https://soroushneyestani.github.io/Persian-to-Braille/install.html
+https://soroushneyestani.github.io/Braille-Hub/install.html
 
 It provides:
 
@@ -218,7 +218,7 @@ It provides:
 ### Stable production manifest
 
 ```text
-https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml
+https://soroushneyestani.github.io/Braille-Hub/install/manifest.xml
 ```
 
 The hosted manifest points to the production HTTPS assets and does not use the local development `localhost` endpoint.

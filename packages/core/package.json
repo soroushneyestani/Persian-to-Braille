@@ -27,14 +27,14 @@
   "description": "Specification-driven Persian Braille translation engine for the fa-ir-g1 profile.",
   "license": "MIT",
   "author": "Soroush Neyestani",
-  "homepage": "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+  "homepage": "https://github.com/soroushneyestani/Braille-Hub#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+    "url": "git+https://github.com/soroushneyestani/Braille-Hub.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/soroushneyestani/Persian-to-Braille/issues"
+    "url": "https://github.com/soroushneyestani/Braille-Hub/issues"
   },
   "keywords": [
     "persian",

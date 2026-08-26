@@ -46,7 +46,7 @@ if (baseline.status !== "closed-baseline-gaps-recorded") {
 requireText(support, "<h1>Support</h1>", "support page");
 requireText(
   support,
-  "https://github.com/soroushneyestani/Persian-to-Braille/issues",
+  "https://github.com/soroushneyestani/Braille-Hub/issues",
   "support issue route",
 );
 requireText(
@@ -94,7 +94,7 @@ if (css.trim().length < 500) {
 
 requireText(
   manifest,
-  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>',
+  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"/>',
   "11.3c-deferred development manifest SupportUrl",
 );
 

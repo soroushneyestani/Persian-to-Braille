@@ -76,7 +76,7 @@ test("install page exposes the stable hosted production manifest", async () => {
   assert.match(page, /\.\/install\/manifest\.xml/);
   assert.match(
     page,
-    /https:\/\/soroushneyestani\.github\.io\/Persian-to-Braille\/install\/manifest\.xml/,
+    /https:\/\/soroushneyestani\.github\.io\/Braille-Hub\/install\/manifest\.xml/,
   );
 });
 
@@ -181,7 +181,7 @@ test("manual preview build copies the exact generated production manifest", asyn
   assert.doesNotMatch(hosted, /localhost/);
   assert.match(
     hosted,
-    /https:\/\/soroushneyestani\.github\.io\/Persian-to-Braille\//,
+    /https:\/\/soroushneyestani\.github\.io\/Braille-Hub\//,
   );
 });
 

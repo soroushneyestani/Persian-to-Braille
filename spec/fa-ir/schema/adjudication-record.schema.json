@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/adjudication-record.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/adjudication-record.schema.json",
   "title": "Persian Braille Evidence Adjudication Record",
   "description": "Machine-readable project-maintainer decision for one Phase 2.13 adjudication-plan item. Adjudication is separate from normative promotion.",
   "type": "object",

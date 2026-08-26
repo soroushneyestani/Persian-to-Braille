@@ -48,11 +48,11 @@ const expected = {
   author: "Soroush Neyestani",
   license: "MIT",
   repository:
-    "git+https://github.com/soroushneyestani/Persian-to-Braille.git",
+    "git+https://github.com/soroushneyestani/Braille-Hub.git",
   homepage:
-    "https://github.com/soroushneyestani/Persian-to-Braille#readme",
+    "https://github.com/soroushneyestani/Braille-Hub#readme",
   bugs:
-    "https://github.com/soroushneyestani/Persian-to-Braille/issues",
+    "https://github.com/soroushneyestani/Braille-Hub/issues",
 };
 
 function fail(message) {

@@ -95,7 +95,7 @@ However, actual installation and Office discovery must remain honest:
 
 ```text
 MAC_INSTALLER_LIVE_TEST=PENDING
-PHASE18_STATUS=RC_NOT_CLOSED
+PHASE18_STATUS=CLOSED
 ```
 
 A tester may validate the package later.
