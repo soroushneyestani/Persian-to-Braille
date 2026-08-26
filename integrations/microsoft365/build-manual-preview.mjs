@@ -147,6 +147,7 @@ for (const [label, content] of [
   }
 }
 
+await (await import("node:fs/promises")).copyFile(installPage, path.join(siteDir, "index.html"));
 console.log("Braille Hub public manual preview build: PASS");
 console.log(`Marketplace dist: ${marketplaceDist}`);
 console.log(`Install page: ${installPage}`);
