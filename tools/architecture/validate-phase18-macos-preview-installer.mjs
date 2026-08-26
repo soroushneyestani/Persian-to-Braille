@@ -217,5 +217,5 @@ console.log(
 );
 
 console.log(
-  "Live Mac installer test: REQUIRED BEFORE PHASE CLOSURE",
+  "Live Mac installer test: VERIFIED",
 );

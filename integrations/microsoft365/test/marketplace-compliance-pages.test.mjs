@@ -35,7 +35,7 @@ test("support page is public-facing and points to the project issue tracker", as
   assert.match(value, /<h1>Support<\/h1>/);
   assert.match(
     value,
-    /https:\/\/github\.com\/soroushneyestani\/Persian-to-Braille\/issues/,
+    /https:\/\/github\.com\/soroushneyestani\/Braille-Hub\/issues/,
   );
   assert.match(value, /Do not include confidential document content/);
 });

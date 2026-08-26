@@ -41,7 +41,7 @@ const packageJson = JSON.parse(await text("package.json"));
 for (const token of [
   "Manual Preview Installation",
   "./install/manifest.xml",
-  "https://soroushneyestani.github.io/Persian-to-Braille/install/manifest.xml",
+  "https://soroushneyestani.github.io/Braille-Hub/install/manifest.xml",
   "Upload My Add-in",
   "Settings → Integrated apps",
   "not supported for",

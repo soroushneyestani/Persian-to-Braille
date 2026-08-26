@@ -76,7 +76,7 @@ test("Windows release package production manifest is safe", async () => {
   assert.doesNotMatch(manifest, /localhost|127\.0\.0\.1/i);
   assert.match(
     manifest,
-    /https:\/\/soroushneyestani\.github\.io\/Persian-to-Braille\//,
+    /https:\/\/soroushneyestani\.github\.io\/Braille-Hub\//,
   );
   assert.match(
     manifest,

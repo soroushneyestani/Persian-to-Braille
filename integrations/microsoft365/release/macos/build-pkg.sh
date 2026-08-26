@@ -22,7 +22,7 @@ if grep -Fq "https://localhost" "$SOURCE_MANIFEST"; then
   exit 1
 fi
 
-if ! grep -Fq "https://soroushneyestani.github.io/Persian-to-Braille" "$SOURCE_MANIFEST"; then
+if ! grep -Fq "https://soroushneyestani.github.io/Braille-Hub" "$SOURCE_MANIFEST"; then
   printf '%s\n' "ERROR: expected production GitHub Pages origin not found in manifest." >&2
   exit 1
 fi
@@ -123,7 +123,7 @@ rather than deleting unrelated add-in manifests.
 
 SUPPORT
 -------
-https://soroushneyestani.github.io/Persian-to-Braille/support.html
+https://soroushneyestani.github.io/Braille-Hub/support.html
 EOF
 
 (

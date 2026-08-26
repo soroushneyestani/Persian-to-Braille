@@ -7,7 +7,7 @@ import {
 
 const root = new URL("../../", import.meta.url);
 const productionBaseUrl =
-  "https://soroushneyestani.github.io/Persian-to-Braille";
+  "https://soroushneyestani.github.io/Braille-Hub";
 
 async function text(path) {
   return readFile(new URL(path, root), "utf8");
@@ -40,7 +40,7 @@ const microsoft365Package =
 
 requireText(
   developmentManifest,
-  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"/>',
+  '<SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"/>',
   "development manifest SupportUrl",
 );
 requireText(
@@ -87,7 +87,7 @@ requireText(
 
 if (
   production.manifest.includes(
-    'SupportUrl DefaultValue="https://github.com/soroushneyestani/Persian-to-Braille"',
+    'SupportUrl DefaultValue="https://github.com/soroushneyestani/Braille-Hub"',
   )
 ) {
   fail("generated Marketplace manifest still uses repository SupportUrl");

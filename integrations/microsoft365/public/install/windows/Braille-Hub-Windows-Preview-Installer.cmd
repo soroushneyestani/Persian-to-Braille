@@ -10,7 +10,7 @@ echo This installer configures a Windows Office sideload/testing catalog.
 echo It is NOT a Microsoft Marketplace installer.
 echo.
 
-set "SETUP_URL=https://soroushneyestani.github.io/Persian-to-Braille/install/windows/windows-preview-setup.ps1"
+set "SETUP_URL=https://soroushneyestani.github.io/Braille-Hub/install/windows/windows-preview-setup.ps1"
 set "SETUP_FILE=%TEMP%\PersianToBrailleWindowsPreviewSetup.ps1"
 
 echo [1/2] Downloading the project setup helper over HTTPS...

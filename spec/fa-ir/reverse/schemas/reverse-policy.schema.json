@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-policy.schema.json",
+  "$id": "https://github.com/soroushneyestani/Braille-Hub/spec/fa-ir/reverse/schemas/reverse-policy.schema.json",
   "title": "Persian Braille Reverse Translation Policy",
   "description": "Phase 13 policy contract for deterministic Braille-to-print resolution and canonicalization.",
   "type": "object",

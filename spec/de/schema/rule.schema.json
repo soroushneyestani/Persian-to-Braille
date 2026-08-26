@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/de/schema/rule.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/de/schema/rule.schema.json",
   "title": "German Braille Canonical Rule",
   "description": "Schema for one lossless canonical German Braille rule promoted from the Phase 15 normative audit. This schema models canonical normative semantics, not the executable runtime-rule representation.",
   "type": "object",

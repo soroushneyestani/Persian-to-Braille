@@ -43,7 +43,7 @@ if (phase112b.status !== "verified-pass") {
 
 if (
   closure.production?.origin !==
-  "https://soroushneyestani.github.io/Persian-to-Braille"
+  "https://soroushneyestani.github.io/Braille-Hub"
 ) {
   fail("production origin mismatch");
 }

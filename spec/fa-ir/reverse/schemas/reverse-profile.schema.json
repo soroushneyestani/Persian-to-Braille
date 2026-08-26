@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-profile.schema.json",
+  "$id": "https://github.com/soroushneyestani/Braille-Hub/spec/fa-ir/reverse/schemas/reverse-profile.schema.json",
   "title": "Persian Braille Reverse Profile",
   "description": "Profile metadata for the Phase 13 Braille-to-print engine.",
   "type": "object",

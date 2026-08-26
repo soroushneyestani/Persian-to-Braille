@@ -103,7 +103,7 @@ profile_id_schema = {
 
 rule_schema = {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/rule.schema.json",
+    "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/rule.schema.json",
     "title": "Persian Braille Rule",
     "description": (
         "Schema for one auditable, profile-scoped Persian Braille rule. "
@@ -308,7 +308,7 @@ rule_schema = {
 
 profile_schema = {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/profile.schema.json",
+    "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/profile.schema.json",
     "title": "Persian Braille Profile",
     "description": (
         "Schema for a versioned Persian Braille translation profile. "
@@ -428,7 +428,7 @@ profile_schema = {
 
 conformance_schema = {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/conformance.schema.json",
+    "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/conformance.schema.json",
     "title": "Persian Braille Conformance Vector",
     "description": (
         "Schema for deterministic print-to-Braille conformance vectors."

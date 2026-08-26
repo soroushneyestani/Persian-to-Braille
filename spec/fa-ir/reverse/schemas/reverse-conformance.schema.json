@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/soroushneyestani/Persian-to-Braille/spec/fa-ir/reverse/schemas/reverse-conformance.schema.json",
+  "$id": "https://github.com/soroushneyestani/Braille-Hub/spec/fa-ir/reverse/schemas/reverse-conformance.schema.json",
   "title": "Persian Braille Reverse Conformance Vector",
   "description": "Independent reverse-translation conformance vector or capability assertion.",
   "type": "object",

@@ -130,7 +130,7 @@ for (const token of [
   "NOT MICROSOFT MARKETPLACE PUBLICATION",
   "EXTERNAL BLOCKED / NOT SATISFIED",
   "Web / Mac: EXPECTED / NOT EXECUTED",
-  "https://soroushneyestani.github.io/Persian-to-Braille/install.html",
+  "https://soroushneyestani.github.io/Braille-Hub/install.html",
   "11.4d Marketplace Screenshots / Listing Assets",
 ]) {
   requireText(normalizedNote, token, "Phase 11.4c live evidence note");

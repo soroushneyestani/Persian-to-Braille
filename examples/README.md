@@ -1,4 +1,4 @@
-# Persian-to-Braille SDK Examples
+# Braille Hub SDK Examples
 
 These examples demonstrate the public `@persian-braille/sdk` entrypoint.
 

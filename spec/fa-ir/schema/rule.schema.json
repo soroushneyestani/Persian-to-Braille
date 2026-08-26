@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/rule.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/rule.schema.json",
   "title": "Persian Braille Rule",
   "description": "Schema for one auditable, profile-scoped Persian Braille rule. A rule is not normative merely because it validates against this schema.",
   "type": "object",

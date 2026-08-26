@@ -35,7 +35,7 @@ if (evidence.status !== "verified-pass") {
 
 if (
   evidence.hosting?.origin !==
-  "https://soroushneyestani.github.io/Persian-to-Braille"
+  "https://soroushneyestani.github.io/Braille-Hub"
 ) {
   fail("production origin changed");
 }

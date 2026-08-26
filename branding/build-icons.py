@@ -1,7 +1,7 @@
-﻿from pathlib import Path
+from pathlib import Path
 from PIL import Image
 
-ROOT = Path(r"C:\Projects\Persian-to-Braille")
+ROOT = Path(r"C:\Projects\Braille-Hub")
 
 source = ROOT / "branding" / "braille-hub-logo.png"
 branding = ROOT / "branding"

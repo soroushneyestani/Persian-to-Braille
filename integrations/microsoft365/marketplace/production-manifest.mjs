@@ -1,6 +1,6 @@
 const DEVELOPMENT_BASE_URL = "https://localhost:3000";
 const DEVELOPMENT_SUPPORT_URL =
-  "https://github.com/soroushneyestani/Persian-to-Braille";
+  "https://github.com/soroushneyestani/Braille-Hub";
 
 function isLoopbackHost(hostname) {
   const value = hostname.toLowerCase();

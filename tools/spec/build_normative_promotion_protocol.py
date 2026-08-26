@@ -161,7 +161,7 @@ semver_schema = {
 promotion_schema = {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": (
-        "https://soroushneyestani.github.io/Persian-to-Braille/"
+        "https://soroushneyestani.github.io/Braille-Hub/"
         "spec/fa-ir/schema/promotion-record.schema.json"
     ),
     "title": "Persian Braille Normative Promotion Record",

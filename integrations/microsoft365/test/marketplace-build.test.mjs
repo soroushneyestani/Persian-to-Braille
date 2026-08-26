@@ -132,7 +132,7 @@ test(
 
     assert.match(
       result.manifest,
-      /<SupportUrl DefaultValue="https:\/\/github\.com\/soroushneyestani\/Persian-to-Braille"\/>/,
+      /<SupportUrl DefaultValue="https:\/\/github\.com\/soroushneyestani\/Braille-Hub"\/>/,
     );
   },
 );

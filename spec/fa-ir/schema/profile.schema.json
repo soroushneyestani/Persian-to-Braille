@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/fa-ir/schema/profile.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/fa-ir/schema/profile.schema.json",
   "title": "Persian Braille Profile",
   "description": "Schema for a versioned Persian Braille translation profile. Profiles select rule sets; they do not duplicate rule definitions.",
   "type": "object",

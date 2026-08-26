@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://soroushneyestani.github.io/Persian-to-Braille/spec/de/schema/profile.schema.json",
+  "$id": "https://soroushneyestani.github.io/Braille-Hub/spec/de/schema/profile.schema.json",
   "title": "German Braille Canonical Profile",
   "description": "Schema for an internal canonical German Braille text-mode profile. The profile identifier is an internal specification identity and does not freeze a public SDK, locale, or product profile identifier.",
   "type": "object",
