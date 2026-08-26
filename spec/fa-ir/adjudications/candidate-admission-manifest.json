@@ -28,7 +28,7 @@
   "inputs": {
     "adjudicationManifest": {
       "path": "spec/fa-ir/adjudications/manifest.json",
-      "sha256": "C42F7BC4373B22FAA6249B3C3576F2DC941C61C52BAC0799FB63A90DBD5318A8"
+      "sha256": "9E6A027F884480C1C3260AD59E10D079A81F9E978C0DCD26E9B0E7F153DDFA1B"
     },
     "adjudicationPolicy": {
       "path": "spec/fa-ir/governance/adjudication-policy.json",
