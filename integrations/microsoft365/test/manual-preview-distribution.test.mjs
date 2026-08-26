@@ -369,3 +369,17 @@ test(
     );
   },
 );
+
+test("Pages root index is the exact install page", async () => {
+  const dist = await resolveMarketplaceDist();
+
+  const installPage = await text(
+    path.join(dist, "site", "install.html"),
+  );
+
+  const rootIndex = await text(
+    path.join(dist, "site", "index.html"),
+  );
+
+  assert.equal(rootIndex, installPage);
+});
